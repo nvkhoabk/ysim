@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ysim://factory/schemas/document-index.schema.json",
+  "title": "YSim Document Index",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "generatedAt",
+    "repositoryRoot",
+    "documentCount",
+    "documents"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string"
+    },
+    "generatedAt": {
+      "type": "string"
+    },
+    "repositoryRoot": {
+      "type": "string"
+    },
+    "documentCount": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "documents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "path",
+          "filename",
+          "extension",
+          "documentSet"
+        ],
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "filename": {
+            "type": "string"
+          },
+          "extension": {
+            "type": "string"
+          },
+          "documentSet": {
+            "type": "string"
+          },
+          "documentCode": {
+            "type": ["string", "null"]
+          },
+          "title": {
+            "type": ["string", "null"]
+          },
+          "version": {
+            "type": ["string", "null"]
+          },
+          "status": {
+            "type": ["string", "null"]
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

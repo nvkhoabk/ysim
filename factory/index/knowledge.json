@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-07-11T20:15:24+07:00",
+  "repositoryRoot": ".",
+  "knowledgeCount": 1,
+  "entries": [
+    {
+      "path": "knowledge/README.md",
+      "filename": "README.md",
+      "extension": "md",
+      "category": "ROOT"
+    }
+  ]
+}

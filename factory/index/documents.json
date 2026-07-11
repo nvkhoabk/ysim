@@ -1,0 +1,1008 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-07-11T20:15:23+07:00",
+  "repositoryRoot": ".",
+  "documentCount": 100,
+  "documents": [
+    {
+      "path": "docs/AAP/AAP-01.md",
+      "filename": "AAP-01.md",
+      "extension": "md",
+      "documentSet": "AAP",
+      "documentCode": "AAP-01",
+      "title": "Repository Discovery Model",
+      "version": "2.1",
+      "status": "FROZEN"
+    },
+    {
+      "path": "docs/AAP/AAP-02.md",
+      "filename": "AAP-02.md",
+      "extension": "md",
+      "documentSet": "AAP",
+      "documentCode": "AAP-02",
+      "title": "Sprint Contract Model",
+      "version": "2.1",
+      "status": "FROZEN"
+    },
+    {
+      "path": "docs/AAP/AAP-03.md",
+      "filename": "AAP-03.md",
+      "extension": "md",
+      "documentSet": "AAP",
+      "documentCode": "AAP-03",
+      "title": "AI Planning Model",
+      "version": "2.1",
+      "status": "FROZEN"
+    },
+    {
+      "path": "docs/AAP/AAP-04.md",
+      "filename": "AAP-04.md",
+      "extension": "md",
+      "documentSet": "AAP",
+      "documentCode": "AAP-04",
+      "title": "AI Verification Model",
+      "version": "2.1",
+      "status": "FROZEN"
+    },
+    {
+      "path": "docs/AAP/AAP-05.md",
+      "filename": "AAP-05.md",
+      "extension": "md",
+      "documentSet": "AAP",
+      "documentCode": "AAP-05",
+      "title": "AI Evidence Model",
+      "version": "2.1",
+      "status": "FROZEN"
+    },
+    {
+      "path": "docs/AAP/AAP-06.md",
+      "filename": "AAP-06.md",
+      "extension": "md",
+      "documentSet": "AAP",
+      "documentCode": "AAP-06",
+      "title": "Architecture Change Proposal Model",
+      "version": "2.1",
+      "status": "FROZEN"
+    },
+    {
+      "path": "docs/ABP/ABP-00.md",
+      "filename": "ABP-00.md",
+      "extension": "md",
+      "documentSet": "ABP",
+      "documentCode": "ABP-00",
+      "title": "Architecture Principles",
+      "version": "1.0",
+      "status": "FROZEN"
+    },
+    {
+      "path": "docs/ABP/ABP-01.md",
+      "filename": "ABP-01.md",
+      "extension": "md",
+      "documentSet": "ABP",
+      "documentCode": null,
+      "title": "Repository Architecture\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/ABP/ABP-02.md",
+      "filename": "ABP-02.md",
+      "extension": "md",
+      "documentSet": "ABP",
+      "documentCode": null,
+      "title": "Module Architecture\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/ABP/ABP-03.md",
+      "filename": "ABP-03.md",
+      "extension": "md",
+      "documentSet": "ABP",
+      "documentCode": null,
+      "title": "Dependency Rules\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/ABP/ABP-04.md",
+      "filename": "ABP-04.md",
+      "extension": "md",
+      "documentSet": "ABP",
+      "documentCode": null,
+      "title": "Transaction Boundary\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/ABP/ABP-05.md",
+      "filename": "ABP-05.md",
+      "extension": "md",
+      "documentSet": "ABP",
+      "documentCode": null,
+      "title": "Event Architecture\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/ABP/ABP-06.md",
+      "filename": "ABP-06.md",
+      "extension": "md",
+      "documentSet": "ABP",
+      "documentCode": null,
+      "title": "Snapshot Architecture\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/ABP/ABP-07.md",
+      "filename": "ABP-07.md",
+      "extension": "md",
+      "documentSet": "ABP",
+      "documentCode": null,
+      "title": "Configuration Architecture\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/ABP/ABP-08.md",
+      "filename": "ABP-08.md",
+      "extension": "md",
+      "documentSet": "ABP",
+      "documentCode": null,
+      "title": "Integration Architecture\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/ABP/ABP-09.md",
+      "filename": "ABP-09.md",
+      "extension": "md",
+      "documentSet": "ABP",
+      "documentCode": null,
+      "title": "Security Architecture\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/ABP/ABP-10.md",
+      "filename": "ABP-10.md",
+      "extension": "md",
+      "documentSet": "ABP",
+      "documentCode": null,
+      "title": "Observability Architecture\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/ABP/ABP-11.md",
+      "filename": "ABP-11.md",
+      "extension": "md",
+      "documentSet": "ABP",
+      "documentCode": null,
+      "title": "Platform Data Architecture\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/ABP/ABP-12.md",
+      "filename": "ABP-12.md",
+      "extension": "md",
+      "documentSet": "ABP",
+      "documentCode": null,
+      "title": "Error Handling Architecture\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/ABP/ABP-13.md",
+      "filename": "ABP-13.md",
+      "extension": "md",
+      "documentSet": "ABP",
+      "documentCode": null,
+      "title": "Testing Architecture\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/ABP/ABP-14.md",
+      "filename": "ABP-14.md",
+      "extension": "md",
+      "documentSet": "ABP",
+      "documentCode": null,
+      "title": "Deployment Architecture\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/ABP/ABP-15.md",
+      "filename": "ABP-15.md",
+      "extension": "md",
+      "documentSet": "ABP",
+      "documentCode": null,
+      "title": "AI Implementation Architecture\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/ABP/ABP-16.md",
+      "filename": "ABP-16.md",
+      "extension": "md",
+      "documentSet": "ABP",
+      "documentCode": "ABP-16",
+      "title": "Commerce Experience Platform Architecture",
+      "version": "2.1",
+      "status": "FROZEN"
+    },
+    {
+      "path": "docs/ABP/ABP-17.md",
+      "filename": "ABP-17.md",
+      "extension": "md",
+      "documentSet": "ABP",
+      "documentCode": "ABP-17",
+      "title": "Design System Architecture",
+      "version": "2.1",
+      "status": "FROZEN"
+    },
+    {
+      "path": "docs/AFM-00.md",
+      "filename": "AFM-00.md",
+      "extension": "md",
+      "documentSet": "ROOT",
+      "documentCode": "AFM-00",
+      "title": "AI Factory Manual",
+      "version": "2.1",
+      "status": "FROZEN"
+    },
+    {
+      "path": "docs/AFM-01.md",
+      "filename": "AFM-01.md",
+      "extension": "md",
+      "documentSet": "ROOT",
+      "documentCode": null,
+      "title": "AI Factory Framework v2.1 Update\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/BRD/BRD-BO-INDEX.md",
+      "filename": "BRD-BO-INDEX.md",
+      "extension": "md",
+      "documentSet": "BRD",
+      "documentCode": null,
+      "title": "Business Object Registry\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/BRD/BRD-CAP-INDEX.md",
+      "filename": "BRD-CAP-INDEX.md",
+      "extension": "md",
+      "documentSet": "BRD",
+      "documentCode": null,
+      "title": "Enterprise Business Capability Registry\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/BRD/BRD-EVENT-INDEX.md",
+      "filename": "BRD-EVENT-INDEX.md",
+      "extension": "md",
+      "documentSet": "BRD",
+      "documentCode": null,
+      "title": "Enterprise Business Event Registry\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/BRD/BRD-META-MODEL.md",
+      "filename": "BRD-META-MODEL.md",
+      "extension": "md",
+      "documentSet": "BRD",
+      "documentCode": "BRD-META-MODEL",
+      "title": "Enterprise Business Meta Model",
+      "version": "1.0",
+      "status": "FROZEN"
+    },
+    {
+      "path": "docs/BRD/BRD-POLICY-INDEX.md",
+      "filename": "BRD-POLICY-INDEX.md",
+      "extension": "md",
+      "documentSet": "BRD",
+      "documentCode": null,
+      "title": "Enterprise Policy Registry\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+      "filename": "BRD-SNAPSHOT-INDEX.md",
+      "extension": "md",
+      "documentSet": "BRD",
+      "documentCode": null,
+      "title": "Enterprise Snapshot Registry\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/BRD/BRD-UPDATE-01.md",
+      "filename": "BRD-UPDATE-01.md",
+      "extension": "md",
+      "documentSet": "BRD",
+      "documentCode": "BRD-UPDATE-01",
+      "title": "Commerce Experience Platform (CXP)",
+      "version": "2.1",
+      "status": "FROZEN"
+    },
+    {
+      "path": "docs/BRD/BRD-WS-01.md",
+      "filename": "BRD-WS-01.md",
+      "extension": "md",
+      "documentSet": "BRD",
+      "documentCode": null,
+      "title": "BRD Workshop 01\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/BRD/BRD-WS-02.md",
+      "filename": "BRD-WS-02.md",
+      "extension": "md",
+      "documentSet": "BRD",
+      "documentCode": null,
+      "title": "BRD Workshop 02\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/BRD/BRD-WS-03.md",
+      "filename": "BRD-WS-03.md",
+      "extension": "md",
+      "documentSet": "BRD",
+      "documentCode": null,
+      "title": "BRD Workshop 03\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/BRD/BRD-WS-04.md",
+      "filename": "BRD-WS-04.md",
+      "extension": "md",
+      "documentSet": "BRD",
+      "documentCode": null,
+      "title": "BRD Workshop 04\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/BRD/BRD-WS-05.md",
+      "filename": "BRD-WS-05.md",
+      "extension": "md",
+      "documentSet": "BRD",
+      "documentCode": null,
+      "title": "BRD Workshop 05\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/BRD/BRD-WS-06.md",
+      "filename": "BRD-WS-06.md",
+      "extension": "md",
+      "documentSet": "BRD",
+      "documentCode": null,
+      "title": "BRD Workshop 06\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/BRD/BRD-WS-07.md",
+      "filename": "BRD-WS-07.md",
+      "extension": "md",
+      "documentSet": "BRD",
+      "documentCode": null,
+      "title": "BRD Workshop 07\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/BRD/BRD-WS-08.md",
+      "filename": "BRD-WS-08.md",
+      "extension": "md",
+      "documentSet": "BRD",
+      "documentCode": null,
+      "title": "BRD Workshop 08\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/BRD/BRD-WS-09.md",
+      "filename": "BRD-WS-09.md",
+      "extension": "md",
+      "documentSet": "BRD",
+      "documentCode": null,
+      "title": "BRD Workshop 09\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/BRD/BRD-WS-10.md",
+      "filename": "BRD-WS-10.md",
+      "extension": "md",
+      "documentSet": "BRD",
+      "documentCode": null,
+      "title": "BRD Workshop 10\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/BRD/BRD-WS-11.md",
+      "filename": "BRD-WS-11.md",
+      "extension": "md",
+      "documentSet": "BRD",
+      "documentCode": null,
+      "title": "BRD Workshop 11\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/BRD/BRD-WS-12.md",
+      "filename": "BRD-WS-12.md",
+      "extension": "md",
+      "documentSet": "BRD",
+      "documentCode": null,
+      "title": "BRD Workshop 12\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/BRD/BRD-WS-13.md",
+      "filename": "BRD-WS-13.md",
+      "extension": "md",
+      "documentSet": "BRD",
+      "documentCode": null,
+      "title": "BRD Workshop 13\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/BRD/BRD-WS-14.md",
+      "filename": "BRD-WS-14.md",
+      "extension": "md",
+      "documentSet": "BRD",
+      "documentCode": null,
+      "title": "BRD Workshop 14\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/BRD/BRD-WS-15.md",
+      "filename": "BRD-WS-15.md",
+      "extension": "md",
+      "documentSet": "BRD",
+      "documentCode": null,
+      "title": "BRD Workshop 15\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/BRD/BRD-WS-16.md",
+      "filename": "BRD-WS-16.md",
+      "extension": "md",
+      "documentSet": "BRD",
+      "documentCode": null,
+      "title": "BRD Workshop 16\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/BRD/BRD-WS-17.md",
+      "filename": "BRD-WS-17.md",
+      "extension": "md",
+      "documentSet": "BRD",
+      "documentCode": null,
+      "title": "BRD Workshop 17\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/DIP/DIP-00.md",
+      "filename": "DIP-00.md",
+      "extension": "md",
+      "documentSet": "DIP",
+      "documentCode": null,
+      "title": "Implementation Constitution & Executable Sprint Model\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/DIP/DIP-01.md",
+      "filename": "DIP-01.md",
+      "extension": "md",
+      "documentSet": "DIP",
+      "documentCode": null,
+      "title": "Executable Sprint Package Standard (ESPK)\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/DIP/DIP-02.md",
+      "filename": "DIP-02.md",
+      "extension": "md",
+      "documentSet": "DIP",
+      "documentCode": null,
+      "title": "AI Context Resolution & Prompt Assembly Standard\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/DIP/DIP-03.md",
+      "filename": "DIP-03.md",
+      "extension": "md",
+      "documentSet": "DIP",
+      "documentCode": null,
+      "title": "Seed & Reference Data Standard\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/DIP/DIP-04.md",
+      "filename": "DIP-04.md",
+      "extension": "md",
+      "documentSet": "DIP",
+      "documentCode": null,
+      "title": "AI Execution Runtime & Bash Runner Standard\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/DIP/DIP-05.md",
+      "filename": "DIP-05.md",
+      "extension": "md",
+      "documentSet": "DIP",
+      "documentCode": null,
+      "title": "AI Prompt Orchestration & Task Assembly Standard\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/DIP/DIP-06.md",
+      "filename": "DIP-06.md",
+      "extension": "md",
+      "documentSet": "DIP",
+      "documentCode": null,
+      "title": "Validation, Evidence & Acceptance Standard\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/DIP/DIP-07.md",
+      "filename": "DIP-07.md",
+      "extension": "md",
+      "documentSet": "DIP",
+      "documentCode": null,
+      "title": "Repository Workflow & Git Strategy Standard\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/DIP/DIP-08.md",
+      "filename": "DIP-08.md",
+      "extension": "md",
+      "documentSet": "DIP",
+      "documentCode": null,
+      "title": "Full-stack Capability Delivery Standard\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/DIP/DIP-09.md",
+      "filename": "DIP-09.md",
+      "extension": "md",
+      "documentSet": "DIP",
+      "documentCode": null,
+      "title": "AI Execution Governance & Exception Handling Standard\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/DIP/DIP-10.md",
+      "filename": "DIP-10.md",
+      "extension": "md",
+      "documentSet": "DIP",
+      "documentCode": null,
+      "title": "DIP-10 — Implementation Roadmap & Capability Matrix\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/ESP/ESP-00.md",
+      "filename": "ESP-00.md",
+      "extension": "md",
+      "documentSet": "ESP",
+      "documentCode": "ESP-00",
+      "title": "Engineering Standards Overview",
+      "version": "2.1",
+      "status": "FROZEN"
+    },
+    {
+      "path": "docs/ESP/ESP-01.md",
+      "filename": "ESP-01.md",
+      "extension": "md",
+      "documentSet": "ESP",
+      "documentCode": null,
+      "title": "Repository Architecture Standards\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/ESP/ESP-02.md",
+      "filename": "ESP-02.md",
+      "extension": "md",
+      "documentSet": "ESP",
+      "documentCode": null,
+      "title": "Source Code Engineering Standards\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/ESP/ESP-03.md",
+      "filename": "ESP-03.md",
+      "extension": "md",
+      "documentSet": "ESP",
+      "documentCode": "ESP-03",
+      "title": "Enterprise Naming Standards",
+      "version": "2.1",
+      "status": "FROZEN"
+    },
+    {
+      "path": "docs/ESP/ESP-04.md",
+      "filename": "ESP-04.md",
+      "extension": "md",
+      "documentSet": "ESP",
+      "documentCode": "ESP-04",
+      "title": "API Engineering Standards",
+      "version": "2.1",
+      "status": "FROZEN"
+    },
+    {
+      "path": "docs/ESP/ESP-05.md",
+      "filename": "ESP-05.md",
+      "extension": "md",
+      "documentSet": "ESP",
+      "documentCode": "ESP-05",
+      "title": "Data Persistence Standards",
+      "version": "2.1",
+      "status": "FROZEN"
+    },
+    {
+      "path": "docs/ESP/ESP-06.md",
+      "filename": "ESP-06.md",
+      "extension": "md",
+      "documentSet": "ESP",
+      "documentCode": "ESP-06",
+      "title": "Migration Standards",
+      "version": "2.1",
+      "status": "FROZEN"
+    },
+    {
+      "path": "docs/ESP/ESP-07.md",
+      "filename": "ESP-07.md",
+      "extension": "md",
+      "documentSet": "ESP",
+      "documentCode": "ESP-07",
+      "title": "Engineering Testing Standards",
+      "version": "2.1",
+      "status": "FROZEN"
+    },
+    {
+      "path": "docs/ESP/ESP-08.md",
+      "filename": "ESP-08.md",
+      "extension": "md",
+      "documentSet": "ESP",
+      "documentCode": "ESP-08",
+      "title": "Observability & Diagnostics Standards",
+      "version": "2.1",
+      "status": "FROZEN"
+    },
+    {
+      "path": "docs/ESP/ESP-09.md",
+      "filename": "ESP-09.md",
+      "extension": "md",
+      "documentSet": "ESP",
+      "documentCode": null,
+      "title": "Configuration & Feature Management Standards\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/ESP/ESP-10.md",
+      "filename": "ESP-10.md",
+      "extension": "md",
+      "documentSet": "ESP",
+      "documentCode": "ESP-10",
+      "title": "Secure Engineering Standards",
+      "version": "2.1",
+      "status": "FROZEN"
+    },
+    {
+      "path": "docs/ESP/ESP-11.md",
+      "filename": "ESP-11.md",
+      "extension": "md",
+      "documentSet": "ESP",
+      "documentCode": "ESP-11",
+      "title": "Engineering Documentation Standards",
+      "version": "2.1",
+      "status": "FROZEN"
+    },
+    {
+      "path": "docs/ESP/ESP-12.md",
+      "filename": "ESP-12.md",
+      "extension": "md",
+      "documentSet": "ESP",
+      "documentCode": null,
+      "title": "Source Control & Change Management Standards\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/ESP/ESP-13.md",
+      "filename": "ESP-13.md",
+      "extension": "md",
+      "documentSet": "ESP",
+      "documentCode": null,
+      "title": "Engineering Review Standards\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/ESP/ESP-14.md",
+      "filename": "ESP-14.md",
+      "extension": "md",
+      "documentSet": "ESP",
+      "documentCode": "ESP-14",
+      "title": "Performance & Scalability Standards",
+      "version": "2.1",
+      "status": "FROZEN"
+    },
+    {
+      "path": "docs/ESPK/Sprint-00.md",
+      "filename": "Sprint-00.md",
+      "extension": "md",
+      "documentSet": "ESPK",
+      "documentCode": null,
+      "title": null,
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/ROP/ROP-00.md",
+      "filename": "ROP-00.md",
+      "extension": "md",
+      "documentSet": "ROP",
+      "documentCode": null,
+      "title": "Release & Operations Overview\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/ROP/ROP-01.md",
+      "filename": "ROP-01.md",
+      "extension": "md",
+      "documentSet": "ROP",
+      "documentCode": null,
+      "title": "Release Planning & Governance\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/ROP/ROP-02.md",
+      "filename": "ROP-02.md",
+      "extension": "md",
+      "documentSet": "ROP",
+      "documentCode": null,
+      "title": "Deployment Standards\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/ROP/ROP-03.md",
+      "filename": "ROP-03.md",
+      "extension": "md",
+      "documentSet": "ROP",
+      "documentCode": null,
+      "title": "Rollback & Recovery Standards\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/ROP/ROP-04.md",
+      "filename": "ROP-04.md",
+      "extension": "md",
+      "documentSet": "ROP",
+      "documentCode": null,
+      "title": "Operational Readiness\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/ROP/ROP-05.md",
+      "filename": "ROP-05.md",
+      "extension": "md",
+      "documentSet": "ROP",
+      "documentCode": null,
+      "title": "Production Operations\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/ROP/ROP-06.md",
+      "filename": "ROP-06.md",
+      "extension": "md",
+      "documentSet": "ROP",
+      "documentCode": null,
+      "title": "Service Monitoring & Incident Management\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/ROP/ROP-07.md",
+      "filename": "ROP-07.md",
+      "extension": "md",
+      "documentSet": "ROP",
+      "documentCode": null,
+      "title": "Backup & Disaster Recovery\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/ROP/ROP-08.md",
+      "filename": "ROP-08.md",
+      "extension": "md",
+      "documentSet": "ROP",
+      "documentCode": null,
+      "title": "Production Change Management\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/ROP/ROP-09.md",
+      "filename": "ROP-09.md",
+      "extension": "md",
+      "documentSet": "ROP",
+      "documentCode": null,
+      "title": "Hypercare & Operational Handover\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/SGP/SGP-00.md",
+      "filename": "SGP-00.md",
+      "extension": "md",
+      "documentSet": "SGP",
+      "documentCode": "SGP-00",
+      "title": "Sprint Governance Overview",
+      "version": "2.1",
+      "status": "FROZEN"
+    },
+    {
+      "path": "docs/SGP/SGP-01.md",
+      "filename": "SGP-01.md",
+      "extension": "md",
+      "documentSet": "SGP",
+      "documentCode": null,
+      "title": "Sprint Lifecycle\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/SGP/SGP-02.md",
+      "filename": "SGP-02.md",
+      "extension": "md",
+      "documentSet": "SGP",
+      "documentCode": "SGP-02",
+      "title": "Sprint Roles & Responsibilities",
+      "version": "2.1",
+      "status": "FROZEN"
+    },
+    {
+      "path": "docs/SGP/SGP-03.md",
+      "filename": "SGP-03.md",
+      "extension": "md",
+      "documentSet": "SGP",
+      "documentCode": null,
+      "title": "Sprint Planning & Approval\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/SGP/SGP-04.md",
+      "filename": "SGP-04.md",
+      "extension": "md",
+      "documentSet": "SGP",
+      "documentCode": null,
+      "title": "Sprint Execution Governance\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/SGP/SGP-05.md",
+      "filename": "SGP-05.md",
+      "extension": "md",
+      "documentSet": "SGP",
+      "documentCode": "SGP-05",
+      "title": "Sprint Review & Acceptance",
+      "version": "2.1",
+      "status": "FROZEN"
+    },
+    {
+      "path": "docs/SGP/SGP-06.md",
+      "filename": "SGP-06.md",
+      "extension": "md",
+      "documentSet": "SGP",
+      "documentCode": null,
+      "title": "Sprint Metrics & Reporting\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/SGP/SGP-07.md",
+      "filename": "SGP-07.md",
+      "extension": "md",
+      "documentSet": "SGP",
+      "documentCode": null,
+      "title": "Sprint Exception Management\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/SGP/SGP-08.md",
+      "filename": "SGP-08.md",
+      "extension": "md",
+      "documentSet": "SGP",
+      "documentCode": "SGP-08",
+      "title": "Sprint Governance Gates",
+      "version": "2.1",
+      "status": "FROZEN"
+    },
+    {
+      "path": "docs/SGP/SGP-09.md",
+      "filename": "SGP-09.md",
+      "extension": "md",
+      "documentSet": "SGP",
+      "documentCode": null,
+      "title": "Sprint Completion & Handover\r",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/SGP/SGP-10.md",
+      "filename": "SGP-10.md",
+      "extension": "md",
+      "documentSet": "SGP",
+      "documentCode": "SGP-10",
+      "title": "Governance Assets & Records",
+      "version": "2.1",
+      "status": "FROZEN"
+    },
+    {
+      "path": "docs/YADF-00.md",
+      "filename": "YADF-00.md",
+      "extension": "md",
+      "documentSet": "ROOT",
+      "documentCode": "YADF",
+      "title": "YSim AI Development Framework (YADF)",
+      "version": "2.0",
+      "status": "FROZEN"
+    },
+    {
+      "path": "docs/YADF-01.md",
+      "filename": "YADF-01.md",
+      "extension": "md",
+      "documentSet": "ROOT",
+      "documentCode": null,
+      "title": "Commerce Meta Model & Full-stack Capability Model\r",
+      "version": null,
+      "status": null
+    }
+  ]
+}
