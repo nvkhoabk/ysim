@@ -1,0 +1,39 @@
+repository:
+
+  name: ysim
+
+  type: monorepo
+
+structure:
+
+  apps:
+
+  packages:
+
+  database:
+
+  integrations:
+
+  infrastructure:
+
+  docs:
+
+  knowledge:
+
+  factory:
+
+  runtime:
+
+  scripts:
+
+branch_strategy:
+
+  default: main
+
+  development:
+
+    - feature
+
+    - chore
+
+    - hotfix

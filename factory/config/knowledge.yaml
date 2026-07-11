@@ -1,0 +1,17 @@
+knowledge:
+
+  source:
+
+    - docs
+
+    - knowledge
+
+priority:
+
+  - knowledge
+
+  - docs
+
+refresh:
+
+  strategy: manual

@@ -1,0 +1,27 @@
+runtime:
+
+  provider:
+
+    active: codex
+
+  execution:
+
+    mode: full-auto
+
+  validation:
+
+    enabled: true
+
+  evidence:
+
+    enabled: true
+
+  reports:
+
+    enabled: true
+
+  git:
+
+    auto_commit: false
+
+    auto_push: false

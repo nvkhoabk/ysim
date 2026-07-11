@@ -1,0 +1,51 @@
+version: 2.1
+
+name: YSim AI Software Factory
+
+status: commissioning
+
+architecture_version: 2.1
+
+repository:
+
+  root: .
+
+  branch: chore/s00-factory-commissioning
+
+runtime:
+
+  provider: codex
+
+  mode: full-auto
+
+documentation:
+
+  source: docs/
+
+knowledge:
+
+  source: knowledge/
+
+prompts:
+
+  source: factory/prompts/
+
+contexts:
+
+  source: factory/contexts/
+
+seeds:
+
+  source: factory/seeds/
+
+validation:
+
+  source: factory/validation/
+
+reports:
+
+  source: factory/reports/
+
+evidence:
+
+  source: factory/evidence/

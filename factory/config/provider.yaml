@@ -1,0 +1,17 @@
+providers:
+
+  codex:
+
+    enabled: true
+
+  claude:
+
+    enabled: false
+
+  gemini:
+
+    enabled: false
+
+  openhands:
+
+    enabled: false
