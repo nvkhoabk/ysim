@@ -1,3 +1,4478 @@
+# Source: AFM-00
+
+- Path: `docs/AFM/AFM-00.md`
+- Set: `AFM`
+- Version: `2.1`
+- Status: `FROZEN`
+
+# AI Factory Manual
+
+## AFM-00
+
+---
+
+# 1. Purpose
+
+AI Factory Manual (AFM) là tài liệu giới thiệu tổng thể về YSim AI Software Factory.
+
+AFM định nghĩa:
+
+- Triết lý phát triển.
+- Kiến trúc framework.
+- Vòng đời phát triển.
+- Mối quan hệ giữa các bộ tài liệu.
+- Nguyên tắc phối hợp giữa AI và con người.
+
+Đây là tài liệu đầu tiên cần đọc trước khi tham gia dự án.
+
+---
+
+# 2. Vision
+
+YSim AI Software Factory hướng tới một quy trình phát triển phần mềm:
+
+- AI-Driven
+- Business-Driven
+- Architecture-Driven
+- Sprint-Driven
+- Experience-Driven
+- Quality-Driven
+- Traceable
+- Continuously Improving
+
+Mọi thay đổi đều phải có nguồn gốc, bằng chứng và khả năng kiểm chứng.
+
+---
+
+# 3. Core Principles
+
+Framework tuân thủ các nguyên tắc:
+
+- Business First
+- Architecture First
+- Experience First
+- Sprint Driven
+- Full-stack Capability Delivery
+- AI Assisted
+- Engineering by Standards
+- Configuration over Customization
+- Governance by Evidence
+- Continuous Improvement
+
+---
+
+# 4. Framework Architecture
+
+```text
+Business Layer
+────────────────────────
+BRD
+YADF
+
+↓
+
+Architecture Layer
+────────────────────────
+ABP
+
+↓
+
+AI & Governance Layer
+────────────────────────
+AAP
+SGP
+
+↓
+
+Engineering Layer
+────────────────────────
+ESP
+
+↓
+
+Implementation Layer
+────────────────────────
+DIP
+
+↓
+
+Verification Layer
+────────────────────────
+VAP
+
+↓
+
+Operations Layer
+────────────────────────
+ROP
+```
+
+Mỗi bộ tài liệu có trách nhiệm riêng và đóng vai trò là một phần của chuỗi phát triển thống nhất.
+
+---
+
+# 5. Sprint Lifecycle
+
+```text
+Business
+
+↓
+
+Architecture
+
+↓
+
+Sprint Planning
+
+↓
+
+Backend
+   +
+Frontend
+
+↓
+
+Integration
+
+↓
+
+Capability Demonstration
+
+↓
+
+Verification
+
+↓
+
+Release
+
+↓
+
+Operations
+
+↓
+
+Continuous Improvement
+```
+
+Một Sprint chỉ hoàn thành khi Capability đã được Demonstration và Verification thành công.
+
+---
+
+# 6. Roles
+
+| Role | Responsibility |
+|------|----------------|
+| Business Owner | Định nghĩa Business |
+| Architect | Thiết kế Architecture |
+| AI Agent | Sinh Artifact theo Standards |
+| Developer | Hiện thực và Review |
+| QA | Verification |
+| Operations | Production Operations |
+
+---
+
+# 7. AI Working Principles
+
+AI phải:
+
+- đọc đúng tài liệu;
+- tuân thủ Standards;
+- không tự thay đổi Architecture;
+- không vượt Sprint Scope;
+- luôn tạo Evidence;
+- luôn đảm bảo Traceability;
+- triển khai Backend và Frontend đồng thời;
+- sinh Seed Data phục vụ kiểm thử;
+- tạo Capability Demonstration Surface;
+- không hoàn thành Capability khi chưa có Demonstration.
+
+AI là thành viên của Factory, không phải người quyết định kiến trúc.
+
+---
+
+# 8. Engineering Philosophy
+
+Framework coi mọi đầu ra đều là Engineering Asset.
+
+Bao gồm:
+
+- Source Code
+- API
+- Documentation
+- Migration
+- Test
+- Configuration
+- Release
+- Runbook
+- Storefront
+- Portal
+- Landing Page
+- Component Library
+- Design System
+- Capability Demonstration Surface
+
+Mọi Asset đều có vòng đời, version và khả năng truy vết.
+
+---
+
+# 9. Continuous Improvement
+
+Sau mỗi Sprint và mỗi Release:
+
+- Lessons Learned
+- Operational Feedback
+- Incident Review
+- Architecture Review
+
+được sử dụng để cải tiến Framework và hệ thống.
+
+---
+
+# 10. Success Criteria
+
+Một Sprint được coi là thành công khi:
+
+- Business Requirement được đáp ứng;
+- Architecture được tuân thủ;
+- Standards được tuân thủ;
+- Capability Demonstration PASS;
+- Verification PASS;
+- Release thành công;
+- Operations tiếp nhận;
+- Lessons Learned được ghi nhận.
+
+---
+
+# 11. Relationship to Other Documents
+
+Chuỗi tài liệu của AI Factory:
+
+```text
+BRD
+    ↓
+YADF
+    ↓
+ABP
+    ↓
+AAP
+    ↓
+SGP
+    ↓
+ESP
+    ↓
+DIP
+    ↓
+VAP
+    ↓
+ROP
+```
+
+Mỗi bộ tài liệu không chỉ định nghĩa yêu cầu kỹ thuật mà còn tạo thành chuỗi hướng dẫn để AI chuyển đổi từ Business Requirement sang Sprint Implementation một cách có khả năng truy vết.
+
+---
+
+# 12. Document Status
+
+**Status: FROZEN**
+
+AFM là tài liệu định hướng cao nhất của YSim AI Software Factory và phản ánh trạng thái kiến trúc hiện hành của phiên bản v2.1.
+
+
+---
+
+# Source: DIP-00
+
+- Path: `docs/DIP/DIP-00.md`
+- Set: `DIP`
+- Version: `2.1`
+- Status: `FROZEN`
+
+# Implementation Constitution & Executable Sprint Model
+
+## DIP-00
+
+---
+
+# 1. Purpose
+
+Development & Implementation Pack (DIP) là tầng tài liệu triển khai của YSim AI Software Factory.
+
+DIP chuyển đổi toàn bộ Architecture, Business và Engineering Standards thành các Sprint có khả năng thực thi trực tiếp bởi AI Coding Assistant.
+
+DIP không mô tả kiến trúc.
+
+DIP mô tả cách kiến trúc được hiện thực hóa.
+
+---
+
+# 2. Position in Software Factory
+
+```text
+Business Architecture
+
+↓
+
+Engineering Architecture
+
+↓
+
+Governance
+
+↓
+
+Engineering Standards
+
+↓
+
+Implementation (DIP)
+
+↓
+
+Codex Execution
+
+↓
+
+Evidence
+
+↓
+
+Release
+```
+
+DIP là cầu nối giữa Architecture và Source Code.
+
+---
+
+# 3. Objectives
+
+DIP nhằm:
+
+- chuẩn hóa quá trình triển khai;
+- cung cấp Context đầy đủ cho Codex;
+- tạo Sprint có khả năng thực thi tự động;
+- đảm bảo Backend và Frontend được triển khai đồng thời;
+- tạo Capability Demonstration cho từng Sprint;
+- sinh Evidence phục vụ Review và Release.
+
+---
+
+# 4. Principles
+
+Implementation tuân thủ:
+
+- Architecture First
+- Capability Driven
+- Full-stack Delivery
+- Seed-driven Development
+- Demonstration First
+- Validation Before Completion
+- Evidence by Design
+- Automation by Default
+- Repeatable Execution
+- Explainable AI Delivery
+
+---
+
+# 5. Executable Sprint Model
+
+Mỗi Sprint trong DIP phải là một Executable Sprint Package.
+
+Package này có thể được Codex thực thi trực tiếp mà không cần bổ sung Prompt ngoài tài liệu.
+
+```text
+Sprint Package
+
+↓
+
+Repository Discovery
+
+↓
+
+Planning
+
+↓
+
+Backend
+
+↓
+
+API
+
+↓
+
+Frontend
+
+↓
+
+Seed Data
+
+↓
+
+Capability Demonstration
+
+↓
+
+Testing
+
+↓
+
+Validation
+
+↓
+
+Evidence
+
+↓
+
+Git Commit
+```
+
+---
+
+# 6. Full-stack Capability Delivery
+
+Mọi Capability có giao diện người dùng phải được triển khai đồng thời:
+
+- Backend
+- API
+- Frontend
+- Design System Integration
+- Experience API
+- Seed Data
+- Demonstration
+- Tests
+- Evidence
+
+Không được triển khai Backend độc lập đối với Capability có UI.
+
+---
+
+# 7. Seed-driven Development
+
+Mỗi Sprint phải cung cấp Seed Information cho Codex.
+
+Seed Information bao gồm tối thiểu:
+
+- Business Context
+- Architecture Context
+- Engineering Constraints
+- Reference Data
+- Sample Data
+- Integration Configuration
+- Target Metrics
+- Acceptance Scenario
+
+Seed là nguồn dữ liệu mặc định để AI triển khai Capability.
+
+---
+
+# 8. Executable Sprint Package
+
+Mỗi Sprint phát hành dưới dạng một Package chuẩn.
+
+```text
+README
+
+↓
+
+Sprint Manifest
+
+↓
+
+Task Manifest
+
+↓
+
+Prompt
+
+↓
+
+Context
+
+↓
+
+Reference Data
+
+↓
+
+Runner
+
+↓
+
+Validation
+
+↓
+
+Evidence
+```
+
+Mọi Sprint phải có cấu trúc thống nhất.
+
+---
+
+# 9. Task Model
+
+Mọi Sprint sử dụng cùng cấu trúc Task.
+
+| Task | Responsibility |
+|--------|----------------|
+| t00 | Repository Discovery |
+| t01 | Domain Model |
+| t02 | Database & Migration |
+| t03 | Backend API |
+| t04 | Business Services |
+| t05 | Integration |
+| t06 | Queue & Background |
+| t07 | Frontend & Demonstration |
+| t08 | Testing |
+| t09 | Validation & Evidence |
+| t10 | Final Review & Commit |
+
+Task không được thay đổi thứ tự.
+
+Task có thể được đánh dấu Not Applicable nhưng không được loại bỏ.
+
+---
+
+# 10. Context Resolution
+
+Trước khi Coding, AI phải đọc đầy đủ:
+
+- BRD
+- ABP
+- YADF
+- AAP
+- SGP
+- ESP
+- API
+- DMS
+- DBD
+- Capability DIP
+
+Không được Coding nếu Context chưa đầy đủ.
+
+---
+
+# 11. Prompt Contract
+
+Mỗi Task phải có Prompt độc lập.
+
+Prompt tối thiểu gồm:
+
+- Role
+- Objective
+- Scope
+- Input Documents
+- Files Allowed To Change
+- Files Prohibited To Change
+- Business Rules
+- Architecture Constraints
+- Reference Data
+- Validation Commands
+- Expected Evidence
+- Completion Criteria
+
+Không sử dụng Prompt tổng hợp cho toàn Sprint.
+
+---
+
+# 12. Bash Runner
+
+Mỗi Sprint phải cung cấp Bash Runner.
+
+Runner phải hỗ trợ:
+
+- run
+- resume
+- from-task
+- single-task
+- dry-run
+
+Runner phải:
+
+- ghi Log;
+- lưu Exit Code;
+- Validate sau mỗi Task;
+- Commit khi PASS.
+
+Không được tiếp tục nếu Validation FAIL.
+
+---
+
+# 13. Validation Model
+
+Validation diễn ra sau từng Task.
+
+Validation tối thiểu:
+
+- Build
+- Test
+- Lint
+- Architecture Compliance
+- Engineering Compliance
+- Demonstration
+- Evidence
+
+Task chỉ được PASS khi Validation PASS.
+
+---
+
+# 14. Evidence Model
+
+Mỗi Task phải sinh:
+
+- Execution Log
+- Validation Result
+- Git Diff
+- Evidence Package
+
+Mỗi Sprint phải sinh:
+
+- Sprint Report
+- Demonstration Report
+- Evidence Manifest
+
+Evidence là điều kiện bắt buộc để Review.
+
+---
+
+# 15. Git Strategy
+
+Khuyến nghị Commit theo từng Task.
+
+Ví dụ:
+
+```text
+feat(s14): implement product repository
+
+feat(s14): implement product api
+
+feat(s14): implement product frontend
+
+test(s14): product capability verification
+```
+
+Commit chỉ được tạo khi Validation PASS.
+
+---
+
+# 16. ACP Integration
+
+Nếu phát hiện:
+
+- Architecture Conflict
+- Business Conflict
+- Frozen Document Violation
+
+AI phải:
+
+- dừng Sprint;
+- sinh ACP;
+- không tiếp tục Coding.
+
+Không được tự ý thay đổi Architecture.
+
+---
+
+# 17. Deliverables
+
+Một Sprint hoàn chỉnh phải sinh:
+
+- Backend Source Code
+- Frontend Source Code
+- API
+- Migration
+- Seed Data
+- Tests
+- Demonstration
+- Documentation
+- Evidence
+- Git Commit
+
+Không chấp nhận Sprint chỉ sinh Source Code.
+
+---
+
+# 18. Rules
+
+DIP-001 — Mọi Sprint phải là Executable Sprint.
+
+DIP-002 — Mọi Sprint phải có Seed Information.
+
+DIP-003 — Capability có UI phải Full-stack.
+
+DIP-004 — Validation sau từng Task.
+
+DIP-005 — Runner phải hỗ trợ Resume.
+
+DIP-006 — Prompt phải độc lập theo Task.
+
+DIP-007 — Evidence là bắt buộc.
+
+DIP-008 — ACP được kích hoạt khi phát hiện xung đột.
+
+DIP-009 — Commit chỉ khi Validation PASS.
+
+DIP-010 — DIP là nguồn Seed chính thức cho Codex.
+
+---
+
+# 19. Compliance Checklist
+
+| Rule | Validation |
+|------|------------|
+| DIC-0001 | Sprint Package đúng chuẩn |
+| DIC-0002 | Seed đầy đủ |
+| DIC-0003 | Context đầy đủ |
+| DIC-0004 | Prompt đầy đủ |
+| DIC-0005 | Runner hoạt động |
+| DIC-0006 | Validation PASS |
+| DIC-0007 | Demonstration hoàn chỉnh |
+| DIC-0008 | Evidence đầy đủ |
+| DIC-0009 | Commit thành công |
+| DIC-0010 | Tuân thủ DIP |
+
+---
+
+# 20. Relationship to Other Documents
+
+DIP-00 liên kết với:
+
+- AFM-00 Architecture Freeze Manifest
+- BRD Meta Model
+- YADF-00 AI Development Framework
+- AAP-00 AI Architecture Principles
+- SGP-00 Sprint Governance Principles
+- ESP-00 Engineering Standards
+- ROP Release & Operations Pack
+- VAP Verification & Acceptance Pack
+
+DIP-00 là tài liệu gốc của toàn bộ Development & Implementation Pack.
+
+---
+
+# 21. Document Status
+
+**Status: FROZEN**
+
+DIP-00 là Implementation Constitution của YSim AI Software Factory.
+
+Từ phiên bản 2.1, mọi Capability đều phải được triển khai thông qua Executable Sprint Package, sử dụng Seed Information làm nguồn Context chính thức cho Codex và được thực thi bằng Bash Runner theo mô hình Full-stack Capability Delivery.
+
+
+---
+
+# Source: DIP-01
+
+- Path: `docs/DIP/DIP-01.md`
+- Set: `DIP`
+- Version: `2.1`
+- Status: `FROZEN`
+
+# Executable Sprint Package Standard (ESPK)
+
+## DIP-01
+
+---
+
+# 1. Purpose
+
+Executable Sprint Package (ESPK) là đơn vị triển khai chuẩn của YSim AI Software Factory.
+
+Mỗi Sprint không còn được phát hành chỉ dưới dạng tài liệu.
+
+Thay vào đó, Sprint được phát hành dưới dạng một Package hoàn chỉnh có thể được AI Coding Assistant thực thi trực tiếp.
+
+ESPK là cầu nối giữa DIP và Source Code.
+
+---
+
+# 2. Position in Software Factory
+
+```text
+DIP
+
+↓
+
+Executable Sprint Package
+
+↓
+
+Bash Runner
+
+↓
+
+AI Coding Agent
+
+↓
+
+Validation
+
+↓
+
+Evidence
+
+↓
+
+Git Commit
+```
+
+---
+
+# 3. Objectives
+
+ESPK nhằm:
+
+- chuẩn hóa mọi Sprint;
+- tạo khả năng thực thi tự động;
+- cung cấp đầy đủ Context;
+- giảm Prompt Engineering thủ công;
+- đảm bảo khả năng Resume;
+- đảm bảo khả năng Audit.
+
+---
+
+# 4. Principles
+
+ESPK tuân thủ:
+
+- Executable by Design
+- Context First
+- Seed-driven Development
+- Capability Driven
+- Full-stack Delivery
+- Validation First
+- Evidence First
+- Repeatable Execution
+- AI Independent
+
+---
+
+# 5. Package Structure
+
+```text
+Sprint Package
+│
+├── README.md
+├── sprint.json
+│
+├── ai/
+│
+├── scripts/
+│
+├── validation/
+│
+├── evidence/
+│
+└── logs/
+```
+
+Mọi Sprint phải tuân thủ đúng cấu trúc này.
+
+---
+
+# 6. AI Directory
+
+```text
+ai/
+
+├── sprints/
+
+├── manifests/
+
+├── prompts/
+
+├── context/
+
+└── seeds/
+```
+
+Không được thay đổi cấu trúc thư mục.
+
+---
+
+# 7. Sprint Manifest
+
+Sprint Manifest định nghĩa:
+
+- Sprint ID
+- Capability
+- Scope
+- Dependencies
+- Deliverables
+- Validation
+- Completion Criteria
+
+Manifest là Entry Point của Sprint.
+
+---
+
+# 8. Task Manifest
+
+Mỗi Task có một Manifest riêng.
+
+```text
+t00
+
+↓
+
+t01
+
+↓
+
+...
+
+↓
+
+t10
+```
+
+Manifest mô tả:
+
+- Objective
+- Inputs
+- Outputs
+- Dependencies
+- Validation
+- Evidence
+
+---
+
+# 9. Prompt Package
+
+Prompt được lưu riêng.
+
+```text
+prompts/
+
+t00.md
+
+...
+
+t10.md
+```
+
+Prompt không được Hardcode trong Runner.
+
+---
+
+# 10. Context Package
+
+Context bao gồm:
+
+- Business Context
+- Architecture Context
+- Engineering Context
+- Repository Context
+- Frontend Context
+- Acceptance Context
+
+AI chỉ được Coding sau khi Context được nạp đầy đủ.
+
+---
+
+# 11. Seed Package
+
+Seed bao gồm:
+
+- Reference Data
+- Demo Data
+- Integration Configuration
+- Sample Users
+- Sample Products
+- Target Metrics
+
+Seed là nguồn dữ liệu mặc định của Sprint.
+
+---
+
+# 12. Validation Package
+
+Validation bao gồm:
+
+- Build Commands
+- Test Commands
+- Lint Commands
+- Demo Scenarios
+- Acceptance Checklist
+
+Validation phải có khả năng chạy tự động.
+
+---
+
+# 13. Bash Runner
+
+Runner tối thiểu hỗ trợ:
+
+- run
+- resume
+- dry-run
+- single-task
+- from-task
+
+Runner phải:
+
+- ghi log;
+- lưu Exit Code;
+- dừng khi FAIL;
+- Commit khi PASS.
+
+---
+
+# 14. Evidence Package
+
+Evidence phải sinh:
+
+- Execution Log
+- Validation Report
+- Build Report
+- Test Report
+- Demonstration Report
+- Git Diff
+- Sprint Report
+
+Evidence là đầu ra bắt buộc.
+
+---
+
+# 15. Capability Demonstration
+
+Mỗi Capability có UI phải cung cấp:
+
+- Demonstration Guide
+- Demo Users
+- Demo Data
+- Demo Scenarios
+- Expected Results
+
+Capability chỉ được Accepted khi Demonstration PASS.
+
+---
+
+# 16. AI Independence
+
+ESPK không phụ thuộc AI cụ thể.
+
+Có thể thực thi bởi:
+
+- Codex
+- Claude Code
+- Gemini CLI
+- OpenHands
+- Cursor Agent
+- AI Coding Assistant khác
+
+Không được Hardcode Prompt theo Model.
+
+---
+
+# 17. Versioning
+
+Package có Version độc lập.
+
+Ví dụ:
+
+```text
+ESPK
+
+v2.1.0
+```
+
+Version không phụ thuộc Repository Version.
+
+---
+
+# 18. Rules
+
+ESPK-001 — Mọi Sprint phải phát hành dưới dạng ESPK.
+
+ESPK-002 — Package phải đầy đủ Manifest.
+
+ESPK-003 — Prompt phải độc lập.
+
+ESPK-004 — Seed là bắt buộc.
+
+ESPK-005 — Runner phải Resume được.
+
+ESPK-006 — Validation phải tự động.
+
+ESPK-007 — Evidence là bắt buộc.
+
+ESPK-008 — Demonstration là bắt buộc đối với Capability có UI.
+
+ESPK-009 — Không phụ thuộc AI Model.
+
+ESPK-010 — Package phải Version hóa.
+
+---
+
+# 19. Compliance Checklist
+
+| Rule | Validation |
+|------|------------|
+| EPC-0101 | Package đúng cấu trúc |
+| EPC-0102 | Manifest đầy đủ |
+| EPC-0103 | Prompt đầy đủ |
+| EPC-0104 | Context đầy đủ |
+| EPC-0105 | Seed đầy đủ |
+| EPC-0106 | Runner hoạt động |
+| EPC-0107 | Validation PASS |
+| EPC-0108 | Evidence đầy đủ |
+| EPC-0109 | Demonstration PASS |
+| EPC-0110 | Tuân thủ DIP |
+
+---
+
+# 20. Relationship to Other Documents
+
+ESPK liên kết với:
+
+- DIP-00 Implementation Constitution
+- AAP Sprint Planning
+- SGP Sprint Governance
+- ESP Engineering Standards
+- VAP Verification & Acceptance Pack
+- ROP Release & Operations Pack
+
+ESPK là Implementation Artifact chuẩn của YSim AI Software Factory.
+
+---
+
+# 21. Document Status
+
+**Status: FROZEN**
+
+Từ phiên bản 2.1, mọi Sprint của YSim phải được phát hành dưới dạng **Executable Sprint Package (ESPK)**.
+
+ESPK là định dạng triển khai chuẩn, độc lập với AI Coding Agent, cung cấp đầy đủ Context, Seed, Prompt, Validation và Evidence để AI có thể thực thi Sprint theo mô hình Full-stack Capability Delivery.
+
+
+---
+
+# Source: DIP-02
+
+- Path: `docs/DIP/DIP-02.md`
+- Set: `DIP`
+- Version: `2.1`
+- Status: `FROZEN`
+
+# AI Context Resolution & Prompt Assembly Standard
+
+## DIP-02
+
+---
+
+# 1. Purpose
+
+AI Coding Assistant chỉ có thể tạo ra Source Code đúng khi được cung cấp đầy đủ Context.
+
+DIP-02 định nghĩa cơ chế thu thập, hợp nhất và chuẩn hóa Context trước khi bắt đầu mỗi Sprint hoặc Task.
+
+Mọi Prompt đều phải được sinh ra từ Context đã được chuẩn hóa.
+
+Không cho phép AI Coding Assistant triển khai khi Context chưa đầy đủ.
+
+---
+
+# 2. Position in Software Factory
+
+```text
+Repository
+
+↓
+
+Discovery
+
+↓
+
+Context Resolution
+
+↓
+
+Prompt Assembly
+
+↓
+
+AI Coding
+
+↓
+
+Validation
+```
+
+Context Resolution là bước bắt buộc trước AI Coding.
+
+---
+
+# 3. Objectives
+
+Context Resolution nhằm:
+
+- xác định đúng phạm vi Sprint;
+- giảm Hallucination;
+- loại bỏ Prompt thủ công;
+- tăng khả năng tái lập;
+- bảo đảm tuân thủ Architecture;
+- tối ưu Token sử dụng.
+
+---
+
+# 4. Principles
+
+Context Resolution tuân thủ:
+
+- Context First
+- Source of Truth
+- Minimal but Complete
+- Architecture-aware
+- Capability-aware
+- Explainable
+- Deterministic
+- Repeatable
+
+---
+
+# 5. Context Layers
+
+Context được chia thành nhiều lớp.
+
+```text
+Business
+
+↓
+
+Architecture
+
+↓
+
+Engineering
+
+↓
+
+Capability
+
+↓
+
+Repository
+
+↓
+
+Runtime
+
+↓
+
+Task
+```
+
+Không được bỏ qua bất kỳ lớp nào nếu có liên quan.
+
+---
+
+# 6. Context Sources
+
+AI có thể sử dụng Context từ:
+
+- BRD
+- ABP
+- DMS
+- DBD
+- API
+- ESP
+- SGP
+- YADF
+- DIP
+- Repository
+- Sprint Manifest
+- Seed Package
+
+Không sử dụng nguồn ngoài nếu chưa được phê duyệt.
+
+---
+
+# 7. Context Resolution Pipeline
+
+```text
+Discovery
+
+↓
+
+Repository Scan
+
+↓
+
+Sprint Manifest
+
+↓
+
+Capability Manifest
+
+↓
+
+Business Context
+
+↓
+
+Architecture Context
+
+↓
+
+Engineering Context
+
+↓
+
+Repository Context
+
+↓
+
+Task Context
+
+↓
+
+Prompt Assembly
+```
+
+Prompt chỉ được tạo sau khi Context Resolution hoàn thành.
+
+---
+
+# 8. Business Context
+
+Business Context tối thiểu gồm:
+
+- Capability
+- Business Rules
+- Actors
+- Use Cases
+- Constraints
+- Acceptance Criteria
+
+Business Context được lấy từ BRD.
+
+---
+
+# 9. Architecture Context
+
+Architecture Context gồm:
+
+- Business Domains
+- Services
+- Modules
+- Events
+- Ownership
+- Integration
+- Deployment Constraints
+
+Nguồn chính:
+
+- ABP
+- AFM
+- YADF
+
+---
+
+# 10. Engineering Context
+
+Engineering Context gồm:
+
+- Coding Standards
+- Naming Standards
+- API Standards
+- Testing Standards
+- Security Standards
+- Performance Standards
+
+Nguồn:
+
+ESP.
+
+---
+
+# 11. Repository Context
+
+Repository Context gồm:
+
+- Folder Structure
+- Existing Modules
+- Package Dependencies
+- Build System
+- Existing Tests
+- Existing APIs
+
+Repository luôn là Source of Truth cho trạng thái hiện tại của Source Code.
+
+---
+
+# 12. Capability Context
+
+Capability Context bao gồm:
+
+- Domain Model
+- API
+- Database
+- Frontend
+- Experience API
+- Seed Data
+- Demonstration
+
+Capability Context được lấy từ Sprint Package.
+
+---
+
+# 13. Runtime Context
+
+Runtime Context bao gồm:
+
+- Environment
+- Feature Flags
+- Configuration
+- Secrets Reference
+- Infrastructure
+
+Không nhúng Secret trực tiếp vào Prompt.
+
+---
+
+# 14. Task Context
+
+Task Context chỉ chứa:
+
+- Objective
+- Files Allowed
+- Files Protected
+- Dependencies
+- Expected Outputs
+- Validation Commands
+
+Task Context phải nhỏ nhất có thể.
+
+---
+
+# 15. Prompt Assembly
+
+Prompt được tạo theo thứ tự:
+
+```text
+Role
+
+↓
+
+Objective
+
+↓
+
+Scope
+
+↓
+
+Context
+
+↓
+
+Business Rules
+
+↓
+
+Architecture Constraints
+
+↓
+
+Engineering Constraints
+
+↓
+
+Repository Constraints
+
+↓
+
+Implementation Tasks
+
+↓
+
+Validation
+
+↓
+
+Completion Criteria
+```
+
+Prompt không được viết thủ công cho từng Sprint.
+
+Prompt phải được sinh từ Context.
+
+---
+
+# 16. Context Size Control
+
+AI không được nạp toàn bộ tài liệu.
+
+Chỉ nạp:
+
+- tài liệu liên quan;
+- Capability hiện tại;
+- Repository hiện tại.
+
+Ưu tiên Context có mức ảnh hưởng cao.
+
+---
+
+# 17. Conflict Resolution
+
+Nếu phát hiện:
+
+- Architecture Conflict
+- Business Conflict
+- Repository Conflict
+
+AI phải:
+
+- dừng Prompt Assembly;
+- sinh ACP;
+- không Coding.
+
+---
+
+# 18. Rules
+
+CTX-001 — Context Resolution bắt buộc trước Coding.
+
+CTX-002 — Prompt sinh từ Context.
+
+CTX-003 — Không Coding nếu thiếu Context.
+
+CTX-004 — Repository là Source of Truth cho Source Code.
+
+CTX-005 — Architecture Document là Source of Truth cho Design.
+
+CTX-006 — Không nhúng Secret.
+
+CTX-007 — Chỉ nạp Context liên quan.
+
+CTX-008 — Capability Context luôn ưu tiên.
+
+CTX-009 — Conflict kích hoạt ACP.
+
+CTX-010 — Prompt phải tái lập được.
+
+---
+
+# 19. Compliance Checklist
+
+| Rule | Validation |
+|------|------------|
+| CRC-0201 | Business Context đầy đủ |
+| CRC-0202 | Architecture Context đầy đủ |
+| CRC-0203 | Engineering Context đầy đủ |
+| CRC-0204 | Repository Context đầy đủ |
+| CRC-0205 | Capability Context đầy đủ |
+| CRC-0206 | Prompt được sinh tự động |
+| CRC-0207 | Không có Conflict |
+| CRC-0208 | Validation Commands đầy đủ |
+| CRC-0209 | Context tối ưu |
+| CRC-0210 | Tuân thủ DIP |
+
+---
+
+# 20. Relationship to Other Documents
+
+DIP-02 liên kết với:
+
+- DIP-00 Implementation Constitution
+- DIP-01 Executable Sprint Package Standard
+- AFM-00
+- BRD
+- ABP
+- YADF
+- AAP
+- SGP
+- ESP
+
+DIP-02 là tài liệu chuẩn hóa Context Resolution của YSim AI Software Factory.
+
+---
+
+# 21. Document Status
+
+**Status: FROZEN**
+
+Từ phiên bản 2.1, mọi Prompt của AI Coding Assistant phải được tạo thông qua Context Resolution theo tiêu chuẩn của DIP-02.
+
+Không cho phép AI Coding trực tiếp từ Prompt thủ công hoặc Context không đầy đủ.
+
+
+---
+
+# Source: DIP-04
+
+- Path: `docs/DIP/DIP-04.md`
+- Set: `DIP`
+- Version: `2.1`
+- Status: `FROZEN`
+
+# AI Execution Runtime & Bash Runner Standard
+
+## DIP-04
+
+---
+
+# 1. Purpose
+
+AI Execution Runtime định nghĩa môi trường thực thi chuẩn cho mọi Executable Sprint Package (ESPK).
+
+Runtime chịu trách nhiệm điều phối toàn bộ vòng đời triển khai của một Sprint, từ Repository Discovery đến Validation, Evidence Generation và Git Commit.
+
+Runtime không phụ thuộc vào AI Coding Agent cụ thể.
+
+---
+
+# 2. Position in Software Factory
+
+```text
+Executable Sprint Package
+
+↓
+
+AI Execution Runtime
+
+↓
+
+Bash Runner
+
+↓
+
+AI Coding Agent
+
+↓
+
+Validation
+
+↓
+
+Evidence
+
+↓
+
+Git Commit
+```
+
+Runtime là Execution Engine của Software Factory.
+
+---
+
+# 3. Objectives
+
+AI Execution Runtime nhằm:
+
+- chuẩn hóa quá trình triển khai;
+- tự động hóa Sprint;
+- hỗ trợ Resume;
+- hỗ trợ Retry;
+- hỗ trợ Parallel-safe Execution;
+- tạo khả năng Audit;
+- giảm thao tác thủ công.
+
+---
+
+# 4. Principles
+
+Runtime tuân thủ:
+
+- Automation by Default
+- Non-interactive Execution
+- Deterministic Execution
+- Fail Fast
+- Resume Safe
+- Evidence First
+- AI Independent
+- Observable Runtime
+- Reproducible
+
+---
+
+# 5. Runtime Components
+
+```text
+Execution Runtime
+
+├── Runner
+
+├── Task Scheduler
+
+├── Prompt Loader
+
+├── Context Loader
+
+├── Seed Loader
+
+├── Validation Engine
+
+├── Evidence Collector
+
+├── Git Manager
+
+└── Reporting Engine
+```
+
+Mỗi thành phần có trách nhiệm độc lập.
+
+---
+
+# 6. Runner Responsibilities
+
+Runner chịu trách nhiệm:
+
+- đọc Sprint Manifest;
+- đọc Task Manifest;
+- khởi tạo Context;
+- khởi tạo Seed;
+- gọi AI Coding Agent;
+- thực thi Validation;
+- sinh Evidence;
+- Commit.
+
+Runner không chứa Business Logic.
+
+---
+
+# 7. Execution Lifecycle
+
+```text
+Environment Check
+
+↓
+
+Repository Discovery
+
+↓
+
+Load Manifest
+
+↓
+
+Load Context
+
+↓
+
+Load Seed
+
+↓
+
+Execute Task
+
+↓
+
+Validation
+
+↓
+
+Evidence
+
+↓
+
+Git Commit
+
+↓
+
+Next Task
+```
+
+---
+
+# 8. Task Scheduler
+
+Scheduler điều phối:
+
+- t00 → t10
+
+Không được bỏ qua Task.
+
+Task có thể:
+
+- PASS
+- FAIL
+- SKIPPED (Not Applicable)
+
+Scheduler phải lưu trạng thái.
+
+---
+
+# 9. Execution Modes
+
+Runtime hỗ trợ:
+
+### Full Sprint
+
+```bash
+run-sprint.sh
+```
+
+---
+
+### Resume
+
+```bash
+run-sprint.sh --resume
+```
+
+---
+
+### From Task
+
+```bash
+run-sprint.sh --from-task t05
+```
+
+---
+
+### Single Task
+
+```bash
+run-task.sh t03
+```
+
+---
+
+### Dry Run
+
+```bash
+run-sprint.sh --dry-run
+```
+
+---
+
+# 10. Environment Validation
+
+Runtime phải kiểm tra:
+
+- Git
+- Node.js
+- pnpm
+- Docker (nếu yêu cầu)
+- AI CLI
+- Environment Variables
+- Required Services
+
+Nếu thiếu Dependency thì dừng Sprint.
+
+---
+
+# 11. AI Provider Abstraction
+
+Runtime không phụ thuộc AI cụ thể.
+
+Có thể cấu hình:
+
+```yaml
+provider:
+
+codex
+
+claude-code
+
+gemini-cli
+
+openhands
+
+cursor-agent
+```
+
+Runner chỉ giao tiếp qua Provider Adapter.
+
+---
+
+# 12. Logging Standard
+
+Runtime phải ghi:
+
+```text
+logs/
+
+sprint.log
+
+task-t00.log
+
+task-t01.log
+
+...
+
+task-t10.log
+```
+
+Log tối thiểu gồm:
+
+- Timestamp
+- Task
+- Command
+- Exit Code
+- Duration
+
+---
+
+# 13. Resume Strategy
+
+Runner phải lưu:
+
+```text
+runtime/
+
+state.json
+```
+
+Ví dụ:
+
+```json
+{
+  "current_task":"t06",
+  "status":"FAILED",
+  "completed":[
+    "t00",
+    "t01",
+    "t02",
+    "t03",
+    "t04",
+    "t05"
+  ]
+}
+```
+
+Resume không được thực hiện lại Task đã PASS.
+
+---
+
+# 14. Retry Strategy
+
+Runner chỉ Retry khi:
+
+- AI Timeout
+- Network Error
+- Temporary Failure
+
+Không Retry khi:
+
+- Validation FAIL
+- Architecture Conflict
+- Business Conflict
+
+---
+
+# 15. Validation Integration
+
+Sau mỗi Task:
+
+```text
+Build
+
+↓
+
+Lint
+
+↓
+
+Tests
+
+↓
+
+Compliance
+
+↓
+
+Capability Demonstration
+
+↓
+
+Evidence
+```
+
+Validation FAIL phải dừng Sprint.
+
+---
+
+# 16. Git Strategy
+
+Runner phải:
+
+- kiểm tra Working Tree;
+- Commit theo Task;
+- gắn Sprint ID;
+- lưu Git Diff.
+
+Không tự động Push trừ khi được cấu hình.
+
+---
+
+# 17. Exit Codes
+
+| Code | Meaning |
+|-------|---------|
+| 0 | SUCCESS |
+| 1 | Validation Failed |
+| 2 | Build Failed |
+| 3 | AI Execution Failed |
+| 4 | Missing Dependency |
+| 5 | Repository Conflict |
+| 6 | Architecture Conflict |
+| 7 | Business Conflict |
+| 8 | User Interrupted |
+| 9 | Unknown Error |
+
+Exit Code phải được ghi vào Log.
+
+---
+
+# 18. Directory Layout
+
+```text
+runtime/
+
+logs/
+
+evidence/
+
+reports/
+
+state/
+
+cache/
+
+tmp/
+```
+
+Runtime không ghi dữ liệu ra ngoài Workspace.
+
+---
+
+# 19. Runtime Rules
+
+RUNTIME-001 — Runner phải Non-interactive.
+
+RUNTIME-002 — Resume là bắt buộc.
+
+RUNTIME-003 — Validation sau từng Task.
+
+RUNTIME-004 — Evidence sau từng Task.
+
+RUNTIME-005 — Commit sau Validation PASS.
+
+RUNTIME-006 — Không Retry Validation FAIL.
+
+RUNTIME-007 — Runtime không phụ thuộc AI.
+
+RUNTIME-008 — Runtime phải ghi Log.
+
+RUNTIME-009 — Runtime phải lưu State.
+
+RUNTIME-010 — Runtime phải có Exit Code chuẩn.
+
+---
+
+# 20. Compliance Checklist
+
+| Rule | Validation |
+|------|------------|
+| RTC-0401 | Runtime khởi tạo đúng |
+| RTC-0402 | Manifest được nạp |
+| RTC-0403 | Context được nạp |
+| RTC-0404 | Seed được nạp |
+| RTC-0405 | Validation hoạt động |
+| RTC-0406 | Resume hoạt động |
+| RTC-0407 | Retry đúng quy tắc |
+| RTC-0408 | Evidence đầy đủ |
+| RTC-0409 | Git Commit thành công |
+| RTC-0410 | Tuân thủ DIP |
+
+---
+
+# 21. Relationship to Other Documents
+
+DIP-04 liên kết với:
+
+- DIP-00 Implementation Constitution
+- DIP-01 Executable Sprint Package Standard
+- DIP-02 AI Context Resolution & Prompt Assembly Standard
+- DIP-03 Seed & Reference Data Standard
+- SGP Sprint Governance Pack
+- ESP Engineering Standards Pack
+- VAP Verification & Acceptance Pack
+- ROP Release & Operations Pack
+
+DIP-04 là tiêu chuẩn Runtime cho mọi Sprint của YSim AI Software Factory.
+
+---
+
+# 22. Document Status
+
+**Status: FROZEN**
+
+Từ phiên bản 2.1, mọi Sprint của YSim phải được thực thi thông qua **AI Execution Runtime** theo tiêu chuẩn của DIP-04.
+
+Runtime là tầng điều phối thống nhất, độc lập với AI Coding Agent, bảo đảm mọi Sprint có thể được thực thi, tạm dừng, tiếp tục, kiểm thử, nghiệm thu và truy vết một cách nhất quán theo mô hình **Executable Sprint Package (ESPK)**.
+
+
+---
+
+# Source: DIP-05
+
+- Path: `docs/DIP/DIP-05.md`
+- Set: `DIP`
+- Version: `2.1`
+- Status: `FROZEN`
+
+# AI Prompt Orchestration & Task Assembly Standard
+
+## DIP-05
+
+---
+
+# 1. Purpose
+
+AI Prompt Orchestration định nghĩa quy trình tạo Prompt cuối cùng được gửi tới AI Coding Agent.
+
+Prompt không được viết thủ công.
+
+Prompt phải được sinh tự động từ:
+
+- Sprint Manifest
+- Task Manifest
+- Context
+- Seed Package
+- Repository State
+- Engineering Standards
+
+Prompt là kết quả của Prompt Assembly.
+
+---
+
+# 2. Position in Software Factory
+
+```text
+Sprint Package
+
+↓
+
+Context Resolution
+
+↓
+
+Seed Resolution
+
+↓
+
+Prompt Orchestration
+
+↓
+
+Prompt Assembly
+
+↓
+
+AI Coding Agent
+
+↓
+
+Validation
+```
+
+Prompt Orchestration là bước cuối cùng trước AI Coding.
+
+---
+
+# 3. Objectives
+
+Prompt Assembly nhằm:
+
+- chuẩn hóa Prompt;
+- giảm Prompt thủ công;
+- giảm Hallucination;
+- tối ưu Token;
+- tăng khả năng tái lập;
+- tăng chất lượng Source Code;
+- độc lập AI Provider.
+
+---
+
+# 4. Principles
+
+Prompt Assembly tuân thủ:
+
+- Context First
+- Seed First
+- Task Driven
+- Minimal but Complete
+- Deterministic
+- Explainable
+- Provider Independent
+- Architecture Safe
+- Repeatable
+
+---
+
+# 5. Prompt Pipeline
+
+```text
+Sprint Manifest
+
+↓
+
+Task Manifest
+
+↓
+
+Context
+
+↓
+
+Seed
+
+↓
+
+Repository Snapshot
+
+↓
+
+Prompt Template
+
+↓
+
+Prompt Assembly
+
+↓
+
+Prompt Validation
+
+↓
+
+Execution
+```
+
+Không được bỏ qua bất kỳ bước nào.
+
+---
+
+# 6. Prompt Components
+
+Một Prompt hoàn chỉnh gồm:
+
+1. Role
+
+2. Objective
+
+3. Sprint Context
+
+4. Task Context
+
+5. Business Context
+
+6. Architecture Constraints
+
+7. Engineering Constraints
+
+8. Repository Constraints
+
+9. Seed Information
+
+10. Implementation Tasks
+
+11. Validation Commands
+
+12. Expected Deliverables
+
+13. Evidence Requirements
+
+14. Completion Criteria
+
+15. Stop Conditions
+
+---
+
+# 7. Standard Prompt Template
+
+```text
+ROLE
+
+OBJECTIVE
+
+SPRINT
+
+TASK
+
+BUSINESS CONTEXT
+
+ARCHITECTURE CONTEXT
+
+ENGINEERING CONSTRAINTS
+
+REPOSITORY CONTEXT
+
+SEED INFORMATION
+
+FILES ALLOWED
+
+FILES PROTECTED
+
+IMPLEMENTATION STEPS
+
+VALIDATION COMMANDS
+
+EXPECTED OUTPUT
+
+EXPECTED EVIDENCE
+
+COMPLETION CONDITIONS
+
+STOP CONDITIONS
+```
+
+Không được thay đổi thứ tự.
+
+---
+
+# 8. Task-specific Prompt
+
+Mỗi Task có Prompt riêng.
+
+Ví dụ:
+
+```text
+t00
+
+Repository Discovery
+```
+
+```text
+t01
+
+Domain Model
+```
+
+```text
+t02
+
+Database
+```
+
+...
+
+```text
+t10
+
+Final Review
+```
+
+Không sử dụng Prompt chung cho toàn Sprint.
+
+---
+
+# 9. Prompt Sources
+
+Prompt được sinh từ:
+
+| Source | Purpose |
+|----------|----------|
+| Sprint Manifest | Scope |
+| Task Manifest | Objective |
+| BRD | Business |
+| ABP | Architecture |
+| ESP | Engineering |
+| Repository | Existing Code |
+| Seed | Demo Data |
+| Validation | Commands |
+
+Prompt không sử dụng dữ liệu ngoài Source of Truth.
+
+---
+
+# 10. Repository Awareness
+
+Prompt phải mô tả:
+
+- Module hiện có
+- Folder Structure
+- Existing APIs
+- Existing Database
+- Existing Frontend
+- Existing Tests
+
+AI không được giả định Repository.
+
+---
+
+# 11. Allowed Changes
+
+Prompt phải khai báo:
+
+```text
+Allowed:
+
+apps/api/modules/product
+
+packages/common/product
+
+apps/admin/product
+```
+
+Protected:
+
+```text
+docs/
+
+architecture/
+
+database/history/
+
+legacy/
+```
+
+AI không được sửa ngoài phạm vi.
+
+---
+
+# 12. Token Budget
+
+Prompt Assembly phải:
+
+- ưu tiên Context gần nhất;
+- loại bỏ dữ liệu dư thừa;
+- không lặp lại Standards;
+- chỉ nạp Capability liên quan.
+
+Prompt phải tối ưu Token.
+
+---
+
+# 13. Prompt Compression
+
+Có thể rút gọn:
+
+- BRD
+- ESP
+- SGP
+
+nhưng không được thay đổi ý nghĩa.
+
+Prompt phải giữ nguyên Constraint.
+
+---
+
+# 14. Stop Conditions
+
+AI phải dừng khi:
+
+- Architecture Conflict
+- Missing Context
+- Missing Dependency
+- Protected File Modification
+- Validation Failure
+- Repository Conflict
+
+Không được tiếp tục Coding.
+
+---
+
+# 15. Prompt Validation
+
+Trước khi gửi AI:
+
+Kiểm tra:
+
+- Context đủ
+- Seed đủ
+- Prompt đủ Section
+- Files Allowed
+- Validation Commands
+- Completion Criteria
+
+Prompt không đạt thì không thực thi.
+
+---
+
+# 16. AI Provider Compatibility
+
+Prompt phải chạy được với:
+
+- Codex
+- Claude Code
+- Gemini CLI
+- Cursor Agent
+- OpenHands
+
+Không Hardcode Prompt theo AI.
+
+---
+
+# 17. Prompt Versioning
+
+Prompt có:
+
+- Version
+- Sprint
+- Task
+- Capability
+- Timestamp
+
+Prompt được lưu cùng Evidence.
+
+---
+
+# 18. Prompt Logging
+
+Runner phải lưu:
+
+```text
+prompts/
+
+t00.prompt.md
+
+t01.prompt.md
+
+...
+
+t10.prompt.md
+```
+
+Prompt đã sử dụng phải được lưu để Audit.
+
+---
+
+# 19. Rules
+
+PROMPT-001 — Prompt được sinh tự động.
+
+PROMPT-002 — Prompt phải dùng Context Resolution.
+
+PROMPT-003 — Prompt phải dùng Seed Information.
+
+PROMPT-004 — Prompt phải có Files Allowed.
+
+PROMPT-005 — Prompt phải có Files Protected.
+
+PROMPT-006 — Prompt phải có Validation Commands.
+
+PROMPT-007 — Prompt phải có Completion Criteria.
+
+PROMPT-008 — Prompt phải có Stop Conditions.
+
+PROMPT-009 — Prompt phải được Version hóa.
+
+PROMPT-010 — Prompt phải lưu vào Evidence.
+
+---
+
+# 20. Compliance Checklist
+
+| Rule | Validation |
+|------|------------|
+| PAC-0501 | Prompt đúng Template |
+| PAC-0502 | Context đầy đủ |
+| PAC-0503 | Seed đầy đủ |
+| PAC-0504 | Files Allowed đầy đủ |
+| PAC-0505 | Files Protected đầy đủ |
+| PAC-0506 | Validation Commands đầy đủ |
+| PAC-0507 | Completion Criteria đầy đủ |
+| PAC-0508 | Stop Conditions đầy đủ |
+| PAC-0509 | Prompt được lưu |
+| PAC-0510 | Tuân thủ DIP |
+
+---
+
+# 21. Relationship to Other Documents
+
+DIP-05 liên kết với:
+
+- DIP-00 Implementation Constitution
+- DIP-01 Executable Sprint Package Standard
+- DIP-02 AI Context Resolution & Prompt Assembly Standard
+- DIP-03 Seed & Reference Data Standard
+- DIP-04 AI Execution Runtime & Bash Runner Standard
+- ESP Engineering Standards Pack
+- SGP Sprint Governance Pack
+- VAP Verification & Acceptance Pack
+
+DIP-05 là tiêu chuẩn chính thức cho Prompt Orchestration của YSim AI Software Factory.
+
+---
+
+# 22. Document Status
+
+**Status: FROZEN**
+
+Từ phiên bản 2.1, mọi Prompt gửi tới AI Coding Agent phải được tạo thông qua Prompt Orchestration theo tiêu chuẩn của DIP-05.
+
+Prompt không còn là nội dung được soạn thủ công mà là một Artifact được sinh tự động từ Sprint Package, Context, Seed Information và Repository State.
+
+Prompt trở thành một thành phần của Evidence Package và phải được lưu trữ, version hóa và truy vết giống như Source Code.
+
+
+---
+
+# Source: DIP-06
+
+- Path: `docs/DIP/DIP-06.md`
+- Set: `DIP`
+- Version: `2.1`
+- Status: `FROZEN`
+
+# Validation, Evidence & Acceptance Standard
+
+## DIP-06
+
+---
+
+# 1. Purpose
+
+Validation, Evidence & Acceptance Standard định nghĩa tiêu chuẩn xác minh, thu thập bằng chứng và nghiệm thu đối với mọi Executable Sprint Package (ESPK).
+
+Một Sprint chỉ được xem là hoàn thành khi:
+
+- Validation PASS;
+- Evidence đầy đủ;
+- Capability được Acceptance.
+
+Build thành công không đồng nghĩa Sprint hoàn thành.
+
+---
+
+# 2. Position in Software Factory
+
+```text
+AI Coding
+
+↓
+
+Build
+
+↓
+
+Validation
+
+↓
+
+Evidence
+
+↓
+
+Capability Demonstration
+
+↓
+
+Acceptance
+
+↓
+
+Git Commit
+
+↓
+
+Release
+```
+
+Validation và Acceptance là điều kiện bắt buộc trước Release.
+
+---
+
+# 3. Objectives
+
+Tiêu chuẩn này nhằm:
+
+- xác minh chất lượng Source Code;
+- chứng minh Capability hoạt động;
+- tạo Evidence phục vụ Audit;
+- chuẩn hóa Acceptance;
+- hỗ trợ Release;
+- hỗ trợ Rollback.
+
+---
+
+# 4. Principles
+
+Validation & Acceptance tuân thủ:
+
+- Validate Everything
+- Evidence by Design
+- Demonstration First
+- Repeatable
+- Explainable
+- Traceable
+- AI Independent
+- Automation First
+- Capability Oriented
+
+---
+
+# 5. Validation Model
+
+Validation gồm nhiều tầng.
+
+```text
+Source
+
+↓
+
+Build
+
+↓
+
+Static Analysis
+
+↓
+
+Unit Test
+
+↓
+
+Integration Test
+
+↓
+
+Contract Test
+
+↓
+
+Frontend Test
+
+↓
+
+End-to-End Test
+
+↓
+
+Compliance
+
+↓
+
+Capability Demonstration
+```
+
+Không được bỏ qua tầng Validation bắt buộc.
+
+---
+
+# 6. Validation Categories
+
+| Category | Purpose |
+|----------|----------|
+| Build Validation | Kiểm tra Build |
+| Static Validation | Lint, Type Check |
+| Unit Validation | Business Logic |
+| Integration Validation | Service Interaction |
+| Contract Validation | API Compatibility |
+| Frontend Validation | UI & Components |
+| E2E Validation | User Journey |
+| Compliance Validation | ESP / SGP / DIP |
+| Runtime Validation | Execution Runtime |
+| Demonstration Validation | Demo Scenario |
+
+---
+
+# 7. Capability Demonstration
+
+Capability có UI phải chứng minh được:
+
+- Login
+- CRUD
+- Search
+- Checkout
+- Payment
+- Dashboard
+- Reporting
+
+(tùy Capability)
+
+Demonstration là một phần của Validation.
+
+---
+
+# 8. Evidence Model
+
+Mỗi Task phải sinh:
+
+- Execution Log
+- Validation Result
+- Build Output
+- Test Output
+- Git Diff
+
+Mỗi Sprint phải sinh:
+
+- Sprint Report
+- Capability Report
+- Demonstration Report
+- Acceptance Report
+
+---
+
+# 9. Evidence Package
+
+```text
+evidence/
+
+├── prompts/
+
+├── logs/
+
+├── validation/
+
+├── screenshots/
+
+├── videos/
+
+├── reports/
+
+├── git/
+
+└── acceptance/
+```
+
+Evidence Package phải được lưu cùng Sprint.
+
+---
+
+# 10. Frontend Evidence
+
+Capability có Frontend phải có:
+
+- Screenshot
+- Navigation Flow
+- UI Components
+- Theme Verification
+- Responsive Verification
+
+Nếu phù hợp, bổ sung Video Demonstration.
+
+---
+
+# 11. Acceptance Criteria
+
+Capability được ACCEPT khi:
+
+✓ Build PASS
+
+✓ Validation PASS
+
+✓ Tests PASS
+
+✓ Demonstration PASS
+
+✓ Evidence đầy đủ
+
+✓ Documentation cập nhật
+
+✓ Git Commit thành công
+
+---
+
+# 12. Acceptance Checklist
+
+Acceptance tối thiểu gồm:
+
+- Business Rules
+- API
+- Database
+- Frontend
+- Design System
+- Experience API
+- Security
+- Performance
+- Documentation
+
+---
+
+# 13. PASS / FAIL Rules
+
+Capability:
+
+PASS
+
+khi:
+
+- không có Validation Error;
+- không có Critical Bug;
+- Acceptance PASS.
+
+FAIL
+
+khi:
+
+- Build FAIL;
+- Test FAIL;
+- Demonstration FAIL;
+- Architecture Conflict;
+- Business Conflict.
+
+---
+
+# 14. Validation Report
+
+Runner phải sinh:
+
+```text
+validation/
+
+summary.md
+
+build.md
+
+tests.md
+
+compliance.md
+
+acceptance.md
+```
+
+Validation Report là đầu ra bắt buộc.
+
+---
+
+# 15. Evidence Traceability
+
+Mọi Evidence phải truy vết được:
+
+```text
+Sprint
+
+↓
+
+Task
+
+↓
+
+Prompt
+
+↓
+
+Commit
+
+↓
+
+Report
+
+↓
+
+Acceptance
+```
+
+Không được có Evidence mồ côi.
+
+---
+
+# 16. Acceptance Authority
+
+Acceptance được thực hiện bởi:
+
+- AI Runtime (tự động)
+- Developer Review
+- Technical Lead
+- Product Owner (nếu cần)
+
+AI chỉ được đánh dấu PASS khi đáp ứng đầy đủ Checklist.
+
+---
+
+# 17. Failure Handling
+
+Nếu Validation FAIL:
+
+Runner phải:
+
+- dừng Sprint;
+- lưu Log;
+- lưu Prompt;
+- lưu Exit Code;
+- sinh Failure Report.
+
+Không Commit.
+
+---
+
+# 18. Rules
+
+VAL-001 — Validation sau từng Task.
+
+VAL-002 — Evidence sau từng Task.
+
+VAL-003 — Capability có UI phải Demonstration.
+
+VAL-004 — Acceptance bắt buộc.
+
+VAL-005 — Screenshot là bắt buộc với Frontend.
+
+VAL-006 — Validation Report phải sinh tự động.
+
+VAL-007 — Failure Report phải được lưu.
+
+VAL-008 — Không Commit khi Acceptance FAIL.
+
+VAL-009 — Evidence phải Version hóa.
+
+VAL-010 — Sprint chỉ COMPLETE khi Acceptance PASS.
+
+---
+
+# 19. Compliance Checklist
+
+| Rule | Validation |
+|------|------------|
+| VAC-0601 | Build PASS |
+| VAC-0602 | Tests PASS |
+| VAC-0603 | Compliance PASS |
+| VAC-0604 | Demonstration PASS |
+| VAC-0605 | Frontend Evidence đầy đủ |
+| VAC-0606 | Acceptance PASS |
+| VAC-0607 | Failure Handling đúng chuẩn |
+| VAC-0608 | Evidence đầy đủ |
+| VAC-0609 | Git Commit thành công |
+| VAC-0610 | Tuân thủ DIP |
+
+---
+
+# 20. Relationship to Other Documents
+
+DIP-06 liên kết với:
+
+- DIP-00 Implementation Constitution
+- DIP-01 Executable Sprint Package Standard
+- DIP-02 AI Context Resolution & Prompt Assembly Standard
+- DIP-03 Seed & Reference Data Standard
+- DIP-04 AI Execution Runtime & Bash Runner Standard
+- DIP-05 AI Prompt Orchestration & Task Assembly Standard
+- ESP Engineering Standards Pack
+- SGP Sprint Governance Pack
+- VAP Verification & Acceptance Pack
+- ROP Release & Operations Pack
+
+DIP-06 là tiêu chuẩn chính thức cho Validation, Evidence và Acceptance của YSim AI Software Factory.
+
+---
+
+# 21. Acceptance Workflow
+
+```text
+Task Completed
+
+↓
+
+Build
+
+↓
+
+Validation
+
+↓
+
+Evidence Collection
+
+↓
+
+Capability Demonstration
+
+↓
+
+Acceptance Checklist
+
+↓
+
+PASS
+
+↓
+
+Git Commit
+
+↓
+
+Next Task
+```
+
+Nếu FAIL ở bất kỳ bước nào:
+
+```text
+Failure Report
+
+↓
+
+Stop Sprint
+
+↓
+
+ACP (nếu có Architecture Conflict)
+```
+
+---
+
+# 22. Document Status
+
+**Status: FROZEN**
+
+Từ phiên bản 2.1, mọi Sprint của YSim phải hoàn thành đầy đủ ba giai đoạn:
+
+- Validation
+- Evidence
+- Acceptance
+
+Capability chỉ được coi là **Completed** khi vượt qua toàn bộ Validation Pipeline, tạo đủ Evidence Package và được Acceptance theo tiêu chuẩn của DIP-06.
+
+Validation, Evidence và Acceptance là điều kiện bắt buộc trước Git Commit và Release.
+
+
+---
+
+# Source: DIP-09
+
+- Path: `docs/DIP/DIP-09.md`
+- Set: `DIP`
+- Version: `2.1`
+- Status: `FROZEN`
+
+# AI Execution Governance & Exception Handling Standard
+
+## DIP-09
+
+---
+
+# 1. Purpose
+
+AI Execution Governance định nghĩa các quy tắc điều phối, giám sát và xử lý ngoại lệ trong quá trình AI Coding Assistant thực thi Executable Sprint Package (ESPK).
+
+Tiêu chuẩn này bảo đảm AI luôn hoạt động trong phạm vi Architecture đã được phê duyệt và có cơ chế dừng, khôi phục hoặc chuyển giao khi gặp tình huống vượt ngoài thẩm quyền.
+
+Governance là lớp bảo vệ cuối cùng của Software Factory.
+
+---
+
+# 2. Position in Software Factory
+
+```text
+Architecture
+
+↓
+
+Implementation
+
+↓
+
+AI Execution Governance
+
+↓
+
+AI Runtime
+
+↓
+
+Capability Delivery
+
+↓
+
+Validation
+
+↓
+
+Acceptance
+```
+
+Governance áp dụng xuyên suốt toàn bộ vòng đời Sprint.
+
+---
+
+# 3. Objectives
+
+AI Execution Governance nhằm:
+
+- bảo đảm AI tuân thủ Architecture;
+- chuẩn hóa xử lý ngoại lệ;
+- hỗ trợ Human-in-the-loop;
+- bảo vệ Repository;
+- giảm Hallucination;
+- giảm Scope Drift;
+- bảo đảm Auditability.
+
+---
+
+# 4. Principles
+
+Governance tuân thủ:
+
+- Architecture First
+- Human Override
+- Explainable AI
+- Fail Fast
+- Stop on Uncertainty
+- Traceable
+- Repeatable
+- Least Privilege
+- Controlled Automation
+
+---
+
+# 5. Governance Scope
+
+Governance áp dụng cho:
+
+- Sprint Planning
+- Prompt Assembly
+- AI Execution
+- Validation
+- Repository
+- Git
+- Demonstration
+- Acceptance
+
+Không giới hạn ở AI Coding.
+
+---
+
+# 6. AI Decision Authority
+
+AI được phép:
+
+- sinh Source Code;
+- tạo Migration;
+- sinh API;
+- tạo Frontend;
+- sinh Tests;
+- sinh Documentation;
+- tạo Seed Data;
+- Commit theo quy tắc.
+
+AI không được phép:
+
+- thay đổi Architecture Frozen;
+- thay đổi Meta Model;
+- thay đổi Business Domain;
+- sửa Protected Files;
+- bỏ qua Validation;
+- bỏ qua Acceptance.
+
+---
+
+# 7. Exception Classification
+
+Ngoại lệ được phân loại:
+
+| Level | Description |
+|---------|-------------|
+| E0 | Information |
+| E1 | Warning |
+| E2 | Validation Failure |
+| E3 | Repository Conflict |
+| E4 | Architecture Conflict |
+| E5 | Security Violation |
+| E6 | Human Approval Required |
+
+---
+
+# 8. Stop Conditions
+
+AI phải dừng ngay khi:
+
+- Architecture Conflict
+- Missing Context
+- Missing Dependency
+- Protected File Modification
+- Repository Corruption
+- Security Policy Violation
+- Validation Failure (Critical)
+
+Không được tự tiếp tục.
+
+---
+
+# 9. Recovery Policy
+
+Recovery chỉ được phép khi:
+
+- Dependency được bổ sung;
+- Validation PASS sau khi sửa;
+- Repository sạch;
+- Human chấp thuận (nếu cần).
+
+Recovery phải tiếp tục từ Checkpoint gần nhất.
+
+---
+
+# 10. Retry Policy
+
+Retry chỉ áp dụng cho:
+
+- Timeout;
+- Network Failure;
+- AI Provider Unavailable;
+- Temporary Infrastructure Error.
+
+Không Retry khi:
+
+- Business Rule Conflict;
+- Architecture Conflict;
+- Validation Logic Failure.
+
+---
+
+# 11. Human-in-the-loop
+
+Con người có quyền:
+
+- Approve;
+- Reject;
+- Retry;
+- Resume;
+- Skip (nếu chính sách cho phép);
+- Stop Sprint.
+
+Mọi quyết định đều phải được ghi vào Evidence.
+
+---
+
+# 12. ACP & ADR Trigger
+
+Runner phải tạo ACP khi phát hiện:
+
+- Architecture Conflict;
+- Capability vượt Scope;
+- Meta Model thay đổi;
+- Business Domain mới.
+
+Runner phải yêu cầu ADR khi:
+
+- thay đổi Decision đã Frozen;
+- thay đổi Design Pattern;
+- thay đổi Platform Strategy.
+
+AI không được tự quyết định.
+
+---
+
+# 13. Repository Protection
+
+Protected Areas:
+
+```text
+docs/frozen/
+architecture/
+release/
+database/history/
+```
+
+AI không được sửa nếu Sprint không cho phép.
+
+---
+
+# 14. Audit Trail
+
+Mọi Sprint phải lưu:
+
+- Prompt;
+- Context;
+- Seed;
+- Commands;
+- Logs;
+- Validation;
+- Evidence;
+- Git Diff;
+- Exception Report.
+
+Audit Trail là bắt buộc.
+
+---
+
+# 15. Escalation Flow
+
+```text
+Warning
+
+↓
+
+Validation Failure
+
+↓
+
+Recovery
+
+↓
+
+Retry
+
+↓
+
+Human Review
+
+↓
+
+ACP / ADR
+
+↓
+
+Stop Sprint
+```
+
+Không được bỏ qua bước Escalation.
+
+---
+
+# 16. Governance States
+
+Một Sprint chỉ có thể ở một trong các trạng thái:
+
+- Planned
+- Running
+- Waiting
+- Validation Failed
+- Blocked
+- Human Review
+- Accepted
+- Completed
+- Cancelled
+
+Runner phải lưu trạng thái hiện tại.
+
+---
+
+# 17. AI Provider Failure
+
+Nếu AI Provider:
+
+- Timeout;
+- Rate Limited;
+- Unavailable;
+
+Runner phải:
+
+- Retry theo Policy;
+- lưu Error;
+- không làm mất State.
+
+Không được Restart Sprint từ đầu.
+
+---
+
+# 18. Exception Report
+
+Nếu Sprint FAIL phải sinh:
+
+```text
+reports/
+
+exception.md
+
+failure.md
+
+recovery.md
+```
+
+Exception Report là Deliverable bắt buộc.
+
+---
+
+# 19. Governance Rules
+
+GOV-001 — AI phải tuân thủ Architecture.
+
+GOV-002 — AI không được sửa Protected Files.
+
+GOV-003 — Architecture Conflict phải tạo ACP.
+
+GOV-004 — Design Decision thay đổi phải tạo ADR.
+
+GOV-005 — Validation Critical Failure phải dừng Sprint.
+
+GOV-006 — Human Override phải được ghi nhận.
+
+GOV-007 — Retry theo Policy.
+
+GOV-008 — Recovery theo Checkpoint.
+
+GOV-009 — Audit Trail là bắt buộc.
+
+GOV-010 — Không AI nào được vượt quá Governance Policy.
+
+---
+
+# 20. Compliance Checklist
+
+| Rule | Validation |
+|------|------------|
+| GVC-0901 | Governance Policy được áp dụng |
+| GVC-0902 | Protected Files không bị sửa |
+| GVC-0903 | ACP được tạo khi cần |
+| GVC-0904 | ADR được yêu cầu khi cần |
+| GVC-0905 | Retry đúng Policy |
+| GVC-0906 | Recovery đúng Checkpoint |
+| GVC-0907 | Audit Trail đầy đủ |
+| GVC-0908 | Human Review được ghi nhận |
+| GVC-0909 | Exception Report đầy đủ |
+| GVC-0910 | Tuân thủ DIP |
+
+---
+
+# 21. Relationship to Other Documents
+
+DIP-09 liên kết với:
+
+- DIP-00 Implementation Constitution
+- DIP-01 Executable Sprint Package Standard
+- DIP-02 AI Context Resolution & Prompt Assembly Standard
+- DIP-03 Seed & Reference Data Standard
+- DIP-04 AI Execution Runtime & Bash Runner Standard
+- DIP-05 AI Prompt Orchestration & Task Assembly Standard
+- DIP-06 Validation, Evidence & Acceptance Standard
+- DIP-07 Repository Workflow & Git Strategy Standard
+- DIP-08 Full-stack Capability Delivery Standard
+- AFM-00 Architecture Freeze Manifest
+- AAP AI Architecture Principles
+- SGP Sprint Governance Principles
+- ESP Engineering Standards
+- ROP Release & Operations Pack
+
+DIP-09 là lớp Governance cao nhất của Development & Implementation Pack.
+
+---
+
+# 22. AI Execution Governance Workflow
+
+```text
+Sprint Planned
+
+↓
+
+Context Loaded
+
+↓
+
+Prompt Generated
+
+↓
+
+AI Execution
+
+↓
+
+Validation
+
+↓
+
+Exception?
+
+├── No
+│
+│   ↓
+│
+│ Acceptance
+│
+│   ↓
+│
+│ Complete
+│
+└── Yes
+    ↓
+Exception Classification
+    ↓
+Recovery / Retry
+    ↓
+Human Review (nếu cần)
+    ↓
+ACP / ADR (nếu cần)
+    ↓
+Resume hoặc Stop
+```
+
+---
+
+# 23. Document Status
+
+**Status: FROZEN**
+
+DIP-09 là tài liệu cuối cùng của **Implementation Foundation**.
+
+Từ phiên bản **YSim AI Software Factory v2.1**, mọi Sprint phải được thực thi dưới sự điều phối của **AI Execution Governance**.
+
+Không AI Coding Agent nào được phép vượt qua các giới hạn về Architecture, Governance, Validation hoặc Security đã được định nghĩa trong Development & Implementation Pack.
+
+Implementation Foundation (DIP-00 → DIP-09) được xem là **Architecture & Execution Baseline** cho toàn bộ quá trình phát triển YSim.
+
+
+---
+
+# Source: ESPK-S00
+
+- Path: `docs/ESPK/ESPK-S00.md`
+- Set: `ESPK`
+- Version: `2.1`
+- Status: `FROZEN`
+
+Sprint-00 — Factory Commissioning & Repository Bootstrap
+Type	Foundation Sprint
+Deliverable	AI Software Factory Ready
+Objective
+
+Sprint-00 có mục tiêu:
+
+Bootstrap Repository
+Bootstrap Workspace
+Import Documentation
+Bootstrap AI Runtime
+Bootstrap Factory
+Bootstrap Bash Runner
+Validate toàn bộ Software Factory
+
+Không phát triển bất kỳ Business Capability nào.
+
+Business Value
+
+Sau Sprint-00:
+
+✅ Repository sẵn sàng
+
+✅ Documentation sẵn sàng
+
+✅ AI Runtime sẵn sàng
+
+✅ Codex Runner sẵn sàng
+
+✅ Prompt Engine sẵn sàng
+
+✅ Seed Repository sẵn sàng
+
+✅ Validation Pipeline sẵn sàng
+
+Deliverables
+1. Repository Bootstrap
+apps/
+
+packages/
+
+database/
+
+integrations/
+
+infrastructure/
+
+docs/
+
+ai/
+
+factory/
+
+runtime/
+
+scripts/
+
+tools/
+
+.github/
+2. Documentation Repository
+docs/
+
+AFM/
+
+BRD/
+
+ABP/
+
+YADF/
+
+AAP/
+
+SGP/
+
+ESP/
+
+DIP/
+
+ROP/
+3. Factory
+factory/
+
+providers/
+
+runtime/
+
+prompts/
+
+contexts/
+
+templates/
+
+seeds/
+
+validation/
+
+evidence/
+
+reports/
+4. Runtime
+runtime/
+
+logs/
+
+state/
+
+cache/
+
+reports/
+
+evidence/
+5. Scripts
+scripts/
+
+bootstrap.sh
+
+commission.sh
+
+run-sprint.sh
+
+run-task.sh
+
+resume.sh
+
+validate.sh
+6. Provider
+factory/providers/
+
+codex/
+
+claude/
+
+gemini/
+
+openhands/
+
+Sprint-00 chỉ implement:
+
+codex/
+7. Prompt Templates
+factory/prompts/
+
+task.md
+
+review.md
+
+migration.md
+
+refactor.md
+
+hotfix.md
+8. Context Templates
+factory/contexts/
+
+business.md
+
+architecture.md
+
+engineering.md
+
+repository.md
+
+runtime.md
+
+task.md
+9. Seed Repository
+factory/seeds/
+
+products/
+
+pricing/
+
+users/
+
+organizations/
+
+themes/
+
+payments/
+
+gigago/
+
+onepay/
+
+gpay/
+
+analytics/
+Sprint Tasks
+
+Sprint-00 vẫn sử dụng chuẩn t00 → t10 để đồng nhất với các Sprint sau.
+
+t00 — Repository Discovery
+
+Mục tiêu
+
+Kiểm tra cấu trúc Repository.
+Kiểm tra Git.
+Kiểm tra Workspace.
+
+Output
+
+Repository Report.
+Working Tree Report.
+t01 — Workspace Bootstrap
+
+Tạo các thư mục chuẩn:
+
+factory/
+
+runtime/
+
+tools/
+
+Không tạo Business Module.
+
+t02 — Documentation Commissioning
+
+Import Documentation theo Layer:
+
+Layer 0
+
+AFM
+YADF
+AAP
+
+Layer 1
+
+BRD
+
+Layer 2
+
+ABP
+
+Layer 3
+
+SGP
+ESP
+
+Layer 4
+
+DIP
+
+Layer 5
+
+ROP
+
+Sinh:
+
+docs/INDEX.md
+
+docs/MASTER_INDEX.md
+t03 — Factory Bootstrap
+
+Tạo:
+
+factory/
+
+providers/
+
+runtime/
+
+templates/
+
+contexts/
+
+prompts/
+
+seeds/
+
+validation/
+
+reports/
+
+evidence/
+t04 — Runtime Bootstrap
+
+Sinh:
+
+runtime/
+
+logs/
+
+cache/
+
+state/
+
+reports/
+
+evidence/
+t05 — AI Provider Bootstrap
+
+Implement:
+
+factory/providers/codex/
+
+Tạo interface cho:
+
+claude/
+
+gemini/
+
+openhands/
+t06 — Prompt & Context Bootstrap
+
+Sinh:
+
+prompt templates
+
+context templates
+
+manifest templates
+
+seed templates
+t07 — Validation Bootstrap
+
+Sinh:
+
+validate.sh
+
+preflight.sh
+
+healthcheck.sh
+
+environment.sh
+
+Validation:
+
+Node
+pnpm
+Git
+Docker
+Codex CLI
+t08 — Dry Run
+
+Runner thực hiện:
+
+Repository
+
+↓
+
+Manifest
+
+↓
+
+Context
+
+↓
+
+Seed
+
+↓
+
+Prompt
+
+↓
+
+Runtime
+
+↓
+
+Validation
+
+Không Coding.
+
+Không Commit Business.
+
+t09 — Evidence Generation
+
+Sinh:
+
+Factory Report
+
+Runtime Report
+
+Environment Report
+
+Repository Report
+
+Validation Report
+t10 — Commissioning Report
+
+Sinh:
+
+SPRING-00-REPORT.md
+
+FACTORY_READY.md
+
+COMMISSIONING_REPORT.md
+
+Commit:
+
+chore(s00): commission AI software factory
+Acceptance Criteria
+
+Sprint-00 PASS khi:
+
+Repository
+ Repository đúng cấu trúc.
+Documentation
+ Documentation import hoàn chỉnh.
+ MASTER_INDEX tồn tại.
+Factory
+ Factory Bootstrap hoàn tất.
+Runtime
+ Runtime Bootstrap hoàn tất.
+Provider
+ Codex Provider hoạt động.
+ Provider Interface chuẩn hóa.
+Prompt
+ Prompt Template đầy đủ.
+Seed
+ Seed Repository đầy đủ.
+Validation
+ Validation PASS.
+Dry Run
+ Dry Run PASS.
+Evidence
+ Evidence đầy đủ.
+Sprint Outputs
+Repository
+
+Factory
+
+Runtime
+
+Provider
+
+Prompt
+
+Context
+
+Seed
+
+Validation
+
+Evidence
+
+Reports
+Exit Criteria
+
+Sau Sprint-00:
+
+AI Software Factory
+
+STATUS
+
+READY
+
+và mới được phép chuyển sang Sprint-01.
+
+
+---
+
+# Source: YADF-00
+
+- Path: `docs/YADF/YADF-00.md`
+- Set: `YADF`
+- Version: `2.0`
+- Status: `FROZEN`
+
+# YSim AI Development Framework (YADF)
+
+---
+
+# 1. Purpose
+
+YSim AI Development Framework (YADF) là framework chuẩn hóa toàn bộ quy trình phát triển phần mềm của nền tảng YSim với sự hỗ trợ của AI Coding Assistant.
+
+YADF định nghĩa:
+
+- Development Governance
+- Architecture Governance
+- Sprint Governance
+- AI Collaboration
+- Verification
+- Operational Readiness
+
+YADF là nền tảng để tất cả các dự án trong hệ sinh thái YSim được phát triển theo cùng một phương pháp.
+
+---
+
+# 2. Framework Philosophy
+
+YADF áp dụng nguyên tắc:
+
+> **Business-Driven, Blueprint-Oriented, Contract-Driven, Full-stack AI Development**
+
+Business quyết định yêu cầu.
+
+Architecture quyết định cấu trúc.
+
+Sprint Contract quyết định phạm vi triển khai.
+
+AI chịu trách nhiệm hiện thực hóa (Implementation).
+
+AI không phải là Source of Truth.
+
+---
+
+# 3. Framework Layers
+
+```text
+Business Layer
+        │
+        ▼
+Architecture Layer
+        │
+        ▼
+Capability Layer
+        │
+        ▼
+Implementation Layer
+        │
+        ▼
+Verification Layer
+        │
+        ▼
+Operation Layer
+```
+
+Mỗi Layer có trách nhiệm rõ ràng và độc lập.
+
+
+---
+
+# 3A. Commerce & Capability Meta Model
+
+Version 2.1 bổ sung Meta Model chuẩn cho AI Software Factory.
+
+```text
+Business Model
+        │
+        ▼
+Business Blueprint
+        │
+        ▼
+Store Template
+        │
+        ▼
+Store Instance
+        │
+        ▼
+Commerce Experience
+```
+
+Mọi Capability có giao diện người dùng được triển khai theo mô hình Full-stack Capability Delivery:
+
+```text
+Capability
+        │
+        ├── Backend
+        ├── API
+        ├── Frontend
+        ├── Seed Data
+        ├── Demonstration
+        └── Verification
+```
+
+YADF coi Capability là đơn vị Delivery nhỏ nhất của AI Factory.
+
+---
+
+# 4. Development Lifecycle
+
+```text
+Business Requirements
+        │
+        ▼
+Business Registry
+        │
+        ▼
+Architecture Baseline
+        │
+        ▼
+Sprint Contract
+        │
+        ▼
+Repository Discovery
+        │
+        ▼
+Backend + Frontend Implementation
+        │
+        ▼
+Capability Demonstration
+        │
+        ▼
+Verification
+        │
+        ▼
+Acceptance
+        │
+        ▼
+Deployment
+        │
+        ▼
+Operations
+```
+
+---
+
+# 5. Core Principles
+
+YADF tuân thủ các nguyên tắc sau:
+
+1. Business là Source of Truth.
+2. Registry là Architecture Source of Truth.
+3. Sprint Contract là Sprint Source of Truth.
+4. AI chỉ là Implementation Agent.
+5. Mọi thay đổi phải truy vết được.
+6. Mọi Sprint phải độc lập và kiểm thử được.
+7. Không thay đổi Architecture trong Sprint nếu chưa được phê duyệt.
+8. Mọi thay đổi phải có bằng chứng (Implementation Evidence).
+9. Capability có giao diện phải được Demonstration trước khi nghiệm thu.
+10. Backend và Frontend được phát triển trong cùng một Sprint.
+
+---
+
+# 6. Sprint Model
+
+Sprint là đơn vị triển khai theo **Technical Capability**.
+
+Mỗi Sprint:
+
+- có Domain Ownership rõ ràng;
+- có Sprint Contract riêng;
+- có phạm vi nhỏ, độc lập;
+- có thể build, test và nghiệm thu độc lập.
+
+Sprint không phải là Business Domain và cũng không phải là Vertical Slice.
+
+---
+
+# 7. Sprint Contract
+
+Sprint Contract là tài liệu bất biến trong quá trình triển khai.
+
+Một Sprint chỉ được bắt đầu khi:
+
+- Business Object đã được xác định.
+- Business Capability đã được xác định.
+- Business Policy đã được xác định.
+- Business Event đã được xác định.
+- Business Snapshot đã được xác định.
+- API Contract đã được xác định.
+
+Nếu phát hiện vấn đề, AI phải tạo **Architecture Change Proposal (ACP)** thay vì tự thay đổi Sprint Contract.
+
+---
+
+# 8. Repository Discovery
+
+Repository Discovery là bước bắt buộc trước khi triển khai.
+
+AI phải đánh giá:
+
+- Existing Modules
+- Existing APIs
+- Existing Database Schema
+- Existing Migrations
+- Existing Events
+- Existing Snapshots
+- Existing Tests
+- Existing Technical Debt
+- Gap Analysis
+
+Repository Discovery là cơ sở để lập kế hoạch triển khai Sprint.
+
+---
+
+# 9. Domain Ownership
+
+Mỗi Sprint chỉ được phép thay đổi:
+
+- Domain thuộc Ownership của Sprint.
+- Shared Components được Sprint Contract cho phép.
+
+Không được thay đổi Domain khác nếu chưa được phê duyệt.
+
+---
+
+# 10. Dependency Resolution
+
+YADF định nghĩa ba mức xử lý Dependency:
+
+## Level 1 — Available Dependency
+
+Dependency đã tồn tại.
+
+→ Triển khai.
+
+## Level 2 — Mockable Dependency
+
+Dependency chưa tồn tại nhưng được phép Mock.
+
+→ AI tạo Mock/Stub/Fake theo Sprint Contract.
+
+## Level 3 — Architecture Dependency
+
+Dependency thuộc Architecture Contract.
+
+Ví dụ:
+
+- Business Object
+- Capability
+- Policy
+- Event
+- Snapshot
+- Shared API
+- Shared Database Contract
+
+AI không được tự tạo.
+
+Phải sinh:
+
+- Dependency Report
+- Architecture Change Proposal (ACP)
+
+---
+
+# 11. Safe Refactoring
+
+AI được phép Refactor khi:
+
+- không thay đổi Business Behavior;
+- không thay đổi Public Contract;
+- không thay đổi Business Flow;
+- không thay đổi Domain Ownership.
+
+Nếu Refactor ảnh hưởng Contract hoặc Architecture:
+
+→ phải tạo ACP.
+
+---
+
+# 12. Verification Model
+
+Definition of Done gồm ba nhóm.
+
+## Technical
+
+- Build
+- Migration
+- Static Analysis
+- Unit Test
+- Contract Test
+
+## Business
+
+- Capability
+- Policy
+- Event
+- Snapshot
+- Business Scenario
+
+## Operational
+
+- Logging
+- Monitoring
+- Metrics
+- Alert
+- Runbook (nếu áp dụng)
+
+---
+
+# 13. Change Control
+
+AI không được thay đổi:
+
+- BRD
+- Business Registry
+- Architecture Baseline
+- Sprint Contract
+
+Mọi thay đổi phải thông qua:
+
+- Architecture Change Proposal (ACP)
+- Architecture Review
+- Approval
+
+---
+
+# 14. AI Collaboration Principles
+
+AI phải:
+
+- tuân thủ Sprint Contract;
+- tuân thủ Registry;
+- tuân thủ Engineering Standards;
+- sinh báo cáo khi phát hiện bất thường;
+- đề xuất thay đổi thay vì tự thay đổi.
+
+AI không được tự định nghĩa Business hoặc Architecture.
+
+---
+
+# 15. Sprint Completion
+
+Một Sprint chỉ được hoàn thành khi đồng thời đạt:
+
+## Technical Done
+
+- Build PASS
+- Migration PASS
+- Static Analysis PASS
+- Test PASS
+
+## Business Done
+
+- Capability hoàn chỉnh
+- Policy đúng
+- Event đúng
+- Snapshot đúng
+- Acceptance Scenario PASS
+
+## Operational Done
+
+- Logging
+- Monitoring
+- Alert
+- Metrics
+- Feature Flag/Kill Switch (nếu yêu cầu)
+
+Ngoài Source Code, Sprint phải tạo đầy đủ:
+
+- Test
+- Seed Data
+- Documentation
+- Validation Report
+- Implementation Evidence
+
+---
+
+# 16. Framework Artifacts
+
+YADF quản lý các nhóm tài liệu sau:
+
+| Artifact | Purpose |
+|----------|---------|
+| Business Requirements | Định nghĩa yêu cầu nghiệp vụ |
+| Enterprise Registries | Source of Truth cho kiến trúc nghiệp vụ |
+| Architecture Baseline Pack | Chuẩn kiến trúc nền tảng |
+| Domain Implementation Pack | Hướng dẫn triển khai theo Domain |
+| Engineering Standards Pack | Quy chuẩn kỹ thuật |
+| Sprint Governance Pack | Quản trị Sprint |
+| Verification & Acceptance Pack | Kiểm thử và nghiệm thu |
+| Operations Readiness Pack | Vận hành và triển khai |
+
+---
+
+# 17. Framework Principles
+
+1. Business drives Architecture.
+2. Architecture governs Implementation.
+3. Sprint Contract governs Execution.
+4. AI implements, never defines Architecture.
+5. Every Sprint must be traceable.
+6. Every Sprint must be verifiable.
+7. Every Sprint must produce Implementation Evidence.
+8. Every Release must be operationally ready.
+9. Every Architecture change must be approved.
+10. One Source of Truth for every architectural concern.
+
+---
+
+# Document Status
+
+**Status: FROZEN**
+
+YADF là framework chuẩn cho toàn bộ hoạt động phát triển phần mềm của nền tảng YSim.
+
+Mọi dự án, Sprint, AI Coding Assistant và quy trình triển khai phải tuân thủ YADF nhằm đảm bảo tính nhất quán, khả năng truy vết và chất lượng của toàn bộ hệ sinh thái YSim.
+
+---
+
+
+---
+
 # Source: AAP-01
 
 - Path: `docs/AAP/AAP-01.md`
@@ -3320,289 +7795,6 @@ Mọi Module mới phải tuân thủ tài liệu này trước khi được đ�
 
 ---
 
-# Source: AFM-00
-
-- Path: `docs/AFM/AFM-00.md`
-- Set: `AFM`
-- Version: `2.1`
-- Status: `FROZEN`
-
-# AI Factory Manual
-
-## AFM-00
-
----
-
-# 1. Purpose
-
-AI Factory Manual (AFM) là tài liệu giới thiệu tổng thể về YSim AI Software Factory.
-
-AFM định nghĩa:
-
-- Triết lý phát triển.
-- Kiến trúc framework.
-- Vòng đời phát triển.
-- Mối quan hệ giữa các bộ tài liệu.
-- Nguyên tắc phối hợp giữa AI và con người.
-
-Đây là tài liệu đầu tiên cần đọc trước khi tham gia dự án.
-
----
-
-# 2. Vision
-
-YSim AI Software Factory hướng tới một quy trình phát triển phần mềm:
-
-- AI-Driven
-- Business-Driven
-- Architecture-Driven
-- Sprint-Driven
-- Experience-Driven
-- Quality-Driven
-- Traceable
-- Continuously Improving
-
-Mọi thay đổi đều phải có nguồn gốc, bằng chứng và khả năng kiểm chứng.
-
----
-
-# 3. Core Principles
-
-Framework tuân thủ các nguyên tắc:
-
-- Business First
-- Architecture First
-- Experience First
-- Sprint Driven
-- Full-stack Capability Delivery
-- AI Assisted
-- Engineering by Standards
-- Configuration over Customization
-- Governance by Evidence
-- Continuous Improvement
-
----
-
-# 4. Framework Architecture
-
-```text
-Business Layer
-────────────────────────
-BRD
-YADF
-
-↓
-
-Architecture Layer
-────────────────────────
-ABP
-
-↓
-
-AI & Governance Layer
-────────────────────────
-AAP
-SGP
-
-↓
-
-Engineering Layer
-────────────────────────
-ESP
-
-↓
-
-Implementation Layer
-────────────────────────
-DIP
-
-↓
-
-Verification Layer
-────────────────────────
-VAP
-
-↓
-
-Operations Layer
-────────────────────────
-ROP
-```
-
-Mỗi bộ tài liệu có trách nhiệm riêng và đóng vai trò là một phần của chuỗi phát triển thống nhất.
-
----
-
-# 5. Sprint Lifecycle
-
-```text
-Business
-
-↓
-
-Architecture
-
-↓
-
-Sprint Planning
-
-↓
-
-Backend
-   +
-Frontend
-
-↓
-
-Integration
-
-↓
-
-Capability Demonstration
-
-↓
-
-Verification
-
-↓
-
-Release
-
-↓
-
-Operations
-
-↓
-
-Continuous Improvement
-```
-
-Một Sprint chỉ hoàn thành khi Capability đã được Demonstration và Verification thành công.
-
----
-
-# 6. Roles
-
-| Role | Responsibility |
-|------|----------------|
-| Business Owner | Định nghĩa Business |
-| Architect | Thiết kế Architecture |
-| AI Agent | Sinh Artifact theo Standards |
-| Developer | Hiện thực và Review |
-| QA | Verification |
-| Operations | Production Operations |
-
----
-
-# 7. AI Working Principles
-
-AI phải:
-
-- đọc đúng tài liệu;
-- tuân thủ Standards;
-- không tự thay đổi Architecture;
-- không vượt Sprint Scope;
-- luôn tạo Evidence;
-- luôn đảm bảo Traceability;
-- triển khai Backend và Frontend đồng thời;
-- sinh Seed Data phục vụ kiểm thử;
-- tạo Capability Demonstration Surface;
-- không hoàn thành Capability khi chưa có Demonstration.
-
-AI là thành viên của Factory, không phải người quyết định kiến trúc.
-
----
-
-# 8. Engineering Philosophy
-
-Framework coi mọi đầu ra đều là Engineering Asset.
-
-Bao gồm:
-
-- Source Code
-- API
-- Documentation
-- Migration
-- Test
-- Configuration
-- Release
-- Runbook
-- Storefront
-- Portal
-- Landing Page
-- Component Library
-- Design System
-- Capability Demonstration Surface
-
-Mọi Asset đều có vòng đời, version và khả năng truy vết.
-
----
-
-# 9. Continuous Improvement
-
-Sau mỗi Sprint và mỗi Release:
-
-- Lessons Learned
-- Operational Feedback
-- Incident Review
-- Architecture Review
-
-được sử dụng để cải tiến Framework và hệ thống.
-
----
-
-# 10. Success Criteria
-
-Một Sprint được coi là thành công khi:
-
-- Business Requirement được đáp ứng;
-- Architecture được tuân thủ;
-- Standards được tuân thủ;
-- Capability Demonstration PASS;
-- Verification PASS;
-- Release thành công;
-- Operations tiếp nhận;
-- Lessons Learned được ghi nhận.
-
----
-
-# 11. Relationship to Other Documents
-
-Chuỗi tài liệu của AI Factory:
-
-```text
-BRD
-    ↓
-YADF
-    ↓
-ABP
-    ↓
-AAP
-    ↓
-SGP
-    ↓
-ESP
-    ↓
-DIP
-    ↓
-VAP
-    ↓
-ROP
-```
-
-Mỗi bộ tài liệu không chỉ định nghĩa yêu cầu kỹ thuật mà còn tạo thành chuỗi hướng dẫn để AI chuyển đổi từ Business Requirement sang Sprint Implementation một cách có khả năng truy vết.
-
----
-
-# 12. Document Status
-
-**Status: FROZEN**
-
-AFM là tài liệu định hướng cao nhất của YSim AI Software Factory và phản ánh trạng thái kiến trúc hiện hành của phiên bản v2.1.
-
-
----
-
 # Source: AFM-01
 
 - Path: `docs/AFM/AFM-01.md`
@@ -3972,1327 +8164,6 @@ AFM-01 là tài liệu công bố chính thức các thay đổi của YSim AI S
 Mọi tài liệu được cập nhật sau AFM-01 phải tuân thủ các nguyên tắc được định nghĩa trong tài liệu này.
 
 ---
-
-
----
-
-# Source: DIP-00
-
-- Path: `docs/DIP/DIP-00.md`
-- Set: `DIP`
-- Version: `2.1`
-- Status: `FROZEN`
-
-# Implementation Constitution & Executable Sprint Model
-
-## DIP-00
-
----
-
-# 1. Purpose
-
-Development & Implementation Pack (DIP) là tầng tài liệu triển khai của YSim AI Software Factory.
-
-DIP chuyển đổi toàn bộ Architecture, Business và Engineering Standards thành các Sprint có khả năng thực thi trực tiếp bởi AI Coding Assistant.
-
-DIP không mô tả kiến trúc.
-
-DIP mô tả cách kiến trúc được hiện thực hóa.
-
----
-
-# 2. Position in Software Factory
-
-```text
-Business Architecture
-
-↓
-
-Engineering Architecture
-
-↓
-
-Governance
-
-↓
-
-Engineering Standards
-
-↓
-
-Implementation (DIP)
-
-↓
-
-Codex Execution
-
-↓
-
-Evidence
-
-↓
-
-Release
-```
-
-DIP là cầu nối giữa Architecture và Source Code.
-
----
-
-# 3. Objectives
-
-DIP nhằm:
-
-- chuẩn hóa quá trình triển khai;
-- cung cấp Context đầy đủ cho Codex;
-- tạo Sprint có khả năng thực thi tự động;
-- đảm bảo Backend và Frontend được triển khai đồng thời;
-- tạo Capability Demonstration cho từng Sprint;
-- sinh Evidence phục vụ Review và Release.
-
----
-
-# 4. Principles
-
-Implementation tuân thủ:
-
-- Architecture First
-- Capability Driven
-- Full-stack Delivery
-- Seed-driven Development
-- Demonstration First
-- Validation Before Completion
-- Evidence by Design
-- Automation by Default
-- Repeatable Execution
-- Explainable AI Delivery
-
----
-
-# 5. Executable Sprint Model
-
-Mỗi Sprint trong DIP phải là một Executable Sprint Package.
-
-Package này có thể được Codex thực thi trực tiếp mà không cần bổ sung Prompt ngoài tài liệu.
-
-```text
-Sprint Package
-
-↓
-
-Repository Discovery
-
-↓
-
-Planning
-
-↓
-
-Backend
-
-↓
-
-API
-
-↓
-
-Frontend
-
-↓
-
-Seed Data
-
-↓
-
-Capability Demonstration
-
-↓
-
-Testing
-
-↓
-
-Validation
-
-↓
-
-Evidence
-
-↓
-
-Git Commit
-```
-
----
-
-# 6. Full-stack Capability Delivery
-
-Mọi Capability có giao diện người dùng phải được triển khai đồng thời:
-
-- Backend
-- API
-- Frontend
-- Design System Integration
-- Experience API
-- Seed Data
-- Demonstration
-- Tests
-- Evidence
-
-Không được triển khai Backend độc lập đối với Capability có UI.
-
----
-
-# 7. Seed-driven Development
-
-Mỗi Sprint phải cung cấp Seed Information cho Codex.
-
-Seed Information bao gồm tối thiểu:
-
-- Business Context
-- Architecture Context
-- Engineering Constraints
-- Reference Data
-- Sample Data
-- Integration Configuration
-- Target Metrics
-- Acceptance Scenario
-
-Seed là nguồn dữ liệu mặc định để AI triển khai Capability.
-
----
-
-# 8. Executable Sprint Package
-
-Mỗi Sprint phát hành dưới dạng một Package chuẩn.
-
-```text
-README
-
-↓
-
-Sprint Manifest
-
-↓
-
-Task Manifest
-
-↓
-
-Prompt
-
-↓
-
-Context
-
-↓
-
-Reference Data
-
-↓
-
-Runner
-
-↓
-
-Validation
-
-↓
-
-Evidence
-```
-
-Mọi Sprint phải có cấu trúc thống nhất.
-
----
-
-# 9. Task Model
-
-Mọi Sprint sử dụng cùng cấu trúc Task.
-
-| Task | Responsibility |
-|--------|----------------|
-| t00 | Repository Discovery |
-| t01 | Domain Model |
-| t02 | Database & Migration |
-| t03 | Backend API |
-| t04 | Business Services |
-| t05 | Integration |
-| t06 | Queue & Background |
-| t07 | Frontend & Demonstration |
-| t08 | Testing |
-| t09 | Validation & Evidence |
-| t10 | Final Review & Commit |
-
-Task không được thay đổi thứ tự.
-
-Task có thể được đánh dấu Not Applicable nhưng không được loại bỏ.
-
----
-
-# 10. Context Resolution
-
-Trước khi Coding, AI phải đọc đầy đủ:
-
-- BRD
-- ABP
-- YADF
-- AAP
-- SGP
-- ESP
-- API
-- DMS
-- DBD
-- Capability DIP
-
-Không được Coding nếu Context chưa đầy đủ.
-
----
-
-# 11. Prompt Contract
-
-Mỗi Task phải có Prompt độc lập.
-
-Prompt tối thiểu gồm:
-
-- Role
-- Objective
-- Scope
-- Input Documents
-- Files Allowed To Change
-- Files Prohibited To Change
-- Business Rules
-- Architecture Constraints
-- Reference Data
-- Validation Commands
-- Expected Evidence
-- Completion Criteria
-
-Không sử dụng Prompt tổng hợp cho toàn Sprint.
-
----
-
-# 12. Bash Runner
-
-Mỗi Sprint phải cung cấp Bash Runner.
-
-Runner phải hỗ trợ:
-
-- run
-- resume
-- from-task
-- single-task
-- dry-run
-
-Runner phải:
-
-- ghi Log;
-- lưu Exit Code;
-- Validate sau mỗi Task;
-- Commit khi PASS.
-
-Không được tiếp tục nếu Validation FAIL.
-
----
-
-# 13. Validation Model
-
-Validation diễn ra sau từng Task.
-
-Validation tối thiểu:
-
-- Build
-- Test
-- Lint
-- Architecture Compliance
-- Engineering Compliance
-- Demonstration
-- Evidence
-
-Task chỉ được PASS khi Validation PASS.
-
----
-
-# 14. Evidence Model
-
-Mỗi Task phải sinh:
-
-- Execution Log
-- Validation Result
-- Git Diff
-- Evidence Package
-
-Mỗi Sprint phải sinh:
-
-- Sprint Report
-- Demonstration Report
-- Evidence Manifest
-
-Evidence là điều kiện bắt buộc để Review.
-
----
-
-# 15. Git Strategy
-
-Khuyến nghị Commit theo từng Task.
-
-Ví dụ:
-
-```text
-feat(s14): implement product repository
-
-feat(s14): implement product api
-
-feat(s14): implement product frontend
-
-test(s14): product capability verification
-```
-
-Commit chỉ được tạo khi Validation PASS.
-
----
-
-# 16. ACP Integration
-
-Nếu phát hiện:
-
-- Architecture Conflict
-- Business Conflict
-- Frozen Document Violation
-
-AI phải:
-
-- dừng Sprint;
-- sinh ACP;
-- không tiếp tục Coding.
-
-Không được tự ý thay đổi Architecture.
-
----
-
-# 17. Deliverables
-
-Một Sprint hoàn chỉnh phải sinh:
-
-- Backend Source Code
-- Frontend Source Code
-- API
-- Migration
-- Seed Data
-- Tests
-- Demonstration
-- Documentation
-- Evidence
-- Git Commit
-
-Không chấp nhận Sprint chỉ sinh Source Code.
-
----
-
-# 18. Rules
-
-DIP-001 — Mọi Sprint phải là Executable Sprint.
-
-DIP-002 — Mọi Sprint phải có Seed Information.
-
-DIP-003 — Capability có UI phải Full-stack.
-
-DIP-004 — Validation sau từng Task.
-
-DIP-005 — Runner phải hỗ trợ Resume.
-
-DIP-006 — Prompt phải độc lập theo Task.
-
-DIP-007 — Evidence là bắt buộc.
-
-DIP-008 — ACP được kích hoạt khi phát hiện xung đột.
-
-DIP-009 — Commit chỉ khi Validation PASS.
-
-DIP-010 — DIP là nguồn Seed chính thức cho Codex.
-
----
-
-# 19. Compliance Checklist
-
-| Rule | Validation |
-|------|------------|
-| DIC-0001 | Sprint Package đúng chuẩn |
-| DIC-0002 | Seed đầy đủ |
-| DIC-0003 | Context đầy đủ |
-| DIC-0004 | Prompt đầy đủ |
-| DIC-0005 | Runner hoạt động |
-| DIC-0006 | Validation PASS |
-| DIC-0007 | Demonstration hoàn chỉnh |
-| DIC-0008 | Evidence đầy đủ |
-| DIC-0009 | Commit thành công |
-| DIC-0010 | Tuân thủ DIP |
-
----
-
-# 20. Relationship to Other Documents
-
-DIP-00 liên kết với:
-
-- AFM-00 Architecture Freeze Manifest
-- BRD Meta Model
-- YADF-00 AI Development Framework
-- AAP-00 AI Architecture Principles
-- SGP-00 Sprint Governance Principles
-- ESP-00 Engineering Standards
-- ROP Release & Operations Pack
-- VAP Verification & Acceptance Pack
-
-DIP-00 là tài liệu gốc của toàn bộ Development & Implementation Pack.
-
----
-
-# 21. Document Status
-
-**Status: FROZEN**
-
-DIP-00 là Implementation Constitution của YSim AI Software Factory.
-
-Từ phiên bản 2.1, mọi Capability đều phải được triển khai thông qua Executable Sprint Package, sử dụng Seed Information làm nguồn Context chính thức cho Codex và được thực thi bằng Bash Runner theo mô hình Full-stack Capability Delivery.
-
-
----
-
-# Source: DIP-01
-
-- Path: `docs/DIP/DIP-01.md`
-- Set: `DIP`
-- Version: `2.1`
-- Status: `FROZEN`
-
-# Executable Sprint Package Standard (ESPK)
-
-## DIP-01
-
----
-
-# 1. Purpose
-
-Executable Sprint Package (ESPK) là đơn vị triển khai chuẩn của YSim AI Software Factory.
-
-Mỗi Sprint không còn được phát hành chỉ dưới dạng tài liệu.
-
-Thay vào đó, Sprint được phát hành dưới dạng một Package hoàn chỉnh có thể được AI Coding Assistant thực thi trực tiếp.
-
-ESPK là cầu nối giữa DIP và Source Code.
-
----
-
-# 2. Position in Software Factory
-
-```text
-DIP
-
-↓
-
-Executable Sprint Package
-
-↓
-
-Bash Runner
-
-↓
-
-AI Coding Agent
-
-↓
-
-Validation
-
-↓
-
-Evidence
-
-↓
-
-Git Commit
-```
-
----
-
-# 3. Objectives
-
-ESPK nhằm:
-
-- chuẩn hóa mọi Sprint;
-- tạo khả năng thực thi tự động;
-- cung cấp đầy đủ Context;
-- giảm Prompt Engineering thủ công;
-- đảm bảo khả năng Resume;
-- đảm bảo khả năng Audit.
-
----
-
-# 4. Principles
-
-ESPK tuân thủ:
-
-- Executable by Design
-- Context First
-- Seed-driven Development
-- Capability Driven
-- Full-stack Delivery
-- Validation First
-- Evidence First
-- Repeatable Execution
-- AI Independent
-
----
-
-# 5. Package Structure
-
-```text
-Sprint Package
-│
-├── README.md
-├── sprint.json
-│
-├── ai/
-│
-├── scripts/
-│
-├── validation/
-│
-├── evidence/
-│
-└── logs/
-```
-
-Mọi Sprint phải tuân thủ đúng cấu trúc này.
-
----
-
-# 6. AI Directory
-
-```text
-ai/
-
-├── sprints/
-
-├── manifests/
-
-├── prompts/
-
-├── context/
-
-└── seeds/
-```
-
-Không được thay đổi cấu trúc thư mục.
-
----
-
-# 7. Sprint Manifest
-
-Sprint Manifest định nghĩa:
-
-- Sprint ID
-- Capability
-- Scope
-- Dependencies
-- Deliverables
-- Validation
-- Completion Criteria
-
-Manifest là Entry Point của Sprint.
-
----
-
-# 8. Task Manifest
-
-Mỗi Task có một Manifest riêng.
-
-```text
-t00
-
-↓
-
-t01
-
-↓
-
-...
-
-↓
-
-t10
-```
-
-Manifest mô tả:
-
-- Objective
-- Inputs
-- Outputs
-- Dependencies
-- Validation
-- Evidence
-
----
-
-# 9. Prompt Package
-
-Prompt được lưu riêng.
-
-```text
-prompts/
-
-t00.md
-
-...
-
-t10.md
-```
-
-Prompt không được Hardcode trong Runner.
-
----
-
-# 10. Context Package
-
-Context bao gồm:
-
-- Business Context
-- Architecture Context
-- Engineering Context
-- Repository Context
-- Frontend Context
-- Acceptance Context
-
-AI chỉ được Coding sau khi Context được nạp đầy đủ.
-
----
-
-# 11. Seed Package
-
-Seed bao gồm:
-
-- Reference Data
-- Demo Data
-- Integration Configuration
-- Sample Users
-- Sample Products
-- Target Metrics
-
-Seed là nguồn dữ liệu mặc định của Sprint.
-
----
-
-# 12. Validation Package
-
-Validation bao gồm:
-
-- Build Commands
-- Test Commands
-- Lint Commands
-- Demo Scenarios
-- Acceptance Checklist
-
-Validation phải có khả năng chạy tự động.
-
----
-
-# 13. Bash Runner
-
-Runner tối thiểu hỗ trợ:
-
-- run
-- resume
-- dry-run
-- single-task
-- from-task
-
-Runner phải:
-
-- ghi log;
-- lưu Exit Code;
-- dừng khi FAIL;
-- Commit khi PASS.
-
----
-
-# 14. Evidence Package
-
-Evidence phải sinh:
-
-- Execution Log
-- Validation Report
-- Build Report
-- Test Report
-- Demonstration Report
-- Git Diff
-- Sprint Report
-
-Evidence là đầu ra bắt buộc.
-
----
-
-# 15. Capability Demonstration
-
-Mỗi Capability có UI phải cung cấp:
-
-- Demonstration Guide
-- Demo Users
-- Demo Data
-- Demo Scenarios
-- Expected Results
-
-Capability chỉ được Accepted khi Demonstration PASS.
-
----
-
-# 16. AI Independence
-
-ESPK không phụ thuộc AI cụ thể.
-
-Có thể thực thi bởi:
-
-- Codex
-- Claude Code
-- Gemini CLI
-- OpenHands
-- Cursor Agent
-- AI Coding Assistant khác
-
-Không được Hardcode Prompt theo Model.
-
----
-
-# 17. Versioning
-
-Package có Version độc lập.
-
-Ví dụ:
-
-```text
-ESPK
-
-v2.1.0
-```
-
-Version không phụ thuộc Repository Version.
-
----
-
-# 18. Rules
-
-ESPK-001 — Mọi Sprint phải phát hành dưới dạng ESPK.
-
-ESPK-002 — Package phải đầy đủ Manifest.
-
-ESPK-003 — Prompt phải độc lập.
-
-ESPK-004 — Seed là bắt buộc.
-
-ESPK-005 — Runner phải Resume được.
-
-ESPK-006 — Validation phải tự động.
-
-ESPK-007 — Evidence là bắt buộc.
-
-ESPK-008 — Demonstration là bắt buộc đối với Capability có UI.
-
-ESPK-009 — Không phụ thuộc AI Model.
-
-ESPK-010 — Package phải Version hóa.
-
----
-
-# 19. Compliance Checklist
-
-| Rule | Validation |
-|------|------------|
-| EPC-0101 | Package đúng cấu trúc |
-| EPC-0102 | Manifest đầy đủ |
-| EPC-0103 | Prompt đầy đủ |
-| EPC-0104 | Context đầy đủ |
-| EPC-0105 | Seed đầy đủ |
-| EPC-0106 | Runner hoạt động |
-| EPC-0107 | Validation PASS |
-| EPC-0108 | Evidence đầy đủ |
-| EPC-0109 | Demonstration PASS |
-| EPC-0110 | Tuân thủ DIP |
-
----
-
-# 20. Relationship to Other Documents
-
-ESPK liên kết với:
-
-- DIP-00 Implementation Constitution
-- AAP Sprint Planning
-- SGP Sprint Governance
-- ESP Engineering Standards
-- VAP Verification & Acceptance Pack
-- ROP Release & Operations Pack
-
-ESPK là Implementation Artifact chuẩn của YSim AI Software Factory.
-
----
-
-# 21. Document Status
-
-**Status: FROZEN**
-
-Từ phiên bản 2.1, mọi Sprint của YSim phải được phát hành dưới dạng **Executable Sprint Package (ESPK)**.
-
-ESPK là định dạng triển khai chuẩn, độc lập với AI Coding Agent, cung cấp đầy đủ Context, Seed, Prompt, Validation và Evidence để AI có thể thực thi Sprint theo mô hình Full-stack Capability Delivery.
-
-
----
-
-# Source: DIP-02
-
-- Path: `docs/DIP/DIP-02.md`
-- Set: `DIP`
-- Version: `2.1`
-- Status: `FROZEN`
-
-# AI Context Resolution & Prompt Assembly Standard
-
-## DIP-02
-
----
-
-# 1. Purpose
-
-AI Coding Assistant chỉ có thể tạo ra Source Code đúng khi được cung cấp đầy đủ Context.
-
-DIP-02 định nghĩa cơ chế thu thập, hợp nhất và chuẩn hóa Context trước khi bắt đầu mỗi Sprint hoặc Task.
-
-Mọi Prompt đều phải được sinh ra từ Context đã được chuẩn hóa.
-
-Không cho phép AI Coding Assistant triển khai khi Context chưa đầy đủ.
-
----
-
-# 2. Position in Software Factory
-
-```text
-Repository
-
-↓
-
-Discovery
-
-↓
-
-Context Resolution
-
-↓
-
-Prompt Assembly
-
-↓
-
-AI Coding
-
-↓
-
-Validation
-```
-
-Context Resolution là bước bắt buộc trước AI Coding.
-
----
-
-# 3. Objectives
-
-Context Resolution nhằm:
-
-- xác định đúng phạm vi Sprint;
-- giảm Hallucination;
-- loại bỏ Prompt thủ công;
-- tăng khả năng tái lập;
-- bảo đảm tuân thủ Architecture;
-- tối ưu Token sử dụng.
-
----
-
-# 4. Principles
-
-Context Resolution tuân thủ:
-
-- Context First
-- Source of Truth
-- Minimal but Complete
-- Architecture-aware
-- Capability-aware
-- Explainable
-- Deterministic
-- Repeatable
-
----
-
-# 5. Context Layers
-
-Context được chia thành nhiều lớp.
-
-```text
-Business
-
-↓
-
-Architecture
-
-↓
-
-Engineering
-
-↓
-
-Capability
-
-↓
-
-Repository
-
-↓
-
-Runtime
-
-↓
-
-Task
-```
-
-Không được bỏ qua bất kỳ lớp nào nếu có liên quan.
-
----
-
-# 6. Context Sources
-
-AI có thể sử dụng Context từ:
-
-- BRD
-- ABP
-- DMS
-- DBD
-- API
-- ESP
-- SGP
-- YADF
-- DIP
-- Repository
-- Sprint Manifest
-- Seed Package
-
-Không sử dụng nguồn ngoài nếu chưa được phê duyệt.
-
----
-
-# 7. Context Resolution Pipeline
-
-```text
-Discovery
-
-↓
-
-Repository Scan
-
-↓
-
-Sprint Manifest
-
-↓
-
-Capability Manifest
-
-↓
-
-Business Context
-
-↓
-
-Architecture Context
-
-↓
-
-Engineering Context
-
-↓
-
-Repository Context
-
-↓
-
-Task Context
-
-↓
-
-Prompt Assembly
-```
-
-Prompt chỉ được tạo sau khi Context Resolution hoàn thành.
-
----
-
-# 8. Business Context
-
-Business Context tối thiểu gồm:
-
-- Capability
-- Business Rules
-- Actors
-- Use Cases
-- Constraints
-- Acceptance Criteria
-
-Business Context được lấy từ BRD.
-
----
-
-# 9. Architecture Context
-
-Architecture Context gồm:
-
-- Business Domains
-- Services
-- Modules
-- Events
-- Ownership
-- Integration
-- Deployment Constraints
-
-Nguồn chính:
-
-- ABP
-- AFM
-- YADF
-
----
-
-# 10. Engineering Context
-
-Engineering Context gồm:
-
-- Coding Standards
-- Naming Standards
-- API Standards
-- Testing Standards
-- Security Standards
-- Performance Standards
-
-Nguồn:
-
-ESP.
-
----
-
-# 11. Repository Context
-
-Repository Context gồm:
-
-- Folder Structure
-- Existing Modules
-- Package Dependencies
-- Build System
-- Existing Tests
-- Existing APIs
-
-Repository luôn là Source of Truth cho trạng thái hiện tại của Source Code.
-
----
-
-# 12. Capability Context
-
-Capability Context bao gồm:
-
-- Domain Model
-- API
-- Database
-- Frontend
-- Experience API
-- Seed Data
-- Demonstration
-
-Capability Context được lấy từ Sprint Package.
-
----
-
-# 13. Runtime Context
-
-Runtime Context bao gồm:
-
-- Environment
-- Feature Flags
-- Configuration
-- Secrets Reference
-- Infrastructure
-
-Không nhúng Secret trực tiếp vào Prompt.
-
----
-
-# 14. Task Context
-
-Task Context chỉ chứa:
-
-- Objective
-- Files Allowed
-- Files Protected
-- Dependencies
-- Expected Outputs
-- Validation Commands
-
-Task Context phải nhỏ nhất có thể.
-
----
-
-# 15. Prompt Assembly
-
-Prompt được tạo theo thứ tự:
-
-```text
-Role
-
-↓
-
-Objective
-
-↓
-
-Scope
-
-↓
-
-Context
-
-↓
-
-Business Rules
-
-↓
-
-Architecture Constraints
-
-↓
-
-Engineering Constraints
-
-↓
-
-Repository Constraints
-
-↓
-
-Implementation Tasks
-
-↓
-
-Validation
-
-↓
-
-Completion Criteria
-```
-
-Prompt không được viết thủ công cho từng Sprint.
-
-Prompt phải được sinh từ Context.
-
----
-
-# 16. Context Size Control
-
-AI không được nạp toàn bộ tài liệu.
-
-Chỉ nạp:
-
-- tài liệu liên quan;
-- Capability hiện tại;
-- Repository hiện tại.
-
-Ưu tiên Context có mức ảnh hưởng cao.
-
----
-
-# 17. Conflict Resolution
-
-Nếu phát hiện:
-
-- Architecture Conflict
-- Business Conflict
-- Repository Conflict
-
-AI phải:
-
-- dừng Prompt Assembly;
-- sinh ACP;
-- không Coding.
-
----
-
-# 18. Rules
-
-CTX-001 — Context Resolution bắt buộc trước Coding.
-
-CTX-002 — Prompt sinh từ Context.
-
-CTX-003 — Không Coding nếu thiếu Context.
-
-CTX-004 — Repository là Source of Truth cho Source Code.
-
-CTX-005 — Architecture Document là Source of Truth cho Design.
-
-CTX-006 — Không nhúng Secret.
-
-CTX-007 — Chỉ nạp Context liên quan.
-
-CTX-008 — Capability Context luôn ưu tiên.
-
-CTX-009 — Conflict kích hoạt ACP.
-
-CTX-010 — Prompt phải tái lập được.
-
----
-
-# 19. Compliance Checklist
-
-| Rule | Validation |
-|------|------------|
-| CRC-0201 | Business Context đầy đủ |
-| CRC-0202 | Architecture Context đầy đủ |
-| CRC-0203 | Engineering Context đầy đủ |
-| CRC-0204 | Repository Context đầy đủ |
-| CRC-0205 | Capability Context đầy đủ |
-| CRC-0206 | Prompt được sinh tự động |
-| CRC-0207 | Không có Conflict |
-| CRC-0208 | Validation Commands đầy đủ |
-| CRC-0209 | Context tối ưu |
-| CRC-0210 | Tuân thủ DIP |
-
----
-
-# 20. Relationship to Other Documents
-
-DIP-02 liên kết với:
-
-- DIP-00 Implementation Constitution
-- DIP-01 Executable Sprint Package Standard
-- AFM-00
-- BRD
-- ABP
-- YADF
-- AAP
-- SGP
-- ESP
-
-DIP-02 là tài liệu chuẩn hóa Context Resolution của YSim AI Software Factory.
-
----
-
-# 21. Document Status
-
-**Status: FROZEN**
-
-Từ phiên bản 2.1, mọi Prompt của AI Coding Assistant phải được tạo thông qua Context Resolution theo tiêu chuẩn của DIP-02.
-
-Không cho phép AI Coding trực tiếp từ Prompt thủ công hoặc Context không đầy đủ.
 
 
 ---
@@ -5726,1518 +8597,6 @@ DIP-03 là tài liệu chuẩn hóa toàn bộ Seed & Reference Data của YSim 
 Từ phiên bản 2.1, mọi Capability của YSim phải được triển khai cùng một **Seed Package** đầy đủ.
 
 Seed Package là nguồn dữ liệu chuẩn để AI Coding Assistant sinh Backend, Frontend, Demonstration, Validation và Dashboard theo mô hình **Full-stack Capability Delivery**, đồng thời là nguồn **Reference Data** thống nhất cho toàn bộ vòng đời phát triển và vận hành của nền tảng.
-
-
----
-
-# Source: DIP-04
-
-- Path: `docs/DIP/DIP-04.md`
-- Set: `DIP`
-- Version: `2.1`
-- Status: `FROZEN`
-
-# AI Execution Runtime & Bash Runner Standard
-
-## DIP-04
-
----
-
-# 1. Purpose
-
-AI Execution Runtime định nghĩa môi trường thực thi chuẩn cho mọi Executable Sprint Package (ESPK).
-
-Runtime chịu trách nhiệm điều phối toàn bộ vòng đời triển khai của một Sprint, từ Repository Discovery đến Validation, Evidence Generation và Git Commit.
-
-Runtime không phụ thuộc vào AI Coding Agent cụ thể.
-
----
-
-# 2. Position in Software Factory
-
-```text
-Executable Sprint Package
-
-↓
-
-AI Execution Runtime
-
-↓
-
-Bash Runner
-
-↓
-
-AI Coding Agent
-
-↓
-
-Validation
-
-↓
-
-Evidence
-
-↓
-
-Git Commit
-```
-
-Runtime là Execution Engine của Software Factory.
-
----
-
-# 3. Objectives
-
-AI Execution Runtime nhằm:
-
-- chuẩn hóa quá trình triển khai;
-- tự động hóa Sprint;
-- hỗ trợ Resume;
-- hỗ trợ Retry;
-- hỗ trợ Parallel-safe Execution;
-- tạo khả năng Audit;
-- giảm thao tác thủ công.
-
----
-
-# 4. Principles
-
-Runtime tuân thủ:
-
-- Automation by Default
-- Non-interactive Execution
-- Deterministic Execution
-- Fail Fast
-- Resume Safe
-- Evidence First
-- AI Independent
-- Observable Runtime
-- Reproducible
-
----
-
-# 5. Runtime Components
-
-```text
-Execution Runtime
-
-├── Runner
-
-├── Task Scheduler
-
-├── Prompt Loader
-
-├── Context Loader
-
-├── Seed Loader
-
-├── Validation Engine
-
-├── Evidence Collector
-
-├── Git Manager
-
-└── Reporting Engine
-```
-
-Mỗi thành phần có trách nhiệm độc lập.
-
----
-
-# 6. Runner Responsibilities
-
-Runner chịu trách nhiệm:
-
-- đọc Sprint Manifest;
-- đọc Task Manifest;
-- khởi tạo Context;
-- khởi tạo Seed;
-- gọi AI Coding Agent;
-- thực thi Validation;
-- sinh Evidence;
-- Commit.
-
-Runner không chứa Business Logic.
-
----
-
-# 7. Execution Lifecycle
-
-```text
-Environment Check
-
-↓
-
-Repository Discovery
-
-↓
-
-Load Manifest
-
-↓
-
-Load Context
-
-↓
-
-Load Seed
-
-↓
-
-Execute Task
-
-↓
-
-Validation
-
-↓
-
-Evidence
-
-↓
-
-Git Commit
-
-↓
-
-Next Task
-```
-
----
-
-# 8. Task Scheduler
-
-Scheduler điều phối:
-
-- t00 → t10
-
-Không được bỏ qua Task.
-
-Task có thể:
-
-- PASS
-- FAIL
-- SKIPPED (Not Applicable)
-
-Scheduler phải lưu trạng thái.
-
----
-
-# 9. Execution Modes
-
-Runtime hỗ trợ:
-
-### Full Sprint
-
-```bash
-run-sprint.sh
-```
-
----
-
-### Resume
-
-```bash
-run-sprint.sh --resume
-```
-
----
-
-### From Task
-
-```bash
-run-sprint.sh --from-task t05
-```
-
----
-
-### Single Task
-
-```bash
-run-task.sh t03
-```
-
----
-
-### Dry Run
-
-```bash
-run-sprint.sh --dry-run
-```
-
----
-
-# 10. Environment Validation
-
-Runtime phải kiểm tra:
-
-- Git
-- Node.js
-- pnpm
-- Docker (nếu yêu cầu)
-- AI CLI
-- Environment Variables
-- Required Services
-
-Nếu thiếu Dependency thì dừng Sprint.
-
----
-
-# 11. AI Provider Abstraction
-
-Runtime không phụ thuộc AI cụ thể.
-
-Có thể cấu hình:
-
-```yaml
-provider:
-
-codex
-
-claude-code
-
-gemini-cli
-
-openhands
-
-cursor-agent
-```
-
-Runner chỉ giao tiếp qua Provider Adapter.
-
----
-
-# 12. Logging Standard
-
-Runtime phải ghi:
-
-```text
-logs/
-
-sprint.log
-
-task-t00.log
-
-task-t01.log
-
-...
-
-task-t10.log
-```
-
-Log tối thiểu gồm:
-
-- Timestamp
-- Task
-- Command
-- Exit Code
-- Duration
-
----
-
-# 13. Resume Strategy
-
-Runner phải lưu:
-
-```text
-runtime/
-
-state.json
-```
-
-Ví dụ:
-
-```json
-{
-  "current_task":"t06",
-  "status":"FAILED",
-  "completed":[
-    "t00",
-    "t01",
-    "t02",
-    "t03",
-    "t04",
-    "t05"
-  ]
-}
-```
-
-Resume không được thực hiện lại Task đã PASS.
-
----
-
-# 14. Retry Strategy
-
-Runner chỉ Retry khi:
-
-- AI Timeout
-- Network Error
-- Temporary Failure
-
-Không Retry khi:
-
-- Validation FAIL
-- Architecture Conflict
-- Business Conflict
-
----
-
-# 15. Validation Integration
-
-Sau mỗi Task:
-
-```text
-Build
-
-↓
-
-Lint
-
-↓
-
-Tests
-
-↓
-
-Compliance
-
-↓
-
-Capability Demonstration
-
-↓
-
-Evidence
-```
-
-Validation FAIL phải dừng Sprint.
-
----
-
-# 16. Git Strategy
-
-Runner phải:
-
-- kiểm tra Working Tree;
-- Commit theo Task;
-- gắn Sprint ID;
-- lưu Git Diff.
-
-Không tự động Push trừ khi được cấu hình.
-
----
-
-# 17. Exit Codes
-
-| Code | Meaning |
-|-------|---------|
-| 0 | SUCCESS |
-| 1 | Validation Failed |
-| 2 | Build Failed |
-| 3 | AI Execution Failed |
-| 4 | Missing Dependency |
-| 5 | Repository Conflict |
-| 6 | Architecture Conflict |
-| 7 | Business Conflict |
-| 8 | User Interrupted |
-| 9 | Unknown Error |
-
-Exit Code phải được ghi vào Log.
-
----
-
-# 18. Directory Layout
-
-```text
-runtime/
-
-logs/
-
-evidence/
-
-reports/
-
-state/
-
-cache/
-
-tmp/
-```
-
-Runtime không ghi dữ liệu ra ngoài Workspace.
-
----
-
-# 19. Runtime Rules
-
-RUNTIME-001 — Runner phải Non-interactive.
-
-RUNTIME-002 — Resume là bắt buộc.
-
-RUNTIME-003 — Validation sau từng Task.
-
-RUNTIME-004 — Evidence sau từng Task.
-
-RUNTIME-005 — Commit sau Validation PASS.
-
-RUNTIME-006 — Không Retry Validation FAIL.
-
-RUNTIME-007 — Runtime không phụ thuộc AI.
-
-RUNTIME-008 — Runtime phải ghi Log.
-
-RUNTIME-009 — Runtime phải lưu State.
-
-RUNTIME-010 — Runtime phải có Exit Code chuẩn.
-
----
-
-# 20. Compliance Checklist
-
-| Rule | Validation |
-|------|------------|
-| RTC-0401 | Runtime khởi tạo đúng |
-| RTC-0402 | Manifest được nạp |
-| RTC-0403 | Context được nạp |
-| RTC-0404 | Seed được nạp |
-| RTC-0405 | Validation hoạt động |
-| RTC-0406 | Resume hoạt động |
-| RTC-0407 | Retry đúng quy tắc |
-| RTC-0408 | Evidence đầy đủ |
-| RTC-0409 | Git Commit thành công |
-| RTC-0410 | Tuân thủ DIP |
-
----
-
-# 21. Relationship to Other Documents
-
-DIP-04 liên kết với:
-
-- DIP-00 Implementation Constitution
-- DIP-01 Executable Sprint Package Standard
-- DIP-02 AI Context Resolution & Prompt Assembly Standard
-- DIP-03 Seed & Reference Data Standard
-- SGP Sprint Governance Pack
-- ESP Engineering Standards Pack
-- VAP Verification & Acceptance Pack
-- ROP Release & Operations Pack
-
-DIP-04 là tiêu chuẩn Runtime cho mọi Sprint của YSim AI Software Factory.
-
----
-
-# 22. Document Status
-
-**Status: FROZEN**
-
-Từ phiên bản 2.1, mọi Sprint của YSim phải được thực thi thông qua **AI Execution Runtime** theo tiêu chuẩn của DIP-04.
-
-Runtime là tầng điều phối thống nhất, độc lập với AI Coding Agent, bảo đảm mọi Sprint có thể được thực thi, tạm dừng, tiếp tục, kiểm thử, nghiệm thu và truy vết một cách nhất quán theo mô hình **Executable Sprint Package (ESPK)**.
-
-
----
-
-# Source: DIP-05
-
-- Path: `docs/DIP/DIP-05.md`
-- Set: `DIP`
-- Version: `2.1`
-- Status: `FROZEN`
-
-# AI Prompt Orchestration & Task Assembly Standard
-
-## DIP-05
-
----
-
-# 1. Purpose
-
-AI Prompt Orchestration định nghĩa quy trình tạo Prompt cuối cùng được gửi tới AI Coding Agent.
-
-Prompt không được viết thủ công.
-
-Prompt phải được sinh tự động từ:
-
-- Sprint Manifest
-- Task Manifest
-- Context
-- Seed Package
-- Repository State
-- Engineering Standards
-
-Prompt là kết quả của Prompt Assembly.
-
----
-
-# 2. Position in Software Factory
-
-```text
-Sprint Package
-
-↓
-
-Context Resolution
-
-↓
-
-Seed Resolution
-
-↓
-
-Prompt Orchestration
-
-↓
-
-Prompt Assembly
-
-↓
-
-AI Coding Agent
-
-↓
-
-Validation
-```
-
-Prompt Orchestration là bước cuối cùng trước AI Coding.
-
----
-
-# 3. Objectives
-
-Prompt Assembly nhằm:
-
-- chuẩn hóa Prompt;
-- giảm Prompt thủ công;
-- giảm Hallucination;
-- tối ưu Token;
-- tăng khả năng tái lập;
-- tăng chất lượng Source Code;
-- độc lập AI Provider.
-
----
-
-# 4. Principles
-
-Prompt Assembly tuân thủ:
-
-- Context First
-- Seed First
-- Task Driven
-- Minimal but Complete
-- Deterministic
-- Explainable
-- Provider Independent
-- Architecture Safe
-- Repeatable
-
----
-
-# 5. Prompt Pipeline
-
-```text
-Sprint Manifest
-
-↓
-
-Task Manifest
-
-↓
-
-Context
-
-↓
-
-Seed
-
-↓
-
-Repository Snapshot
-
-↓
-
-Prompt Template
-
-↓
-
-Prompt Assembly
-
-↓
-
-Prompt Validation
-
-↓
-
-Execution
-```
-
-Không được bỏ qua bất kỳ bước nào.
-
----
-
-# 6. Prompt Components
-
-Một Prompt hoàn chỉnh gồm:
-
-1. Role
-
-2. Objective
-
-3. Sprint Context
-
-4. Task Context
-
-5. Business Context
-
-6. Architecture Constraints
-
-7. Engineering Constraints
-
-8. Repository Constraints
-
-9. Seed Information
-
-10. Implementation Tasks
-
-11. Validation Commands
-
-12. Expected Deliverables
-
-13. Evidence Requirements
-
-14. Completion Criteria
-
-15. Stop Conditions
-
----
-
-# 7. Standard Prompt Template
-
-```text
-ROLE
-
-OBJECTIVE
-
-SPRINT
-
-TASK
-
-BUSINESS CONTEXT
-
-ARCHITECTURE CONTEXT
-
-ENGINEERING CONSTRAINTS
-
-REPOSITORY CONTEXT
-
-SEED INFORMATION
-
-FILES ALLOWED
-
-FILES PROTECTED
-
-IMPLEMENTATION STEPS
-
-VALIDATION COMMANDS
-
-EXPECTED OUTPUT
-
-EXPECTED EVIDENCE
-
-COMPLETION CONDITIONS
-
-STOP CONDITIONS
-```
-
-Không được thay đổi thứ tự.
-
----
-
-# 8. Task-specific Prompt
-
-Mỗi Task có Prompt riêng.
-
-Ví dụ:
-
-```text
-t00
-
-Repository Discovery
-```
-
-```text
-t01
-
-Domain Model
-```
-
-```text
-t02
-
-Database
-```
-
-...
-
-```text
-t10
-
-Final Review
-```
-
-Không sử dụng Prompt chung cho toàn Sprint.
-
----
-
-# 9. Prompt Sources
-
-Prompt được sinh từ:
-
-| Source | Purpose |
-|----------|----------|
-| Sprint Manifest | Scope |
-| Task Manifest | Objective |
-| BRD | Business |
-| ABP | Architecture |
-| ESP | Engineering |
-| Repository | Existing Code |
-| Seed | Demo Data |
-| Validation | Commands |
-
-Prompt không sử dụng dữ liệu ngoài Source of Truth.
-
----
-
-# 10. Repository Awareness
-
-Prompt phải mô tả:
-
-- Module hiện có
-- Folder Structure
-- Existing APIs
-- Existing Database
-- Existing Frontend
-- Existing Tests
-
-AI không được giả định Repository.
-
----
-
-# 11. Allowed Changes
-
-Prompt phải khai báo:
-
-```text
-Allowed:
-
-apps/api/modules/product
-
-packages/common/product
-
-apps/admin/product
-```
-
-Protected:
-
-```text
-docs/
-
-architecture/
-
-database/history/
-
-legacy/
-```
-
-AI không được sửa ngoài phạm vi.
-
----
-
-# 12. Token Budget
-
-Prompt Assembly phải:
-
-- ưu tiên Context gần nhất;
-- loại bỏ dữ liệu dư thừa;
-- không lặp lại Standards;
-- chỉ nạp Capability liên quan.
-
-Prompt phải tối ưu Token.
-
----
-
-# 13. Prompt Compression
-
-Có thể rút gọn:
-
-- BRD
-- ESP
-- SGP
-
-nhưng không được thay đổi ý nghĩa.
-
-Prompt phải giữ nguyên Constraint.
-
----
-
-# 14. Stop Conditions
-
-AI phải dừng khi:
-
-- Architecture Conflict
-- Missing Context
-- Missing Dependency
-- Protected File Modification
-- Validation Failure
-- Repository Conflict
-
-Không được tiếp tục Coding.
-
----
-
-# 15. Prompt Validation
-
-Trước khi gửi AI:
-
-Kiểm tra:
-
-- Context đủ
-- Seed đủ
-- Prompt đủ Section
-- Files Allowed
-- Validation Commands
-- Completion Criteria
-
-Prompt không đạt thì không thực thi.
-
----
-
-# 16. AI Provider Compatibility
-
-Prompt phải chạy được với:
-
-- Codex
-- Claude Code
-- Gemini CLI
-- Cursor Agent
-- OpenHands
-
-Không Hardcode Prompt theo AI.
-
----
-
-# 17. Prompt Versioning
-
-Prompt có:
-
-- Version
-- Sprint
-- Task
-- Capability
-- Timestamp
-
-Prompt được lưu cùng Evidence.
-
----
-
-# 18. Prompt Logging
-
-Runner phải lưu:
-
-```text
-prompts/
-
-t00.prompt.md
-
-t01.prompt.md
-
-...
-
-t10.prompt.md
-```
-
-Prompt đã sử dụng phải được lưu để Audit.
-
----
-
-# 19. Rules
-
-PROMPT-001 — Prompt được sinh tự động.
-
-PROMPT-002 — Prompt phải dùng Context Resolution.
-
-PROMPT-003 — Prompt phải dùng Seed Information.
-
-PROMPT-004 — Prompt phải có Files Allowed.
-
-PROMPT-005 — Prompt phải có Files Protected.
-
-PROMPT-006 — Prompt phải có Validation Commands.
-
-PROMPT-007 — Prompt phải có Completion Criteria.
-
-PROMPT-008 — Prompt phải có Stop Conditions.
-
-PROMPT-009 — Prompt phải được Version hóa.
-
-PROMPT-010 — Prompt phải lưu vào Evidence.
-
----
-
-# 20. Compliance Checklist
-
-| Rule | Validation |
-|------|------------|
-| PAC-0501 | Prompt đúng Template |
-| PAC-0502 | Context đầy đủ |
-| PAC-0503 | Seed đầy đủ |
-| PAC-0504 | Files Allowed đầy đủ |
-| PAC-0505 | Files Protected đầy đủ |
-| PAC-0506 | Validation Commands đầy đủ |
-| PAC-0507 | Completion Criteria đầy đủ |
-| PAC-0508 | Stop Conditions đầy đủ |
-| PAC-0509 | Prompt được lưu |
-| PAC-0510 | Tuân thủ DIP |
-
----
-
-# 21. Relationship to Other Documents
-
-DIP-05 liên kết với:
-
-- DIP-00 Implementation Constitution
-- DIP-01 Executable Sprint Package Standard
-- DIP-02 AI Context Resolution & Prompt Assembly Standard
-- DIP-03 Seed & Reference Data Standard
-- DIP-04 AI Execution Runtime & Bash Runner Standard
-- ESP Engineering Standards Pack
-- SGP Sprint Governance Pack
-- VAP Verification & Acceptance Pack
-
-DIP-05 là tiêu chuẩn chính thức cho Prompt Orchestration của YSim AI Software Factory.
-
----
-
-# 22. Document Status
-
-**Status: FROZEN**
-
-Từ phiên bản 2.1, mọi Prompt gửi tới AI Coding Agent phải được tạo thông qua Prompt Orchestration theo tiêu chuẩn của DIP-05.
-
-Prompt không còn là nội dung được soạn thủ công mà là một Artifact được sinh tự động từ Sprint Package, Context, Seed Information và Repository State.
-
-Prompt trở thành một thành phần của Evidence Package và phải được lưu trữ, version hóa và truy vết giống như Source Code.
-
-
----
-
-# Source: DIP-06
-
-- Path: `docs/DIP/DIP-06.md`
-- Set: `DIP`
-- Version: `2.1`
-- Status: `FROZEN`
-
-# Validation, Evidence & Acceptance Standard
-
-## DIP-06
-
----
-
-# 1. Purpose
-
-Validation, Evidence & Acceptance Standard định nghĩa tiêu chuẩn xác minh, thu thập bằng chứng và nghiệm thu đối với mọi Executable Sprint Package (ESPK).
-
-Một Sprint chỉ được xem là hoàn thành khi:
-
-- Validation PASS;
-- Evidence đầy đủ;
-- Capability được Acceptance.
-
-Build thành công không đồng nghĩa Sprint hoàn thành.
-
----
-
-# 2. Position in Software Factory
-
-```text
-AI Coding
-
-↓
-
-Build
-
-↓
-
-Validation
-
-↓
-
-Evidence
-
-↓
-
-Capability Demonstration
-
-↓
-
-Acceptance
-
-↓
-
-Git Commit
-
-↓
-
-Release
-```
-
-Validation và Acceptance là điều kiện bắt buộc trước Release.
-
----
-
-# 3. Objectives
-
-Tiêu chuẩn này nhằm:
-
-- xác minh chất lượng Source Code;
-- chứng minh Capability hoạt động;
-- tạo Evidence phục vụ Audit;
-- chuẩn hóa Acceptance;
-- hỗ trợ Release;
-- hỗ trợ Rollback.
-
----
-
-# 4. Principles
-
-Validation & Acceptance tuân thủ:
-
-- Validate Everything
-- Evidence by Design
-- Demonstration First
-- Repeatable
-- Explainable
-- Traceable
-- AI Independent
-- Automation First
-- Capability Oriented
-
----
-
-# 5. Validation Model
-
-Validation gồm nhiều tầng.
-
-```text
-Source
-
-↓
-
-Build
-
-↓
-
-Static Analysis
-
-↓
-
-Unit Test
-
-↓
-
-Integration Test
-
-↓
-
-Contract Test
-
-↓
-
-Frontend Test
-
-↓
-
-End-to-End Test
-
-↓
-
-Compliance
-
-↓
-
-Capability Demonstration
-```
-
-Không được bỏ qua tầng Validation bắt buộc.
-
----
-
-# 6. Validation Categories
-
-| Category | Purpose |
-|----------|----------|
-| Build Validation | Kiểm tra Build |
-| Static Validation | Lint, Type Check |
-| Unit Validation | Business Logic |
-| Integration Validation | Service Interaction |
-| Contract Validation | API Compatibility |
-| Frontend Validation | UI & Components |
-| E2E Validation | User Journey |
-| Compliance Validation | ESP / SGP / DIP |
-| Runtime Validation | Execution Runtime |
-| Demonstration Validation | Demo Scenario |
-
----
-
-# 7. Capability Demonstration
-
-Capability có UI phải chứng minh được:
-
-- Login
-- CRUD
-- Search
-- Checkout
-- Payment
-- Dashboard
-- Reporting
-
-(tùy Capability)
-
-Demonstration là một phần của Validation.
-
----
-
-# 8. Evidence Model
-
-Mỗi Task phải sinh:
-
-- Execution Log
-- Validation Result
-- Build Output
-- Test Output
-- Git Diff
-
-Mỗi Sprint phải sinh:
-
-- Sprint Report
-- Capability Report
-- Demonstration Report
-- Acceptance Report
-
----
-
-# 9. Evidence Package
-
-```text
-evidence/
-
-├── prompts/
-
-├── logs/
-
-├── validation/
-
-├── screenshots/
-
-├── videos/
-
-├── reports/
-
-├── git/
-
-└── acceptance/
-```
-
-Evidence Package phải được lưu cùng Sprint.
-
----
-
-# 10. Frontend Evidence
-
-Capability có Frontend phải có:
-
-- Screenshot
-- Navigation Flow
-- UI Components
-- Theme Verification
-- Responsive Verification
-
-Nếu phù hợp, bổ sung Video Demonstration.
-
----
-
-# 11. Acceptance Criteria
-
-Capability được ACCEPT khi:
-
-✓ Build PASS
-
-✓ Validation PASS
-
-✓ Tests PASS
-
-✓ Demonstration PASS
-
-✓ Evidence đầy đủ
-
-✓ Documentation cập nhật
-
-✓ Git Commit thành công
-
----
-
-# 12. Acceptance Checklist
-
-Acceptance tối thiểu gồm:
-
-- Business Rules
-- API
-- Database
-- Frontend
-- Design System
-- Experience API
-- Security
-- Performance
-- Documentation
-
----
-
-# 13. PASS / FAIL Rules
-
-Capability:
-
-PASS
-
-khi:
-
-- không có Validation Error;
-- không có Critical Bug;
-- Acceptance PASS.
-
-FAIL
-
-khi:
-
-- Build FAIL;
-- Test FAIL;
-- Demonstration FAIL;
-- Architecture Conflict;
-- Business Conflict.
-
----
-
-# 14. Validation Report
-
-Runner phải sinh:
-
-```text
-validation/
-
-summary.md
-
-build.md
-
-tests.md
-
-compliance.md
-
-acceptance.md
-```
-
-Validation Report là đầu ra bắt buộc.
-
----
-
-# 15. Evidence Traceability
-
-Mọi Evidence phải truy vết được:
-
-```text
-Sprint
-
-↓
-
-Task
-
-↓
-
-Prompt
-
-↓
-
-Commit
-
-↓
-
-Report
-
-↓
-
-Acceptance
-```
-
-Không được có Evidence mồ côi.
-
----
-
-# 16. Acceptance Authority
-
-Acceptance được thực hiện bởi:
-
-- AI Runtime (tự động)
-- Developer Review
-- Technical Lead
-- Product Owner (nếu cần)
-
-AI chỉ được đánh dấu PASS khi đáp ứng đầy đủ Checklist.
-
----
-
-# 17. Failure Handling
-
-Nếu Validation FAIL:
-
-Runner phải:
-
-- dừng Sprint;
-- lưu Log;
-- lưu Prompt;
-- lưu Exit Code;
-- sinh Failure Report.
-
-Không Commit.
-
----
-
-# 18. Rules
-
-VAL-001 — Validation sau từng Task.
-
-VAL-002 — Evidence sau từng Task.
-
-VAL-003 — Capability có UI phải Demonstration.
-
-VAL-004 — Acceptance bắt buộc.
-
-VAL-005 — Screenshot là bắt buộc với Frontend.
-
-VAL-006 — Validation Report phải sinh tự động.
-
-VAL-007 — Failure Report phải được lưu.
-
-VAL-008 — Không Commit khi Acceptance FAIL.
-
-VAL-009 — Evidence phải Version hóa.
-
-VAL-010 — Sprint chỉ COMPLETE khi Acceptance PASS.
-
----
-
-# 19. Compliance Checklist
-
-| Rule | Validation |
-|------|------------|
-| VAC-0601 | Build PASS |
-| VAC-0602 | Tests PASS |
-| VAC-0603 | Compliance PASS |
-| VAC-0604 | Demonstration PASS |
-| VAC-0605 | Frontend Evidence đầy đủ |
-| VAC-0606 | Acceptance PASS |
-| VAC-0607 | Failure Handling đúng chuẩn |
-| VAC-0608 | Evidence đầy đủ |
-| VAC-0609 | Git Commit thành công |
-| VAC-0610 | Tuân thủ DIP |
-
----
-
-# 20. Relationship to Other Documents
-
-DIP-06 liên kết với:
-
-- DIP-00 Implementation Constitution
-- DIP-01 Executable Sprint Package Standard
-- DIP-02 AI Context Resolution & Prompt Assembly Standard
-- DIP-03 Seed & Reference Data Standard
-- DIP-04 AI Execution Runtime & Bash Runner Standard
-- DIP-05 AI Prompt Orchestration & Task Assembly Standard
-- ESP Engineering Standards Pack
-- SGP Sprint Governance Pack
-- VAP Verification & Acceptance Pack
-- ROP Release & Operations Pack
-
-DIP-06 là tiêu chuẩn chính thức cho Validation, Evidence và Acceptance của YSim AI Software Factory.
-
----
-
-# 21. Acceptance Workflow
-
-```text
-Task Completed
-
-↓
-
-Build
-
-↓
-
-Validation
-
-↓
-
-Evidence Collection
-
-↓
-
-Capability Demonstration
-
-↓
-
-Acceptance Checklist
-
-↓
-
-PASS
-
-↓
-
-Git Commit
-
-↓
-
-Next Task
-```
-
-Nếu FAIL ở bất kỳ bước nào:
-
-```text
-Failure Report
-
-↓
-
-Stop Sprint
-
-↓
-
-ACP (nếu có Architecture Conflict)
-```
-
----
-
-# 22. Document Status
-
-**Status: FROZEN**
-
-Từ phiên bản 2.1, mọi Sprint của YSim phải hoàn thành đầy đủ ba giai đoạn:
-
-- Validation
-- Evidence
-- Acceptance
-
-Capability chỉ được coi là **Completed** khi vượt qua toàn bộ Validation Pipeline, tạo đủ Evidence Package và được Acceptance theo tiêu chuẩn của DIP-06.
-
-Validation, Evidence và Acceptance là điều kiện bắt buộc trước Git Commit và Release.
 
 
 ---
@@ -8259,480 +9618,6 @@ Từ phiên bản 2.1, mọi Sprint của YSim phải triển khai theo mô hìn
 Capability là đơn vị triển khai, nghiệm thu và phát hành chính thức của nền tảng.
 
 Không chấp nhận Sprint chỉ hoàn thành Backend, API hoặc Frontend riêng lẻ.
-
-
----
-
-# Source: DIP-09
-
-- Path: `docs/DIP/DIP-09.md`
-- Set: `DIP`
-- Version: `2.1`
-- Status: `FROZEN`
-
-# AI Execution Governance & Exception Handling Standard
-
-## DIP-09
-
----
-
-# 1. Purpose
-
-AI Execution Governance định nghĩa các quy tắc điều phối, giám sát và xử lý ngoại lệ trong quá trình AI Coding Assistant thực thi Executable Sprint Package (ESPK).
-
-Tiêu chuẩn này bảo đảm AI luôn hoạt động trong phạm vi Architecture đã được phê duyệt và có cơ chế dừng, khôi phục hoặc chuyển giao khi gặp tình huống vượt ngoài thẩm quyền.
-
-Governance là lớp bảo vệ cuối cùng của Software Factory.
-
----
-
-# 2. Position in Software Factory
-
-```text
-Architecture
-
-↓
-
-Implementation
-
-↓
-
-AI Execution Governance
-
-↓
-
-AI Runtime
-
-↓
-
-Capability Delivery
-
-↓
-
-Validation
-
-↓
-
-Acceptance
-```
-
-Governance áp dụng xuyên suốt toàn bộ vòng đời Sprint.
-
----
-
-# 3. Objectives
-
-AI Execution Governance nhằm:
-
-- bảo đảm AI tuân thủ Architecture;
-- chuẩn hóa xử lý ngoại lệ;
-- hỗ trợ Human-in-the-loop;
-- bảo vệ Repository;
-- giảm Hallucination;
-- giảm Scope Drift;
-- bảo đảm Auditability.
-
----
-
-# 4. Principles
-
-Governance tuân thủ:
-
-- Architecture First
-- Human Override
-- Explainable AI
-- Fail Fast
-- Stop on Uncertainty
-- Traceable
-- Repeatable
-- Least Privilege
-- Controlled Automation
-
----
-
-# 5. Governance Scope
-
-Governance áp dụng cho:
-
-- Sprint Planning
-- Prompt Assembly
-- AI Execution
-- Validation
-- Repository
-- Git
-- Demonstration
-- Acceptance
-
-Không giới hạn ở AI Coding.
-
----
-
-# 6. AI Decision Authority
-
-AI được phép:
-
-- sinh Source Code;
-- tạo Migration;
-- sinh API;
-- tạo Frontend;
-- sinh Tests;
-- sinh Documentation;
-- tạo Seed Data;
-- Commit theo quy tắc.
-
-AI không được phép:
-
-- thay đổi Architecture Frozen;
-- thay đổi Meta Model;
-- thay đổi Business Domain;
-- sửa Protected Files;
-- bỏ qua Validation;
-- bỏ qua Acceptance.
-
----
-
-# 7. Exception Classification
-
-Ngoại lệ được phân loại:
-
-| Level | Description |
-|---------|-------------|
-| E0 | Information |
-| E1 | Warning |
-| E2 | Validation Failure |
-| E3 | Repository Conflict |
-| E4 | Architecture Conflict |
-| E5 | Security Violation |
-| E6 | Human Approval Required |
-
----
-
-# 8. Stop Conditions
-
-AI phải dừng ngay khi:
-
-- Architecture Conflict
-- Missing Context
-- Missing Dependency
-- Protected File Modification
-- Repository Corruption
-- Security Policy Violation
-- Validation Failure (Critical)
-
-Không được tự tiếp tục.
-
----
-
-# 9. Recovery Policy
-
-Recovery chỉ được phép khi:
-
-- Dependency được bổ sung;
-- Validation PASS sau khi sửa;
-- Repository sạch;
-- Human chấp thuận (nếu cần).
-
-Recovery phải tiếp tục từ Checkpoint gần nhất.
-
----
-
-# 10. Retry Policy
-
-Retry chỉ áp dụng cho:
-
-- Timeout;
-- Network Failure;
-- AI Provider Unavailable;
-- Temporary Infrastructure Error.
-
-Không Retry khi:
-
-- Business Rule Conflict;
-- Architecture Conflict;
-- Validation Logic Failure.
-
----
-
-# 11. Human-in-the-loop
-
-Con người có quyền:
-
-- Approve;
-- Reject;
-- Retry;
-- Resume;
-- Skip (nếu chính sách cho phép);
-- Stop Sprint.
-
-Mọi quyết định đều phải được ghi vào Evidence.
-
----
-
-# 12. ACP & ADR Trigger
-
-Runner phải tạo ACP khi phát hiện:
-
-- Architecture Conflict;
-- Capability vượt Scope;
-- Meta Model thay đổi;
-- Business Domain mới.
-
-Runner phải yêu cầu ADR khi:
-
-- thay đổi Decision đã Frozen;
-- thay đổi Design Pattern;
-- thay đổi Platform Strategy.
-
-AI không được tự quyết định.
-
----
-
-# 13. Repository Protection
-
-Protected Areas:
-
-```text
-docs/frozen/
-architecture/
-release/
-database/history/
-```
-
-AI không được sửa nếu Sprint không cho phép.
-
----
-
-# 14. Audit Trail
-
-Mọi Sprint phải lưu:
-
-- Prompt;
-- Context;
-- Seed;
-- Commands;
-- Logs;
-- Validation;
-- Evidence;
-- Git Diff;
-- Exception Report.
-
-Audit Trail là bắt buộc.
-
----
-
-# 15. Escalation Flow
-
-```text
-Warning
-
-↓
-
-Validation Failure
-
-↓
-
-Recovery
-
-↓
-
-Retry
-
-↓
-
-Human Review
-
-↓
-
-ACP / ADR
-
-↓
-
-Stop Sprint
-```
-
-Không được bỏ qua bước Escalation.
-
----
-
-# 16. Governance States
-
-Một Sprint chỉ có thể ở một trong các trạng thái:
-
-- Planned
-- Running
-- Waiting
-- Validation Failed
-- Blocked
-- Human Review
-- Accepted
-- Completed
-- Cancelled
-
-Runner phải lưu trạng thái hiện tại.
-
----
-
-# 17. AI Provider Failure
-
-Nếu AI Provider:
-
-- Timeout;
-- Rate Limited;
-- Unavailable;
-
-Runner phải:
-
-- Retry theo Policy;
-- lưu Error;
-- không làm mất State.
-
-Không được Restart Sprint từ đầu.
-
----
-
-# 18. Exception Report
-
-Nếu Sprint FAIL phải sinh:
-
-```text
-reports/
-
-exception.md
-
-failure.md
-
-recovery.md
-```
-
-Exception Report là Deliverable bắt buộc.
-
----
-
-# 19. Governance Rules
-
-GOV-001 — AI phải tuân thủ Architecture.
-
-GOV-002 — AI không được sửa Protected Files.
-
-GOV-003 — Architecture Conflict phải tạo ACP.
-
-GOV-004 — Design Decision thay đổi phải tạo ADR.
-
-GOV-005 — Validation Critical Failure phải dừng Sprint.
-
-GOV-006 — Human Override phải được ghi nhận.
-
-GOV-007 — Retry theo Policy.
-
-GOV-008 — Recovery theo Checkpoint.
-
-GOV-009 — Audit Trail là bắt buộc.
-
-GOV-010 — Không AI nào được vượt quá Governance Policy.
-
----
-
-# 20. Compliance Checklist
-
-| Rule | Validation |
-|------|------------|
-| GVC-0901 | Governance Policy được áp dụng |
-| GVC-0902 | Protected Files không bị sửa |
-| GVC-0903 | ACP được tạo khi cần |
-| GVC-0904 | ADR được yêu cầu khi cần |
-| GVC-0905 | Retry đúng Policy |
-| GVC-0906 | Recovery đúng Checkpoint |
-| GVC-0907 | Audit Trail đầy đủ |
-| GVC-0908 | Human Review được ghi nhận |
-| GVC-0909 | Exception Report đầy đủ |
-| GVC-0910 | Tuân thủ DIP |
-
----
-
-# 21. Relationship to Other Documents
-
-DIP-09 liên kết với:
-
-- DIP-00 Implementation Constitution
-- DIP-01 Executable Sprint Package Standard
-- DIP-02 AI Context Resolution & Prompt Assembly Standard
-- DIP-03 Seed & Reference Data Standard
-- DIP-04 AI Execution Runtime & Bash Runner Standard
-- DIP-05 AI Prompt Orchestration & Task Assembly Standard
-- DIP-06 Validation, Evidence & Acceptance Standard
-- DIP-07 Repository Workflow & Git Strategy Standard
-- DIP-08 Full-stack Capability Delivery Standard
-- AFM-00 Architecture Freeze Manifest
-- AAP AI Architecture Principles
-- SGP Sprint Governance Principles
-- ESP Engineering Standards
-- ROP Release & Operations Pack
-
-DIP-09 là lớp Governance cao nhất của Development & Implementation Pack.
-
----
-
-# 22. AI Execution Governance Workflow
-
-```text
-Sprint Planned
-
-↓
-
-Context Loaded
-
-↓
-
-Prompt Generated
-
-↓
-
-AI Execution
-
-↓
-
-Validation
-
-↓
-
-Exception?
-
-├── No
-│
-│   ↓
-│
-│ Acceptance
-│
-│   ↓
-│
-│ Complete
-│
-└── Yes
-    ↓
-Exception Classification
-    ↓
-Recovery / Retry
-    ↓
-Human Review (nếu cần)
-    ↓
-ACP / ADR (nếu cần)
-    ↓
-Resume hoặc Stop
-```
-
----
-
-# 23. Document Status
-
-**Status: FROZEN**
-
-DIP-09 là tài liệu cuối cùng của **Implementation Foundation**.
-
-Từ phiên bản **YSim AI Software Factory v2.1**, mọi Sprint phải được thực thi dưới sự điều phối của **AI Execution Governance**.
-
-Không AI Coding Agent nào được phép vượt qua các giới hạn về Architecture, Governance, Validation hoặc Security đã được định nghĩa trong Development & Implementation Pack.
-
-Implementation Foundation (DIP-00 → DIP-09) được xem là **Architecture & Execution Baseline** cho toàn bộ quá trình phát triển YSim.
 
 
 ---
@@ -12250,800 +13135,6 @@ Migration Standards là tiêu chuẩn thống nhất cho mọi thay đổi cấu
 ESP-06 là tài liệu chuẩn hóa quy trình thiết kế, kiểm thử và triển khai Database Migration của YSim.
 
 Mọi thay đổi đối với Persistence Layer phải được thực hiện thông qua Migration theo tài liệu này.
-
----
-
-
----
-
-# Source: ESP-07
-
-- Path: `docs/ESP/ESP-07.md`
-- Set: `ESP`
-- Version: `2.1`
-- Status: `FROZEN`
-
-# Engineering Testing Standards
-
-## ESP-07
-
----
-
-# 1. Purpose
-
-Engineering Testing Standards định nghĩa các tiêu chuẩn kiểm thử kỹ thuật của nền tảng YSim.
-
-Tài liệu này chuẩn hóa:
-
-- Test Architecture
-- Test Types
-- Test Organization
-- Test Automation
-- Test Quality
-- Test Evidence
-
-ESP-07 áp dụng cho toàn bộ hoạt động kiểm thử trong quá trình Engineering.
-
-Các hoạt động Verification và Acceptance ở cấp Sprint được quy định trong VAP.
-
----
-
-# 2. Principles
-
-Engineering Testing tuân thủ:
-
-- Test First Mindset
-- Automation First
-- Repeatable
-- Deterministic
-- Independent
-- Traceable
-- Contract Driven
-- Full-stack Testing
-- Experience-driven Verification
-
----
-
-# 3. Testing Objectives
-
-Testing nhằm:
-
-- xác minh Source Code;
-- xác minh API;
-- xác minh Integration;
-- xác minh Business Rules ở cấp kỹ thuật;
-- ngăn Regression;
-- tạo Evidence cho Sprint.
-
-Testing không thay thế Business Acceptance.
-
----
-
-# 4. Testing Pyramid
-
-Platform chuẩn hóa Testing Pyramid.
-
-```text
-            E2E
-       Integration
-            Unit
-```
-
-Ưu tiên:
-
-- nhiều Unit Test;
-- vừa đủ Integration Test;
-- tối thiểu End-to-End Test theo phạm vi Sprint.
-
----
-
-# 5. Test Classification
-
-Platform chuẩn hóa:
-
-| Test Type | Purpose |
-|------------|----------|
-| Unit Test | Kiểm tra đơn vị mã nguồn |
-| Integration Test | Kiểm tra tương tác giữa các module |
-| Contract Test | Kiểm tra API/Event Contract |
-| End-to-End Test | Kiểm tra luồng nghiệp vụ chính |
-| Performance Test | Kiểm tra hiệu năng (khi Sprint yêu cầu) |
-| Security Test | Kiểm tra yêu cầu bảo mật (khi Sprint yêu cầu) |
-| Frontend Test | Kiểm tra UI, Components, Routes |
-| Experience Test | Kiểm tra User Journey và Capability Demonstration |
-
----
-
-# 5A. Full-stack Testing Model
-
-Đối với Capability có giao diện người dùng, bộ kiểm thử tối thiểu gồm:
-
-- Backend Unit Test
-- API Contract Test
-- Frontend Component Test
-- Frontend Integration Test
-- End-to-End User Journey
-- Capability Demonstration Verification
-
-Không hoàn thành Sprint nếu chỉ kiểm thử Backend.
-
----
-
-# 6. Unit Testing Standards
-
-Unit Test:
-
-- độc lập;
-- không phụ thuộc Database thực;
-- không phụ thuộc Network;
-- chạy nhanh;
-- dễ đọc.
-
-Một Unit Test chỉ kiểm tra một hành vi chính.
-
----
-
-# 7. Integration Testing Standards
-
-Integration Test xác minh:
-
-- Repository
-- Database
-- External Adapter (qua môi trường kiểm thử hoặc mock phù hợp)
-- Message Queue
-- Cache
-- Object Storage (nếu thuộc phạm vi Sprint)
-
-Integration Test phải cô lập được môi trường kiểm thử.
-
----
-
-# 8. Contract Testing
-
-Contract Test kiểm tra:
-
-- API Contract
-- Event Contract
-- Request Schema
-- Response Schema
-- Version Compatibility
-
-Contract Test là bắt buộc đối với API mới hoặc thay đổi Contract.
-
----
-
-# 9. End-to-End Testing
-
-E2E Test:
-
-- tập trung vào Business Flow chính;
-- không bao phủ toàn bộ hệ thống;
-- ưu tiên các Capability quan trọng.
-
-Ví dụ:
-
-```text
-Create Order
-
-↓
-
-Payment
-
-↓
-
-Package Assignment
-
-↓
-
-Notification
-```
-
----
-
-# 10. Test Organization
-
-Repository:
-
-```text
-tests/
-
-unit/
-
-integration/
-
-contract/
-
-e2e/
-
-fixtures/
-```
-
-Cho phép đặt Unit Test cùng module (co-located) nếu thống nhất trong toàn dự án và tuân thủ cấu trúc của framework.
-
----
-
-# 11. Test Data
-
-Test Data:
-
-- độc lập;
-- tái sử dụng;
-- không dùng dữ liệu Production;
-- có thể tạo và xóa tự động.
-
----
-
-# 12. Test Automation
-
-Test phải:
-
-- chạy tự động;
-- tích hợp CI;
-- tạo Report;
-- tạo Artifact.
-
-Không yêu cầu chạy thủ công trong Pipeline thông thường.
-
----
-
-# 13. Test Quality
-
-Mỗi Test phải:
-
-- rõ ràng;
-- ổn định;
-- có thể lặp lại;
-- không phụ thuộc thứ tự chạy;
-- không sinh dữ liệu tồn đọng.
-
----
-
-# 14. Test Evidence
-
-Mỗi lần chạy Test tạo:
-
-- Test Report
-- Execution Time
-- Result
-- Failed Cases
-- Logs (khi cần)
-- Coverage Summary (nếu có)
-
-Evidence được lưu cùng Sprint.
-
-Đối với Frontend cần bổ sung Screenshot, Video hoặc UI Evidence khi phù hợp.
-
----
-
-# 15. Test Coverage
-
-Coverage là chỉ số quan sát.
-
-Coverage được theo dõi theo:
-
-- Frontend
-- Design System
-- Experience
-
-
-- Module
-- Sprint
-- Capability
-
-Không đặt mục tiêu phần trăm cứng cho toàn hệ thống.
-
-Mỗi Sprint có thể xác định ngưỡng phù hợp trong Sprint Contract hoặc VAP.
-
----
-
-# 16. Regression Testing
-
-Regression:
-
-- chạy tự động;
-- tập trung các Capability bị ảnh hưởng;
-- thực hiện trước Release.
-
-Regression Suite được duy trì và mở rộng theo thời gian.
-
----
-
-# 17. Prohibited Practices
-
-Không được:
-
-- bỏ qua Test bắt buộc trong Sprint Contract;
-- sử dụng dữ liệu Production;
-- tạo Test phụ thuộc lẫn nhau;
-- tạo Test ngẫu nhiên không thể tái lập;
-- đánh dấu PASS khi chưa thực thi.
-
----
-
-# 18. Testing Rules
-
-TS-001 — Mọi Sprint phải có Test.
-
-TS-002 — API mới phải có Contract Test.
-
-TS-003 — Unit Test phải độc lập.
-
-TS-004 — Integration Test phải cô lập môi trường.
-
-TS-005 — Test phải chạy trong CI.
-
-TS-006 — Test tạo Evidence.
-
-TS-007 — Regression được cập nhật khi có thay đổi.
-
-TS-008 — Test Data không dùng Production.
-
-TS-009 — AI phải sinh Test theo Standards.
-
-TS-010 — Testing Standards áp dụng cho mọi Sprint.
-
-TS-011 — Capability có UI phải có Frontend Test.
-
-TS-012 — Capability Demonstration phải được xác minh bằng E2E hoặc Experience Test.
-
----
-
-# 19. Testing Compliance Checklist
-
-| Rule | Validation |
-|------|------------|
-| TCC-0701 | Unit Test đầy đủ |
-| TCC-0702 | Integration Test phù hợp |
-| TCC-0703 | Contract Test đúng chuẩn |
-| TCC-0704 | E2E Flow được xác định |
-| TCC-0705 | Test Automation hoạt động |
-| TCC-0706 | Test Evidence được tạo |
-| TCC-0707 | Regression Suite được cập nhật |
-| TCC-0708 | Test Data độc lập |
-| TCC-0709 | Test chạy trong CI |
-| TCC-0710 | Tuân thủ ESP |
-| TCC-0711 | Frontend Test đầy đủ |
-| TCC-0712 | Capability Demonstration được xác minh |
-
----
-
-# 20. Relationship to Other Documents
-
-ESP-07 liên kết với:
-
-- ESP-02 Source Code Engineering Standards
-- ESP-04 API Engineering Standards
-- ESP-06 Migration Standards
-- AAP-04 AI Verification Model
-- SGP-05 Sprint Review & Acceptance
-- VAP (Verification & Acceptance Pack)
-
-Engineering Testing Standards là nền tảng kỹ thuật cho toàn bộ hoạt động Verification của nền tảng YSim, bao gồm Backend, Frontend, Design System và Experience Verification.
-
----
-
-# 21. Document Status
-
-**Status: FROZEN**
-
-ESP-07 là tài liệu chuẩn hóa toàn bộ tiêu chuẩn kiểm thử kỹ thuật của YSim.
-
-Mọi Sprint phải triển khai và tự động hóa kiểm thử theo Engineering Testing Standards trước khi chuyển sang Verification và Acceptance.
-
----
-
-
----
-
-# Source: ESP-08
-
-- Path: `docs/ESP/ESP-08.md`
-- Set: `ESP`
-- Version: `2.1`
-- Status: `FROZEN`
-
-# Observability & Diagnostics Standards
-
-## ESP-08
-
----
-
-# 1. Purpose
-
-Observability & Diagnostics Standards định nghĩa các tiêu chuẩn thu thập, ghi nhận và phân tích thông tin vận hành của nền tảng YSim.
-
-Observability bao gồm:
-
-- Logging
-- Metrics
-- Distributed Tracing
-- Health Check
-- Diagnostics
-- Audit Logging
-- Alerting
-
-Mục tiêu là giúp hệ thống dễ vận hành, dễ giám sát và dễ phân tích sự cố.
-
----
-
-# 2. Principles
-
-Observability tuân thủ:
-
-- Observable by Default
-- Structured Logging
-- Trace Everything
-- Metrics First
-- Security Aware
-- Privacy Aware
-- Low Overhead
-- Automation Friendly
-- Full-stack Observability
-- Experience-aware Diagnostics
-
----
-
-# 3. Objectives
-
-Observability nhằm:
-
-- hỗ trợ Debug;
-- hỗ trợ Production Monitoring;
-- hỗ trợ Incident Investigation;
-- hỗ trợ Performance Analysis;
-- hỗ trợ Audit;
-- hỗ trợ AI Diagnostics;
-- hỗ trợ Experience Diagnostics;
-- hỗ trợ Capability Demonstration Monitoring.
-
----
-
-# 4. Observability Architecture
-
-```text
-Application
-
-↓
-
-Logs
-
-↓
-
-Metrics
-
-↓
-
-Traces
-
-↓
-
-Alerting
-
-↓
-
-Dashboard
-
-↓
-
-Experience Dashboard
-
-↓
-
-Incident Response
-```
-
-Observability là một khả năng xuyên suốt toàn hệ thống.
-
----
-
-# 5. Logging Standards
-
-Mọi Service phải ghi Log theo cấu trúc thống nhất.
-
-Log tối thiểu gồm:
-
-- Timestamp
-- Level
-- Service
-- Module
-- Trace ID
-- Correlation ID (nếu có)
-- Message
-
-Log phải ở định dạng có cấu trúc (ví dụ JSON) để thuận tiện cho việc thu thập và tìm kiếm.
-
----
-
-# 6. Log Levels
-
-Chuẩn hóa:
-
-| Level | Purpose |
-|--------|----------|
-| TRACE | Chi tiết nhất, phục vụ phân tích sâu |
-| DEBUG | Debug trong môi trường phù hợp |
-| INFO | Hoạt động bình thường |
-| WARN | Cảnh báo |
-| ERROR | Lỗi cần xử lý |
-| FATAL | Lỗi nghiêm trọng dẫn đến không thể tiếp tục |
-
-Không ghi mọi thông tin ở mức INFO.
-
----
-
-# 7. Structured Logging
-
-Ví dụ:
-
-```json
-{
-  "timestamp": "...",
-  "level": "INFO",
-  "service": "payment",
-  "module": "payment-processing",
-  "traceId": "...",
-  "message": "Payment completed"
-}
-```
-
-Không ghi Log dạng chuỗi tự do nếu có thể ghi dữ liệu có cấu trúc.
-
----
-
-# 8. Correlation & Trace
-
-Mỗi Request nên có:
-
-- Trace ID
-- Correlation ID (nếu đi qua nhiều hệ thống)
-- Request ID (nếu cần)
-
-Các ID này phải được truyền xuyên suốt giữa các Service.
-
----
-
-# 8A. Experience Observability
-
-Đối với Capability có giao diện người dùng, cần quan sát thêm:
-
-- Frontend Errors
-- Page Load Time
-- User Journey
-- Experience API Latency
-- Storefront Availability
-- Capability Demonstration Health
-
-Các Metrics này bổ sung cho Backend Metrics và không thay thế chúng.
-
----
-
-# 9. Metrics Standards
-
-Mỗi Service cần công bố các nhóm Metrics phù hợp.
-
-Ví dụ:
-
-- Request Count
-- Request Duration
-- Error Count
-- Queue Length
-- Active Jobs
-- Database Latency
-- Cache Hit Rate
-
-Metrics phải hỗ trợ Dashboard và Alerting.
-
----
-
-# 10. Distributed Tracing
-
-Distributed Tracing áp dụng cho:
-
-- Internal API
-- Integration API
-- Event Processing
-- Background Jobs
-
-Mỗi Trace phải hỗ trợ xác định đường đi của Request qua nhiều Service.
-
----
-
-# 11. Health Check
-
-Mỗi Service phải cung cấp Health Endpoint.
-
-Tối thiểu:
-
-```text
-/health
-```
-
-Có thể mở rộng:
-
-```text
-/health/live
-
-/health/ready
-```
-
-Health Check không được tiết lộ thông tin nhạy cảm.
-
----
-
-# 12. Audit Logging
-
-Audit Log ghi nhận:
-
-- Authentication
-- Authorization
-- Administrative Actions
-- Configuration Changes
-- Security Events
-- Business Operations theo yêu cầu nghiệp vụ
-
-Audit Log phải bất biến và có chính sách lưu giữ rõ ràng.
-
----
-
-# 13. Sensitive Data
-
-Không ghi Log:
-
-- Password
-- Secret
-- Token
-- OTP
-- CVV
-- Khóa mã hóa
-- Dữ liệu cá nhân nhạy cảm nếu không có cơ sở và biện pháp bảo vệ phù hợp
-
-Nếu cần ghi nhận, phải áp dụng Masking hoặc Redaction.
-
----
-
-# 14. Diagnostics
-
-Diagnostics bao gồm:
-
-- Exception Details
-- Stack Trace (chỉ trong môi trường phù hợp)
-- Performance Statistics
-- Dependency Status
-- Resource Utilization
-
-Diagnostics phải hỗ trợ Root Cause Analysis.
-
----
-
-# 15. Alerting
-
-Alert phải dựa trên:
-
-- Error Rate
-- Latency
-- Resource Usage
-- Queue Backlog
-- Health Status
-- Availability
-
-Không tạo Alert cho mọi Log ERROR.
-
----
-
-# 16. Observability Dashboard
-
-Dashboard tối thiểu hiển thị:
-
-- Frontend Status
-- Experience Status
-
-- Service Status
-- Error Rate
-- Response Time
-- Throughput
-- Queue Status
-- Active Alerts
-- Health Status
-
-Dashboard phải hỗ trợ Drill-down theo Service hoặc Capability.
-
----
-
-# 17. Incident Support
-
-Observability phải hỗ trợ:
-
-- Incident Detection
-- Incident Investigation
-- Root Cause Analysis
-- Recovery Verification
-
-Logs, Metrics và Traces phải có khả năng liên kết với nhau.
-
----
-
-# 18. Prohibited Practices
-
-Không được:
-
-- Ghi Password hoặc Secret vào Log.
-- Ghi Token đầy đủ.
-- Ghi dữ liệu cá nhân nhạy cảm khi không cần thiết.
-- Ghi Log không có ngữ cảnh.
-- Bỏ Trace ID đối với Request đi qua nhiều Service.
-- Tắt Logging hoặc Metrics mà không có phê duyệt.
-
----
-
-# 19. Observability Rules
-
-OB-001 — Mọi Service phải hỗ trợ Logging.
-
-OB-002 — Mọi Service phải công bố Health Check.
-
-OB-003 — Metrics phải được thu thập.
-
-OB-004 — API phải hỗ trợ Traceability.
-
-OB-005 — Audit Log phải được bảo vệ.
-
-OB-006 — Không ghi dữ liệu nhạy cảm vào Log.
-
-OB-007 — Dashboard phải phản ánh dữ liệu thực tế.
-
-OB-008 — Alert phải có tiêu chí rõ ràng.
-
-OB-009 — AI phải tuân thủ Observability Standards.
-
-OB-010 — Observability là yêu cầu bắt buộc của mọi Sprint.
-
-OB-011 — Capability có UI phải công bố Experience Metrics.
-
-OB-012 — Capability Demonstration phải được theo dõi bằng Observability.
-
----
-
-# 20. Observability Compliance Checklist
-
-| Rule | Validation |
-|------|------------|
-| OCC-0801 | Structured Logging |
-| OCC-0802 | Log Level đúng chuẩn |
-| OCC-0803 | Metrics được công bố |
-| OCC-0804 | Trace ID hoạt động |
-| OCC-0805 | Health Check tồn tại |
-| OCC-0806 | Audit Logging đúng chuẩn |
-| OCC-0807 | Không ghi dữ liệu nhạy cảm |
-| OCC-0808 | Dashboard hoạt động |
-| OCC-0809 | Alerting được cấu hình |
-| OCC-0810 | Tuân thủ ESP |
-| OCC-0811 | Experience Metrics đầy đủ |
-| OCC-0812 | Frontend Observability đúng chuẩn |
-
----
-
-# 21. Relationship to Other Documents
-
-ESP-08 liên kết với:
-
-- ESP-04 API Engineering Standards
-- ESP-07 Engineering Testing Standards
-- ESP-09 Configuration Standards
-- ESP-10 Security Standards
-- ABP-10 Observability Architecture
-- ROP (Release & Operations Pack)
-
-Observability & Diagnostics Standards là tiêu chuẩn thống nhất cho khả năng quan sát và chẩn đoán của toàn bộ nền tảng YSim, bao gồm Backend, Frontend, Experience và Capability Demonstration.
-
----
-
-# 22. Document Status
-
-**Status: FROZEN**
-
-ESP-08 là tài liệu chuẩn hóa toàn bộ tiêu chuẩn Logging, Metrics, Tracing và Diagnostics của YSim.
-
-Mọi Service và mọi Sprint phải triển khai đầy đủ các yêu cầu về Observability trước khi được coi là sẵn sàng cho môi trường Production.
 
 ---
 

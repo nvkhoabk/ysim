@@ -211,7 +211,30 @@ def select_documents(
         manifest.get("limits", {}).get("max_documents", 30)
     )
 
-    return selected[:max_documents]
+    required_documents = [
+        document
+        for document in selected
+        if document.get("documentCode") in required_codes
+    ]
+
+    optional_documents = [
+        document
+        for document in selected
+        if document.get("documentCode") not in required_codes
+    ]
+
+    if len(required_documents) > max_documents:
+        raise ContextBuildError(
+            "Required document count exceeds max_documents: "
+            f"{len(required_documents)} required, "
+            f"limit is {max_documents}"
+        )
+
+    remaining_slots = max_documents - len(required_documents)
+
+    selected = required_documents + optional_documents[:remaining_slots]
+
+    return selected
 
 
 def build_context(
