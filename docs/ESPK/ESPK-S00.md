@@ -1,5 +1,5 @@
 ---
-document_code: ESPK-00
+document_code: ESPK-S00
 document_name: Factory Commissioning & Repository Bootstrap
 project: YSim v2.1
 document_set: Sprint

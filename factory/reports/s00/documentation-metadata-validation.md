@@ -5,7 +5,7 @@
 - Governed documents: **100**
 - Navigation documents: **2**
 - Errors: **0**
-- Warnings: **63**
+- Warnings: **62**
 
 ## Errors
 
@@ -57,7 +57,6 @@
 - `{"path": "docs/ESP/ESP-09.md", "type": "legacy_document_version", "value": "1.0"}`
 - `{"path": "docs/ESP/ESP-12.md", "type": "legacy_document_version", "value": "1.0"}`
 - `{"path": "docs/ESP/ESP-13.md", "type": "legacy_document_version", "value": "1.0"}`
-- `{"path": "docs/ESPK/ESPK-S00.md", "type": "filename_code_mismatch", "filenameCode": "ESPK-S00", "documentCode": "ESPK-00"}`
 - `{"path": "docs/ESPK/ESPK-S00.md", "type": "missing_h1_title"}`
 - `{"path": "docs/ROP/ROP-00.md", "type": "legacy_document_version", "value": "1.0"}`
 - `{"path": "docs/ROP/ROP-01.md", "type": "legacy_document_version", "value": "1.0"}`

@@ -1,1436 +1,1435 @@
 {
-  "schemaVersion": "1.1",
-  "generatedAt": "2026-07-11T23:23:35.490825+07:00",
-  "status": "PASS",
-  "totalMarkdownCount": 102,
-  "governedDocumentCount": 100,
-  "navigationDocumentCount": 2,
-  "skippedDocumentCount": 2,
-  "errorCount": 0,
-  "warningCount": 62,
-  "duplicateDocumentCodes": {},
-  "errors": [],
-  "warnings": [
-    {
-      "path": "docs/ABP/ABP-00.md",
-      "type": "legacy_document_version",
-      "value": "1.0"
-    },
-    {
-      "path": "docs/ABP/ABP-01.md",
-      "type": "legacy_document_version",
-      "value": "1.0"
-    },
-    {
-      "path": "docs/ABP/ABP-02.md",
-      "type": "legacy_document_version",
-      "value": "1.0"
-    },
-    {
-      "path": "docs/ABP/ABP-03.md",
-      "type": "legacy_document_version",
-      "value": "1.0"
-    },
-    {
-      "path": "docs/ABP/ABP-04.md",
-      "type": "legacy_document_version",
-      "value": "1.0"
-    },
-    {
-      "path": "docs/ABP/ABP-05.md",
-      "type": "legacy_document_version",
-      "value": "1.0"
-    },
-    {
-      "path": "docs/ABP/ABP-06.md",
-      "type": "legacy_document_version",
-      "value": "1.0"
-    },
-    {
-      "path": "docs/ABP/ABP-07.md",
-      "type": "legacy_document_version",
-      "value": "1.0"
-    },
-    {
-      "path": "docs/ABP/ABP-08.md",
-      "type": "legacy_document_version",
-      "value": "1.0"
-    },
-    {
-      "path": "docs/ABP/ABP-09.md",
-      "type": "legacy_document_version",
-      "value": "1.0"
-    },
-    {
-      "path": "docs/ABP/ABP-10.md",
-      "type": "legacy_document_version",
-      "value": "1.0"
-    },
-    {
-      "path": "docs/ABP/ABP-11.md",
-      "type": "legacy_document_version",
-      "value": "1.0"
-    },
-    {
-      "path": "docs/ABP/ABP-12.md",
-      "type": "legacy_document_version",
-      "value": "1.0"
-    },
-    {
-      "path": "docs/ABP/ABP-13.md",
-      "type": "legacy_document_version",
-      "value": "1.0"
-    },
-    {
-      "path": "docs/ABP/ABP-14.md",
-      "type": "legacy_document_version",
-      "value": "1.0"
-    },
-    {
-      "path": "docs/ABP/ABP-15.md",
-      "type": "legacy_document_version",
-      "value": "1.0"
-    },
-    {
-      "path": "docs/BRD/BRD-BO-INDEX.md",
-      "type": "legacy_document_version",
-      "value": "1.0"
-    },
-    {
-      "path": "docs/BRD/BRD-CAP-INDEX.md",
-      "type": "legacy_document_version",
-      "value": "1.0"
-    },
-    {
-      "path": "docs/BRD/BRD-EVENT-INDEX.md",
-      "type": "legacy_document_version",
-      "value": "1.0"
-    },
-    {
-      "path": "docs/BRD/BRD-META-MODEL.md",
-      "type": "legacy_document_version",
-      "value": "1.0"
-    },
-    {
-      "path": "docs/BRD/BRD-POLICY-INDEX.md",
-      "type": "legacy_document_version",
-      "value": "1.0"
-    },
-    {
-      "path": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
-      "type": "legacy_document_version",
-      "value": "1.0"
-    },
-    {
-      "path": "docs/BRD/BRD-WS-01.md",
-      "type": "legacy_document_version",
-      "value": "2.0"
-    },
-    {
-      "path": "docs/BRD/BRD-WS-02.md",
-      "type": "legacy_document_version",
-      "value": "2.0"
-    },
-    {
-      "path": "docs/BRD/BRD-WS-03.md",
-      "type": "legacy_document_version",
-      "value": "2.0"
-    },
-    {
-      "path": "docs/BRD/BRD-WS-04.md",
-      "type": "legacy_document_version",
-      "value": "2.0"
-    },
-    {
-      "path": "docs/BRD/BRD-WS-05.md",
-      "type": "legacy_document_version",
-      "value": "2.0"
-    },
-    {
-      "path": "docs/BRD/BRD-WS-06.md",
-      "type": "legacy_document_version",
-      "value": "2.0"
-    },
-    {
-      "path": "docs/BRD/BRD-WS-07.md",
-      "type": "legacy_document_version",
-      "value": "2.0"
-    },
-    {
-      "path": "docs/BRD/BRD-WS-08.md",
-      "type": "legacy_document_version",
-      "value": "2.0"
-    },
-    {
-      "path": "docs/BRD/BRD-WS-09.md",
-      "type": "legacy_document_version",
-      "value": "2.0"
-    },
-    {
-      "path": "docs/BRD/BRD-WS-10.md",
-      "type": "legacy_document_version",
-      "value": "2.0"
-    },
-    {
-      "path": "docs/BRD/BRD-WS-11.md",
-      "type": "legacy_document_version",
-      "value": "2.0"
-    },
-    {
-      "path": "docs/BRD/BRD-WS-12.md",
-      "type": "legacy_document_version",
-      "value": "2.0"
-    },
-    {
-      "path": "docs/BRD/BRD-WS-13.md",
-      "type": "legacy_document_version",
-      "value": "2.0"
-    },
-    {
-      "path": "docs/BRD/BRD-WS-14.md",
-      "type": "legacy_document_version",
-      "value": "2.0"
-    },
-    {
-      "path": "docs/BRD/BRD-WS-15.md",
-      "type": "legacy_document_version",
-      "value": "2.0"
-    },
-    {
-      "path": "docs/BRD/BRD-WS-16.md",
-      "type": "legacy_document_version",
-      "value": "2.0"
-    },
-    {
-      "path": "docs/BRD/BRD-WS-17.md",
-      "type": "legacy_document_version",
-      "value": "2.0"
-    },
-    {
-      "path": "docs/ESP/ESP-01.md",
-      "type": "legacy_document_version",
-      "value": "1.0"
-    },
-    {
-      "path": "docs/ESP/ESP-02.md",
-      "type": "legacy_document_version",
-      "value": "1.0"
-    },
-    {
-      "path": "docs/ESP/ESP-09.md",
-      "type": "legacy_document_version",
-      "value": "1.0"
-    },
-    {
-      "path": "docs/ESP/ESP-12.md",
-      "type": "legacy_document_version",
-      "value": "1.0"
-    },
-    {
-      "path": "docs/ESP/ESP-13.md",
-      "type": "legacy_document_version",
-      "value": "1.0"
-    },
-    {
-      "path": "docs/ESPK/ESPK-S00.md",
-      "type": "missing_h1_title"
-    },
-    {
-      "path": "docs/ROP/ROP-00.md",
-      "type": "legacy_document_version",
-      "value": "1.0"
-    },
-    {
-      "path": "docs/ROP/ROP-01.md",
-      "type": "legacy_document_version",
-      "value": "1.0"
-    },
-    {
-      "path": "docs/ROP/ROP-02.md",
-      "type": "legacy_document_version",
-      "value": "1.0"
-    },
-    {
-      "path": "docs/ROP/ROP-03.md",
-      "type": "legacy_document_version",
-      "value": "1.0"
-    },
-    {
-      "path": "docs/ROP/ROP-04.md",
-      "type": "legacy_document_version",
-      "value": "1.0"
-    },
-    {
-      "path": "docs/ROP/ROP-05.md",
-      "type": "legacy_document_version",
-      "value": "1.0"
-    },
-    {
-      "path": "docs/ROP/ROP-06.md",
-      "type": "legacy_document_version",
-      "value": "1.0"
-    },
-    {
-      "path": "docs/ROP/ROP-07.md",
-      "type": "legacy_document_version",
-      "value": "1.0"
-    },
-    {
-      "path": "docs/ROP/ROP-08.md",
-      "type": "legacy_document_version",
-      "value": "1.0"
-    },
-    {
-      "path": "docs/ROP/ROP-09.md",
-      "type": "legacy_document_version",
-      "value": "1.0"
-    },
-    {
-      "path": "docs/SGP/SGP-01.md",
-      "type": "legacy_document_version",
-      "value": "1.0"
-    },
-    {
-      "path": "docs/SGP/SGP-03.md",
-      "type": "legacy_document_version",
-      "value": "1.0"
-    },
-    {
-      "path": "docs/SGP/SGP-04.md",
-      "type": "legacy_document_version",
-      "value": "1.0"
-    },
-    {
-      "path": "docs/SGP/SGP-06.md",
-      "type": "legacy_document_version",
-      "value": "1.0"
-    },
-    {
-      "path": "docs/SGP/SGP-07.md",
-      "type": "legacy_document_version",
-      "value": "1.0"
-    },
-    {
-      "path": "docs/SGP/SGP-09.md",
-      "type": "legacy_document_version",
-      "value": "1.0"
-    },
-    {
-      "path": "docs/YADF/YADF-00.md",
-      "type": "legacy_document_version",
-      "value": "2.0"
-    }
-  ],
-  "skipped": [
-    {
-      "path": "docs/INDEX.md",
-      "reason": "generated_navigation_document"
-    },
-    {
-      "path": "docs/MASTER_INDEX.md",
-      "reason": "generated_navigation_document"
-    }
-  ],
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-07-11T23:24:02.572462+07:00",
+  "documentCount": 102,
   "documents": [
     {
       "path": "docs/AAP/AAP-01.md",
+      "filename": "AAP-01.md",
+      "extension": "md",
+      "documentSet": "AAP",
       "documentCode": "AAP-01",
       "documentName": "Repository Discovery Model",
-      "documentSet": "AI Architecture Pack",
+      "title": "Repository Discovery Model",
       "project": "YSim v2.1",
       "version": "2.1",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Repository Discovery Model"
+      "generatedNavigation": false
     },
     {
       "path": "docs/AAP/AAP-02.md",
+      "filename": "AAP-02.md",
+      "extension": "md",
+      "documentSet": "AAP",
       "documentCode": "AAP-02",
       "documentName": "Sprint Contract Model",
-      "documentSet": "AI Architecture Pack",
+      "title": "Sprint Contract Model",
       "project": "YSim v2.1",
       "version": "2.1",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Sprint Contract Model"
+      "generatedNavigation": false
     },
     {
       "path": "docs/AAP/AAP-03.md",
+      "filename": "AAP-03.md",
+      "extension": "md",
+      "documentSet": "AAP",
       "documentCode": "AAP-03",
       "documentName": "AI Planning Model",
-      "documentSet": "AI Architecture Pack",
+      "title": "AI Planning Model",
       "project": "YSim v2.1",
       "version": "2.1",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "AI Planning Model"
+      "generatedNavigation": false
     },
     {
       "path": "docs/AAP/AAP-04.md",
+      "filename": "AAP-04.md",
+      "extension": "md",
+      "documentSet": "AAP",
       "documentCode": "AAP-04",
       "documentName": "AI Verification Model",
-      "documentSet": "AI Architecture Pack",
+      "title": "AI Verification Model",
       "project": "YSim v2.1",
       "version": "2.1",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "AI Verification Model"
+      "generatedNavigation": false
     },
     {
       "path": "docs/AAP/AAP-05.md",
+      "filename": "AAP-05.md",
+      "extension": "md",
+      "documentSet": "AAP",
       "documentCode": "AAP-05",
       "documentName": "AI Evidence Model",
-      "documentSet": "AI Architecture Pack",
+      "title": "AI Evidence Model",
       "project": "YSim v2.1",
       "version": "2.1",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "AI Evidence Model"
+      "generatedNavigation": false
     },
     {
       "path": "docs/AAP/AAP-06.md",
+      "filename": "AAP-06.md",
+      "extension": "md",
+      "documentSet": "AAP",
       "documentCode": "AAP-06",
       "documentName": "Architecture Change Proposal Model",
-      "documentSet": "AI Architecture Pack",
+      "title": "Architecture Change Proposal Model",
       "project": "YSim v2.1",
       "version": "2.1",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Architecture Change Proposal Model"
+      "generatedNavigation": false
     },
     {
       "path": "docs/ABP/ABP-00.md",
+      "filename": "ABP-00.md",
+      "extension": "md",
+      "documentSet": "ABP",
       "documentCode": "ABP-00",
       "documentName": "Architecture Principles",
-      "documentSet": "Architecture Baseline Pack",
+      "title": "Architecture Principles",
       "project": "YSim v2.0",
       "version": "1.0",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Architecture Principles"
+      "generatedNavigation": false
     },
     {
       "path": "docs/ABP/ABP-01.md",
+      "filename": "ABP-01.md",
+      "extension": "md",
+      "documentSet": "ABP",
       "documentCode": "ABP-01",
       "documentName": "Repository Architecture",
-      "documentSet": "Architecture Baseline Pack",
+      "title": "Repository Architecture",
       "project": "YSim v2.0",
       "version": "1.0",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Repository Architecture"
+      "generatedNavigation": false
     },
     {
       "path": "docs/ABP/ABP-02.md",
+      "filename": "ABP-02.md",
+      "extension": "md",
+      "documentSet": "ABP",
       "documentCode": "ABP-02",
       "documentName": "Module Architecture",
-      "documentSet": "Architecture Baseline Pack",
+      "title": "Module Architecture",
       "project": "YSim v2.0",
       "version": "1.0",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Module Architecture"
+      "generatedNavigation": false
     },
     {
       "path": "docs/ABP/ABP-03.md",
+      "filename": "ABP-03.md",
+      "extension": "md",
+      "documentSet": "ABP",
       "documentCode": "ABP-03",
       "documentName": "Dependency Rules",
-      "documentSet": "Architecture Baseline Pack",
+      "title": "Dependency Rules",
       "project": "YSim v2.0",
       "version": "1.0",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Dependency Rules"
+      "generatedNavigation": false
     },
     {
       "path": "docs/ABP/ABP-04.md",
+      "filename": "ABP-04.md",
+      "extension": "md",
+      "documentSet": "ABP",
       "documentCode": "ABP-04",
       "documentName": "Transaction Boundary",
-      "documentSet": "Architecture Baseline Pack",
+      "title": "Transaction Boundary",
       "project": "YSim v2.0",
       "version": "1.0",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Transaction Boundary"
+      "generatedNavigation": false
     },
     {
       "path": "docs/ABP/ABP-05.md",
+      "filename": "ABP-05.md",
+      "extension": "md",
+      "documentSet": "ABP",
       "documentCode": "ABP-05",
       "documentName": "Event Architecture",
-      "documentSet": "Architecture Baseline Pack",
+      "title": "Event Architecture",
       "project": "YSim v2.0",
       "version": "1.0",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Event Architecture"
+      "generatedNavigation": false
     },
     {
       "path": "docs/ABP/ABP-06.md",
+      "filename": "ABP-06.md",
+      "extension": "md",
+      "documentSet": "ABP",
       "documentCode": "ABP-06",
       "documentName": "Snapshot Architecture",
-      "documentSet": "Architecture Baseline Pack",
+      "title": "Snapshot Architecture",
       "project": "YSim v2.0",
       "version": "1.0",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Snapshot Architecture"
+      "generatedNavigation": false
     },
     {
       "path": "docs/ABP/ABP-07.md",
+      "filename": "ABP-07.md",
+      "extension": "md",
+      "documentSet": "ABP",
       "documentCode": "ABP-07",
       "documentName": "Configuration Architecture",
-      "documentSet": "Architecture Baseline Pack",
+      "title": "Configuration Architecture",
       "project": "YSim v2.0",
       "version": "1.0",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Configuration Architecture"
+      "generatedNavigation": false
     },
     {
       "path": "docs/ABP/ABP-08.md",
+      "filename": "ABP-08.md",
+      "extension": "md",
+      "documentSet": "ABP",
       "documentCode": "ABP-08",
       "documentName": "Integration Architecture",
-      "documentSet": "Architecture Baseline Pack",
+      "title": "Integration Architecture",
       "project": "YSim v2.0",
       "version": "1.0",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Integration Architecture"
+      "generatedNavigation": false
     },
     {
       "path": "docs/ABP/ABP-09.md",
+      "filename": "ABP-09.md",
+      "extension": "md",
+      "documentSet": "ABP",
       "documentCode": "ABP-09",
       "documentName": "Security Architecture",
-      "documentSet": "Architecture Baseline Pack",
+      "title": "Security Architecture",
       "project": "YSim v2.0",
       "version": "1.0",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Security Architecture"
+      "generatedNavigation": false
     },
     {
       "path": "docs/ABP/ABP-10.md",
+      "filename": "ABP-10.md",
+      "extension": "md",
+      "documentSet": "ABP",
       "documentCode": "ABP-10",
       "documentName": "Observability Architecture",
-      "documentSet": "Architecture Baseline Pack",
+      "title": "Observability Architecture",
       "project": "YSim v2.0",
       "version": "1.0",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Observability Architecture"
+      "generatedNavigation": false
     },
     {
       "path": "docs/ABP/ABP-11.md",
+      "filename": "ABP-11.md",
+      "extension": "md",
+      "documentSet": "ABP",
       "documentCode": "ABP-11",
       "documentName": "Platform Data Architecture",
-      "documentSet": "Architecture Baseline Pack",
+      "title": "Platform Data Architecture",
       "project": "YSim v2.0",
       "version": "1.0",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Platform Data Architecture"
+      "generatedNavigation": false
     },
     {
       "path": "docs/ABP/ABP-12.md",
+      "filename": "ABP-12.md",
+      "extension": "md",
+      "documentSet": "ABP",
       "documentCode": "ABP-12",
       "documentName": "Error Handling Architecture",
-      "documentSet": "Architecture Baseline Pack",
+      "title": "Error Handling Architecture",
       "project": "YSim v2.0",
       "version": "1.0",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Error Handling Architecture"
+      "generatedNavigation": false
     },
     {
       "path": "docs/ABP/ABP-13.md",
+      "filename": "ABP-13.md",
+      "extension": "md",
+      "documentSet": "ABP",
       "documentCode": "ABP-13",
       "documentName": "Testing Architecture",
-      "documentSet": "Architecture Baseline Pack",
+      "title": "Testing Architecture",
       "project": "YSim v2.0",
       "version": "1.0",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Testing Architecture"
+      "generatedNavigation": false
     },
     {
       "path": "docs/ABP/ABP-14.md",
+      "filename": "ABP-14.md",
+      "extension": "md",
+      "documentSet": "ABP",
       "documentCode": "ABP-14",
       "documentName": "Deployment Architecture",
-      "documentSet": "Architecture Baseline Pack",
+      "title": "Deployment Architecture",
       "project": "YSim v2.0",
       "version": "1.0",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Deployment Architecture"
+      "generatedNavigation": false
     },
     {
       "path": "docs/ABP/ABP-15.md",
+      "filename": "ABP-15.md",
+      "extension": "md",
+      "documentSet": "ABP",
       "documentCode": "ABP-15",
       "documentName": "AI Implementation Architecture",
-      "documentSet": "Architecture Baseline Pack",
+      "title": "AI Implementation Architecture",
       "project": "YSim v2.0",
       "version": "1.0",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "AI Implementation Architecture"
+      "generatedNavigation": false
     },
     {
       "path": "docs/ABP/ABP-16.md",
+      "filename": "ABP-16.md",
+      "extension": "md",
+      "documentSet": "ABP",
       "documentCode": "ABP-16",
       "documentName": "Commerce Experience Platform Architecture",
-      "documentSet": "Architecture Blueprint Pack",
+      "title": "Commerce Experience Platform Architecture",
       "project": "YSim v2.1",
       "version": "2.1",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Commerce Experience Platform Architecture"
+      "generatedNavigation": false
     },
     {
       "path": "docs/ABP/ABP-17.md",
+      "filename": "ABP-17.md",
+      "extension": "md",
+      "documentSet": "ABP",
       "documentCode": "ABP-17",
       "documentName": "Design System Architecture",
-      "documentSet": "Architecture Blueprint Pack",
+      "title": "Design System Architecture",
       "project": "YSim v2.1",
       "version": "2.1",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Design System Architecture"
+      "generatedNavigation": false
     },
     {
       "path": "docs/AFM/AFM-00.md",
+      "filename": "AFM-00.md",
+      "extension": "md",
+      "documentSet": "AFM",
       "documentCode": "AFM-00",
       "documentName": "AI Factory Manual",
-      "documentSet": "AI Factory Manual",
+      "title": "AI Factory Manual",
       "project": "YSim v2.1",
       "version": "2.1",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "AI Factory Manual"
+      "generatedNavigation": false
     },
     {
       "path": "docs/AFM/AFM-01.md",
+      "filename": "AFM-01.md",
+      "extension": "md",
+      "documentSet": "AFM",
       "documentCode": "AFM-01",
       "documentName": "AI Factory Framework v2.1 Update",
-      "documentSet": "AI Factory Manual",
+      "title": "AI Factory Framework v2.1 Update",
       "project": "YSim v2.1",
       "version": "2.1",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "AI Factory Framework v2.1 Update"
+      "generatedNavigation": false
     },
     {
       "path": "docs/BRD/BRD-BO-INDEX.md",
+      "filename": "BRD-BO-INDEX.md",
+      "extension": "md",
+      "documentSet": "BRD",
       "documentCode": "BRD-BO-INDEX",
       "documentName": "Business Object Registry",
-      "documentSet": "BRD",
+      "title": "Business Object Registry",
       "project": "YSim v2.0",
       "version": "1.0",
       "status": "FROZEN",
       "language": "vi-VN",
-      "title": "Business Object Registry"
+      "generatedNavigation": false
     },
     {
       "path": "docs/BRD/BRD-CAP-INDEX.md",
+      "filename": "BRD-CAP-INDEX.md",
+      "extension": "md",
+      "documentSet": "BRD",
       "documentCode": "BRD-CAP-INDEX",
       "documentName": "Enterprise Business Capability Registry",
-      "documentSet": "BRD",
+      "title": "Enterprise Business Capability Registry",
       "project": "YSim v2.0",
       "version": "1.0",
       "status": "FROZEN",
       "language": "vi-VN",
-      "title": "Enterprise Business Capability Registry"
+      "generatedNavigation": false
     },
     {
       "path": "docs/BRD/BRD-EVENT-INDEX.md",
+      "filename": "BRD-EVENT-INDEX.md",
+      "extension": "md",
+      "documentSet": "BRD",
       "documentCode": "BRD-EVENT-INDEX",
       "documentName": "Enterprise Business Event Registry",
-      "documentSet": "BRD",
+      "title": "Enterprise Business Event Registry",
       "project": "YSim v2.0",
       "version": "1.0",
       "status": "FROZEN",
       "language": "vi-VN",
-      "title": "Enterprise Business Event Registry"
+      "generatedNavigation": false
     },
     {
       "path": "docs/BRD/BRD-META-MODEL.md",
+      "filename": "BRD-META-MODEL.md",
+      "extension": "md",
+      "documentSet": "BRD",
       "documentCode": "BRD-META-MODEL",
       "documentName": "Enterprise Business Meta Model",
-      "documentSet": "BRD",
+      "title": "Enterprise Business Meta Model",
       "project": "YSim v2.0",
       "version": "1.0",
       "status": "FROZEN",
       "language": "vi-VN",
-      "title": "Enterprise Business Meta Model"
+      "generatedNavigation": false
     },
     {
       "path": "docs/BRD/BRD-POLICY-INDEX.md",
+      "filename": "BRD-POLICY-INDEX.md",
+      "extension": "md",
+      "documentSet": "BRD",
       "documentCode": "BRD-POLICY-INDEX",
       "documentName": "Enterprise Policy Registry",
-      "documentSet": "BRD",
+      "title": "Enterprise Policy Registry",
       "project": "YSim v2.0",
       "version": "1.0",
       "status": "FROZEN",
       "language": "vi-VN",
-      "title": "Enterprise Policy Registry"
+      "generatedNavigation": false
     },
     {
       "path": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+      "filename": "BRD-SNAPSHOT-INDEX.md",
+      "extension": "md",
+      "documentSet": "BRD",
       "documentCode": "BRD-SNAPSHOT-INDEX",
       "documentName": "Enterprise Snapshot Registry",
-      "documentSet": "BRD",
+      "title": "Enterprise Snapshot Registry",
       "project": "YSim v2.0",
       "version": "1.0",
       "status": "FROZEN",
       "language": "vi-VN",
-      "title": "Enterprise Snapshot Registry"
+      "generatedNavigation": false
     },
     {
       "path": "docs/BRD/BRD-UPDATE-01.md",
+      "filename": "BRD-UPDATE-01.md",
+      "extension": "md",
+      "documentSet": "BRD",
       "documentCode": "BRD-UPDATE-01",
       "documentName": "Commerce Experience Platform (CXP)",
-      "documentSet": "Business Requirement Documents",
+      "title": "Commerce Experience Platform (CXP)",
       "project": "YSim v2.1",
       "version": "2.1",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Commerce Experience Platform (CXP)"
+      "generatedNavigation": false
     },
     {
       "path": "docs/BRD/BRD-WS-01.md",
+      "filename": "BRD-WS-01.md",
+      "extension": "md",
+      "documentSet": "BRD",
       "documentCode": "BRD-WS-01",
       "documentName": "Product Vision & Strategy",
-      "documentSet": "BRD",
+      "title": "BRD Workshop 01",
       "project": "YSim v2.0",
       "version": "2.0",
       "status": "FROZEN",
       "language": "vi-VN",
-      "title": "BRD Workshop 01"
+      "generatedNavigation": false
     },
     {
       "path": "docs/BRD/BRD-WS-02.md",
+      "filename": "BRD-WS-02.md",
+      "extension": "md",
+      "documentSet": "BRD",
       "documentCode": "BRD-WS-02",
       "documentName": "Business Model & Revenue Architecture",
-      "documentSet": "BRD",
+      "title": "BRD Workshop 02",
       "project": "YSim v2.0",
       "version": "2.0",
       "status": "FROZEN",
       "language": "vi-VN",
-      "title": "BRD Workshop 02"
+      "generatedNavigation": false
     },
     {
       "path": "docs/BRD/BRD-WS-03.md",
+      "filename": "BRD-WS-03.md",
+      "extension": "md",
+      "documentSet": "BRD",
       "documentCode": "BRD-WS-03",
       "documentName": "Identity, Organization & Access Control Model",
-      "documentSet": "BRD",
+      "title": "BRD Workshop 03",
       "project": "YSim v2.0",
       "version": "2.0",
       "status": "FROZEN",
       "language": "vi-VN",
-      "title": "BRD Workshop 03"
+      "generatedNavigation": false
     },
     {
       "path": "docs/BRD/BRD-WS-04.md",
+      "filename": "BRD-WS-04.md",
+      "extension": "md",
+      "documentSet": "BRD",
       "documentCode": "BRD-WS-04",
       "documentName": "Product Catalog, Supplier & Product Intelligence",
-      "documentSet": "BRD",
+      "title": "BRD Workshop 04",
       "project": "YSim v2.0",
       "version": "2.0",
       "status": "FROZEN",
       "language": "vi-VN",
-      "title": "BRD Workshop 04"
+      "generatedNavigation": false
     },
     {
       "path": "docs/BRD/BRD-WS-05.md",
+      "filename": "BRD-WS-05.md",
+      "extension": "md",
+      "documentSet": "BRD",
       "documentCode": "BRD-WS-05",
       "documentName": "Pricing, Commercial Policy & Revenue Model",
-      "documentSet": "BRD",
+      "title": "BRD Workshop 05",
       "project": "YSim v2.0",
       "version": "2.0",
       "status": "FROZEN",
       "language": "vi-VN",
-      "title": "BRD Workshop 05"
+      "generatedNavigation": false
     },
     {
       "path": "docs/BRD/BRD-WS-06.md",
+      "filename": "BRD-WS-06.md",
+      "extension": "md",
+      "documentSet": "BRD",
       "documentCode": "BRD-WS-06",
       "documentName": "Promotion, Coupon, Campaign & Sales Enablement",
-      "documentSet": "BRD",
+      "title": "BRD Workshop 06",
       "project": "YSim v2.0",
       "version": "2.0",
       "status": "FROZEN",
       "language": "vi-VN",
-      "title": "BRD Workshop 06"
+      "generatedNavigation": false
     },
     {
       "path": "docs/BRD/BRD-WS-07.md",
+      "filename": "BRD-WS-07.md",
+      "extension": "md",
+      "documentSet": "BRD",
       "documentCode": "BRD-WS-07",
       "documentName": "Sales Order, Purchase Order, Cart & Checkout Model",
-      "documentSet": "BRD",
+      "title": "BRD Workshop 07",
       "project": "YSim v2.0",
       "version": "2.0",
       "status": "FROZEN",
       "language": "vi-VN",
-      "title": "BRD Workshop 07"
+      "generatedNavigation": false
     },
     {
       "path": "docs/BRD/BRD-WS-08.md",
+      "filename": "BRD-WS-08.md",
+      "extension": "md",
+      "documentSet": "BRD",
       "documentCode": "BRD-WS-08",
       "documentName": "Payment, Payment Gateway & Payment Lifecycle",
-      "documentSet": "BRD",
+      "title": "BRD Workshop 08",
       "project": "YSim v2.0",
       "version": "2.0",
       "status": "FROZEN",
       "language": "vi-VN",
-      "title": "BRD Workshop 08"
+      "generatedNavigation": false
     },
     {
       "path": "docs/BRD/BRD-WS-09.md",
+      "filename": "BRD-WS-09.md",
+      "extension": "md",
+      "documentSet": "BRD",
       "documentCode": "BRD-WS-09",
       "documentName": "Inventory, Allocation & Fulfillment Lifecycle",
-      "documentSet": "BRD",
+      "title": "BRD Workshop 09",
       "project": "YSim v2.0",
       "version": "2.0",
       "status": "FROZEN",
       "language": "vi-VN",
-      "title": "BRD Workshop 09"
+      "generatedNavigation": false
     },
     {
       "path": "docs/BRD/BRD-WS-10.md",
+      "filename": "BRD-WS-10.md",
+      "extension": "md",
+      "documentSet": "BRD",
       "documentCode": "BRD-WS-10",
       "documentName": "Settlement, Revenue Sharing & Financial Lifecycle",
-      "documentSet": "BRD",
+      "title": "BRD Workshop 10",
       "project": "YSim v2.0",
       "version": "2.0",
       "status": "FROZEN",
       "language": "vi-VN",
-      "title": "BRD Workshop 10"
+      "generatedNavigation": false
     },
     {
       "path": "docs/BRD/BRD-WS-11.md",
+      "filename": "BRD-WS-11.md",
+      "extension": "md",
+      "documentSet": "BRD",
       "documentCode": "BRD-WS-11",
       "documentName": "Customer Service, Ticketing & Customer Lifecycle",
-      "documentSet": "BRD",
+      "title": "BRD Workshop 11",
       "project": "YSim v2.0",
       "version": "2.0",
       "status": "FROZEN",
       "language": "vi-VN",
-      "title": "BRD Workshop 11"
+      "generatedNavigation": false
     },
     {
       "path": "docs/BRD/BRD-WS-12.md",
+      "filename": "BRD-WS-12.md",
+      "extension": "md",
+      "documentSet": "BRD",
       "documentCode": "BRD-WS-12",
       "documentName": "Communication Platform, Notification & Engagement",
-      "documentSet": "BRD",
+      "title": "BRD Workshop 12",
       "project": "YSim v2.0",
       "version": "2.0",
       "status": "FROZEN",
       "language": "vi-VN",
-      "title": "BRD Workshop 12"
+      "generatedNavigation": false
     },
     {
       "path": "docs/BRD/BRD-WS-13.md",
+      "filename": "BRD-WS-13.md",
+      "extension": "md",
+      "documentSet": "BRD",
       "documentCode": "BRD-WS-13",
       "documentName": "Reporting, Analytics & Operational Intelligence",
-      "documentSet": "BRD",
+      "title": "BRD Workshop 13",
       "project": "YSim v2.0",
       "version": "2.0",
       "status": "FROZEN",
       "language": "vi-VN",
-      "title": "BRD Workshop 13"
+      "generatedNavigation": false
     },
     {
       "path": "docs/BRD/BRD-WS-14.md",
+      "filename": "BRD-WS-14.md",
+      "extension": "md",
+      "documentSet": "BRD",
       "documentCode": "BRD-WS-14",
       "documentName": "Platform Configuration, Reference Data & Business Rules",
-      "documentSet": "BRD",
+      "title": "BRD Workshop 14",
       "project": "YSim v2.0",
       "version": "2.0",
       "status": "FROZEN",
       "language": "vi-VN",
-      "title": "BRD Workshop 14"
+      "generatedNavigation": false
     },
     {
       "path": "docs/BRD/BRD-WS-15.md",
+      "filename": "BRD-WS-15.md",
+      "extension": "md",
+      "documentSet": "BRD",
       "documentCode": "BRD-WS-15",
       "documentName": "Integration Platform, API Gateway & Event Bus",
-      "documentSet": "BRD",
+      "title": "BRD Workshop 15",
       "project": "YSim v2.0",
       "version": "2.0",
       "status": "FROZEN",
       "language": "vi-VN",
-      "title": "BRD Workshop 15"
+      "generatedNavigation": false
     },
     {
       "path": "docs/BRD/BRD-WS-16.md",
+      "filename": "BRD-WS-16.md",
+      "extension": "md",
+      "documentSet": "BRD",
       "documentCode": "BRD-WS-16",
       "documentName": "Identity, Security, Authorization, Audit & Compliance",
-      "documentSet": "BRD",
+      "title": "BRD Workshop 16",
       "project": "YSim v2.0",
       "version": "2.0",
       "status": "FROZEN",
       "language": "vi-VN",
-      "title": "BRD Workshop 16"
+      "generatedNavigation": false
     },
     {
       "path": "docs/BRD/BRD-WS-17.md",
+      "filename": "BRD-WS-17.md",
+      "extension": "md",
+      "documentSet": "BRD",
       "documentCode": "BRD-WS-17",
       "documentName": "Platform Operations, Monitoring, Scheduler & Background Processing",
-      "documentSet": "BRD",
+      "title": "BRD Workshop 17",
       "project": "YSim v2.0",
       "version": "2.0",
       "status": "FROZEN",
       "language": "vi-VN",
-      "title": "BRD Workshop 17"
+      "generatedNavigation": false
     },
     {
       "path": "docs/DIP/DIP-00.md",
+      "filename": "DIP-00.md",
+      "extension": "md",
+      "documentSet": "DIP",
       "documentCode": "DIP-00",
       "documentName": "Implementation Constitution & Executable Sprint Model",
-      "documentSet": "Development & Implementation Pack",
+      "title": "Implementation Constitution & Executable Sprint Model",
       "project": "YSim v2.1",
       "version": "2.1",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Implementation Constitution & Executable Sprint Model"
+      "generatedNavigation": false
     },
     {
       "path": "docs/DIP/DIP-01.md",
+      "filename": "DIP-01.md",
+      "extension": "md",
+      "documentSet": "DIP",
       "documentCode": "DIP-01",
       "documentName": "Executable Sprint Package Standard (ESPK)",
-      "documentSet": "Development & Implementation Pack",
+      "title": "Executable Sprint Package Standard (ESPK)",
       "project": "YSim v2.1",
       "version": "2.1",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Executable Sprint Package Standard (ESPK)"
+      "generatedNavigation": false
     },
     {
       "path": "docs/DIP/DIP-02.md",
+      "filename": "DIP-02.md",
+      "extension": "md",
+      "documentSet": "DIP",
       "documentCode": "DIP-02",
       "documentName": "AI Context Resolution & Prompt Assembly Standard",
-      "documentSet": "Development & Implementation Pack",
+      "title": "AI Context Resolution & Prompt Assembly Standard",
       "project": "YSim v2.1",
       "version": "2.1",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "AI Context Resolution & Prompt Assembly Standard"
+      "generatedNavigation": false
     },
     {
       "path": "docs/DIP/DIP-03.md",
+      "filename": "DIP-03.md",
+      "extension": "md",
+      "documentSet": "DIP",
       "documentCode": "DIP-03",
       "documentName": "Seed & Reference Data Standard",
-      "documentSet": "Development & Implementation Pack",
+      "title": "Seed & Reference Data Standard",
       "project": "YSim v2.1",
       "version": "2.1",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Seed & Reference Data Standard"
+      "generatedNavigation": false
     },
     {
       "path": "docs/DIP/DIP-04.md",
+      "filename": "DIP-04.md",
+      "extension": "md",
+      "documentSet": "DIP",
       "documentCode": "DIP-04",
       "documentName": "AI Execution Runtime & Bash Runner Standard",
-      "documentSet": "Development & Implementation Pack",
+      "title": "AI Execution Runtime & Bash Runner Standard",
       "project": "YSim v2.1",
       "version": "2.1",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "AI Execution Runtime & Bash Runner Standard"
+      "generatedNavigation": false
     },
     {
       "path": "docs/DIP/DIP-05.md",
+      "filename": "DIP-05.md",
+      "extension": "md",
+      "documentSet": "DIP",
       "documentCode": "DIP-05",
       "documentName": "AI Prompt Orchestration & Task Assembly Standard",
-      "documentSet": "Development & Implementation Pack",
+      "title": "AI Prompt Orchestration & Task Assembly Standard",
       "project": "YSim v2.1",
       "version": "2.1",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "AI Prompt Orchestration & Task Assembly Standard"
+      "generatedNavigation": false
     },
     {
       "path": "docs/DIP/DIP-06.md",
+      "filename": "DIP-06.md",
+      "extension": "md",
+      "documentSet": "DIP",
       "documentCode": "DIP-06",
       "documentName": "Validation, Evidence & Acceptance Standard",
-      "documentSet": "Development & Implementation Pack",
+      "title": "Validation, Evidence & Acceptance Standard",
       "project": "YSim v2.1",
       "version": "2.1",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Validation, Evidence & Acceptance Standard"
+      "generatedNavigation": false
     },
     {
       "path": "docs/DIP/DIP-07.md",
+      "filename": "DIP-07.md",
+      "extension": "md",
+      "documentSet": "DIP",
       "documentCode": "DIP-07",
       "documentName": "Repository Workflow & Git Strategy Standard",
-      "documentSet": "Development & Implementation Pack",
+      "title": "Repository Workflow & Git Strategy Standard",
       "project": "YSim v2.1",
       "version": "2.1",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Repository Workflow & Git Strategy Standard"
+      "generatedNavigation": false
     },
     {
       "path": "docs/DIP/DIP-08.md",
+      "filename": "DIP-08.md",
+      "extension": "md",
+      "documentSet": "DIP",
       "documentCode": "DIP-08",
       "documentName": "Full-stack Capability Delivery Standard",
-      "documentSet": "Development & Implementation Pack",
+      "title": "Full-stack Capability Delivery Standard",
       "project": "YSim v2.1",
       "version": "2.1",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Full-stack Capability Delivery Standard"
+      "generatedNavigation": false
     },
     {
       "path": "docs/DIP/DIP-09.md",
+      "filename": "DIP-09.md",
+      "extension": "md",
+      "documentSet": "DIP",
       "documentCode": "DIP-09",
       "documentName": "AI Execution Governance & Exception Handling Standard",
-      "documentSet": "Development & Implementation Pack",
+      "title": "AI Execution Governance & Exception Handling Standard",
       "project": "YSim v2.1",
       "version": "2.1",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "AI Execution Governance & Exception Handling Standard"
+      "generatedNavigation": false
     },
     {
       "path": "docs/DIP/DIP-10.md",
+      "filename": "DIP-10.md",
+      "extension": "md",
+      "documentSet": "DIP",
       "documentCode": "DIP-10",
       "documentName": "Implementation Roadmap & Capability Matrix",
-      "documentSet": "Development & Implementation Pack (DIP)",
+      "title": "DIP-10 — Implementation Roadmap & Capability Matrix",
       "project": "YSim AI Software Factory",
       "version": "2.1",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "DIP-10 — Implementation Roadmap & Capability Matrix"
+      "generatedNavigation": false
     },
     {
       "path": "docs/ESP/ESP-00.md",
+      "filename": "ESP-00.md",
+      "extension": "md",
+      "documentSet": "ESP",
       "documentCode": "ESP-00",
       "documentName": "Engineering Standards Overview",
-      "documentSet": "Engineering Standards Pack",
+      "title": "Engineering Standards Overview",
       "project": "YSim v2.1",
       "version": "2.1",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Engineering Standards Overview"
+      "generatedNavigation": false
     },
     {
       "path": "docs/ESP/ESP-01.md",
+      "filename": "ESP-01.md",
+      "extension": "md",
+      "documentSet": "ESP",
       "documentCode": "ESP-01",
       "documentName": "Repository Architecture Standards",
-      "documentSet": "Engineering Standards Pack",
+      "title": "Repository Architecture Standards",
       "project": "YSim v2.0",
       "version": "1.0",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Repository Architecture Standards"
+      "generatedNavigation": false
     },
     {
       "path": "docs/ESP/ESP-02.md",
+      "filename": "ESP-02.md",
+      "extension": "md",
+      "documentSet": "ESP",
       "documentCode": "ESP-02",
       "documentName": "Source Code Engineering Standards",
-      "documentSet": "Engineering Standards Pack",
+      "title": "Source Code Engineering Standards",
       "project": "YSim v2.0",
       "version": "1.0",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Source Code Engineering Standards"
+      "generatedNavigation": false
     },
     {
       "path": "docs/ESP/ESP-03.md",
+      "filename": "ESP-03.md",
+      "extension": "md",
+      "documentSet": "ESP",
       "documentCode": "ESP-03",
       "documentName": "Enterprise Naming Standards",
-      "documentSet": "Engineering Standards Pack",
+      "title": "Enterprise Naming Standards",
       "project": "YSim v2.1",
       "version": "2.1",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Enterprise Naming Standards"
+      "generatedNavigation": false
     },
     {
       "path": "docs/ESP/ESP-04.md",
+      "filename": "ESP-04.md",
+      "extension": "md",
+      "documentSet": "ESP",
       "documentCode": "ESP-04",
       "documentName": "API Engineering Standards",
-      "documentSet": "Engineering Standards Pack",
+      "title": "API Engineering Standards",
       "project": "YSim v2.1",
       "version": "2.1",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "API Engineering Standards"
+      "generatedNavigation": false
     },
     {
       "path": "docs/ESP/ESP-05.md",
+      "filename": "ESP-05.md",
+      "extension": "md",
+      "documentSet": "ESP",
       "documentCode": "ESP-05",
       "documentName": "Data Persistence Standards",
-      "documentSet": "Engineering Standards Pack",
+      "title": "Data Persistence Standards",
       "project": "YSim v2.1",
       "version": "2.1",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Data Persistence Standards"
+      "generatedNavigation": false
     },
     {
       "path": "docs/ESP/ESP-06.md",
+      "filename": "ESP-06.md",
+      "extension": "md",
+      "documentSet": "ESP",
       "documentCode": "ESP-06",
       "documentName": "Migration Standards",
-      "documentSet": "Engineering Standards Pack",
+      "title": "Migration Standards",
       "project": "YSim v2.1",
       "version": "2.1",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Migration Standards"
+      "generatedNavigation": false
     },
     {
       "path": "docs/ESP/ESP-07.md",
+      "filename": "ESP-07.md",
+      "extension": "md",
+      "documentSet": "ESP",
       "documentCode": "ESP-07",
       "documentName": "Engineering Testing Standards",
-      "documentSet": "Engineering Standards Pack",
+      "title": "Engineering Testing Standards",
       "project": "YSim v2.1",
       "version": "2.1",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Engineering Testing Standards"
+      "generatedNavigation": false
     },
     {
       "path": "docs/ESP/ESP-08.md",
+      "filename": "ESP-08.md",
+      "extension": "md",
+      "documentSet": "ESP",
       "documentCode": "ESP-08",
       "documentName": "Observability & Diagnostics Standards",
-      "documentSet": "Engineering Standards Pack",
+      "title": "Observability & Diagnostics Standards",
       "project": "YSim v2.1",
       "version": "2.1",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Observability & Diagnostics Standards"
+      "generatedNavigation": false
     },
     {
       "path": "docs/ESP/ESP-09.md",
+      "filename": "ESP-09.md",
+      "extension": "md",
+      "documentSet": "ESP",
       "documentCode": "ESP-09",
       "documentName": "Configuration & Feature Management Standards",
-      "documentSet": "Engineering Standards Pack",
+      "title": "Configuration & Feature Management Standards",
       "project": "YSim v2.0",
       "version": "1.0",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Configuration & Feature Management Standards"
+      "generatedNavigation": false
     },
     {
       "path": "docs/ESP/ESP-10.md",
+      "filename": "ESP-10.md",
+      "extension": "md",
+      "documentSet": "ESP",
       "documentCode": "ESP-10",
       "documentName": "Secure Engineering Standards",
-      "documentSet": "Engineering Standards Pack",
+      "title": "Secure Engineering Standards",
       "project": "YSim v2.1",
       "version": "2.1",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Secure Engineering Standards"
+      "generatedNavigation": false
     },
     {
       "path": "docs/ESP/ESP-11.md",
+      "filename": "ESP-11.md",
+      "extension": "md",
+      "documentSet": "ESP",
       "documentCode": "ESP-11",
       "documentName": "Engineering Documentation Standards",
-      "documentSet": "Engineering Standards Pack",
+      "title": "Engineering Documentation Standards",
       "project": "YSim v2.1",
       "version": "2.1",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Engineering Documentation Standards"
+      "generatedNavigation": false
     },
     {
       "path": "docs/ESP/ESP-12.md",
+      "filename": "ESP-12.md",
+      "extension": "md",
+      "documentSet": "ESP",
       "documentCode": "ESP-12",
       "documentName": "Source Control & Change Management Standards",
-      "documentSet": "Engineering Standards Pack",
+      "title": "Source Control & Change Management Standards",
       "project": "YSim v2.0",
       "version": "1.0",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Source Control & Change Management Standards"
+      "generatedNavigation": false
     },
     {
       "path": "docs/ESP/ESP-13.md",
+      "filename": "ESP-13.md",
+      "extension": "md",
+      "documentSet": "ESP",
       "documentCode": "ESP-13",
       "documentName": "Engineering Review Standards",
-      "documentSet": "Engineering Standards Pack",
+      "title": "Engineering Review Standards",
       "project": "YSim v2.0",
       "version": "1.0",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Engineering Review Standards"
+      "generatedNavigation": false
     },
     {
       "path": "docs/ESP/ESP-14.md",
+      "filename": "ESP-14.md",
+      "extension": "md",
+      "documentSet": "ESP",
       "documentCode": "ESP-14",
       "documentName": "Performance & Scalability Standards",
-      "documentSet": "Engineering Standards Pack",
+      "title": "Performance & Scalability Standards",
       "project": "YSim v2.1",
       "version": "2.1",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Performance & Scalability Standards"
+      "generatedNavigation": false
     },
     {
       "path": "docs/ESPK/ESPK-S00.md",
+      "filename": "ESPK-S00.md",
+      "extension": "md",
+      "documentSet": "ESPK",
       "documentCode": "ESPK-S00",
       "documentName": "Factory Commissioning & Repository Bootstrap",
-      "documentSet": "Sprint",
+      "title": null,
       "project": "YSim v2.1",
       "version": "2.1",
       "status": "FROZEN",
       "language": "vi-VN",
-      "title": null
+      "generatedNavigation": false
+    },
+    {
+      "path": "docs/INDEX.md",
+      "filename": "INDEX.md",
+      "extension": "md",
+      "documentSet": "ROOT",
+      "documentCode": null,
+      "documentName": null,
+      "title": "YSim Documentation Index",
+      "project": null,
+      "version": null,
+      "status": null,
+      "language": null,
+      "generatedNavigation": true
+    },
+    {
+      "path": "docs/MASTER_INDEX.md",
+      "filename": "MASTER_INDEX.md",
+      "extension": "md",
+      "documentSet": "ROOT",
+      "documentCode": null,
+      "documentName": null,
+      "title": "YSim v2.1 Documentation Master Index",
+      "project": null,
+      "version": null,
+      "status": null,
+      "language": null,
+      "generatedNavigation": true
     },
     {
       "path": "docs/ROP/ROP-00.md",
+      "filename": "ROP-00.md",
+      "extension": "md",
+      "documentSet": "ROP",
       "documentCode": "ROP-00",
       "documentName": "Release & Operations Overview",
-      "documentSet": "Release & Operations Pack",
+      "title": "Release & Operations Overview",
       "project": "YSim v2.0",
       "version": "1.0",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Release & Operations Overview"
+      "generatedNavigation": false
     },
     {
       "path": "docs/ROP/ROP-01.md",
+      "filename": "ROP-01.md",
+      "extension": "md",
+      "documentSet": "ROP",
       "documentCode": "ROP-01",
       "documentName": "Release Planning & Governance",
-      "documentSet": "Release & Operations Pack",
+      "title": "Release Planning & Governance",
       "project": "YSim v2.0",
       "version": "1.0",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Release Planning & Governance"
+      "generatedNavigation": false
     },
     {
       "path": "docs/ROP/ROP-02.md",
+      "filename": "ROP-02.md",
+      "extension": "md",
+      "documentSet": "ROP",
       "documentCode": "ROP-02",
       "documentName": "Deployment Standards",
-      "documentSet": "Release & Operations Pack",
+      "title": "Deployment Standards",
       "project": "YSim v2.0",
       "version": "1.0",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Deployment Standards"
+      "generatedNavigation": false
     },
     {
       "path": "docs/ROP/ROP-03.md",
+      "filename": "ROP-03.md",
+      "extension": "md",
+      "documentSet": "ROP",
       "documentCode": "ROP-03",
       "documentName": "Rollback & Recovery Standards",
-      "documentSet": "Release & Operations Pack",
+      "title": "Rollback & Recovery Standards",
       "project": "YSim v2.0",
       "version": "1.0",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Rollback & Recovery Standards"
+      "generatedNavigation": false
     },
     {
       "path": "docs/ROP/ROP-04.md",
+      "filename": "ROP-04.md",
+      "extension": "md",
+      "documentSet": "ROP",
       "documentCode": "ROP-04",
       "documentName": "Operational Readiness",
-      "documentSet": "Release & Operations Pack",
+      "title": "Operational Readiness",
       "project": "YSim v2.0",
       "version": "1.0",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Operational Readiness"
+      "generatedNavigation": false
     },
     {
       "path": "docs/ROP/ROP-05.md",
+      "filename": "ROP-05.md",
+      "extension": "md",
+      "documentSet": "ROP",
       "documentCode": "ROP-05",
       "documentName": "Production Operations",
-      "documentSet": "Release & Operations Pack",
+      "title": "Production Operations",
       "project": "YSim v2.0",
       "version": "1.0",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Production Operations"
+      "generatedNavigation": false
     },
     {
       "path": "docs/ROP/ROP-06.md",
+      "filename": "ROP-06.md",
+      "extension": "md",
+      "documentSet": "ROP",
       "documentCode": "ROP-06",
       "documentName": "Service Monitoring & Incident Management",
-      "documentSet": "Release & Operations Pack",
+      "title": "Service Monitoring & Incident Management",
       "project": "YSim v2.0",
       "version": "1.0",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Service Monitoring & Incident Management"
+      "generatedNavigation": false
     },
     {
       "path": "docs/ROP/ROP-07.md",
+      "filename": "ROP-07.md",
+      "extension": "md",
+      "documentSet": "ROP",
       "documentCode": "ROP-07",
       "documentName": "Backup & Disaster Recovery",
-      "documentSet": "Release & Operations Pack",
+      "title": "Backup & Disaster Recovery",
       "project": "YSim v2.0",
       "version": "1.0",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Backup & Disaster Recovery"
+      "generatedNavigation": false
     },
     {
       "path": "docs/ROP/ROP-08.md",
+      "filename": "ROP-08.md",
+      "extension": "md",
+      "documentSet": "ROP",
       "documentCode": "ROP-08",
       "documentName": "Production Change Management",
-      "documentSet": "Release & Operations Pack",
+      "title": "Production Change Management",
       "project": "YSim v2.0",
       "version": "1.0",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Production Change Management"
+      "generatedNavigation": false
     },
     {
       "path": "docs/ROP/ROP-09.md",
+      "filename": "ROP-09.md",
+      "extension": "md",
+      "documentSet": "ROP",
       "documentCode": "ROP-09",
       "documentName": "Hypercare & Operational Handover",
-      "documentSet": "Release & Operations Pack",
+      "title": "Hypercare & Operational Handover",
       "project": "YSim v2.0",
       "version": "1.0",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Hypercare & Operational Handover"
+      "generatedNavigation": false
     },
     {
       "path": "docs/SGP/SGP-00.md",
+      "filename": "SGP-00.md",
+      "extension": "md",
+      "documentSet": "SGP",
       "documentCode": "SGP-00",
       "documentName": "Sprint Governance Overview",
-      "documentSet": "Sprint Governance Pack",
+      "title": "Sprint Governance Overview",
       "project": "YSim v2.1",
       "version": "2.1",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Sprint Governance Overview"
+      "generatedNavigation": false
     },
     {
       "path": "docs/SGP/SGP-01.md",
+      "filename": "SGP-01.md",
+      "extension": "md",
+      "documentSet": "SGP",
       "documentCode": "SGP-01",
       "documentName": "Sprint Lifecycle",
-      "documentSet": "Sprint Governance Pack",
+      "title": "Sprint Lifecycle",
       "project": "YSim v2.0",
       "version": "1.0",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Sprint Lifecycle"
+      "generatedNavigation": false
     },
     {
       "path": "docs/SGP/SGP-02.md",
+      "filename": "SGP-02.md",
+      "extension": "md",
+      "documentSet": "SGP",
       "documentCode": "SGP-02",
       "documentName": "Sprint Roles & Responsibilities",
-      "documentSet": "Sprint Governance Pack",
+      "title": "Sprint Roles & Responsibilities",
       "project": "YSim v2.1",
       "version": "2.1",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Sprint Roles & Responsibilities"
+      "generatedNavigation": false
     },
     {
       "path": "docs/SGP/SGP-03.md",
+      "filename": "SGP-03.md",
+      "extension": "md",
+      "documentSet": "SGP",
       "documentCode": "SGP-03",
       "documentName": "Sprint Planning & Approval",
-      "documentSet": "Sprint Governance Pack",
+      "title": "Sprint Planning & Approval",
       "project": "YSim v2.0",
       "version": "1.0",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Sprint Planning & Approval"
+      "generatedNavigation": false
     },
     {
       "path": "docs/SGP/SGP-04.md",
+      "filename": "SGP-04.md",
+      "extension": "md",
+      "documentSet": "SGP",
       "documentCode": "SGP-04",
       "documentName": "Sprint Execution Governance",
-      "documentSet": "Sprint Governance Pack",
+      "title": "Sprint Execution Governance",
       "project": "YSim v2.0",
       "version": "1.0",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Sprint Execution Governance"
+      "generatedNavigation": false
     },
     {
       "path": "docs/SGP/SGP-05.md",
+      "filename": "SGP-05.md",
+      "extension": "md",
+      "documentSet": "SGP",
       "documentCode": "SGP-05",
       "documentName": "Sprint Review & Acceptance",
-      "documentSet": "Sprint Governance Pack",
+      "title": "Sprint Review & Acceptance",
       "project": "YSim v2.1",
       "version": "2.1",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Sprint Review & Acceptance"
+      "generatedNavigation": false
     },
     {
       "path": "docs/SGP/SGP-06.md",
+      "filename": "SGP-06.md",
+      "extension": "md",
+      "documentSet": "SGP",
       "documentCode": "SGP-06",
       "documentName": "Sprint Metrics & Reporting",
-      "documentSet": "Sprint Governance Pack",
+      "title": "Sprint Metrics & Reporting",
       "project": "YSim v2.0",
       "version": "1.0",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Sprint Metrics & Reporting"
+      "generatedNavigation": false
     },
     {
       "path": "docs/SGP/SGP-07.md",
+      "filename": "SGP-07.md",
+      "extension": "md",
+      "documentSet": "SGP",
       "documentCode": "SGP-07",
       "documentName": "Sprint Exception Management",
-      "documentSet": "Sprint Governance Pack",
+      "title": "Sprint Exception Management",
       "project": "YSim v2.0",
       "version": "1.0",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Sprint Exception Management"
+      "generatedNavigation": false
     },
     {
       "path": "docs/SGP/SGP-08.md",
+      "filename": "SGP-08.md",
+      "extension": "md",
+      "documentSet": "SGP",
       "documentCode": "SGP-08",
       "documentName": "Sprint Governance Gates",
-      "documentSet": "Sprint Governance Pack",
+      "title": "Sprint Governance Gates",
       "project": "YSim v2.1",
       "version": "2.1",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Sprint Governance Gates"
+      "generatedNavigation": false
     },
     {
       "path": "docs/SGP/SGP-09.md",
+      "filename": "SGP-09.md",
+      "extension": "md",
+      "documentSet": "SGP",
       "documentCode": "SGP-09",
       "documentName": "Sprint Completion & Handover",
-      "documentSet": "Sprint Governance Pack",
+      "title": "Sprint Completion & Handover",
       "project": "YSim v2.0",
       "version": "1.0",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Sprint Completion & Handover"
+      "generatedNavigation": false
     },
     {
       "path": "docs/SGP/SGP-10.md",
+      "filename": "SGP-10.md",
+      "extension": "md",
+      "documentSet": "SGP",
       "documentCode": "SGP-10",
       "documentName": "Governance Assets & Records",
-      "documentSet": "Sprint Governance Pack",
+      "title": "Governance Assets & Records",
       "project": "YSim v2.1",
       "version": "2.1",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Governance Assets & Records"
+      "generatedNavigation": false
     },
     {
       "path": "docs/YADF/YADF-00.md",
+      "filename": "YADF-00.md",
+      "extension": "md",
+      "documentSet": "YADF",
       "documentCode": "YADF-00",
       "documentName": "YSim AI Development Framework",
-      "documentSet": "Engineering Governance",
+      "title": "YSim AI Development Framework (YADF)",
       "project": "YSim v2.0",
       "version": "2.0",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "YSim AI Development Framework (YADF)"
+      "generatedNavigation": false
     },
     {
       "path": "docs/YADF/YADF-01.md",
+      "filename": "YADF-01.md",
+      "extension": "md",
+      "documentSet": "YADF",
       "documentCode": "YADF-01",
       "documentName": "Commerce Meta Model & Full-stack Capability Model",
-      "documentSet": "YSim Architecture & Domain Foundation",
+      "title": "Commerce Meta Model & Full-stack Capability Model",
       "project": "YSim v2.1",
       "version": "2.1",
       "status": "FROZEN",
       "language": "en-US",
-      "title": "Commerce Meta Model & Full-stack Capability Model"
+      "generatedNavigation": false
     }
   ]
 }

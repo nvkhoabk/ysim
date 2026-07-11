@@ -1,0 +1,30 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-07-11T23:24:02.572462+07:00",
+  "status": "PASS",
+  "sourceIndex": "factory/index/documents.json",
+  "documentCount": 102,
+  "documentSetCount": 11,
+  "capabilityCount": 7,
+  "integrationCount": 0,
+  "relationshipCount": 28,
+  "nullGovernedDocumentCodes": 0,
+  "documentsBySet": {
+    "AAP": 6,
+    "ABP": 18,
+    "AFM": 2,
+    "BRD": 24,
+    "DIP": 11,
+    "ESP": 15,
+    "ESPK": 1,
+    "ROOT": 2,
+    "ROP": 10,
+    "SGP": 11,
+    "YADF": 2
+  },
+  "notes": [
+    "Heuristic capability and integration matches are bootstrap knowledge only.",
+    "All heuristic matches require review before becoming authoritative.",
+    "docs/ remains the authoritative source of truth."
+  ]
+}

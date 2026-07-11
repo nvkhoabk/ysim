@@ -1,14 +1,92 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-07-11T22:19:46+07:00",
+  "generatedAt": "2026-07-11T23:23:54+07:00",
   "repositoryRoot": ".",
-  "knowledgeCount": 1,
+  "knowledgeCount": 14,
   "entries": [
     {
       "path": "knowledge/README.md",
       "filename": "README.md",
       "extension": "md",
       "category": "ROOT"
+    },
+    {
+      "path": "knowledge/catalog/business-rules.json",
+      "filename": "business-rules.json",
+      "extension": "json",
+      "category": "catalog"
+    },
+    {
+      "path": "knowledge/catalog/capabilities.json",
+      "filename": "capabilities.json",
+      "extension": "json",
+      "category": "catalog"
+    },
+    {
+      "path": "knowledge/catalog/document-sets.json",
+      "filename": "document-sets.json",
+      "extension": "json",
+      "category": "catalog"
+    },
+    {
+      "path": "knowledge/catalog/documents.json",
+      "filename": "documents.json",
+      "extension": "json",
+      "category": "catalog"
+    },
+    {
+      "path": "knowledge/catalog/entities.json",
+      "filename": "entities.json",
+      "extension": "json",
+      "category": "catalog"
+    },
+    {
+      "path": "knowledge/catalog/integrations.json",
+      "filename": "integrations.json",
+      "extension": "json",
+      "category": "catalog"
+    },
+    {
+      "path": "knowledge/catalog/knowledge-graph.json",
+      "filename": "knowledge-graph.json",
+      "extension": "json",
+      "category": "catalog"
+    },
+    {
+      "path": "knowledge/catalog/relationships.json",
+      "filename": "relationships.json",
+      "extension": "json",
+      "category": "catalog"
+    },
+    {
+      "path": "knowledge/catalog/schema.json",
+      "filename": "schema.json",
+      "extension": "json",
+      "category": "catalog"
+    },
+    {
+      "path": "knowledge/catalog/summary.json",
+      "filename": "summary.json",
+      "extension": "json",
+      "category": "catalog"
+    },
+    {
+      "path": "knowledge/knowledge.yaml",
+      "filename": "knowledge.yaml",
+      "extension": "yaml",
+      "category": "ROOT"
+    },
+    {
+      "path": "knowledge/normalized/documents.json",
+      "filename": "documents.json",
+      "extension": "json",
+      "category": "normalized"
+    },
+    {
+      "path": "knowledge/raw/documents.json",
+      "filename": "documents.json",
+      "extension": "json",
+      "category": "raw"
     }
   ]
 }

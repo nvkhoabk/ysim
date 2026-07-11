@@ -1,0 +1,1057 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-07-11T23:24:02.572462+07:00",
+  "nodeCount": 109,
+  "edgeCount": 28,
+  "nodes": [
+    {
+      "id": "AAP-01",
+      "type": "document",
+      "label": "Repository Discovery Model",
+      "path": "docs/AAP/AAP-01.md",
+      "documentSet": "AAP",
+      "layer": "factory"
+    },
+    {
+      "id": "AAP-02",
+      "type": "document",
+      "label": "Sprint Contract Model",
+      "path": "docs/AAP/AAP-02.md",
+      "documentSet": "AAP",
+      "layer": "factory"
+    },
+    {
+      "id": "AAP-03",
+      "type": "document",
+      "label": "AI Planning Model",
+      "path": "docs/AAP/AAP-03.md",
+      "documentSet": "AAP",
+      "layer": "factory"
+    },
+    {
+      "id": "AAP-04",
+      "type": "document",
+      "label": "AI Verification Model",
+      "path": "docs/AAP/AAP-04.md",
+      "documentSet": "AAP",
+      "layer": "factory"
+    },
+    {
+      "id": "AAP-05",
+      "type": "document",
+      "label": "AI Evidence Model",
+      "path": "docs/AAP/AAP-05.md",
+      "documentSet": "AAP",
+      "layer": "factory"
+    },
+    {
+      "id": "AAP-06",
+      "type": "document",
+      "label": "Architecture Change Proposal Model",
+      "path": "docs/AAP/AAP-06.md",
+      "documentSet": "AAP",
+      "layer": "factory"
+    },
+    {
+      "id": "ABP-00",
+      "type": "document",
+      "label": "Architecture Principles",
+      "path": "docs/ABP/ABP-00.md",
+      "documentSet": "ABP",
+      "layer": "architecture"
+    },
+    {
+      "id": "ABP-01",
+      "type": "document",
+      "label": "Repository Architecture",
+      "path": "docs/ABP/ABP-01.md",
+      "documentSet": "ABP",
+      "layer": "architecture"
+    },
+    {
+      "id": "ABP-02",
+      "type": "document",
+      "label": "Module Architecture",
+      "path": "docs/ABP/ABP-02.md",
+      "documentSet": "ABP",
+      "layer": "architecture"
+    },
+    {
+      "id": "ABP-03",
+      "type": "document",
+      "label": "Dependency Rules",
+      "path": "docs/ABP/ABP-03.md",
+      "documentSet": "ABP",
+      "layer": "architecture"
+    },
+    {
+      "id": "ABP-04",
+      "type": "document",
+      "label": "Transaction Boundary",
+      "path": "docs/ABP/ABP-04.md",
+      "documentSet": "ABP",
+      "layer": "architecture"
+    },
+    {
+      "id": "ABP-05",
+      "type": "document",
+      "label": "Event Architecture",
+      "path": "docs/ABP/ABP-05.md",
+      "documentSet": "ABP",
+      "layer": "architecture"
+    },
+    {
+      "id": "ABP-06",
+      "type": "document",
+      "label": "Snapshot Architecture",
+      "path": "docs/ABP/ABP-06.md",
+      "documentSet": "ABP",
+      "layer": "architecture"
+    },
+    {
+      "id": "ABP-07",
+      "type": "document",
+      "label": "Configuration Architecture",
+      "path": "docs/ABP/ABP-07.md",
+      "documentSet": "ABP",
+      "layer": "architecture"
+    },
+    {
+      "id": "ABP-08",
+      "type": "document",
+      "label": "Integration Architecture",
+      "path": "docs/ABP/ABP-08.md",
+      "documentSet": "ABP",
+      "layer": "architecture"
+    },
+    {
+      "id": "ABP-09",
+      "type": "document",
+      "label": "Security Architecture",
+      "path": "docs/ABP/ABP-09.md",
+      "documentSet": "ABP",
+      "layer": "architecture"
+    },
+    {
+      "id": "ABP-10",
+      "type": "document",
+      "label": "Observability Architecture",
+      "path": "docs/ABP/ABP-10.md",
+      "documentSet": "ABP",
+      "layer": "architecture"
+    },
+    {
+      "id": "ABP-11",
+      "type": "document",
+      "label": "Platform Data Architecture",
+      "path": "docs/ABP/ABP-11.md",
+      "documentSet": "ABP",
+      "layer": "architecture"
+    },
+    {
+      "id": "ABP-12",
+      "type": "document",
+      "label": "Error Handling Architecture",
+      "path": "docs/ABP/ABP-12.md",
+      "documentSet": "ABP",
+      "layer": "architecture"
+    },
+    {
+      "id": "ABP-13",
+      "type": "document",
+      "label": "Testing Architecture",
+      "path": "docs/ABP/ABP-13.md",
+      "documentSet": "ABP",
+      "layer": "architecture"
+    },
+    {
+      "id": "ABP-14",
+      "type": "document",
+      "label": "Deployment Architecture",
+      "path": "docs/ABP/ABP-14.md",
+      "documentSet": "ABP",
+      "layer": "architecture"
+    },
+    {
+      "id": "ABP-15",
+      "type": "document",
+      "label": "AI Implementation Architecture",
+      "path": "docs/ABP/ABP-15.md",
+      "documentSet": "ABP",
+      "layer": "architecture"
+    },
+    {
+      "id": "ABP-16",
+      "type": "document",
+      "label": "Commerce Experience Platform Architecture",
+      "path": "docs/ABP/ABP-16.md",
+      "documentSet": "ABP",
+      "layer": "architecture"
+    },
+    {
+      "id": "ABP-17",
+      "type": "document",
+      "label": "Design System Architecture",
+      "path": "docs/ABP/ABP-17.md",
+      "documentSet": "ABP",
+      "layer": "architecture"
+    },
+    {
+      "id": "AFM-00",
+      "type": "document",
+      "label": "AI Factory Manual",
+      "path": "docs/AFM/AFM-00.md",
+      "documentSet": "AFM",
+      "layer": "factory"
+    },
+    {
+      "id": "AFM-01",
+      "type": "document",
+      "label": "AI Factory Framework v2.1 Update",
+      "path": "docs/AFM/AFM-01.md",
+      "documentSet": "AFM",
+      "layer": "factory"
+    },
+    {
+      "id": "BRD-BO-INDEX",
+      "type": "document",
+      "label": "Business Object Registry",
+      "path": "docs/BRD/BRD-BO-INDEX.md",
+      "documentSet": "BRD",
+      "layer": "business"
+    },
+    {
+      "id": "BRD-CAP-INDEX",
+      "type": "document",
+      "label": "Enterprise Business Capability Registry",
+      "path": "docs/BRD/BRD-CAP-INDEX.md",
+      "documentSet": "BRD",
+      "layer": "business"
+    },
+    {
+      "id": "BRD-EVENT-INDEX",
+      "type": "document",
+      "label": "Enterprise Business Event Registry",
+      "path": "docs/BRD/BRD-EVENT-INDEX.md",
+      "documentSet": "BRD",
+      "layer": "business"
+    },
+    {
+      "id": "BRD-META-MODEL",
+      "type": "document",
+      "label": "Enterprise Business Meta Model",
+      "path": "docs/BRD/BRD-META-MODEL.md",
+      "documentSet": "BRD",
+      "layer": "business"
+    },
+    {
+      "id": "BRD-POLICY-INDEX",
+      "type": "document",
+      "label": "Enterprise Policy Registry",
+      "path": "docs/BRD/BRD-POLICY-INDEX.md",
+      "documentSet": "BRD",
+      "layer": "business"
+    },
+    {
+      "id": "BRD-SNAPSHOT-INDEX",
+      "type": "document",
+      "label": "Enterprise Snapshot Registry",
+      "path": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+      "documentSet": "BRD",
+      "layer": "business"
+    },
+    {
+      "id": "BRD-UPDATE-01",
+      "type": "document",
+      "label": "Commerce Experience Platform (CXP)",
+      "path": "docs/BRD/BRD-UPDATE-01.md",
+      "documentSet": "BRD",
+      "layer": "business"
+    },
+    {
+      "id": "BRD-WS-01",
+      "type": "document",
+      "label": "BRD Workshop 01",
+      "path": "docs/BRD/BRD-WS-01.md",
+      "documentSet": "BRD",
+      "layer": "business"
+    },
+    {
+      "id": "BRD-WS-02",
+      "type": "document",
+      "label": "BRD Workshop 02",
+      "path": "docs/BRD/BRD-WS-02.md",
+      "documentSet": "BRD",
+      "layer": "business"
+    },
+    {
+      "id": "BRD-WS-03",
+      "type": "document",
+      "label": "BRD Workshop 03",
+      "path": "docs/BRD/BRD-WS-03.md",
+      "documentSet": "BRD",
+      "layer": "business"
+    },
+    {
+      "id": "BRD-WS-04",
+      "type": "document",
+      "label": "BRD Workshop 04",
+      "path": "docs/BRD/BRD-WS-04.md",
+      "documentSet": "BRD",
+      "layer": "business"
+    },
+    {
+      "id": "BRD-WS-05",
+      "type": "document",
+      "label": "BRD Workshop 05",
+      "path": "docs/BRD/BRD-WS-05.md",
+      "documentSet": "BRD",
+      "layer": "business"
+    },
+    {
+      "id": "BRD-WS-06",
+      "type": "document",
+      "label": "BRD Workshop 06",
+      "path": "docs/BRD/BRD-WS-06.md",
+      "documentSet": "BRD",
+      "layer": "business"
+    },
+    {
+      "id": "BRD-WS-07",
+      "type": "document",
+      "label": "BRD Workshop 07",
+      "path": "docs/BRD/BRD-WS-07.md",
+      "documentSet": "BRD",
+      "layer": "business"
+    },
+    {
+      "id": "BRD-WS-08",
+      "type": "document",
+      "label": "BRD Workshop 08",
+      "path": "docs/BRD/BRD-WS-08.md",
+      "documentSet": "BRD",
+      "layer": "business"
+    },
+    {
+      "id": "BRD-WS-09",
+      "type": "document",
+      "label": "BRD Workshop 09",
+      "path": "docs/BRD/BRD-WS-09.md",
+      "documentSet": "BRD",
+      "layer": "business"
+    },
+    {
+      "id": "BRD-WS-10",
+      "type": "document",
+      "label": "BRD Workshop 10",
+      "path": "docs/BRD/BRD-WS-10.md",
+      "documentSet": "BRD",
+      "layer": "business"
+    },
+    {
+      "id": "BRD-WS-11",
+      "type": "document",
+      "label": "BRD Workshop 11",
+      "path": "docs/BRD/BRD-WS-11.md",
+      "documentSet": "BRD",
+      "layer": "business"
+    },
+    {
+      "id": "BRD-WS-12",
+      "type": "document",
+      "label": "BRD Workshop 12",
+      "path": "docs/BRD/BRD-WS-12.md",
+      "documentSet": "BRD",
+      "layer": "business"
+    },
+    {
+      "id": "BRD-WS-13",
+      "type": "document",
+      "label": "BRD Workshop 13",
+      "path": "docs/BRD/BRD-WS-13.md",
+      "documentSet": "BRD",
+      "layer": "business"
+    },
+    {
+      "id": "BRD-WS-14",
+      "type": "document",
+      "label": "BRD Workshop 14",
+      "path": "docs/BRD/BRD-WS-14.md",
+      "documentSet": "BRD",
+      "layer": "business"
+    },
+    {
+      "id": "BRD-WS-15",
+      "type": "document",
+      "label": "BRD Workshop 15",
+      "path": "docs/BRD/BRD-WS-15.md",
+      "documentSet": "BRD",
+      "layer": "business"
+    },
+    {
+      "id": "BRD-WS-16",
+      "type": "document",
+      "label": "BRD Workshop 16",
+      "path": "docs/BRD/BRD-WS-16.md",
+      "documentSet": "BRD",
+      "layer": "business"
+    },
+    {
+      "id": "BRD-WS-17",
+      "type": "document",
+      "label": "BRD Workshop 17",
+      "path": "docs/BRD/BRD-WS-17.md",
+      "documentSet": "BRD",
+      "layer": "business"
+    },
+    {
+      "id": "DIP-00",
+      "type": "document",
+      "label": "Implementation Constitution & Executable Sprint Model",
+      "path": "docs/DIP/DIP-00.md",
+      "documentSet": "DIP",
+      "layer": "implementation"
+    },
+    {
+      "id": "DIP-01",
+      "type": "document",
+      "label": "Executable Sprint Package Standard (ESPK)",
+      "path": "docs/DIP/DIP-01.md",
+      "documentSet": "DIP",
+      "layer": "implementation"
+    },
+    {
+      "id": "DIP-02",
+      "type": "document",
+      "label": "AI Context Resolution & Prompt Assembly Standard",
+      "path": "docs/DIP/DIP-02.md",
+      "documentSet": "DIP",
+      "layer": "implementation"
+    },
+    {
+      "id": "DIP-03",
+      "type": "document",
+      "label": "Seed & Reference Data Standard",
+      "path": "docs/DIP/DIP-03.md",
+      "documentSet": "DIP",
+      "layer": "implementation"
+    },
+    {
+      "id": "DIP-04",
+      "type": "document",
+      "label": "AI Execution Runtime & Bash Runner Standard",
+      "path": "docs/DIP/DIP-04.md",
+      "documentSet": "DIP",
+      "layer": "implementation"
+    },
+    {
+      "id": "DIP-05",
+      "type": "document",
+      "label": "AI Prompt Orchestration & Task Assembly Standard",
+      "path": "docs/DIP/DIP-05.md",
+      "documentSet": "DIP",
+      "layer": "implementation"
+    },
+    {
+      "id": "DIP-06",
+      "type": "document",
+      "label": "Validation, Evidence & Acceptance Standard",
+      "path": "docs/DIP/DIP-06.md",
+      "documentSet": "DIP",
+      "layer": "implementation"
+    },
+    {
+      "id": "DIP-07",
+      "type": "document",
+      "label": "Repository Workflow & Git Strategy Standard",
+      "path": "docs/DIP/DIP-07.md",
+      "documentSet": "DIP",
+      "layer": "implementation"
+    },
+    {
+      "id": "DIP-08",
+      "type": "document",
+      "label": "Full-stack Capability Delivery Standard",
+      "path": "docs/DIP/DIP-08.md",
+      "documentSet": "DIP",
+      "layer": "implementation"
+    },
+    {
+      "id": "DIP-09",
+      "type": "document",
+      "label": "AI Execution Governance & Exception Handling Standard",
+      "path": "docs/DIP/DIP-09.md",
+      "documentSet": "DIP",
+      "layer": "implementation"
+    },
+    {
+      "id": "DIP-10",
+      "type": "document",
+      "label": "DIP-10 — Implementation Roadmap & Capability Matrix",
+      "path": "docs/DIP/DIP-10.md",
+      "documentSet": "DIP",
+      "layer": "implementation"
+    },
+    {
+      "id": "ESP-00",
+      "type": "document",
+      "label": "Engineering Standards Overview",
+      "path": "docs/ESP/ESP-00.md",
+      "documentSet": "ESP",
+      "layer": "engineering"
+    },
+    {
+      "id": "ESP-01",
+      "type": "document",
+      "label": "Repository Architecture Standards",
+      "path": "docs/ESP/ESP-01.md",
+      "documentSet": "ESP",
+      "layer": "engineering"
+    },
+    {
+      "id": "ESP-02",
+      "type": "document",
+      "label": "Source Code Engineering Standards",
+      "path": "docs/ESP/ESP-02.md",
+      "documentSet": "ESP",
+      "layer": "engineering"
+    },
+    {
+      "id": "ESP-03",
+      "type": "document",
+      "label": "Enterprise Naming Standards",
+      "path": "docs/ESP/ESP-03.md",
+      "documentSet": "ESP",
+      "layer": "engineering"
+    },
+    {
+      "id": "ESP-04",
+      "type": "document",
+      "label": "API Engineering Standards",
+      "path": "docs/ESP/ESP-04.md",
+      "documentSet": "ESP",
+      "layer": "engineering"
+    },
+    {
+      "id": "ESP-05",
+      "type": "document",
+      "label": "Data Persistence Standards",
+      "path": "docs/ESP/ESP-05.md",
+      "documentSet": "ESP",
+      "layer": "engineering"
+    },
+    {
+      "id": "ESP-06",
+      "type": "document",
+      "label": "Migration Standards",
+      "path": "docs/ESP/ESP-06.md",
+      "documentSet": "ESP",
+      "layer": "engineering"
+    },
+    {
+      "id": "ESP-07",
+      "type": "document",
+      "label": "Engineering Testing Standards",
+      "path": "docs/ESP/ESP-07.md",
+      "documentSet": "ESP",
+      "layer": "engineering"
+    },
+    {
+      "id": "ESP-08",
+      "type": "document",
+      "label": "Observability & Diagnostics Standards",
+      "path": "docs/ESP/ESP-08.md",
+      "documentSet": "ESP",
+      "layer": "engineering"
+    },
+    {
+      "id": "ESP-09",
+      "type": "document",
+      "label": "Configuration & Feature Management Standards",
+      "path": "docs/ESP/ESP-09.md",
+      "documentSet": "ESP",
+      "layer": "engineering"
+    },
+    {
+      "id": "ESP-10",
+      "type": "document",
+      "label": "Secure Engineering Standards",
+      "path": "docs/ESP/ESP-10.md",
+      "documentSet": "ESP",
+      "layer": "engineering"
+    },
+    {
+      "id": "ESP-11",
+      "type": "document",
+      "label": "Engineering Documentation Standards",
+      "path": "docs/ESP/ESP-11.md",
+      "documentSet": "ESP",
+      "layer": "engineering"
+    },
+    {
+      "id": "ESP-12",
+      "type": "document",
+      "label": "Source Control & Change Management Standards",
+      "path": "docs/ESP/ESP-12.md",
+      "documentSet": "ESP",
+      "layer": "engineering"
+    },
+    {
+      "id": "ESP-13",
+      "type": "document",
+      "label": "Engineering Review Standards",
+      "path": "docs/ESP/ESP-13.md",
+      "documentSet": "ESP",
+      "layer": "engineering"
+    },
+    {
+      "id": "ESP-14",
+      "type": "document",
+      "label": "Performance & Scalability Standards",
+      "path": "docs/ESP/ESP-14.md",
+      "documentSet": "ESP",
+      "layer": "engineering"
+    },
+    {
+      "id": "ESPK-S00",
+      "type": "document",
+      "label": "ESPK-S00.md",
+      "path": "docs/ESPK/ESPK-S00.md",
+      "documentSet": "ESPK",
+      "layer": "execution"
+    },
+    {
+      "id": "doc-d08e66411886fba7",
+      "type": "document",
+      "label": "YSim Documentation Index",
+      "path": "docs/INDEX.md",
+      "documentSet": "ROOT",
+      "layer": "navigation"
+    },
+    {
+      "id": "doc-8a2f5d2ad6b53599",
+      "type": "document",
+      "label": "YSim v2.1 Documentation Master Index",
+      "path": "docs/MASTER_INDEX.md",
+      "documentSet": "ROOT",
+      "layer": "navigation"
+    },
+    {
+      "id": "ROP-00",
+      "type": "document",
+      "label": "Release & Operations Overview",
+      "path": "docs/ROP/ROP-00.md",
+      "documentSet": "ROP",
+      "layer": "operations"
+    },
+    {
+      "id": "ROP-01",
+      "type": "document",
+      "label": "Release Planning & Governance",
+      "path": "docs/ROP/ROP-01.md",
+      "documentSet": "ROP",
+      "layer": "operations"
+    },
+    {
+      "id": "ROP-02",
+      "type": "document",
+      "label": "Deployment Standards",
+      "path": "docs/ROP/ROP-02.md",
+      "documentSet": "ROP",
+      "layer": "operations"
+    },
+    {
+      "id": "ROP-03",
+      "type": "document",
+      "label": "Rollback & Recovery Standards",
+      "path": "docs/ROP/ROP-03.md",
+      "documentSet": "ROP",
+      "layer": "operations"
+    },
+    {
+      "id": "ROP-04",
+      "type": "document",
+      "label": "Operational Readiness",
+      "path": "docs/ROP/ROP-04.md",
+      "documentSet": "ROP",
+      "layer": "operations"
+    },
+    {
+      "id": "ROP-05",
+      "type": "document",
+      "label": "Production Operations",
+      "path": "docs/ROP/ROP-05.md",
+      "documentSet": "ROP",
+      "layer": "operations"
+    },
+    {
+      "id": "ROP-06",
+      "type": "document",
+      "label": "Service Monitoring & Incident Management",
+      "path": "docs/ROP/ROP-06.md",
+      "documentSet": "ROP",
+      "layer": "operations"
+    },
+    {
+      "id": "ROP-07",
+      "type": "document",
+      "label": "Backup & Disaster Recovery",
+      "path": "docs/ROP/ROP-07.md",
+      "documentSet": "ROP",
+      "layer": "operations"
+    },
+    {
+      "id": "ROP-08",
+      "type": "document",
+      "label": "Production Change Management",
+      "path": "docs/ROP/ROP-08.md",
+      "documentSet": "ROP",
+      "layer": "operations"
+    },
+    {
+      "id": "ROP-09",
+      "type": "document",
+      "label": "Hypercare & Operational Handover",
+      "path": "docs/ROP/ROP-09.md",
+      "documentSet": "ROP",
+      "layer": "operations"
+    },
+    {
+      "id": "SGP-00",
+      "type": "document",
+      "label": "Sprint Governance Overview",
+      "path": "docs/SGP/SGP-00.md",
+      "documentSet": "SGP",
+      "layer": "governance"
+    },
+    {
+      "id": "SGP-01",
+      "type": "document",
+      "label": "Sprint Lifecycle",
+      "path": "docs/SGP/SGP-01.md",
+      "documentSet": "SGP",
+      "layer": "governance"
+    },
+    {
+      "id": "SGP-02",
+      "type": "document",
+      "label": "Sprint Roles & Responsibilities",
+      "path": "docs/SGP/SGP-02.md",
+      "documentSet": "SGP",
+      "layer": "governance"
+    },
+    {
+      "id": "SGP-03",
+      "type": "document",
+      "label": "Sprint Planning & Approval",
+      "path": "docs/SGP/SGP-03.md",
+      "documentSet": "SGP",
+      "layer": "governance"
+    },
+    {
+      "id": "SGP-04",
+      "type": "document",
+      "label": "Sprint Execution Governance",
+      "path": "docs/SGP/SGP-04.md",
+      "documentSet": "SGP",
+      "layer": "governance"
+    },
+    {
+      "id": "SGP-05",
+      "type": "document",
+      "label": "Sprint Review & Acceptance",
+      "path": "docs/SGP/SGP-05.md",
+      "documentSet": "SGP",
+      "layer": "governance"
+    },
+    {
+      "id": "SGP-06",
+      "type": "document",
+      "label": "Sprint Metrics & Reporting",
+      "path": "docs/SGP/SGP-06.md",
+      "documentSet": "SGP",
+      "layer": "governance"
+    },
+    {
+      "id": "SGP-07",
+      "type": "document",
+      "label": "Sprint Exception Management",
+      "path": "docs/SGP/SGP-07.md",
+      "documentSet": "SGP",
+      "layer": "governance"
+    },
+    {
+      "id": "SGP-08",
+      "type": "document",
+      "label": "Sprint Governance Gates",
+      "path": "docs/SGP/SGP-08.md",
+      "documentSet": "SGP",
+      "layer": "governance"
+    },
+    {
+      "id": "SGP-09",
+      "type": "document",
+      "label": "Sprint Completion & Handover",
+      "path": "docs/SGP/SGP-09.md",
+      "documentSet": "SGP",
+      "layer": "governance"
+    },
+    {
+      "id": "SGP-10",
+      "type": "document",
+      "label": "Governance Assets & Records",
+      "path": "docs/SGP/SGP-10.md",
+      "documentSet": "SGP",
+      "layer": "governance"
+    },
+    {
+      "id": "YADF-00",
+      "type": "document",
+      "label": "YSim AI Development Framework (YADF)",
+      "path": "docs/YADF/YADF-00.md",
+      "documentSet": "YADF",
+      "layer": "factory"
+    },
+    {
+      "id": "YADF-01",
+      "type": "document",
+      "label": "Commerce Meta Model & Full-stack Capability Model",
+      "path": "docs/YADF/YADF-01.md",
+      "documentSet": "YADF",
+      "layer": "factory"
+    },
+    {
+      "id": "ai-software-factory",
+      "type": "capability",
+      "label": "Ai Software Factory"
+    },
+    {
+      "id": "analytics-reporting",
+      "type": "capability",
+      "label": "Analytics Reporting"
+    },
+    {
+      "id": "commerce-experience-platform",
+      "type": "capability",
+      "label": "Commerce Experience Platform"
+    },
+    {
+      "id": "identity-access",
+      "type": "capability",
+      "label": "Identity Access"
+    },
+    {
+      "id": "operations-monitoring",
+      "type": "capability",
+      "label": "Operations Monitoring"
+    },
+    {
+      "id": "platform-foundation",
+      "type": "capability",
+      "label": "Platform Foundation"
+    },
+    {
+      "id": "product-catalog",
+      "type": "capability",
+      "label": "Product Catalog"
+    }
+  ],
+  "edges": [
+    {
+      "id": "rel-01d533898b232e04",
+      "from": "ABP-16",
+      "to": "commerce-experience-platform",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-09afaaea85ef061b",
+      "from": "ROP-08",
+      "to": "product-catalog",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-2d55b105f7667b7a",
+      "from": "SGP-08",
+      "to": "ai-software-factory",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-384a3cc48a6500c4",
+      "from": "ROP-06",
+      "to": "operations-monitoring",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-421ed62c0f1b905d",
+      "from": "SGP-10",
+      "to": "ai-software-factory",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-47db49f5248c3ae7",
+      "from": "ROP-01",
+      "to": "ai-software-factory",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-498724dee3a44aa6",
+      "from": "ROP-05",
+      "to": "operations-monitoring",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-4d5a5eb3e64be3b7",
+      "from": "SGP-00",
+      "to": "ai-software-factory",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-4faa3f8af6102c86",
+      "from": "AFM-00",
+      "to": "ai-software-factory",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-64a7fd4179bb27c0",
+      "from": "AFM-01",
+      "to": "ai-software-factory",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-64cd8a00d2e0a0cb",
+      "from": "DIP-01",
+      "to": "ai-software-factory",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-685f87d5fcce0834",
+      "from": "SGP-04",
+      "to": "ai-software-factory",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-70e0732cce6e79a4",
+      "from": "SGP-06",
+      "to": "analytics-reporting",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-76638481371b1d71",
+      "from": "ABP-01",
+      "to": "platform-foundation",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-79f0aa6995abfa01",
+      "from": "DIP-00",
+      "to": "ai-software-factory",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-80087eafb26ca6a5",
+      "from": "DIP-09",
+      "to": "ai-software-factory",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-82ed88135a92440b",
+      "from": "ABP-10",
+      "to": "operations-monitoring",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-98270ecef012596f",
+      "from": "ESP-01",
+      "to": "platform-foundation",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-99362dacd257a6c8",
+      "from": "DIP-03",
+      "to": "ai-software-factory",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-ac0e79231d98ff85",
+      "from": "DIP-01",
+      "to": "product-catalog",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-b201c90f9474d169",
+      "from": "BRD-UPDATE-01",
+      "to": "commerce-experience-platform",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-b39f4f5bee454934",
+      "from": "SGP-02",
+      "to": "identity-access",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-c3a15a7078747af6",
+      "from": "ROP-00",
+      "to": "operations-monitoring",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-cd136a1560893e91",
+      "from": "DIP-02",
+      "to": "ai-software-factory",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-e8dfd041e794cb0f",
+      "from": "ABP-02",
+      "to": "platform-foundation",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-eab282a543a37530",
+      "from": "ESP-08",
+      "to": "operations-monitoring",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-f3cd9e6af666dad9",
+      "from": "ROP-05",
+      "to": "product-catalog",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-fc48fc473b021c62",
+      "from": "DIP-05",
+      "to": "ai-software-factory",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    }
+  ]
+}

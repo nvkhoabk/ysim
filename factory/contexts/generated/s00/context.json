@@ -1,0 +1,251 @@
+{
+  "schemaVersion": "1.0",
+  "contextId": "s00-factory-commissioning",
+  "generatedAt": "2026-07-11T23:24:50.843578+07:00",
+  "sourceManifest": "factory/context-manifests/s00.yaml",
+  "documentCount": 30,
+  "characterCount": 186697,
+  "documents": [
+    {
+      "documentCode": "AAP-01",
+      "path": "docs/AAP/AAP-01.md",
+      "documentSet": "AAP",
+      "version": "2.1",
+      "status": "FROZEN",
+      "characters": 7192
+    },
+    {
+      "documentCode": "AAP-02",
+      "path": "docs/AAP/AAP-02.md",
+      "documentSet": "AAP",
+      "version": "2.1",
+      "status": "FROZEN",
+      "characters": 7495
+    },
+    {
+      "documentCode": "AAP-03",
+      "path": "docs/AAP/AAP-03.md",
+      "documentSet": "AAP",
+      "version": "2.1",
+      "status": "FROZEN",
+      "characters": 6273
+    },
+    {
+      "documentCode": "AAP-04",
+      "path": "docs/AAP/AAP-04.md",
+      "documentSet": "AAP",
+      "version": "2.1",
+      "status": "FROZEN",
+      "characters": 6069
+    },
+    {
+      "documentCode": "AAP-05",
+      "path": "docs/AAP/AAP-05.md",
+      "documentSet": "AAP",
+      "version": "2.1",
+      "status": "FROZEN",
+      "characters": 6350
+    },
+    {
+      "documentCode": "AAP-06",
+      "path": "docs/AAP/AAP-06.md",
+      "documentSet": "AAP",
+      "version": "2.1",
+      "status": "FROZEN",
+      "characters": 6293
+    },
+    {
+      "documentCode": "ABP-01",
+      "path": "docs/ABP/ABP-01.md",
+      "documentSet": "ABP",
+      "version": "1.0",
+      "status": "FROZEN",
+      "characters": 4511
+    },
+    {
+      "documentCode": "ABP-02",
+      "path": "docs/ABP/ABP-02.md",
+      "documentSet": "ABP",
+      "version": "1.0",
+      "status": "FROZEN",
+      "characters": 5485
+    },
+    {
+      "documentCode": "AFM-00",
+      "path": "docs/AFM/AFM-00.md",
+      "documentSet": "AFM",
+      "version": "2.1",
+      "status": "FROZEN",
+      "characters": 4014
+    },
+    {
+      "documentCode": "AFM-01",
+      "path": "docs/AFM/AFM-01.md",
+      "documentSet": "AFM",
+      "version": "2.1",
+      "status": "FROZEN",
+      "characters": 5673
+    },
+    {
+      "documentCode": "DIP-00",
+      "path": "docs/DIP/DIP-00.md",
+      "documentSet": "DIP",
+      "version": "2.1",
+      "status": "FROZEN",
+      "characters": 6820
+    },
+    {
+      "documentCode": "DIP-01",
+      "path": "docs/DIP/DIP-01.md",
+      "documentSet": "DIP",
+      "version": "2.1",
+      "status": "FROZEN",
+      "characters": 4970
+    },
+    {
+      "documentCode": "DIP-02",
+      "path": "docs/DIP/DIP-02.md",
+      "documentSet": "DIP",
+      "version": "2.1",
+      "status": "FROZEN",
+      "characters": 5416
+    },
+    {
+      "documentCode": "DIP-03",
+      "path": "docs/DIP/DIP-03.md",
+      "documentSet": "DIP",
+      "version": "2.1",
+      "status": "FROZEN",
+      "characters": 6558
+    },
+    {
+      "documentCode": "DIP-04",
+      "path": "docs/DIP/DIP-04.md",
+      "documentSet": "DIP",
+      "version": "2.1",
+      "status": "FROZEN",
+      "characters": 5982
+    },
+    {
+      "documentCode": "DIP-05",
+      "path": "docs/DIP/DIP-05.md",
+      "documentSet": "DIP",
+      "version": "2.1",
+      "status": "FROZEN",
+      "characters": 6208
+    },
+    {
+      "documentCode": "DIP-06",
+      "path": "docs/DIP/DIP-06.md",
+      "documentSet": "DIP",
+      "version": "2.1",
+      "status": "FROZEN",
+      "characters": 6277
+    },
+    {
+      "documentCode": "DIP-07",
+      "path": "docs/DIP/DIP-07.md",
+      "documentSet": "DIP",
+      "version": "2.1",
+      "status": "FROZEN",
+      "characters": 6109
+    },
+    {
+      "documentCode": "DIP-08",
+      "path": "docs/DIP/DIP-08.md",
+      "documentSet": "DIP",
+      "version": "2.1",
+      "status": "FROZEN",
+      "characters": 5313
+    },
+    {
+      "documentCode": "DIP-09",
+      "path": "docs/DIP/DIP-09.md",
+      "documentSet": "DIP",
+      "version": "2.1",
+      "status": "FROZEN",
+      "characters": 7020
+    },
+    {
+      "documentCode": "DIP-10",
+      "path": "docs/DIP/DIP-10.md",
+      "documentSet": "DIP",
+      "version": "2.1",
+      "status": "FROZEN",
+      "characters": 7959
+    },
+    {
+      "documentCode": "ESP-00",
+      "path": "docs/ESP/ESP-00.md",
+      "documentSet": "ESP",
+      "version": "2.1",
+      "status": "FROZEN",
+      "characters": 6784
+    },
+    {
+      "documentCode": "ESP-01",
+      "path": "docs/ESP/ESP-01.md",
+      "documentSet": "ESP",
+      "version": "1.0",
+      "status": "FROZEN",
+      "characters": 5564
+    },
+    {
+      "documentCode": "ESP-02",
+      "path": "docs/ESP/ESP-02.md",
+      "documentSet": "ESP",
+      "version": "1.0",
+      "status": "FROZEN",
+      "characters": 5651
+    },
+    {
+      "documentCode": "ESP-03",
+      "path": "docs/ESP/ESP-03.md",
+      "documentSet": "ESP",
+      "version": "2.1",
+      "status": "FROZEN",
+      "characters": 7738
+    },
+    {
+      "documentCode": "ESP-04",
+      "path": "docs/ESP/ESP-04.md",
+      "documentSet": "ESP",
+      "version": "2.1",
+      "status": "FROZEN",
+      "characters": 7145
+    },
+    {
+      "documentCode": "ESP-05",
+      "path": "docs/ESP/ESP-05.md",
+      "documentSet": "ESP",
+      "version": "2.1",
+      "status": "FROZEN",
+      "characters": 6671
+    },
+    {
+      "documentCode": "ESP-06",
+      "path": "docs/ESP/ESP-06.md",
+      "documentSet": "ESP",
+      "version": "2.1",
+      "status": "FROZEN",
+      "characters": 5770
+    },
+    {
+      "documentCode": "ESP-07",
+      "path": "docs/ESP/ESP-07.md",
+      "documentSet": "ESP",
+      "version": "2.1",
+      "status": "FROZEN",
+      "characters": 6499
+    },
+    {
+      "documentCode": "ESP-08",
+      "path": "docs/ESP/ESP-08.md",
+      "documentSet": "ESP",
+      "version": "2.1",
+      "status": "FROZEN",
+      "characters": 6888
+    }
+  ],
+  "output": "factory/contexts/generated/s00/context.md"
+}

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-07-11T22:19:46+07:00",
+  "generatedAt": "2026-07-11T23:23:54+07:00",
   "project": "YSim",
   "factoryVersion": "2.1",
   "sources": {
@@ -10,7 +10,7 @@
     },
     "knowledge": {
       "index": "factory/index/knowledge.json",
-      "count": 1
+      "count": 14
     }
   }
 }

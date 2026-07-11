@@ -1,0 +1,21 @@
+version: 1.0
+
+source:
+
+docs/
+
+normalized:
+
+knowledge/normalized
+
+catalog:
+
+knowledge/catalog
+
+cache:
+
+knowledge/cache
+
+generated:
+
+true
