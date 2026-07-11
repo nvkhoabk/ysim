@@ -1,0 +1,39 @@
+Metadata-Version: 2.4
+Name: ysf
+Version: 0.1.0
+Summary: YSim Software Factory production toolchain
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: PyYAML<7.0,>=6.0
+Provides-Extra: dev
+Requires-Dist: pytest<9.0,>=8.0; extra == "dev"
+Requires-Dist: pytest-cov<6.0,>=5.0; extra == "dev"
+Requires-Dist: ruff<1.0,>=0.5; extra == "dev"
+Requires-Dist: mypy<2.0,>=1.10; extra == "dev"
+
+# YSF — YSim Software Factory
+
+YSF is the production toolchain used to operate the YSim AI Software Factory.
+
+## Initial commands
+
+```bash
+ysf --version
+ysf doctor
+ysf doctor --json
+```
+
+## Planned commands
+
+```bash
+ysf build-index
+ysf build-knowledge
+ysf build-context
+ysf build-prompt
+ysf validate
+ysf run
+ysf report
+```
+
+During migration, the existing scripts under scripts/ remain supported.
+

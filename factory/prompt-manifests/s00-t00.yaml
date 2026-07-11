@@ -1,0 +1,15 @@
+task: T00
+
+sprint: S00
+
+context:
+
+factory/contexts/generated/s00
+
+objective:
+
+Bootstrap repository
+
+output:
+
+factory/prompts/generated/s00/t00
