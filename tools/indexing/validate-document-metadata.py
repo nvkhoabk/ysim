@@ -3,157 +3,177 @@
 from __future__ import annotations
 
 import json
-import re
 import sys
-from collections import Counter, defaultdict
-from datetime import datetime, timezone
+from collections import defaultdict
+from datetime import datetime
 from pathlib import Path
 
-
-REQUIRED_FIELDS = (
-    "document_code",
-    "document_name",
-    "project",
-    "document_set",
-    "version",
-    "status",
-    "language",
+from document_metadata import (
+    ALLOWED_STATUSES,
+    REQUIRED_FIELDS,
+    extract_title,
+    is_governed_document,
+    is_navigation_file,
+    normalize_filename_code,
+    parse_frontmatter,
+    relative_path,
 )
-
-ALLOWED_STATUS = {
-    "DRAFT",
-    "REVIEW",
-    "APPROVED",
-    "FROZEN",
-    "DEPRECATED",
-    "ARCHIVED",
-}
-
-
-def parse_frontmatter(path: Path) -> dict[str, str]:
-    text = path.read_text(encoding="utf-8-sig")
-
-    lines = text.splitlines()
-
-    if not lines or lines[0].strip() != "---":
-        return {}
-
-    metadata: dict[str, str] = {}
-
-    for line in lines[1:]:
-        if line.strip() == "---":
-            break
-
-        if ":" not in line:
-            continue
-
-        key, value = line.split(":", 1)
-        metadata[key.strip()] = value.strip().strip("\"'")
-
-    return metadata
 
 
 def main() -> int:
     repo_root = Path(__file__).resolve().parents[2]
-    docs_dir = repo_root / "docs"
-    output_dir = repo_root / "factory" / "reports" / "s00"
-    output_dir.mkdir(parents=True, exist_ok=True)
+    docs_root = repo_root / "docs"
+    report_dir = repo_root / "factory" / "reports" / "s00"
 
-    json_output = output_dir / "documentation-metadata-validation.json"
-    md_output = output_dir / "documentation-metadata-validation.md"
+    report_dir.mkdir(parents=True, exist_ok=True)
 
-    files = sorted(docs_dir.rglob("*.md"))
+    json_output = (
+        report_dir
+        / "documentation-metadata-validation.json"
+    )
+    markdown_output = (
+        report_dir
+        / "documentation-metadata-validation.md"
+    )
 
-    records: list[dict[str, object]] = []
-    code_locations: dict[str, list[str]] = defaultdict(list)
+    files = sorted(docs_root.rglob("*.md"))
 
-    error_count = 0
-    warning_count = 0
+    errors: list[dict[str, object]] = []
+    warnings: list[dict[str, object]] = []
+    skipped: list[dict[str, object]] = []
+    documents: list[dict[str, object]] = []
+
+    code_locations: defaultdict[str, list[str]] = defaultdict(list)
+
+    governed_count = 0
+    navigation_count = 0
 
     for path in files:
-        relative_path = path.relative_to(repo_root).as_posix()
+        relative = relative_path(path, repo_root)
+
+        if is_navigation_file(path, repo_root):
+            navigation_count += 1
+
+            skipped.append({
+                "path": relative,
+                "reason": "generated_navigation_document",
+            })
+
+            continue
+
+        if not is_governed_document(path, docs_root):
+            skipped.append({
+                "path": relative,
+                "reason": "unmanaged_document_set",
+            })
+
+            continue
+
+        governed_count += 1
         metadata = parse_frontmatter(path)
 
-        errors: list[str] = []
-        warnings: list[str] = []
-
         missing_fields = [
-            field for field in REQUIRED_FIELDS if not metadata.get(field)
+            field
+            for field in REQUIRED_FIELDS
+            if not metadata.get(field)
         ]
 
         if missing_fields:
-            errors.append(
-                "Missing metadata: " + ", ".join(missing_fields)
-            )
+            errors.append({
+                "path": relative,
+                "type": "missing_metadata",
+                "fields": missing_fields,
+            })
 
         document_code = metadata.get("document_code", "")
 
         if document_code:
-            code_locations[document_code].append(relative_path)
+            code_locations[document_code].append(relative)
 
-            filename_stem = path.stem
-            if filename_stem != document_code:
-                warnings.append(
-                    f"Filename '{filename_stem}' differs from "
-                    f"document_code '{document_code}'"
-                )
+            expected_code = normalize_filename_code(path)
+
+            if document_code != expected_code:
+                warnings.append({
+                    "path": relative,
+                    "type": "filename_code_mismatch",
+                    "filenameCode": expected_code,
+                    "documentCode": document_code,
+                })
 
         status = metadata.get("status", "")
-        if status and status not in ALLOWED_STATUS:
-            warnings.append(f"Unknown status: {status}")
+
+        if status and status not in ALLOWED_STATUSES:
+            errors.append({
+                "path": relative,
+                "type": "invalid_status",
+                "value": status,
+            })
 
         project = metadata.get("project", "")
-        if project and project != "YSim v2.1":
-            warnings.append(
-                f"Legacy project metadata retained: {project}"
-            )
+
+        if project and not project.startswith("YSim"):
+            warnings.append({
+                "path": relative,
+                "type": "unexpected_project",
+                "value": project,
+            })
 
         version = metadata.get("version", "")
+
         if version and version != "2.1":
-            warnings.append(
-                f"Legacy document version retained: {version}"
-            )
+            warnings.append({
+                "path": relative,
+                "type": "legacy_document_version",
+                "value": version,
+            })
 
-        error_count += len(errors)
-        warning_count += len(warnings)
+        title = extract_title(path)
 
-        records.append(
-            {
-                "path": relative_path,
-                "metadata": metadata,
-                "errors": errors,
-                "warnings": warnings,
-            }
-        )
+        if not title:
+            warnings.append({
+                "path": relative,
+                "type": "missing_h1_title",
+            })
 
-    duplicate_codes = {
-        code: locations
-        for code, locations in code_locations.items()
-        if len(locations) > 1
-    }
+        documents.append({
+            "path": relative,
+            "documentCode": document_code or None,
+            "documentName": metadata.get("document_name") or None,
+            "documentSet": metadata.get("document_set") or None,
+            "project": project or None,
+            "version": version or None,
+            "status": status or None,
+            "language": metadata.get("language") or None,
+            "title": title,
+        })
 
-    for code, locations in duplicate_codes.items():
-        error_count += 1
-        records.append(
-            {
-                "path": None,
-                "metadata": {"document_code": code},
-                "errors": [
-                    "Duplicate document_code found in: "
-                    + ", ".join(locations)
-                ],
-                "warnings": [],
-            }
-        )
+    duplicate_codes: dict[str, list[str]] = {}
+
+    for code, paths in sorted(code_locations.items()):
+        if len(paths) > 1:
+            duplicate_codes[code] = paths
+
+            errors.append({
+                "type": "duplicate_document_code",
+                "documentCode": code,
+                "paths": paths,
+            })
 
     result = {
-        "schemaVersion": "1.0",
-        "generatedAt": datetime.now(timezone.utc).isoformat(),
-        "documentCount": len(files),
-        "errorCount": error_count,
-        "warningCount": warning_count,
+        "schemaVersion": "1.1",
+        "generatedAt": datetime.now().astimezone().isoformat(),
+        "status": "PASS" if not errors else "FAIL",
+        "totalMarkdownCount": len(files),
+        "governedDocumentCount": governed_count,
+        "navigationDocumentCount": navigation_count,
+        "skippedDocumentCount": len(skipped),
+        "errorCount": len(errors),
+        "warningCount": len(warnings),
         "duplicateDocumentCodes": duplicate_codes,
-        "documents": records,
+        "errors": errors,
+        "warnings": warnings,
+        "skipped": skipped,
+        "documents": documents,
     }
 
     json_output.write_text(
@@ -164,59 +184,73 @@ def main() -> int:
     lines = [
         "# Sprint-00 Documentation Metadata Validation",
         "",
-        f"- Documents: {len(files)}",
-        f"- Errors: {error_count}",
-        f"- Warnings: {warning_count}",
+        f"- Status: **{result['status']}**",
+        f"- Total Markdown files: **{result['totalMarkdownCount']}**",
+        f"- Governed documents: **{result['governedDocumentCount']}**",
+        f"- Navigation documents: **{result['navigationDocumentCount']}**",
+        f"- Errors: **{result['errorCount']}**",
+        f"- Warnings: **{result['warningCount']}**",
         "",
         "## Errors",
         "",
     ]
 
-    error_records = [
-        record for record in records if record["errors"]
-    ]
-
-    if not error_records:
-        lines.append("No errors.")
+    if errors:
+        for error in errors:
+            lines.append(
+                "- `" + json.dumps(
+                    error,
+                    ensure_ascii=False,
+                ) + "`"
+            )
     else:
-        for record in error_records:
-            lines.append(f"### {record['path'] or 'Global'}")
-            for error in record["errors"]:
-                lines.append(f"- {error}")
-            lines.append("")
+        lines.append("- None")
 
-    lines.extend(
-        [
-            "## Warnings",
-            "",
-        ]
-    )
+    lines.extend([
+        "",
+        "## Warnings",
+        "",
+    ])
 
-    warning_records = [
-        record for record in records if record["warnings"]
-    ]
-
-    if not warning_records:
-        lines.append("No warnings.")
+    if warnings:
+        for warning in warnings:
+            lines.append(
+                "- `" + json.dumps(
+                    warning,
+                    ensure_ascii=False,
+                ) + "`"
+            )
     else:
-        for record in warning_records:
-            lines.append(f"### {record['path']}")
-            for warning in record["warnings"]:
-                lines.append(f"- {warning}")
-            lines.append("")
+        lines.append("- None")
 
-    md_output.write_text(
-        "\n".join(lines).rstrip() + "\n",
+    lines.extend([
+        "",
+        "## Skipped Navigation Documents",
+        "",
+    ])
+
+    if skipped:
+        for entry in skipped:
+            lines.append(
+                f"- `{entry['path']}` — {entry['reason']}"
+            )
+    else:
+        lines.append("- None")
+
+    markdown_output.write_text(
+        "\n".join(lines) + "\n",
         encoding="utf-8",
     )
 
     print(
-        f"Validated {len(files)} documents: "
-        f"{error_count} error(s), {warning_count} warning(s)."
+        f"{result['status']}: "
+        f"{governed_count} governed document(s), "
+        f"{navigation_count} navigation document(s), "
+        f"{len(errors)} error(s), "
+        f"{len(warnings)} warning(s)."
     )
-    print(md_output.relative_to(repo_root))
 
-    return 1 if error_count else 0
+    return 0 if not errors else 1
 
 
 if __name__ == "__main__":

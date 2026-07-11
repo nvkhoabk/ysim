@@ -1,262 +1,83 @@
 # Sprint-00 Documentation Metadata Validation
 
-- Documents: 102
-- Errors: 2
-- Warnings: 123
+- Status: **PASS**
+- Total Markdown files: **102**
+- Governed documents: **100**
+- Navigation documents: **2**
+- Errors: **0**
+- Warnings: **63**
 
 ## Errors
 
-### docs/INDEX.md
-- Missing metadata: document_code, document_name, project, document_set, version, status, language
-
-### docs/MASTER_INDEX.md
-- Missing metadata: document_code, document_name, project, document_set, version, status, language
+- None
 
 ## Warnings
 
-### docs/ABP/ABP-00.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 1.0
+- `{"path": "docs/ABP/ABP-00.md", "type": "legacy_document_version", "value": "1.0"}`
+- `{"path": "docs/ABP/ABP-01.md", "type": "legacy_document_version", "value": "1.0"}`
+- `{"path": "docs/ABP/ABP-02.md", "type": "legacy_document_version", "value": "1.0"}`
+- `{"path": "docs/ABP/ABP-03.md", "type": "legacy_document_version", "value": "1.0"}`
+- `{"path": "docs/ABP/ABP-04.md", "type": "legacy_document_version", "value": "1.0"}`
+- `{"path": "docs/ABP/ABP-05.md", "type": "legacy_document_version", "value": "1.0"}`
+- `{"path": "docs/ABP/ABP-06.md", "type": "legacy_document_version", "value": "1.0"}`
+- `{"path": "docs/ABP/ABP-07.md", "type": "legacy_document_version", "value": "1.0"}`
+- `{"path": "docs/ABP/ABP-08.md", "type": "legacy_document_version", "value": "1.0"}`
+- `{"path": "docs/ABP/ABP-09.md", "type": "legacy_document_version", "value": "1.0"}`
+- `{"path": "docs/ABP/ABP-10.md", "type": "legacy_document_version", "value": "1.0"}`
+- `{"path": "docs/ABP/ABP-11.md", "type": "legacy_document_version", "value": "1.0"}`
+- `{"path": "docs/ABP/ABP-12.md", "type": "legacy_document_version", "value": "1.0"}`
+- `{"path": "docs/ABP/ABP-13.md", "type": "legacy_document_version", "value": "1.0"}`
+- `{"path": "docs/ABP/ABP-14.md", "type": "legacy_document_version", "value": "1.0"}`
+- `{"path": "docs/ABP/ABP-15.md", "type": "legacy_document_version", "value": "1.0"}`
+- `{"path": "docs/BRD/BRD-BO-INDEX.md", "type": "legacy_document_version", "value": "1.0"}`
+- `{"path": "docs/BRD/BRD-CAP-INDEX.md", "type": "legacy_document_version", "value": "1.0"}`
+- `{"path": "docs/BRD/BRD-EVENT-INDEX.md", "type": "legacy_document_version", "value": "1.0"}`
+- `{"path": "docs/BRD/BRD-META-MODEL.md", "type": "legacy_document_version", "value": "1.0"}`
+- `{"path": "docs/BRD/BRD-POLICY-INDEX.md", "type": "legacy_document_version", "value": "1.0"}`
+- `{"path": "docs/BRD/BRD-SNAPSHOT-INDEX.md", "type": "legacy_document_version", "value": "1.0"}`
+- `{"path": "docs/BRD/BRD-WS-01.md", "type": "legacy_document_version", "value": "2.0"}`
+- `{"path": "docs/BRD/BRD-WS-02.md", "type": "legacy_document_version", "value": "2.0"}`
+- `{"path": "docs/BRD/BRD-WS-03.md", "type": "legacy_document_version", "value": "2.0"}`
+- `{"path": "docs/BRD/BRD-WS-04.md", "type": "legacy_document_version", "value": "2.0"}`
+- `{"path": "docs/BRD/BRD-WS-05.md", "type": "legacy_document_version", "value": "2.0"}`
+- `{"path": "docs/BRD/BRD-WS-06.md", "type": "legacy_document_version", "value": "2.0"}`
+- `{"path": "docs/BRD/BRD-WS-07.md", "type": "legacy_document_version", "value": "2.0"}`
+- `{"path": "docs/BRD/BRD-WS-08.md", "type": "legacy_document_version", "value": "2.0"}`
+- `{"path": "docs/BRD/BRD-WS-09.md", "type": "legacy_document_version", "value": "2.0"}`
+- `{"path": "docs/BRD/BRD-WS-10.md", "type": "legacy_document_version", "value": "2.0"}`
+- `{"path": "docs/BRD/BRD-WS-11.md", "type": "legacy_document_version", "value": "2.0"}`
+- `{"path": "docs/BRD/BRD-WS-12.md", "type": "legacy_document_version", "value": "2.0"}`
+- `{"path": "docs/BRD/BRD-WS-13.md", "type": "legacy_document_version", "value": "2.0"}`
+- `{"path": "docs/BRD/BRD-WS-14.md", "type": "legacy_document_version", "value": "2.0"}`
+- `{"path": "docs/BRD/BRD-WS-15.md", "type": "legacy_document_version", "value": "2.0"}`
+- `{"path": "docs/BRD/BRD-WS-16.md", "type": "legacy_document_version", "value": "2.0"}`
+- `{"path": "docs/BRD/BRD-WS-17.md", "type": "legacy_document_version", "value": "2.0"}`
+- `{"path": "docs/ESP/ESP-01.md", "type": "legacy_document_version", "value": "1.0"}`
+- `{"path": "docs/ESP/ESP-02.md", "type": "legacy_document_version", "value": "1.0"}`
+- `{"path": "docs/ESP/ESP-09.md", "type": "legacy_document_version", "value": "1.0"}`
+- `{"path": "docs/ESP/ESP-12.md", "type": "legacy_document_version", "value": "1.0"}`
+- `{"path": "docs/ESP/ESP-13.md", "type": "legacy_document_version", "value": "1.0"}`
+- `{"path": "docs/ESPK/ESPK-S00.md", "type": "filename_code_mismatch", "filenameCode": "ESPK-S00", "documentCode": "ESPK-00"}`
+- `{"path": "docs/ESPK/ESPK-S00.md", "type": "missing_h1_title"}`
+- `{"path": "docs/ROP/ROP-00.md", "type": "legacy_document_version", "value": "1.0"}`
+- `{"path": "docs/ROP/ROP-01.md", "type": "legacy_document_version", "value": "1.0"}`
+- `{"path": "docs/ROP/ROP-02.md", "type": "legacy_document_version", "value": "1.0"}`
+- `{"path": "docs/ROP/ROP-03.md", "type": "legacy_document_version", "value": "1.0"}`
+- `{"path": "docs/ROP/ROP-04.md", "type": "legacy_document_version", "value": "1.0"}`
+- `{"path": "docs/ROP/ROP-05.md", "type": "legacy_document_version", "value": "1.0"}`
+- `{"path": "docs/ROP/ROP-06.md", "type": "legacy_document_version", "value": "1.0"}`
+- `{"path": "docs/ROP/ROP-07.md", "type": "legacy_document_version", "value": "1.0"}`
+- `{"path": "docs/ROP/ROP-08.md", "type": "legacy_document_version", "value": "1.0"}`
+- `{"path": "docs/ROP/ROP-09.md", "type": "legacy_document_version", "value": "1.0"}`
+- `{"path": "docs/SGP/SGP-01.md", "type": "legacy_document_version", "value": "1.0"}`
+- `{"path": "docs/SGP/SGP-03.md", "type": "legacy_document_version", "value": "1.0"}`
+- `{"path": "docs/SGP/SGP-04.md", "type": "legacy_document_version", "value": "1.0"}`
+- `{"path": "docs/SGP/SGP-06.md", "type": "legacy_document_version", "value": "1.0"}`
+- `{"path": "docs/SGP/SGP-07.md", "type": "legacy_document_version", "value": "1.0"}`
+- `{"path": "docs/SGP/SGP-09.md", "type": "legacy_document_version", "value": "1.0"}`
+- `{"path": "docs/YADF/YADF-00.md", "type": "legacy_document_version", "value": "2.0"}`
 
-### docs/ABP/ABP-01.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 1.0
+## Skipped Navigation Documents
 
-### docs/ABP/ABP-02.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 1.0
-
-### docs/ABP/ABP-03.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 1.0
-
-### docs/ABP/ABP-04.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 1.0
-
-### docs/ABP/ABP-05.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 1.0
-
-### docs/ABP/ABP-06.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 1.0
-
-### docs/ABP/ABP-07.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 1.0
-
-### docs/ABP/ABP-08.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 1.0
-
-### docs/ABP/ABP-09.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 1.0
-
-### docs/ABP/ABP-10.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 1.0
-
-### docs/ABP/ABP-11.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 1.0
-
-### docs/ABP/ABP-12.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 1.0
-
-### docs/ABP/ABP-13.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 1.0
-
-### docs/ABP/ABP-14.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 1.0
-
-### docs/ABP/ABP-15.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 1.0
-
-### docs/BRD/BRD-BO-INDEX.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 1.0
-
-### docs/BRD/BRD-CAP-INDEX.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 1.0
-
-### docs/BRD/BRD-EVENT-INDEX.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 1.0
-
-### docs/BRD/BRD-META-MODEL.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 1.0
-
-### docs/BRD/BRD-POLICY-INDEX.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 1.0
-
-### docs/BRD/BRD-SNAPSHOT-INDEX.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 1.0
-
-### docs/BRD/BRD-WS-01.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 2.0
-
-### docs/BRD/BRD-WS-02.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 2.0
-
-### docs/BRD/BRD-WS-03.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 2.0
-
-### docs/BRD/BRD-WS-04.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 2.0
-
-### docs/BRD/BRD-WS-05.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 2.0
-
-### docs/BRD/BRD-WS-06.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 2.0
-
-### docs/BRD/BRD-WS-07.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 2.0
-
-### docs/BRD/BRD-WS-08.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 2.0
-
-### docs/BRD/BRD-WS-09.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 2.0
-
-### docs/BRD/BRD-WS-10.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 2.0
-
-### docs/BRD/BRD-WS-11.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 2.0
-
-### docs/BRD/BRD-WS-12.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 2.0
-
-### docs/BRD/BRD-WS-13.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 2.0
-
-### docs/BRD/BRD-WS-14.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 2.0
-
-### docs/BRD/BRD-WS-15.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 2.0
-
-### docs/BRD/BRD-WS-16.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 2.0
-
-### docs/BRD/BRD-WS-17.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 2.0
-
-### docs/DIP/DIP-10.md
-- Legacy project metadata retained: YSim AI Software Factory
-
-### docs/ESP/ESP-01.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 1.0
-
-### docs/ESP/ESP-02.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 1.0
-
-### docs/ESP/ESP-09.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 1.0
-
-### docs/ESP/ESP-12.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 1.0
-
-### docs/ESP/ESP-13.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 1.0
-
-### docs/ROP/ROP-00.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 1.0
-
-### docs/ROP/ROP-01.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 1.0
-
-### docs/ROP/ROP-02.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 1.0
-
-### docs/ROP/ROP-03.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 1.0
-
-### docs/ROP/ROP-04.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 1.0
-
-### docs/ROP/ROP-05.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 1.0
-
-### docs/ROP/ROP-06.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 1.0
-
-### docs/ROP/ROP-07.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 1.0
-
-### docs/ROP/ROP-08.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 1.0
-
-### docs/ROP/ROP-09.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 1.0
-
-### docs/SGP/SGP-01.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 1.0
-
-### docs/SGP/SGP-03.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 1.0
-
-### docs/SGP/SGP-04.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 1.0
-
-### docs/SGP/SGP-06.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 1.0
-
-### docs/SGP/SGP-07.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 1.0
-
-### docs/SGP/SGP-09.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 1.0
-
-### docs/YADF/YADF-00.md
-- Legacy project metadata retained: YSim v2.0
-- Legacy document version retained: 2.0
+- `docs/INDEX.md` — generated_navigation_document
+- `docs/MASTER_INDEX.md` — generated_navigation_document
