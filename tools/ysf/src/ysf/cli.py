@@ -3,8 +3,10 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+from pathlib import Path
 
 from ysf import __version__
+from ysf.context.service import build_context
 from ysf.core.doctor import run_doctor
 from ysf.core.repository import (
     RepositoryError,
@@ -99,6 +101,25 @@ def print_result(
                     f"    {stage['message']}"
                 )
 
+    elif result.command == "build-context":
+        print(
+            "  context: "
+            f"{result.data['contextId']}"
+        )
+        print(
+            "  documents: "
+            f"{result.data['documentCount']}"
+        )
+        print(
+            "  characters: "
+            f"{result.data['characterCount']}"
+        )
+        print(
+            "  output: "
+            f"{result.data['outputDirectory']}"
+        )
+
+
 
 def create_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
@@ -145,6 +166,27 @@ def create_parser() -> argparse.ArgumentParser:
         )
     )
     build_knowledge_parser.add_argument(
+        "--json",
+        action="store_true",
+    )
+
+    build_context_parser = (
+        subparsers.add_parser(
+            "build-context",
+            help="Build a Context Package.",
+        )
+    )
+
+    build_context_parser.add_argument(
+        "--manifest",
+        default=(
+            "factory/context-manifests/"
+            "s00.yaml"
+        ),
+        help="Context manifest path.",
+    )
+
+    build_context_parser.add_argument(
         "--json",
         action="store_true",
     )
@@ -200,6 +242,26 @@ def main() -> int:
         elif args.command == "build-knowledge":
             result = build_knowledge(
                 repository_root
+            )
+
+        elif args.command == "build-context":
+            manifest_path = Path(
+                args.manifest
+            )
+
+            if not manifest_path.is_absolute():
+                manifest_path = (
+                    repository_root
+                    / manifest_path
+                )
+
+            result = build_context(
+                repository_root=(
+                    repository_root
+                ),
+                manifest_path=(
+                    manifest_path
+                ),
             )
 
         elif args.command == "pipeline":

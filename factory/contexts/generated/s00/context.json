@@ -1,10 +1,9 @@
 {
-  "schemaVersion": "1.0",
+  "schemaVersion": "1.1",
   "contextId": "s00-factory-commissioning",
-  "generatedAt": "2026-07-12T00:28:41.089171+07:00",
   "sourceManifest": "factory/context-manifests/s00.yaml",
   "documentCount": 30,
-  "characterCount": 184848,
+  "characterCount": 180767,
   "documents": [
     {
       "documentCode": "AFM-00",
@@ -151,6 +150,30 @@
       "characters": 5485
     },
     {
+      "documentCode": "ABP-07",
+      "path": "docs/ABP/ABP-07.md",
+      "documentSet": "ABP",
+      "version": "1.0",
+      "status": "FROZEN",
+      "characters": 5951
+    },
+    {
+      "documentCode": "ABP-14",
+      "path": "docs/ABP/ABP-14.md",
+      "documentSet": "ABP",
+      "version": "1.0",
+      "status": "FROZEN",
+      "characters": 4552
+    },
+    {
+      "documentCode": "ABP-15",
+      "path": "docs/ABP/ABP-15.md",
+      "documentSet": "ABP",
+      "version": "1.0",
+      "status": "FROZEN",
+      "characters": 5002
+    },
+    {
       "documentCode": "AFM-01",
       "path": "docs/AFM/AFM-01.md",
       "documentSet": "AFM",
@@ -221,31 +244,8 @@
       "version": "2.1",
       "status": "FROZEN",
       "characters": 7738
-    },
-    {
-      "documentCode": "ESP-04",
-      "path": "docs/ESP/ESP-04.md",
-      "documentSet": "ESP",
-      "version": "2.1",
-      "status": "FROZEN",
-      "characters": 7145
-    },
-    {
-      "documentCode": "ESP-05",
-      "path": "docs/ESP/ESP-05.md",
-      "documentSet": "ESP",
-      "version": "2.1",
-      "status": "FROZEN",
-      "characters": 6671
-    },
-    {
-      "documentCode": "ESP-06",
-      "path": "docs/ESP/ESP-06.md",
-      "documentSet": "ESP",
-      "version": "2.1",
-      "status": "FROZEN",
-      "characters": 5770
     }
   ],
-  "output": "factory/contexts/generated/s00/context.md"
+  "output": "factory/contexts/generated/s00/context.md",
+  "generatedAt": "2026-07-12T03:46:04.371549+07:00"
 }

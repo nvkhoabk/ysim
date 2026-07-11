@@ -7795,6 +7795,1049 @@ Mọi Module mới phải tuân thủ tài liệu này trước khi được đ�
 
 ---
 
+# Source: ABP-07
+
+- Path: `docs/ABP/ABP-07.md`
+- Set: `ABP`
+- Version: `1.0`
+- Status: `FROZEN`
+
+# Configuration Architecture
+
+## ABP-07
+
+---
+
+# 1. Purpose
+
+Configuration Architecture định nghĩa kiến trúc quản lý Configuration của nền tảng YSim.
+
+Tài liệu này chuẩn hóa:
+
+- Configuration Lifecycle
+- Configuration Ownership
+- Configuration Versioning
+- Runtime Configuration
+- Configuration Distribution
+- Configuration Governance
+- Configuration Security
+- Configuration Deployment
+
+Configuration là một thành phần kiến trúc của Platform.
+
+---
+
+# 2. Configuration Principles
+
+YSim áp dụng các nguyên tắc:
+
+- Configuration Driven
+- Business Managed
+- Versioned
+- Approved
+- Traceable
+- Runtime Reloadable
+- Environment Aware
+- Policy Controlled
+
+Business Behavior ưu tiên điều khiển bằng Configuration thay vì Hard-code.
+
+---
+
+# 3. Configuration Definition
+
+Configuration là tập hợp các tham số điều khiển hành vi của Platform.
+
+Configuration không phải Source Code.
+
+Configuration không phải Business Data.
+
+Configuration có vòng đời độc lập.
+
+---
+
+# 4. Configuration Categories
+
+Platform chuẩn hóa các nhóm Configuration.
+
+| Category | Examples |
+|-----------|----------|
+| Platform Configuration | Cache, Timeout, Retry |
+| Business Configuration | Commercial Parameters |
+| Organization Configuration | Branding, Theme |
+| Security Configuration | MFA, Password Policy |
+| Integration Configuration | Connector, Endpoint |
+| Notification Configuration | Template, Channel |
+| Reporting Configuration | KPI, Dashboard |
+| Scheduler Configuration | Job Schedule |
+
+---
+
+# 5. Configuration Ownership
+
+Mỗi Configuration chỉ có một Owner.
+
+Owner chịu trách nhiệm:
+
+- tạo;
+- cập nhật;
+- phê duyệt;
+- phát hành;
+- ngừng sử dụng.
+
+Không có Configuration không có Ownership.
+
+---
+
+# 6. Configuration Lifecycle
+
+```text
+Draft
+
+↓
+
+Review
+
+↓
+
+Approved
+
+↓
+
+Published
+
+↓
+
+Effective
+
+↓
+
+Deprecated
+
+↓
+
+Archived
+```
+
+Không sử dụng Configuration chưa được Published.
+
+---
+
+# 7. Configuration Version
+
+Mọi Configuration đều hỗ trợ Version.
+
+Version mới không ghi đè Version cũ.
+
+Platform luôn lưu lịch sử Version.
+
+---
+
+# 8. Effective Date
+
+Configuration hỗ trợ:
+
+- Effective From
+- Effective Until
+
+Platform luôn áp dụng Version có hiệu lực tại thời điểm xử lý.
+
+---
+
+# 9. Runtime Reload
+
+Platform phải hỗ trợ Runtime Reload.
+
+Không yêu cầu Restart Service khi:
+
+- thay đổi Reference Data;
+- thay đổi Metadata;
+- thay đổi Business Rule;
+- thay đổi Policy;
+- thay đổi Dictionary;
+- thay đổi Configuration thông thường.
+
+Các trường hợp cần Restart phải được quy định rõ.
+
+---
+
+# 10. Configuration Dependency
+
+Configuration có thể phụ thuộc nhau.
+
+Ví dụ:
+
+```text
+Price Policy
+
+↓
+
+Promotion Policy
+
+↓
+
+Settlement Policy
+```
+
+Dependency phải được kiểm tra trước khi Publish.
+
+Không cho phép tạo Dependency vòng (Circular Dependency).
+
+---
+
+# 11. Configuration Package
+
+Configuration hỗ trợ Package.
+
+Package bao gồm:
+
+- Configuration
+- Reference Data
+- Dictionary
+- Metadata
+- Business Rule
+- Policy
+
+Package được sử dụng cho:
+
+- Migration
+- Deployment
+- Environment Synchronization
+
+---
+
+# 12. Environment Management
+
+Configuration được quản lý theo Environment.
+
+Ví dụ:
+
+- Development
+- Test
+- UAT
+- Staging
+- Production
+
+Platform phải hỗ trợ Promote Configuration giữa các Environment.
+
+---
+
+# 13. Configuration Validation
+
+Trước khi Publish phải Validate:
+
+- Schema
+- Dependency
+- Reference
+- Effective Date
+- Conflict
+- Security
+
+Không Publish Configuration không hợp lệ.
+
+---
+
+# 14. Configuration Security
+
+Configuration chịu Security Policy.
+
+Có thể áp dụng:
+
+- Approval Workflow
+- Permission
+- Data Masking
+- Encryption
+- Audit
+
+Configuration nhạy cảm phải được bảo vệ.
+
+---
+
+# 15. Configuration Traceability
+
+Mỗi Configuration phải truy vết được:
+
+- Business Requirement
+- Business Object
+- Policy
+- Rule
+- Version
+- Owner
+- Approval
+- Deployment Package
+
+---
+
+# 16. Configuration Rollback
+
+Platform phải hỗ trợ Rollback.
+
+Rollback không làm mất Version cũ.
+
+Rollback luôn tạo Audit và Business Event.
+
+---
+
+# 17. Configuration Distribution
+
+Configuration được phân phối thông qua Configuration Service.
+
+Module không đọc trực tiếp Database Configuration.
+
+Module luôn sử dụng Contract của Configuration Service.
+
+---
+
+# 18. Configuration Rules
+
+CA-001 — Configuration ưu tiên hơn Hard-code.
+
+CA-002 — Configuration phải có Version.
+
+CA-003 — Configuration phải có Approval.
+
+CA-004 — Configuration hỗ trợ Effective Date.
+
+CA-005 — Configuration hỗ trợ Runtime Reload.
+
+CA-006 — Configuration phải có Traceability.
+
+CA-007 — Configuration phải có Owner.
+
+CA-008 — Configuration hỗ trợ Package.
+
+CA-009 — Configuration được Validate trước khi Publish.
+
+CA-010 — Configuration tuân thủ Security Policy.
+
+---
+
+# 19. Architecture Compliance Checklist (ACC)
+
+| Rule | Validation |
+|------|------------|
+| ACC-0701 | Configuration có Owner |
+| ACC-0702 | Configuration có Version |
+| ACC-0703 | Configuration có Approval |
+| ACC-0704 | Configuration hỗ trợ Effective Date |
+| ACC-0705 | Configuration được Validate trước Publish |
+| ACC-0706 | Runtime Reload hoạt động đúng |
+| ACC-0707 | Không có Circular Dependency |
+| ACC-0708 | Configuration được Audit |
+| ACC-0709 | Configuration được quản lý theo Environment |
+| ACC-0710 | Configuration sử dụng Configuration Service thay vì truy cập trực tiếp Database |
+
+Checklist này được sử dụng trong:
+
+- Architecture Review
+- AI Review
+- CI/CD Validation
+- Code Review
+
+---
+
+# 20. Relationship to Other Baselines
+
+Configuration Architecture liên kết với:
+
+- ABP-03 Dependency Rules
+- ABP-04 Transaction Boundary
+- ABP-05 Event Architecture
+- ABP-06 Snapshot Architecture
+- BRD-POLICY-INDEX
+- BRD-BO-INDEX
+
+Configuration là thành phần điều khiển hành vi của Platform, không phải Business Data.
+
+---
+
+# 21. Document Status
+
+**Status: FROZEN**
+
+ABP-07 là tài liệu nền tảng quy định kiến trúc Configuration của nền tảng YSim.
+
+Mọi Module, Sprint và AI Implementation phải tuân thủ các nguyên tắc trong tài liệu này.
+
+---
+
+
+---
+
+# Source: ABP-14
+
+- Path: `docs/ABP/ABP-14.md`
+- Set: `ABP`
+- Version: `1.0`
+- Status: `FROZEN`
+
+# Deployment Architecture
+
+## ABP-14
+
+---
+
+# 1. Purpose
+
+Deployment Architecture định nghĩa kiến trúc triển khai và phát hành của nền tảng YSim.
+
+Tài liệu này chuẩn hóa:
+
+- Deployment Unit
+- Release Architecture
+- Environment Strategy
+- Deployment Pipeline
+- Rollback
+- Release Governance
+- Operational Readiness
+
+Deployment Architecture đảm bảo mọi Release có thể được triển khai, kiểm soát và khôi phục một cách an toàn.
+
+---
+
+# 2. Deployment Principles
+
+YSim áp dụng các nguyên tắc:
+
+- Release by Contract
+- Immutable Artifact
+- Environment Independent
+- Configuration Driven
+- Safe Deployment
+- Reproducible
+- Traceable
+- Rollback Ready
+
+---
+
+# 3. Deployment Architecture
+
+```text
+Source Code
+
+↓
+
+Build Artifact
+
+↓
+
+Release Package
+
+↓
+
+Deployment Package
+
+↓
+
+Environment
+
+↓
+
+Runtime Platform
+```
+
+Artifact không thay đổi sau khi phát hành.
+
+---
+
+# 4. Deployment Unit
+
+Deployment Unit là đơn vị nhỏ nhất được phép triển khai.
+
+Ví dụ:
+
+- API Service
+- Worker
+- Scheduler
+- Portal
+- Gateway
+
+Deployment Unit không nhất thiết trùng với Module.
+
+---
+
+# 5. Release Unit
+
+Release Unit là tập hợp các Deployment Unit được phát hành cùng nhau.
+
+Một Release Unit phải có:
+
+- Version
+- Manifest
+- Release Note
+- Migration
+- Validation Report
+
+---
+
+# 6. Environment Strategy
+
+Platform chuẩn hóa các môi trường:
+
+- Local
+- Development
+- Integration
+- UAT
+- Staging
+- Production
+
+Không Hard-code cấu hình theo Environment.
+
+---
+
+# 7. Deployment Pipeline
+
+```text
+Build
+
+↓
+
+Package
+
+↓
+
+Validation
+
+↓
+
+Deployment
+
+↓
+
+Verification
+
+↓
+
+Monitoring
+
+↓
+
+Acceptance
+```
+
+Deployment chỉ được tiếp tục nếu vượt qua từng bước.
+
+---
+
+# 8. Configuration during Deployment
+
+Deployment không thay đổi Source Code.
+
+Khác biệt giữa các Environment được điều khiển bởi:
+
+- Configuration
+- Secret
+- Policy
+- Environment Variable
+
+---
+
+# 9. Database Migration
+
+Migration tuân thủ:
+
+- Forward Only
+- Versioned
+- Repeatable
+- Auditable
+
+Không sửa Migration đã phát hành.
+
+---
+
+# 10. Release Verification
+
+Sau Deployment phải thực hiện:
+
+- Health Check
+- Smoke Test
+- Contract Validation
+- Business Verification
+- Monitoring Validation
+
+Release chỉ được chấp nhận khi Verification thành công.
+
+---
+
+# 11. Rollback Strategy
+
+Platform hỗ trợ:
+
+- Application Rollback
+- Configuration Rollback
+- Feature Rollback
+
+Database Rollback không phải cơ chế mặc định.
+
+Nếu dữ liệu đã thay đổi, xử lý theo Migration hoặc Compensation.
+
+---
+
+# 12. Feature Management
+
+Platform hỗ trợ:
+
+- Feature Flag
+- Kill Switch
+- Progressive Enablement
+
+Feature có thể được bật/tắt mà không cần triển khai lại khi kiến trúc cho phép.
+
+---
+
+# 13. Release Traceability
+
+Mỗi Release phải truy vết được tới:
+
+- Sprint
+- Capability
+- Source Commit
+- Build
+- Artifact
+- Migration
+- Test Evidence
+- Deployment Record
+
+---
+
+# 14. Operational Readiness
+
+Một Release chỉ sẵn sàng Production khi có:
+
+- Build PASS
+- Verification PASS
+- Monitoring
+- Alert
+- Runbook
+- Rollback Plan
+- Release Approval
+
+---
+
+# 15. Deployment Rules
+
+DEP-001 — Artifact là Immutable.
+
+DEP-002 — Configuration tách khỏi Source Code.
+
+DEP-003 — Migration chỉ tiến về phía trước.
+
+DEP-004 — Release phải có Manifest.
+
+DEP-005 — Release phải có Validation Report.
+
+DEP-006 — Rollback phải được định nghĩa trước.
+
+DEP-007 — Mọi Release đều có Traceability.
+
+DEP-008 — Production chỉ nhận Release đã được Approval.
+
+DEP-009 — Feature Flag ưu tiên hơn Branching Runtime.
+
+DEP-010 — Deployment phải Observable.
+
+---
+
+# 16. Architecture Compliance Checklist (ACC)
+
+| Rule | Validation |
+|------|------------|
+| ACC-1401 | Immutable Artifact |
+| ACC-1402 | Environment Independent |
+| ACC-1403 | Configuration tách khỏi Code |
+| ACC-1404 | Migration Versioned |
+| ACC-1405 | Release Manifest đầy đủ |
+| ACC-1406 | Verification hoàn thành |
+| ACC-1407 | Rollback Plan tồn tại |
+| ACC-1408 | Feature Flag đúng chuẩn |
+| ACC-1409 | Monitoring sau Release |
+| ACC-1410 | Release có đầy đủ Traceability |
+
+---
+
+# 17. Relationship to Other Baselines
+
+Deployment Architecture liên kết với:
+
+- ABP-07 Configuration Architecture
+- ABP-09 Security Architecture
+- ABP-10 Observability Architecture
+- ABP-12 Error Handling Architecture
+- ABP-13 Testing Architecture
+
+Deployment là cầu nối giữa Development và Operations.
+
+---
+
+# 18. Document Status
+
+**Status: FROZEN**
+
+ABP-14 là tài liệu nền tảng quy định kiến trúc triển khai và phát hành của nền tảng YSim.
+
+Mọi Release, Deployment Pipeline và AI Implementation phải tuân thủ các nguyên tắc trong tài liệu này.
+
+---
+
+
+---
+
+# Source: ABP-15
+
+- Path: `docs/ABP/ABP-15.md`
+- Set: `ABP`
+- Version: `1.0`
+- Status: `FROZEN`
+
+# AI Implementation Architecture
+
+## ABP-15
+
+---
+
+# 1. Purpose
+
+AI Implementation Architecture định nghĩa kiến trúc triển khai phần mềm bằng AI của nền tảng YSim.
+
+Tài liệu này chuẩn hóa:
+
+- AI Working Model
+- Sprint Execution
+- Repository Discovery
+- Implementation Strategy
+- Validation
+- Evidence Generation
+- Architecture Governance
+
+AI là Implementation Agent của Platform.
+
+---
+
+# 2. AI Principles
+
+YSim áp dụng các nguyên tắc:
+
+- Contract Driven
+- Registry Governed
+- Sprint Based
+- Evidence Driven
+- Repository Aware
+- Architecture Safe
+- Human Governed
+- AI Assisted
+
+AI không phải Architecture Owner.
+
+AI không phải Business Owner.
+
+AI chỉ hiện thực hóa kiến trúc đã được phê duyệt.
+
+---
+
+# 3. AI Implementation Lifecycle
+
+```text
+Sprint Contract
+
+↓
+
+Repository Discovery
+
+↓
+
+Implementation Planning
+
+↓
+
+Code Generation
+
+↓
+
+Validation
+
+↓
+
+Evidence Generation
+
+↓
+
+Human Review
+
+↓
+
+Sprint Completion
+```
+
+Mọi Sprint đều phải tuân theo Lifecycle này.
+
+---
+
+# 4. Repository Discovery
+
+Repository Discovery là bước bắt buộc.
+
+AI phải xác định:
+
+- Existing Modules
+- Existing APIs
+- Existing Events
+- Existing Snapshots
+- Existing Database
+- Existing Migrations
+- Existing Tests
+- Existing Contracts
+
+Nếu không thực hiện Discovery, AI không được phép triển khai.
+
+---
+
+# 5. Sprint Contract
+
+Sprint Contract là đầu vào duy nhất của AI.
+
+Sprint Contract xác định:
+
+- Scope
+- Capability
+- Ownership
+- Constraints
+- Acceptance Criteria
+- Dependencies
+
+AI không được tự mở rộng Scope.
+
+---
+
+# 6. Architecture Governance
+
+AI phải tuân thủ:
+
+- BRD
+- Registry
+- ABP
+- DIP
+- ESP
+- Sprint Contract
+
+Nếu phát hiện mâu thuẫn:
+
+↓
+
+Architecture Change Proposal (ACP)
+
+AI không được tự thay đổi Architecture.
+
+---
+
+# 7. Dependency Resolution
+
+AI chỉ được sử dụng:
+
+- Public Contract
+- Approved API
+- Registered Event
+- Registered Snapshot
+- Approved Shared Component
+
+Không sử dụng Internal Implementation của Module khác.
+
+---
+
+# 8. Code Generation Principles
+
+Code phải:
+
+- tuân thủ Module Boundary;
+- tuân thủ Dependency Rules;
+- tuân thủ Security Policy;
+- tuân thủ Configuration Architecture;
+- tuân thủ Event Architecture.
+
+Code Generation không được phá vỡ Architecture.
+
+---
+
+# 9. AI Validation
+
+Sau khi sinh mã nguồn, AI phải thực hiện:
+
+- Static Validation
+- Build Validation
+- Contract Validation
+- Architecture Validation
+- Dependency Validation
+
+Validation thất bại thì Sprint chưa hoàn thành.
+
+---
+
+# 10. Implementation Evidence
+
+Mỗi Sprint phải sinh đầy đủ:
+
+- Source Code
+- Migration
+- Test
+- Seed Data
+- Configuration
+- Documentation
+- Validation Report
+- Review Report
+
+Evidence là một phần của Sprint Output.
+
+---
+
+# 11. Architecture Compliance
+
+AI phải kiểm tra:
+
+- Module Boundary
+- Dependency Rules
+- Event Contract
+- Snapshot Contract
+- Security Rules
+- Configuration Rules
+
+Không chỉ Build PASS.
+
+---
+
+# 12. AI Output Package
+
+Một Sprint tối thiểu tạo ra:
+
+- Source Code
+- Test
+- Migration
+- API
+- Event
+- Documentation
+- Validation
+- Evidence
+
+Không chỉ tạo Source Code.
+
+---
+
+# 13. Human Review
+
+AI không tự phê duyệt.
+
+Human Review xác nhận:
+
+- Business Alignment
+- Architecture Compliance
+- Sprint Acceptance
+- Release Readiness
+
+---
+
+# 14. AI Rules
+
+AI-001 — Repository Discovery là bắt buộc.
+
+AI-002 — Sprint Contract là bất biến.
+
+AI-003 — Không sửa ngoài Scope.
+
+AI-004 — Không thay đổi Architecture.
+
+AI-005 — Không tạo Business Object mới.
+
+AI-006 — Không thay đổi Registry.
+
+AI-007 — Mọi thay đổi kiến trúc phải tạo ACP.
+
+AI-008 — Mọi Sprint phải sinh Evidence.
+
+AI-009 — Validation là bắt buộc.
+
+AI-010 — Human Review là bước cuối cùng.
+
+---
+
+# 15. Architecture Compliance Checklist (ACC)
+
+| Rule | Validation |
+|------|------------|
+| ACC-1501 | Repository Discovery hoàn thành |
+| ACC-1502 | Sprint Contract được tuân thủ |
+| ACC-1503 | Không vượt Scope |
+| ACC-1504 | Dependency hợp lệ |
+| ACC-1505 | Kiến trúc không bị thay đổi |
+| ACC-1506 | Validation hoàn thành |
+| ACC-1507 | Test đầy đủ |
+| ACC-1508 | Evidence đầy đủ |
+| ACC-1509 | ACP được tạo nếu cần |
+| ACC-1510 | Human Review hoàn thành |
+
+---
+
+# 16. AI Resolution Pipeline (AIRP)
+
+```text
+Sprint Contract
+        │
+        ▼
+Repository Discovery
+        │
+        ▼
+Architecture Resolution
+        │
+        ▼
+Implementation Planning
+        │
+        ▼
+Code Generation
+        │
+        ▼
+Validation Resolution
+        │
+        ▼
+Evidence Generation
+        │
+        ▼
+Human Review
+        │
+        ▼
+Sprint Completion
+```
+
+AIRP là Pipeline chuẩn cho mọi AI Coding Assistant.
+
+---
+
+# 17. Relationship to Other Baselines
+
+AI Implementation Architecture liên kết với:
+
+- YADF
+- ABP-00 ~ ABP-14
+- DIP
+- ESP
+- SGP
+- VAP
+- ORP
+- CIP
+
+Đây là tài liệu chuyển đổi từ kiến trúc sang triển khai.
+
+---
+
+# 18. Document Status
+
+**Status: FROZEN**
+
+ABP-15 là tài liệu nền tảng quy định kiến trúc triển khai bằng AI của nền tảng YSim.
+
+Mọi AI Coding Assistant, Sprint và quy trình phát triển phải tuân thủ tài liệu này.
+
+---
+
+
+---
+
 # Source: AFM-01
 
 - Path: `docs/AFM/AFM-01.md`
@@ -11931,1210 +12974,6 @@ Enterprise Naming Standards là ngôn ngữ thống nhất giữa Business Archi
 ESP-03 là tài liệu chuẩn hóa hệ thống đặt tên của nền tảng YSim.
 
 Mọi Business Artifact, Engineering Artifact và AI Artifact phải tuân thủ Enterprise Naming Standards.
-
----
-
-
----
-
-# Source: ESP-04
-
-- Path: `docs/ESP/ESP-04.md`
-- Set: `ESP`
-- Version: `2.1`
-- Status: `FROZEN`
-
-# API Engineering Standards
-
-## ESP-04
-
----
-
-# 1. Purpose
-
-API Engineering Standards định nghĩa các tiêu chuẩn thiết kế, triển khai và quản lý API trong nền tảng YSim.
-
-API là Contract giữa các hệ thống và giữa các Business Capability.
-
-Mọi API phải:
-
-- nhất quán;
-- có khả năng mở rộng;
-- có khả năng kiểm thử;
-- có khả năng quan sát;
-- có khả năng truy vết.
-
----
-
-# 2. Principles
-
-API tuân thủ các nguyên tắc:
-
-- Contract First
-- Business Capability Driven
-- Versioned
-- Stateless
-- Secure by Default
-- Backward Compatible
-- Observable
-- AI Friendly
-- Full-stack API Design
-- Experience-aware Contracts
-
----
-
-# 3. API Objectives
-
-API phải:
-
-- phản ánh Business Capability;
-- phản ánh Domain Model;
-- phản ánh Business Object;
-- không phụ thuộc UI implementation;
-- hỗ trợ Experience Composition;
-- không phụ thuộc Database;
-- ổn định theo thời gian.
-
----
-
-# 4. API Classification
-
-Platform chuẩn hóa các loại API.
-
-| Type | Purpose |
-|------|----------|
-| Public API | Đối tác, khách hàng |
-| Internal API | Giao tiếp giữa các module |
-| Administrative API | Quản trị hệ thống |
-| Integration API | Kết nối hệ thống bên ngoài |
-| Webhook API | Nhận sự kiện từ bên ngoài |
-| Experience API | Cung cấp dữ liệu tổng hợp cho Storefront / Portal |
-
-Mỗi API phải được phân loại rõ ràng.
-
----
-
-# 5. API Architecture
-
-```text
-Client
-    │
-API Gateway
-    │
-Application Layer
-    │
-Domain Layer
-    │
-Infrastructure
-```
-
-API không truy cập Database trực tiếp.
-
----
-
-# 5A. Experience API
-
-Đối với các Capability có giao diện người dùng, ưu tiên cung cấp Experience API thay vì để Frontend gọi trực tiếp nhiều Business API.
-
-Experience API có thể tổng hợp dữ liệu từ nhiều Domain nhằm phục vụ:
-
-- Portal
-- Storefront
-- Landing Page
-- Checkout
-- Dashboard
-- Capability Demonstration
-
-Business API vẫn giữ nguyên tính độc lập và không phụ thuộc Experience Layer.
-
----
-
-# 6. Resource Design
-
-API sử dụng Resource-Oriented Design.
-
-Ví dụ:
-
-```text
-/customers
-
-/orders
-
-/payments
-
-/packages
-
-/activations
-```
-
-Không sử dụng:
-
-```text
-/getCustomer
-
-/createOrder
-
-/updatePackage
-```
-
----
-
-# 7. HTTP Methods
-
-| Method | Purpose |
-|---------|----------|
-| GET | Read |
-| POST | Create hoặc Command |
-| PUT | Replace |
-| PATCH | Partial Update |
-| DELETE | Remove (nếu nghiệp vụ cho phép) |
-
-Không sử dụng GET cho các thao tác làm thay đổi trạng thái.
-
----
-
-# 8. URI Standards
-
-URI phải:
-
-- lowercase;
-- plural resource;
-- kebab-case nếu nhiều từ.
-
-Ví dụ:
-
-```text
-/api/v1/customers
-
-/api/v1/customer-profiles
-
-/api/v1/payment-sessions
-```
-
-Không sử dụng động từ trong URI.
-
----
-
-# 9. Request Standards
-
-Request phải:
-
-- sử dụng DTO;
-- validate đầy đủ;
-- không nhận dữ liệu ngoài Contract;
-- có schema rõ ràng.
-
-Validation không đặt trong Controller nếu Framework hỗ trợ Validation Layer.
-
----
-
-# 10. Response Standards
-
-Response chuẩn:
-
-```json
-{
-  "success": true,
-  "data": {},
-  "metadata": {},
-  "traceId": "...",
-  "timestamp": "..."
-}
-```
-
-Response Error:
-
-```json
-{
-  "success": false,
-  "error": {
-    "code": "...",
-    "message": "...",
-    "details": []
-  },
-  "traceId": "...",
-  "timestamp": "..."
-}
-```
-
-Không trả về định dạng khác nhau giữa các API nếu không có lý do chính đáng.
-
----
-
-# 11. Error Handling
-
-API sử dụng Error Model thống nhất.
-
-Bao gồm:
-
-- Error Code
-- Error Message
-- Error Details
-- Trace ID
-
-Không trả Stack Trace cho Client.
-
----
-
-# 12. Versioning
-
-API phải được Version.
-
-Ví dụ:
-
-```text
-/api/v1/
-/api/v2/
-```
-
-Không thay đổi Breaking Contract trong cùng Version.
-
-Breaking Change yêu cầu Version mới hoặc chiến lược tương thích đã được phê duyệt.
-
----
-
-# 13. Pagination
-
-Collection API hỗ trợ:
-
-- page
-- pageSize
-
-hoặc
-
-- cursor
-
-Response bao gồm Metadata phân trang.
-
----
-
-# 14. Filtering & Sorting
-
-Chuẩn hóa:
-
-```text
-?status=ACTIVE
-
-?sort=name
-
-?page=1&pageSize=20
-```
-
-Không tạo query parameter tùy ý giữa các Module.
-
----
-
-# 15. Idempotency
-
-Các API có nguy cơ thực hiện lặp (ví dụ thanh toán, tạo giao dịch) nên hỗ trợ Idempotency Key.
-
-Ví dụ:
-
-```text
-Idempotency-Key:
-```
-
-Mọi yêu cầu Idempotent phải được xử lý thống nhất.
-
----
-
-# 16. Authentication & Authorization
-
-API phải:
-
-- Authentication trước.
-- Authorization sau.
-
-Không truy cập Business Logic nếu Authentication thất bại.
-
-Chuẩn xác thực và phân quyền được quy định chi tiết tại ESP-10.
-
----
-
-# 17. Observability
-
-Mỗi Request phải có:
-
-- Trace ID
-- Correlation ID (nếu có)
-- Request Log
-- Response Log (theo chính sách)
-
-Không ghi log dữ liệu nhạy cảm.
-
----
-
-# 18. API Documentation
-
-Mỗi API phải có:
-
-- Description
-- Request Schema
-- Response Schema
-- Error Codes
-- Authentication
-- Examples
-
-API Documentation là một Deliverable bắt buộc.
-
-Đối với Experience API cần bổ sung:
-- Sample UI Flow
-- Sample Response
-- Capability Demonstration Scenario
-
----
-
-# 19. API Testing
-
-Mỗi API phải có:
-
-- Unit Test
-- Integration Test
-- Contract Test
-
-Các yêu cầu hiệu năng hoặc bảo mật được bổ sung theo phạm vi Sprint và ESP-07.
-
----
-
-# 20. Prohibited Practices
-
-Không được:
-
-- Truy cập Database từ Controller.
-- Trả Exception thô.
-- Hardcode Business Rules.
-- Hardcode Permission.
-- Thay đổi API Contract không qua Version hoặc phê duyệt.
-- Trả dữ liệu dư thừa không được định nghĩa trong Contract.
-
----
-
-# 21. API Rules
-
-API-001 — API là Contract.
-
-API-002 — API phải Versioned.
-
-API-003 — API phải Stateless.
-
-API-004 — API phải Validate Request.
-
-API-005 — API phải sử dụng DTO.
-
-API-006 — API phải có Documentation.
-
-API-007 — API phải có Test.
-
-API-008 — API phải hỗ trợ Traceability.
-
-API-009 — API phải tuân thủ Security Standards.
-
-API-010 — AI phải tuân thủ API Engineering Standards.
-
-API-011 — Frontend không được phụ thuộc trực tiếp vào nhiều Business API khi đã có Experience API.
-
-API-012 — Experience API phải có Contract và Test độc lập.
-
----
-
-# 22. API Compliance Checklist
-
-| Rule | Validation |
-|------|------------|
-| APC-0401 | Resource Design đúng chuẩn |
-| APC-0402 | HTTP Method đúng |
-| APC-0403 | URI đúng chuẩn |
-| APC-0404 | DTO được sử dụng |
-| APC-0405 | Response Model thống nhất |
-| APC-0406 | Error Model thống nhất |
-| APC-0407 | API được Version |
-| APC-0408 | Authentication & Authorization đúng chuẩn |
-| APC-0409 | API Documentation đầy đủ |
-| APC-0410 | API Test đầy đủ |
-| APC-0411 | Experience API đúng chuẩn |
-| APC-0412 | Experience API có Demonstration Scenario |
-
----
-
-# 23. Relationship to Other Documents
-
-ESP-04 liên kết với:
-
-- ESP-02 Source Code Engineering Standards
-- ESP-03 Enterprise Naming Standards
-- ESP-05 Database Standards
-- ESP-07 Testing Standards
-- ESP-08 Logging & Observability Standards
-- ESP-10 Security Standards
-- ABP-04 Domain Architecture
-- ABP-05 Event Architecture
-- ABP-06 Integration Architecture
-
-API Engineering Standards là tiêu chuẩn thống nhất cho mọi API của nền tảng YSim, bao gồm Business API, Integration API và Experience API phục vụ Full-stack Capability Delivery.
-
----
-
-# 24. Document Status
-
-**Status: FROZEN**
-
-ESP-04 là tài liệu chuẩn hóa toàn bộ tiêu chuẩn thiết kế, triển khai và quản lý API của YSim.
-
-Mọi API mới hoặc thay đổi API hiện có phải tuân thủ tài liệu này.
-
----
-
-
----
-
-# Source: ESP-05
-
-- Path: `docs/ESP/ESP-05.md`
-- Set: `ESP`
-- Version: `2.1`
-- Status: `FROZEN`
-
-# Data Persistence Standards
-
-## ESP-05
-
----
-
-# 1. Purpose
-
-Data Persistence Standards định nghĩa các tiêu chuẩn thiết kế, triển khai và quản lý tầng lưu trữ dữ liệu của nền tảng YSim.
-
-Persistence bao gồm:
-
-- Relational Database
-- Cache
-- Object Storage
-- Search Index
-- Queue Persistence
-- Snapshot Storage
-
-Tiêu chuẩn này đảm bảo dữ liệu được lưu trữ nhất quán, an toàn và có khả năng mở rộng.
-
----
-
-# 2. Principles
-
-Persistence tuân thủ các nguyên tắc:
-
-- Domain Driven
-- Single Source of Truth
-- Explicit Persistence
-- Transaction Safe
-- Consistent
-- Auditable
-- Scalable
-- Technology Agnostic
-- Full-stack Data Model
-- Experience-aware Persistence
-
----
-
-# 3. Persistence Objectives
-
-Persistence phải:
-
-- phản ánh Domain Model;
-- phản ánh Business Object;
-- hỗ trợ Transaction;
-- hỗ trợ Traceability;
-- hỗ trợ Audit;
-- hỗ trợ Backup & Recovery.
-- hỗ trợ Experience Composition và Capability Demonstration.
-
-Persistence không quyết định Business Logic.
-
----
-
-# 4. Persistence Architecture
-
-```text
-Application
-        │
-Repository
-        │
-Persistence Layer
-        │
-Storage Engine
-```
-
-Business Logic không được truy cập Storage trực tiếp.
-
----
-
-# 5. Persistence Classification
-
-Platform chuẩn hóa các loại Persistence.
-
-| Type | Purpose |
-|-------|----------|
-| Relational Database | Transactional Data |
-| Cache | High-speed Access |
-| Object Storage | Binary Files |
-| Search Index | Full-text Search |
-| Queue Storage | Message Persistence |
-| Snapshot Store | Historical State |
-| Experience Cache | Storefront / Portal Experience Cache |
-
-Mỗi loại Persistence có trách nhiệm riêng.
-
----
-
-# 5A. Experience Persistence
-
-Đối với các Capability có giao diện người dùng, Persistence có thể cung cấp thêm các mô hình dữ liệu tối ưu cho Experience.
-
-Bao gồm:
-
-- Experience Cache
-- Read Model
-- View Model
-- Aggregated Projection
-
-Các mô hình này không được thay thế Domain Model và không phải là Source of Truth.
-
-
----
-
-# 6. Relational Database Standards
-
-Relational Database dùng cho:
-
-- Business Transaction
-- Master Data
-- Reference Data
-- Configuration Data
-
-Database phải phản ánh Domain Model.
-
-Không thiết kế theo UI.
-
----
-
-# 7. Entity Standards
-
-Entity phải:
-
-- đại diện Business Object;
-- có Identity ổn định;
-- có Lifecycle rõ ràng.
-
-Không tạo Entity chỉ để phục vụ một màn hình giao diện.
-
----
-
-# 8. Primary Key Standards
-
-Primary Key:
-
-- sử dụng UUID hoặc định danh theo chuẩn dự án;
-- không sử dụng Business Value làm Primary Key.
-
-Ví dụ:
-
-```text
-id
-```
-
----
-
-# 9. Foreign Key Standards
-
-Foreign Key:
-
-```text
-customer_id
-
-order_id
-
-package_id
-```
-
-Quan hệ phải phản ánh Domain.
-
-Không tạo quan hệ vòng (Circular Relationship).
-
----
-
-# 10. Repository Pattern
-
-Persistence chỉ được truy cập thông qua Repository.
-
-```text
-Application
-
-↓
-
-Repository
-
-↓
-
-Database
-```
-
-Controller không truy cập Database.
-
-Integration Adapter không ghi trực tiếp vào Domain Database.
-
----
-
-# 11. Transaction Standards
-
-Transaction:
-
-- ngắn;
-- rõ ràng;
-- có phạm vi xác định;
-- rollback được.
-
-Không thực hiện gọi dịch vụ bên ngoài trong Transaction nếu có thể tránh.
-
----
-
-# 12. Soft Delete
-
-Business Object mặc định ưu tiên:
-
-- Soft Delete
-
-Bao gồm:
-
-```text
-deleted_at
-
-deleted_by
-```
-
-Hard Delete chỉ áp dụng khi được Business và Architecture phê duyệt.
-
----
-
-# 13. Audit Fields
-
-Mọi Entity nghiệp vụ nên có:
-
-```text
-created_at
-
-created_by
-
-updated_at
-
-updated_by
-
-version
-```
-
-Nếu áp dụng Soft Delete thì bổ sung:
-
-```text
-deleted_at
-
-deleted_by
-```
-
----
-
-# 14. Cache Standards
-
-Cache chỉ lưu:
-
-- Read Model
-- Session
-- Temporary Data
-- Derived Data
-
-Cache không là nguồn dữ liệu chính.
-
-Experience Cache chỉ lưu dữ liệu tổng hợp phục vụ Portal, Storefront và Capability Demonstration.
-
-Cache phải có chính sách TTL và Invalidaton rõ ràng.
-
----
-
-# 15. Object Storage Standards
-
-Object Storage dùng cho:
-
-- QR Images
-- Attachments
-- Reports
-- Export Files
-- Documents
-
-Database chỉ lưu Metadata và Reference.
-
-Không lưu Binary lớn trực tiếp trong Database trừ khi có lý do đặc biệt.
-
----
-
-# 16. Search Index Standards
-
-Search Index:
-
-- đồng bộ từ Business Data;
-- có khả năng Rebuild;
-- không là Source of Truth.
-
----
-
-# 17. Snapshot Persistence
-
-Snapshot:
-
-- bất biến sau khi tạo;
-- có Timestamp;
-- có Version;
-- có Traceability.
-
-Snapshot phục vụ Audit và Historical View.
-
----
-
-# 18. Data Integrity
-
-Persistence phải đảm bảo:
-
-- Referential Integrity
-- Uniqueness
-- Consistency
-- Optimistic Locking (khi phù hợp)
-- Idempotency (đối với các nghiệp vụ yêu cầu)
-
----
-
-# 19. Prohibited Practices
-
-Không được:
-
-- Business Logic trong SQL.
-- Controller truy cập Database.
-- Hardcode SQL trong Controller.
-- Circular Foreign Key.
-- Duplicate Master Data.
-- Lưu Secret ở dạng rõ (plaintext).
-
----
-
-# 20. Persistence Rules
-
-DP-001 — Persistence phản ánh Domain.
-
-DP-002 — Repository là điểm truy cập chuẩn.
-
-DP-003 — Transaction phải rõ phạm vi.
-
-DP-004 — Cache không là Source of Truth.
-
-DP-005 — Object Storage lưu Binary.
-
-DP-006 — Snapshot bất biến.
-
-DP-007 — Entity phải có Audit Fields.
-
-DP-008 — Persistence phải hỗ trợ Traceability.
-
-DP-009 — AI phải tuân thủ Persistence Standards.
-
-DP-010 — Không truy cập Database trực tiếp từ Presentation Layer.
-
-DP-011 — Experience Persistence không được chứa Business Logic.
-
-DP-012 — Read Model phải được đồng bộ từ Domain Model.
-
----
-
-# 21. Persistence Compliance Checklist
-
-| Rule | Validation |
-|------|------------|
-| DPC-0501 | Repository Pattern được áp dụng |
-| DPC-0502 | Entity phản ánh Domain |
-| DPC-0503 | Primary Key đúng chuẩn |
-| DPC-0504 | Transaction đúng phạm vi |
-| DPC-0505 | Audit Fields đầy đủ |
-| DPC-0506 | Cache sử dụng đúng mục đích |
-| DPC-0507 | Object Storage tách khỏi Database |
-| DPC-0508 | Snapshot bất biến |
-| DPC-0509 | Data Integrity được đảm bảo |
-| DPC-0510 | Persistence tuân thủ ESP |
-| DPC-0511 | Experience Persistence đúng chuẩn |
-| DPC-0512 | Read Model đồng bộ Domain |
-
----
-
-# 22. Relationship to Other Documents
-
-ESP-05 liên kết với:
-
-- ESP-02 Source Code Engineering Standards
-- ESP-03 Enterprise Naming Standards
-- ESP-04 API Engineering Standards
-- ESP-06 Migration Standards
-- ABP-04 Domain Architecture
-- ABP-07 Data Architecture
-- DBD (Database Design Documents)
-
-Data Persistence Standards là tiêu chuẩn thống nhất cho toàn bộ tầng lưu trữ dữ liệu của nền tảng YSim, bao gồm Domain Persistence và Experience Persistence phục vụ Full-stack Capability Delivery.
-
----
-
-# 23. Document Status
-
-**Status: FROZEN**
-
-ESP-05 là tài liệu chuẩn hóa toàn bộ tiêu chuẩn thiết kế và triển khai tầng lưu trữ dữ liệu của YSim.
-
-Mọi cơ chế lưu trữ dữ liệu phải tuân thủ tài liệu này.
-
----
-
-
----
-
-# Source: ESP-06
-
-- Path: `docs/ESP/ESP-06.md`
-- Set: `ESP`
-- Version: `2.1`
-- Status: `FROZEN`
-
-# Migration Standards
-
-## ESP-06
-
----
-
-# 1. Purpose
-
-Migration Standards định nghĩa các tiêu chuẩn thiết kế, triển khai và quản lý Database Migration trong nền tảng YSim.
-
-Migration là một Engineering Artifact.
-
-Mọi thay đổi đối với cấu trúc dữ liệu phải được quản lý thông qua Migration.
-
-Không được thay đổi Schema trực tiếp trên môi trường.
-
----
-
-# 2. Principles
-
-Migration tuân thủ các nguyên tắc:
-
-- Migration First
-- Immutable
-- Incremental
-- Repeatable
-- Versioned
-- Auditable
-- Rollback Aware
-- Full-stack Migration
-- Experience-safe Evolution
-
----
-
-# 3. Objectives
-
-Migration phải:
-
-- phản ánh thay đổi Domain Model;
-- có khả năng chạy nhiều môi trường;
-- hỗ trợ CI/CD;
-- hỗ trợ Audit;
-- hỗ trợ Rollback (khi khả thi).
-
----
-
-# 4. Migration Scope
-
-Migration bao gồm:
-
-- Schema Changes
-- Table Creation
-- Column Changes
-- Constraint Changes
-- Index Changes
-- View Changes
-- Function Changes
-- Seed Data (nếu được định nghĩa)
-- Experience Read Models
-- Experience Cache Structures
-
-Migration không được chứa Business Logic.
-
----
-
-# 5. Migration Lifecycle
-
-```text
-Planned
-    │
-    ▼
-Generated
-    │
-    ▼
-Reviewed
-    │
-    ▼
-Approved
-    │
-    ▼
-Executed
-    │
-    ▼
-Verified
-    │
-    ▼
-Archived
-```
-
-Migration phải được quản lý như một Artifact.
-
----
-
-# 6. Migration Naming
-
-Tên Migration phải:
-
-- duy nhất;
-- có thứ tự;
-- mô tả mục đích.
-
-Ví dụ:
-
-```text
-20260715_create_customer_table
-
-20260718_add_package_status
-
-20260722_create_payment_index
-```
-
-Không sử dụng:
-
-```text
-migration1
-
-update
-
-fix
-```
-
----
-
-# 7. Migration Organization
-
-Repository:
-
-```text
-database/
-
-migrations/
-seed/
-fixtures/
-```
-
-Không lưu Migration ngoài thư mục chuẩn.
-
----
-
-# 8. Schema Changes
-
-Schema chỉ được thay đổi bằng Migration.
-
-Không:
-
-- ALTER trực tiếp trên Production;
-- sửa Migration đã phát hành;
-- bỏ qua Version.
-
----
-
-# 8A. Experience Migration
-
-Đối với Capability có giao diện người dùng, Migration có thể bao gồm:
-
-- Read Model Schema
-- View Model
-- Experience Cache Structure
-- Materialized View (nếu sử dụng)
-
-Các thành phần này phải được tách biệt với Domain Schema và không được trở thành Source of Truth.
-
----
-
-# 9. Seed Data
-
-Seed Data chỉ dùng cho:
-
-- Master Data
-- Reference Data
-- Demo Data (môi trường phù hợp)
-- Capability Demonstration Data
-
-Không sử dụng Seed để xử lý Business Transaction.
-
----
-
-# 10. Backward Compatibility
-
-Migration phải ưu tiên:
-
-- Additive Changes
-- Backward Compatibility
-- Zero-Downtime (khi khả thi)
-
-Ví dụ:
-
-- thêm cột mới trước;
-- triển khai mã nguồn tương thích;
-- chỉ loại bỏ cột sau khi không còn sử dụng.
-
----
-
-# 11. Data Transformation
-
-Nếu cần chuyển đổi dữ liệu:
-
-- phải có Migration riêng hoặc bước chuyển đổi được mô tả rõ;
-- phải kiểm tra tính toàn vẹn dữ liệu;
-- phải có khả năng chạy lặp an toàn nếu được thiết kế như vậy.
-
----
-
-# 12. Rollback Strategy
-
-Mỗi Migration phải xác định:
-
-- Rollback Supported
-- Rollback Limited
-- Rollback Not Supported
-
-Nếu không hỗ trợ Rollback phải nêu rõ lý do và phương án khôi phục.
-
----
-
-# 13. Migration Review
-
-Migration phải được Review về:
-
-- Domain Impact
-- Data Integrity
-- Performance
-- Compatibility
-- Rollback Strategy
-
----
-
-# 14. Migration Testing
-
-Mỗi Migration phải được kiểm tra:
-
-- chạy trên cơ sở dữ liệu mới;
-- nâng cấp từ phiên bản trước;
-- tính toàn vẹn dữ liệu;
-- khả năng chạy trong Pipeline CI.
-
----
-
-# 15. Production Execution
-
-Migration Production phải:
-
-- theo Release Plan;
-- có Backup phù hợp;
-- có Monitoring;
-- có Verification sau khi chạy.
-
-Không chạy Migration Production ngoài quy trình Release.
-
----
-
-# 16. Prohibited Practices
-
-Không được:
-
-- sửa Migration đã Release;
-- chạy SQL thủ công trên Production (trừ trường hợp khẩn cấp theo quy trình được phê duyệt);
-- gộp nhiều thay đổi không liên quan vào một Migration;
-- bỏ qua bước Review;
-- phụ thuộc vào dữ liệu cục bộ của Developer.
-
----
-
-# 17. Migration Rules
-
-MG-001 — Mọi thay đổi Schema phải dùng Migration.
-
-MG-002 — Migration là bất biến sau Release.
-
-MG-003 — Migration phải có Version.
-
-MG-004 — Migration phải được Review.
-
-MG-005 — Migration phải được Test.
-
-MG-006 — Migration phải được lưu trong Repository.
-
-MG-007 — Migration phải hỗ trợ Audit.
-
-MG-008 — Seed Data tách biệt Migration.
-
-MG-009 — AI phải sinh Migration theo Standards.
-
-MG-010 — Không thay đổi trực tiếp Database Production.
-
-MG-011 — Experience Schema phải được Migration quản lý.
-
-MG-012 — Demonstration Seed Data phải tách biệt Production Seed Data.
-
----
-
-# 18. Migration Compliance Checklist
-
-| Rule | Validation |
-|------|------------|
-| MCC-0601 | Migration có Version |
-| MCC-0602 | Tên đúng chuẩn |
-| MCC-0603 | Không sửa Migration đã Release |
-| MCC-0604 | Review hoàn thành |
-| MCC-0605 | Test hoàn thành |
-| MCC-0606 | Rollback Strategy được xác định |
-| MCC-0607 | Seed Data tách biệt |
-| MCC-0608 | Migration lưu đúng Repository |
-| MCC-0609 | Verification sau khi chạy |
-| MCC-0610 | Tuân thủ ESP |
-| MCC-0611 | Experience Migration đúng chuẩn |
-| MCC-0612 | Demonstration Seed Data tách biệt |
-
----
-
-# 19. Relationship to Other Documents
-
-ESP-06 liên kết với:
-
-- ESP-05 Data Persistence Standards
-- ESP-07 Testing Standards
-- ESP-15 Release Standards
-- ABP-07 Data Architecture
-- DBD (Database Design Documents)
-- ROP (Release & Operations Pack)
-
-Migration Standards là tiêu chuẩn thống nhất cho mọi thay đổi cấu trúc dữ liệu của nền tảng YSim, bao gồm Domain Migration, Experience Migration và Seed Data phục vụ Full-stack Capability Delivery.
-
----
-
-# 20. Document Status
-
-**Status: FROZEN**
-
-ESP-06 là tài liệu chuẩn hóa quy trình thiết kế, kiểm thử và triển khai Database Migration của YSim.
-
-Mọi thay đổi đối với Persistence Layer phải được thực hiện thông qua Migration theo tài liệu này.
 
 ---
 

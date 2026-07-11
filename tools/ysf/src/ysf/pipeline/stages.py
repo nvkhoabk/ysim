@@ -2,9 +2,16 @@ from __future__ import annotations
 
 from pathlib import Path
 
+from ysf.context.service import (
+    build_context,
+)
 from ysf.core.result import CommandResult
-from ysf.index.service import build_indexes
-from ysf.knowledge.service import build_knowledge
+from ysf.index.service import (
+    build_indexes,
+)
+from ysf.knowledge.service import (
+    build_knowledge,
+)
 from ysf.pipeline.stage import PipelineStage
 
 
@@ -16,7 +23,9 @@ class IndexStage(PipelineStage):
         self,
         repository_root: Path,
     ) -> CommandResult:
-        return build_indexes(repository_root)
+        return build_indexes(
+            repository_root
+        )
 
 
 class KnowledgeStage(PipelineStage):
@@ -27,4 +36,30 @@ class KnowledgeStage(PipelineStage):
         self,
         repository_root: Path,
     ) -> CommandResult:
-        return build_knowledge(repository_root)
+        return build_knowledge(
+            repository_root
+        )
+
+
+class ContextStage(PipelineStage):
+    name = "context"
+    order = 30
+
+    def __init__(
+        self,
+        manifest_path: Path,
+    ) -> None:
+        self._manifest_path = (
+            manifest_path
+        )
+
+    def run(
+        self,
+        repository_root: Path,
+    ) -> CommandResult:
+        return build_context(
+            repository_root=repository_root,
+            manifest_path=(
+                self._manifest_path
+            ),
+        )

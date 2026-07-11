@@ -9,6 +9,11 @@ src/ysf.egg-info/entry_points.txt
 src/ysf.egg-info/requires.txt
 src/ysf.egg-info/top_level.txt
 src/ysf/context/__init__.py
+src/ysf/context/assembler.py
+src/ysf/context/manifest.py
+src/ysf/context/models.py
+src/ysf/context/selector.py
+src/ysf/context/service.py
 src/ysf/core/__init__.py
 src/ysf/core/doctor.py
 src/ysf/core/repository.py
@@ -28,6 +33,14 @@ src/ysf/knowledge/normalizer.py
 src/ysf/knowledge/patterns.py
 src/ysf/knowledge/service.py
 src/ysf/knowledge/validator.py
+src/ysf/pipeline/__init__.py
+src/ysf/pipeline/engine.py
+src/ysf/pipeline/executor.py
+src/ysf/pipeline/models.py
+src/ysf/pipeline/registry.py
+src/ysf/pipeline/service.py
+src/ysf/pipeline/stage.py
+src/ysf/pipeline/stages.py
 src/ysf/prompt/__init__.py
 src/ysf/reporting/__init__.py
 src/ysf/validation/__init__.py

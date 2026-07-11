@@ -3,21 +3,13 @@
 set -euo pipefail
 
 REPO_ROOT="$(git rev-parse --show-toplevel)"
-MANIFEST="${1:-factory/context-manifests/s00.yaml}"
+VENV_PATH="${REPO_ROOT}/../.venv-ysf"
 
-cd "${REPO_ROOT}"
+if [[ ! -x "${VENV_PATH}/bin/ysf" ]]; then
+  printf 'ERROR: YSF is not installed at %s\n' \
+    "${VENV_PATH}" >&2
+  exit 4
+fi
 
-[[ -f "${MANIFEST}" ]] || {
-  printf 'Missing context manifest: %s\n' "${MANIFEST}" >&2
-  exit 1
-}
-
-python3 -m py_compile tools/context/build-context.py
-
-python3 tools/context/build-context.py \
-  --repo-root "${REPO_ROOT}" \
-  --manifest "${REPO_ROOT}/${MANIFEST}"
-
-git diff --check
-
-printf 'Context package generated successfully.\n'
+exec "${VENV_PATH}/bin/ysf" \
+  build-context "$@"
