@@ -16,6 +16,7 @@ from ysf.core.result import CommandResult
 from ysf.index.service import build_indexes
 from ysf.knowledge.service import build_knowledge
 from ysf.pipeline.service import run_pipeline
+from ysf.verification.service import run_verification
 
 
 def print_result(
@@ -119,6 +120,22 @@ def print_result(
             f"{result.data['outputDirectory']}"
         )
 
+    elif result.command == "verify":
+        for check in result.data["checks"]:
+            print(
+                f"  [{check['status']}] "
+                f"{check['name']}"
+            )
+
+        if result.data["failedChecks"]:
+            print(
+                "  failed: "
+                + ", ".join(
+                    result.data[
+                        "failedChecks"
+                    ]
+                )
+            )
 
 
 def create_parser() -> argparse.ArgumentParser:
@@ -216,6 +233,16 @@ def create_parser() -> argparse.ArgumentParser:
             "after a failure."
         ),
     )
+    verify_parser = subparsers.add_parser(
+        "verify",
+        help="Run the complete YSF quality gate.",
+    )
+
+    verify_parser.add_argument(
+        "--json",
+        action="store_true",
+        help="Print machine-readable JSON.",
+    )
 
     return parser
 
@@ -271,6 +298,11 @@ def main() -> int:
                 fail_fast=(
                     not args.continue_on_error
                 ),
+            )
+
+        elif args.command == "verify":
+            result = run_verification(
+                repository_root
             )
 
         else:
