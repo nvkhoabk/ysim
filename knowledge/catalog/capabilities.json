@@ -1,12 +1,14 @@
 {
-  "schemaVersion": "1.0",
-  "generatedAt": "2026-07-12T00:28:37.944187+07:00",
+  "schemaVersion": "1.1",
+  "generatedAt": "2026-07-12T02:15:56.973510+07:00",
   "capabilityCount": 7,
   "capabilities": [
     {
       "id": "ai-software-factory",
       "name": "Ai Software Factory",
       "documentIds": [
+        "AAP-02",
+        "ABP-15",
         "AFM-00",
         "AFM-01",
         "DIP-00",
@@ -15,13 +17,21 @@
         "DIP-03",
         "DIP-05",
         "DIP-09",
+        "DIP-10",
         "ROP-01",
         "SGP-00",
+        "SGP-01",
+        "SGP-02",
+        "SGP-03",
         "SGP-04",
+        "SGP-05",
+        "SGP-06",
+        "SGP-07",
         "SGP-08",
+        "SGP-09",
         "SGP-10"
       ],
-      "documentCount": 13,
+      "documentCount": 23,
       "source": "deterministic-title-matching",
       "reviewStatus": "REQUIRES_HUMAN_REVIEW"
     },
@@ -50,9 +60,10 @@
       "id": "identity-access",
       "name": "Identity Access",
       "documentIds": [
+        "ABP-09",
         "SGP-02"
       ],
-      "documentCount": 1,
+      "documentCount": 2,
       "source": "deterministic-title-matching",
       "reviewStatus": "REQUIRES_HUMAN_REVIEW"
     },
@@ -76,9 +87,11 @@
       "documentIds": [
         "ABP-01",
         "ABP-02",
+        "ABP-07",
+        "ABP-14",
         "ESP-01"
       ],
-      "documentCount": 3,
+      "documentCount": 5,
       "source": "deterministic-title-matching",
       "reviewStatus": "REQUIRES_HUMAN_REVIEW"
     },

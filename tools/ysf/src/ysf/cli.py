@@ -8,6 +8,7 @@ from ysf import __version__
 from ysf.core.doctor import run_doctor
 from ysf.core.repository import RepositoryError, find_repository_root
 from ysf.index.service import build_indexes
+from ysf.knowledge.service import build_knowledge
 
 
 def create_parser() -> argparse.ArgumentParser:
@@ -44,6 +45,17 @@ def create_parser() -> argparse.ArgumentParser:
     )
 
     build_index_parser.add_argument(
+        "--json",
+        action="store_true",
+        help="Print machine-readable JSON.",
+    )
+
+    build_knowledge_parser = subparsers.add_parser(
+        "build-knowledge",
+        help="Build normalized knowledge catalogs.",
+    )
+
+    build_knowledge_parser.add_argument(
         "--json",
         action="store_true",
         help="Print machine-readable JSON.",
@@ -111,6 +123,47 @@ def main() -> int:
                 print(f"  output: {output}")
 
         return 0 if result.successful else 1
+
+    if args.command == "build-knowledge":
+        result = build_knowledge(
+            repository_root
+        )
+
+        if args.json:
+            print(
+                json.dumps(
+                    result.to_dict(),
+                    indent=2,
+                    ensure_ascii=False,
+                )
+            )
+        else:
+            print(
+                f"[{result.status}] "
+                f"{result.message}"
+            )
+            print(
+                f"  documents: "
+                f"{result.data['documentCount']}"
+            )
+            print(
+                f"  capabilities: "
+                f"{result.data['capabilityCount']}"
+            )
+            print(
+                f"  integrations: "
+                f"{result.data['integrationCount']}"
+            )
+            print(
+                f"  relationships: "
+                f"{result.data['relationshipCount']}"
+            )
+
+        return (
+            0
+            if result.successful
+            else 1
+        )
 
     parser.error(f"Unsupported command: {args.command}")
     return 2

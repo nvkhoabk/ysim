@@ -1,13 +1,13 @@
 {
-  "schemaVersion": "1.0",
-  "generatedAt": "2026-07-12T00:28:37.944187+07:00",
+  "schemaVersion": "1.1",
+  "generatedAt": "2026-07-12T02:15:56.973510+07:00",
   "status": "PASS",
   "sourceIndex": "factory/index/documents.json",
   "documentCount": 102,
   "documentSetCount": 11,
   "capabilityCount": 7,
   "integrationCount": 0,
-  "relationshipCount": 28,
+  "relationshipCount": 41,
   "nullGovernedDocumentCodes": 0,
   "documentsBySet": {
     "AAP": 6,
@@ -23,8 +23,8 @@
     "YADF": 2
   },
   "notes": [
-    "Heuristic capability and integration matches are bootstrap knowledge only.",
-    "All heuristic matches require review before becoming authoritative.",
-    "docs/ remains the authoritative source of truth."
+    "Capability and integration matches are deterministic heuristics.",
+    "Heuristic relationships require human or AI review.",
+    "docs/ remains the authoritative source."
   ]
 }

@@ -1,7 +1,7 @@
 {
-  "schemaVersion": "1.0",
-  "generatedAt": "2026-07-12T00:28:37.944187+07:00",
-  "relationshipCount": 28,
+  "schemaVersion": "1.1",
+  "generatedAt": "2026-07-12T02:15:56.973510+07:00",
+  "relationshipCount": 41,
   "relationships": [
     {
       "id": "rel-01d533898b232e04",
@@ -32,8 +32,22 @@
       "source": "deterministic-title-matching"
     },
     {
+      "id": "rel-3e4c0f2a9c049b4e",
+      "from": "SGP-06",
+      "to": "ai-software-factory",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
       "id": "rel-421ed62c0f1b905d",
       "from": "SGP-10",
+      "to": "ai-software-factory",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-43cb0ac891d6ab5d",
+      "from": "SGP-07",
       "to": "ai-software-factory",
       "type": "references-capability",
       "source": "deterministic-title-matching"
@@ -88,6 +102,13 @@
       "source": "deterministic-title-matching"
     },
     {
+      "id": "rel-6909497a571dde1c",
+      "from": "SGP-02",
+      "to": "ai-software-factory",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
       "id": "rel-70e0732cce6e79a4",
       "from": "SGP-06",
       "to": "analytics-reporting",
@@ -123,6 +144,20 @@
       "source": "deterministic-title-matching"
     },
     {
+      "id": "rel-91e5dfa1a27ffaad",
+      "from": "SGP-01",
+      "to": "ai-software-factory",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-97dfed2cbbbe3e8d",
+      "from": "SGP-03",
+      "to": "ai-software-factory",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
       "id": "rel-98270ecef012596f",
       "from": "ESP-01",
       "to": "platform-foundation",
@@ -132,6 +167,20 @@
     {
       "id": "rel-99362dacd257a6c8",
       "from": "DIP-03",
+      "to": "ai-software-factory",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-9b9af6896d13e09d",
+      "from": "ABP-15",
+      "to": "ai-software-factory",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-9f311daecbf0d896",
+      "from": "DIP-10",
       "to": "ai-software-factory",
       "type": "references-capability",
       "source": "deterministic-title-matching"
@@ -158,6 +207,20 @@
       "source": "deterministic-title-matching"
     },
     {
+      "id": "rel-b698e1d323ed0a84",
+      "from": "ABP-09",
+      "to": "identity-access",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-bffb00dd49e7afe0",
+      "from": "ABP-14",
+      "to": "platform-foundation",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
       "id": "rel-c3a15a7078747af6",
       "from": "ROP-00",
       "to": "operations-monitoring",
@@ -167,6 +230,13 @@
     {
       "id": "rel-cd136a1560893e91",
       "from": "DIP-02",
+      "to": "ai-software-factory",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-d33634fb8c1bde1c",
+      "from": "SGP-05",
       "to": "ai-software-factory",
       "type": "references-capability",
       "source": "deterministic-title-matching"
@@ -186,9 +256,30 @@
       "source": "deterministic-title-matching"
     },
     {
+      "id": "rel-ed2d371ea2014b91",
+      "from": "ABP-07",
+      "to": "platform-foundation",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-f276b3734453fcb3",
+      "from": "SGP-09",
+      "to": "ai-software-factory",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
       "id": "rel-f3cd9e6af666dad9",
       "from": "ROP-05",
       "to": "product-catalog",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-f5191c47c2d19c44",
+      "from": "AAP-02",
+      "to": "ai-software-factory",
       "type": "references-capability",
       "source": "deterministic-title-matching"
     },
