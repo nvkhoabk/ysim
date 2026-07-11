@@ -14,6 +14,12 @@ src/ysf/core/doctor.py
 src/ysf/core/repository.py
 src/ysf/core/result.py
 src/ysf/index/__init__.py
+src/ysf/index/catalog.py
+src/ysf/index/documents.py
+src/ysf/index/knowledge.py
+src/ysf/index/metadata.py
+src/ysf/index/models.py
+src/ysf/index/service.py
 src/ysf/knowledge/__init__.py
 src/ysf/prompt/__init__.py
 src/ysf/reporting/__init__.py

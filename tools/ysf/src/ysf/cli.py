@@ -7,6 +7,7 @@ import sys
 from ysf import __version__
 from ysf.core.doctor import run_doctor
 from ysf.core.repository import RepositoryError, find_repository_root
+from ysf.index.service import build_indexes
 
 
 def create_parser() -> argparse.ArgumentParser:
@@ -32,6 +33,17 @@ def create_parser() -> argparse.ArgumentParser:
     )
 
     doctor_parser.add_argument(
+        "--json",
+        action="store_true",
+        help="Print machine-readable JSON.",
+    )
+
+    build_index_parser = subparsers.add_parser(
+        "build-index",
+        help="Build documentation and knowledge indexes.",
+    )
+
+    build_index_parser.add_argument(
         "--json",
         action="store_true",
         help="Print machine-readable JSON.",
@@ -70,6 +82,33 @@ def main() -> int:
 
             for name, value in result.data["paths"].items():
                 print(f"  {name}: {'FOUND' if value else 'MISSING'}")
+
+        return 0 if result.successful else 1
+
+    if args.command == "build-index":
+        result = build_indexes(repository_root)
+
+        if args.json:
+            print(
+                json.dumps(
+                    result.to_dict(),
+                    indent=2,
+                    ensure_ascii=False,
+                )
+            )
+        else:
+            print(f"[{result.status}] {result.message}")
+            print(
+                f"  documents: "
+                f"{result.data['documentCount']}"
+            )
+            print(
+                f"  knowledge: "
+                f"{result.data['knowledgeCount']}"
+            )
+
+            for output in result.data["outputs"]:
+                print(f"  output: {output}")
 
         return 0 if result.successful else 1
 
