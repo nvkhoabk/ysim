@@ -1,0 +1,41 @@
+version: "1.0"
+
+context_id: s00-factory-commissioning
+
+sprint:
+  id: S00
+  name: Factory Commissioning & Repository Bootstrap
+
+capabilities:
+  - ai-software-factory
+  - platform-foundation
+
+document_sets:
+  include:
+    - AFM
+    - YADF
+    - AAP
+    - SGP
+    - ESP
+    - DIP
+    - ESPK
+
+documents:
+  required:
+    - AFM-00
+    - YADF-00
+    - DIP-00
+    - DIP-01
+    - DIP-02
+    - DIP-04
+    - DIP-05
+    - DIP-06
+    - DIP-09
+    - ESPK-S00
+
+limits:
+  max_documents: 30
+  max_characters: 250000
+
+output:
+  directory: factory/contexts/generated/s00
