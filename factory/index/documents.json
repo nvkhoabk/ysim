@@ -1,8 +1,8 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-07-11T20:15:23+07:00",
+  "generatedAt": "2026-07-11T21:39:14+07:00",
   "repositoryRoot": ".",
-  "documentCount": 100,
+  "documentCount": 102,
   "documents": [
     {
       "path": "docs/AAP/AAP-01.md",
@@ -245,20 +245,20 @@
       "status": "FROZEN"
     },
     {
-      "path": "docs/AFM-00.md",
+      "path": "docs/AFM/AFM-00.md",
       "filename": "AFM-00.md",
       "extension": "md",
-      "documentSet": "ROOT",
+      "documentSet": "AFM",
       "documentCode": "AFM-00",
       "title": "AI Factory Manual",
       "version": "2.1",
       "status": "FROZEN"
     },
     {
-      "path": "docs/AFM-01.md",
+      "path": "docs/AFM/AFM-01.md",
       "filename": "AFM-01.md",
       "extension": "md",
-      "documentSet": "ROOT",
+      "documentSet": "AFM",
       "documentCode": null,
       "title": "AI Factory Framework v2.1 Update\r",
       "version": null,
@@ -775,6 +775,26 @@
       "status": null
     },
     {
+      "path": "docs/INDEX.md",
+      "filename": "INDEX.md",
+      "extension": "md",
+      "documentSet": "ROOT",
+      "documentCode": null,
+      "title": "YSim Documentation Index",
+      "version": null,
+      "status": null
+    },
+    {
+      "path": "docs/MASTER_INDEX.md",
+      "filename": "MASTER_INDEX.md",
+      "extension": "md",
+      "documentSet": "ROOT",
+      "documentCode": null,
+      "title": "YSim v2.1 Documentation Master Index",
+      "version": null,
+      "status": null
+    },
+    {
       "path": "docs/ROP/ROP-00.md",
       "filename": "ROP-00.md",
       "extension": "md",
@@ -985,20 +1005,20 @@
       "status": "FROZEN"
     },
     {
-      "path": "docs/YADF-00.md",
+      "path": "docs/YADF/YADF-00.md",
       "filename": "YADF-00.md",
       "extension": "md",
-      "documentSet": "ROOT",
-      "documentCode": "YADF",
+      "documentSet": "YADF",
+      "documentCode": "YADF-00",
       "title": "YSim AI Development Framework (YADF)",
       "version": "2.0",
       "status": "FROZEN"
     },
     {
-      "path": "docs/YADF-01.md",
+      "path": "docs/YADF/YADF-01.md",
       "filename": "YADF-01.md",
       "extension": "md",
-      "documentSet": "ROOT",
+      "documentSet": "YADF",
       "documentCode": null,
       "title": "Commerce Meta Model & Full-stack Capability Model\r",
       "version": null,

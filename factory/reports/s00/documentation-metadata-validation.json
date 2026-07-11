@@ -1,0 +1,1673 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-07-11T14:39:09.455338+00:00",
+  "documentCount": 102,
+  "errorCount": 2,
+  "warningCount": 123,
+  "duplicateDocumentCodes": {},
+  "documents": [
+    {
+      "path": "docs/AAP/AAP-01.md",
+      "metadata": {
+        "document_code": "AAP-01",
+        "document_name": "Repository Discovery Model",
+        "project": "YSim v2.1",
+        "document_set": "AI Architecture Pack",
+        "version": "2.1",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "docs/AAP/AAP-02.md",
+      "metadata": {
+        "document_code": "AAP-02",
+        "document_name": "Sprint Contract Model",
+        "project": "YSim v2.1",
+        "document_set": "AI Architecture Pack",
+        "version": "2.1",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "docs/AAP/AAP-03.md",
+      "metadata": {
+        "document_code": "AAP-03",
+        "document_name": "AI Planning Model",
+        "project": "YSim v2.1",
+        "document_set": "AI Architecture Pack",
+        "version": "2.1",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "docs/AAP/AAP-04.md",
+      "metadata": {
+        "document_code": "AAP-04",
+        "document_name": "AI Verification Model",
+        "project": "YSim v2.1",
+        "document_set": "AI Architecture Pack",
+        "version": "2.1",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "docs/AAP/AAP-05.md",
+      "metadata": {
+        "document_code": "AAP-05",
+        "document_name": "AI Evidence Model",
+        "project": "YSim v2.1",
+        "document_set": "AI Architecture Pack",
+        "version": "2.1",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "docs/AAP/AAP-06.md",
+      "metadata": {
+        "document_code": "AAP-06",
+        "document_name": "Architecture Change Proposal Model",
+        "project": "YSim v2.1",
+        "document_set": "AI Architecture Pack",
+        "version": "2.1",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "docs/ABP/ABP-00.md",
+      "metadata": {
+        "document_code": "ABP-00",
+        "document_name": "Architecture Principles",
+        "project": "YSim v2.0",
+        "document_set": "Architecture Baseline Pack",
+        "version": "1.0",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 1.0"
+      ]
+    },
+    {
+      "path": "docs/ABP/ABP-01.md",
+      "metadata": {
+        "document_code": "ABP-01",
+        "document_name": "Repository Architecture",
+        "project": "YSim v2.0",
+        "document_set": "Architecture Baseline Pack",
+        "version": "1.0",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 1.0"
+      ]
+    },
+    {
+      "path": "docs/ABP/ABP-02.md",
+      "metadata": {
+        "document_code": "ABP-02",
+        "document_name": "Module Architecture",
+        "project": "YSim v2.0",
+        "document_set": "Architecture Baseline Pack",
+        "version": "1.0",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 1.0"
+      ]
+    },
+    {
+      "path": "docs/ABP/ABP-03.md",
+      "metadata": {
+        "document_code": "ABP-03",
+        "document_name": "Dependency Rules",
+        "project": "YSim v2.0",
+        "document_set": "Architecture Baseline Pack",
+        "version": "1.0",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 1.0"
+      ]
+    },
+    {
+      "path": "docs/ABP/ABP-04.md",
+      "metadata": {
+        "document_code": "ABP-04",
+        "document_name": "Transaction Boundary",
+        "project": "YSim v2.0",
+        "document_set": "Architecture Baseline Pack",
+        "version": "1.0",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 1.0"
+      ]
+    },
+    {
+      "path": "docs/ABP/ABP-05.md",
+      "metadata": {
+        "document_code": "ABP-05",
+        "document_name": "Event Architecture",
+        "project": "YSim v2.0",
+        "document_set": "Architecture Baseline Pack",
+        "version": "1.0",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 1.0"
+      ]
+    },
+    {
+      "path": "docs/ABP/ABP-06.md",
+      "metadata": {
+        "document_code": "ABP-06",
+        "document_name": "Snapshot Architecture",
+        "project": "YSim v2.0",
+        "document_set": "Architecture Baseline Pack",
+        "version": "1.0",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 1.0"
+      ]
+    },
+    {
+      "path": "docs/ABP/ABP-07.md",
+      "metadata": {
+        "document_code": "ABP-07",
+        "document_name": "Configuration Architecture",
+        "project": "YSim v2.0",
+        "document_set": "Architecture Baseline Pack",
+        "version": "1.0",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 1.0"
+      ]
+    },
+    {
+      "path": "docs/ABP/ABP-08.md",
+      "metadata": {
+        "document_code": "ABP-08",
+        "document_name": "Integration Architecture",
+        "project": "YSim v2.0",
+        "document_set": "Architecture Baseline Pack",
+        "version": "1.0",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 1.0"
+      ]
+    },
+    {
+      "path": "docs/ABP/ABP-09.md",
+      "metadata": {
+        "document_code": "ABP-09",
+        "document_name": "Security Architecture",
+        "project": "YSim v2.0",
+        "document_set": "Architecture Baseline Pack",
+        "version": "1.0",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 1.0"
+      ]
+    },
+    {
+      "path": "docs/ABP/ABP-10.md",
+      "metadata": {
+        "document_code": "ABP-10",
+        "document_name": "Observability Architecture",
+        "project": "YSim v2.0",
+        "document_set": "Architecture Baseline Pack",
+        "version": "1.0",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 1.0"
+      ]
+    },
+    {
+      "path": "docs/ABP/ABP-11.md",
+      "metadata": {
+        "document_code": "ABP-11",
+        "document_name": "Platform Data Architecture",
+        "project": "YSim v2.0",
+        "document_set": "Architecture Baseline Pack",
+        "version": "1.0",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 1.0"
+      ]
+    },
+    {
+      "path": "docs/ABP/ABP-12.md",
+      "metadata": {
+        "document_code": "ABP-12",
+        "document_name": "Error Handling Architecture",
+        "project": "YSim v2.0",
+        "document_set": "Architecture Baseline Pack",
+        "version": "1.0",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 1.0"
+      ]
+    },
+    {
+      "path": "docs/ABP/ABP-13.md",
+      "metadata": {
+        "document_code": "ABP-13",
+        "document_name": "Testing Architecture",
+        "project": "YSim v2.0",
+        "document_set": "Architecture Baseline Pack",
+        "version": "1.0",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 1.0"
+      ]
+    },
+    {
+      "path": "docs/ABP/ABP-14.md",
+      "metadata": {
+        "document_code": "ABP-14",
+        "document_name": "Deployment Architecture",
+        "project": "YSim v2.0",
+        "document_set": "Architecture Baseline Pack",
+        "version": "1.0",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 1.0"
+      ]
+    },
+    {
+      "path": "docs/ABP/ABP-15.md",
+      "metadata": {
+        "document_code": "ABP-15",
+        "document_name": "AI Implementation Architecture",
+        "project": "YSim v2.0",
+        "document_set": "Architecture Baseline Pack",
+        "version": "1.0",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 1.0"
+      ]
+    },
+    {
+      "path": "docs/ABP/ABP-16.md",
+      "metadata": {
+        "document_code": "ABP-16",
+        "document_name": "Commerce Experience Platform Architecture",
+        "project": "YSim v2.1",
+        "document_set": "Architecture Blueprint Pack",
+        "version": "2.1",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "docs/ABP/ABP-17.md",
+      "metadata": {
+        "document_code": "ABP-17",
+        "document_name": "Design System Architecture",
+        "project": "YSim v2.1",
+        "document_set": "Architecture Blueprint Pack",
+        "version": "2.1",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "docs/AFM/AFM-00.md",
+      "metadata": {
+        "document_code": "AFM-00",
+        "document_name": "AI Factory Manual",
+        "project": "YSim v2.1",
+        "document_set": "AI Factory Manual",
+        "version": "2.1",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "docs/AFM/AFM-01.md",
+      "metadata": {
+        "document_code": "AFM-01",
+        "document_name": "AI Factory Framework v2.1 Update",
+        "project": "YSim v2.1",
+        "document_set": "AI Factory Manual",
+        "version": "2.1",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "docs/BRD/BRD-BO-INDEX.md",
+      "metadata": {
+        "document_code": "BRD-BO-INDEX",
+        "document_name": "Business Object Registry",
+        "project": "YSim v2.0",
+        "document_set": "BRD",
+        "version": "1.0",
+        "status": "FROZEN",
+        "language": "vi-VN",
+        "author": "ChatGPT + Project Team",
+        "last_updated": "2026-07"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 1.0"
+      ]
+    },
+    {
+      "path": "docs/BRD/BRD-CAP-INDEX.md",
+      "metadata": {
+        "document_code": "BRD-CAP-INDEX",
+        "document_name": "Enterprise Business Capability Registry",
+        "project": "YSim v2.0",
+        "document_set": "BRD",
+        "version": "1.0",
+        "status": "FROZEN",
+        "language": "vi-VN",
+        "author": "ChatGPT + Project Team",
+        "last_updated": "2026-07"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 1.0"
+      ]
+    },
+    {
+      "path": "docs/BRD/BRD-EVENT-INDEX.md",
+      "metadata": {
+        "document_code": "BRD-EVENT-INDEX",
+        "document_name": "Enterprise Business Event Registry",
+        "project": "YSim v2.0",
+        "document_set": "BRD",
+        "version": "1.0",
+        "status": "FROZEN",
+        "language": "vi-VN",
+        "author": "ChatGPT + Project Team",
+        "last_updated": "2026-07"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 1.0"
+      ]
+    },
+    {
+      "path": "docs/BRD/BRD-META-MODEL.md",
+      "metadata": {
+        "document_code": "BRD-META-MODEL",
+        "document_name": "Enterprise Business Meta Model",
+        "project": "YSim v2.0",
+        "document_set": "BRD",
+        "version": "1.0",
+        "status": "FROZEN",
+        "language": "vi-VN"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 1.0"
+      ]
+    },
+    {
+      "path": "docs/BRD/BRD-POLICY-INDEX.md",
+      "metadata": {
+        "document_code": "BRD-POLICY-INDEX",
+        "document_name": "Enterprise Policy Registry",
+        "project": "YSim v2.0",
+        "document_set": "BRD",
+        "version": "1.0",
+        "status": "FROZEN",
+        "language": "vi-VN",
+        "author": "ChatGPT + Project Team",
+        "last_updated": "2026-07"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 1.0"
+      ]
+    },
+    {
+      "path": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+      "metadata": {
+        "document_code": "BRD-SNAPSHOT-INDEX",
+        "document_name": "Enterprise Snapshot Registry",
+        "project": "YSim v2.0",
+        "document_set": "BRD",
+        "version": "1.0",
+        "status": "FROZEN",
+        "language": "vi-VN",
+        "author": "ChatGPT + Project Team",
+        "last_updated": "2026-07"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 1.0"
+      ]
+    },
+    {
+      "path": "docs/BRD/BRD-UPDATE-01.md",
+      "metadata": {
+        "document_code": "BRD-UPDATE-01",
+        "document_name": "Commerce Experience Platform (CXP)",
+        "project": "YSim v2.1",
+        "document_set": "Business Requirement Documents",
+        "version": "2.1",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "docs/BRD/BRD-WS-01.md",
+      "metadata": {
+        "document_code": "BRD-WS-01",
+        "document_name": "Product Vision & Strategy",
+        "project": "YSim v2.0",
+        "document_set": "BRD",
+        "version": "2.0",
+        "status": "FROZEN",
+        "language": "vi-VN",
+        "author": "ChatGPT + Project Team",
+        "last_updated": "2026-07"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 2.0"
+      ]
+    },
+    {
+      "path": "docs/BRD/BRD-WS-02.md",
+      "metadata": {
+        "document_code": "BRD-WS-02",
+        "document_name": "Business Model & Revenue Architecture",
+        "project": "YSim v2.0",
+        "document_set": "BRD",
+        "version": "2.0",
+        "status": "FROZEN",
+        "language": "vi-VN",
+        "author": "ChatGPT + Project Team",
+        "last_updated": "2026-07",
+        "workshop": "WS-02"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 2.0"
+      ]
+    },
+    {
+      "path": "docs/BRD/BRD-WS-03.md",
+      "metadata": {
+        "document_code": "BRD-WS-03",
+        "document_name": "Identity, Organization & Access Control Model",
+        "project": "YSim v2.0",
+        "document_set": "BRD",
+        "version": "2.0",
+        "status": "FROZEN",
+        "language": "vi-VN",
+        "author": "ChatGPT + Project Team",
+        "last_updated": "2026-07",
+        "workshop": "WS-03"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 2.0"
+      ]
+    },
+    {
+      "path": "docs/BRD/BRD-WS-04.md",
+      "metadata": {
+        "document_code": "BRD-WS-04",
+        "document_name": "Product Catalog, Supplier & Product Intelligence",
+        "project": "YSim v2.0",
+        "document_set": "BRD",
+        "version": "2.0",
+        "status": "FROZEN",
+        "language": "vi-VN",
+        "author": "ChatGPT + Project Team",
+        "last_updated": "2026-07",
+        "workshop": "WS-04"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 2.0"
+      ]
+    },
+    {
+      "path": "docs/BRD/BRD-WS-05.md",
+      "metadata": {
+        "document_code": "BRD-WS-05",
+        "document_name": "Pricing, Commercial Policy & Revenue Model",
+        "project": "YSim v2.0",
+        "document_set": "BRD",
+        "version": "2.0",
+        "status": "FROZEN",
+        "language": "vi-VN",
+        "author": "ChatGPT + Project Team",
+        "last_updated": "2026-07",
+        "workshop": "WS-05"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 2.0"
+      ]
+    },
+    {
+      "path": "docs/BRD/BRD-WS-06.md",
+      "metadata": {
+        "document_code": "BRD-WS-06",
+        "document_name": "Promotion, Coupon, Campaign & Sales Enablement",
+        "project": "YSim v2.0",
+        "document_set": "BRD",
+        "version": "2.0",
+        "status": "FROZEN",
+        "language": "vi-VN",
+        "author": "ChatGPT + Project Team",
+        "last_updated": "2026-07",
+        "workshop": "WS-06"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 2.0"
+      ]
+    },
+    {
+      "path": "docs/BRD/BRD-WS-07.md",
+      "metadata": {
+        "document_code": "BRD-WS-07",
+        "document_name": "Sales Order, Purchase Order, Cart & Checkout Model",
+        "project": "YSim v2.0",
+        "document_set": "BRD",
+        "version": "2.0",
+        "status": "FROZEN",
+        "language": "vi-VN",
+        "author": "ChatGPT + Project Team",
+        "last_updated": "2026-07",
+        "workshop": "WS-07"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 2.0"
+      ]
+    },
+    {
+      "path": "docs/BRD/BRD-WS-08.md",
+      "metadata": {
+        "document_code": "BRD-WS-08",
+        "document_name": "Payment, Payment Gateway & Payment Lifecycle",
+        "project": "YSim v2.0",
+        "document_set": "BRD",
+        "version": "2.0",
+        "status": "FROZEN",
+        "language": "vi-VN",
+        "author": "ChatGPT + Project Team",
+        "last_updated": "2026-07",
+        "workshop": "WS-08"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 2.0"
+      ]
+    },
+    {
+      "path": "docs/BRD/BRD-WS-09.md",
+      "metadata": {
+        "document_code": "BRD-WS-09",
+        "document_name": "Inventory, Allocation & Fulfillment Lifecycle",
+        "project": "YSim v2.0",
+        "document_set": "BRD",
+        "version": "2.0",
+        "status": "FROZEN",
+        "language": "vi-VN",
+        "author": "ChatGPT + Project Team",
+        "last_updated": "2026-07",
+        "workshop": "WS-09"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 2.0"
+      ]
+    },
+    {
+      "path": "docs/BRD/BRD-WS-10.md",
+      "metadata": {
+        "document_code": "BRD-WS-10",
+        "document_name": "Settlement, Revenue Sharing & Financial Lifecycle",
+        "project": "YSim v2.0",
+        "document_set": "BRD",
+        "version": "2.0",
+        "status": "FROZEN",
+        "language": "vi-VN",
+        "author": "ChatGPT + Project Team",
+        "last_updated": "2026-07",
+        "workshop": "WS-10"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 2.0"
+      ]
+    },
+    {
+      "path": "docs/BRD/BRD-WS-11.md",
+      "metadata": {
+        "document_code": "BRD-WS-11",
+        "document_name": "Customer Service, Ticketing & Customer Lifecycle",
+        "project": "YSim v2.0",
+        "document_set": "BRD",
+        "version": "2.0",
+        "status": "FROZEN",
+        "language": "vi-VN",
+        "author": "ChatGPT + Project Team",
+        "last_updated": "2026-07",
+        "workshop": "WS-11"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 2.0"
+      ]
+    },
+    {
+      "path": "docs/BRD/BRD-WS-12.md",
+      "metadata": {
+        "document_code": "BRD-WS-12",
+        "document_name": "Communication Platform, Notification & Engagement",
+        "project": "YSim v2.0",
+        "document_set": "BRD",
+        "version": "2.0",
+        "status": "FROZEN",
+        "language": "vi-VN",
+        "author": "ChatGPT + Project Team",
+        "last_updated": "2026-07",
+        "workshop": "WS-12"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 2.0"
+      ]
+    },
+    {
+      "path": "docs/BRD/BRD-WS-13.md",
+      "metadata": {
+        "document_code": "BRD-WS-13",
+        "document_name": "Reporting, Analytics & Operational Intelligence",
+        "project": "YSim v2.0",
+        "document_set": "BRD",
+        "version": "2.0",
+        "status": "FROZEN",
+        "language": "vi-VN",
+        "author": "ChatGPT + Project Team",
+        "last_updated": "2026-07",
+        "workshop": "WS-13"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 2.0"
+      ]
+    },
+    {
+      "path": "docs/BRD/BRD-WS-14.md",
+      "metadata": {
+        "document_code": "BRD-WS-14",
+        "document_name": "Platform Configuration, Reference Data & Business Rules",
+        "project": "YSim v2.0",
+        "document_set": "BRD",
+        "version": "2.0",
+        "status": "FROZEN",
+        "language": "vi-VN",
+        "author": "ChatGPT + Project Team",
+        "last_updated": "2026-07",
+        "workshop": "WS-14"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 2.0"
+      ]
+    },
+    {
+      "path": "docs/BRD/BRD-WS-15.md",
+      "metadata": {
+        "document_code": "BRD-WS-15",
+        "document_name": "Integration Platform, API Gateway & Event Bus",
+        "project": "YSim v2.0",
+        "document_set": "BRD",
+        "version": "2.0",
+        "status": "FROZEN",
+        "language": "vi-VN",
+        "author": "ChatGPT + Project Team",
+        "last_updated": "2026-07",
+        "workshop": "WS-15"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 2.0"
+      ]
+    },
+    {
+      "path": "docs/BRD/BRD-WS-16.md",
+      "metadata": {
+        "document_code": "BRD-WS-16",
+        "document_name": "Identity, Security, Authorization, Audit & Compliance",
+        "project": "YSim v2.0",
+        "document_set": "BRD",
+        "version": "2.0",
+        "status": "FROZEN",
+        "language": "vi-VN",
+        "author": "ChatGPT + Project Team",
+        "last_updated": "2026-07",
+        "workshop": "WS-16"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 2.0"
+      ]
+    },
+    {
+      "path": "docs/BRD/BRD-WS-17.md",
+      "metadata": {
+        "document_code": "BRD-WS-17",
+        "document_name": "Platform Operations, Monitoring, Scheduler & Background Processing",
+        "project": "YSim v2.0",
+        "document_set": "BRD",
+        "version": "2.0",
+        "status": "FROZEN",
+        "language": "vi-VN",
+        "author": "ChatGPT + Project Team",
+        "last_updated": "2026-07",
+        "workshop": "WS-17"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 2.0"
+      ]
+    },
+    {
+      "path": "docs/DIP/DIP-00.md",
+      "metadata": {
+        "document_code": "DIP-00",
+        "document_name": "Implementation Constitution & Executable Sprint Model",
+        "project": "YSim v2.1",
+        "document_set": "Development & Implementation Pack",
+        "version": "2.1",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "docs/DIP/DIP-01.md",
+      "metadata": {
+        "document_code": "DIP-01",
+        "document_name": "Executable Sprint Package Standard (ESPK)",
+        "project": "YSim v2.1",
+        "document_set": "Development & Implementation Pack",
+        "version": "2.1",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "docs/DIP/DIP-02.md",
+      "metadata": {
+        "document_code": "DIP-02",
+        "document_name": "AI Context Resolution & Prompt Assembly Standard",
+        "project": "YSim v2.1",
+        "document_set": "Development & Implementation Pack",
+        "version": "2.1",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "docs/DIP/DIP-03.md",
+      "metadata": {
+        "document_code": "DIP-03",
+        "document_name": "Seed & Reference Data Standard",
+        "project": "YSim v2.1",
+        "document_set": "Development & Implementation Pack",
+        "version": "2.1",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "docs/DIP/DIP-04.md",
+      "metadata": {
+        "document_code": "DIP-04",
+        "document_name": "AI Execution Runtime & Bash Runner Standard",
+        "project": "YSim v2.1",
+        "document_set": "Development & Implementation Pack",
+        "version": "2.1",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "docs/DIP/DIP-05.md",
+      "metadata": {
+        "document_code": "DIP-05",
+        "document_name": "AI Prompt Orchestration & Task Assembly Standard",
+        "project": "YSim v2.1",
+        "document_set": "Development & Implementation Pack",
+        "version": "2.1",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "docs/DIP/DIP-06.md",
+      "metadata": {
+        "document_code": "DIP-06",
+        "document_name": "Validation, Evidence & Acceptance Standard",
+        "project": "YSim v2.1",
+        "document_set": "Development & Implementation Pack",
+        "version": "2.1",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "docs/DIP/DIP-07.md",
+      "metadata": {
+        "document_code": "DIP-07",
+        "document_name": "Repository Workflow & Git Strategy Standard",
+        "project": "YSim v2.1",
+        "document_set": "Development & Implementation Pack",
+        "version": "2.1",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "docs/DIP/DIP-08.md",
+      "metadata": {
+        "document_code": "DIP-08",
+        "document_name": "Full-stack Capability Delivery Standard",
+        "project": "YSim v2.1",
+        "document_set": "Development & Implementation Pack",
+        "version": "2.1",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "docs/DIP/DIP-09.md",
+      "metadata": {
+        "document_code": "DIP-09",
+        "document_name": "AI Execution Governance & Exception Handling Standard",
+        "project": "YSim v2.1",
+        "document_set": "Development & Implementation Pack",
+        "version": "2.1",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "docs/DIP/DIP-10.md",
+      "metadata": {
+        "document_code": "DIP-10",
+        "document_name": "Implementation Roadmap & Capability Matrix",
+        "project": "YSim AI Software Factory",
+        "document_set": "Development & Implementation Pack (DIP)",
+        "version": "2.1",
+        "status": "FROZEN",
+        "owner": "Architecture Board",
+        "language": "en-US",
+        "last_updated": "2026-07"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim AI Software Factory"
+      ]
+    },
+    {
+      "path": "docs/ESP/ESP-00.md",
+      "metadata": {
+        "document_code": "ESP-00",
+        "document_name": "Engineering Standards Overview",
+        "project": "YSim v2.1",
+        "document_set": "Engineering Standards Pack",
+        "version": "2.1",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "docs/ESP/ESP-01.md",
+      "metadata": {
+        "document_code": "ESP-01",
+        "document_name": "Repository Architecture Standards",
+        "project": "YSim v2.0",
+        "document_set": "Engineering Standards Pack",
+        "version": "1.0",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 1.0"
+      ]
+    },
+    {
+      "path": "docs/ESP/ESP-02.md",
+      "metadata": {
+        "document_code": "ESP-02",
+        "document_name": "Source Code Engineering Standards",
+        "project": "YSim v2.0",
+        "document_set": "Engineering Standards Pack",
+        "version": "1.0",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 1.0"
+      ]
+    },
+    {
+      "path": "docs/ESP/ESP-03.md",
+      "metadata": {
+        "document_code": "ESP-03",
+        "document_name": "Enterprise Naming Standards",
+        "project": "YSim v2.1",
+        "document_set": "Engineering Standards Pack",
+        "version": "2.1",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "docs/ESP/ESP-04.md",
+      "metadata": {
+        "document_code": "ESP-04",
+        "document_name": "API Engineering Standards",
+        "project": "YSim v2.1",
+        "document_set": "Engineering Standards Pack",
+        "version": "2.1",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "docs/ESP/ESP-05.md",
+      "metadata": {
+        "document_code": "ESP-05",
+        "document_name": "Data Persistence Standards",
+        "project": "YSim v2.1",
+        "document_set": "Engineering Standards Pack",
+        "version": "2.1",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "docs/ESP/ESP-06.md",
+      "metadata": {
+        "document_code": "ESP-06",
+        "document_name": "Migration Standards",
+        "project": "YSim v2.1",
+        "document_set": "Engineering Standards Pack",
+        "version": "2.1",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "docs/ESP/ESP-07.md",
+      "metadata": {
+        "document_code": "ESP-07",
+        "document_name": "Engineering Testing Standards",
+        "project": "YSim v2.1",
+        "document_set": "Engineering Standards Pack",
+        "version": "2.1",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "docs/ESP/ESP-08.md",
+      "metadata": {
+        "document_code": "ESP-08",
+        "document_name": "Observability & Diagnostics Standards",
+        "project": "YSim v2.1",
+        "document_set": "Engineering Standards Pack",
+        "version": "2.1",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "docs/ESP/ESP-09.md",
+      "metadata": {
+        "document_code": "ESP-09",
+        "document_name": "Configuration & Feature Management Standards",
+        "project": "YSim v2.0",
+        "document_set": "Engineering Standards Pack",
+        "version": "1.0",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 1.0"
+      ]
+    },
+    {
+      "path": "docs/ESP/ESP-10.md",
+      "metadata": {
+        "document_code": "ESP-10",
+        "document_name": "Secure Engineering Standards",
+        "project": "YSim v2.1",
+        "document_set": "Engineering Standards Pack",
+        "version": "2.1",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "docs/ESP/ESP-11.md",
+      "metadata": {
+        "document_code": "ESP-11",
+        "document_name": "Engineering Documentation Standards",
+        "project": "YSim v2.1",
+        "document_set": "Engineering Standards Pack",
+        "version": "2.1",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "docs/ESP/ESP-12.md",
+      "metadata": {
+        "document_code": "ESP-12",
+        "document_name": "Source Control & Change Management Standards",
+        "project": "YSim v2.0",
+        "document_set": "Engineering Standards Pack",
+        "version": "1.0",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 1.0"
+      ]
+    },
+    {
+      "path": "docs/ESP/ESP-13.md",
+      "metadata": {
+        "document_code": "ESP-13",
+        "document_name": "Engineering Review Standards",
+        "project": "YSim v2.0",
+        "document_set": "Engineering Standards Pack",
+        "version": "1.0",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 1.0"
+      ]
+    },
+    {
+      "path": "docs/ESP/ESP-14.md",
+      "metadata": {
+        "document_code": "ESP-14",
+        "document_name": "Performance & Scalability Standards",
+        "project": "YSim v2.1",
+        "document_set": "Engineering Standards Pack",
+        "version": "2.1",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "docs/ESPK/Sprint-00.md",
+      "metadata": {
+        "document_code": "Sprint-00",
+        "document_name": "Factory Commissioning & Repository Bootstrap",
+        "project": "YSim v2.1",
+        "document_set": "Sprint",
+        "version": "2.1",
+        "status": "FROZEN",
+        "language": "vi-VN"
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "docs/INDEX.md",
+      "metadata": {},
+      "errors": [
+        "Missing metadata: document_code, document_name, project, document_set, version, status, language"
+      ],
+      "warnings": []
+    },
+    {
+      "path": "docs/MASTER_INDEX.md",
+      "metadata": {},
+      "errors": [
+        "Missing metadata: document_code, document_name, project, document_set, version, status, language"
+      ],
+      "warnings": []
+    },
+    {
+      "path": "docs/ROP/ROP-00.md",
+      "metadata": {
+        "document_code": "ROP-00",
+        "document_name": "Release & Operations Overview",
+        "project": "YSim v2.0",
+        "document_set": "Release & Operations Pack",
+        "version": "1.0",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 1.0"
+      ]
+    },
+    {
+      "path": "docs/ROP/ROP-01.md",
+      "metadata": {
+        "document_code": "ROP-01",
+        "document_name": "Release Planning & Governance",
+        "project": "YSim v2.0",
+        "document_set": "Release & Operations Pack",
+        "version": "1.0",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 1.0"
+      ]
+    },
+    {
+      "path": "docs/ROP/ROP-02.md",
+      "metadata": {
+        "document_code": "ROP-02",
+        "document_name": "Deployment Standards",
+        "project": "YSim v2.0",
+        "document_set": "Release & Operations Pack",
+        "version": "1.0",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 1.0"
+      ]
+    },
+    {
+      "path": "docs/ROP/ROP-03.md",
+      "metadata": {
+        "document_code": "ROP-03",
+        "document_name": "Rollback & Recovery Standards",
+        "project": "YSim v2.0",
+        "document_set": "Release & Operations Pack",
+        "version": "1.0",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 1.0"
+      ]
+    },
+    {
+      "path": "docs/ROP/ROP-04.md",
+      "metadata": {
+        "document_code": "ROP-04",
+        "document_name": "Operational Readiness",
+        "project": "YSim v2.0",
+        "document_set": "Release & Operations Pack",
+        "version": "1.0",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 1.0"
+      ]
+    },
+    {
+      "path": "docs/ROP/ROP-05.md",
+      "metadata": {
+        "document_code": "ROP-05",
+        "document_name": "Production Operations",
+        "project": "YSim v2.0",
+        "document_set": "Release & Operations Pack",
+        "version": "1.0",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 1.0"
+      ]
+    },
+    {
+      "path": "docs/ROP/ROP-06.md",
+      "metadata": {
+        "document_code": "ROP-06",
+        "document_name": "Service Monitoring & Incident Management",
+        "project": "YSim v2.0",
+        "document_set": "Release & Operations Pack",
+        "version": "1.0",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 1.0"
+      ]
+    },
+    {
+      "path": "docs/ROP/ROP-07.md",
+      "metadata": {
+        "document_code": "ROP-07",
+        "document_name": "Backup & Disaster Recovery",
+        "project": "YSim v2.0",
+        "document_set": "Release & Operations Pack",
+        "version": "1.0",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 1.0"
+      ]
+    },
+    {
+      "path": "docs/ROP/ROP-08.md",
+      "metadata": {
+        "document_code": "ROP-08",
+        "document_name": "Production Change Management",
+        "project": "YSim v2.0",
+        "document_set": "Release & Operations Pack",
+        "version": "1.0",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 1.0"
+      ]
+    },
+    {
+      "path": "docs/ROP/ROP-09.md",
+      "metadata": {
+        "document_code": "ROP-09",
+        "document_name": "Hypercare & Operational Handover",
+        "project": "YSim v2.0",
+        "document_set": "Release & Operations Pack",
+        "version": "1.0",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 1.0"
+      ]
+    },
+    {
+      "path": "docs/SGP/SGP-00.md",
+      "metadata": {
+        "document_code": "SGP-00",
+        "document_name": "Sprint Governance Overview",
+        "project": "YSim v2.1",
+        "document_set": "Sprint Governance Pack",
+        "version": "2.1",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "docs/SGP/SGP-01.md",
+      "metadata": {
+        "document_code": "SGP-01",
+        "document_name": "Sprint Lifecycle",
+        "project": "YSim v2.0",
+        "document_set": "Sprint Governance Pack",
+        "version": "1.0",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 1.0"
+      ]
+    },
+    {
+      "path": "docs/SGP/SGP-02.md",
+      "metadata": {
+        "document_code": "SGP-02",
+        "document_name": "Sprint Roles & Responsibilities",
+        "project": "YSim v2.1",
+        "document_set": "Sprint Governance Pack",
+        "version": "2.1",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "docs/SGP/SGP-03.md",
+      "metadata": {
+        "document_code": "SGP-03",
+        "document_name": "Sprint Planning & Approval",
+        "project": "YSim v2.0",
+        "document_set": "Sprint Governance Pack",
+        "version": "1.0",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 1.0"
+      ]
+    },
+    {
+      "path": "docs/SGP/SGP-04.md",
+      "metadata": {
+        "document_code": "SGP-04",
+        "document_name": "Sprint Execution Governance",
+        "project": "YSim v2.0",
+        "document_set": "Sprint Governance Pack",
+        "version": "1.0",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 1.0"
+      ]
+    },
+    {
+      "path": "docs/SGP/SGP-05.md",
+      "metadata": {
+        "document_code": "SGP-05",
+        "document_name": "Sprint Review & Acceptance",
+        "project": "YSim v2.1",
+        "document_set": "Sprint Governance Pack",
+        "version": "2.1",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "docs/SGP/SGP-06.md",
+      "metadata": {
+        "document_code": "SGP-06",
+        "document_name": "Sprint Metrics & Reporting",
+        "project": "YSim v2.0",
+        "document_set": "Sprint Governance Pack",
+        "version": "1.0",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 1.0"
+      ]
+    },
+    {
+      "path": "docs/SGP/SGP-07.md",
+      "metadata": {
+        "document_code": "SGP-07",
+        "document_name": "Sprint Exception Management",
+        "project": "YSim v2.0",
+        "document_set": "Sprint Governance Pack",
+        "version": "1.0",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 1.0"
+      ]
+    },
+    {
+      "path": "docs/SGP/SGP-08.md",
+      "metadata": {
+        "document_code": "SGP-08",
+        "document_name": "Sprint Governance Gates",
+        "project": "YSim v2.1",
+        "document_set": "Sprint Governance Pack",
+        "version": "2.1",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "docs/SGP/SGP-09.md",
+      "metadata": {
+        "document_code": "SGP-09",
+        "document_name": "Sprint Completion & Handover",
+        "project": "YSim v2.0",
+        "document_set": "Sprint Governance Pack",
+        "version": "1.0",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 1.0"
+      ]
+    },
+    {
+      "path": "docs/SGP/SGP-10.md",
+      "metadata": {
+        "document_code": "SGP-10",
+        "document_name": "Governance Assets & Records",
+        "project": "YSim v2.1",
+        "document_set": "Sprint Governance Pack",
+        "version": "2.1",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "path": "docs/YADF/YADF-00.md",
+      "metadata": {
+        "document_code": "YADF-00",
+        "document_name": "YSim AI Development Framework",
+        "project": "YSim v2.0",
+        "document_set": "Engineering Governance",
+        "version": "2.0",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": [
+        "Legacy project metadata retained: YSim v2.0",
+        "Legacy document version retained: 2.0"
+      ]
+    },
+    {
+      "path": "docs/YADF/YADF-01.md",
+      "metadata": {
+        "document_code": "YADF-01",
+        "document_name": "Commerce Meta Model & Full-stack Capability Model",
+        "project": "YSim v2.1",
+        "document_set": "YSim Architecture & Domain Foundation",
+        "version": "2.1",
+        "status": "FROZEN",
+        "language": "en-US"
+      },
+      "errors": [],
+      "warnings": []
+    }
+  ]
+}
