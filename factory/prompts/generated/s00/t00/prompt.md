@@ -41,44 +41,23 @@ M factory/contexts/generated/s00/context.json
  M knowledge/catalog/relationships.json
  M knowledge/catalog/summary.json
  M knowledge/normalized/documents.json
-?? ACCEPTANCE.md
-?? DOCUMENT_BASELINE.md
-?? EXECUTION_ORDER.md
-?? GOVERNANCE.md
-?? README.md
-?? SCOPE.md
-?? SPRINT-01-INSTALL.md
-?? TARGET_STRUCTURE.md
-?? ai/
-?? factory/context-manifests/s01.yaml
-?? factory/context-manifests/s01.yaml.invalid
-?? factory/contexts/generated/s01/
-?? factory/executions/s01/
-?? factory/prompts/generated/s01/
-?? factory/reports/s01/
-?? factory/schemas/sprint.schema.json
-?? factory/schemas/task-manifest.schema.json
-?? scripts/build-sprint-01-context.sh
-?? scripts/build-sprint-01-prompt.sh
-?? scripts/install-sprint-01.sh
-?? scripts/run-sprint-01-task.sh
-?? scripts/run-sprint-01.sh
-?? sprint.json
+?? factory/prompts/generated/s01/t01/
+?? factory/reports/s01/s01-t01-workspace-foundation.md
 ```
 
 ## Recent Commits
 
 ```text
-3a89828 (HEAD -> feat/s01-platform-foundation) fix(s01): align prompt manifests and validator with ysf schema
+e3ed5dd (HEAD -> feat/s01-platform-foundation, origin/feat/s01-platform-foundation) prepared
+d6629e4 chore(s01): add sequential sprint auto runner
+10ace03 docs(s01-t00): complete repository audit and execution plan
+3a89828 fix(s01): align prompt manifests and validator with ysf schema
 9154741 fix(s01): align t00 prompt manifest with ysf schema
 5be8413 (tag: architecture-v2.2, origin/chore/s00-factory-commissioning, chore/s00-factory-commissioning) release(architecture): freeze architecture baseline v2.2
 fde2273 docs(v2.2): add UXF, CAP, ECS, PCS, POL and ABP-18
 1f9beab release(s00): freeze ysf v0.1.0 dry-run engine
 ab9ab71 chore(s00): finalize ysf dry-run pipeline
 a831948 feat(s00): add execution pipeline stage abstraction
-a4321c7 feat(s00): add dry-run execution runner
-a4d5787 feat(s00): add execution planner
-7019a2e feat(s00): add execution workspace snapshot service
 ```
 
 ## Repository Tree
@@ -160,6 +139,7 @@ a4d5787 feat(s00): add execution planner
 ./knowledge/seed
 ./knowledge/ui
 ./runtime
+./runtime/auto-runner
 ./runtime/cache
 ./runtime/codex
 ./runtime/codex-readiness
@@ -183,6 +163,7 @@ a4d5787 feat(s00): add execution planner
 ./scripts/regenerate-sprint-01-prompt-manifests.py
 ./scripts/resume.sh
 ./scripts/run-execution.sh
+./scripts/run-sprint-01-auto.sh
 ./scripts/run-sprint-01-task.sh
 ./scripts/run-sprint-01.sh
 ./scripts/run-sprint.sh
