@@ -1,0 +1,93 @@
+name: ${YSIM_INFRA_PROJECT:-ysim-local-foundation}
+
+services:
+  postgres:
+    image: ${YSIM_POSTGRES_IMAGE:-postgres:16.4-alpine}
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${YSIM_POSTGRES_DB:-ysim}
+      POSTGRES_USER: ${YSIM_POSTGRES_USER:-ysim}
+      POSTGRES_PASSWORD: ${YSIM_POSTGRES_PASSWORD:-ysim_local_password}
+    ports:
+      - "${YSIM_POSTGRES_HOST_PORT:-5432}:5432"
+    volumes:
+      - ysim-postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - pg_isready -U "$${POSTGRES_USER}" -d "$${POSTGRES_DB}"
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+
+  redis:
+    image: ${YSIM_REDIS_IMAGE:-redis:7.4-alpine}
+    restart: unless-stopped
+    command:
+      - redis-server
+      - --appendonly
+      - "yes"
+    ports:
+      - "${YSIM_REDIS_HOST_PORT:-6379}:6379"
+    volumes:
+      - ysim-redis-data:/data
+    healthcheck:
+      test:
+        - CMD
+        - redis-cli
+        - ping
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 5s
+
+  minio:
+    image: ${YSIM_MINIO_IMAGE:-minio/minio:RELEASE.2024-07-16T23-46-41Z}
+    restart: unless-stopped
+    command:
+      - server
+      - /data
+      - --console-address
+      - ":9001"
+    environment:
+      MINIO_ROOT_USER: ${YSIM_MINIO_ROOT_USER:-ysim_minio}
+      MINIO_ROOT_PASSWORD: ${YSIM_MINIO_ROOT_PASSWORD:-ysim_minio_password}
+    ports:
+      - "${YSIM_MINIO_API_HOST_PORT:-9000}:9000"
+      - "${YSIM_MINIO_CONSOLE_HOST_PORT:-9001}:9001"
+    volumes:
+      - ysim-minio-data:/data
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - curl -fsS http://localhost:9000/minio/health/live >/dev/null
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 10s
+
+  mailpit:
+    image: ${YSIM_MAILPIT_IMAGE:-axllent/mailpit:v1.20.5}
+    restart: unless-stopped
+    ports:
+      - "${YSIM_MAILPIT_SMTP_HOST_PORT:-1025}:1025"
+      - "${YSIM_MAILPIT_HTTP_HOST_PORT:-8025}:8025"
+    volumes:
+      - ysim-mailpit-data:/data
+    environment:
+      MP_DATABASE: /data/mailpit.db
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - wget -q --spider http://localhost:8025/livez
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 5s
+
+volumes:
+  ysim-postgres-data:
+  ysim-redis-data:
+  ysim-minio-data:
+  ysim-mailpit-data:

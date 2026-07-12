@@ -16,6 +16,7 @@ from ysf.core.result import CommandResult
 from ysf.execution.service import run_dry_execution
 from ysf.index.service import build_indexes
 from ysf.knowledge.service import build_knowledge
+from ysf.local_infra.verifier import verify_local_infra
 from ysf.pipeline.service import run_pipeline
 from ysf.prompt.service import build_prompt
 from ysf.verification.service import run_verification
@@ -145,6 +146,32 @@ def print_result(
         )
 
     elif result.command == "verify":
+        for check in result.data["checks"]:
+            print(
+                f"  [{check['status']}] "
+                f"{check['name']}"
+            )
+
+        if result.data["failedChecks"]:
+            print(
+                "  failed: "
+                + ", ".join(
+                    result.data[
+                        "failedChecks"
+                    ]
+                )
+            )
+
+    elif result.command == "local-infra":
+        print(
+            "  compose: "
+            f"{result.data['composeFile']}"
+        )
+        print(
+            "  env example: "
+            f"{result.data['environmentExample']}"
+        )
+
         for check in result.data["checks"]:
             print(
                 f"  [{check['status']}] "
@@ -347,6 +374,40 @@ def create_parser() -> argparse.ArgumentParser:
         help="Print machine-readable JSON.",
     )
 
+    local_infra_parser = subparsers.add_parser(
+        "local-infra",
+        help="Verify and inspect local infrastructure assets.",
+    )
+    local_infra_subparsers = (
+        local_infra_parser.add_subparsers(
+            dest="local_infra_command",
+            required=True,
+        )
+    )
+
+    local_infra_verify_parser = (
+        local_infra_subparsers.add_parser(
+            "verify",
+            help=(
+                "Validate the local Docker "
+                "Compose infrastructure baseline."
+            ),
+        )
+    )
+    local_infra_verify_parser.add_argument(
+        "--runtime",
+        action="store_true",
+        help=(
+            "Also run docker compose config "
+            "validation."
+        ),
+    )
+    local_infra_verify_parser.add_argument(
+        "--json",
+        action="store_true",
+        help="Print machine-readable JSON.",
+    )
+
     run_parser = subparsers.add_parser(
         "run",
         help="Run an execution plan.",
@@ -476,6 +537,22 @@ def main() -> int:
         elif args.command == "verify":
             result = run_verification(
                 repository_root
+            )
+
+        elif args.command == "local-infra":
+            if (
+                args.local_infra_command
+                != "verify"
+            ):
+                parser.error(
+                    "Unsupported local-infra "
+                    "command."
+                )
+                return 2
+
+            result = verify_local_infra(
+                repository_root=repository_root,
+                runtime=args.runtime,
             )
 
         elif args.command == "run":

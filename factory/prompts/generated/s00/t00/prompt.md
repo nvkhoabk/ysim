@@ -41,14 +41,22 @@ M factory/contexts/generated/s00/context.json
  M knowledge/catalog/relationships.json
  M knowledge/catalog/summary.json
  M knowledge/normalized/documents.json
-?? factory/prompts/generated/s01/t04/
-?? factory/reports/s01/s01-t04-logging-errors.md
+ M tools/ysf/src/ysf/cli.py
+?? factory/config/local-infra/
+?? factory/prompts/generated/s01/t05/
+?? factory/reports/s01/s01-t05-local-infrastructure.md
+?? factory/reports/s01/s01-t05-runner-evidence.md
+?? scripts/local-infra.sh
+?? scripts/verify-local-infra.sh
+?? tools/ysf/src/ysf/local_infra/
+?? tools/ysf/tests/unit/test_local_infra_verifier.py
 ```
 
 ## Recent Commits
 
 ```text
-e5e1ac3 (HEAD -> feat/s01-platform-foundation, tag: s01-t03-complete) feat(s01-t03): add typed configuration and environment validation
+72c3aca (HEAD -> feat/s01-platform-foundation, tag: s01-t04-complete) feat(s01-t04): add structured logging and platform error handling
+e5e1ac3 (tag: s01-t03-complete) feat(s01-t03): add typed configuration and environment validation
 7548433 (origin/feat/s01-platform-foundation) prepared
 af7d70e (tag: s01-t02-complete) feat(s01-t02): bootstrap NestJS API application
 bdcec14 (tag: s01-t01-complete) feat(s01-t01): establish monorepo workspace foundation
@@ -57,7 +65,6 @@ d6629e4 chore(s01): add sequential sprint auto runner
 10ace03 docs(s01-t00): complete repository audit and execution plan
 3a89828 fix(s01): align prompt manifests and validator with ysf schema
 9154741 fix(s01): align t00 prompt manifest with ysf schema
-5be8413 (tag: architecture-v2.2, origin/chore/s00-factory-commissioning, chore/s00-factory-commissioning) release(architecture): freeze architecture baseline v2.2
 ```
 
 ## Repository Tree
@@ -160,6 +167,7 @@ d6629e4 chore(s01): add sequential sprint auto runner
 ./scripts/build-sprint-01-prompt.sh
 ./scripts/commission.sh
 ./scripts/install-sprint-01.sh
+./scripts/local-infra.sh
 ./scripts/regenerate-sprint-01-prompt-manifests.py
 ./scripts/resume.sh
 ./scripts/run-execution.sh
@@ -171,6 +179,7 @@ d6629e4 chore(s01): add sequential sprint auto runner
 ./scripts/validate-sprint-01-pack.sh
 ./scripts/validate.sh
 ./scripts/verify-factory.sh
+./scripts/verify-local-infra.sh
 ./scripts/ysf.sh
 ./sprint.json
 ./tools
