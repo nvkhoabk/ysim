@@ -13,6 +13,7 @@ from ysf.knowledge.service import (
     build_knowledge,
 )
 from ysf.pipeline.stage import PipelineStage
+from ysf.prompt.service import build_prompt
 
 
 class IndexStage(PipelineStage):
@@ -62,4 +63,26 @@ class ContextStage(PipelineStage):
             manifest_path=(
                 self._manifest_path
             ),
+        )
+
+
+class PromptStage(PipelineStage):
+    name = "prompt"
+    order = 40
+
+    def __init__(
+        self,
+        manifest_path: Path,
+    ) -> None:
+        self._manifest_path = (
+            manifest_path
+        )
+
+    def run(
+        self,
+        repository_root: Path,
+    ) -> CommandResult:
+        return build_prompt(
+            repository_root=repository_root,
+            manifest_path=self._manifest_path,
         )

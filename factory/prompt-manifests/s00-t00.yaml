@@ -1,15 +1,57 @@
-task: T00
+schema_version: "1.0"
 
-sprint: S00
+prompt:
+  id: s00-t00
+  sprint: S00
+  task: T00
+  provider: codex
+  template: factory/prompts/templates/codex-task.md
+
+objective: >
+  Review and verify the YSim Software Factory repository baseline for
+  Sprint-00 without modifying business source code.
 
 context:
+  directory: factory/contexts/generated/s00
+  manifest: factory/contexts/generated/s00/context.json
+  content: factory/contexts/generated/s00/context.md
 
-factory/contexts/generated/s00
+repository:
+  include_status: true
+  include_branch: true
+  include_recent_commits: 10
+  include_tree_depth: 2
 
-objective:
+constraints:
+  allowed_paths:
+    - factory/
+    - knowledge/
+    - tools/
+    - scripts/
+    - docs/ESPK/
 
-Bootstrap repository
+  protected_paths:
+    - docs/AFM/
+    - docs/BRD/
+    - docs/ABP/
+    - docs/YADF/
+    - docs/AAP/
+    - docs/SGP/
+    - docs/ESP/
+    - docs/DIP/
+    - docs/ROP/
+
+validation:
+  commands:
+    - ysf verify
+    - git diff --check
+
+completion:
+  required_outputs:
+    - repository assessment
+    - identified risks
+    - validation result
+    - implementation recommendation
 
 output:
-
-factory/prompts/generated/s00/t00
+  directory: factory/prompts/generated/s00/t00

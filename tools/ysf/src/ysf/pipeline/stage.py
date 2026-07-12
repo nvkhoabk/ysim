@@ -16,3 +16,4 @@ class PipelineStage(ABC):
         repository_root: Path,
     ) -> CommandResult:
         """Execute the pipeline stage."""
+

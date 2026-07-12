@@ -16,6 +16,7 @@ from ysf.core.result import CommandResult
 from ysf.index.service import build_indexes
 from ysf.knowledge.service import build_knowledge
 from ysf.pipeline.service import run_pipeline
+from ysf.prompt.service import build_prompt
 from ysf.verification.service import run_verification
 
 
@@ -120,6 +121,28 @@ def print_result(
             f"{result.data['outputDirectory']}"
         )
 
+    elif result.command == "build-prompt":
+        print(
+            f"  prompt: "
+            f"{result.data['promptId']}"
+        )
+        print(
+            f"  provider: "
+            f"{result.data['provider']}"
+        )
+        print(
+            f"  characters: "
+            f"{result.data['characterCount']}"
+        )
+        print(
+            f"  estimated tokens: "
+            f"{result.data['estimatedTokens']}"
+        )
+        print(
+            f"  output: "
+            f"{result.data['promptFile']}"
+        )
+
     elif result.command == "verify":
         for check in result.data["checks"]:
             print(
@@ -208,6 +231,26 @@ def create_parser() -> argparse.ArgumentParser:
         action="store_true",
     )
 
+    build_prompt_parser = (
+        subparsers.add_parser(
+            "build-prompt",
+            help="Build a Prompt Artifact.",
+        )
+    )
+
+    build_prompt_parser.add_argument(
+        "--manifest",
+        default=(
+            "factory/prompt-manifests/"
+            "s00-t00.yaml"
+        ),
+    )
+
+    build_prompt_parser.add_argument(
+        "--json",
+        action="store_true",
+    )
+
     pipeline_parser = subparsers.add_parser(
         "pipeline",
         help="Run registered YSF stages.",
@@ -289,6 +332,22 @@ def main() -> int:
                 manifest_path=(
                     manifest_path
                 ),
+            )
+
+        elif args.command == "build-prompt":
+            manifest_path = Path(
+                args.manifest
+            )
+
+            if not manifest_path.is_absolute():
+                manifest_path = (
+                    repository_root
+                    / manifest_path
+                )
+
+            result = build_prompt(
+                repository_root=repository_root,
+                manifest_path=manifest_path,
             )
 
         elif args.command == "pipeline":

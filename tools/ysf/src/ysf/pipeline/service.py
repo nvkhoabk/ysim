@@ -13,12 +13,14 @@ from ysf.pipeline.stages import (
     ContextStage,
     IndexStage,
     KnowledgeStage,
+    PromptStage,
 )
 
 
 def create_default_registry(
     repository_root: Path,
     context_manifest: Path | None = None,
+    prompt_manifest: Path | None = None,
 ) -> StageRegistry:
     registry = StageRegistry()
 
@@ -36,6 +38,19 @@ def create_default_registry(
         ContextStage(manifest)
     )
 
+    resolved_prompt_manifest = (
+        prompt_manifest
+        or repository_root
+        / "factory/prompt-manifests/"
+        "s00-t00.yaml"
+    )
+
+    registry.register(
+        PromptStage(
+            resolved_prompt_manifest
+        )
+    )
+
     return registry
 
 
@@ -44,6 +59,7 @@ def run_pipeline(
     stage_names: list[str] | None = None,
     fail_fast: bool = True,
     context_manifest: Path | None = None,
+    prompt_manifest: Path | None = None,
 ) -> CommandResult:
     engine = PipelineEngine(
         create_default_registry(
@@ -52,6 +68,9 @@ def run_pipeline(
             ),
             context_manifest=(
                 context_manifest
+            ),
+            prompt_manifest=(
+                prompt_manifest
             ),
         )
     )

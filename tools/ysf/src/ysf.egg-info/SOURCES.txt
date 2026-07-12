@@ -42,5 +42,13 @@ src/ysf/pipeline/service.py
 src/ysf/pipeline/stage.py
 src/ysf/pipeline/stages.py
 src/ysf/prompt/__init__.py
+src/ysf/prompt/manifest.py
+src/ysf/prompt/models.py
+src/ysf/prompt/renderer.py
+src/ysf/prompt/repository.py
+src/ysf/prompt/service.py
+src/ysf/prompt/validator.py
 src/ysf/reporting/__init__.py
 src/ysf/validation/__init__.py
+src/ysf/verification/__init__.py
+src/ysf/verification/service.py
