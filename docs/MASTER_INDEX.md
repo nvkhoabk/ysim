@@ -14,6 +14,11 @@
 | 8 | ESPK | Executable Sprint Packages  |
 | 9 | DIP | Development and implementation standards |
 | 10 | ROP | Release and operations |
+| 11 | CAP | Platform Capability Registry |
+| 12 | ECS | Experience Configuration Schema |
+| 13 | PCS | Platform Configuration Schema |
+| 14 | POL | Platform Policy Framework |
+| 15 | UXF | User Experience Foundation |
 
 ## Source-of-Truth Policy
 

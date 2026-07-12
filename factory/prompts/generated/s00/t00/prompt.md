@@ -23,7 +23,10 @@ chore/s00-factory-commissioning
 ## Working Tree
 
 ```text
-M factory/contexts/generated/s00/context.json
+M .gitignore
+ M docs/INDEX.md
+ M docs/MASTER_INDEX.md
+ M factory/contexts/generated/s00/context.json
  M factory/executions/s00/t00/plan.json
  M factory/executions/s00/t00/report.json
  M factory/executions/s00/t00/report.md
@@ -41,18 +44,19 @@ M factory/contexts/generated/s00/context.json
  M knowledge/catalog/relationships.json
  M knowledge/catalog/summary.json
  M knowledge/normalized/documents.json
-?? factory/releases/
-?? factory/reports/s00/step-14g-ysf-v0.1.0-freeze.md
-?? runtime/tmp/execution-stage-integration/
-?? runtime/tmp/step-14f0-report/
-?? runtime/tmp/step-14f0/
-?? runtime/tmp/ysf-integration-execution/
+?? docs/ABP/ABP-18.md
+?? docs/CAP/
+?? docs/ECS/
+?? docs/PCS/
+?? docs/POL/
+?? docs/UXF/
 ```
 
 ## Recent Commits
 
 ```text
-ab9ab71 (HEAD -> chore/s00-factory-commissioning, origin/chore/s00-factory-commissioning) chore(s00): finalize ysf dry-run pipeline
+1f9beab (HEAD -> chore/s00-factory-commissioning, origin/chore/s00-factory-commissioning) release(s00): freeze ysf v0.1.0 dry-run engine
+ab9ab71 chore(s00): finalize ysf dry-run pipeline
 a831948 feat(s00): add execution pipeline stage abstraction
 a4321c7 feat(s00): add dry-run execution runner
 a4d5787 feat(s00): add execution planner
@@ -61,7 +65,6 @@ a4d5787 feat(s00): add execution planner
 db1fdec feat(s00): migrate prompt builder into ysf pipeline
 e44f995 feat(s00): add unified ysf verification gate
 1b613b6 feat(s00): migrate context builder into ysf pipeline
-cf6e363 feat(s00): establish ysf pipeline engine
 ```
 
 ## Repository Tree
@@ -81,13 +84,18 @@ cf6e363 feat(s00): establish ysf pipeline engine
 ./docs/ABP
 ./docs/AFM
 ./docs/BRD
+./docs/CAP
 ./docs/DIP
+./docs/ECS
 ./docs/ESP
 ./docs/ESPK
 ./docs/INDEX.md
 ./docs/MASTER_INDEX.md
+./docs/PCS
+./docs/POL
 ./docs/ROP
 ./docs/SGP
+./docs/UXF
 ./docs/YADF
 ./factory
 ./factory/README.md
@@ -126,6 +134,7 @@ cf6e363 feat(s00): establish ysf pipeline engine
 ./knowledge/ui
 ./runtime
 ./runtime/cache
+./runtime/codex-readiness
 ./runtime/reports
 ./runtime/state
 ./runtime/tmp

@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.1",
-  "generatedAt": "2026-07-12T15:42:04.036361+07:00",
-  "documentCount": 102,
+  "generatedAt": "2026-07-12T19:55:08.964232+07:00",
+  "documentCount": 118,
   "documents": [
     {
       "id": "AAP-01",
@@ -314,6 +314,19 @@
       "status": "FROZEN",
       "generatedNavigation": false,
       "searchableText": "abp-17 design system architecture abp-17.md abp"
+    },
+    {
+      "id": "ABP-18",
+      "path": "docs/ABP/ABP-18.md",
+      "filename": "ABP-18.md",
+      "documentSet": "ABP",
+      "layer": "architecture",
+      "documentCode": "ABP-18",
+      "title": "ABP-18 — Runtime Resolution Architecture",
+      "version": "1.0",
+      "status": "Draft",
+      "generatedNavigation": false,
+      "searchableText": "abp-18 abp-18 — runtime resolution architecture abp-18.md abp"
     },
     {
       "id": "AFM-00",
@@ -654,6 +667,32 @@
       "searchableText": "brd-ws-17 brd workshop 17 brd-ws-17.md brd"
     },
     {
+      "id": "CAP-00",
+      "path": "docs/CAP/CAP-00.md",
+      "filename": "CAP-00.md",
+      "documentSet": "CAP",
+      "layer": "other",
+      "documentCode": "CAP-00",
+      "title": "CAP-00 — Platform Capability Registry",
+      "version": "1.0",
+      "status": "Draft",
+      "generatedNavigation": false,
+      "searchableText": "cap-00 cap-00 — platform capability registry cap-00.md cap"
+    },
+    {
+      "id": "CAP-INDEX",
+      "path": "docs/CAP/INDEX.md",
+      "filename": "INDEX.md",
+      "documentSet": "CAP",
+      "layer": "other",
+      "documentCode": "CAP-INDEX",
+      "title": "Capability Architecture",
+      "version": "1.0",
+      "status": "Draft",
+      "generatedNavigation": false,
+      "searchableText": "cap-index capability architecture index.md cap"
+    },
+    {
       "id": "DIP-00",
       "path": "docs/DIP/DIP-00.md",
       "filename": "DIP-00.md",
@@ -795,6 +834,32 @@
       "status": "FROZEN",
       "generatedNavigation": false,
       "searchableText": "dip-10 dip-10 — implementation roadmap & capability matrix dip-10.md dip"
+    },
+    {
+      "id": "ECS-00",
+      "path": "docs/ECS/ECS-00.md",
+      "filename": "ECS-00.md",
+      "documentSet": "ECS",
+      "layer": "other",
+      "documentCode": "ECS-00",
+      "title": "ECS-00 — Experience Configuration Schema",
+      "version": "1.0",
+      "status": "Draft",
+      "generatedNavigation": false,
+      "searchableText": "ecs-00 ecs-00 — experience configuration schema ecs-00.md ecs"
+    },
+    {
+      "id": "ECS-INDEX",
+      "path": "docs/ECS/INDEX.md",
+      "filename": "INDEX.md",
+      "documentSet": "ECS",
+      "layer": "other",
+      "documentCode": "ECS-INDEX",
+      "title": "Experience Configuration Schema",
+      "version": "1.0",
+      "status": "Draft",
+      "generatedNavigation": false,
+      "searchableText": "ecs-index experience configuration schema index.md ecs"
     },
     {
       "id": "ESP-00",
@@ -1029,6 +1094,58 @@
       "status": null,
       "generatedNavigation": true,
       "searchableText": "ysim v2.1 documentation master index master_index.md root"
+    },
+    {
+      "id": "PCS-INDEX",
+      "path": "docs/PCS/INDEX.md",
+      "filename": "INDEX.md",
+      "documentSet": "PCS",
+      "layer": "other",
+      "documentCode": "PCS-INDEX",
+      "title": "Platform Configuration Schema",
+      "version": "1.0",
+      "status": "Draft",
+      "generatedNavigation": false,
+      "searchableText": "pcs-index platform configuration schema index.md pcs"
+    },
+    {
+      "id": "PCS-00",
+      "path": "docs/PCS/PCS-00.md",
+      "filename": "PCS-00.md",
+      "documentSet": "PCS",
+      "layer": "other",
+      "documentCode": "PCS-00",
+      "title": "PCS-00 — Platform Configuration Schema",
+      "version": "1.0",
+      "status": "Draft",
+      "generatedNavigation": false,
+      "searchableText": "pcs-00 pcs-00 — platform configuration schema pcs-00.md pcs"
+    },
+    {
+      "id": "POL-INDEX",
+      "path": "docs/POL/INDEX.md",
+      "filename": "INDEX.md",
+      "documentSet": "POL",
+      "layer": "other",
+      "documentCode": "POL-INDEX",
+      "title": "Policy Framework",
+      "version": "1.0",
+      "status": "Draft",
+      "generatedNavigation": false,
+      "searchableText": "pol-index policy framework index.md pol"
+    },
+    {
+      "id": "POL-00",
+      "path": "docs/POL/POL-00.md",
+      "filename": "POL-00.md",
+      "documentSet": "POL",
+      "layer": "other",
+      "documentCode": "POL-00",
+      "title": "POL-00 — Platform Policy Framework",
+      "version": "1.0",
+      "status": "Draft",
+      "generatedNavigation": false,
+      "searchableText": "pol-00 pol-00 — platform policy framework pol-00.md pol"
     },
     {
       "id": "ROP-00",
@@ -1302,6 +1419,97 @@
       "status": "FROZEN",
       "generatedNavigation": false,
       "searchableText": "sgp-10 governance assets & records sgp-10.md sgp"
+    },
+    {
+      "id": "UXF-INDEX",
+      "path": "docs/UXF/INDEX.md",
+      "filename": "INDEX.md",
+      "documentSet": "UXF",
+      "layer": "other",
+      "documentCode": "UXF-INDEX",
+      "title": "User Experience Foundation",
+      "version": "1.0",
+      "status": "Draft",
+      "generatedNavigation": false,
+      "searchableText": "uxf-index user experience foundation index.md uxf"
+    },
+    {
+      "id": "UXF-00",
+      "path": "docs/UXF/UXF-00.md",
+      "filename": "UXF-00.md",
+      "documentSet": "UXF",
+      "layer": "other",
+      "documentCode": "UXF-00",
+      "title": "UXF-00 — User Experience Foundation Overview",
+      "version": "1.0",
+      "status": "Draft",
+      "generatedNavigation": false,
+      "searchableText": "uxf-00 uxf-00 — user experience foundation overview uxf-00.md uxf"
+    },
+    {
+      "id": "UXF-01",
+      "path": "docs/UXF/UXF-01.md",
+      "filename": "UXF-01.md",
+      "documentSet": "UXF",
+      "layer": "other",
+      "documentCode": "UXF-01",
+      "title": "UXF-01 — Experience Channels, Personas & Navigation",
+      "version": "1.0",
+      "status": "Draft",
+      "generatedNavigation": false,
+      "searchableText": "uxf-01 uxf-01 — experience channels, personas & navigation uxf-01.md uxf"
+    },
+    {
+      "id": "UXF-02",
+      "path": "docs/UXF/UXF-02.md",
+      "filename": "UXF-02.md",
+      "documentSet": "UXF",
+      "layer": "other",
+      "documentCode": "UXF-02",
+      "title": "UXF-02 — Design System, Theme & Experience Inheritance",
+      "version": "1.0",
+      "status": "Draft",
+      "generatedNavigation": false,
+      "searchableText": "uxf-02 uxf-02 — design system, theme & experience inheritance uxf-02.md uxf"
+    },
+    {
+      "id": "UXF-03",
+      "path": "docs/UXF/UXF-03.md",
+      "filename": "UXF-03.md",
+      "documentSet": "UXF",
+      "layer": "other",
+      "documentCode": "UXF-03",
+      "title": "UXF-03 — Storefront Template & Page Composition",
+      "version": "1.0",
+      "status": "Draft",
+      "generatedNavigation": false,
+      "searchableText": "uxf-03 uxf-03 — storefront template & page composition uxf-03.md uxf"
+    },
+    {
+      "id": "UXF-04",
+      "path": "docs/UXF/UXF-04.md",
+      "filename": "UXF-04.md",
+      "documentSet": "UXF",
+      "layer": "other",
+      "documentCode": "UXF-04",
+      "title": "UXF-04 — White-label, Localization & Runtime Context Resolution",
+      "version": "1.0",
+      "status": "Draft",
+      "generatedNavigation": false,
+      "searchableText": "uxf-04 uxf-04 — white-label, localization & runtime context resolution uxf-04.md uxf"
+    },
+    {
+      "id": "UXF-05",
+      "path": "docs/UXF/UXF-05.md",
+      "filename": "UXF-05.md",
+      "documentSet": "UXF",
+      "layer": "other",
+      "documentCode": "UXF-05",
+      "title": "UXF-05 — Experience Runtime & Commerce Runtime Integration",
+      "version": "1.0",
+      "status": "Draft",
+      "generatedNavigation": false,
+      "searchableText": "uxf-05 uxf-05 — experience runtime & commerce runtime integration uxf-05.md uxf"
     },
     {
       "id": "YADF-00",

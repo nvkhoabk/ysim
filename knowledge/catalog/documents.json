@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.1",
-  "generatedAt": "2026-07-12T15:42:04.036361+07:00",
-  "documentCount": 102,
+  "generatedAt": "2026-07-12T19:55:08.964232+07:00",
+  "documentCount": 118,
   "documents": [
     {
       "id": "AAP-01",
@@ -289,6 +289,18 @@
       "title": "Design System Architecture",
       "version": "2.1",
       "status": "FROZEN",
+      "generatedNavigation": false
+    },
+    {
+      "id": "ABP-18",
+      "path": "docs/ABP/ABP-18.md",
+      "filename": "ABP-18.md",
+      "documentSet": "ABP",
+      "layer": "architecture",
+      "documentCode": "ABP-18",
+      "title": "ABP-18 — Runtime Resolution Architecture",
+      "version": "1.0",
+      "status": "Draft",
       "generatedNavigation": false
     },
     {
@@ -604,6 +616,30 @@
       "generatedNavigation": false
     },
     {
+      "id": "CAP-00",
+      "path": "docs/CAP/CAP-00.md",
+      "filename": "CAP-00.md",
+      "documentSet": "CAP",
+      "layer": "other",
+      "documentCode": "CAP-00",
+      "title": "CAP-00 — Platform Capability Registry",
+      "version": "1.0",
+      "status": "Draft",
+      "generatedNavigation": false
+    },
+    {
+      "id": "CAP-INDEX",
+      "path": "docs/CAP/INDEX.md",
+      "filename": "INDEX.md",
+      "documentSet": "CAP",
+      "layer": "other",
+      "documentCode": "CAP-INDEX",
+      "title": "Capability Architecture",
+      "version": "1.0",
+      "status": "Draft",
+      "generatedNavigation": false
+    },
+    {
       "id": "DIP-00",
       "path": "docs/DIP/DIP-00.md",
       "filename": "DIP-00.md",
@@ -733,6 +769,30 @@
       "title": "DIP-10 — Implementation Roadmap & Capability Matrix",
       "version": "2.1",
       "status": "FROZEN",
+      "generatedNavigation": false
+    },
+    {
+      "id": "ECS-00",
+      "path": "docs/ECS/ECS-00.md",
+      "filename": "ECS-00.md",
+      "documentSet": "ECS",
+      "layer": "other",
+      "documentCode": "ECS-00",
+      "title": "ECS-00 — Experience Configuration Schema",
+      "version": "1.0",
+      "status": "Draft",
+      "generatedNavigation": false
+    },
+    {
+      "id": "ECS-INDEX",
+      "path": "docs/ECS/INDEX.md",
+      "filename": "INDEX.md",
+      "documentSet": "ECS",
+      "layer": "other",
+      "documentCode": "ECS-INDEX",
+      "title": "Experience Configuration Schema",
+      "version": "1.0",
+      "status": "Draft",
       "generatedNavigation": false
     },
     {
@@ -950,6 +1010,54 @@
       "version": null,
       "status": null,
       "generatedNavigation": true
+    },
+    {
+      "id": "PCS-INDEX",
+      "path": "docs/PCS/INDEX.md",
+      "filename": "INDEX.md",
+      "documentSet": "PCS",
+      "layer": "other",
+      "documentCode": "PCS-INDEX",
+      "title": "Platform Configuration Schema",
+      "version": "1.0",
+      "status": "Draft",
+      "generatedNavigation": false
+    },
+    {
+      "id": "PCS-00",
+      "path": "docs/PCS/PCS-00.md",
+      "filename": "PCS-00.md",
+      "documentSet": "PCS",
+      "layer": "other",
+      "documentCode": "PCS-00",
+      "title": "PCS-00 — Platform Configuration Schema",
+      "version": "1.0",
+      "status": "Draft",
+      "generatedNavigation": false
+    },
+    {
+      "id": "POL-INDEX",
+      "path": "docs/POL/INDEX.md",
+      "filename": "INDEX.md",
+      "documentSet": "POL",
+      "layer": "other",
+      "documentCode": "POL-INDEX",
+      "title": "Policy Framework",
+      "version": "1.0",
+      "status": "Draft",
+      "generatedNavigation": false
+    },
+    {
+      "id": "POL-00",
+      "path": "docs/POL/POL-00.md",
+      "filename": "POL-00.md",
+      "documentSet": "POL",
+      "layer": "other",
+      "documentCode": "POL-00",
+      "title": "POL-00 — Platform Policy Framework",
+      "version": "1.0",
+      "status": "Draft",
+      "generatedNavigation": false
     },
     {
       "id": "ROP-00",
@@ -1201,6 +1309,90 @@
       "title": "Governance Assets & Records",
       "version": "2.1",
       "status": "FROZEN",
+      "generatedNavigation": false
+    },
+    {
+      "id": "UXF-INDEX",
+      "path": "docs/UXF/INDEX.md",
+      "filename": "INDEX.md",
+      "documentSet": "UXF",
+      "layer": "other",
+      "documentCode": "UXF-INDEX",
+      "title": "User Experience Foundation",
+      "version": "1.0",
+      "status": "Draft",
+      "generatedNavigation": false
+    },
+    {
+      "id": "UXF-00",
+      "path": "docs/UXF/UXF-00.md",
+      "filename": "UXF-00.md",
+      "documentSet": "UXF",
+      "layer": "other",
+      "documentCode": "UXF-00",
+      "title": "UXF-00 — User Experience Foundation Overview",
+      "version": "1.0",
+      "status": "Draft",
+      "generatedNavigation": false
+    },
+    {
+      "id": "UXF-01",
+      "path": "docs/UXF/UXF-01.md",
+      "filename": "UXF-01.md",
+      "documentSet": "UXF",
+      "layer": "other",
+      "documentCode": "UXF-01",
+      "title": "UXF-01 — Experience Channels, Personas & Navigation",
+      "version": "1.0",
+      "status": "Draft",
+      "generatedNavigation": false
+    },
+    {
+      "id": "UXF-02",
+      "path": "docs/UXF/UXF-02.md",
+      "filename": "UXF-02.md",
+      "documentSet": "UXF",
+      "layer": "other",
+      "documentCode": "UXF-02",
+      "title": "UXF-02 — Design System, Theme & Experience Inheritance",
+      "version": "1.0",
+      "status": "Draft",
+      "generatedNavigation": false
+    },
+    {
+      "id": "UXF-03",
+      "path": "docs/UXF/UXF-03.md",
+      "filename": "UXF-03.md",
+      "documentSet": "UXF",
+      "layer": "other",
+      "documentCode": "UXF-03",
+      "title": "UXF-03 — Storefront Template & Page Composition",
+      "version": "1.0",
+      "status": "Draft",
+      "generatedNavigation": false
+    },
+    {
+      "id": "UXF-04",
+      "path": "docs/UXF/UXF-04.md",
+      "filename": "UXF-04.md",
+      "documentSet": "UXF",
+      "layer": "other",
+      "documentCode": "UXF-04",
+      "title": "UXF-04 — White-label, Localization & Runtime Context Resolution",
+      "version": "1.0",
+      "status": "Draft",
+      "generatedNavigation": false
+    },
+    {
+      "id": "UXF-05",
+      "path": "docs/UXF/UXF-05.md",
+      "filename": "UXF-05.md",
+      "documentSet": "UXF",
+      "layer": "other",
+      "documentCode": "UXF-05",
+      "title": "UXF-05 — Experience Runtime & Commerce Runtime Integration",
+      "version": "1.0",
+      "status": "Draft",
       "generatedNavigation": false
     },
     {

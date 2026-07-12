@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.1",
-  "generatedAt": "2026-07-12T15:42:04.036361+07:00",
-  "capabilityCount": 7,
+  "generatedAt": "2026-07-12T19:55:08.964232+07:00",
+  "capabilityCount": 8,
   "capabilities": [
     {
       "id": "ai-software-factory",
@@ -29,9 +29,10 @@
         "SGP-07",
         "SGP-08",
         "SGP-09",
-        "SGP-10"
+        "SGP-10",
+        "UXF-04"
       ],
-      "documentCount": 23,
+      "documentCount": 24,
       "source": "deterministic-title-matching",
       "reviewStatus": "REQUIRES_HUMAN_REVIEW"
     },
@@ -50,9 +51,11 @@
       "name": "Commerce Experience Platform",
       "documentIds": [
         "ABP-16",
-        "BRD-UPDATE-01"
+        "BRD-UPDATE-01",
+        "UXF-02",
+        "UXF-03"
       ],
-      "documentCount": 2,
+      "documentCount": 4,
       "source": "deterministic-title-matching",
       "reviewStatus": "REQUIRES_HUMAN_REVIEW"
     },
@@ -78,6 +81,16 @@
         "ROP-06"
       ],
       "documentCount": 5,
+      "source": "deterministic-title-matching",
+      "reviewStatus": "REQUIRES_HUMAN_REVIEW"
+    },
+    {
+      "id": "organization-tenant",
+      "name": "Organization Tenant",
+      "documentIds": [
+        "UXF-02"
+      ],
+      "documentCount": 1,
       "source": "deterministic-title-matching",
       "reviewStatus": "REQUIRES_HUMAN_REVIEW"
     },

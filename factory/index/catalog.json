@@ -1,12 +1,12 @@
 {
   "schemaVersion": "1.1",
-  "generatedAt": "2026-07-12T15:42:04.034148+07:00",
+  "generatedAt": "2026-07-12T19:55:08.961718+07:00",
   "project": "YSim",
   "factoryVersion": "2.1",
   "sources": {
     "documentation": {
       "index": "factory/index/documents.json",
-      "count": 102
+      "count": 118
     },
     "knowledge": {
       "index": "factory/index/knowledge.json",

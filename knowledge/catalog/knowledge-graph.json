@@ -1,8 +1,8 @@
 {
   "schemaVersion": "1.1",
-  "generatedAt": "2026-07-12T15:42:04.036361+07:00",
-  "nodeCount": 109,
-  "edgeCount": 41,
+  "generatedAt": "2026-07-12T19:55:08.964232+07:00",
+  "nodeCount": 126,
+  "edgeCount": 45,
   "nodes": [
     {
       "id": "AAP-01",
@@ -193,6 +193,14 @@
       "type": "document",
       "label": "Design System Architecture",
       "path": "docs/ABP/ABP-17.md",
+      "documentSet": "ABP",
+      "layer": "architecture"
+    },
+    {
+      "id": "ABP-18",
+      "type": "document",
+      "label": "ABP-18 — Runtime Resolution Architecture",
+      "path": "docs/ABP/ABP-18.md",
       "documentSet": "ABP",
       "layer": "architecture"
     },
@@ -405,6 +413,22 @@
       "layer": "business"
     },
     {
+      "id": "CAP-00",
+      "type": "document",
+      "label": "CAP-00 — Platform Capability Registry",
+      "path": "docs/CAP/CAP-00.md",
+      "documentSet": "CAP",
+      "layer": "other"
+    },
+    {
+      "id": "CAP-INDEX",
+      "type": "document",
+      "label": "Capability Architecture",
+      "path": "docs/CAP/INDEX.md",
+      "documentSet": "CAP",
+      "layer": "other"
+    },
+    {
       "id": "DIP-00",
       "type": "document",
       "label": "Implementation Constitution & Executable Sprint Model",
@@ -491,6 +515,22 @@
       "path": "docs/DIP/DIP-10.md",
       "documentSet": "DIP",
       "layer": "implementation"
+    },
+    {
+      "id": "ECS-00",
+      "type": "document",
+      "label": "ECS-00 — Experience Configuration Schema",
+      "path": "docs/ECS/ECS-00.md",
+      "documentSet": "ECS",
+      "layer": "other"
+    },
+    {
+      "id": "ECS-INDEX",
+      "type": "document",
+      "label": "Experience Configuration Schema",
+      "path": "docs/ECS/INDEX.md",
+      "documentSet": "ECS",
+      "layer": "other"
     },
     {
       "id": "ESP-00",
@@ -635,6 +675,38 @@
       "path": "docs/MASTER_INDEX.md",
       "documentSet": "ROOT",
       "layer": "navigation"
+    },
+    {
+      "id": "PCS-INDEX",
+      "type": "document",
+      "label": "Platform Configuration Schema",
+      "path": "docs/PCS/INDEX.md",
+      "documentSet": "PCS",
+      "layer": "other"
+    },
+    {
+      "id": "PCS-00",
+      "type": "document",
+      "label": "PCS-00 — Platform Configuration Schema",
+      "path": "docs/PCS/PCS-00.md",
+      "documentSet": "PCS",
+      "layer": "other"
+    },
+    {
+      "id": "POL-INDEX",
+      "type": "document",
+      "label": "Policy Framework",
+      "path": "docs/POL/INDEX.md",
+      "documentSet": "POL",
+      "layer": "other"
+    },
+    {
+      "id": "POL-00",
+      "type": "document",
+      "label": "POL-00 — Platform Policy Framework",
+      "path": "docs/POL/POL-00.md",
+      "documentSet": "POL",
+      "layer": "other"
     },
     {
       "id": "ROP-00",
@@ -805,6 +877,62 @@
       "layer": "governance"
     },
     {
+      "id": "UXF-INDEX",
+      "type": "document",
+      "label": "User Experience Foundation",
+      "path": "docs/UXF/INDEX.md",
+      "documentSet": "UXF",
+      "layer": "other"
+    },
+    {
+      "id": "UXF-00",
+      "type": "document",
+      "label": "UXF-00 — User Experience Foundation Overview",
+      "path": "docs/UXF/UXF-00.md",
+      "documentSet": "UXF",
+      "layer": "other"
+    },
+    {
+      "id": "UXF-01",
+      "type": "document",
+      "label": "UXF-01 — Experience Channels, Personas & Navigation",
+      "path": "docs/UXF/UXF-01.md",
+      "documentSet": "UXF",
+      "layer": "other"
+    },
+    {
+      "id": "UXF-02",
+      "type": "document",
+      "label": "UXF-02 — Design System, Theme & Experience Inheritance",
+      "path": "docs/UXF/UXF-02.md",
+      "documentSet": "UXF",
+      "layer": "other"
+    },
+    {
+      "id": "UXF-03",
+      "type": "document",
+      "label": "UXF-03 — Storefront Template & Page Composition",
+      "path": "docs/UXF/UXF-03.md",
+      "documentSet": "UXF",
+      "layer": "other"
+    },
+    {
+      "id": "UXF-04",
+      "type": "document",
+      "label": "UXF-04 — White-label, Localization & Runtime Context Resolution",
+      "path": "docs/UXF/UXF-04.md",
+      "documentSet": "UXF",
+      "layer": "other"
+    },
+    {
+      "id": "UXF-05",
+      "type": "document",
+      "label": "UXF-05 — Experience Runtime & Commerce Runtime Integration",
+      "path": "docs/UXF/UXF-05.md",
+      "documentSet": "UXF",
+      "layer": "other"
+    },
+    {
       "id": "YADF-00",
       "type": "document",
       "label": "YSim AI Development Framework (YADF)",
@@ -844,6 +972,11 @@
       "id": "operations-monitoring",
       "type": "capability",
       "label": "Operations Monitoring"
+    },
+    {
+      "id": "organization-tenant",
+      "type": "capability",
+      "label": "Organization Tenant"
     },
     {
       "id": "platform-foundation",
@@ -991,6 +1124,13 @@
       "source": "deterministic-title-matching"
     },
     {
+      "id": "rel-8192269760a8668e",
+      "from": "UXF-02",
+      "to": "commerce-experience-platform",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
       "id": "rel-82ed88135a92440b",
       "from": "ABP-10",
       "to": "operations-monitoring",
@@ -1001,6 +1141,13 @@
       "id": "rel-91e5dfa1a27ffaad",
       "from": "SGP-01",
       "to": "ai-software-factory",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-9472419e6fe44b91",
+      "from": "UXF-02",
+      "to": "organization-tenant",
       "type": "references-capability",
       "source": "deterministic-title-matching"
     },
@@ -1057,6 +1204,13 @@
       "id": "rel-b39f4f5bee454934",
       "from": "SGP-02",
       "to": "identity-access",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-b654d544ac3d9849",
+      "from": "UXF-04",
+      "to": "ai-software-factory",
       "type": "references-capability",
       "source": "deterministic-title-matching"
     },
@@ -1134,6 +1288,13 @@
       "id": "rel-f5191c47c2d19c44",
       "from": "AAP-02",
       "to": "ai-software-factory",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-fb0bca26a9f0e2e6",
+      "from": "UXF-03",
+      "to": "commerce-experience-platform",
       "type": "references-capability",
       "source": "deterministic-title-matching"
     },

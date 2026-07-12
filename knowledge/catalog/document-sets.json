@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.1",
-  "generatedAt": "2026-07-12T15:42:04.036361+07:00",
-  "documentSetCount": 11,
+  "generatedAt": "2026-07-12T19:55:08.964232+07:00",
+  "documentSetCount": 16,
   "documentSets": [
     {
       "id": "AAP",
@@ -19,7 +19,7 @@
     {
       "id": "ABP",
       "layer": "architecture",
-      "documentCount": 18,
+      "documentCount": 19,
       "documentIds": [
         "ABP-00",
         "ABP-01",
@@ -38,7 +38,8 @@
         "ABP-14",
         "ABP-15",
         "ABP-16",
-        "ABP-17"
+        "ABP-17",
+        "ABP-18"
       ]
     },
     {
@@ -82,6 +83,15 @@
       ]
     },
     {
+      "id": "CAP",
+      "layer": "other",
+      "documentCount": 2,
+      "documentIds": [
+        "CAP-00",
+        "CAP-INDEX"
+      ]
+    },
+    {
       "id": "DIP",
       "layer": "implementation",
       "documentCount": 11,
@@ -97,6 +107,15 @@
         "DIP-08",
         "DIP-09",
         "DIP-10"
+      ]
+    },
+    {
+      "id": "ECS",
+      "layer": "other",
+      "documentCount": 2,
+      "documentIds": [
+        "ECS-00",
+        "ECS-INDEX"
       ]
     },
     {
@@ -127,6 +146,24 @@
       "documentCount": 1,
       "documentIds": [
         "ESPK-S00"
+      ]
+    },
+    {
+      "id": "PCS",
+      "layer": "other",
+      "documentCount": 2,
+      "documentIds": [
+        "PCS-00",
+        "PCS-INDEX"
+      ]
+    },
+    {
+      "id": "POL",
+      "layer": "other",
+      "documentCount": 2,
+      "documentIds": [
+        "POL-00",
+        "POL-INDEX"
       ]
     },
     {
@@ -171,6 +208,20 @@
         "SGP-08",
         "SGP-09",
         "SGP-10"
+      ]
+    },
+    {
+      "id": "UXF",
+      "layer": "other",
+      "documentCount": 7,
+      "documentIds": [
+        "UXF-00",
+        "UXF-01",
+        "UXF-02",
+        "UXF-03",
+        "UXF-04",
+        "UXF-05",
+        "UXF-INDEX"
       ]
     },
     {

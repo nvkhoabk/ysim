@@ -37,6 +37,7 @@ This index is generated from the documentation repository.
 | ABP-15 | AI Implementation Architecture | [ABP-15.md](ABP/ABP-15.md) |
 | ABP-16 | Commerce Experience Platform Architecture | [ABP-16.md](ABP/ABP-16.md) |
 | ABP-17 | Design System Architecture | [ABP-17.md](ABP/ABP-17.md) |
+| ABP-18 | Runtime Resolution Architecture | [ABP-18.md](ABP/ABP-18.md) |
 
 ## AFM
 
@@ -74,6 +75,12 @@ This index is generated from the documentation repository.
 | BRD-WS-16 | Identity, Security, Authorization, Audit & Compliance | [BRD-WS-16.md](BRD/BRD-WS-16.md) |
 | BRD-WS-17 | Platform Operations, Monitoring, Scheduler & Background Processing | [BRD-WS-17.md](BRD/BRD-WS-17.md) |
 
+## CAP
+
+| Code | Document | File |
+|---|---|---|
+| CAP-00 | Platform Capability Registry | [CAP-00.md](CAP/CAP-00.md) |
+
 ## DIP
 
 | Code | Document | File |
@@ -89,6 +96,12 @@ This index is generated from the documentation repository.
 | DIP-08 | Full-stack Capability Delivery Standard | [DIP-08.md](DIP/DIP-08.md) |
 | DIP-09 | AI Execution Governance & Exception Handling Standard | [DIP-09.md](DIP/DIP-09.md) |
 | DIP-10 | Implementation Roadmap & Capability Matrix | [DIP-10.md](DIP/DIP-10.md) |
+
+## ECS
+
+| Code | Document | File |
+|---|---|---|
+| ECS-00 | Experience Configuration Schema | [ECS-00.md](ECS/ECS-00.md) |
 
 ## ESP
 
@@ -115,6 +128,18 @@ This index is generated from the documentation repository.
 | Code | Document | File |
 |---|---|---|
 | Sprint-00 | Factory Commissioning & Repository Bootstrap | [Sprint-00.md](ESPK/Sprint-00.md) |
+
+## PCS
+
+| Code | Document | File |
+|---|---|---|
+| PCS-00 | Platform Configuration Schema | [PCS-00.md](PCS/PCS-00.md) |
+
+## POL
+
+| Code | Document | File |
+|---|---|---|
+| POL-00 | Platform Policy Framework | [POL-00.md](POL/POL-00.md) |
 
 ## ROP
 
@@ -147,6 +172,17 @@ This index is generated from the documentation repository.
 | SGP-09 | Sprint Completion & Handover | [SGP-09.md](SGP/SGP-09.md) |
 | SGP-10 | Governance Assets & Records | [SGP-10.md](SGP/SGP-10.md) |
 
+## UXF
+
+| Code | Document | File |
+|---|---|---|
+| UXF-00 | User Experience Foundation Overview | [UXF-00.md](UXF/UXF-00.md) |
+| UXF-01 | Experience Channels, Personas & Navigation | [UXF-01.md](UXF/UXF-01.md) |
+| UXF-02 | Design System, Theme & Experience Inheritance | [UXF-02.md](UXF/UXF-02.md) |
+| UXF-03 | Storefront Template & Page Composition | [UXF-03.md](UXF/UXF-03.md) |
+| UXF-04 | White-label, Localization & Runtime Context Resolution | [UXF-04.md](UXF/UXF-04.md) |
+| UXF-05 | Experience Runtime & Commerce Runtime Integration | [UXF-05.md](UXF/UXF-05.md) |
+
 ## YADF
 
 | Code | Document | File |
@@ -156,4 +192,4 @@ This index is generated from the documentation repository.
 
 ## Summary
 
-Total indexed documents: **100**
+Total indexed documents: **111**

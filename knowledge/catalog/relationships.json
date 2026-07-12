@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.1",
-  "generatedAt": "2026-07-12T15:42:04.036361+07:00",
-  "relationshipCount": 41,
+  "generatedAt": "2026-07-12T19:55:08.964232+07:00",
+  "relationshipCount": 45,
   "relationships": [
     {
       "id": "rel-01d533898b232e04",
@@ -137,6 +137,13 @@
       "source": "deterministic-title-matching"
     },
     {
+      "id": "rel-8192269760a8668e",
+      "from": "UXF-02",
+      "to": "commerce-experience-platform",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
       "id": "rel-82ed88135a92440b",
       "from": "ABP-10",
       "to": "operations-monitoring",
@@ -147,6 +154,13 @@
       "id": "rel-91e5dfa1a27ffaad",
       "from": "SGP-01",
       "to": "ai-software-factory",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-9472419e6fe44b91",
+      "from": "UXF-02",
+      "to": "organization-tenant",
       "type": "references-capability",
       "source": "deterministic-title-matching"
     },
@@ -203,6 +217,13 @@
       "id": "rel-b39f4f5bee454934",
       "from": "SGP-02",
       "to": "identity-access",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-b654d544ac3d9849",
+      "from": "UXF-04",
+      "to": "ai-software-factory",
       "type": "references-capability",
       "source": "deterministic-title-matching"
     },
@@ -280,6 +301,13 @@
       "id": "rel-f5191c47c2d19c44",
       "from": "AAP-02",
       "to": "ai-software-factory",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-fb0bca26a9f0e2e6",
+      "from": "UXF-03",
+      "to": "commerce-experience-platform",
       "type": "references-capability",
       "source": "deterministic-title-matching"
     },
