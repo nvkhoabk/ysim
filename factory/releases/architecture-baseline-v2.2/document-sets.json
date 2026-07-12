@@ -1,0 +1,237 @@
+{
+  "schemaVersion": "1.1",
+  "generatedAt": "2026-07-12T19:55:08.964232+07:00",
+  "documentSetCount": 16,
+  "documentSets": [
+    {
+      "id": "AAP",
+      "layer": "factory",
+      "documentCount": 6,
+      "documentIds": [
+        "AAP-01",
+        "AAP-02",
+        "AAP-03",
+        "AAP-04",
+        "AAP-05",
+        "AAP-06"
+      ]
+    },
+    {
+      "id": "ABP",
+      "layer": "architecture",
+      "documentCount": 19,
+      "documentIds": [
+        "ABP-00",
+        "ABP-01",
+        "ABP-02",
+        "ABP-03",
+        "ABP-04",
+        "ABP-05",
+        "ABP-06",
+        "ABP-07",
+        "ABP-08",
+        "ABP-09",
+        "ABP-10",
+        "ABP-11",
+        "ABP-12",
+        "ABP-13",
+        "ABP-14",
+        "ABP-15",
+        "ABP-16",
+        "ABP-17",
+        "ABP-18"
+      ]
+    },
+    {
+      "id": "AFM",
+      "layer": "factory",
+      "documentCount": 2,
+      "documentIds": [
+        "AFM-00",
+        "AFM-01"
+      ]
+    },
+    {
+      "id": "BRD",
+      "layer": "business",
+      "documentCount": 24,
+      "documentIds": [
+        "BRD-BO-INDEX",
+        "BRD-CAP-INDEX",
+        "BRD-EVENT-INDEX",
+        "BRD-META-MODEL",
+        "BRD-POLICY-INDEX",
+        "BRD-SNAPSHOT-INDEX",
+        "BRD-UPDATE-01",
+        "BRD-WS-01",
+        "BRD-WS-02",
+        "BRD-WS-03",
+        "BRD-WS-04",
+        "BRD-WS-05",
+        "BRD-WS-06",
+        "BRD-WS-07",
+        "BRD-WS-08",
+        "BRD-WS-09",
+        "BRD-WS-10",
+        "BRD-WS-11",
+        "BRD-WS-12",
+        "BRD-WS-13",
+        "BRD-WS-14",
+        "BRD-WS-15",
+        "BRD-WS-16",
+        "BRD-WS-17"
+      ]
+    },
+    {
+      "id": "CAP",
+      "layer": "other",
+      "documentCount": 2,
+      "documentIds": [
+        "CAP-00",
+        "CAP-INDEX"
+      ]
+    },
+    {
+      "id": "DIP",
+      "layer": "implementation",
+      "documentCount": 11,
+      "documentIds": [
+        "DIP-00",
+        "DIP-01",
+        "DIP-02",
+        "DIP-03",
+        "DIP-04",
+        "DIP-05",
+        "DIP-06",
+        "DIP-07",
+        "DIP-08",
+        "DIP-09",
+        "DIP-10"
+      ]
+    },
+    {
+      "id": "ECS",
+      "layer": "other",
+      "documentCount": 2,
+      "documentIds": [
+        "ECS-00",
+        "ECS-INDEX"
+      ]
+    },
+    {
+      "id": "ESP",
+      "layer": "engineering",
+      "documentCount": 15,
+      "documentIds": [
+        "ESP-00",
+        "ESP-01",
+        "ESP-02",
+        "ESP-03",
+        "ESP-04",
+        "ESP-05",
+        "ESP-06",
+        "ESP-07",
+        "ESP-08",
+        "ESP-09",
+        "ESP-10",
+        "ESP-11",
+        "ESP-12",
+        "ESP-13",
+        "ESP-14"
+      ]
+    },
+    {
+      "id": "ESPK",
+      "layer": "execution",
+      "documentCount": 1,
+      "documentIds": [
+        "ESPK-S00"
+      ]
+    },
+    {
+      "id": "PCS",
+      "layer": "other",
+      "documentCount": 2,
+      "documentIds": [
+        "PCS-00",
+        "PCS-INDEX"
+      ]
+    },
+    {
+      "id": "POL",
+      "layer": "other",
+      "documentCount": 2,
+      "documentIds": [
+        "POL-00",
+        "POL-INDEX"
+      ]
+    },
+    {
+      "id": "ROOT",
+      "layer": "navigation",
+      "documentCount": 2,
+      "documentIds": [
+        "doc-8a2f5d2ad6b53599",
+        "doc-d08e66411886fba7"
+      ]
+    },
+    {
+      "id": "ROP",
+      "layer": "operations",
+      "documentCount": 10,
+      "documentIds": [
+        "ROP-00",
+        "ROP-01",
+        "ROP-02",
+        "ROP-03",
+        "ROP-04",
+        "ROP-05",
+        "ROP-06",
+        "ROP-07",
+        "ROP-08",
+        "ROP-09"
+      ]
+    },
+    {
+      "id": "SGP",
+      "layer": "governance",
+      "documentCount": 11,
+      "documentIds": [
+        "SGP-00",
+        "SGP-01",
+        "SGP-02",
+        "SGP-03",
+        "SGP-04",
+        "SGP-05",
+        "SGP-06",
+        "SGP-07",
+        "SGP-08",
+        "SGP-09",
+        "SGP-10"
+      ]
+    },
+    {
+      "id": "UXF",
+      "layer": "other",
+      "documentCount": 7,
+      "documentIds": [
+        "UXF-00",
+        "UXF-01",
+        "UXF-02",
+        "UXF-03",
+        "UXF-04",
+        "UXF-05",
+        "UXF-INDEX"
+      ]
+    },
+    {
+      "id": "YADF",
+      "layer": "factory",
+      "documentCount": 2,
+      "documentIds": [
+        "YADF-00",
+        "YADF-01"
+      ]
+    }
+  ]
+}

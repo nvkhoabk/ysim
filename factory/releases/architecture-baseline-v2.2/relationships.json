@@ -1,0 +1,322 @@
+{
+  "schemaVersion": "1.1",
+  "generatedAt": "2026-07-12T19:55:08.964232+07:00",
+  "relationshipCount": 45,
+  "relationships": [
+    {
+      "id": "rel-01d533898b232e04",
+      "from": "ABP-16",
+      "to": "commerce-experience-platform",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-09afaaea85ef061b",
+      "from": "ROP-08",
+      "to": "product-catalog",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-2d55b105f7667b7a",
+      "from": "SGP-08",
+      "to": "ai-software-factory",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-384a3cc48a6500c4",
+      "from": "ROP-06",
+      "to": "operations-monitoring",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-3e4c0f2a9c049b4e",
+      "from": "SGP-06",
+      "to": "ai-software-factory",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-421ed62c0f1b905d",
+      "from": "SGP-10",
+      "to": "ai-software-factory",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-43cb0ac891d6ab5d",
+      "from": "SGP-07",
+      "to": "ai-software-factory",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-47db49f5248c3ae7",
+      "from": "ROP-01",
+      "to": "ai-software-factory",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-498724dee3a44aa6",
+      "from": "ROP-05",
+      "to": "operations-monitoring",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-4d5a5eb3e64be3b7",
+      "from": "SGP-00",
+      "to": "ai-software-factory",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-4faa3f8af6102c86",
+      "from": "AFM-00",
+      "to": "ai-software-factory",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-64a7fd4179bb27c0",
+      "from": "AFM-01",
+      "to": "ai-software-factory",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-64cd8a00d2e0a0cb",
+      "from": "DIP-01",
+      "to": "ai-software-factory",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-685f87d5fcce0834",
+      "from": "SGP-04",
+      "to": "ai-software-factory",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-6909497a571dde1c",
+      "from": "SGP-02",
+      "to": "ai-software-factory",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-70e0732cce6e79a4",
+      "from": "SGP-06",
+      "to": "analytics-reporting",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-76638481371b1d71",
+      "from": "ABP-01",
+      "to": "platform-foundation",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-79f0aa6995abfa01",
+      "from": "DIP-00",
+      "to": "ai-software-factory",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-80087eafb26ca6a5",
+      "from": "DIP-09",
+      "to": "ai-software-factory",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-8192269760a8668e",
+      "from": "UXF-02",
+      "to": "commerce-experience-platform",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-82ed88135a92440b",
+      "from": "ABP-10",
+      "to": "operations-monitoring",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-91e5dfa1a27ffaad",
+      "from": "SGP-01",
+      "to": "ai-software-factory",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-9472419e6fe44b91",
+      "from": "UXF-02",
+      "to": "organization-tenant",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-97dfed2cbbbe3e8d",
+      "from": "SGP-03",
+      "to": "ai-software-factory",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-98270ecef012596f",
+      "from": "ESP-01",
+      "to": "platform-foundation",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-99362dacd257a6c8",
+      "from": "DIP-03",
+      "to": "ai-software-factory",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-9b9af6896d13e09d",
+      "from": "ABP-15",
+      "to": "ai-software-factory",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-9f311daecbf0d896",
+      "from": "DIP-10",
+      "to": "ai-software-factory",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-ac0e79231d98ff85",
+      "from": "DIP-01",
+      "to": "product-catalog",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-b201c90f9474d169",
+      "from": "BRD-UPDATE-01",
+      "to": "commerce-experience-platform",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-b39f4f5bee454934",
+      "from": "SGP-02",
+      "to": "identity-access",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-b654d544ac3d9849",
+      "from": "UXF-04",
+      "to": "ai-software-factory",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-b698e1d323ed0a84",
+      "from": "ABP-09",
+      "to": "identity-access",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-bffb00dd49e7afe0",
+      "from": "ABP-14",
+      "to": "platform-foundation",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-c3a15a7078747af6",
+      "from": "ROP-00",
+      "to": "operations-monitoring",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-cd136a1560893e91",
+      "from": "DIP-02",
+      "to": "ai-software-factory",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-d33634fb8c1bde1c",
+      "from": "SGP-05",
+      "to": "ai-software-factory",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-e8dfd041e794cb0f",
+      "from": "ABP-02",
+      "to": "platform-foundation",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-eab282a543a37530",
+      "from": "ESP-08",
+      "to": "operations-monitoring",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-ed2d371ea2014b91",
+      "from": "ABP-07",
+      "to": "platform-foundation",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-f276b3734453fcb3",
+      "from": "SGP-09",
+      "to": "ai-software-factory",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-f3cd9e6af666dad9",
+      "from": "ROP-05",
+      "to": "product-catalog",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-f5191c47c2d19c44",
+      "from": "AAP-02",
+      "to": "ai-software-factory",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-fb0bca26a9f0e2e6",
+      "from": "UXF-03",
+      "to": "commerce-experience-platform",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    },
+    {
+      "id": "rel-fc48fc473b021c62",
+      "from": "DIP-05",
+      "to": "ai-software-factory",
+      "type": "references-capability",
+      "source": "deterministic-title-matching"
+    }
+  ]
+}
