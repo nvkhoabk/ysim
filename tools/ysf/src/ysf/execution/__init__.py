@@ -29,6 +29,11 @@ from ysf.execution.service import (
     ExecutionServiceError,
     run_dry_execution,
 )
+from ysf.execution.stage import (
+    ExecutionStage,
+    ExecutionStageConfig,
+    ExecutionStageError,
+)
 from ysf.execution.workspace import (
     WorkspaceSnapshotError,
     capture_workspace_snapshot,
@@ -45,6 +50,9 @@ __all__ = [
     "ExecutionResult",
     "ExecutionRunnerError",
     "ExecutionServiceError",
+    "ExecutionStage",
+    "ExecutionStageConfig",
+    "ExecutionStageError",
     "ExecutionStatus",
     "WorkspaceSnapshot",
     "WorkspaceSnapshotError",
