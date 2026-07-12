@@ -1,0 +1,157 @@
+schema_version: "1.0"
+
+project:
+  code: YSIM
+  name: YSim Platform
+  version: "2.1"
+
+sprint:
+  code: S01
+  name: Platform Foundation
+  baseline: architecture-v2.2
+  ysf_version: "0.1.0"
+
+task:
+  code: s01-t00
+  order: 0
+  name: "Repository Audit and Execution Plan"
+  status: planned
+  execution_mode: sequential
+  agent: codex
+  fail_fast: true
+
+objective: >
+  Audit the approved repository baseline, confirm the frozen Architecture Baseline v2.2 and
+  YSF v0.1.0 state, identify implementation gaps, and produce a deterministic execution plan
+  for Sprint-01 without changing product runtime source code.
+
+depends_on:
+  []
+
+source_of_truth:
+  - ai/sprints/s01-platform-foundation.yaml
+  - sprint.json
+  - SCOPE.md
+  - TARGET_STRUCTURE.md
+  - ACCEPTANCE.md
+  - EXECUTION_ORDER.md
+  - DOCUMENT_BASELINE.md
+  - GOVERNANCE.md
+
+required_reading:
+  - SCOPE.md
+  - TARGET_STRUCTURE.md
+  - ACCEPTANCE.md
+  - EXECUTION_ORDER.md
+  - DOCUMENT_BASELINE.md
+  - GOVERNANCE.md
+  - AFM-00
+  - YADF-00
+  - DIP-00
+  - DIP-01
+  - DIP-02
+  - DIP-04
+  - DIP-05
+  - DIP-06
+  - DIP-09
+  - ESPK-S00
+  - ABP-00
+  - ABP-01
+  - ABP-02
+  - ABP-03
+  - ABP-18
+  - CAP-00
+  - PCS-00
+  - POL-00
+
+scope:
+  include:
+    - "Inspect repository structure, branches, tracked files, generated artifacts, package managers, Docker files, CI files, and YSF state."
+    - "Confirm all required Sprint-01 definition files and source documents are discoverable."
+    - "Record current tool versions for Node.js, pnpm, Docker, Git, Python, YSF, and Codex where available."
+    - "Compare the repository against TARGET_STRUCTURE.md and classify missing, existing, conflicting, and deferred paths."
+    - "Produce a task-by-task execution plan for s01-t01 through s01-t10."
+  exclude:
+    - "Creating apps, packages, business modules, migrations, Docker services, or CI implementation."
+    - "Changing frozen architecture documents."
+    - "Running Codex in workspace-write mode."
+
+architecture_invariants:
+  - "Audit is read-only except for Sprint-specific reports and plans."
+  - "Storefront and supplier boundaries must remain unchanged."
+  - "No business aggregate may be introduced."
+
+protected_paths:
+  - docs/BRD/
+  - docs/ABP/
+  - docs/AFM/
+  - docs/YADF/
+  - docs/DIP/
+  - docs/UXF/
+  - docs/CAP/
+  - docs/ECS/
+  - docs/PCS/
+  - docs/POL/
+
+allowed_paths:
+  - ai/
+  - factory/reports/s01/
+  - factory/executions/s01/
+  - runtime/
+  - scripts/
+
+implementation:
+  - step: 1
+    action: "Confirm the active branch, HEAD commit, clean/dirty state, and architecture baseline tag or commit."
+  - step: 2
+    action: "Run YSF doctor, pipeline, and verification; preserve machine-readable outputs."
+  - step: 3
+    action: "Inventory repository root and compare it with the approved target structure."
+  - step: 4
+    action: "Inspect existing package, TypeScript, Docker, infrastructure, and CI artifacts without assuming they are absent."
+  - step: 5
+    action: "Produce a gap matrix and explicit execution plan for all remaining Sprint-01 tasks."
+  - step: 6
+    action: "Write a task report with risks, blockers, assumptions, and recommended sequencing."
+
+required_outputs:
+  - "factory/reports/s01/s01-t00-repository-audit.md"
+  - "factory/reports/s01/s01-t00-gap-matrix.json"
+  - "factory/reports/s01/s01-execution-plan.md"
+
+validation:
+  - command: "git diff --check"
+    required: true
+    purpose: "Verify repository whitespace integrity."
+  - command: "ysf doctor"
+    required: true
+    purpose: "Validate the YSF environment."
+  - command: "ysf pipeline"
+    required: true
+    purpose: "Confirm the five-stage baseline pipeline."
+  - command: "ysf verify"
+    required: true
+    purpose: "Confirm the unified quality gate."
+
+acceptance_criteria:
+  - "Repository baseline and active branch are recorded."
+  - "All required documents are found or missing items are explicitly listed."
+  - "Target-structure gaps are classified."
+  - "Tasks s01-t01 through s01-t10 have an executable sequence."
+  - "No product runtime source code is created or modified."
+
+evidence:
+  - "Git branch and HEAD"
+  - "YSF JSON outputs"
+  - "Repository tree snapshot"
+  - "Gap matrix"
+  - "Execution plan"
+
+stop_conditions:
+  - "Architecture baseline cannot be identified."
+  - "YSF verification fails and the failure is unrelated to generated audit outputs."
+  - "Required Sprint definition files are missing."
+  - "Repository contains unreviewed conflicting application code."
+
+commit:
+  message: "docs(s01-t00): record repository audit and execution plan"

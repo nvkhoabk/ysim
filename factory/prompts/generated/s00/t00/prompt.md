@@ -18,15 +18,12 @@ Review and verify the YSim Software Factory repository baseline for Sprint-00 wi
 
 ## Branch
 
-chore/s00-factory-commissioning
+feat/s01-platform-foundation
 
 ## Working Tree
 
 ```text
-M .gitignore
- M docs/INDEX.md
- M docs/MASTER_INDEX.md
- M factory/contexts/generated/s00/context.json
+M factory/contexts/generated/s00/context.json
  M factory/executions/s00/t00/plan.json
  M factory/executions/s00/t00/report.json
  M factory/executions/s00/t00/report.md
@@ -44,33 +41,51 @@ M .gitignore
  M knowledge/catalog/relationships.json
  M knowledge/catalog/summary.json
  M knowledge/normalized/documents.json
-?? docs/ABP/ABP-18.md
-?? docs/CAP/
-?? docs/ECS/
-?? docs/PCS/
-?? docs/POL/
-?? docs/UXF/
+?? ACCEPTANCE.md
+?? DOCUMENT_BASELINE.md
+?? EXECUTION_ORDER.md
+?? GOVERNANCE.md
+?? README.md
+?? SCOPE.md
+?? SPRINT-01-INSTALL.md
+?? TARGET_STRUCTURE.md
+?? ai/
+?? factory/context-manifests/s01.yaml
+?? factory/context-manifests/s01.yaml.invalid
+?? factory/contexts/generated/s01/
+?? factory/executions/s01/
+?? factory/prompts/generated/s01/
+?? factory/reports/s01/
+?? factory/schemas/sprint.schema.json
+?? factory/schemas/task-manifest.schema.json
+?? scripts/build-sprint-01-context.sh
+?? scripts/build-sprint-01-prompt.sh
+?? scripts/install-sprint-01.sh
+?? scripts/run-sprint-01-task.sh
+?? scripts/run-sprint-01.sh
+?? sprint.json
 ```
 
 ## Recent Commits
 
 ```text
-1f9beab (HEAD -> chore/s00-factory-commissioning, origin/chore/s00-factory-commissioning) release(s00): freeze ysf v0.1.0 dry-run engine
+3a89828 (HEAD -> feat/s01-platform-foundation) fix(s01): align prompt manifests and validator with ysf schema
+9154741 fix(s01): align t00 prompt manifest with ysf schema
+5be8413 (tag: architecture-v2.2, origin/chore/s00-factory-commissioning, chore/s00-factory-commissioning) release(architecture): freeze architecture baseline v2.2
+fde2273 docs(v2.2): add UXF, CAP, ECS, PCS, POL and ABP-18
+1f9beab release(s00): freeze ysf v0.1.0 dry-run engine
 ab9ab71 chore(s00): finalize ysf dry-run pipeline
 a831948 feat(s00): add execution pipeline stage abstraction
 a4321c7 feat(s00): add dry-run execution runner
 a4d5787 feat(s00): add execution planner
 7019a2e feat(s00): add execution workspace snapshot service
-737e18c feat(s00): add ysf execution models
-db1fdec feat(s00): migrate prompt builder into ysf pipeline
-e44f995 feat(s00): add unified ysf verification gate
-1b613b6 feat(s00): migrate context builder into ysf pipeline
 ```
 
 ## Repository Tree
 
 ```text
 .
+./.agents
 ./.mypy_cache
 ./.mypy_cache/.gitignore
 ./.mypy_cache/3.11
@@ -79,6 +94,18 @@ e44f995 feat(s00): add unified ysf verification gate
 ./.ruff_cache/.gitignore
 ./.ruff_cache/0.15.21
 ./.ruff_cache/CACHEDIR.TAG
+./ACCEPTANCE.md
+./DOCUMENT_BASELINE.md
+./EXECUTION_ORDER.md
+./GOVERNANCE.md
+./README.md
+./SCOPE.md
+./SPRINT-01-INSTALL.md
+./TARGET_STRUCTURE.md
+./ai
+./ai/manifests
+./ai/sprints
+./ai/templates
 ./docs
 ./docs/AAP
 ./docs/ABP
@@ -134,6 +161,7 @@ e44f995 feat(s00): add unified ysf verification gate
 ./knowledge/ui
 ./runtime
 ./runtime/cache
+./runtime/codex
 ./runtime/codex-readiness
 ./runtime/reports
 ./runtime/state
@@ -148,14 +176,22 @@ e44f995 feat(s00): add unified ysf verification gate
 ./scripts/build-knowledge.sh
 ./scripts/build-prompt.legacy.sh
 ./scripts/build-prompt.sh
+./scripts/build-sprint-01-context.sh
+./scripts/build-sprint-01-prompt.sh
 ./scripts/commission.sh
+./scripts/install-sprint-01.sh
+./scripts/regenerate-sprint-01-prompt-manifests.py
 ./scripts/resume.sh
 ./scripts/run-execution.sh
+./scripts/run-sprint-01-task.sh
+./scripts/run-sprint-01.sh
 ./scripts/run-sprint.sh
 ./scripts/run-task.sh
+./scripts/validate-sprint-01-pack.sh
 ./scripts/validate.sh
 ./scripts/verify-factory.sh
 ./scripts/ysf.sh
+./sprint.json
 ./tools
 ./tools/context
 ./tools/indexing

@@ -1,0 +1,162 @@
+schema_version: "1.0"
+
+project:
+  code: YSIM
+  name: YSim Platform
+  version: "2.1"
+
+sprint:
+  code: S01
+  name: Platform Foundation
+  baseline: architecture-v2.2
+  ysf_version: "0.1.0"
+
+task:
+  code: s01-t03
+  order: 3
+  name: "Configuration and Environment Validation"
+  status: planned
+  execution_mode: sequential
+  agent: codex
+  fail_fast: true
+
+objective: >
+  Implement the shared configuration foundation, startup environment validation, typed access
+  boundaries, and secrets-handling conventions for the YSim platform.
+
+depends_on:
+  - s01-t02
+
+source_of_truth:
+  - PCS-00
+  - ECS-00
+  - ABP-18
+  - GOVERNANCE.md
+  - .env.example
+
+required_reading:
+  - SCOPE.md
+  - TARGET_STRUCTURE.md
+  - ACCEPTANCE.md
+  - EXECUTION_ORDER.md
+  - DOCUMENT_BASELINE.md
+  - GOVERNANCE.md
+  - AFM-00
+  - YADF-00
+  - DIP-00
+  - DIP-01
+  - DIP-02
+  - DIP-04
+  - DIP-05
+  - DIP-06
+  - DIP-09
+  - ESPK-S00
+  - ABP-00
+  - ABP-01
+  - ABP-02
+  - ABP-03
+  - ABP-18
+  - CAP-00
+  - PCS-00
+  - POL-00
+  - ECS-00
+  - ESP-03
+  - ESP-04
+
+scope:
+  include:
+    - "Shared config package."
+    - "Typed environment schema and fail-fast validation."
+    - "Application configuration module."
+    - "Separation of public configuration, server configuration, and secret references."
+    - "Test coverage for valid and invalid configurations."
+    - "Non-sensitive defaults for local development only."
+  exclude:
+    - "Production secret store integration."
+    - "Real payment or supplier credentials."
+    - "Business configuration persistence."
+    - "Published snapshot engine."
+    - "Runtime merge engine beyond minimal bootstrap needs."
+
+architecture_invariants:
+  - "Secrets must never be logged."
+  - "Unknown or invalid required variables must fail deterministically."
+  - "Configuration access must be typed and centralized."
+  - "Storefront-specific configuration must not expose supplier data."
+
+protected_paths:
+  - docs/BRD/
+  - docs/ABP/
+  - docs/AFM/
+  - docs/YADF/
+  - docs/DIP/
+  - docs/UXF/
+  - docs/CAP/
+  - docs/ECS/
+  - docs/PCS/
+  - docs/POL/
+
+allowed_paths:
+  - packages/config/
+  - apps/api/src/config/
+  - apps/api/test/
+  - apps/api/package.json
+  - .env.example
+  - package.json
+  - pnpm-lock.yaml
+  - factory/reports/s01/
+
+implementation:
+  - step: 1
+    action: "Define the shared configuration package and environment schema."
+  - step: 2
+    action: "Add typed parsing and validation with clear startup errors."
+  - step: 3
+    action: "Integrate configuration into the NestJS API bootstrap."
+  - step: 4
+    action: "Separate secret names/references from public and non-secret values."
+  - step: 5
+    action: "Add tests for required values, defaults, invalid types, and secret redaction."
+  - step: 6
+    action: "Update .env.example with safe placeholders and explanatory comments."
+
+required_outputs:
+  - "packages/config/"
+  - "apps/api/src/config/"
+  - "updated .env.example"
+  - "factory/reports/s01/s01-t03-configuration.md"
+
+validation:
+  - command: "pnpm --filter @ysim/config build"
+    required: true
+  - command: "pnpm --filter @ysim/config test"
+    required: true
+  - command: "pnpm --filter api build"
+    required: true
+  - command: "pnpm --filter api test"
+    required: true
+  - command: "git diff --check"
+    required: true
+  - command: "ysf verify"
+    required: true
+
+acceptance_criteria:
+  - "Required configuration is validated at startup."
+  - "Invalid configuration fails fast with actionable errors."
+  - "Secret values are redacted from errors and logs."
+  - "Typed configuration is reusable across applications."
+  - "No real credential is committed."
+
+evidence:
+  - "Schema summary"
+  - "Valid/invalid test output"
+  - "Redaction test output"
+  - "Environment variable inventory"
+
+stop_conditions:
+  - "A real credential is discovered in tracked files."
+  - "Configuration design conflicts with PCS-00 or frozen architecture."
+  - "Validation can pass only by silently accepting invalid values."
+
+commit:
+  message: "feat(s01-t03): add typed configuration and environment validation"

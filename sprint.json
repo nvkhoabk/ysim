@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "1.0",
+  "sprintCode": "S01",
+  "sprintName": "Platform Foundation",
+  "project": "YSim Platform v2.1",
+  "baseline": "architecture-v2.2",
+  "ysfVersion": "0.1.0",
+  "status": "PLANNED",
+  "executionMode": "SEQUENTIAL",
+  "taskCount": 11,
+  "tasks": [
+    {
+      "code": "s01-t00",
+      "order": 0
+    },
+    {
+      "code": "s01-t01",
+      "order": 1
+    },
+    {
+      "code": "s01-t02",
+      "order": 2
+    },
+    {
+      "code": "s01-t03",
+      "order": 3
+    },
+    {
+      "code": "s01-t04",
+      "order": 4
+    },
+    {
+      "code": "s01-t05",
+      "order": 5
+    },
+    {
+      "code": "s01-t06",
+      "order": 6
+    },
+    {
+      "code": "s01-t07",
+      "order": 7
+    },
+    {
+      "code": "s01-t08",
+      "order": 8
+    },
+    {
+      "code": "s01-t09",
+      "order": 9
+    },
+    {
+      "code": "s01-t10",
+      "order": 10
+    }
+  ],
+  "outcome": "Production-oriented platform skeleton ready for business-domain implementation."
+}

@@ -1,0 +1,251 @@
+{
+  "schemaVersion": "1.1",
+  "contextId": "s01",
+  "sourceManifest": "factory/context-manifests/s01.yaml",
+  "documentCount": 30,
+  "characterCount": 191409,
+  "documents": [
+    {
+      "documentCode": "ABP-00",
+      "path": "docs/ABP/ABP-00.md",
+      "documentSet": "ABP",
+      "version": "1.0",
+      "status": "FROZEN",
+      "characters": 6664
+    },
+    {
+      "documentCode": "ABP-01",
+      "path": "docs/ABP/ABP-01.md",
+      "documentSet": "ABP",
+      "version": "1.0",
+      "status": "FROZEN",
+      "characters": 4511
+    },
+    {
+      "documentCode": "ABP-02",
+      "path": "docs/ABP/ABP-02.md",
+      "documentSet": "ABP",
+      "version": "1.0",
+      "status": "FROZEN",
+      "characters": 5485
+    },
+    {
+      "documentCode": "ABP-03",
+      "path": "docs/ABP/ABP-03.md",
+      "documentSet": "ABP",
+      "version": "1.0",
+      "status": "FROZEN",
+      "characters": 5051
+    },
+    {
+      "documentCode": "ABP-18",
+      "path": "docs/ABP/ABP-18.md",
+      "documentSet": "ABP",
+      "version": "1.0",
+      "status": "Draft",
+      "characters": 7055
+    },
+    {
+      "documentCode": "AFM-00",
+      "path": "docs/AFM/AFM-00.md",
+      "documentSet": "AFM",
+      "version": "2.1",
+      "status": "FROZEN",
+      "characters": 4014
+    },
+    {
+      "documentCode": "CAP-00",
+      "path": "docs/CAP/CAP-00.md",
+      "documentSet": "CAP",
+      "version": "1.0",
+      "status": "Draft",
+      "characters": 7285
+    },
+    {
+      "documentCode": "DIP-00",
+      "path": "docs/DIP/DIP-00.md",
+      "documentSet": "DIP",
+      "version": "2.1",
+      "status": "FROZEN",
+      "characters": 6820
+    },
+    {
+      "documentCode": "DIP-01",
+      "path": "docs/DIP/DIP-01.md",
+      "documentSet": "DIP",
+      "version": "2.1",
+      "status": "FROZEN",
+      "characters": 4970
+    },
+    {
+      "documentCode": "DIP-02",
+      "path": "docs/DIP/DIP-02.md",
+      "documentSet": "DIP",
+      "version": "2.1",
+      "status": "FROZEN",
+      "characters": 5416
+    },
+    {
+      "documentCode": "DIP-04",
+      "path": "docs/DIP/DIP-04.md",
+      "documentSet": "DIP",
+      "version": "2.1",
+      "status": "FROZEN",
+      "characters": 5982
+    },
+    {
+      "documentCode": "DIP-05",
+      "path": "docs/DIP/DIP-05.md",
+      "documentSet": "DIP",
+      "version": "2.1",
+      "status": "FROZEN",
+      "characters": 6208
+    },
+    {
+      "documentCode": "DIP-06",
+      "path": "docs/DIP/DIP-06.md",
+      "documentSet": "DIP",
+      "version": "2.1",
+      "status": "FROZEN",
+      "characters": 6277
+    },
+    {
+      "documentCode": "DIP-09",
+      "path": "docs/DIP/DIP-09.md",
+      "documentSet": "DIP",
+      "version": "2.1",
+      "status": "FROZEN",
+      "characters": 7020
+    },
+    {
+      "documentCode": "ECS-00",
+      "path": "docs/ECS/ECS-00.md",
+      "documentSet": "ECS",
+      "version": "1.0",
+      "status": "Draft",
+      "characters": 6770
+    },
+    {
+      "documentCode": "ESP-00",
+      "path": "docs/ESP/ESP-00.md",
+      "documentSet": "ESP",
+      "version": "2.1",
+      "status": "FROZEN",
+      "characters": 6784
+    },
+    {
+      "documentCode": "ESP-01",
+      "path": "docs/ESP/ESP-01.md",
+      "documentSet": "ESP",
+      "version": "1.0",
+      "status": "FROZEN",
+      "characters": 5564
+    },
+    {
+      "documentCode": "ESP-02",
+      "path": "docs/ESP/ESP-02.md",
+      "documentSet": "ESP",
+      "version": "1.0",
+      "status": "FROZEN",
+      "characters": 5651
+    },
+    {
+      "documentCode": "ESPK-S00",
+      "path": "docs/ESPK/ESPK-S00.md",
+      "documentSet": "ESPK",
+      "version": "2.1",
+      "status": "FROZEN",
+      "characters": 3883
+    },
+    {
+      "documentCode": "PCS-00",
+      "path": "docs/PCS/PCS-00.md",
+      "documentSet": "PCS",
+      "version": "1.0",
+      "status": "Draft",
+      "characters": 7518
+    },
+    {
+      "documentCode": "POL-00",
+      "path": "docs/POL/POL-00.md",
+      "documentSet": "POL",
+      "version": "1.0",
+      "status": "Draft",
+      "characters": 7248
+    },
+    {
+      "documentCode": "UXF-00",
+      "path": "docs/UXF/UXF-00.md",
+      "documentSet": "UXF",
+      "version": "1.0",
+      "status": "Draft",
+      "characters": 9340
+    },
+    {
+      "documentCode": "UXF-02",
+      "path": "docs/UXF/UXF-02.md",
+      "documentSet": "UXF",
+      "version": "1.0",
+      "status": "Draft",
+      "characters": 7190
+    },
+    {
+      "documentCode": "UXF-05",
+      "path": "docs/UXF/UXF-05.md",
+      "documentSet": "UXF",
+      "version": "1.0",
+      "status": "Draft",
+      "characters": 7669
+    },
+    {
+      "documentCode": "YADF-00",
+      "path": "docs/YADF/YADF-00.md",
+      "documentSet": "YADF",
+      "version": "2.0",
+      "status": "FROZEN",
+      "characters": 7655
+    },
+    {
+      "documentCode": "AAP-01",
+      "path": "docs/AAP/AAP-01.md",
+      "documentSet": "AAP",
+      "version": "2.1",
+      "status": "FROZEN",
+      "characters": 7192
+    },
+    {
+      "documentCode": "AAP-02",
+      "path": "docs/AAP/AAP-02.md",
+      "documentSet": "AAP",
+      "version": "2.1",
+      "status": "FROZEN",
+      "characters": 7495
+    },
+    {
+      "documentCode": "AAP-03",
+      "path": "docs/AAP/AAP-03.md",
+      "documentSet": "AAP",
+      "version": "2.1",
+      "status": "FROZEN",
+      "characters": 6273
+    },
+    {
+      "documentCode": "AAP-04",
+      "path": "docs/AAP/AAP-04.md",
+      "documentSet": "AAP",
+      "version": "2.1",
+      "status": "FROZEN",
+      "characters": 6069
+    },
+    {
+      "documentCode": "AAP-05",
+      "path": "docs/AAP/AAP-05.md",
+      "documentSet": "AAP",
+      "version": "2.1",
+      "status": "FROZEN",
+      "characters": 6350
+    }
+  ],
+  "output": "factory/contexts/generated/s01/context.md",
+  "generatedAt": "2026-07-12T22:17:58.041138+07:00"
+}

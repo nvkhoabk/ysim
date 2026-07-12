@@ -1,0 +1,51 @@
+schema_version: "1.0"
+
+project:
+  code: YSIM
+  version: "2.1"
+
+sprint:
+  code: S01
+  baseline: architecture-v2.2
+
+task:
+  code: s01-t07
+  order: 7
+  name: "Health, Readiness, OpenAPI & Operational Endpoints"
+  status: planned
+  execution_mode: sequential
+
+depends_on:
+  - s01-t06
+
+objective: >
+  Implement the health, readiness, openapi & operational endpoints while preserving all
+  architecture invariants and avoiding business-domain implementation.
+
+scope:
+  include:
+    - "GET /health"
+    - "GET /ready"
+    - "Swagger/OpenAPI"
+    - "Version endpoint"
+    - "Operational diagnostics"
+
+  exclude:
+    - "Product"
+    - "Pricing"
+    - "Order"
+    - "Payment"
+    - "Allocation"
+    - "Supplier Gateway"
+
+quality_gates:
+  - "git diff --check"
+  - "ysf verify"
+
+deliverables:
+  - "Implementation"
+  - "Task report"
+  - "Validation evidence"
+
+commit:
+  message: "feat(s01-t07): Health, Readiness, OpenAPI & Operational Endpoints"

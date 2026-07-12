@@ -1,0 +1,51 @@
+schema_version: "1.0"
+
+project:
+  code: YSIM
+  version: "2.1"
+
+sprint:
+  code: S01
+  baseline: architecture-v2.2
+
+task:
+  code: s01-t06
+  order: 6
+  name: "BullMQ, Scheduler & Background Runtime Foundation"
+  status: planned
+  execution_mode: sequential
+
+depends_on:
+  - s01-t05
+
+objective: >
+  Implement the bullmq, scheduler & background runtime foundation while preserving all
+  architecture invariants and avoiding business-domain implementation.
+
+scope:
+  include:
+    - "BullMQ bootstrap"
+    - "Queue registry"
+    - "Worker framework"
+    - "Scheduler bootstrap"
+    - "No business jobs"
+
+  exclude:
+    - "Product"
+    - "Pricing"
+    - "Order"
+    - "Payment"
+    - "Allocation"
+    - "Supplier Gateway"
+
+quality_gates:
+  - "git diff --check"
+  - "ysf verify"
+
+deliverables:
+  - "Implementation"
+  - "Task report"
+  - "Validation evidence"
+
+commit:
+  message: "feat(s01-t06): BullMQ, Scheduler & Background Runtime Foundation"

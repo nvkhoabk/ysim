@@ -1,0 +1,49 @@
+version: '1.0'
+context_id: s01
+sprint:
+  id: S01
+  name: Factory Commissioning & Repository Bootstrap
+capabilities:
+- ai-software-factory
+- platform-foundation
+document_sets:
+  include:
+  - AFM
+  - YADF
+  - AAP
+  - SGP
+  - ESP
+  - DIP
+  - ESPK
+documents:
+  required:
+  - AFM-00
+  - YADF-00
+  - DIP-00
+  - DIP-01
+  - DIP-02
+  - DIP-04
+  - DIP-05
+  - DIP-06
+  - DIP-09
+  - ESPK-S00
+  - ABP-00
+  - ABP-01
+  - ABP-02
+  - ABP-03
+  - ABP-18
+  - UXF-00
+  - UXF-02
+  - UXF-05
+  - CAP-00
+  - ECS-00
+  - PCS-00
+  - POL-00
+  - ESP-00
+  - ESP-01
+  - ESP-02
+limits:
+  max_documents: 30
+  max_characters: 250000
+output:
+  directory: factory/contexts/generated/s01

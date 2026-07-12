@@ -1,0 +1,163 @@
+schema_version: "1.0"
+
+project:
+  code: YSIM
+  name: YSim Platform
+  version: "2.1"
+
+sprint:
+  code: S01
+  name: Platform Foundation
+  baseline: architecture-v2.2
+  ysf_version: "0.1.0"
+
+task:
+  code: s01-t02
+  order: 2
+  name: "NestJS API Bootstrap"
+  status: planned
+  execution_mode: sequential
+  agent: codex
+  fail_fast: true
+
+objective: >
+  Bootstrap the YSim NestJS API application with a minimal production-oriented module
+  structure, strict TypeScript configuration, test harness, and application lifecycle while
+  keeping business domains out of scope.
+
+depends_on:
+  - s01-t01
+
+source_of_truth:
+  - TARGET_STRUCTURE.md
+  - ACCEPTANCE.md
+  - factory/reports/s01/s01-t01-workspace-foundation.md
+
+required_reading:
+  - SCOPE.md
+  - TARGET_STRUCTURE.md
+  - ACCEPTANCE.md
+  - EXECUTION_ORDER.md
+  - DOCUMENT_BASELINE.md
+  - GOVERNANCE.md
+  - AFM-00
+  - YADF-00
+  - DIP-00
+  - DIP-01
+  - DIP-02
+  - DIP-04
+  - DIP-05
+  - DIP-06
+  - DIP-09
+  - ESPK-S00
+  - ABP-00
+  - ABP-01
+  - ABP-02
+  - ABP-03
+  - ABP-18
+  - CAP-00
+  - PCS-00
+  - POL-00
+  - ESP-00
+  - ESP-01
+  - ESP-02
+  - ABP-04
+  - ABP-05
+
+scope:
+  include:
+    - "NestJS application under apps/api."
+    - "Root application module and bootstrap entry point."
+    - "Application lifecycle and graceful shutdown foundation."
+    - "Unit-test and integration-test harness."
+    - "Package scripts for build, lint, typecheck, test, and start."
+    - "Minimal module boundaries for platform bootstrap only."
+  exclude:
+    - "Production Identity, Organization, Product, Pricing, Order, Payment, Allocation, Fulfillment, or Supplier modules."
+    - "Database entities and migrations."
+    - "Real gateway integrations."
+    - "Business endpoints other than temporary bootstrap diagnostics where required."
+
+architecture_invariants:
+  - "The API application depends on shared packages through workspace contracts."
+  - "No supplier type may appear in public API or storefront-facing code."
+  - "Bootstrap code must remain thin."
+  - "Business logic must not be placed in controllers or main.ts."
+
+protected_paths:
+  - docs/BRD/
+  - docs/ABP/
+  - docs/AFM/
+  - docs/YADF/
+  - docs/DIP/
+  - docs/UXF/
+  - docs/CAP/
+  - docs/ECS/
+  - docs/PCS/
+  - docs/POL/
+
+allowed_paths:
+  - apps/api/
+  - packages/contracts/
+  - packages/errors/
+  - packages/testing/
+  - package.json
+  - pnpm-lock.yaml
+  - factory/reports/s01/
+
+implementation:
+  - step: 1
+    action: "Create the apps/api package using the repository's approved NestJS and TypeScript versions."
+  - step: 2
+    action: "Create main bootstrap, root module, and lifecycle configuration."
+  - step: 3
+    action: "Configure strict compilation and test environments."
+  - step: 4
+    action: "Add a minimal root or bootstrap endpoint only if needed for application smoke testing; do not duplicate the health endpoint planned for s01-t07."
+  - step: 5
+    action: "Add unit and integration smoke tests proving the application can initialize."
+  - step: 6
+    action: "Document module boundaries and deferred business modules."
+
+required_outputs:
+  - "apps/api/package.json"
+  - "apps/api/src/main.ts"
+  - "apps/api/src/app.module.ts"
+  - "apps/api/tsconfig.json"
+  - "apps/api/test/"
+  - "factory/reports/s01/s01-t02-api-bootstrap.md"
+
+validation:
+  - command: "pnpm --filter api build"
+    required: true
+  - command: "pnpm --filter api lint"
+    required: true
+  - command: "pnpm --filter api typecheck"
+    required: true
+  - command: "pnpm --filter api test"
+    required: true
+  - command: "git diff --check"
+    required: true
+  - command: "ysf verify"
+    required: true
+
+acceptance_criteria:
+  - "NestJS API compiles."
+  - "API test harness passes."
+  - "Application initializes and shuts down cleanly."
+  - "Strict TypeScript is active."
+  - "No production business module is implemented."
+
+evidence:
+  - "Build output"
+  - "Test output"
+  - "Application bootstrap structure"
+  - "Deferred-module list"
+
+stop_conditions:
+  - "NestJS bootstrap requires weakening strict TypeScript."
+  - "Existing app code conflicts with the approved target architecture."
+  - "A requested endpoint requires implementing an out-of-scope business capability."
+
+commit:
+  message: "feat(s01-t02): bootstrap NestJS API application"

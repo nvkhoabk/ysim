@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ysim.vn/schemas/task-manifest.schema.json",
+  "title": "YSF Task Manifest",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "project",
+    "sprint",
+    "task",
+    "objective",
+    "scope"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "project": {
+      "type": "object"
+    },
+    "sprint": {
+      "type": "object"
+    },
+    "task": {
+      "type": "object",
+      "required": [
+        "code",
+        "order",
+        "name",
+        "status"
+      ],
+      "properties": {
+        "code": {
+          "type": "string",
+          "pattern": "^s[0-9]{2}-t[0-9]{2}$"
+        },
+        "order": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "type": "string"
+        }
+      }
+    },
+    "objective": {
+      "type": "string",
+      "minLength": 1
+    },
+    "depends_on": {
+      "type": [
+        "array",
+        "null"
+      ]
+    },
+    "scope": {
+      "type": "object"
+    },
+    "validation": {
+      "type": "array"
+    },
+    "acceptance_criteria": {
+      "type": "array"
+    }
+  },
+  "additionalProperties": true
+}

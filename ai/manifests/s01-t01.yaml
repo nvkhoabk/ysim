@@ -1,0 +1,173 @@
+schema_version: "1.0"
+
+project:
+  code: YSIM
+  name: YSim Platform
+  version: "2.1"
+
+sprint:
+  code: S01
+  name: Platform Foundation
+  baseline: architecture-v2.2
+  ysf_version: "0.1.0"
+
+task:
+  code: s01-t01
+  order: 1
+  name: "Monorepo and Workspace Foundation"
+  status: planned
+  execution_mode: sequential
+  agent: codex
+  fail_fast: true
+
+objective: >
+  Create the root pnpm and TypeScript workspace foundation, repository conventions, shared
+  quality scripts, and directory seams required by the YSim Platform without implementing
+  business capabilities.
+
+depends_on:
+  - s01-t00
+
+source_of_truth:
+  - TARGET_STRUCTURE.md
+  - SCOPE.md
+  - GOVERNANCE.md
+  - factory/reports/s01/s01-execution-plan.md
+
+required_reading:
+  - SCOPE.md
+  - TARGET_STRUCTURE.md
+  - ACCEPTANCE.md
+  - EXECUTION_ORDER.md
+  - DOCUMENT_BASELINE.md
+  - GOVERNANCE.md
+  - AFM-00
+  - YADF-00
+  - DIP-00
+  - DIP-01
+  - DIP-02
+  - DIP-04
+  - DIP-05
+  - DIP-06
+  - DIP-09
+  - ESPK-S00
+  - ABP-00
+  - ABP-01
+  - ABP-02
+  - ABP-03
+  - ABP-18
+  - CAP-00
+  - PCS-00
+  - POL-00
+  - ESP-00
+  - ESP-01
+  - ESP-02
+
+scope:
+  include:
+    - "Root package.json and pnpm-workspace.yaml."
+    - "Base TypeScript configuration with strict mode."
+    - "Shared lint, formatting, and typecheck conventions."
+    - "Tracked README or placeholder artifacts for approved top-level implementation directories."
+    - "Root scripts for install, build, lint, typecheck, test, verify, and clean."
+    - "Environment example conventions without real secrets."
+  exclude:
+    - "NestJS application implementation."
+    - "Frontend application implementation."
+    - "Database schema or business migration."
+    - "Supplier, payment, product, allocation, or order implementation."
+
+architecture_invariants:
+  - "Applications may depend on packages; packages must not depend on applications."
+  - "Strict TypeScript must be enabled."
+  - "Workspace scripts must be deterministic and non-interactive."
+  - "Runtime artifacts and secrets must be ignored by Git."
+
+protected_paths:
+  - docs/BRD/
+  - docs/ABP/
+  - docs/AFM/
+  - docs/YADF/
+  - docs/DIP/
+  - docs/UXF/
+  - docs/CAP/
+  - docs/ECS/
+  - docs/PCS/
+  - docs/POL/
+
+allowed_paths:
+  - package.json
+  - pnpm-workspace.yaml
+  - pnpm-lock.yaml
+  - tsconfig.base.json
+  - eslint.config.*
+  - .prettier*
+  - .editorconfig
+  - .gitignore
+  - .env.example
+  - apps/
+  - packages/
+  - database/
+  - integrations/
+  - infrastructure/
+  - scripts/
+  - factory/reports/s01/
+
+implementation:
+  - step: 1
+    action: "Reconcile the audit findings with existing root workspace files and preserve valid prior work."
+  - step: 2
+    action: "Create or update the pnpm workspace definition for apps and packages."
+  - step: 3
+    action: "Create root scripts and TypeScript strict-mode baseline."
+  - step: 4
+    action: "Create approved implementation directories only when they contain meaningful tracked content."
+  - step: 5
+    action: "Define environment example and Git ignore rules for runtime, secrets, build output, caches, and packaging metadata."
+  - step: 6
+    action: "Add workspace validation script and concise repository usage documentation."
+
+required_outputs:
+  - "package.json"
+  - "pnpm-workspace.yaml"
+  - "tsconfig.base.json"
+  - ".env.example"
+  - "scripts/validate-workspace.sh"
+  - "factory/reports/s01/s01-t01-workspace-foundation.md"
+
+validation:
+  - command: "pnpm install --frozen-lockfile=false"
+    required: true
+    purpose: "Resolve workspace dependencies and lockfile."
+  - command: "pnpm -r exec tsc --version"
+    required: true
+    purpose: "Confirm TypeScript is available to workspace projects where applicable."
+  - command: "bash scripts/validate-workspace.sh"
+    required: true
+    purpose: "Validate required workspace structure and conventions."
+  - command: "git diff --check"
+    required: true
+  - command: "ysf verify"
+    required: true
+
+acceptance_criteria:
+  - "pnpm recognizes all approved workspace patterns."
+  - "TypeScript strict-mode baseline exists."
+  - "Root quality scripts are available."
+  - "No real secret is committed."
+  - "No business-domain implementation is introduced."
+  - "Workspace validation passes."
+
+evidence:
+  - "Workspace listing"
+  - "Package-manager output"
+  - "Validation script output"
+  - "Changed-file summary"
+
+stop_conditions:
+  - "Existing repository tooling conflicts with pnpm and cannot be safely reconciled."
+  - "Changes require modifying frozen architecture documents."
+  - "Workspace validation cannot pass without adding business-domain code."
+
+commit:
+  message: "feat(s01-t01): establish monorepo workspace foundation"

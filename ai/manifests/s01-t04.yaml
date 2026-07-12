@@ -1,0 +1,167 @@
+schema_version: "1.0"
+
+project:
+  code: YSIM
+  name: YSim Platform
+  version: "2.1"
+
+sprint:
+  code: S01
+  name: Platform Foundation
+  baseline: architecture-v2.2
+  ysf_version: "0.1.0"
+
+task:
+  code: s01-t04
+  order: 4
+  name: "Logging, Correlation, Errors, and Diagnostics"
+  status: planned
+  execution_mode: sequential
+  agent: codex
+  fail_fast: true
+
+objective: >
+  Implement structured logging, request correlation, standardized error contracts, and
+  diagnostic foundations shared by the YSim API while avoiding business-specific error
+  taxonomies.
+
+depends_on:
+  - s01-t03
+
+source_of_truth:
+  - ABP-18
+  - CAP-00
+  - DIP-04
+  - DIP-06
+  - GOVERNANCE.md
+
+required_reading:
+  - SCOPE.md
+  - TARGET_STRUCTURE.md
+  - ACCEPTANCE.md
+  - EXECUTION_ORDER.md
+  - DOCUMENT_BASELINE.md
+  - GOVERNANCE.md
+  - AFM-00
+  - YADF-00
+  - DIP-00
+  - DIP-01
+  - DIP-02
+  - DIP-04
+  - DIP-05
+  - DIP-06
+  - DIP-09
+  - ESPK-S00
+  - ABP-00
+  - ABP-01
+  - ABP-02
+  - ABP-03
+  - ABP-18
+  - CAP-00
+  - PCS-00
+  - POL-00
+  - ESP-04
+  - ESP-05
+  - ROP-00
+  - ROP-01
+
+scope:
+  include:
+    - "Shared logging package."
+    - "Structured JSON-capable logger."
+    - "Request/correlation identifier propagation."
+    - "Standard platform error contract."
+    - "NestJS global exception boundary."
+    - "Secret and sensitive-field redaction."
+    - "Diagnostic context suitable for later monitoring integration."
+  exclude:
+    - "Business-domain error catalogs."
+    - "External APM vendor integration."
+    - "Production log shipping."
+    - "Customer-facing support workflows."
+    - "Monitoring dashboards."
+
+architecture_invariants:
+  - "Logs must not contain secrets or full sensitive payloads."
+  - "Correlation identifiers must be available across request handling."
+  - "Error responses must not leak stack traces in production mode."
+  - "Logging package must not depend on applications."
+
+protected_paths:
+  - docs/BRD/
+  - docs/ABP/
+  - docs/AFM/
+  - docs/YADF/
+  - docs/DIP/
+  - docs/UXF/
+  - docs/CAP/
+  - docs/ECS/
+  - docs/PCS/
+  - docs/POL/
+
+allowed_paths:
+  - packages/logging/
+  - packages/errors/
+  - apps/api/src/common/
+  - apps/api/src/logging/
+  - apps/api/test/
+  - package.json
+  - pnpm-lock.yaml
+  - factory/reports/s01/
+
+implementation:
+  - step: 1
+    action: "Define the shared platform error shape and stable error-code conventions."
+  - step: 2
+    action: "Implement structured logging with environment-appropriate output."
+  - step: 3
+    action: "Add correlation-ID extraction/generation and response propagation."
+  - step: 4
+    action: "Add global exception handling and safe error serialization."
+  - step: 5
+    action: "Add sensitive-field redaction and tests."
+  - step: 6
+    action: "Document log fields, error fields, and deferred observability integrations."
+
+required_outputs:
+  - "packages/logging/"
+  - "packages/errors/"
+  - "apps/api/src/common/"
+  - "factory/reports/s01/s01-t04-logging-errors.md"
+
+validation:
+  - command: "pnpm --filter @ysim/logging build"
+    required: true
+  - command: "pnpm --filter @ysim/logging test"
+    required: true
+  - command: "pnpm --filter @ysim/errors build"
+    required: true
+  - command: "pnpm --filter api test"
+    required: true
+  - command: "pnpm --filter api build"
+    required: true
+  - command: "git diff --check"
+    required: true
+  - command: "ysf verify"
+    required: true
+
+acceptance_criteria:
+  - "Structured logs are produced."
+  - "Correlation ID is generated or preserved."
+  - "Error responses follow a stable contract."
+  - "Secrets and sensitive fields are redacted."
+  - "Production-mode errors do not leak stack traces."
+
+evidence:
+  - "Sample structured log"
+  - "Correlation test"
+  - "Error contract sample"
+  - "Redaction tests"
+
+stop_conditions:
+  - "Logging requires committing secrets."
+  - "Error handling introduces business-domain behavior."
+  - "Correlation cannot be propagated without breaking application initialization."
+
+commit:
+  message: "feat(s01-t04): add structured logging and platform error handling"

@@ -1,0 +1,107 @@
+schema_version: "1.0"
+
+sprint:
+  code: S01
+  name: Platform Foundation
+  project: YSim Platform v2.1
+  baseline: architecture-v2.2
+  ysf_version: "0.1.0"
+  status: planned
+
+objective: >
+  Establish the production-oriented technical foundation of the YSim Platform
+  without implementing business domains.
+
+execution:
+  mode: sequential
+  agent: codex
+  orchestrator: ysf
+  fail_fast: true
+  task_range:
+    - s01-t00
+    - s01-t01
+    - s01-t02
+    - s01-t03
+    - s01-t04
+    - s01-t05
+    - s01-t06
+    - s01-t07
+    - s01-t08
+    - s01-t09
+    - s01-t10
+
+scope:
+  include:
+    - monorepo foundation
+    - NestJS API bootstrap
+    - configuration and environment validation
+    - logging and diagnostics
+    - PostgreSQL, Redis, MinIO and Mailpit baseline
+    - BullMQ and scheduler foundation
+    - health, readiness and OpenAPI
+    - admin and storefront application shells
+    - shared design tokens and UI foundation
+    - tests, CI and validation
+  exclude:
+    - product business domain
+    - pricing business domain
+    - order business domain
+    - payment business domain
+    - allocation implementation
+    - supplier gateway implementation
+    - storefront business binding implementation
+    - settlement implementation
+
+architecture_invariants:
+  - storefronts must not know suppliers
+  - supplier selection belongs only to Allocation
+  - runtime resolves references and delegates business execution
+  - presentation must not own business decisions
+  - shared packages must not depend on applications
+  - frozen architecture documents must not be silently modified
+
+required_documents:
+  - AFM-00
+  - YADF-00
+  - DIP-00
+  - DIP-01
+  - DIP-02
+  - DIP-04
+  - DIP-05
+  - DIP-06
+  - DIP-09
+  - ESPK-S00
+  - ABP-00
+  - ABP-01
+  - ABP-02
+  - ABP-03
+  - ABP-18
+  - UXF-00
+  - UXF-02
+  - UXF-05
+  - CAP-00
+  - PCS-00
+  - POL-00
+  - ESP-00
+  - ESP-01
+  - ESP-02
+
+quality_gates:
+  - pnpm install
+  - pnpm -r build
+  - pnpm -r lint
+  - pnpm -r typecheck
+  - pnpm -r test
+  - git diff --check
+  - ysf verify
+
+deliverables:
+  - platform workspace
+  - API bootstrap
+  - frontend application shells
+  - shared foundation packages
+  - infrastructure baseline
+  - CI workflow
+  - validation scripts
+  - task evidence
+  - sprint acceptance report

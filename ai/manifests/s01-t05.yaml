@@ -1,0 +1,171 @@
+schema_version: "1.0"
+
+project:
+  code: YSIM
+  name: YSim Platform
+  version: "2.1"
+
+sprint:
+  code: S01
+  name: Platform Foundation
+  baseline: architecture-v2.2
+  ysf_version: "0.1.0"
+
+task:
+  code: s01-t05
+  order: 5
+  name: "Local Infrastructure Baseline"
+  status: planned
+  execution_mode: sequential
+  agent: codex
+  fail_fast: true
+
+objective: >
+  Establish the reproducible local infrastructure baseline for PostgreSQL, Redis, MinIO, and
+  Mailpit with Docker Compose, health checks, named volumes, environment conventions, and
+  verification scripts.
+
+depends_on:
+  - s01-t04
+
+source_of_truth:
+  - TARGET_STRUCTURE.md
+  - ACCEPTANCE.md
+  - GOVERNANCE.md
+  - .env.example
+
+required_reading:
+  - SCOPE.md
+  - TARGET_STRUCTURE.md
+  - ACCEPTANCE.md
+  - EXECUTION_ORDER.md
+  - DOCUMENT_BASELINE.md
+  - GOVERNANCE.md
+  - AFM-00
+  - YADF-00
+  - DIP-00
+  - DIP-01
+  - DIP-02
+  - DIP-04
+  - DIP-05
+  - DIP-06
+  - DIP-09
+  - ESPK-S00
+  - ABP-00
+  - ABP-01
+  - ABP-02
+  - ABP-03
+  - ABP-18
+  - CAP-00
+  - PCS-00
+  - POL-00
+  - ESP-05
+  - ESP-06
+  - ROP-00
+  - ROP-02
+
+scope:
+  include:
+    - "Docker Compose baseline for PostgreSQL, Redis, MinIO, and Mailpit."
+    - "Named volumes and local network conventions."
+    - "Service health checks where supported."
+    - "Safe local-development credentials in .env.example only."
+    - "Infrastructure startup, shutdown, status, and validation scripts."
+    - "API connectivity seam without business database schema."
+  exclude:
+    - "Production Kubernetes or cloud deployment."
+    - "Business database migrations."
+    - "Supplier or payment integration containers."
+    - "Production object-storage buckets and policies."
+    - "HA, backup automation, and disaster-recovery implementation."
+
+architecture_invariants:
+  - "Local infrastructure must be reproducible and non-interactive."
+  - "No production credential may be used."
+  - "Container names, ports, and volumes must be documented."
+  - "Database initialization must not introduce business tables."
+
+protected_paths:
+  - docs/BRD/
+  - docs/ABP/
+  - docs/AFM/
+  - docs/YADF/
+  - docs/DIP/
+  - docs/UXF/
+  - docs/CAP/
+  - docs/ECS/
+  - docs/PCS/
+  - docs/POL/
+
+allowed_paths:
+  - docker-compose.yml
+  - infrastructure/
+  - database/README.md
+  - database/migrations/
+  - database/seeds/
+  - scripts/infra-*.sh
+  - .env.example
+  - apps/api/src/config/
+  - package.json
+  - factory/reports/s01/
+
+implementation:
+  - step: 1
+    action: "Inspect and preserve any valid existing Docker baseline before replacing files."
+  - step: 2
+    action: "Define PostgreSQL, Redis, MinIO, and Mailpit services with explicit configuration."
+  - step: 3
+    action: "Add named volumes, network, restart behavior, and health checks."
+  - step: 4
+    action: "Add scripts for startup, shutdown, status, logs, and connectivity validation."
+  - step: 5
+    action: "Document local endpoints, ports, credentials, and reset procedures."
+  - step: 6
+    action: "Add API configuration seams and optional smoke tests without creating business schema."
+
+required_outputs:
+  - "docker-compose.yml"
+  - "infrastructure/compose/"
+  - "scripts/infra-up.sh"
+  - "scripts/infra-down.sh"
+  - "scripts/infra-status.sh"
+  - "scripts/infra-validate.sh"
+  - "factory/reports/s01/s01-t05-infrastructure.md"
+
+validation:
+  - command: "docker compose config"
+    required: true
+  - command: "bash scripts/infra-up.sh"
+    required: true
+  - command: "bash scripts/infra-validate.sh"
+    required: true
+  - command: "bash scripts/infra-status.sh"
+    required: true
+  - command: "pnpm --filter api build"
+    required: true
+  - command: "git diff --check"
+    required: true
+  - command: "ysf verify"
+    required: true
+
+acceptance_criteria:
+  - "Docker Compose configuration is valid."
+  - "PostgreSQL, Redis, MinIO, and Mailpit start successfully."
+  - "Health and connectivity validation passes."
+  - "Named volumes are used."
+  - "No business schema is introduced."
+  - "No production secret is committed."
+
+evidence:
+  - "docker compose config output"
+  - "Service status"
+  - "Connectivity validation"
+  - "Port and volume inventory"
+
+stop_conditions:
+  - "Docker services conflict with an approved existing environment and cannot be reconciled safely."
+  - "A production credential is required."
+  - "Implementation introduces supplier, payment, or business-domain infrastructure."
+
+commit:
+  message: "feat(s01-t05): establish local infrastructure baseline"

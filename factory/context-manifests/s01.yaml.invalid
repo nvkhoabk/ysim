@@ -1,0 +1,111 @@
+schema_version: "1.0"
+
+context:
+  code: s01
+  name: Sprint-01 Platform Foundation Context
+  project: YSim Platform v2.1
+  baseline: architecture-v2.2
+  output_directory: factory/contexts/generated/s01
+
+sprint_definition:
+  sprint_file: ai/sprints/s01-platform-foundation.yaml
+  sprint_json: sprint.json
+  definition_files:
+    - SCOPE.md
+    - TARGET_STRUCTURE.md
+    - ACCEPTANCE.md
+    - EXECUTION_ORDER.md
+    - DOCUMENT_BASELINE.md
+    - GOVERNANCE.md
+
+required_documents:
+  - AFM-00
+  - YADF-00
+  - DIP-00
+  - DIP-01
+  - DIP-02
+  - DIP-04
+  - DIP-05
+  - DIP-06
+  - DIP-09
+  - ESPK-S00
+  - ABP-00
+  - ABP-01
+  - ABP-02
+  - ABP-03
+  - ABP-18
+  - UXF-00
+  - UXF-02
+  - UXF-05
+  - CAP-00
+  - ECS-00
+  - PCS-00
+  - POL-00
+  - ESP-00
+  - ESP-01
+  - ESP-02
+
+optional_documents:
+  - UXF-01
+  - UXF-03
+  - UXF-04
+  - ROP-00
+  - ROP-01
+  - ROP-02
+
+task_manifests:
+  - ai/manifests/s01-t00.yaml
+  - ai/manifests/s01-t01.yaml
+  - ai/manifests/s01-t02.yaml
+  - ai/manifests/s01-t03.yaml
+  - ai/manifests/s01-t04.yaml
+  - ai/manifests/s01-t05.yaml
+  - ai/manifests/s01-t06.yaml
+  - ai/manifests/s01-t07.yaml
+  - ai/manifests/s01-t08.yaml
+  - ai/manifests/s01-t09.yaml
+  - ai/manifests/s01-t10.yaml
+
+repository_discovery:
+  include:
+    - package.json
+    - pnpm-workspace.yaml
+    - pnpm-lock.yaml
+    - tsconfig*.json
+    - apps/**
+    - packages/**
+    - database/**
+    - integrations/**
+    - infrastructure/**
+    - scripts/**
+    - .github/**
+    - tools/ysf/**
+  exclude:
+    - .git/**
+    - node_modules/**
+    - runtime/**
+    - dist/**
+    - build/**
+    - coverage/**
+    - "**/__pycache__/**"
+    - "**/*.pyc"
+    - "**/*.egg-info/**"
+
+constraints:
+  protected_paths:
+    - docs/BRD/
+    - docs/ABP/
+    - docs/AFM/
+    - docs/YADF/
+    - docs/DIP/
+    - docs/UXF/
+    - docs/CAP/
+    - docs/ECS/
+    - docs/PCS/
+    - docs/POL/
+  architecture_invariants:
+    - Storefronts must not know suppliers.
+    - Supplier selection belongs only to the Allocation capability.
+    - Runtime performs Resolve, Compose, and Delegate.
+    - Presentation code must not own business decisions.
+    - Frozen architecture documents must not be silently modified.
