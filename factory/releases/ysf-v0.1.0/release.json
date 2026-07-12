@@ -1,0 +1,83 @@
+{
+  "schemaVersion": "1.0",
+  "release": "ysf-v0.1.0",
+  "version": "0.1.0",
+  "generatedAt": "2026-07-12T15:32:50.285973+07:00",
+  "git": {
+    "branch": "chore/s00-factory-commissioning",
+    "headCommit": "ab9ab714ce8e6bc53179283f59d1beebed3361d2"
+  },
+  "pipeline": {
+    "stageCount": 5,
+    "stages": [
+      {
+        "order": 10,
+        "name": "index"
+      },
+      {
+        "order": 20,
+        "name": "knowledge"
+      },
+      {
+        "order": 30,
+        "name": "context"
+      },
+      {
+        "order": 40,
+        "name": "prompt"
+      },
+      {
+        "order": 50,
+        "name": "execution"
+      }
+    ]
+  },
+  "executionSafety": {
+    "mode": "dry-run",
+    "provider": "codex",
+    "providerInvoked": false,
+    "repositoryModificationEnabled": false
+  },
+  "artifacts": [
+    {
+      "path": "factory/index/documents.json",
+      "sha256": "518ed6def26140c16f506ded1d8b1532c43760b14373ca91fbba9e843371454f",
+      "sizeBytes": 42402
+    },
+    {
+      "path": "factory/index/knowledge.json",
+      "sha256": "eaf79abf4682ef816442b122d09de116e77deabf1a23d14c403c44209aa13a06",
+      "sizeBytes": 2308
+    },
+    {
+      "path": "factory/index/catalog.json",
+      "sha256": "88a8ab4e99dc0e71c1596b70f4311edf37d6b1029531165f1abe4e8c8ab78100",
+      "sizeBytes": 336
+    },
+    {
+      "path": "knowledge/catalog/summary.json",
+      "sha256": "518e32ca98a913812045d76b653f603b9567be0694c21b130fc3ed550afe7325",
+      "sizeBytes": 695
+    },
+    {
+      "path": "factory/contexts/generated/s00/context.json",
+      "sha256": "34380a3578d5bfb85936eedbdbb35f0e8115ff6a3e0df186ae3203eb5d4e91a7",
+      "sizeBytes": 5843
+    },
+    {
+      "path": "factory/prompts/generated/s00/t00/prompt.json",
+      "sha256": "1e85f9c62aa572e78d5eb63f387977cfbbd9ddceaffb2c27157712bb63c6aaca",
+      "sizeBytes": 1774
+    },
+    {
+      "path": "factory/executions/s00/t00/plan.json",
+      "sha256": "87b31da503f7a34454cd87d421413058b285acf28516c087359f256d79d58dfe",
+      "sizeBytes": 4951
+    },
+    {
+      "path": "factory/executions/s00/t00/report.json",
+      "sha256": "6fe8c47eef837cd428ef34fb85134dfe8b8d92cdbe689f7f255ae14ca0726628",
+      "sizeBytes": 5712
+    }
+  ]
+}

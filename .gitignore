@@ -6,3 +6,5 @@ __pycache__/
 
 # Python packaging metadata
 *.egg-info/
+
+runtime/tmp/

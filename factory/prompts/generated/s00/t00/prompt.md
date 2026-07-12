@@ -24,13 +24,15 @@ chore/s00-factory-commissioning
 
 ```text
 M factory/contexts/generated/s00/context.json
+ M factory/executions/s00/t00/plan.json
+ M factory/executions/s00/t00/report.json
+ M factory/executions/s00/t00/report.md
  M factory/index/catalog.json
  M factory/index/documents.json
  M factory/index/knowledge.json
  M factory/prompts/generated/s00/t00/manifest.json
  M factory/prompts/generated/s00/t00/prompt.json
  M factory/prompts/generated/s00/t00/prompt.md
- M factory/reports/s00/step-07-knowledge-factory.md
  M knowledge/catalog/capabilities.json
  M knowledge/catalog/document-sets.json
  M knowledge/catalog/documents.json
@@ -39,37 +41,27 @@ M factory/contexts/generated/s00/context.json
  M knowledge/catalog/relationships.json
  M knowledge/catalog/summary.json
  M knowledge/normalized/documents.json
- M tools/ysf/src/ysf.egg-info/SOURCES.txt
- M tools/ysf/src/ysf/execution/__init__.py
- M tools/ysf/src/ysf/execution/__pycache__/__init__.cpython-311.pyc
- M tools/ysf/src/ysf/execution/workspace.py
-?? factory/executions/
-?? tools/ysf/src/ysf/execution/__pycache__/workspace.cpython-311.pyc
-?? tools/ysf/src/ysf/execution/providers/
-?? tools/ysf/tests/integration/__pycache__/test_workspace_snapshot_integration.cpython-311-pytest-8.4.2.pyc
-?? tools/ysf/tests/integration/test_workspace_snapshot_integration.py
-?? tools/ysf/tests/unit/__pycache__/test_codex_provider.cpython-311-pytest-8.4.2.pyc
-?? tools/ysf/tests/unit/__pycache__/test_execution_models.cpython-311-pytest-8.4.2.pyc
-?? tools/ysf/tests/unit/__pycache__/test_provider_registry.cpython-311-pytest-8.4.2.pyc
-?? tools/ysf/tests/unit/__pycache__/test_workspace_snapshot.cpython-311-pytest-8.4.2.pyc
-?? tools/ysf/tests/unit/test_codex_provider.py
-?? tools/ysf/tests/unit/test_provider_registry.py
-?? tools/ysf/tests/unit/test_workspace_snapshot.py
+?? factory/releases/
+?? factory/reports/s00/step-14g-ysf-v0.1.0-freeze.md
+?? runtime/tmp/execution-stage-integration/
+?? runtime/tmp/step-14f0-report/
+?? runtime/tmp/step-14f0/
+?? runtime/tmp/ysf-integration-execution/
 ```
 
 ## Recent Commits
 
 ```text
-737e18c (HEAD -> chore/s00-factory-commissioning, origin/chore/s00-factory-commissioning) feat(s00): add ysf execution models
+ab9ab71 (HEAD -> chore/s00-factory-commissioning, origin/chore/s00-factory-commissioning) chore(s00): finalize ysf dry-run pipeline
+a831948 feat(s00): add execution pipeline stage abstraction
+a4321c7 feat(s00): add dry-run execution runner
+a4d5787 feat(s00): add execution planner
+7019a2e feat(s00): add execution workspace snapshot service
+737e18c feat(s00): add ysf execution models
 db1fdec feat(s00): migrate prompt builder into ysf pipeline
 e44f995 feat(s00): add unified ysf verification gate
 1b613b6 feat(s00): migrate context builder into ysf pipeline
 cf6e363 feat(s00): establish ysf pipeline engine
-ba3dd94 feat(s00): migrate knowledge builder into ysf
-25a9039 feat(s00): migrate index builder into ysf
-07ac27c feat(s00): establish ysf production toolchain
-4533e02 fix(s00): preserve required documents in context selection
-d532d97 chore(s00): commission context engine
 ```
 
 ## Repository Tree
@@ -109,6 +101,7 @@ d532d97 chore(s00): commission context engine
 ./factory/prompt-manifests
 ./factory/prompts
 ./factory/providers
+./factory/releases
 ./factory/reports
 ./factory/runtime
 ./factory/schemas
@@ -148,6 +141,7 @@ d532d97 chore(s00): commission context engine
 ./scripts/build-prompt.sh
 ./scripts/commission.sh
 ./scripts/resume.sh
+./scripts/run-execution.sh
 ./scripts/run-sprint.sh
 ./scripts/run-task.sh
 ./scripts/validate.sh
