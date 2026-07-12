@@ -1,0 +1,49 @@
+schema_version: '1.0'
+prompt:
+  id: s01-t00
+  sprint: S01
+  task: T00
+  provider: codex
+  template: factory/prompts/templates/codex-task.md
+objective: Audit the approved repository baseline, confirm the frozen Architecture
+  Baseline v2.2 and YSF v0.1.0 state, identify implementation gaps, and produce a
+  deterministic execution plan for Sprint-01 without changing product runtime source
+  code.
+context:
+  directory: factory/contexts/generated/s01
+  manifest: factory/contexts/generated/s01/context.json
+  content: factory/contexts/generated/s01/context.md
+repository:
+  include_status: true
+  include_branch: true
+  include_recent_commits: 10
+  include_tree_depth: 2
+constraints:
+  allowed_paths:
+  - factory/
+  - knowledge/
+  - tools/
+  - scripts/
+  - docs/ESPK/
+  protected_paths:
+  - docs/AFM/
+  - docs/BRD/
+  - docs/ABP/
+  - docs/YADF/
+  - docs/AAP/
+  - docs/SGP/
+  - docs/ESP/
+  - docs/DIP/
+  - docs/ROP/
+validation:
+  commands:
+  - ysf verify
+  - git diff --check
+completion:
+  required_outputs:
+  - repository assessment
+  - identified risks
+  - validation result
+  - implementation recommendation
+output:
+  directory: factory/prompts/generated/s01/t00
