@@ -1,0 +1,48 @@
+schema_version: '1.0'
+prompt:
+  id: s01-t02
+  sprint: S01
+  task: T02
+  provider: codex
+  template: factory/prompts/templates/codex-task.md
+objective: Bootstrap the YSim NestJS API application with a minimal production-oriented
+  module structure, strict TypeScript configuration, test harness, and application
+  lifecycle while keeping business domains out of scope.
+context:
+  directory: factory/contexts/generated/s01
+  manifest: factory/contexts/generated/s01/context.json
+  content: factory/contexts/generated/s01/context.md
+repository:
+  include_status: true
+  include_branch: true
+  include_recent_commits: 10
+  include_tree_depth: 2
+constraints:
+  allowed_paths:
+  - factory/
+  - knowledge/
+  - tools/
+  - scripts/
+  - docs/ESPK/
+  protected_paths:
+  - docs/AFM/
+  - docs/BRD/
+  - docs/ABP/
+  - docs/YADF/
+  - docs/AAP/
+  - docs/SGP/
+  - docs/ESP/
+  - docs/DIP/
+  - docs/ROP/
+validation:
+  commands:
+  - ysf verify
+  - git diff --check
+completion:
+  required_outputs:
+  - repository assessment
+  - identified risks
+  - validation result
+  - implementation recommendation
+output:
+  directory: factory/prompts/generated/s01/t02
