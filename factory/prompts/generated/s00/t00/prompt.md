@@ -41,14 +41,15 @@ M factory/contexts/generated/s00/context.json
  M knowledge/catalog/relationships.json
  M knowledge/catalog/summary.json
  M knowledge/normalized/documents.json
-?? factory/prompts/generated/s01/t01/
-?? factory/reports/s01/s01-t01-workspace-foundation.md
+?? factory/prompts/generated/s01/t02/
+?? factory/reports/s01/s01-t02-api-bootstrap.md
 ```
 
 ## Recent Commits
 
 ```text
-e3ed5dd (HEAD -> feat/s01-platform-foundation, origin/feat/s01-platform-foundation) prepared
+bdcec14 (HEAD -> feat/s01-platform-foundation, tag: s01-t01-complete) feat(s01-t01): establish monorepo workspace foundation
+e3ed5dd (origin/feat/s01-platform-foundation) prepared
 d6629e4 chore(s01): add sequential sprint auto runner
 10ace03 docs(s01-t00): complete repository audit and execution plan
 3a89828 fix(s01): align prompt manifests and validator with ysf schema
@@ -57,7 +58,6 @@ d6629e4 chore(s01): add sequential sprint auto runner
 fde2273 docs(v2.2): add UXF, CAP, ECS, PCS, POL and ABP-18
 1f9beab release(s00): freeze ysf v0.1.0 dry-run engine
 ab9ab71 chore(s00): finalize ysf dry-run pipeline
-a831948 feat(s00): add execution pipeline stage abstraction
 ```
 
 ## Repository Tree
