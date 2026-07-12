@@ -1,5 +1,3 @@
-"""YSF pipeline engine."""
+"""YSF pipeline engine package."""
 
-from ysf.pipeline.service import run_pipeline
-
-__all__ = ["run_pipeline"]
+__all__: list[str] = []

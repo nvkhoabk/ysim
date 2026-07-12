@@ -303,6 +303,39 @@ def create_parser() -> argparse.ArgumentParser:
             "after a failure."
         ),
     )
+
+    pipeline_parser.add_argument(
+        "--execution-prompt-artifact",
+        default=(
+            "factory/prompts/generated/"
+            "s00/t00/prompt.json"
+        ),
+        help=(
+            "Prompt artifact used by the "
+            "dry-run execution stage."
+        ),
+    )
+
+    pipeline_parser.add_argument(
+        "--execution-id",
+        default=None,
+        help=(
+            "Optional execution ID for "
+            "the execution stage."
+        ),
+    )
+
+    pipeline_parser.add_argument(
+        "--execution-output-directory",
+        default=(
+            "factory/executions/s00/t00"
+        ),
+        help=(
+            "Output directory for execution "
+            "plan and reports."
+        ),
+    )
+
     verify_parser = subparsers.add_parser(
         "verify",
         help="Run the complete YSF quality gate.",
@@ -418,14 +451,28 @@ def main() -> int:
             )
 
         elif args.command == "pipeline":
+            execution_prompt_artifact = Path(
+                args.execution_prompt_artifact
+            )
+
+            execution_output_directory = Path(
+                args.execution_output_directory
+            )
+
             result = run_pipeline(
                 repository_root=repository_root,
                 stage_names=args.stages,
                 fail_fast=(
                     not args.continue_on_error
                 ),
+                execution_prompt_artifact=(
+                    execution_prompt_artifact
+                ),
+                execution_id=args.execution_id,
+                execution_output_directory=(
+                    execution_output_directory
+                ),
             )
-
         elif args.command == "verify":
             result = run_verification(
                 repository_root
