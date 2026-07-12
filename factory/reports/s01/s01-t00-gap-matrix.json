@@ -1,0 +1,215 @@
+{
+  "schemaVersion": "1.0",
+  "sprint": "S01",
+  "task": "s01-t00",
+  "generatedAt": "2026-07-12T22:30:00+07:00",
+  "baseline": {
+    "architecture": {
+      "tag": "architecture-v2.2",
+      "commit": "5be8413d3c22d1345b3088424af40ca2eb9d1115",
+      "status": "confirmed"
+    },
+    "ysf": {
+      "version": "0.1.0",
+      "status": "confirmed",
+      "pathNote": "Bare ysf is not on PATH; repository wrapper ./scripts/ysf.sh resolves ../.venv-ysf/bin/ysf."
+    },
+    "branch": "feat/s01-platform-foundation",
+    "head": "3a8982808b16d869976e9304bdb7230cdb272871"
+  },
+  "targetStructure": [
+    {
+      "path": "apps/",
+      "status": "missing",
+      "plannedTask": "s01-t01",
+      "notes": "Top-level application directory is absent; create tracked foundation only."
+    },
+    {
+      "path": "apps/api/",
+      "status": "missing",
+      "plannedTask": "s01-t02",
+      "notes": "NestJS API bootstrap not implemented."
+    },
+    {
+      "path": "apps/admin-web/",
+      "status": "missing",
+      "plannedTask": "s01-t08",
+      "notes": "Admin shell not implemented."
+    },
+    {
+      "path": "apps/storefront-web/",
+      "status": "missing",
+      "plannedTask": "s01-t08",
+      "notes": "Storefront shell not implemented; must retain no-supplier-reference invariant."
+    },
+    {
+      "path": "packages/",
+      "status": "missing",
+      "plannedTask": "s01-t01",
+      "notes": "Shared package workspace absent."
+    },
+    {
+      "path": "packages/config/",
+      "status": "missing",
+      "plannedTask": "s01-t03",
+      "notes": "Typed configuration package not implemented."
+    },
+    {
+      "path": "packages/contracts/",
+      "status": "missing",
+      "plannedTask": "s01-t02",
+      "notes": "Contract package may be created for platform contracts only."
+    },
+    {
+      "path": "packages/design-tokens/",
+      "status": "missing",
+      "plannedTask": "s01-t08",
+      "notes": "Design token baseline not implemented."
+    },
+    {
+      "path": "packages/errors/",
+      "status": "missing",
+      "plannedTask": "s01-t04",
+      "notes": "Platform error contract not implemented."
+    },
+    {
+      "path": "packages/logging/",
+      "status": "missing",
+      "plannedTask": "s01-t04",
+      "notes": "Structured logging package not implemented."
+    },
+    {
+      "path": "packages/runtime-context/",
+      "status": "missing",
+      "plannedTask": "s01-t08",
+      "notes": "Frontend/runtime context types not implemented."
+    },
+    {
+      "path": "packages/testing/",
+      "status": "missing",
+      "plannedTask": "s01-t02",
+      "notes": "Shared testing helpers absent."
+    },
+    {
+      "path": "packages/ui/",
+      "status": "missing",
+      "plannedTask": "s01-t08",
+      "notes": "Shared UI package absent."
+    },
+    {
+      "path": "database/",
+      "status": "missing",
+      "plannedTask": "s01-t05",
+      "notes": "Database conventions absent; no business migrations should be introduced."
+    },
+    {
+      "path": "integrations/",
+      "status": "missing",
+      "plannedTask": "s01-t05",
+      "notes": "Integration folder absent; no supplier implementation in Sprint-01."
+    },
+    {
+      "path": "infrastructure/",
+      "status": "missing",
+      "plannedTask": "s01-t05",
+      "notes": "Infrastructure baseline absent."
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "status": "missing",
+      "plannedTask": "s01-t09",
+      "notes": "CI workflow not implemented."
+    },
+    {
+      "path": "pnpm-workspace.yaml",
+      "status": "missing",
+      "plannedTask": "s01-t01",
+      "notes": "Workspace discovery cannot run until created."
+    },
+    {
+      "path": "package.json",
+      "status": "missing",
+      "plannedTask": "s01-t01",
+      "notes": "Root package scripts absent."
+    },
+    {
+      "path": "tsconfig.base.json",
+      "status": "missing",
+      "plannedTask": "s01-t01",
+      "notes": "Strict TypeScript baseline absent."
+    },
+    {
+      "path": "eslint.config.*",
+      "status": "missing",
+      "plannedTask": "s01-t01",
+      "notes": "Shared lint baseline absent."
+    },
+    {
+      "path": ".env.example",
+      "status": "missing",
+      "plannedTask": "s01-t01",
+      "notes": "Safe environment example absent."
+    },
+    {
+      "path": "docker-compose.yml",
+      "status": "missing",
+      "plannedTask": "s01-t05",
+      "notes": "Local PostgreSQL, Redis, MinIO, and Mailpit baseline absent."
+    },
+    {
+      "path": "docs/",
+      "status": "existing",
+      "plannedTask": "none",
+      "notes": "Frozen architecture and supporting documents are present and must not be silently edited."
+    },
+    {
+      "path": "factory/",
+      "status": "existing",
+      "plannedTask": "s01-t00-through-s01-t10",
+      "notes": "YSF factory artifacts exist; current S01 prompts/context are generated artifacts."
+    },
+    {
+      "path": "knowledge/",
+      "status": "existing",
+      "plannedTask": "s01-t00-through-s01-t10",
+      "notes": "Knowledge catalogs exist; current tracked changes are generated/catalog artifacts."
+    },
+    {
+      "path": "tools/ysf/",
+      "status": "existing",
+      "plannedTask": "none",
+      "notes": "YSF implementation exists and verifies through the repository wrapper."
+    }
+  ],
+  "risks": [
+    {
+      "id": "R-S01-T00-001",
+      "severity": "medium",
+      "summary": "The exact command ysf verify fails when ysf is not on PATH.",
+      "mitigation": "Use ./scripts/ysf.sh verify or export ../.venv-ysf/bin on PATH before task gates."
+    },
+    {
+      "id": "R-S01-T00-002",
+      "severity": "medium",
+      "summary": "Several Sprint-01 pack files are untracked and outside the prompt's narrower allowed paths.",
+      "mitigation": "Treat them as pre-existing Sprint pack artifacts; do not edit them in T00 unless task scope explicitly allows."
+    },
+    {
+      "id": "R-S01-T00-003",
+      "severity": "low",
+      "summary": "s01-t06 through s01-t10 manifests are less detailed than s01-t01 through s01-t05.",
+      "mitigation": "Before execution, derive task prompts from SCOPE, TARGET_STRUCTURE, ACCEPTANCE, EXECUTION_ORDER, and architecture invariants."
+    },
+    {
+      "id": "R-S01-T00-004",
+      "severity": "medium",
+      "summary": "Product runtime foundation is not implemented yet.",
+      "mitigation": "Execute tasks sequentially; do not skip workspace, API, config, logging, infrastructure, background runtime, frontend, CI, and evidence gates."
+    }
+  ],
+  "validation": {
+    "gitDiffCheck": "pass",
+    "ysfVerifyBareCommand": "fail-command-not-found",
+    "ysfVerifyRepositoryWrapper": "pass"
+  }
+}
