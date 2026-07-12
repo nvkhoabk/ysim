@@ -38,12 +38,12 @@
     "mode": "dry-run",
     "dryRun": true,
     "promptPath": "factory/prompts/generated/s00/t00/prompt.md",
-    "promptHash": "200f432afd89a093fbe659d7b74850581bfe3a3be2a29adfc49b71c5f87f42c4",
-    "estimatedTokens": 46884,
+    "promptHash": "a275f2fc9bc981806fbfdeb9e55d6e27d14ec1a2f2ef6c71b419459073388af7",
+    "estimatedTokens": 46867,
     "workspace": {
       "repositoryRoot": "/root/projects/ysim-v2.1/ysim",
       "branch": "feat/s01-platform-foundation",
-      "headCommit": "7548433419f00e336f1cdf899b85782adb193a6d",
+      "headCommit": "e5e1ac3dd243279572bcb40e6a44080899358986",
       "workingTreeClean": false,
       "statusLines": [
         "M factory/contexts/generated/s00/context.json",
@@ -56,9 +56,6 @@
         " M factory/prompts/generated/s00/t00/manifest.json",
         " M factory/prompts/generated/s00/t00/prompt.json",
         " M factory/prompts/generated/s00/t00/prompt.md",
-        " M factory/prompts/generated/s01/t03/manifest.json",
-        " M factory/prompts/generated/s01/t03/prompt.json",
-        " M factory/prompts/generated/s01/t03/prompt.md",
         " M knowledge/catalog/capabilities.json",
         " M knowledge/catalog/document-sets.json",
         " M knowledge/catalog/documents.json",
@@ -67,9 +64,12 @@
         " M knowledge/catalog/relationships.json",
         " M knowledge/catalog/summary.json",
         " M knowledge/normalized/documents.json",
-        "?? factory/reports/s01/s01-t03-configuration.md"
+        "?? factory/prompts/generated/s01/t04/manifest.json",
+        "?? factory/prompts/generated/s01/t04/prompt.json",
+        "?? factory/prompts/generated/s01/t04/prompt.md",
+        "?? factory/reports/s01/s01-t04-logging-errors.md"
       ],
-      "capturedAt": "2026-07-13T00:25:45.944837+07:00"
+      "capturedAt": "2026-07-13T00:27:15.059890+07:00"
     },
     "allowedPaths": [
       "factory/",
@@ -98,7 +98,7 @@
     "schemaVersion": "1.0",
     "repositoryRoot": "/root/projects/ysim-v2.1/ysim",
     "branch": "feat/s01-platform-foundation",
-    "headCommit": "7548433419f00e336f1cdf899b85782adb193a6d",
+    "headCommit": "e5e1ac3dd243279572bcb40e6a44080899358986",
     "workingTreeClean": false,
     "statusLines": [
       "M factory/contexts/generated/s00/context.json",
@@ -111,9 +111,6 @@
       " M factory/prompts/generated/s00/t00/manifest.json",
       " M factory/prompts/generated/s00/t00/prompt.json",
       " M factory/prompts/generated/s00/t00/prompt.md",
-      " M factory/prompts/generated/s01/t03/manifest.json",
-      " M factory/prompts/generated/s01/t03/prompt.json",
-      " M factory/prompts/generated/s01/t03/prompt.md",
       " M knowledge/catalog/capabilities.json",
       " M knowledge/catalog/document-sets.json",
       " M knowledge/catalog/documents.json",
@@ -122,10 +119,13 @@
       " M knowledge/catalog/relationships.json",
       " M knowledge/catalog/summary.json",
       " M knowledge/normalized/documents.json",
-      "?? factory/reports/s01/s01-t03-configuration.md"
+      "?? factory/prompts/generated/s01/t04/manifest.json",
+      "?? factory/prompts/generated/s01/t04/prompt.json",
+      "?? factory/prompts/generated/s01/t04/prompt.md",
+      "?? factory/reports/s01/s01-t04-logging-errors.md"
     ],
-    "capturedAt": "2026-07-13T00:25:45.944837+07:00",
-    "snapshotHash": "136b0805cb8519f1244f97dc68106153396343e7f602a153f6e43070597f60eb"
+    "capturedAt": "2026-07-13T00:27:15.059890+07:00",
+    "snapshotHash": "dac450fdbeebcde0525a421124675db4e756889229c5c2890d64b3196878d2a2"
   },
   "result": {
     "executionId": "s00-t00-pipeline-dry-run",
@@ -133,9 +133,9 @@
     "provider": "codex",
     "mode": "dry-run",
     "dryRun": true,
-    "startedAt": "2026-07-13T00:25:45.945422+07:00",
-    "finishedAt": "2026-07-13T00:25:45.945445+07:00",
-    "durationSeconds": 4.5e-05,
+    "startedAt": "2026-07-13T00:27:15.060474+07:00",
+    "finishedAt": "2026-07-13T00:27:15.060494+07:00",
+    "durationSeconds": 4.2e-05,
     "message": "Codex dry-run completed. No provider process was started.",
     "exitCode": 0,
     "stdout": "DRY RUN\nProvider: codex\nPrompt: factory/prompts/generated/s00/t00/prompt.md\nNo files were modified.\n",

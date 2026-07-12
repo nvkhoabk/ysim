@@ -33,9 +33,6 @@ M factory/contexts/generated/s00/context.json
  M factory/prompts/generated/s00/t00/manifest.json
  M factory/prompts/generated/s00/t00/prompt.json
  M factory/prompts/generated/s00/t00/prompt.md
- M factory/prompts/generated/s01/t03/manifest.json
- M factory/prompts/generated/s01/t03/prompt.json
- M factory/prompts/generated/s01/t03/prompt.md
  M knowledge/catalog/capabilities.json
  M knowledge/catalog/document-sets.json
  M knowledge/catalog/documents.json
@@ -44,13 +41,15 @@ M factory/contexts/generated/s00/context.json
  M knowledge/catalog/relationships.json
  M knowledge/catalog/summary.json
  M knowledge/normalized/documents.json
-?? factory/reports/s01/s01-t03-configuration.md
+?? factory/prompts/generated/s01/t04/
+?? factory/reports/s01/s01-t04-logging-errors.md
 ```
 
 ## Recent Commits
 
 ```text
-7548433 (HEAD -> feat/s01-platform-foundation, origin/feat/s01-platform-foundation) prepared
+e5e1ac3 (HEAD -> feat/s01-platform-foundation, tag: s01-t03-complete) feat(s01-t03): add typed configuration and environment validation
+7548433 (origin/feat/s01-platform-foundation) prepared
 af7d70e (tag: s01-t02-complete) feat(s01-t02): bootstrap NestJS API application
 bdcec14 (tag: s01-t01-complete) feat(s01-t01): establish monorepo workspace foundation
 e3ed5dd prepared
@@ -59,7 +58,6 @@ d6629e4 chore(s01): add sequential sprint auto runner
 3a89828 fix(s01): align prompt manifests and validator with ysf schema
 9154741 fix(s01): align t00 prompt manifest with ysf schema
 5be8413 (tag: architecture-v2.2, origin/chore/s00-factory-commissioning, chore/s00-factory-commissioning) release(architecture): freeze architecture baseline v2.2
-fde2273 docs(v2.2): add UXF, CAP, ECS, PCS, POL and ABP-18
 ```
 
 ## Repository Tree
