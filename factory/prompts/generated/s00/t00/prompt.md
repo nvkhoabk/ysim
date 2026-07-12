@@ -27,7 +27,9 @@ M factory/contexts/generated/s00/context.json
  M factory/index/catalog.json
  M factory/index/documents.json
  M factory/index/knowledge.json
- M factory/prompt-manifests/s00-t00.yaml
+ M factory/prompts/generated/s00/t00/manifest.json
+ M factory/prompts/generated/s00/t00/prompt.json
+ M factory/prompts/generated/s00/t00/prompt.md
  M factory/reports/s00/step-07-knowledge-factory.md
  M knowledge/catalog/capabilities.json
  M knowledge/catalog/document-sets.json
@@ -37,41 +39,30 @@ M factory/contexts/generated/s00/context.json
  M knowledge/catalog/relationships.json
  M knowledge/catalog/summary.json
  M knowledge/normalized/documents.json
- M scripts/build-prompt.sh
  M tools/ysf/src/ysf.egg-info/SOURCES.txt
- M tools/ysf/src/ysf/__pycache__/cli.cpython-311.pyc
- M tools/ysf/src/ysf/cli.py
- M tools/ysf/src/ysf/pipeline/__pycache__/service.cpython-311.pyc
- M tools/ysf/src/ysf/pipeline/__pycache__/stage.cpython-311.pyc
- M tools/ysf/src/ysf/pipeline/__pycache__/stages.cpython-311.pyc
- M tools/ysf/src/ysf/pipeline/service.py
- M tools/ysf/src/ysf/pipeline/stage.py
- M tools/ysf/src/ysf/pipeline/stages.py
- M tools/ysf/src/ysf/prompt/__init__.py
-?? factory/prompts/generated/
-?? factory/prompts/templates/codex-task.md
-?? factory/reports/s00/step-13-ysf-prompt-builder.md
-?? scripts/build-prompt.legacy.sh
-?? tools/ysf/src/ysf/prompt/__pycache__/
-?? tools/ysf/src/ysf/prompt/manifest.py
-?? tools/ysf/src/ysf/prompt/models.py
-?? tools/ysf/src/ysf/prompt/renderer.py
-?? tools/ysf/src/ysf/prompt/repository.py
-?? tools/ysf/src/ysf/prompt/service.py
-?? tools/ysf/src/ysf/prompt/validator.py
-?? tools/ysf/tests/integration/__pycache__/test_build_prompt.cpython-311-pytest-8.4.2.pyc
-?? tools/ysf/tests/integration/test_build_prompt.py
-?? tools/ysf/tests/unit/__pycache__/test_prompt_renderer.cpython-311-pytest-8.4.2.pyc
-?? tools/ysf/tests/unit/__pycache__/test_prompt_validator.cpython-311-pytest-8.4.2.pyc
-?? tools/ysf/tests/unit/__pycache__/test_verification.cpython-311-pytest-8.4.2.pyc
-?? tools/ysf/tests/unit/test_prompt_renderer.py
-?? tools/ysf/tests/unit/test_prompt_validator.py
+ M tools/ysf/src/ysf/execution/__init__.py
+ M tools/ysf/src/ysf/execution/__pycache__/__init__.cpython-311.pyc
+ M tools/ysf/src/ysf/execution/workspace.py
+?? factory/executions/
+?? tools/ysf/src/ysf/execution/__pycache__/workspace.cpython-311.pyc
+?? tools/ysf/src/ysf/execution/providers/
+?? tools/ysf/tests/integration/__pycache__/test_workspace_snapshot_integration.cpython-311-pytest-8.4.2.pyc
+?? tools/ysf/tests/integration/test_workspace_snapshot_integration.py
+?? tools/ysf/tests/unit/__pycache__/test_codex_provider.cpython-311-pytest-8.4.2.pyc
+?? tools/ysf/tests/unit/__pycache__/test_execution_models.cpython-311-pytest-8.4.2.pyc
+?? tools/ysf/tests/unit/__pycache__/test_provider_registry.cpython-311-pytest-8.4.2.pyc
+?? tools/ysf/tests/unit/__pycache__/test_workspace_snapshot.cpython-311-pytest-8.4.2.pyc
+?? tools/ysf/tests/unit/test_codex_provider.py
+?? tools/ysf/tests/unit/test_provider_registry.py
+?? tools/ysf/tests/unit/test_workspace_snapshot.py
 ```
 
 ## Recent Commits
 
 ```text
-e44f995 (HEAD -> chore/s00-factory-commissioning, origin/chore/s00-factory-commissioning) feat(s00): add unified ysf verification gate
+737e18c (HEAD -> chore/s00-factory-commissioning, origin/chore/s00-factory-commissioning) feat(s00): add ysf execution models
+db1fdec feat(s00): migrate prompt builder into ysf pipeline
+e44f995 feat(s00): add unified ysf verification gate
 1b613b6 feat(s00): migrate context builder into ysf pipeline
 cf6e363 feat(s00): establish ysf pipeline engine
 ba3dd94 feat(s00): migrate knowledge builder into ysf
@@ -79,8 +70,6 @@ ba3dd94 feat(s00): migrate knowledge builder into ysf
 07ac27c feat(s00): establish ysf production toolchain
 4533e02 fix(s00): preserve required documents in context selection
 d532d97 chore(s00): commission context engine
-0123080 fix(s00): align sprint package document identity
-ddee3dd chore(s00): harden documentation indexing and metadata validation
 ```
 
 ## Repository Tree
@@ -114,6 +103,7 @@ ddee3dd chore(s00): harden documentation indexing and metadata validation
 ./factory/context-manifests
 ./factory/contexts
 ./factory/evidence
+./factory/executions
 ./factory/index
 ./factory/manifests
 ./factory/prompt-manifests

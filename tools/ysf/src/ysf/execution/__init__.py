@@ -8,6 +8,12 @@ from ysf.execution.models import (
     ExecutionStatus,
     WorkspaceSnapshot,
 )
+from ysf.execution.workspace import (
+    WorkspaceSnapshotError,
+    capture_workspace_snapshot,
+    snapshot_to_payload,
+    write_workspace_snapshot,
+)
 
 __all__ = [
     "ExecutionArtifact",
@@ -16,4 +22,8 @@ __all__ = [
     "ExecutionResult",
     "ExecutionStatus",
     "WorkspaceSnapshot",
+    "WorkspaceSnapshotError",
+    "capture_workspace_snapshot",
+    "snapshot_to_payload",
+    "write_workspace_snapshot",
 ]
