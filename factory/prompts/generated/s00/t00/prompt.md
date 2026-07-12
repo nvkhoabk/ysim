@@ -25,8 +25,6 @@ feat/s01-platform-foundation
 ```text
 M factory/contexts/generated/s00/context.json
  M factory/executions/s00/t00/plan.json
- M factory/executions/s00/t00/report.json
- M factory/executions/s00/t00/report.md
  M factory/index/catalog.json
  M factory/index/documents.json
  M factory/index/knowledge.json
@@ -41,14 +39,14 @@ M factory/contexts/generated/s00/context.json
  M knowledge/catalog/relationships.json
  M knowledge/catalog/summary.json
  M knowledge/normalized/documents.json
-?? factory/prompts/generated/s01/t02/
-?? factory/reports/s01/s01-t02-api-bootstrap.md
+?? factory/prompts/generated/s01/t03/
 ```
 
 ## Recent Commits
 
 ```text
-bdcec14 (HEAD -> feat/s01-platform-foundation, tag: s01-t01-complete) feat(s01-t01): establish monorepo workspace foundation
+af7d70e (HEAD -> feat/s01-platform-foundation, tag: s01-t02-complete) feat(s01-t02): bootstrap NestJS API application
+bdcec14 (tag: s01-t01-complete) feat(s01-t01): establish monorepo workspace foundation
 e3ed5dd (origin/feat/s01-platform-foundation) prepared
 d6629e4 chore(s01): add sequential sprint auto runner
 10ace03 docs(s01-t00): complete repository audit and execution plan
@@ -57,7 +55,6 @@ d6629e4 chore(s01): add sequential sprint auto runner
 5be8413 (tag: architecture-v2.2, origin/chore/s00-factory-commissioning, chore/s00-factory-commissioning) release(architecture): freeze architecture baseline v2.2
 fde2273 docs(v2.2): add UXF, CAP, ECS, PCS, POL and ABP-18
 1f9beab release(s00): freeze ysf v0.1.0 dry-run engine
-ab9ab71 chore(s00): finalize ysf dry-run pipeline
 ```
 
 ## Repository Tree
@@ -65,6 +62,7 @@ ab9ab71 chore(s00): finalize ysf dry-run pipeline
 ```text
 .
 ./.agents
+./.codex
 ./.mypy_cache
 ./.mypy_cache/.gitignore
 ./.mypy_cache/3.11

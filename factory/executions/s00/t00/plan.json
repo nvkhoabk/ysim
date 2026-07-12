@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-07-13T00:22:29.204692+07:00",
+  "generatedAt": "2026-07-13T00:23:09.546882+07:00",
   "status": "PLANNED",
   "request": {
     "executionId": "s00-t00-pipeline-dry-run",
@@ -40,18 +40,16 @@
     "mode": "dry-run",
     "dryRun": true,
     "promptPath": "factory/prompts/generated/s00/t00/prompt.md",
-    "promptHash": "779cf9612ae368da8a4e3807f5ec027310c4b67d0441d4cf77e87de568f8a896",
-    "estimatedTokens": 46859,
+    "promptHash": "246072b02c32e99ca8b95051794b7c97b6f1bddab7ff3b5677baf32d09139f9f",
+    "estimatedTokens": 46836,
     "workspace": {
       "repositoryRoot": "/root/projects/ysim-v2.1/ysim",
       "branch": "feat/s01-platform-foundation",
-      "headCommit": "bdcec1410c0521f779d7b5ce933e6dec3c45824c",
+      "headCommit": "af7d70e1cb936838d4d070c86c291ff55558f8af",
       "workingTreeClean": false,
       "statusLines": [
         "M factory/contexts/generated/s00/context.json",
         " M factory/executions/s00/t00/plan.json",
-        " M factory/executions/s00/t00/report.json",
-        " M factory/executions/s00/t00/report.md",
         " M factory/index/catalog.json",
         " M factory/index/documents.json",
         " M factory/index/knowledge.json",
@@ -66,12 +64,11 @@
         " M knowledge/catalog/relationships.json",
         " M knowledge/catalog/summary.json",
         " M knowledge/normalized/documents.json",
-        "?? factory/prompts/generated/s01/t02/manifest.json",
-        "?? factory/prompts/generated/s01/t02/prompt.json",
-        "?? factory/prompts/generated/s01/t02/prompt.md",
-        "?? factory/reports/s01/s01-t02-api-bootstrap.md"
+        "?? factory/prompts/generated/s01/t03/manifest.json",
+        "?? factory/prompts/generated/s01/t03/prompt.json",
+        "?? factory/prompts/generated/s01/t03/prompt.md"
       ],
-      "capturedAt": "2026-07-13T00:22:29.204533+07:00"
+      "capturedAt": "2026-07-13T00:23:09.546590+07:00"
     },
     "allowedPaths": [
       "factory/",
@@ -100,13 +97,11 @@
     "schemaVersion": "1.0",
     "repositoryRoot": "/root/projects/ysim-v2.1/ysim",
     "branch": "feat/s01-platform-foundation",
-    "headCommit": "bdcec1410c0521f779d7b5ce933e6dec3c45824c",
+    "headCommit": "af7d70e1cb936838d4d070c86c291ff55558f8af",
     "workingTreeClean": false,
     "statusLines": [
       "M factory/contexts/generated/s00/context.json",
       " M factory/executions/s00/t00/plan.json",
-      " M factory/executions/s00/t00/report.json",
-      " M factory/executions/s00/t00/report.md",
       " M factory/index/catalog.json",
       " M factory/index/documents.json",
       " M factory/index/knowledge.json",
@@ -121,12 +116,11 @@
       " M knowledge/catalog/relationships.json",
       " M knowledge/catalog/summary.json",
       " M knowledge/normalized/documents.json",
-      "?? factory/prompts/generated/s01/t02/manifest.json",
-      "?? factory/prompts/generated/s01/t02/prompt.json",
-      "?? factory/prompts/generated/s01/t02/prompt.md",
-      "?? factory/reports/s01/s01-t02-api-bootstrap.md"
+      "?? factory/prompts/generated/s01/t03/manifest.json",
+      "?? factory/prompts/generated/s01/t03/prompt.json",
+      "?? factory/prompts/generated/s01/t03/prompt.md"
     ],
-    "capturedAt": "2026-07-13T00:22:29.204533+07:00",
-    "snapshotHash": "0978bdd80070b8946fd6e9b15c8272c2a2471dcda5e3d74c8c5fd843ab8ce042"
+    "capturedAt": "2026-07-13T00:23:09.546590+07:00",
+    "snapshotHash": "6b5e89b5c67d44ace8f49f51c051712b3e9d3002024bcea21d80a656047cba49"
   }
 }
