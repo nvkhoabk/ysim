@@ -13,6 +13,7 @@ from ysf.core.repository import (
     find_repository_root,
 )
 from ysf.core.result import CommandResult
+from ysf.execution.service import run_dry_execution
 from ysf.index.service import build_indexes
 from ysf.knowledge.service import build_knowledge
 from ysf.pipeline.service import run_pipeline
@@ -160,6 +161,32 @@ def print_result(
                 )
             )
 
+    elif result.command == "run":
+        print(
+            "  execution: "
+            f"{result.data['executionId']}"
+        )
+        print(
+            "  provider: "
+            f"{result.data['provider']}"
+        )
+        print(
+            "  mode: "
+            f"{result.data['mode']}"
+        )
+        print(
+            "  provider invoked: "
+            f"{result.data['providerInvoked']}"
+        )
+        print(
+            "  modified files: "
+            f"{result.data['modifiedFileCount']}"
+        )
+        print(
+            "  report: "
+            f"{result.data['reportJson']}"
+        )
+
 
 def create_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
@@ -287,6 +314,46 @@ def create_parser() -> argparse.ArgumentParser:
         help="Print machine-readable JSON.",
     )
 
+    run_parser = subparsers.add_parser(
+        "run",
+        help="Run an execution plan.",
+    )
+
+    run_parser.add_argument(
+        "--prompt-artifact",
+        default=(
+            "factory/prompts/generated/"
+            "s00/t00/prompt.json"
+        ),
+        help="Path to prompt.json.",
+    )
+
+    run_parser.add_argument(
+        "--provider",
+        default=None,
+        help="Override the provider.",
+    )
+
+    run_parser.add_argument(
+        "--execution-id",
+        default=None,
+        help="Optional execution ID.",
+    )
+
+    run_parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        help=(
+            "Run without invoking an AI provider "
+            "or modifying files."
+        ),
+    )
+
+    run_parser.add_argument(
+        "--json",
+        action="store_true",
+    )
+
     return parser
 
 
@@ -362,6 +429,35 @@ def main() -> int:
         elif args.command == "verify":
             result = run_verification(
                 repository_root
+            )
+
+        elif args.command == "run":
+            if not args.dry_run:
+                parser.error(
+                    "Step 14E requires --dry-run."
+                )
+                return 2
+
+            prompt_artifact_path = Path(
+                args.prompt_artifact
+            )
+
+            if not prompt_artifact_path.is_absolute():
+                prompt_artifact_path = (
+                    repository_root
+                    / prompt_artifact_path
+                )
+
+            result = run_dry_execution(
+                repository_root=repository_root,
+                prompt_artifact_path=(
+                    prompt_artifact_path
+                ),
+                provider=args.provider,
+                execution_id=(
+                    args.execution_id
+                ),
+                mode="dry-run",
             )
 
         else:

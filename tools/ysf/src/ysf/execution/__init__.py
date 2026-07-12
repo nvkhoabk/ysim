@@ -1,4 +1,4 @@
-"""YSF execution engine models and services."""
+"""YSF execution engine."""
 
 from ysf.execution.models import (
     ExecutionArtifact,
@@ -17,6 +17,18 @@ from ysf.execution.planner import (
     plan_execution,
     write_execution_plan,
 )
+from ysf.execution.report import (
+    ExecutionReportError,
+    write_execution_report,
+)
+from ysf.execution.runner import (
+    ExecutionRunnerError,
+    run_execution,
+)
+from ysf.execution.service import (
+    ExecutionServiceError,
+    run_dry_execution,
+)
 from ysf.execution.workspace import (
     WorkspaceSnapshotError,
     capture_workspace_snapshot,
@@ -28,8 +40,11 @@ __all__ = [
     "ExecutionArtifact",
     "ExecutionPlan",
     "ExecutionPlannerError",
+    "ExecutionReportError",
     "ExecutionRequest",
     "ExecutionResult",
+    "ExecutionRunnerError",
+    "ExecutionServiceError",
     "ExecutionStatus",
     "WorkspaceSnapshot",
     "WorkspaceSnapshotError",
@@ -39,7 +54,10 @@ __all__ = [
     "default_execution_id",
     "default_plan_output",
     "plan_execution",
+    "run_dry_execution",
+    "run_execution",
     "snapshot_to_payload",
     "write_execution_plan",
+    "write_execution_report",
     "write_workspace_snapshot",
 ]

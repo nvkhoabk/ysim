@@ -1,7 +1,5 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-07-12T13:28:02.558760+07:00",
-  "status": "PLANNED",
   "request": {
     "executionId": "s00-t00-dry-run",
     "sprint": "S00",
@@ -182,5 +180,32 @@
     ],
     "capturedAt": "2026-07-12T13:28:02.558570+07:00",
     "snapshotHash": "c59b6db68f9aefe3c83d58326863f0959b6ec381f96fbf14b85d9cbd6ec1b5f3"
+  },
+  "result": {
+    "executionId": "s00-t00-dry-run",
+    "status": "PASS",
+    "provider": "codex",
+    "mode": "dry-run",
+    "dryRun": true,
+    "startedAt": "2026-07-12T13:28:02.559165+07:00",
+    "finishedAt": "2026-07-12T13:28:02.559171+07:00",
+    "durationSeconds": 2.2e-05,
+    "message": "Codex dry-run completed. No provider process was started.",
+    "exitCode": 0,
+    "stdout": "DRY RUN\nProvider: codex\nPrompt: factory/prompts/generated/s00/t00/prompt.md\nNo files were modified.\n",
+    "stderr": "",
+    "modifiedFiles": [],
+    "artifacts": [
+      {
+        "artifact_type": "execution-plan",
+        "path": "plan.json",
+        "description": "Validated dry-run execution plan."
+      }
+    ],
+    "metadata": {
+      "providerVersion": "0.2",
+      "providerInvoked": false,
+      "dryRun": true
+    }
   }
 }
