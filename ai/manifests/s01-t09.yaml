@@ -2,50 +2,161 @@ schema_version: "1.0"
 
 project:
   code: YSIM
+  name: YSim Platform
   version: "2.1"
 
 sprint:
   code: S01
+  name: Platform Foundation
   baseline: architecture-v2.2
+  ysf_version: "0.1.0"
 
 task:
   code: s01-t09
   order: 9
-  name: "Quality Gates, CI & Validation"
+  name: "Quality Gates, CI, Validation and Developer Workflow"
   status: planned
   execution_mode: sequential
+  agent: codex
+  fail_fast: true
+
+objective: >
+  Create a reproducible engineering quality pipeline for local and CI execution, including
+  install, lint, typecheck, tests, builds, infrastructure validation, security hygiene checks,
+  and human-readable failure output.
 
 depends_on:
   - s01-t08
 
-objective: >
-  Implement the quality gates, ci & validation while preserving all
-  architecture invariants and avoiding business-domain implementation.
+source_of_truth:
+  - TARGET_STRUCTURE.md
+  - ACCEPTANCE.md
+  - factory/reports/s01/s01-execution-plan.md
+
+required_reading:
+  - SCOPE.md
+  - TARGET_STRUCTURE.md
+  - ACCEPTANCE.md
+  - EXECUTION_ORDER.md
+  - DOCUMENT_BASELINE.md
+  - GOVERNANCE.md
+  - AFM-00
+  - YADF-00
+  - DIP-00
+  - DIP-01
+  - DIP-02
+  - DIP-04
+  - DIP-05
+  - DIP-06
+  - DIP-09
+  - ESPK-S00
+  - ABP-00
+  - ABP-01
+  - ABP-02
+  - ABP-03
+  - ABP-18
+  - UXF-00
+  - UXF-01
+  - UXF-02
+  - UXF-05
+  - CAP-00
+  - ECS-00
+  - PCS-00
+  - POL-00
+  - ESP-11
+  - ESP-12
+  - SGP-00
+  - SGP-01
 
 scope:
   include:
-    - "lint"
-    - "typecheck"
-    - "tests"
-    - "GitHub Actions"
-    - "verification scripts"
-
+    - "Root verify command."
+    - "GitHub Actions CI workflow."
+    - "Workspace lint, typecheck, test, and build stages."
+    - "Docker Compose config validation."
+    - "Secret hygiene checks."
+    - "Protected architecture path checks."
+    - "Supplier leakage check for Storefront/UI."
+    - "Human-readable validation summary."
   exclude:
-    - "Product"
-    - "Pricing"
-    - "Order"
-    - "Payment"
-    - "Allocation"
-    - "Supplier Gateway"
+    - "Production deployment."
+    - "Release promotion."
+    - "Cloud credentials."
+    - "Business end-to-end tests."
 
-quality_gates:
-  - "git diff --check"
-  - "ysf verify"
+architecture_invariants:
+  - "Local and CI commands must be consistent."
+  - "CI must be non-interactive."
+  - "Secrets must not be printed."
+  - "Quality gates must fail with actionable output."
+  - "Frozen architecture documents must be protected."
 
-deliverables:
-  - "Implementation"
-  - "Task report"
-  - "Validation evidence"
+protected_paths:
+  - docs/BRD/
+  - docs/ABP/
+  - docs/AFM/
+  - docs/YADF/
+  - docs/DIP/
+  - docs/UXF/
+  - docs/CAP/
+  - docs/ECS/
+  - docs/PCS/
+  - docs/POL/
+
+allowed_paths:
+  - .github/workflows/
+  - scripts/
+  - package.json
+  - pnpm-lock.yaml
+  - tools/
+  - factory/reports/s01/
+
+implementation:
+  - step: 1
+    action: "Define a single root verification command."
+  - step: 2
+    action: "Create CI workflow using pinned runtimes and caching."
+  - step: 3
+    action: "Add Docker Compose validation."
+  - step: 4
+    action: "Add checks for tracked secrets, forbidden files, protected paths, and supplier leakage."
+  - step: 5
+    action: "Add concise summary output and preserve logs on failure."
+  - step: 6
+    action: "Document local developer workflow."
+
+required_outputs:
+  - ".github/workflows/ci.yml"
+  - "scripts/verify-platform.sh"
+  - "scripts/check-protected-paths.sh"
+  - "scripts/check-supplier-boundary.sh"
+  - "factory/reports/s01/s01-t09-quality-gates.md"
+
+validation:
+  - command: "bash scripts/verify-platform.sh"
+    required: true
+  - command: "docker compose config"
+    required: true
+  - command: "pnpm -r build"
+    required: true
+  - command: "git diff --check"
+    required: true
+  - command: "./scripts/ysf.sh verify"
+    required: true
+
+acceptance_criteria:
+  - "One local command executes the full platform quality gate."
+  - "CI executes equivalent checks."
+  - "An intentional lint or test failure causes a clear non-zero result."
+  - "Protected-path and supplier-boundary checks detect violations."
+  - "No secret is exposed in logs."
+
+human_acceptance:
+  - "Run root verify from a clean checkout and receive a clear PASS."
+  - "Introduce a temporary failing test and confirm a useful failure, then revert."
+  - "Temporarily add a supplier reference to Storefront and confirm boundary check fails, then revert."
+  - "Inspect CI workflow for install, lint, typecheck, test, build, and YSF verification."
+  - "Confirm logs do not print credentials."
 
 commit:
-  message: "feat(s01-t09): Quality Gates, CI & Validation"
+  message: "test(s01-t09): add quality gates and CI validation"

@@ -5,8 +5,10 @@ prompt:
   task: T06
   provider: codex
   template: factory/prompts/templates/codex-task.md
-objective: Implement the bullmq, scheduler & background runtime foundation while preserving
-  all architecture invariants and avoiding business-domain implementation.
+objective: Establish the shared background execution foundation using BullMQ and a
+  scheduler abstraction, including queue naming, worker lifecycle, retry/backoff defaults,
+  failed-job handling, observability seams, and test coverage without implementing
+  any production business job.
 context:
   directory: factory/contexts/generated/s01
   manifest: factory/contexts/generated/s01/context.json

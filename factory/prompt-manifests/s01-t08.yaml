@@ -5,8 +5,9 @@ prompt:
   task: T08
   provider: codex
   template: factory/prompts/templates/codex-task.md
-objective: Implement the frontend shells, design tokens & shared ui while preserving
-  all architecture invariants and avoiding business-domain implementation.
+objective: Create buildable Admin and Storefront frontend shells sharing design tokens,
+  foundational UI components, runtime-context contracts, accessibility defaults, and
+  localization primitives without implementing production commerce flows.
 context:
   directory: factory/contexts/generated/s01
   manifest: factory/contexts/generated/s01/context.json

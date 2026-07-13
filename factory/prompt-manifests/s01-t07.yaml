@@ -5,8 +5,8 @@ prompt:
   task: T07
   provider: codex
   template: factory/prompts/templates/codex-task.md
-objective: Implement the health, readiness, openapi & operational endpoints while
-  preserving all architecture invariants and avoiding business-domain implementation.
+objective: Provide operational endpoints and API documentation so humans and infrastructure
+  can determine whether the API is alive, ready, correctly configured, and discoverable.
 context:
   directory: factory/contexts/generated/s01
   manifest: factory/contexts/generated/s01/context.json

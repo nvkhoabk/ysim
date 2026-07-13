@@ -5,8 +5,9 @@ prompt:
   task: T09
   provider: codex
   template: factory/prompts/templates/codex-task.md
-objective: Implement the quality gates, ci & validation while preserving all architecture
-  invariants and avoiding business-domain implementation.
+objective: Create a reproducible engineering quality pipeline for local and CI execution,
+  including install, lint, typecheck, tests, builds, infrastructure validation, security
+  hygiene checks, and human-readable failure output.
 context:
   directory: factory/contexts/generated/s01
   manifest: factory/contexts/generated/s01/context.json

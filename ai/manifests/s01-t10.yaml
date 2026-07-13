@@ -2,50 +2,163 @@ schema_version: "1.0"
 
 project:
   code: YSIM
+  name: YSim Platform
   version: "2.1"
 
 sprint:
   code: S01
+  name: Platform Foundation
   baseline: architecture-v2.2
+  ysf_version: "0.1.0"
 
 task:
   code: s01-t10
   order: 10
-  name: "Sprint Review, Evidence & Acceptance"
+  name: "Sprint Review, Human Acceptance, Evidence and Handover"
   status: planned
   execution_mode: sequential
+  agent: codex
+  fail_fast: true
+
+objective: >
+  Perform the final architectural, functional, operational, and human acceptance review of
+  Sprint-01; consolidate evidence; record deviations and deferred work; and determine whether
+  the Platform Foundation is ready for Sprint-02.
 
 depends_on:
   - s01-t09
 
-objective: >
-  Implement the sprint review, evidence & acceptance while preserving all
-  architecture invariants and avoiding business-domain implementation.
+source_of_truth:
+  - TARGET_STRUCTURE.md
+  - ACCEPTANCE.md
+  - factory/reports/s01/s01-execution-plan.md
+
+required_reading:
+  - SCOPE.md
+  - TARGET_STRUCTURE.md
+  - ACCEPTANCE.md
+  - EXECUTION_ORDER.md
+  - DOCUMENT_BASELINE.md
+  - GOVERNANCE.md
+  - AFM-00
+  - YADF-00
+  - DIP-00
+  - DIP-01
+  - DIP-02
+  - DIP-04
+  - DIP-05
+  - DIP-06
+  - DIP-09
+  - ESPK-S00
+  - ABP-00
+  - ABP-01
+  - ABP-02
+  - ABP-03
+  - ABP-18
+  - UXF-00
+  - UXF-01
+  - UXF-02
+  - UXF-05
+  - CAP-00
+  - ECS-00
+  - PCS-00
+  - POL-00
+  - SGP-02
+  - SGP-03
+  - ROP-00
 
 scope:
   include:
-    - "review"
-    - "evidence"
-    - "acceptance"
-    - "handover"
-    - "release report"
-
+    - "Final repository structure review."
+    - "All task report and evidence review."
+    - "Architecture invariant review."
+    - "Human acceptance execution and sign-off."
+    - "Known issue and deferred work register."
+    - "Sprint acceptance report."
+    - "Release readiness recommendation."
   exclude:
-    - "Product"
-    - "Pricing"
-    - "Order"
-    - "Payment"
-    - "Allocation"
-    - "Supplier Gateway"
+    - "New implementation except corrections needed to satisfy Sprint-01 acceptance."
+    - "Business-domain features."
+    - "Sprint-02 implementation."
 
-quality_gates:
-  - "git diff --check"
-  - "ysf verify"
+architecture_invariants:
+  - "Acceptance must be evidence-based."
+  - "Known failures must not be hidden."
+  - "Architecture deviations require explicit approval."
+  - "No Sprint-02 work before sign-off."
 
-deliverables:
-  - "Implementation"
-  - "Task report"
-  - "Validation evidence"
+protected_paths:
+  - docs/BRD/
+  - docs/ABP/
+  - docs/AFM/
+  - docs/YADF/
+  - docs/DIP/
+  - docs/UXF/
+  - docs/CAP/
+  - docs/ECS/
+  - docs/PCS/
+  - docs/POL/
+
+allowed_paths:
+  - factory/reports/s01/
+  - human-acceptance/
+  - SPRINT-01-ACCEPTANCE.md
+  - PROJECT_STATUS.md
+  - README.md
+  - scripts/
+
+implementation:
+  - step: 1
+    action: "Verify all T00-T09 reports, commits, and evidence."
+  - step: 2
+    action: "Compare final tree against TARGET_STRUCTURE.md."
+  - step: 3
+    action: "Run complete machine quality gate."
+  - step: 4
+    action: "Execute human acceptance scenarios for T06-T09 and the overall platform."
+  - step: 5
+    action: "Review architecture invariants, supplier isolation, localization, and runtime boundaries."
+  - step: 6
+    action: "Record deviations and deferred work."
+  - step: 7
+    action: "Create final acceptance and handover report."
+  - step: 8
+    action: "Recommend PASS, CONDITIONAL PASS, or FAIL."
+
+required_outputs:
+  - "factory/reports/s01/s01-final-acceptance.md"
+  - "factory/reports/s01/s01-deferred-work.json"
+  - "SPRINT-01-ACCEPTANCE.md"
+  - "human-acceptance/s01-final-human-signoff.md"
+
+validation:
+  - command: "bash scripts/verify-platform.sh"
+    required: true
+  - command: "pnpm -r build"
+    required: true
+  - command: "docker compose config"
+    required: true
+  - command: "git diff --check"
+    required: true
+  - command: "./scripts/ysf.sh verify"
+    required: true
+
+acceptance_criteria:
+  - "All mandatory criteria are verified."
+  - "Human scenarios have recorded results and evidence."
+  - "Architecture invariants are confirmed or deviations approved."
+  - "Deferred work is explicit and non-blocking."
+  - "Final decision is PASS or approved CONDITIONAL PASS."
+
+human_acceptance:
+  - "Clone/install/start the platform using documented commands."
+  - "Observe API health/readiness and OpenAPI."
+  - "Open Admin and Storefront shells on desktop and mobile widths."
+  - "Switch language and observe fallback behavior."
+  - "Trigger and observe a test background job."
+  - "Run the full verification command and understand failures."
+  - "Confirm no real business feature or supplier coupling was introduced."
+  - "Product owner and technical reviewer sign the final record."
 
 commit:
-  message: "feat(s01-t10): Sprint Review, Evidence & Acceptance"
+  message: "chore(s01-t10): complete Sprint-01 acceptance"

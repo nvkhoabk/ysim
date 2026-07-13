@@ -5,8 +5,9 @@ prompt:
   task: T10
   provider: codex
   template: factory/prompts/templates/codex-task.md
-objective: Implement the sprint review, evidence & acceptance while preserving all
-  architecture invariants and avoiding business-domain implementation.
+objective: Perform the final architectural, functional, operational, and human acceptance
+  review of Sprint-01; consolidate evidence; record deviations and deferred work;
+  and determine whether the Platform Foundation is ready for Sprint-02.
 context:
   directory: factory/contexts/generated/s01
   manifest: factory/contexts/generated/s01/context.json

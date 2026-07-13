@@ -2,50 +2,155 @@ schema_version: "1.0"
 
 project:
   code: YSIM
+  name: YSim Platform
   version: "2.1"
 
 sprint:
   code: S01
+  name: Platform Foundation
   baseline: architecture-v2.2
+  ysf_version: "0.1.0"
 
 task:
   code: s01-t07
   order: 7
-  name: "Health, Readiness, OpenAPI & Operational Endpoints"
+  name: "Health, Readiness, OpenAPI and Operational Endpoints"
   status: planned
   execution_mode: sequential
+  agent: codex
+  fail_fast: true
+
+objective: >
+  Provide operational endpoints and API documentation so humans and infrastructure can
+  determine whether the API is alive, ready, correctly configured, and discoverable.
 
 depends_on:
   - s01-t06
 
-objective: >
-  Implement the health, readiness, openapi & operational endpoints while preserving all
-  architecture invariants and avoiding business-domain implementation.
+source_of_truth:
+  - TARGET_STRUCTURE.md
+  - ACCEPTANCE.md
+  - factory/reports/s01/s01-execution-plan.md
+
+required_reading:
+  - SCOPE.md
+  - TARGET_STRUCTURE.md
+  - ACCEPTANCE.md
+  - EXECUTION_ORDER.md
+  - DOCUMENT_BASELINE.md
+  - GOVERNANCE.md
+  - AFM-00
+  - YADF-00
+  - DIP-00
+  - DIP-01
+  - DIP-02
+  - DIP-04
+  - DIP-05
+  - DIP-06
+  - DIP-09
+  - ESPK-S00
+  - ABP-00
+  - ABP-01
+  - ABP-02
+  - ABP-03
+  - ABP-18
+  - UXF-00
+  - UXF-01
+  - UXF-02
+  - UXF-05
+  - CAP-00
+  - ECS-00
+  - PCS-00
+  - POL-00
+  - ESP-08
+  - ROP-00
+  - ROP-01
+  - ROP-02
 
 scope:
   include:
-    - "GET /health"
-    - "GET /ready"
-    - "Swagger/OpenAPI"
-    - "Version endpoint"
-    - "Operational diagnostics"
-
+    - "Liveness endpoint."
+    - "Readiness endpoint with dependency checks."
+    - "Version/build information endpoint."
+    - "OpenAPI/Swagger generation."
+    - "Dependency timeout and degraded-state behavior."
+    - "Tests for healthy and unavailable dependencies."
   exclude:
-    - "Product"
-    - "Pricing"
-    - "Order"
-    - "Payment"
-    - "Allocation"
-    - "Supplier Gateway"
+    - "Business APIs."
+    - "Admin dashboards."
+    - "External monitoring vendor integration."
 
-quality_gates:
-  - "git diff --check"
-  - "ysf verify"
+architecture_invariants:
+  - "Liveness must not depend on external services."
+  - "Readiness must reflect required dependency state."
+  - "Operational endpoints must not leak secrets."
+  - "OpenAPI must not expose supplier details."
 
-deliverables:
-  - "Implementation"
-  - "Task report"
-  - "Validation evidence"
+protected_paths:
+  - docs/BRD/
+  - docs/ABP/
+  - docs/AFM/
+  - docs/YADF/
+  - docs/DIP/
+  - docs/UXF/
+  - docs/CAP/
+  - docs/ECS/
+  - docs/PCS/
+  - docs/POL/
+
+allowed_paths:
+  - apps/api/src/health/
+  - apps/api/src/openapi/
+  - apps/api/src/version/
+  - apps/api/test/
+  - packages/contracts/
+  - package.json
+  - pnpm-lock.yaml
+  - factory/reports/s01/
+
+implementation:
+  - step: 1
+    action: "Implement /health as a fast liveness check."
+  - step: 2
+    action: "Implement /ready with bounded checks for PostgreSQL, Redis, MinIO, and required configuration."
+  - step: 3
+    action: "Implement version/build metadata endpoint."
+  - step: 4
+    action: "Configure OpenAPI and Swagger route."
+  - step: 5
+    action: "Add tests for success, dependency failure, timeout, and secret redaction."
+  - step: 6
+    action: "Document endpoint semantics."
+
+required_outputs:
+  - "apps/api/src/health/"
+  - "apps/api/src/openapi/"
+  - "apps/api/src/version/"
+  - "factory/reports/s01/s01-t07-operational-endpoints.md"
+
+validation:
+  - command: "pnpm --filter api test"
+    required: true
+  - command: "pnpm --filter api build"
+    required: true
+  - command: "pnpm -r build"
+    required: true
+  - command: "git diff --check"
+    required: true
+  - command: "./scripts/ysf.sh verify"
+    required: true
+
+acceptance_criteria:
+  - "/health returns success while process is alive."
+  - "/ready becomes non-ready when a required dependency is unavailable."
+  - "OpenAPI can be generated and viewed."
+  - "Version endpoint reports non-sensitive metadata."
+
+human_acceptance:
+  - "Open /health and verify a clear healthy response."
+  - "Stop Redis or PostgreSQL and confirm /ready changes state."
+  - "Open Swagger UI and confirm only foundation endpoints are present."
+  - "Confirm no secrets or stack traces are exposed."
 
 commit:
-  message: "feat(s01-t07): Health, Readiness, OpenAPI & Operational Endpoints"
+  message: "feat(s01-t07): add operational endpoints and OpenAPI"

@@ -2,50 +2,173 @@ schema_version: "1.0"
 
 project:
   code: YSIM
+  name: YSim Platform
   version: "2.1"
 
 sprint:
   code: S01
+  name: Platform Foundation
   baseline: architecture-v2.2
+  ysf_version: "0.1.0"
 
 task:
   code: s01-t08
   order: 8
-  name: "Frontend Shells, Design Tokens & Shared UI"
+  name: "Frontend Shells, Design Tokens, Shared UI and Localization Baseline"
   status: planned
   execution_mode: sequential
+  agent: codex
+  fail_fast: true
+
+objective: >
+  Create buildable Admin and Storefront frontend shells sharing design tokens, foundational UI
+  components, runtime-context contracts, accessibility defaults, and localization primitives
+  without implementing production commerce flows.
 
 depends_on:
   - s01-t07
 
-objective: >
-  Implement the frontend shells, design tokens & shared ui while preserving all
-  architecture invariants and avoiding business-domain implementation.
+source_of_truth:
+  - TARGET_STRUCTURE.md
+  - ACCEPTANCE.md
+  - factory/reports/s01/s01-execution-plan.md
+
+required_reading:
+  - SCOPE.md
+  - TARGET_STRUCTURE.md
+  - ACCEPTANCE.md
+  - EXECUTION_ORDER.md
+  - DOCUMENT_BASELINE.md
+  - GOVERNANCE.md
+  - AFM-00
+  - YADF-00
+  - DIP-00
+  - DIP-01
+  - DIP-02
+  - DIP-04
+  - DIP-05
+  - DIP-06
+  - DIP-09
+  - ESPK-S00
+  - ABP-00
+  - ABP-01
+  - ABP-02
+  - ABP-03
+  - ABP-18
+  - UXF-00
+  - UXF-01
+  - UXF-02
+  - UXF-05
+  - CAP-00
+  - ECS-00
+  - PCS-00
+  - POL-00
+  - UXF-03
+  - UXF-04
+  - ESP-09
+  - ESP-10
 
 scope:
   include:
-    - "admin-web shell"
-    - "storefront-web shell"
-    - "design tokens"
-    - "shared ui"
-    - "runtime-context"
-
+    - "Admin web application shell."
+    - "Storefront web application shell."
+    - "Shared design tokens package."
+    - "Shared foundational UI package."
+    - "Runtime-context package."
+    - "Localization bootstrap with English and Vietnamese sample resources."
+    - "Responsive navigation shells and accessibility behavior."
+    - "YSim default visual identity baseline."
   exclude:
-    - "Product"
-    - "Pricing"
-    - "Order"
-    - "Payment"
-    - "Allocation"
-    - "Supplier Gateway"
+    - "Product catalog, cart, checkout, payment, allocation, and supplier UI."
+    - "Drag-and-drop builder."
+    - "Production white-label management."
 
-quality_gates:
-  - "git diff --check"
-  - "ysf verify"
+architecture_invariants:
+  - "Admin and Storefront must reuse shared tokens and components."
+  - "No supplier concept may appear in Storefront/UI contracts."
+  - "Localization must not be hardcoded page strings."
+  - "Theme values must not be hardcoded inside components."
+  - "Fallback locale and default YSim theme must exist."
 
-deliverables:
-  - "Implementation"
-  - "Task report"
-  - "Validation evidence"
+protected_paths:
+  - docs/BRD/
+  - docs/ABP/
+  - docs/AFM/
+  - docs/YADF/
+  - docs/DIP/
+  - docs/UXF/
+  - docs/CAP/
+  - docs/ECS/
+  - docs/PCS/
+  - docs/POL/
+
+allowed_paths:
+  - apps/admin-web/
+  - apps/storefront-web/
+  - packages/design-tokens/
+  - packages/ui/
+  - packages/runtime-context/
+  - packages/localization/
+  - package.json
+  - pnpm-lock.yaml
+  - factory/reports/s01/
+
+implementation:
+  - step: 1
+    action: "Create buildable Admin and Storefront shells."
+  - step: 2
+    action: "Implement shared YSim green design tokens."
+  - step: 3
+    action: "Implement foundational components."
+  - step: 4
+    action: "Create runtime-context contracts for organization, storefront, locale, currency, theme, tracking, and preferences without supplier fields."
+  - step: 5
+    action: "Implement localization provider, fallback locale, and en/vi resources."
+  - step: 6
+    action: "Add responsive and keyboard-accessible shell behavior."
+  - step: 7
+    action: "Add visual smoke pages."
+
+required_outputs:
+  - "apps/admin-web/"
+  - "apps/storefront-web/"
+  - "packages/design-tokens/"
+  - "packages/ui/"
+  - "packages/runtime-context/"
+  - "packages/localization/"
+  - "factory/reports/s01/s01-t08-frontend-foundation.md"
+
+validation:
+  - command: "pnpm --filter admin-web build"
+    required: true
+  - command: "pnpm --filter storefront-web build"
+    required: true
+  - command: "pnpm --filter @ysim/ui test"
+    required: true
+  - command: "pnpm --filter @ysim/design-tokens build"
+    required: true
+  - command: "pnpm -r build"
+    required: true
+  - command: "git diff --check"
+    required: true
+  - command: "./scripts/ysf.sh verify"
+    required: true
+
+acceptance_criteria:
+  - "Both frontend applications start and build."
+  - "Both visibly share the same design system."
+  - "Language can switch between English and Vietnamese."
+  - "Fallback locale works."
+  - "Keyboard navigation and focus indicators are visible."
+  - "No supplier reference exists in Storefront/UI runtime contracts."
+
+human_acceptance:
+  - "Open both apps and confirm YSim green visual identity."
+  - "Compare shared components in both apps for consistency."
+  - "Switch locale and confirm visible content and fallback behavior."
+  - "Check mobile and desktop widths."
+  - "Use keyboard-only navigation and confirm visible focus."
+  - "Search frontend source and confirm no supplier concepts."
 
 commit:
-  message: "feat(s01-t08): Frontend Shells, Design Tokens & Shared UI"
+  message: "feat(s01-t08): add frontend shells and shared UI foundation"

@@ -2,50 +2,161 @@ schema_version: "1.0"
 
 project:
   code: YSIM
+  name: YSim Platform
   version: "2.1"
 
 sprint:
   code: S01
+  name: Platform Foundation
   baseline: architecture-v2.2
+  ysf_version: "0.1.0"
 
 task:
   code: s01-t06
   order: 6
-  name: "BullMQ, Scheduler & Background Runtime Foundation"
+  name: "BullMQ, Scheduler and Background Runtime Foundation"
   status: planned
   execution_mode: sequential
+  agent: codex
+  fail_fast: true
+
+objective: >
+  Establish the shared background execution foundation using BullMQ and a scheduler
+  abstraction, including queue naming, worker lifecycle, retry/backoff defaults, failed-job
+  handling, observability seams, and test coverage without implementing any production
+  business job.
 
 depends_on:
   - s01-t05
 
-objective: >
-  Implement the bullmq, scheduler & background runtime foundation while preserving all
-  architecture invariants and avoiding business-domain implementation.
+source_of_truth:
+  - TARGET_STRUCTURE.md
+  - ACCEPTANCE.md
+  - factory/reports/s01/s01-execution-plan.md
+
+required_reading:
+  - SCOPE.md
+  - TARGET_STRUCTURE.md
+  - ACCEPTANCE.md
+  - EXECUTION_ORDER.md
+  - DOCUMENT_BASELINE.md
+  - GOVERNANCE.md
+  - AFM-00
+  - YADF-00
+  - DIP-00
+  - DIP-01
+  - DIP-02
+  - DIP-04
+  - DIP-05
+  - DIP-06
+  - DIP-09
+  - ESPK-S00
+  - ABP-00
+  - ABP-01
+  - ABP-02
+  - ABP-03
+  - ABP-18
+  - UXF-00
+  - UXF-01
+  - UXF-02
+  - UXF-05
+  - CAP-00
+  - ECS-00
+  - PCS-00
+  - POL-00
+  - ESP-06
+  - ESP-07
+  - ROP-03
 
 scope:
   include:
-    - "BullMQ bootstrap"
-    - "Queue registry"
-    - "Worker framework"
-    - "Scheduler bootstrap"
-    - "No business jobs"
-
+    - "Shared queue configuration and naming conventions."
+    - "BullMQ connection bootstrap using Redis configuration."
+    - "Worker lifecycle and graceful shutdown."
+    - "Scheduler abstraction for delayed and recurring jobs."
+    - "Retry, backoff, timeout, concurrency, and failed-job defaults."
+    - "Test-only sample queue proving enqueue-process-complete lifecycle."
   exclude:
-    - "Product"
-    - "Pricing"
-    - "Order"
-    - "Payment"
-    - "Allocation"
-    - "Supplier Gateway"
+    - "Order, payment, allocation, notification, settlement, fulfillment, or supplier jobs."
+    - "Production scheduler workflows."
+    - "Business compensation logic."
 
-quality_gates:
-  - "git diff --check"
-  - "ysf verify"
+architecture_invariants:
+  - "Background runtime must be capability-neutral."
+  - "No task may reference supplier-specific jobs."
+  - "Queue payloads must use versioned envelopes."
+  - "Workers must stop cleanly."
 
-deliverables:
-  - "Implementation"
-  - "Task report"
-  - "Validation evidence"
+protected_paths:
+  - docs/BRD/
+  - docs/ABP/
+  - docs/AFM/
+  - docs/YADF/
+  - docs/DIP/
+  - docs/UXF/
+  - docs/CAP/
+  - docs/ECS/
+  - docs/PCS/
+  - docs/POL/
+
+allowed_paths:
+  - packages/queue/
+  - packages/scheduler/
+  - apps/api/src/background/
+  - apps/api/test/
+  - package.json
+  - pnpm-lock.yaml
+  - factory/reports/s01/
+
+implementation:
+  - step: 1
+    action: "Define queue names, payload envelope, job metadata, and result/error contracts."
+  - step: 2
+    action: "Create Redis-backed BullMQ connection factory using typed configuration."
+  - step: 3
+    action: "Implement queue registry, worker factory, and scheduler abstraction."
+  - step: 4
+    action: "Add graceful startup/shutdown and correlation metadata propagation."
+  - step: 5
+    action: "Add retry, backoff, timeout, concurrency, and failed-job handling."
+  - step: 6
+    action: "Add test-only queue and integration tests."
+  - step: 7
+    action: "Document deferred business jobs."
+
+required_outputs:
+  - "packages/queue/"
+  - "packages/scheduler/"
+  - "apps/api/src/background/"
+  - "factory/reports/s01/s01-t06-background-runtime.md"
+
+validation:
+  - command: "pnpm --filter @ysim/queue build"
+    required: true
+  - command: "pnpm --filter @ysim/queue test"
+    required: true
+  - command: "pnpm --filter @ysim/scheduler build"
+    required: true
+  - command: "pnpm --filter api test"
+    required: true
+  - command: "pnpm -r build"
+    required: true
+  - command: "git diff --check"
+    required: true
+  - command: "./scripts/ysf.sh verify"
+    required: true
+
+acceptance_criteria:
+  - "A test job can be enqueued, processed, completed, and inspected."
+  - "Retry and backoff behavior is covered by tests."
+  - "Worker shutdown leaves no hanging process."
+  - "No production business job exists."
+
+human_acceptance:
+  - "Start Redis and API, trigger the test job, and observe completion."
+  - "Intentionally fail a test job and observe retries and final failure."
+  - "Stop the API and confirm workers shut down cleanly."
+  - "Confirm queue names and envelopes are generic."
 
 commit:
-  message: "feat(s01-t06): BullMQ, Scheduler & Background Runtime Foundation"
+  message: "feat(s01-t06): add background runtime foundation"
