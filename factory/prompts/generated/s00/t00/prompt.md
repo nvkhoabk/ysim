@@ -23,13 +23,23 @@ feat/s01-platform-foundation
 ## Working Tree
 
 ```text
-M factory/contexts/generated/s00/context.json
+M ai/manifests/s01-t06.yaml
+ M ai/manifests/s01-t07.yaml
+ M ai/manifests/s01-t08.yaml
+ M ai/manifests/s01-t09.yaml
+ M ai/manifests/s01-t10.yaml
+ M factory/contexts/generated/s00/context.json
  M factory/executions/s00/t00/plan.json
  M factory/executions/s00/t00/report.json
  M factory/executions/s00/t00/report.md
  M factory/index/catalog.json
  M factory/index/documents.json
  M factory/index/knowledge.json
+ M factory/prompt-manifests/s01-t06.yaml
+ M factory/prompt-manifests/s01-t07.yaml
+ M factory/prompt-manifests/s01-t08.yaml
+ M factory/prompt-manifests/s01-t09.yaml
+ M factory/prompt-manifests/s01-t10.yaml
  M factory/prompts/generated/s00/t00/manifest.json
  M factory/prompts/generated/s00/t00/prompt.json
  M factory/prompts/generated/s00/t00/prompt.md
@@ -41,21 +51,15 @@ M factory/contexts/generated/s00/context.json
  M knowledge/catalog/relationships.json
  M knowledge/catalog/summary.json
  M knowledge/normalized/documents.json
- M tools/ysf/src/ysf/cli.py
-?? factory/config/local-infra/
-?? factory/prompts/generated/s01/t05/
-?? factory/reports/s01/s01-t05-local-infrastructure.md
-?? factory/reports/s01/s01-t05-runner-evidence.md
-?? scripts/local-infra.sh
-?? scripts/verify-local-infra.sh
-?? tools/ysf/src/ysf/local_infra/
-?? tools/ysf/tests/unit/test_local_infra_verifier.py
+?? HUMAN_ACCEPTANCE_FRAMEWORK.md
+?? human-acceptance/
 ```
 
 ## Recent Commits
 
 ```text
-72c3aca (HEAD -> feat/s01-platform-foundation, tag: s01-t04-complete) feat(s01-t04): add structured logging and platform error handling
+1da2ff0 (HEAD -> feat/s01-platform-foundation, tag: s01-t05-complete) feat(s01-t05): establish local infrastructure baseline
+72c3aca (tag: s01-t04-complete) feat(s01-t04): add structured logging and platform error handling
 e5e1ac3 (tag: s01-t03-complete) feat(s01-t03): add typed configuration and environment validation
 7548433 (origin/feat/s01-platform-foundation) prepared
 af7d70e (tag: s01-t02-complete) feat(s01-t02): bootstrap NestJS API application
@@ -64,7 +68,6 @@ e3ed5dd prepared
 d6629e4 chore(s01): add sequential sprint auto runner
 10ace03 docs(s01-t00): complete repository audit and execution plan
 3a89828 fix(s01): align prompt manifests and validator with ysf schema
-9154741 fix(s01): align t00 prompt manifest with ysf schema
 ```
 
 ## Repository Tree
@@ -84,6 +87,7 @@ d6629e4 chore(s01): add sequential sprint auto runner
 ./DOCUMENT_BASELINE.md
 ./EXECUTION_ORDER.md
 ./GOVERNANCE.md
+./HUMAN_ACCEPTANCE_FRAMEWORK.md
 ./README.md
 ./SCOPE.md
 ./SPRINT-01-INSTALL.md
@@ -129,6 +133,12 @@ d6629e4 chore(s01): add sequential sprint auto runner
 ./factory/seeds
 ./factory/templates
 ./factory/validation
+./human-acceptance
+./human-acceptance/s01-t06-human-acceptance.md
+./human-acceptance/s01-t07-human-acceptance.md
+./human-acceptance/s01-t08-human-acceptance.md
+./human-acceptance/s01-t09-human-acceptance.md
+./human-acceptance/s01-t10-human-acceptance.md
 ./knowledge
 ./knowledge/README.md
 ./knowledge/api
