@@ -2,21 +2,26 @@
 
 ## Summary
 
-Sprint-01 can proceed as a platform-foundation sprint. The frozen architecture baseline and YSF dry-run factory baseline are identifiable, and the repository-provided YSF wrapper verifies successfully. No product runtime source code was changed by this audit.
+Sprint-01 T00 is complete as an audit-only task. The frozen Architecture Baseline v2.2 and YSF v0.1.0 release artifacts are present and verifiable, while the current repository tree still lacks the product runtime foundation directories required by Sprint-01. No product runtime source code was created or modified by this audit.
 
 ## Baseline Confirmation
 
 | Item | Result |
 |---|---|
 | Branch | `feat/s01-platform-foundation` |
-| Current HEAD | `3a8982808b16d869976e9304bdb7230cdb272871` |
+| Current HEAD | `5d9f8d425a7150550abfe54ab9f925538afe1fcf` |
+| HEAD tag | `s01-t09-complete` |
+| Origin relation | Local branch is ahead of `origin/feat/s01-platform-foundation` by three commits |
 | Architecture tag | `architecture-v2.2` |
 | Architecture commit | `5be8413d3c22d1345b3088424af40ca2eb9d1115` |
+| Architecture freeze artifact | `factory/releases/architecture-baseline-v2.2/freeze.md` |
+| Architecture freeze status | Frozen, approved for Sprint-01 |
 | YSF version | `0.1.0` |
 | YSF release artifact | `factory/releases/ysf-v0.1.0/release.json` |
+| YSF release mode | Dry-run factory release, provider not invoked |
 | Sprint manifest | `sprint.json` and `ai/sprints/s01-platform-foundation.yaml` present |
 
-The working tree is intentionally dirty with generated factory and knowledge artifacts plus untracked Sprint-01 pack files. Tracked changes are limited to `factory/` and `knowledge/`; no tracked protected frozen document path is modified.
+The working tree is intentionally dirty with generated factory and knowledge artifacts. The changed tracked paths are limited to `factory/`, `knowledge/`, `docs/ESPK/`, and `scripts/`; no tracked protected frozen document path is modified.
 
 ## Tool Inventory
 
@@ -35,41 +40,50 @@ The working tree is intentionally dirty with generated factory and knowledge art
 Existing baseline:
 
 - `docs/` contains the required architecture, governance, engineering, runtime, experience, policy, capability, and Sprint-00 documents.
+- `factory/releases/architecture-baseline-v2.2/` contains the frozen baseline package and declares Sprint-01 approval.
+- `factory/releases/ysf-v0.1.0/` contains the YSF v0.1.0 release manifest and checksums.
 - `factory/`, `knowledge/`, `tools/ysf/`, `scripts/`, and runtime support directories exist.
-- Sprint-01 context and generated prompt artifacts exist under `factory/contexts/generated/s01/` and `factory/prompts/generated/s01/t00/`.
-- `architecture-v2.2` is present and points at the expected freeze commit.
-- `./scripts/ysf.sh verify` passes all YSF gates.
+- Sprint-01 manifest, context, prompt, report, and execution artifacts are discoverable.
+- `./scripts/ysf.sh verify` passes all current YSF gates.
 
-Missing implementation foundation:
+Implementation gaps against `TARGET_STRUCTURE.md`:
 
-- No `apps/` directory or application code exists.
+- No `apps/` directory or application code exists in the current committed tree.
 - No `packages/` workspace exists.
-- No root `package.json`, `pnpm-workspace.yaml`, or `tsconfig.base.json` exists.
+- No root `package.json`, `pnpm-workspace.yaml`, `pnpm-lock.yaml`, or `tsconfig.base.json` exists.
+- No root `.env.example`, `eslint.config.*`, or `docker-compose.yml` exists.
 - No `database/`, `integrations/`, or `infrastructure/` directories exist.
-- No `docker-compose.yml`, `.env.example`, or CI workflow exists.
-- No API, frontend shells, design-token package, queue foundation, health/readiness endpoints, or Sprint-01 quality gate implementation exists.
+- No `.github/workflows/ci.yml` exists.
+- No API, frontend shells, shared design-token package, shared UI package, runtime-context package, queue foundation, or platform workspace implementation exists.
 
-## Risks
+Repository-state inconsistency:
+
+- The branch history and tags indicate tasks through `s01-t09` have completion commits.
+- The actual HEAD tree does not contain the runtime source directories expected from those task names.
+- The only current S01 task artifacts present are factory reports, prompts, validation scripts, documentation/evidence artifacts, and generated catalogs.
+- Treat later-task completion tags as historical metadata only until runtime source artifacts are present and verified.
+
+## Identified Risks
 
 | Risk | Severity | Mitigation |
 |---|---|---|
-| Bare `ysf verify` is not on PATH. | Medium | Use `./scripts/ysf.sh verify` or export `../.venv-ysf/bin` before task gates. |
-| Untracked Sprint-01 files include root docs and `ai/` artifacts outside the narrower T00 prompt allowed paths. | Medium | Treat as pre-existing Sprint pack material; avoid editing outside active task scope. |
-| `s01-t06` through `s01-t10` task manifests are sparse compared to earlier tasks. | Low | Use SCOPE, TARGET_STRUCTURE, ACCEPTANCE, EXECUTION_ORDER, and architecture invariants when generating prompts. |
-| Sprint foundation is currently absent. | Medium | Execute tasks strictly in order and stop on failed task gates. |
+| The exact bare command `ysf verify` is not required by this runner and may depend on PATH setup. | Medium | Use the repository wrapper `./scripts/ysf.sh verify` as the deterministic gate. |
+| Branch tags imply later Sprint-01 tasks are complete, but target runtime source directories are absent. | High | Do not start Sprint-02; execute or re-execute S01 tasks sequentially from the first missing implementation task. |
+| Working tree contains generated factory and knowledge modifications. | Medium | Keep T00 changes scoped to factory evidence; do not revert unrelated generated artifacts without explicit instruction. |
+| Protected frozen documents are read-only for this task. | High | Continue using factory/knowledge/scripts/docs/ESPK outputs for evidence; create ACP if frozen docs must change. |
+| Storefront and supplier boundaries cannot be verified in source because no storefront source exists. | Low | Enforce the no-supplier-reference gate when `apps/storefront-web/` is introduced in S01-T08. |
 
 ## Validation Result
 
 | Command | Result | Notes |
 |---|---|---|
 | `git diff --check` | PASS | No whitespace errors reported. |
-| `ysf verify` | FAIL | `/bin/bash: line 1: ysf: command not found`. |
-| `./scripts/ysf.sh verify` | PASS | Doctor, ruff, mypy, pytest, pipeline, and git-diff-check passed. |
-| `../.venv-ysf/bin/ysf doctor` | PASS | Environment ready. |
-| `../.venv-ysf/bin/ysf pipeline` | PASS | Five-stage pipeline completed. |
+| `./scripts/ysf.sh verify` | PASS | Doctor, background runtime, operational API, frontend foundation, ruff, mypy, pytest, pipeline, and git-diff-check passed. |
+
+The runner constraint requires `./scripts/ysf.sh`; no bare `ysf` invocation was used for this audit.
 
 ## Implementation Recommendation
 
-Proceed to `s01-t01` after normalizing the YSF command expectation. The preferred approach is to keep the repository wrapper as the deterministic gate in scripts while optionally adding `../.venv-ysf/bin` to PATH in the operator environment. Do not start implementation tasks until each prior task report and validation output is present.
+Proceed only with the Sprint-01 sequence defined in `factory/reports/s01/s01-execution-plan.md`. The effective next implementation task is the first task whose required runtime artifacts are absent: `s01-t01` workspace foundation. Later task tags should not be treated as acceptance evidence for source implementation until the corresponding `apps/`, `packages/`, infrastructure, frontend, and CI artifacts exist and pass task-specific validation.
 
-The detailed target-structure gap matrix is in `factory/reports/s01/s01-t00-gap-matrix.json`; the deterministic task sequence is in `factory/reports/s01/s01-execution-plan.md`.
+Do not implement business domains in Sprint-01. Keep Product, Catalog, Pricing, Checkout, Order, Payment, Allocation, Supplier Gateway, Settlement, and Storefront business bindings out of scope.

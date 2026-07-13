@@ -33,6 +33,13 @@ M factory/contexts/generated/s00/context.json
  M factory/prompts/generated/s00/t00/manifest.json
  M factory/prompts/generated/s00/t00/prompt.json
  M factory/prompts/generated/s00/t00/prompt.md
+ M factory/prompts/generated/s01/t00/manifest.json
+ M factory/prompts/generated/s01/t00/prompt.json
+ M factory/prompts/generated/s01/t00/prompt.md
+ M factory/reports/s01/s01-execution-plan.md
+ M factory/reports/s01/s01-t00-evidence.md
+ M factory/reports/s01/s01-t00-gap-matrix.json
+ M factory/reports/s01/s01-t00-repository-audit.md
  M knowledge/catalog/capabilities.json
  M knowledge/catalog/document-sets.json
  M knowledge/catalog/documents.json
@@ -41,19 +48,13 @@ M factory/contexts/generated/s00/context.json
  M knowledge/catalog/relationships.json
  M knowledge/catalog/summary.json
  M knowledge/normalized/documents.json
-?? docs/ESPK/S01-T09-CI-WORKFLOW.md
-?? factory/prompts/generated/s01/t09/
-?? factory/reports/s01/s01-t09-quality-gates.md
-?? scripts/check-protected-paths.sh
-?? scripts/check-secret-hygiene.sh
-?? scripts/check-supplier-boundary.sh
-?? scripts/verify-platform.sh
 ```
 
 ## Recent Commits
 
 ```text
-d5dcaa9 (HEAD -> feat/s01-platform-foundation, tag: s01-t08-complete) feat(s01-t08): add frontend shells and shared UI foundation
+5d9f8d4 (HEAD -> feat/s01-platform-foundation, tag: s01-t09-complete) test(s01-t09): add quality gates and CI validation
+d5dcaa9 (tag: s01-t08-complete) feat(s01-t08): add frontend shells and shared UI foundation
 d40d236 (tag: s01-t07-complete) feat(s01-t07): add operational endpoints and OpenAPI
 62118a3 (origin/feat/s01-platform-foundation) fix(s01): ignore generated artifacts in auto runner
 aa1bc9b (tag: s01-t06-complete) feat(s01-t06): add background runtime foundation
@@ -62,7 +63,6 @@ ed2d2c1 chore(factory): refresh generated knowledge artifacts
 6a980c8 docs(s01): expand tasks t06-t10 and add human acceptance
 1da2ff0 (tag: s01-t05-complete) feat(s01-t05): establish local infrastructure baseline
 72c3aca (tag: s01-t04-complete) feat(s01-t04): add structured logging and platform error handling
-e5e1ac3 (tag: s01-t03-complete) feat(s01-t03): add typed configuration and environment validation
 ```
 
 ## Repository Tree

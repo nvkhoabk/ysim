@@ -32,6 +32,9 @@ M factory/contexts/generated/s00/context.json
  M factory/prompts/generated/s00/t00/manifest.json
  M factory/prompts/generated/s00/t00/prompt.json
  M factory/prompts/generated/s00/t00/prompt.md
+ D factory/prompts/generated/s01/t00/manifest.json
+ D factory/prompts/generated/s01/t00/prompt.json
+ D factory/prompts/generated/s01/t00/prompt.md
  M knowledge/catalog/capabilities.json
  M knowledge/catalog/document-sets.json
  M knowledge/catalog/documents.json
@@ -40,60 +43,28 @@ M factory/contexts/generated/s00/context.json
  M knowledge/catalog/relationships.json
  M knowledge/catalog/summary.json
  M knowledge/normalized/documents.json
-?? ACCEPTANCE.md
-?? DOCUMENT_BASELINE.md
-?? EXECUTION_ORDER.md
-?? GOVERNANCE.md
-?? README.md
-?? SCOPE.md
-?? SPRINT-01-INSTALL.md
-?? TARGET_STRUCTURE.md
-?? ai/
-?? factory/context-manifests/s01.yaml
-?? factory/context-manifests/s01.yaml.invalid
-?? factory/contexts/generated/s01/
-?? factory/prompt-manifests/s01-t01.yaml
-?? factory/prompt-manifests/s01-t02.yaml
-?? factory/prompt-manifests/s01-t03.yaml
-?? factory/prompt-manifests/s01-t04.yaml
-?? factory/prompt-manifests/s01-t05.yaml
-?? factory/prompt-manifests/s01-t06.yaml
-?? factory/prompt-manifests/s01-t07.yaml
-?? factory/prompt-manifests/s01-t08.yaml
-?? factory/prompt-manifests/s01-t09.yaml
-?? factory/prompt-manifests/s01-t10.yaml
-?? factory/prompts/generated/s01/
-?? factory/schemas/sprint.schema.json
-?? factory/schemas/task-manifest.schema.json
-?? scripts/build-sprint-01-context.sh
-?? scripts/build-sprint-01-prompt.sh
-?? scripts/install-sprint-01.sh
-?? scripts/regenerate-sprint-01-prompt-manifests.py
-?? scripts/run-sprint-01-task.sh
-?? scripts/run-sprint-01.sh
-?? scripts/validate-sprint-01-pack.sh
-?? sprint.json
 ```
 
 ## Recent Commits
 
 ```text
-9154741 (HEAD -> feat/s01-platform-foundation) fix(s01): align t00 prompt manifest with ysf schema
-5be8413 (tag: architecture-v2.2, origin/chore/s00-factory-commissioning, chore/s00-factory-commissioning) release(architecture): freeze architecture baseline v2.2
-fde2273 docs(v2.2): add UXF, CAP, ECS, PCS, POL and ABP-18
-1f9beab release(s00): freeze ysf v0.1.0 dry-run engine
-ab9ab71 chore(s00): finalize ysf dry-run pipeline
-a831948 feat(s00): add execution pipeline stage abstraction
-a4321c7 feat(s00): add dry-run execution runner
-a4d5787 feat(s00): add execution planner
-7019a2e feat(s00): add execution workspace snapshot service
-737e18c feat(s00): add ysf execution models
+5d9f8d4 (HEAD -> feat/s01-platform-foundation, tag: s01-t09-complete) test(s01-t09): add quality gates and CI validation
+d5dcaa9 (tag: s01-t08-complete) feat(s01-t08): add frontend shells and shared UI foundation
+d40d236 (tag: s01-t07-complete) feat(s01-t07): add operational endpoints and OpenAPI
+62118a3 (origin/feat/s01-platform-foundation) fix(s01): ignore generated artifacts in auto runner
+aa1bc9b (tag: s01-t06-complete) feat(s01-t06): add background runtime foundation
+c30889e chore(factory): refresh generated knowledge artifacts
+ed2d2c1 chore(factory): refresh generated knowledge artifacts
+6a980c8 docs(s01): expand tasks t06-t10 and add human acceptance
+1da2ff0 (tag: s01-t05-complete) feat(s01-t05): establish local infrastructure baseline
+72c3aca (tag: s01-t04-complete) feat(s01-t04): add structured logging and platform error handling
 ```
 
 ## Repository Tree
 
 ```text
 .
+./.agents
 ./.mypy_cache
 ./.mypy_cache/.gitignore
 ./.mypy_cache/3.11
@@ -106,6 +77,7 @@ a4d5787 feat(s00): add execution planner
 ./DOCUMENT_BASELINE.md
 ./EXECUTION_ORDER.md
 ./GOVERNANCE.md
+./HUMAN_ACCEPTANCE_FRAMEWORK.md
 ./README.md
 ./SCOPE.md
 ./SPRINT-01-INSTALL.md
@@ -151,6 +123,12 @@ a4d5787 feat(s00): add execution planner
 ./factory/seeds
 ./factory/templates
 ./factory/validation
+./human-acceptance
+./human-acceptance/s01-t06-human-acceptance.md
+./human-acceptance/s01-t07-human-acceptance.md
+./human-acceptance/s01-t08-human-acceptance.md
+./human-acceptance/s01-t09-human-acceptance.md
+./human-acceptance/s01-t10-human-acceptance.md
 ./knowledge
 ./knowledge/README.md
 ./knowledge/api
@@ -168,7 +146,9 @@ a4d5787 feat(s00): add execution planner
 ./knowledge/seed
 ./knowledge/ui
 ./runtime
+./runtime/auto-runner
 ./runtime/cache
+./runtime/codex
 ./runtime/codex-readiness
 ./runtime/reports
 ./runtime/state
@@ -185,11 +165,16 @@ a4d5787 feat(s00): add execution planner
 ./scripts/build-prompt.sh
 ./scripts/build-sprint-01-context.sh
 ./scripts/build-sprint-01-prompt.sh
+./scripts/check-protected-paths.sh
+./scripts/check-secret-hygiene.sh
+./scripts/check-supplier-boundary.sh
 ./scripts/commission.sh
 ./scripts/install-sprint-01.sh
+./scripts/local-infra.sh
 ./scripts/regenerate-sprint-01-prompt-manifests.py
 ./scripts/resume.sh
 ./scripts/run-execution.sh
+./scripts/run-sprint-01-auto.sh
 ./scripts/run-sprint-01-task.sh
 ./scripts/run-sprint-01.sh
 ./scripts/run-sprint.sh
@@ -197,6 +182,8 @@ a4d5787 feat(s00): add execution planner
 ./scripts/validate-sprint-01-pack.sh
 ./scripts/validate.sh
 ./scripts/verify-factory.sh
+./scripts/verify-local-infra.sh
+./scripts/verify-platform.sh
 ./scripts/ysf.sh
 ./sprint.json
 ./tools
