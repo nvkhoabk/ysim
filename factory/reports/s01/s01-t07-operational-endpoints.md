@@ -24,7 +24,8 @@
 
 - Added `ysf operational-api verify` for operational endpoint contract verification.
 - Added the operational API verifier to `ysf verify`.
-- Added unit coverage for the valid baseline, liveness dependency rejection, and prohibited OpenAPI terms.
+- Added unit coverage for the valid baseline, liveness dependency rejection, prohibited OpenAPI terms, and missing OpenAPI operation documentation.
+- The verifier now checks that every foundation OpenAPI path includes the expected operation method and at least one documented response.
 - `ysf operational-api verify`: PASS.
 - `pytest tools/ysf/tests/unit/test_operational_verifier.py tools/ysf/tests/unit/test_verification.py -q`: PASS.
 - `ruff check src tests`: PASS.

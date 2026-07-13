@@ -358,6 +358,10 @@ def _openapi_checks(
         "paths": sorted(paths),
     })
 
+    checks.extend(
+        _openapi_operation_checks(paths)
+    )
+
     checks.append({
         "name": "openapi-no-prohibited-terms",
         "status": (
@@ -369,5 +373,47 @@ def _openapi_checks(
             else "FAIL"
         ),
     })
+
+    return checks
+
+
+def _openapi_operation_checks(
+    paths: dict[str, Any],
+) -> list[dict[str, Any]]:
+    checks: list[dict[str, Any]] = []
+
+    for path, expected in EXPECTED_ENDPOINTS.items():
+        path_item = paths.get(path, {})
+        method = str(expected["method"]).lower()
+        operation = (
+            path_item.get(method)
+            if isinstance(path_item, dict)
+            else None
+        )
+        responses = (
+            operation.get("responses")
+            if isinstance(operation, dict)
+            else None
+        )
+
+        checks.append({
+            "name": f"openapi-{path}-operation",
+            "status": (
+                "PASS"
+                if isinstance(operation, dict)
+                else "FAIL"
+            ),
+        })
+        checks.append({
+            "name": f"openapi-{path}-responses",
+            "status": (
+                "PASS"
+                if (
+                    isinstance(responses, dict)
+                    and len(responses) > 0
+                )
+                else "FAIL"
+            ),
+        })
 
     return checks

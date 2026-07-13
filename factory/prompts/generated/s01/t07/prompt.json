@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-07-13T18:09:31.281958+07:00",
+  "generatedAt": "2026-07-13T18:27:00.171336+07:00",
   "promptId": "s01-t07",
   "sprint": "S01",
   "task": "T07",
@@ -10,9 +10,9 @@
   "contextContent": "factory/contexts/generated/s01/context.md",
   "outputDirectory": "factory/prompts/generated/s01/t07",
   "promptFile": "factory/prompts/generated/s01/t07/prompt.md",
-  "promptHash": "7c7ea50f8ccb9ccea6b8575ae4d72cc0d3524cefca8aac8b7c896b749539baea",
-  "characterCount": 197726,
-  "estimatedTokens": 49432,
+  "promptHash": "a796aa17e7a58c720483727ddf3336a4b81a8347e3afafa5d9a2dfb52470ce2b",
+  "characterCount": 198558,
+  "estimatedTokens": 49640,
   "sourceDocuments": [
     "ABP-00 (docs/ABP/ABP-00.md)",
     "ABP-01 (docs/ABP/ABP-01.md)",

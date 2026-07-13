@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-07-13T18:16:09.180124+07:00",
+  "generatedAt": "2026-07-13T18:29:54.883767+07:00",
   "promptId": "s00-t00",
   "sprint": "S00",
   "task": "T00",
@@ -10,9 +10,9 @@
   "contextContent": "factory/contexts/generated/s00/context.md",
   "outputDirectory": "factory/prompts/generated/s00/t00",
   "promptFile": "factory/prompts/generated/s00/t00/prompt.md",
-  "promptHash": "70698765207ac7d07fdcde5559498b9e21dcb613800533e60a84f8c2c082bead",
-  "characterCount": 188137,
-  "estimatedTokens": 47034,
+  "promptHash": "ebf6868538038d5d6ad845e393218f4870685c872e691b6d148f71071610f0ae",
+  "characterCount": 188021,
+  "estimatedTokens": 47005,
   "sourceDocuments": [
     "AFM-00 (docs/AFM/AFM-00.md)",
     "DIP-00 (docs/DIP/DIP-00.md)",

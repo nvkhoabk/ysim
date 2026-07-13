@@ -33,6 +33,10 @@ M factory/contexts/generated/s00/context.json
  M factory/prompts/generated/s00/t00/manifest.json
  M factory/prompts/generated/s00/t00/prompt.json
  M factory/prompts/generated/s00/t00/prompt.md
+ M factory/prompts/generated/s01/t07/manifest.json
+ M factory/prompts/generated/s01/t07/prompt.json
+ M factory/prompts/generated/s01/t07/prompt.md
+ M factory/reports/s01/s01-t07-operational-endpoints.md
  M knowledge/catalog/capabilities.json
  M knowledge/catalog/document-sets.json
  M knowledge/catalog/documents.json
@@ -41,22 +45,16 @@ M factory/contexts/generated/s00/context.json
  M knowledge/catalog/relationships.json
  M knowledge/catalog/summary.json
  M knowledge/normalized/documents.json
- M tools/ysf/src/ysf/cli.py
- M tools/ysf/src/ysf/verification/service.py
- M tools/ysf/tests/unit/test_verification.py
-?? factory/config/operational-api.yaml
-?? factory/prompts/generated/s01/t07/
-?? factory/reports/s01/s01-t07-operational-endpoints.md
-?? knowledge/api/operational-endpoints.openapi.yaml
-?? tools/ysf/src/ysf/operational/
-?? tools/ysf/tests/unit/test_operational_verifier.py
+ M tools/ysf/src/ysf/operational/verifier.py
+ M tools/ysf/tests/unit/test_operational_verifier.py
 ```
 
 ## Recent Commits
 
 ```text
-aa1bc9b (HEAD -> feat/s01-platform-foundation, tag: s01-t06-complete) feat(s01-t06): add background runtime foundation
-c30889e (origin/feat/s01-platform-foundation) chore(factory): refresh generated knowledge artifacts
+62118a3 (HEAD -> feat/s01-platform-foundation, origin/feat/s01-platform-foundation) fix(s01): ignore generated artifacts in auto runner
+aa1bc9b (tag: s01-t06-complete) feat(s01-t06): add background runtime foundation
+c30889e chore(factory): refresh generated knowledge artifacts
 ed2d2c1 chore(factory): refresh generated knowledge artifacts
 6a980c8 docs(s01): expand tasks t06-t10 and add human acceptance
 1da2ff0 (tag: s01-t05-complete) feat(s01-t05): establish local infrastructure baseline
@@ -64,7 +62,6 @@ ed2d2c1 chore(factory): refresh generated knowledge artifacts
 e5e1ac3 (tag: s01-t03-complete) feat(s01-t03): add typed configuration and environment validation
 7548433 prepared
 af7d70e (tag: s01-t02-complete) feat(s01-t02): bootstrap NestJS API application
-bdcec14 (tag: s01-t01-complete) feat(s01-t01): establish monorepo workspace foundation
 ```
 
 ## Repository Tree
