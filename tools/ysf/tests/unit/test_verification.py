@@ -51,6 +51,11 @@ def test_verification_passes(
         ),
         patch(
             "ysf.verification.service."
+            "verify_frontend_foundation",
+            return_value=successful_result,
+        ),
+        patch(
+            "ysf.verification.service."
             "run_process",
             return_value=successful_process,
         ),

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "1.0",
+  "fallbackLocale": "en",
+  "locales": {
+    "en": {
+      "shell.brand": "YSim",
+      "shell.skipToContent": "Skip to content",
+      "shell.admin.home": "Admin overview",
+      "shell.admin.operations": "Operations",
+      "shell.admin.configuration": "Configuration",
+      "shell.storefront.home": "Travel eSIM",
+      "shell.storefront.coverage": "Coverage",
+      "shell.storefront.support": "Support",
+      "shell.locale.en": "English",
+      "shell.locale.vi": "Vietnamese",
+      "shell.status.ready": "Ready"
+    },
+    "vi": {
+      "shell.brand": "YSim",
+      "shell.skipToContent": "Chuyen den noi dung",
+      "shell.admin.home": "Tong quan quan tri",
+      "shell.admin.operations": "Van hanh",
+      "shell.admin.configuration": "Cau hinh",
+      "shell.storefront.home": "eSIM du lich",
+      "shell.storefront.coverage": "Pham vi phu song",
+      "shell.storefront.support": "Ho tro",
+      "shell.locale.en": "Tieng Anh",
+      "shell.locale.vi": "Tieng Viet"
+    }
+  }
+}

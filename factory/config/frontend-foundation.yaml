@@ -1,0 +1,133 @@
+schemaVersion: "1.0"
+name: ysim-frontend-foundation
+status: baseline
+owner: platform-foundation
+
+applications:
+  admin-web:
+    path: apps/admin-web/
+    type: admin-shell
+    buildCommand: pnpm --filter admin-web build
+    routes:
+      - /
+      - /operations
+      - /configuration
+    consumes:
+      - "@ysim/design-tokens"
+      - "@ysim/ui"
+      - "@ysim/runtime-context"
+      - "@ysim/localization"
+    shell:
+      landmarks:
+        - banner
+        - navigation
+        - main
+      navigation:
+        responsive: true
+        keyboard: true
+        focusVisible: true
+
+  storefront-web:
+    path: apps/storefront-web/
+    type: storefront-shell
+    buildCommand: pnpm --filter storefront-web build
+    routes:
+      - /
+      - /support
+      - /coverage
+    consumes:
+      - "@ysim/design-tokens"
+      - "@ysim/ui"
+      - "@ysim/runtime-context"
+      - "@ysim/localization"
+    shell:
+      landmarks:
+        - banner
+        - navigation
+        - main
+        - contentinfo
+      navigation:
+        responsive: true
+        keyboard: true
+        focusVisible: true
+
+packages:
+  design-tokens:
+    name: "@ysim/design-tokens"
+    path: packages/design-tokens/
+    buildCommand: pnpm --filter @ysim/design-tokens build
+    contract: knowledge/ui/design-tokens.json
+
+  ui:
+    name: "@ysim/ui"
+    path: packages/ui/
+    testCommand: pnpm --filter @ysim/ui test
+    components:
+      - AppShell
+      - Button
+      - Card
+      - LocaleSwitcher
+      - NavigationRail
+      - SkipLink
+      - StatusBadge
+
+  runtime-context:
+    name: "@ysim/runtime-context"
+    path: packages/runtime-context/
+    contract: knowledge/ui/runtime-context.json
+
+  localization:
+    name: "@ysim/localization"
+    path: packages/localization/
+    resources: knowledge/ui/localization-resources.json
+
+theme:
+  defaultTheme: ysim-green
+  tokenContract: knowledge/ui/design-tokens.json
+  componentRule: components-reference-tokens-only
+
+localization:
+  fallbackLocale: en
+  supportedLocales:
+    - en
+    - vi
+  resourceContract: knowledge/ui/localization-resources.json
+  rule: no-hardcoded-page-strings
+
+runtimeContext:
+  contract: knowledge/ui/runtime-context.json
+  requiredFields:
+    - organization
+    - storefront
+    - locale
+    - currency
+    - theme
+    - tracking
+    - preferences
+  prohibitedFields:
+    - providerSystem
+    - providerProduct
+    - providerMapping
+    - providerRouting
+
+accessibility:
+  skipLink: true
+  keyboardNavigation: true
+  visibleFocus: true
+  ariaLandmarks: true
+  minTouchTargetPx: 44
+  colorContrast: WCAG-AA
+
+responsive:
+  breakpoints:
+    mobile: 360
+    tablet: 768
+    laptop: 1024
+    desktop: 1280
+    wide: 1536
+
+visualIdentity:
+  name: YSim Green
+  primaryToken: color.primary
+  surfaceToken: color.surface
+  textToken: color.text

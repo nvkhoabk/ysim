@@ -10,6 +10,9 @@ from ysf.background.verifier import (
 )
 from ysf.core.doctor import run_doctor
 from ysf.core.result import CommandResult
+from ysf.frontend.verifier import (
+    verify_frontend_foundation,
+)
 from ysf.operational.verifier import (
     verify_operational_api,
 )
@@ -103,6 +106,21 @@ def run_verification(
             else 1
         ),
         "data": operational_result.data,
+    })
+
+    frontend_result = verify_frontend_foundation(
+        repository_root
+    )
+
+    checks.append({
+        "name": "frontend-foundation",
+        "status": frontend_result.status,
+        "exitCode": (
+            0
+            if frontend_result.successful
+            else 1
+        ),
+        "data": frontend_result.data,
     })
 
     checks.append(

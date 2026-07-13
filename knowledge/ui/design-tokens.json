@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "1.0",
+  "name": "ysim-green-design-tokens",
+  "status": "baseline",
+  "theme": "ysim-green",
+  "tokens": {
+    "color": {
+      "primary": "#2BA84A",
+      "primaryStrong": "#177A32",
+      "secondary": "#1B7F8C",
+      "accent": "#F5A623",
+      "success": "#00B050",
+      "warning": "#D97706",
+      "error": "#DC2626",
+      "background": "#F7FAF8",
+      "surface": "#FFFFFF",
+      "surfaceMuted": "#EEF5F0",
+      "border": "#C7D7CC",
+      "text": "#102016",
+      "muted": "#5D6B63",
+      "focus": "#0F766E"
+    },
+    "typography": {
+      "headingFont": "Inter",
+      "bodyFont": "Inter",
+      "codeFont": "ui-monospace",
+      "lineHeight": 1.5,
+      "letterSpacing": 0
+    },
+    "layout": {
+      "containerMaxWidth": "1200px",
+      "radius": {
+        "small": "4px",
+        "medium": "8px",
+        "large": "12px"
+      },
+      "spacing": {
+        "xs": "4px",
+        "sm": "8px",
+        "md": "16px",
+        "lg": "24px",
+        "xl": "32px"
+      }
+    },
+    "motion": {
+      "transition": "150ms ease",
+      "reducedMotion": true
+    },
+    "focus": {
+      "outlineWidth": "2px",
+      "outlineOffset": "2px",
+      "outlineColor": "color.focus"
+    }
+  }
+}

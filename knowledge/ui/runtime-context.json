@@ -1,0 +1,44 @@
+{
+  "schemaVersion": "1.0",
+  "name": "ysim-runtime-context-contract",
+  "status": "baseline",
+  "immutability": "request-scoped",
+  "fields": {
+    "organization": {
+      "type": "object",
+      "required": ["id", "code"]
+    },
+    "storefront": {
+      "type": "object",
+      "required": ["id", "code"]
+    },
+    "locale": {
+      "type": "string",
+      "fallback": "en"
+    },
+    "currency": {
+      "type": "string",
+      "fallback": "USD"
+    },
+    "theme": {
+      "type": "string",
+      "fallback": "ysim-green"
+    },
+    "tracking": {
+      "type": "object",
+      "required": ["source"]
+    },
+    "preferences": {
+      "type": "object",
+      "required": ["reducedMotion"]
+    }
+  },
+  "businessBindings": {
+    "catalog": "reference",
+    "pricing": "reference",
+    "promotion": "reference",
+    "payment": "reference",
+    "checkout": "reference",
+    "support": "reference"
+  }
+}

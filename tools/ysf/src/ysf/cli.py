@@ -17,6 +17,9 @@ from ysf.core.repository import (
 )
 from ysf.core.result import CommandResult
 from ysf.execution.service import run_dry_execution
+from ysf.frontend.verifier import (
+    verify_frontend_foundation,
+)
 from ysf.index.service import build_indexes
 from ysf.knowledge.service import build_knowledge
 from ysf.local_infra.verifier import verify_local_infra
@@ -217,6 +220,28 @@ def print_result(
             )
 
     elif result.command == "operational-api":
+        print(
+            "  config: "
+            f"{result.data['configFile']}"
+        )
+
+        for check in result.data["checks"]:
+            print(
+                f"  [{check['status']}] "
+                f"{check['name']}"
+            )
+
+        if result.data["failedChecks"]:
+            print(
+                "  failed: "
+                + ", ".join(
+                    result.data[
+                        "failedChecks"
+                    ]
+                )
+            )
+
+    elif result.command == "frontend-foundation":
         print(
             "  config: "
             f"{result.data['configFile']}"
@@ -510,6 +535,33 @@ def create_parser() -> argparse.ArgumentParser:
         help="Print machine-readable JSON.",
     )
 
+    frontend_parser = subparsers.add_parser(
+        "frontend-foundation",
+        help="Verify frontend foundation baseline assets.",
+    )
+    frontend_subparsers = (
+        frontend_parser.add_subparsers(
+            dest="frontend_command",
+            required=True,
+        )
+    )
+
+    frontend_verify_parser = (
+        frontend_subparsers.add_parser(
+            "verify",
+            help=(
+                "Validate frontend shell, design token, "
+                "runtime context, accessibility, and "
+                "localization baseline contracts."
+            ),
+        )
+    )
+    frontend_verify_parser.add_argument(
+        "--json",
+        action="store_true",
+        help="Print machine-readable JSON.",
+    )
+
     run_parser = subparsers.add_parser(
         "run",
         help="Run an execution plan.",
@@ -678,6 +730,18 @@ def main() -> int:
                 return 2
 
             result = verify_operational_api(
+                repository_root=repository_root,
+            )
+
+        elif args.command == "frontend-foundation":
+            if args.frontend_command != "verify":
+                parser.error(
+                    "Unsupported frontend-foundation "
+                    "command."
+                )
+                return 2
+
+            result = verify_frontend_foundation(
                 repository_root=repository_root,
             )
 
