@@ -1,0 +1,130 @@
+schemaVersion: "1.0"
+name: ysim-platform-operational-api
+status: baseline
+owner: platform-foundation
+
+runtime:
+  basePath: /
+  timeoutMs: 1000
+  failureMode: degraded
+
+endpoints:
+  - path: /health
+    method: GET
+    purpose: liveness
+    public: true
+    dependencies: []
+    response:
+      status: ok
+      fields:
+        - status
+        - timestamp
+        - service
+    invariants:
+      - must-not-check-external-services
+      - must-not-leak-secrets
+
+  - path: /ready
+    method: GET
+    purpose: readiness
+    public: true
+    dependencies:
+      - postgres
+      - redis
+      - minio
+      - required-configuration
+    response:
+      readyStatus: ready
+      degradedStatus: degraded
+      fields:
+        - status
+        - timestamp
+        - service
+        - checks
+    invariants:
+      - must-use-bounded-dependency-checks
+      - must-report-degraded-required-dependencies
+      - must-not-leak-secrets
+
+  - path: /version
+    method: GET
+    purpose: version
+    public: true
+    dependencies: []
+    response:
+      fields:
+        - service
+        - version
+        - build
+        - commit
+        - environment
+    invariants:
+      - must-return-non-sensitive-build-metadata
+      - must-not-leak-secrets
+
+  - path: /openapi.json
+    method: GET
+    purpose: api-document
+    public: true
+    dependencies: []
+    response:
+      fields:
+        - openapi
+        - info
+        - paths
+    invariants:
+      - must-describe-foundation-endpoints-only
+      - must-not-expose-supplier-details
+
+  - path: /docs
+    method: GET
+    purpose: api-document-ui
+    public: true
+    dependencies: []
+    response:
+      fields:
+        - swagger-ui
+    invariants:
+      - must-render-openapi-documentation
+      - must-not-expose-supplier-details
+
+readinessDependencies:
+  postgres:
+    required: true
+    timeoutMs: 1000
+    check: connection
+  redis:
+    required: true
+    timeoutMs: 1000
+    check: ping
+  minio:
+    required: true
+    timeoutMs: 1000
+    check: health
+  required-configuration:
+    required: true
+    timeoutMs: 1000
+    check: validated-environment
+
+redaction:
+  denyFieldPatterns:
+    - password
+    - secret
+    - token
+    - credential
+    - privateKey
+    - accessKey
+
+openapi:
+  document: knowledge/api/operational-endpoints.openapi.yaml
+  allowedPathPrefixes:
+    - /health
+    - /ready
+    - /version
+    - /openapi.json
+    - /docs
+  prohibitedTerms:
+    - supplier
+    - gigago
+    - onepay
+    - gpay

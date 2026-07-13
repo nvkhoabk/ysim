@@ -10,6 +10,9 @@ from ysf.background.verifier import (
 )
 from ysf.core.doctor import run_doctor
 from ysf.core.result import CommandResult
+from ysf.operational.verifier import (
+    verify_operational_api,
+)
 from ysf.pipeline.service import run_pipeline
 
 
@@ -85,6 +88,21 @@ def run_verification(
             else 1
         ),
         "data": background_result.data,
+    })
+
+    operational_result = verify_operational_api(
+        repository_root
+    )
+
+    checks.append({
+        "name": "operational-api",
+        "status": operational_result.status,
+        "exitCode": (
+            0
+            if operational_result.successful
+            else 1
+        ),
+        "data": operational_result.data,
     })
 
     checks.append(

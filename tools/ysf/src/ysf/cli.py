@@ -20,6 +20,9 @@ from ysf.execution.service import run_dry_execution
 from ysf.index.service import build_indexes
 from ysf.knowledge.service import build_knowledge
 from ysf.local_infra.verifier import verify_local_infra
+from ysf.operational.verifier import (
+    verify_operational_api,
+)
 from ysf.pipeline.service import run_pipeline
 from ysf.prompt.service import build_prompt
 from ysf.verification.service import run_verification
@@ -192,6 +195,28 @@ def print_result(
             )
 
     elif result.command == "background-runtime":
+        print(
+            "  config: "
+            f"{result.data['configFile']}"
+        )
+
+        for check in result.data["checks"]:
+            print(
+                f"  [{check['status']}] "
+                f"{check['name']}"
+            )
+
+        if result.data["failedChecks"]:
+            print(
+                "  failed: "
+                + ", ".join(
+                    result.data[
+                        "failedChecks"
+                    ]
+                )
+            )
+
+    elif result.command == "operational-api":
         print(
             "  config: "
             f"{result.data['configFile']}"
@@ -459,6 +484,32 @@ def create_parser() -> argparse.ArgumentParser:
         help="Print machine-readable JSON.",
     )
 
+    operational_parser = subparsers.add_parser(
+        "operational-api",
+        help="Verify operational API baseline assets.",
+    )
+    operational_subparsers = (
+        operational_parser.add_subparsers(
+            dest="operational_command",
+            required=True,
+        )
+    )
+
+    operational_verify_parser = (
+        operational_subparsers.add_parser(
+            "verify",
+            help=(
+                "Validate liveness, readiness, "
+                "version, and OpenAPI baseline."
+            ),
+        )
+    )
+    operational_verify_parser.add_argument(
+        "--json",
+        action="store_true",
+        help="Print machine-readable JSON.",
+    )
+
     run_parser = subparsers.add_parser(
         "run",
         help="Run an execution plan.",
@@ -615,6 +666,18 @@ def main() -> int:
                 return 2
 
             result = verify_background_runtime(
+                repository_root=repository_root,
+            )
+
+        elif args.command == "operational-api":
+            if args.operational_command != "verify":
+                parser.error(
+                    "Unsupported operational-api "
+                    "command."
+                )
+                return 2
+
+            result = verify_operational_api(
                 repository_root=repository_root,
             )
 

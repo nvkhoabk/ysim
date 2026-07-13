@@ -1,0 +1,172 @@
+openapi: 3.1.0
+info:
+  title: YSim Platform Operational API
+  version: 0.1.0
+  description: Foundation operational endpoints for liveness, readiness, version metadata, and API discoverability.
+servers:
+  - url: /
+tags:
+  - name: Operations
+    description: Platform foundation operational checks.
+paths:
+  /health:
+    get:
+      tags:
+        - Operations
+      operationId: getHealth
+      summary: Liveness check
+      description: Confirms the API process is alive without checking external services.
+      responses:
+        "200":
+          description: Process is alive.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthResponse"
+  /ready:
+    get:
+      tags:
+        - Operations
+      operationId: getReadiness
+      summary: Readiness check
+      description: Reports readiness using bounded checks for required infrastructure and configuration.
+      responses:
+        "200":
+          description: Required dependencies are available.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ReadinessResponse"
+        "503":
+          description: One or more required dependencies are unavailable or degraded.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ReadinessResponse"
+  /version:
+    get:
+      tags:
+        - Operations
+      operationId: getVersion
+      summary: Version metadata
+      description: Returns non-sensitive service version and build metadata.
+      responses:
+        "200":
+          description: Version metadata is available.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/VersionResponse"
+  /openapi.json:
+    get:
+      tags:
+        - Operations
+      operationId: getOpenApiDocument
+      summary: OpenAPI document
+      description: Returns the machine-readable API document.
+      responses:
+        "200":
+          description: OpenAPI document.
+          content:
+            application/json:
+              schema:
+                type: object
+  /docs:
+    get:
+      tags:
+        - Operations
+      operationId: getApiDocs
+      summary: Swagger UI
+      description: Renders the human-readable API documentation UI.
+      responses:
+        "200":
+          description: API documentation UI.
+          content:
+            text/html:
+              schema:
+                type: string
+components:
+  schemas:
+    HealthResponse:
+      type: object
+      required:
+        - status
+        - timestamp
+        - service
+      properties:
+        status:
+          type: string
+          enum:
+            - ok
+        timestamp:
+          type: string
+          format: date-time
+        service:
+          type: string
+    DependencyCheck:
+      type: object
+      required:
+        - name
+        - status
+        - required
+        - latencyMs
+      properties:
+        name:
+          type: string
+          enum:
+            - postgres
+            - redis
+            - minio
+            - required-configuration
+        status:
+          type: string
+          enum:
+            - ready
+            - degraded
+            - unavailable
+        required:
+          type: boolean
+        latencyMs:
+          type: integer
+          minimum: 0
+    ReadinessResponse:
+      type: object
+      required:
+        - status
+        - timestamp
+        - service
+        - checks
+      properties:
+        status:
+          type: string
+          enum:
+            - ready
+            - degraded
+        timestamp:
+          type: string
+          format: date-time
+        service:
+          type: string
+        checks:
+          type: array
+          items:
+            $ref: "#/components/schemas/DependencyCheck"
+    VersionResponse:
+      type: object
+      required:
+        - service
+        - version
+        - build
+        - commit
+        - environment
+      properties:
+        service:
+          type: string
+        version:
+          type: string
+        build:
+          type: string
+        commit:
+          type: string
+        environment:
+          type: string

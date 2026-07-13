@@ -53,12 +53,74 @@ is_done() {
   git rev-parse "s01-t$1-complete" >/dev/null 2>&1
 }
 
+is_generated_path() {
+  local path="$1"
+
+  case "${path}" in
+    factory/index/*)
+      return 0
+      ;;
+    factory/contexts/generated/*)
+      return 0
+      ;;
+    factory/prompts/generated/*)
+      return 0
+      ;;
+    factory/executions/s00/*)
+      return 0
+      ;;
+    knowledge/catalog/*)
+      return 0
+      ;;
+    knowledge/normalized/*)
+      return 0
+      ;;
+    runtime/*)
+      return 0
+      ;;
+    logs/*)
+      return 0
+      ;;
+    *)
+      return 1
+      ;;
+  esac
+}
+
+
 require_clean_tree() {
-  if [[ -n "$(git status --porcelain=v1)" ]]; then
-    echo "ERROR: Working tree must be clean." >&2
-    git status --short >&2
+  local line
+  local path
+  local source_changes=()
+
+  while IFS= read -r line; do
+    [[ -z "${line}" ]] && continue
+
+    path="${line:3}"
+
+    # Handle rename output: old -> new
+    if [[ "${path}" == *" -> "* ]]; then
+      path="${path##* -> }"
+    fi
+
+    if is_generated_path "${path}"; then
+      continue
+    fi
+
+    source_changes+=("${line}")
+  done < <(
+    git status \
+      --porcelain=v1 \
+      --untracked-files=all
+  )
+
+  if (( ${#source_changes[@]} > 0 )); then
+    echo "ERROR: Source working tree must be clean." >&2
+    printf '%s\n' "${source_changes[@]}" >&2
     exit 10
   fi
+
+  echo "[PASS] Source working tree is clean."
 }
 
 build_context() {
@@ -188,13 +250,32 @@ commit_task() {
 EOF
 
   git add -A
-  git restore --staged runtime 2>/dev/null || true
-  git restore --staged logs 2>/dev/null || true
+
+  git restore --staged \
+    runtime \
+    logs \
+    factory/index \
+    factory/contexts/generated \
+    factory/prompts/generated \
+    factory/executions/s00 \
+    knowledge/catalog \
+    knowledge/normalized \
+    2>/dev/null || true
   git diff --cached --check
 
   if ! git diff --cached --quiet; then
     git commit -m "$message"
   fi
+
+git restore \
+  factory/index \
+  factory/contexts/generated/s00 \
+  factory/prompts/generated/s00 \
+  factory/executions/s00 \
+  knowledge/catalog \
+  knowledge/normalized \
+  2>/dev/null || true
+
 
   git tag -a "s01-t${task}-complete" \
     -m "Sprint-01 task T${task} complete"
