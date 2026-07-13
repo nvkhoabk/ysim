@@ -1,8 +1,8 @@
 {
   "schemaVersion": "1.2",
-  "generatedAt": "2026-07-13T18:35:51.012897+07:00",
+  "generatedAt": "2026-07-13T18:40:30.983369+07:00",
   "repositoryRoot": ".",
-  "documentCount": 118,
+  "documentCount": 119,
   "documents": [
     {
       "path": "docs/AAP/AAP-01.md",
@@ -1150,6 +1150,20 @@
       "version": "2.1",
       "status": "FROZEN",
       "language": "vi-VN",
+      "generatedNavigation": false
+    },
+    {
+      "path": "docs/ESPK/S01-T09-CI-WORKFLOW.md",
+      "filename": "S01-T09-CI-WORKFLOW.md",
+      "extension": "md",
+      "documentSet": "ESPK",
+      "documentCode": "ESPK-S01-T09-CI",
+      "documentName": "S01-T09 CI Workflow Template",
+      "title": "S01-T09 CI Workflow Template",
+      "project": "YSim v2.1",
+      "version": "2.1",
+      "status": "Draft",
+      "language": "en-US",
       "generatedNavigation": false
     },
     {

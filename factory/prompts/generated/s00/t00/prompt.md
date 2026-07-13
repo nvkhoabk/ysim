@@ -41,23 +41,20 @@ M factory/contexts/generated/s00/context.json
  M knowledge/catalog/relationships.json
  M knowledge/catalog/summary.json
  M knowledge/normalized/documents.json
- M tools/ysf/src/ysf/cli.py
- M tools/ysf/src/ysf/verification/service.py
- M tools/ysf/tests/unit/test_verification.py
-?? factory/config/frontend-foundation.yaml
-?? factory/prompts/generated/s01/t08/
-?? factory/reports/s01/s01-t08-frontend-foundation.md
-?? knowledge/ui/design-tokens.json
-?? knowledge/ui/localization-resources.json
-?? knowledge/ui/runtime-context.json
-?? tools/ysf/src/ysf/frontend/
-?? tools/ysf/tests/unit/test_frontend_verifier.py
+?? docs/ESPK/S01-T09-CI-WORKFLOW.md
+?? factory/prompts/generated/s01/t09/
+?? factory/reports/s01/s01-t09-quality-gates.md
+?? scripts/check-protected-paths.sh
+?? scripts/check-secret-hygiene.sh
+?? scripts/check-supplier-boundary.sh
+?? scripts/verify-platform.sh
 ```
 
 ## Recent Commits
 
 ```text
-d40d236 (HEAD -> feat/s01-platform-foundation, tag: s01-t07-complete) feat(s01-t07): add operational endpoints and OpenAPI
+d5dcaa9 (HEAD -> feat/s01-platform-foundation, tag: s01-t08-complete) feat(s01-t08): add frontend shells and shared UI foundation
+d40d236 (tag: s01-t07-complete) feat(s01-t07): add operational endpoints and OpenAPI
 62118a3 (origin/feat/s01-platform-foundation) fix(s01): ignore generated artifacts in auto runner
 aa1bc9b (tag: s01-t06-complete) feat(s01-t06): add background runtime foundation
 c30889e chore(factory): refresh generated knowledge artifacts
@@ -66,7 +63,6 @@ ed2d2c1 chore(factory): refresh generated knowledge artifacts
 1da2ff0 (tag: s01-t05-complete) feat(s01-t05): establish local infrastructure baseline
 72c3aca (tag: s01-t04-complete) feat(s01-t04): add structured logging and platform error handling
 e5e1ac3 (tag: s01-t03-complete) feat(s01-t03): add typed configuration and environment validation
-7548433 prepared
 ```
 
 ## Repository Tree
@@ -174,6 +170,9 @@ e5e1ac3 (tag: s01-t03-complete) feat(s01-t03): add typed configuration and envir
 ./scripts/build-prompt.sh
 ./scripts/build-sprint-01-context.sh
 ./scripts/build-sprint-01-prompt.sh
+./scripts/check-protected-paths.sh
+./scripts/check-secret-hygiene.sh
+./scripts/check-supplier-boundary.sh
 ./scripts/commission.sh
 ./scripts/install-sprint-01.sh
 ./scripts/local-infra.sh
@@ -189,6 +188,7 @@ e5e1ac3 (tag: s01-t03-complete) feat(s01-t03): add typed configuration and envir
 ./scripts/validate.sh
 ./scripts/verify-factory.sh
 ./scripts/verify-local-infra.sh
+./scripts/verify-platform.sh
 ./scripts/ysf.sh
 ./sprint.json
 ./tools

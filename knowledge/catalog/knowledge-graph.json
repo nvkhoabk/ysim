@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.1",
-  "generatedAt": "2026-07-13T18:35:51.018001+07:00",
-  "nodeCount": 126,
+  "generatedAt": "2026-07-13T18:40:30.990881+07:00",
+  "nodeCount": 127,
   "edgeCount": 45,
   "nodes": [
     {
@@ -657,6 +657,14 @@
       "type": "document",
       "label": "ESPK-S00.md",
       "path": "docs/ESPK/ESPK-S00.md",
+      "documentSet": "ESPK",
+      "layer": "execution"
+    },
+    {
+      "id": "ESPK-S01-T09-CI",
+      "type": "document",
+      "label": "S01-T09 CI Workflow Template",
+      "path": "docs/ESPK/S01-T09-CI-WORKFLOW.md",
       "documentSet": "ESPK",
       "layer": "execution"
     },
