@@ -1,0 +1,57 @@
+queueNaming:
+  pattern: ysim:{environment}:{capability}:{purpose}
+  environment: local
+  rules:
+    - lowercase-kebab-case
+    - capability-neutral
+    - no-supplier-specific-names
+
+bullmq:
+  adapter: BullMQ
+  connection: redis
+  redis:
+    hostEnv: YSIM_REDIS_HOST
+    portEnv: YSIM_REDIS_HOST_PORT
+  queues:
+    prefix: ysim
+
+defaults:
+  attempts: 3
+  timeoutMs: 30000
+  concurrency: 1
+  removeOnComplete: 100
+  removeOnFail: 1000
+  backoff:
+    strategy: exponential
+    delayMs: 1000
+
+workerLifecycle:
+  start: explicit
+  shutdown: graceful
+  gracefulShutdownMs: 10000
+  drainActiveJob: true
+
+scheduler:
+  abstraction: Scheduler
+  delayed: true
+  recurring: true
+  productionWorkflows: false
+
+failedJobHandling:
+  retain: true
+  inspectable: true
+  alertSeverity: error
+  includeCorrelationId: true
+
+observability:
+  logs: true
+  metrics: true
+  traces: true
+  correlationMetadata: true
+
+testQueues:
+  - name: ysim:local:platform:test-lifecycle
+    purpose: test-only enqueue-process-complete verification
+    production: false
+
+productionJobs: []

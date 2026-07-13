@@ -6,6 +6,9 @@ import sys
 from pathlib import Path
 
 from ysf import __version__
+from ysf.background.verifier import (
+    verify_background_runtime,
+)
 from ysf.context.service import build_context
 from ysf.core.doctor import run_doctor
 from ysf.core.repository import (
@@ -170,6 +173,28 @@ def print_result(
         print(
             "  env example: "
             f"{result.data['environmentExample']}"
+        )
+
+        for check in result.data["checks"]:
+            print(
+                f"  [{check['status']}] "
+                f"{check['name']}"
+            )
+
+        if result.data["failedChecks"]:
+            print(
+                "  failed: "
+                + ", ".join(
+                    result.data[
+                        "failedChecks"
+                    ]
+                )
+            )
+
+    elif result.command == "background-runtime":
+        print(
+            "  config: "
+            f"{result.data['configFile']}"
         )
 
         for check in result.data["checks"]:
@@ -408,6 +433,32 @@ def create_parser() -> argparse.ArgumentParser:
         help="Print machine-readable JSON.",
     )
 
+    background_parser = subparsers.add_parser(
+        "background-runtime",
+        help="Verify background runtime foundation assets.",
+    )
+    background_subparsers = (
+        background_parser.add_subparsers(
+            dest="background_command",
+            required=True,
+        )
+    )
+
+    background_verify_parser = (
+        background_subparsers.add_parser(
+            "verify",
+            help=(
+                "Validate the queue, scheduler, "
+                "and worker lifecycle baseline."
+            ),
+        )
+    )
+    background_verify_parser.add_argument(
+        "--json",
+        action="store_true",
+        help="Print machine-readable JSON.",
+    )
+
     run_parser = subparsers.add_parser(
         "run",
         help="Run an execution plan.",
@@ -553,6 +604,18 @@ def main() -> int:
             result = verify_local_infra(
                 repository_root=repository_root,
                 runtime=args.runtime,
+            )
+
+        elif args.command == "background-runtime":
+            if args.background_command != "verify":
+                parser.error(
+                    "Unsupported background-runtime "
+                    "command."
+                )
+                return 2
+
+            result = verify_background_runtime(
+                repository_root=repository_root,
             )
 
         elif args.command == "run":

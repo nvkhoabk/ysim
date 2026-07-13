@@ -23,23 +23,13 @@ feat/s01-platform-foundation
 ## Working Tree
 
 ```text
-M ai/manifests/s01-t06.yaml
- M ai/manifests/s01-t07.yaml
- M ai/manifests/s01-t08.yaml
- M ai/manifests/s01-t09.yaml
- M ai/manifests/s01-t10.yaml
- M factory/contexts/generated/s00/context.json
+M factory/contexts/generated/s00/context.json
  M factory/executions/s00/t00/plan.json
  M factory/executions/s00/t00/report.json
  M factory/executions/s00/t00/report.md
  M factory/index/catalog.json
  M factory/index/documents.json
  M factory/index/knowledge.json
- M factory/prompt-manifests/s01-t06.yaml
- M factory/prompt-manifests/s01-t07.yaml
- M factory/prompt-manifests/s01-t08.yaml
- M factory/prompt-manifests/s01-t09.yaml
- M factory/prompt-manifests/s01-t10.yaml
  M factory/prompts/generated/s00/t00/manifest.json
  M factory/prompts/generated/s00/t00/prompt.json
  M factory/prompts/generated/s00/t00/prompt.md
@@ -51,23 +41,30 @@ M ai/manifests/s01-t06.yaml
  M knowledge/catalog/relationships.json
  M knowledge/catalog/summary.json
  M knowledge/normalized/documents.json
-?? HUMAN_ACCEPTANCE_FRAMEWORK.md
-?? human-acceptance/
+ M tools/ysf/src/ysf/cli.py
+ M tools/ysf/src/ysf/verification/service.py
+ M tools/ysf/tests/unit/test_verification.py
+?? factory/config/background-runtime.yaml
+?? factory/prompts/generated/s01/t06/
+?? factory/reports/s01/s01-t06-background-runtime.md
+?? tools/ysf/src/ysf/background/
+?? tools/ysf/tests/unit/test_background_runtime.py
+?? tools/ysf/tests/unit/test_background_verifier.py
 ```
 
 ## Recent Commits
 
 ```text
-1da2ff0 (HEAD -> feat/s01-platform-foundation, tag: s01-t05-complete) feat(s01-t05): establish local infrastructure baseline
+c30889e (HEAD -> feat/s01-platform-foundation, origin/feat/s01-platform-foundation) chore(factory): refresh generated knowledge artifacts
+ed2d2c1 chore(factory): refresh generated knowledge artifacts
+6a980c8 docs(s01): expand tasks t06-t10 and add human acceptance
+1da2ff0 (tag: s01-t05-complete) feat(s01-t05): establish local infrastructure baseline
 72c3aca (tag: s01-t04-complete) feat(s01-t04): add structured logging and platform error handling
 e5e1ac3 (tag: s01-t03-complete) feat(s01-t03): add typed configuration and environment validation
-7548433 (origin/feat/s01-platform-foundation) prepared
+7548433 prepared
 af7d70e (tag: s01-t02-complete) feat(s01-t02): bootstrap NestJS API application
 bdcec14 (tag: s01-t01-complete) feat(s01-t01): establish monorepo workspace foundation
 e3ed5dd prepared
-d6629e4 chore(s01): add sequential sprint auto runner
-10ace03 docs(s01-t00): complete repository audit and execution plan
-3a89828 fix(s01): align prompt manifests and validator with ysf schema
 ```
 
 ## Repository Tree

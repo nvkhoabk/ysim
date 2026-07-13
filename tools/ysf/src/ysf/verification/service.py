@@ -5,6 +5,9 @@ import sys
 from pathlib import Path
 from typing import Any
 
+from ysf.background.verifier import (
+    verify_background_runtime,
+)
 from ysf.core.doctor import run_doctor
 from ysf.core.result import CommandResult
 from ysf.pipeline.service import run_pipeline
@@ -67,6 +70,21 @@ def run_verification(
             else 1
         ),
         "data": doctor_result.data,
+    })
+
+    background_result = verify_background_runtime(
+        repository_root
+    )
+
+    checks.append({
+        "name": "background-runtime",
+        "status": background_result.status,
+        "exitCode": (
+            0
+            if background_result.successful
+            else 1
+        ),
+        "data": background_result.data,
     })
 
     checks.append(
