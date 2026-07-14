@@ -1,0 +1,355 @@
+{
+  "schema_version": "1.1",
+  "candidate_id": "V23-REQ-REGISTRY-FC2",
+  "baseline_kind": "RECONCILED_REQUIREMENT_REGISTRY",
+  "status": "CANDIDATE",
+  "approval_status": "PENDING_HUMAN_APPROVAL",
+  "branch": "rebuild/v2.3-foundation",
+  "source_git_commit": "7f16d4c4b8ab514bd45de184f65ace221b03f4db",
+  "generated_on": "2026-07-14",
+  "freeze_scope": [
+    "SOURCE_INVENTORY",
+    "EXTRACTION_AND_RECONCILIATION_RESULTS",
+    "CURRENT_IDENTITY_MAPPING",
+    "ALIAS_COMPOSITE_RETIRED_KEY_DECISIONS",
+    "CURRENT_SCOPE_CLASSIFICATION",
+    "SOURCE_TRACEABILITY",
+    "DEFERRED_DOCUMENTATION_FINDINGS"
+  ],
+  "explicit_non_claims": [
+    "NOT_FINAL_BRD_UXF_V2.3_FREEZE",
+    "NOT_FINAL_ACCEPTANCE_BASELINE",
+    "NOT_ARCHITECTURE_APPROVAL",
+    "NOT_IMPLEMENTATION_AUTHORIZATION",
+    "NOT_DECLARATION_OF_TEMPORARY_KEYS_AS_FINAL_CANONICAL_IDS"
+  ],
+  "validator_result": {
+    "command": "python3 scripts/docs/validate-requirement-registry.py",
+    "status": "VALID_READY_TO_FREEZE"
+  },
+  "ready_to_freeze": true,
+  "exact_registry_counts": {
+    "source_document_count": 31,
+    "brd_source_document_count": 24,
+    "uxf_source_document_count": 7,
+    "active_registry_entry_count": 1185,
+    "implementation_unit_count": 1174,
+    "acceptance_unit_count": 1174,
+    "scope_coverage_unit_count": 1174,
+    "canonical_atomic_requirement_count": 1174,
+    "canonical_id_count": 576,
+    "active_temporary_key_count": 609,
+    "composite_parent_count": 2,
+    "alias_count": 9,
+    "retired_temporary_key_count": 157,
+    "unresolved_count": 0,
+    "documentation_finding_count": 15
+  },
+  "scope_distribution": {
+    "DEFERRED": 15,
+    "FUTURE": 74,
+    "OUT_OF_SCOPE": 17,
+    "UNCLEAR": 0,
+    "V2.3_ACTIVE": 1068
+  },
+  "lifecycle_distribution": {
+    "CURRENT": 0,
+    "DEPRECATED": 0,
+    "DRAFT": 165,
+    "FROZEN": 1020,
+    "SUPERSEDED": 0,
+    "UNCLEAR": 0
+  },
+  "requirement_type_distribution": {
+    "ACCESSIBILITY_REQUIREMENT": 8,
+    "BUSINESS_DECISION": 177,
+    "BUSINESS_REQUIREMENT": 367,
+    "BUSINESS_RULE": 14,
+    "DATA_REQUIREMENT": 149,
+    "DESIGN_PRINCIPLE": 18,
+    "INTEGRATION_REQUIREMENT": 54,
+    "OPERATIONAL_REQUIREMENT": 77,
+    "PERFORMANCE_REQUIREMENT": 4,
+    "PRIVACY_REQUIREMENT": 9,
+    "SCOPE_CONSTRAINT": 116,
+    "SECURITY_REQUIREMENT": 60,
+    "UX_REQUIREMENT": 132
+  },
+  "acceptance_distribution": {
+    "DIRECT": 0,
+    "INFERRED_ONLY": 1174,
+    "LINKED": 0,
+    "MISSING": 0
+  },
+  "canonical_id_count": 576,
+  "active_temporary_key_count": 609,
+  "composite_parent_count": 2,
+  "alias_count": 9,
+  "retired_temporary_key_count": 157,
+  "unresolved_count": 0,
+  "known_gaps": [
+    {
+      "gap_id": "SOURCE_BASELINE_V22_REQUIRES_V23_CORRECTION_AND_APPROVAL",
+      "observed_count": 31,
+      "blocks_final_brd_uxf_freeze": true,
+      "statement": "The BRD/UXF source content originates in the architecture-v2.2 baseline; BRD is ADOPTED and UXF is DRAFT_REVIEW for v2.3 correction and approval."
+    },
+    {
+      "gap_id": "ACTIVE_TEMPORARY_KEYS_REQUIRE_STABLE_IDS",
+      "observed_count": 609,
+      "blocks_final_brd_uxf_freeze": true,
+      "statement": "Active temporary keys are traceable Phase 1C identities, not final canonical Requirement IDs, and must receive stable IDs in a later phase."
+    },
+    {
+      "gap_id": "INFERRED_ONLY_ACCEPTANCE_REQUIRES_DOCUMENTATION",
+      "observed_count": 1174,
+      "blocks_final_brd_uxf_freeze": true,
+      "statement": "INFERRED_ONLY acceptance units require documented DIRECT or LINKED acceptance in a later phase."
+    },
+    {
+      "gap_id": "DEFERRED_DOCUMENTATION_FINDINGS_REQUIRE_SOURCE_CORRECTION",
+      "observed_count": 15,
+      "blocks_final_brd_uxf_freeze": true,
+      "statement": "Deferred BRD/UXF documentation findings must be resolved in the source-correction phase."
+    }
+  ],
+  "source_baseline": {
+    "origin": "ARCHITECTURE_BASELINE_V2.2",
+    "origin_tag": "architecture-v2.2",
+    "brd_v2.3_classification": "ADOPTED",
+    "uxf_v2.3_classification": "DRAFT_REVIEW",
+    "purpose": "CORRECTION_AND_APPROVAL_FOR_V2.3"
+  },
+  "source_documents": [
+    {
+      "path": "docs/BRD/BRD-BO-INDEX.md",
+      "document_set": "BRD",
+      "sha256": "4de5b2faf06b2c77cf0b8325ba7f9ba37f24c8bd8592307106629cb4aecd1e44"
+    },
+    {
+      "path": "docs/BRD/BRD-CAP-INDEX.md",
+      "document_set": "BRD",
+      "sha256": "59f1943bf9844d62c3b6a05c133065f71238aac44b8d7011b0e545151681304c"
+    },
+    {
+      "path": "docs/BRD/BRD-EVENT-INDEX.md",
+      "document_set": "BRD",
+      "sha256": "a12db7306f377d0b9150b72a7f6d1e3e629029375c563d17bc8324be7ebd2b42"
+    },
+    {
+      "path": "docs/BRD/BRD-META-MODEL.md",
+      "document_set": "BRD",
+      "sha256": "8a6068fd03c466cbee13fb5e21ce8dfeef70fe2064b2ecedff1cd995d536fa64"
+    },
+    {
+      "path": "docs/BRD/BRD-POLICY-INDEX.md",
+      "document_set": "BRD",
+      "sha256": "b3a5b902af0a2e6dd5fde143a2f8ae36f632e66a17b30d452318f88d7662768c"
+    },
+    {
+      "path": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+      "document_set": "BRD",
+      "sha256": "dda067e30cd66aa46a3b329384b4ba081a77c20237fa00749726131ccdc3aee2"
+    },
+    {
+      "path": "docs/BRD/BRD-UPDATE-01.md",
+      "document_set": "BRD",
+      "sha256": "5fe579b765c9d30091001f3b54f515d33fc3dcf5444e5546a9f1eb4d0627cf62"
+    },
+    {
+      "path": "docs/BRD/BRD-WS-01.md",
+      "document_set": "BRD",
+      "sha256": "5f06b30a2583eb86e0eb3249515fbf50a2f495fbe96a7d36e40778e375ec75a6"
+    },
+    {
+      "path": "docs/BRD/BRD-WS-02.md",
+      "document_set": "BRD",
+      "sha256": "4435e56ccf7c9cc5595d26fd1874904697ddcae5869679162371c8d718cabb68"
+    },
+    {
+      "path": "docs/BRD/BRD-WS-03.md",
+      "document_set": "BRD",
+      "sha256": "87301326add89c31402736f39e85927b22dcd192d4a84620e754f7a98fafd637"
+    },
+    {
+      "path": "docs/BRD/BRD-WS-04.md",
+      "document_set": "BRD",
+      "sha256": "c588c1f02c8a681fcc2bcc2e34a10d3a2082c1cc2fb356974c51d39c841b4427"
+    },
+    {
+      "path": "docs/BRD/BRD-WS-05.md",
+      "document_set": "BRD",
+      "sha256": "27033f0ef0776bb676698aa19237100f5402cfbeac3d81789e96ebdd1fe61413"
+    },
+    {
+      "path": "docs/BRD/BRD-WS-06.md",
+      "document_set": "BRD",
+      "sha256": "82fb5377f150666a99893224fa639236faf4bc3d8e05992180b06ddf8bd0d005"
+    },
+    {
+      "path": "docs/BRD/BRD-WS-07.md",
+      "document_set": "BRD",
+      "sha256": "46dc9fd58629c23183cf02e28c8a6f97d536dd6c496ddc84627e3fdf3bc4ae93"
+    },
+    {
+      "path": "docs/BRD/BRD-WS-08.md",
+      "document_set": "BRD",
+      "sha256": "81f73cffa032a7100b5cfec030c06333f57024fa2b7fe7e3e7784b57c31af90a"
+    },
+    {
+      "path": "docs/BRD/BRD-WS-09.md",
+      "document_set": "BRD",
+      "sha256": "2c4650ffd2c9180b8476122a6921391fbb0578e6813cc4d311cfd0ecfd1f8935"
+    },
+    {
+      "path": "docs/BRD/BRD-WS-10.md",
+      "document_set": "BRD",
+      "sha256": "800f8fa87bee0a2bc3f0825be4a0f31ebf23c34a90a226c9fafb638af57eb889"
+    },
+    {
+      "path": "docs/BRD/BRD-WS-11.md",
+      "document_set": "BRD",
+      "sha256": "44aa48c93e14eb7914aff0c3737574a871cb6c0127fdea320201e4312c94db4c"
+    },
+    {
+      "path": "docs/BRD/BRD-WS-12.md",
+      "document_set": "BRD",
+      "sha256": "1c7cd24183583d0917891fc8fd00bbb4146ab880b2bbab0d46c23e9fff0f638b"
+    },
+    {
+      "path": "docs/BRD/BRD-WS-13.md",
+      "document_set": "BRD",
+      "sha256": "46e1b9176352a57ffc62a82e128934e76bf28b8c123df6b73a1fcc4a8e90fcb2"
+    },
+    {
+      "path": "docs/BRD/BRD-WS-14.md",
+      "document_set": "BRD",
+      "sha256": "fe1b5aa63cfede9d949cb678a60bf1eb5e250b131049cda9f5b4dfef437a2ef2"
+    },
+    {
+      "path": "docs/BRD/BRD-WS-15.md",
+      "document_set": "BRD",
+      "sha256": "20eb5dfee4215f31e81b57ac70b7da621679f0184e45b0e8a7a84bb84c8e77de"
+    },
+    {
+      "path": "docs/BRD/BRD-WS-16.md",
+      "document_set": "BRD",
+      "sha256": "027fac669b060e1ec9dc66020e10b8d86dfb1b1bd6ec0725f066064e5ff93903"
+    },
+    {
+      "path": "docs/BRD/BRD-WS-17.md",
+      "document_set": "BRD",
+      "sha256": "2e90fdc4ceabb0bfb24c5257c80237aaf1b205f089cc9129925d71185319a924"
+    },
+    {
+      "path": "docs/UXF/INDEX.md",
+      "document_set": "UXF",
+      "sha256": "1c4c153004cb8e3fcc4d7bb0b71ba826501838c92b9741cf561bded00354ad84"
+    },
+    {
+      "path": "docs/UXF/UXF-00.md",
+      "document_set": "UXF",
+      "sha256": "c6c7cdd05eb515d686951a3cfffbf4c42e00aea5d79a1c1eb37a1ee7a604d940"
+    },
+    {
+      "path": "docs/UXF/UXF-01.md",
+      "document_set": "UXF",
+      "sha256": "e7d9a8ab601072fc69f4b23784d1d54723bce31a1bb32c82521afef92f03151e"
+    },
+    {
+      "path": "docs/UXF/UXF-02.md",
+      "document_set": "UXF",
+      "sha256": "ebb4a6e7741453a1cff3837affc7cc9dfaaf1bd628a85a322f9eb2ce8ac0f26b"
+    },
+    {
+      "path": "docs/UXF/UXF-03.md",
+      "document_set": "UXF",
+      "sha256": "e480a8aece2f8f8c90057bbddd0b6f8fb416c38641fd3cce3bc01aa9e3d8560a"
+    },
+    {
+      "path": "docs/UXF/UXF-04.md",
+      "document_set": "UXF",
+      "sha256": "48d723d7208c125b6a1ff3b665183059f8fe8969d35143a8095aaa919447e6dd"
+    },
+    {
+      "path": "docs/UXF/UXF-05.md",
+      "document_set": "UXF",
+      "sha256": "71d23f3c8ec77eba0b414d0a8e9e20c345811bfb7daf22d182947feae6a8df42"
+    }
+  ],
+  "registry_artifacts": [
+    {
+      "path": "docs/baselines/v2.3/BRD_UXF_INVENTORY.md",
+      "role": "SOURCE_INVENTORY_REPORT",
+      "sha256": "70c8714fc1487929e7c232d9c4ff3d08da927eb521e8cf96a00ed1bb6a064c02"
+    },
+    {
+      "path": "docs/baselines/v2.3/REQUIREMENT_REGISTRY_QA.md",
+      "role": "QA_REPORT",
+      "sha256": "0e02d8e2029e1b0b313ec61ccc1e00aa174959b9674052fc8f515569210497d4"
+    },
+    {
+      "path": "docs/baselines/v2.3/REQUIREMENT_REGISTRY_RECONCILIATION.md",
+      "role": "RECONCILIATION_REPORT",
+      "sha256": "4bafb121748d1e0ab55faca27b27ef2f5df61528c5f4d584dd11169435bbd377"
+    },
+    {
+      "path": "docs/baselines/v2.3/REQUIREMENT_REGISTRY_REPORT.md",
+      "role": "REGISTRY_REPORT",
+      "sha256": "58e763b7e50b0050ed7b73ed514af13463081f3c1ea5a3180e8fb6292928d142"
+    },
+    {
+      "path": "docs/baselines/v2.3/requirements/brd-requirements.json",
+      "role": "BRD_REGISTRY",
+      "sha256": "f1c7586ab5f8bfb1180a02490c111df4f96cf3d2f58e7c91364fa47daf6b5cf0"
+    },
+    {
+      "path": "docs/baselines/v2.3/requirements/registry-qa.json",
+      "role": "QA_DATA",
+      "sha256": "ffe85af33de3dca784e6da471b95027b5113937a190556b5fc966d4883dcc681"
+    },
+    {
+      "path": "docs/baselines/v2.3/requirements/registry-reconciliation.json",
+      "role": "RECONCILIATION_LEDGER",
+      "sha256": "b1d5267aa8b2c7e22760dcf56fc0ca0a507139a3293f45737e3299014635c6ce"
+    },
+    {
+      "path": "docs/baselines/v2.3/requirements/registry-summary.json",
+      "role": "REGISTRY_SUMMARY",
+      "sha256": "0a3bf986365b61fffe519982876f7c385121cf3a95278c89b17fab9c42b06688"
+    },
+    {
+      "path": "docs/baselines/v2.3/requirements/uxf-requirements.json",
+      "role": "UXF_REGISTRY",
+      "sha256": "fb35d291fe06134e04316e247d75806aaddb28878ecb37d05b56c81791297f57"
+    }
+  ],
+  "validator_artifacts": [
+    {
+      "path": "scripts/docs/validate-requirement-registry.py",
+      "role": "REGISTRY_VALIDATOR",
+      "sha256": "68a2c020cd413893c3459001069d2c54d31ee28c05cd9f91cca550ba702d9eaa"
+    }
+  ],
+  "hash_algorithm": "SHA-256",
+  "aggregate_hash_algorithm": "For source_documents, read canonical Git blob bytes from '<source_git_commit>:<relative_posix_path>' and hash those bytes with SHA-256. For registry_artifacts and validator_artifacts, hash raw artifact bytes with SHA-256. For each aggregate, sort entries lexicographically by relative POSIX path and SHA-256 the concatenated UTF-8 records '<path>\\0<lowercase_sha256>\\n'. source_aggregate_hash covers source_documents; registry_aggregate_hash covers registry_artifacts plus validator_artifacts.",
+  "source_aggregate_hash": "34685bed33422505763d31ef8f86837a1139fd5aaf2946a9adcbfa9dd1cd9a35",
+  "registry_aggregate_hash": "832cc96192c72b89472964e030893ac4c01bcc0d20eb21f7e935b7a7c6288658",
+  "approval": {
+    "status": "PENDING",
+    "authorized_approver": "PENDING",
+    "decision": "PENDING",
+    "date": "PENDING",
+    "signature": "PENDING"
+  },
+  "supersedes_candidate_id": "V23-REQ-REGISTRY-FC1",
+  "correction": {
+    "category": "SOURCE_HASH_BASIS_REPAIR",
+    "fc1_failure": "CLEAN_CHECKOUT_SOURCE_HASH_MISMATCH",
+    "root_cause": "RAW_WORKING_TREE_CRLF_VS_CANONICAL_GIT_BLOB_LF",
+    "affected_source_document_count": 28,
+    "semantic_payload_changed": false
+  },
+  "source_hash_basis": "GIT_BLOB_CONTENT_AT_SOURCE_COMMIT",
+  "line_ending_semantics": "GIT_CANONICAL_TEXT"
+}
