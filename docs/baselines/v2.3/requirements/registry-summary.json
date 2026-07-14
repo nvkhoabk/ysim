@@ -1,0 +1,125 @@
+{
+  "schema_version": "2.0",
+  "generated_on": "2026-07-14",
+  "sets": {
+    "BRD": {
+      "file_count": 24,
+      "requirement_count": 1020,
+      "with_id": 514,
+      "without_id": 506,
+      "missing_acceptance": 1009,
+      "unclear_scope": 0,
+      "documented_acceptance": 0,
+      "acceptance_gap": 1009,
+      "composite_parent_count": 2,
+      "alias_count": 9,
+      "atomic_requirement_count": 1009,
+      "canonical_atomic_requirement_count": 1009
+    },
+    "UXF": {
+      "file_count": 7,
+      "requirement_count": 165,
+      "with_id": 62,
+      "without_id": 103,
+      "missing_acceptance": 165,
+      "unclear_scope": 0,
+      "documented_acceptance": 0,
+      "acceptance_gap": 165,
+      "composite_parent_count": 0,
+      "alias_count": 0,
+      "atomic_requirement_count": 165,
+      "canonical_atomic_requirement_count": 165
+    }
+  },
+  "totals": {
+    "file_count": 31,
+    "requirement_count": 1185,
+    "with_id": 576,
+    "without_id": 609,
+    "duplicate_ids": 0,
+    "duplicate_temporary_keys": 0,
+    "dangling_references": 0,
+    "missing_acceptance": 1174,
+    "unclear_scope": 0,
+    "ambiguous_requirements": 0,
+    "requirements_with_overlap": 26,
+    "unique_overlap_pairs": 13,
+    "unique_overlap_groups": 13,
+    "exact_duplicate_groups": 9,
+    "probable_semantic_overlap_groups": 4,
+    "documented_acceptance": 0,
+    "acceptance_gap": 1174,
+    "composite_parent_count": 2,
+    "alias_count": 9,
+    "atomic_requirement_count": 1174,
+    "canonical_atomic_requirement_count": 1174
+  },
+  "duplicate_ids": [],
+  "duplicate_temporary_keys": [],
+  "dangling_references": [],
+  "by_scope_status": {
+    "DEFERRED": 15,
+    "FUTURE": 74,
+    "OUT_OF_SCOPE": 17,
+    "V2.3_ACTIVE": 1068
+  },
+  "by_lifecycle_status": {
+    "DRAFT": 165,
+    "FROZEN": 1020
+  },
+  "by_requirement_type": {
+    "ACCESSIBILITY_REQUIREMENT": 8,
+    "BUSINESS_DECISION": 177,
+    "BUSINESS_REQUIREMENT": 367,
+    "BUSINESS_RULE": 14,
+    "DATA_REQUIREMENT": 149,
+    "DESIGN_PRINCIPLE": 18,
+    "INTEGRATION_REQUIREMENT": 54,
+    "OPERATIONAL_REQUIREMENT": 77,
+    "PERFORMANCE_REQUIREMENT": 4,
+    "PRIVACY_REQUIREMENT": 9,
+    "SCOPE_CONSTRAINT": 116,
+    "SECURITY_REQUIREMENT": 60,
+    "UX_REQUIREMENT": 132
+  },
+  "by_acceptance_status": {
+    "INFERRED_ONLY": 1185
+  },
+  "by_scope_basis": {
+    "BASELINE_INHERITANCE": 1054,
+    "FRAMEWORK_DECISION": 8,
+    "SOURCE_EXPLICIT": 123
+  },
+  "phase": "Documentation Governance v2.3 Phase 1C Reconciliation",
+  "by_scope_status_registry_entries": {
+    "DEFERRED": 15,
+    "FUTURE": 74,
+    "OUT_OF_SCOPE": 17,
+    "V2.3_ACTIVE": 1079
+  },
+  "by_acceptance_status_for_acceptance_units": {
+    "INFERRED_ONLY": 1174
+  },
+  "compatibility_notes": {
+    "missing_acceptance": "Compatibility field; equals acceptance_gap (INFERRED_ONLY + MISSING) across acceptance units, excluding non-atomic composite parents."
+  },
+  "reconciliation": {
+    "active_requirement_count": 1185,
+    "atomic_requirement_count": 1174,
+    "canonical_atomic_requirement_count": 1174,
+    "composite_parent_count": 2,
+    "alias_count": 9,
+    "false_positive_excluded": 137,
+    "false_positive_confirmed_requirement": 3,
+    "false_negative_added": 3,
+    "false_negative_excluded": 7,
+    "compound_split_candidates": 10,
+    "atomic_replacement_splits": 8,
+    "composite_parent_splits": 2,
+    "split_resulting_requirements": 30,
+    "canonical_tombstones": 0,
+    "temporary_keys_retired": 157,
+    "unresolved_human_decisions": 0
+  },
+  "ready_to_freeze": true
+}
