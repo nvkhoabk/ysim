@@ -636,3 +636,135 @@ machine-readable trong tài liệu sở hữu tương ứng. Không được đ�
 |---|---|---|
 | 1.0 | 2026-07-13 | Khởi tạo bản ghi quyết định framework; file nguồn bị dừng giữa FD-01. |
 | 2.0 | 2026-07-13 | Phục hồi FD-01, bổ sung toàn bộ framework, product scope, UXF, domain và documentation governance decisions đã được phê duyệt. |
+
+---
+
+## 10. Phase 2 Document Remediation Decisions
+
+### P2D-01 — Big-bang document remediation
+
+- Toàn bộ 31 documents là một document-baseline change set.
+- Không freeze/commit từng domain.
+- Chỉ human-accept khi toàn baseline hoàn tất.
+- Automated internal checkpoints vẫn bắt buộc.
+
+### P2D-02 — Stable Requirement IDs
+
+- Giữ nguyên 576 existing IDs.
+- 609 active temporary keys nhận type-neutral stable IDs theo origin document.
+- Mapping examples:
+  - `TMP-BRD-WS-03-001` → `BRD-WS-03-R001`
+  - `TMP-BRD-BO-INDEX-048` → `BRD-BO-INDEX-R048`
+  - `TMP-UXF-05-037` → `UXF-05-R037`
+- 157 retired temporary keys tiếp tục là tombstone.
+- Không reuse ID.
+- Previous temporary key được giữ trong provenance.
+- ID không đổi khi type/scope/lifecycle hoặc current document thay đổi.
+
+### P2D-03 — Acceptance applicability
+
+- Chỉ `V2.3_ACTIVE` canonical atomic requirements có implementation acceptance.
+- `FUTURE`/`DEFERRED`/`OUT_OF_SCOPE` dùng `NOT_APPLICABLE_FOR_V2.3`.
+- Inactive requirements bắt buộc có scope rationale.
+- Inactive requirements không được tính vào acceptance gap.
+- Khi reactivate, documented acceptance trở thành bắt buộc.
+
+### P2D-04 — Delivery commitment and criticality
+
+- Mọi `V2.3_ACTIVE` requirement là `REQUIRED`.
+- Verification criticality tách thành `CRITICAL`/`HIGH`/`NORMAL`.
+- Criticality không cho phép bỏ requirement.
+
+### P2D-05 — Criticality assignment
+
+- Dùng rule-based classification và exception register.
+- `CRITICAL`: identity/auth, privileged access, security/privacy,
+  payment/refund, pricing integrity, reservation/allocation, procurement,
+  fulfillment, financial ledger/reconciliation, production configuration,
+  audit, recovery và data integrity.
+- `HIGH`: core commerce, customer/order management, integrations,
+  notification delivery, operational reporting, portal/storefront workflows
+  và accessibility của critical journeys.
+- `NORMAL`: administrative convenience, non-critical presentation, secondary
+  UX, descriptive catalogs và non-runtime governance inspection.
+- Borderline/override phải vào exception register.
+
+### P2D-06 — Risk-tiered acceptance
+
+- `CRITICAL`: positive, negative/fail-closed và
+  recovery/retry/idempotency/concurrency/authorization boundary khi áp dụng.
+- `HIGH`: expected path và primary failure/edge path.
+- `NORMAL`: ít nhất một observable pass/fail criterion.
+- Không padding criteria; non-applicable dimensions phải có rationale.
+- Evidence runtime/API/data/screenshot/document theo impacted surface.
+
+### P2D-07 — Authoritative Markdown block
+
+- Dùng strict visible Markdown Requirement Block.
+- Dùng `YSIM:REQUIREMENT BEGIN`/`YSIM:REQUIREMENT END` markers.
+- Source Markdown là authoritative.
+- JSON registry là generated projection.
+
+### P2D-08 — Ambiguity handling
+
+- Xử lý deterministic work.
+- Semantic blockers vào Decision Register.
+- Không suy diễn acceptance hoặc business meaning.
+- Không tạo final candidate khi Decision Register chưa rỗng.
+
+### P2D-09 — Authority hierarchy
+
+Thứ tự authority:
+
+1. Human-approved v2.3 decisions.
+2. BRD business meaning sau correction.
+3. UXF aligned với BRD.
+4. Generated registry là projection.
+
+Conflict chưa approved phải vào Decision Register. Legacy wording được giữ
+bằng Git/change provenance.
+
+### P2D-10 — Document lifecycle
+
+31 documents chuyển đồng bộ:
+
+```text
+V2.3_DRAFT → V2.3_CANDIDATE → V2.3_FROZEN
+```
+
+Không candidate nếu còn temporary ID, missing active acceptance hoặc unresolved
+decision.
+
+### P2D-11 — Version metadata
+
+- Tách `product_baseline: 2.3` và `document_revision`.
+- Dùng standard YAML front matter.
+- Required metadata:
+  `schema_version`, `document_code`, `title`, `product_baseline`,
+  `document_revision`, `lifecycle_status`, `language`, `authority`,
+  `supersedes`, `requirement_block_schema`.
+- BRD language `vi-VN`; UXF language `en`.
+
+### P2D-12 — Requirement title
+
+- Title là non-normative navigation metadata.
+- ID và normative statement là authoritative.
+- Title không tham gia semantic fingerprint.
+
+### P2D-13 — Controlled statement rewrite
+
+- Change classifications:
+  `EDITORIAL`, `CLARIFICATION`, `SCOPE_UPDATE`, `SEMANTIC_CHANGE`, `SPLIT`,
+  `MERGE`, `ALIAS`.
+- Non-editorial change phải có approved provenance.
+- Semantic change chưa approved phải block.
+- Stable ID giữ nguyên nếu identity không đổi.
+
+### P2D-14 — Acceptance abstraction
+
+- BRD acceptance ở observable business/contract boundary.
+- UXF acceptance ở journey/state/accessibility/performance outcome.
+- Không đưa database/framework/internal class/topology vào acceptance nếu chưa
+  là approved constraint.
+- Implementation slices phải chứng minh Acceptance IDs; không sửa acceptance
+  để phù hợp code.
