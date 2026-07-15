@@ -1,0 +1,1315 @@
+{
+  "approval_scope_exclusion": "27_HUMAN_OPERATOR_MAPPING_DECISIONS_NOT_APPROVED",
+  "artifact": "V23-P2C-SEMANTIC-ORACLE-HUMAN-MAPPING-DECISIONS-C2",
+  "candidate_id": "V23-P2C-SEMANTIC-ORACLE-MODEL-C2",
+  "decision_count": 27,
+  "decisions": [
+    {
+      "criticality": "HIGH",
+      "current_route": "UNIQUE_INLINE_CONTRACT",
+      "decision_id": "P2C-SO-C2-HOMR-001",
+      "options": [
+        {
+          "candidate_operators": [
+            "POLICY_OUTCOME_EQUALS",
+            "EVIDENCE_FIELD_PRESENT"
+          ],
+          "disposition": "AUTHOR_SOURCE_GROUNDED_OPERATOR_AST",
+          "non_claim": "CANDIDATE_COMPOSITION_REQUIRES_HUMAN_CONFIRMATION",
+          "option_id": "P2C-SO-C2-HOMR-001-OPT-1",
+          "source_edit_required": false
+        },
+        {
+          "candidate_operators": [],
+          "disposition": "SOURCE_SEMANTICS_BLOCKED",
+          "non_claim": "NO_OPERATOR_AST_UNTIL_SOURCE_SEMANTICS_ARE_APPROVED",
+          "option_id": "P2C-SO-C2-HOMR-001-OPT-2",
+          "source_edit_required": true
+        }
+      ],
+      "recommended_option_id": "P2C-SO-C2-HOMR-001-OPT-1",
+      "requirement_id": "BD-04-001",
+      "selected_option_id": null,
+      "selection_status": "PENDING",
+      "source_provenance": {
+        "approved_decisions": [
+          "P2-DEC-007"
+        ],
+        "identity_origin": "PRESERVED_STABLE_ID",
+        "original_identity": "BD-04-001",
+        "previous_temporary_key": null,
+        "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+        "source_baseline": "v2.2",
+        "source_context_heading": "BD-04-001",
+        "source_context_sha256": "678620f32e0db94988f43ea4b56d23e284fd5b41953e9520fb328b5bc66e233d",
+        "source_document": "docs/BRD/BRD-WS-04.md",
+        "source_fingerprint": "63df232f43395e2a0fe801be558496ee7e5c652dc21b08b269c0b52ca6e99acf",
+        "source_lines": "L521-L529",
+        "source_section": "24. Business Decisions (Locked) > BD-04-001"
+      },
+      "statement": "YSim sử dụng mô hình Four-Level Catalog: - Supplier Catalog - Master Catalog - Sales Catalog - Storefront Catalog"
+    },
+    {
+      "criticality": "HIGH",
+      "current_route": "UNIQUE_INLINE_CONTRACT",
+      "decision_id": "P2C-SO-C2-HOMR-002",
+      "options": [
+        {
+          "candidate_operators": [
+            "POLICY_OUTCOME_EQUALS",
+            "EVIDENCE_FIELD_PRESENT"
+          ],
+          "disposition": "AUTHOR_SOURCE_GROUNDED_OPERATOR_AST",
+          "non_claim": "CANDIDATE_COMPOSITION_REQUIRES_HUMAN_CONFIRMATION",
+          "option_id": "P2C-SO-C2-HOMR-002-OPT-1",
+          "source_edit_required": false
+        },
+        {
+          "candidate_operators": [],
+          "disposition": "SOURCE_SEMANTICS_BLOCKED",
+          "non_claim": "NO_OPERATOR_AST_UNTIL_SOURCE_SEMANTICS_ARE_APPROVED",
+          "option_id": "P2C-SO-C2-HOMR-002-OPT-2",
+          "source_edit_required": true
+        }
+      ],
+      "recommended_option_id": "P2C-SO-C2-HOMR-002-OPT-1",
+      "requirement_id": "BD-07-014",
+      "selected_option_id": null,
+      "selection_status": "PENDING",
+      "source_provenance": {
+        "approved_decisions": [],
+        "identity_origin": "PRESERVED_STABLE_ID",
+        "original_identity": "BD-07-014",
+        "previous_temporary_key": null,
+        "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+        "source_baseline": "v2.2",
+        "source_context_heading": "16. Purchase Order Relationship",
+        "source_context_sha256": "377ba4c9e2d7228a57bd381962536a997d53127ff0180913ea416eff141893e5",
+        "source_document": "docs/BRD/BRD-WS-07.md",
+        "source_fingerprint": "aea9df2dade06f29ff5b944ceb1de81ea0aba23b799624f884f51d436986df5a",
+        "source_lines": "L716-L719",
+        "source_section": "24. Business Decisions (Locked) > BD-07-014"
+      },
+      "statement": "Một Sales Order có thể phát sinh nhiều Purchase Order."
+    },
+    {
+      "criticality": "CRITICAL",
+      "current_route": "UNIQUE_INLINE_CONTRACT",
+      "decision_id": "P2C-SO-C2-HOMR-003",
+      "options": [
+        {
+          "candidate_operators": [
+            "POLICY_OUTCOME_EQUALS",
+            "EVIDENCE_FIELD_PRESENT"
+          ],
+          "disposition": "AUTHOR_SOURCE_GROUNDED_OPERATOR_AST",
+          "non_claim": "CANDIDATE_COMPOSITION_REQUIRES_HUMAN_CONFIRMATION",
+          "option_id": "P2C-SO-C2-HOMR-003-OPT-1",
+          "source_edit_required": false
+        },
+        {
+          "candidate_operators": [],
+          "disposition": "SOURCE_SEMANTICS_BLOCKED",
+          "non_claim": "NO_OPERATOR_AST_UNTIL_SOURCE_SEMANTICS_ARE_APPROVED",
+          "option_id": "P2C-SO-C2-HOMR-003-OPT-2",
+          "source_edit_required": true
+        }
+      ],
+      "recommended_option_id": "P2C-SO-C2-HOMR-003-OPT-1",
+      "requirement_id": "BD-09-014",
+      "selected_option_id": null,
+      "selection_status": "PENDING",
+      "source_provenance": {
+        "approved_decisions": [],
+        "identity_origin": "PRESERVED_STABLE_ID",
+        "original_identity": "BD-09-014",
+        "previous_temporary_key": null,
+        "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+        "source_baseline": "v2.2",
+        "source_context_heading": "BD-09-014",
+        "source_context_sha256": "082199309b457c38ce744ec2598a43319128d7081643a2c72a9ece18a666b7c3",
+        "source_document": "docs/BRD/BRD-WS-09.md",
+        "source_fingerprint": "9453b41071784ab2fdcc5bee633d3211482194cb8bdd3497a3f98e1c2eb522d3",
+        "source_lines": "L640-L643",
+        "source_section": "25. Business Decisions (Locked) > BD-09-014"
+      },
+      "statement": "Fulfillment hoàn thành khi Delivery thành công."
+    },
+    {
+      "criticality": "CRITICAL",
+      "current_route": "INLINE_ARCHETYPE_BINDING",
+      "decision_id": "P2C-SO-C2-HOMR-004",
+      "options": [
+        {
+          "candidate_operators": [
+            "ACTOR_AUTHORIZED",
+            "ACTOR_DENIED",
+            "EVIDENCE_FIELD_PRESENT"
+          ],
+          "disposition": "AUTHOR_SOURCE_GROUNDED_OPERATOR_AST",
+          "non_claim": "CANDIDATE_COMPOSITION_REQUIRES_HUMAN_CONFIRMATION",
+          "option_id": "P2C-SO-C2-HOMR-004-OPT-1",
+          "source_edit_required": false
+        },
+        {
+          "candidate_operators": [],
+          "disposition": "SOURCE_SEMANTICS_BLOCKED",
+          "non_claim": "NO_OPERATOR_AST_UNTIL_SOURCE_SEMANTICS_ARE_APPROVED",
+          "option_id": "P2C-SO-C2-HOMR-004-OPT-2",
+          "source_edit_required": true
+        }
+      ],
+      "recommended_option_id": "P2C-SO-C2-HOMR-004-OPT-1",
+      "requirement_id": "BD-16-027",
+      "selected_option_id": null,
+      "selection_status": "PENDING",
+      "source_provenance": {
+        "approved_decisions": [],
+        "identity_origin": "PRESERVED_STABLE_ID",
+        "original_identity": "BD-16-027",
+        "previous_temporary_key": null,
+        "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+        "source_baseline": "v2.2",
+        "source_context_heading": "29. Security Business Events",
+        "source_context_sha256": "6bd0565e1d201ed4d938250bfe47c7cda8fc6c1a9bde6f1e0558bdc02dd3c34a",
+        "source_document": "docs/BRD/BRD-WS-16.md",
+        "source_fingerprint": "f683049be7eafcfa2591845c50ac54b23555c809358f2afcef3b5d0311e606fb",
+        "source_lines": "L1031-L1034",
+        "source_section": "31. Business Decisions (Locked) > BD-16-027"
+      },
+      "statement": "Security Platform Publish Business Event."
+    },
+    {
+      "criticality": "HIGH",
+      "current_route": "UNIQUE_INLINE_CONTRACT",
+      "decision_id": "P2C-SO-C2-HOMR-005",
+      "options": [
+        {
+          "candidate_operators": [
+            "DELIVERY_TERMINAL_STATE",
+            "EVIDENCE_FIELD_PRESENT"
+          ],
+          "disposition": "AUTHOR_SOURCE_GROUNDED_OPERATOR_AST",
+          "non_claim": "CANDIDATE_COMPOSITION_REQUIRES_HUMAN_CONFIRMATION",
+          "option_id": "P2C-SO-C2-HOMR-005-OPT-1",
+          "source_edit_required": false
+        },
+        {
+          "candidate_operators": [],
+          "disposition": "SOURCE_SEMANTICS_BLOCKED",
+          "non_claim": "NO_OPERATOR_AST_UNTIL_SOURCE_SEMANTICS_ARE_APPROVED",
+          "option_id": "P2C-SO-C2-HOMR-005-OPT-2",
+          "source_edit_required": true
+        }
+      ],
+      "recommended_option_id": "P2C-SO-C2-HOMR-005-OPT-1",
+      "requirement_id": "BD-17-016",
+      "selected_option_id": null,
+      "selection_status": "PENDING",
+      "source_provenance": {
+        "approved_decisions": [],
+        "identity_origin": "PRESERVED_STABLE_ID",
+        "original_identity": "BD-17-016",
+        "previous_temporary_key": null,
+        "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+        "source_baseline": "v2.2",
+        "source_context_heading": "BD-17-016",
+        "source_context_sha256": "82d6cb771db89481d4e8731831abec1fbc8c2661d3489995ede0fada4ac3f04e",
+        "source_document": "docs/BRD/BRD-WS-17.md",
+        "source_fingerprint": "17e38bcd71e76d2fe1ef49a7f95fcf01e1dd856afed132ee752c4889990a0012",
+        "source_lines": "L1119-L1122",
+        "source_section": "37. Business Decisions (Locked) > BD-17-016"
+      },
+      "statement": "Platform có Operational Dashboard dành riêng cho Operator."
+    },
+    {
+      "criticality": "HIGH",
+      "current_route": "UNIQUE_INLINE_CONTRACT",
+      "decision_id": "P2C-SO-C2-HOMR-006",
+      "options": [
+        {
+          "candidate_operators": [
+            "REFERENCE_TARGET_VALID",
+            "DELIVERY_TERMINAL_STATE"
+          ],
+          "disposition": "AUTHOR_SOURCE_GROUNDED_OPERATOR_AST",
+          "non_claim": "CANDIDATE_COMPOSITION_REQUIRES_HUMAN_CONFIRMATION",
+          "option_id": "P2C-SO-C2-HOMR-006-OPT-1",
+          "source_edit_required": false
+        },
+        {
+          "candidate_operators": [],
+          "disposition": "SOURCE_SEMANTICS_BLOCKED",
+          "non_claim": "NO_OPERATOR_AST_UNTIL_SOURCE_SEMANTICS_ARE_APPROVED",
+          "option_id": "P2C-SO-C2-HOMR-006-OPT-2",
+          "source_edit_required": true
+        }
+      ],
+      "recommended_option_id": "P2C-SO-C2-HOMR-006-OPT-1",
+      "requirement_id": "BRD-UPDATE-01-R028",
+      "selected_option_id": null,
+      "selection_status": "PENDING",
+      "source_provenance": {
+        "approved_decisions": [],
+        "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
+        "original_identity": "TMP-BRD-UPDATE-01-028",
+        "previous_temporary_key": "TMP-BRD-UPDATE-01-028",
+        "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+        "source_baseline": "v2.2",
+        "source_context_heading": "17. Business Principles",
+        "source_context_sha256": "63dc655309f8a4806db68f44a8ff990ca5872e6b558f1e8852306197a866f64a",
+        "source_document": "docs/BRD/BRD-UPDATE-01.md",
+        "source_fingerprint": "35687b54a029a38cbd3f9c7481d908f806e40d5a4816f59162df5fa2bbb7c25a",
+        "source_lines": "L904-L914",
+        "source_section": "17. Business Principles"
+      },
+      "statement": "Commerce Experience Platform tuân thủ: - API First"
+    },
+    {
+      "criticality": "NORMAL",
+      "current_route": "UNIQUE_INLINE_CONTRACT",
+      "decision_id": "P2C-SO-C2-HOMR-007",
+      "options": [
+        {
+          "candidate_operators": [
+            "POLICY_OUTCOME_EQUALS",
+            "EVIDENCE_FIELD_PRESENT"
+          ],
+          "disposition": "AUTHOR_SOURCE_GROUNDED_OPERATOR_AST",
+          "non_claim": "CANDIDATE_COMPOSITION_REQUIRES_HUMAN_CONFIRMATION",
+          "option_id": "P2C-SO-C2-HOMR-007-OPT-1",
+          "source_edit_required": false
+        },
+        {
+          "candidate_operators": [],
+          "disposition": "SOURCE_SEMANTICS_BLOCKED",
+          "non_claim": "NO_OPERATOR_AST_UNTIL_SOURCE_SEMANTICS_ARE_APPROVED",
+          "option_id": "P2C-SO-C2-HOMR-007-OPT-2",
+          "source_edit_required": true
+        }
+      ],
+      "recommended_option_id": "P2C-SO-C2-HOMR-007-OPT-1",
+      "requirement_id": "BRD-WS-02-R004",
+      "selected_option_id": null,
+      "selection_status": "PENDING",
+      "source_provenance": {
+        "approved_decisions": [],
+        "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
+        "original_identity": "TMP-BRD-WS-02-004",
+        "previous_temporary_key": "TMP-BRD-WS-02-004",
+        "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+        "source_baseline": "v2.2",
+        "source_context_heading": "11. Inventory Strategy",
+        "source_context_sha256": "76bbf48c25b2025bff4104c11af6bb8c6c5bb117a75fd18750975701f7918cdc",
+        "source_document": "docs/BRD/BRD-WS-02.md",
+        "source_fingerprint": "42cf4a9d51db01c52c656589d8253e7da10ce639572bfabf27c7a36f69937102",
+        "source_lines": "L294",
+        "source_section": "11. Inventory Strategy"
+      },
+      "statement": "Inventory luôn tồn tại."
+    },
+    {
+      "criticality": "HIGH",
+      "current_route": "UNIQUE_INLINE_CONTRACT",
+      "decision_id": "P2C-SO-C2-HOMR-008",
+      "options": [
+        {
+          "candidate_operators": [
+            "POLICY_OUTCOME_EQUALS",
+            "EVIDENCE_FIELD_PRESENT"
+          ],
+          "disposition": "AUTHOR_SOURCE_GROUNDED_OPERATOR_AST",
+          "non_claim": "CANDIDATE_COMPOSITION_REQUIRES_HUMAN_CONFIRMATION",
+          "option_id": "P2C-SO-C2-HOMR-008-OPT-1",
+          "source_edit_required": false
+        },
+        {
+          "candidate_operators": [],
+          "disposition": "SOURCE_SEMANTICS_BLOCKED",
+          "non_claim": "NO_OPERATOR_AST_UNTIL_SOURCE_SEMANTICS_ARE_APPROVED",
+          "option_id": "P2C-SO-C2-HOMR-008-OPT-2",
+          "source_edit_required": true
+        }
+      ],
+      "recommended_option_id": "P2C-SO-C2-HOMR-008-OPT-1",
+      "requirement_id": "BRD-WS-04-R011",
+      "selected_option_id": null,
+      "selection_status": "PENDING",
+      "source_provenance": {
+        "approved_decisions": [],
+        "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
+        "original_identity": "TMP-BRD-WS-04-011",
+        "previous_temporary_key": "TMP-BRD-WS-04-011",
+        "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+        "source_baseline": "v2.2",
+        "source_context_heading": "16. Product Version",
+        "source_context_sha256": "e9410d76d17f90c82beb3d0eaf9adb331f726c739666d65d585cd1d4e4ef325b",
+        "source_document": "docs/BRD/BRD-WS-04.md",
+        "source_fingerprint": "6bb54d0a12e1641c981d8a0c8e6b57e2d2ce0b1d0557481228ef9aaa7b3b9fb6",
+        "source_lines": "L344",
+        "source_section": "16. Product Version"
+      },
+      "statement": "Version luôn đi kèm Publish Workflow."
+    },
+    {
+      "criticality": "CRITICAL",
+      "current_route": "UNIQUE_INLINE_CONTRACT",
+      "decision_id": "P2C-SO-C2-HOMR-009",
+      "options": [
+        {
+          "candidate_operators": [
+            "POLICY_OUTCOME_EQUALS",
+            "EVIDENCE_FIELD_PRESENT"
+          ],
+          "disposition": "AUTHOR_SOURCE_GROUNDED_OPERATOR_AST",
+          "non_claim": "CANDIDATE_COMPOSITION_REQUIRES_HUMAN_CONFIRMATION",
+          "option_id": "P2C-SO-C2-HOMR-009-OPT-1",
+          "source_edit_required": false
+        },
+        {
+          "candidate_operators": [],
+          "disposition": "SOURCE_SEMANTICS_BLOCKED",
+          "non_claim": "NO_OPERATOR_AST_UNTIL_SOURCE_SEMANTICS_ARE_APPROVED",
+          "option_id": "P2C-SO-C2-HOMR-009-OPT-2",
+          "source_edit_required": true
+        }
+      ],
+      "recommended_option_id": "P2C-SO-C2-HOMR-009-OPT-1",
+      "requirement_id": "BRD-WS-07-R001",
+      "selected_option_id": null,
+      "selection_status": "PENDING",
+      "source_provenance": {
+        "approved_decisions": [
+          "P2-DEC-007"
+        ],
+        "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
+        "original_identity": "TMP-BRD-WS-07-001",
+        "previous_temporary_key": "TMP-BRD-WS-07-001",
+        "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+        "source_baseline": "v2.2",
+        "source_context_heading": "Purchase Order (PO)",
+        "source_context_sha256": "8ba73bf3d27037bd42689497e98ff67a2b9470c09a4a610cb51ef2aeeaefe7fc",
+        "source_document": "docs/BRD/BRD-WS-07.md",
+        "source_fingerprint": "4ae91cbfa4c2c8ebb02387696a7ef83a2cd450667aa188ce91acb9a8d04465bd",
+        "source_lines": "L120",
+        "source_section": "4. Order Taxonomy > Purchase Order (PO)"
+      },
+      "statement": "Purchase Order phát sinh khi YSim cần nhập Product Item từ Supplier."
+    },
+    {
+      "criticality": "NORMAL",
+      "current_route": "UNIQUE_INLINE_CONTRACT",
+      "decision_id": "P2C-SO-C2-HOMR-010",
+      "options": [
+        {
+          "candidate_operators": [
+            "POLICY_OUTCOME_EQUALS",
+            "EVIDENCE_FIELD_PRESENT"
+          ],
+          "disposition": "AUTHOR_SOURCE_GROUNDED_OPERATOR_AST",
+          "non_claim": "CANDIDATE_COMPOSITION_REQUIRES_HUMAN_CONFIRMATION",
+          "option_id": "P2C-SO-C2-HOMR-010-OPT-1",
+          "source_edit_required": false
+        },
+        {
+          "candidate_operators": [],
+          "disposition": "SOURCE_SEMANTICS_BLOCKED",
+          "non_claim": "NO_OPERATOR_AST_UNTIL_SOURCE_SEMANTICS_ARE_APPROVED",
+          "option_id": "P2C-SO-C2-HOMR-010-OPT-2",
+          "source_edit_required": true
+        }
+      ],
+      "recommended_option_id": "P2C-SO-C2-HOMR-010-OPT-1",
+      "requirement_id": "BRD-WS-11-R009",
+      "selected_option_id": null,
+      "selection_status": "PENDING",
+      "source_provenance": {
+        "approved_decisions": [],
+        "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
+        "original_identity": "TMP-BRD-WS-11-009",
+        "previous_temporary_key": "TMP-BRD-WS-11-009",
+        "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+        "source_baseline": "v2.2",
+        "source_context_heading": "20. Satisfaction Survey",
+        "source_context_sha256": "8806162cf1df0bbf7231cb5413e25279dd62867ba20c94ebb0d0709dc704c235",
+        "source_document": "docs/BRD/BRD-WS-11.md",
+        "source_fingerprint": "b76ca46f932582704b3dc1e2c4ca890dc1e68b40a6d850e7dbe25f900859eb5d",
+        "source_lines": "L488-L492",
+        "source_section": "20. Satisfaction Survey"
+      },
+      "statement": "Có thể cấu hình: - Always - Random - Disabled"
+    },
+    {
+      "criticality": "HIGH",
+      "current_route": "UNIQUE_INLINE_CONTRACT",
+      "decision_id": "P2C-SO-C2-HOMR-011",
+      "options": [
+        {
+          "candidate_operators": [
+            "POLICY_OUTCOME_EQUALS",
+            "EVIDENCE_FIELD_PRESENT"
+          ],
+          "disposition": "AUTHOR_SOURCE_GROUNDED_OPERATOR_AST",
+          "non_claim": "CANDIDATE_COMPOSITION_REQUIRES_HUMAN_CONFIRMATION",
+          "option_id": "P2C-SO-C2-HOMR-011-OPT-1",
+          "source_edit_required": false
+        },
+        {
+          "candidate_operators": [],
+          "disposition": "SOURCE_SEMANTICS_BLOCKED",
+          "non_claim": "NO_OPERATOR_AST_UNTIL_SOURCE_SEMANTICS_ARE_APPROVED",
+          "option_id": "P2C-SO-C2-HOMR-011-OPT-2",
+          "source_edit_required": true
+        }
+      ],
+      "recommended_option_id": "P2C-SO-C2-HOMR-011-OPT-1",
+      "requirement_id": "BRD-WS-13-R003",
+      "selected_option_id": null,
+      "selection_status": "PENDING",
+      "source_provenance": {
+        "approved_decisions": [],
+        "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
+        "original_identity": "TMP-BRD-WS-13-003",
+        "previous_temporary_key": "TMP-BRD-WS-13-003",
+        "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+        "source_baseline": "v2.2",
+        "source_context_heading": "4. Dashboard Widget",
+        "source_context_sha256": "5ff050cde793f2ed33ece067c9283e4077eef7a36d130be15c3442c4584545de",
+        "source_document": "docs/BRD/BRD-WS-13.md",
+        "source_fingerprint": "4869eff46da71e315b600f95ba5e4486e6c65528df6296a77de417678a1611f4",
+        "source_lines": "L116",
+        "source_section": "4. Dashboard Widget"
+      },
+      "statement": "Widget Library cho phép Organization lựa chọn Widget cần hiển thị hoặc ẩn."
+    },
+    {
+      "criticality": "NORMAL",
+      "current_route": "UNIQUE_INLINE_CONTRACT",
+      "decision_id": "P2C-SO-C2-HOMR-012",
+      "options": [
+        {
+          "candidate_operators": [
+            "POLICY_OUTCOME_EQUALS",
+            "EVIDENCE_FIELD_PRESENT"
+          ],
+          "disposition": "AUTHOR_SOURCE_GROUNDED_OPERATOR_AST",
+          "non_claim": "CANDIDATE_COMPOSITION_REQUIRES_HUMAN_CONFIRMATION",
+          "option_id": "P2C-SO-C2-HOMR-012-OPT-1",
+          "source_edit_required": false
+        },
+        {
+          "candidate_operators": [],
+          "disposition": "SOURCE_SEMANTICS_BLOCKED",
+          "non_claim": "NO_OPERATOR_AST_UNTIL_SOURCE_SEMANTICS_ARE_APPROVED",
+          "option_id": "P2C-SO-C2-HOMR-012-OPT-2",
+          "source_edit_required": true
+        }
+      ],
+      "recommended_option_id": "P2C-SO-C2-HOMR-012-OPT-1",
+      "requirement_id": "BRD-WS-13-R021",
+      "selected_option_id": null,
+      "selection_status": "PENDING",
+      "source_provenance": {
+        "approved_decisions": [],
+        "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
+        "original_identity": "TMP-BRD-WS-13-021",
+        "previous_temporary_key": "TMP-BRD-WS-13-021",
+        "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+        "source_baseline": "v2.2",
+        "source_context_heading": "25. Widget Library",
+        "source_context_sha256": "23adaa9026073a8156aa394e9d4951b65efd1f0759ace24911947babf5d3ecd8",
+        "source_document": "docs/BRD/BRD-WS-13.md",
+        "source_fingerprint": "10309aafa1d3b838ff518946bceecbd79e3a6c28a4a3053719e9eabae92cb4f0",
+        "source_lines": "L656",
+        "source_section": "25. Widget Library"
+      },
+      "statement": "Organization có thể lựa chọn Widget cần hiển thị."
+    },
+    {
+      "criticality": "NORMAL",
+      "current_route": "UNIQUE_INLINE_CONTRACT",
+      "decision_id": "P2C-SO-C2-HOMR-013",
+      "options": [
+        {
+          "candidate_operators": [
+            "POLICY_OUTCOME_EQUALS",
+            "EVIDENCE_FIELD_PRESENT"
+          ],
+          "disposition": "AUTHOR_SOURCE_GROUNDED_OPERATOR_AST",
+          "non_claim": "CANDIDATE_COMPOSITION_REQUIRES_HUMAN_CONFIRMATION",
+          "option_id": "P2C-SO-C2-HOMR-013-OPT-1",
+          "source_edit_required": false
+        },
+        {
+          "candidate_operators": [],
+          "disposition": "SOURCE_SEMANTICS_BLOCKED",
+          "non_claim": "NO_OPERATOR_AST_UNTIL_SOURCE_SEMANTICS_ARE_APPROVED",
+          "option_id": "P2C-SO-C2-HOMR-013-OPT-2",
+          "source_edit_required": true
+        }
+      ],
+      "recommended_option_id": "P2C-SO-C2-HOMR-013-OPT-1",
+      "requirement_id": "BRD-WS-14-R013",
+      "selected_option_id": null,
+      "selection_status": "PENDING",
+      "source_provenance": {
+        "approved_decisions": [],
+        "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
+        "original_identity": "TMP-BRD-WS-14-013",
+        "previous_temporary_key": "TMP-BRD-WS-14-013",
+        "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+        "source_baseline": "v2.2",
+        "source_context_heading": "15. Configuration Version",
+        "source_context_sha256": "9208e204d9cb610736822c64809a0e8ced379623045721629805a45957b7c6aa",
+        "source_document": "docs/BRD/BRD-WS-14.md",
+        "source_fingerprint": "288b245850188ca6d4a926ffb1fd897e1cb765f3cc259150b14c3dd1f0031ca9",
+        "source_lines": "L427",
+        "source_section": "15. Configuration Version"
+      },
+      "statement": "Version cũ luôn được lưu lại."
+    },
+    {
+      "criticality": "NORMAL",
+      "current_route": "UNIQUE_INLINE_CONTRACT",
+      "decision_id": "P2C-SO-C2-HOMR-014",
+      "options": [
+        {
+          "candidate_operators": [
+            "POLICY_OUTCOME_EQUALS",
+            "EVIDENCE_FIELD_PRESENT"
+          ],
+          "disposition": "AUTHOR_SOURCE_GROUNDED_OPERATOR_AST",
+          "non_claim": "CANDIDATE_COMPOSITION_REQUIRES_HUMAN_CONFIRMATION",
+          "option_id": "P2C-SO-C2-HOMR-014-OPT-1",
+          "source_edit_required": false
+        },
+        {
+          "candidate_operators": [],
+          "disposition": "SOURCE_SEMANTICS_BLOCKED",
+          "non_claim": "NO_OPERATOR_AST_UNTIL_SOURCE_SEMANTICS_ARE_APPROVED",
+          "option_id": "P2C-SO-C2-HOMR-014-OPT-2",
+          "source_edit_required": true
+        }
+      ],
+      "recommended_option_id": "P2C-SO-C2-HOMR-014-OPT-1",
+      "requirement_id": "BRD-WS-14-R025",
+      "selected_option_id": null,
+      "selection_status": "PENDING",
+      "source_provenance": {
+        "approved_decisions": [],
+        "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
+        "original_identity": "TMP-BRD-WS-14-025",
+        "previous_temporary_key": "TMP-BRD-WS-14-025",
+        "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+        "source_baseline": "v2.2",
+        "source_context_heading": "22. Configuration Rollback",
+        "source_context_sha256": "9c7682701e01006a7c022c53b6cfdc365351db2e6f2aabe4c649e85538d65df9",
+        "source_document": "docs/BRD/BRD-WS-14.md",
+        "source_fingerprint": "55d489bc18404f4017ab8ccc5eb3aa9f82976f5831919ae0a22f62925b7a8e84",
+        "source_lines": "L595",
+        "source_section": "22. Configuration Rollback"
+      },
+      "statement": "Rollback luôn tạo một Version mới."
+    },
+    {
+      "criticality": "HIGH",
+      "current_route": "UNIQUE_INLINE_CONTRACT",
+      "decision_id": "P2C-SO-C2-HOMR-015",
+      "options": [
+        {
+          "candidate_operators": [
+            "POLICY_OUTCOME_EQUALS",
+            "EVIDENCE_FIELD_PRESENT"
+          ],
+          "disposition": "AUTHOR_SOURCE_GROUNDED_OPERATOR_AST",
+          "non_claim": "CANDIDATE_COMPOSITION_REQUIRES_HUMAN_CONFIRMATION",
+          "option_id": "P2C-SO-C2-HOMR-015-OPT-1",
+          "source_edit_required": false
+        },
+        {
+          "candidate_operators": [],
+          "disposition": "SOURCE_SEMANTICS_BLOCKED",
+          "non_claim": "NO_OPERATOR_AST_UNTIL_SOURCE_SEMANTICS_ARE_APPROVED",
+          "option_id": "P2C-SO-C2-HOMR-015-OPT-2",
+          "source_edit_required": true
+        }
+      ],
+      "recommended_option_id": "P2C-SO-C2-HOMR-015-OPT-1",
+      "requirement_id": "BRD-WS-17-R018",
+      "selected_option_id": null,
+      "selection_status": "PENDING",
+      "source_provenance": {
+        "approved_decisions": [
+          "P2-DEC-004"
+        ],
+        "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
+        "original_identity": "TMP-BRD-WS-17-018",
+        "previous_temporary_key": "TMP-BRD-WS-17-018",
+        "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+        "source_baseline": "v2.2",
+        "source_context_heading": "33. Operational Command Center",
+        "source_context_sha256": "074268adc5f33a1a97020d3107da534eb5dfc62ce3bea438d4c3a1d39abe7664",
+        "source_document": "docs/BRD/BRD-WS-17.md",
+        "source_fingerprint": "57dd50fec5957bdc57ef356fe966ca977458ee75a1c1e22a218c545a0186684d",
+        "source_lines": "L891-L895",
+        "source_section": "33. Operational Command Center"
+      },
+      "statement": "Mọi thao tác yêu cầu: - Runbook (nếu có)"
+    },
+    {
+      "criticality": "CRITICAL",
+      "current_route": "INLINE_ARCHETYPE_BINDING",
+      "decision_id": "P2C-SO-C2-HOMR-016",
+      "options": [
+        {
+          "candidate_operators": [
+            "ACTOR_AUTHORIZED",
+            "ACTOR_DENIED",
+            "EVIDENCE_FIELD_PRESENT"
+          ],
+          "disposition": "AUTHOR_SOURCE_GROUNDED_OPERATOR_AST",
+          "non_claim": "CANDIDATE_COMPOSITION_REQUIRES_HUMAN_CONFIRMATION",
+          "option_id": "P2C-SO-C2-HOMR-016-OPT-1",
+          "source_edit_required": false
+        },
+        {
+          "candidate_operators": [],
+          "disposition": "SOURCE_SEMANTICS_BLOCKED",
+          "non_claim": "NO_OPERATOR_AST_UNTIL_SOURCE_SEMANTICS_ARE_APPROVED",
+          "option_id": "P2C-SO-C2-HOMR-016-OPT-2",
+          "source_edit_required": true
+        }
+      ],
+      "recommended_option_id": "P2C-SO-C2-HOMR-016-OPT-1",
+      "requirement_id": "BRD-WS-17-R029",
+      "selected_option_id": null,
+      "selection_status": "PENDING",
+      "source_provenance": {
+        "allocation_contract": "ENTERPRISE_OPERATIONS_CHILD_RECONCILIATION",
+        "approved_decision_contracts": {
+          "P2-DEC-003": {
+            "decision_id": "P2-DEC-003",
+            "sections": [
+              {
+                "heading": "Ownership and budget",
+                "items": [
+                  "Connector Retry handles transient transport/provider failure inside one operation attempt.",
+                  "Operation Retry owns persisted business state, total SLA, fallback, compensation, and manual resolution.",
+                  "Each operation has one absolute deadline and one retry budget.",
+                  "The Connector receives only the remaining sub-budget.",
+                  "operation_attempt and connector_attempt counters are separate and share one correlation context.",
+                  "Provider SDK retries are disabled or counted in the shared budget.",
+                  "Side effects use a stable operation idempotency key."
+                ]
+              },
+              {
+                "heading": "Error classes",
+                "items": [
+                  "TRANSIENT",
+                  "RATE_LIMITED",
+                  "TERMINAL",
+                  "AMBIGUOUS_OUTCOME",
+                  "POLICY_BLOCKED",
+                  "CANCELLED/DEADLINE_EXCEEDED"
+                ]
+              },
+              {
+                "heading": "Failure behavior",
+                "items": [
+                  "Ambiguous payment, procurement, allocation, or fulfillment outcomes are queried/reconciled before side effects are repeated.",
+                  "Blind retry is prohibited and no exactly-once claim is made.",
+                  "On exhaustion, control returns to Operation; policy then selects fallback, compensation, DLQ, or manual resolution.",
+                  "Partial fulfillment continues to manual resolution and does not trigger automatic refund.",
+                  "Numeric budgets reference P2-DEC-010."
+                ]
+              }
+            ],
+            "selected_option": 1,
+            "status": "DECIDED_PENDING_PACK_APPROVAL",
+            "title": "Two-layer shared-budget retry ownership"
+          },
+          "P2-DEC-010": {
+            "decision_id": "P2-DEC-010",
+            "sections": [
+              {
+                "heading": "Service tiers",
+                "items": [
+                  "T0_INTEGRITY_CRITICAL: availability 99.95%, RTO 15m, RPO 0 committed business records.",
+                  "T1_CUSTOMER_CRITICAL: availability 99.90%, RTO 1h, RPO 5m.",
+                  "T2_OPERATIONAL: availability 99.50%, RTO 4h, RPO 1h.",
+                  "T3_ANALYTICAL_BATCH: availability 99.00%, RTO 24h, RPO 24h."
+                ]
+              },
+              {
+                "heading": "Latency p95/p99",
+                "items": [
+                  "Interactive read: 500ms / 1.5s.",
+                  "Local transactional command: 750ms / 2s.",
+                  "Async command acceptance: 1s / 3s.",
+                  "Operational search/table: 2s / 5s.",
+                  "Large report/export submission: 1s / 3s."
+                ]
+              },
+              {
+                "heading": "Timeout defaults",
+                "items": [
+                  "Internal interactive hop: 2s.",
+                  "Public interactive request: 10s.",
+                  "External connect: 3s.",
+                  "External response: 15s, with synchronous hard cap 30s.",
+                  "Async acknowledgement: 1s p95.",
+                  "Inquiry/reconciliation: 15s."
+                ]
+              },
+              {
+                "heading": "Reservation",
+                "items": [
+                  "Online default is 15m.",
+                  "Payment policy is configurable from 5m to 30m.",
+                  "Total with extension is at most 30m unless an approved method policy says otherwise.",
+                  "Extension is allowed only while provider state is PENDING.",
+                  "Inventory and promotion reservations share the payment-attempt lifecycle.",
+                  "Offline confirmation after expiry requires price, promotion, inventory, procurement, and fulfillment revalidation.",
+                  "Previously approved retry, refund, and manual-resolution rules remain effective."
+                ]
+              },
+              {
+                "heading": "Connector health",
+                "items": [
+                  "Evaluation uses a rolling 5m window with a traffic floor of 20 attempts.",
+                  "DEGRADED: error at least 5%, p95 above SLO, or rate-limit at least 10%.",
+                  "UNHEALTHY: error at least 20%, three failed probes, circuit open, or credential/trust failure.",
+                  "RECOVERING: five successful probes and error below 5%, maintained for 10m.",
+                  "Business rejection is not connector technical failure.",
+                  "Routing does not select an UNHEALTHY connector."
+                ]
+              },
+              {
+                "heading": "Freshness",
+                "items": [
+                  "F0_LIVE: p95 at most 60s, hard stale 5m.",
+                  "F1_NEAR_REAL_TIME: p95 at most 5m, hard stale 15m.",
+                  "F2_HOURLY: at most 60m.",
+                  "F3_DAILY: at most 24h and before 06:00 local business time.",
+                  "Every report/export includes data_as_of, generated_at, timezone, freshness tier, completeness/provisional state, filters, and snapshot identity."
+                ]
+              },
+              {
+                "heading": "Governance",
+                "items": [
+                  "SLO uses a rolling 30-day window with burn-rate monitoring.",
+                  "Correctness/integrity is not an availability error-budget allowance.",
+                  "User-impacting planned maintenance counts unless explicitly contracted.",
+                  "Missing telemetry is failure.",
+                  "A configuration override requires owner, reason, expiry, approval, and audit.",
+                  "RTO/RPO is tested through drills.",
+                  "SLA is used only when contractual consequences exist."
+                ]
+              },
+              {
+                "heading": "References",
+                "items": [
+                  "https://sre.google/sre-book/service-level-objectives/",
+                  "https://sre.google/workbook/implementing-slos/"
+                ]
+              }
+            ],
+            "selected_option": 1,
+            "status": "DECIDED_PENDING_PACK_APPROVAL",
+            "title": "Reliability, timeout, and freshness matrices"
+          }
+        },
+        "approved_decisions": [
+          "P2-DEC-003",
+          "P2-DEC-004",
+          "P2-DEC-010"
+        ],
+        "identity_origin": "PHASE_2C_NEW_ALLOCATION",
+        "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+        "source_baseline": "v2.2",
+        "source_context_heading": "30. Enterprise Operations Principle",
+        "source_context_sha256": "f4b6aeebc35c74925667ca32adae5d22b689e2ba373fa7cae75a6f8c6fe8ee2a",
+        "source_document": "docs/BRD/BRD-WS-17.md"
+      },
+      "statement": "Mọi tác vụ vận hành phải có đường khôi phục xác định, có thể đối soát kết quả và bảo toàn bất biến khi thất bại."
+    },
+    {
+      "criticality": "HIGH",
+      "current_route": "UNIQUE_INLINE_CONTRACT",
+      "decision_id": "P2C-SO-C2-HOMR-017",
+      "options": [
+        {
+          "candidate_operators": [
+            "POLICY_OUTCOME_EQUALS",
+            "EVIDENCE_FIELD_PRESENT"
+          ],
+          "disposition": "AUTHOR_SOURCE_GROUNDED_OPERATOR_AST",
+          "non_claim": "CANDIDATE_COMPOSITION_REQUIRES_HUMAN_CONFIRMATION",
+          "option_id": "P2C-SO-C2-HOMR-017-OPT-1",
+          "source_edit_required": false
+        },
+        {
+          "candidate_operators": [],
+          "disposition": "SOURCE_SEMANTICS_BLOCKED",
+          "non_claim": "NO_OPERATOR_AST_UNTIL_SOURCE_SEMANTICS_ARE_APPROVED",
+          "option_id": "P2C-SO-C2-HOMR-017-OPT-2",
+          "source_edit_required": true
+        }
+      ],
+      "recommended_option_id": "P2C-SO-C2-HOMR-017-OPT-1",
+      "requirement_id": "EP-12-003",
+      "selected_option_id": null,
+      "selection_status": "PENDING",
+      "source_provenance": {
+        "approved_decisions": [],
+        "identity_origin": "PRESERVED_STABLE_ID",
+        "original_identity": "EP-12-003",
+        "previous_temporary_key": null,
+        "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+        "source_baseline": "v2.2",
+        "source_context_heading": "5. Communication Matrix",
+        "source_context_sha256": "2a489cfe1633eb750fa40b19db53add3f859b2a074404f00e32c7fe48f8024d5",
+        "source_document": "docs/BRD/BRD-WS-12.md",
+        "source_fingerprint": "fdf33b8f7e1455ba7ca68c0d93a34c7bd99af4788722ffcdfa1e28fcbf7ae855",
+        "source_lines": "L764-L767",
+        "source_section": "33. Enterprise Design Principles > EP-12-003"
+      },
+      "statement": "Communication Matrix quyết định toàn bộ hành vi gửi Notification."
+    },
+    {
+      "criticality": "CRITICAL",
+      "current_route": "INLINE_ARCHETYPE_BINDING",
+      "decision_id": "P2C-SO-C2-HOMR-018",
+      "options": [
+        {
+          "candidate_operators": [
+            "ACTOR_AUTHORIZED",
+            "ACTOR_DENIED",
+            "EVIDENCE_FIELD_PRESENT"
+          ],
+          "disposition": "AUTHOR_SOURCE_GROUNDED_OPERATOR_AST",
+          "non_claim": "CANDIDATE_COMPOSITION_REQUIRES_HUMAN_CONFIRMATION",
+          "option_id": "P2C-SO-C2-HOMR-018-OPT-1",
+          "source_edit_required": false
+        },
+        {
+          "candidate_operators": [],
+          "disposition": "SOURCE_SEMANTICS_BLOCKED",
+          "non_claim": "NO_OPERATOR_AST_UNTIL_SOURCE_SEMANTICS_ARE_APPROVED",
+          "option_id": "P2C-SO-C2-HOMR-018-OPT-2",
+          "source_edit_required": true
+        }
+      ],
+      "recommended_option_id": "P2C-SO-C2-HOMR-018-OPT-1",
+      "requirement_id": "EP-13-001",
+      "selected_option_id": null,
+      "selection_status": "PENDING",
+      "source_provenance": {
+        "approved_decisions": [],
+        "identity_origin": "PRESERVED_STABLE_ID",
+        "original_identity": "EP-13-001",
+        "previous_temporary_key": null,
+        "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+        "source_baseline": "v2.2",
+        "source_context_heading": "EP-13-001",
+        "source_context_sha256": "917901f75b0d4cef16761ef242878ffe9a3b57d32f94d5ce054fb8d4def936f4",
+        "source_document": "docs/BRD/BRD-WS-13.md",
+        "source_fingerprint": "b3b6e454a9bdaaa3fd08554efa6f9cfa5ec03065c077d49c7792ac6ff8c35e39",
+        "source_lines": "L993-L998",
+        "source_section": "30. Enterprise Design Principles > EP-13-001"
+      },
+      "statement": "Dashboard là cửa ngõ truy cập nhanh tới Business Object. Mọi Widget đều hỗ trợ Drill-down tới dữ liệu chi tiết theo Permission."
+    },
+    {
+      "criticality": "NORMAL",
+      "current_route": "UNIQUE_INLINE_CONTRACT",
+      "decision_id": "P2C-SO-C2-HOMR-019",
+      "options": [
+        {
+          "candidate_operators": [
+            "POLICY_OUTCOME_EQUALS",
+            "EVIDENCE_FIELD_PRESENT"
+          ],
+          "disposition": "AUTHOR_SOURCE_GROUNDED_OPERATOR_AST",
+          "non_claim": "CANDIDATE_COMPOSITION_REQUIRES_HUMAN_CONFIRMATION",
+          "option_id": "P2C-SO-C2-HOMR-019-OPT-1",
+          "source_edit_required": false
+        },
+        {
+          "candidate_operators": [],
+          "disposition": "SOURCE_SEMANTICS_BLOCKED",
+          "non_claim": "NO_OPERATOR_AST_UNTIL_SOURCE_SEMANTICS_ARE_APPROVED",
+          "option_id": "P2C-SO-C2-HOMR-019-OPT-2",
+          "source_edit_required": true
+        }
+      ],
+      "recommended_option_id": "P2C-SO-C2-HOMR-019-OPT-1",
+      "requirement_id": "EP-14-010",
+      "selected_option_id": null,
+      "selection_status": "PENDING",
+      "source_provenance": {
+        "approved_decisions": [],
+        "identity_origin": "PRESERVED_STABLE_ID",
+        "original_identity": "EP-14-010",
+        "previous_temporary_key": null,
+        "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+        "source_baseline": "v2.2",
+        "source_context_heading": "EP-14-010",
+        "source_context_sha256": "607589477828a948f15017dd4efe83a9594e10758d0d31946aa64727eda14cb8",
+        "source_document": "docs/BRD/BRD-WS-14.md",
+        "source_fingerprint": "d817ef271baf12ebd3afbe4df10a619cf8294dee8aed45fcc78231fa26af4ef7",
+        "source_lines": "L1250-L1253",
+        "source_section": "32. Enterprise Design Principles > EP-14-010"
+      },
+      "statement": "Organization được khởi tạo bằng Template nhằm giảm thời gian Onboarding."
+    },
+    {
+      "criticality": "HIGH",
+      "current_route": "UNIQUE_INLINE_CONTRACT",
+      "decision_id": "P2C-SO-C2-HOMR-020",
+      "options": [
+        {
+          "candidate_operators": [
+            "DELIVERY_TERMINAL_STATE",
+            "EVIDENCE_FIELD_PRESENT"
+          ],
+          "disposition": "AUTHOR_SOURCE_GROUNDED_OPERATOR_AST",
+          "non_claim": "CANDIDATE_COMPOSITION_REQUIRES_HUMAN_CONFIRMATION",
+          "option_id": "P2C-SO-C2-HOMR-020-OPT-1",
+          "source_edit_required": false
+        },
+        {
+          "candidate_operators": [],
+          "disposition": "SOURCE_SEMANTICS_BLOCKED",
+          "non_claim": "NO_OPERATOR_AST_UNTIL_SOURCE_SEMANTICS_ARE_APPROVED",
+          "option_id": "P2C-SO-C2-HOMR-020-OPT-2",
+          "source_edit_required": true
+        }
+      ],
+      "recommended_option_id": "P2C-SO-C2-HOMR-020-OPT-1",
+      "requirement_id": "EP-17-001",
+      "selected_option_id": null,
+      "selection_status": "PENDING",
+      "source_provenance": {
+        "approved_decisions": [],
+        "identity_origin": "PRESERVED_STABLE_ID",
+        "original_identity": "EP-17-001",
+        "previous_temporary_key": null,
+        "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+        "source_baseline": "v2.2",
+        "source_context_heading": "EP-17-001",
+        "source_context_sha256": "c579432cbfd1b21e18bda6a2a172c5080577cc9674839abd731ab2582202cc37",
+        "source_document": "docs/BRD/BRD-WS-17.md",
+        "source_fingerprint": "3432d499946cd991216482e77997e52d778909b7efef8aeec8995e90921cdb93",
+        "source_lines": "L1235-L1238",
+        "source_section": "38. Enterprise Design Principles > EP-17-001"
+      },
+      "statement": "Platform Operations được quản lý tập trung thông qua Platform Operations Center."
+    },
+    {
+      "criticality": "HIGH",
+      "current_route": "UNIQUE_INLINE_CONTRACT",
+      "decision_id": "P2C-SO-C2-HOMR-021",
+      "options": [
+        {
+          "candidate_operators": [
+            "STATE_TRANSITION_ALLOWED",
+            "EVIDENCE_FIELD_PRESENT"
+          ],
+          "disposition": "AUTHOR_SOURCE_GROUNDED_OPERATOR_AST",
+          "non_claim": "CANDIDATE_COMPOSITION_REQUIRES_HUMAN_CONFIRMATION",
+          "option_id": "P2C-SO-C2-HOMR-021-OPT-1",
+          "source_edit_required": false
+        },
+        {
+          "candidate_operators": [],
+          "disposition": "SOURCE_SEMANTICS_BLOCKED",
+          "non_claim": "NO_OPERATOR_AST_UNTIL_SOURCE_SEMANTICS_ARE_APPROVED",
+          "option_id": "P2C-SO-C2-HOMR-021-OPT-2",
+          "source_edit_required": true
+        }
+      ],
+      "recommended_option_id": "P2C-SO-C2-HOMR-021-OPT-1",
+      "requirement_id": "UXF-002",
+      "selected_option_id": null,
+      "selection_status": "PENDING",
+      "source_provenance": {
+        "approved_decisions": [],
+        "identity_origin": "PRESERVED_STABLE_ID",
+        "original_identity": "UXF-002",
+        "previous_temporary_key": null,
+        "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+        "source_baseline": "v2.2",
+        "source_context_heading": "UXF-002",
+        "source_context_sha256": "c8a0aa5aed237e84f7c13f941f079f890bfd9c94a79f61e2c3d3669411245f59",
+        "source_document": "docs/UXF/UXF-00.md",
+        "source_fingerprint": "610e4f9d816853535bcc5c6689c8cd189643194b7e83a1ddddde7dc7bd228710",
+        "source_lines": "L609-L612",
+        "source_section": "20. Architectural Principles > UXF-002"
+      },
+      "statement": "Storefronts represent commercial experiences rather than websites."
+    },
+    {
+      "criticality": "HIGH",
+      "current_route": "UNIQUE_INLINE_CONTRACT",
+      "decision_id": "P2C-SO-C2-HOMR-022",
+      "options": [
+        {
+          "candidate_operators": [
+            "STATE_TRANSITION_ALLOWED",
+            "EVIDENCE_FIELD_PRESENT"
+          ],
+          "disposition": "AUTHOR_SOURCE_GROUNDED_OPERATOR_AST",
+          "non_claim": "CANDIDATE_COMPOSITION_REQUIRES_HUMAN_CONFIRMATION",
+          "option_id": "P2C-SO-C2-HOMR-022-OPT-1",
+          "source_edit_required": false
+        },
+        {
+          "candidate_operators": [],
+          "disposition": "SOURCE_SEMANTICS_BLOCKED",
+          "non_claim": "NO_OPERATOR_AST_UNTIL_SOURCE_SEMANTICS_ARE_APPROVED",
+          "option_id": "P2C-SO-C2-HOMR-022-OPT-2",
+          "source_edit_required": true
+        }
+      ],
+      "recommended_option_id": "P2C-SO-C2-HOMR-022-OPT-1",
+      "requirement_id": "UXF-003",
+      "selected_option_id": null,
+      "selection_status": "PENDING",
+      "source_provenance": {
+        "approved_decisions": [],
+        "identity_origin": "PRESERVED_STABLE_ID",
+        "original_identity": "UXF-003",
+        "previous_temporary_key": null,
+        "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+        "source_baseline": "v2.2",
+        "source_context_heading": "UXF-003",
+        "source_context_sha256": "6940e25ff97d8630368d2207bae3291461afe75f8490653294ec4bd7af010e6e",
+        "source_document": "docs/UXF/UXF-00.md",
+        "source_fingerprint": "11303a5a1dd0542d5bd3b70cb99d2448e0384fdf880a4376fb21c09caa57f2e3",
+        "source_lines": "L615-L618",
+        "source_section": "20. Architectural Principles > UXF-003"
+      },
+      "statement": "Storefronts consume YSim Products only."
+    },
+    {
+      "criticality": "HIGH",
+      "current_route": "UNIQUE_INLINE_CONTRACT",
+      "decision_id": "P2C-SO-C2-HOMR-023",
+      "options": [
+        {
+          "candidate_operators": [
+            "STATE_TRANSITION_ALLOWED",
+            "EVIDENCE_FIELD_PRESENT"
+          ],
+          "disposition": "AUTHOR_SOURCE_GROUNDED_OPERATOR_AST",
+          "non_claim": "CANDIDATE_COMPOSITION_REQUIRES_HUMAN_CONFIRMATION",
+          "option_id": "P2C-SO-C2-HOMR-023-OPT-1",
+          "source_edit_required": false
+        },
+        {
+          "candidate_operators": [],
+          "disposition": "SOURCE_SEMANTICS_BLOCKED",
+          "non_claim": "NO_OPERATOR_AST_UNTIL_SOURCE_SEMANTICS_ARE_APPROVED",
+          "option_id": "P2C-SO-C2-HOMR-023-OPT-2",
+          "source_edit_required": true
+        }
+      ],
+      "recommended_option_id": "P2C-SO-C2-HOMR-023-OPT-1",
+      "requirement_id": "UXF-008",
+      "selected_option_id": null,
+      "selection_status": "PENDING",
+      "source_provenance": {
+        "approved_decisions": [
+          "P2-DEC-008"
+        ],
+        "identity_origin": "PRESERVED_STABLE_ID",
+        "original_identity": "UXF-008",
+        "previous_temporary_key": null,
+        "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+        "source_baseline": "v2.2",
+        "source_context_heading": "UXF-008",
+        "source_context_sha256": "abd7673b8343b2428339e25d6cf0102b3fdfaa6f8913613413fd5ce6366f185e",
+        "source_document": "docs/UXF/UXF-00.md",
+        "source_fingerprint": "20303fc4b812bc36885cb2776af43159c7f4e037effd8d05e7b7405d6f321490",
+        "source_lines": "L645-L648",
+        "source_section": "20. Architectural Principles > UXF-008"
+      },
+      "statement": "Localization defines customer experience, not only language."
+    },
+    {
+      "criticality": "HIGH",
+      "current_route": "INLINE_ARCHETYPE_BINDING",
+      "decision_id": "P2C-SO-C2-HOMR-024",
+      "options": [
+        {
+          "candidate_operators": [
+            "POLICY_OUTCOME_EQUALS",
+            "EVIDENCE_FIELD_PRESENT"
+          ],
+          "disposition": "AUTHOR_SOURCE_GROUNDED_OPERATOR_AST",
+          "non_claim": "CANDIDATE_COMPOSITION_REQUIRES_HUMAN_CONFIRMATION",
+          "option_id": "P2C-SO-C2-HOMR-024-OPT-1",
+          "source_edit_required": false
+        },
+        {
+          "candidate_operators": [],
+          "disposition": "SOURCE_SEMANTICS_BLOCKED",
+          "non_claim": "NO_OPERATOR_AST_UNTIL_SOURCE_SEMANTICS_ARE_APPROVED",
+          "option_id": "P2C-SO-C2-HOMR-024-OPT-2",
+          "source_edit_required": true
+        }
+      ],
+      "recommended_option_id": "P2C-SO-C2-HOMR-024-OPT-1",
+      "requirement_id": "UXF-02-R009",
+      "selected_option_id": null,
+      "selection_status": "PENDING",
+      "source_provenance": {
+        "approved_decisions": [],
+        "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
+        "original_identity": "TMP-UXF-02-009",
+        "previous_temporary_key": "TMP-UXF-02-009",
+        "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+        "source_baseline": "v2.2",
+        "source_context_heading": "18. Design Accessibility",
+        "source_context_sha256": "005d03136b01fbfc51aecdb4957e3fd361c068c92883677b8242c37948911b84",
+        "source_document": "docs/UXF/UXF-02.md",
+        "source_fingerprint": "d27ea5dc7317fe49df4515b2158c294433af56d1cb2c82e9b2cd97edef310640",
+        "source_lines": "L540",
+        "source_section": "18. Design Accessibility"
+      },
+      "statement": "Accessibility cannot be disabled by Themes."
+    },
+    {
+      "criticality": "HIGH",
+      "current_route": "INLINE_ARCHETYPE_BINDING",
+      "decision_id": "P2C-SO-C2-HOMR-025",
+      "options": [
+        {
+          "candidate_operators": [
+            "POLICY_OUTCOME_EQUALS",
+            "EVIDENCE_FIELD_PRESENT"
+          ],
+          "disposition": "AUTHOR_SOURCE_GROUNDED_OPERATOR_AST",
+          "non_claim": "CANDIDATE_COMPOSITION_REQUIRES_HUMAN_CONFIRMATION",
+          "option_id": "P2C-SO-C2-HOMR-025-OPT-1",
+          "source_edit_required": false
+        },
+        {
+          "candidate_operators": [],
+          "disposition": "SOURCE_SEMANTICS_BLOCKED",
+          "non_claim": "NO_OPERATOR_AST_UNTIL_SOURCE_SEMANTICS_ARE_APPROVED",
+          "option_id": "P2C-SO-C2-HOMR-025-OPT-2",
+          "source_edit_required": true
+        }
+      ],
+      "recommended_option_id": "P2C-SO-C2-HOMR-025-OPT-1",
+      "requirement_id": "UXF-209",
+      "selected_option_id": null,
+      "selection_status": "PENDING",
+      "source_provenance": {
+        "approved_decisions": [],
+        "identity_origin": "PRESERVED_STABLE_ID",
+        "original_identity": "UXF-209",
+        "previous_temporary_key": null,
+        "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+        "source_baseline": "v2.2",
+        "source_context_heading": "UXF-209",
+        "source_context_sha256": "3ec3e154e2514f1f8cb977d5567106ff41a872d7919d3a885dec673bbb8f2383",
+        "source_document": "docs/UXF/UXF-02.md",
+        "source_fingerprint": "47d5cf0d2b9ba787c7919421eac0228594fba22381b7d6a86a679e5f55cdc92c",
+        "source_lines": "L610-L613",
+        "source_section": "20. Design Principles > UXF-209"
+      },
+      "statement": "Accessibility is mandatory."
+    },
+    {
+      "criticality": "HIGH",
+      "current_route": "UNIQUE_INLINE_CONTRACT",
+      "decision_id": "P2C-SO-C2-HOMR-026",
+      "options": [
+        {
+          "candidate_operators": [
+            "STATE_TRANSITION_ALLOWED",
+            "EVIDENCE_FIELD_PRESENT"
+          ],
+          "disposition": "AUTHOR_SOURCE_GROUNDED_OPERATOR_AST",
+          "non_claim": "CANDIDATE_COMPOSITION_REQUIRES_HUMAN_CONFIRMATION",
+          "option_id": "P2C-SO-C2-HOMR-026-OPT-1",
+          "source_edit_required": false
+        },
+        {
+          "candidate_operators": [],
+          "disposition": "SOURCE_SEMANTICS_BLOCKED",
+          "non_claim": "NO_OPERATOR_AST_UNTIL_SOURCE_SEMANTICS_ARE_APPROVED",
+          "option_id": "P2C-SO-C2-HOMR-026-OPT-2",
+          "source_edit_required": true
+        }
+      ],
+      "recommended_option_id": "P2C-SO-C2-HOMR-026-OPT-1",
+      "requirement_id": "UXF-301",
+      "selected_option_id": null,
+      "selection_status": "PENDING",
+      "source_provenance": {
+        "approved_decisions": [],
+        "identity_origin": "PRESERVED_STABLE_ID",
+        "original_identity": "UXF-301",
+        "previous_temporary_key": null,
+        "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+        "source_baseline": "v2.2",
+        "source_context_heading": "UXF-301",
+        "source_context_sha256": "2c62bca5bca8f8043a6bb90c4d6b7c7cbc7c2bc6b4135364cec9c13b3e1bda68",
+        "source_document": "docs/UXF/UXF-03.md",
+        "source_fingerprint": "746179091ccfb27b85fc7267c27866bc5dfd5754a0135468d0d8b9144402e246",
+        "source_lines": "L627-L630",
+        "source_section": "22. Architectural Principles > UXF-301"
+      },
+      "statement": "Storefronts are runtime experiences."
+    },
+    {
+      "criticality": "HIGH",
+      "current_route": "UNIQUE_INLINE_CONTRACT",
+      "decision_id": "P2C-SO-C2-HOMR-027",
+      "options": [
+        {
+          "candidate_operators": [
+            "STATE_TRANSITION_ALLOWED",
+            "EVIDENCE_FIELD_PRESENT"
+          ],
+          "disposition": "AUTHOR_SOURCE_GROUNDED_OPERATOR_AST",
+          "non_claim": "CANDIDATE_COMPOSITION_REQUIRES_HUMAN_CONFIRMATION",
+          "option_id": "P2C-SO-C2-HOMR-027-OPT-1",
+          "source_edit_required": false
+        },
+        {
+          "candidate_operators": [],
+          "disposition": "SOURCE_SEMANTICS_BLOCKED",
+          "non_claim": "NO_OPERATOR_AST_UNTIL_SOURCE_SEMANTICS_ARE_APPROVED",
+          "option_id": "P2C-SO-C2-HOMR-027-OPT-2",
+          "source_edit_required": true
+        }
+      ],
+      "recommended_option_id": "P2C-SO-C2-HOMR-027-OPT-1",
+      "requirement_id": "UXF-302",
+      "selected_option_id": null,
+      "selection_status": "PENDING",
+      "source_provenance": {
+        "approved_decisions": [],
+        "identity_origin": "PRESERVED_STABLE_ID",
+        "original_identity": "UXF-302",
+        "previous_temporary_key": null,
+        "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+        "source_baseline": "v2.2",
+        "source_context_heading": "UXF-302",
+        "source_context_sha256": "cabe80d6fa78120875e0e51d5f4adc5e8ee5890830fcd1174e513e36fcff070a",
+        "source_document": "docs/UXF/UXF-03.md",
+        "source_fingerprint": "2092149811f47c9c201180d73a19d2ac0f38842ff371bcb1c639785a138652be",
+        "source_lines": "L633-L636",
+        "source_section": "22. Architectural Principles > UXF-302"
+      },
+      "statement": "Templates define structure only."
+    }
+  ],
+  "selected_count": 0,
+  "status": "PENDING_HUMAN_DECISION"
+}

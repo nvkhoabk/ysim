@@ -1,0 +1,4548 @@
+{
+  "accepted_archetype_adapter_count": 57,
+  "adapters": [
+    {
+      "active_mapping_count": 31,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-ACCESS-AUTHORIZATION",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:ACTOR_AUTHORIZED",
+        "BOUNDARY_MUTATION:ACTOR_DENIED"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-ACCESS-AUTHORIZATION must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:ACTOR_AUTHORIZED",
+        "NEGATIVE_MUTATION:ACTOR_DENIED"
+      ],
+      "operator_binding_contract": {
+        "ACTOR_AUTHORIZED": {
+          "action": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:action"
+          },
+          "actor": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:actor"
+          },
+          "effective_policy": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:effective_policy"
+          },
+          "resource": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:resource"
+          }
+        },
+        "ACTOR_DENIED": {
+          "action": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:action"
+          },
+          "actor": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:actor"
+          },
+          "effective_policy": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:effective_policy"
+          },
+          "resource": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:resource"
+          }
+        }
+      },
+      "operator_composition": [
+        "ACTOR_AUTHORIZED",
+        "ACTOR_DENIED"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "Access Authorization",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 30,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-AUDIT-TRACE-IMMUTABILITY",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:AUDIT_IMMUTABLE",
+        "BOUNDARY_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-AUDIT-TRACE-IMMUTABILITY must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:AUDIT_IMMUTABLE",
+        "NEGATIVE_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "operator_binding_contract": {
+        "AUDIT_IMMUTABLE": {
+          "audit_record": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:audit_record"
+          },
+          "immutability_boundary": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:immutability_boundary"
+          },
+          "required_fields": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_fields"
+          }
+        },
+        "EVIDENCE_FIELD_PRESENT": {
+          "evidence_object": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:evidence_object"
+          },
+          "required_fields": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_fields"
+          }
+        }
+      },
+      "operator_composition": [
+        "AUDIT_IMMUTABLE",
+        "EVIDENCE_FIELD_PRESENT"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "Audit Trace Immutability",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 45,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-C3-BUSINESS-BOUND-OUTCOME",
+      "archetype_version": "1.1.0-candidate.oracle-extension.1",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:POLICY_OUTCOME_EQUALS",
+        "BOUNDARY_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-C3-BUSINESS-BOUND-OUTCOME must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": true,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:POLICY_OUTCOME_EQUALS",
+        "NEGATIVE_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "operator_binding_contract": {
+        "EVIDENCE_FIELD_PRESENT": {
+          "evidence_object": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:evidence_object"
+          },
+          "required_fields": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_fields"
+          }
+        },
+        "POLICY_OUTCOME_EQUALS": {
+          "expected_outcome": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:expected_outcome"
+          },
+          "policy": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy"
+          },
+          "policy_inputs": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy_inputs"
+          }
+        }
+      },
+      "operator_composition": [
+        "POLICY_OUTCOME_EQUALS",
+        "EVIDENCE_FIELD_PRESENT"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "Business Bound Outcome",
+      "status": "HUMAN_OPERATOR_MAPPING_REVIEW"
+    },
+    {
+      "active_mapping_count": 3,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-C3-BUSINESS_OUTCOME-0D112A9A3D",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:POLICY_OUTCOME_EQUALS",
+        "BOUNDARY_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-C3-BUSINESS_OUTCOME-0D112A9A3D must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:POLICY_OUTCOME_EQUALS",
+        "NEGATIVE_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "operator_binding_contract": {
+        "EVIDENCE_FIELD_PRESENT": {
+          "evidence_object": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:evidence_object"
+          },
+          "required_fields": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_fields"
+          }
+        },
+        "POLICY_OUTCOME_EQUALS": {
+          "expected_outcome": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:expected_outcome"
+          },
+          "policy": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy"
+          },
+          "policy_inputs": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy_inputs"
+          }
+        }
+      },
+      "operator_composition": [
+        "POLICY_OUTCOME_EQUALS",
+        "EVIDENCE_FIELD_PRESENT"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "C3 Business_Outcome 0D112A9A3D",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 4,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-C3-BUSINESS_OUTCOME-176522CB44",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:POLICY_OUTCOME_EQUALS",
+        "BOUNDARY_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-C3-BUSINESS_OUTCOME-176522CB44 must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:POLICY_OUTCOME_EQUALS",
+        "NEGATIVE_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "operator_binding_contract": {
+        "EVIDENCE_FIELD_PRESENT": {
+          "evidence_object": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:evidence_object"
+          },
+          "required_fields": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_fields"
+          }
+        },
+        "POLICY_OUTCOME_EQUALS": {
+          "expected_outcome": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:expected_outcome"
+          },
+          "policy": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy"
+          },
+          "policy_inputs": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy_inputs"
+          }
+        }
+      },
+      "operator_composition": [
+        "POLICY_OUTCOME_EQUALS",
+        "EVIDENCE_FIELD_PRESENT"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "C3 Business_Outcome 176522Cb44",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 4,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-C3-BUSINESS_OUTCOME-1D961718E2",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:POLICY_OUTCOME_EQUALS",
+        "BOUNDARY_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-C3-BUSINESS_OUTCOME-1D961718E2 must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:POLICY_OUTCOME_EQUALS",
+        "NEGATIVE_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "operator_binding_contract": {
+        "EVIDENCE_FIELD_PRESENT": {
+          "evidence_object": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:evidence_object"
+          },
+          "required_fields": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_fields"
+          }
+        },
+        "POLICY_OUTCOME_EQUALS": {
+          "expected_outcome": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:expected_outcome"
+          },
+          "policy": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy"
+          },
+          "policy_inputs": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy_inputs"
+          }
+        }
+      },
+      "operator_composition": [
+        "POLICY_OUTCOME_EQUALS",
+        "EVIDENCE_FIELD_PRESENT"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "C3 Business_Outcome 1D961718E2",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 2,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-C3-BUSINESS_OUTCOME-2EEC23D512",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:POLICY_OUTCOME_EQUALS",
+        "BOUNDARY_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-C3-BUSINESS_OUTCOME-2EEC23D512 must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:POLICY_OUTCOME_EQUALS",
+        "NEGATIVE_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "operator_binding_contract": {
+        "EVIDENCE_FIELD_PRESENT": {
+          "evidence_object": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:evidence_object"
+          },
+          "required_fields": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_fields"
+          }
+        },
+        "POLICY_OUTCOME_EQUALS": {
+          "expected_outcome": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:expected_outcome"
+          },
+          "policy": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy"
+          },
+          "policy_inputs": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy_inputs"
+          }
+        }
+      },
+      "operator_composition": [
+        "POLICY_OUTCOME_EQUALS",
+        "EVIDENCE_FIELD_PRESENT"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "C3 Business_Outcome 2Eec23D512",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 2,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-C3-BUSINESS_OUTCOME-317284513D",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:POLICY_OUTCOME_EQUALS",
+        "BOUNDARY_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-C3-BUSINESS_OUTCOME-317284513D must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:POLICY_OUTCOME_EQUALS",
+        "NEGATIVE_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "operator_binding_contract": {
+        "EVIDENCE_FIELD_PRESENT": {
+          "evidence_object": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:evidence_object"
+          },
+          "required_fields": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_fields"
+          }
+        },
+        "POLICY_OUTCOME_EQUALS": {
+          "expected_outcome": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:expected_outcome"
+          },
+          "policy": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy"
+          },
+          "policy_inputs": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy_inputs"
+          }
+        }
+      },
+      "operator_composition": [
+        "POLICY_OUTCOME_EQUALS",
+        "EVIDENCE_FIELD_PRESENT"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "C3 Business_Outcome 317284513D",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 4,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-C3-BUSINESS_OUTCOME-4CC869737B",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:POLICY_OUTCOME_EQUALS",
+        "BOUNDARY_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-C3-BUSINESS_OUTCOME-4CC869737B must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:POLICY_OUTCOME_EQUALS",
+        "NEGATIVE_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "operator_binding_contract": {
+        "EVIDENCE_FIELD_PRESENT": {
+          "evidence_object": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:evidence_object"
+          },
+          "required_fields": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_fields"
+          }
+        },
+        "POLICY_OUTCOME_EQUALS": {
+          "expected_outcome": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:expected_outcome"
+          },
+          "policy": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy"
+          },
+          "policy_inputs": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy_inputs"
+          }
+        }
+      },
+      "operator_composition": [
+        "POLICY_OUTCOME_EQUALS",
+        "EVIDENCE_FIELD_PRESENT"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "C3 Business_Outcome 4Cc869737B",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 3,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-C3-BUSINESS_OUTCOME-5D99E1EF82",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:POLICY_OUTCOME_EQUALS",
+        "BOUNDARY_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-C3-BUSINESS_OUTCOME-5D99E1EF82 must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:POLICY_OUTCOME_EQUALS",
+        "NEGATIVE_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "operator_binding_contract": {
+        "EVIDENCE_FIELD_PRESENT": {
+          "evidence_object": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:evidence_object"
+          },
+          "required_fields": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_fields"
+          }
+        },
+        "POLICY_OUTCOME_EQUALS": {
+          "expected_outcome": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:expected_outcome"
+          },
+          "policy": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy"
+          },
+          "policy_inputs": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy_inputs"
+          }
+        }
+      },
+      "operator_composition": [
+        "POLICY_OUTCOME_EQUALS",
+        "EVIDENCE_FIELD_PRESENT"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "C3 Business_Outcome 5D99E1Ef82",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 3,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-C3-BUSINESS_OUTCOME-6A52BD81E4",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:POLICY_OUTCOME_EQUALS",
+        "BOUNDARY_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-C3-BUSINESS_OUTCOME-6A52BD81E4 must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:POLICY_OUTCOME_EQUALS",
+        "NEGATIVE_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "operator_binding_contract": {
+        "EVIDENCE_FIELD_PRESENT": {
+          "evidence_object": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:evidence_object"
+          },
+          "required_fields": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_fields"
+          }
+        },
+        "POLICY_OUTCOME_EQUALS": {
+          "expected_outcome": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:expected_outcome"
+          },
+          "policy": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy"
+          },
+          "policy_inputs": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy_inputs"
+          }
+        }
+      },
+      "operator_composition": [
+        "POLICY_OUTCOME_EQUALS",
+        "EVIDENCE_FIELD_PRESENT"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "C3 Business_Outcome 6A52Bd81E4",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 3,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-C3-BUSINESS_OUTCOME-6BA023340C",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:POLICY_OUTCOME_EQUALS",
+        "BOUNDARY_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-C3-BUSINESS_OUTCOME-6BA023340C must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:POLICY_OUTCOME_EQUALS",
+        "NEGATIVE_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "operator_binding_contract": {
+        "EVIDENCE_FIELD_PRESENT": {
+          "evidence_object": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:evidence_object"
+          },
+          "required_fields": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_fields"
+          }
+        },
+        "POLICY_OUTCOME_EQUALS": {
+          "expected_outcome": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:expected_outcome"
+          },
+          "policy": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy"
+          },
+          "policy_inputs": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy_inputs"
+          }
+        }
+      },
+      "operator_composition": [
+        "POLICY_OUTCOME_EQUALS",
+        "EVIDENCE_FIELD_PRESENT"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "C3 Business_Outcome 6Ba023340C",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 3,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-C3-BUSINESS_OUTCOME-6C0DBD8B06",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:POLICY_OUTCOME_EQUALS",
+        "BOUNDARY_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-C3-BUSINESS_OUTCOME-6C0DBD8B06 must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:POLICY_OUTCOME_EQUALS",
+        "NEGATIVE_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "operator_binding_contract": {
+        "EVIDENCE_FIELD_PRESENT": {
+          "evidence_object": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:evidence_object"
+          },
+          "required_fields": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_fields"
+          }
+        },
+        "POLICY_OUTCOME_EQUALS": {
+          "expected_outcome": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:expected_outcome"
+          },
+          "policy": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy"
+          },
+          "policy_inputs": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy_inputs"
+          }
+        }
+      },
+      "operator_composition": [
+        "POLICY_OUTCOME_EQUALS",
+        "EVIDENCE_FIELD_PRESENT"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "C3 Business_Outcome 6C0Dbd8B06",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 4,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-C3-BUSINESS_OUTCOME-7AD45B38CE",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:POLICY_OUTCOME_EQUALS",
+        "BOUNDARY_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-C3-BUSINESS_OUTCOME-7AD45B38CE must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:POLICY_OUTCOME_EQUALS",
+        "NEGATIVE_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "operator_binding_contract": {
+        "EVIDENCE_FIELD_PRESENT": {
+          "evidence_object": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:evidence_object"
+          },
+          "required_fields": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_fields"
+          }
+        },
+        "POLICY_OUTCOME_EQUALS": {
+          "expected_outcome": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:expected_outcome"
+          },
+          "policy": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy"
+          },
+          "policy_inputs": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy_inputs"
+          }
+        }
+      },
+      "operator_composition": [
+        "POLICY_OUTCOME_EQUALS",
+        "EVIDENCE_FIELD_PRESENT"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "C3 Business_Outcome 7Ad45B38Ce",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 3,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-C3-BUSINESS_OUTCOME-A492B3307E",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:POLICY_OUTCOME_EQUALS",
+        "BOUNDARY_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-C3-BUSINESS_OUTCOME-A492B3307E must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:POLICY_OUTCOME_EQUALS",
+        "NEGATIVE_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "operator_binding_contract": {
+        "EVIDENCE_FIELD_PRESENT": {
+          "evidence_object": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:evidence_object"
+          },
+          "required_fields": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_fields"
+          }
+        },
+        "POLICY_OUTCOME_EQUALS": {
+          "expected_outcome": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:expected_outcome"
+          },
+          "policy": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy"
+          },
+          "policy_inputs": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy_inputs"
+          }
+        }
+      },
+      "operator_composition": [
+        "POLICY_OUTCOME_EQUALS",
+        "EVIDENCE_FIELD_PRESENT"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "C3 Business_Outcome A492B3307E",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 1,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-C3-BUSINESS_OUTCOME-A4EF75FE78",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:POLICY_OUTCOME_EQUALS",
+        "BOUNDARY_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-C3-BUSINESS_OUTCOME-A4EF75FE78 must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:POLICY_OUTCOME_EQUALS",
+        "NEGATIVE_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "operator_binding_contract": {
+        "EVIDENCE_FIELD_PRESENT": {
+          "evidence_object": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:evidence_object"
+          },
+          "required_fields": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_fields"
+          }
+        },
+        "POLICY_OUTCOME_EQUALS": {
+          "expected_outcome": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:expected_outcome"
+          },
+          "policy": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy"
+          },
+          "policy_inputs": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy_inputs"
+          }
+        }
+      },
+      "operator_composition": [
+        "POLICY_OUTCOME_EQUALS",
+        "EVIDENCE_FIELD_PRESENT"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "C3 Business_Outcome A4Ef75Fe78",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 1,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-C3-BUSINESS_OUTCOME-A50F32435F",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:POLICY_OUTCOME_EQUALS",
+        "BOUNDARY_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-C3-BUSINESS_OUTCOME-A50F32435F must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:POLICY_OUTCOME_EQUALS",
+        "NEGATIVE_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "operator_binding_contract": {
+        "EVIDENCE_FIELD_PRESENT": {
+          "evidence_object": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:evidence_object"
+          },
+          "required_fields": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_fields"
+          }
+        },
+        "POLICY_OUTCOME_EQUALS": {
+          "expected_outcome": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:expected_outcome"
+          },
+          "policy": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy"
+          },
+          "policy_inputs": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy_inputs"
+          }
+        }
+      },
+      "operator_composition": [
+        "POLICY_OUTCOME_EQUALS",
+        "EVIDENCE_FIELD_PRESENT"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "C3 Business_Outcome A50F32435F",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 2,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-C3-BUSINESS_OUTCOME-A62EA42FEF",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:POLICY_OUTCOME_EQUALS",
+        "BOUNDARY_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-C3-BUSINESS_OUTCOME-A62EA42FEF must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:POLICY_OUTCOME_EQUALS",
+        "NEGATIVE_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "operator_binding_contract": {
+        "EVIDENCE_FIELD_PRESENT": {
+          "evidence_object": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:evidence_object"
+          },
+          "required_fields": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_fields"
+          }
+        },
+        "POLICY_OUTCOME_EQUALS": {
+          "expected_outcome": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:expected_outcome"
+          },
+          "policy": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy"
+          },
+          "policy_inputs": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy_inputs"
+          }
+        }
+      },
+      "operator_composition": [
+        "POLICY_OUTCOME_EQUALS",
+        "EVIDENCE_FIELD_PRESENT"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "C3 Business_Outcome A62Ea42Fef",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 11,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-C3-BUSINESS_OUTCOME-BD4FCEA8D3",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:POLICY_OUTCOME_EQUALS",
+        "BOUNDARY_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-C3-BUSINESS_OUTCOME-BD4FCEA8D3 must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:POLICY_OUTCOME_EQUALS",
+        "NEGATIVE_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "operator_binding_contract": {
+        "EVIDENCE_FIELD_PRESENT": {
+          "evidence_object": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:evidence_object"
+          },
+          "required_fields": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_fields"
+          }
+        },
+        "POLICY_OUTCOME_EQUALS": {
+          "expected_outcome": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:expected_outcome"
+          },
+          "policy": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy"
+          },
+          "policy_inputs": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy_inputs"
+          }
+        }
+      },
+      "operator_composition": [
+        "POLICY_OUTCOME_EQUALS",
+        "EVIDENCE_FIELD_PRESENT"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "C3 Business_Outcome Bd4Fcea8D3",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 3,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-C3-BUSINESS_OUTCOME-D4A7E52EA1",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:POLICY_OUTCOME_EQUALS",
+        "BOUNDARY_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-C3-BUSINESS_OUTCOME-D4A7E52EA1 must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:POLICY_OUTCOME_EQUALS",
+        "NEGATIVE_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "operator_binding_contract": {
+        "EVIDENCE_FIELD_PRESENT": {
+          "evidence_object": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:evidence_object"
+          },
+          "required_fields": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_fields"
+          }
+        },
+        "POLICY_OUTCOME_EQUALS": {
+          "expected_outcome": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:expected_outcome"
+          },
+          "policy": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy"
+          },
+          "policy_inputs": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy_inputs"
+          }
+        }
+      },
+      "operator_composition": [
+        "POLICY_OUTCOME_EQUALS",
+        "EVIDENCE_FIELD_PRESENT"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "C3 Business_Outcome D4A7E52Ea1",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 1,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-C3-BUSINESS_OUTCOME-E7D29F727C",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:POLICY_OUTCOME_EQUALS",
+        "BOUNDARY_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-C3-BUSINESS_OUTCOME-E7D29F727C must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:POLICY_OUTCOME_EQUALS",
+        "NEGATIVE_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "operator_binding_contract": {
+        "EVIDENCE_FIELD_PRESENT": {
+          "evidence_object": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:evidence_object"
+          },
+          "required_fields": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_fields"
+          }
+        },
+        "POLICY_OUTCOME_EQUALS": {
+          "expected_outcome": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:expected_outcome"
+          },
+          "policy": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy"
+          },
+          "policy_inputs": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy_inputs"
+          }
+        }
+      },
+      "operator_composition": [
+        "POLICY_OUTCOME_EQUALS",
+        "EVIDENCE_FIELD_PRESENT"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "C3 Business_Outcome E7D29F727C",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 6,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-C3-BUSINESS_OUTCOME-F0C0AE0967",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:POLICY_OUTCOME_EQUALS",
+        "BOUNDARY_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-C3-BUSINESS_OUTCOME-F0C0AE0967 must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:POLICY_OUTCOME_EQUALS",
+        "NEGATIVE_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "operator_binding_contract": {
+        "EVIDENCE_FIELD_PRESENT": {
+          "evidence_object": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:evidence_object"
+          },
+          "required_fields": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_fields"
+          }
+        },
+        "POLICY_OUTCOME_EQUALS": {
+          "expected_outcome": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:expected_outcome"
+          },
+          "policy": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy"
+          },
+          "policy_inputs": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy_inputs"
+          }
+        }
+      },
+      "operator_composition": [
+        "POLICY_OUTCOME_EQUALS",
+        "EVIDENCE_FIELD_PRESENT"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "C3 Business_Outcome F0C0Ae0967",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 4,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-C3-BUSINESS_OUTCOME-F7177F89E1",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:POLICY_OUTCOME_EQUALS",
+        "BOUNDARY_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-C3-BUSINESS_OUTCOME-F7177F89E1 must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:POLICY_OUTCOME_EQUALS",
+        "NEGATIVE_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "operator_binding_contract": {
+        "EVIDENCE_FIELD_PRESENT": {
+          "evidence_object": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:evidence_object"
+          },
+          "required_fields": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_fields"
+          }
+        },
+        "POLICY_OUTCOME_EQUALS": {
+          "expected_outcome": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:expected_outcome"
+          },
+          "policy": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy"
+          },
+          "policy_inputs": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy_inputs"
+          }
+        }
+      },
+      "operator_composition": [
+        "POLICY_OUTCOME_EQUALS",
+        "EVIDENCE_FIELD_PRESENT"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "C3 Business_Outcome F7177F89E1",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 3,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-C3-BUSINESS_OUTCOME-FACDAAF796",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:POLICY_OUTCOME_EQUALS",
+        "BOUNDARY_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-C3-BUSINESS_OUTCOME-FACDAAF796 must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:POLICY_OUTCOME_EQUALS",
+        "NEGATIVE_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "operator_binding_contract": {
+        "EVIDENCE_FIELD_PRESENT": {
+          "evidence_object": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:evidence_object"
+          },
+          "required_fields": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_fields"
+          }
+        },
+        "POLICY_OUTCOME_EQUALS": {
+          "expected_outcome": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:expected_outcome"
+          },
+          "policy": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy"
+          },
+          "policy_inputs": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy_inputs"
+          }
+        }
+      },
+      "operator_composition": [
+        "POLICY_OUTCOME_EQUALS",
+        "EVIDENCE_FIELD_PRESENT"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "C3 Business_Outcome Facdaaf796",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 21,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-C3-CLASSIFICATION-BOUND-OUTCOME",
+      "archetype_version": "1.1.0-candidate.oracle-extension.1",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:ENUM_VALUE_ALLOWED",
+        "BOUNDARY_MUTATION:SET_CONTAINS"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-C3-CLASSIFICATION-BOUND-OUTCOME must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": true,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:ENUM_VALUE_ALLOWED",
+        "NEGATIVE_MUTATION:SET_CONTAINS"
+      ],
+      "operator_binding_contract": {
+        "ENUM_VALUE_ALLOWED": {
+          "actual_value": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:actual_value"
+          },
+          "allowed_values": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:allowed_values"
+          },
+          "field": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:field"
+          }
+        },
+        "SET_CONTAINS": {
+          "actual_set": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:actual_set"
+          },
+          "required_members": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_members"
+          }
+        }
+      },
+      "operator_composition": [
+        "ENUM_VALUE_ALLOWED",
+        "SET_CONTAINS"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "Classification Bound Outcome",
+      "status": "HUMAN_OPERATOR_MAPPING_REVIEW"
+    },
+    {
+      "active_mapping_count": 9,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-C3-CONFIGURATION-BOUND-OUTCOME",
+      "archetype_version": "1.1.0-candidate.oracle-extension.1",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:CONFIGURATION_RESOLVES",
+        "BOUNDARY_MUTATION:CONFIGURATION_PRECEDENCE"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-C3-CONFIGURATION-BOUND-OUTCOME must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": true,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:CONFIGURATION_RESOLVES",
+        "NEGATIVE_MUTATION:CONFIGURATION_PRECEDENCE"
+      ],
+      "operator_binding_contract": {
+        "CONFIGURATION_PRECEDENCE": {
+          "configuration_key": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:configuration_key"
+          },
+          "precedence_order": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:precedence_order"
+          },
+          "source_values": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:source_values"
+          }
+        },
+        "CONFIGURATION_RESOLVES": {
+          "configuration_key": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:configuration_key"
+          },
+          "configuration_sources": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:configuration_sources"
+          },
+          "expected_value": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:expected_value"
+          }
+        }
+      },
+      "operator_composition": [
+        "CONFIGURATION_RESOLVES",
+        "CONFIGURATION_PRECEDENCE"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "Configuration Bound Outcome",
+      "status": "HUMAN_OPERATOR_MAPPING_REVIEW"
+    },
+    {
+      "active_mapping_count": 6,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-C3-DATA_OUTCOME-7A08CD38EA",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:SET_CONTAINS",
+        "BOUNDARY_MUTATION:REFERENCE_TARGET_VALID"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-C3-DATA_OUTCOME-7A08CD38EA must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:SET_CONTAINS",
+        "NEGATIVE_MUTATION:REFERENCE_TARGET_VALID"
+      ],
+      "operator_binding_contract": {
+        "REFERENCE_TARGET_VALID": {
+          "allowed_states": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:allowed_states"
+          },
+          "reference": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:reference"
+          },
+          "registry": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:registry"
+          }
+        },
+        "SET_CONTAINS": {
+          "actual_set": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:actual_set"
+          },
+          "required_members": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_members"
+          }
+        }
+      },
+      "operator_composition": [
+        "SET_CONTAINS",
+        "REFERENCE_TARGET_VALID"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "C3 Data_Outcome 7A08Cd38Ea",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 3,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-C3-DATA_OUTCOME-9F0C4D8FDF",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:SET_CONTAINS",
+        "BOUNDARY_MUTATION:REFERENCE_TARGET_VALID"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-C3-DATA_OUTCOME-9F0C4D8FDF must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:SET_CONTAINS",
+        "NEGATIVE_MUTATION:REFERENCE_TARGET_VALID"
+      ],
+      "operator_binding_contract": {
+        "REFERENCE_TARGET_VALID": {
+          "allowed_states": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:allowed_states"
+          },
+          "reference": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:reference"
+          },
+          "registry": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:registry"
+          }
+        },
+        "SET_CONTAINS": {
+          "actual_set": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:actual_set"
+          },
+          "required_members": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_members"
+          }
+        }
+      },
+      "operator_composition": [
+        "SET_CONTAINS",
+        "REFERENCE_TARGET_VALID"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "C3 Data_Outcome 9F0C4D8Fdf",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 5,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-C3-DATA_OUTCOME-A38585FB73",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:SET_CONTAINS",
+        "BOUNDARY_MUTATION:REFERENCE_TARGET_VALID"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-C3-DATA_OUTCOME-A38585FB73 must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:SET_CONTAINS",
+        "NEGATIVE_MUTATION:REFERENCE_TARGET_VALID"
+      ],
+      "operator_binding_contract": {
+        "REFERENCE_TARGET_VALID": {
+          "allowed_states": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:allowed_states"
+          },
+          "reference": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:reference"
+          },
+          "registry": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:registry"
+          }
+        },
+        "SET_CONTAINS": {
+          "actual_set": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:actual_set"
+          },
+          "required_members": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_members"
+          }
+        }
+      },
+      "operator_composition": [
+        "SET_CONTAINS",
+        "REFERENCE_TARGET_VALID"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "C3 Data_Outcome A38585Fb73",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 2,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-C3-DATA_OUTCOME-C32ABF5DE2",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:SET_CONTAINS",
+        "BOUNDARY_MUTATION:REFERENCE_TARGET_VALID"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-C3-DATA_OUTCOME-C32ABF5DE2 must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:SET_CONTAINS",
+        "NEGATIVE_MUTATION:REFERENCE_TARGET_VALID"
+      ],
+      "operator_binding_contract": {
+        "REFERENCE_TARGET_VALID": {
+          "allowed_states": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:allowed_states"
+          },
+          "reference": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:reference"
+          },
+          "registry": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:registry"
+          }
+        },
+        "SET_CONTAINS": {
+          "actual_set": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:actual_set"
+          },
+          "required_members": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_members"
+          }
+        }
+      },
+      "operator_composition": [
+        "SET_CONTAINS",
+        "REFERENCE_TARGET_VALID"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "C3 Data_Outcome C32Abf5De2",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 1,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-C3-DATA_OUTCOME-F406C6D8C9",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:SET_CONTAINS",
+        "BOUNDARY_MUTATION:REFERENCE_TARGET_VALID"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-C3-DATA_OUTCOME-F406C6D8C9 must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:SET_CONTAINS",
+        "NEGATIVE_MUTATION:REFERENCE_TARGET_VALID"
+      ],
+      "operator_binding_contract": {
+        "REFERENCE_TARGET_VALID": {
+          "allowed_states": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:allowed_states"
+          },
+          "reference": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:reference"
+          },
+          "registry": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:registry"
+          }
+        },
+        "SET_CONTAINS": {
+          "actual_set": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:actual_set"
+          },
+          "required_members": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_members"
+          }
+        }
+      },
+      "operator_composition": [
+        "SET_CONTAINS",
+        "REFERENCE_TARGET_VALID"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "C3 Data_Outcome F406C6D8C9",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 4,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-C3-DATA_OUTCOME-F9AEF86126",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:SET_CONTAINS",
+        "BOUNDARY_MUTATION:REFERENCE_TARGET_VALID"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-C3-DATA_OUTCOME-F9AEF86126 must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:SET_CONTAINS",
+        "NEGATIVE_MUTATION:REFERENCE_TARGET_VALID"
+      ],
+      "operator_binding_contract": {
+        "REFERENCE_TARGET_VALID": {
+          "allowed_states": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:allowed_states"
+          },
+          "reference": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:reference"
+          },
+          "registry": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:registry"
+          }
+        },
+        "SET_CONTAINS": {
+          "actual_set": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:actual_set"
+          },
+          "required_members": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_members"
+          }
+        }
+      },
+      "operator_composition": [
+        "SET_CONTAINS",
+        "REFERENCE_TARGET_VALID"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "C3 Data_Outcome F9Aef86126",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 19,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-C3-EVENT-BOUND-OUTCOME",
+      "archetype_version": "1.1.0-candidate.oracle-extension.1",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:EVENT_EMITTED",
+        "BOUNDARY_MUTATION:DELIVERY_TERMINAL_STATE"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-C3-EVENT-BOUND-OUTCOME must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": true,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:EVENT_EMITTED",
+        "NEGATIVE_MUTATION:DELIVERY_TERMINAL_STATE"
+      ],
+      "operator_binding_contract": {
+        "DELIVERY_TERMINAL_STATE": {
+          "allowed_terminal_states": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:allowed_terminal_states"
+          },
+          "delivery_id": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:delivery_id"
+          },
+          "observed_state": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:observed_state"
+          }
+        },
+        "EVENT_EMITTED": {
+          "correlation_id": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:correlation_id"
+          },
+          "event_id": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:event_id"
+          },
+          "trigger": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:trigger"
+          }
+        }
+      },
+      "operator_composition": [
+        "EVENT_EMITTED",
+        "DELIVERY_TERMINAL_STATE"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "Event Bound Outcome",
+      "status": "HUMAN_OPERATOR_MAPPING_REVIEW"
+    },
+    {
+      "active_mapping_count": 3,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-C3-FINANCIAL-BOUND-OUTCOME",
+      "archetype_version": "1.1.0-candidate.oracle-extension.1",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:POLICY_OUTCOME_EQUALS",
+        "BOUNDARY_MUTATION:RECONCILIATION_BALANCED"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-C3-FINANCIAL-BOUND-OUTCOME must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": true,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:POLICY_OUTCOME_EQUALS",
+        "NEGATIVE_MUTATION:RECONCILIATION_BALANCED"
+      ],
+      "operator_binding_contract": {
+        "POLICY_OUTCOME_EQUALS": {
+          "expected_outcome": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:expected_outcome"
+          },
+          "policy": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy"
+          },
+          "policy_inputs": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy_inputs"
+          }
+        },
+        "RECONCILIATION_BALANCED": {
+          "correlation_id": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:correlation_id"
+          },
+          "credits": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:credits"
+          },
+          "currency": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:currency"
+          },
+          "debits": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:debits"
+          }
+        }
+      },
+      "operator_composition": [
+        "POLICY_OUTCOME_EQUALS",
+        "RECONCILIATION_BALANCED"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "Financial Bound Outcome",
+      "status": "HUMAN_OPERATOR_MAPPING_REVIEW"
+    },
+    {
+      "active_mapping_count": 3,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-C3-MULTI-DIMENSION-CONFORMANCE",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:SET_CONTAINS",
+        "BOUNDARY_MUTATION:POLICY_OUTCOME_EQUALS"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-C3-MULTI-DIMENSION-CONFORMANCE must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:SET_CONTAINS",
+        "NEGATIVE_MUTATION:POLICY_OUTCOME_EQUALS"
+      ],
+      "operator_binding_contract": {
+        "POLICY_OUTCOME_EQUALS": {
+          "expected_outcome": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:expected_outcome"
+          },
+          "policy": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy"
+          },
+          "policy_inputs": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy_inputs"
+          }
+        },
+        "SET_CONTAINS": {
+          "actual_set": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:actual_set"
+          },
+          "required_members": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_members"
+          }
+        }
+      },
+      "operator_composition": [
+        "SET_CONTAINS",
+        "POLICY_OUTCOME_EQUALS"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "C3 Multi Dimension Conformance",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 1,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-C3-OBSERVABILITY-CAPABILITY-SET",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:DELIVERY_TERMINAL_STATE",
+        "BOUNDARY_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-C3-OBSERVABILITY-CAPABILITY-SET must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:DELIVERY_TERMINAL_STATE",
+        "NEGATIVE_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "operator_binding_contract": {
+        "DELIVERY_TERMINAL_STATE": {
+          "allowed_terminal_states": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:allowed_terminal_states"
+          },
+          "delivery_id": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:delivery_id"
+          },
+          "observed_state": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:observed_state"
+          }
+        },
+        "EVIDENCE_FIELD_PRESENT": {
+          "evidence_object": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:evidence_object"
+          },
+          "required_fields": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_fields"
+          }
+        }
+      },
+      "operator_composition": [
+        "DELIVERY_TERMINAL_STATE",
+        "EVIDENCE_FIELD_PRESENT"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "C3 Observability Capability Set",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 19,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-C3-OPERATIONAL-BOUND-OUTCOME",
+      "archetype_version": "1.1.0-candidate.oracle-extension.1",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:DELIVERY_TERMINAL_STATE",
+        "BOUNDARY_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-C3-OPERATIONAL-BOUND-OUTCOME must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": true,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:DELIVERY_TERMINAL_STATE",
+        "NEGATIVE_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "operator_binding_contract": {
+        "DELIVERY_TERMINAL_STATE": {
+          "allowed_terminal_states": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:allowed_terminal_states"
+          },
+          "delivery_id": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:delivery_id"
+          },
+          "observed_state": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:observed_state"
+          }
+        },
+        "EVIDENCE_FIELD_PRESENT": {
+          "evidence_object": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:evidence_object"
+          },
+          "required_fields": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_fields"
+          }
+        }
+      },
+      "operator_composition": [
+        "DELIVERY_TERMINAL_STATE",
+        "EVIDENCE_FIELD_PRESENT"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "Operational Bound Outcome",
+      "status": "HUMAN_OPERATOR_MAPPING_REVIEW"
+    },
+    {
+      "active_mapping_count": 62,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-C3-PROHIBITED-OUTCOME-INVARIANT",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:SET_EXCLUDES",
+        "BOUNDARY_MUTATION:POLICY_OUTCOME_EQUALS"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-C3-PROHIBITED-OUTCOME-INVARIANT must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:SET_EXCLUDES",
+        "NEGATIVE_MUTATION:POLICY_OUTCOME_EQUALS"
+      ],
+      "operator_binding_contract": {
+        "POLICY_OUTCOME_EQUALS": {
+          "expected_outcome": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:expected_outcome"
+          },
+          "policy": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy"
+          },
+          "policy_inputs": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy_inputs"
+          }
+        },
+        "SET_EXCLUDES": {
+          "actual_set": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:actual_set"
+          },
+          "prohibited_members": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:prohibited_members"
+          }
+        }
+      },
+      "operator_composition": [
+        "SET_EXCLUDES",
+        "POLICY_OUTCOME_EQUALS"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "C3 Prohibited Outcome Invariant",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 1,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-C3-PUBLISH-TIME-CONFORMANCE",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:STATE_TRANSITION_ALLOWED",
+        "BOUNDARY_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-C3-PUBLISH-TIME-CONFORMANCE must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:STATE_TRANSITION_ALLOWED",
+        "NEGATIVE_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "operator_binding_contract": {
+        "EVIDENCE_FIELD_PRESENT": {
+          "evidence_object": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:evidence_object"
+          },
+          "required_fields": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_fields"
+          }
+        },
+        "STATE_TRANSITION_ALLOWED": {
+          "from_state": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:from_state"
+          },
+          "state_machine": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:state_machine"
+          },
+          "to_state": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:to_state"
+          },
+          "trigger": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:trigger"
+          }
+        }
+      },
+      "operator_composition": [
+        "STATE_TRANSITION_ALLOWED",
+        "EVIDENCE_FIELD_PRESENT"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "C3 Publish Time Conformance",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 7,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-C3-RELATIONSHIP-BOUND-OUTCOME",
+      "archetype_version": "1.1.0-candidate.oracle-extension.1",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:REFERENCE_TARGET_VALID",
+        "BOUNDARY_MUTATION:OWNER_EQUALS"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-C3-RELATIONSHIP-BOUND-OUTCOME must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": true,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:REFERENCE_TARGET_VALID",
+        "NEGATIVE_MUTATION:OWNER_EQUALS"
+      ],
+      "operator_binding_contract": {
+        "OWNER_EQUALS": {
+          "actual_owner": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:actual_owner"
+          },
+          "entity": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:entity"
+          },
+          "expected_owner": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:expected_owner"
+          }
+        },
+        "REFERENCE_TARGET_VALID": {
+          "allowed_states": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:allowed_states"
+          },
+          "reference": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:reference"
+          },
+          "registry": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:registry"
+          }
+        }
+      },
+      "operator_composition": [
+        "REFERENCE_TARGET_VALID",
+        "OWNER_EQUALS"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "Relationship Bound Outcome",
+      "status": "HUMAN_OPERATOR_MAPPING_REVIEW"
+    },
+    {
+      "active_mapping_count": 22,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-C3-SECURITY-BOUND-OUTCOME",
+      "archetype_version": "1.1.0-candidate.oracle-extension.1",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:ACTOR_AUTHORIZED",
+        "BOUNDARY_MUTATION:ACTOR_DENIED",
+        "BOUNDARY_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-C3-SECURITY-BOUND-OUTCOME must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": true,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:ACTOR_AUTHORIZED",
+        "NEGATIVE_MUTATION:ACTOR_DENIED",
+        "NEGATIVE_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "operator_binding_contract": {
+        "ACTOR_AUTHORIZED": {
+          "action": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:action"
+          },
+          "actor": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:actor"
+          },
+          "effective_policy": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:effective_policy"
+          },
+          "resource": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:resource"
+          }
+        },
+        "ACTOR_DENIED": {
+          "action": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:action"
+          },
+          "actor": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:actor"
+          },
+          "effective_policy": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:effective_policy"
+          },
+          "resource": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:resource"
+          }
+        },
+        "EVIDENCE_FIELD_PRESENT": {
+          "evidence_object": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:evidence_object"
+          },
+          "required_fields": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_fields"
+          }
+        }
+      },
+      "operator_composition": [
+        "ACTOR_AUTHORIZED",
+        "ACTOR_DENIED",
+        "EVIDENCE_FIELD_PRESENT"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "Security Bound Outcome",
+      "status": "HUMAN_OPERATOR_MAPPING_REVIEW"
+    },
+    {
+      "active_mapping_count": 1,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-C3-TRACEABLE-REFERENCE-SET",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:REFERENCE_TARGET_VALID",
+        "BOUNDARY_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-C3-TRACEABLE-REFERENCE-SET must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:REFERENCE_TARGET_VALID",
+        "NEGATIVE_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "operator_binding_contract": {
+        "EVIDENCE_FIELD_PRESENT": {
+          "evidence_object": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:evidence_object"
+          },
+          "required_fields": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_fields"
+          }
+        },
+        "REFERENCE_TARGET_VALID": {
+          "allowed_states": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:allowed_states"
+          },
+          "reference": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:reference"
+          },
+          "registry": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:registry"
+          }
+        }
+      },
+      "operator_composition": [
+        "REFERENCE_TARGET_VALID",
+        "EVIDENCE_FIELD_PRESENT"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "C3 Traceable Reference Set",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 11,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-C3-UX-BOUND-OUTCOME",
+      "archetype_version": "1.1.0-candidate.oracle-extension.1",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:STATE_TRANSITION_ALLOWED",
+        "BOUNDARY_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-C3-UX-BOUND-OUTCOME must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": true,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:STATE_TRANSITION_ALLOWED",
+        "NEGATIVE_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "operator_binding_contract": {
+        "EVIDENCE_FIELD_PRESENT": {
+          "evidence_object": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:evidence_object"
+          },
+          "required_fields": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_fields"
+          }
+        },
+        "STATE_TRANSITION_ALLOWED": {
+          "from_state": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:from_state"
+          },
+          "state_machine": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:state_machine"
+          },
+          "to_state": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:to_state"
+          },
+          "trigger": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:trigger"
+          }
+        }
+      },
+      "operator_composition": [
+        "STATE_TRANSITION_ALLOWED",
+        "EVIDENCE_FIELD_PRESENT"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "Ux Bound Outcome",
+      "status": "HUMAN_OPERATOR_MAPPING_REVIEW"
+    },
+    {
+      "active_mapping_count": 5,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-C3-UX_OUTCOME-29F26DC28A",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:STATE_TRANSITION_ALLOWED",
+        "BOUNDARY_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-C3-UX_OUTCOME-29F26DC28A must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:STATE_TRANSITION_ALLOWED",
+        "NEGATIVE_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "operator_binding_contract": {
+        "EVIDENCE_FIELD_PRESENT": {
+          "evidence_object": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:evidence_object"
+          },
+          "required_fields": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_fields"
+          }
+        },
+        "STATE_TRANSITION_ALLOWED": {
+          "from_state": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:from_state"
+          },
+          "state_machine": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:state_machine"
+          },
+          "to_state": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:to_state"
+          },
+          "trigger": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:trigger"
+          }
+        }
+      },
+      "operator_composition": [
+        "STATE_TRANSITION_ALLOWED",
+        "EVIDENCE_FIELD_PRESENT"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "C3 Ux_Outcome 29F26Dc28A",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 4,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-C3-UX_OUTCOME-4A6569E847",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:STATE_TRANSITION_ALLOWED",
+        "BOUNDARY_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-C3-UX_OUTCOME-4A6569E847 must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:STATE_TRANSITION_ALLOWED",
+        "NEGATIVE_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "operator_binding_contract": {
+        "EVIDENCE_FIELD_PRESENT": {
+          "evidence_object": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:evidence_object"
+          },
+          "required_fields": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_fields"
+          }
+        },
+        "STATE_TRANSITION_ALLOWED": {
+          "from_state": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:from_state"
+          },
+          "state_machine": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:state_machine"
+          },
+          "to_state": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:to_state"
+          },
+          "trigger": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:trigger"
+          }
+        }
+      },
+      "operator_composition": [
+        "STATE_TRANSITION_ALLOWED",
+        "EVIDENCE_FIELD_PRESENT"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "C3 Ux_Outcome 4A6569E847",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 1,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-C3-UX_OUTCOME-A97CB78D22",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:STATE_TRANSITION_ALLOWED",
+        "BOUNDARY_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-C3-UX_OUTCOME-A97CB78D22 must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:STATE_TRANSITION_ALLOWED",
+        "NEGATIVE_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "operator_binding_contract": {
+        "EVIDENCE_FIELD_PRESENT": {
+          "evidence_object": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:evidence_object"
+          },
+          "required_fields": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_fields"
+          }
+        },
+        "STATE_TRANSITION_ALLOWED": {
+          "from_state": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:from_state"
+          },
+          "state_machine": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:state_machine"
+          },
+          "to_state": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:to_state"
+          },
+          "trigger": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:trigger"
+          }
+        }
+      },
+      "operator_composition": [
+        "STATE_TRANSITION_ALLOWED",
+        "EVIDENCE_FIELD_PRESENT"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "C3 Ux_Outcome A97Cb78D22",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 3,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-CANONICAL-IDENTITY-NAMING",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:REFERENCE_TARGET_VALID",
+        "BOUNDARY_MUTATION:OWNER_EQUALS"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-CANONICAL-IDENTITY-NAMING must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:REFERENCE_TARGET_VALID",
+        "NEGATIVE_MUTATION:OWNER_EQUALS"
+      ],
+      "operator_binding_contract": {
+        "OWNER_EQUALS": {
+          "actual_owner": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:actual_owner"
+          },
+          "entity": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:entity"
+          },
+          "expected_owner": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:expected_owner"
+          }
+        },
+        "REFERENCE_TARGET_VALID": {
+          "allowed_states": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:allowed_states"
+          },
+          "reference": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:reference"
+          },
+          "registry": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:registry"
+          }
+        }
+      },
+      "operator_composition": [
+        "REFERENCE_TARGET_VALID",
+        "OWNER_EQUALS"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "Canonical Identity Naming",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 50,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-CAPABILITY-AVAILABILITY",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:CAPABILITY_AVAILABLE",
+        "BOUNDARY_MUTATION:CAPABILITY_NOT_PLACEHOLDER"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-CAPABILITY-AVAILABILITY must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:CAPABILITY_AVAILABLE",
+        "NEGATIVE_MUTATION:CAPABILITY_NOT_PLACEHOLDER"
+      ],
+      "operator_binding_contract": {
+        "CAPABILITY_AVAILABLE": {
+          "capability": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:capability"
+          },
+          "scope": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:scope"
+          },
+          "subject": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:subject"
+          }
+        },
+        "CAPABILITY_NOT_PLACEHOLDER": {
+          "capability": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:capability"
+          },
+          "scope": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:scope"
+          },
+          "subject": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:subject"
+          }
+        }
+      },
+      "operator_composition": [
+        "CAPABILITY_AVAILABLE",
+        "CAPABILITY_NOT_PLACEHOLDER"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "Capability Availability",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 67,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-CLASSIFICATION-TAXONOMY",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:ENUM_VALUE_ALLOWED",
+        "BOUNDARY_MUTATION:SET_CONTAINS"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-CLASSIFICATION-TAXONOMY must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:ENUM_VALUE_ALLOWED",
+        "NEGATIVE_MUTATION:SET_CONTAINS"
+      ],
+      "operator_binding_contract": {
+        "ENUM_VALUE_ALLOWED": {
+          "actual_value": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:actual_value"
+          },
+          "allowed_values": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:allowed_values"
+          },
+          "field": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:field"
+          }
+        },
+        "SET_CONTAINS": {
+          "actual_set": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:actual_set"
+          },
+          "required_members": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_members"
+          }
+        }
+      },
+      "operator_composition": [
+        "ENUM_VALUE_ALLOWED",
+        "SET_CONTAINS"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "Classification Taxonomy",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 27,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-CONFIGURATION-RESOLUTION",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:CONFIGURATION_RESOLVES",
+        "BOUNDARY_MUTATION:CONFIGURATION_PRECEDENCE"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-CONFIGURATION-RESOLUTION must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:CONFIGURATION_RESOLVES",
+        "NEGATIVE_MUTATION:CONFIGURATION_PRECEDENCE"
+      ],
+      "operator_binding_contract": {
+        "CONFIGURATION_PRECEDENCE": {
+          "configuration_key": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:configuration_key"
+          },
+          "precedence_order": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:precedence_order"
+          },
+          "source_values": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:source_values"
+          }
+        },
+        "CONFIGURATION_RESOLVES": {
+          "configuration_key": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:configuration_key"
+          },
+          "configuration_sources": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:configuration_sources"
+          },
+          "expected_value": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:expected_value"
+          }
+        }
+      },
+      "operator_composition": [
+        "CONFIGURATION_RESOLVES",
+        "CONFIGURATION_PRECEDENCE"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "Configuration Resolution",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 9,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-CONSENT-PREFERENCE",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:POLICY_OUTCOME_EQUALS",
+        "BOUNDARY_MUTATION:ACTOR_DENIED"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-CONSENT-PREFERENCE must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:POLICY_OUTCOME_EQUALS",
+        "NEGATIVE_MUTATION:ACTOR_DENIED"
+      ],
+      "operator_binding_contract": {
+        "ACTOR_DENIED": {
+          "action": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:action"
+          },
+          "actor": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:actor"
+          },
+          "effective_policy": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:effective_policy"
+          },
+          "resource": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:resource"
+          }
+        },
+        "POLICY_OUTCOME_EQUALS": {
+          "expected_outcome": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:expected_outcome"
+          },
+          "policy": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy"
+          },
+          "policy_inputs": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy_inputs"
+          }
+        }
+      },
+      "operator_composition": [
+        "POLICY_OUTCOME_EQUALS",
+        "ACTOR_DENIED"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "Consent Preference",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 11,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-DATA-ISOLATION-VISIBILITY",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:TENANT_ISOLATED",
+        "BOUNDARY_MUTATION:ACTOR_DENIED"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-DATA-ISOLATION-VISIBILITY must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:TENANT_ISOLATED",
+        "NEGATIVE_MUTATION:ACTOR_DENIED"
+      ],
+      "operator_binding_contract": {
+        "ACTOR_DENIED": {
+          "action": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:action"
+          },
+          "actor": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:actor"
+          },
+          "effective_policy": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:effective_policy"
+          },
+          "resource": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:resource"
+          }
+        },
+        "TENANT_ISOLATED": {
+          "actor_tenant": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:actor_tenant"
+          },
+          "permission_context": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:permission_context"
+          },
+          "resource_tenant": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:resource_tenant"
+          }
+        }
+      },
+      "operator_composition": [
+        "TENANT_ISOLATED",
+        "ACTOR_DENIED"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "Data Isolation Visibility",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 3,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-DATA-RETENTION-DELETION",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:DATA_RETENTION_WINDOW"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-DATA-RETENTION-DELETION must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:DATA_RETENTION_WINDOW"
+      ],
+      "operator_binding_contract": {
+        "DATA_RETENTION_WINDOW": {
+          "data_class": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:data_class"
+          },
+          "retention_window": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:retention_window"
+          },
+          "terminal_action": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:terminal_action"
+          }
+        }
+      },
+      "operator_composition": [
+        "DATA_RETENTION_WINDOW"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "Data Retention Deletion",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 58,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-DESIGN-BOUNDARY",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:SCOPE_ACTIVE",
+        "BOUNDARY_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-DESIGN-BOUNDARY must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:SCOPE_ACTIVE",
+        "NEGATIVE_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "operator_binding_contract": {
+        "EVIDENCE_FIELD_PRESENT": {
+          "evidence_object": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:evidence_object"
+          },
+          "required_fields": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_fields"
+          }
+        },
+        "SCOPE_ACTIVE": {
+          "baseline": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:baseline"
+          },
+          "scope": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:scope"
+          },
+          "subject": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:subject"
+          }
+        }
+      },
+      "operator_composition": [
+        "SCOPE_ACTIVE",
+        "EVIDENCE_FIELD_PRESENT"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "Design Boundary",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 19,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-ELIGIBILITY-PREREQUISITE",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:POLICY_OUTCOME_EQUALS",
+        "BOUNDARY_MUTATION:APPROVAL_REQUIRED"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-ELIGIBILITY-PREREQUISITE must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:POLICY_OUTCOME_EQUALS",
+        "NEGATIVE_MUTATION:APPROVAL_REQUIRED"
+      ],
+      "operator_binding_contract": {
+        "APPROVAL_REQUIRED": {
+          "action": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:action"
+          },
+          "approval_policy": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:approval_policy"
+          },
+          "approval_reference": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:approval_reference"
+          }
+        },
+        "POLICY_OUTCOME_EQUALS": {
+          "expected_outcome": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:expected_outcome"
+          },
+          "policy": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy"
+          },
+          "policy_inputs": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy_inputs"
+          }
+        }
+      },
+      "operator_composition": [
+        "POLICY_OUTCOME_EQUALS",
+        "APPROVAL_REQUIRED"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "Eligibility Prerequisite",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 49,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-ENTITY-IDENTITY-LIFECYCLE",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:REFERENCE_TARGET_VALID",
+        "BOUNDARY_MUTATION:OWNER_EQUALS"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-ENTITY-IDENTITY-LIFECYCLE must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:REFERENCE_TARGET_VALID",
+        "NEGATIVE_MUTATION:OWNER_EQUALS"
+      ],
+      "operator_binding_contract": {
+        "OWNER_EQUALS": {
+          "actual_owner": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:actual_owner"
+          },
+          "entity": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:entity"
+          },
+          "expected_owner": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:expected_owner"
+          }
+        },
+        "REFERENCE_TARGET_VALID": {
+          "allowed_states": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:allowed_states"
+          },
+          "reference": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:reference"
+          },
+          "registry": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:registry"
+          }
+        }
+      },
+      "operator_composition": [
+        "REFERENCE_TARGET_VALID",
+        "OWNER_EQUALS"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "Entity Identity Lifecycle",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 32,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-EVENT-EMISSION-METADATA",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:EVENT_EMITTED",
+        "BOUNDARY_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-EVENT-EMISSION-METADATA must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:EVENT_EMITTED",
+        "NEGATIVE_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "operator_binding_contract": {
+        "EVENT_EMITTED": {
+          "correlation_id": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:correlation_id"
+          },
+          "event_id": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:event_id"
+          },
+          "trigger": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:trigger"
+          }
+        },
+        "EVIDENCE_FIELD_PRESENT": {
+          "evidence_object": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:evidence_object"
+          },
+          "required_fields": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_fields"
+          }
+        }
+      },
+      "operator_composition": [
+        "EVENT_EMITTED",
+        "EVIDENCE_FIELD_PRESENT"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "Event Emission Metadata",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 3,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-EVENT-ORDER-IDEMPOTENCY",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:EVENT_ORDER_PRESERVED"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-EVENT-ORDER-IDEMPOTENCY must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:EVENT_ORDER_PRESERVED"
+      ],
+      "operator_binding_contract": {
+        "EVENT_ORDER_PRESERVED": {
+          "correlation_id": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:correlation_id"
+          },
+          "event_family": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:event_family"
+          },
+          "expected_sequence": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:expected_sequence"
+          }
+        }
+      },
+      "operator_composition": [
+        "EVENT_ORDER_PRESERVED"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "Event Order Idempotency",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 22,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-GOVERNED-DEFINITION-LIFECYCLE",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:CONFIGURATION_RESOLVES",
+        "BOUNDARY_MUTATION:AUDIT_IMMUTABLE"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-GOVERNED-DEFINITION-LIFECYCLE must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:CONFIGURATION_RESOLVES",
+        "NEGATIVE_MUTATION:AUDIT_IMMUTABLE"
+      ],
+      "operator_binding_contract": {
+        "AUDIT_IMMUTABLE": {
+          "audit_record": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:audit_record"
+          },
+          "immutability_boundary": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:immutability_boundary"
+          },
+          "required_fields": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_fields"
+          }
+        },
+        "CONFIGURATION_RESOLVES": {
+          "configuration_key": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:configuration_key"
+          },
+          "configuration_sources": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:configuration_sources"
+          },
+          "expected_value": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:expected_value"
+          }
+        }
+      },
+      "operator_composition": [
+        "CONFIGURATION_RESOLVES",
+        "AUDIT_IMMUTABLE"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "Governed Definition Lifecycle",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 2,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-OPERATIONAL-CONTROL-RECOVERY",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:DELIVERY_TERMINAL_STATE",
+        "BOUNDARY_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-OPERATIONAL-CONTROL-RECOVERY must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:DELIVERY_TERMINAL_STATE",
+        "NEGATIVE_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "operator_binding_contract": {
+        "DELIVERY_TERMINAL_STATE": {
+          "allowed_terminal_states": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:allowed_terminal_states"
+          },
+          "delivery_id": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:delivery_id"
+          },
+          "observed_state": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:observed_state"
+          }
+        },
+        "EVIDENCE_FIELD_PRESENT": {
+          "evidence_object": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:evidence_object"
+          },
+          "required_fields": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_fields"
+          }
+        }
+      },
+      "operator_composition": [
+        "DELIVERY_TERMINAL_STATE",
+        "EVIDENCE_FIELD_PRESENT"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "Operational Control Recovery",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 33,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-POLICY-OUTCOME-PRECEDENCE",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:POLICY_OUTCOME_EQUALS",
+        "BOUNDARY_MUTATION:CONFIGURATION_PRECEDENCE"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-POLICY-OUTCOME-PRECEDENCE must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:POLICY_OUTCOME_EQUALS",
+        "NEGATIVE_MUTATION:CONFIGURATION_PRECEDENCE"
+      ],
+      "operator_binding_contract": {
+        "CONFIGURATION_PRECEDENCE": {
+          "configuration_key": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:configuration_key"
+          },
+          "precedence_order": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:precedence_order"
+          },
+          "source_values": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:source_values"
+          }
+        },
+        "POLICY_OUTCOME_EQUALS": {
+          "expected_outcome": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:expected_outcome"
+          },
+          "policy": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy"
+          },
+          "policy_inputs": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy_inputs"
+          }
+        }
+      },
+      "operator_composition": [
+        "POLICY_OUTCOME_EQUALS",
+        "CONFIGURATION_PRECEDENCE"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "Policy Outcome Precedence",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 70,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-RELATIONSHIP-REFERENCE",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:REFERENCE_TARGET_VALID",
+        "BOUNDARY_MUTATION:OWNER_EQUALS"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-RELATIONSHIP-REFERENCE must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:REFERENCE_TARGET_VALID",
+        "NEGATIVE_MUTATION:OWNER_EQUALS"
+      ],
+      "operator_binding_contract": {
+        "OWNER_EQUALS": {
+          "actual_owner": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:actual_owner"
+          },
+          "entity": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:entity"
+          },
+          "expected_owner": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:expected_owner"
+          }
+        },
+        "REFERENCE_TARGET_VALID": {
+          "allowed_states": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:allowed_states"
+          },
+          "reference": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:reference"
+          },
+          "registry": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:registry"
+          }
+        }
+      },
+      "operator_composition": [
+        "REFERENCE_TARGET_VALID",
+        "OWNER_EQUALS"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "Relationship Reference",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 6,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-REPORTING-FRESHNESS-EXPORT",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:PERFORMANCE_WITHIN_BUDGET",
+        "BOUNDARY_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-REPORTING-FRESHNESS-EXPORT must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:PERFORMANCE_WITHIN_BUDGET",
+        "NEGATIVE_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "operator_binding_contract": {
+        "EVIDENCE_FIELD_PRESENT": {
+          "evidence_object": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:evidence_object"
+          },
+          "required_fields": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_fields"
+          }
+        },
+        "PERFORMANCE_WITHIN_BUDGET": {
+          "budget": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:budget"
+          },
+          "metric": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:metric"
+          },
+          "observed_value": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:observed_value"
+          },
+          "service": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:service"
+          }
+        }
+      },
+      "operator_composition": [
+        "PERFORMANCE_WITHIN_BUDGET",
+        "EVIDENCE_FIELD_PRESENT"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "Reporting Freshness Export",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 50,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-REQUIRED-VALUE-SET",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:SET_CONTAINS",
+        "BOUNDARY_MUTATION:SET_EQUALS"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-REQUIRED-VALUE-SET must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:SET_CONTAINS",
+        "NEGATIVE_MUTATION:SET_EQUALS"
+      ],
+      "operator_binding_contract": {
+        "SET_CONTAINS": {
+          "actual_set": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:actual_set"
+          },
+          "required_members": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_members"
+          }
+        },
+        "SET_EQUALS": {
+          "actual_set": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:actual_set"
+          },
+          "expected_set": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:expected_set"
+          }
+        }
+      },
+      "operator_composition": [
+        "SET_CONTAINS",
+        "SET_EQUALS"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "Required Value Set",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 3,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-SCOPE-EXCLUSION",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:SCOPE_NOT_ACTIVE"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-SCOPE-EXCLUSION must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:SCOPE_NOT_ACTIVE"
+      ],
+      "operator_binding_contract": {
+        "SCOPE_NOT_ACTIVE": {
+          "baseline": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:baseline"
+          },
+          "inactive_scope": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:inactive_scope"
+          },
+          "subject": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:subject"
+          }
+        }
+      },
+      "operator_composition": [
+        "SCOPE_NOT_ACTIVE"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "Scope Exclusion",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 2,
+      "adapter_version": "1.0.0-candidate.2",
+      "archetype_id": "IAC-UX-STATE-ACTION-FEEDBACK",
+      "archetype_version": "1.1.0-candidate.3",
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:STATE_TRANSITION_ALLOWED",
+        "BOUNDARY_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "counterexample": "A record whose typed graph does not satisfy IAC-UX-STATE-ACTION-FEEDBACK must not use this adapter.",
+      "evidence_schema": [
+        "result",
+        "reason",
+        "version",
+        "correlation"
+      ],
+      "human_approval_required": false,
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:STATE_TRANSITION_ALLOWED",
+        "NEGATIVE_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "operator_binding_contract": {
+        "EVIDENCE_FIELD_PRESENT": {
+          "evidence_object": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:evidence_object"
+          },
+          "required_fields": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_fields"
+          }
+        },
+        "STATE_TRANSITION_ALLOWED": {
+          "from_state": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:from_state"
+          },
+          "state_machine": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:state_machine"
+          },
+          "to_state": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:to_state"
+          },
+          "trigger": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:trigger"
+          }
+        }
+      },
+      "operator_composition": [
+        "STATE_TRANSITION_ALLOWED",
+        "EVIDENCE_FIELD_PRESENT"
+      ],
+      "required_binding_map": {
+        "evidence_surface": "evidence_surface",
+        "prohibited_outcome": "prohibited_outcome",
+        "qualifier": "qualifier",
+        "subject": "subject",
+        "target": "target",
+        "trigger": "trigger"
+      },
+      "semantic_intent": "Ux State Action Feedback",
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    }
+  ],
+  "artifact": "V23-P2C-ARCHETYPE-ORACLE-ADAPTERS-C2",
+  "candidate_archetype_adapter_count": 9,
+  "candidate_archetype_affected_records": 156,
+  "candidate_id": "V23-P2C-SEMANTIC-ORACLE-MODEL-C2",
+  "runtime_adapter_status": "PENDING",
+  "status": "CANDIDATE"
+}

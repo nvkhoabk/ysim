@@ -1,0 +1,2156 @@
+{
+  "active_mapping_count": 118,
+  "adapters": [
+    {
+      "active_mapping_count": 0,
+      "adapter_version": "1.0.0-candidate.2",
+      "all_bindings_must_be_used": true,
+      "binding_normalization": {},
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:REFERENCE_TARGET_VALID",
+        "BOUNDARY_MUTATION:OWNER_EQUALS"
+      ],
+      "counterexample": "A requirement incompatible with Verify that named entities retain distinct identity, ownership/reference, and lifecycle boundaries. cannot use this adapter.",
+      "evidence_assertion": "EVIDENCE_FIELD_PRESENT",
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:REFERENCE_TARGET_VALID",
+        "NEGATIVE_MUTATION:OWNER_EQUALS"
+      ],
+      "operator_binding_contract": {
+        "OWNER_EQUALS": {
+          "actual_owner": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:actual_owner"
+          },
+          "entity": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:entity"
+          },
+          "expected_owner": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:expected_owner"
+          }
+        },
+        "REFERENCE_TARGET_VALID": {
+          "allowed_states": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:allowed_states"
+          },
+          "reference": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:reference"
+          },
+          "registry": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:registry"
+          }
+        }
+      },
+      "operator_composition": [
+        "REFERENCE_TARGET_VALID",
+        "OWNER_EQUALS"
+      ],
+      "positive_assertion_operators": [
+        "REFERENCE_TARGET_VALID",
+        "OWNER_EQUALS"
+      ],
+      "profile_id": "ACP-ENTITY_INDEPENDENCE",
+      "profile_version": "1.0.0",
+      "required_profile_bindings": [
+        "entity_a",
+        "entity_b",
+        "independence_dimensions"
+      ],
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 1,
+      "adapter_version": "1.0.0-candidate.2",
+      "all_bindings_must_be_used": true,
+      "binding_normalization": {},
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:ENUM_VALUE_ALLOWED",
+        "BOUNDARY_MUTATION:ROLE_LIST_CONSISTENT",
+        "BOUNDARY_MUTATION:REFERENCE_TARGET_VALID"
+      ],
+      "counterexample": "A requirement incompatible with Verify an enumerated discriminator, dependent-field consistency, and canonical registry references. cannot use this adapter.",
+      "evidence_assertion": "EVIDENCE_FIELD_PRESENT",
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:ENUM_VALUE_ALLOWED",
+        "NEGATIVE_MUTATION:ROLE_LIST_CONSISTENT",
+        "NEGATIVE_MUTATION:REFERENCE_TARGET_VALID"
+      ],
+      "operator_binding_contract": {
+        "ENUM_VALUE_ALLOWED": {
+          "actual_value": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:actual_value"
+          },
+          "allowed_values": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:allowed_values"
+          },
+          "field": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:field"
+          }
+        },
+        "REFERENCE_TARGET_VALID": {
+          "allowed_states": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:allowed_states"
+          },
+          "reference": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:reference"
+          },
+          "registry": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:registry"
+          }
+        },
+        "ROLE_LIST_CONSISTENT": {
+          "dependent_lists": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:dependent_lists"
+          },
+          "role": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:role"
+          },
+          "role_rules": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:role_rules"
+          }
+        }
+      },
+      "operator_composition": [
+        "ENUM_VALUE_ALLOWED",
+        "ROLE_LIST_CONSISTENT",
+        "REFERENCE_TARGET_VALID"
+      ],
+      "positive_assertion_operators": [
+        "ENUM_VALUE_ALLOWED",
+        "ROLE_LIST_CONSISTENT",
+        "REFERENCE_TARGET_VALID"
+      ],
+      "profile_id": "ACP-ENUM_REFERENCE_INTEGRITY",
+      "profile_version": "1.0.0",
+      "required_profile_bindings": [
+        "enum_field",
+        "allowed_values",
+        "dependent_fields",
+        "reference_registry",
+        "prohibited_reference_states"
+      ],
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 28,
+      "adapter_version": "1.0.0-candidate.2",
+      "all_bindings_must_be_used": true,
+      "binding_normalization": {
+        "capability_subject": "subject",
+        "required_capabilities": "required_capabilities|target_list"
+      },
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:SET_CONTAINS",
+        "BOUNDARY_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "counterexample": "A requirement incompatible with Verify that a named subject exposes every explicitly enumerated required capability without inventing additional capabilities. cannot use this adapter.",
+      "evidence_assertion": "EVIDENCE_FIELD_PRESENT",
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:SET_CONTAINS",
+        "NEGATIVE_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "operator_binding_contract": {
+        "EVIDENCE_FIELD_PRESENT": {
+          "evidence_object": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:evidence_object"
+          },
+          "required_fields": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_fields"
+          }
+        },
+        "SET_CONTAINS": {
+          "actual_set": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:actual_set"
+          },
+          "required_members": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_members"
+          }
+        }
+      },
+      "operator_composition": [
+        "SET_CONTAINS",
+        "EVIDENCE_FIELD_PRESENT"
+      ],
+      "positive_assertion_operators": [
+        "SET_CONTAINS",
+        "EVIDENCE_FIELD_PRESENT"
+      ],
+      "profile_id": "ACP-REQUIRED_CAPABILITY_SET",
+      "profile_version": "1.0.0",
+      "required_profile_bindings": [
+        "capability_subject",
+        "required_capabilities"
+      ],
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 0,
+      "adapter_version": "1.0.0-candidate.2",
+      "all_bindings_must_be_used": true,
+      "binding_normalization": {},
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:POLICY_OUTCOME_EQUALS",
+        "BOUNDARY_MUTATION:SCOPE_ACTIVE"
+      ],
+      "counterexample": "A requirement incompatible with Verify independent policy configuration and enforcement at explicitly named scopes. cannot use this adapter.",
+      "evidence_assertion": "EVIDENCE_FIELD_PRESENT",
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:POLICY_OUTCOME_EQUALS",
+        "NEGATIVE_MUTATION:SCOPE_ACTIVE"
+      ],
+      "operator_binding_contract": {
+        "POLICY_OUTCOME_EQUALS": {
+          "expected_outcome": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:expected_outcome"
+          },
+          "policy": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy"
+          },
+          "policy_inputs": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy_inputs"
+          }
+        },
+        "SCOPE_ACTIVE": {
+          "baseline": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:baseline"
+          },
+          "scope": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:scope"
+          },
+          "subject": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:subject"
+          }
+        }
+      },
+      "operator_composition": [
+        "POLICY_OUTCOME_EQUALS",
+        "SCOPE_ACTIVE"
+      ],
+      "positive_assertion_operators": [
+        "POLICY_OUTCOME_EQUALS",
+        "SCOPE_ACTIVE"
+      ],
+      "profile_id": "ACP-POLICY_SCOPE_ENFORCEMENT",
+      "profile_version": "1.0.0",
+      "required_profile_bindings": [
+        "policy_name",
+        "policy_scopes",
+        "governed_action"
+      ],
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 0,
+      "adapter_version": "1.0.0-candidate.2",
+      "all_bindings_must_be_used": true,
+      "binding_normalization": {},
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:POLICY_OUTCOME_EQUALS",
+        "BOUNDARY_MUTATION:CONFIGURATION_PRECEDENCE"
+      ],
+      "counterexample": "A requirement incompatible with Verify deterministic resolution when two or more named policies apply. cannot use this adapter.",
+      "evidence_assertion": "EVIDENCE_FIELD_PRESENT",
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:POLICY_OUTCOME_EQUALS",
+        "NEGATIVE_MUTATION:CONFIGURATION_PRECEDENCE"
+      ],
+      "operator_binding_contract": {
+        "CONFIGURATION_PRECEDENCE": {
+          "configuration_key": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:configuration_key"
+          },
+          "precedence_order": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:precedence_order"
+          },
+          "source_values": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:source_values"
+          }
+        },
+        "POLICY_OUTCOME_EQUALS": {
+          "expected_outcome": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:expected_outcome"
+          },
+          "policy": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy"
+          },
+          "policy_inputs": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy_inputs"
+          }
+        }
+      },
+      "operator_composition": [
+        "POLICY_OUTCOME_EQUALS",
+        "CONFIGURATION_PRECEDENCE"
+      ],
+      "positive_assertion_operators": [
+        "POLICY_OUTCOME_EQUALS",
+        "CONFIGURATION_PRECEDENCE"
+      ],
+      "profile_id": "ACP-POLICY_PRECEDENCE",
+      "profile_version": "1.0.0",
+      "required_profile_bindings": [
+        "policy_set",
+        "precedence_order",
+        "decision_subject"
+      ],
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 0,
+      "adapter_version": "1.0.0-candidate.2",
+      "all_bindings_must_be_used": true,
+      "binding_normalization": {},
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:STATE_TRANSITION_ALLOWED",
+        "BOUNDARY_MUTATION:STATE_TRANSITION_REJECTED"
+      ],
+      "counterexample": "A requirement incompatible with Verify an explicitly named source state, trigger, target state, and prohibited transition. cannot use this adapter.",
+      "evidence_assertion": "EVIDENCE_FIELD_PRESENT",
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:STATE_TRANSITION_ALLOWED",
+        "NEGATIVE_MUTATION:STATE_TRANSITION_REJECTED"
+      ],
+      "operator_binding_contract": {
+        "STATE_TRANSITION_ALLOWED": {
+          "from_state": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:from_state"
+          },
+          "state_machine": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:state_machine"
+          },
+          "to_state": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:to_state"
+          },
+          "trigger": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:trigger"
+          }
+        },
+        "STATE_TRANSITION_REJECTED": {
+          "from_state": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:from_state"
+          },
+          "prohibited_state": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:prohibited_state"
+          },
+          "state_machine": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:state_machine"
+          },
+          "trigger": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:trigger"
+          }
+        }
+      },
+      "operator_composition": [
+        "STATE_TRANSITION_ALLOWED",
+        "STATE_TRANSITION_REJECTED"
+      ],
+      "positive_assertion_operators": [
+        "STATE_TRANSITION_ALLOWED",
+        "STATE_TRANSITION_REJECTED"
+      ],
+      "profile_id": "ACP-STATE_TRANSITION",
+      "profile_version": "1.0.0",
+      "required_profile_bindings": [
+        "state_subject",
+        "source_states",
+        "trigger",
+        "target_states"
+      ],
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 0,
+      "adapter_version": "1.0.0-candidate.2",
+      "all_bindings_must_be_used": true,
+      "binding_normalization": {},
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:STATE_TRANSITION_ALLOWED",
+        "BOUNDARY_MUTATION:STATE_TRANSITION_REJECTED",
+        "BOUNDARY_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "counterexample": "A requirement incompatible with Verify an invariant that must hold across all bound states and transitions. cannot use this adapter.",
+      "evidence_assertion": "EVIDENCE_FIELD_PRESENT",
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:STATE_TRANSITION_ALLOWED",
+        "NEGATIVE_MUTATION:STATE_TRANSITION_REJECTED",
+        "NEGATIVE_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "operator_binding_contract": {
+        "EVIDENCE_FIELD_PRESENT": {
+          "evidence_object": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:evidence_object"
+          },
+          "required_fields": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_fields"
+          }
+        },
+        "STATE_TRANSITION_ALLOWED": {
+          "from_state": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:from_state"
+          },
+          "state_machine": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:state_machine"
+          },
+          "to_state": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:to_state"
+          },
+          "trigger": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:trigger"
+          }
+        },
+        "STATE_TRANSITION_REJECTED": {
+          "from_state": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:from_state"
+          },
+          "prohibited_state": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:prohibited_state"
+          },
+          "state_machine": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:state_machine"
+          },
+          "trigger": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:trigger"
+          }
+        }
+      },
+      "operator_composition": [
+        "STATE_TRANSITION_ALLOWED",
+        "STATE_TRANSITION_REJECTED",
+        "EVIDENCE_FIELD_PRESENT"
+      ],
+      "positive_assertion_operators": [
+        "STATE_TRANSITION_ALLOWED",
+        "STATE_TRANSITION_REJECTED",
+        "EVIDENCE_FIELD_PRESENT"
+      ],
+      "profile_id": "ACP-STATE_MACHINE_INVARIANT",
+      "profile_version": "1.0.0",
+      "required_profile_bindings": [
+        "state_machine_subject",
+        "invariant",
+        "applicable_states"
+      ],
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 0,
+      "adapter_version": "1.0.0-candidate.2",
+      "all_bindings_must_be_used": true,
+      "binding_normalization": {},
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:FAIL_CLOSED",
+        "BOUNDARY_MUTATION:SAFE_FALLBACK_USED"
+      ],
+      "counterexample": "A requirement incompatible with Verify an explicit mandatory-evidence or assurance boundary that prohibits success when unresolved. cannot use this adapter.",
+      "evidence_assertion": "EVIDENCE_FIELD_PRESENT",
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:FAIL_CLOSED",
+        "NEGATIVE_MUTATION:SAFE_FALLBACK_USED"
+      ],
+      "operator_binding_contract": {
+        "FAIL_CLOSED": {
+          "denied_state": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:denied_state"
+          },
+          "failure_condition": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:failure_condition"
+          },
+          "protected_action": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:protected_action"
+          }
+        },
+        "SAFE_FALLBACK_USED": {
+          "affected_experience": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:affected_experience"
+          },
+          "failure_condition": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:failure_condition"
+          },
+          "fallback": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:fallback"
+          }
+        }
+      },
+      "operator_composition": [
+        "FAIL_CLOSED",
+        "SAFE_FALLBACK_USED"
+      ],
+      "positive_assertion_operators": [
+        "FAIL_CLOSED",
+        "SAFE_FALLBACK_USED"
+      ],
+      "profile_id": "ACP-FAIL_CLOSED_BOUNDARY",
+      "profile_version": "1.0.0",
+      "required_profile_bindings": [
+        "protected_action",
+        "mandatory_evidence",
+        "blocked_outcome"
+      ],
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 0,
+      "adapter_version": "1.0.0-candidate.2",
+      "all_bindings_must_be_used": true,
+      "binding_normalization": {},
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:SET_EXCLUDES",
+        "BOUNDARY_MUTATION:TENANT_ISOLATED"
+      ],
+      "counterexample": "A requirement incompatible with Verify allowed external disclosure and absence of explicitly prohibited internal fields. cannot use this adapter.",
+      "evidence_assertion": "EVIDENCE_FIELD_PRESENT",
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:SET_EXCLUDES",
+        "NEGATIVE_MUTATION:TENANT_ISOLATED"
+      ],
+      "operator_binding_contract": {
+        "SET_EXCLUDES": {
+          "actual_set": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:actual_set"
+          },
+          "prohibited_members": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:prohibited_members"
+          }
+        },
+        "TENANT_ISOLATED": {
+          "actor_tenant": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:actor_tenant"
+          },
+          "permission_context": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:permission_context"
+          },
+          "resource_tenant": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:resource_tenant"
+          }
+        }
+      },
+      "operator_composition": [
+        "SET_EXCLUDES",
+        "TENANT_ISOLATED"
+      ],
+      "positive_assertion_operators": [
+        "SET_EXCLUDES",
+        "TENANT_ISOLATED"
+      ],
+      "profile_id": "ACP-NO_INTERNAL_DISCLOSURE",
+      "profile_version": "1.0.0",
+      "required_profile_bindings": [
+        "channel",
+        "allowed_disclosure",
+        "prohibited_fields"
+      ],
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 2,
+      "adapter_version": "1.0.0-candidate.2",
+      "all_bindings_must_be_used": true,
+      "binding_normalization": {},
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:EVENT_ORDER_PRESERVED"
+      ],
+      "counterexample": "A requirement incompatible with Verify whether explicitly bound event families must preserve or need not preserve processing order. cannot use this adapter.",
+      "evidence_assertion": "EVIDENCE_FIELD_PRESENT",
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:EVENT_ORDER_PRESERVED"
+      ],
+      "operator_binding_contract": {
+        "EVENT_ORDER_PRESERVED": {
+          "correlation_id": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:correlation_id"
+          },
+          "event_family": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:event_family"
+          },
+          "expected_sequence": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:expected_sequence"
+          }
+        }
+      },
+      "operator_composition": [
+        "EVENT_ORDER_PRESERVED"
+      ],
+      "positive_assertion_operators": [
+        "EVENT_ORDER_PRESERVED"
+      ],
+      "profile_id": "ACP-EVENT_ORDERING",
+      "profile_version": "1.0.0",
+      "required_profile_bindings": [
+        "event_families",
+        "ordering_policy",
+        "observation_boundary"
+      ],
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 0,
+      "adapter_version": "1.0.0-candidate.2",
+      "all_bindings_must_be_used": true,
+      "binding_normalization": {},
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:EVENT_EMITTED",
+        "BOUNDARY_MUTATION:DELIVERY_TERMINAL_STATE"
+      ],
+      "counterexample": "A requirement incompatible with Verify an explicit event producer, consumer, delivery outcome, and terminal failure boundary. cannot use this adapter.",
+      "evidence_assertion": "EVIDENCE_FIELD_PRESENT",
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:EVENT_EMITTED",
+        "NEGATIVE_MUTATION:DELIVERY_TERMINAL_STATE"
+      ],
+      "operator_binding_contract": {
+        "DELIVERY_TERMINAL_STATE": {
+          "allowed_terminal_states": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:allowed_terminal_states"
+          },
+          "delivery_id": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:delivery_id"
+          },
+          "observed_state": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:observed_state"
+          }
+        },
+        "EVENT_EMITTED": {
+          "correlation_id": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:correlation_id"
+          },
+          "event_id": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:event_id"
+          },
+          "trigger": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:trigger"
+          }
+        }
+      },
+      "operator_composition": [
+        "EVENT_EMITTED",
+        "DELIVERY_TERMINAL_STATE"
+      ],
+      "positive_assertion_operators": [
+        "EVENT_EMITTED",
+        "DELIVERY_TERMINAL_STATE"
+      ],
+      "profile_id": "ACP-EVENT_DELIVERY",
+      "profile_version": "1.0.0",
+      "required_profile_bindings": [
+        "event_name",
+        "producer",
+        "consumer",
+        "delivery_outcome"
+      ],
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 0,
+      "adapter_version": "1.0.0-candidate.2",
+      "all_bindings_must_be_used": true,
+      "binding_normalization": {},
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:STATE_TRANSITION_REJECTED",
+        "BOUNDARY_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "counterexample": "A requirement incompatible with Verify explicit repeated-operation semantics under a bound idempotency identity. cannot use this adapter.",
+      "evidence_assertion": "EVIDENCE_FIELD_PRESENT",
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:STATE_TRANSITION_REJECTED",
+        "NEGATIVE_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "operator_binding_contract": {
+        "EVIDENCE_FIELD_PRESENT": {
+          "evidence_object": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:evidence_object"
+          },
+          "required_fields": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_fields"
+          }
+        },
+        "STATE_TRANSITION_REJECTED": {
+          "from_state": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:from_state"
+          },
+          "prohibited_state": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:prohibited_state"
+          },
+          "state_machine": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:state_machine"
+          },
+          "trigger": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:trigger"
+          }
+        }
+      },
+      "operator_composition": [
+        "STATE_TRANSITION_REJECTED",
+        "EVIDENCE_FIELD_PRESENT"
+      ],
+      "positive_assertion_operators": [
+        "STATE_TRANSITION_REJECTED",
+        "EVIDENCE_FIELD_PRESENT"
+      ],
+      "profile_id": "ACP-IDEMPOTENT_OPERATION",
+      "profile_version": "1.0.0",
+      "required_profile_bindings": [
+        "operation",
+        "idempotency_identity",
+        "stable_outcome"
+      ],
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 0,
+      "adapter_version": "1.0.0-candidate.2",
+      "all_bindings_must_be_used": true,
+      "binding_normalization": {},
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:RETRY_LIMIT_NOT_EXCEEDED",
+        "BOUNDARY_MUTATION:DELIVERY_TERMINAL_STATE"
+      ],
+      "counterexample": "A requirement incompatible with Verify an explicitly bounded retry policy and observable terminal outcome. cannot use this adapter.",
+      "evidence_assertion": "EVIDENCE_FIELD_PRESENT",
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:RETRY_LIMIT_NOT_EXCEEDED",
+        "NEGATIVE_MUTATION:DELIVERY_TERMINAL_STATE"
+      ],
+      "operator_binding_contract": {
+        "DELIVERY_TERMINAL_STATE": {
+          "allowed_terminal_states": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:allowed_terminal_states"
+          },
+          "delivery_id": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:delivery_id"
+          },
+          "observed_state": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:observed_state"
+          }
+        },
+        "RETRY_LIMIT_NOT_EXCEEDED": {
+          "operation": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:operation"
+          },
+          "retry_count": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:retry_count"
+          },
+          "retry_limit": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:retry_limit"
+          }
+        }
+      },
+      "operator_composition": [
+        "RETRY_LIMIT_NOT_EXCEEDED",
+        "DELIVERY_TERMINAL_STATE"
+      ],
+      "positive_assertion_operators": [
+        "RETRY_LIMIT_NOT_EXCEEDED",
+        "DELIVERY_TERMINAL_STATE"
+      ],
+      "profile_id": "ACP-RETRY_AND_TERMINAL_FAILURE",
+      "profile_version": "1.0.0",
+      "required_profile_bindings": [
+        "operation",
+        "retry_limit",
+        "retry_condition",
+        "terminal_outcome"
+      ],
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 3,
+      "adapter_version": "1.0.0-candidate.2",
+      "all_bindings_must_be_used": true,
+      "binding_normalization": {},
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:ACTOR_AUTHORIZED",
+        "BOUNDARY_MUTATION:ACTOR_DENIED"
+      ],
+      "counterexample": "A requirement incompatible with Verify explicitly bound actor, resource/action, and permission boundary. cannot use this adapter.",
+      "evidence_assertion": "EVIDENCE_FIELD_PRESENT",
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:ACTOR_AUTHORIZED",
+        "NEGATIVE_MUTATION:ACTOR_DENIED"
+      ],
+      "operator_binding_contract": {
+        "ACTOR_AUTHORIZED": {
+          "action": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:action"
+          },
+          "actor": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:actor"
+          },
+          "effective_policy": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:effective_policy"
+          },
+          "resource": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:resource"
+          }
+        },
+        "ACTOR_DENIED": {
+          "action": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:action"
+          },
+          "actor": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:actor"
+          },
+          "effective_policy": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:effective_policy"
+          },
+          "resource": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:resource"
+          }
+        }
+      },
+      "operator_composition": [
+        "ACTOR_AUTHORIZED",
+        "ACTOR_DENIED"
+      ],
+      "positive_assertion_operators": [
+        "ACTOR_AUTHORIZED",
+        "ACTOR_DENIED"
+      ],
+      "profile_id": "ACP-ROLE_AND_PERMISSION_ENFORCEMENT",
+      "profile_version": "1.0.0",
+      "required_profile_bindings": [
+        "actor_scope",
+        "governed_resource",
+        "allowed_actions",
+        "prohibited_actions"
+      ],
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 3,
+      "adapter_version": "1.0.0-candidate.2",
+      "all_bindings_must_be_used": true,
+      "binding_normalization": {},
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:ACTOR_AUTHORIZED",
+        "BOUNDARY_MUTATION:ACTOR_DENIED"
+      ],
+      "counterexample": "A requirement incompatible with Verify a named assurance or credential requirement at an authentication boundary. cannot use this adapter.",
+      "evidence_assertion": "EVIDENCE_FIELD_PRESENT",
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:ACTOR_AUTHORIZED",
+        "NEGATIVE_MUTATION:ACTOR_DENIED"
+      ],
+      "operator_binding_contract": {
+        "ACTOR_AUTHORIZED": {
+          "action": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:action"
+          },
+          "actor": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:actor"
+          },
+          "effective_policy": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:effective_policy"
+          },
+          "resource": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:resource"
+          }
+        },
+        "ACTOR_DENIED": {
+          "action": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:action"
+          },
+          "actor": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:actor"
+          },
+          "effective_policy": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:effective_policy"
+          },
+          "resource": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:resource"
+          }
+        }
+      },
+      "operator_composition": [
+        "ACTOR_AUTHORIZED",
+        "ACTOR_DENIED"
+      ],
+      "positive_assertion_operators": [
+        "ACTOR_AUTHORIZED",
+        "ACTOR_DENIED"
+      ],
+      "profile_id": "ACP-AUTHENTICATION_REQUIREMENT",
+      "profile_version": "1.0.0",
+      "required_profile_bindings": [
+        "principal_type",
+        "assurance_requirement",
+        "protected_action"
+      ],
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 1,
+      "adapter_version": "1.0.0-candidate.2",
+      "all_bindings_must_be_used": true,
+      "binding_normalization": {},
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:MFA_CHALLENGE_REQUIRED",
+        "BOUNDARY_MUTATION:ACTOR_DENIED",
+        "BOUNDARY_MUTATION:AUDIT_IMMUTABLE"
+      ],
+      "counterexample": "A requirement incompatible with Verify MFA policy, effective scope resolution, required challenge, bypass denial, and applicable recovery. cannot use this adapter.",
+      "evidence_assertion": "EVIDENCE_FIELD_PRESENT",
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:MFA_CHALLENGE_REQUIRED",
+        "NEGATIVE_MUTATION:ACTOR_DENIED",
+        "NEGATIVE_MUTATION:AUDIT_IMMUTABLE"
+      ],
+      "operator_binding_contract": {
+        "ACTOR_DENIED": {
+          "action": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:action"
+          },
+          "actor": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:actor"
+          },
+          "effective_policy": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:effective_policy"
+          },
+          "resource": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:resource"
+          }
+        },
+        "AUDIT_IMMUTABLE": {
+          "audit_record": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:audit_record"
+          },
+          "immutability_boundary": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:immutability_boundary"
+          },
+          "required_fields": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_fields"
+          }
+        },
+        "MFA_CHALLENGE_REQUIRED": {
+          "challenge_result": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:challenge_result"
+          },
+          "effective_policy": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:effective_policy"
+          },
+          "policy_scope": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:policy_scope"
+          },
+          "principal": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:principal"
+          }
+        }
+      },
+      "operator_composition": [
+        "MFA_CHALLENGE_REQUIRED",
+        "ACTOR_DENIED",
+        "AUDIT_IMMUTABLE"
+      ],
+      "positive_assertion_operators": [
+        "MFA_CHALLENGE_REQUIRED",
+        "ACTOR_DENIED",
+        "AUDIT_IMMUTABLE"
+      ],
+      "profile_id": "ACP-MFA_ENFORCEMENT",
+      "profile_version": "1.0.0",
+      "required_profile_bindings": [
+        "mfa_scopes",
+        "principal_types",
+        "challenge_requirement"
+      ],
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 0,
+      "adapter_version": "1.0.0-candidate.2",
+      "all_bindings_must_be_used": true,
+      "binding_normalization": {},
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:TENANT_ISOLATED",
+        "BOUNDARY_MUTATION:ACTOR_DENIED"
+      ],
+      "counterexample": "A requirement incompatible with Verify explicit tenant, organization, owner, or subject isolation at read and mutation boundaries. cannot use this adapter.",
+      "evidence_assertion": "EVIDENCE_FIELD_PRESENT",
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:TENANT_ISOLATED",
+        "NEGATIVE_MUTATION:ACTOR_DENIED"
+      ],
+      "operator_binding_contract": {
+        "ACTOR_DENIED": {
+          "action": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:action"
+          },
+          "actor": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:actor"
+          },
+          "effective_policy": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:effective_policy"
+          },
+          "resource": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:resource"
+          }
+        },
+        "TENANT_ISOLATED": {
+          "actor_tenant": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:actor_tenant"
+          },
+          "permission_context": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:permission_context"
+          },
+          "resource_tenant": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:resource_tenant"
+          }
+        }
+      },
+      "operator_composition": [
+        "TENANT_ISOLATED",
+        "ACTOR_DENIED"
+      ],
+      "positive_assertion_operators": [
+        "TENANT_ISOLATED",
+        "ACTOR_DENIED"
+      ],
+      "profile_id": "ACP-DATA_ISOLATION",
+      "profile_version": "1.0.0",
+      "required_profile_bindings": [
+        "isolation_scope",
+        "data_subject",
+        "allowed_owner"
+      ],
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 1,
+      "adapter_version": "1.0.0-candidate.2",
+      "all_bindings_must_be_used": true,
+      "binding_normalization": {},
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:DATA_RETENTION_WINDOW"
+      ],
+      "counterexample": "A requirement incompatible with Verify an explicit retention duration, online/archive boundary, and post-retention outcome. cannot use this adapter.",
+      "evidence_assertion": "EVIDENCE_FIELD_PRESENT",
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:DATA_RETENTION_WINDOW"
+      ],
+      "operator_binding_contract": {
+        "DATA_RETENTION_WINDOW": {
+          "data_class": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:data_class"
+          },
+          "retention_window": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:retention_window"
+          },
+          "terminal_action": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:terminal_action"
+          }
+        }
+      },
+      "operator_composition": [
+        "DATA_RETENTION_WINDOW"
+      ],
+      "positive_assertion_operators": [
+        "DATA_RETENTION_WINDOW"
+      ],
+      "profile_id": "ACP-DATA_RETENTION",
+      "profile_version": "1.0.0",
+      "required_profile_bindings": [
+        "data_subject",
+        "retention_period",
+        "post_retention_outcome"
+      ],
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 1,
+      "adapter_version": "1.0.0-candidate.2",
+      "all_bindings_must_be_used": true,
+      "binding_normalization": {},
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:AUDIT_IMMUTABLE",
+        "BOUNDARY_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "counterexample": "A requirement incompatible with Verify that a named decision or operation records required actor, action, reason, version, and outcome evidence. cannot use this adapter.",
+      "evidence_assertion": "EVIDENCE_FIELD_PRESENT",
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:AUDIT_IMMUTABLE",
+        "NEGATIVE_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "operator_binding_contract": {
+        "AUDIT_IMMUTABLE": {
+          "audit_record": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:audit_record"
+          },
+          "immutability_boundary": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:immutability_boundary"
+          },
+          "required_fields": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_fields"
+          }
+        },
+        "EVIDENCE_FIELD_PRESENT": {
+          "evidence_object": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:evidence_object"
+          },
+          "required_fields": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_fields"
+          }
+        }
+      },
+      "operator_composition": [
+        "AUDIT_IMMUTABLE",
+        "EVIDENCE_FIELD_PRESENT"
+      ],
+      "positive_assertion_operators": [
+        "AUDIT_IMMUTABLE",
+        "EVIDENCE_FIELD_PRESENT"
+      ],
+      "profile_id": "ACP-AUDITABILITY",
+      "profile_version": "1.0.0",
+      "required_profile_bindings": [
+        "audited_subject",
+        "required_audit_fields",
+        "audit_trigger"
+      ],
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 0,
+      "adapter_version": "1.0.0-candidate.2",
+      "all_bindings_must_be_used": true,
+      "binding_normalization": {},
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:CONFIGURATION_RESOLVES",
+        "BOUNDARY_MUTATION:CONFIGURATION_PRECEDENCE",
+        "BOUNDARY_MUTATION:AUDIT_IMMUTABLE"
+      ],
+      "counterexample": "A requirement incompatible with Verify explicit draft, validation, activation, replacement, and retirement behavior for configuration. cannot use this adapter.",
+      "evidence_assertion": "EVIDENCE_FIELD_PRESENT",
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:CONFIGURATION_RESOLVES",
+        "NEGATIVE_MUTATION:CONFIGURATION_PRECEDENCE",
+        "NEGATIVE_MUTATION:AUDIT_IMMUTABLE"
+      ],
+      "operator_binding_contract": {
+        "AUDIT_IMMUTABLE": {
+          "audit_record": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:audit_record"
+          },
+          "immutability_boundary": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:immutability_boundary"
+          },
+          "required_fields": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_fields"
+          }
+        },
+        "CONFIGURATION_PRECEDENCE": {
+          "configuration_key": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:configuration_key"
+          },
+          "precedence_order": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:precedence_order"
+          },
+          "source_values": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:source_values"
+          }
+        },
+        "CONFIGURATION_RESOLVES": {
+          "configuration_key": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:configuration_key"
+          },
+          "configuration_sources": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:configuration_sources"
+          },
+          "expected_value": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:expected_value"
+          }
+        }
+      },
+      "operator_composition": [
+        "CONFIGURATION_RESOLVES",
+        "CONFIGURATION_PRECEDENCE",
+        "AUDIT_IMMUTABLE"
+      ],
+      "positive_assertion_operators": [
+        "CONFIGURATION_RESOLVES",
+        "CONFIGURATION_PRECEDENCE",
+        "AUDIT_IMMUTABLE"
+      ],
+      "profile_id": "ACP-CONFIGURATION_LIFECYCLE",
+      "profile_version": "1.0.0",
+      "required_profile_bindings": [
+        "configuration_subject",
+        "lifecycle_states",
+        "activation_condition"
+      ],
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 0,
+      "adapter_version": "1.0.0-candidate.2",
+      "all_bindings_must_be_used": true,
+      "binding_normalization": {},
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:APPROVAL_REQUIRED",
+        "BOUNDARY_MUTATION:AUDIT_IMMUTABLE"
+      ],
+      "counterexample": "A requirement incompatible with Verify an explicit approval eligibility, decision, reason, and governed action boundary. cannot use this adapter.",
+      "evidence_assertion": "EVIDENCE_FIELD_PRESENT",
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:APPROVAL_REQUIRED",
+        "NEGATIVE_MUTATION:AUDIT_IMMUTABLE"
+      ],
+      "operator_binding_contract": {
+        "APPROVAL_REQUIRED": {
+          "action": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:action"
+          },
+          "approval_policy": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:approval_policy"
+          },
+          "approval_reference": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:approval_reference"
+          }
+        },
+        "AUDIT_IMMUTABLE": {
+          "audit_record": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:audit_record"
+          },
+          "immutability_boundary": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:immutability_boundary"
+          },
+          "required_fields": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_fields"
+          }
+        }
+      },
+      "operator_composition": [
+        "APPROVAL_REQUIRED",
+        "AUDIT_IMMUTABLE"
+      ],
+      "positive_assertion_operators": [
+        "APPROVAL_REQUIRED",
+        "AUDIT_IMMUTABLE"
+      ],
+      "profile_id": "ACP-APPROVAL_WORKFLOW",
+      "profile_version": "1.0.0",
+      "required_profile_bindings": [
+        "approval_subject",
+        "authorized_approver_scope",
+        "approval_outcomes",
+        "governed_action"
+      ],
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 0,
+      "adapter_version": "1.0.0-candidate.2",
+      "all_bindings_must_be_used": true,
+      "binding_normalization": {},
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:STATE_TRANSITION_ALLOWED",
+        "BOUNDARY_MUTATION:ACTOR_AUTHORIZED"
+      ],
+      "counterexample": "A requirement incompatible with Verify a named rendered state, available action, prohibited disclosure/action, and fallback outcome. cannot use this adapter.",
+      "evidence_assertion": "EVIDENCE_FIELD_PRESENT",
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:STATE_TRANSITION_ALLOWED",
+        "NEGATIVE_MUTATION:ACTOR_AUTHORIZED"
+      ],
+      "operator_binding_contract": {
+        "ACTOR_AUTHORIZED": {
+          "action": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:action"
+          },
+          "actor": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:actor"
+          },
+          "effective_policy": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:effective_policy"
+          },
+          "resource": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:resource"
+          }
+        },
+        "STATE_TRANSITION_ALLOWED": {
+          "from_state": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:from_state"
+          },
+          "state_machine": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:state_machine"
+          },
+          "to_state": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:to_state"
+          },
+          "trigger": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:trigger"
+          }
+        }
+      },
+      "operator_composition": [
+        "STATE_TRANSITION_ALLOWED",
+        "ACTOR_AUTHORIZED"
+      ],
+      "positive_assertion_operators": [
+        "STATE_TRANSITION_ALLOWED",
+        "ACTOR_AUTHORIZED"
+      ],
+      "profile_id": "ACP-UX_STATE_AND_ACTION",
+      "profile_version": "1.0.0",
+      "required_profile_bindings": [
+        "ux_surface",
+        "rendered_state",
+        "available_actions",
+        "fallback_outcome"
+      ],
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 6,
+      "adapter_version": "1.0.0-candidate.2",
+      "all_bindings_must_be_used": true,
+      "binding_normalization": {},
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:ACCESSIBILITY_CONFORMS"
+      ],
+      "counterexample": "A requirement incompatible with Verify a specifically named accessibility mode, interaction, or conformance outcome. cannot use this adapter.",
+      "evidence_assertion": "EVIDENCE_FIELD_PRESENT",
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:ACCESSIBILITY_CONFORMS"
+      ],
+      "operator_binding_contract": {
+        "ACCESSIBILITY_CONFORMS": {
+          "accessibility_standard": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:accessibility_standard"
+          },
+          "experience": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:experience"
+          },
+          "required_outcomes": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_outcomes"
+          }
+        }
+      },
+      "operator_composition": [
+        "ACCESSIBILITY_CONFORMS"
+      ],
+      "positive_assertion_operators": [
+        "ACCESSIBILITY_CONFORMS"
+      ],
+      "profile_id": "ACP-UX_ACCESSIBILITY",
+      "profile_version": "1.0.0",
+      "required_profile_bindings": [
+        "ux_surface",
+        "accessibility_capability",
+        "affected_content_or_action"
+      ],
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 0,
+      "adapter_version": "1.0.0-candidate.2",
+      "all_bindings_must_be_used": true,
+      "binding_normalization": {},
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:PERFORMANCE_WITHIN_BUDGET"
+      ],
+      "counterexample": "A requirement incompatible with Verify an explicit user-visible timing or responsiveness budget at a named journey boundary. cannot use this adapter.",
+      "evidence_assertion": "EVIDENCE_FIELD_PRESENT",
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:PERFORMANCE_WITHIN_BUDGET"
+      ],
+      "operator_binding_contract": {
+        "PERFORMANCE_WITHIN_BUDGET": {
+          "budget": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:budget"
+          },
+          "metric": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:metric"
+          },
+          "observed_value": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:observed_value"
+          },
+          "service": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:service"
+          }
+        }
+      },
+      "operator_composition": [
+        "PERFORMANCE_WITHIN_BUDGET"
+      ],
+      "positive_assertion_operators": [
+        "PERFORMANCE_WITHIN_BUDGET"
+      ],
+      "profile_id": "ACP-UX_PERFORMANCE_BUDGET",
+      "profile_version": "1.0.0",
+      "required_profile_bindings": [
+        "journey_boundary",
+        "metric",
+        "budget",
+        "measurement_condition"
+      ],
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 1,
+      "adapter_version": "1.0.0-candidate.2",
+      "all_bindings_must_be_used": true,
+      "binding_normalization": {},
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:EVIDENCE_FIELD_PRESENT",
+        "BOUNDARY_MUTATION:SCOPE_ACTIVE"
+      ],
+      "counterexample": "A requirement incompatible with Verify traceability from a design principle to governed requirements, configuration, and architectural boundary without runtime tautology. cannot use this adapter.",
+      "evidence_assertion": "SCOPE_ACTIVE",
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:EVIDENCE_FIELD_PRESENT",
+        "NEGATIVE_MUTATION:SCOPE_ACTIVE"
+      ],
+      "operator_binding_contract": {
+        "EVIDENCE_FIELD_PRESENT": {
+          "evidence_object": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:evidence_object"
+          },
+          "required_fields": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_fields"
+          }
+        },
+        "SCOPE_ACTIVE": {
+          "baseline": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:baseline"
+          },
+          "scope": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:scope"
+          },
+          "subject": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:subject"
+          }
+        }
+      },
+      "operator_composition": [
+        "EVIDENCE_FIELD_PRESENT",
+        "SCOPE_ACTIVE"
+      ],
+      "positive_assertion_operators": [
+        "EVIDENCE_FIELD_PRESENT",
+        "SCOPE_ACTIVE"
+      ],
+      "profile_id": "ACP-DESIGN_CONFORMANCE_TRACE",
+      "profile_version": "1.0.0",
+      "required_profile_bindings": [
+        "principle",
+        "governed_artifact",
+        "required_trace"
+      ],
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 1,
+      "adapter_version": "1.0.0-candidate.2",
+      "all_bindings_must_be_used": true,
+      "binding_normalization": {},
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:DELIVERY_TERMINAL_STATE",
+        "BOUNDARY_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "counterexample": "A requirement incompatible with Verify named running/completed/failed state, outcome, signals, and detectable missing-evidence failure. cannot use this adapter.",
+      "evidence_assertion": "EVIDENCE_FIELD_PRESENT",
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:DELIVERY_TERMINAL_STATE",
+        "NEGATIVE_MUTATION:EVIDENCE_FIELD_PRESENT"
+      ],
+      "operator_binding_contract": {
+        "DELIVERY_TERMINAL_STATE": {
+          "allowed_terminal_states": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:allowed_terminal_states"
+          },
+          "delivery_id": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:delivery_id"
+          },
+          "observed_state": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:observed_state"
+          }
+        },
+        "EVIDENCE_FIELD_PRESENT": {
+          "evidence_object": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:evidence_object"
+          },
+          "required_fields": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_fields"
+          }
+        }
+      },
+      "operator_composition": [
+        "DELIVERY_TERMINAL_STATE",
+        "EVIDENCE_FIELD_PRESENT"
+      ],
+      "positive_assertion_operators": [
+        "DELIVERY_TERMINAL_STATE",
+        "EVIDENCE_FIELD_PRESENT"
+      ],
+      "profile_id": "ACP-OPERATION_OBSERVABILITY",
+      "profile_version": "1.0.0",
+      "required_profile_bindings": [
+        "operation_subject",
+        "required_states",
+        "required_signals"
+      ],
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 0,
+      "adapter_version": "1.0.0-candidate.2",
+      "all_bindings_must_be_used": true,
+      "binding_normalization": {},
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:REFERENCE_TARGET_VALID",
+        "BOUNDARY_MUTATION:DELIVERY_TERMINAL_STATE"
+      ],
+      "counterexample": "A requirement incompatible with Verify an explicit producer/provider, consumer/client, accepted input/output, ownership boundary, and rejection outcome. cannot use this adapter.",
+      "evidence_assertion": "EVIDENCE_FIELD_PRESENT",
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:REFERENCE_TARGET_VALID",
+        "NEGATIVE_MUTATION:DELIVERY_TERMINAL_STATE"
+      ],
+      "operator_binding_contract": {
+        "DELIVERY_TERMINAL_STATE": {
+          "allowed_terminal_states": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:allowed_terminal_states"
+          },
+          "delivery_id": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:delivery_id"
+          },
+          "observed_state": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:observed_state"
+          }
+        },
+        "REFERENCE_TARGET_VALID": {
+          "allowed_states": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:allowed_states"
+          },
+          "reference": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:reference"
+          },
+          "registry": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:registry"
+          }
+        }
+      },
+      "operator_composition": [
+        "REFERENCE_TARGET_VALID",
+        "DELIVERY_TERMINAL_STATE"
+      ],
+      "positive_assertion_operators": [
+        "REFERENCE_TARGET_VALID",
+        "DELIVERY_TERMINAL_STATE"
+      ],
+      "profile_id": "ACP-INTEGRATION_CONTRACT",
+      "profile_version": "1.0.0",
+      "required_profile_bindings": [
+        "provider",
+        "consumer",
+        "contract_input",
+        "contract_outcome"
+      ],
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 4,
+      "adapter_version": "1.0.0-candidate.2",
+      "all_bindings_must_be_used": true,
+      "binding_normalization": {},
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:SCOPE_NOT_ACTIVE"
+      ],
+      "counterexample": "A requirement incompatible with Verify that an explicitly future, deferred, or excluded capability is not represented as active behavior in the current baseline. cannot use this adapter.",
+      "evidence_assertion": "EVIDENCE_FIELD_PRESENT",
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:SCOPE_NOT_ACTIVE"
+      ],
+      "operator_binding_contract": {
+        "SCOPE_NOT_ACTIVE": {
+          "baseline": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:baseline"
+          },
+          "inactive_scope": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:inactive_scope"
+          },
+          "subject": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:subject"
+          }
+        }
+      },
+      "operator_composition": [
+        "SCOPE_NOT_ACTIVE"
+      ],
+      "positive_assertion_operators": [
+        "SCOPE_NOT_ACTIVE"
+      ],
+      "profile_id": "ACP-SCOPE_EXCLUSION",
+      "profile_version": "1.0.0",
+      "required_profile_bindings": [
+        "excluded_capability",
+        "scope_status",
+        "current_baseline"
+      ],
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 56,
+      "adapter_version": "1.0.0-candidate.2",
+      "all_bindings_must_be_used": true,
+      "binding_normalization": {
+        "capability_subject": "subject",
+        "required_capability": "capability_name|target"
+      },
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:CAPABILITY_AVAILABLE",
+        "BOUNDARY_MUTATION:CAPABILITY_NOT_PLACEHOLDER",
+        "BOUNDARY_MUTATION:SCOPE_ACTIVE"
+      ],
+      "counterexample": "A requirement incompatible with Verify that one explicitly named subject exposes one explicitly named capability. cannot use this adapter.",
+      "evidence_assertion": "EVIDENCE_FIELD_PRESENT",
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:CAPABILITY_AVAILABLE",
+        "NEGATIVE_MUTATION:CAPABILITY_NOT_PLACEHOLDER",
+        "NEGATIVE_MUTATION:SCOPE_ACTIVE"
+      ],
+      "operator_binding_contract": {
+        "CAPABILITY_AVAILABLE": {
+          "capability": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:capability"
+          },
+          "scope": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:scope"
+          },
+          "subject": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:subject"
+          }
+        },
+        "CAPABILITY_NOT_PLACEHOLDER": {
+          "capability": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:capability"
+          },
+          "scope": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:scope"
+          },
+          "subject": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:subject"
+          }
+        },
+        "SCOPE_ACTIVE": {
+          "baseline": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:baseline"
+          },
+          "scope": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:scope"
+          },
+          "subject": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:subject"
+          }
+        }
+      },
+      "operator_composition": [
+        "CAPABILITY_AVAILABLE",
+        "CAPABILITY_NOT_PLACEHOLDER",
+        "SCOPE_ACTIVE"
+      ],
+      "positive_assertion_operators": [
+        "CAPABILITY_AVAILABLE",
+        "CAPABILITY_NOT_PLACEHOLDER",
+        "SCOPE_ACTIVE"
+      ],
+      "profile_id": "ACP-ATOMIC_CAPABILITY_AVAILABILITY",
+      "profile_version": "1.1.0",
+      "required_profile_bindings": [
+        "capability_subject",
+        "required_capability"
+      ],
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 5,
+      "adapter_version": "1.0.0-candidate.2",
+      "all_bindings_must_be_used": true,
+      "binding_normalization": {},
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:ENUM_VALUE_ALLOWED",
+        "BOUNDARY_MUTATION:SET_CONTAINS"
+      ],
+      "counterexample": "A requirement incompatible with Verify that a named canonical subject carries one explicit business classification without substituting another classification. cannot use this adapter.",
+      "evidence_assertion": "EVIDENCE_FIELD_PRESENT",
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:ENUM_VALUE_ALLOWED",
+        "NEGATIVE_MUTATION:SET_CONTAINS"
+      ],
+      "operator_binding_contract": {
+        "ENUM_VALUE_ALLOWED": {
+          "actual_value": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:actual_value"
+          },
+          "allowed_values": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:allowed_values"
+          },
+          "field": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:field"
+          }
+        },
+        "SET_CONTAINS": {
+          "actual_set": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:actual_set"
+          },
+          "required_members": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:required_members"
+          }
+        }
+      },
+      "operator_composition": [
+        "ENUM_VALUE_ALLOWED",
+        "SET_CONTAINS"
+      ],
+      "positive_assertion_operators": [
+        "ENUM_VALUE_ALLOWED",
+        "SET_CONTAINS"
+      ],
+      "profile_id": "ACP-BUSINESS_CLASSIFICATION",
+      "profile_version": "1.1.0",
+      "required_profile_bindings": [
+        "classified_subject",
+        "business_classification"
+      ],
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    },
+    {
+      "active_mapping_count": 5,
+      "adapter_version": "1.0.0-candidate.2",
+      "all_bindings_must_be_used": true,
+      "binding_normalization": {},
+      "boundary_mutations": [
+        "BOUNDARY_MUTATION:ENUM_VALUE_ALLOWED",
+        "BOUNDARY_MUTATION:SET_EQUALS"
+      ],
+      "counterexample": "A requirement incompatible with Verify one explicit required, unique, format, range, or allowed-value constraint on a named data field. cannot use this adapter.",
+      "evidence_assertion": "EVIDENCE_FIELD_PRESENT",
+      "negative_mutations": [
+        "NEGATIVE_MUTATION:ENUM_VALUE_ALLOWED",
+        "NEGATIVE_MUTATION:SET_EQUALS"
+      ],
+      "operator_binding_contract": {
+        "ENUM_VALUE_ALLOWED": {
+          "actual_value": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:actual_value"
+          },
+          "allowed_values": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:allowed_values"
+          },
+          "field": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:field"
+          }
+        },
+        "SET_EQUALS": {
+          "actual_set": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:actual_set"
+          },
+          "expected_set": {
+            "inference": false,
+            "required_at_materialization": true,
+            "source": "MATERIALIZED_REQUIREMENT_BINDING:expected_set"
+          }
+        }
+      },
+      "operator_composition": [
+        "ENUM_VALUE_ALLOWED",
+        "SET_EQUALS"
+      ],
+      "positive_assertion_operators": [
+        "ENUM_VALUE_ALLOWED",
+        "SET_EQUALS"
+      ],
+      "profile_id": "ACP-DATA_VALUE_CONSTRAINT",
+      "profile_version": "1.1.0",
+      "required_profile_bindings": [
+        "data_field",
+        "value_constraint"
+      ],
+      "status": "MODEL_ADAPTER_DEFINED_RUNTIME_BINDING_PENDING"
+    }
+  ],
+  "artifact": "V23-P2C-PROFILE-ORACLE-ADAPTERS-C2",
+  "binding_schema_variants_normalized": 12,
+  "candidate_id": "V23-P2C-SEMANTIC-ORACLE-MODEL-C2",
+  "profile_count": 31,
+  "runtime_adapter_status": "PENDING",
+  "status": "CANDIDATE"
+}

@@ -1,0 +1,1018 @@
+{
+  "$id": "urn:ysim:v2.3:semantic-oracle-contract-ast:c2",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "assertions": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "assertion_id": {
+            "type": "string"
+          },
+          "bindings": {
+            "minProperties": 1,
+            "type": "object"
+          },
+          "decision_provenance": {
+            "items": {
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "evidence_refs": {
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1,
+            "type": "array"
+          },
+          "expected_outcome": {
+            "type": [
+              "string",
+              "number",
+              "boolean",
+              "array",
+              "object"
+            ]
+          },
+          "operator_id": {
+            "enum": [
+              "ACCESSIBILITY_CONFORMS",
+              "ACTOR_AUTHORIZED",
+              "ACTOR_DENIED",
+              "APPROVAL_REQUIRED",
+              "AUDIT_IMMUTABLE",
+              "CAPABILITY_AVAILABLE",
+              "CAPABILITY_NOT_PLACEHOLDER",
+              "COMPOSITE_COVERED_BY_CHILDREN",
+              "CONFIGURATION_PRECEDENCE",
+              "CONFIGURATION_RESOLVES",
+              "DATA_RETENTION_WINDOW",
+              "DELIVERY_TERMINAL_STATE",
+              "ENUM_VALUE_ALLOWED",
+              "EVENT_EMITTED",
+              "EVENT_NOT_EMITTED",
+              "EVENT_ORDER_NOT_REQUIRED",
+              "EVENT_ORDER_PRESERVED",
+              "EVIDENCE_FIELD_PRESENT",
+              "FAIL_CLOSED",
+              "MFA_CHALLENGE_REQUIRED",
+              "OWNER_EQUALS",
+              "PAYMENT_INITIATION_ALLOWED",
+              "PAYMENT_INITIATION_BLOCKED",
+              "PERFORMANCE_WITHIN_BUDGET",
+              "POLICY_OUTCOME_EQUALS",
+              "PROCUREMENT_FEASIBLE",
+              "PROCUREMENT_NOT_FEASIBLE",
+              "RECONCILIATION_BALANCED",
+              "REFERENCE_TARGET_VALID",
+              "RETRY_LIMIT_NOT_EXCEEDED",
+              "ROLE_LIST_CONSISTENT",
+              "SAFE_FALLBACK_USED",
+              "SCOPE_ACTIVE",
+              "SCOPE_NOT_ACTIVE",
+              "SET_CONTAINS",
+              "SET_EQUALS",
+              "SET_EXCLUDES",
+              "STATE_TRANSITION_ALLOWED",
+              "STATE_TRANSITION_REJECTED",
+              "TENANT_ISOLATED"
+            ]
+          },
+          "operator_version": {
+            "type": "string"
+          },
+          "source_provenance": {
+            "items": {
+              "additionalProperties": true,
+              "properties": {
+                "inference": {
+                  "const": false
+                },
+                "source_document": {
+                  "type": "string"
+                },
+                "source_fingerprint": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "source_document",
+                "source_fingerprint",
+                "inference"
+              ],
+              "type": "object"
+            },
+            "minItems": 1,
+            "type": "array"
+          }
+        },
+        "required": [
+          "assertion_id",
+          "operator_id",
+          "operator_version",
+          "bindings",
+          "expected_outcome",
+          "evidence_refs",
+          "source_provenance"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "boundary_cases": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "case_id": {
+            "type": "string"
+          },
+          "common_assertions": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "assertion_id": {
+                  "type": "string"
+                },
+                "bindings": {
+                  "minProperties": 1,
+                  "type": "object"
+                },
+                "decision_provenance": {
+                  "items": {
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "evidence_refs": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "minItems": 1,
+                  "type": "array"
+                },
+                "expected_outcome": {
+                  "type": [
+                    "string",
+                    "number",
+                    "boolean",
+                    "array",
+                    "object"
+                  ]
+                },
+                "operator_id": {
+                  "enum": [
+                    "ACCESSIBILITY_CONFORMS",
+                    "ACTOR_AUTHORIZED",
+                    "ACTOR_DENIED",
+                    "APPROVAL_REQUIRED",
+                    "AUDIT_IMMUTABLE",
+                    "CAPABILITY_AVAILABLE",
+                    "CAPABILITY_NOT_PLACEHOLDER",
+                    "COMPOSITE_COVERED_BY_CHILDREN",
+                    "CONFIGURATION_PRECEDENCE",
+                    "CONFIGURATION_RESOLVES",
+                    "DATA_RETENTION_WINDOW",
+                    "DELIVERY_TERMINAL_STATE",
+                    "ENUM_VALUE_ALLOWED",
+                    "EVENT_EMITTED",
+                    "EVENT_NOT_EMITTED",
+                    "EVENT_ORDER_NOT_REQUIRED",
+                    "EVENT_ORDER_PRESERVED",
+                    "EVIDENCE_FIELD_PRESENT",
+                    "FAIL_CLOSED",
+                    "MFA_CHALLENGE_REQUIRED",
+                    "OWNER_EQUALS",
+                    "PAYMENT_INITIATION_ALLOWED",
+                    "PAYMENT_INITIATION_BLOCKED",
+                    "PERFORMANCE_WITHIN_BUDGET",
+                    "POLICY_OUTCOME_EQUALS",
+                    "PROCUREMENT_FEASIBLE",
+                    "PROCUREMENT_NOT_FEASIBLE",
+                    "RECONCILIATION_BALANCED",
+                    "REFERENCE_TARGET_VALID",
+                    "RETRY_LIMIT_NOT_EXCEEDED",
+                    "ROLE_LIST_CONSISTENT",
+                    "SAFE_FALLBACK_USED",
+                    "SCOPE_ACTIVE",
+                    "SCOPE_NOT_ACTIVE",
+                    "SET_CONTAINS",
+                    "SET_EQUALS",
+                    "SET_EXCLUDES",
+                    "STATE_TRANSITION_ALLOWED",
+                    "STATE_TRANSITION_REJECTED",
+                    "TENANT_ISOLATED"
+                  ]
+                },
+                "operator_version": {
+                  "type": "string"
+                },
+                "source_provenance": {
+                  "items": {
+                    "additionalProperties": true,
+                    "properties": {
+                      "inference": {
+                        "const": false
+                      },
+                      "source_document": {
+                        "type": "string"
+                      },
+                      "source_fingerprint": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "source_document",
+                      "source_fingerprint",
+                      "inference"
+                    ],
+                    "type": "object"
+                  },
+                  "minItems": 1,
+                  "type": "array"
+                }
+              },
+              "required": [
+                "assertion_id",
+                "operator_id",
+                "operator_version",
+                "bindings",
+                "expected_outcome",
+                "evidence_refs",
+                "source_provenance"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "distinguishing_evidence_refs": {
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1,
+            "type": "array"
+          },
+          "left_assertions": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "assertion_id": {
+                  "type": "string"
+                },
+                "bindings": {
+                  "minProperties": 1,
+                  "type": "object"
+                },
+                "decision_provenance": {
+                  "items": {
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "evidence_refs": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "minItems": 1,
+                  "type": "array"
+                },
+                "expected_outcome": {
+                  "type": [
+                    "string",
+                    "number",
+                    "boolean",
+                    "array",
+                    "object"
+                  ]
+                },
+                "operator_id": {
+                  "enum": [
+                    "ACCESSIBILITY_CONFORMS",
+                    "ACTOR_AUTHORIZED",
+                    "ACTOR_DENIED",
+                    "APPROVAL_REQUIRED",
+                    "AUDIT_IMMUTABLE",
+                    "CAPABILITY_AVAILABLE",
+                    "CAPABILITY_NOT_PLACEHOLDER",
+                    "COMPOSITE_COVERED_BY_CHILDREN",
+                    "CONFIGURATION_PRECEDENCE",
+                    "CONFIGURATION_RESOLVES",
+                    "DATA_RETENTION_WINDOW",
+                    "DELIVERY_TERMINAL_STATE",
+                    "ENUM_VALUE_ALLOWED",
+                    "EVENT_EMITTED",
+                    "EVENT_NOT_EMITTED",
+                    "EVENT_ORDER_NOT_REQUIRED",
+                    "EVENT_ORDER_PRESERVED",
+                    "EVIDENCE_FIELD_PRESENT",
+                    "FAIL_CLOSED",
+                    "MFA_CHALLENGE_REQUIRED",
+                    "OWNER_EQUALS",
+                    "PAYMENT_INITIATION_ALLOWED",
+                    "PAYMENT_INITIATION_BLOCKED",
+                    "PERFORMANCE_WITHIN_BUDGET",
+                    "POLICY_OUTCOME_EQUALS",
+                    "PROCUREMENT_FEASIBLE",
+                    "PROCUREMENT_NOT_FEASIBLE",
+                    "RECONCILIATION_BALANCED",
+                    "REFERENCE_TARGET_VALID",
+                    "RETRY_LIMIT_NOT_EXCEEDED",
+                    "ROLE_LIST_CONSISTENT",
+                    "SAFE_FALLBACK_USED",
+                    "SCOPE_ACTIVE",
+                    "SCOPE_NOT_ACTIVE",
+                    "SET_CONTAINS",
+                    "SET_EQUALS",
+                    "SET_EXCLUDES",
+                    "STATE_TRANSITION_ALLOWED",
+                    "STATE_TRANSITION_REJECTED",
+                    "TENANT_ISOLATED"
+                  ]
+                },
+                "operator_version": {
+                  "type": "string"
+                },
+                "source_provenance": {
+                  "items": {
+                    "additionalProperties": true,
+                    "properties": {
+                      "inference": {
+                        "const": false
+                      },
+                      "source_document": {
+                        "type": "string"
+                      },
+                      "source_fingerprint": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "source_document",
+                      "source_fingerprint",
+                      "inference"
+                    ],
+                    "type": "object"
+                  },
+                  "minItems": 1,
+                  "type": "array"
+                }
+              },
+              "required": [
+                "assertion_id",
+                "operator_id",
+                "operator_version",
+                "bindings",
+                "expected_outcome",
+                "evidence_refs",
+                "source_provenance"
+              ],
+              "type": "object"
+            },
+            "minItems": 1,
+            "type": "array"
+          },
+          "left_condition": {
+            "minProperties": 1,
+            "type": "object"
+          },
+          "right_assertions": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "assertion_id": {
+                  "type": "string"
+                },
+                "bindings": {
+                  "minProperties": 1,
+                  "type": "object"
+                },
+                "decision_provenance": {
+                  "items": {
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "evidence_refs": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "minItems": 1,
+                  "type": "array"
+                },
+                "expected_outcome": {
+                  "type": [
+                    "string",
+                    "number",
+                    "boolean",
+                    "array",
+                    "object"
+                  ]
+                },
+                "operator_id": {
+                  "enum": [
+                    "ACCESSIBILITY_CONFORMS",
+                    "ACTOR_AUTHORIZED",
+                    "ACTOR_DENIED",
+                    "APPROVAL_REQUIRED",
+                    "AUDIT_IMMUTABLE",
+                    "CAPABILITY_AVAILABLE",
+                    "CAPABILITY_NOT_PLACEHOLDER",
+                    "COMPOSITE_COVERED_BY_CHILDREN",
+                    "CONFIGURATION_PRECEDENCE",
+                    "CONFIGURATION_RESOLVES",
+                    "DATA_RETENTION_WINDOW",
+                    "DELIVERY_TERMINAL_STATE",
+                    "ENUM_VALUE_ALLOWED",
+                    "EVENT_EMITTED",
+                    "EVENT_NOT_EMITTED",
+                    "EVENT_ORDER_NOT_REQUIRED",
+                    "EVENT_ORDER_PRESERVED",
+                    "EVIDENCE_FIELD_PRESENT",
+                    "FAIL_CLOSED",
+                    "MFA_CHALLENGE_REQUIRED",
+                    "OWNER_EQUALS",
+                    "PAYMENT_INITIATION_ALLOWED",
+                    "PAYMENT_INITIATION_BLOCKED",
+                    "PERFORMANCE_WITHIN_BUDGET",
+                    "POLICY_OUTCOME_EQUALS",
+                    "PROCUREMENT_FEASIBLE",
+                    "PROCUREMENT_NOT_FEASIBLE",
+                    "RECONCILIATION_BALANCED",
+                    "REFERENCE_TARGET_VALID",
+                    "RETRY_LIMIT_NOT_EXCEEDED",
+                    "ROLE_LIST_CONSISTENT",
+                    "SAFE_FALLBACK_USED",
+                    "SCOPE_ACTIVE",
+                    "SCOPE_NOT_ACTIVE",
+                    "SET_CONTAINS",
+                    "SET_EQUALS",
+                    "SET_EXCLUDES",
+                    "STATE_TRANSITION_ALLOWED",
+                    "STATE_TRANSITION_REJECTED",
+                    "TENANT_ISOLATED"
+                  ]
+                },
+                "operator_version": {
+                  "type": "string"
+                },
+                "source_provenance": {
+                  "items": {
+                    "additionalProperties": true,
+                    "properties": {
+                      "inference": {
+                        "const": false
+                      },
+                      "source_document": {
+                        "type": "string"
+                      },
+                      "source_fingerprint": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "source_document",
+                      "source_fingerprint",
+                      "inference"
+                    ],
+                    "type": "object"
+                  },
+                  "minItems": 1,
+                  "type": "array"
+                }
+              },
+              "required": [
+                "assertion_id",
+                "operator_id",
+                "operator_version",
+                "bindings",
+                "expected_outcome",
+                "evidence_refs",
+                "source_provenance"
+              ],
+              "type": "object"
+            },
+            "minItems": 1,
+            "type": "array"
+          },
+          "right_condition": {
+            "minProperties": 1,
+            "type": "object"
+          }
+        },
+        "required": [
+          "case_id",
+          "left_condition",
+          "right_condition",
+          "left_assertions",
+          "right_assertions",
+          "distinguishing_evidence_refs"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "contract_id": {
+      "type": "string"
+    },
+    "coverage_relationships": {
+      "type": "object"
+    },
+    "decision_provenance": {
+      "items": {
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "evidence_assertions": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "assertion_id": {
+            "type": "string"
+          },
+          "bindings": {
+            "minProperties": 1,
+            "type": "object"
+          },
+          "decision_provenance": {
+            "items": {
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "evidence_refs": {
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1,
+            "type": "array"
+          },
+          "expected_outcome": {
+            "type": [
+              "string",
+              "number",
+              "boolean",
+              "array",
+              "object"
+            ]
+          },
+          "operator_id": {
+            "enum": [
+              "ACCESSIBILITY_CONFORMS",
+              "ACTOR_AUTHORIZED",
+              "ACTOR_DENIED",
+              "APPROVAL_REQUIRED",
+              "AUDIT_IMMUTABLE",
+              "CAPABILITY_AVAILABLE",
+              "CAPABILITY_NOT_PLACEHOLDER",
+              "COMPOSITE_COVERED_BY_CHILDREN",
+              "CONFIGURATION_PRECEDENCE",
+              "CONFIGURATION_RESOLVES",
+              "DATA_RETENTION_WINDOW",
+              "DELIVERY_TERMINAL_STATE",
+              "ENUM_VALUE_ALLOWED",
+              "EVENT_EMITTED",
+              "EVENT_NOT_EMITTED",
+              "EVENT_ORDER_NOT_REQUIRED",
+              "EVENT_ORDER_PRESERVED",
+              "EVIDENCE_FIELD_PRESENT",
+              "FAIL_CLOSED",
+              "MFA_CHALLENGE_REQUIRED",
+              "OWNER_EQUALS",
+              "PAYMENT_INITIATION_ALLOWED",
+              "PAYMENT_INITIATION_BLOCKED",
+              "PERFORMANCE_WITHIN_BUDGET",
+              "POLICY_OUTCOME_EQUALS",
+              "PROCUREMENT_FEASIBLE",
+              "PROCUREMENT_NOT_FEASIBLE",
+              "RECONCILIATION_BALANCED",
+              "REFERENCE_TARGET_VALID",
+              "RETRY_LIMIT_NOT_EXCEEDED",
+              "ROLE_LIST_CONSISTENT",
+              "SAFE_FALLBACK_USED",
+              "SCOPE_ACTIVE",
+              "SCOPE_NOT_ACTIVE",
+              "SET_CONTAINS",
+              "SET_EQUALS",
+              "SET_EXCLUDES",
+              "STATE_TRANSITION_ALLOWED",
+              "STATE_TRANSITION_REJECTED",
+              "TENANT_ISOLATED"
+            ]
+          },
+          "operator_version": {
+            "type": "string"
+          },
+          "source_provenance": {
+            "items": {
+              "additionalProperties": true,
+              "properties": {
+                "inference": {
+                  "const": false
+                },
+                "source_document": {
+                  "type": "string"
+                },
+                "source_fingerprint": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "source_document",
+                "source_fingerprint",
+                "inference"
+              ],
+              "type": "object"
+            },
+            "minItems": 1,
+            "type": "array"
+          }
+        },
+        "required": [
+          "assertion_id",
+          "operator_id",
+          "operator_version",
+          "bindings",
+          "expected_outcome",
+          "evidence_refs",
+          "source_provenance"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "mechanism": {
+      "enum": [
+        "PROFILE_BINDING",
+        "INLINE_ARCHETYPE_BINDING",
+        "UNIQUE_INLINE_CONTRACT"
+      ]
+    },
+    "mutations": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "mutated_value": {},
+          "mutation_id": {
+            "type": "string"
+          },
+          "operation": {
+            "enum": [
+              "SET_VALUE",
+              "REMOVE_FIELD"
+            ]
+          },
+          "target_path": {
+            "pattern": "^/",
+            "type": "string"
+          }
+        },
+        "required": [
+          "mutation_id",
+          "operation",
+          "target_path",
+          "mutated_value"
+        ],
+        "type": "object"
+      },
+      "minItems": 3,
+      "type": "array"
+    },
+    "preconditions": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "assertion_id": {
+            "type": "string"
+          },
+          "bindings": {
+            "minProperties": 1,
+            "type": "object"
+          },
+          "decision_provenance": {
+            "items": {
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "evidence_refs": {
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1,
+            "type": "array"
+          },
+          "expected_outcome": {
+            "type": [
+              "string",
+              "number",
+              "boolean",
+              "array",
+              "object"
+            ]
+          },
+          "operator_id": {
+            "enum": [
+              "ACCESSIBILITY_CONFORMS",
+              "ACTOR_AUTHORIZED",
+              "ACTOR_DENIED",
+              "APPROVAL_REQUIRED",
+              "AUDIT_IMMUTABLE",
+              "CAPABILITY_AVAILABLE",
+              "CAPABILITY_NOT_PLACEHOLDER",
+              "COMPOSITE_COVERED_BY_CHILDREN",
+              "CONFIGURATION_PRECEDENCE",
+              "CONFIGURATION_RESOLVES",
+              "DATA_RETENTION_WINDOW",
+              "DELIVERY_TERMINAL_STATE",
+              "ENUM_VALUE_ALLOWED",
+              "EVENT_EMITTED",
+              "EVENT_NOT_EMITTED",
+              "EVENT_ORDER_NOT_REQUIRED",
+              "EVENT_ORDER_PRESERVED",
+              "EVIDENCE_FIELD_PRESENT",
+              "FAIL_CLOSED",
+              "MFA_CHALLENGE_REQUIRED",
+              "OWNER_EQUALS",
+              "PAYMENT_INITIATION_ALLOWED",
+              "PAYMENT_INITIATION_BLOCKED",
+              "PERFORMANCE_WITHIN_BUDGET",
+              "POLICY_OUTCOME_EQUALS",
+              "PROCUREMENT_FEASIBLE",
+              "PROCUREMENT_NOT_FEASIBLE",
+              "RECONCILIATION_BALANCED",
+              "REFERENCE_TARGET_VALID",
+              "RETRY_LIMIT_NOT_EXCEEDED",
+              "ROLE_LIST_CONSISTENT",
+              "SAFE_FALLBACK_USED",
+              "SCOPE_ACTIVE",
+              "SCOPE_NOT_ACTIVE",
+              "SET_CONTAINS",
+              "SET_EQUALS",
+              "SET_EXCLUDES",
+              "STATE_TRANSITION_ALLOWED",
+              "STATE_TRANSITION_REJECTED",
+              "TENANT_ISOLATED"
+            ]
+          },
+          "operator_version": {
+            "type": "string"
+          },
+          "source_provenance": {
+            "items": {
+              "additionalProperties": true,
+              "properties": {
+                "inference": {
+                  "const": false
+                },
+                "source_document": {
+                  "type": "string"
+                },
+                "source_fingerprint": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "source_document",
+                "source_fingerprint",
+                "inference"
+              ],
+              "type": "object"
+            },
+            "minItems": 1,
+            "type": "array"
+          }
+        },
+        "required": [
+          "assertion_id",
+          "operator_id",
+          "operator_version",
+          "bindings",
+          "expected_outcome",
+          "evidence_refs",
+          "source_provenance"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "prohibitions": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "assertion_id": {
+            "type": "string"
+          },
+          "bindings": {
+            "minProperties": 1,
+            "type": "object"
+          },
+          "decision_provenance": {
+            "items": {
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "evidence_refs": {
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1,
+            "type": "array"
+          },
+          "expected_outcome": {
+            "type": [
+              "string",
+              "number",
+              "boolean",
+              "array",
+              "object"
+            ]
+          },
+          "operator_id": {
+            "enum": [
+              "ACCESSIBILITY_CONFORMS",
+              "ACTOR_AUTHORIZED",
+              "ACTOR_DENIED",
+              "APPROVAL_REQUIRED",
+              "AUDIT_IMMUTABLE",
+              "CAPABILITY_AVAILABLE",
+              "CAPABILITY_NOT_PLACEHOLDER",
+              "COMPOSITE_COVERED_BY_CHILDREN",
+              "CONFIGURATION_PRECEDENCE",
+              "CONFIGURATION_RESOLVES",
+              "DATA_RETENTION_WINDOW",
+              "DELIVERY_TERMINAL_STATE",
+              "ENUM_VALUE_ALLOWED",
+              "EVENT_EMITTED",
+              "EVENT_NOT_EMITTED",
+              "EVENT_ORDER_NOT_REQUIRED",
+              "EVENT_ORDER_PRESERVED",
+              "EVIDENCE_FIELD_PRESENT",
+              "FAIL_CLOSED",
+              "MFA_CHALLENGE_REQUIRED",
+              "OWNER_EQUALS",
+              "PAYMENT_INITIATION_ALLOWED",
+              "PAYMENT_INITIATION_BLOCKED",
+              "PERFORMANCE_WITHIN_BUDGET",
+              "POLICY_OUTCOME_EQUALS",
+              "PROCUREMENT_FEASIBLE",
+              "PROCUREMENT_NOT_FEASIBLE",
+              "RECONCILIATION_BALANCED",
+              "REFERENCE_TARGET_VALID",
+              "RETRY_LIMIT_NOT_EXCEEDED",
+              "ROLE_LIST_CONSISTENT",
+              "SAFE_FALLBACK_USED",
+              "SCOPE_ACTIVE",
+              "SCOPE_NOT_ACTIVE",
+              "SET_CONTAINS",
+              "SET_EQUALS",
+              "SET_EXCLUDES",
+              "STATE_TRANSITION_ALLOWED",
+              "STATE_TRANSITION_REJECTED",
+              "TENANT_ISOLATED"
+            ]
+          },
+          "operator_version": {
+            "type": "string"
+          },
+          "source_provenance": {
+            "items": {
+              "additionalProperties": true,
+              "properties": {
+                "inference": {
+                  "const": false
+                },
+                "source_document": {
+                  "type": "string"
+                },
+                "source_fingerprint": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "source_document",
+                "source_fingerprint",
+                "inference"
+              ],
+              "type": "object"
+            },
+            "minItems": 1,
+            "type": "array"
+          }
+        },
+        "required": [
+          "assertion_id",
+          "operator_id",
+          "operator_version",
+          "bindings",
+          "expected_outcome",
+          "evidence_refs",
+          "source_provenance"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "requirement_id": {
+      "type": "string"
+    },
+    "source_provenance": {
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "inference": {
+            "const": false
+          },
+          "source_document": {
+            "type": "string"
+          },
+          "source_fingerprint": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "source_document",
+          "source_fingerprint",
+          "inference"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "trigger": {
+      "additionalProperties": false,
+      "properties": {
+        "bindings": {
+          "minProperties": 1,
+          "type": "object"
+        },
+        "source_provenance": {
+          "items": {
+            "additionalProperties": true,
+            "properties": {
+              "inference": {
+                "const": false
+              },
+              "source_document": {
+                "type": "string"
+              },
+              "source_fingerprint": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "source_document",
+              "source_fingerprint",
+              "inference"
+            ],
+            "type": "object"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "trigger_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "trigger_id",
+        "bindings",
+        "source_provenance"
+      ],
+      "type": "object"
+    },
+    "verification_mode": {
+      "enum": [
+        "EXECUTABLE",
+        "STATIC",
+        "HYBRID",
+        "MANUAL"
+      ]
+    }
+  },
+  "required": [
+    "contract_id",
+    "requirement_id",
+    "mechanism",
+    "verification_mode",
+    "preconditions",
+    "trigger",
+    "assertions",
+    "prohibitions",
+    "boundary_cases",
+    "evidence_assertions",
+    "source_provenance",
+    "decision_provenance",
+    "mutations",
+    "coverage_relationships"
+  ],
+  "title": "YSim Semantic Oracle Contract AST C2",
+  "type": "object"
+}

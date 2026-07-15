@@ -1,0 +1,4417 @@
+{
+  "artifact": "V23-P2C-SEMANTIC-ORACLE-REFERENCE-CONTRACTS-C2",
+  "candidate_id": "V23-P2C-SEMANTIC-ORACLE-MODEL-C2",
+  "contracts": [
+    {
+      "domain_boundary_fixtures": {
+        "allocatable_stock_path": {
+          "allocatable_stock": true,
+          "procurement_feasibility_required": false,
+          "reservation_required": true,
+          "supplier_terms_revalidated": "ONLY_IF_SPECIFIC_POLICY_REQUIRES"
+        },
+        "common_policy_checks": [
+          "PRICING_VALIDITY",
+          "MARGIN_COST_POLICY",
+          "REQUIRED_APPROVALS_ACCORDING_TO_POLICY"
+        ],
+        "procurement_path": {
+          "allocatable_stock": false,
+          "partial_procurement_allowed": false,
+          "payment_before_gate_pass": false,
+          "procurement_required": true,
+          "supplier_terms_valid": true,
+          "whole_order_feasible": true
+        }
+      },
+      "execution_records": [
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "Another outcome is returned or the policy cannot be resolved.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "cdf5cb47b446808939c3d953692a65698fe033a67c8b68c139a85821988b9523",
+          "mutated_value": "WRONG_OUTCOME",
+          "mutation_class": "POSITIVE_MUTATION",
+          "mutation_id": "POLICY_OUTCOME_EQUALS-POS",
+          "operator_id": "POLICY_OUTCOME_EQUALS",
+          "original_sha256": "2ded14f835e5fd74a39a338f32f5efc73c5ad85dc1ac107b4886f565ee36273e",
+          "original_value": "PASS",
+          "target_path": "/observed/observed_outcome"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "Another outcome is returned or the policy cannot be resolved.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "f157d97cc69e18ee6d49581b424a5454d20838b366e10c499bd6b183c7305688",
+          "mutated_value": true,
+          "mutation_class": "NEGATIVE_MUTATION",
+          "mutation_id": "POLICY_OUTCOME_EQUALS-NEG",
+          "operator_id": "POLICY_OUTCOME_EQUALS",
+          "original_sha256": "2ded14f835e5fd74a39a338f32f5efc73c5ad85dc1ac107b4886f565ee36273e",
+          "original_value": false,
+          "target_path": "/observed/prohibited"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "Another outcome is returned or the policy cannot be resolved.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "9057a713bde00e6524f868633a6f729e6643b26576d168e0a5c9151b51cba0f9",
+          "mutated_value": false,
+          "mutation_class": "BOUNDARY_MUTATION",
+          "mutation_id": "POLICY_OUTCOME_EQUALS-BOUND",
+          "operator_id": "POLICY_OUTCOME_EQUALS",
+          "original_sha256": "2ded14f835e5fd74a39a338f32f5efc73c5ad85dc1ac107b4886f565ee36273e",
+          "original_value": true,
+          "target_path": "/observed/boundary_valid"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "Approval is missing, invalid, expired, or follows the action.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "da9235ca02f8175a2fefc77cbf8d15110b62527262432328fdd55955452e2f9a",
+          "mutated_value": false,
+          "mutation_class": "POSITIVE_MUTATION",
+          "mutation_id": "APPROVAL_REQUIRED-POS",
+          "operator_id": "APPROVAL_REQUIRED",
+          "original_sha256": "cf8ddd0ad5271d36e673fd9a86e22d0282db3c99ab6e0c97f7bb52270e3a0bf2",
+          "original_value": true,
+          "target_path": "/observed/approval_valid"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "Approval is missing, invalid, expired, or follows the action.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "8d2d5582bdfb07685270f4e54f8ee79910b605b8e9b04140d5c1296ee2b346e8",
+          "mutated_value": true,
+          "mutation_class": "NEGATIVE_MUTATION",
+          "mutation_id": "APPROVAL_REQUIRED-NEG",
+          "operator_id": "APPROVAL_REQUIRED",
+          "original_sha256": "cf8ddd0ad5271d36e673fd9a86e22d0282db3c99ab6e0c97f7bb52270e3a0bf2",
+          "original_value": false,
+          "target_path": "/observed/bypassed"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "Approval is missing, invalid, expired, or follows the action.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "2a0d598eb533da6e9fa6c6d2a8870e9b4b98b37dfd4d9af1d87c081ca0965455",
+          "mutated_value": false,
+          "mutation_class": "BOUNDARY_MUTATION",
+          "mutation_id": "APPROVAL_REQUIRED-BOUND",
+          "operator_id": "APPROVAL_REQUIRED",
+          "original_sha256": "cf8ddd0ad5271d36e673fd9a86e22d0282db3c99ab6e0c97f7bb52270e3a0bf2",
+          "original_value": true,
+          "target_path": "/observed/boundary_valid"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "Capacity/terms fail or only partial coverage exists where prohibited.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "1837f0106f12bbf735b0f398e4beb5f447b5dc8846c46947d7a4dbae6859cefa",
+          "mutated_value": false,
+          "mutation_class": "POSITIVE_MUTATION",
+          "mutation_id": "PROCUREMENT_FEASIBLE-POS",
+          "operator_id": "PROCUREMENT_FEASIBLE",
+          "original_sha256": "249090963dbd09c829f0e9f18d08a9a491c889f0834c597f3910d2a8b90fa99b",
+          "original_value": true,
+          "target_path": "/observed/whole_order_capacity"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "Capacity/terms fail or only partial coverage exists where prohibited.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "ab87f5cd752536aff1ccf39b01ac45d3967de0580d0cf38fb487077f505d2552",
+          "mutated_value": true,
+          "mutation_class": "NEGATIVE_MUTATION",
+          "mutation_id": "PROCUREMENT_FEASIBLE-NEG",
+          "operator_id": "PROCUREMENT_FEASIBLE",
+          "original_sha256": "249090963dbd09c829f0e9f18d08a9a491c889f0834c597f3910d2a8b90fa99b",
+          "original_value": false,
+          "target_path": "/observed/partial"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "Capacity/terms fail or only partial coverage exists where prohibited.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "888a66525ed3f6fe1b9430d8064f57a736936fdabc58de3bd475059b471a4cf6",
+          "mutated_value": false,
+          "mutation_class": "BOUNDARY_MUTATION",
+          "mutation_id": "PROCUREMENT_FEASIBLE-BOUND",
+          "operator_id": "PROCUREMENT_FEASIBLE",
+          "original_sha256": "249090963dbd09c829f0e9f18d08a9a491c889f0834c597f3910d2a8b90fa99b",
+          "original_value": true,
+          "target_path": "/observed/boundary_valid"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "Payment initiates before or without gate PASS.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "7089dff065561c56f95956d748ddb4201712ba4fcd05df8b4c7695d86374a385",
+          "mutated_value": "FAIL",
+          "mutation_class": "POSITIVE_MUTATION",
+          "mutation_id": "PAYMENT_INITIATION_ALLOWED-POS",
+          "operator_id": "PAYMENT_INITIATION_ALLOWED",
+          "original_sha256": "9f27e31eb056bece973f0b8183fe53da47091f59087ce53cd6fa63b80d716928",
+          "original_value": "PASS",
+          "target_path": "/observed/gate_result"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "Payment initiates before or without gate PASS.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "02992728d8c17e4cfcc2895b8fb6a699e4b9f2017aa51273f369c1873d4f80d3",
+          "mutated_value": 0,
+          "mutation_class": "NEGATIVE_MUTATION",
+          "mutation_id": "PAYMENT_INITIATION_ALLOWED-NEG",
+          "operator_id": "PAYMENT_INITIATION_ALLOWED",
+          "original_sha256": "9f27e31eb056bece973f0b8183fe53da47091f59087ce53cd6fa63b80d716928",
+          "original_value": 2,
+          "target_path": "/observed/payment_at"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "Payment initiates before or without gate PASS.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "e2083c90f9ad97930c81c760029d7fd53416f8ce956a488576d443bf13e77e53",
+          "mutated_value": false,
+          "mutation_class": "BOUNDARY_MUTATION",
+          "mutation_id": "PAYMENT_INITIATION_ALLOWED-BOUND",
+          "operator_id": "PAYMENT_INITIATION_ALLOWED",
+          "original_sha256": "9f27e31eb056bece973f0b8183fe53da47091f59087ce53cd6fa63b80d716928",
+          "original_value": true,
+          "target_path": "/observed/boundary_valid"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "A payment session proceeds to initiation or charge authorization.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "1cf0f2165df69b999b46aef2935a0f844b74f6e82336e82eb97865a583a200a6",
+          "mutated_value": true,
+          "mutation_class": "POSITIVE_MUTATION",
+          "mutation_id": "PAYMENT_INITIATION_BLOCKED-POS",
+          "operator_id": "PAYMENT_INITIATION_BLOCKED",
+          "original_sha256": "1a2db27ff6e43cef0a95fa928ee3fc5637e7de08c293ec8ae02456ac6e8cf7f8",
+          "original_value": false,
+          "target_path": "/observed/authorization_started"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "A payment session proceeds to initiation or charge authorization.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "82bda671b58025cbb201f2b80f4fd047a3113502fd3774e1592f146125a9838b",
+          "mutated_value": "PAYMENT_INITIATED",
+          "mutation_class": "NEGATIVE_MUTATION",
+          "mutation_id": "PAYMENT_INITIATION_BLOCKED-NEG",
+          "operator_id": "PAYMENT_INITIATION_BLOCKED",
+          "original_sha256": "1a2db27ff6e43cef0a95fa928ee3fc5637e7de08c293ec8ae02456ac6e8cf7f8",
+          "original_value": "BLOCKED",
+          "target_path": "/observed/payment_state"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "A payment session proceeds to initiation or charge authorization.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "df08bf355e438115aacbb4dac2a6d5077ff362124c75df2219b7302b77b36a5c",
+          "mutated_value": false,
+          "mutation_class": "BOUNDARY_MUTATION",
+          "mutation_id": "PAYMENT_INITIATION_BLOCKED-BOUND",
+          "operator_id": "PAYMENT_INITIATION_BLOCKED",
+          "original_sha256": "1a2db27ff6e43cef0a95fa928ee3fc5637e7de08c293ec8ae02456ac6e8cf7f8",
+          "original_value": true,
+          "target_path": "/observed/boundary_valid"
+        }
+      ],
+      "fixtures": [
+        {
+          "bindings": {
+            "expected_outcome": "PASS",
+            "policy": "PRE_FULFILLMENT_COMMERCIAL_ELIGIBILITY",
+            "policy_inputs": "PRICING_VALIDITY,MARGIN_COST_POLICY,REQUIRED_APPROVALS"
+          },
+          "boundary": {
+            "left": {
+              "case": "APPLICABLE"
+            },
+            "right": {
+              "case": "NON_APPLICABLE"
+            }
+          },
+          "evidence": {
+            "policy_inputs": "PREFULFILLMENT:POLICY_INPUTS",
+            "policy_outcome": "PREFULFILLMENT:POLICY_OUTCOME",
+            "policy_version": "PREFULFILLMENT:POLICY_VERSION",
+            "reason": "PREFULFILLMENT:REASON"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "fixture_id": "REF-FIX-pre-fulfillment-commercial-gate-POLICY_OUTCOME_EQUALS",
+          "observed": {
+            "boundary_valid": true,
+            "observed_outcome": "PASS",
+            "prohibited": false
+          },
+          "operator_id": "POLICY_OUTCOME_EQUALS",
+          "operator_version": "1.0.0-candidate.2",
+          "provenance": {
+            "inference": false,
+            "requirement_id": "BRD-WS-05-R021",
+            "source_document": "docs/BRD/BRD-WS-05.md",
+            "source_fingerprint": "e1eca663e62adedb995c53f53ec855b2025f9d8392b440284dc849c6128f4e31"
+          },
+          "verification_mode": "EXECUTABLE"
+        },
+        {
+          "bindings": {
+            "action": "PAYMENT_INITIATION",
+            "approval_policy": "MARGIN_AND_COMMERCIAL_APPROVAL_POLICY",
+            "approval_reference": "APPROVAL-REF-PREFULFILLMENT"
+          },
+          "boundary": {
+            "left": {
+              "case": "APPLICABLE"
+            },
+            "right": {
+              "case": "NON_APPLICABLE"
+            }
+          },
+          "evidence": {
+            "action_at": "PREFULFILLMENT:ACTION_AT",
+            "approval_id": "PREFULFILLMENT:APPROVAL_ID",
+            "approval_status": "PREFULFILLMENT:APPROVAL_STATUS",
+            "approved_at": "PREFULFILLMENT:APPROVED_AT",
+            "approver": "PREFULFILLMENT:APPROVER"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "fixture_id": "REF-FIX-pre-fulfillment-commercial-gate-APPROVAL_REQUIRED",
+          "observed": {
+            "action_at": 2,
+            "approval_at": 1,
+            "approval_valid": true,
+            "boundary_valid": true,
+            "bypassed": false
+          },
+          "operator_id": "APPROVAL_REQUIRED",
+          "operator_version": "1.0.0-candidate.2",
+          "provenance": {
+            "inference": false,
+            "requirement_id": "BRD-WS-05-R021",
+            "source_document": "docs/BRD/BRD-WS-05.md",
+            "source_fingerprint": "e1eca663e62adedb995c53f53ec855b2025f9d8392b440284dc849c6128f4e31"
+          },
+          "verification_mode": "EXECUTABLE"
+        },
+        {
+          "bindings": {
+            "capacity": "WHOLE_ORDER_PROCUREMENT_CAPACITY",
+            "coverage_policy": "V2.3_NO_PARTIAL_ORDER",
+            "order_id": "ORDER-PREFULFILLMENT-FIXTURE",
+            "supplier_terms": "CURRENT_SUPPLIER_COMMERCIAL_TERMS"
+          },
+          "boundary": {
+            "left": {
+              "case": "APPLICABLE"
+            },
+            "right": {
+              "case": "NON_APPLICABLE"
+            }
+          },
+          "evidence": {
+            "capacity_result": "PREFULFILLMENT:CAPACITY_RESULT",
+            "coverage_result": "PREFULFILLMENT:COVERAGE_RESULT",
+            "order_id": "PREFULFILLMENT:ORDER_ID",
+            "supplier_terms_result": "PREFULFILLMENT:SUPPLIER_TERMS_RESULT"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "fixture_id": "REF-FIX-pre-fulfillment-commercial-gate-PROCUREMENT_FEASIBLE",
+          "observed": {
+            "boundary_valid": true,
+            "partial": false,
+            "terms_valid": true,
+            "whole_order_capacity": true
+          },
+          "operator_id": "PROCUREMENT_FEASIBLE",
+          "operator_version": "1.0.0-candidate.2",
+          "provenance": {
+            "inference": false,
+            "requirement_id": "BRD-WS-05-R021",
+            "source_document": "docs/BRD/BRD-WS-05.md",
+            "source_fingerprint": "e1eca663e62adedb995c53f53ec855b2025f9d8392b440284dc849c6128f4e31"
+          },
+          "verification_mode": "EXECUTABLE"
+        },
+        {
+          "bindings": {
+            "commercial_gate_result": "PASS",
+            "order_id": "ORDER-PREFULFILLMENT-FIXTURE",
+            "payment_state": "PAYMENT_INITIATED"
+          },
+          "boundary": {
+            "left": {
+              "case": "APPLICABLE"
+            },
+            "right": {
+              "case": "NON_APPLICABLE"
+            }
+          },
+          "evidence": {
+            "gate_at": "PREFULFILLMENT:GATE_AT",
+            "gate_result": "PREFULFILLMENT:GATE_RESULT",
+            "order_id": "PREFULFILLMENT:ORDER_ID",
+            "payment_at": "PREFULFILLMENT:PAYMENT_AT",
+            "payment_state": "PREFULFILLMENT:PAYMENT_STATE"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "fixture_id": "REF-FIX-pre-fulfillment-commercial-gate-PAYMENT_INITIATION_ALLOWED",
+          "observed": {
+            "boundary_valid": true,
+            "gate_at": 1,
+            "gate_result": "PASS",
+            "payment_at": 2,
+            "payment_state": "PAYMENT_INITIATED"
+          },
+          "operator_id": "PAYMENT_INITIATION_ALLOWED",
+          "operator_version": "1.0.0-candidate.2",
+          "provenance": {
+            "inference": false,
+            "requirement_id": "BRD-WS-05-R021",
+            "source_document": "docs/BRD/BRD-WS-05.md",
+            "source_fingerprint": "e1eca663e62adedb995c53f53ec855b2025f9d8392b440284dc849c6128f4e31"
+          },
+          "verification_mode": "EXECUTABLE"
+        },
+        {
+          "bindings": {
+            "blocked_states": [
+              "PAYMENT_INITIATED",
+              "CHARGE_AUTHORIZATION_STARTED"
+            ],
+            "failed_checks": [
+              "PRICING_INVALID",
+              "MARGIN_OR_APPROVAL_FAILED",
+              "PROCUREMENT_INFEASIBLE"
+            ],
+            "order_id": "ORDER-PREFULFILLMENT-FIXTURE"
+          },
+          "boundary": {
+            "left": {
+              "case": "APPLICABLE"
+            },
+            "right": {
+              "case": "NON_APPLICABLE"
+            }
+          },
+          "evidence": {
+            "failed_checks": "PREFULFILLMENT:FAILED_CHECKS",
+            "order_id": "PREFULFILLMENT:ORDER_ID",
+            "payment_decision": "PREFULFILLMENT:PAYMENT_DECISION",
+            "payment_state": "PREFULFILLMENT:PAYMENT_STATE"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "fixture_id": "REF-FIX-pre-fulfillment-commercial-gate-PAYMENT_INITIATION_BLOCKED",
+          "observed": {
+            "authorization_started": false,
+            "boundary_valid": true,
+            "payment_state": "BLOCKED"
+          },
+          "operator_id": "PAYMENT_INITIATION_BLOCKED",
+          "operator_version": "1.0.0-candidate.2",
+          "provenance": {
+            "inference": false,
+            "requirement_id": "BRD-WS-05-R021",
+            "source_document": "docs/BRD/BRD-WS-05.md",
+            "source_fingerprint": "e1eca663e62adedb995c53f53ec855b2025f9d8392b440284dc849c6128f4e31"
+          },
+          "verification_mode": "EXECUTABLE"
+        }
+      ],
+      "operator_composition": [
+        "POLICY_OUTCOME_EQUALS",
+        "APPROVAL_REQUIRED",
+        "PROCUREMENT_FEASIBLE",
+        "PAYMENT_INITIATION_ALLOWED",
+        "PAYMENT_INITIATION_BLOCKED"
+      ],
+      "reference_id": "pre-fulfillment-commercial-gate",
+      "rendered_oracles": [
+        {
+          "bindings": {
+            "expected_outcome": "PASS",
+            "policy": "PRE_FULFILLMENT_COMMERCIAL_ELIGIBILITY",
+            "policy_inputs": "PRICING_VALIDITY,MARGIN_COST_POLICY,REQUIRED_APPROVALS"
+          },
+          "boundary": "A qualifier selecting another branch is evaluated against that branch's expected outcome. Bound context: PRE_FULFILLMENT_COMMERCIAL_ELIGIBILITY.",
+          "evidence_fields": [
+            "policy_inputs",
+            "policy_outcome",
+            "reason",
+            "policy_version"
+          ],
+          "negative": "An outcome different from PASS violates PRE_FULFILLMENT_COMMERCIAL_ELIGIBILITY.",
+          "operator_id": "POLICY_OUTCOME_EQUALS",
+          "positive": "PRE_FULFILLMENT_COMMERCIAL_ELIGIBILITY returns PASS for PRICING_VALIDITY,MARGIN_COST_POLICY,REQUIRED_APPROVALS."
+        },
+        {
+          "bindings": {
+            "action": "PAYMENT_INITIATION",
+            "approval_policy": "MARGIN_AND_COMMERCIAL_APPROVAL_POLICY",
+            "approval_reference": "APPROVAL-REF-PREFULFILLMENT"
+          },
+          "boundary": "Delegated approval is accepted only when MARGIN_AND_COMMERCIAL_APPROVAL_POLICY permits delegation.",
+          "evidence_fields": [
+            "approval_id",
+            "approval_status",
+            "approver",
+            "approved_at",
+            "action_at"
+          ],
+          "negative": "PAYMENT_INITIATION is blocked without a valid prior approval.",
+          "operator_id": "APPROVAL_REQUIRED",
+          "positive": "PAYMENT_INITIATION proceeds after approval APPROVAL-REF-PREFULFILLMENT under MARGIN_AND_COMMERCIAL_APPROVAL_POLICY."
+        },
+        {
+          "bindings": {
+            "capacity": "WHOLE_ORDER_PROCUREMENT_CAPACITY",
+            "coverage_policy": "V2.3_NO_PARTIAL_ORDER",
+            "order_id": "ORDER-PREFULFILLMENT-FIXTURE",
+            "supplier_terms": "CURRENT_SUPPLIER_COMMERCIAL_TERMS"
+          },
+          "boundary": "When allocatable stock is used, procurement feasibility is not required. Bound context: ORDER-PREFULFILLMENT-FIXTURE.",
+          "evidence_fields": [
+            "order_id",
+            "supplier_terms_result",
+            "capacity_result",
+            "coverage_result"
+          ],
+          "negative": "Procurement is infeasible or violates V2.3_NO_PARTIAL_ORDER.",
+          "operator_id": "PROCUREMENT_FEASIBLE",
+          "positive": "Procurement for ORDER-PREFULFILLMENT-FIXTURE is feasible under CURRENT_SUPPLIER_COMMERCIAL_TERMS, WHOLE_ORDER_PROCUREMENT_CAPACITY, and V2.3_NO_PARTIAL_ORDER."
+        },
+        {
+          "bindings": {
+            "commercial_gate_result": "PASS",
+            "order_id": "ORDER-PREFULFILLMENT-FIXTURE",
+            "payment_state": "PAYMENT_INITIATED"
+          },
+          "boundary": "Stock and procurement paths use different feasibility assertions but share commercial checks. Bound context: ORDER-PREFULFILLMENT-FIXTURE.",
+          "evidence_fields": [
+            "order_id",
+            "gate_result",
+            "gate_at",
+            "payment_state",
+            "payment_at"
+          ],
+          "negative": "Payment initiation without a prior PASS gate is prohibited. Bound context: ORDER-PREFULFILLMENT-FIXTURE.",
+          "operator_id": "PAYMENT_INITIATION_ALLOWED",
+          "positive": "Payment for ORDER-PREFULFILLMENT-FIXTURE enters PAYMENT_INITIATED only after PASS."
+        },
+        {
+          "bindings": {
+            "blocked_states": [
+              "PAYMENT_INITIATED",
+              "CHARGE_AUTHORIZATION_STARTED"
+            ],
+            "failed_checks": [
+              "PRICING_INVALID",
+              "MARGIN_OR_APPROVAL_FAILED",
+              "PROCUREMENT_INFEASIBLE"
+            ],
+            "order_id": "ORDER-PREFULFILLMENT-FIXTURE"
+          },
+          "boundary": "Payment may proceed only after failed checks are corrected and the gate is re-evaluated. Bound context: ORDER-PREFULFILLMENT-FIXTURE.",
+          "evidence_fields": [
+            "order_id",
+            "failed_checks",
+            "payment_state",
+            "payment_decision"
+          ],
+          "negative": "Entering a blocked payment state while ['PRICING_INVALID', 'MARGIN_OR_APPROVAL_FAILED', 'PROCUREMENT_INFEASIBLE'] fail is prohibited.",
+          "operator_id": "PAYMENT_INITIATION_BLOCKED",
+          "positive": "Payment for ORDER-PREFULFILLMENT-FIXTURE remains outside ['PAYMENT_INITIATED', 'CHARGE_AUTHORIZATION_STARTED'] while ['PRICING_INVALID', 'MARGIN_OR_APPROVAL_FAILED', 'PROCUREMENT_INFEASIBLE'] fail."
+        }
+      ],
+      "requirement_id": "BRD-WS-05-R021",
+      "review_reason": null,
+      "semantic_constraints": {
+        "fallback_boundary": null,
+        "organization_relationship_nonclaim": null,
+        "pre_fulfillment_procurement_path": "supplier terms and whole-order procurement feasibility required before payment; no partial procurement",
+        "pre_fulfillment_stock_path": "reservation path; procurement feasibility not required; pricing, margin/cost and approvals remain policy checks",
+        "retry_attempt_boundary": null
+      },
+      "semantic_status": "RETAINED_EXECUTABLE",
+      "source_provenance": {
+        "approved_decisions": [
+          "V23-P2C-ACCEPTANCE-MAPPING-C3"
+        ],
+        "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
+        "original_identity": "TMP-BRD-WS-05-021",
+        "phase_2c_c3_actions": [
+          "C3_APPROVED_SEMANTIC_DIRECTIVE"
+        ],
+        "previous_temporary_key": "TMP-BRD-WS-05-021",
+        "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+        "source_baseline": "v2.2",
+        "source_context_heading": "20. Commercial Consistency Principle",
+        "source_context_sha256": "0559996de13bf4b1e203f2a3702ccad5afab8cbd895d6bccf8f1fa8374c70cab",
+        "source_document": "docs/BRD/BRD-WS-05.md",
+        "source_fingerprint": "e1eca663e62adedb995c53f53ec855b2025f9d8392b440284dc849c6128f4e31",
+        "source_fingerprint_before_c3": "be65e84eaeb1c705861c317ce204c84c0394dfce6a0c5cad9c59e6f62b4909a1",
+        "source_lines": "L492-L494",
+        "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+        "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+        "source_section": "20. Commercial Consistency Principle"
+      },
+      "source_statement": "Trước payment initiation, Platform phải chứng minh toàn bộ order có commercial eligibility gồm pricing validity, minimum-margin/cost policy, supplier commercial terms, required approvals, inventory availability hoặc procurement feasibility, và khả năng fulfill toàn bộ order theo no-partial policy v2.3; khi có allocatable stock phải dùng reservation path, khi cần procurement phải xác nhận procurement feasibility, và mọi commercial/procurement validation failure phải block payment initiation."
+    },
+    {
+      "domain_boundary_fixtures": {
+        "business_or_security_critical": {
+          "actionable_recovery": true,
+          "configuration_valid": false,
+          "failure_observable": true,
+          "protected_flow_allowed": false,
+          "safe_fallback_used": false
+        },
+        "non_critical_presentation": {
+          "configuration_valid": false,
+          "render_continues_when_possible": true,
+          "safe_fallback_used": true
+        }
+      },
+      "execution_records": [
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "Rendering aborts unnecessarily or an unsafe inferred value is used.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "2adffe2b8777a8a93668f8a9fe5f6ec348f621e317c492f7920c66bf4f80bfde",
+          "mutated_value": false,
+          "mutation_class": "POSITIVE_MUTATION",
+          "mutation_id": "SAFE_FALLBACK_USED-POS",
+          "operator_id": "SAFE_FALLBACK_USED",
+          "original_sha256": "9b3407866c541c6b1ea6ca4799cf21df28372130394ee7c33e86787cc5ae2361",
+          "original_value": true,
+          "target_path": "/observed/continued"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "Rendering aborts unnecessarily or an unsafe inferred value is used.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "b6c5d3c83fed53045c284f127e7015883c79287810d823f1a1cbccb50ea8e4c3",
+          "mutated_value": true,
+          "mutation_class": "NEGATIVE_MUTATION",
+          "mutation_id": "SAFE_FALLBACK_USED-NEG",
+          "operator_id": "SAFE_FALLBACK_USED",
+          "original_sha256": "9b3407866c541c6b1ea6ca4799cf21df28372130394ee7c33e86787cc5ae2361",
+          "original_value": false,
+          "target_path": "/observed/unsafe_default"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "Rendering aborts unnecessarily or an unsafe inferred value is used.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "2d7cfd3e80a20a4ac5f19e6d36f9b21c6caf91d3ac0f90afd16d49cc4eeadaef",
+          "mutated_value": false,
+          "mutation_class": "BOUNDARY_MUTATION",
+          "mutation_id": "SAFE_FALLBACK_USED-BOUND",
+          "operator_id": "SAFE_FALLBACK_USED",
+          "original_sha256": "9b3407866c541c6b1ea6ca4799cf21df28372130394ee7c33e86787cc5ae2361",
+          "original_value": true,
+          "target_path": "/observed/boundary_valid"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "The action succeeds using missing, invalid, or inferred evidence.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "c43f2b6df1413f1204ff3c677b7a467eed7b8238b014dfb9b30b5e964ad99b28",
+          "mutated_value": true,
+          "mutation_class": "POSITIVE_MUTATION",
+          "mutation_id": "FAIL_CLOSED-POS",
+          "operator_id": "FAIL_CLOSED",
+          "original_sha256": "45709db17671dd3ba9e2c2f4b51138f5209885fa5baee747d9d3870f8b0c3adc",
+          "original_value": false,
+          "target_path": "/observed/action_allowed"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "The action succeeds using missing, invalid, or inferred evidence.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "8aeb9b4e7762e86a2e19e02dfd4ae058616ba22c95a37e9e7fc110815ae12488",
+          "mutated_value": true,
+          "mutation_class": "NEGATIVE_MUTATION",
+          "mutation_id": "FAIL_CLOSED-NEG",
+          "operator_id": "FAIL_CLOSED",
+          "original_sha256": "45709db17671dd3ba9e2c2f4b51138f5209885fa5baee747d9d3870f8b0c3adc",
+          "original_value": false,
+          "target_path": "/observed/unsafe_default"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "The action succeeds using missing, invalid, or inferred evidence.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "2bf8b388de34ee3ba76a358d1a49bd221b1dce1e7a64d8331a15d0bdfc2f4d6e",
+          "mutated_value": false,
+          "mutation_class": "BOUNDARY_MUTATION",
+          "mutation_id": "FAIL_CLOSED-BOUND",
+          "operator_id": "FAIL_CLOSED",
+          "original_sha256": "45709db17671dd3ba9e2c2f4b51138f5209885fa5baee747d9d3870f8b0c3adc",
+          "original_value": true,
+          "target_path": "/observed/boundary_valid"
+        }
+      ],
+      "fixtures": [
+        {
+          "bindings": {
+            "affected_experience": "CURRENT_EXPERIENCE_REQUEST",
+            "failure_condition": "MISSING_OR_INVALID_CHILD_PRESENTATION_CONFIGURATION",
+            "fallback": "APPROVED_SAFE_PRESENTATION_FALLBACK"
+          },
+          "boundary": {
+            "left": {
+              "case": "APPLICABLE"
+            },
+            "right": {
+              "case": "NON_APPLICABLE"
+            }
+          },
+          "evidence": {
+            "failure": "RUNTIME_CONFIG:FAILURE",
+            "recovery_information": "RUNTIME_CONFIG:RECOVERY_INFORMATION",
+            "render_outcome": "RUNTIME_CONFIG:RENDER_OUTCOME",
+            "selected_fallback": "RUNTIME_CONFIG:SELECTED_FALLBACK"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "fixture_id": "REF-FIX-runtime-configuration-fallback-SAFE_FALLBACK_USED",
+          "observed": {
+            "boundary_valid": true,
+            "continued": true,
+            "selected_fallback": "APPROVED_SAFE_PRESENTATION_FALLBACK",
+            "unsafe_default": false
+          },
+          "operator_id": "SAFE_FALLBACK_USED",
+          "operator_version": "1.0.0-candidate.2",
+          "provenance": {
+            "inference": false,
+            "requirement_id": "UXF-00-R013",
+            "source_document": "docs/UXF/UXF-00.md",
+            "source_fingerprint": "acc952dfd45e0eeff27343f8c3d28b0434c678cf748e15279ae69423a736e87f"
+          },
+          "verification_mode": "EXECUTABLE"
+        },
+        {
+          "bindings": {
+            "denied_state": "CONFIGURATION_FAILURE_BLOCKED",
+            "failure_condition": "MISSING_OR_INVALID_CHILD_PRESENTATION_CONFIGURATION",
+            "protected_action": "CHECKOUT_PAYMENT_AUTHORIZATION_ALLOCATION_OR_FULFILLMENT"
+          },
+          "boundary": {
+            "left": {
+              "case": "APPLICABLE"
+            },
+            "right": {
+              "case": "NON_APPLICABLE"
+            }
+          },
+          "evidence": {
+            "action_result": "RUNTIME_CONFIG:ACTION_RESULT",
+            "failure": "RUNTIME_CONFIG:FAILURE",
+            "reason": "RUNTIME_CONFIG:REASON",
+            "resulting_state": "RUNTIME_CONFIG:RESULTING_STATE"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "fixture_id": "REF-FIX-runtime-configuration-fallback-FAIL_CLOSED",
+          "observed": {
+            "action_allowed": false,
+            "boundary_valid": true,
+            "resulting_state": "CONFIGURATION_FAILURE_BLOCKED",
+            "unsafe_default": false
+          },
+          "operator_id": "FAIL_CLOSED",
+          "operator_version": "1.0.0-candidate.2",
+          "provenance": {
+            "inference": false,
+            "requirement_id": "UXF-00-R013",
+            "source_document": "docs/UXF/UXF-00.md",
+            "source_fingerprint": "acc952dfd45e0eeff27343f8c3d28b0434c678cf748e15279ae69423a736e87f"
+          },
+          "verification_mode": "EXECUTABLE"
+        }
+      ],
+      "operator_composition": [
+        "SAFE_FALLBACK_USED",
+        "FAIL_CLOSED"
+      ],
+      "reference_id": "runtime-configuration-fallback",
+      "rendered_oracles": [
+        {
+          "bindings": {
+            "affected_experience": "CURRENT_EXPERIENCE_REQUEST",
+            "failure_condition": "MISSING_OR_INVALID_CHILD_PRESENTATION_CONFIGURATION",
+            "fallback": "APPROVED_SAFE_PRESENTATION_FALLBACK"
+          },
+          "boundary": "Business/security-critical configuration does not use this fallback path. Bound context: MISSING_OR_INVALID_CHILD_PRESENTATION_CONFIGURATION.",
+          "evidence_fields": [
+            "failure",
+            "selected_fallback",
+            "render_outcome",
+            "recovery_information"
+          ],
+          "negative": "An unsafe or absent fallback violates the presentation recovery contract. Bound context: MISSING_OR_INVALID_CHILD_PRESENTATION_CONFIGURATION.",
+          "operator_id": "SAFE_FALLBACK_USED",
+          "positive": "CURRENT_EXPERIENCE_REQUEST uses APPROVED_SAFE_PRESENTATION_FALLBACK under MISSING_OR_INVALID_CHILD_PRESENTATION_CONFIGURATION."
+        },
+        {
+          "bindings": {
+            "denied_state": "CONFIGURATION_FAILURE_BLOCKED",
+            "failure_condition": "MISSING_OR_INVALID_CHILD_PRESENTATION_CONFIGURATION",
+            "protected_action": "CHECKOUT_PAYMENT_AUTHORIZATION_ALLOCATION_OR_FULFILLMENT"
+          },
+          "boundary": "A presentation-only failure follows its safe-fallback contract instead. Bound context: MISSING_OR_INVALID_CHILD_PRESENTATION_CONFIGURATION.",
+          "evidence_fields": [
+            "failure",
+            "action_result",
+            "resulting_state",
+            "reason"
+          ],
+          "negative": "Success of CHECKOUT_PAYMENT_AUTHORIZATION_ALLOCATION_OR_FULFILLMENT under MISSING_OR_INVALID_CHILD_PRESENTATION_CONFIGURATION violates fail-closed behavior.",
+          "operator_id": "FAIL_CLOSED",
+          "positive": "CHECKOUT_PAYMENT_AUTHORIZATION_ALLOCATION_OR_FULFILLMENT reaches CONFIGURATION_FAILURE_BLOCKED under MISSING_OR_INVALID_CHILD_PRESENTATION_CONFIGURATION."
+        }
+      ],
+      "requirement_id": "UXF-00-R013",
+      "review_reason": null,
+      "semantic_constraints": {
+        "fallback_boundary": "non-critical presentation uses safe fallback; business/security-critical configuration fails closed",
+        "organization_relationship_nonclaim": null,
+        "pre_fulfillment_procurement_path": null,
+        "pre_fulfillment_stock_path": null,
+        "retry_attempt_boundary": null
+      },
+      "semantic_status": "RETAINED_EXECUTABLE",
+      "source_provenance": {
+        "approved_decisions": [
+          "V23-P2C-ACCEPTANCE-MAPPING-C3"
+        ],
+        "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
+        "original_identity": "TMP-UXF-00-013",
+        "phase_2c_c3_actions": [
+          "C3_APPROVED_SEMANTIC_DIRECTIVE"
+        ],
+        "previous_temporary_key": "TMP-UXF-00-013",
+        "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+        "source_baseline": "v2.2",
+        "source_context_heading": "12. Fallback Experience",
+        "source_context_sha256": "60b4a5e34a152d8e66574e8461c34a0296b318eea1631ec5ff334805aa9c22c3",
+        "source_document": "docs/UXF/UXF-00.md",
+        "source_fingerprint": "acc952dfd45e0eeff27343f8c3d28b0434c678cf748e15279ae69423a736e87f",
+        "source_fingerprint_before_c3": "1796ccb7f406176950afb115a8cf25040721fd9b6a72488039a96d92c5eadadc",
+        "source_lines": "L411",
+        "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+        "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+        "source_section": "12. Fallback Experience"
+      },
+      "source_statement": "A missing or invalid business-critical configuration must fail closed: checkout, payment, allocation, fulfillment, authorization, and security flows must not continue with inferred unsafe defaults, and the failure must expose actionable recovery information."
+    },
+    {
+      "domain_boundary_fixtures": {},
+      "execution_records": [
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "The capability is absent, disabled, out of scope, or cannot produce its declared conformance result.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "cd5e519d7adaa386333082b9e932ae9e3865981d25cc588a85f91832df079eb9",
+          "mutated_value": false,
+          "mutation_class": "POSITIVE_MUTATION",
+          "mutation_id": "CAPABILITY_AVAILABLE-POS",
+          "operator_id": "CAPABILITY_AVAILABLE",
+          "original_sha256": "21577f8914f1127d81ebf9151d9aa379d9bda8be8aafd2f318976bee5f37454c",
+          "original_value": true,
+          "target_path": "/observed/available"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "The capability is absent, disabled, out of scope, or cannot produce its declared conformance result.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "a56903295cc8441fc975f53aae51e940c6cb8a75a96e33c03d881c0a57c5092f",
+          "mutated_value": true,
+          "mutation_class": "NEGATIVE_MUTATION",
+          "mutation_id": "CAPABILITY_AVAILABLE-NEG",
+          "operator_id": "CAPABILITY_AVAILABLE",
+          "original_sha256": "21577f8914f1127d81ebf9151d9aa379d9bda8be8aafd2f318976bee5f37454c",
+          "original_value": false,
+          "target_path": "/observed/prohibited"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "The capability is absent, disabled, out of scope, or cannot produce its declared conformance result.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "5a52a9d5f82379c019343abf8c5f8cb14589d4db484a10038b7e5fde088fc0fc",
+          "mutated_value": false,
+          "mutation_class": "BOUNDARY_MUTATION",
+          "mutation_id": "CAPABILITY_AVAILABLE-BOUND",
+          "operator_id": "CAPABILITY_AVAILABLE",
+          "original_sha256": "21577f8914f1127d81ebf9151d9aa379d9bda8be8aafd2f318976bee5f37454c",
+          "original_value": true,
+          "target_path": "/observed/boundary_valid"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "Only metadata, a disabled stub, or a placeholder is present.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "50dedaa66b6cc13edc36dae0b3d4dbe0a0d9bad0847bd7698c4bffbf433414fb",
+          "mutated_value": false,
+          "mutation_class": "POSITIVE_MUTATION",
+          "mutation_id": "CAPABILITY_NOT_PLACEHOLDER-POS",
+          "operator_id": "CAPABILITY_NOT_PLACEHOLDER",
+          "original_sha256": "a1624e8eefda61e71744e5c2dac045205c99f2ec6de98f80f3d20a99c41cfc54",
+          "original_value": true,
+          "target_path": "/observed/usable"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "Only metadata, a disabled stub, or a placeholder is present.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "2c9cf2db7c1ba36709382b956fca738d0311f16eb1f74abc350bfb538d02de62",
+          "mutated_value": true,
+          "mutation_class": "NEGATIVE_MUTATION",
+          "mutation_id": "CAPABILITY_NOT_PLACEHOLDER-NEG",
+          "operator_id": "CAPABILITY_NOT_PLACEHOLDER",
+          "original_sha256": "a1624e8eefda61e71744e5c2dac045205c99f2ec6de98f80f3d20a99c41cfc54",
+          "original_value": false,
+          "target_path": "/observed/placeholder"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "Only metadata, a disabled stub, or a placeholder is present.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "9fbbd69a4d05f8caf8adfda768ebda3bd4cac42a36373d5fcc7afc4f669d1bb4",
+          "mutated_value": false,
+          "mutation_class": "BOUNDARY_MUTATION",
+          "mutation_id": "CAPABILITY_NOT_PLACEHOLDER-BOUND",
+          "operator_id": "CAPABILITY_NOT_PLACEHOLDER",
+          "original_sha256": "a1624e8eefda61e71744e5c2dac045205c99f2ec6de98f80f3d20a99c41cfc54",
+          "original_value": true,
+          "target_path": "/observed/boundary_valid"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "Subject is treated inactive or only future.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "8bc27344c6d8dc6742aa96e0ed74c59e24d08e0123d0b88a7c9faf0c60f011b1",
+          "mutated_value": false,
+          "mutation_class": "POSITIVE_MUTATION",
+          "mutation_id": "SCOPE_ACTIVE-POS",
+          "operator_id": "SCOPE_ACTIVE",
+          "original_sha256": "a0e212146c1b7d5e9ee7f8b1f8b76bbc88e27642bbd091c81af1767138dc1eeb",
+          "original_value": true,
+          "target_path": "/observed/active"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "Subject is treated inactive or only future.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "e0e95507f8aa0d192640f97893a20fe697b1e21c909ef3e5718a445fc74c79d8",
+          "mutated_value": true,
+          "mutation_class": "NEGATIVE_MUTATION",
+          "mutation_id": "SCOPE_ACTIVE-NEG",
+          "operator_id": "SCOPE_ACTIVE",
+          "original_sha256": "a0e212146c1b7d5e9ee7f8b1f8b76bbc88e27642bbd091c81af1767138dc1eeb",
+          "original_value": false,
+          "target_path": "/observed/future_only"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "Subject is treated inactive or only future.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "54301d49e6cbb51cd5316c974ce7ebf7013840b2710fa3c47d0b985aaba494f2",
+          "mutated_value": false,
+          "mutation_class": "BOUNDARY_MUTATION",
+          "mutation_id": "SCOPE_ACTIVE-BOUND",
+          "operator_id": "SCOPE_ACTIVE",
+          "original_sha256": "a0e212146c1b7d5e9ee7f8b1f8b76bbc88e27642bbd091c81af1767138dc1eeb",
+          "original_value": true,
+          "target_path": "/observed/boundary_valid"
+        }
+      ],
+      "fixtures": [
+        {
+          "bindings": {
+            "capability": "CATALOG_BROWSING_CAPABILITY",
+            "scope": "SUPPORTED_ORGANIZATION_MARKET_CHANNEL",
+            "subject": "V2.3_ACTIVE_EXPERIENCE_CHANNEL"
+          },
+          "boundary": {
+            "left": {
+              "case": "APPLICABLE"
+            },
+            "right": {
+              "case": "NON_APPLICABLE"
+            }
+          },
+          "evidence": {
+            "capability_inventory": "ACTIVE_CAPABILITY:CAPABILITY_INVENTORY",
+            "invocation_or_conformance_result": "ACTIVE_CAPABILITY:INVOCATION_OR_CONFORMANCE_RESULT"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "fixture_id": "REF-FIX-atomic-capability-CAPABILITY_AVAILABLE",
+          "observed": {
+            "available": true,
+            "boundary_valid": true,
+            "prohibited": false,
+            "usable": true
+          },
+          "operator_id": "CAPABILITY_AVAILABLE",
+          "operator_version": "1.0.0-candidate.2",
+          "provenance": {
+            "inference": false,
+            "requirement_id": "BRD-WS-01-R007",
+            "source_document": "docs/BRD/BRD-WS-01.md",
+            "source_fingerprint": "7b572e235ae6e33ae35ed22b52d951d35ed35531211738b374be4b13a3bd82e9"
+          },
+          "verification_mode": "HYBRID"
+        },
+        {
+          "bindings": {
+            "capability": "CATALOG_BROWSING_CAPABILITY",
+            "scope": "SUPPORTED_ORGANIZATION_MARKET_CHANNEL",
+            "subject": "V2.3_ACTIVE_EXPERIENCE_CHANNEL"
+          },
+          "boundary": {
+            "left": {
+              "case": "APPLICABLE"
+            },
+            "right": {
+              "case": "NON_APPLICABLE"
+            }
+          },
+          "evidence": {
+            "capability_status": "ACTIVE_CAPABILITY:CAPABILITY_STATUS",
+            "observable_use_result": "ACTIVE_CAPABILITY:OBSERVABLE_USE_RESULT"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "fixture_id": "REF-FIX-atomic-capability-CAPABILITY_NOT_PLACEHOLDER",
+          "observed": {
+            "boundary_valid": true,
+            "placeholder": false,
+            "prohibited": false,
+            "usable": true
+          },
+          "operator_id": "CAPABILITY_NOT_PLACEHOLDER",
+          "operator_version": "1.0.0-candidate.2",
+          "provenance": {
+            "inference": false,
+            "requirement_id": "BRD-WS-01-R007",
+            "source_document": "docs/BRD/BRD-WS-01.md",
+            "source_fingerprint": "7b572e235ae6e33ae35ed22b52d951d35ed35531211738b374be4b13a3bd82e9"
+          },
+          "verification_mode": "HYBRID"
+        },
+        {
+          "bindings": {
+            "baseline": "2.3",
+            "scope": "SUPPORTED_ORGANIZATION_MARKET_CHANNEL",
+            "subject": "V2.3_ACTIVE_EXPERIENCE_CHANNEL"
+          },
+          "boundary": {
+            "left": {
+              "case": "APPLICABLE"
+            },
+            "right": {
+              "case": "NON_APPLICABLE"
+            }
+          },
+          "evidence": {
+            "baseline": "ACTIVE_CAPABILITY:BASELINE",
+            "scope_record": "ACTIVE_CAPABILITY:SCOPE_RECORD",
+            "subject": "ACTIVE_CAPABILITY:SUBJECT"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "fixture_id": "REF-FIX-atomic-capability-SCOPE_ACTIVE",
+          "observed": {
+            "active": true,
+            "boundary_valid": true,
+            "future_only": false
+          },
+          "operator_id": "SCOPE_ACTIVE",
+          "operator_version": "1.0.0-candidate.2",
+          "provenance": {
+            "inference": false,
+            "requirement_id": "BRD-WS-01-R007",
+            "source_document": "docs/BRD/BRD-WS-01.md",
+            "source_fingerprint": "7b572e235ae6e33ae35ed22b52d951d35ed35531211738b374be4b13a3bd82e9"
+          },
+          "verification_mode": "STATIC"
+        }
+      ],
+      "operator_composition": [
+        "CAPABILITY_AVAILABLE",
+        "CAPABILITY_NOT_PLACEHOLDER",
+        "SCOPE_ACTIVE"
+      ],
+      "reference_id": "atomic-capability",
+      "rendered_oracles": [
+        {
+          "bindings": {
+            "capability": "CATALOG_BROWSING_CAPABILITY",
+            "scope": "SUPPORTED_ORGANIZATION_MARKET_CHANNEL",
+            "subject": "V2.3_ACTIVE_EXPERIENCE_CHANNEL"
+          },
+          "boundary": "A future-only extension for CATALOG_BROWSING_CAPABILITY does not satisfy active availability in SUPPORTED_ORGANIZATION_MARKET_CHANNEL.",
+          "evidence_fields": [
+            "capability_inventory",
+            "invocation_or_conformance_result"
+          ],
+          "negative": "CATALOG_BROWSING_CAPABILITY is missing or unavailable to V2.3_ACTIVE_EXPERIENCE_CHANNEL in SUPPORTED_ORGANIZATION_MARKET_CHANNEL; availability conformance fails.",
+          "operator_id": "CAPABILITY_AVAILABLE",
+          "positive": "CATALOG_BROWSING_CAPABILITY is available to V2.3_ACTIVE_EXPERIENCE_CHANNEL in SUPPORTED_ORGANIZATION_MARKET_CHANNEL and produces an observable conformance result."
+        },
+        {
+          "bindings": {
+            "capability": "CATALOG_BROWSING_CAPABILITY",
+            "scope": "SUPPORTED_ORGANIZATION_MARKET_CHANNEL",
+            "subject": "V2.3_ACTIVE_EXPERIENCE_CHANNEL"
+          },
+          "boundary": "An extension point is distinguished from an active CATALOG_BROWSING_CAPABILITY obligation.",
+          "evidence_fields": [
+            "capability_status",
+            "observable_use_result"
+          ],
+          "negative": "A placeholder or disabled stub for CATALOG_BROWSING_CAPABILITY is not accepted as availability evidence.",
+          "operator_id": "CAPABILITY_NOT_PLACEHOLDER",
+          "positive": "CATALOG_BROWSING_CAPABILITY for V2.3_ACTIVE_EXPERIENCE_CHANNEL has a usable outcome in SUPPORTED_ORGANIZATION_MARKET_CHANNEL."
+        },
+        {
+          "bindings": {
+            "baseline": "2.3",
+            "scope": "SUPPORTED_ORGANIZATION_MARKET_CHANNEL",
+            "subject": "V2.3_ACTIVE_EXPERIENCE_CHANNEL"
+          },
+          "boundary": "An excluded applicability segment remains outside SUPPORTED_ORGANIZATION_MARKET_CHANNEL.",
+          "evidence_fields": [
+            "subject",
+            "baseline",
+            "scope_record"
+          ],
+          "negative": "A future-only or inactive V2.3_ACTIVE_EXPERIENCE_CHANNEL does not satisfy active scope.",
+          "operator_id": "SCOPE_ACTIVE",
+          "positive": "V2.3_ACTIVE_EXPERIENCE_CHANNEL is active in baseline 2.3 for SUPPORTED_ORGANIZATION_MARKET_CHANNEL."
+        }
+      ],
+      "requirement_id": "BRD-WS-01-R007",
+      "review_reason": null,
+      "semantic_constraints": {
+        "fallback_boundary": null,
+        "organization_relationship_nonclaim": null,
+        "pre_fulfillment_procurement_path": null,
+        "pre_fulfillment_stock_path": null,
+        "retry_attempt_boundary": null
+      },
+      "semantic_status": "RETAINED_EXECUTABLE",
+      "source_provenance": {
+        "approved_decisions": [
+          "P2-DEC-007",
+          "V23-P2C-ACCEPTANCE-MAPPING-C3"
+        ],
+        "corrected_source_range": {
+          "document": "docs/BRD/BRD-WS-01.md",
+          "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+          "section": "4. Product Scope > In Scope"
+        },
+        "deterministic_transformation": "RESTORE_IN_SCOPE_PREDICATE",
+        "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
+        "original_identity": "TMP-BRD-WS-01-007",
+        "phase_2c_c3_actions": [
+          "C3_DETERMINISTIC_SOURCE_NORMALIZATION"
+        ],
+        "previous_temporary_key": "TMP-BRD-WS-01-007",
+        "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+        "source_baseline": "v2.2",
+        "source_context_heading": "In Scope",
+        "source_context_sha256": "38d43d01b0fdf81b82681b2fd34a75ff50c90b7ff040edfdda6f619baa2f2e50",
+        "source_document": "docs/BRD/BRD-WS-01.md",
+        "source_fingerprint": "7b572e235ae6e33ae35ed22b52d951d35ed35531211738b374be4b13a3bd82e9",
+        "source_fingerprint_before_c3": "d3bc50416e160d27b85486f1bad960b8b118962c7e533a0c3aaad1eb4365d6ea",
+        "source_lines": "L65",
+        "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+        "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+        "source_range_before_c3": {
+          "document": "docs/BRD/BRD-WS-01.md",
+          "lines": "L65",
+          "section": "4. Product Scope > In Scope"
+        },
+        "source_section": "4. Product Scope > In Scope"
+      },
+      "source_statement": "Intelligent Allocation Engine is included in the active YSim v2.3 product scope."
+    },
+    {
+      "domain_boundary_fixtures": {},
+      "execution_records": [
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "Value is outside the enumeration.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "e5866c0533685d741d595f9a124e2019258d600e5ac0c3f083a107649cbbbb10",
+          "mutated_value": "UNKNOWN",
+          "mutation_class": "POSITIVE_MUTATION",
+          "mutation_id": "ENUM_VALUE_ALLOWED-POS",
+          "operator_id": "ENUM_VALUE_ALLOWED",
+          "original_sha256": "54aa4fdcd3a3da12db761b200ff02fd6d16b44149e17308640ddd48b3e1b5e2b",
+          "original_value": "NONE",
+          "target_path": "/observed/actual_value"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "Value is outside the enumeration.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "0dd19eaf765eb8394585d73d155b6a93fa753ade098d329a9ed335524ece6262",
+          "mutated_value": "PROHIBITED",
+          "mutation_class": "NEGATIVE_MUTATION",
+          "mutation_id": "ENUM_VALUE_ALLOWED-NEG",
+          "operator_id": "ENUM_VALUE_ALLOWED",
+          "original_sha256": "54aa4fdcd3a3da12db761b200ff02fd6d16b44149e17308640ddd48b3e1b5e2b",
+          "original_value": "NONE",
+          "target_path": "/observed/actual_value"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "Value is outside the enumeration.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "131f1c49e2e37a3951d2060f7c7f922b38f7dacf71d056e9c39e33d9d5876b40",
+          "mutated_value": false,
+          "mutation_class": "BOUNDARY_MUTATION",
+          "mutation_id": "ENUM_VALUE_ALLOWED-BOUND",
+          "operator_id": "ENUM_VALUE_ALLOWED",
+          "original_sha256": "54aa4fdcd3a3da12db761b200ff02fd6d16b44149e17308640ddd48b3e1b5e2b",
+          "original_value": true,
+          "target_path": "/observed/boundary_valid"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "A required list is empty or a prohibited list is non-empty.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "4809f781573ca08daa3799d02cd1fd360d6b4cc81e600bdd280d1af9232bc6c2",
+          "mutated_value": false,
+          "mutation_class": "POSITIVE_MUTATION",
+          "mutation_id": "ROLE_LIST_CONSISTENT-POS",
+          "operator_id": "ROLE_LIST_CONSISTENT",
+          "original_sha256": "6fe4294cfa37b9310356ce16a310d6f5ecfc5a961cb1134751e6219e8f2462a4",
+          "original_value": true,
+          "target_path": "/observed/required_lists_present"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "A required list is empty or a prohibited list is non-empty.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "27e5f05729faf9cac2f65f4dfe22f92999fcfc81d4794a532ebd9190a6d7c167",
+          "mutated_value": true,
+          "mutation_class": "NEGATIVE_MUTATION",
+          "mutation_id": "ROLE_LIST_CONSISTENT-NEG",
+          "operator_id": "ROLE_LIST_CONSISTENT",
+          "original_sha256": "6fe4294cfa37b9310356ce16a310d6f5ecfc5a961cb1134751e6219e8f2462a4",
+          "original_value": false,
+          "target_path": "/observed/prohibited_lists_present"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "A required list is empty or a prohibited list is non-empty.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "f3123cbabb78477150709e8f10b7138d0702f998a502475c34de371682587974",
+          "mutated_value": false,
+          "mutation_class": "BOUNDARY_MUTATION",
+          "mutation_id": "ROLE_LIST_CONSISTENT-BOUND",
+          "operator_id": "ROLE_LIST_CONSISTENT",
+          "original_sha256": "6fe4294cfa37b9310356ce16a310d6f5ecfc5a961cb1134751e6219e8f2462a4",
+          "original_value": true,
+          "target_path": "/observed/boundary_valid"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "The reference is dangling, aliased where forbidden, retired, tombstoned, or in a disallowed state.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "a79b1ebce5b474d7f920301ecff43e123a3218f9f81447f82156300ec8e472ad",
+          "mutated_value": false,
+          "mutation_class": "POSITIVE_MUTATION",
+          "mutation_id": "REFERENCE_TARGET_VALID-POS",
+          "operator_id": "REFERENCE_TARGET_VALID",
+          "original_sha256": "fb5010944ebc4e697ab744dfaeeb8a704ba3f5d7e8c708b0254ae6e6ae677af0",
+          "original_value": true,
+          "target_path": "/observed/resolved"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "The reference is dangling, aliased where forbidden, retired, tombstoned, or in a disallowed state.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "5fd6f71f40bb7049bb3bf1d1c44900724c9ecd30e6aa788756421cd0994de3c5",
+          "mutated_value": true,
+          "mutation_class": "NEGATIVE_MUTATION",
+          "mutation_id": "REFERENCE_TARGET_VALID-NEG",
+          "operator_id": "REFERENCE_TARGET_VALID",
+          "original_sha256": "fb5010944ebc4e697ab744dfaeeb8a704ba3f5d7e8c708b0254ae6e6ae677af0",
+          "original_value": false,
+          "target_path": "/observed/prohibited"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "The reference is dangling, aliased where forbidden, retired, tombstoned, or in a disallowed state.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "3029561e6c2d0307ac07fafc6c38ce76731933be07c8df078bf5a77cfe20632f",
+          "mutated_value": false,
+          "mutation_class": "BOUNDARY_MUTATION",
+          "mutation_id": "REFERENCE_TARGET_VALID-BOUND",
+          "operator_id": "REFERENCE_TARGET_VALID",
+          "original_sha256": "fb5010944ebc4e697ab744dfaeeb8a704ba3f5d7e8c708b0254ae6e6ae677af0",
+          "original_value": true,
+          "target_path": "/observed/boundary_valid"
+        }
+      ],
+      "fixtures": [
+        {
+          "bindings": {
+            "actual_value": "NONE",
+            "allowed_values": [
+              "NONE",
+              "PUBLISHER",
+              "SUBSCRIBER",
+              "BOTH"
+            ],
+            "field": "event_role"
+          },
+          "boundary": {
+            "left": {
+              "case": "APPLICABLE"
+            },
+            "right": {
+              "case": "NON_APPLICABLE"
+            }
+          },
+          "evidence": {
+            "actual_value": "EVENT_ROLE:ACTUAL_VALUE",
+            "allowed_values": "EVENT_ROLE:ALLOWED_VALUES",
+            "field": "EVENT_ROLE:FIELD",
+            "validation_result": "EVENT_ROLE:VALIDATION_RESULT"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "fixture_id": "REF-FIX-enum-reference-integrity-ENUM_VALUE_ALLOWED",
+          "observed": {
+            "actual_value": "NONE",
+            "boundary_valid": true
+          },
+          "operator_id": "ENUM_VALUE_ALLOWED",
+          "operator_version": "1.0.0-candidate.2",
+          "provenance": {
+            "inference": false,
+            "requirement_id": "BRD-CAP-INDEX-R029",
+            "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+            "source_fingerprint": "eba829414e616f68141a624b9bc3021d71331d003a4de0be6ca5a914700554b3"
+          },
+          "verification_mode": "EXECUTABLE"
+        },
+        {
+          "bindings": {
+            "dependent_lists": [
+              "published_event_ids",
+              "subscribed_event_ids"
+            ],
+            "role": "PUBLISHER",
+            "role_rules": "PUBLISHER_REQUIRES_NONEMPTY_PUBLISHED_EVENT_LIST_AND_EMPTY_SUBSCRIBED_LIST"
+          },
+          "boundary": {
+            "left": {
+              "case": "APPLICABLE"
+            },
+            "right": {
+              "case": "NON_APPLICABLE"
+            }
+          },
+          "evidence": {
+            "consistency_result": "EVENT_ROLE:CONSISTENCY_RESULT",
+            "dependent_lists": "EVENT_ROLE:DEPENDENT_LISTS",
+            "role": "EVENT_ROLE:ROLE"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "fixture_id": "REF-FIX-enum-reference-integrity-ROLE_LIST_CONSISTENT",
+          "observed": {
+            "boundary_valid": true,
+            "prohibited_lists_present": false,
+            "required_lists_present": true
+          },
+          "operator_id": "ROLE_LIST_CONSISTENT",
+          "operator_version": "1.0.0-candidate.2",
+          "provenance": {
+            "inference": false,
+            "requirement_id": "BRD-CAP-INDEX-R029",
+            "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+            "source_fingerprint": "eba829414e616f68141a624b9bc3021d71331d003a4de0be6ca5a914700554b3"
+          },
+          "verification_mode": "EXECUTABLE"
+        },
+        {
+          "bindings": {
+            "allowed_states": [
+              "ACTIVE_CANONICAL"
+            ],
+            "reference": "CANONICAL_EVENT_ID",
+            "registry": "BRD_EVENT_INDEX"
+          },
+          "boundary": {
+            "left": {
+              "case": "APPLICABLE"
+            },
+            "right": {
+              "case": "NON_APPLICABLE"
+            }
+          },
+          "evidence": {
+            "reference_value": "EVENT_ROLE:REFERENCE_VALUE",
+            "resolved_target": "EVENT_ROLE:RESOLVED_TARGET",
+            "target_state": "EVENT_ROLE:TARGET_STATE"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "fixture_id": "REF-FIX-enum-reference-integrity-REFERENCE_TARGET_VALID",
+          "observed": {
+            "boundary_valid": true,
+            "prohibited": false,
+            "resolved": true,
+            "target_state": "ACTIVE_CANONICAL"
+          },
+          "operator_id": "REFERENCE_TARGET_VALID",
+          "operator_version": "1.0.0-candidate.2",
+          "provenance": {
+            "inference": false,
+            "requirement_id": "BRD-CAP-INDEX-R029",
+            "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+            "source_fingerprint": "eba829414e616f68141a624b9bc3021d71331d003a4de0be6ca5a914700554b3"
+          },
+          "verification_mode": "EXECUTABLE"
+        }
+      ],
+      "operator_composition": [
+        "ENUM_VALUE_ALLOWED",
+        "ROLE_LIST_CONSISTENT",
+        "REFERENCE_TARGET_VALID"
+      ],
+      "reference_id": "enum-reference-integrity",
+      "rendered_oracles": [
+        {
+          "bindings": {
+            "actual_value": "NONE",
+            "allowed_values": [
+              "NONE",
+              "PUBLISHER",
+              "SUBSCRIBER",
+              "BOTH"
+            ],
+            "field": "event_role"
+          },
+          "boundary": "Deprecated values remain invalid unless explicitly present in ['NONE', 'PUBLISHER', 'SUBSCRIBER', 'BOTH'].",
+          "evidence_fields": [
+            "field",
+            "actual_value",
+            "allowed_values",
+            "validation_result"
+          ],
+          "negative": "NONE is not allowed for event_role.",
+          "operator_id": "ENUM_VALUE_ALLOWED",
+          "positive": "event_role value NONE belongs to ['NONE', 'PUBLISHER', 'SUBSCRIBER', 'BOTH']."
+        },
+        {
+          "bindings": {
+            "dependent_lists": [
+              "published_event_ids",
+              "subscribed_event_ids"
+            ],
+            "role": "PUBLISHER",
+            "role_rules": "PUBLISHER_REQUIRES_NONEMPTY_PUBLISHED_EVENT_LIST_AND_EMPTY_SUBSCRIBED_LIST"
+          },
+          "boundary": "Changing PUBLISHER changes the complete list-consistency rule.",
+          "evidence_fields": [
+            "role",
+            "dependent_lists",
+            "consistency_result"
+          ],
+          "negative": "The dependent lists contradict the selected role PUBLISHER.",
+          "operator_id": "ROLE_LIST_CONSISTENT",
+          "positive": "['published_event_ids', 'subscribed_event_ids'] satisfy PUBLISHER_REQUIRES_NONEMPTY_PUBLISHED_EVENT_LIST_AND_EMPTY_SUBSCRIBED_LIST for PUBLISHER."
+        },
+        {
+          "bindings": {
+            "allowed_states": [
+              "ACTIVE_CANONICAL"
+            ],
+            "reference": "CANONICAL_EVENT_ID",
+            "registry": "BRD_EVENT_INDEX"
+          },
+          "boundary": "Alias, retired, and tombstone targets remain outside ['ACTIVE_CANONICAL'].",
+          "evidence_fields": [
+            "reference_value",
+            "resolved_target",
+            "target_state"
+          ],
+          "negative": "CANONICAL_EVENT_ID does not resolve to an allowed canonical target in BRD_EVENT_INDEX.",
+          "operator_id": "REFERENCE_TARGET_VALID",
+          "positive": "CANONICAL_EVENT_ID resolves in BRD_EVENT_INDEX to a target in ['ACTIVE_CANONICAL']."
+        }
+      ],
+      "requirement_id": "BRD-CAP-INDEX-R029",
+      "review_reason": null,
+      "semantic_constraints": {
+        "fallback_boundary": null,
+        "organization_relationship_nonclaim": null,
+        "pre_fulfillment_procurement_path": null,
+        "pre_fulfillment_stock_path": null,
+        "retry_attempt_boundary": null
+      },
+      "semantic_status": "RETAINED_EXECUTABLE",
+      "source_provenance": {
+        "allocation_contract": "P2-ALLOC-001",
+        "approved_decision_contracts": {
+          "P2-DEC-005": {
+            "decision_id": "P2-DEC-005",
+            "sections": [
+              {
+                "heading": "Existing principle",
+                "items": [
+                  "Reclassify CAP-P07 as DESIGN_PRINCIPLE.",
+                  "CAP-EP-006 remains an alias.",
+                  "A Capability may be PUBLISHER, SUBSCRIBER, BOTH, or NONE; not every Capability must be event-driven."
+                ]
+              },
+              {
+                "heading": "New requirement allocation",
+                "items": [
+                  "Add one V2.3_ACTIVE DATA_REQUIREMENT with reserved stable ID BRD-CAP-INDEX-R029.",
+                  "Required fields are event_role, published_event_ids, and subscribed_event_ids.",
+                  "NONE requires both lists to be empty.",
+                  "PUBLISHER, SUBSCRIBER, and BOTH require the corresponding lists to be non-empty.",
+                  "Event references resolve to canonical active/approved Event Registry IDs.",
+                  "Alias, retired, tombstone, and dangling references are prohibited.",
+                  "Event ownership and schema version remain authoritative in Event Registry.",
+                  "The new requirement has HIGH verification criticality."
+                ]
+              }
+            ],
+            "selected_option": 1,
+            "status": "DECIDED_PENDING_PACK_APPROVAL",
+            "title": "Capability event role and metadata split"
+          }
+        },
+        "approved_decisions": [
+          "P2-DEC-005"
+        ],
+        "identity_origin": "PHASE_2C_NEW_ALLOCATION",
+        "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+        "source_baseline": "v2.2",
+        "source_context_heading": "APPROVED_DECISION_CONTRACT",
+        "source_context_sha256": "eba829414e616f68141a624b9bc3021d71331d003a4de0be6ca5a914700554b3",
+        "source_document": "docs/BRD/BRD-CAP-INDEX.md"
+      },
+      "source_statement": "Mỗi Capability phải khai báo event_role là PUBLISHER, SUBSCRIBER, BOTH hoặc NONE cùng published_event_ids và subscribed_event_ids; NONE yêu cầu hai danh sách rỗng, các role còn lại yêu cầu danh sách tương ứng không rỗng, và mọi tham chiếu phải trỏ tới Event Registry ID canonical active/approved, không được dùng alias, retired, tombstone hoặc dangling reference."
+    },
+    {
+      "domain_boundary_fixtures": {},
+      "execution_records": [
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "Challenge is bypassed or unresolved while access succeeds.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "abb36261d27a76c87c0c444814b2396b15d40e25d9072c761ce70313bfad8dd1",
+          "mutated_value": "NOT_COMPLETED",
+          "mutation_class": "POSITIVE_MUTATION",
+          "mutation_id": "MFA_CHALLENGE_REQUIRED-POS",
+          "operator_id": "MFA_CHALLENGE_REQUIRED",
+          "original_sha256": "8bffcb83ec9c7c8ed9558a4c60cebf97c7d3219f0d76ac57f53c78b453f62d7f",
+          "original_value": "MFA_CHALLENGE_COMPLETED",
+          "target_path": "/observed/challenge_result"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "Challenge is bypassed or unresolved while access succeeds.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "aed63d60cfd41a2dac2fbf8f85b5c74f92e4eef65a4b7c6737bceb6e2cd1f2f4",
+          "mutated_value": true,
+          "mutation_class": "NEGATIVE_MUTATION",
+          "mutation_id": "MFA_CHALLENGE_REQUIRED-NEG",
+          "operator_id": "MFA_CHALLENGE_REQUIRED",
+          "original_sha256": "8bffcb83ec9c7c8ed9558a4c60cebf97c7d3219f0d76ac57f53c78b453f62d7f",
+          "original_value": false,
+          "target_path": "/observed/bypassed"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "Challenge is bypassed or unresolved while access succeeds.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "a345c4f97af9e74b882d9e22fcf6bbdb489bd5dd29d72fda9f1e3254c166a15b",
+          "mutated_value": false,
+          "mutation_class": "BOUNDARY_MUTATION",
+          "mutation_id": "MFA_CHALLENGE_REQUIRED-BOUND",
+          "operator_id": "MFA_CHALLENGE_REQUIRED",
+          "original_sha256": "8bffcb83ec9c7c8ed9558a4c60cebf97c7d3219f0d76ac57f53c78b453f62d7f",
+          "original_value": true,
+          "target_path": "/observed/boundary_valid"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "The prohibited action succeeds.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "921da32baa242f25eba1c5bdc5d56fed252fee3cf3f048146c6e4648437263b2",
+          "mutated_value": "ALLOW",
+          "mutation_class": "POSITIVE_MUTATION",
+          "mutation_id": "ACTOR_DENIED-POS",
+          "operator_id": "ACTOR_DENIED",
+          "original_sha256": "f08817098ceac35d065d9225a6c58022eca0071ba63643f4db181597b4d3fc3f",
+          "original_value": "DENY",
+          "target_path": "/observed/decision"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "The prohibited action succeeds.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "90264c9f65d8415aad4680b0d42ae362866121ec4194ea485163e55a62e7e1d2",
+          "mutated_value": true,
+          "mutation_class": "NEGATIVE_MUTATION",
+          "mutation_id": "ACTOR_DENIED-NEG",
+          "operator_id": "ACTOR_DENIED",
+          "original_sha256": "f08817098ceac35d065d9225a6c58022eca0071ba63643f4db181597b4d3fc3f",
+          "original_value": false,
+          "target_path": "/observed/entitled"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "The prohibited action succeeds.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "3b5198e17ccf25d97fe4459e4e37ed343347e87739a4e1cc2f9956a4c788e597",
+          "mutated_value": false,
+          "mutation_class": "BOUNDARY_MUTATION",
+          "mutation_id": "ACTOR_DENIED-BOUND",
+          "operator_id": "ACTOR_DENIED",
+          "original_sha256": "f08817098ceac35d065d9225a6c58022eca0071ba63643f4db181597b4d3fc3f",
+          "original_value": true,
+          "target_path": "/observed/boundary_valid"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "A field is missing or the record is modified/deleted.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "55e092d3fca4e74f8d6b21d8e170cf6f4f3d71c6df4c48bb9de7399ce173abc5",
+          "mutated_value": [],
+          "mutation_class": "POSITIVE_MUTATION",
+          "mutation_id": "AUDIT_IMMUTABLE-POS",
+          "operator_id": "AUDIT_IMMUTABLE",
+          "original_sha256": "2f3f7d72d5edce897a5d0d30f8c056a99c6ca0121bd353198272021545914dc4",
+          "original_value": [
+            "principal",
+            "scope",
+            "policy_version",
+            "challenge_result",
+            "reason",
+            "timestamp"
+          ],
+          "target_path": "/observed/present_fields"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "A field is missing or the record is modified/deleted.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "aadb4bfcb722a320a7b24d98fa2b2d29255abda01c5d249f2f2b26b89ae4bfad",
+          "mutated_value": true,
+          "mutation_class": "NEGATIVE_MUTATION",
+          "mutation_id": "AUDIT_IMMUTABLE-NEG",
+          "operator_id": "AUDIT_IMMUTABLE",
+          "original_sha256": "2f3f7d72d5edce897a5d0d30f8c056a99c6ca0121bd353198272021545914dc4",
+          "original_value": false,
+          "target_path": "/observed/modified"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "A field is missing or the record is modified/deleted.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "9b62e2300ad00a83c89552ac7c87d8abf01b384c1ba09f2d280f56aaf0f9e3e1",
+          "mutated_value": false,
+          "mutation_class": "BOUNDARY_MUTATION",
+          "mutation_id": "AUDIT_IMMUTABLE-BOUND",
+          "operator_id": "AUDIT_IMMUTABLE",
+          "original_sha256": "2f3f7d72d5edce897a5d0d30f8c056a99c6ca0121bd353198272021545914dc4",
+          "original_value": true,
+          "target_path": "/observed/boundary_valid"
+        }
+      ],
+      "fixtures": [
+        {
+          "bindings": {
+            "challenge_result": "MFA_CHALLENGE_COMPLETED",
+            "effective_policy": "RESOLVED_MFA_POLICY",
+            "policy_scope": "PLATFORM_ORGANIZATION_ROLE_USER_OR_API_CLIENT",
+            "principal": "PLATFORM_OR_ORGANIZATION_ROLE_USER_API_CLIENT_PRINCIPAL"
+          },
+          "boundary": {
+            "left": {
+              "case": "APPLICABLE"
+            },
+            "right": {
+              "case": "NON_APPLICABLE"
+            }
+          },
+          "evidence": {
+            "audit_record": "MFA_POLICY:AUDIT_RECORD",
+            "challenge_result": "MFA_POLICY:CHALLENGE_RESULT",
+            "policy_scope": "MFA_POLICY:POLICY_SCOPE",
+            "policy_version": "MFA_POLICY:POLICY_VERSION",
+            "principal": "MFA_POLICY:PRINCIPAL"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "fixture_id": "REF-FIX-mfa-enforcement-MFA_CHALLENGE_REQUIRED",
+          "observed": {
+            "audit_present": true,
+            "boundary_valid": true,
+            "bypassed": false,
+            "challenge_result": "MFA_CHALLENGE_COMPLETED"
+          },
+          "operator_id": "MFA_CHALLENGE_REQUIRED",
+          "operator_version": "1.0.0-candidate.2",
+          "provenance": {
+            "inference": false,
+            "requirement_id": "BD-16-003",
+            "source_document": "docs/BRD/BRD-WS-16.md",
+            "source_fingerprint": "b52f2437882642c2d7180f802cc18f6bd19a636ea242296d2404594b8aae2cc0"
+          },
+          "verification_mode": "EXECUTABLE"
+        },
+        {
+          "bindings": {
+            "action": "PROTECTED_ACCESS",
+            "actor": "PRINCIPAL_WITH_UNSATISFIED_MFA",
+            "effective_policy": "RESOLVED_MFA_POLICY",
+            "resource": "MFA_PROTECTED_RESOURCE"
+          },
+          "boundary": {
+            "left": {
+              "case": "APPLICABLE"
+            },
+            "right": {
+              "case": "NON_APPLICABLE"
+            }
+          },
+          "evidence": {
+            "audit_record": "MFA_POLICY:AUDIT_RECORD",
+            "policy_input": "MFA_POLICY:POLICY_INPUT",
+            "policy_outcome": "MFA_POLICY:POLICY_OUTCOME",
+            "reason": "MFA_POLICY:REASON"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "fixture_id": "REF-FIX-mfa-enforcement-ACTOR_DENIED",
+          "observed": {
+            "boundary_valid": true,
+            "decision": "DENY",
+            "entitled": false
+          },
+          "operator_id": "ACTOR_DENIED",
+          "operator_version": "1.0.0-candidate.2",
+          "provenance": {
+            "inference": false,
+            "requirement_id": "BD-16-003",
+            "source_document": "docs/BRD/BRD-WS-16.md",
+            "source_fingerprint": "b52f2437882642c2d7180f802cc18f6bd19a636ea242296d2404594b8aae2cc0"
+          },
+          "verification_mode": "EXECUTABLE"
+        },
+        {
+          "bindings": {
+            "audit_record": "MFA_POLICY_DECISION_AUDIT",
+            "immutability_boundary": "AUDIT_RECORD_CREATION",
+            "required_fields": [
+              "principal",
+              "scope",
+              "policy_version",
+              "challenge_result",
+              "reason",
+              "timestamp"
+            ]
+          },
+          "boundary": {
+            "left": {
+              "case": "APPLICABLE"
+            },
+            "right": {
+              "case": "NON_APPLICABLE"
+            }
+          },
+          "evidence": {
+            "audit_record": "MFA_POLICY:AUDIT_RECORD",
+            "change_attempt": "MFA_POLICY:CHANGE_ATTEMPT",
+            "integrity_proof": "MFA_POLICY:INTEGRITY_PROOF",
+            "required_fields": "MFA_POLICY:REQUIRED_FIELDS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "fixture_id": "REF-FIX-mfa-enforcement-AUDIT_IMMUTABLE",
+          "observed": {
+            "boundary_valid": true,
+            "deleted": false,
+            "modified": false,
+            "present_fields": [
+              "principal",
+              "scope",
+              "policy_version",
+              "challenge_result",
+              "reason",
+              "timestamp"
+            ]
+          },
+          "operator_id": "AUDIT_IMMUTABLE",
+          "operator_version": "1.0.0-candidate.2",
+          "provenance": {
+            "inference": false,
+            "requirement_id": "BD-16-003",
+            "source_document": "docs/BRD/BRD-WS-16.md",
+            "source_fingerprint": "b52f2437882642c2d7180f802cc18f6bd19a636ea242296d2404594b8aae2cc0"
+          },
+          "verification_mode": "HYBRID"
+        }
+      ],
+      "operator_composition": [
+        "MFA_CHALLENGE_REQUIRED",
+        "ACTOR_DENIED",
+        "AUDIT_IMMUTABLE"
+      ],
+      "reference_id": "mfa-enforcement",
+      "rendered_oracles": [
+        {
+          "bindings": {
+            "challenge_result": "MFA_CHALLENGE_COMPLETED",
+            "effective_policy": "RESOLVED_MFA_POLICY",
+            "policy_scope": "PLATFORM_ORGANIZATION_ROLE_USER_OR_API_CLIENT",
+            "principal": "PLATFORM_OR_ORGANIZATION_ROLE_USER_API_CLIENT_PRINCIPAL"
+          },
+          "boundary": "An approved recovery flow must satisfy the policy's assurance boundary. Bound context: PLATFORM_OR_ORGANIZATION_ROLE_USER_API_CLIENT_PRINCIPAL.",
+          "evidence_fields": [
+            "principal",
+            "policy_scope",
+            "policy_version",
+            "challenge_result",
+            "audit_record"
+          ],
+          "negative": "Protected access without the required challenge is denied and audited. Bound context: PLATFORM_OR_ORGANIZATION_ROLE_USER_API_CLIENT_PRINCIPAL.",
+          "operator_id": "MFA_CHALLENGE_REQUIRED",
+          "positive": "RESOLVED_MFA_POLICY requires MFA_CHALLENGE_COMPLETED for PLATFORM_OR_ORGANIZATION_ROLE_USER_API_CLIENT_PRINCIPAL in PLATFORM_ORGANIZATION_ROLE_USER_OR_API_CLIENT."
+        },
+        {
+          "bindings": {
+            "action": "PROTECTED_ACCESS",
+            "actor": "PRINCIPAL_WITH_UNSATISFIED_MFA",
+            "effective_policy": "RESOLVED_MFA_POLICY",
+            "resource": "MFA_PROTECTED_RESOURCE"
+          },
+          "boundary": "A challenge outcome is distinguished from both ALLOW and DENY. Bound context: PRINCIPAL_WITH_UNSATISFIED_MFA.",
+          "evidence_fields": [
+            "policy_input",
+            "policy_outcome",
+            "reason",
+            "audit_record"
+          ],
+          "negative": "ALLOW for prohibited actor PRINCIPAL_WITH_UNSATISFIED_MFA is a policy violation.",
+          "operator_id": "ACTOR_DENIED",
+          "positive": "RESOLVED_MFA_POLICY denies PRINCIPAL_WITH_UNSATISFIED_MFA the action PROTECTED_ACCESS on MFA_PROTECTED_RESOURCE."
+        },
+        {
+          "bindings": {
+            "audit_record": "MFA_POLICY_DECISION_AUDIT",
+            "immutability_boundary": "AUDIT_RECORD_CREATION",
+            "required_fields": [
+              "principal",
+              "scope",
+              "policy_version",
+              "challenge_result",
+              "reason",
+              "timestamp"
+            ]
+          },
+          "boundary": "Archival may change storage tier but not audit content. Bound context: MFA_POLICY_DECISION_AUDIT.",
+          "evidence_fields": [
+            "audit_record",
+            "required_fields",
+            "integrity_proof",
+            "change_attempt"
+          ],
+          "negative": "Missing fields or modification of MFA_POLICY_DECISION_AUDIT violate audit integrity.",
+          "operator_id": "AUDIT_IMMUTABLE",
+          "positive": "MFA_POLICY_DECISION_AUDIT contains ['principal', 'scope', 'policy_version', 'challenge_result', 'reason', 'timestamp'] and remains immutable after AUDIT_RECORD_CREATION."
+        }
+      ],
+      "requirement_id": "BD-16-003",
+      "review_reason": null,
+      "semantic_constraints": {
+        "fallback_boundary": null,
+        "organization_relationship_nonclaim": null,
+        "pre_fulfillment_procurement_path": null,
+        "pre_fulfillment_stock_path": null,
+        "retry_attempt_boundary": null
+      },
+      "semantic_status": "RETAINED_EXECUTABLE",
+      "source_provenance": {
+        "approved_decisions": [
+          "P2-DEC-008"
+        ],
+        "identity_origin": "PRESERVED_STABLE_ID",
+        "original_identity": "BD-16-003",
+        "previous_temporary_key": null,
+        "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+        "source_baseline": "v2.2",
+        "source_context_heading": "BD-16-003",
+        "source_context_sha256": "0a54eea37a289d34ddab77fc2503b323ed462f6daad1ef94e15a8c422258a2b5",
+        "source_document": "docs/BRD/BRD-WS-16.md",
+        "source_fingerprint": "b52f2437882642c2d7180f802cc18f6bd19a636ea242296d2404594b8aae2cc0",
+        "source_lines": "L795-L806",
+        "source_section": "31. Business Decisions (Locked) > BD-16-003"
+      },
+      "source_statement": "Platform hỗ trợ Multi-Factor Authentication (MFA). MFA có thể áp dụng theo: - Platform - Organization - Role - User - API Client"
+    },
+    {
+      "domain_boundary_fixtures": {},
+      "execution_records": [
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "Two or more events are processed out of order.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "9f84fe53f410ddd26d32513b6c5413e66c9adfa88b6a9a95430a974cca6a4eff",
+          "mutated_value": [],
+          "mutation_class": "POSITIVE_MUTATION",
+          "mutation_id": "EVENT_ORDER_PRESERVED-POS",
+          "operator_id": "EVENT_ORDER_PRESERVED",
+          "original_sha256": "79752537eb0998465b8dce02a46ef64552a9beb8f1d9c9a86a24e58645258e47",
+          "original_value": [
+            "PRECEDING_FINANCIAL_EVENT",
+            "FOLLOWING_FINANCIAL_EVENT"
+          ],
+          "target_path": "/observed/observed_sequence"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "Two or more events are processed out of order.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "ff1616929cc587fb8ee784d061473b8b397b0d4baf7a799930f3cd9d9ba13ad4",
+          "mutated_value": true,
+          "mutation_class": "NEGATIVE_MUTATION",
+          "mutation_id": "EVENT_ORDER_PRESERVED-NEG",
+          "operator_id": "EVENT_ORDER_PRESERVED",
+          "original_sha256": "79752537eb0998465b8dce02a46ef64552a9beb8f1d9c9a86a24e58645258e47",
+          "original_value": false,
+          "target_path": "/observed/order_violation"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "Two or more events are processed out of order.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "7c557a2e45a635e7f7ff206cb18ac602ec50290b315e2767e3b4ba2c6816bd4c",
+          "mutated_value": false,
+          "mutation_class": "BOUNDARY_MUTATION",
+          "mutation_id": "EVENT_ORDER_PRESERVED-BOUND",
+          "operator_id": "EVENT_ORDER_PRESERVED",
+          "original_sha256": "79752537eb0998465b8dce02a46ef64552a9beb8f1d9c9a86a24e58645258e47",
+          "original_value": true,
+          "target_path": "/observed/boundary_valid"
+        }
+      ],
+      "fixtures": [
+        {
+          "bindings": {
+            "correlation_id": "BUSINESS_TRANSACTION_CORRELATION",
+            "event_family": "PAYMENT_SETTLEMENT_AND_FINANCIAL_EVENTS",
+            "expected_sequence": [
+              "PRECEDING_FINANCIAL_EVENT",
+              "FOLLOWING_FINANCIAL_EVENT"
+            ]
+          },
+          "boundary": {
+            "left": {
+              "case": "APPLICABLE"
+            },
+            "right": {
+              "case": "NON_APPLICABLE"
+            }
+          },
+          "evidence": {
+            "correlation_id": "FINANCIAL_EVENTS:CORRELATION_ID",
+            "expected_sequence": "FINANCIAL_EVENTS:EXPECTED_SEQUENCE",
+            "observed_sequence": "FINANCIAL_EVENTS:OBSERVED_SEQUENCE"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "fixture_id": "REF-FIX-event-ordering-required-EVENT_ORDER_PRESERVED",
+          "observed": {
+            "boundary_valid": true,
+            "observed_sequence": [
+              "PRECEDING_FINANCIAL_EVENT",
+              "FOLLOWING_FINANCIAL_EVENT"
+            ],
+            "order_violation": false
+          },
+          "operator_id": "EVENT_ORDER_PRESERVED",
+          "operator_version": "1.0.0-candidate.2",
+          "provenance": {
+            "inference": false,
+            "requirement_id": "BRD-EVENT-INDEX-R001",
+            "source_document": "docs/BRD/BRD-EVENT-INDEX.md",
+            "source_fingerprint": "caf87a1651b05ee0f4ce8535fe95f79b475cbefdf72346473ab6b7435b6d7992"
+          },
+          "verification_mode": "EXECUTABLE"
+        }
+      ],
+      "operator_composition": [
+        "EVENT_ORDER_PRESERVED"
+      ],
+      "reference_id": "event-ordering-required",
+      "rendered_oracles": [
+        {
+          "bindings": {
+            "correlation_id": "BUSINESS_TRANSACTION_CORRELATION",
+            "event_family": "PAYMENT_SETTLEMENT_AND_FINANCIAL_EVENTS",
+            "expected_sequence": [
+              "PRECEDING_FINANCIAL_EVENT",
+              "FOLLOWING_FINANCIAL_EVENT"
+            ]
+          },
+          "boundary": "An unordered event family is excluded from the ordering assertion. Bound context: PAYMENT_SETTLEMENT_AND_FINANCIAL_EVENTS.",
+          "evidence_fields": [
+            "observed_sequence",
+            "expected_sequence",
+            "correlation_id"
+          ],
+          "negative": "The observed sequence for PAYMENT_SETTLEMENT_AND_FINANCIAL_EVENTS differs from ['PRECEDING_FINANCIAL_EVENT', 'FOLLOWING_FINANCIAL_EVENT'].",
+          "operator_id": "EVENT_ORDER_PRESERVED",
+          "positive": "Events in PAYMENT_SETTLEMENT_AND_FINANCIAL_EVENTS for BUSINESS_TRANSACTION_CORRELATION preserve ['PRECEDING_FINANCIAL_EVENT', 'FOLLOWING_FINANCIAL_EVENT']."
+        }
+      ],
+      "requirement_id": "BRD-EVENT-INDEX-R001",
+      "review_reason": null,
+      "semantic_constraints": {
+        "fallback_boundary": null,
+        "organization_relationship_nonclaim": null,
+        "pre_fulfillment_procurement_path": null,
+        "pre_fulfillment_stock_path": null,
+        "retry_attempt_boundary": null
+      },
+      "semantic_status": "RETAINED_EXECUTABLE",
+      "source_provenance": {
+        "approved_decision_contracts": {
+          "P2-DEC-002": {
+            "decision_id": "P2-DEC-002",
+            "sections": [
+              {
+                "heading": "Mandatory event types",
+                "items": [
+                  "security.authentication.succeeded",
+                  "security.authentication.failed",
+                  "security.mfa.challenge.succeeded",
+                  "security.mfa.challenge.failed",
+                  "security.account.locked",
+                  "security.account.unlocked",
+                  "security.session.revoked",
+                  "security.identity.linked",
+                  "security.identity.unlinked",
+                  "security.access.denied",
+                  "security.privilege.changed",
+                  "security.policy.changed",
+                  "security.credential.lifecycle.changed",
+                  "security.federation.trust.changed",
+                  "security.risk.decision.made",
+                  "security.suspicious_activity.detected",
+                  "security.break_glass.started",
+                  "security.break_glass.ended"
+                ]
+              },
+              {
+                "heading": "Shared envelope",
+                "items": [
+                  "event_id",
+                  "event_type",
+                  "event_version",
+                  "occurred_at",
+                  "producer",
+                  "organization_id/platform_scope",
+                  "actor",
+                  "subject",
+                  "correlation_id",
+                  "causation_id",
+                  "classification",
+                  "outcome",
+                  "reason_code",
+                  "typed payload"
+                ]
+              },
+              {
+                "heading": "Contract",
+                "items": [
+                  "Event Registry owns canonical schema and producer declarations.",
+                  "No password, OTP, token, private key, raw assertion, or secret is allowed.",
+                  "PII is minimized and stable references are preferred.",
+                  "Delivery is at least once; consumers deduplicate by event_id.",
+                  "There is no global ordering; explicit per-subject ordering is used only where declared.",
+                  "Replay preserves original event identity and adds replay metadata.",
+                  "Schema changes within a major version are backward-compatible.",
+                  "Consumer authorization is constrained by Organization, event type, and classification.",
+                  "Retry, DLQ, alerting, retention, and publish observability are mandatory.",
+                  "A durable audit/event record exists before a security state-changing operation completes.",
+                  "Transport topology remains architecture-owned."
+                ]
+              }
+            ],
+            "selected_option": 1,
+            "status": "DECIDED_PENDING_PACK_APPROVAL",
+            "title": "Mandatory Security Platform events"
+          }
+        },
+        "approved_decisions": [
+          "P2-DEC-002"
+        ],
+        "approved_effective_statement_candidate": "Payment, Settlement, and Financial events must preserve processing order.",
+        "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
+        "original_identity": "TMP-BRD-EVENT-INDEX-001",
+        "previous_temporary_key": "TMP-BRD-EVENT-INDEX-001",
+        "related_non_exception_defect": "EXPAND_SOURCE_RANGE_AND_REWRITE_EFFECTIVE_STATEMENT",
+        "remediation_contracts": [
+          "V23-P2B-CRITICALITY-DECISION-C1"
+        ],
+        "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+        "source_baseline": "v2.2",
+        "source_context_heading": "7. Event Delivery Principles",
+        "source_context_sha256": "2e7c1ed9552883e1bd1ecd397103a7ec0af0d8a4ff7f069c02ae508cc8aefdca",
+        "source_document": "docs/BRD/BRD-EVENT-INDEX.md",
+        "source_fingerprint": "caf87a1651b05ee0f4ce8535fe95f79b475cbefdf72346473ab6b7435b6d7992",
+        "source_lines": "L197",
+        "source_section": "7. Event Delivery Principles"
+      },
+      "source_statement": "Các event thuộc họ Payment, Settlement và Financial phải duy trì thứ tự xử lý."
+    },
+    {
+      "domain_boundary_fixtures": {},
+      "execution_records": [
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "The family is incorrectly evaluated as order-preserving or loses its explicit unordered classification.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "69caca393fc798535e6a72f00888e2db19923c3f8f1c138842b16b1d4ab585ef",
+          "mutated_value": "ORDERED",
+          "mutation_class": "POSITIVE_MUTATION",
+          "mutation_id": "EVENT_ORDER_NOT_REQUIRED-POS",
+          "operator_id": "EVENT_ORDER_NOT_REQUIRED",
+          "original_sha256": "0bf8e3772964affa2d7d910722f51d0507bf8628bd790b7b4f818da4b928163d",
+          "original_value": "UNORDERED",
+          "target_path": "/observed/classification"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "The family is incorrectly evaluated as order-preserving or loses its explicit unordered classification.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "fce95860ebdd4c972b8c9c63c942dc0a0c02080259e88b4746060d08a7536ee4",
+          "mutated_value": true,
+          "mutation_class": "NEGATIVE_MUTATION",
+          "mutation_id": "EVENT_ORDER_NOT_REQUIRED-NEG",
+          "operator_id": "EVENT_ORDER_NOT_REQUIRED",
+          "original_sha256": "0bf8e3772964affa2d7d910722f51d0507bf8628bd790b7b4f818da4b928163d",
+          "original_value": false,
+          "target_path": "/observed/forced_ordering"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "The family is incorrectly evaluated as order-preserving or loses its explicit unordered classification.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "10571854928229aa3b07fd994e3492a6d114f42fb34d75d7659c011190f4bb2f",
+          "mutated_value": false,
+          "mutation_class": "BOUNDARY_MUTATION",
+          "mutation_id": "EVENT_ORDER_NOT_REQUIRED-BOUND",
+          "operator_id": "EVENT_ORDER_NOT_REQUIRED",
+          "original_sha256": "0bf8e3772964affa2d7d910722f51d0507bf8628bd790b7b4f818da4b928163d",
+          "original_value": true,
+          "target_path": "/observed/boundary_valid"
+        }
+      ],
+      "fixtures": [
+        {
+          "bindings": {
+            "event_family": "MARKETING_ANALYTICS_AND_NOTIFICATION_EVENTS",
+            "ordering_policy": "ORDERING_NOT_REQUIRED",
+            "scope": "EVENT_PROCESSING_ORDER"
+          },
+          "boundary": {
+            "left": {
+              "case": "APPLICABLE"
+            },
+            "right": {
+              "case": "NON_APPLICABLE"
+            }
+          },
+          "evidence": {
+            "classification_result": "NON_FINANCIAL_EVENTS:CLASSIFICATION_RESULT",
+            "event_family": "NON_FINANCIAL_EVENTS:EVENT_FAMILY",
+            "ordering_policy": "NON_FINANCIAL_EVENTS:ORDERING_POLICY",
+            "scope": "NON_FINANCIAL_EVENTS:SCOPE"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "fixture_id": "REF-FIX-event-ordering-not-required-EVENT_ORDER_NOT_REQUIRED",
+          "observed": {
+            "boundary_valid": true,
+            "classification": "UNORDERED",
+            "forced_ordering": false
+          },
+          "operator_id": "EVENT_ORDER_NOT_REQUIRED",
+          "operator_version": "1.0.0-candidate.2",
+          "provenance": {
+            "inference": false,
+            "requirement_id": "BRD-EVENT-INDEX-R002",
+            "source_document": "docs/BRD/BRD-EVENT-INDEX.md",
+            "source_fingerprint": "c14ec46a5c8f39c83af25e5991bc1592f5787f42bbab120d790d918761c48035"
+          },
+          "verification_mode": "STATIC"
+        }
+      ],
+      "operator_composition": [
+        "EVENT_ORDER_NOT_REQUIRED"
+      ],
+      "reference_id": "event-ordering-not-required",
+      "rendered_oracles": [
+        {
+          "bindings": {
+            "event_family": "MARKETING_ANALYTICS_AND_NOTIFICATION_EVENTS",
+            "ordering_policy": "ORDERING_NOT_REQUIRED",
+            "scope": "EVENT_PROCESSING_ORDER"
+          },
+          "boundary": "A separately ordered family is excluded from the unordered rule in EVENT_PROCESSING_ORDER.",
+          "evidence_fields": [
+            "event_family",
+            "scope",
+            "ordering_policy",
+            "classification_result"
+          ],
+          "negative": "Missing or inverted unordered classification for MARKETING_ANALYTICS_AND_NOTIFICATION_EVENTS violates ORDERING_NOT_REQUIRED.",
+          "operator_id": "EVENT_ORDER_NOT_REQUIRED",
+          "positive": "ORDERING_NOT_REQUIRED classifies MARKETING_ANALYTICS_AND_NOTIFICATION_EVENTS as not requiring processing order in EVENT_PROCESSING_ORDER."
+        }
+      ],
+      "requirement_id": "BRD-EVENT-INDEX-R002",
+      "review_reason": null,
+      "semantic_constraints": {
+        "fallback_boundary": null,
+        "organization_relationship_nonclaim": null,
+        "pre_fulfillment_procurement_path": null,
+        "pre_fulfillment_stock_path": null,
+        "retry_attempt_boundary": null
+      },
+      "semantic_status": "RETAINED_EXECUTABLE",
+      "source_provenance": {
+        "approved_decisions": [],
+        "approved_effective_statement_candidate": "Marketing, Analytics, and Notification events are not required to preserve processing order.",
+        "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
+        "original_identity": "TMP-BRD-EVENT-INDEX-002",
+        "previous_temporary_key": "TMP-BRD-EVENT-INDEX-002",
+        "remediation_contracts": [
+          "V23-P2B-CRITICALITY-DECISION-C1"
+        ],
+        "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+        "source_baseline": "v2.2",
+        "source_context_heading": "7. Event Delivery Principles",
+        "source_context_sha256": "2e7c1ed9552883e1bd1ecd397103a7ec0af0d8a4ff7f069c02ae508cc8aefdca",
+        "source_document": "docs/BRD/BRD-EVENT-INDEX.md",
+        "source_fingerprint": "c14ec46a5c8f39c83af25e5991bc1592f5787f42bbab120d790d918761c48035",
+        "source_lines": "L205",
+        "source_section": "7. Event Delivery Principles"
+      },
+      "source_statement": "Các event thuộc họ Marketing, Analytics và Notification không bắt buộc duy trì thứ tự xử lý."
+    },
+    {
+      "domain_boundary_fixtures": {
+        "canonical_identity_management": "YSIM_PLATFORM",
+        "legal_personal_data_ownership": "NOT_ASSERTED_BY_REQUIREMENT",
+        "organization_rights": "ORGANIZATION_SCOPED_RELATIONSHIP_CONSENT_PURPOSE_POLICY_JURISDICTION"
+      },
+      "execution_records": [
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "The prohibited action succeeds.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "359e726907ae659faa28942ce31eb9378df645354240871d9db0f74576cbe387",
+          "mutated_value": "ALLOW",
+          "mutation_class": "POSITIVE_MUTATION",
+          "mutation_id": "ACTOR_DENIED-POS",
+          "operator_id": "ACTOR_DENIED",
+          "original_sha256": "e8f449bb3839eb9b9559648a3351444dbbb37dfa1356773985c14b2524c2b41e",
+          "original_value": "DENY",
+          "target_path": "/observed/decision"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "The prohibited action succeeds.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "08af3fc344c2004839e0e536831b70eee70eedf04d9bbd52a0ae7ac3d8f3b063",
+          "mutated_value": true,
+          "mutation_class": "NEGATIVE_MUTATION",
+          "mutation_id": "ACTOR_DENIED-NEG",
+          "operator_id": "ACTOR_DENIED",
+          "original_sha256": "e8f449bb3839eb9b9559648a3351444dbbb37dfa1356773985c14b2524c2b41e",
+          "original_value": false,
+          "target_path": "/observed/entitled"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "The prohibited action succeeds.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "bc539c1ae2e4c7928297ee4589366e00bf54713a93bee60cf14cb7d6ac6ab63f",
+          "mutated_value": false,
+          "mutation_class": "BOUNDARY_MUTATION",
+          "mutation_id": "ACTOR_DENIED-BOUND",
+          "operator_id": "ACTOR_DENIED",
+          "original_sha256": "e8f449bb3839eb9b9559648a3351444dbbb37dfa1356773985c14b2524c2b41e",
+          "original_value": true,
+          "target_path": "/observed/boundary_valid"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "Cross-tenant data is disclosed or mutated without permission.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "1c8277a47afa7d1a044d9bf8106010103f3b89212aa1e46db21536697996e9b5",
+          "mutated_value": false,
+          "mutation_class": "POSITIVE_MUTATION",
+          "mutation_id": "TENANT_ISOLATED-POS",
+          "operator_id": "TENANT_ISOLATED",
+          "original_sha256": "95a711ffc76ce63abe8f607bc539e7fef96a4986a6d005f1f8cf0ae8847a25d1",
+          "original_value": true,
+          "target_path": "/observed/access_allowed"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "Cross-tenant data is disclosed or mutated without permission.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "7cdeebff4ddf87797547ac4e21c61a35519d929ba66a04b1c53a2ab3fdff67b9",
+          "mutated_value": true,
+          "mutation_class": "NEGATIVE_MUTATION",
+          "mutation_id": "TENANT_ISOLATED-NEG",
+          "operator_id": "TENANT_ISOLATED",
+          "original_sha256": "95a711ffc76ce63abe8f607bc539e7fef96a4986a6d005f1f8cf0ae8847a25d1",
+          "original_value": false,
+          "target_path": "/observed/cross_tenant_disclosure"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "Cross-tenant data is disclosed or mutated without permission.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "cdaf730671d1145e8fab1f6c672815033e71e7d1ebb28f343ba47ba0d2ec39d6",
+          "mutated_value": false,
+          "mutation_class": "BOUNDARY_MUTATION",
+          "mutation_id": "TENANT_ISOLATED-BOUND",
+          "operator_id": "TENANT_ISOLATED",
+          "original_sha256": "95a711ffc76ce63abe8f607bc539e7fef96a4986a6d005f1f8cf0ae8847a25d1",
+          "original_value": true,
+          "target_path": "/observed/boundary_valid"
+        }
+      ],
+      "fixtures": [
+        {
+          "bindings": {
+            "action": "TAKE_OWNERSHIP_MERGE_OR_MODIFY_CANONICAL_CUSTOMER_IDENTITY",
+            "actor": "ORGANIZATION_ACTOR",
+            "effective_policy": "ORGANIZATION_SCOPED_CUSTOMER_RELATIONSHIP_POLICY",
+            "resource": "CANONICAL_CUSTOMER_IDENTITY"
+          },
+          "boundary": {
+            "left": {
+              "case": "APPLICABLE"
+            },
+            "right": {
+              "case": "NON_APPLICABLE"
+            }
+          },
+          "evidence": {
+            "audit_record": "ORG_RELATIONSHIP:AUDIT_RECORD",
+            "policy_input": "ORG_RELATIONSHIP:POLICY_INPUT",
+            "policy_outcome": "ORG_RELATIONSHIP:POLICY_OUTCOME",
+            "reason": "ORG_RELATIONSHIP:REASON"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "fixture_id": "REF-FIX-organization-relationship-ACTOR_DENIED",
+          "observed": {
+            "boundary_valid": true,
+            "decision": "DENY",
+            "entitled": false
+          },
+          "operator_id": "ACTOR_DENIED",
+          "operator_version": "1.0.0-candidate.2",
+          "provenance": {
+            "inference": false,
+            "requirement_id": "BRD-WS-11-R003",
+            "source_document": "docs/BRD/BRD-WS-11.md",
+            "source_fingerprint": "8b014a3a00a1e523fcfdc825c69d163ace56d18cdbcf1d1e42e40858e701bf25"
+          },
+          "verification_mode": "EXECUTABLE"
+        },
+        {
+          "bindings": {
+            "actor_tenant": "ORGANIZATION_A",
+            "permission_context": "RELATIONSHIP_CONSENT_PURPOSE_POLICY_AND_JURISDICTION",
+            "resource_tenant": "ORGANIZATION_A"
+          },
+          "boundary": {
+            "left": {
+              "case": "APPLICABLE"
+            },
+            "right": {
+              "case": "NON_APPLICABLE"
+            }
+          },
+          "evidence": {
+            "access_decision": "ORG_RELATIONSHIP:ACCESS_DECISION",
+            "actor_tenant": "ORG_RELATIONSHIP:ACTOR_TENANT",
+            "audit_record": "ORG_RELATIONSHIP:AUDIT_RECORD",
+            "resource_tenant": "ORG_RELATIONSHIP:RESOURCE_TENANT"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "fixture_id": "REF-FIX-organization-relationship-TENANT_ISOLATED",
+          "observed": {
+            "access_allowed": true,
+            "boundary_valid": true,
+            "cross_tenant_disclosure": false,
+            "relationship_authorized": false
+          },
+          "operator_id": "TENANT_ISOLATED",
+          "operator_version": "1.0.0-candidate.2",
+          "provenance": {
+            "inference": false,
+            "requirement_id": "BRD-WS-11-R003",
+            "source_document": "docs/BRD/BRD-WS-11.md",
+            "source_fingerprint": "8b014a3a00a1e523fcfdc825c69d163ace56d18cdbcf1d1e42e40858e701bf25"
+          },
+          "verification_mode": "EXECUTABLE"
+        }
+      ],
+      "operator_composition": [
+        "ACTOR_DENIED",
+        "TENANT_ISOLATED"
+      ],
+      "reference_id": "organization-relationship",
+      "rendered_oracles": [
+        {
+          "bindings": {
+            "action": "TAKE_OWNERSHIP_MERGE_OR_MODIFY_CANONICAL_CUSTOMER_IDENTITY",
+            "actor": "ORGANIZATION_ACTOR",
+            "effective_policy": "ORGANIZATION_SCOPED_CUSTOMER_RELATIONSHIP_POLICY",
+            "resource": "CANONICAL_CUSTOMER_IDENTITY"
+          },
+          "boundary": "A challenge outcome is distinguished from both ALLOW and DENY. Bound context: ORGANIZATION_ACTOR.",
+          "evidence_fields": [
+            "policy_input",
+            "policy_outcome",
+            "reason",
+            "audit_record"
+          ],
+          "negative": "ALLOW for prohibited actor ORGANIZATION_ACTOR is a policy violation.",
+          "operator_id": "ACTOR_DENIED",
+          "positive": "ORGANIZATION_SCOPED_CUSTOMER_RELATIONSHIP_POLICY denies ORGANIZATION_ACTOR the action TAKE_OWNERSHIP_MERGE_OR_MODIFY_CANONICAL_CUSTOMER_IDENTITY on CANONICAL_CUSTOMER_IDENTITY."
+        },
+        {
+          "bindings": {
+            "actor_tenant": "ORGANIZATION_A",
+            "permission_context": "RELATIONSHIP_CONSENT_PURPOSE_POLICY_AND_JURISDICTION",
+            "resource_tenant": "ORGANIZATION_A"
+          },
+          "boundary": "An approved relationship changes permission context but never erases tenant identity. Bound context: ORGANIZATION_A.",
+          "evidence_fields": [
+            "access_decision",
+            "actor_tenant",
+            "resource_tenant",
+            "audit_record"
+          ],
+          "negative": "Cross-tenant access without RELATIONSHIP_CONSENT_PURPOSE_POLICY_AND_JURISDICTION is denied and audited.",
+          "operator_id": "TENANT_ISOLATED",
+          "positive": "Access for ORGANIZATION_A to ORGANIZATION_A is permitted by RELATIONSHIP_CONSENT_PURPOSE_POLICY_AND_JURISDICTION."
+        }
+      ],
+      "requirement_id": "BRD-WS-11-R003",
+      "review_reason": null,
+      "semantic_constraints": {
+        "fallback_boundary": null,
+        "organization_relationship_nonclaim": "canonical platform management does not assert legal ownership of personal data",
+        "pre_fulfillment_procurement_path": null,
+        "pre_fulfillment_stock_path": null,
+        "retry_attempt_boundary": null
+      },
+      "semantic_status": "RETAINED_EXECUTABLE",
+      "source_provenance": {
+        "approved_decisions": [
+          "V23-P2C-ACCEPTANCE-MAPPING-C3"
+        ],
+        "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
+        "original_identity": "TMP-BRD-WS-11-003",
+        "phase_2c_c3_actions": [
+          "C3_APPROVED_SEMANTIC_DIRECTIVE"
+        ],
+        "previous_temporary_key": "TMP-BRD-WS-11-003",
+        "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+        "source_baseline": "v2.2",
+        "source_context_heading": "4. Enterprise Customer Principle",
+        "source_context_sha256": "cfa9fa544137f2b7842d75f211e25bfbee6947004cc59ba6b21a3c2a6dea4f8b",
+        "source_document": "docs/BRD/BRD-WS-11.md",
+        "source_fingerprint": "8b014a3a00a1e523fcfdc825c69d163ace56d18cdbcf1d1e42e40858e701bf25",
+        "source_fingerprint_before_c3": "d3e7dc2818ea7c66f717446a5a6b87bf5b6c298dbc7b7c2ede1251b1ed2191d2",
+        "source_lines": "L110",
+        "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+        "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+        "source_section": "4. Enterprise Customer Principle"
+      },
+      "source_statement": "Organization chỉ được quản lý Organization-scoped Customer Relationship và dữ liệu hoặc quyền được cấp trong relationship đó; Organization không được chiếm quyền sở hữu, hợp nhất hoặc sửa canonical Customer Identity ngoài policy được phép."
+    },
+    {
+      "domain_boundary_fixtures": {},
+      "execution_records": [
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "Cross-tenant data is disclosed or mutated without permission.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "02119c2f8729407546d904a69b0dd1375818a36f3633ac326c91731850a8930f",
+          "mutated_value": false,
+          "mutation_class": "POSITIVE_MUTATION",
+          "mutation_id": "TENANT_ISOLATED-POS",
+          "operator_id": "TENANT_ISOLATED",
+          "original_sha256": "c0195e02922a8e7706e340f712a497d1b17566366333f8afd2cda5ee471c22bb",
+          "original_value": true,
+          "target_path": "/observed/access_allowed"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "Cross-tenant data is disclosed or mutated without permission.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "9a80171dc2b4e517cfb1669bf86133bf60bf2d1c3d195f8b3945364531e81e4c",
+          "mutated_value": true,
+          "mutation_class": "NEGATIVE_MUTATION",
+          "mutation_id": "TENANT_ISOLATED-NEG",
+          "operator_id": "TENANT_ISOLATED",
+          "original_sha256": "c0195e02922a8e7706e340f712a497d1b17566366333f8afd2cda5ee471c22bb",
+          "original_value": false,
+          "target_path": "/observed/cross_tenant_disclosure"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "Cross-tenant data is disclosed or mutated without permission.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "a2cdb639a8cd8c3edf976b211f36098226ba59ce3a501cd8f46e66e118f0e20f",
+          "mutated_value": false,
+          "mutation_class": "BOUNDARY_MUTATION",
+          "mutation_id": "TENANT_ISOLATED-BOUND",
+          "operator_id": "TENANT_ISOLATED",
+          "original_sha256": "c0195e02922a8e7706e340f712a497d1b17566366333f8afd2cda5ee471c22bb",
+          "original_value": true,
+          "target_path": "/observed/boundary_valid"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "The prohibited action succeeds.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "50c7d65f88c275161ba68d6c60d0c014815a984df678aafd48b2447f6f407774",
+          "mutated_value": "ALLOW",
+          "mutation_class": "POSITIVE_MUTATION",
+          "mutation_id": "ACTOR_DENIED-POS",
+          "operator_id": "ACTOR_DENIED",
+          "original_sha256": "6dc516cb1d42abdfd2b7f51f6d0d73c8f62ab8da831d016e89ef7260cd3383c4",
+          "original_value": "DENY",
+          "target_path": "/observed/decision"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "The prohibited action succeeds.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "89842afdca8cb6859203cf79d38f2d858dbddbbf5740ce90281307e192b1d429",
+          "mutated_value": true,
+          "mutation_class": "NEGATIVE_MUTATION",
+          "mutation_id": "ACTOR_DENIED-NEG",
+          "operator_id": "ACTOR_DENIED",
+          "original_sha256": "6dc516cb1d42abdfd2b7f51f6d0d73c8f62ab8da831d016e89ef7260cd3383c4",
+          "original_value": false,
+          "target_path": "/observed/entitled"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "The prohibited action succeeds.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "052a1da67fb405de73e0968e047f6310925994e34232e17c52eaef9766d0197e",
+          "mutated_value": false,
+          "mutation_class": "BOUNDARY_MUTATION",
+          "mutation_id": "ACTOR_DENIED-BOUND",
+          "operator_id": "ACTOR_DENIED",
+          "original_sha256": "6dc516cb1d42abdfd2b7f51f6d0d73c8f62ab8da831d016e89ef7260cd3383c4",
+          "original_value": true,
+          "target_path": "/observed/boundary_valid"
+        }
+      ],
+      "fixtures": [
+        {
+          "bindings": {
+            "actor_tenant": "ORGANIZATION_A",
+            "permission_context": "ORGANIZATION_ISOLATION_AND_TENANT_BOUNDARY_POLICY",
+            "resource_tenant": "ORGANIZATION_A"
+          },
+          "boundary": {
+            "left": {
+              "case": "APPLICABLE"
+            },
+            "right": {
+              "case": "NON_APPLICABLE"
+            }
+          },
+          "evidence": {
+            "access_decision": "TENANT_BOUNDARY:ACCESS_DECISION",
+            "actor_tenant": "TENANT_BOUNDARY:ACTOR_TENANT",
+            "audit_record": "TENANT_BOUNDARY:AUDIT_RECORD",
+            "resource_tenant": "TENANT_BOUNDARY:RESOURCE_TENANT"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "fixture_id": "REF-FIX-tenant-isolation-TENANT_ISOLATED",
+          "observed": {
+            "access_allowed": true,
+            "boundary_valid": true,
+            "cross_tenant_disclosure": false,
+            "relationship_authorized": false
+          },
+          "operator_id": "TENANT_ISOLATED",
+          "operator_version": "1.0.0-candidate.2",
+          "provenance": {
+            "inference": false,
+            "requirement_id": "BRD-WS-03-R010",
+            "source_document": "docs/BRD/BRD-WS-03.md",
+            "source_fingerprint": "b1919b8370faf679a072286e43c92a187a5da2df976736a074d38a19fcda7cec"
+          },
+          "verification_mode": "EXECUTABLE"
+        },
+        {
+          "bindings": {
+            "action": "ACCESS_OR_MUTATE",
+            "actor": "ORGANIZATION_A_ACTOR",
+            "effective_policy": "TENANT_ISOLATION_POLICY",
+            "resource": "ORGANIZATION_B_DATA"
+          },
+          "boundary": {
+            "left": {
+              "case": "APPLICABLE"
+            },
+            "right": {
+              "case": "NON_APPLICABLE"
+            }
+          },
+          "evidence": {
+            "audit_record": "TENANT_BOUNDARY:AUDIT_RECORD",
+            "policy_input": "TENANT_BOUNDARY:POLICY_INPUT",
+            "policy_outcome": "TENANT_BOUNDARY:POLICY_OUTCOME",
+            "reason": "TENANT_BOUNDARY:REASON"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "fixture_id": "REF-FIX-tenant-isolation-ACTOR_DENIED",
+          "observed": {
+            "boundary_valid": true,
+            "decision": "DENY",
+            "entitled": false
+          },
+          "operator_id": "ACTOR_DENIED",
+          "operator_version": "1.0.0-candidate.2",
+          "provenance": {
+            "inference": false,
+            "requirement_id": "BRD-WS-03-R010",
+            "source_document": "docs/BRD/BRD-WS-03.md",
+            "source_fingerprint": "b1919b8370faf679a072286e43c92a187a5da2df976736a074d38a19fcda7cec"
+          },
+          "verification_mode": "EXECUTABLE"
+        }
+      ],
+      "operator_composition": [
+        "TENANT_ISOLATED",
+        "ACTOR_DENIED"
+      ],
+      "reference_id": "tenant-isolation",
+      "rendered_oracles": [
+        {
+          "bindings": {
+            "actor_tenant": "ORGANIZATION_A",
+            "permission_context": "ORGANIZATION_ISOLATION_AND_TENANT_BOUNDARY_POLICY",
+            "resource_tenant": "ORGANIZATION_A"
+          },
+          "boundary": "An approved relationship changes permission context but never erases tenant identity. Bound context: ORGANIZATION_A.",
+          "evidence_fields": [
+            "access_decision",
+            "actor_tenant",
+            "resource_tenant",
+            "audit_record"
+          ],
+          "negative": "Cross-tenant access without ORGANIZATION_ISOLATION_AND_TENANT_BOUNDARY_POLICY is denied and audited.",
+          "operator_id": "TENANT_ISOLATED",
+          "positive": "Access for ORGANIZATION_A to ORGANIZATION_A is permitted by ORGANIZATION_ISOLATION_AND_TENANT_BOUNDARY_POLICY."
+        },
+        {
+          "bindings": {
+            "action": "ACCESS_OR_MUTATE",
+            "actor": "ORGANIZATION_A_ACTOR",
+            "effective_policy": "TENANT_ISOLATION_POLICY",
+            "resource": "ORGANIZATION_B_DATA"
+          },
+          "boundary": "A challenge outcome is distinguished from both ALLOW and DENY. Bound context: ORGANIZATION_A_ACTOR.",
+          "evidence_fields": [
+            "policy_input",
+            "policy_outcome",
+            "reason",
+            "audit_record"
+          ],
+          "negative": "ALLOW for prohibited actor ORGANIZATION_A_ACTOR is a policy violation.",
+          "operator_id": "ACTOR_DENIED",
+          "positive": "TENANT_ISOLATION_POLICY denies ORGANIZATION_A_ACTOR the action ACCESS_OR_MUTATE on ORGANIZATION_B_DATA."
+        }
+      ],
+      "requirement_id": "BRD-WS-03-R010",
+      "review_reason": null,
+      "semantic_constraints": {
+        "fallback_boundary": null,
+        "organization_relationship_nonclaim": null,
+        "pre_fulfillment_procurement_path": null,
+        "pre_fulfillment_stock_path": null,
+        "retry_attempt_boundary": null
+      },
+      "semantic_status": "RETAINED_EXECUTABLE",
+      "source_provenance": {
+        "approved_decisions": [],
+        "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
+        "original_identity": "TMP-BRD-WS-03-010",
+        "previous_temporary_key": "TMP-BRD-WS-03-010",
+        "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+        "source_baseline": "v2.2",
+        "source_context_heading": "17. Organization Boundary",
+        "source_context_sha256": "db01ee79d47f9f42b0bc1486243582bf659c30b61443a0d612f1fb13a0747cc2",
+        "source_document": "docs/BRD/BRD-WS-03.md",
+        "source_fingerprint": "b1919b8370faf679a072286e43c92a187a5da2df976736a074d38a19fcda7cec",
+        "source_lines": "L401",
+        "source_section": "17. Organization Boundary"
+      },
+      "source_statement": "Một Organization không được phép truy cập dữ liệu của Organization khác nếu không được phép theo Business Rule."
+    },
+    {
+      "domain_boundary_fixtures": {},
+      "execution_records": [],
+      "fixtures": [],
+      "operator_composition": [],
+      "reference_id": "state-transition",
+      "rendered_oracles": [],
+      "requirement_id": "BD-10-004",
+      "review_reason": "SOURCE_DOES_NOT_SUPPLY_A_COMPLETE_CONCRETE_OPERATOR_FIXTURE_WITHOUT_INFERENCE",
+      "semantic_constraints": {
+        "fallback_boundary": null,
+        "organization_relationship_nonclaim": null,
+        "pre_fulfillment_procurement_path": null,
+        "pre_fulfillment_stock_path": null,
+        "retry_attempt_boundary": null
+      },
+      "semantic_status": "HUMAN_OPERATOR_MAPPING_REVIEW",
+      "source_provenance": {
+        "approved_decisions": [],
+        "identity_origin": "PRESERVED_STABLE_ID",
+        "original_identity": "BD-10-004",
+        "previous_temporary_key": null,
+        "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+        "source_baseline": "v2.2",
+        "source_context_heading": "BD-10-004",
+        "source_context_sha256": "b7361db884afdadd4c7d3be5a412ef088110c47e47fb36c5baab3430baea7406",
+        "source_document": "docs/BRD/BRD-WS-10.md",
+        "source_fingerprint": "6a50fb8fe3668c2638571610a7740b0d6cb316e793d7653efc95ecb40a0fd1bf",
+        "source_lines": "L663-L666",
+        "source_section": "30. Business Decisions (Locked) > BD-10-004"
+      },
+      "source_statement": "CommissionSnapshot phát sinh sau Payment Success và ở trạng thái Pending cho đến khi Settlement xác nhận."
+    },
+    {
+      "domain_boundary_fixtures": {},
+      "execution_records": [
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "A field is missing or the record is modified/deleted.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "9c2e5168d70447530a3d97acaa4ee7fa918b47719ff6c95f4a096b3ba3e6ab19",
+          "mutated_value": [],
+          "mutation_class": "POSITIVE_MUTATION",
+          "mutation_id": "AUDIT_IMMUTABLE-POS",
+          "operator_id": "AUDIT_IMMUTABLE",
+          "original_sha256": "2927036be9e66c4af97542d19c00bec914849d5c10ee6609af5b0764136803b8",
+          "original_value": [
+            "who",
+            "when",
+            "before",
+            "after",
+            "reason",
+            "version"
+          ],
+          "target_path": "/observed/present_fields"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "A field is missing or the record is modified/deleted.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "094793fa5c5446533a35fff5ae033ef9aef3689f7d72c226649cb3e1e8ae18a2",
+          "mutated_value": true,
+          "mutation_class": "NEGATIVE_MUTATION",
+          "mutation_id": "AUDIT_IMMUTABLE-NEG",
+          "operator_id": "AUDIT_IMMUTABLE",
+          "original_sha256": "2927036be9e66c4af97542d19c00bec914849d5c10ee6609af5b0764136803b8",
+          "original_value": false,
+          "target_path": "/observed/modified"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "A field is missing or the record is modified/deleted.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "439a90a9de521c23ae8fea96309a66f6ffdda8aa1c4f8a06947dbe8ee1486ec2",
+          "mutated_value": false,
+          "mutation_class": "BOUNDARY_MUTATION",
+          "mutation_id": "AUDIT_IMMUTABLE-BOUND",
+          "operator_id": "AUDIT_IMMUTABLE",
+          "original_sha256": "2927036be9e66c4af97542d19c00bec914849d5c10ee6609af5b0764136803b8",
+          "original_value": true,
+          "target_path": "/observed/boundary_valid"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "At least one named field is missing or unusable.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "e18c0614a4e4c560a07e20aa37772ef1bfebf1a6dee0c31bffbae55995924310",
+          "mutated_value": [],
+          "mutation_class": "POSITIVE_MUTATION",
+          "mutation_id": "EVIDENCE_FIELD_PRESENT-POS",
+          "operator_id": "EVIDENCE_FIELD_PRESENT",
+          "original_sha256": "6b89daead23a203e91692c67411fd96df02e44d98f6aece9a1f7a5ababd79821",
+          "original_value": [
+            "who",
+            "when",
+            "before",
+            "after",
+            "reason",
+            "version"
+          ],
+          "target_path": "/observed/present_fields"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "At least one named field is missing or unusable.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "97ae0f65bd8095e83f021699f87ed96798baf4fb66cf0c9edc3661b8055977c1",
+          "mutated_value": true,
+          "mutation_class": "NEGATIVE_MUTATION",
+          "mutation_id": "EVIDENCE_FIELD_PRESENT-NEG",
+          "operator_id": "EVIDENCE_FIELD_PRESENT",
+          "original_sha256": "6b89daead23a203e91692c67411fd96df02e44d98f6aece9a1f7a5ababd79821",
+          "original_value": false,
+          "target_path": "/observed/invalid_field"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "At least one named field is missing or unusable.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "2c521eaa00133d8ff13a750f5ca6b954124feeb3c810de57ad2591981b197d39",
+          "mutated_value": false,
+          "mutation_class": "BOUNDARY_MUTATION",
+          "mutation_id": "EVIDENCE_FIELD_PRESENT-BOUND",
+          "operator_id": "EVIDENCE_FIELD_PRESENT",
+          "original_sha256": "6b89daead23a203e91692c67411fd96df02e44d98f6aece9a1f7a5ababd79821",
+          "original_value": true,
+          "target_path": "/observed/boundary_valid"
+        }
+      ],
+      "fixtures": [
+        {
+          "bindings": {
+            "audit_record": "AUDIT_RECORD_WITH_WHO_WHEN_BEFORE_AFTER_REASON_VERSION",
+            "immutability_boundary": "RECORD_CREATION",
+            "required_fields": [
+              "who",
+              "when",
+              "before",
+              "after",
+              "reason",
+              "version"
+            ]
+          },
+          "boundary": {
+            "left": {
+              "case": "APPLICABLE"
+            },
+            "right": {
+              "case": "NON_APPLICABLE"
+            }
+          },
+          "evidence": {
+            "audit_record": "AUDIT_RECORD:AUDIT_RECORD",
+            "change_attempt": "AUDIT_RECORD:CHANGE_ATTEMPT",
+            "integrity_proof": "AUDIT_RECORD:INTEGRITY_PROOF",
+            "required_fields": "AUDIT_RECORD:REQUIRED_FIELDS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "fixture_id": "REF-FIX-audit-immutability-AUDIT_IMMUTABLE",
+          "observed": {
+            "boundary_valid": true,
+            "deleted": false,
+            "modified": false,
+            "present_fields": [
+              "who",
+              "when",
+              "before",
+              "after",
+              "reason",
+              "version"
+            ]
+          },
+          "operator_id": "AUDIT_IMMUTABLE",
+          "operator_version": "1.0.0-candidate.2",
+          "provenance": {
+            "inference": false,
+            "requirement_id": "BD-14-016",
+            "source_document": "docs/BRD/BRD-WS-14.md",
+            "source_fingerprint": "4018ba43f9de31c594da1230a23a9bc57947d66a926f698714e9cce5b2249b9d"
+          },
+          "verification_mode": "HYBRID"
+        },
+        {
+          "bindings": {
+            "evidence_object": "AUDIT_RECORD",
+            "required_fields": [
+              "who",
+              "when",
+              "before",
+              "after",
+              "reason",
+              "version"
+            ]
+          },
+          "boundary": {
+            "left": {
+              "case": "APPLICABLE"
+            },
+            "right": {
+              "case": "NON_APPLICABLE"
+            }
+          },
+          "evidence": {
+            "evidence_object": "AUDIT_RECORD:EVIDENCE_OBJECT",
+            "field_presence": "AUDIT_RECORD:FIELD_PRESENCE",
+            "missing_fields": "AUDIT_RECORD:MISSING_FIELDS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "fixture_id": "REF-FIX-audit-immutability-EVIDENCE_FIELD_PRESENT",
+          "observed": {
+            "boundary_valid": true,
+            "invalid_field": false,
+            "present_fields": [
+              "who",
+              "when",
+              "before",
+              "after",
+              "reason",
+              "version"
+            ]
+          },
+          "operator_id": "EVIDENCE_FIELD_PRESENT",
+          "operator_version": "1.0.0-candidate.2",
+          "provenance": {
+            "inference": false,
+            "requirement_id": "BD-14-016",
+            "source_document": "docs/BRD/BRD-WS-14.md",
+            "source_fingerprint": "4018ba43f9de31c594da1230a23a9bc57947d66a926f698714e9cce5b2249b9d"
+          },
+          "verification_mode": "STATIC"
+        }
+      ],
+      "operator_composition": [
+        "AUDIT_IMMUTABLE",
+        "EVIDENCE_FIELD_PRESENT"
+      ],
+      "reference_id": "audit-immutability",
+      "rendered_oracles": [
+        {
+          "bindings": {
+            "audit_record": "AUDIT_RECORD_WITH_WHO_WHEN_BEFORE_AFTER_REASON_VERSION",
+            "immutability_boundary": "RECORD_CREATION",
+            "required_fields": [
+              "who",
+              "when",
+              "before",
+              "after",
+              "reason",
+              "version"
+            ]
+          },
+          "boundary": "Archival may change storage tier but not audit content. Bound context: AUDIT_RECORD_WITH_WHO_WHEN_BEFORE_AFTER_REASON_VERSION.",
+          "evidence_fields": [
+            "audit_record",
+            "required_fields",
+            "integrity_proof",
+            "change_attempt"
+          ],
+          "negative": "Missing fields or modification of AUDIT_RECORD_WITH_WHO_WHEN_BEFORE_AFTER_REASON_VERSION violate audit integrity.",
+          "operator_id": "AUDIT_IMMUTABLE",
+          "positive": "AUDIT_RECORD_WITH_WHO_WHEN_BEFORE_AFTER_REASON_VERSION contains ['who', 'when', 'before', 'after', 'reason', 'version'] and remains immutable after RECORD_CREATION."
+        },
+        {
+          "bindings": {
+            "evidence_object": "AUDIT_RECORD",
+            "required_fields": [
+              "who",
+              "when",
+              "before",
+              "after",
+              "reason",
+              "version"
+            ]
+          },
+          "boundary": "Only explicitly optional fields may be absent at the applicability boundary. Bound context: AUDIT_RECORD.",
+          "evidence_fields": [
+            "evidence_object",
+            "field_presence",
+            "missing_fields"
+          ],
+          "negative": "Missing fields from ['who', 'when', 'before', 'after', 'reason', 'version'] are reported by name.",
+          "operator_id": "EVIDENCE_FIELD_PRESENT",
+          "positive": "AUDIT_RECORD contains every field in ['who', 'when', 'before', 'after', 'reason', 'version']."
+        }
+      ],
+      "requirement_id": "BD-14-016",
+      "review_reason": null,
+      "semantic_constraints": {
+        "fallback_boundary": null,
+        "organization_relationship_nonclaim": null,
+        "pre_fulfillment_procurement_path": null,
+        "pre_fulfillment_stock_path": null,
+        "retry_attempt_boundary": null
+      },
+      "semantic_status": "RETAINED_EXECUTABLE",
+      "source_provenance": {
+        "approved_decisions": [],
+        "identity_origin": "PRESERVED_STABLE_ID",
+        "original_identity": "BD-14-016",
+        "previous_temporary_key": null,
+        "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+        "source_baseline": "v2.2",
+        "source_context_heading": "18. Configuration Audit",
+        "source_context_sha256": "499b94c479357d38c562a4af9165c2e4ab7dfd9e08e42abf02e3063255d8b275",
+        "source_document": "docs/BRD/BRD-WS-14.md",
+        "source_fingerprint": "4018ba43f9de31c594da1230a23a9bc57947d66a926f698714e9cce5b2249b9d",
+        "source_lines": "L1041-L1051",
+        "source_section": "31. Business Decisions (Locked) > BD-14-016"
+      },
+      "source_statement": "Configuration Audit lưu đầy đủ: - Who - When - Before - After - Reason - Version"
+    },
+    {
+      "domain_boundary_fixtures": {
+        "attempt_3": {
+          "accepted": true,
+          "retry_count": 3,
+          "retry_limit": 3
+        },
+        "attempt_4": {
+          "accepted": false,
+          "retry_count": 4,
+          "retry_limit": 3,
+          "terminal_state_required": true
+        }
+      },
+      "execution_records": [
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "An attempt beyond the limit is accepted.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "b1887f757382b5d55f34d3a39ad2598b433cd98b9238cfbdb01cbd158aaf923f",
+          "mutated_value": 4,
+          "mutation_class": "POSITIVE_MUTATION",
+          "mutation_id": "RETRY_LIMIT_NOT_EXCEEDED-POS",
+          "operator_id": "RETRY_LIMIT_NOT_EXCEEDED",
+          "original_sha256": "4eadf44786808d676659a122bc5702d0ffc1d1d388ef3fa25adaf6f3abd1928c",
+          "original_value": 3,
+          "target_path": "/observed/attempts"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "An attempt beyond the limit is accepted.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "6c80abc86a2775dbe57a9807c63a29b6774919e413821305a58fd430716cb707",
+          "mutated_value": true,
+          "mutation_class": "NEGATIVE_MUTATION",
+          "mutation_id": "RETRY_LIMIT_NOT_EXCEEDED-NEG",
+          "operator_id": "RETRY_LIMIT_NOT_EXCEEDED",
+          "original_sha256": "4eadf44786808d676659a122bc5702d0ffc1d1d388ef3fa25adaf6f3abd1928c",
+          "original_value": false,
+          "target_path": "/observed/attempt_after_terminal"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "An attempt beyond the limit is accepted.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "766e6bf7984a4c2d40efa06f06efe253093d20b5ca92221b2b4c05f252778b84",
+          "mutated_value": false,
+          "mutation_class": "BOUNDARY_MUTATION",
+          "mutation_id": "RETRY_LIMIT_NOT_EXCEEDED-BOUND",
+          "operator_id": "RETRY_LIMIT_NOT_EXCEEDED",
+          "original_sha256": "4eadf44786808d676659a122bc5702d0ffc1d1d388ef3fa25adaf6f3abd1928c",
+          "original_value": true,
+          "target_path": "/observed/boundary_valid"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "Delivery remains indeterminate or reaches a disallowed state.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "366d7faffaf699a3cd650b403b85547b6ebf921d99f4527e02c3ec4ad4137f28",
+          "mutated_value": "UNKNOWN",
+          "mutation_class": "POSITIVE_MUTATION",
+          "mutation_id": "DELIVERY_TERMINAL_STATE-POS",
+          "operator_id": "DELIVERY_TERMINAL_STATE",
+          "original_sha256": "61767b5e39e60142ed96c02869ef71fc3c2b787c4a46b153df7f504817ca3ca2",
+          "original_value": "DELIVERED",
+          "target_path": "/observed/observed_state"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "Delivery remains indeterminate or reaches a disallowed state.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "e42f7a9c37090d48e44200b363c6e8e778f9aca9c0579adf0d530c9d702f2159",
+          "mutated_value": true,
+          "mutation_class": "NEGATIVE_MUTATION",
+          "mutation_id": "DELIVERY_TERMINAL_STATE-NEG",
+          "operator_id": "DELIVERY_TERMINAL_STATE",
+          "original_sha256": "61767b5e39e60142ed96c02869ef71fc3c2b787c4a46b153df7f504817ca3ca2",
+          "original_value": false,
+          "target_path": "/observed/exited_terminal"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "Delivery remains indeterminate or reaches a disallowed state.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "12b717e9c7e9c2a1c2b3389314910876131f24ad1d2e0db4066e4ff3176f425e",
+          "mutated_value": false,
+          "mutation_class": "BOUNDARY_MUTATION",
+          "mutation_id": "DELIVERY_TERMINAL_STATE-BOUND",
+          "operator_id": "DELIVERY_TERMINAL_STATE",
+          "original_sha256": "61767b5e39e60142ed96c02869ef71fc3c2b787c4a46b153df7f504817ca3ca2",
+          "original_value": true,
+          "target_path": "/observed/boundary_valid"
+        }
+      ],
+      "fixtures": [
+        {
+          "bindings": {
+            "operation": "EVENT_DELIVERY",
+            "retry_count": 3,
+            "retry_limit": 3
+          },
+          "boundary": {
+            "left": {
+              "case": "APPLICABLE"
+            },
+            "right": {
+              "case": "NON_APPLICABLE"
+            }
+          },
+          "evidence": {
+            "attempts": "RETRY_3_4:ATTEMPTS",
+            "failure_reason": "RETRY_3_4:FAILURE_REASON",
+            "operation": "RETRY_3_4:OPERATION",
+            "terminal_state": "RETRY_3_4:TERMINAL_STATE"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "fixture_id": "REF-FIX-retry-limit-RETRY_LIMIT_NOT_EXCEEDED",
+          "observed": {
+            "attempt_after_terminal": false,
+            "attempts": 3,
+            "boundary_valid": true
+          },
+          "operator_id": "RETRY_LIMIT_NOT_EXCEEDED",
+          "operator_version": "1.0.0-candidate.2",
+          "provenance": {
+            "inference": false,
+            "requirement_id": "BD-09-009",
+            "source_document": "docs/BRD/BRD-WS-09.md",
+            "source_fingerprint": "568891fe81b33d818b1e1cf72fe4f8c415c735ba850fa7d7649b3324f611ee50"
+          },
+          "verification_mode": "EXECUTABLE"
+        },
+        {
+          "bindings": {
+            "allowed_terminal_states": [
+              "DELIVERED",
+              "TERMINAL_FAILURE_AFTER_ATTEMPT_3"
+            ],
+            "delivery_id": "EVENT_DELIVERY_CORRELATION",
+            "observed_state": "DELIVERED"
+          },
+          "boundary": {
+            "left": {
+              "case": "APPLICABLE"
+            },
+            "right": {
+              "case": "NON_APPLICABLE"
+            }
+          },
+          "evidence": {
+            "delivery_id": "RETRY_3_4:DELIVERY_ID",
+            "failure_reason": "RETRY_3_4:FAILURE_REASON",
+            "observed_state": "RETRY_3_4:OBSERVED_STATE",
+            "outcome": "RETRY_3_4:OUTCOME"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "fixture_id": "REF-FIX-retry-limit-DELIVERY_TERMINAL_STATE",
+          "observed": {
+            "boundary_valid": true,
+            "exited_terminal": false,
+            "observed_state": "DELIVERED"
+          },
+          "operator_id": "DELIVERY_TERMINAL_STATE",
+          "operator_version": "1.0.0-candidate.2",
+          "provenance": {
+            "inference": false,
+            "requirement_id": "BD-09-009",
+            "source_document": "docs/BRD/BRD-WS-09.md",
+            "source_fingerprint": "568891fe81b33d818b1e1cf72fe4f8c415c735ba850fa7d7649b3324f611ee50"
+          },
+          "verification_mode": "EXECUTABLE"
+        }
+      ],
+      "operator_composition": [
+        "RETRY_LIMIT_NOT_EXCEEDED",
+        "DELIVERY_TERMINAL_STATE"
+      ],
+      "reference_id": "retry-limit",
+      "rendered_oracles": [
+        {
+          "bindings": {
+            "operation": "EVENT_DELIVERY",
+            "retry_count": 3,
+            "retry_limit": 3
+          },
+          "boundary": "Success before the limit reaches a terminal success state and stops retries. Bound context: EVENT_DELIVERY.",
+          "evidence_fields": [
+            "operation",
+            "attempts",
+            "terminal_state",
+            "failure_reason"
+          ],
+          "negative": "A retry after 3 is prohibited.",
+          "operator_id": "RETRY_LIMIT_NOT_EXCEEDED",
+          "positive": "EVENT_DELIVERY uses 3 retries, not exceeding 3."
+        },
+        {
+          "bindings": {
+            "allowed_terminal_states": [
+              "DELIVERED",
+              "TERMINAL_FAILURE_AFTER_ATTEMPT_3"
+            ],
+            "delivery_id": "EVENT_DELIVERY_CORRELATION",
+            "observed_state": "DELIVERED"
+          },
+          "boundary": "A retryable state is explicitly non-terminal and requires further processing. Bound context: EVENT_DELIVERY_CORRELATION.",
+          "evidence_fields": [
+            "delivery_id",
+            "observed_state",
+            "outcome",
+            "failure_reason"
+          ],
+          "negative": "DELIVERED is not an allowed terminal state.",
+          "operator_id": "DELIVERY_TERMINAL_STATE",
+          "positive": "EVENT_DELIVERY_CORRELATION reaches DELIVERED, a member of ['DELIVERED', 'TERMINAL_FAILURE_AFTER_ATTEMPT_3']."
+        }
+      ],
+      "requirement_id": "BD-09-009",
+      "review_reason": null,
+      "semantic_constraints": {
+        "fallback_boundary": null,
+        "organization_relationship_nonclaim": null,
+        "pre_fulfillment_procurement_path": null,
+        "pre_fulfillment_stock_path": null,
+        "retry_attempt_boundary": "attempt 3 is the final permitted retry; attempt 4 is rejected and terminal behavior is recorded"
+      },
+      "semantic_status": "RETAINED_EXECUTABLE",
+      "source_provenance": {
+        "approved_decisions": [
+          "P2-DEC-003"
+        ],
+        "identity_origin": "PRESERVED_STABLE_ID",
+        "original_identity": "BD-09-009",
+        "previous_temporary_key": null,
+        "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+        "source_baseline": "v2.2",
+        "source_context_heading": "BD-09-009",
+        "source_context_sha256": "35117a854b9715b6cada13bdfaf02008edd431ab8d04277e345f176dbcfcd88a",
+        "source_document": "docs/BRD/BRD-WS-09.md",
+        "source_fingerprint": "568891fe81b33d818b1e1cf72fe4f8c415c735ba850fa7d7649b3324f611ee50",
+        "source_lines": "L610-L613",
+        "source_section": "25. Business Decisions (Locked) > BD-09-009"
+      },
+      "source_statement": "Fulfillment Retry tối đa 3 lần."
+    },
+    {
+      "domain_boundary_fixtures": {},
+      "execution_records": [
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "Another outcome is returned or the policy cannot be resolved.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "7957d56ed76b8fef989b93a8f5e4765c3e181cbb33155ef9b107d86b62d68a3c",
+          "mutated_value": "WRONG_OUTCOME",
+          "mutation_class": "POSITIVE_MUTATION",
+          "mutation_id": "POLICY_OUTCOME_EQUALS-POS",
+          "operator_id": "POLICY_OUTCOME_EQUALS",
+          "original_sha256": "9b427c995d4e90b9bf11dbb292a9e9f34fd04d0278535c0c992d2c1ee8c83b4d",
+          "original_value": "IMMUTABLE_TRANSACTION_PRICING_SNAPSHOT",
+          "target_path": "/observed/observed_outcome"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "Another outcome is returned or the policy cannot be resolved.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "aba56de154e28599d0d984b710e75998a388c18e9397ca27c18665753fb2ae8e",
+          "mutated_value": true,
+          "mutation_class": "NEGATIVE_MUTATION",
+          "mutation_id": "POLICY_OUTCOME_EQUALS-NEG",
+          "operator_id": "POLICY_OUTCOME_EQUALS",
+          "original_sha256": "9b427c995d4e90b9bf11dbb292a9e9f34fd04d0278535c0c992d2c1ee8c83b4d",
+          "original_value": false,
+          "target_path": "/observed/prohibited"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "Another outcome is returned or the policy cannot be resolved.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "9dfbbffa4516656a3d879fafb8761816b50f681c874c92352ae497286f8ed666",
+          "mutated_value": false,
+          "mutation_class": "BOUNDARY_MUTATION",
+          "mutation_id": "POLICY_OUTCOME_EQUALS-BOUND",
+          "operator_id": "POLICY_OUTCOME_EQUALS",
+          "original_sha256": "9b427c995d4e90b9bf11dbb292a9e9f34fd04d0278535c0c992d2c1ee8c83b4d",
+          "original_value": true,
+          "target_path": "/observed/boundary_valid"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "At least one named field is missing or unusable.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "7ae1c58b316717474f69ec38f4803f65914bd8c073907d7bef0945e7ced6f0bb",
+          "mutated_value": [],
+          "mutation_class": "POSITIVE_MUTATION",
+          "mutation_id": "EVIDENCE_FIELD_PRESENT-POS",
+          "operator_id": "EVIDENCE_FIELD_PRESENT",
+          "original_sha256": "adc5cb31a9b3031a8dd87d01a798400f2bc28790edcbafb24e507b852d138e8a",
+          "original_value": [
+            "price",
+            "currency",
+            "promotion",
+            "tax_context",
+            "policy_version",
+            "effective_at"
+          ],
+          "target_path": "/observed/present_fields"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "At least one named field is missing or unusable.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "9aa13e99b06494d40173523fc78b7f904490100ab6d8f8ae3d16805e1ba90c2b",
+          "mutated_value": true,
+          "mutation_class": "NEGATIVE_MUTATION",
+          "mutation_id": "EVIDENCE_FIELD_PRESENT-NEG",
+          "operator_id": "EVIDENCE_FIELD_PRESENT",
+          "original_sha256": "adc5cb31a9b3031a8dd87d01a798400f2bc28790edcbafb24e507b852d138e8a",
+          "original_value": false,
+          "target_path": "/observed/invalid_field"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "At least one named field is missing or unusable.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "ebdd614a41bd0ff9625414afb2f050805847c96d6d4b5c6f0f3b2c5209511757",
+          "mutated_value": false,
+          "mutation_class": "BOUNDARY_MUTATION",
+          "mutation_id": "EVIDENCE_FIELD_PRESENT-BOUND",
+          "operator_id": "EVIDENCE_FIELD_PRESENT",
+          "original_sha256": "adc5cb31a9b3031a8dd87d01a798400f2bc28790edcbafb24e507b852d138e8a",
+          "original_value": true,
+          "target_path": "/observed/boundary_valid"
+        }
+      ],
+      "fixtures": [
+        {
+          "bindings": {
+            "expected_outcome": "IMMUTABLE_TRANSACTION_PRICING_SNAPSHOT",
+            "policy": "TRANSACTION_TIME_PRICING_SNAPSHOT",
+            "policy_inputs": "PRICE,CURRENCY,PROMOTION,TAX_CONTEXT,POLICY_VERSION,EFFECTIVE_AT"
+          },
+          "boundary": {
+            "left": {
+              "case": "APPLICABLE"
+            },
+            "right": {
+              "case": "NON_APPLICABLE"
+            }
+          },
+          "evidence": {
+            "policy_inputs": "PRICING_SNAPSHOT:POLICY_INPUTS",
+            "policy_outcome": "PRICING_SNAPSHOT:POLICY_OUTCOME",
+            "policy_version": "PRICING_SNAPSHOT:POLICY_VERSION",
+            "reason": "PRICING_SNAPSHOT:REASON"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "fixture_id": "REF-FIX-pricing-snapshot-POLICY_OUTCOME_EQUALS",
+          "observed": {
+            "boundary_valid": true,
+            "observed_outcome": "IMMUTABLE_TRANSACTION_PRICING_SNAPSHOT",
+            "prohibited": false
+          },
+          "operator_id": "POLICY_OUTCOME_EQUALS",
+          "operator_version": "1.0.0-candidate.2",
+          "provenance": {
+            "inference": false,
+            "requirement_id": "BD-02-007",
+            "source_document": "docs/BRD/BRD-WS-02.md",
+            "source_fingerprint": "7af8eb671480487ce7ad8a69570cd059eeaf894f8c9bfa0f618bd52314efdfc0"
+          },
+          "verification_mode": "EXECUTABLE"
+        },
+        {
+          "bindings": {
+            "evidence_object": "PRICING_SNAPSHOT",
+            "required_fields": [
+              "price",
+              "currency",
+              "promotion",
+              "tax_context",
+              "policy_version",
+              "effective_at"
+            ]
+          },
+          "boundary": {
+            "left": {
+              "case": "APPLICABLE"
+            },
+            "right": {
+              "case": "NON_APPLICABLE"
+            }
+          },
+          "evidence": {
+            "evidence_object": "PRICING_SNAPSHOT:EVIDENCE_OBJECT",
+            "field_presence": "PRICING_SNAPSHOT:FIELD_PRESENCE",
+            "missing_fields": "PRICING_SNAPSHOT:MISSING_FIELDS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "fixture_id": "REF-FIX-pricing-snapshot-EVIDENCE_FIELD_PRESENT",
+          "observed": {
+            "boundary_valid": true,
+            "invalid_field": false,
+            "present_fields": [
+              "price",
+              "currency",
+              "promotion",
+              "tax_context",
+              "policy_version",
+              "effective_at"
+            ]
+          },
+          "operator_id": "EVIDENCE_FIELD_PRESENT",
+          "operator_version": "1.0.0-candidate.2",
+          "provenance": {
+            "inference": false,
+            "requirement_id": "BD-02-007",
+            "source_document": "docs/BRD/BRD-WS-02.md",
+            "source_fingerprint": "7af8eb671480487ce7ad8a69570cd059eeaf894f8c9bfa0f618bd52314efdfc0"
+          },
+          "verification_mode": "STATIC"
+        }
+      ],
+      "operator_composition": [
+        "POLICY_OUTCOME_EQUALS",
+        "EVIDENCE_FIELD_PRESENT"
+      ],
+      "reference_id": "pricing-snapshot",
+      "rendered_oracles": [
+        {
+          "bindings": {
+            "expected_outcome": "IMMUTABLE_TRANSACTION_PRICING_SNAPSHOT",
+            "policy": "TRANSACTION_TIME_PRICING_SNAPSHOT",
+            "policy_inputs": "PRICE,CURRENCY,PROMOTION,TAX_CONTEXT,POLICY_VERSION,EFFECTIVE_AT"
+          },
+          "boundary": "A qualifier selecting another branch is evaluated against that branch's expected outcome. Bound context: TRANSACTION_TIME_PRICING_SNAPSHOT.",
+          "evidence_fields": [
+            "policy_inputs",
+            "policy_outcome",
+            "reason",
+            "policy_version"
+          ],
+          "negative": "An outcome different from IMMUTABLE_TRANSACTION_PRICING_SNAPSHOT violates TRANSACTION_TIME_PRICING_SNAPSHOT.",
+          "operator_id": "POLICY_OUTCOME_EQUALS",
+          "positive": "TRANSACTION_TIME_PRICING_SNAPSHOT returns IMMUTABLE_TRANSACTION_PRICING_SNAPSHOT for PRICE,CURRENCY,PROMOTION,TAX_CONTEXT,POLICY_VERSION,EFFECTIVE_AT."
+        },
+        {
+          "bindings": {
+            "evidence_object": "PRICING_SNAPSHOT",
+            "required_fields": [
+              "price",
+              "currency",
+              "promotion",
+              "tax_context",
+              "policy_version",
+              "effective_at"
+            ]
+          },
+          "boundary": "Only explicitly optional fields may be absent at the applicability boundary. Bound context: PRICING_SNAPSHOT.",
+          "evidence_fields": [
+            "evidence_object",
+            "field_presence",
+            "missing_fields"
+          ],
+          "negative": "Missing fields from ['price', 'currency', 'promotion', 'tax_context', 'policy_version', 'effective_at'] are reported by name.",
+          "operator_id": "EVIDENCE_FIELD_PRESENT",
+          "positive": "PRICING_SNAPSHOT contains every field in ['price', 'currency', 'promotion', 'tax_context', 'policy_version', 'effective_at']."
+        }
+      ],
+      "requirement_id": "BD-02-007",
+      "review_reason": null,
+      "semantic_constraints": {
+        "fallback_boundary": null,
+        "organization_relationship_nonclaim": null,
+        "pre_fulfillment_procurement_path": null,
+        "pre_fulfillment_stock_path": null,
+        "retry_attempt_boundary": null
+      },
+      "semantic_status": "RETAINED_EXECUTABLE",
+      "source_provenance": {
+        "approved_decisions": [],
+        "identity_origin": "PRESERVED_STABLE_ID",
+        "original_identity": "BD-02-007",
+        "previous_temporary_key": null,
+        "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+        "source_baseline": "v2.2",
+        "source_context_heading": "BD-02-001",
+        "source_context_sha256": "d306690cb04d415d1e2342b0f9d1a8204753ce8a48dd776d59a17534c95fe200",
+        "source_document": "docs/BRD/BRD-WS-02.md",
+        "source_fingerprint": "7af8eb671480487ce7ad8a69570cd059eeaf894f8c9bfa0f618bd52314efdfc0",
+        "source_lines": "L528-L537",
+        "source_section": "17. Business Decisions (Locked) > BD-02-007"
+      },
+      "source_statement": "**Decision** Snapshot Pricing là nguyên tắc bắt buộc. **Rationale** Mọi Settlement và nghiệp vụ tài chính phải sử dụng giá tại thời điểm phát sinh giao dịch."
+    },
+    {
+      "domain_boundary_fixtures": {},
+      "execution_records": [],
+      "fixtures": [],
+      "operator_composition": [],
+      "reference_id": "settlement-reconciliation",
+      "rendered_oracles": [],
+      "requirement_id": "BD-10-004",
+      "review_reason": "SOURCE_DOES_NOT_SUPPLY_A_COMPLETE_CONCRETE_OPERATOR_FIXTURE_WITHOUT_INFERENCE",
+      "semantic_constraints": {
+        "fallback_boundary": null,
+        "organization_relationship_nonclaim": null,
+        "pre_fulfillment_procurement_path": null,
+        "pre_fulfillment_stock_path": null,
+        "retry_attempt_boundary": null
+      },
+      "semantic_status": "HUMAN_OPERATOR_MAPPING_REVIEW",
+      "source_provenance": {
+        "approved_decisions": [],
+        "identity_origin": "PRESERVED_STABLE_ID",
+        "original_identity": "BD-10-004",
+        "previous_temporary_key": null,
+        "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+        "source_baseline": "v2.2",
+        "source_context_heading": "BD-10-004",
+        "source_context_sha256": "b7361db884afdadd4c7d3be5a412ef088110c47e47fb36c5baab3430baea7406",
+        "source_document": "docs/BRD/BRD-WS-10.md",
+        "source_fingerprint": "6a50fb8fe3668c2638571610a7740b0d6cb316e793d7653efc95ecb40a0fd1bf",
+        "source_lines": "L663-L666",
+        "source_section": "30. Business Decisions (Locked) > BD-10-004"
+      },
+      "source_statement": "CommissionSnapshot phát sinh sau Payment Success và ở trạng thái Pending cho đến khi Settlement xác nhận."
+    },
+    {
+      "domain_boundary_fixtures": {},
+      "execution_records": [
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "One outcome is absent or blocked.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "fb799597ed02b29e6f1461433750c0dbb48f3161cac9442c8ec46b58ea3647fe",
+          "mutated_value": [],
+          "mutation_class": "POSITIVE_MUTATION",
+          "mutation_id": "ACCESSIBILITY_CONFORMS-POS",
+          "operator_id": "ACCESSIBILITY_CONFORMS",
+          "original_sha256": "2b3185da22c255fdcd4be5cda17db2d31ebba43d1f5b6cb839b079daf24a5dc5",
+          "original_value": [
+            "KEYBOARD_USABLE",
+            "ACCESSIBLE_NAME_PRESENT",
+            "FOCUS_VISIBLE",
+            "CONTRAST_CONFORMS"
+          ],
+          "target_path": "/observed/passed_outcomes"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "One outcome is absent or blocked.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "569d4b1c9dc4e04f17cfe5c93c4cb6b7a6a46a1c22f6b3b4393bdc7ebd4b5153",
+          "mutated_value": true,
+          "mutation_class": "NEGATIVE_MUTATION",
+          "mutation_id": "ACCESSIBILITY_CONFORMS-NEG",
+          "operator_id": "ACCESSIBILITY_CONFORMS",
+          "original_sha256": "2b3185da22c255fdcd4be5cda17db2d31ebba43d1f5b6cb839b079daf24a5dc5",
+          "original_value": false,
+          "target_path": "/observed/disabled"
+        },
+        {
+          "actual_detection": "KILLED",
+          "baseline": {
+            "passed": true,
+            "status": "PASS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "mutant": {
+            "detail": "One outcome is absent or blocked.",
+            "passed": false,
+            "status": "ASSERTION_VIOLATED"
+          },
+          "mutant_sha256": "be159f55d00b539aec7caa9e653bfcdcf579c228ad7414531b0712e479c26c9f",
+          "mutated_value": false,
+          "mutation_class": "BOUNDARY_MUTATION",
+          "mutation_id": "ACCESSIBILITY_CONFORMS-BOUND",
+          "operator_id": "ACCESSIBILITY_CONFORMS",
+          "original_sha256": "2b3185da22c255fdcd4be5cda17db2d31ebba43d1f5b6cb839b079daf24a5dc5",
+          "original_value": true,
+          "target_path": "/observed/boundary_valid"
+        }
+      ],
+      "fixtures": [
+        {
+          "bindings": {
+            "accessibility_standard": "APPROVED_V2.3_ACCESSIBILITY_CONTRACT",
+            "experience": "V2.3_ACTIVE_EXPERIENCE_CHANNEL",
+            "required_outcomes": [
+              "KEYBOARD_USABLE",
+              "ACCESSIBLE_NAME_PRESENT",
+              "FOCUS_VISIBLE",
+              "CONTRAST_CONFORMS"
+            ]
+          },
+          "boundary": {
+            "left": {
+              "case": "APPLICABLE"
+            },
+            "right": {
+              "case": "NON_APPLICABLE"
+            }
+          },
+          "evidence": {
+            "accessibility_results": "ACCESSIBILITY:ACCESSIBILITY_RESULTS",
+            "assistive_technology": "ACCESSIBILITY:ASSISTIVE_TECHNOLOGY",
+            "experience": "ACCESSIBILITY:EXPERIENCE",
+            "violations": "ACCESSIBILITY:VIOLATIONS"
+          },
+          "execution_layer": "MODEL_CONFORMANCE_EXECUTED",
+          "fixture_id": "REF-FIX-accessibility-ACCESSIBILITY_CONFORMS",
+          "observed": {
+            "boundary_valid": true,
+            "disabled": false,
+            "passed_outcomes": [
+              "KEYBOARD_USABLE",
+              "ACCESSIBLE_NAME_PRESENT",
+              "FOCUS_VISIBLE",
+              "CONTRAST_CONFORMS"
+            ]
+          },
+          "operator_id": "ACCESSIBILITY_CONFORMS",
+          "operator_version": "1.0.0-candidate.2",
+          "provenance": {
+            "inference": false,
+            "requirement_id": "UXF-02-R009",
+            "source_document": "docs/UXF/UXF-02.md",
+            "source_fingerprint": "d27ea5dc7317fe49df4515b2158c294433af56d1cb2c82e9b2cd97edef310640"
+          },
+          "verification_mode": "HYBRID"
+        }
+      ],
+      "operator_composition": [
+        "ACCESSIBILITY_CONFORMS"
+      ],
+      "reference_id": "accessibility",
+      "rendered_oracles": [
+        {
+          "bindings": {
+            "accessibility_standard": "APPROVED_V2.3_ACCESSIBILITY_CONTRACT",
+            "experience": "V2.3_ACTIVE_EXPERIENCE_CHANNEL",
+            "required_outcomes": [
+              "KEYBOARD_USABLE",
+              "ACCESSIBLE_NAME_PRESENT",
+              "FOCUS_VISIBLE",
+              "CONTRAST_CONFORMS"
+            ]
+          },
+          "boundary": "An excluded medium requires its own applicability decision. Bound context: V2.3_ACTIVE_EXPERIENCE_CHANNEL.",
+          "evidence_fields": [
+            "experience",
+            "accessibility_results",
+            "assistive_technology",
+            "violations"
+          ],
+          "negative": "A missing accessibility outcome violates APPROVED_V2.3_ACCESSIBILITY_CONTRACT.",
+          "operator_id": "ACCESSIBILITY_CONFORMS",
+          "positive": "V2.3_ACTIVE_EXPERIENCE_CHANNEL satisfies ['KEYBOARD_USABLE', 'ACCESSIBLE_NAME_PRESENT', 'FOCUS_VISIBLE', 'CONTRAST_CONFORMS'] under APPROVED_V2.3_ACCESSIBILITY_CONTRACT."
+        }
+      ],
+      "requirement_id": "UXF-02-R009",
+      "review_reason": null,
+      "semantic_constraints": {
+        "fallback_boundary": null,
+        "organization_relationship_nonclaim": null,
+        "pre_fulfillment_procurement_path": null,
+        "pre_fulfillment_stock_path": null,
+        "retry_attempt_boundary": null
+      },
+      "semantic_status": "RETAINED_EXECUTABLE",
+      "source_provenance": {
+        "approved_decisions": [],
+        "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
+        "original_identity": "TMP-UXF-02-009",
+        "previous_temporary_key": "TMP-UXF-02-009",
+        "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+        "source_baseline": "v2.2",
+        "source_context_heading": "18. Design Accessibility",
+        "source_context_sha256": "005d03136b01fbfc51aecdb4957e3fd361c068c92883677b8242c37948911b84",
+        "source_document": "docs/UXF/UXF-02.md",
+        "source_fingerprint": "d27ea5dc7317fe49df4515b2158c294433af56d1cb2c82e9b2cd97edef310640",
+        "source_lines": "L540",
+        "source_section": "18. Design Accessibility"
+      },
+      "source_statement": "Accessibility cannot be disabled by Themes."
+    },
+    {
+      "domain_boundary_fixtures": {},
+      "execution_records": [],
+      "fixtures": [],
+      "operator_composition": [],
+      "reference_id": "performance-budget",
+      "rendered_oracles": [],
+      "requirement_id": "EP-12-007",
+      "review_reason": "SOURCE_DOES_NOT_SUPPLY_A_COMPLETE_CONCRETE_OPERATOR_FIXTURE_WITHOUT_INFERENCE",
+      "semantic_constraints": {
+        "fallback_boundary": null,
+        "organization_relationship_nonclaim": null,
+        "pre_fulfillment_procurement_path": null,
+        "pre_fulfillment_stock_path": null,
+        "retry_attempt_boundary": null
+      },
+      "semantic_status": "HUMAN_OPERATOR_MAPPING_REVIEW",
+      "source_provenance": {
+        "approved_decisions": [
+          "P2-DEC-006",
+          "P2-DEC-009",
+          "V23-P2C-ACCEPTANCE-MAPPING-C3"
+        ],
+        "identity_origin": "PRESERVED_STABLE_ID",
+        "original_identity": "EP-12-007",
+        "phase_2c_c3_actions": [
+          "C3_APPROVED_SEMANTIC_DIRECTIVE"
+        ],
+        "previous_temporary_key": null,
+        "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+        "source_baseline": "v2.2",
+        "source_context_heading": "EP-12-007",
+        "source_context_sha256": "f3dd7358382f7eb0d5bb37add5b6857ade11d9f5edbb4c20a36e0bdf875fecad",
+        "source_document": "docs/BRD/BRD-WS-12.md",
+        "source_fingerprint": "1c08d6ac5478e1546c37a4465473dae2147718d534a760a7df6ac0adb2d856bb",
+        "source_fingerprint_before_c3": "7ce50d9ee2f5e107a6ec83c678b58d50f3102504692cad923537e5d5b1847168",
+        "source_lines": "L788-L791",
+        "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+        "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+        "source_section": "33. Enterprise Design Principles > EP-12-007"
+      },
+      "source_statement": "Message Queue và Channel Adapter phải đáp ứng approved service tier, performance budget, SLO và channel-delivery contract, bao gồm capacity scaling, backpressure, observable delivery và failure isolation."
+    }
+  ],
+  "reclassified_human_review": 3,
+  "reference_count": 16,
+  "retained_semantic_pass": 13,
+  "status": "CANDIDATE"
+}
