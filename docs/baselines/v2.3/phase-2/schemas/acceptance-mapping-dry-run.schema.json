@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "candidate_id": {
+      "const": "V23-P2C-ACCEPTANCE-MODEL-C1"
+    },
+    "mappings": {
+      "items": {
+        "required": [
+          "requirement_id",
+          "statement_fingerprint",
+          "requirement_type",
+          "scope",
+          "criticality",
+          "proposed_mechanism",
+          "concrete_bindings",
+          "confidence",
+          "rationale",
+          "semantic_risks",
+          "source_and_decision_provenance"
+        ],
+        "type": "object"
+      },
+      "maxItems": 1076,
+      "minItems": 1076,
+      "type": "array"
+    },
+    "source_denominator": {
+      "const": 1076
+    }
+  },
+  "required": [
+    "artifact",
+    "candidate_id",
+    "source_denominator",
+    "summary",
+    "mappings",
+    "stratified_semantic_sample"
+  ],
+  "title": "Acceptance Mapping Dry Run",
+  "type": "object"
+}

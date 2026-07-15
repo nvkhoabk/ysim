@@ -1,14 +1,17 @@
 ---
-document_code: UXF-03
-document_name: Storefront Template & Page Composition
-project: YSim Platform v2.1
-document_set: UXF (User Experience Foundation)
-version: 1.0
-status: Draft
-language: en
-owner: YSim Architecture Team
-last_updated: 2026-07-12
+document_code: "UXF-03"
+title: "Storefront Template & Page Composition"
+product_baseline: "2.3"
+document_revision: "2.3.0-draft.1"
+lifecycle_status: "V2.3_DRAFT"
+language: "en"
+source_baseline: "v2.2"
+generated_registry_role: "UXF_CANONICAL_SOURCE"
+last_remediated_on: "2026-07-15"
 ---
+## v2.3 requirement authority
+
+The `YSIM:REQUIREMENT` blocks in the normative appendix are authoritative for baseline 2.3. Legacy prose is retained as context; approved v2.3 decisions and the normative blocks take precedence where wording differs.
 
 # UXF-03 — Storefront Template & Page Composition
 
@@ -699,3 +702,1479 @@ This document should be read together with:
 - AFM
 - YADF
 - DIP
+
+<!-- YSIM:PHASE_2C CANONICAL APPENDIX BEGIN -->
+
+## v2.3 normative requirement appendix
+
+
+
+<!-- YSIM:REQUIREMENT BEGIN -->
+### UXF-03-R001 — Templates never contain business data
+
+```json
+{
+  "acceptance_contract": [
+    {
+      "case": "POSITIVE",
+      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
+      "criterion_id": "UXF-03-R001-AC001",
+      "given": "a user in the applicable channel and context for Templates never contain business data",
+      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
+      "then": "the prohibited content or action is absent from both the rendered state and its customer-facing payload, while the permitted journey remains usable",
+      "verifies": [
+        "UXF-03-R001-O001"
+      ],
+      "when": "the user reaches the relevant journey state or invokes the available action"
+    },
+    {
+      "case": "PRINCIPAL_FAILURE_OR_EDGE",
+      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
+      "criterion_id": "UXF-03-R001-AC002",
+      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for Templates never contain business data",
+      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
+      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
+      "verifies": [
+        "UXF-03-R001-O001"
+      ],
+      "when": "the affected state is rendered or action is requested"
+    }
+  ],
+  "acceptance_rationale": null,
+  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_status": "DIRECT",
+  "acceptance_unit": true,
+  "atomic_obligations": [
+    {
+      "acceptance_criterion_references": [
+        "UXF-03-R001-AC001",
+        "UXF-03-R001-AC002"
+      ],
+      "applicability": "V2.3_ACTIVE",
+      "obligation_id": "UXF-03-R001-O001",
+      "obligation_text": "Templates never contain business data"
+    }
+  ],
+  "criticality_applicability": null,
+  "criticality_unit": true,
+  "delivery_commitment": "COMMITTED_FOR_V2.3",
+  "implementation_unit": true,
+  "lifecycle": "V2.3_DRAFT",
+  "normative_statement": "Templates never contain business data.",
+  "provenance": {
+    "approved_decisions": [],
+    "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
+    "original_identity": "TMP-UXF-03-001",
+    "previous_temporary_key": "TMP-UXF-03-001",
+    "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+    "source_baseline": "v2.2",
+    "source_context_heading": "4. Template Engine",
+    "source_context_sha256": "7f336beb5e01b1ee674abe551a1bd722a507b0eda619fc1a756a8a0ef9990fae",
+    "source_document": "docs/UXF/UXF-03.md",
+    "source_fingerprint": "beca3f6b30bd9748d8bd7a1f370dee7290f170c4c176d1885be9e0ccd87d2717",
+    "source_lines": "L110",
+    "source_section": "4. Template Engine"
+  },
+  "record_kind": "CANONICAL_ATOMIC",
+  "relationships": {
+    "alias_of": null,
+    "aliases": [],
+    "coverage_mode": null,
+    "derived_from": [],
+    "derived_requirements": []
+  },
+  "requirement_type": "UX_REQUIREMENT",
+  "scope_coverage_unit": true,
+  "scope_status": "V2.3_ACTIVE",
+  "stable_id": "UXF-03-R001",
+  "title": "Templates never contain business data",
+  "verification_criticality": "HIGH"
+}
+```
+<!-- YSIM:REQUIREMENT END -->
+
+<!-- YSIM:REQUIREMENT BEGIN -->
+### UXF-03-R002 — Widgets never query suppliers directly
+
+```json
+{
+  "acceptance_contract": [
+    {
+      "case": "POSITIVE",
+      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
+      "criterion_id": "UXF-03-R002-AC001",
+      "given": "a user in the applicable channel and context for Widgets never query suppliers directly",
+      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
+      "then": "the prohibited content or action is absent from both the rendered state and its customer-facing payload, while the permitted journey remains usable",
+      "verifies": [
+        "UXF-03-R002-O001"
+      ],
+      "when": "the user reaches the relevant journey state or invokes the available action"
+    },
+    {
+      "case": "PRINCIPAL_FAILURE_OR_EDGE",
+      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
+      "criterion_id": "UXF-03-R002-AC002",
+      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for Widgets never query suppliers directly",
+      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
+      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
+      "verifies": [
+        "UXF-03-R002-O001"
+      ],
+      "when": "the affected state is rendered or action is requested"
+    }
+  ],
+  "acceptance_rationale": null,
+  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_status": "DIRECT",
+  "acceptance_unit": true,
+  "atomic_obligations": [
+    {
+      "acceptance_criterion_references": [
+        "UXF-03-R002-AC001",
+        "UXF-03-R002-AC002"
+      ],
+      "applicability": "V2.3_ACTIVE",
+      "obligation_id": "UXF-03-R002-O001",
+      "obligation_text": "Widgets never query suppliers directly"
+    }
+  ],
+  "criticality_applicability": null,
+  "criticality_unit": true,
+  "delivery_commitment": "COMMITTED_FOR_V2.3",
+  "implementation_unit": true,
+  "lifecycle": "V2.3_DRAFT",
+  "normative_statement": "Widgets never query suppliers directly.",
+  "provenance": {
+    "approved_decisions": [
+      "P2-DEC-007"
+    ],
+    "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
+    "original_identity": "TMP-UXF-03-002",
+    "previous_temporary_key": "TMP-UXF-03-002",
+    "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+    "source_baseline": "v2.2",
+    "source_context_heading": "11. Business Widgets",
+    "source_context_sha256": "13242228e4c16a597e7c920b049a3afbf423ceb626e82702cd5e49f2eb5dee5a",
+    "source_document": "docs/UXF/UXF-03.md",
+    "source_fingerprint": "5cf2c500782bef10b13a60ce569ee7240df3c01e98587da695c910fd27228c40",
+    "source_lines": "L391",
+    "source_section": "11. Business Widgets"
+  },
+  "record_kind": "CANONICAL_ATOMIC",
+  "relationships": {
+    "alias_of": null,
+    "aliases": [],
+    "coverage_mode": null,
+    "derived_from": [],
+    "derived_requirements": []
+  },
+  "requirement_type": "UX_REQUIREMENT",
+  "scope_coverage_unit": true,
+  "scope_status": "V2.3_ACTIVE",
+  "stable_id": "UXF-03-R002",
+  "title": "Widgets never query suppliers directly",
+  "verification_criticality": "HIGH"
+}
+```
+<!-- YSIM:REQUIREMENT END -->
+
+<!-- YSIM:REQUIREMENT BEGIN -->
+### UXF-03-R003 — Components never depend on: - Supplier
+
+```json
+{
+  "acceptance_contract": [
+    {
+      "case": "POSITIVE",
+      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
+      "criterion_id": "UXF-03-R003-AC001",
+      "given": "a user in the applicable channel and context for Components never depend on: - Supplier",
+      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
+      "then": "the prohibited content or action is absent from both the rendered state and its customer-facing payload, while the permitted journey remains usable",
+      "verifies": [
+        "UXF-03-R003-O001"
+      ],
+      "when": "the user reaches the relevant journey state or invokes the available action"
+    },
+    {
+      "case": "PRINCIPAL_FAILURE_OR_EDGE",
+      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
+      "criterion_id": "UXF-03-R003-AC002",
+      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for Components never depend on: - Supplier",
+      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
+      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
+      "verifies": [
+        "UXF-03-R003-O001"
+      ],
+      "when": "the affected state is rendered or action is requested"
+    }
+  ],
+  "acceptance_rationale": null,
+  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_status": "DIRECT",
+  "acceptance_unit": true,
+  "atomic_obligations": [
+    {
+      "acceptance_criterion_references": [
+        "UXF-03-R003-AC001",
+        "UXF-03-R003-AC002"
+      ],
+      "applicability": "V2.3_ACTIVE",
+      "obligation_id": "UXF-03-R003-O001",
+      "obligation_text": "Components never depend on: - Supplier"
+    }
+  ],
+  "criticality_applicability": null,
+  "criticality_unit": true,
+  "delivery_commitment": "COMMITTED_FOR_V2.3",
+  "implementation_unit": true,
+  "lifecycle": "V2.3_DRAFT",
+  "normative_statement": "Components never depend on: - Supplier",
+  "provenance": {
+    "approved_decisions": [
+      "P2-DEC-007"
+    ],
+    "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
+    "original_identity": "TMP-UXF-03-003",
+    "previous_temporary_key": "TMP-UXF-03-003",
+    "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+    "source_baseline": "v2.2",
+    "source_context_heading": "12. Component Binding",
+    "source_context_sha256": "53b457fbcd34d974edd4c70a5998a0cb200364f4be612c36f7ff99ffa941e228",
+    "source_document": "docs/UXF/UXF-03.md",
+    "source_fingerprint": "c212a9d0e3749ee31beecc1e0d325585850da663fd9cd3d74be374d35c230214",
+    "source_lines": "L415-L417",
+    "source_section": "12. Component Binding"
+  },
+  "record_kind": "CANONICAL_ATOMIC",
+  "relationships": {
+    "alias_of": null,
+    "aliases": [],
+    "coverage_mode": null,
+    "derived_from": [],
+    "derived_requirements": []
+  },
+  "requirement_type": "UX_REQUIREMENT",
+  "scope_coverage_unit": true,
+  "scope_status": "V2.3_ACTIVE",
+  "stable_id": "UXF-03-R003",
+  "title": "Components never depend on: - Supplier",
+  "verification_criticality": "HIGH"
+}
+```
+<!-- YSIM:REQUIREMENT END -->
+
+<!-- YSIM:REQUIREMENT BEGIN -->
+### UXF-03-R004 — Components never depend on: - Database
+
+```json
+{
+  "acceptance_contract": [
+    {
+      "case": "POSITIVE",
+      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
+      "criterion_id": "UXF-03-R004-AC001",
+      "given": "a user in the applicable channel and context for Components never depend on: - Database",
+      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
+      "then": "the prohibited content or action is absent from both the rendered state and its customer-facing payload, while the permitted journey remains usable",
+      "verifies": [
+        "UXF-03-R004-O001"
+      ],
+      "when": "the user reaches the relevant journey state or invokes the available action"
+    },
+    {
+      "case": "PRINCIPAL_FAILURE_OR_EDGE",
+      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
+      "criterion_id": "UXF-03-R004-AC002",
+      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for Components never depend on: - Database",
+      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
+      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
+      "verifies": [
+        "UXF-03-R004-O001"
+      ],
+      "when": "the affected state is rendered or action is requested"
+    }
+  ],
+  "acceptance_rationale": null,
+  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_status": "DIRECT",
+  "acceptance_unit": true,
+  "atomic_obligations": [
+    {
+      "acceptance_criterion_references": [
+        "UXF-03-R004-AC001",
+        "UXF-03-R004-AC002"
+      ],
+      "applicability": "V2.3_ACTIVE",
+      "obligation_id": "UXF-03-R004-O001",
+      "obligation_text": "Components never depend on: - Database"
+    }
+  ],
+  "criticality_applicability": null,
+  "criticality_unit": true,
+  "delivery_commitment": "COMMITTED_FOR_V2.3",
+  "implementation_unit": true,
+  "lifecycle": "V2.3_DRAFT",
+  "normative_statement": "Components never depend on: - Database",
+  "provenance": {
+    "approved_decisions": [],
+    "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
+    "original_identity": "TMP-UXF-03-004",
+    "previous_temporary_key": "TMP-UXF-03-004",
+    "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+    "source_baseline": "v2.2",
+    "source_context_heading": "12. Component Binding",
+    "source_context_sha256": "53b457fbcd34d974edd4c70a5998a0cb200364f4be612c36f7ff99ffa941e228",
+    "source_document": "docs/UXF/UXF-03.md",
+    "source_fingerprint": "a1d04eb0af52a456b0860a8633610eb33ded12c65a52eb01c0dd387fc8509b0d",
+    "source_lines": "L415-L418",
+    "source_section": "12. Component Binding"
+  },
+  "record_kind": "CANONICAL_ATOMIC",
+  "relationships": {
+    "alias_of": null,
+    "aliases": [],
+    "coverage_mode": null,
+    "derived_from": [],
+    "derived_requirements": []
+  },
+  "requirement_type": "UX_REQUIREMENT",
+  "scope_coverage_unit": true,
+  "scope_status": "V2.3_ACTIVE",
+  "stable_id": "UXF-03-R004",
+  "title": "Components never depend on: - Database",
+  "verification_criticality": "HIGH"
+}
+```
+<!-- YSIM:REQUIREMENT END -->
+
+<!-- YSIM:REQUIREMENT BEGIN -->
+### UXF-03-R005 — Components never depend on: - External APIs
+
+```json
+{
+  "acceptance_contract": [
+    {
+      "case": "POSITIVE",
+      "controlled_contract": "INTEGRATION_BOUNDARY_OBSERVATION_V1",
+      "criterion_id": "UXF-03-R005-AC001",
+      "given": "a contract interaction at the integration boundary defined by Components never depend on: - External APIs",
+      "observable_evidence": "contract validation result, boundary ownership record, external outcome, and reconciliation evidence where the contract requires it",
+      "then": "the interaction is accepted only at the declared boundary, names the responsible owner, and exposes the external outcome or reconciliation result required by the contract",
+      "verifies": [
+        "UXF-03-R005-O001"
+      ],
+      "when": "a conforming interaction is submitted and its ownership boundary is evaluated"
+    },
+    {
+      "case": "PRINCIPAL_FAILURE_OR_EDGE",
+      "controlled_contract": "INTEGRATION_CONTRACT_REJECTION_V1",
+      "criterion_id": "UXF-03-R005-AC002",
+      "given": "an interaction that violates the contract or ownership boundary for Components never depend on: - External APIs",
+      "observable_evidence": "contract rejection or reconciliation result, reason, boundary owner, and external outcome",
+      "then": "the interaction is rejected or reconciled according to the declared contract without transferring ownership to the wrong boundary",
+      "verifies": [
+        "UXF-03-R005-O001"
+      ],
+      "when": "the interaction reaches the integration boundary"
+    }
+  ],
+  "acceptance_rationale": null,
+  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_status": "DIRECT",
+  "acceptance_unit": true,
+  "atomic_obligations": [
+    {
+      "acceptance_criterion_references": [
+        "UXF-03-R005-AC001",
+        "UXF-03-R005-AC002"
+      ],
+      "applicability": "V2.3_ACTIVE",
+      "obligation_id": "UXF-03-R005-O001",
+      "obligation_text": "Components never depend on: - External APIs"
+    }
+  ],
+  "criticality_applicability": null,
+  "criticality_unit": true,
+  "delivery_commitment": "COMMITTED_FOR_V2.3",
+  "implementation_unit": true,
+  "lifecycle": "V2.3_DRAFT",
+  "normative_statement": "Components never depend on: - External APIs",
+  "provenance": {
+    "approved_decisions": [
+      "P2-DEC-006"
+    ],
+    "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
+    "original_identity": "TMP-UXF-03-005",
+    "previous_temporary_key": "TMP-UXF-03-005",
+    "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+    "source_baseline": "v2.2",
+    "source_context_heading": "12. Component Binding",
+    "source_context_sha256": "53b457fbcd34d974edd4c70a5998a0cb200364f4be612c36f7ff99ffa941e228",
+    "source_document": "docs/UXF/UXF-03.md",
+    "source_fingerprint": "a1b5a0f91af129e7347d3e445d4fdd3d2b26bec182db8b0ca1d9f088250773e9",
+    "source_lines": "L415-L419",
+    "source_section": "12. Component Binding"
+  },
+  "record_kind": "CANONICAL_ATOMIC",
+  "relationships": {
+    "alias_of": null,
+    "aliases": [],
+    "coverage_mode": null,
+    "derived_from": [],
+    "derived_requirements": []
+  },
+  "requirement_type": "INTEGRATION_REQUIREMENT",
+  "scope_coverage_unit": true,
+  "scope_status": "V2.3_ACTIVE",
+  "stable_id": "UXF-03-R005",
+  "title": "Components never depend on: - External APIs",
+  "verification_criticality": "HIGH"
+}
+```
+<!-- YSIM:REQUIREMENT END -->
+
+<!-- YSIM:REQUIREMENT BEGIN -->
+### UXF-03-R006 — Drag-and-drop editing is not required for MVP
+
+```json
+{
+  "acceptance_contract": [
+    {
+      "case": "POSITIVE",
+      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
+      "criterion_id": "UXF-03-R006-AC001",
+      "given": "a user in the applicable channel and context for Drag-and-drop editing is not required for MVP",
+      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
+      "then": "the rendered output exposes every required content element and action, keeps prohibited content absent, and makes the applicable confirmation or fallback directly observable",
+      "verifies": [
+        "UXF-03-R006-O001"
+      ],
+      "when": "the user reaches the relevant journey state or invokes the available action"
+    },
+    {
+      "case": "PRINCIPAL_FAILURE_OR_EDGE",
+      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
+      "criterion_id": "UXF-03-R006-AC002",
+      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for Drag-and-drop editing is not required for MVP",
+      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
+      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
+      "verifies": [
+        "UXF-03-R006-O001"
+      ],
+      "when": "the affected state is rendered or action is requested"
+    }
+  ],
+  "acceptance_rationale": null,
+  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_status": "DIRECT",
+  "acceptance_unit": true,
+  "atomic_obligations": [
+    {
+      "acceptance_criterion_references": [
+        "UXF-03-R006-AC001",
+        "UXF-03-R006-AC002"
+      ],
+      "applicability": "V2.3_ACTIVE",
+      "obligation_id": "UXF-03-R006-O001",
+      "obligation_text": "Drag-and-drop editing is not required for MVP"
+    }
+  ],
+  "criticality_applicability": null,
+  "criticality_unit": true,
+  "delivery_commitment": "COMMITTED_FOR_V2.3",
+  "implementation_unit": true,
+  "lifecycle": "V2.3_DRAFT",
+  "normative_statement": "Drag-and-drop editing is not required for MVP.",
+  "provenance": {
+    "approved_decisions": [],
+    "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
+    "original_identity": "TMP-UXF-03-006",
+    "previous_temporary_key": "TMP-UXF-03-006",
+    "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+    "source_baseline": "v2.2",
+    "source_context_heading": "15. CMS-lite",
+    "source_context_sha256": "97a4052c7b76f2fd5b8d5306514058f982530c758ebe921201f15566a4156fb1",
+    "source_document": "docs/UXF/UXF-03.md",
+    "source_fingerprint": "d8afa71b524005b16c2d1ded2fd99adf4c1ace947c80a82a2cf8c97c4f88c215",
+    "source_lines": "L494",
+    "source_section": "15. CMS-lite"
+  },
+  "record_kind": "CANONICAL_ATOMIC",
+  "relationships": {
+    "alias_of": null,
+    "aliases": [],
+    "coverage_mode": null,
+    "derived_from": [],
+    "derived_requirements": []
+  },
+  "requirement_type": "UX_REQUIREMENT",
+  "scope_coverage_unit": true,
+  "scope_status": "V2.3_ACTIVE",
+  "stable_id": "UXF-03-R006",
+  "title": "Drag-and-drop editing is not required for MVP",
+  "verification_criticality": "HIGH"
+}
+```
+<!-- YSIM:REQUIREMENT END -->
+
+<!-- YSIM:REQUIREMENT BEGIN -->
+### UXF-03-R007 — Navigation is never hardcoded
+
+```json
+{
+  "acceptance_contract": [
+    {
+      "case": "POSITIVE",
+      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
+      "criterion_id": "UXF-03-R007-AC001",
+      "given": "a user in the applicable channel and context for Navigation is never hardcoded",
+      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
+      "then": "the prohibited content or action is absent from both the rendered state and its customer-facing payload, while the permitted journey remains usable",
+      "verifies": [
+        "UXF-03-R007-O001"
+      ],
+      "when": "the user reaches the relevant journey state or invokes the available action"
+    },
+    {
+      "case": "PRINCIPAL_FAILURE_OR_EDGE",
+      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
+      "criterion_id": "UXF-03-R007-AC002",
+      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for Navigation is never hardcoded",
+      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
+      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
+      "verifies": [
+        "UXF-03-R007-O001"
+      ],
+      "when": "the affected state is rendered or action is requested"
+    }
+  ],
+  "acceptance_rationale": null,
+  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_status": "DIRECT",
+  "acceptance_unit": true,
+  "atomic_obligations": [
+    {
+      "acceptance_criterion_references": [
+        "UXF-03-R007-AC001",
+        "UXF-03-R007-AC002"
+      ],
+      "applicability": "V2.3_ACTIVE",
+      "obligation_id": "UXF-03-R007-O001",
+      "obligation_text": "Navigation is never hardcoded"
+    }
+  ],
+  "criticality_applicability": null,
+  "criticality_unit": true,
+  "delivery_commitment": "COMMITTED_FOR_V2.3",
+  "implementation_unit": true,
+  "lifecycle": "V2.3_DRAFT",
+  "normative_statement": "Navigation is never hardcoded.",
+  "provenance": {
+    "approved_decisions": [],
+    "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
+    "original_identity": "TMP-UXF-03-007",
+    "previous_temporary_key": "TMP-UXF-03-007",
+    "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+    "source_baseline": "v2.2",
+    "source_context_heading": "17. Navigation Composition",
+    "source_context_sha256": "af9f8f2771a82ec831cdeddc25a8f7080eaff483483424331e051e9fd5e6faa6",
+    "source_document": "docs/UXF/UXF-03.md",
+    "source_fingerprint": "7f8754c897773df5a768b992c6b2b80847909a5c8a0f8a91ea0dbf45a25d323d",
+    "source_lines": "L552",
+    "source_section": "17. Navigation Composition"
+  },
+  "record_kind": "CANONICAL_ATOMIC",
+  "relationships": {
+    "alias_of": null,
+    "aliases": [],
+    "coverage_mode": null,
+    "derived_from": [],
+    "derived_requirements": []
+  },
+  "requirement_type": "UX_REQUIREMENT",
+  "scope_coverage_unit": true,
+  "scope_status": "V2.3_ACTIVE",
+  "stable_id": "UXF-03-R007",
+  "title": "Navigation is never hardcoded",
+  "verification_criticality": "HIGH"
+}
+```
+<!-- YSIM:REQUIREMENT END -->
+
+<!-- YSIM:REQUIREMENT BEGIN -->
+### UXF-301 — Storefronts are runtime experiences
+
+```json
+{
+  "acceptance_contract": [
+    {
+      "case": "POSITIVE",
+      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
+      "criterion_id": "UXF-301-AC001",
+      "given": "a user in the applicable channel and context for Storefronts are runtime experiences",
+      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
+      "then": "the rendered output identifies the applied runtime context, reflects the values resolved for that context, and contains no unresolved configuration token",
+      "verifies": [
+        "UXF-301-O001"
+      ],
+      "when": "the user reaches the relevant journey state or invokes the available action"
+    },
+    {
+      "case": "PRINCIPAL_FAILURE_OR_EDGE",
+      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
+      "criterion_id": "UXF-301-AC002",
+      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for Storefronts are runtime experiences",
+      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
+      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
+      "verifies": [
+        "UXF-301-O001"
+      ],
+      "when": "the affected state is rendered or action is requested"
+    }
+  ],
+  "acceptance_rationale": null,
+  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_status": "DIRECT",
+  "acceptance_unit": true,
+  "atomic_obligations": [
+    {
+      "acceptance_criterion_references": [
+        "UXF-301-AC001",
+        "UXF-301-AC002"
+      ],
+      "applicability": "V2.3_ACTIVE",
+      "obligation_id": "UXF-301-O001",
+      "obligation_text": "Storefronts are runtime experiences"
+    }
+  ],
+  "criticality_applicability": null,
+  "criticality_unit": true,
+  "delivery_commitment": "COMMITTED_FOR_V2.3",
+  "implementation_unit": true,
+  "lifecycle": "V2.3_DRAFT",
+  "normative_statement": "Storefronts are runtime experiences.",
+  "provenance": {
+    "approved_decisions": [],
+    "identity_origin": "PRESERVED_STABLE_ID",
+    "original_identity": "UXF-301",
+    "previous_temporary_key": null,
+    "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+    "source_baseline": "v2.2",
+    "source_context_heading": "UXF-301",
+    "source_context_sha256": "2c62bca5bca8f8043a6bb90c4d6b7c7cbc7c2bc6b4135364cec9c13b3e1bda68",
+    "source_document": "docs/UXF/UXF-03.md",
+    "source_fingerprint": "746179091ccfb27b85fc7267c27866bc5dfd5754a0135468d0d8b9144402e246",
+    "source_lines": "L627-L630",
+    "source_section": "22. Architectural Principles > UXF-301"
+  },
+  "record_kind": "CANONICAL_ATOMIC",
+  "relationships": {
+    "alias_of": null,
+    "aliases": [],
+    "coverage_mode": null,
+    "derived_from": [],
+    "derived_requirements": []
+  },
+  "requirement_type": "UX_REQUIREMENT",
+  "scope_coverage_unit": true,
+  "scope_status": "V2.3_ACTIVE",
+  "stable_id": "UXF-301",
+  "title": "Storefronts are runtime experiences",
+  "verification_criticality": "HIGH"
+}
+```
+<!-- YSIM:REQUIREMENT END -->
+
+<!-- YSIM:REQUIREMENT BEGIN -->
+### UXF-302 — Templates define structure only
+
+```json
+{
+  "acceptance_contract": [
+    {
+      "case": "POSITIVE",
+      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
+      "criterion_id": "UXF-302-AC001",
+      "given": "a user in the applicable channel and context for Templates define structure only",
+      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
+      "then": "the rendered output exposes every required content element and action, keeps prohibited content absent, and makes the applicable confirmation or fallback directly observable",
+      "verifies": [
+        "UXF-302-O001"
+      ],
+      "when": "the user reaches the relevant journey state or invokes the available action"
+    },
+    {
+      "case": "PRINCIPAL_FAILURE_OR_EDGE",
+      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
+      "criterion_id": "UXF-302-AC002",
+      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for Templates define structure only",
+      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
+      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
+      "verifies": [
+        "UXF-302-O001"
+      ],
+      "when": "the affected state is rendered or action is requested"
+    }
+  ],
+  "acceptance_rationale": null,
+  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_status": "DIRECT",
+  "acceptance_unit": true,
+  "atomic_obligations": [
+    {
+      "acceptance_criterion_references": [
+        "UXF-302-AC001",
+        "UXF-302-AC002"
+      ],
+      "applicability": "V2.3_ACTIVE",
+      "obligation_id": "UXF-302-O001",
+      "obligation_text": "Templates define structure only"
+    }
+  ],
+  "criticality_applicability": null,
+  "criticality_unit": true,
+  "delivery_commitment": "COMMITTED_FOR_V2.3",
+  "implementation_unit": true,
+  "lifecycle": "V2.3_DRAFT",
+  "normative_statement": "Templates define structure only.",
+  "provenance": {
+    "approved_decisions": [],
+    "identity_origin": "PRESERVED_STABLE_ID",
+    "original_identity": "UXF-302",
+    "previous_temporary_key": null,
+    "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+    "source_baseline": "v2.2",
+    "source_context_heading": "UXF-302",
+    "source_context_sha256": "cabe80d6fa78120875e0e51d5f4adc5e8ee5890830fcd1174e513e36fcff070a",
+    "source_document": "docs/UXF/UXF-03.md",
+    "source_fingerprint": "2092149811f47c9c201180d73a19d2ac0f38842ff371bcb1c639785a138652be",
+    "source_lines": "L633-L636",
+    "source_section": "22. Architectural Principles > UXF-302"
+  },
+  "record_kind": "CANONICAL_ATOMIC",
+  "relationships": {
+    "alias_of": null,
+    "aliases": [],
+    "coverage_mode": null,
+    "derived_from": [],
+    "derived_requirements": []
+  },
+  "requirement_type": "UX_REQUIREMENT",
+  "scope_coverage_unit": true,
+  "scope_status": "V2.3_ACTIVE",
+  "stable_id": "UXF-302",
+  "title": "Templates define structure only",
+  "verification_criticality": "HIGH"
+}
+```
+<!-- YSIM:REQUIREMENT END -->
+
+<!-- YSIM:REQUIREMENT BEGIN -->
+### UXF-303 — Layouts are reusable
+
+```json
+{
+  "acceptance_contract": [
+    {
+      "case": "POSITIVE",
+      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
+      "criterion_id": "UXF-303-AC001",
+      "given": "a user in the applicable channel and context for Layouts are reusable",
+      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
+      "then": "the rendered output exposes every required content element and action, keeps prohibited content absent, and makes the applicable confirmation or fallback directly observable",
+      "verifies": [
+        "UXF-303-O001"
+      ],
+      "when": "the user reaches the relevant journey state or invokes the available action"
+    },
+    {
+      "case": "PRINCIPAL_FAILURE_OR_EDGE",
+      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
+      "criterion_id": "UXF-303-AC002",
+      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for Layouts are reusable",
+      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
+      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
+      "verifies": [
+        "UXF-303-O001"
+      ],
+      "when": "the affected state is rendered or action is requested"
+    }
+  ],
+  "acceptance_rationale": null,
+  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_status": "DIRECT",
+  "acceptance_unit": true,
+  "atomic_obligations": [
+    {
+      "acceptance_criterion_references": [
+        "UXF-303-AC001",
+        "UXF-303-AC002"
+      ],
+      "applicability": "V2.3_ACTIVE",
+      "obligation_id": "UXF-303-O001",
+      "obligation_text": "Layouts are reusable"
+    }
+  ],
+  "criticality_applicability": null,
+  "criticality_unit": true,
+  "delivery_commitment": "COMMITTED_FOR_V2.3",
+  "implementation_unit": true,
+  "lifecycle": "V2.3_DRAFT",
+  "normative_statement": "Layouts are reusable.",
+  "provenance": {
+    "approved_decisions": [],
+    "identity_origin": "PRESERVED_STABLE_ID",
+    "original_identity": "UXF-303",
+    "previous_temporary_key": null,
+    "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+    "source_baseline": "v2.2",
+    "source_context_heading": "UXF-303",
+    "source_context_sha256": "2f52fa1d8e4bb72fc48b536e1ebdc17f72bf04b0334101e8fd54047dee2dc00a",
+    "source_document": "docs/UXF/UXF-03.md",
+    "source_fingerprint": "dd4ee76df1392726d02173f8e7d1e33f978be20a36fae4927a81a543bdd4c7c9",
+    "source_lines": "L639-L642",
+    "source_section": "22. Architectural Principles > UXF-303"
+  },
+  "record_kind": "CANONICAL_ATOMIC",
+  "relationships": {
+    "alias_of": null,
+    "aliases": [],
+    "coverage_mode": null,
+    "derived_from": [],
+    "derived_requirements": []
+  },
+  "requirement_type": "UX_REQUIREMENT",
+  "scope_coverage_unit": true,
+  "scope_status": "V2.3_ACTIVE",
+  "stable_id": "UXF-303",
+  "title": "Layouts are reusable",
+  "verification_criticality": "HIGH"
+}
+```
+<!-- YSIM:REQUIREMENT END -->
+
+<!-- YSIM:REQUIREMENT BEGIN -->
+### UXF-304 — Pages are configuration driven
+
+```json
+{
+  "acceptance_contract": [
+    {
+      "case": "POSITIVE",
+      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
+      "criterion_id": "UXF-304-AC001",
+      "given": "a user in the applicable channel and context for Pages are configuration driven",
+      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
+      "then": "the rendered output exposes every required content element and action, keeps prohibited content absent, and makes the applicable confirmation or fallback directly observable",
+      "verifies": [
+        "UXF-304-O001"
+      ],
+      "when": "the user reaches the relevant journey state or invokes the available action"
+    },
+    {
+      "case": "PRINCIPAL_FAILURE_OR_EDGE",
+      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
+      "criterion_id": "UXF-304-AC002",
+      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for Pages are configuration driven",
+      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
+      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
+      "verifies": [
+        "UXF-304-O001"
+      ],
+      "when": "the affected state is rendered or action is requested"
+    }
+  ],
+  "acceptance_rationale": null,
+  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_status": "DIRECT",
+  "acceptance_unit": true,
+  "atomic_obligations": [
+    {
+      "acceptance_criterion_references": [
+        "UXF-304-AC001",
+        "UXF-304-AC002"
+      ],
+      "applicability": "V2.3_ACTIVE",
+      "obligation_id": "UXF-304-O001",
+      "obligation_text": "Pages are configuration driven"
+    }
+  ],
+  "criticality_applicability": null,
+  "criticality_unit": true,
+  "delivery_commitment": "COMMITTED_FOR_V2.3",
+  "implementation_unit": true,
+  "lifecycle": "V2.3_DRAFT",
+  "normative_statement": "Pages are configuration driven.",
+  "provenance": {
+    "approved_decisions": [],
+    "identity_origin": "PRESERVED_STABLE_ID",
+    "original_identity": "UXF-304",
+    "previous_temporary_key": null,
+    "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+    "source_baseline": "v2.2",
+    "source_context_heading": "UXF-304",
+    "source_context_sha256": "6b92934b339626f100b27fafc74bf286702a631683a9808bc9346bc01924350d",
+    "source_document": "docs/UXF/UXF-03.md",
+    "source_fingerprint": "7b40f7e2113b42ec59cd436b43e5afc3a104636c990b6ed295cd8793912b9285",
+    "source_lines": "L645-L648",
+    "source_section": "22. Architectural Principles > UXF-304"
+  },
+  "record_kind": "CANONICAL_ATOMIC",
+  "relationships": {
+    "alias_of": null,
+    "aliases": [],
+    "coverage_mode": null,
+    "derived_from": [],
+    "derived_requirements": []
+  },
+  "requirement_type": "UX_REQUIREMENT",
+  "scope_coverage_unit": true,
+  "scope_status": "V2.3_ACTIVE",
+  "stable_id": "UXF-304",
+  "title": "Pages are configuration driven",
+  "verification_criticality": "HIGH"
+}
+```
+<!-- YSIM:REQUIREMENT END -->
+
+<!-- YSIM:REQUIREMENT BEGIN -->
+### UXF-305 — Sections are independently configurable
+
+```json
+{
+  "acceptance_contract": [
+    {
+      "case": "POSITIVE",
+      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
+      "criterion_id": "UXF-305-AC001",
+      "given": "a user in the applicable channel and context for Sections are independently configurable",
+      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
+      "then": "the rendered output exposes every required content element and action, keeps prohibited content absent, and makes the applicable confirmation or fallback directly observable",
+      "verifies": [
+        "UXF-305-O001"
+      ],
+      "when": "the user reaches the relevant journey state or invokes the available action"
+    },
+    {
+      "case": "PRINCIPAL_FAILURE_OR_EDGE",
+      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
+      "criterion_id": "UXF-305-AC002",
+      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for Sections are independently configurable",
+      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
+      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
+      "verifies": [
+        "UXF-305-O001"
+      ],
+      "when": "the affected state is rendered or action is requested"
+    }
+  ],
+  "acceptance_rationale": null,
+  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_status": "DIRECT",
+  "acceptance_unit": true,
+  "atomic_obligations": [
+    {
+      "acceptance_criterion_references": [
+        "UXF-305-AC001",
+        "UXF-305-AC002"
+      ],
+      "applicability": "V2.3_ACTIVE",
+      "obligation_id": "UXF-305-O001",
+      "obligation_text": "Sections are independently configurable"
+    }
+  ],
+  "criticality_applicability": null,
+  "criticality_unit": true,
+  "delivery_commitment": "COMMITTED_FOR_V2.3",
+  "implementation_unit": true,
+  "lifecycle": "V2.3_DRAFT",
+  "normative_statement": "Sections are independently configurable.",
+  "provenance": {
+    "approved_decisions": [],
+    "identity_origin": "PRESERVED_STABLE_ID",
+    "original_identity": "UXF-305",
+    "previous_temporary_key": null,
+    "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+    "source_baseline": "v2.2",
+    "source_context_heading": "UXF-305",
+    "source_context_sha256": "52a567b94e9abedc473b044bcbbd7e737aef7660f5703967c6cbb143d826859d",
+    "source_document": "docs/UXF/UXF-03.md",
+    "source_fingerprint": "6a1dd64817f93211c24a9c5a55395e585fa5c8a415342974b712970b86283654",
+    "source_lines": "L651-L654",
+    "source_section": "22. Architectural Principles > UXF-305"
+  },
+  "record_kind": "CANONICAL_ATOMIC",
+  "relationships": {
+    "alias_of": null,
+    "aliases": [],
+    "coverage_mode": null,
+    "derived_from": [],
+    "derived_requirements": []
+  },
+  "requirement_type": "UX_REQUIREMENT",
+  "scope_coverage_unit": true,
+  "scope_status": "V2.3_ACTIVE",
+  "stable_id": "UXF-305",
+  "title": "Sections are independently configurable",
+  "verification_criticality": "HIGH"
+}
+```
+<!-- YSIM:REQUIREMENT END -->
+
+<!-- YSIM:REQUIREMENT BEGIN -->
+### UXF-306 — Business Widgets bind to platform capabilities
+
+```json
+{
+  "acceptance_contract": [
+    {
+      "case": "POSITIVE",
+      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
+      "criterion_id": "UXF-306-AC001",
+      "given": "a user in the applicable channel and context for Business Widgets bind to platform capabilities",
+      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
+      "then": "the rendered output exposes every required content element and action, keeps prohibited content absent, and makes the applicable confirmation or fallback directly observable",
+      "verifies": [
+        "UXF-306-O001"
+      ],
+      "when": "the user reaches the relevant journey state or invokes the available action"
+    },
+    {
+      "case": "PRINCIPAL_FAILURE_OR_EDGE",
+      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
+      "criterion_id": "UXF-306-AC002",
+      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for Business Widgets bind to platform capabilities",
+      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
+      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
+      "verifies": [
+        "UXF-306-O001"
+      ],
+      "when": "the affected state is rendered or action is requested"
+    }
+  ],
+  "acceptance_rationale": null,
+  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_status": "DIRECT",
+  "acceptance_unit": true,
+  "atomic_obligations": [
+    {
+      "acceptance_criterion_references": [
+        "UXF-306-AC001",
+        "UXF-306-AC002"
+      ],
+      "applicability": "V2.3_ACTIVE",
+      "obligation_id": "UXF-306-O001",
+      "obligation_text": "Business Widgets bind to platform capabilities"
+    }
+  ],
+  "criticality_applicability": null,
+  "criticality_unit": true,
+  "delivery_commitment": "COMMITTED_FOR_V2.3",
+  "implementation_unit": true,
+  "lifecycle": "V2.3_DRAFT",
+  "normative_statement": "Business Widgets bind to platform capabilities.",
+  "provenance": {
+    "approved_decisions": [],
+    "identity_origin": "PRESERVED_STABLE_ID",
+    "original_identity": "UXF-306",
+    "previous_temporary_key": null,
+    "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+    "source_baseline": "v2.2",
+    "source_context_heading": "UXF-306",
+    "source_context_sha256": "179ae73b28ed4a4ee4a1210063f9dc5ad8a234c1b47414e15b0ed0be32f07f8c",
+    "source_document": "docs/UXF/UXF-03.md",
+    "source_fingerprint": "c51c4ae9145291466e37bcc499d74de307d5c082ea6e715c8ebd1a93cab3d546",
+    "source_lines": "L657-L660",
+    "source_section": "22. Architectural Principles > UXF-306"
+  },
+  "record_kind": "CANONICAL_ATOMIC",
+  "relationships": {
+    "alias_of": null,
+    "aliases": [],
+    "coverage_mode": null,
+    "derived_from": [],
+    "derived_requirements": []
+  },
+  "requirement_type": "UX_REQUIREMENT",
+  "scope_coverage_unit": true,
+  "scope_status": "V2.3_ACTIVE",
+  "stable_id": "UXF-306",
+  "title": "Business Widgets bind to platform capabilities",
+  "verification_criticality": "HIGH"
+}
+```
+<!-- YSIM:REQUIREMENT END -->
+
+<!-- YSIM:REQUIREMENT BEGIN -->
+### UXF-307 — Storefronts never communicate with suppliers
+
+```json
+{
+  "acceptance_contract": [
+    {
+      "case": "POSITIVE",
+      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
+      "criterion_id": "UXF-307-AC001",
+      "given": "a user in the applicable channel and context for Storefronts never communicate with suppliers",
+      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
+      "then": "the prohibited content or action is absent from both the rendered state and its customer-facing payload, while the permitted journey remains usable",
+      "verifies": [
+        "UXF-307-O001"
+      ],
+      "when": "the user reaches the relevant journey state or invokes the available action"
+    },
+    {
+      "case": "PRINCIPAL_FAILURE_OR_EDGE",
+      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
+      "criterion_id": "UXF-307-AC002",
+      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for Storefronts never communicate with suppliers",
+      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
+      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
+      "verifies": [
+        "UXF-307-O001"
+      ],
+      "when": "the affected state is rendered or action is requested"
+    }
+  ],
+  "acceptance_rationale": null,
+  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_status": "DIRECT",
+  "acceptance_unit": true,
+  "atomic_obligations": [
+    {
+      "acceptance_criterion_references": [
+        "UXF-307-AC001",
+        "UXF-307-AC002"
+      ],
+      "applicability": "V2.3_ACTIVE",
+      "obligation_id": "UXF-307-O001",
+      "obligation_text": "Storefronts never communicate with suppliers"
+    }
+  ],
+  "criticality_applicability": null,
+  "criticality_unit": true,
+  "delivery_commitment": "COMMITTED_FOR_V2.3",
+  "implementation_unit": true,
+  "lifecycle": "V2.3_DRAFT",
+  "normative_statement": "Storefronts never communicate with suppliers.",
+  "provenance": {
+    "approved_decisions": [
+      "P2-DEC-007"
+    ],
+    "identity_origin": "PRESERVED_STABLE_ID",
+    "original_identity": "UXF-307",
+    "previous_temporary_key": null,
+    "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+    "source_baseline": "v2.2",
+    "source_context_heading": "UXF-307",
+    "source_context_sha256": "98590e65c0e3f7d89ed15a466406b4ef97d211717758b3839e4050cc753f825c",
+    "source_document": "docs/UXF/UXF-03.md",
+    "source_fingerprint": "191145a4c804f7c20ddc508ccfabd59af8d9410b065e898018e8d171d162a30a",
+    "source_lines": "L663-L666",
+    "source_section": "22. Architectural Principles > UXF-307"
+  },
+  "record_kind": "CANONICAL_ATOMIC",
+  "relationships": {
+    "alias_of": null,
+    "aliases": [],
+    "coverage_mode": null,
+    "derived_from": [],
+    "derived_requirements": []
+  },
+  "requirement_type": "UX_REQUIREMENT",
+  "scope_coverage_unit": true,
+  "scope_status": "V2.3_ACTIVE",
+  "stable_id": "UXF-307",
+  "title": "Storefronts never communicate with suppliers",
+  "verification_criticality": "HIGH"
+}
+```
+<!-- YSIM:REQUIREMENT END -->
+
+<!-- YSIM:REQUIREMENT BEGIN -->
+### UXF-308 — Published snapshots are immutable
+
+```json
+{
+  "acceptance_contract": [
+    {
+      "case": "POSITIVE",
+      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
+      "criterion_id": "UXF-308-AC001",
+      "given": "a candidate Published snapshots are immutable record and the canonical records it references",
+      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
+      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
+      "verifies": [
+        "UXF-308-O001"
+      ],
+      "when": "the candidate is evaluated against its declared data contract"
+    },
+    {
+      "case": "PRINCIPAL_FAILURE_OR_EDGE",
+      "controlled_contract": "DATA_CONTRACT_REJECTION_V1",
+      "criterion_id": "UXF-308-AC002",
+      "given": "a Published snapshots are immutable candidate containing an unsupported value, inconsistent relationship, or unresolved reference",
+      "observable_evidence": "rejection result, field or relationship reason, unresolved reference, and unchanged persisted state",
+      "then": "the candidate is rejected without persisting the invalid state, and each invalid field or relationship has a deterministic reason",
+      "verifies": [
+        "UXF-308-O001"
+      ],
+      "when": "the candidate is validated"
+    }
+  ],
+  "acceptance_rationale": null,
+  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_status": "DIRECT",
+  "acceptance_unit": true,
+  "atomic_obligations": [
+    {
+      "acceptance_criterion_references": [
+        "UXF-308-AC001",
+        "UXF-308-AC002"
+      ],
+      "applicability": "V2.3_ACTIVE",
+      "obligation_id": "UXF-308-O001",
+      "obligation_text": "Published snapshots are immutable"
+    }
+  ],
+  "criticality_applicability": {
+    "AUTHORIZATION_BOUNDARY": {
+      "criterion_references": [],
+      "rationale": "UXF-308 does not define a authorization boundary obligation or boundary.",
+      "status": "NOT_APPLICABLE"
+    },
+    "CONCURRENCY": {
+      "criterion_references": [],
+      "rationale": "UXF-308 does not define a concurrency obligation or boundary.",
+      "status": "NOT_APPLICABLE"
+    },
+    "IDEMPOTENCY": {
+      "criterion_references": [],
+      "rationale": "UXF-308 does not define a idempotency obligation or boundary.",
+      "status": "NOT_APPLICABLE"
+    },
+    "NEGATIVE_FAIL_CLOSED": {
+      "criterion_references": [],
+      "rationale": "UXF-308 does not define a negative fail closed obligation or boundary.",
+      "status": "NOT_APPLICABLE"
+    },
+    "POSITIVE": {
+      "criterion_references": [
+        "UXF-308-AC001"
+      ],
+      "status": "APPLICABLE"
+    },
+    "RECOVERY": {
+      "criterion_references": [],
+      "rationale": "UXF-308 does not define a recovery obligation or boundary.",
+      "status": "NOT_APPLICABLE"
+    }
+  },
+  "criticality_unit": true,
+  "delivery_commitment": "COMMITTED_FOR_V2.3",
+  "implementation_unit": true,
+  "lifecycle": "V2.3_DRAFT",
+  "normative_statement": "Published snapshots are immutable.",
+  "provenance": {
+    "approved_decisions": [],
+    "identity_origin": "PRESERVED_STABLE_ID",
+    "original_identity": "UXF-308",
+    "previous_temporary_key": null,
+    "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+    "source_baseline": "v2.2",
+    "source_context_heading": "UXF-308",
+    "source_context_sha256": "ac41ee163b85647bc0ae8a7240b66c8b996f80a4dcd3970324d5004956f5d3d3",
+    "source_document": "docs/UXF/UXF-03.md",
+    "source_fingerprint": "cbe13e5babb586bc81bd357ef2facf4f61392f8a06e0d473d6ce033263cb91d4",
+    "source_lines": "L669-L672",
+    "source_section": "22. Architectural Principles > UXF-308"
+  },
+  "record_kind": "CANONICAL_ATOMIC",
+  "relationships": {
+    "alias_of": null,
+    "aliases": [],
+    "coverage_mode": null,
+    "derived_from": [],
+    "derived_requirements": []
+  },
+  "requirement_type": "DATA_REQUIREMENT",
+  "scope_coverage_unit": true,
+  "scope_status": "V2.3_ACTIVE",
+  "stable_id": "UXF-308",
+  "title": "Published snapshots are immutable",
+  "verification_criticality": "CRITICAL"
+}
+```
+<!-- YSIM:REQUIREMENT END -->
+
+<!-- YSIM:REQUIREMENT BEGIN -->
+### UXF-309 — Preview is isolated from production
+
+```json
+{
+  "acceptance_contract": [
+    {
+      "case": "POSITIVE",
+      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
+      "criterion_id": "UXF-309-AC001",
+      "given": "a user in the applicable channel and context for Preview is isolated from production",
+      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
+      "then": "the rendered output exposes every required content element and action, keeps prohibited content absent, and makes the applicable confirmation or fallback directly observable",
+      "verifies": [
+        "UXF-309-O001"
+      ],
+      "when": "the user reaches the relevant journey state or invokes the available action"
+    },
+    {
+      "case": "PRINCIPAL_FAILURE_OR_EDGE",
+      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
+      "criterion_id": "UXF-309-AC002",
+      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for Preview is isolated from production",
+      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
+      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
+      "verifies": [
+        "UXF-309-O001"
+      ],
+      "when": "the affected state is rendered or action is requested"
+    }
+  ],
+  "acceptance_rationale": null,
+  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_status": "DIRECT",
+  "acceptance_unit": true,
+  "atomic_obligations": [
+    {
+      "acceptance_criterion_references": [
+        "UXF-309-AC001",
+        "UXF-309-AC002"
+      ],
+      "applicability": "V2.3_ACTIVE",
+      "obligation_id": "UXF-309-O001",
+      "obligation_text": "Preview is isolated from production"
+    }
+  ],
+  "criticality_applicability": null,
+  "criticality_unit": true,
+  "delivery_commitment": "COMMITTED_FOR_V2.3",
+  "implementation_unit": true,
+  "lifecycle": "V2.3_DRAFT",
+  "normative_statement": "Preview is isolated from production.",
+  "provenance": {
+    "approved_decisions": [],
+    "identity_origin": "PRESERVED_STABLE_ID",
+    "original_identity": "UXF-309",
+    "previous_temporary_key": null,
+    "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+    "source_baseline": "v2.2",
+    "source_context_heading": "UXF-309",
+    "source_context_sha256": "27cfa9f57cd5fef7e235a59b1f50fea220baeb73ff1b3d69c6a3c20bb0ef95aa",
+    "source_document": "docs/UXF/UXF-03.md",
+    "source_fingerprint": "7f4e76dd64f65d8776d82343b9638bacd4e1645bb00e20285d7bb8199ffa1a18",
+    "source_lines": "L675-L678",
+    "source_section": "22. Architectural Principles > UXF-309"
+  },
+  "record_kind": "CANONICAL_ATOMIC",
+  "relationships": {
+    "alias_of": null,
+    "aliases": [],
+    "coverage_mode": null,
+    "derived_from": [],
+    "derived_requirements": []
+  },
+  "requirement_type": "UX_REQUIREMENT",
+  "scope_coverage_unit": true,
+  "scope_status": "V2.3_ACTIVE",
+  "stable_id": "UXF-309",
+  "title": "Preview is isolated from production",
+  "verification_criticality": "HIGH"
+}
+```
+<!-- YSIM:REQUIREMENT END -->
+
+<!-- YSIM:REQUIREMENT BEGIN -->
+### UXF-310 — Every storefront is composed from reusable components
+
+```json
+{
+  "acceptance_contract": [
+    {
+      "case": "POSITIVE",
+      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
+      "criterion_id": "UXF-310-AC001",
+      "given": "a user in the applicable channel and context for Every storefront is composed from reusable components",
+      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
+      "then": "the rendered output exposes every required content element and action, keeps prohibited content absent, and makes the applicable confirmation or fallback directly observable",
+      "verifies": [
+        "UXF-310-O001"
+      ],
+      "when": "the user reaches the relevant journey state or invokes the available action"
+    },
+    {
+      "case": "PRINCIPAL_FAILURE_OR_EDGE",
+      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
+      "criterion_id": "UXF-310-AC002",
+      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for Every storefront is composed from reusable components",
+      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
+      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
+      "verifies": [
+        "UXF-310-O001"
+      ],
+      "when": "the affected state is rendered or action is requested"
+    }
+  ],
+  "acceptance_rationale": null,
+  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_status": "DIRECT",
+  "acceptance_unit": true,
+  "atomic_obligations": [
+    {
+      "acceptance_criterion_references": [
+        "UXF-310-AC001",
+        "UXF-310-AC002"
+      ],
+      "applicability": "V2.3_ACTIVE",
+      "obligation_id": "UXF-310-O001",
+      "obligation_text": "Every storefront is composed from reusable components"
+    }
+  ],
+  "criticality_applicability": null,
+  "criticality_unit": true,
+  "delivery_commitment": "COMMITTED_FOR_V2.3",
+  "implementation_unit": true,
+  "lifecycle": "V2.3_DRAFT",
+  "normative_statement": "Every storefront is composed from reusable components.",
+  "provenance": {
+    "approved_decisions": [],
+    "identity_origin": "PRESERVED_STABLE_ID",
+    "original_identity": "UXF-310",
+    "previous_temporary_key": null,
+    "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+    "source_baseline": "v2.2",
+    "source_context_heading": "UXF-310",
+    "source_context_sha256": "e11046a352bc785e231b2e27e7ea0a5eac485536e3733a521e48a2966db07b6c",
+    "source_document": "docs/UXF/UXF-03.md",
+    "source_fingerprint": "ae428416a9c2aab2345e6e3c3d24db9901ac37e1a3dfce13c249bde14769d700",
+    "source_lines": "L681-L684",
+    "source_section": "22. Architectural Principles > UXF-310"
+  },
+  "record_kind": "CANONICAL_ATOMIC",
+  "relationships": {
+    "alias_of": null,
+    "aliases": [],
+    "coverage_mode": null,
+    "derived_from": [],
+    "derived_requirements": []
+  },
+  "requirement_type": "UX_REQUIREMENT",
+  "scope_coverage_unit": true,
+  "scope_status": "V2.3_ACTIVE",
+  "stable_id": "UXF-310",
+  "title": "Every storefront is composed from reusable components",
+  "verification_criticality": "HIGH"
+}
+```
+<!-- YSIM:REQUIREMENT END -->
+
+<!-- YSIM:PHASE_2C CANONICAL APPENDIX END -->

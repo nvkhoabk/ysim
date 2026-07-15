@@ -1,0 +1,108 @@
+{
+  "approval_block": {
+    "approver": null,
+    "date": null,
+    "decision": "PENDING",
+    "revision": null,
+    "signature": null
+  },
+  "approval_status": "PENDING_HUMAN_APPROVAL",
+  "base_commit": "0df2d424e00f9cd27b8dcb6645eef827ce97b60e",
+  "blocker": "ACCEPTANCE_CONTRACT_MODEL_NOT_APPROVED",
+  "candidate_id": "V23-P2C-ACCEPTANCE-MODEL-C1",
+  "does_not_supersede": [
+    "C2_SOURCE_REMEDIATION",
+    "C2_STABLE_ID_RECONCILIATION",
+    "C2_STRUCTURAL_RECONCILIATION",
+    "APPROVED_SCOPE_DECISIONS",
+    "APPROVED_CRITICALITY_DECISIONS"
+  ],
+  "final_document_baseline": false,
+  "generated_file_sha256": {
+    "docs/baselines/v2.3/phase-2/ACCEPTANCE_CONTRACT_MODEL.md": "6e70ec20f2a77ae449e67f633c98bf76b7b4ec263dd0b27f86a3d3ac472fac2b",
+    "docs/baselines/v2.3/phase-2/ACCEPTANCE_MAPPING_REVIEW_PACK.md": "ca81d7a0dd8a085141f7cc7657ab0a64ad73fc34607ad267bd061142ecaf96c2",
+    "docs/baselines/v2.3/phase-2/ACCEPTANCE_PROFILE_CATALOG.md": "bb12a35e4901ec14b55a36d5e4a1b3322a367a7b0c74005680cd865ed4a2dc30",
+    "docs/baselines/v2.3/phase-2/PHASE_2C_BLOCKER_REGISTER.md": "838cbe0427c5bb189e61a4769caba02e855c43fe17644f43e7918d97cedf53ff",
+    "docs/baselines/v2.3/phase-2/acceptance-mapping-dry-run.json": "70286130036369db925433d723e43e819a0eaf6bac0e3723cb288080dce2b882",
+    "docs/baselines/v2.3/phase-2/acceptance-profile-catalog.json": "0ffc968ea54d40293dc4d7e8fa07b0dcd4e6f37893471c2091b89fd422c6ce0c",
+    "docs/baselines/v2.3/phase-2/phase-2c-document-baseline-candidate.json": "2b770b86fe931925f22da6ede0e7d20212952b98dd61116f236d9103092ae67e",
+    "docs/baselines/v2.3/phase-2/schemas/acceptance-mapping-dry-run.schema.json": "5f92f5c7d37ca6a350265ef757312722239e0bf670488f184dbdecc1c0b12eda",
+    "docs/baselines/v2.3/phase-2/schemas/acceptance-profile-catalog.schema.json": "6bd1d1dfec3c639c3754686a568986799f6cd010963e2c4357dae07fd3e46d34"
+  },
+  "hash_basis": "GIT_INDEX_BLOB_CONTENT",
+  "line_endings": "GIT_CANONICAL_TEXT",
+  "mapping_summary": {
+    "criticality_by_mechanism": {
+      "HUMAN_MAPPING_REVIEW": {
+        "CRITICAL": 185,
+        "HIGH": 347,
+        "NORMAL": 339
+      },
+      "INLINE_CONTRACT_REQUIRED": {
+        "CRITICAL": 122,
+        "HIGH": 28,
+        "NORMAL": 11
+      },
+      "PROFILE_BINDING_HIGH_CONFIDENCE": {
+        "CRITICAL": 9,
+        "HIGH": 19,
+        "NORMAL": 16
+      }
+    },
+    "disposition_counts": {
+      "HUMAN_MAPPING_REVIEW": 871,
+      "INLINE_CONTRACT_REQUIRED": 161,
+      "INVALID_OR_BLOCKED": 0,
+      "PROFILE_BINDING_HIGH_CONFIDENCE": 44
+    },
+    "human_review_groups": {
+      "NO_NARROW_PROFILE_MATCH": 530,
+      "REQUIRED_BINDINGS_NOT_SOURCE_GROUNDED": 341
+    },
+    "inline_category_counts": {
+      "ALLOCATION": 19,
+      "COMPLEX_WORKFLOW": 9,
+      "FINANCIAL_RECONCILIATION": 25,
+      "FRAUD_RISK_DECISION": 3,
+      "FULFILLMENT": 13,
+      "PAYMENT": 56,
+      "PRICING": 6,
+      "PROCUREMENT": 13,
+      "PROMOTION": 14,
+      "REFUND": 3
+    },
+    "profile_mapping_counts": {
+      "ACP-AUDITABILITY": 1,
+      "ACP-AUTHENTICATION_REQUIREMENT": 3,
+      "ACP-DATA_RETENTION": 1,
+      "ACP-DESIGN_CONFORMANCE_TRACE": 1,
+      "ACP-ENUM_REFERENCE_INTEGRITY": 1,
+      "ACP-EVENT_ORDERING": 1,
+      "ACP-MFA_ENFORCEMENT": 1,
+      "ACP-OPERATION_OBSERVABILITY": 1,
+      "ACP-REQUIRED_CAPABILITY_SET": 21,
+      "ACP-ROLE_AND_PERMISSION_ENFORCEMENT": 3,
+      "ACP-SCOPE_EXCLUSION": 4,
+      "ACP-UX_ACCESSIBILITY": 6
+    },
+    "total_active_atomic_requirements": 1076
+  },
+  "model": "HYBRID_ACCEPTANCE_PROFILES_AND_INLINE_CONTRACTS",
+  "model_version": "1.0.0-candidate.1",
+  "next_gate": "HUMAN_ACCEPTANCE_MODEL_APPROVAL",
+  "source_denominator": 1076,
+  "source_documents_regenerated": false,
+  "status": "CANDIDATE",
+  "stratified_sample_result": "PASS",
+  "stratified_sample_size": 902,
+  "supersedes_acceptance_approach": [
+    "V23-P2C-DOCUMENT-BASELINE-C1",
+    "V23-P2C-DOCUMENT-BASELINE-C2"
+  ],
+  "tool_sha256": {
+    "scripts/docs/generate-acceptance-model-candidate.py": "f7627c835245b2d2e650928bd943f568ce209816341de0973a669c8db26b8044",
+    "scripts/docs/validate-acceptance-mapping-dry-run.py": "ee94fb9b2f66d500d62cd78f75c76ac1d7a48927c77701703b0b566ef5f8cb16",
+    "scripts/docs/validate-acceptance-profile-catalog.py": "512bf7f13c5197546c8b9ad36a07b942a1faacb5f37f9b68a7980f5671bc3123"
+  },
+  "yadf_authorization": false
+}

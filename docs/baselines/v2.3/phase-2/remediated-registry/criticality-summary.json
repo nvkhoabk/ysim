@@ -1,0 +1,13 @@
+{
+  "denominator": 1076,
+  "distribution": {
+    "CRITICAL": 316,
+    "HIGH": 394,
+    "NORMAL": 366
+  },
+  "inactive_or_non_atomic_excluded": 122,
+  "source_disposition_count": 46,
+  "source_exception_status": {
+    "OPEN": 46
+  }
+}

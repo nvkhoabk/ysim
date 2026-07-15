@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "profiles": {
+      "items": {
+        "required": [
+          "profile_id",
+          "version",
+          "semantic_intent",
+          "supported_requirement_types",
+          "applicability_rules",
+          "prohibited_uses",
+          "required_bindings",
+          "oracle_templates",
+          "evidence_requirements",
+          "failure_semantics",
+          "criticality_compatibility",
+          "deterministic_validation_rules",
+          "valid_examples",
+          "counterexamples"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "status": {
+      "const": "CANDIDATE"
+    }
+  },
+  "required": [
+    "artifact",
+    "model",
+    "catalog_version",
+    "status",
+    "profile_count",
+    "profiles"
+  ],
+  "title": "Acceptance Profile Catalog",
+  "type": "object"
+}

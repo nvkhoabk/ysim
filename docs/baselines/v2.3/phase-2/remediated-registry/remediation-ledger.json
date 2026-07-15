@@ -1,0 +1,559 @@
+{
+  "artifact": "V23-P2C-REMEDIATION-LEDGER",
+  "disposition_count": 46,
+  "entries": [
+    {
+      "application_status": "APPLIED_IN_PHASE_2C",
+      "applied_requirement_ids": [
+        "BD-04-007"
+      ],
+      "approved_pack": "V23-P2B-CRITICALITY-DECISION-C1",
+      "decision_basis": "EARLIER_EXPLICIT_HUMAN_DECISION",
+      "exception_id": "P2-CRIT-EXC-001",
+      "selected_disposition": "ROUTE_TO_SCOPE_REMEDIATION",
+      "source_exception_status": "OPEN",
+      "source_resolution_claim": false
+    },
+    {
+      "application_status": "APPLIED_IN_PHASE_2C",
+      "applied_requirement_ids": [
+        "BD-14-022"
+      ],
+      "approved_pack": "V23-P2B-CRITICALITY-DECISION-C1",
+      "decision_basis": "CONTROLLED_FAST_TRACK_BULK_HUMAN_AUTHORIZATION",
+      "exception_id": "P2-CRIT-EXC-002",
+      "selected_disposition": "CONFIRM_CRITICAL",
+      "source_exception_status": "OPEN",
+      "source_resolution_claim": false
+    },
+    {
+      "application_status": "APPLIED_IN_PHASE_2C",
+      "applied_requirement_ids": [
+        "BRD-CAP-INDEX-R007"
+      ],
+      "approved_pack": "V23-P2B-CRITICALITY-DECISION-C1",
+      "decision_basis": "DETERMINISTIC_OR_POLICY_REMEDIATION_RECOMMENDATION",
+      "exception_id": "P2-CRIT-EXC-003",
+      "selected_disposition": "APPROVED_SCOPE_PROMOTION_REMEDIATION",
+      "source_exception_status": "OPEN",
+      "source_resolution_claim": false
+    },
+    {
+      "application_status": "APPLIED_IN_PHASE_2C",
+      "applied_requirement_ids": [
+        "BRD-EVENT-INDEX-R002"
+      ],
+      "approved_pack": "V23-P2B-CRITICALITY-DECISION-C1",
+      "decision_basis": "DETERMINISTIC_OR_POLICY_REMEDIATION_RECOMMENDATION",
+      "exception_id": "P2-CRIT-EXC-004",
+      "selected_disposition": "EXPAND_SOURCE_RANGE_AND_REWRITE_EFFECTIVE_STATEMENT",
+      "source_exception_status": "OPEN",
+      "source_resolution_claim": false
+    },
+    {
+      "application_status": "APPLIED_IN_PHASE_2C",
+      "applied_requirement_ids": [
+        "BRD-UPDATE-01-R010"
+      ],
+      "approved_pack": "V23-P2B-CRITICALITY-DECISION-C1",
+      "decision_basis": "EARLIER_EXPLICIT_HUMAN_DECISION",
+      "exception_id": "P2-CRIT-EXC-005",
+      "selected_disposition": "COMPOSITE_PARENT_WITH_ATOMIC_CHILD_RECONCILIATION",
+      "source_exception_status": "OPEN",
+      "source_resolution_claim": false
+    },
+    {
+      "application_status": "APPLIED_IN_PHASE_2C",
+      "applied_requirement_ids": [
+        "BRD-UPDATE-01-R018"
+      ],
+      "approved_pack": "V23-P2B-CRITICALITY-DECISION-C1",
+      "decision_basis": "CONTROLLED_FAST_TRACK_BULK_HUMAN_AUTHORIZATION",
+      "exception_id": "P2-CRIT-EXC-006",
+      "selected_disposition": "CONFIRM_HIGH",
+      "source_exception_status": "OPEN",
+      "source_resolution_claim": false
+    },
+    {
+      "application_status": "APPLIED_IN_PHASE_2C",
+      "applied_requirement_ids": [
+        "BRD-UPDATE-01-R020"
+      ],
+      "approved_pack": "V23-P2B-CRITICALITY-DECISION-C1",
+      "decision_basis": "CRITICALITY_RULE_RECOMMENDATION",
+      "exception_id": "P2-CRIT-EXC-007",
+      "selected_disposition": "CONFIRM_HIGH",
+      "source_exception_status": "OPEN",
+      "source_resolution_claim": false
+    },
+    {
+      "application_status": "APPLIED_IN_PHASE_2C",
+      "applied_requirement_ids": [
+        "BRD-UPDATE-01-R021"
+      ],
+      "approved_pack": "V23-P2B-CRITICALITY-DECISION-C1",
+      "decision_basis": "CONTROLLED_FAST_TRACK_BULK_HUMAN_AUTHORIZATION",
+      "exception_id": "P2-CRIT-EXC-008",
+      "selected_disposition": "CONFIRM_NORMAL",
+      "source_exception_status": "OPEN",
+      "source_resolution_claim": false
+    },
+    {
+      "application_status": "APPLIED_IN_PHASE_2C",
+      "applied_requirement_ids": [
+        "BRD-UPDATE-01-R022"
+      ],
+      "approved_pack": "V23-P2B-CRITICALITY-DECISION-C1",
+      "decision_basis": "CONTROLLED_FAST_TRACK_BULK_HUMAN_AUTHORIZATION",
+      "exception_id": "P2-CRIT-EXC-009",
+      "selected_disposition": "CONFIRM_HIGH",
+      "source_exception_status": "OPEN",
+      "source_resolution_claim": false
+    },
+    {
+      "application_status": "APPLIED_IN_PHASE_2C",
+      "applied_requirement_ids": [
+        "BRD-UPDATE-01-R023"
+      ],
+      "approved_pack": "V23-P2B-CRITICALITY-DECISION-C1",
+      "decision_basis": "CONTROLLED_FAST_TRACK_BULK_HUMAN_AUTHORIZATION",
+      "exception_id": "P2-CRIT-EXC-010",
+      "selected_disposition": "CONFIRM_HIGH",
+      "source_exception_status": "OPEN",
+      "source_resolution_claim": false
+    },
+    {
+      "application_status": "APPLIED_IN_PHASE_2C",
+      "applied_requirement_ids": [
+        "BRD-UPDATE-01-R024"
+      ],
+      "approved_pack": "V23-P2B-CRITICALITY-DECISION-C1",
+      "decision_basis": "CONTROLLED_FAST_TRACK_BULK_HUMAN_AUTHORIZATION",
+      "exception_id": "P2-CRIT-EXC-011",
+      "selected_disposition": "CONFIRM_CRITICAL",
+      "source_exception_status": "OPEN",
+      "source_resolution_claim": false
+    },
+    {
+      "application_status": "APPLIED_IN_PHASE_2C",
+      "applied_requirement_ids": [
+        "BRD-UPDATE-01-R025"
+      ],
+      "approved_pack": "V23-P2B-CRITICALITY-DECISION-C1",
+      "decision_basis": "CONTROLLED_FAST_TRACK_BULK_HUMAN_AUTHORIZATION",
+      "exception_id": "P2-CRIT-EXC-012",
+      "selected_disposition": "CONFIRM_HIGH",
+      "source_exception_status": "OPEN",
+      "source_resolution_claim": false
+    },
+    {
+      "application_status": "APPLIED_IN_PHASE_2C",
+      "applied_requirement_ids": [
+        "BRD-UPDATE-01-R026"
+      ],
+      "approved_pack": "V23-P2B-CRITICALITY-DECISION-C1",
+      "decision_basis": "CONTROLLED_FAST_TRACK_BULK_HUMAN_AUTHORIZATION",
+      "exception_id": "P2-CRIT-EXC-013",
+      "selected_disposition": "CONFIRM_HIGH",
+      "source_exception_status": "OPEN",
+      "source_resolution_claim": false
+    },
+    {
+      "application_status": "APPLIED_IN_PHASE_2C",
+      "applied_requirement_ids": [
+        "BRD-UPDATE-01-R027"
+      ],
+      "approved_pack": "V23-P2B-CRITICALITY-DECISION-C1",
+      "decision_basis": "CONTROLLED_FAST_TRACK_BULK_HUMAN_AUTHORIZATION",
+      "exception_id": "P2-CRIT-EXC-014",
+      "selected_disposition": "CONFIRM_HIGH",
+      "source_exception_status": "OPEN",
+      "source_resolution_claim": false
+    },
+    {
+      "application_status": "APPLIED_IN_PHASE_2C",
+      "applied_requirement_ids": [
+        "BRD-UPDATE-01-R029"
+      ],
+      "approved_pack": "V23-P2B-CRITICALITY-DECISION-C1",
+      "decision_basis": "CONTROLLED_FAST_TRACK_BULK_HUMAN_AUTHORIZATION",
+      "exception_id": "P2-CRIT-EXC-015",
+      "selected_disposition": "CONFIRM_NORMAL",
+      "source_exception_status": "OPEN",
+      "source_resolution_claim": false
+    },
+    {
+      "application_status": "APPLIED_IN_PHASE_2C",
+      "applied_requirement_ids": [
+        "BRD-WS-01-R001"
+      ],
+      "approved_pack": "V23-P2B-CRITICALITY-DECISION-C1",
+      "decision_basis": "DETERMINISTIC_OR_POLICY_REMEDIATION_RECOMMENDATION",
+      "exception_id": "P2-CRIT-EXC-016",
+      "selected_disposition": "ROUTE_TO_REMEDIATION",
+      "source_exception_status": "OPEN",
+      "source_resolution_claim": false
+    },
+    {
+      "application_status": "APPLIED_IN_PHASE_2C",
+      "applied_requirement_ids": [
+        "BRD-WS-01-R004"
+      ],
+      "approved_pack": "V23-P2B-CRITICALITY-DECISION-C1",
+      "decision_basis": "DETERMINISTIC_OR_POLICY_REMEDIATION_RECOMMENDATION",
+      "exception_id": "P2-CRIT-EXC-017",
+      "selected_disposition": "ROUTE_TO_REMEDIATION",
+      "source_exception_status": "OPEN",
+      "source_resolution_claim": false
+    },
+    {
+      "application_status": "APPLIED_IN_PHASE_2C",
+      "applied_requirement_ids": [
+        "BRD-WS-01-R029"
+      ],
+      "approved_pack": "V23-P2B-CRITICALITY-DECISION-C1",
+      "decision_basis": "CRITICALITY_RULE_RECOMMENDATION",
+      "exception_id": "P2-CRIT-EXC-018",
+      "selected_disposition": "CONFIRM_HIGH",
+      "source_exception_status": "OPEN",
+      "source_resolution_claim": false
+    },
+    {
+      "application_status": "APPLIED_IN_PHASE_2C",
+      "applied_requirement_ids": [
+        "BRD-WS-05-R021"
+      ],
+      "approved_pack": "V23-P2B-CRITICALITY-DECISION-C1",
+      "decision_basis": "CRITICALITY_RULE_RECOMMENDATION",
+      "exception_id": "P2-CRIT-EXC-019",
+      "selected_disposition": "CONFIRM_CRITICAL",
+      "source_exception_status": "OPEN",
+      "source_resolution_claim": false
+    },
+    {
+      "application_status": "APPLIED_IN_PHASE_2C",
+      "applied_requirement_ids": [
+        "BRD-WS-08-R012",
+        "BRD-WS-08-R013"
+      ],
+      "approved_pack": "V23-P2B-CRITICALITY-DECISION-C1",
+      "decision_basis": "DETERMINISTIC_OR_POLICY_REMEDIATION_RECOMMENDATION",
+      "exception_id": "P2-CRIT-EXC-020",
+      "selected_disposition": "APPROVED_SCOPE_PROMOTION_REMEDIATION",
+      "source_exception_status": "OPEN",
+      "source_resolution_claim": false
+    },
+    {
+      "application_status": "APPLIED_IN_PHASE_2C",
+      "applied_requirement_ids": [
+        "BRD-WS-11-R002"
+      ],
+      "approved_pack": "V23-P2B-CRITICALITY-DECISION-C1",
+      "decision_basis": "CRITICALITY_RULE_RECOMMENDATION",
+      "exception_id": "P2-CRIT-EXC-021",
+      "selected_disposition": "CONFIRM_CRITICAL",
+      "source_exception_status": "OPEN",
+      "source_resolution_claim": false
+    },
+    {
+      "application_status": "APPLIED_IN_PHASE_2C",
+      "applied_requirement_ids": [
+        "BRD-WS-11-R003"
+      ],
+      "approved_pack": "V23-P2B-CRITICALITY-DECISION-C1",
+      "decision_basis": "CRITICALITY_RULE_RECOMMENDATION",
+      "exception_id": "P2-CRIT-EXC-022",
+      "selected_disposition": "CONFIRM_CRITICAL",
+      "source_exception_status": "OPEN",
+      "source_resolution_claim": false
+    },
+    {
+      "application_status": "APPLIED_IN_PHASE_2C",
+      "applied_requirement_ids": [
+        "BRD-WS-17-R013"
+      ],
+      "approved_pack": "V23-P2B-CRITICALITY-DECISION-C1",
+      "decision_basis": "DETERMINISTIC_OR_POLICY_REMEDIATION_RECOMMENDATION",
+      "exception_id": "P2-CRIT-EXC-023",
+      "selected_disposition": "COMPOSITE_PARENT_WITH_ATOMIC_CHILDREN",
+      "source_exception_status": "OPEN",
+      "source_resolution_claim": false
+    },
+    {
+      "application_status": "APPLIED_IN_PHASE_2C",
+      "applied_requirement_ids": [
+        "UXF-00-R016"
+      ],
+      "approved_pack": "V23-P2B-CRITICALITY-DECISION-C1",
+      "decision_basis": "DETERMINISTIC_OR_POLICY_REMEDIATION_RECOMMENDATION",
+      "exception_id": "P2-CRIT-EXC-024",
+      "selected_disposition": "ROUTE_TO_REMEDIATION",
+      "source_exception_status": "OPEN",
+      "source_resolution_claim": false
+    },
+    {
+      "application_status": "APPLIED_IN_PHASE_2C",
+      "applied_requirement_ids": [
+        "UXF-00-R017"
+      ],
+      "approved_pack": "V23-P2B-CRITICALITY-DECISION-C1",
+      "decision_basis": "CRITICALITY_RULE_RECOMMENDATION",
+      "exception_id": "P2-CRIT-EXC-025",
+      "selected_disposition": "CONFIRM_CRITICAL",
+      "source_exception_status": "OPEN",
+      "source_resolution_claim": false
+    },
+    {
+      "application_status": "APPLIED_IN_PHASE_2C",
+      "applied_requirement_ids": [
+        "UXF-00-R020"
+      ],
+      "approved_pack": "V23-P2B-CRITICALITY-DECISION-C1",
+      "decision_basis": "CRITICALITY_RULE_RECOMMENDATION",
+      "exception_id": "P2-CRIT-EXC-026",
+      "selected_disposition": "CONFIRM_HIGH",
+      "source_exception_status": "OPEN",
+      "source_resolution_claim": false
+    },
+    {
+      "application_status": "APPLIED_IN_PHASE_2C",
+      "applied_requirement_ids": [
+        "UXF-00-R021"
+      ],
+      "approved_pack": "V23-P2B-CRITICALITY-DECISION-C1",
+      "decision_basis": "CRITICALITY_RULE_RECOMMENDATION",
+      "exception_id": "P2-CRIT-EXC-027",
+      "selected_disposition": "CONFIRM_CRITICAL",
+      "source_exception_status": "OPEN",
+      "source_resolution_claim": false
+    },
+    {
+      "application_status": "APPLIED_IN_PHASE_2C",
+      "applied_requirement_ids": [
+        "UXF-005"
+      ],
+      "approved_pack": "V23-P2B-CRITICALITY-DECISION-C1",
+      "decision_basis": "CRITICALITY_RULE_RECOMMENDATION",
+      "exception_id": "P2-CRIT-EXC-028",
+      "selected_disposition": "CONFIRM_CRITICAL",
+      "source_exception_status": "OPEN",
+      "source_resolution_claim": false
+    },
+    {
+      "application_status": "APPLIED_IN_PHASE_2C",
+      "applied_requirement_ids": [
+        "UXF-01-R009"
+      ],
+      "approved_pack": "V23-P2B-CRITICALITY-DECISION-C1",
+      "decision_basis": "CRITICALITY_RULE_RECOMMENDATION",
+      "exception_id": "P2-CRIT-EXC-029",
+      "selected_disposition": "CONFIRM_HIGH",
+      "source_exception_status": "OPEN",
+      "source_resolution_claim": false
+    },
+    {
+      "application_status": "APPLIED_IN_PHASE_2C",
+      "applied_requirement_ids": [
+        "UXF-02-R001"
+      ],
+      "approved_pack": "V23-P2B-CRITICALITY-DECISION-C1",
+      "decision_basis": "CRITICALITY_RULE_RECOMMENDATION",
+      "exception_id": "P2-CRIT-EXC-030",
+      "selected_disposition": "CONFIRM_NORMAL",
+      "source_exception_status": "OPEN",
+      "source_resolution_claim": false
+    },
+    {
+      "application_status": "APPLIED_IN_PHASE_2C",
+      "applied_requirement_ids": [
+        "UXF-02-R009"
+      ],
+      "approved_pack": "V23-P2B-CRITICALITY-DECISION-C1",
+      "decision_basis": "CRITICALITY_RULE_RECOMMENDATION",
+      "exception_id": "P2-CRIT-EXC-031",
+      "selected_disposition": "CONFIRM_HIGH",
+      "source_exception_status": "OPEN",
+      "source_resolution_claim": false
+    },
+    {
+      "application_status": "APPLIED_IN_PHASE_2C",
+      "applied_requirement_ids": [
+        "UXF-04-R004"
+      ],
+      "approved_pack": "V23-P2B-CRITICALITY-DECISION-C1",
+      "decision_basis": "CRITICALITY_RULE_RECOMMENDATION",
+      "exception_id": "P2-CRIT-EXC-032",
+      "selected_disposition": "CONFIRM_CRITICAL",
+      "source_exception_status": "OPEN",
+      "source_resolution_claim": false
+    },
+    {
+      "application_status": "APPLIED_IN_PHASE_2C",
+      "applied_requirement_ids": [
+        "UXF-04-R006"
+      ],
+      "approved_pack": "V23-P2B-CRITICALITY-DECISION-C1",
+      "decision_basis": "DETERMINISTIC_OR_POLICY_REMEDIATION_RECOMMENDATION",
+      "exception_id": "P2-CRIT-EXC-033",
+      "selected_disposition": "ROUTE_TO_REMEDIATION",
+      "source_exception_status": "OPEN",
+      "source_resolution_claim": false
+    },
+    {
+      "application_status": "APPLIED_IN_PHASE_2C",
+      "applied_requirement_ids": [
+        "UXF-05-R005"
+      ],
+      "approved_pack": "V23-P2B-CRITICALITY-DECISION-C1",
+      "decision_basis": "CRITICALITY_RULE_RECOMMENDATION",
+      "exception_id": "P2-CRIT-EXC-034",
+      "selected_disposition": "CONFIRM_CRITICAL",
+      "source_exception_status": "OPEN",
+      "source_resolution_claim": false
+    },
+    {
+      "application_status": "APPLIED_IN_PHASE_2C",
+      "applied_requirement_ids": [
+        "UXF-05-R008"
+      ],
+      "approved_pack": "V23-P2B-CRITICALITY-DECISION-C1",
+      "decision_basis": "CRITICALITY_RULE_RECOMMENDATION",
+      "exception_id": "P2-CRIT-EXC-035",
+      "selected_disposition": "CONFIRM_CRITICAL",
+      "source_exception_status": "OPEN",
+      "source_resolution_claim": false
+    },
+    {
+      "application_status": "APPLIED_IN_PHASE_2C",
+      "applied_requirement_ids": [
+        "UXF-05-R009"
+      ],
+      "approved_pack": "V23-P2B-CRITICALITY-DECISION-C1",
+      "decision_basis": "CRITICALITY_RULE_RECOMMENDATION",
+      "exception_id": "P2-CRIT-EXC-036",
+      "selected_disposition": "CONFIRM_CRITICAL",
+      "source_exception_status": "OPEN",
+      "source_resolution_claim": false
+    },
+    {
+      "application_status": "APPLIED_IN_PHASE_2C",
+      "applied_requirement_ids": [
+        "UXF-106"
+      ],
+      "approved_pack": "V23-P2B-CRITICALITY-DECISION-C1",
+      "decision_basis": "DETERMINISTIC_OR_POLICY_REMEDIATION_RECOMMENDATION",
+      "exception_id": "P2-CRIT-EXC-037",
+      "selected_disposition": "ROUTE_TO_REMEDIATION",
+      "source_exception_status": "OPEN",
+      "source_resolution_claim": false
+    },
+    {
+      "application_status": "APPLIED_IN_PHASE_2C",
+      "applied_requirement_ids": [
+        "UXF-110"
+      ],
+      "approved_pack": "V23-P2B-CRITICALITY-DECISION-C1",
+      "decision_basis": "DETERMINISTIC_OR_POLICY_REMEDIATION_RECOMMENDATION",
+      "exception_id": "P2-CRIT-EXC-038",
+      "selected_disposition": "ROUTE_TO_REMEDIATION",
+      "source_exception_status": "OPEN",
+      "source_resolution_claim": false
+    },
+    {
+      "application_status": "APPLIED_IN_PHASE_2C",
+      "applied_requirement_ids": [
+        "UXF-202"
+      ],
+      "approved_pack": "V23-P2B-CRITICALITY-DECISION-C1",
+      "decision_basis": "DETERMINISTIC_OR_POLICY_REMEDIATION_RECOMMENDATION",
+      "exception_id": "P2-CRIT-EXC-039",
+      "selected_disposition": "ROUTE_TO_REMEDIATION",
+      "source_exception_status": "OPEN",
+      "source_resolution_claim": false
+    },
+    {
+      "application_status": "APPLIED_IN_PHASE_2C",
+      "applied_requirement_ids": [
+        "UXF-203"
+      ],
+      "approved_pack": "V23-P2B-CRITICALITY-DECISION-C1",
+      "decision_basis": "DETERMINISTIC_OR_POLICY_REMEDIATION_RECOMMENDATION",
+      "exception_id": "P2-CRIT-EXC-040",
+      "selected_disposition": "ROUTE_TO_REMEDIATION",
+      "source_exception_status": "OPEN",
+      "source_resolution_claim": false
+    },
+    {
+      "application_status": "APPLIED_IN_PHASE_2C",
+      "applied_requirement_ids": [
+        "UXF-204"
+      ],
+      "approved_pack": "V23-P2B-CRITICALITY-DECISION-C1",
+      "decision_basis": "DETERMINISTIC_OR_POLICY_REMEDIATION_RECOMMENDATION",
+      "exception_id": "P2-CRIT-EXC-041",
+      "selected_disposition": "ROUTE_TO_REMEDIATION",
+      "source_exception_status": "OPEN",
+      "source_resolution_claim": false
+    },
+    {
+      "application_status": "APPLIED_IN_PHASE_2C",
+      "applied_requirement_ids": [
+        "UXF-208"
+      ],
+      "approved_pack": "V23-P2B-CRITICALITY-DECISION-C1",
+      "decision_basis": "DETERMINISTIC_OR_POLICY_REMEDIATION_RECOMMENDATION",
+      "exception_id": "P2-CRIT-EXC-042",
+      "selected_disposition": "ROUTE_TO_REMEDIATION",
+      "source_exception_status": "OPEN",
+      "source_resolution_claim": false
+    },
+    {
+      "application_status": "APPLIED_IN_PHASE_2C",
+      "applied_requirement_ids": [
+        "UXF-402"
+      ],
+      "approved_pack": "V23-P2B-CRITICALITY-DECISION-C1",
+      "decision_basis": "CONTROLLED_FAST_TRACK_BULK_HUMAN_AUTHORIZATION",
+      "exception_id": "P2-CRIT-EXC-043",
+      "selected_disposition": "CONFIRM_HIGH",
+      "source_exception_status": "OPEN",
+      "source_resolution_claim": false
+    },
+    {
+      "application_status": "APPLIED_IN_PHASE_2C",
+      "applied_requirement_ids": [
+        "UXF-408"
+      ],
+      "approved_pack": "V23-P2B-CRITICALITY-DECISION-C1",
+      "decision_basis": "DETERMINISTIC_OR_POLICY_REMEDIATION_RECOMMENDATION",
+      "exception_id": "P2-CRIT-EXC-044",
+      "selected_disposition": "ROUTE_TO_REMEDIATION",
+      "source_exception_status": "OPEN",
+      "source_resolution_claim": false
+    },
+    {
+      "application_status": "APPLIED_IN_PHASE_2C",
+      "applied_requirement_ids": [
+        "UXF-501"
+      ],
+      "approved_pack": "V23-P2B-CRITICALITY-DECISION-C1",
+      "decision_basis": "DETERMINISTIC_OR_POLICY_REMEDIATION_RECOMMENDATION",
+      "exception_id": "P2-CRIT-EXC-045",
+      "selected_disposition": "ROUTE_TO_REMEDIATION",
+      "source_exception_status": "OPEN",
+      "source_resolution_claim": false
+    },
+    {
+      "application_status": "APPLIED_IN_PHASE_2C",
+      "applied_requirement_ids": [
+        "UXF-506"
+      ],
+      "approved_pack": "V23-P2B-CRITICALITY-DECISION-C1",
+      "decision_basis": "CRITICALITY_RULE_RECOMMENDATION",
+      "exception_id": "P2-CRIT-EXC-046",
+      "selected_disposition": "CONFIRM_CRITICAL",
+      "source_exception_status": "OPEN",
+      "source_resolution_claim": false
+    }
+  ]
+}

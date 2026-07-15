@@ -1,0 +1,27 @@
+{
+  "active_atomic_count": 1076,
+  "active_temporary_key_count": 0,
+  "alias_count": 10,
+  "artifact": "V23-P2C-REMEDIATED-REGISTRY",
+  "candidate_id": "V23-P2C-DOCUMENT-BASELINE-C2",
+  "canonical_atomic_count": 1184,
+  "composite_parent_count": 4,
+  "dangling_reference_count": 0,
+  "inactive_atomic_count": 108,
+  "missing_stable_id_count": 0,
+  "record_kind_distribution": {
+    "ALIAS": 10,
+    "CANONICAL_ATOMIC": 1184,
+    "COMPOSITE_PARENT": 4
+  },
+  "requirement_record_count": 1198,
+  "scope_distribution": {
+    "DEFERRED": 16,
+    "FUTURE": 74,
+    "OUT_OF_SCOPE": 18,
+    "V2.3_ACTIVE": 1076
+  },
+  "source_aggregate_sha256": "1e51bb160cb37012b0dc4ad209f7adc9b33a169c04d13ef9a383c26a0eecd3ce",
+  "source_document_count": 31,
+  "stable_id_count": 1198
+}
