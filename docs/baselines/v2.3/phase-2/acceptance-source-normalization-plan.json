@@ -1,0 +1,1461 @@
+{
+  "application_status": "NOT_YET_APPLIED",
+  "artifact": "V23-P2C-ACCEPTANCE-SOURCE-NORMALIZATION-PLAN-C3",
+  "candidate_id": "V23-P2C-ACCEPTANCE-MAPPING-C3",
+  "plan_count": 41,
+  "plans": [
+    {
+      "approved_decision_provenance": [],
+      "contract_preview": {
+        "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that Business Object naming is governed by the complete Naming Convention child rules. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+        "expected_evidence": "canonical references and persisted business state",
+        "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'tuân thủ các quy tắc đặt tên sau' for Business Object; canonical references and persisted business state must distinguish rejection/non-conformance from the positive outcome.",
+        "positive_oracle": "Observe Business Object at NO_EXPLICIT_TRIGGER; canonical references and persisted business state must show the bound DATA_OUTCOME outcome 'tuân thủ các quy tắc đặt tên sau' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+        "requirement_specific_bindings": {
+          "evidence_surface": "canonical references and persisted business state",
+          "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+          "qualifier": "NO_EXPLICIT_QUALIFIER",
+          "subject": "Business Object",
+          "target": "tuân thủ các quy tắc đặt tên sau",
+          "trigger": "NO_EXPLICIT_TRIGGER"
+        }
+      },
+      "corrected_effective_statement": "Business Object naming is governed by the complete Naming Convention child rules.",
+      "corrected_source_range": {
+        "document": "docs/BRD/BRD-BO-INDEX.md",
+        "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+        "section": "5. Naming Convention"
+      },
+      "current_source_range": {
+        "document": "docs/BRD/BRD-BO-INDEX.md",
+        "lines": "L108",
+        "section": "5. Naming Convention"
+      },
+      "current_statement": "Business Object phải tuân thủ các quy tắc đặt tên sau:",
+      "deterministic_transformation": "EXPAND_RANGE_AND_CONVERT_TO_COMPOSITE_PARENT",
+      "expected_mapping_after_normalization": "STRUCTURAL_RECONCILIATION_REQUIRED",
+      "normalization_plan_id": "P2C-C3-SN-001",
+      "requirement_id": "BRD-BO-INDEX-R001",
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_fingerprint": "ad0d60e40b9ae4a1134a91a427204f004d92a3048dad26f509c7f6608cfb0dea"
+    },
+    {
+      "approved_decision_provenance": [],
+      "contract_preview": {
+        "boundary_failure_oracle": "At the applicability boundary trigger='Nếu cần thay đổi phải: - Review Impact', qualifier='NO_EXPLICIT_QUALIFIER', verify that A proposed change to the name of a published Business Object must include Review Impact. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+        "expected_evidence": "observable policy decision, business state, or customer/operator-visible outcome",
+        "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'Nếu cần thay đổi phải: - Review Impact' for Nếu cần thay đổi phải; observable policy decision, business state, or customer/operator-visible outcome must distinguish rejection/non-conformance from the positive outcome.",
+        "positive_oracle": "Observe Nếu cần thay đổi phải at Nếu cần thay đổi phải: - Review Impact; observable policy decision, business state, or customer/operator-visible outcome must show the bound BUSINESS_OUTCOME outcome 'Nếu cần thay đổi phải: - Review Impact' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+        "requirement_specific_bindings": {
+          "evidence_surface": "observable policy decision, business state, or customer/operator-visible outcome",
+          "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+          "qualifier": "NO_EXPLICIT_QUALIFIER",
+          "subject": "Nếu cần thay đổi phải",
+          "target": "Nếu cần thay đổi phải: - Review Impact",
+          "trigger": "Nếu cần thay đổi phải: - Review Impact"
+        }
+      },
+      "corrected_effective_statement": "A proposed change to the name of a published Business Object must include Review Impact.",
+      "corrected_source_range": {
+        "document": "docs/BRD/BRD-BO-INDEX.md",
+        "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+        "section": "5. Naming Convention > 5.3 Stable Naming"
+      },
+      "current_source_range": {
+        "document": "docs/BRD/BRD-BO-INDEX.md",
+        "lines": "L156-L158",
+        "section": "5. Naming Convention > 5.3 Stable Naming"
+      },
+      "current_statement": "Nếu cần thay đổi phải: - Review Impact",
+      "deterministic_transformation": "RESTORE_STABLE_NAMING_SUBJECT",
+      "expected_mapping_after_normalization": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "normalization_plan_id": "P2C-C3-SN-002",
+      "requirement_id": "BRD-BO-INDEX-R004",
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_fingerprint": "58d928f4945770c655fc5f7c1d38c6383dadfb8c187a954892a5d9aa54ca5db8"
+    },
+    {
+      "approved_decision_provenance": [
+        "BDD-27",
+        "SD-03"
+      ],
+      "contract_preview": {
+        "boundary_failure_oracle": "At the applicability boundary trigger='Nếu cần thay đổi phải: - Approval', qualifier='NO_EXPLICIT_QUALIFIER', verify that A proposed change to the name of a published Business Object must include Approval. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+        "expected_evidence": "observable policy decision, business state, or customer/operator-visible outcome",
+        "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'Nếu cần thay đổi phải: - Approval' for Nếu cần thay đổi phải; observable policy decision, business state, or customer/operator-visible outcome must distinguish rejection/non-conformance from the positive outcome.",
+        "positive_oracle": "Observe Nếu cần thay đổi phải at Nếu cần thay đổi phải: - Approval; observable policy decision, business state, or customer/operator-visible outcome must show the bound BUSINESS_OUTCOME outcome 'Nếu cần thay đổi phải: - Approval' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+        "requirement_specific_bindings": {
+          "evidence_surface": "observable policy decision, business state, or customer/operator-visible outcome",
+          "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+          "qualifier": "NO_EXPLICIT_QUALIFIER",
+          "subject": "Nếu cần thay đổi phải",
+          "target": "Nếu cần thay đổi phải: - Approval",
+          "trigger": "Nếu cần thay đổi phải: - Approval"
+        }
+      },
+      "corrected_effective_statement": "A proposed change to the name of a published Business Object must include Approval.",
+      "corrected_source_range": {
+        "document": "docs/BRD/BRD-BO-INDEX.md",
+        "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+        "section": "5. Naming Convention > 5.3 Stable Naming"
+      },
+      "current_source_range": {
+        "document": "docs/BRD/BRD-BO-INDEX.md",
+        "lines": "L156-L159",
+        "section": "5. Naming Convention > 5.3 Stable Naming"
+      },
+      "current_statement": "Nếu cần thay đổi phải: - Approval",
+      "deterministic_transformation": "RESTORE_STABLE_NAMING_SUBJECT",
+      "expected_mapping_after_normalization": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "normalization_plan_id": "P2C-C3-SN-003",
+      "requirement_id": "BRD-BO-INDEX-R005",
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_fingerprint": "22b78ee3b5f3166013c26a0ce06b27d70efb9bf304064321c476a90179cb1801"
+    },
+    {
+      "approved_decision_provenance": [],
+      "contract_preview": {
+        "boundary_failure_oracle": "At the applicability boundary trigger='Nếu cần thay đổi phải: - Versioning', qualifier='NO_EXPLICIT_QUALIFIER', verify that A proposed change to the name of a published Business Object must include Versioning. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+        "expected_evidence": "observable policy decision, business state, or customer/operator-visible outcome",
+        "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'Nếu cần thay đổi phải: - Versioning' for Nếu cần thay đổi phải; observable policy decision, business state, or customer/operator-visible outcome must distinguish rejection/non-conformance from the positive outcome.",
+        "positive_oracle": "Observe Nếu cần thay đổi phải at Nếu cần thay đổi phải: - Versioning; observable policy decision, business state, or customer/operator-visible outcome must show the bound BUSINESS_OUTCOME outcome 'Nếu cần thay đổi phải: - Versioning' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+        "requirement_specific_bindings": {
+          "evidence_surface": "observable policy decision, business state, or customer/operator-visible outcome",
+          "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+          "qualifier": "NO_EXPLICIT_QUALIFIER",
+          "subject": "Nếu cần thay đổi phải",
+          "target": "Nếu cần thay đổi phải: - Versioning",
+          "trigger": "Nếu cần thay đổi phải: - Versioning"
+        }
+      },
+      "corrected_effective_statement": "A proposed change to the name of a published Business Object must include Versioning.",
+      "corrected_source_range": {
+        "document": "docs/BRD/BRD-BO-INDEX.md",
+        "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+        "section": "5. Naming Convention > 5.3 Stable Naming"
+      },
+      "current_source_range": {
+        "document": "docs/BRD/BRD-BO-INDEX.md",
+        "lines": "L156-L160",
+        "section": "5. Naming Convention > 5.3 Stable Naming"
+      },
+      "current_statement": "Nếu cần thay đổi phải: - Versioning",
+      "deterministic_transformation": "RESTORE_STABLE_NAMING_SUBJECT",
+      "expected_mapping_after_normalization": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "normalization_plan_id": "P2C-C3-SN-004",
+      "requirement_id": "BRD-BO-INDEX-R006",
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_fingerprint": "ef0ee7cee6a28d1b0655596cc097936fb42ef9403dd90cb0a5678e037fef464f"
+    },
+    {
+      "approved_decision_provenance": [],
+      "contract_preview": {
+        "boundary_failure_oracle": "At the applicability boundary trigger='Nếu cần thay đổi phải: - Traceability', qualifier='NO_EXPLICIT_QUALIFIER', verify that A proposed change to the name of a published Business Object must include Traceability. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+        "expected_evidence": "observable policy decision, business state, or customer/operator-visible outcome",
+        "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'Nếu cần thay đổi phải: - Traceability' for Nếu cần thay đổi phải; observable policy decision, business state, or customer/operator-visible outcome must distinguish rejection/non-conformance from the positive outcome.",
+        "positive_oracle": "Observe Nếu cần thay đổi phải at Nếu cần thay đổi phải: - Traceability; observable policy decision, business state, or customer/operator-visible outcome must show the bound AUDIT_TRACE outcome 'Nếu cần thay đổi phải: - Traceability' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+        "requirement_specific_bindings": {
+          "evidence_surface": "observable policy decision, business state, or customer/operator-visible outcome",
+          "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+          "qualifier": "NO_EXPLICIT_QUALIFIER",
+          "subject": "Nếu cần thay đổi phải",
+          "target": "Nếu cần thay đổi phải: - Traceability",
+          "trigger": "Nếu cần thay đổi phải: - Traceability"
+        }
+      },
+      "corrected_effective_statement": "A proposed change to the name of a published Business Object must include Traceability.",
+      "corrected_source_range": {
+        "document": "docs/BRD/BRD-BO-INDEX.md",
+        "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+        "section": "5. Naming Convention > 5.3 Stable Naming"
+      },
+      "current_source_range": {
+        "document": "docs/BRD/BRD-BO-INDEX.md",
+        "lines": "L156-L161",
+        "section": "5. Naming Convention > 5.3 Stable Naming"
+      },
+      "current_statement": "Nếu cần thay đổi phải: - Traceability",
+      "deterministic_transformation": "RESTORE_STABLE_NAMING_SUBJECT",
+      "expected_mapping_after_normalization": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "normalization_plan_id": "P2C-C3-SN-005",
+      "requirement_id": "BRD-BO-INDEX-R007",
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_fingerprint": "a3521aaaa0347aca28a9231b19efc3ae7d109b0a847c24bcbd1f387bd723b6cf"
+    },
+    {
+      "approved_decision_provenance": [],
+      "contract_preview": {
+        "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that Business Object Registry conformance is covered by all named Registry Principle children. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+        "expected_evidence": "canonical references and persisted business state",
+        "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'các nguyên tắc sau' for Business Object Registry; canonical references and persisted business state must distinguish rejection/non-conformance from the positive outcome.",
+        "positive_oracle": "Observe Business Object Registry at NO_EXPLICIT_TRIGGER; canonical references and persisted business state must show the bound DATA_OUTCOME outcome 'các nguyên tắc sau' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+        "requirement_specific_bindings": {
+          "evidence_surface": "canonical references and persisted business state",
+          "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+          "qualifier": "NO_EXPLICIT_QUALIFIER",
+          "subject": "Business Object Registry",
+          "target": "các nguyên tắc sau",
+          "trigger": "NO_EXPLICIT_TRIGGER"
+        }
+      },
+      "corrected_effective_statement": "Business Object Registry conformance is covered by all named Registry Principle children.",
+      "corrected_source_range": {
+        "document": "docs/BRD/BRD-BO-INDEX.md",
+        "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+        "section": "8. Registry Principles"
+      },
+      "current_source_range": {
+        "document": "docs/BRD/BRD-BO-INDEX.md",
+        "lines": "L233",
+        "section": "8. Registry Principles"
+      },
+      "current_statement": "Business Object Registry tuân thủ các nguyên tắc sau.",
+      "deterministic_transformation": "EXPAND_RANGE_AND_CONVERT_TO_COMPOSITE_PARENT",
+      "expected_mapping_after_normalization": "STRUCTURAL_RECONCILIATION_REQUIRED",
+      "normalization_plan_id": "P2C-C3-SN-006",
+      "requirement_id": "BRD-BO-INDEX-R014",
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_fingerprint": "b7b3ffa55ec8dc0ae850587ed7e8e8695010edba352915473b9028d7b795b977"
+    },
+    {
+      "approved_decision_provenance": [],
+      "contract_preview": {
+        "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that Policy scheduling must support Publish, Activate, and Expire without redeploying the system. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+        "expected_evidence": "observable policy decision, business state, or customer/operator-visible outcome",
+        "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'mà không cần triển khai lại hệ thống' for mà không cần triển khai lại hệ thống; observable policy decision, business state, or customer/operator-visible outcome must distinguish rejection/non-conformance from the positive outcome.",
+        "positive_oracle": "Observe mà không cần triển khai lại hệ thống at NO_EXPLICIT_TRIGGER; observable policy decision, business state, or customer/operator-visible outcome must show the bound BUSINESS_OUTCOME outcome 'mà không cần triển khai lại hệ thống' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+        "requirement_specific_bindings": {
+          "evidence_surface": "observable policy decision, business state, or customer/operator-visible outcome",
+          "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+          "qualifier": "NO_EXPLICIT_QUALIFIER",
+          "subject": "mà không cần triển khai lại hệ thống",
+          "target": "mà không cần triển khai lại hệ thống",
+          "trigger": "NO_EXPLICIT_TRIGGER"
+        }
+      },
+      "corrected_effective_statement": "Policy scheduling must support Publish, Activate, and Expire without redeploying the system.",
+      "corrected_source_range": {
+        "document": "docs/BRD/BRD-POLICY-INDEX.md",
+        "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+        "section": "10. Effective Date"
+      },
+      "current_source_range": {
+        "document": "docs/BRD/BRD-POLICY-INDEX.md",
+        "lines": "L287",
+        "section": "10. Effective Date"
+      },
+      "current_statement": "mà không cần triển khai lại hệ thống.",
+      "deterministic_transformation": "EXPAND_PRECEDING_SUBJECT_AND_ACTION_LIST",
+      "expected_mapping_after_normalization": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "normalization_plan_id": "P2C-C3-SN-007",
+      "requirement_id": "BRD-POLICY-INDEX-R004",
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_fingerprint": "4609a19224cb80841f6599cab41d3dfb2ac6b90e2c03e94447c1b8b33b561dde"
+    },
+    {
+      "approved_decision_provenance": [],
+      "contract_preview": {
+        "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that eSIM Commerce is included in the active YSim v2.3 product scope. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+        "expected_evidence": "observable policy decision, business state, or customer/operator-visible outcome",
+        "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'eSIM Commerce' for eSIM Commerce; observable policy decision, business state, or customer/operator-visible outcome must distinguish rejection/non-conformance from the positive outcome.",
+        "positive_oracle": "Observe eSIM Commerce at NO_EXPLICIT_TRIGGER; observable policy decision, business state, or customer/operator-visible outcome must show the bound BUSINESS_OUTCOME outcome 'eSIM Commerce' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+        "requirement_specific_bindings": {
+          "evidence_surface": "observable policy decision, business state, or customer/operator-visible outcome",
+          "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+          "qualifier": "NO_EXPLICIT_QUALIFIER",
+          "subject": "eSIM Commerce",
+          "target": "eSIM Commerce",
+          "trigger": "NO_EXPLICIT_TRIGGER"
+        }
+      },
+      "corrected_effective_statement": "eSIM Commerce is included in the active YSim v2.3 product scope.",
+      "corrected_source_range": {
+        "document": "docs/BRD/BRD-WS-01.md",
+        "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+        "section": "4. Product Scope > In Scope"
+      },
+      "current_source_range": {
+        "document": "docs/BRD/BRD-WS-01.md",
+        "lines": "L61",
+        "section": "4. Product Scope > In Scope"
+      },
+      "current_statement": "- eSIM Commerce",
+      "deterministic_transformation": "RESTORE_IN_SCOPE_PREDICATE",
+      "expected_mapping_after_normalization": "EXISTING_PROFILE_BINDING_HIGH_CONFIDENCE",
+      "normalization_plan_id": "P2C-C3-SN-008",
+      "requirement_id": "BRD-WS-01-R003",
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_fingerprint": "3d7e8b249215b7080b48bc4226ef6bb96e1e56b11b3c3b95e651a40dc0690a22"
+    },
+    {
+      "approved_decision_provenance": [],
+      "contract_preview": {
+        "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that Multi-level Distribution is included in the active YSim v2.3 product scope. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+        "expected_evidence": "observable policy decision, business state, or customer/operator-visible outcome",
+        "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'Multi-level Distribution' for Multi-level Distribution; observable policy decision, business state, or customer/operator-visible outcome must distinguish rejection/non-conformance from the positive outcome.",
+        "positive_oracle": "Observe Multi-level Distribution at NO_EXPLICIT_TRIGGER; observable policy decision, business state, or customer/operator-visible outcome must show the bound BUSINESS_OUTCOME outcome 'Multi-level Distribution' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+        "requirement_specific_bindings": {
+          "evidence_surface": "observable policy decision, business state, or customer/operator-visible outcome",
+          "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+          "qualifier": "NO_EXPLICIT_QUALIFIER",
+          "subject": "Multi-level Distribution",
+          "target": "Multi-level Distribution",
+          "trigger": "NO_EXPLICIT_TRIGGER"
+        }
+      },
+      "corrected_effective_statement": "Multi-level Distribution is included in the active YSim v2.3 product scope.",
+      "corrected_source_range": {
+        "document": "docs/BRD/BRD-WS-01.md",
+        "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+        "section": "4. Product Scope > In Scope"
+      },
+      "current_source_range": {
+        "document": "docs/BRD/BRD-WS-01.md",
+        "lines": "L63",
+        "section": "4. Product Scope > In Scope"
+      },
+      "current_statement": "- Multi-level Distribution",
+      "deterministic_transformation": "RESTORE_IN_SCOPE_PREDICATE",
+      "expected_mapping_after_normalization": "EXISTING_PROFILE_BINDING_HIGH_CONFIDENCE",
+      "normalization_plan_id": "P2C-C3-SN-009",
+      "requirement_id": "BRD-WS-01-R005",
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_fingerprint": "244fb0a041b03025a3809f69ed1b23d2799e4bc31143915e40949103bac92c63"
+    },
+    {
+      "approved_decision_provenance": [
+        "P2-DEC-007"
+      ],
+      "contract_preview": {
+        "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that Multi-supplier Integration is included in the active YSim v2.3 product scope. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+        "expected_evidence": "accepted/rejected contract and external interaction result",
+        "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'Multi-supplier Integration' for Multi-supplier Integration; accepted/rejected contract and external interaction result must distinguish rejection/non-conformance from the positive outcome.",
+        "positive_oracle": "Observe Multi-supplier Integration at NO_EXPLICIT_TRIGGER; accepted/rejected contract and external interaction result must show the bound BUSINESS_OUTCOME outcome 'Multi-supplier Integration' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+        "requirement_specific_bindings": {
+          "evidence_surface": "accepted/rejected contract and external interaction result",
+          "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+          "qualifier": "NO_EXPLICIT_QUALIFIER",
+          "subject": "Multi-supplier Integration",
+          "target": "Multi-supplier Integration",
+          "trigger": "NO_EXPLICIT_TRIGGER"
+        }
+      },
+      "corrected_effective_statement": "Multi-supplier Integration is included in the active YSim v2.3 product scope.",
+      "corrected_source_range": {
+        "document": "docs/BRD/BRD-WS-01.md",
+        "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+        "section": "4. Product Scope > In Scope"
+      },
+      "current_source_range": {
+        "document": "docs/BRD/BRD-WS-01.md",
+        "lines": "L64",
+        "section": "4. Product Scope > In Scope"
+      },
+      "current_statement": "- Multi-supplier Integration",
+      "deterministic_transformation": "RESTORE_IN_SCOPE_PREDICATE",
+      "expected_mapping_after_normalization": "EXISTING_PROFILE_BINDING_HIGH_CONFIDENCE",
+      "normalization_plan_id": "P2C-C3-SN-010",
+      "requirement_id": "BRD-WS-01-R006",
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_fingerprint": "a21a5a4a56ffcaa98d233ed64e857907e3eeb43ae6a6b36a00370a5bc2fefca1"
+    },
+    {
+      "approved_decision_provenance": [
+        "P2-DEC-007"
+      ],
+      "contract_preview": {
+        "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that Intelligent Allocation Engine is included in the active YSim v2.3 product scope. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+        "expected_evidence": "observable policy decision, business state, or customer/operator-visible outcome",
+        "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'Intelligent Allocation Engine' for Intelligent Allocation Engine; observable policy decision, business state, or customer/operator-visible outcome must distinguish rejection/non-conformance from the positive outcome.",
+        "positive_oracle": "Observe Intelligent Allocation Engine at NO_EXPLICIT_TRIGGER; observable policy decision, business state, or customer/operator-visible outcome must show the bound BUSINESS_OUTCOME outcome 'Intelligent Allocation Engine' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+        "requirement_specific_bindings": {
+          "evidence_surface": "observable policy decision, business state, or customer/operator-visible outcome",
+          "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+          "qualifier": "NO_EXPLICIT_QUALIFIER",
+          "subject": "Intelligent Allocation Engine",
+          "target": "Intelligent Allocation Engine",
+          "trigger": "NO_EXPLICIT_TRIGGER"
+        }
+      },
+      "corrected_effective_statement": "Intelligent Allocation Engine is included in the active YSim v2.3 product scope.",
+      "corrected_source_range": {
+        "document": "docs/BRD/BRD-WS-01.md",
+        "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+        "section": "4. Product Scope > In Scope"
+      },
+      "current_source_range": {
+        "document": "docs/BRD/BRD-WS-01.md",
+        "lines": "L65",
+        "section": "4. Product Scope > In Scope"
+      },
+      "current_statement": "- Intelligent Allocation Engine",
+      "deterministic_transformation": "RESTORE_IN_SCOPE_PREDICATE",
+      "expected_mapping_after_normalization": "EXISTING_PROFILE_BINDING_HIGH_CONFIDENCE",
+      "normalization_plan_id": "P2C-C3-SN-011",
+      "requirement_id": "BRD-WS-01-R007",
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_fingerprint": "d3bc50416e160d27b85486f1bad960b8b118962c7e533a0c3aaad1eb4365d6ea"
+    },
+    {
+      "approved_decision_provenance": [],
+      "contract_preview": {
+        "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that Pricing is included in the active YSim v2.3 product scope. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+        "expected_evidence": "observable policy decision, business state, or customer/operator-visible outcome",
+        "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'Pricing' for Pricing; observable policy decision, business state, or customer/operator-visible outcome must distinguish rejection/non-conformance from the positive outcome.",
+        "positive_oracle": "Observe Pricing at NO_EXPLICIT_TRIGGER; observable policy decision, business state, or customer/operator-visible outcome must show the bound BUSINESS_OUTCOME outcome 'Pricing' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+        "requirement_specific_bindings": {
+          "evidence_surface": "observable policy decision, business state, or customer/operator-visible outcome",
+          "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+          "qualifier": "NO_EXPLICIT_QUALIFIER",
+          "subject": "Pricing",
+          "target": "Pricing",
+          "trigger": "NO_EXPLICIT_TRIGGER"
+        }
+      },
+      "corrected_effective_statement": "Pricing is included in the active YSim v2.3 product scope.",
+      "corrected_source_range": {
+        "document": "docs/BRD/BRD-WS-01.md",
+        "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+        "section": "4. Product Scope > In Scope"
+      },
+      "current_source_range": {
+        "document": "docs/BRD/BRD-WS-01.md",
+        "lines": "L66",
+        "section": "4. Product Scope > In Scope"
+      },
+      "current_statement": "- Pricing",
+      "deterministic_transformation": "RESTORE_IN_SCOPE_PREDICATE",
+      "expected_mapping_after_normalization": "EXISTING_PROFILE_BINDING_HIGH_CONFIDENCE",
+      "normalization_plan_id": "P2C-C3-SN-012",
+      "requirement_id": "BRD-WS-01-R008",
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_fingerprint": "d35805ed6b5b489709e3f3878bff9868d09b4c1db01021abf65a1a24a20a9ec2"
+    },
+    {
+      "approved_decision_provenance": [],
+      "contract_preview": {
+        "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that Promotion is included in the active YSim v2.3 product scope. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+        "expected_evidence": "observable policy decision, business state, or customer/operator-visible outcome",
+        "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'Promotion' for Promotion; observable policy decision, business state, or customer/operator-visible outcome must distinguish rejection/non-conformance from the positive outcome.",
+        "positive_oracle": "Observe Promotion at NO_EXPLICIT_TRIGGER; observable policy decision, business state, or customer/operator-visible outcome must show the bound BUSINESS_OUTCOME outcome 'Promotion' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+        "requirement_specific_bindings": {
+          "evidence_surface": "observable policy decision, business state, or customer/operator-visible outcome",
+          "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+          "qualifier": "NO_EXPLICIT_QUALIFIER",
+          "subject": "Promotion",
+          "target": "Promotion",
+          "trigger": "NO_EXPLICIT_TRIGGER"
+        }
+      },
+      "corrected_effective_statement": "Promotion is included in the active YSim v2.3 product scope.",
+      "corrected_source_range": {
+        "document": "docs/BRD/BRD-WS-01.md",
+        "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+        "section": "4. Product Scope > In Scope"
+      },
+      "current_source_range": {
+        "document": "docs/BRD/BRD-WS-01.md",
+        "lines": "L67",
+        "section": "4. Product Scope > In Scope"
+      },
+      "current_statement": "- Promotion",
+      "deterministic_transformation": "RESTORE_IN_SCOPE_PREDICATE",
+      "expected_mapping_after_normalization": "EXISTING_PROFILE_BINDING_HIGH_CONFIDENCE",
+      "normalization_plan_id": "P2C-C3-SN-013",
+      "requirement_id": "BRD-WS-01-R009",
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_fingerprint": "978a2387cf21835ffc4d311dd0cc4cd86c412594dac0dffb9faa38d426ab1bc2"
+    },
+    {
+      "approved_decision_provenance": [],
+      "contract_preview": {
+        "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that Coupon is included in the active YSim v2.3 product scope. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+        "expected_evidence": "observable policy decision, business state, or customer/operator-visible outcome",
+        "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'Coupon' for Coupon; observable policy decision, business state, or customer/operator-visible outcome must distinguish rejection/non-conformance from the positive outcome.",
+        "positive_oracle": "Observe Coupon at NO_EXPLICIT_TRIGGER; observable policy decision, business state, or customer/operator-visible outcome must show the bound BUSINESS_OUTCOME outcome 'Coupon' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+        "requirement_specific_bindings": {
+          "evidence_surface": "observable policy decision, business state, or customer/operator-visible outcome",
+          "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+          "qualifier": "NO_EXPLICIT_QUALIFIER",
+          "subject": "Coupon",
+          "target": "Coupon",
+          "trigger": "NO_EXPLICIT_TRIGGER"
+        }
+      },
+      "corrected_effective_statement": "Coupon is included in the active YSim v2.3 product scope.",
+      "corrected_source_range": {
+        "document": "docs/BRD/BRD-WS-01.md",
+        "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+        "section": "4. Product Scope > In Scope"
+      },
+      "current_source_range": {
+        "document": "docs/BRD/BRD-WS-01.md",
+        "lines": "L68",
+        "section": "4. Product Scope > In Scope"
+      },
+      "current_statement": "- Coupon",
+      "deterministic_transformation": "RESTORE_IN_SCOPE_PREDICATE",
+      "expected_mapping_after_normalization": "EXISTING_PROFILE_BINDING_HIGH_CONFIDENCE",
+      "normalization_plan_id": "P2C-C3-SN-014",
+      "requirement_id": "BRD-WS-01-R010",
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_fingerprint": "1230c15c28cd776f08c04ce3c94a342bc7782e9de5d78e1c6f9f34606ef61d4b"
+    },
+    {
+      "approved_decision_provenance": [],
+      "contract_preview": {
+        "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that Campaign is included in the active YSim v2.3 product scope. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+        "expected_evidence": "observable policy decision, business state, or customer/operator-visible outcome",
+        "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'Campaign' for Campaign; observable policy decision, business state, or customer/operator-visible outcome must distinguish rejection/non-conformance from the positive outcome.",
+        "positive_oracle": "Observe Campaign at NO_EXPLICIT_TRIGGER; observable policy decision, business state, or customer/operator-visible outcome must show the bound BUSINESS_OUTCOME outcome 'Campaign' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+        "requirement_specific_bindings": {
+          "evidence_surface": "observable policy decision, business state, or customer/operator-visible outcome",
+          "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+          "qualifier": "NO_EXPLICIT_QUALIFIER",
+          "subject": "Campaign",
+          "target": "Campaign",
+          "trigger": "NO_EXPLICIT_TRIGGER"
+        }
+      },
+      "corrected_effective_statement": "Campaign is included in the active YSim v2.3 product scope.",
+      "corrected_source_range": {
+        "document": "docs/BRD/BRD-WS-01.md",
+        "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+        "section": "4. Product Scope > In Scope"
+      },
+      "current_source_range": {
+        "document": "docs/BRD/BRD-WS-01.md",
+        "lines": "L69",
+        "section": "4. Product Scope > In Scope"
+      },
+      "current_statement": "- Campaign",
+      "deterministic_transformation": "RESTORE_IN_SCOPE_PREDICATE",
+      "expected_mapping_after_normalization": "EXISTING_PROFILE_BINDING_HIGH_CONFIDENCE",
+      "normalization_plan_id": "P2C-C3-SN-015",
+      "requirement_id": "BRD-WS-01-R011",
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_fingerprint": "2523c93260968bd8f104d3045991c752e0611c91b341e5c3d00811feac9bd7b7"
+    },
+    {
+      "approved_decision_provenance": [],
+      "contract_preview": {
+        "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that Checkout is included in the active YSim v2.3 product scope. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+        "expected_evidence": "observable policy decision, business state, or customer/operator-visible outcome",
+        "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'Checkout' for Checkout; observable policy decision, business state, or customer/operator-visible outcome must distinguish rejection/non-conformance from the positive outcome.",
+        "positive_oracle": "Observe Checkout at NO_EXPLICIT_TRIGGER; observable policy decision, business state, or customer/operator-visible outcome must show the bound BUSINESS_OUTCOME outcome 'Checkout' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+        "requirement_specific_bindings": {
+          "evidence_surface": "observable policy decision, business state, or customer/operator-visible outcome",
+          "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+          "qualifier": "NO_EXPLICIT_QUALIFIER",
+          "subject": "Checkout",
+          "target": "Checkout",
+          "trigger": "NO_EXPLICIT_TRIGGER"
+        }
+      },
+      "corrected_effective_statement": "Checkout is included in the active YSim v2.3 product scope.",
+      "corrected_source_range": {
+        "document": "docs/BRD/BRD-WS-01.md",
+        "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+        "section": "4. Product Scope > In Scope"
+      },
+      "current_source_range": {
+        "document": "docs/BRD/BRD-WS-01.md",
+        "lines": "L70",
+        "section": "4. Product Scope > In Scope"
+      },
+      "current_statement": "- Checkout",
+      "deterministic_transformation": "RESTORE_IN_SCOPE_PREDICATE",
+      "expected_mapping_after_normalization": "EXISTING_PROFILE_BINDING_HIGH_CONFIDENCE",
+      "normalization_plan_id": "P2C-C3-SN-016",
+      "requirement_id": "BRD-WS-01-R012",
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_fingerprint": "d5b73cedb7b7a4366f3a8a2c380d341052fba12df99ee6d54c856e940a4a7aa2"
+    },
+    {
+      "approved_decision_provenance": [],
+      "contract_preview": {
+        "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that Payment is included in the active YSim v2.3 product scope. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+        "expected_evidence": "observable policy decision, business state, or customer/operator-visible outcome",
+        "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'Payment' for Payment; observable policy decision, business state, or customer/operator-visible outcome must distinguish rejection/non-conformance from the positive outcome.",
+        "positive_oracle": "Observe Payment at NO_EXPLICIT_TRIGGER; observable policy decision, business state, or customer/operator-visible outcome must show the bound BUSINESS_OUTCOME outcome 'Payment' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+        "requirement_specific_bindings": {
+          "evidence_surface": "observable policy decision, business state, or customer/operator-visible outcome",
+          "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+          "qualifier": "NO_EXPLICIT_QUALIFIER",
+          "subject": "Payment",
+          "target": "Payment",
+          "trigger": "NO_EXPLICIT_TRIGGER"
+        }
+      },
+      "corrected_effective_statement": "Payment is included in the active YSim v2.3 product scope.",
+      "corrected_source_range": {
+        "document": "docs/BRD/BRD-WS-01.md",
+        "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+        "section": "4. Product Scope > In Scope"
+      },
+      "current_source_range": {
+        "document": "docs/BRD/BRD-WS-01.md",
+        "lines": "L71",
+        "section": "4. Product Scope > In Scope"
+      },
+      "current_statement": "- Payment",
+      "deterministic_transformation": "RESTORE_IN_SCOPE_PREDICATE",
+      "expected_mapping_after_normalization": "EXISTING_PROFILE_BINDING_HIGH_CONFIDENCE",
+      "normalization_plan_id": "P2C-C3-SN-017",
+      "requirement_id": "BRD-WS-01-R013",
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_fingerprint": "f26784e7c96bfd795296d37f67ced0f5ded699f21a6ed197b402e88135f7fd5d"
+    },
+    {
+      "approved_decision_provenance": [],
+      "contract_preview": {
+        "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that Fulfillment is included in the active YSim v2.3 product scope. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+        "expected_evidence": "observable policy decision, business state, or customer/operator-visible outcome",
+        "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'Fulfillment' for Fulfillment; observable policy decision, business state, or customer/operator-visible outcome must distinguish rejection/non-conformance from the positive outcome.",
+        "positive_oracle": "Observe Fulfillment at NO_EXPLICIT_TRIGGER; observable policy decision, business state, or customer/operator-visible outcome must show the bound BUSINESS_OUTCOME outcome 'Fulfillment' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+        "requirement_specific_bindings": {
+          "evidence_surface": "observable policy decision, business state, or customer/operator-visible outcome",
+          "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+          "qualifier": "NO_EXPLICIT_QUALIFIER",
+          "subject": "Fulfillment",
+          "target": "Fulfillment",
+          "trigger": "NO_EXPLICIT_TRIGGER"
+        }
+      },
+      "corrected_effective_statement": "Fulfillment is included in the active YSim v2.3 product scope.",
+      "corrected_source_range": {
+        "document": "docs/BRD/BRD-WS-01.md",
+        "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+        "section": "4. Product Scope > In Scope"
+      },
+      "current_source_range": {
+        "document": "docs/BRD/BRD-WS-01.md",
+        "lines": "L72",
+        "section": "4. Product Scope > In Scope"
+      },
+      "current_statement": "- Fulfillment",
+      "deterministic_transformation": "RESTORE_IN_SCOPE_PREDICATE",
+      "expected_mapping_after_normalization": "EXISTING_PROFILE_BINDING_HIGH_CONFIDENCE",
+      "normalization_plan_id": "P2C-C3-SN-018",
+      "requirement_id": "BRD-WS-01-R014",
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_fingerprint": "597260520ac2da3d42f4c11569f7a7731c2b315f9becd59fb56b7b56e7cdc29b"
+    },
+    {
+      "approved_decision_provenance": [],
+      "contract_preview": {
+        "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that Activation is included in the active YSim v2.3 product scope. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+        "expected_evidence": "observable policy decision, business state, or customer/operator-visible outcome",
+        "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'Activation' for Activation; observable policy decision, business state, or customer/operator-visible outcome must distinguish rejection/non-conformance from the positive outcome.",
+        "positive_oracle": "Observe Activation at NO_EXPLICIT_TRIGGER; observable policy decision, business state, or customer/operator-visible outcome must show the bound BUSINESS_OUTCOME outcome 'Activation' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+        "requirement_specific_bindings": {
+          "evidence_surface": "observable policy decision, business state, or customer/operator-visible outcome",
+          "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+          "qualifier": "NO_EXPLICIT_QUALIFIER",
+          "subject": "Activation",
+          "target": "Activation",
+          "trigger": "NO_EXPLICIT_TRIGGER"
+        }
+      },
+      "corrected_effective_statement": "Activation is included in the active YSim v2.3 product scope.",
+      "corrected_source_range": {
+        "document": "docs/BRD/BRD-WS-01.md",
+        "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+        "section": "4. Product Scope > In Scope"
+      },
+      "current_source_range": {
+        "document": "docs/BRD/BRD-WS-01.md",
+        "lines": "L73",
+        "section": "4. Product Scope > In Scope"
+      },
+      "current_statement": "- Activation",
+      "deterministic_transformation": "RESTORE_IN_SCOPE_PREDICATE",
+      "expected_mapping_after_normalization": "EXISTING_PROFILE_BINDING_HIGH_CONFIDENCE",
+      "normalization_plan_id": "P2C-C3-SN-019",
+      "requirement_id": "BRD-WS-01-R015",
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_fingerprint": "800708fd26837300f9306c09194486bdeebdbbf1e3e3076dbea7c0bbdc6c1915"
+    },
+    {
+      "approved_decision_provenance": [],
+      "contract_preview": {
+        "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that Settlement is included in the active YSim v2.3 product scope. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+        "expected_evidence": "observable policy decision, business state, or customer/operator-visible outcome",
+        "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'Settlement' for Settlement; observable policy decision, business state, or customer/operator-visible outcome must distinguish rejection/non-conformance from the positive outcome.",
+        "positive_oracle": "Observe Settlement at NO_EXPLICIT_TRIGGER; observable policy decision, business state, or customer/operator-visible outcome must show the bound BUSINESS_OUTCOME outcome 'Settlement' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+        "requirement_specific_bindings": {
+          "evidence_surface": "observable policy decision, business state, or customer/operator-visible outcome",
+          "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+          "qualifier": "NO_EXPLICIT_QUALIFIER",
+          "subject": "Settlement",
+          "target": "Settlement",
+          "trigger": "NO_EXPLICIT_TRIGGER"
+        }
+      },
+      "corrected_effective_statement": "Settlement is included in the active YSim v2.3 product scope.",
+      "corrected_source_range": {
+        "document": "docs/BRD/BRD-WS-01.md",
+        "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+        "section": "4. Product Scope > In Scope"
+      },
+      "current_source_range": {
+        "document": "docs/BRD/BRD-WS-01.md",
+        "lines": "L74",
+        "section": "4. Product Scope > In Scope"
+      },
+      "current_statement": "- Settlement",
+      "deterministic_transformation": "RESTORE_IN_SCOPE_PREDICATE",
+      "expected_mapping_after_normalization": "EXISTING_PROFILE_BINDING_HIGH_CONFIDENCE",
+      "normalization_plan_id": "P2C-C3-SN-020",
+      "requirement_id": "BRD-WS-01-R016",
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_fingerprint": "0cf6da12565e4ffca3f15ea894c72fe257b2de49e0a9c83d10bac993711b26bc"
+    },
+    {
+      "approved_decision_provenance": [],
+      "contract_preview": {
+        "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that CRM is included in the active YSim v2.3 product scope. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+        "expected_evidence": "observable policy decision, business state, or customer/operator-visible outcome",
+        "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'CRM' for CRM; observable policy decision, business state, or customer/operator-visible outcome must distinguish rejection/non-conformance from the positive outcome.",
+        "positive_oracle": "Observe CRM at NO_EXPLICIT_TRIGGER; observable policy decision, business state, or customer/operator-visible outcome must show the bound BUSINESS_OUTCOME outcome 'CRM' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+        "requirement_specific_bindings": {
+          "evidence_surface": "observable policy decision, business state, or customer/operator-visible outcome",
+          "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+          "qualifier": "NO_EXPLICIT_QUALIFIER",
+          "subject": "CRM",
+          "target": "CRM",
+          "trigger": "NO_EXPLICIT_TRIGGER"
+        }
+      },
+      "corrected_effective_statement": "CRM is included in the active YSim v2.3 product scope.",
+      "corrected_source_range": {
+        "document": "docs/BRD/BRD-WS-01.md",
+        "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+        "section": "4. Product Scope > In Scope"
+      },
+      "current_source_range": {
+        "document": "docs/BRD/BRD-WS-01.md",
+        "lines": "L75",
+        "section": "4. Product Scope > In Scope"
+      },
+      "current_statement": "- CRM",
+      "deterministic_transformation": "RESTORE_IN_SCOPE_PREDICATE",
+      "expected_mapping_after_normalization": "EXISTING_PROFILE_BINDING_HIGH_CONFIDENCE",
+      "normalization_plan_id": "P2C-C3-SN-021",
+      "requirement_id": "BRD-WS-01-R017",
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_fingerprint": "15bc5e7009aa63fad237aaca371d34536c478266c20e39d3ecf7f06c9bb54727"
+    },
+    {
+      "approved_decision_provenance": [
+        "P2-DEC-008"
+      ],
+      "contract_preview": {
+        "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that Customer Support is included in the active YSim v2.3 product scope. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+        "expected_evidence": "observable policy decision, business state, or customer/operator-visible outcome",
+        "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'Customer Support' for Customer Support; observable policy decision, business state, or customer/operator-visible outcome must distinguish rejection/non-conformance from the positive outcome.",
+        "positive_oracle": "Observe Customer Support at NO_EXPLICIT_TRIGGER; observable policy decision, business state, or customer/operator-visible outcome must show the bound CAPABILITY_AVAILABILITY outcome 'Customer Support' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+        "requirement_specific_bindings": {
+          "evidence_surface": "observable policy decision, business state, or customer/operator-visible outcome",
+          "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+          "qualifier": "NO_EXPLICIT_QUALIFIER",
+          "subject": "Customer Support",
+          "target": "Customer Support",
+          "trigger": "NO_EXPLICIT_TRIGGER"
+        }
+      },
+      "corrected_effective_statement": "Customer Support is included in the active YSim v2.3 product scope.",
+      "corrected_source_range": {
+        "document": "docs/BRD/BRD-WS-01.md",
+        "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+        "section": "4. Product Scope > In Scope"
+      },
+      "current_source_range": {
+        "document": "docs/BRD/BRD-WS-01.md",
+        "lines": "L76",
+        "section": "4. Product Scope > In Scope"
+      },
+      "current_statement": "- Customer Support",
+      "deterministic_transformation": "RESTORE_IN_SCOPE_PREDICATE",
+      "expected_mapping_after_normalization": "EXISTING_PROFILE_BINDING_HIGH_CONFIDENCE",
+      "normalization_plan_id": "P2C-C3-SN-022",
+      "requirement_id": "BRD-WS-01-R018",
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_fingerprint": "d0a10547452260b3866b7c0f0f80c62bee644450ee258e16bb40a3191650b41c"
+    },
+    {
+      "approved_decision_provenance": [],
+      "contract_preview": {
+        "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that Analytics is included in the active YSim v2.3 product scope. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+        "expected_evidence": "observable policy decision, business state, or customer/operator-visible outcome",
+        "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'Analytics' for Analytics; observable policy decision, business state, or customer/operator-visible outcome must distinguish rejection/non-conformance from the positive outcome.",
+        "positive_oracle": "Observe Analytics at NO_EXPLICIT_TRIGGER; observable policy decision, business state, or customer/operator-visible outcome must show the bound BUSINESS_OUTCOME outcome 'Analytics' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+        "requirement_specific_bindings": {
+          "evidence_surface": "observable policy decision, business state, or customer/operator-visible outcome",
+          "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+          "qualifier": "NO_EXPLICIT_QUALIFIER",
+          "subject": "Analytics",
+          "target": "Analytics",
+          "trigger": "NO_EXPLICIT_TRIGGER"
+        }
+      },
+      "corrected_effective_statement": "Analytics is included in the active YSim v2.3 product scope.",
+      "corrected_source_range": {
+        "document": "docs/BRD/BRD-WS-01.md",
+        "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+        "section": "4. Product Scope > In Scope"
+      },
+      "current_source_range": {
+        "document": "docs/BRD/BRD-WS-01.md",
+        "lines": "L77",
+        "section": "4. Product Scope > In Scope"
+      },
+      "current_statement": "- Analytics",
+      "deterministic_transformation": "RESTORE_IN_SCOPE_PREDICATE",
+      "expected_mapping_after_normalization": "EXISTING_PROFILE_BINDING_HIGH_CONFIDENCE",
+      "normalization_plan_id": "P2C-C3-SN-023",
+      "requirement_id": "BRD-WS-01-R019",
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_fingerprint": "843312debf82000c0390f3721a9d9a0acc29836cbc1e852f7e0cde3c4139ce93"
+    },
+    {
+      "approved_decision_provenance": [],
+      "contract_preview": {
+        "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that Reason Required is an example step under Catalog Governance and is not a standalone atomic requirement. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+        "expected_evidence": "observable policy decision, business state, or customer/operator-visible outcome",
+        "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'Reason Required' for Reason Required; observable policy decision, business state, or customer/operator-visible outcome must distinguish rejection/non-conformance from the positive outcome.",
+        "positive_oracle": "Observe Reason Required at NO_EXPLICIT_TRIGGER; observable policy decision, business state, or customer/operator-visible outcome must show the bound BUSINESS_OUTCOME outcome 'Reason Required' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+        "requirement_specific_bindings": {
+          "evidence_surface": "observable policy decision, business state, or customer/operator-visible outcome",
+          "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+          "qualifier": "NO_EXPLICIT_QUALIFIER",
+          "subject": "Reason Required",
+          "target": "Reason Required",
+          "trigger": "NO_EXPLICIT_TRIGGER"
+        }
+      },
+      "corrected_effective_statement": "Reason Required is an example step under Catalog Governance and is not a standalone atomic requirement.",
+      "corrected_source_range": {
+        "document": "docs/BRD/BRD-WS-04.md",
+        "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+        "section": "17. Catalog Governance"
+      },
+      "current_source_range": {
+        "document": "docs/BRD/BRD-WS-04.md",
+        "lines": "L370",
+        "section": "17. Catalog Governance"
+      },
+      "current_statement": "Reason Required",
+      "deterministic_transformation": "EXPAND_RANGE_AND_RETIRE_EXAMPLE_EXTRACTION",
+      "expected_mapping_after_normalization": "RETIRE_NON_REQUIREMENT_EXTRACTION",
+      "normalization_plan_id": "P2C-C3-SN-024",
+      "requirement_id": "BRD-WS-04-R012",
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_fingerprint": "1ad7dbe6622c151dd37051417ce4fbe800e64b01e46060c31fc80a64dbf6d7ac"
+    },
+    {
+      "approved_decision_provenance": [],
+      "contract_preview": {
+        "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that When Selling Price is below Cost or Parent Recommendation, the Platform must produce Warning. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+        "expected_evidence": "observable policy decision, business state, or customer/operator-visible outcome",
+        "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'thì hệ thống phải: - Warning' for thì hệ thống phải; observable policy decision, business state, or customer/operator-visible outcome must distinguish rejection/non-conformance from the positive outcome.",
+        "positive_oracle": "Observe thì hệ thống phải at NO_EXPLICIT_TRIGGER; observable policy decision, business state, or customer/operator-visible outcome must show the bound BUSINESS_OUTCOME outcome 'thì hệ thống phải: - Warning' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+        "requirement_specific_bindings": {
+          "evidence_surface": "observable policy decision, business state, or customer/operator-visible outcome",
+          "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+          "qualifier": "NO_EXPLICIT_QUALIFIER",
+          "subject": "thì hệ thống phải",
+          "target": "thì hệ thống phải: - Warning",
+          "trigger": "NO_EXPLICIT_TRIGGER"
+        }
+      },
+      "corrected_effective_statement": "When Selling Price is below Cost or Parent Recommendation, the Platform must produce Warning.",
+      "corrected_source_range": {
+        "document": "docs/BRD/BRD-WS-05.md",
+        "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+        "section": "11. Margin Policy"
+      },
+      "current_source_range": {
+        "document": "docs/BRD/BRD-WS-05.md",
+        "lines": "L273-L275",
+        "section": "11. Margin Policy"
+      },
+      "current_statement": "thì hệ thống phải: - Warning",
+      "deterministic_transformation": "RESTORE_MARGIN_POLICY_CONDITION",
+      "expected_mapping_after_normalization": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "normalization_plan_id": "P2C-C3-SN-025",
+      "requirement_id": "BRD-WS-05-R016",
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_fingerprint": "ea03b79ea7f4837e8ba68d048a8387a5f9baf7a1fac5a432e785d58a7902733b"
+    },
+    {
+      "approved_decision_provenance": [],
+      "contract_preview": {
+        "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that When Selling Price is below Cost or Parent Recommendation, the Platform must produce Reason Required. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+        "expected_evidence": "observable policy decision, business state, or customer/operator-visible outcome",
+        "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'thì hệ thống phải: - Reason Required' for thì hệ thống phải; observable policy decision, business state, or customer/operator-visible outcome must distinguish rejection/non-conformance from the positive outcome.",
+        "positive_oracle": "Observe thì hệ thống phải at NO_EXPLICIT_TRIGGER; observable policy decision, business state, or customer/operator-visible outcome must show the bound BUSINESS_OUTCOME outcome 'thì hệ thống phải: - Reason Required' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+        "requirement_specific_bindings": {
+          "evidence_surface": "observable policy decision, business state, or customer/operator-visible outcome",
+          "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+          "qualifier": "NO_EXPLICIT_QUALIFIER",
+          "subject": "thì hệ thống phải",
+          "target": "thì hệ thống phải: - Reason Required",
+          "trigger": "NO_EXPLICIT_TRIGGER"
+        }
+      },
+      "corrected_effective_statement": "When Selling Price is below Cost or Parent Recommendation, the Platform must produce Reason Required.",
+      "corrected_source_range": {
+        "document": "docs/BRD/BRD-WS-05.md",
+        "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+        "section": "11. Margin Policy"
+      },
+      "current_source_range": {
+        "document": "docs/BRD/BRD-WS-05.md",
+        "lines": "L273-L276",
+        "section": "11. Margin Policy"
+      },
+      "current_statement": "thì hệ thống phải: - Reason Required",
+      "deterministic_transformation": "RESTORE_MARGIN_POLICY_CONDITION",
+      "expected_mapping_after_normalization": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "normalization_plan_id": "P2C-C3-SN-026",
+      "requirement_id": "BRD-WS-05-R017",
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_fingerprint": "688136067d78dbc2da9233ff30504965380ebdb93272ea65f8e3105f9739dccb"
+    },
+    {
+      "approved_decision_provenance": [],
+      "contract_preview": {
+        "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that When Selling Price is below Cost or Parent Recommendation, the Platform must produce Parent Notification. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+        "expected_evidence": "observable policy decision, business state, or customer/operator-visible outcome",
+        "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'thì hệ thống phải: - Parent Notification' for thì hệ thống phải; observable policy decision, business state, or customer/operator-visible outcome must distinguish rejection/non-conformance from the positive outcome.",
+        "positive_oracle": "Observe thì hệ thống phải at NO_EXPLICIT_TRIGGER; observable policy decision, business state, or customer/operator-visible outcome must show the bound BUSINESS_OUTCOME outcome 'thì hệ thống phải: - Parent Notification' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+        "requirement_specific_bindings": {
+          "evidence_surface": "observable policy decision, business state, or customer/operator-visible outcome",
+          "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+          "qualifier": "NO_EXPLICIT_QUALIFIER",
+          "subject": "thì hệ thống phải",
+          "target": "thì hệ thống phải: - Parent Notification",
+          "trigger": "NO_EXPLICIT_TRIGGER"
+        }
+      },
+      "corrected_effective_statement": "When Selling Price is below Cost or Parent Recommendation, the Platform must produce Parent Notification.",
+      "corrected_source_range": {
+        "document": "docs/BRD/BRD-WS-05.md",
+        "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+        "section": "11. Margin Policy"
+      },
+      "current_source_range": {
+        "document": "docs/BRD/BRD-WS-05.md",
+        "lines": "L273-L277",
+        "section": "11. Margin Policy"
+      },
+      "current_statement": "thì hệ thống phải: - Parent Notification",
+      "deterministic_transformation": "RESTORE_MARGIN_POLICY_CONDITION",
+      "expected_mapping_after_normalization": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "normalization_plan_id": "P2C-C3-SN-027",
+      "requirement_id": "BRD-WS-05-R018",
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_fingerprint": "c8fe2db062627c02f868945fec9d6911f19b8e513e62af54f74ad7e438dbecfd"
+    },
+    {
+      "approved_decision_provenance": [],
+      "contract_preview": {
+        "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that When Selling Price is below Cost or Parent Recommendation, the Platform must produce Audit. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+        "expected_evidence": "operation state, telemetry/control outcome, and operator-visible evidence",
+        "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'thì hệ thống phải: - Audit' for thì hệ thống phải; operation state, telemetry/control outcome, and operator-visible evidence must distinguish rejection/non-conformance from the positive outcome.",
+        "positive_oracle": "Observe thì hệ thống phải at NO_EXPLICIT_TRIGGER; operation state, telemetry/control outcome, and operator-visible evidence must show the bound AUDIT_TRACE outcome 'thì hệ thống phải: - Audit' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+        "requirement_specific_bindings": {
+          "evidence_surface": "operation state, telemetry/control outcome, and operator-visible evidence",
+          "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+          "qualifier": "NO_EXPLICIT_QUALIFIER",
+          "subject": "thì hệ thống phải",
+          "target": "thì hệ thống phải: - Audit",
+          "trigger": "NO_EXPLICIT_TRIGGER"
+        }
+      },
+      "corrected_effective_statement": "When Selling Price is below Cost or Parent Recommendation, the Platform must produce Audit.",
+      "corrected_source_range": {
+        "document": "docs/BRD/BRD-WS-05.md",
+        "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+        "section": "11. Margin Policy"
+      },
+      "current_source_range": {
+        "document": "docs/BRD/BRD-WS-05.md",
+        "lines": "L273-L278",
+        "section": "11. Margin Policy"
+      },
+      "current_statement": "thì hệ thống phải: - Audit",
+      "deterministic_transformation": "RESTORE_MARGIN_POLICY_CONDITION",
+      "expected_mapping_after_normalization": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "normalization_plan_id": "P2C-C3-SN-028",
+      "requirement_id": "BRD-WS-05-R019",
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_fingerprint": "5812c4bf36e15390c9a94a2dcf40caace03dfdda8f6c6255b789492f911d728a"
+    },
+    {
+      "approved_decision_provenance": [
+        "P2-DEC-008"
+      ],
+      "contract_preview": {
+        "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that When Customer Portal requests access to the original QR again, Two-Factor Authentication (OTP) is mandatory. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+        "expected_evidence": "observable policy decision, business state, or customer/operator-visible outcome",
+        "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'Customer Portal muốn xem lại QR gốc: Bắt buộc' for Customer Portal muốn xem lại QR gốc; observable policy decision, business state, or customer/operator-visible outcome must distinguish rejection/non-conformance from the positive outcome.",
+        "positive_oracle": "Observe Customer Portal muốn xem lại QR gốc at NO_EXPLICIT_TRIGGER; observable policy decision, business state, or customer/operator-visible outcome must show the bound BUSINESS_OUTCOME outcome 'Customer Portal muốn xem lại QR gốc: Bắt buộc' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+        "requirement_specific_bindings": {
+          "evidence_surface": "observable policy decision, business state, or customer/operator-visible outcome",
+          "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+          "qualifier": "NO_EXPLICIT_QUALIFIER",
+          "subject": "Customer Portal muốn xem lại QR gốc",
+          "target": "Customer Portal muốn xem lại QR gốc: Bắt buộc",
+          "trigger": "NO_EXPLICIT_TRIGGER"
+        }
+      },
+      "corrected_effective_statement": "When Customer Portal requests access to the original QR again, Two-Factor Authentication (OTP) is mandatory.",
+      "corrected_source_range": {
+        "document": "docs/BRD/BRD-WS-09.md",
+        "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+        "section": "22. QR Security"
+      },
+      "current_source_range": {
+        "document": "docs/BRD/BRD-WS-09.md",
+        "lines": "L487-L489",
+        "section": "22. QR Security"
+      },
+      "current_statement": "Customer Portal muốn xem lại QR gốc: Bắt buộc:",
+      "deterministic_transformation": "EXPAND_QR_REACCESS_CONDITION_AND_OUTCOME",
+      "expected_mapping_after_normalization": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "normalization_plan_id": "P2C-C3-SN-029",
+      "requirement_id": "BRD-WS-09-R013",
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_fingerprint": "ec717c98ed85f9658795a7b8119f1e239a8a6f915198c73aad8e48fe3e16a0b4"
+    },
+    {
+      "approved_decision_provenance": [],
+      "contract_preview": {
+        "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that Customer Analytics must comply with Relationship Policy and Data Permission. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+        "expected_evidence": "allow/challenge/deny result and audit evidence",
+        "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'Tuân thủ Relationship Policy và Data Permission' for Tuân thủ Relationship Policy và Data Permission; allow/challenge/deny result and audit evidence must distinguish rejection/non-conformance from the positive outcome.",
+        "positive_oracle": "Observe Tuân thủ Relationship Policy và Data Permission at NO_EXPLICIT_TRIGGER; allow/challenge/deny result and audit evidence must show the bound ACCESS_BOUNDARY outcome 'Tuân thủ Relationship Policy và Data Permission' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+        "requirement_specific_bindings": {
+          "evidence_surface": "allow/challenge/deny result and audit evidence",
+          "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+          "qualifier": "NO_EXPLICIT_QUALIFIER",
+          "subject": "Tuân thủ Relationship Policy và Data Permission",
+          "target": "Tuân thủ Relationship Policy và Data Permission",
+          "trigger": "NO_EXPLICIT_TRIGGER"
+        }
+      },
+      "corrected_effective_statement": "Customer Analytics must comply with Relationship Policy and Data Permission.",
+      "corrected_source_range": {
+        "document": "docs/BRD/BRD-WS-13.md",
+        "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+        "section": "21. Customer Analytics"
+      },
+      "current_source_range": {
+        "document": "docs/BRD/BRD-WS-13.md",
+        "lines": "L542",
+        "section": "21. Customer Analytics"
+      },
+      "current_statement": "Tuân thủ Relationship Policy và Data Permission.",
+      "deterministic_transformation": "RESTORE_CUSTOMER_ANALYTICS_SUBJECT",
+      "expected_mapping_after_normalization": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "normalization_plan_id": "P2C-C3-SN-030",
+      "requirement_id": "BRD-WS-13-R015",
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_fingerprint": "0b55aa2fcb4e14db8ca3dfbf2f6ef84be565c50726b8e7eefda7d8002633231c"
+    },
+    {
+      "approved_decision_provenance": [],
+      "contract_preview": {
+        "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='Bao gồm: - Field Name - Data Type - Required - Default Value - Validation Rule - Searchable - Sortable - Filterable - Exportable - Importable - Permission - Localization - Tooltip - Description', verify that Metadata must contain Field Name, Data Type, Required, Default Value, Validation Rule, Searchable, Sortable, Filterable, Exportable, Importable, Permission, Localization, Tooltip, and Description. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+        "expected_evidence": "allow/challenge/deny result and audit evidence",
+        "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'Bao gồm: - Field Name - Data Type - Required - Default Value - Validation Rule - Searchable - Sortable - Filterable - Exportable - Importable - Permission - Localization - Tooltip - Description' for Bao gồm; allow/challenge/deny result and audit evidence must distinguish rejection/non-conformance from the positive outcome.",
+        "positive_oracle": "Observe Bao gồm at NO_EXPLICIT_TRIGGER; allow/challenge/deny result and audit evidence must show the bound REQUIRED_SET outcome 'Bao gồm: - Field Name - Data Type - Required - Default Value - Validation Rule - Searchable - Sortable - Filterable - Exportable - Importable - Permission - Localization - Tooltip - Description' under qualifier 'Bao gồm: - Field Name - Data Type - Required - Default Value - Validation Rule - Searchable - Sortable - Filterable - Exportable - Importable - Permission - Localization - Tooltip - Description'.",
+        "requirement_specific_bindings": {
+          "evidence_surface": "allow/challenge/deny result and audit evidence",
+          "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+          "qualifier": "Bao gồm: - Field Name - Data Type - Required - Default Value - Validation Rule - Searchable - Sortable - Filterable - Exportable - Importable - Permission - Localization - Tooltip - Description",
+          "subject": "Bao gồm",
+          "target": "Bao gồm: - Field Name - Data Type - Required - Default Value - Validation Rule - Searchable - Sortable - Filterable - Exportable - Importable - Permission - Localization - Tooltip - Description",
+          "trigger": "NO_EXPLICIT_TRIGGER"
+        }
+      },
+      "corrected_effective_statement": "Metadata must contain Field Name, Data Type, Required, Default Value, Validation Rule, Searchable, Sortable, Filterable, Exportable, Importable, Permission, Localization, Tooltip, and Description.",
+      "corrected_source_range": {
+        "document": "docs/BRD/BRD-WS-14.md",
+        "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+        "section": "14. Metadata"
+      },
+      "current_source_range": {
+        "document": "docs/BRD/BRD-WS-14.md",
+        "lines": "L369-L384",
+        "section": "14. Metadata"
+      },
+      "current_statement": "Bao gồm: - Field Name - Data Type - Required - Default Value - Validation Rule - Searchable - Sortable - Filterable - Exportable - Importable - Permission - Localization - Tooltip - Description",
+      "deterministic_transformation": "RESTORE_METADATA_SUBJECT",
+      "expected_mapping_after_normalization": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "normalization_plan_id": "P2C-C3-SN-031",
+      "requirement_id": "BRD-WS-14-R012",
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_fingerprint": "5ab75ac869cbf9e45f90f5dab00610aaa6e07c625f2f72a78159885dca9f486e"
+    },
+    {
+      "approved_decision_provenance": [
+        "BDD-27",
+        "SD-03"
+      ],
+      "contract_preview": {
+        "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that Each Configuration Capability Matrix must define Read, Create, Edit, Delete, Override, Clone, Import, Export, Approval Required, and Runtime Reload Supported. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+        "expected_evidence": "observable policy decision, business state, or customer/operator-visible outcome",
+        "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'Bao gồm: - Read - Create - Edit - Delete - Override - Clone - Import - Export - Approval Required - Runtime Reload Supported' for Bao gồm; observable policy decision, business state, or customer/operator-visible outcome must distinguish rejection/non-conformance from the positive outcome.",
+        "positive_oracle": "Observe Bao gồm at NO_EXPLICIT_TRIGGER; observable policy decision, business state, or customer/operator-visible outcome must show the bound REQUIRED_SET outcome 'Bao gồm: - Read - Create - Edit - Delete - Override - Clone - Import - Export - Approval Required - Runtime Reload Supported' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+        "requirement_specific_bindings": {
+          "evidence_surface": "observable policy decision, business state, or customer/operator-visible outcome",
+          "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+          "qualifier": "NO_EXPLICIT_QUALIFIER",
+          "subject": "Bao gồm",
+          "target": "Bao gồm: - Read - Create - Edit - Delete - Override - Clone - Import - Export - Approval Required - Runtime Reload Supported",
+          "trigger": "NO_EXPLICIT_TRIGGER"
+        }
+      },
+      "corrected_effective_statement": "Each Configuration Capability Matrix must define Read, Create, Edit, Delete, Override, Clone, Import, Export, Approval Required, and Runtime Reload Supported.",
+      "corrected_source_range": {
+        "document": "docs/BRD/BRD-WS-14.md",
+        "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+        "section": "28. Configuration Capability Matrix"
+      },
+      "current_source_range": {
+        "document": "docs/BRD/BRD-WS-14.md",
+        "lines": "L755-L766",
+        "section": "28. Configuration Capability Matrix"
+      },
+      "current_statement": "Bao gồm: - Read - Create - Edit - Delete - Override - Clone - Import - Export - Approval Required - Runtime Reload Supported",
+      "deterministic_transformation": "RESTORE_CONFIGURATION_MATRIX_SUBJECT",
+      "expected_mapping_after_normalization": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "normalization_plan_id": "P2C-C3-SN-032",
+      "requirement_id": "BRD-WS-14-R030",
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_fingerprint": "ce1d0a5b4062200dd152903c1c3dc033dfb45004c6db516f5a3f3fd8aa749962"
+    },
+    {
+      "approved_decision_provenance": [],
+      "contract_preview": {
+        "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='Không được Hard-code', verify that Field-Level Permission must be evaluated with Data Scope and Permission and must not be hard-coded. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+        "expected_evidence": "observable policy decision, business state, or customer/operator-visible outcome",
+        "negative_oracle": "Exercise the prohibited outcome 'Không được Hard-code' for Không; observable policy decision, business state, or customer/operator-visible outcome must show rejection or absence of a compliant state.",
+        "positive_oracle": "Observe Không at NO_EXPLICIT_TRIGGER; observable policy decision, business state, or customer/operator-visible outcome must show the bound PROHIBITED_INVARIANT outcome 'Hard-code' under qualifier 'Không được Hard-code'.",
+        "requirement_specific_bindings": {
+          "evidence_surface": "observable policy decision, business state, or customer/operator-visible outcome",
+          "prohibited_outcome": "Không được Hard-code",
+          "qualifier": "Không được Hard-code",
+          "subject": "Không",
+          "target": "Hard-code",
+          "trigger": "NO_EXPLICIT_TRIGGER"
+        }
+      },
+      "corrected_effective_statement": "Field-Level Permission must be evaluated with Data Scope and Permission and must not be hard-coded.",
+      "corrected_source_range": {
+        "document": "docs/BRD/BRD-WS-16.md",
+        "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+        "section": "10. Field-Level Permission"
+      },
+      "current_source_range": {
+        "document": "docs/BRD/BRD-WS-16.md",
+        "lines": "L266",
+        "section": "10. Field-Level Permission"
+      },
+      "current_statement": "Không được Hard-code.",
+      "deterministic_transformation": "RESTORE_FIELD_PERMISSION_SUBJECT",
+      "expected_mapping_after_normalization": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "normalization_plan_id": "P2C-C3-SN-033",
+      "requirement_id": "BRD-WS-16-R004",
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_fingerprint": "4621b7640c0dcd2270db940c6e871c9dfa60a401b1675b7473403baf1ab00536"
+    },
+    {
+      "approved_decision_provenance": [],
+      "contract_preview": {
+        "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that After the three-month online Audit Log retention period, the Audit Log must be archived. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+        "expected_evidence": "operation state, telemetry/control outcome, and operator-visible evidence",
+        "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'Archive' for Sau thời gian này: - Audit; operation state, telemetry/control outcome, and operator-visible evidence must distinguish rejection/non-conformance from the positive outcome.",
+        "positive_oracle": "Observe Sau thời gian này: - Audit at NO_EXPLICIT_TRIGGER; operation state, telemetry/control outcome, and operator-visible evidence must show the bound AUDIT_TRACE outcome 'Archive' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+        "requirement_specific_bindings": {
+          "evidence_surface": "operation state, telemetry/control outcome, and operator-visible evidence",
+          "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+          "qualifier": "NO_EXPLICIT_QUALIFIER",
+          "subject": "Sau thời gian này: - Audit",
+          "target": "Archive",
+          "trigger": "NO_EXPLICIT_TRIGGER"
+        }
+      },
+      "corrected_effective_statement": "After the three-month online Audit Log retention period, the Audit Log must be archived.",
+      "corrected_source_range": {
+        "document": "docs/BRD/BRD-WS-16.md",
+        "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+        "section": "25. Audit Retention"
+      },
+      "current_source_range": {
+        "document": "docs/BRD/BRD-WS-16.md",
+        "lines": "L597-L602",
+        "section": "25. Audit Retention"
+      },
+      "current_statement": "Sau thời gian này: - Audit được Archive",
+      "deterministic_transformation": "RESTORE_RETENTION_PERIOD_AND_AUDIT_SUBJECT",
+      "expected_mapping_after_normalization": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "normalization_plan_id": "P2C-C3-SN-034",
+      "requirement_id": "BRD-WS-16-R013",
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_fingerprint": "88528833f051f4faf92eba801f45a615bbedb5f70a520d765b7b907152562384"
+    },
+    {
+      "approved_decision_provenance": [],
+      "contract_preview": {
+        "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='Sau thời gian này: - Archive chỉ đọc', verify that After the three-month online Audit Log retention period, the Archive must be read-only. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+        "expected_evidence": "operation state, telemetry/control outcome, and operator-visible evidence",
+        "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'đọc' for Sau thời gian này: - Archive; operation state, telemetry/control outcome, and operator-visible evidence must distinguish rejection/non-conformance from the positive outcome.",
+        "positive_oracle": "Observe Sau thời gian này: - Archive at NO_EXPLICIT_TRIGGER; operation state, telemetry/control outcome, and operator-visible evidence must show the bound BUSINESS_OUTCOME outcome 'đọc' under qualifier 'Sau thời gian này: - Archive chỉ đọc'.",
+        "requirement_specific_bindings": {
+          "evidence_surface": "operation state, telemetry/control outcome, and operator-visible evidence",
+          "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+          "qualifier": "Sau thời gian này: - Archive chỉ đọc",
+          "subject": "Sau thời gian này: - Archive",
+          "target": "đọc",
+          "trigger": "NO_EXPLICIT_TRIGGER"
+        }
+      },
+      "corrected_effective_statement": "After the three-month online Audit Log retention period, the Archive must be read-only.",
+      "corrected_source_range": {
+        "document": "docs/BRD/BRD-WS-16.md",
+        "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+        "section": "25. Audit Retention"
+      },
+      "current_source_range": {
+        "document": "docs/BRD/BRD-WS-16.md",
+        "lines": "L597-L602",
+        "section": "25. Audit Retention"
+      },
+      "current_statement": "Sau thời gian này: - Archive chỉ đọc",
+      "deterministic_transformation": "RESTORE_RETENTION_PERIOD_AND_AUDIT_SUBJECT",
+      "expected_mapping_after_normalization": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "normalization_plan_id": "P2C-C3-SN-035",
+      "requirement_id": "BRD-WS-16-R014",
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_fingerprint": "88528833f051f4faf92eba801f45a615bbedb5f70a520d765b7b907152562384"
+    },
+    {
+      "approved_decision_provenance": [],
+      "contract_preview": {
+        "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='Sau thời gian này: - Không được chỉnh sửa', verify that After the three-month online Audit Log retention period, the Archive must not be modified. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+        "expected_evidence": "observable policy decision, business state, or customer/operator-visible outcome",
+        "negative_oracle": "Exercise the prohibited outcome 'Sau thời gian này: - Không được chỉnh sửa' for Sau thời gian này; observable policy decision, business state, or customer/operator-visible outcome must show rejection or absence of a compliant state.",
+        "positive_oracle": "Observe Sau thời gian này at NO_EXPLICIT_TRIGGER; observable policy decision, business state, or customer/operator-visible outcome must show the bound PROHIBITED_INVARIANT outcome 'chỉnh sửa' under qualifier 'Sau thời gian này: - Không được chỉnh sửa'.",
+        "requirement_specific_bindings": {
+          "evidence_surface": "observable policy decision, business state, or customer/operator-visible outcome",
+          "prohibited_outcome": "Sau thời gian này: - Không được chỉnh sửa",
+          "qualifier": "Sau thời gian này: - Không được chỉnh sửa",
+          "subject": "Sau thời gian này",
+          "target": "chỉnh sửa",
+          "trigger": "NO_EXPLICIT_TRIGGER"
+        }
+      },
+      "corrected_effective_statement": "After the three-month online Audit Log retention period, the Archive must not be modified.",
+      "corrected_source_range": {
+        "document": "docs/BRD/BRD-WS-16.md",
+        "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+        "section": "25. Audit Retention"
+      },
+      "current_source_range": {
+        "document": "docs/BRD/BRD-WS-16.md",
+        "lines": "L597-L602",
+        "section": "25. Audit Retention"
+      },
+      "current_statement": "Sau thời gian này: - Không được chỉnh sửa",
+      "deterministic_transformation": "RESTORE_RETENTION_PERIOD_AND_AUDIT_SUBJECT",
+      "expected_mapping_after_normalization": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "normalization_plan_id": "P2C-C3-SN-036",
+      "requirement_id": "BRD-WS-16-R015",
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_fingerprint": "88528833f051f4faf92eba801f45a615bbedb5f70a520d765b7b907152562384"
+    },
+    {
+      "approved_decision_provenance": [],
+      "contract_preview": {
+        "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='Sau thời gian này: - Không được xóa trực tiếp', verify that After the three-month online Audit Log retention period, the Archive must not be deleted directly. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+        "expected_evidence": "observable policy decision, business state, or customer/operator-visible outcome",
+        "negative_oracle": "Exercise the prohibited outcome 'Sau thời gian này: - Không được xóa trực tiếp' for Sau thời gian này; observable policy decision, business state, or customer/operator-visible outcome must show rejection or absence of a compliant state.",
+        "positive_oracle": "Observe Sau thời gian này at NO_EXPLICIT_TRIGGER; observable policy decision, business state, or customer/operator-visible outcome must show the bound PROHIBITED_INVARIANT outcome 'xóa trực tiếp' under qualifier 'Sau thời gian này: - Không được xóa trực tiếp'.",
+        "requirement_specific_bindings": {
+          "evidence_surface": "observable policy decision, business state, or customer/operator-visible outcome",
+          "prohibited_outcome": "Sau thời gian này: - Không được xóa trực tiếp",
+          "qualifier": "Sau thời gian này: - Không được xóa trực tiếp",
+          "subject": "Sau thời gian này",
+          "target": "xóa trực tiếp",
+          "trigger": "NO_EXPLICIT_TRIGGER"
+        }
+      },
+      "corrected_effective_statement": "After the three-month online Audit Log retention period, the Archive must not be deleted directly.",
+      "corrected_source_range": {
+        "document": "docs/BRD/BRD-WS-16.md",
+        "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+        "section": "25. Audit Retention"
+      },
+      "current_source_range": {
+        "document": "docs/BRD/BRD-WS-16.md",
+        "lines": "L597-L602",
+        "section": "25. Audit Retention"
+      },
+      "current_statement": "Sau thời gian này: - Không được xóa trực tiếp",
+      "deterministic_transformation": "RESTORE_RETENTION_PERIOD_AND_AUDIT_SUBJECT",
+      "expected_mapping_after_normalization": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "normalization_plan_id": "P2C-C3-SN-037",
+      "requirement_id": "BRD-WS-16-R016",
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_fingerprint": "88528833f051f4faf92eba801f45a615bbedb5f70a520d765b7b907152562384"
+    },
+    {
+      "approved_decision_provenance": [],
+      "contract_preview": {
+        "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that The Architectural Principles heading is a composite parent covering the named UXF principle children and is not an atomic acceptance unit. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+        "expected_evidence": "rendered state, available/prohibited action, and user-visible feedback",
+        "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'mandatory' for The following principles; rendered state, available/prohibited action, and user-visible feedback must distinguish rejection/non-conformance from the positive outcome.",
+        "positive_oracle": "Observe The following principles at NO_EXPLICIT_TRIGGER; rendered state, available/prohibited action, and user-visible feedback must show the bound UX_OUTCOME outcome 'mandatory' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+        "requirement_specific_bindings": {
+          "evidence_surface": "rendered state, available/prohibited action, and user-visible feedback",
+          "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+          "qualifier": "NO_EXPLICIT_QUALIFIER",
+          "subject": "The following principles",
+          "target": "mandatory",
+          "trigger": "NO_EXPLICIT_TRIGGER"
+        }
+      },
+      "corrected_effective_statement": "The Architectural Principles heading is a composite parent covering the named UXF principle children and is not an atomic acceptance unit.",
+      "corrected_source_range": {
+        "document": "docs/UXF/UXF-00.md",
+        "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+        "section": "20. Architectural Principles"
+      },
+      "current_source_range": {
+        "document": "docs/UXF/UXF-00.md",
+        "lines": "L601",
+        "section": "20. Architectural Principles"
+      },
+      "current_statement": "The following principles are mandatory.",
+      "deterministic_transformation": "EXPAND_RANGE_AND_CONVERT_TO_COMPOSITE_PARENT",
+      "expected_mapping_after_normalization": "STRUCTURAL_RECONCILIATION_REQUIRED",
+      "normalization_plan_id": "P2C-C3-SN-038",
+      "requirement_id": "UXF-00-R031",
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_fingerprint": "0182d8f960d53e8fca772781b8717e634251c8e80d1e866ea5070d2da1a5a3e4"
+    },
+    {
+      "approved_decision_provenance": [
+        "P2-DEC-008",
+        "P2-DEC-010"
+      ],
+      "contract_preview": {
+        "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that Guest Checkout, Mandatory Login, Country Restrictions, Product Visibility, Promotion Eligibility, and Payment Availability are examples of runtime policies, not a standalone requirement set. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+        "expected_evidence": "operation state, telemetry/control outcome, and operator-visible evidence",
+        "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'Examples: - Guest Checkout - Mandatory Login - Country Restrictions - Product Visibility - Promotion Eligibility - Payment Availability' for Examples; operation state, telemetry/control outcome, and operator-visible evidence must distinguish rejection/non-conformance from the positive outcome.",
+        "positive_oracle": "Observe Examples at NO_EXPLICIT_TRIGGER; operation state, telemetry/control outcome, and operator-visible evidence must show the bound BUSINESS_OUTCOME outcome 'Examples: - Guest Checkout - Mandatory Login - Country Restrictions - Product Visibility - Promotion Eligibility - Payment Availability' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+        "requirement_specific_bindings": {
+          "evidence_surface": "operation state, telemetry/control outcome, and operator-visible evidence",
+          "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+          "qualifier": "NO_EXPLICIT_QUALIFIER",
+          "subject": "Examples",
+          "target": "Examples: - Guest Checkout - Mandatory Login - Country Restrictions - Product Visibility - Promotion Eligibility - Payment Availability",
+          "trigger": "NO_EXPLICIT_TRIGGER"
+        }
+      },
+      "corrected_effective_statement": "Guest Checkout, Mandatory Login, Country Restrictions, Product Visibility, Promotion Eligibility, and Payment Availability are examples of runtime policies, not a standalone requirement set.",
+      "corrected_source_range": {
+        "document": "docs/UXF/UXF-04.md",
+        "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+        "section": "20. Runtime Policies"
+      },
+      "current_source_range": {
+        "document": "docs/UXF/UXF-04.md",
+        "lines": "L556-L563",
+        "section": "20. Runtime Policies"
+      },
+      "current_statement": "Examples: - Guest Checkout - Mandatory Login - Country Restrictions - Product Visibility - Promotion Eligibility - Payment Availability",
+      "deterministic_transformation": "EXPAND_RANGE_AND_RETIRE_EXAMPLE_EXTRACTION",
+      "expected_mapping_after_normalization": "RETIRE_NON_REQUIREMENT_EXTRACTION",
+      "normalization_plan_id": "P2C-C3-SN-039",
+      "requirement_id": "UXF-04-R007",
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_fingerprint": "f2434bed7593bc69704e57de02a50d64198295f49e3e15040c837f20c3f6f95f"
+    },
+    {
+      "approved_decision_provenance": [],
+      "contract_preview": {
+        "boundary_failure_oracle": "At the applicability boundary trigger='If runtime cannot resolve a binding: Runtime', qualifier='NO_EXPLICIT_QUALIFIER', verify that When runtime cannot resolve a binding, it must follow the complete approved fallback chain and expose the resulting fallback or terminal failure state. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+        "expected_evidence": "rendered state, available/prohibited action, and user-visible feedback",
+        "negative_oracle": "Exercise the prohibited outcome 'If runtime cannot resolve a binding: Runtime' for If runtime; rendered state, available/prohibited action, and user-visible feedback must show rejection or absence of a compliant state.",
+        "positive_oracle": "Observe If runtime at If runtime cannot resolve a binding: Runtime; rendered state, available/prohibited action, and user-visible feedback must show the bound PROHIBITED_INVARIANT outcome 'resolve a binding: Runtime' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+        "requirement_specific_bindings": {
+          "evidence_surface": "rendered state, available/prohibited action, and user-visible feedback",
+          "prohibited_outcome": "If runtime cannot resolve a binding: Runtime",
+          "qualifier": "NO_EXPLICIT_QUALIFIER",
+          "subject": "If runtime",
+          "target": "resolve a binding: Runtime",
+          "trigger": "If runtime cannot resolve a binding: Runtime"
+        }
+      },
+      "corrected_effective_statement": "When runtime cannot resolve a binding, it must follow the complete approved fallback chain and expose the resulting fallback or terminal failure state.",
+      "corrected_source_range": {
+        "document": "docs/UXF/UXF-05.md",
+        "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+        "section": "19. Runtime Failure Fallback"
+      },
+      "current_source_range": {
+        "document": "docs/UXF/UXF-05.md",
+        "lines": "L514-L517",
+        "section": "19. Runtime Failure Fallback"
+      },
+      "current_statement": "If runtime cannot resolve a binding: ``` Runtime",
+      "deterministic_transformation": "EXPAND_COMPLETE_RUNTIME_FALLBACK_RANGE",
+      "expected_mapping_after_normalization": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "normalization_plan_id": "P2C-C3-SN-040",
+      "requirement_id": "UXF-05-R021",
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_fingerprint": "47a3a698c676bc62852961cae11cb55b5e77cb57f149704e438dd7f8f055acb1"
+    },
+    {
+      "approved_decision_provenance": [],
+      "contract_preview": {
+        "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that Recommendation engines are an explanatory future-extension example and not a standalone active requirement. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+        "expected_evidence": "rendered state, available/prohibited action, and user-visible feedback",
+        "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'Examples include: - Recommendation engines' for Examples include; rendered state, available/prohibited action, and user-visible feedback must distinguish rejection/non-conformance from the positive outcome.",
+        "positive_oracle": "Observe Examples include at NO_EXPLICIT_TRIGGER; rendered state, available/prohibited action, and user-visible feedback must show the bound UX_OUTCOME outcome 'Examples include: - Recommendation engines' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+        "requirement_specific_bindings": {
+          "evidence_surface": "rendered state, available/prohibited action, and user-visible feedback",
+          "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+          "qualifier": "NO_EXPLICIT_QUALIFIER",
+          "subject": "Examples include",
+          "target": "Examples include: - Recommendation engines",
+          "trigger": "NO_EXPLICIT_TRIGGER"
+        }
+      },
+      "corrected_effective_statement": "Recommendation engines are an explanatory future-extension example and not a standalone active requirement.",
+      "corrected_source_range": {
+        "document": "docs/UXF/UXF-05.md",
+        "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+        "section": "25. Future Extensions"
+      },
+      "current_source_range": {
+        "document": "docs/UXF/UXF-05.md",
+        "lines": "L707-L712",
+        "section": "25. Future Extensions"
+      },
+      "current_statement": "Examples include: - Recommendation engines",
+      "deterministic_transformation": "EXPAND_RANGE_AND_RETIRE_FUTURE_EXAMPLE_EXTRACTION",
+      "expected_mapping_after_normalization": "RETIRE_NON_REQUIREMENT_EXTRACTION",
+      "normalization_plan_id": "P2C-C3-SN-041",
+      "requirement_id": "UXF-05-R037",
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_fingerprint": "4a227e5baef5a2e8a20c14b42df32a9ade4c1e0b3d90a139d728596c3c4509f4"
+    }
+  ],
+  "status": "CANDIDATE"
+}

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "approval_status": {
+      "const": "PENDING_HUMAN_APPROVAL"
+    },
+    "candidate_id": {
+      "const": "V23-P2C-ACCEPTANCE-MAPPING-C3"
+    },
+    "mappings": {
+      "maxItems": 1076,
+      "minItems": 1076,
+      "type": "array"
+    },
+    "status": {
+      "const": "CANDIDATE"
+    }
+  },
+  "required": [
+    "candidate_id",
+    "status",
+    "approval_status",
+    "summary",
+    "mappings"
+  ],
+  "type": "object"
+}

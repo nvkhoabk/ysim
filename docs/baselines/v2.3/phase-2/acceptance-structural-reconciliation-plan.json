@@ -1,0 +1,1684 @@
+{
+  "artifact": "V23-P2C-ACCEPTANCE-STRUCTURAL-RECONCILIATION-PLAN-C3",
+  "candidate_id": "V23-P2C-ACCEPTANCE-MAPPING-C3",
+  "id_allocation_status": "NOT_ALLOCATED",
+  "plan_count": 36,
+  "plans": [
+    {
+      "child_obligations": [
+        {
+          "candidate_key": "CHILD-01",
+          "obligation_text": "Partner được phép bán dưới Cost nhưng phải có Warning và Audit.",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-02",
+          "obligation_text": "Named child obligations from the complete surrounding source range",
+          "stable_id": null
+        }
+      ],
+      "composite_parent_id": "BD-05-008",
+      "contract_preview": {
+        "boundary_failure_oracle": "Alias, overlap, or non-applicable children are resolved before coverage is calculated.",
+        "expected_evidence": "parent-child traceability, overlap decision, and child acceptance results",
+        "negative_oracle": "A missing or failed child cannot be masked by parent-level acceptance.",
+        "positive_oracle": "ALL_CHILDREN coverage is satisfied only when every reconciled atomic child has its own contract."
+      },
+      "coverage_rule": "ALL_CHILDREN",
+      "decision_required": false,
+      "existing_children": [],
+      "id_allocation_status": "NOT_ALLOCATED",
+      "overlap_alias_implications": "RECONCILE_EACH_CHILD_AGAINST_EXISTING_CANONICAL_REQUIREMENTS_AND_ALIASES_BEFORE_ID_ALLOCATION",
+      "parent_unit_flags": {
+        "acceptance_unit": false,
+        "criticality_unit": false,
+        "implementation_unit": false,
+        "scope_coverage_unit": false
+      },
+      "proposed_new_child_ids": [],
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_remediation_action": "CONVERT_PARENT_TO_COMPOSITE_AND_MATERIALIZE_ONLY_RECONCILED_ATOMIC_CHILDREN"
+    },
+    {
+      "child_obligations": [
+        {
+          "candidate_key": "CHILD-01",
+          "obligation_text": "Version 2.0 triển khai Auto Translation",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-02",
+          "obligation_text": "AI Customer Support được giữ chỗ",
+          "stable_id": null
+        }
+      ],
+      "composite_parent_id": "BD-11-014",
+      "contract_preview": {
+        "boundary_failure_oracle": "Alias, overlap, or non-applicable children are resolved before coverage is calculated.",
+        "expected_evidence": "parent-child traceability, overlap decision, and child acceptance results",
+        "negative_oracle": "A missing or failed child cannot be masked by parent-level acceptance.",
+        "positive_oracle": "ALL_CHILDREN coverage is satisfied only when every reconciled atomic child has its own contract."
+      },
+      "coverage_rule": "ALL_CHILDREN",
+      "decision_required": false,
+      "existing_children": [],
+      "id_allocation_status": "NOT_ALLOCATED",
+      "overlap_alias_implications": "RECONCILE_EACH_CHILD_AGAINST_EXISTING_CANONICAL_REQUIREMENTS_AND_ALIASES_BEFORE_ID_ALLOCATION",
+      "parent_unit_flags": {
+        "acceptance_unit": false,
+        "criticality_unit": false,
+        "implementation_unit": false,
+        "scope_coverage_unit": false
+      },
+      "proposed_new_child_ids": [],
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_remediation_action": "CONVERT_PARENT_TO_COMPOSITE_AND_MATERIALIZE_ONLY_RECONCILED_ATOMIC_CHILDREN"
+    },
+    {
+      "child_obligations": [
+        {
+          "candidate_key": "CHILD-01",
+          "obligation_text": "Report là Business Object độc lập",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-02",
+          "obligation_text": "System Report chỉ dành cho YSim Internal",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-03",
+          "obligation_text": "Business Report hỗ trợ kế thừa: YSim ↓ Parent Organization ↓ Organization Override",
+          "stable_id": null
+        }
+      ],
+      "composite_parent_id": "BD-13-004",
+      "contract_preview": {
+        "boundary_failure_oracle": "Alias, overlap, or non-applicable children are resolved before coverage is calculated.",
+        "expected_evidence": "parent-child traceability, overlap decision, and child acceptance results",
+        "negative_oracle": "A missing or failed child cannot be masked by parent-level acceptance.",
+        "positive_oracle": "ALL_CHILDREN coverage is satisfied only when every reconciled atomic child has its own contract."
+      },
+      "coverage_rule": "ALL_CHILDREN",
+      "decision_required": false,
+      "existing_children": [],
+      "id_allocation_status": "NOT_ALLOCATED",
+      "overlap_alias_implications": "RECONCILE_EACH_CHILD_AGAINST_EXISTING_CANONICAL_REQUIREMENTS_AND_ALIASES_BEFORE_ID_ALLOCATION",
+      "parent_unit_flags": {
+        "acceptance_unit": false,
+        "criticality_unit": false,
+        "implementation_unit": false,
+        "scope_coverage_unit": false
+      },
+      "proposed_new_child_ids": [],
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_remediation_action": "CONVERT_PARENT_TO_COMPOSITE_AND_MATERIALIZE_ONLY_RECONCILED_ATOMIC_CHILDREN"
+    },
+    {
+      "child_obligations": [
+        {
+          "candidate_key": "CHILD-01",
+          "obligation_text": "Report Permission được xác định theo",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-02",
+          "obligation_text": "Organization",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-03",
+          "obligation_text": "Role",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-04",
+          "obligation_text": "Permission",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-05",
+          "obligation_text": "Data Scope",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-06",
+          "obligation_text": "Support Policy Có thể Mask dữ liệu theo Permission",
+          "stable_id": null
+        }
+      ],
+      "composite_parent_id": "BD-13-013",
+      "contract_preview": {
+        "boundary_failure_oracle": "Alias, overlap, or non-applicable children are resolved before coverage is calculated.",
+        "expected_evidence": "parent-child traceability, overlap decision, and child acceptance results",
+        "negative_oracle": "A missing or failed child cannot be masked by parent-level acceptance.",
+        "positive_oracle": "ALL_CHILDREN coverage is satisfied only when every reconciled atomic child has its own contract."
+      },
+      "coverage_rule": "ALL_CHILDREN",
+      "decision_required": false,
+      "existing_children": [],
+      "id_allocation_status": "NOT_ALLOCATED",
+      "overlap_alias_implications": "RECONCILE_EACH_CHILD_AGAINST_EXISTING_CANONICAL_REQUIREMENTS_AND_ALIASES_BEFORE_ID_ALLOCATION",
+      "parent_unit_flags": {
+        "acceptance_unit": false,
+        "criticality_unit": false,
+        "implementation_unit": false,
+        "scope_coverage_unit": false
+      },
+      "proposed_new_child_ids": [],
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_remediation_action": "CONVERT_PARENT_TO_COMPOSITE_AND_MATERIALIZE_ONLY_RECONCILED_ATOMIC_CHILDREN"
+    },
+    {
+      "child_obligations": [
+        {
+          "candidate_key": "CHILD-01",
+          "obligation_text": "Insight là Business Object",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-02",
+          "obligation_text": "Insight được sinh từ Rule Engine và Analytics",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-03",
+          "obligation_text": "Version 2 chưa sử dụng AI",
+          "stable_id": null
+        }
+      ],
+      "composite_parent_id": "BD-13-020",
+      "contract_preview": {
+        "boundary_failure_oracle": "Alias, overlap, or non-applicable children are resolved before coverage is calculated.",
+        "expected_evidence": "parent-child traceability, overlap decision, and child acceptance results",
+        "negative_oracle": "A missing or failed child cannot be masked by parent-level acceptance.",
+        "positive_oracle": "ALL_CHILDREN coverage is satisfied only when every reconciled atomic child has its own contract."
+      },
+      "coverage_rule": "ALL_CHILDREN",
+      "decision_required": false,
+      "existing_children": [],
+      "id_allocation_status": "NOT_ALLOCATED",
+      "overlap_alias_implications": "RECONCILE_EACH_CHILD_AGAINST_EXISTING_CANONICAL_REQUIREMENTS_AND_ALIASES_BEFORE_ID_ALLOCATION",
+      "parent_unit_flags": {
+        "acceptance_unit": false,
+        "criticality_unit": false,
+        "implementation_unit": false,
+        "scope_coverage_unit": false
+      },
+      "proposed_new_child_ids": [],
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_remediation_action": "CONVERT_PARENT_TO_COMPOSITE_AND_MATERIALIZE_ONLY_RECONCILED_ATOMIC_CHILDREN"
+    },
+    {
+      "child_obligations": [
+        {
+          "candidate_key": "CHILD-01",
+          "obligation_text": "Reference Data là Business Object",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-02",
+          "obligation_text": "Reference Data quản lý toàn bộ dữ liệu tham chiếu của Platform",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-03",
+          "obligation_text": "Reference Data hỗ trợ",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-04",
+          "obligation_text": "Multi-language",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-05",
+          "obligation_text": "Parent / Child",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-06",
+          "obligation_text": "Alias",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-07",
+          "obligation_text": "Effective Date",
+          "stable_id": null
+        }
+      ],
+      "composite_parent_id": "BD-14-003",
+      "contract_preview": {
+        "boundary_failure_oracle": "Alias, overlap, or non-applicable children are resolved before coverage is calculated.",
+        "expected_evidence": "parent-child traceability, overlap decision, and child acceptance results",
+        "negative_oracle": "A missing or failed child cannot be masked by parent-level acceptance.",
+        "positive_oracle": "ALL_CHILDREN coverage is satisfied only when every reconciled atomic child has its own contract."
+      },
+      "coverage_rule": "ALL_CHILDREN",
+      "decision_required": false,
+      "existing_children": [],
+      "id_allocation_status": "NOT_ALLOCATED",
+      "overlap_alias_implications": "RECONCILE_EACH_CHILD_AGAINST_EXISTING_CANONICAL_REQUIREMENTS_AND_ALIASES_BEFORE_ID_ALLOCATION",
+      "parent_unit_flags": {
+        "acceptance_unit": false,
+        "criticality_unit": false,
+        "implementation_unit": false,
+        "scope_coverage_unit": false
+      },
+      "proposed_new_child_ids": [],
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_remediation_action": "CONVERT_PARENT_TO_COMPOSITE_AND_MATERIALIZE_ONLY_RECONCILED_ATOMIC_CHILDREN"
+    },
+    {
+      "child_obligations": [
+        {
+          "candidate_key": "CHILD-01",
+          "obligation_text": "Dictionary là Business Object độc lập",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-02",
+          "obligation_text": "Dictionary không thay thế Reference Data",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-03",
+          "obligation_text": "Dictionary quản lý Label, Enum, Caption và Translation",
+          "stable_id": null
+        }
+      ],
+      "composite_parent_id": "BD-14-004",
+      "contract_preview": {
+        "boundary_failure_oracle": "Alias, overlap, or non-applicable children are resolved before coverage is calculated.",
+        "expected_evidence": "parent-child traceability, overlap decision, and child acceptance results",
+        "negative_oracle": "A missing or failed child cannot be masked by parent-level acceptance.",
+        "positive_oracle": "ALL_CHILDREN coverage is satisfied only when every reconciled atomic child has its own contract."
+      },
+      "coverage_rule": "ALL_CHILDREN",
+      "decision_required": false,
+      "existing_children": [],
+      "id_allocation_status": "NOT_ALLOCATED",
+      "overlap_alias_implications": "RECONCILE_EACH_CHILD_AGAINST_EXISTING_CANONICAL_REQUIREMENTS_AND_ALIASES_BEFORE_ID_ALLOCATION",
+      "parent_unit_flags": {
+        "acceptance_unit": false,
+        "criticality_unit": false,
+        "implementation_unit": false,
+        "scope_coverage_unit": false
+      },
+      "proposed_new_child_ids": [],
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_remediation_action": "CONVERT_PARENT_TO_COMPOSITE_AND_MATERIALIZE_ONLY_RECONCILED_ATOMIC_CHILDREN"
+    },
+    {
+      "child_obligations": [
+        {
+          "candidate_key": "CHILD-01",
+          "obligation_text": "Business Rule là Business Object",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-02",
+          "obligation_text": "Business Rule được cấu hình",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-03",
+          "obligation_text": "Không Hard-code",
+          "stable_id": null
+        }
+      ],
+      "composite_parent_id": "BD-14-006",
+      "contract_preview": {
+        "boundary_failure_oracle": "Alias, overlap, or non-applicable children are resolved before coverage is calculated.",
+        "expected_evidence": "parent-child traceability, overlap decision, and child acceptance results",
+        "negative_oracle": "A missing or failed child cannot be masked by parent-level acceptance.",
+        "positive_oracle": "ALL_CHILDREN coverage is satisfied only when every reconciled atomic child has its own contract."
+      },
+      "coverage_rule": "ALL_CHILDREN",
+      "decision_required": false,
+      "existing_children": [],
+      "id_allocation_status": "NOT_ALLOCATED",
+      "overlap_alias_implications": "RECONCILE_EACH_CHILD_AGAINST_EXISTING_CANONICAL_REQUIREMENTS_AND_ALIASES_BEFORE_ID_ALLOCATION",
+      "parent_unit_flags": {
+        "acceptance_unit": false,
+        "criticality_unit": false,
+        "implementation_unit": false,
+        "scope_coverage_unit": false
+      },
+      "proposed_new_child_ids": [],
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_remediation_action": "CONVERT_PARENT_TO_COMPOSITE_AND_MATERIALIZE_ONLY_RECONCILED_ATOMIC_CHILDREN"
+    },
+    {
+      "child_obligations": [
+        {
+          "candidate_key": "CHILD-01",
+          "obligation_text": "Feature Flag là Business Object",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-02",
+          "obligation_text": "Feature Flag hỗ trợ",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-03",
+          "obligation_text": "Global",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-04",
+          "obligation_text": "Parent Organization",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-05",
+          "obligation_text": "Organization",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-06",
+          "obligation_text": "Storefront",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-07",
+          "obligation_text": "User",
+          "stable_id": null
+        }
+      ],
+      "composite_parent_id": "BD-14-010",
+      "contract_preview": {
+        "boundary_failure_oracle": "Alias, overlap, or non-applicable children are resolved before coverage is calculated.",
+        "expected_evidence": "parent-child traceability, overlap decision, and child acceptance results",
+        "negative_oracle": "A missing or failed child cannot be masked by parent-level acceptance.",
+        "positive_oracle": "ALL_CHILDREN coverage is satisfied only when every reconciled atomic child has its own contract."
+      },
+      "coverage_rule": "ALL_CHILDREN",
+      "decision_required": false,
+      "existing_children": [],
+      "id_allocation_status": "NOT_ALLOCATED",
+      "overlap_alias_implications": "RECONCILE_EACH_CHILD_AGAINST_EXISTING_CANONICAL_REQUIREMENTS_AND_ALIASES_BEFORE_ID_ALLOCATION",
+      "parent_unit_flags": {
+        "acceptance_unit": false,
+        "criticality_unit": false,
+        "implementation_unit": false,
+        "scope_coverage_unit": false
+      },
+      "proposed_new_child_ids": [],
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_remediation_action": "CONVERT_PARENT_TO_COMPOSITE_AND_MATERIALIZE_ONLY_RECONCILED_ATOMIC_CHILDREN"
+    },
+    {
+      "child_obligations": [
+        {
+          "candidate_key": "CHILD-01",
+          "obligation_text": "Integration Platform hỗ trợ đầy đủ",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-02",
+          "obligation_text": "REST API",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-03",
+          "obligation_text": "Webhook",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-04",
+          "obligation_text": "Event Bus",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-05",
+          "obligation_text": "Message Queue",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-06",
+          "obligation_text": "Batch Import",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-07",
+          "obligation_text": "Batch Export",
+          "stable_id": null
+        }
+      ],
+      "composite_parent_id": "BD-15-001",
+      "contract_preview": {
+        "boundary_failure_oracle": "Alias, overlap, or non-applicable children are resolved before coverage is calculated.",
+        "expected_evidence": "parent-child traceability, overlap decision, and child acceptance results",
+        "negative_oracle": "A missing or failed child cannot be masked by parent-level acceptance.",
+        "positive_oracle": "ALL_CHILDREN coverage is satisfied only when every reconciled atomic child has its own contract."
+      },
+      "coverage_rule": "ALL_CHILDREN",
+      "decision_required": false,
+      "existing_children": [],
+      "id_allocation_status": "NOT_ALLOCATED",
+      "overlap_alias_implications": "RECONCILE_EACH_CHILD_AGAINST_EXISTING_CANONICAL_REQUIREMENTS_AND_ALIASES_BEFORE_ID_ALLOCATION",
+      "parent_unit_flags": {
+        "acceptance_unit": false,
+        "criticality_unit": false,
+        "implementation_unit": false,
+        "scope_coverage_unit": false
+      },
+      "proposed_new_child_ids": [],
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_remediation_action": "CONVERT_PARENT_TO_COMPOSITE_AND_MATERIALIZE_ONLY_RECONCILED_ATOMIC_CHILDREN"
+    },
+    {
+      "child_obligations": [
+        {
+          "candidate_key": "CHILD-01",
+          "obligation_text": "Connector là Business Object",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-02",
+          "obligation_text": "Connector chỉ chịu trách nhiệm kết nối với hệ thống bên ngoài",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-03",
+          "obligation_text": "Business Logic không được đặt trong Connector",
+          "stable_id": null
+        }
+      ],
+      "composite_parent_id": "BD-15-003",
+      "contract_preview": {
+        "boundary_failure_oracle": "Alias, overlap, or non-applicable children are resolved before coverage is calculated.",
+        "expected_evidence": "parent-child traceability, overlap decision, and child acceptance results",
+        "negative_oracle": "A missing or failed child cannot be masked by parent-level acceptance.",
+        "positive_oracle": "ALL_CHILDREN coverage is satisfied only when every reconciled atomic child has its own contract."
+      },
+      "coverage_rule": "ALL_CHILDREN",
+      "decision_required": false,
+      "existing_children": [],
+      "id_allocation_status": "NOT_ALLOCATED",
+      "overlap_alias_implications": "RECONCILE_EACH_CHILD_AGAINST_EXISTING_CANONICAL_REQUIREMENTS_AND_ALIASES_BEFORE_ID_ALLOCATION",
+      "parent_unit_flags": {
+        "acceptance_unit": false,
+        "criticality_unit": false,
+        "implementation_unit": false,
+        "scope_coverage_unit": false
+      },
+      "proposed_new_child_ids": [],
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_remediation_action": "CONVERT_PARENT_TO_COMPOSITE_AND_MATERIALIZE_ONLY_RECONCILED_ATOMIC_CHILDREN"
+    },
+    {
+      "child_obligations": [
+        {
+          "candidate_key": "CHILD-01",
+          "obligation_text": "Business Event là Business Object",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-02",
+          "obligation_text": "Mọi Business Domain đều Publish Business Event",
+          "stable_id": null
+        }
+      ],
+      "composite_parent_id": "BD-15-006",
+      "contract_preview": {
+        "boundary_failure_oracle": "Alias, overlap, or non-applicable children are resolved before coverage is calculated.",
+        "expected_evidence": "parent-child traceability, overlap decision, and child acceptance results",
+        "negative_oracle": "A missing or failed child cannot be masked by parent-level acceptance.",
+        "positive_oracle": "ALL_CHILDREN coverage is satisfied only when every reconciled atomic child has its own contract."
+      },
+      "coverage_rule": "ALL_CHILDREN",
+      "decision_required": false,
+      "existing_children": [],
+      "id_allocation_status": "NOT_ALLOCATED",
+      "overlap_alias_implications": "RECONCILE_EACH_CHILD_AGAINST_EXISTING_CANONICAL_REQUIREMENTS_AND_ALIASES_BEFORE_ID_ALLOCATION",
+      "parent_unit_flags": {
+        "acceptance_unit": false,
+        "criticality_unit": false,
+        "implementation_unit": false,
+        "scope_coverage_unit": false
+      },
+      "proposed_new_child_ids": [],
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_remediation_action": "CONVERT_PARENT_TO_COMPOSITE_AND_MATERIALIZE_ONLY_RECONCILED_ATOMIC_CHILDREN"
+    },
+    {
+      "child_obligations": [
+        {
+          "candidate_key": "CHILD-01",
+          "obligation_text": "Business Domain đăng ký Subscribe Business Event",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-02",
+          "obligation_text": "Publisher không biết Subscriber",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-03",
+          "obligation_text": "Event Bus chịu trách nhiệm Routing và Delivery",
+          "stable_id": null
+        }
+      ],
+      "composite_parent_id": "BD-15-007",
+      "contract_preview": {
+        "boundary_failure_oracle": "Alias, overlap, or non-applicable children are resolved before coverage is calculated.",
+        "expected_evidence": "parent-child traceability, overlap decision, and child acceptance results",
+        "negative_oracle": "A missing or failed child cannot be masked by parent-level acceptance.",
+        "positive_oracle": "ALL_CHILDREN coverage is satisfied only when every reconciled atomic child has its own contract."
+      },
+      "coverage_rule": "ALL_CHILDREN",
+      "decision_required": false,
+      "existing_children": [],
+      "id_allocation_status": "NOT_ALLOCATED",
+      "overlap_alias_implications": "RECONCILE_EACH_CHILD_AGAINST_EXISTING_CANONICAL_REQUIREMENTS_AND_ALIASES_BEFORE_ID_ALLOCATION",
+      "parent_unit_flags": {
+        "acceptance_unit": false,
+        "criticality_unit": false,
+        "implementation_unit": false,
+        "scope_coverage_unit": false
+      },
+      "proposed_new_child_ids": [],
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_remediation_action": "CONVERT_PARENT_TO_COMPOSITE_AND_MATERIALIZE_ONLY_RECONCILED_ATOMIC_CHILDREN"
+    },
+    {
+      "child_obligations": [
+        {
+          "candidate_key": "CHILD-01",
+          "obligation_text": "Business Service Registry là Business Object",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-02",
+          "obligation_text": "Registry quản lý",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-03",
+          "obligation_text": "Service",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-04",
+          "obligation_text": "API",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-05",
+          "obligation_text": "Published Event",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-06",
+          "obligation_text": "Consumed Event",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-07",
+          "obligation_text": "Dependency",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-08",
+          "obligation_text": "Owner",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-09",
+          "obligation_text": "Version",
+          "stable_id": null
+        }
+      ],
+      "composite_parent_id": "BD-15-023",
+      "contract_preview": {
+        "boundary_failure_oracle": "Alias, overlap, or non-applicable children are resolved before coverage is calculated.",
+        "expected_evidence": "parent-child traceability, overlap decision, and child acceptance results",
+        "negative_oracle": "A missing or failed child cannot be masked by parent-level acceptance.",
+        "positive_oracle": "ALL_CHILDREN coverage is satisfied only when every reconciled atomic child has its own contract."
+      },
+      "coverage_rule": "ALL_CHILDREN",
+      "decision_required": false,
+      "existing_children": [],
+      "id_allocation_status": "NOT_ALLOCATED",
+      "overlap_alias_implications": "RECONCILE_EACH_CHILD_AGAINST_EXISTING_CANONICAL_REQUIREMENTS_AND_ALIASES_BEFORE_ID_ALLOCATION",
+      "parent_unit_flags": {
+        "acceptance_unit": false,
+        "criticality_unit": false,
+        "implementation_unit": false,
+        "scope_coverage_unit": false
+      },
+      "proposed_new_child_ids": [],
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_remediation_action": "CONVERT_PARENT_TO_COMPOSITE_AND_MATERIALIZE_ONLY_RECONCILED_ATOMIC_CHILDREN"
+    },
+    {
+      "child_obligations": [
+        {
+          "candidate_key": "CHILD-01",
+          "obligation_text": "Connector Routing Rule là Business Object",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-02",
+          "obligation_text": "Routing Rule được cấu hình",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-03",
+          "obligation_text": "Business Domain không quyết định Connector",
+          "stable_id": null
+        }
+      ],
+      "composite_parent_id": "BD-15-027",
+      "contract_preview": {
+        "boundary_failure_oracle": "Alias, overlap, or non-applicable children are resolved before coverage is calculated.",
+        "expected_evidence": "parent-child traceability, overlap decision, and child acceptance results",
+        "negative_oracle": "A missing or failed child cannot be masked by parent-level acceptance.",
+        "positive_oracle": "ALL_CHILDREN coverage is satisfied only when every reconciled atomic child has its own contract."
+      },
+      "coverage_rule": "ALL_CHILDREN",
+      "decision_required": false,
+      "existing_children": [],
+      "id_allocation_status": "NOT_ALLOCATED",
+      "overlap_alias_implications": "RECONCILE_EACH_CHILD_AGAINST_EXISTING_CANONICAL_REQUIREMENTS_AND_ALIASES_BEFORE_ID_ALLOCATION",
+      "parent_unit_flags": {
+        "acceptance_unit": false,
+        "criticality_unit": false,
+        "implementation_unit": false,
+        "scope_coverage_unit": false
+      },
+      "proposed_new_child_ids": [],
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_remediation_action": "CONVERT_PARENT_TO_COMPOSITE_AND_MATERIALIZE_ONLY_RECONCILED_ATOMIC_CHILDREN"
+    },
+    {
+      "child_obligations": [
+        {
+          "candidate_key": "CHILD-01",
+          "obligation_text": "Connector hỗ trợ Lifecycle",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-02",
+          "obligation_text": "Draft",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-03",
+          "obligation_text": "Configured",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-04",
+          "obligation_text": "Validated",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-05",
+          "obligation_text": "Testing",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-06",
+          "obligation_text": "Active",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-07",
+          "obligation_text": "Suspended",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-08",
+          "obligation_text": "Retired",
+          "stable_id": null
+        }
+      ],
+      "composite_parent_id": "BD-15-029",
+      "contract_preview": {
+        "boundary_failure_oracle": "Alias, overlap, or non-applicable children are resolved before coverage is calculated.",
+        "expected_evidence": "parent-child traceability, overlap decision, and child acceptance results",
+        "negative_oracle": "A missing or failed child cannot be masked by parent-level acceptance.",
+        "positive_oracle": "ALL_CHILDREN coverage is satisfied only when every reconciled atomic child has its own contract."
+      },
+      "coverage_rule": "ALL_CHILDREN",
+      "decision_required": false,
+      "existing_children": [],
+      "id_allocation_status": "NOT_ALLOCATED",
+      "overlap_alias_implications": "RECONCILE_EACH_CHILD_AGAINST_EXISTING_CANONICAL_REQUIREMENTS_AND_ALIASES_BEFORE_ID_ALLOCATION",
+      "parent_unit_flags": {
+        "acceptance_unit": false,
+        "criticality_unit": false,
+        "implementation_unit": false,
+        "scope_coverage_unit": false
+      },
+      "proposed_new_child_ids": [],
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_remediation_action": "CONVERT_PARENT_TO_COMPOSITE_AND_MATERIALIZE_ONLY_RECONCILED_ATOMIC_CHILDREN"
+    },
+    {
+      "child_obligations": [
+        {
+          "candidate_key": "CHILD-01",
+          "obligation_text": "Permission hỗ trợ Scope linh hoạt",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-02",
+          "obligation_text": "Bao gồm",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-03",
+          "obligation_text": "Platform",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-04",
+          "obligation_text": "Organization",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-05",
+          "obligation_text": "Department",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-06",
+          "obligation_text": "Team",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-07",
+          "obligation_text": "Storefront",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-08",
+          "obligation_text": "Customer Portal",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-09",
+          "obligation_text": "User",
+          "stable_id": null
+        }
+      ],
+      "composite_parent_id": "BD-16-006",
+      "contract_preview": {
+        "boundary_failure_oracle": "Alias, overlap, or non-applicable children are resolved before coverage is calculated.",
+        "expected_evidence": "parent-child traceability, overlap decision, and child acceptance results",
+        "negative_oracle": "A missing or failed child cannot be masked by parent-level acceptance.",
+        "positive_oracle": "ALL_CHILDREN coverage is satisfied only when every reconciled atomic child has its own contract."
+      },
+      "coverage_rule": "ALL_CHILDREN",
+      "decision_required": false,
+      "existing_children": [],
+      "id_allocation_status": "NOT_ALLOCATED",
+      "overlap_alias_implications": "RECONCILE_EACH_CHILD_AGAINST_EXISTING_CANONICAL_REQUIREMENTS_AND_ALIASES_BEFORE_ID_ALLOCATION",
+      "parent_unit_flags": {
+        "acceptance_unit": false,
+        "criticality_unit": false,
+        "implementation_unit": false,
+        "scope_coverage_unit": false
+      },
+      "proposed_new_child_ids": [],
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_remediation_action": "CONVERT_PARENT_TO_COMPOSITE_AND_MATERIALIZE_ONLY_RECONCILED_ATOMIC_CHILDREN"
+    },
+    {
+      "child_obligations": [
+        {
+          "candidate_key": "CHILD-01",
+          "obligation_text": "Audit Log là Business Object",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-02",
+          "obligation_text": "Audit ghi nhận đầy đủ các Security Event và Business Event quan trọng",
+          "stable_id": null
+        }
+      ],
+      "composite_parent_id": "BD-16-016",
+      "contract_preview": {
+        "boundary_failure_oracle": "Alias, overlap, or non-applicable children are resolved before coverage is calculated.",
+        "expected_evidence": "parent-child traceability, overlap decision, and child acceptance results",
+        "negative_oracle": "A missing or failed child cannot be masked by parent-level acceptance.",
+        "positive_oracle": "ALL_CHILDREN coverage is satisfied only when every reconciled atomic child has its own contract."
+      },
+      "coverage_rule": "ALL_CHILDREN",
+      "decision_required": false,
+      "existing_children": [],
+      "id_allocation_status": "NOT_ALLOCATED",
+      "overlap_alias_implications": "RECONCILE_EACH_CHILD_AGAINST_EXISTING_CANONICAL_REQUIREMENTS_AND_ALIASES_BEFORE_ID_ALLOCATION",
+      "parent_unit_flags": {
+        "acceptance_unit": false,
+        "criticality_unit": false,
+        "implementation_unit": false,
+        "scope_coverage_unit": false
+      },
+      "proposed_new_child_ids": [],
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_remediation_action": "CONVERT_PARENT_TO_COMPOSITE_AND_MATERIALIZE_ONLY_RECONCILED_ATOMIC_CHILDREN"
+    },
+    {
+      "child_obligations": [
+        {
+          "candidate_key": "CHILD-01",
+          "obligation_text": "Risk Rule là Business Object",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-02",
+          "obligation_text": "Risk Rule được cấu hình",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-03",
+          "obligation_text": "Không Hard-code",
+          "stable_id": null
+        }
+      ],
+      "composite_parent_id": "BD-16-021",
+      "contract_preview": {
+        "boundary_failure_oracle": "Alias, overlap, or non-applicable children are resolved before coverage is calculated.",
+        "expected_evidence": "parent-child traceability, overlap decision, and child acceptance results",
+        "negative_oracle": "A missing or failed child cannot be masked by parent-level acceptance.",
+        "positive_oracle": "ALL_CHILDREN coverage is satisfied only when every reconciled atomic child has its own contract."
+      },
+      "coverage_rule": "ALL_CHILDREN",
+      "decision_required": false,
+      "existing_children": [],
+      "id_allocation_status": "NOT_ALLOCATED",
+      "overlap_alias_implications": "RECONCILE_EACH_CHILD_AGAINST_EXISTING_CANONICAL_REQUIREMENTS_AND_ALIASES_BEFORE_ID_ALLOCATION",
+      "parent_unit_flags": {
+        "acceptance_unit": false,
+        "criticality_unit": false,
+        "implementation_unit": false,
+        "scope_coverage_unit": false
+      },
+      "proposed_new_child_ids": [],
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_remediation_action": "CONVERT_PARENT_TO_COMPOSITE_AND_MATERIALIZE_ONLY_RECONCILED_ATOMIC_CHILDREN"
+    },
+    {
+      "child_obligations": [
+        {
+          "candidate_key": "CHILD-01",
+          "obligation_text": "Alert Rule là Business Object",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-02",
+          "obligation_text": "Alert Rule được cấu hình",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-03",
+          "obligation_text": "Không Hard-code",
+          "stable_id": null
+        }
+      ],
+      "composite_parent_id": "BD-17-005",
+      "contract_preview": {
+        "boundary_failure_oracle": "Alias, overlap, or non-applicable children are resolved before coverage is calculated.",
+        "expected_evidence": "parent-child traceability, overlap decision, and child acceptance results",
+        "negative_oracle": "A missing or failed child cannot be masked by parent-level acceptance.",
+        "positive_oracle": "ALL_CHILDREN coverage is satisfied only when every reconciled atomic child has its own contract."
+      },
+      "coverage_rule": "ALL_CHILDREN",
+      "decision_required": false,
+      "existing_children": [],
+      "id_allocation_status": "NOT_ALLOCATED",
+      "overlap_alias_implications": "RECONCILE_EACH_CHILD_AGAINST_EXISTING_CANONICAL_REQUIREMENTS_AND_ALIASES_BEFORE_ID_ALLOCATION",
+      "parent_unit_flags": {
+        "acceptance_unit": false,
+        "criticality_unit": false,
+        "implementation_unit": false,
+        "scope_coverage_unit": false
+      },
+      "proposed_new_child_ids": [],
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_remediation_action": "CONVERT_PARENT_TO_COMPOSITE_AND_MATERIALIZE_ONLY_RECONCILED_ATOMIC_CHILDREN"
+    },
+    {
+      "child_obligations": [
+        {
+          "candidate_key": "CHILD-01",
+          "obligation_text": "Alert được gửi theo Notification Preference",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-02",
+          "obligation_text": "Personal Inbox luôn là kênh nhận mặc định",
+          "stable_id": null
+        }
+      ],
+      "composite_parent_id": "BD-17-006",
+      "contract_preview": {
+        "boundary_failure_oracle": "Alias, overlap, or non-applicable children are resolved before coverage is calculated.",
+        "expected_evidence": "parent-child traceability, overlap decision, and child acceptance results",
+        "negative_oracle": "A missing or failed child cannot be masked by parent-level acceptance.",
+        "positive_oracle": "ALL_CHILDREN coverage is satisfied only when every reconciled atomic child has its own contract."
+      },
+      "coverage_rule": "ALL_CHILDREN",
+      "decision_required": false,
+      "existing_children": [],
+      "id_allocation_status": "NOT_ALLOCATED",
+      "overlap_alias_implications": "RECONCILE_EACH_CHILD_AGAINST_EXISTING_CANONICAL_REQUIREMENTS_AND_ALIASES_BEFORE_ID_ALLOCATION",
+      "parent_unit_flags": {
+        "acceptance_unit": false,
+        "criticality_unit": false,
+        "implementation_unit": false,
+        "scope_coverage_unit": false
+      },
+      "proposed_new_child_ids": [],
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_remediation_action": "CONVERT_PARENT_TO_COMPOSITE_AND_MATERIALIZE_ONLY_RECONCILED_ATOMIC_CHILDREN"
+    },
+    {
+      "child_obligations": [
+        {
+          "candidate_key": "CHILD-01",
+          "obligation_text": "Scheduler là Business Object",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-02",
+          "obligation_text": "Scheduler hỗ trợ",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-03",
+          "obligation_text": "Cron",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-04",
+          "obligation_text": "Fixed Interval",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-05",
+          "obligation_text": "Manual Trigger",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-06",
+          "obligation_text": "Business Event Trigger",
+          "stable_id": null
+        }
+      ],
+      "composite_parent_id": "BD-17-007",
+      "contract_preview": {
+        "boundary_failure_oracle": "Alias, overlap, or non-applicable children are resolved before coverage is calculated.",
+        "expected_evidence": "parent-child traceability, overlap decision, and child acceptance results",
+        "negative_oracle": "A missing or failed child cannot be masked by parent-level acceptance.",
+        "positive_oracle": "ALL_CHILDREN coverage is satisfied only when every reconciled atomic child has its own contract."
+      },
+      "coverage_rule": "ALL_CHILDREN",
+      "decision_required": false,
+      "existing_children": [],
+      "id_allocation_status": "NOT_ALLOCATED",
+      "overlap_alias_implications": "RECONCILE_EACH_CHILD_AGAINST_EXISTING_CANONICAL_REQUIREMENTS_AND_ALIASES_BEFORE_ID_ALLOCATION",
+      "parent_unit_flags": {
+        "acceptance_unit": false,
+        "criticality_unit": false,
+        "implementation_unit": false,
+        "scope_coverage_unit": false
+      },
+      "proposed_new_child_ids": [],
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_remediation_action": "CONVERT_PARENT_TO_COMPOSITE_AND_MATERIALIZE_ONLY_RECONCILED_ATOMIC_CHILDREN"
+    },
+    {
+      "child_obligations": [
+        {
+          "candidate_key": "CHILD-01",
+          "obligation_text": "Business Object Registry là tài liệu nền tảng phục vụ Enterprise Architecture Governance",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-02",
+          "obligation_text": "Mọi thay đổi Business Object đều phải được",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-03",
+          "obligation_text": "Review",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-04",
+          "obligation_text": "Approval",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-05",
+          "obligation_text": "Versioning",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-06",
+          "obligation_text": "Audit",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-07",
+          "obligation_text": "Traceability",
+          "stable_id": null
+        }
+      ],
+      "composite_parent_id": "BO-P07",
+      "contract_preview": {
+        "boundary_failure_oracle": "Alias, overlap, or non-applicable children are resolved before coverage is calculated.",
+        "expected_evidence": "parent-child traceability, overlap decision, and child acceptance results",
+        "negative_oracle": "A missing or failed child cannot be masked by parent-level acceptance.",
+        "positive_oracle": "ALL_CHILDREN coverage is satisfied only when every reconciled atomic child has its own contract."
+      },
+      "coverage_rule": "ALL_CHILDREN",
+      "decision_required": false,
+      "existing_children": [],
+      "id_allocation_status": "NOT_ALLOCATED",
+      "overlap_alias_implications": "RECONCILE_EACH_CHILD_AGAINST_EXISTING_CANONICAL_REQUIREMENTS_AND_ALIASES_BEFORE_ID_ALLOCATION",
+      "parent_unit_flags": {
+        "acceptance_unit": false,
+        "criticality_unit": false,
+        "implementation_unit": false,
+        "scope_coverage_unit": false
+      },
+      "proposed_new_child_ids": [],
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_remediation_action": "CONVERT_PARENT_TO_COMPOSITE_AND_MATERIALIZE_ONLY_RECONCILED_ATOMIC_CHILDREN"
+    },
+    {
+      "child_obligations": [
+        {
+          "candidate_key": "CHILD-01",
+          "obligation_text": "Business Object Publish Business Event",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-02",
+          "obligation_text": "Business Object khác Subscribe Business Event",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-03",
+          "obligation_text": "Không gọi trực tiếp khi không cần thiết",
+          "stable_id": null
+        }
+      ],
+      "composite_parent_id": "BO-R04",
+      "contract_preview": {
+        "boundary_failure_oracle": "Alias, overlap, or non-applicable children are resolved before coverage is calculated.",
+        "expected_evidence": "parent-child traceability, overlap decision, and child acceptance results",
+        "negative_oracle": "A missing or failed child cannot be masked by parent-level acceptance.",
+        "positive_oracle": "ALL_CHILDREN coverage is satisfied only when every reconciled atomic child has its own contract."
+      },
+      "coverage_rule": "ALL_CHILDREN",
+      "decision_required": false,
+      "existing_children": [],
+      "id_allocation_status": "NOT_ALLOCATED",
+      "overlap_alias_implications": "RECONCILE_EACH_CHILD_AGAINST_EXISTING_CANONICAL_REQUIREMENTS_AND_ALIASES_BEFORE_ID_ALLOCATION",
+      "parent_unit_flags": {
+        "acceptance_unit": false,
+        "criticality_unit": false,
+        "implementation_unit": false,
+        "scope_coverage_unit": false
+      },
+      "proposed_new_child_ids": [],
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_remediation_action": "CONVERT_PARENT_TO_COMPOSITE_AND_MATERIALIZE_ONLY_RECONCILED_ATOMIC_CHILDREN"
+    },
+    {
+      "child_obligations": [
+        {
+          "candidate_key": "CHILD-01",
+          "obligation_text": "Capability Registry tuân thủ các nguyên tắc sau.",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-02",
+          "obligation_text": "Named child obligations from the complete surrounding source range",
+          "stable_id": null
+        }
+      ],
+      "composite_parent_id": "BRD-CAP-INDEX-R004",
+      "contract_preview": {
+        "boundary_failure_oracle": "Alias, overlap, or non-applicable children are resolved before coverage is calculated.",
+        "expected_evidence": "parent-child traceability, overlap decision, and child acceptance results",
+        "negative_oracle": "A missing or failed child cannot be masked by parent-level acceptance.",
+        "positive_oracle": "ALL_CHILDREN coverage is satisfied only when every reconciled atomic child has its own contract."
+      },
+      "coverage_rule": "ALL_CHILDREN",
+      "decision_required": false,
+      "existing_children": [],
+      "id_allocation_status": "NOT_ALLOCATED",
+      "overlap_alias_implications": "RECONCILE_EACH_CHILD_AGAINST_EXISTING_CANONICAL_REQUIREMENTS_AND_ALIASES_BEFORE_ID_ALLOCATION",
+      "parent_unit_flags": {
+        "acceptance_unit": false,
+        "criticality_unit": false,
+        "implementation_unit": false,
+        "scope_coverage_unit": false
+      },
+      "proposed_new_child_ids": [],
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_remediation_action": "CONVERT_PARENT_TO_COMPOSITE_AND_MATERIALIZE_ONLY_RECONCILED_ATOMIC_CHILDREN"
+    },
+    {
+      "child_obligations": [
+        {
+          "candidate_key": "CHILD-01",
+          "obligation_text": "Nền tảng phải cung cấp Shared Approval Engine dùng chung cho ngoại lệ biên lợi nhuận, hoàn tiền, cấu hình, thông tin xác thực, ghi đè rủi ro và các nghiệp vụ BRD quy định; engine phải hỗ trợ policy, phân giải người duyệt, phân tách nhiệm vụ, hết hạn, escalation, delegation, evidence và immutable audit, đồng thời không được diễn giải thành general-purpose BPM workflow engine.",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-02",
+          "obligation_text": "Named child obligations from the complete surrounding source range",
+          "stable_id": null
+        }
+      ],
+      "composite_parent_id": "BRD-CAP-INDEX-R007",
+      "contract_preview": {
+        "boundary_failure_oracle": "Alias, overlap, or non-applicable children are resolved before coverage is calculated.",
+        "expected_evidence": "parent-child traceability, overlap decision, and child acceptance results",
+        "negative_oracle": "A missing or failed child cannot be masked by parent-level acceptance.",
+        "positive_oracle": "ALL_CHILDREN coverage is satisfied only when every reconciled atomic child has its own contract."
+      },
+      "coverage_rule": "ALL_CHILDREN",
+      "decision_required": false,
+      "existing_children": [],
+      "id_allocation_status": "NOT_ALLOCATED",
+      "overlap_alias_implications": "RECONCILE_EACH_CHILD_AGAINST_EXISTING_CANONICAL_REQUIREMENTS_AND_ALIASES_BEFORE_ID_ALLOCATION",
+      "parent_unit_flags": {
+        "acceptance_unit": false,
+        "criticality_unit": false,
+        "implementation_unit": false,
+        "scope_coverage_unit": false
+      },
+      "proposed_new_child_ids": [],
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_remediation_action": "CONVERT_PARENT_TO_COMPOSITE_AND_MATERIALIZE_ONLY_RECONCILED_ATOMIC_CHILDREN"
+    },
+    {
+      "child_obligations": [
+        {
+          "candidate_key": "CHILD-01",
+          "obligation_text": "Business Blueprint tuân thủ các nguyên tắc sau.",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-02",
+          "obligation_text": "Named child obligations from the complete surrounding source range",
+          "stable_id": null
+        }
+      ],
+      "composite_parent_id": "BRD-UPDATE-01-R008",
+      "contract_preview": {
+        "boundary_failure_oracle": "Alias, overlap, or non-applicable children are resolved before coverage is calculated.",
+        "expected_evidence": "parent-child traceability, overlap decision, and child acceptance results",
+        "negative_oracle": "A missing or failed child cannot be masked by parent-level acceptance.",
+        "positive_oracle": "ALL_CHILDREN coverage is satisfied only when every reconciled atomic child has its own contract."
+      },
+      "coverage_rule": "ALL_CHILDREN",
+      "decision_required": false,
+      "existing_children": [],
+      "id_allocation_status": "NOT_ALLOCATED",
+      "overlap_alias_implications": "RECONCILE_EACH_CHILD_AGAINST_EXISTING_CANONICAL_REQUIREMENTS_AND_ALIASES_BEFORE_ID_ALLOCATION",
+      "parent_unit_flags": {
+        "acceptance_unit": false,
+        "criticality_unit": false,
+        "implementation_unit": false,
+        "scope_coverage_unit": false
+      },
+      "proposed_new_child_ids": [],
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_remediation_action": "CONVERT_PARENT_TO_COMPOSITE_AND_MATERIALIZE_ONLY_RECONCILED_ATOMIC_CHILDREN"
+    },
+    {
+      "child_obligations": [
+        {
+          "candidate_key": "CHILD-01",
+          "obligation_text": "Mọi tác vụ vận hành phải có contract cho phép tự động hóa có kiểm soát, permission và audit.",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-02",
+          "obligation_text": "Named child obligations from the complete surrounding source range",
+          "stable_id": null
+        }
+      ],
+      "composite_parent_id": "BRD-WS-17-R030",
+      "contract_preview": {
+        "boundary_failure_oracle": "Alias, overlap, or non-applicable children are resolved before coverage is calculated.",
+        "expected_evidence": "parent-child traceability, overlap decision, and child acceptance results",
+        "negative_oracle": "A missing or failed child cannot be masked by parent-level acceptance.",
+        "positive_oracle": "ALL_CHILDREN coverage is satisfied only when every reconciled atomic child has its own contract."
+      },
+      "coverage_rule": "ALL_CHILDREN",
+      "decision_required": false,
+      "existing_children": [],
+      "id_allocation_status": "NOT_ALLOCATED",
+      "overlap_alias_implications": "RECONCILE_EACH_CHILD_AGAINST_EXISTING_CANONICAL_REQUIREMENTS_AND_ALIASES_BEFORE_ID_ALLOCATION",
+      "parent_unit_flags": {
+        "acceptance_unit": false,
+        "criticality_unit": false,
+        "implementation_unit": false,
+        "scope_coverage_unit": false
+      },
+      "proposed_new_child_ids": [],
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_remediation_action": "CONVERT_PARENT_TO_COMPOSITE_AND_MATERIALIZE_ONLY_RECONCILED_ATOMIC_CHILDREN"
+    },
+    {
+      "child_obligations": [
+        {
+          "candidate_key": "CHILD-01",
+          "obligation_text": "Capability Registry là tài liệu nền tảng phục vụ Enterprise Architecture Governance",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-02",
+          "obligation_text": "Mọi Capability mới phải trải qua",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-03",
+          "obligation_text": "Architecture Review",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-04",
+          "obligation_text": "Approval",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-05",
+          "obligation_text": "Versioning",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-06",
+          "obligation_text": "Audit",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-07",
+          "obligation_text": "Traceability",
+          "stable_id": null
+        }
+      ],
+      "composite_parent_id": "CAP-P08",
+      "contract_preview": {
+        "boundary_failure_oracle": "Alias, overlap, or non-applicable children are resolved before coverage is calculated.",
+        "expected_evidence": "parent-child traceability, overlap decision, and child acceptance results",
+        "negative_oracle": "A missing or failed child cannot be masked by parent-level acceptance.",
+        "positive_oracle": "ALL_CHILDREN coverage is satisfied only when every reconciled atomic child has its own contract."
+      },
+      "coverage_rule": "ALL_CHILDREN",
+      "decision_required": false,
+      "existing_children": [],
+      "id_allocation_status": "NOT_ALLOCATED",
+      "overlap_alias_implications": "RECONCILE_EACH_CHILD_AGAINST_EXISTING_CANONICAL_REQUIREMENTS_AND_ALIASES_BEFORE_ID_ALLOCATION",
+      "parent_unit_flags": {
+        "acceptance_unit": false,
+        "criticality_unit": false,
+        "implementation_unit": false,
+        "scope_coverage_unit": false
+      },
+      "proposed_new_child_ids": [],
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_remediation_action": "CONVERT_PARENT_TO_COMPOSITE_AND_MATERIALIZE_ONLY_RECONCILED_ATOMIC_CHILDREN"
+    },
+    {
+      "child_obligations": [
+        {
+          "candidate_key": "CHILD-01",
+          "obligation_text": "Widget là Platform Capability",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-02",
+          "obligation_text": "Widget không thuộc Dashboard",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-03",
+          "obligation_text": "Một Widget có thể tái sử dụng trên nhiều Portal và Workspace",
+          "stable_id": null
+        }
+      ],
+      "composite_parent_id": "EP-13-003",
+      "contract_preview": {
+        "boundary_failure_oracle": "Alias, overlap, or non-applicable children are resolved before coverage is calculated.",
+        "expected_evidence": "parent-child traceability, overlap decision, and child acceptance results",
+        "negative_oracle": "A missing or failed child cannot be masked by parent-level acceptance.",
+        "positive_oracle": "ALL_CHILDREN coverage is satisfied only when every reconciled atomic child has its own contract."
+      },
+      "coverage_rule": "ALL_CHILDREN",
+      "decision_required": false,
+      "existing_children": [],
+      "id_allocation_status": "NOT_ALLOCATED",
+      "overlap_alias_implications": "RECONCILE_EACH_CHILD_AGAINST_EXISTING_CANONICAL_REQUIREMENTS_AND_ALIASES_BEFORE_ID_ALLOCATION",
+      "parent_unit_flags": {
+        "acceptance_unit": false,
+        "criticality_unit": false,
+        "implementation_unit": false,
+        "scope_coverage_unit": false
+      },
+      "proposed_new_child_ids": [],
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_remediation_action": "CONVERT_PARENT_TO_COMPOSITE_AND_MATERIALIZE_ONLY_RECONCILED_ATOMIC_CHILDREN"
+    },
+    {
+      "child_obligations": [
+        {
+          "candidate_key": "CHILD-01",
+          "obligation_text": "Alert Rule được cấu hình hoàn toàn",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-02",
+          "obligation_text": "Alert có thể Trigger Notification, Workflow hoặc Business Action",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-03",
+          "obligation_text": "Không Hard-code",
+          "stable_id": null
+        }
+      ],
+      "composite_parent_id": "EP-13-005",
+      "contract_preview": {
+        "boundary_failure_oracle": "Alias, overlap, or non-applicable children are resolved before coverage is calculated.",
+        "expected_evidence": "parent-child traceability, overlap decision, and child acceptance results",
+        "negative_oracle": "A missing or failed child cannot be masked by parent-level acceptance.",
+        "positive_oracle": "ALL_CHILDREN coverage is satisfied only when every reconciled atomic child has its own contract."
+      },
+      "coverage_rule": "ALL_CHILDREN",
+      "decision_required": false,
+      "existing_children": [],
+      "id_allocation_status": "NOT_ALLOCATED",
+      "overlap_alias_implications": "RECONCILE_EACH_CHILD_AGAINST_EXISTING_CANONICAL_REQUIREMENTS_AND_ALIASES_BEFORE_ID_ALLOCATION",
+      "parent_unit_flags": {
+        "acceptance_unit": false,
+        "criticality_unit": false,
+        "implementation_unit": false,
+        "scope_coverage_unit": false
+      },
+      "proposed_new_child_ids": [],
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_remediation_action": "CONVERT_PARENT_TO_COMPOSITE_AND_MATERIALIZE_ONLY_RECONCILED_ATOMIC_CHILDREN"
+    },
+    {
+      "child_obligations": [
+        {
+          "candidate_key": "CHILD-01",
+          "obligation_text": "Toàn bộ truy cập dữ liệu và chức năng đều phải được đánh giá động dựa trên",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-02",
+          "obligation_text": "Identity",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-03",
+          "obligation_text": "Role",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-04",
+          "obligation_text": "Permission",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-05",
+          "obligation_text": "Data Scope",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-06",
+          "obligation_text": "Organization Relationship",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-07",
+          "obligation_text": "Support Policy",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-08",
+          "obligation_text": "Customer Consent",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-09",
+          "obligation_text": "Data Classification",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-10",
+          "obligation_text": "Security Policy",
+          "stable_id": null
+        }
+      ],
+      "composite_parent_id": "EP-16-010",
+      "contract_preview": {
+        "boundary_failure_oracle": "Alias, overlap, or non-applicable children are resolved before coverage is calculated.",
+        "expected_evidence": "parent-child traceability, overlap decision, and child acceptance results",
+        "negative_oracle": "A missing or failed child cannot be masked by parent-level acceptance.",
+        "positive_oracle": "ALL_CHILDREN coverage is satisfied only when every reconciled atomic child has its own contract."
+      },
+      "coverage_rule": "ALL_CHILDREN",
+      "decision_required": false,
+      "existing_children": [],
+      "id_allocation_status": "NOT_ALLOCATED",
+      "overlap_alias_implications": "RECONCILE_EACH_CHILD_AGAINST_EXISTING_CANONICAL_REQUIREMENTS_AND_ALIASES_BEFORE_ID_ALLOCATION",
+      "parent_unit_flags": {
+        "acceptance_unit": false,
+        "criticality_unit": false,
+        "implementation_unit": false,
+        "scope_coverage_unit": false
+      },
+      "proposed_new_child_ids": [],
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_remediation_action": "CONVERT_PARENT_TO_COMPOSITE_AND_MATERIALIZE_ONLY_RECONCILED_ATOMIC_CHILDREN"
+    },
+    {
+      "child_obligations": [
+        {
+          "candidate_key": "CHILD-01",
+          "obligation_text": "Business Event là bất biến",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-02",
+          "obligation_text": "Sau khi Publish không được sửa",
+          "stable_id": null
+        }
+      ],
+      "composite_parent_id": "EVT-P01",
+      "contract_preview": {
+        "boundary_failure_oracle": "Alias, overlap, or non-applicable children are resolved before coverage is calculated.",
+        "expected_evidence": "parent-child traceability, overlap decision, and child acceptance results",
+        "negative_oracle": "A missing or failed child cannot be masked by parent-level acceptance.",
+        "positive_oracle": "ALL_CHILDREN coverage is satisfied only when every reconciled atomic child has its own contract."
+      },
+      "coverage_rule": "ALL_CHILDREN",
+      "decision_required": false,
+      "existing_children": [],
+      "id_allocation_status": "NOT_ALLOCATED",
+      "overlap_alias_implications": "RECONCILE_EACH_CHILD_AGAINST_EXISTING_CANONICAL_REQUIREMENTS_AND_ALIASES_BEFORE_ID_ALLOCATION",
+      "parent_unit_flags": {
+        "acceptance_unit": false,
+        "criticality_unit": false,
+        "implementation_unit": false,
+        "scope_coverage_unit": false
+      },
+      "proposed_new_child_ids": [],
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_remediation_action": "CONVERT_PARENT_TO_COMPOSITE_AND_MATERIALIZE_ONLY_RECONCILED_ATOMIC_CHILDREN"
+    },
+    {
+      "child_obligations": [
+        {
+          "candidate_key": "CHILD-01",
+          "obligation_text": "Business Event Registry là tài liệu nền tảng phục vụ Enterprise Event Governance",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-02",
+          "obligation_text": "Mọi Event mới phải được",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-03",
+          "obligation_text": "Architecture Review",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-04",
+          "obligation_text": "Approval",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-05",
+          "obligation_text": "Versioning",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-06",
+          "obligation_text": "Audit",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-07",
+          "obligation_text": "Traceability",
+          "stable_id": null
+        }
+      ],
+      "composite_parent_id": "EVT-P08",
+      "contract_preview": {
+        "boundary_failure_oracle": "Alias, overlap, or non-applicable children are resolved before coverage is calculated.",
+        "expected_evidence": "parent-child traceability, overlap decision, and child acceptance results",
+        "negative_oracle": "A missing or failed child cannot be masked by parent-level acceptance.",
+        "positive_oracle": "ALL_CHILDREN coverage is satisfied only when every reconciled atomic child has its own contract."
+      },
+      "coverage_rule": "ALL_CHILDREN",
+      "decision_required": false,
+      "existing_children": [],
+      "id_allocation_status": "NOT_ALLOCATED",
+      "overlap_alias_implications": "RECONCILE_EACH_CHILD_AGAINST_EXISTING_CANONICAL_REQUIREMENTS_AND_ALIASES_BEFORE_ID_ALLOCATION",
+      "parent_unit_flags": {
+        "acceptance_unit": false,
+        "criticality_unit": false,
+        "implementation_unit": false,
+        "scope_coverage_unit": false
+      },
+      "proposed_new_child_ids": [],
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_remediation_action": "CONVERT_PARENT_TO_COMPOSITE_AND_MATERIALIZE_ONLY_RECONCILED_ATOMIC_CHILDREN"
+    },
+    {
+      "child_obligations": [
+        {
+          "candidate_key": "CHILD-01",
+          "obligation_text": "Enterprise Policy Registry là tài liệu nền tảng phục vụ Enterprise Policy Governance",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-02",
+          "obligation_text": "Mọi Policy mới phải trải qua",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-03",
+          "obligation_text": "Architecture Review",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-04",
+          "obligation_text": "Approval",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-05",
+          "obligation_text": "Versioning",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-06",
+          "obligation_text": "Audit",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-07",
+          "obligation_text": "Traceability",
+          "stable_id": null
+        }
+      ],
+      "composite_parent_id": "POL-P10",
+      "contract_preview": {
+        "boundary_failure_oracle": "Alias, overlap, or non-applicable children are resolved before coverage is calculated.",
+        "expected_evidence": "parent-child traceability, overlap decision, and child acceptance results",
+        "negative_oracle": "A missing or failed child cannot be masked by parent-level acceptance.",
+        "positive_oracle": "ALL_CHILDREN coverage is satisfied only when every reconciled atomic child has its own contract."
+      },
+      "coverage_rule": "ALL_CHILDREN",
+      "decision_required": false,
+      "existing_children": [],
+      "id_allocation_status": "NOT_ALLOCATED",
+      "overlap_alias_implications": "RECONCILE_EACH_CHILD_AGAINST_EXISTING_CANONICAL_REQUIREMENTS_AND_ALIASES_BEFORE_ID_ALLOCATION",
+      "parent_unit_flags": {
+        "acceptance_unit": false,
+        "criticality_unit": false,
+        "implementation_unit": false,
+        "scope_coverage_unit": false
+      },
+      "proposed_new_child_ids": [],
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_remediation_action": "CONVERT_PARENT_TO_COMPOSITE_AND_MATERIALIZE_ONLY_RECONCILED_ATOMIC_CHILDREN"
+    },
+    {
+      "child_obligations": [
+        {
+          "candidate_key": "CHILD-01",
+          "obligation_text": "Customer-facing provider, network, or brand information may be shown as read-only disclosure when required by Catalog, legal, or product definition; internal supplier ID, procurement source, cost or margin, routing priority, supplier health, connector identity, and allocation details must never be exposed or influence allocation, and missing mandatory disclosure data must fail closed.",
+          "stable_id": null
+        },
+        {
+          "candidate_key": "CHILD-02",
+          "obligation_text": "Named child obligations from the complete surrounding source range",
+          "stable_id": null
+        }
+      ],
+      "composite_parent_id": "UXF-05-R054",
+      "contract_preview": {
+        "boundary_failure_oracle": "Alias, overlap, or non-applicable children are resolved before coverage is calculated.",
+        "expected_evidence": "parent-child traceability, overlap decision, and child acceptance results",
+        "negative_oracle": "A missing or failed child cannot be masked by parent-level acceptance.",
+        "positive_oracle": "ALL_CHILDREN coverage is satisfied only when every reconciled atomic child has its own contract."
+      },
+      "coverage_rule": "ALL_CHILDREN",
+      "decision_required": false,
+      "existing_children": [],
+      "id_allocation_status": "NOT_ALLOCATED",
+      "overlap_alias_implications": "RECONCILE_EACH_CHILD_AGAINST_EXISTING_CANONICAL_REQUIREMENTS_AND_ALIASES_BEFORE_ID_ALLOCATION",
+      "parent_unit_flags": {
+        "acceptance_unit": false,
+        "criticality_unit": false,
+        "implementation_unit": false,
+        "scope_coverage_unit": false
+      },
+      "proposed_new_child_ids": [],
+      "source_application_status": "NOT_YET_APPLIED",
+      "source_remediation_action": "CONVERT_PARENT_TO_COMPOSITE_AND_MATERIALIZE_ONLY_RECONCILED_ATOMIC_CHILDREN"
+    }
+  ],
+  "status": "CANDIDATE"
+}

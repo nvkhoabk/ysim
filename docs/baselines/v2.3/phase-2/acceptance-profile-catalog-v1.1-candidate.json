@@ -1,0 +1,3883 @@
+{
+  "$schema": "./schemas/acceptance-profile-catalog.schema.json",
+  "artifact": "V23-P2C-ACCEPTANCE-PROFILE-CATALOG-1.1-CANDIDATE",
+  "candidate_addition_count": 3,
+  "catalog_version": "1.1.0",
+  "model": "HYBRID_ACCEPTANCE_PROFILES_AND_INLINE_CONTRACTS",
+  "profile_count": 31,
+  "profiles": [
+    {
+      "applicability_rules": [
+        "The normative statement and full source section express this profile's semantic intent directly.",
+        "Every required binding is extracted verbatim or normalized deterministically from source/approved decisions.",
+        "Rendered positive, negative, and edge oracles verify the same atomic obligation without solution inference."
+      ],
+      "counterexamples": [
+        {
+          "example_id": "ACP-ENTITY_INDEPENDENCE-COUNTEREXAMPLE-1",
+          "statement": "A complex payment and allocation workflow with reconciliation and recovery branches.",
+          "why_invalid": "The workflow combines domain-specific states and failure semantics and must route to INLINE_CONTRACT_REQUIRED."
+        }
+      ],
+      "criticality_compatibility": [
+        "CRITICAL",
+        "HIGH",
+        "NORMAL"
+      ],
+      "deterministic_validation_rules": [
+        "All required bindings are present, typed, non-empty, source-grounded, and used by at least one oracle.",
+        "No undeclared binding token remains after rendering.",
+        "Rendered oracles contain no generic or tautological acceptance phrase.",
+        "Requirement type and criticality are compatible with this profile.",
+        "The semantic matcher, binding extractor, and rendered-oracle audit all pass independently."
+      ],
+      "evidence_requirements": [
+        "both stable identities",
+        "ownership and reference resolution",
+        "before/after lifecycle states"
+      ],
+      "failure_semantics": "Reject conflated identity or implicit lifecycle coupling.",
+      "matcher_contract": {
+        "keyword_only_match_forbidden": true,
+        "requires_structural_binding_extraction": true,
+        "requires_type_compatibility": true,
+        "semantic_terms": [
+          "độc lập",
+          "independent"
+        ]
+      },
+      "observable_verification_contract": "identity, owner/reference, and lifecycle comparisons for both bound entities",
+      "optional_bindings": [
+        {
+          "data_type": "string_list",
+          "description": "Approved decisions that constrain the rendered contract.",
+          "name": "approved_decision_refs",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Full source-section heading used for semantic review.",
+          "name": "source_context_heading",
+          "source_required": true
+        }
+      ],
+      "oracle_templates": {
+        "edge_boundary": "For {entity_a}, given one entity changes lifecycle state, when the relationship is observed, then the other entity changes only through an explicit independently authorized transition.",
+        "negative": "Given a candidate that merges {entity_a} with {entity_b}, when entity integrity is validated, then the conflation is rejected with the violated independence dimension identified.",
+        "positive": "Given {entity_a} and {entity_b}, when identity, ownership/reference, and lifecycle evidence is compared, then each entity remains independently identifiable and governed across {independence_dimensions}."
+      },
+      "profile_id": "ACP-ENTITY_INDEPENDENCE",
+      "prohibited_uses": [
+        "Keyword-only classification without structural and binding validation.",
+        "Complex payment, pricing, promotion, procurement, allocation, fulfillment, refund, fraud/risk, or financial-reconciliation workflow.",
+        "Any use requiring an invented threshold, state, role, actor, failure mode, or technical implementation.",
+        "Any binding that broadens or drops a qualifier, applicability scope, or failure semantic."
+      ],
+      "required_bindings": [
+        {
+          "data_type": "identifier",
+          "description": "Concrete entity a extracted from source or an approved decision.",
+          "name": "entity_a",
+          "source_required": true
+        },
+        {
+          "data_type": "identifier",
+          "description": "Concrete entity b extracted from source or an approved decision.",
+          "name": "entity_b",
+          "source_required": true
+        },
+        {
+          "data_type": "string_list",
+          "description": "Concrete independence dimensions extracted from source or an approved decision.",
+          "name": "independence_dimensions",
+          "source_required": true
+        }
+      ],
+      "semantic_intent": "Verify that named entities retain distinct identity, ownership/reference, and lifecycle boundaries.",
+      "supported_requirement_types": [
+        "DATA_REQUIREMENT",
+        "INTEGRATION_REQUIREMENT",
+        "BUSINESS_RULE"
+      ],
+      "title": "Independent business entities",
+      "valid_examples": [
+        {
+          "bindings": {
+            "entity_a": "bound_entity_a_example_1",
+            "entity_b": "bound_entity_b_example_1",
+            "independence_dimensions": [
+              "independence_dimensions_A_example_1",
+              "independence_dimensions_B_example_1"
+            ]
+          },
+          "example_id": "ACP-ENTITY_INDEPENDENCE-EXAMPLE_1",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        },
+        {
+          "bindings": {
+            "entity_a": "bound_entity_a_example_2",
+            "entity_b": "bound_entity_b_example_2",
+            "independence_dimensions": [
+              "independence_dimensions_A_example_2",
+              "independence_dimensions_B_example_2"
+            ]
+          },
+          "example_id": "ACP-ENTITY_INDEPENDENCE-EXAMPLE_2",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        }
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "applicability_rules": [
+        "The normative statement and full source section express this profile's semantic intent directly.",
+        "Every required binding is extracted verbatim or normalized deterministically from source/approved decisions.",
+        "Rendered positive, negative, and edge oracles verify the same atomic obligation without solution inference."
+      ],
+      "counterexamples": [
+        {
+          "example_id": "ACP-ENUM_REFERENCE_INTEGRITY-COUNTEREXAMPLE-1",
+          "statement": "A complex payment and allocation workflow with reconciliation and recovery branches.",
+          "why_invalid": "The workflow combines domain-specific states and failure semantics and must route to INLINE_CONTRACT_REQUIRED."
+        }
+      ],
+      "criticality_compatibility": [
+        "CRITICAL",
+        "HIGH",
+        "NORMAL"
+      ],
+      "deterministic_validation_rules": [
+        "All required bindings are present, typed, non-empty, source-grounded, and used by at least one oracle.",
+        "No undeclared binding token remains after rendering.",
+        "Rendered oracles contain no generic or tautological acceptance phrase.",
+        "Requirement type and criticality are compatible with this profile.",
+        "The semantic matcher, binding extractor, and rendered-oracle audit all pass independently."
+      ],
+      "evidence_requirements": [
+        "submitted discriminator and fields",
+        "field validation results",
+        "canonical reference statuses",
+        "persistence outcome"
+      ],
+      "failure_semantics": "Reject the complete inconsistent record; do not persist partial reference state.",
+      "matcher_contract": {
+        "keyword_only_match_forbidden": true,
+        "requires_structural_binding_extraction": true,
+        "requires_type_compatibility": true,
+        "semantic_terms": [
+          "enum",
+          "publisher",
+          "subscriber",
+          "canonical",
+          "registry id"
+        ]
+      },
+      "observable_verification_contract": "accepted/rejected field values, dependent-field validation, and canonical reference resolution",
+      "optional_bindings": [
+        {
+          "data_type": "string_list",
+          "description": "Approved decisions that constrain the rendered contract.",
+          "name": "approved_decision_refs",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Full source-section heading used for semantic review.",
+          "name": "source_context_heading",
+          "source_required": true
+        }
+      ],
+      "oracle_templates": {
+        "edge_boundary": "Given references in {prohibited_reference_states}, when canonical resolution runs, then every prohibited or dangling reference is rejected.",
+        "negative": "Given an unsupported {enum_field} value or inconsistent {dependent_fields}, when validation runs, then the record is rejected and the invalid field is identified.",
+        "positive": "Given {enum_field} and {dependent_fields}, when a record is validated, then only {allowed_values} and role-consistent fields with references resolving in {reference_registry} are accepted."
+      },
+      "profile_id": "ACP-ENUM_REFERENCE_INTEGRITY",
+      "prohibited_uses": [
+        "Keyword-only classification without structural and binding validation.",
+        "Complex payment, pricing, promotion, procurement, allocation, fulfillment, refund, fraud/risk, or financial-reconciliation workflow.",
+        "Any use requiring an invented threshold, state, role, actor, failure mode, or technical implementation.",
+        "Any binding that broadens or drops a qualifier, applicability scope, or failure semantic."
+      ],
+      "required_bindings": [
+        {
+          "data_type": "field_name",
+          "description": "Concrete enum field extracted from source or an approved decision.",
+          "name": "enum_field",
+          "source_required": true
+        },
+        {
+          "data_type": "string_list",
+          "description": "Concrete allowed values extracted from source or an approved decision.",
+          "name": "allowed_values",
+          "source_required": true
+        },
+        {
+          "data_type": "string_list",
+          "description": "Concrete dependent fields extracted from source or an approved decision.",
+          "name": "dependent_fields",
+          "source_required": true
+        },
+        {
+          "data_type": "identifier",
+          "description": "Concrete reference registry extracted from source or an approved decision.",
+          "name": "reference_registry",
+          "source_required": true
+        },
+        {
+          "data_type": "string_list",
+          "description": "Concrete prohibited reference states extracted from source or an approved decision.",
+          "name": "prohibited_reference_states",
+          "source_required": true
+        }
+      ],
+      "semantic_intent": "Verify an enumerated discriminator, dependent-field consistency, and canonical registry references.",
+      "supported_requirement_types": [
+        "DATA_REQUIREMENT",
+        "BUSINESS_RULE"
+      ],
+      "title": "Enum and canonical-reference integrity",
+      "valid_examples": [
+        {
+          "bindings": {
+            "allowed_values": [
+              "allowed_values_A_example_1",
+              "allowed_values_B_example_1"
+            ],
+            "dependent_fields": [
+              "dependent_fields_A_example_1",
+              "dependent_fields_B_example_1"
+            ],
+            "enum_field": "bound_enum_field_example_1",
+            "prohibited_reference_states": [
+              "prohibited_reference_states_A_example_1",
+              "prohibited_reference_states_B_example_1"
+            ],
+            "reference_registry": "bound_reference_registry_example_1"
+          },
+          "example_id": "ACP-ENUM_REFERENCE_INTEGRITY-EXAMPLE_1",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        },
+        {
+          "bindings": {
+            "allowed_values": [
+              "allowed_values_A_example_2",
+              "allowed_values_B_example_2"
+            ],
+            "dependent_fields": [
+              "dependent_fields_A_example_2",
+              "dependent_fields_B_example_2"
+            ],
+            "enum_field": "bound_enum_field_example_2",
+            "prohibited_reference_states": [
+              "prohibited_reference_states_A_example_2",
+              "prohibited_reference_states_B_example_2"
+            ],
+            "reference_registry": "bound_reference_registry_example_2"
+          },
+          "example_id": "ACP-ENUM_REFERENCE_INTEGRITY-EXAMPLE_2",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        }
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "applicability_rules": [
+        "The normative statement and full source section express this profile's semantic intent directly.",
+        "Every required binding is extracted verbatim or normalized deterministically from source/approved decisions.",
+        "Rendered positive, negative, and edge oracles verify the same atomic obligation without solution inference."
+      ],
+      "counterexamples": [
+        {
+          "example_id": "ACP-REQUIRED_CAPABILITY_SET-COUNTEREXAMPLE-1",
+          "statement": "A complex payment and allocation workflow with reconciliation and recovery branches.",
+          "why_invalid": "The workflow combines domain-specific states and failure semantics and must route to INLINE_CONTRACT_REQUIRED."
+        }
+      ],
+      "criticality_compatibility": [
+        "CRITICAL",
+        "HIGH",
+        "NORMAL"
+      ],
+      "deterministic_validation_rules": [
+        "All required bindings are present, typed, non-empty, source-grounded, and used by at least one oracle.",
+        "No undeclared binding token remains after rendering.",
+        "Rendered oracles contain no generic or tautological acceptance phrase.",
+        "Requirement type and criticality are compatible with this profile.",
+        "The semantic matcher, binding extractor, and rendered-oracle audit all pass independently."
+      ],
+      "evidence_requirements": [
+        "subject identity",
+        "enumerated capability inventory",
+        "per-capability observable outcome"
+      ],
+      "failure_semantics": "Report the exact missing bound member; no aggregate pass from partial coverage.",
+      "matcher_contract": {
+        "keyword_only_match_forbidden": true,
+        "requires_structural_binding_extraction": true,
+        "requires_type_compatibility": true,
+        "semantic_terms": [
+          "hỗ trợ",
+          "supports",
+          "bao gồm",
+          "include"
+        ]
+      },
+      "observable_verification_contract": "capability inventory and an observable outcome for each bound capability",
+      "optional_bindings": [
+        {
+          "data_type": "string_list",
+          "description": "Approved decisions that constrain the rendered contract.",
+          "name": "approved_decision_refs",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Full source-section heading used for semantic review.",
+          "name": "source_context_heading",
+          "source_required": true
+        }
+      ],
+      "oracle_templates": {
+        "edge_boundary": "Given a capability outside {required_capabilities}, when conformance is evaluated, then it is not used as evidence that a missing bound capability exists.",
+        "negative": "For {capability_subject}, given one bound capability is absent or attributed to another subject, when completeness is evaluated, then the missing or misattributed member is reported.",
+        "positive": "Given {capability_subject}, when its capability inventory is inspected, then every member of {required_capabilities} is independently available and attributable to that subject."
+      },
+      "profile_id": "ACP-REQUIRED_CAPABILITY_SET",
+      "prohibited_uses": [
+        "Keyword-only classification without structural and binding validation.",
+        "Complex payment, pricing, promotion, procurement, allocation, fulfillment, refund, fraud/risk, or financial-reconciliation workflow.",
+        "Any use requiring an invented threshold, state, role, actor, failure mode, or technical implementation.",
+        "Any binding that broadens or drops a qualifier, applicability scope, or failure semantic."
+      ],
+      "required_bindings": [
+        {
+          "data_type": "identifier",
+          "description": "Concrete capability subject extracted from source or an approved decision.",
+          "name": "capability_subject",
+          "source_required": true
+        },
+        {
+          "data_type": "string_list",
+          "description": "Concrete required capabilities extracted from source or an approved decision.",
+          "name": "required_capabilities",
+          "source_required": true
+        }
+      ],
+      "semantic_intent": "Verify that a named subject exposes every explicitly enumerated required capability without inventing additional capabilities.",
+      "supported_requirement_types": [
+        "BUSINESS_REQUIREMENT",
+        "BUSINESS_DECISION",
+        "UX_REQUIREMENT",
+        "OPERATIONAL_REQUIREMENT"
+      ],
+      "title": "Required capability set",
+      "valid_examples": [
+        {
+          "bindings": {
+            "capability_subject": "bound_capability_subject_example_1",
+            "required_capabilities": [
+              "required_capabilities_A_example_1",
+              "required_capabilities_B_example_1"
+            ]
+          },
+          "example_id": "ACP-REQUIRED_CAPABILITY_SET-EXAMPLE_1",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        },
+        {
+          "bindings": {
+            "capability_subject": "bound_capability_subject_example_2",
+            "required_capabilities": [
+              "required_capabilities_A_example_2",
+              "required_capabilities_B_example_2"
+            ]
+          },
+          "example_id": "ACP-REQUIRED_CAPABILITY_SET-EXAMPLE_2",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        }
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "applicability_rules": [
+        "The normative statement and full source section express this profile's semantic intent directly.",
+        "Every required binding is extracted verbatim or normalized deterministically from source/approved decisions.",
+        "Rendered positive, negative, and edge oracles verify the same atomic obligation without solution inference."
+      ],
+      "counterexamples": [
+        {
+          "example_id": "ACP-POLICY_SCOPE_ENFORCEMENT-COUNTEREXAMPLE-1",
+          "statement": "A complex payment and allocation workflow with reconciliation and recovery branches.",
+          "why_invalid": "The workflow combines domain-specific states and failure semantics and must route to INLINE_CONTRACT_REQUIRED."
+        }
+      ],
+      "criticality_compatibility": [
+        "CRITICAL",
+        "HIGH",
+        "NORMAL"
+      ],
+      "deterministic_validation_rules": [
+        "All required bindings are present, typed, non-empty, source-grounded, and used by at least one oracle.",
+        "No undeclared binding token remains after rendering.",
+        "Rendered oracles contain no generic or tautological acceptance phrase.",
+        "Requirement type and criticality are compatible with this profile.",
+        "The semantic matcher, binding extractor, and rendered-oracle audit all pass independently."
+      ],
+      "evidence_requirements": [
+        "scope-specific policy values",
+        "principal-to-scope bindings",
+        "effective-policy trace",
+        "decision and audit evidence"
+      ],
+      "failure_semantics": "Fail closed when a mandatory applicable scope cannot be resolved.",
+      "matcher_contract": {
+        "keyword_only_match_forbidden": true,
+        "requires_structural_binding_extraction": true,
+        "requires_type_compatibility": true,
+        "semantic_terms": [
+          "platform",
+          "organization",
+          "role",
+          "user",
+          "scope"
+        ]
+      },
+      "observable_verification_contract": "configured policies, effective scope resolution, and allow/challenge/deny outcome",
+      "optional_bindings": [
+        {
+          "data_type": "string_list",
+          "description": "Approved decisions that constrain the rendered contract.",
+          "name": "approved_decision_refs",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Full source-section heading used for semantic review.",
+          "name": "source_context_heading",
+          "source_required": true
+        }
+      ],
+      "oracle_templates": {
+        "edge_boundary": "Given overlapping policies across {policy_scopes}, when policy resolution runs, then contributing scopes and the effective result are observable without silently dropping a scope.",
+        "negative": "Given a principal outside a required policy condition, when {governed_action} is attempted, then the action is denied or challenged by the effective bound policy.",
+        "positive": "Given {policy_name} configured at each of {policy_scopes}, when {governed_action} is evaluated, then the effective policy identifies and enforces every applicable bound scope."
+      },
+      "profile_id": "ACP-POLICY_SCOPE_ENFORCEMENT",
+      "prohibited_uses": [
+        "Keyword-only classification without structural and binding validation.",
+        "Complex payment, pricing, promotion, procurement, allocation, fulfillment, refund, fraud/risk, or financial-reconciliation workflow.",
+        "Any use requiring an invented threshold, state, role, actor, failure mode, or technical implementation.",
+        "Any binding that broadens or drops a qualifier, applicability scope, or failure semantic."
+      ],
+      "required_bindings": [
+        {
+          "data_type": "identifier",
+          "description": "Concrete policy name extracted from source or an approved decision.",
+          "name": "policy_name",
+          "source_required": true
+        },
+        {
+          "data_type": "string_list",
+          "description": "Concrete policy scopes extracted from source or an approved decision.",
+          "name": "policy_scopes",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Concrete governed action extracted from source or an approved decision.",
+          "name": "governed_action",
+          "source_required": true
+        }
+      ],
+      "semantic_intent": "Verify independent policy configuration and enforcement at explicitly named scopes.",
+      "supported_requirement_types": [
+        "SECURITY_REQUIREMENT",
+        "BUSINESS_RULE",
+        "BUSINESS_DECISION"
+      ],
+      "title": "Policy scope enforcement",
+      "valid_examples": [
+        {
+          "bindings": {
+            "governed_action": "bound_governed_action_example_1",
+            "policy_name": "bound_policy_name_example_1",
+            "policy_scopes": [
+              "policy_scopes_A_example_1",
+              "policy_scopes_B_example_1"
+            ]
+          },
+          "example_id": "ACP-POLICY_SCOPE_ENFORCEMENT-EXAMPLE_1",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        },
+        {
+          "bindings": {
+            "governed_action": "bound_governed_action_example_2",
+            "policy_name": "bound_policy_name_example_2",
+            "policy_scopes": [
+              "policy_scopes_A_example_2",
+              "policy_scopes_B_example_2"
+            ]
+          },
+          "example_id": "ACP-POLICY_SCOPE_ENFORCEMENT-EXAMPLE_2",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        }
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "applicability_rules": [
+        "The normative statement and full source section express this profile's semantic intent directly.",
+        "Every required binding is extracted verbatim or normalized deterministically from source/approved decisions.",
+        "Rendered positive, negative, and edge oracles verify the same atomic obligation without solution inference."
+      ],
+      "counterexamples": [
+        {
+          "example_id": "ACP-POLICY_PRECEDENCE-COUNTEREXAMPLE-1",
+          "statement": "A complex payment and allocation workflow with reconciliation and recovery branches.",
+          "why_invalid": "The workflow combines domain-specific states and failure semantics and must route to INLINE_CONTRACT_REQUIRED."
+        }
+      ],
+      "criticality_compatibility": [
+        "CRITICAL",
+        "HIGH",
+        "NORMAL"
+      ],
+      "deterministic_validation_rules": [
+        "All required bindings are present, typed, non-empty, source-grounded, and used by at least one oracle.",
+        "No undeclared binding token remains after rendering.",
+        "Rendered oracles contain no generic or tautological acceptance phrase.",
+        "Requirement type and criticality are compatible with this profile.",
+        "The semantic matcher, binding extractor, and rendered-oracle audit all pass independently."
+      ],
+      "evidence_requirements": [
+        "all applicable policy versions",
+        "precedence inputs",
+        "selected policy and reason",
+        "resulting decision"
+      ],
+      "failure_semantics": "Block an ambiguous policy decision rather than inventing precedence.",
+      "matcher_contract": {
+        "keyword_only_match_forbidden": true,
+        "requires_structural_binding_extraction": true,
+        "requires_type_compatibility": true,
+        "semantic_terms": [
+          "precedence",
+          "ưu tiên",
+          "override",
+          "ghi đè"
+        ]
+      },
+      "observable_verification_contract": "applicable policy set, selected policy, precedence reason, and decision",
+      "optional_bindings": [
+        {
+          "data_type": "string_list",
+          "description": "Approved decisions that constrain the rendered contract.",
+          "name": "approved_decision_refs",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Full source-section heading used for semantic review.",
+          "name": "source_context_heading",
+          "source_required": true
+        }
+      ],
+      "oracle_templates": {
+        "edge_boundary": "For {policy_set}, given equal-precedence or incomplete policy metadata, when resolution runs, then no silent winner is selected and the conflict is surfaced deterministically.",
+        "negative": "For {policy_set}, given a lower-precedence policy conflicts with a higher-precedence policy, when resolution runs, then the lower-precedence outcome does not take effect.",
+        "positive": "Given {policy_set} applies to {decision_subject}, when precedence is resolved, then the selected policy follows {precedence_order} and the selection reason is recorded."
+      },
+      "profile_id": "ACP-POLICY_PRECEDENCE",
+      "prohibited_uses": [
+        "Keyword-only classification without structural and binding validation.",
+        "Complex payment, pricing, promotion, procurement, allocation, fulfillment, refund, fraud/risk, or financial-reconciliation workflow.",
+        "Any use requiring an invented threshold, state, role, actor, failure mode, or technical implementation.",
+        "Any binding that broadens or drops a qualifier, applicability scope, or failure semantic."
+      ],
+      "required_bindings": [
+        {
+          "data_type": "string_list",
+          "description": "Concrete policy set extracted from source or an approved decision.",
+          "name": "policy_set",
+          "source_required": true
+        },
+        {
+          "data_type": "string_list",
+          "description": "Concrete precedence order extracted from source or an approved decision.",
+          "name": "precedence_order",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Concrete decision subject extracted from source or an approved decision.",
+          "name": "decision_subject",
+          "source_required": true
+        }
+      ],
+      "semantic_intent": "Verify deterministic resolution when two or more named policies apply.",
+      "supported_requirement_types": [
+        "BUSINESS_RULE",
+        "SECURITY_REQUIREMENT",
+        "PRIVACY_REQUIREMENT"
+      ],
+      "title": "Policy precedence",
+      "valid_examples": [
+        {
+          "bindings": {
+            "decision_subject": "bound_decision_subject_example_1",
+            "policy_set": [
+              "policy_set_A_example_1",
+              "policy_set_B_example_1"
+            ],
+            "precedence_order": [
+              "precedence_order_A_example_1",
+              "precedence_order_B_example_1"
+            ]
+          },
+          "example_id": "ACP-POLICY_PRECEDENCE-EXAMPLE_1",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        },
+        {
+          "bindings": {
+            "decision_subject": "bound_decision_subject_example_2",
+            "policy_set": [
+              "policy_set_A_example_2",
+              "policy_set_B_example_2"
+            ],
+            "precedence_order": [
+              "precedence_order_A_example_2",
+              "precedence_order_B_example_2"
+            ]
+          },
+          "example_id": "ACP-POLICY_PRECEDENCE-EXAMPLE_2",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        }
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "applicability_rules": [
+        "The normative statement and full source section express this profile's semantic intent directly.",
+        "Every required binding is extracted verbatim or normalized deterministically from source/approved decisions.",
+        "Rendered positive, negative, and edge oracles verify the same atomic obligation without solution inference."
+      ],
+      "counterexamples": [
+        {
+          "example_id": "ACP-STATE_TRANSITION-COUNTEREXAMPLE-1",
+          "statement": "A complex payment and allocation workflow with reconciliation and recovery branches.",
+          "why_invalid": "The workflow combines domain-specific states and failure semantics and must route to INLINE_CONTRACT_REQUIRED."
+        }
+      ],
+      "criticality_compatibility": [
+        "CRITICAL",
+        "HIGH",
+        "NORMAL"
+      ],
+      "deterministic_validation_rules": [
+        "All required bindings are present, typed, non-empty, source-grounded, and used by at least one oracle.",
+        "No undeclared binding token remains after rendering.",
+        "Rendered oracles contain no generic or tautological acceptance phrase.",
+        "Requirement type and criticality are compatible with this profile.",
+        "The semantic matcher, binding extractor, and rendered-oracle audit all pass independently."
+      ],
+      "evidence_requirements": [
+        "subject identity",
+        "before/after state",
+        "trigger and prerequisite values",
+        "transition decision and reason"
+      ],
+      "failure_semantics": "Reject prohibited transitions without partial state mutation.",
+      "matcher_contract": {
+        "keyword_only_match_forbidden": true,
+        "requires_structural_binding_extraction": true,
+        "requires_type_compatibility": true,
+        "semantic_terms": [
+          "transition",
+          "chuyển",
+          "trạng thái",
+          "state"
+        ]
+      },
+      "observable_verification_contract": "before state, trigger, transition decision, after state, and reason",
+      "optional_bindings": [
+        {
+          "data_type": "string_list",
+          "description": "Approved decisions that constrain the rendered contract.",
+          "name": "approved_decision_refs",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Full source-section heading used for semantic review.",
+          "name": "source_context_heading",
+          "source_required": true
+        }
+      ],
+      "oracle_templates": {
+        "edge_boundary": "For {state_subject}, given a missing trigger prerequisite or terminal state, when transition is requested, then the request produces a deterministic rejection with unchanged state.",
+        "negative": "Given {state_subject} outside {source_states}, when {trigger} occurs, then no prohibited target transition is recorded.",
+        "positive": "Given {state_subject} in {source_states}, when {trigger} occurs, then only the bound target in {target_states} is reached and the transition is observable."
+      },
+      "profile_id": "ACP-STATE_TRANSITION",
+      "prohibited_uses": [
+        "Keyword-only classification without structural and binding validation.",
+        "Complex payment, pricing, promotion, procurement, allocation, fulfillment, refund, fraud/risk, or financial-reconciliation workflow.",
+        "Any use requiring an invented threshold, state, role, actor, failure mode, or technical implementation.",
+        "Any binding that broadens or drops a qualifier, applicability scope, or failure semantic."
+      ],
+      "required_bindings": [
+        {
+          "data_type": "identifier",
+          "description": "Concrete state subject extracted from source or an approved decision.",
+          "name": "state_subject",
+          "source_required": true
+        },
+        {
+          "data_type": "string_list",
+          "description": "Concrete source states extracted from source or an approved decision.",
+          "name": "source_states",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Concrete trigger extracted from source or an approved decision.",
+          "name": "trigger",
+          "source_required": true
+        },
+        {
+          "data_type": "string_list",
+          "description": "Concrete target states extracted from source or an approved decision.",
+          "name": "target_states",
+          "source_required": true
+        }
+      ],
+      "semantic_intent": "Verify an explicitly named source state, trigger, target state, and prohibited transition.",
+      "supported_requirement_types": [
+        "BUSINESS_RULE",
+        "BUSINESS_REQUIREMENT",
+        "OPERATIONAL_REQUIREMENT"
+      ],
+      "title": "State transition",
+      "valid_examples": [
+        {
+          "bindings": {
+            "source_states": [
+              "source_states_A_example_1",
+              "source_states_B_example_1"
+            ],
+            "state_subject": "bound_state_subject_example_1",
+            "target_states": [
+              "target_states_A_example_1",
+              "target_states_B_example_1"
+            ],
+            "trigger": "bound_trigger_example_1"
+          },
+          "example_id": "ACP-STATE_TRANSITION-EXAMPLE_1",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        },
+        {
+          "bindings": {
+            "source_states": [
+              "source_states_A_example_2",
+              "source_states_B_example_2"
+            ],
+            "state_subject": "bound_state_subject_example_2",
+            "target_states": [
+              "target_states_A_example_2",
+              "target_states_B_example_2"
+            ],
+            "trigger": "bound_trigger_example_2"
+          },
+          "example_id": "ACP-STATE_TRANSITION-EXAMPLE_2",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        }
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "applicability_rules": [
+        "The normative statement and full source section express this profile's semantic intent directly.",
+        "Every required binding is extracted verbatim or normalized deterministically from source/approved decisions.",
+        "Rendered positive, negative, and edge oracles verify the same atomic obligation without solution inference."
+      ],
+      "counterexamples": [
+        {
+          "example_id": "ACP-STATE_MACHINE_INVARIANT-COUNTEREXAMPLE-1",
+          "statement": "A complex payment and allocation workflow with reconciliation and recovery branches.",
+          "why_invalid": "The workflow combines domain-specific states and failure semantics and must route to INLINE_CONTRACT_REQUIRED."
+        }
+      ],
+      "criticality_compatibility": [
+        "CRITICAL",
+        "HIGH",
+        "NORMAL"
+      ],
+      "deterministic_validation_rules": [
+        "All required bindings are present, typed, non-empty, source-grounded, and used by at least one oracle.",
+        "No undeclared binding token remains after rendering.",
+        "Rendered oracles contain no generic or tautological acceptance phrase.",
+        "Requirement type and criticality are compatible with this profile.",
+        "The semantic matcher, binding extractor, and rendered-oracle audit all pass independently."
+      ],
+      "evidence_requirements": [
+        "ordered state history",
+        "invariant evaluation per transition",
+        "rejection or recovery reason"
+      ],
+      "failure_semantics": "Do not accept any transition that leaves the invariant false.",
+      "matcher_contract": {
+        "keyword_only_match_forbidden": true,
+        "requires_structural_binding_extraction": true,
+        "requires_type_compatibility": true,
+        "semantic_terms": [
+          "invariant",
+          "mọi trạng thái",
+          "terminal state",
+          "trạng thái cuối"
+        ]
+      },
+      "observable_verification_contract": "state history and invariant evaluation at each bound state",
+      "optional_bindings": [
+        {
+          "data_type": "string_list",
+          "description": "Approved decisions that constrain the rendered contract.",
+          "name": "approved_decision_refs",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Full source-section heading used for semantic review.",
+          "name": "source_context_heading",
+          "source_required": true
+        }
+      ],
+      "oracle_templates": {
+        "edge_boundary": "Given recovery from an intermediate or terminal failure, when state is restored or advanced, then {invariant} remains true and the recovery transition is recorded.",
+        "negative": "Given a transition that would violate {invariant}, when it is requested, then the transition is rejected with the invariant violation identified.",
+        "positive": "Given {state_machine_subject} traverses {applicable_states}, when each transition is evaluated, then {invariant} holds before and after every accepted transition."
+      },
+      "profile_id": "ACP-STATE_MACHINE_INVARIANT",
+      "prohibited_uses": [
+        "Keyword-only classification without structural and binding validation.",
+        "Complex payment, pricing, promotion, procurement, allocation, fulfillment, refund, fraud/risk, or financial-reconciliation workflow.",
+        "Any use requiring an invented threshold, state, role, actor, failure mode, or technical implementation.",
+        "Any binding that broadens or drops a qualifier, applicability scope, or failure semantic."
+      ],
+      "required_bindings": [
+        {
+          "data_type": "identifier",
+          "description": "Concrete state machine subject extracted from source or an approved decision.",
+          "name": "state_machine_subject",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Concrete invariant extracted from source or an approved decision.",
+          "name": "invariant",
+          "source_required": true
+        },
+        {
+          "data_type": "string_list",
+          "description": "Concrete applicable states extracted from source or an approved decision.",
+          "name": "applicable_states",
+          "source_required": true
+        }
+      ],
+      "semantic_intent": "Verify an invariant that must hold across all bound states and transitions.",
+      "supported_requirement_types": [
+        "BUSINESS_RULE",
+        "OPERATIONAL_REQUIREMENT"
+      ],
+      "title": "State-machine invariant",
+      "valid_examples": [
+        {
+          "bindings": {
+            "applicable_states": [
+              "applicable_states_A_example_1",
+              "applicable_states_B_example_1"
+            ],
+            "invariant": "bound_invariant_example_1",
+            "state_machine_subject": "bound_state_machine_subject_example_1"
+          },
+          "example_id": "ACP-STATE_MACHINE_INVARIANT-EXAMPLE_1",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        },
+        {
+          "bindings": {
+            "applicable_states": [
+              "applicable_states_A_example_2",
+              "applicable_states_B_example_2"
+            ],
+            "invariant": "bound_invariant_example_2",
+            "state_machine_subject": "bound_state_machine_subject_example_2"
+          },
+          "example_id": "ACP-STATE_MACHINE_INVARIANT-EXAMPLE_2",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        }
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "applicability_rules": [
+        "The normative statement and full source section express this profile's semantic intent directly.",
+        "Every required binding is extracted verbatim or normalized deterministically from source/approved decisions.",
+        "Rendered positive, negative, and edge oracles verify the same atomic obligation without solution inference."
+      ],
+      "counterexamples": [
+        {
+          "example_id": "ACP-FAIL_CLOSED_BOUNDARY-COUNTEREXAMPLE-1",
+          "statement": "A complex payment and allocation workflow with reconciliation and recovery branches.",
+          "why_invalid": "The workflow combines domain-specific states and failure semantics and must route to INLINE_CONTRACT_REQUIRED."
+        }
+      ],
+      "criticality_compatibility": [
+        "CRITICAL",
+        "HIGH",
+        "NORMAL"
+      ],
+      "deterministic_validation_rules": [
+        "All required bindings are present, typed, non-empty, source-grounded, and used by at least one oracle.",
+        "No undeclared binding token remains after rendering.",
+        "Rendered oracles contain no generic or tautological acceptance phrase.",
+        "Requirement type and criticality are compatible with this profile.",
+        "The semantic matcher, binding extractor, and rendered-oracle audit all pass independently."
+      ],
+      "evidence_requirements": [
+        "mandatory evidence values and validity",
+        "decision and reason",
+        "before/after protected state"
+      ],
+      "failure_semantics": "No success or partial protected-state change without all mandatory evidence.",
+      "matcher_contract": {
+        "keyword_only_match_forbidden": true,
+        "requires_structural_binding_extraction": true,
+        "requires_type_compatibility": true,
+        "semantic_terms": [
+          "fail closed",
+          "fail-closed",
+          "không được tiếp tục",
+          "must not proceed"
+        ]
+      },
+      "observable_verification_contract": "evidence validation, allow/deny result, protected-state comparison, and reason",
+      "optional_bindings": [
+        {
+          "data_type": "string_list",
+          "description": "Approved decisions that constrain the rendered contract.",
+          "name": "approved_decision_refs",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Full source-section heading used for semantic review.",
+          "name": "source_context_heading",
+          "source_required": true
+        }
+      ],
+      "oracle_templates": {
+        "edge_boundary": "For {protected_action}, given evidence cannot be resolved conclusively, when the boundary is evaluated, then the unresolved result follows the same blocked outcome rather than defaulting to success.",
+        "negative": "Given missing or invalid {mandatory_evidence}, when {protected_action} is requested, then {blocked_outcome} and protected state is unchanged.",
+        "positive": "Given valid {mandatory_evidence}, when {protected_action} is requested, then evaluation may proceed and records the validated evidence."
+      },
+      "profile_id": "ACP-FAIL_CLOSED_BOUNDARY",
+      "prohibited_uses": [
+        "Keyword-only classification without structural and binding validation.",
+        "Complex payment, pricing, promotion, procurement, allocation, fulfillment, refund, fraud/risk, or financial-reconciliation workflow.",
+        "Any use requiring an invented threshold, state, role, actor, failure mode, or technical implementation.",
+        "Any binding that broadens or drops a qualifier, applicability scope, or failure semantic."
+      ],
+      "required_bindings": [
+        {
+          "data_type": "text",
+          "description": "Concrete protected action extracted from source or an approved decision.",
+          "name": "protected_action",
+          "source_required": true
+        },
+        {
+          "data_type": "string_list",
+          "description": "Concrete mandatory evidence extracted from source or an approved decision.",
+          "name": "mandatory_evidence",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Concrete blocked outcome extracted from source or an approved decision.",
+          "name": "blocked_outcome",
+          "source_required": true
+        }
+      ],
+      "semantic_intent": "Verify an explicit mandatory-evidence or assurance boundary that prohibits success when unresolved.",
+      "supported_requirement_types": [
+        "SECURITY_REQUIREMENT",
+        "PRIVACY_REQUIREMENT",
+        "DATA_REQUIREMENT",
+        "INTEGRATION_REQUIREMENT",
+        "UX_REQUIREMENT"
+      ],
+      "title": "Fail-closed boundary",
+      "valid_examples": [
+        {
+          "bindings": {
+            "blocked_outcome": "bound_blocked_outcome_example_1",
+            "mandatory_evidence": [
+              "mandatory_evidence_A_example_1",
+              "mandatory_evidence_B_example_1"
+            ],
+            "protected_action": "bound_protected_action_example_1"
+          },
+          "example_id": "ACP-FAIL_CLOSED_BOUNDARY-EXAMPLE_1",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        },
+        {
+          "bindings": {
+            "blocked_outcome": "bound_blocked_outcome_example_2",
+            "mandatory_evidence": [
+              "mandatory_evidence_A_example_2",
+              "mandatory_evidence_B_example_2"
+            ],
+            "protected_action": "bound_protected_action_example_2"
+          },
+          "example_id": "ACP-FAIL_CLOSED_BOUNDARY-EXAMPLE_2",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        }
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "applicability_rules": [
+        "The normative statement and full source section express this profile's semantic intent directly.",
+        "Every required binding is extracted verbatim or normalized deterministically from source/approved decisions.",
+        "Rendered positive, negative, and edge oracles verify the same atomic obligation without solution inference."
+      ],
+      "counterexamples": [
+        {
+          "example_id": "ACP-NO_INTERNAL_DISCLOSURE-COUNTEREXAMPLE-1",
+          "statement": "A complex payment and allocation workflow with reconciliation and recovery branches.",
+          "why_invalid": "The workflow combines domain-specific states and failure semantics and must route to INLINE_CONTRACT_REQUIRED."
+        }
+      ],
+      "criticality_compatibility": [
+        "CRITICAL",
+        "HIGH",
+        "NORMAL"
+      ],
+      "deterministic_validation_rules": [
+        "All required bindings are present, typed, non-empty, source-grounded, and used by at least one oracle.",
+        "No undeclared binding token remains after rendering.",
+        "Rendered oracles contain no generic or tautological acceptance phrase.",
+        "Requirement type and criticality are compatible with this profile.",
+        "The semantic matcher, binding extractor, and rendered-oracle audit all pass independently."
+      ],
+      "evidence_requirements": [
+        "rendered field inventory",
+        "complete external payload fields",
+        "allowed disclosure source",
+        "blocked or fallback outcome"
+      ],
+      "failure_semantics": "Do not expose prohibited internal data through UI, payload, fallback, or derived labels.",
+      "matcher_contract": {
+        "keyword_only_match_forbidden": true,
+        "requires_structural_binding_extraction": true,
+        "requires_type_compatibility": true,
+        "semantic_terms": [
+          "must never be exposed",
+          "không được hiển thị",
+          "không được lộ",
+          "internal"
+        ]
+      },
+      "observable_verification_contract": "rendered fields, external payload field inventory, and prohibited-field absence",
+      "optional_bindings": [
+        {
+          "data_type": "string_list",
+          "description": "Approved decisions that constrain the rendered contract.",
+          "name": "approved_decision_refs",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Full source-section heading used for semantic review.",
+          "name": "source_context_heading",
+          "source_required": true
+        }
+      ],
+      "oracle_templates": {
+        "edge_boundary": "For {channel}, given allowed disclosure data is unavailable, when disclosure is mandatory, then the affected action follows its explicit fail-closed outcome without substituting internal data.",
+        "negative": "Given internal values for {prohibited_fields}, when the UI and external payload are inspected, then none of those fields or values is disclosed.",
+        "positive": "Given {channel}, when customer-facing disclosure is produced, then only {allowed_disclosure} is present and remains read-only where bound."
+      },
+      "profile_id": "ACP-NO_INTERNAL_DISCLOSURE",
+      "prohibited_uses": [
+        "Keyword-only classification without structural and binding validation.",
+        "Complex payment, pricing, promotion, procurement, allocation, fulfillment, refund, fraud/risk, or financial-reconciliation workflow.",
+        "Any use requiring an invented threshold, state, role, actor, failure mode, or technical implementation.",
+        "Any binding that broadens or drops a qualifier, applicability scope, or failure semantic."
+      ],
+      "required_bindings": [
+        {
+          "data_type": "identifier",
+          "description": "Concrete channel extracted from source or an approved decision.",
+          "name": "channel",
+          "source_required": true
+        },
+        {
+          "data_type": "string_list",
+          "description": "Concrete allowed disclosure extracted from source or an approved decision.",
+          "name": "allowed_disclosure",
+          "source_required": true
+        },
+        {
+          "data_type": "string_list",
+          "description": "Concrete prohibited fields extracted from source or an approved decision.",
+          "name": "prohibited_fields",
+          "source_required": true
+        }
+      ],
+      "semantic_intent": "Verify allowed external disclosure and absence of explicitly prohibited internal fields.",
+      "supported_requirement_types": [
+        "UX_REQUIREMENT",
+        "PRIVACY_REQUIREMENT",
+        "SECURITY_REQUIREMENT"
+      ],
+      "title": "No internal disclosure",
+      "valid_examples": [
+        {
+          "bindings": {
+            "allowed_disclosure": [
+              "allowed_disclosure_A_example_1",
+              "allowed_disclosure_B_example_1"
+            ],
+            "channel": "bound_channel_example_1",
+            "prohibited_fields": [
+              "prohibited_fields_A_example_1",
+              "prohibited_fields_B_example_1"
+            ]
+          },
+          "example_id": "ACP-NO_INTERNAL_DISCLOSURE-EXAMPLE_1",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        },
+        {
+          "bindings": {
+            "allowed_disclosure": [
+              "allowed_disclosure_A_example_2",
+              "allowed_disclosure_B_example_2"
+            ],
+            "channel": "bound_channel_example_2",
+            "prohibited_fields": [
+              "prohibited_fields_A_example_2",
+              "prohibited_fields_B_example_2"
+            ]
+          },
+          "example_id": "ACP-NO_INTERNAL_DISCLOSURE-EXAMPLE_2",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        }
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "applicability_rules": [
+        "The normative statement and full source section express this profile's semantic intent directly.",
+        "Every required binding is extracted verbatim or normalized deterministically from source/approved decisions.",
+        "Rendered positive, negative, and edge oracles verify the same atomic obligation without solution inference."
+      ],
+      "counterexamples": [
+        {
+          "example_id": "ACP-EVENT_ORDERING-COUNTEREXAMPLE-1",
+          "statement": "A complex payment and allocation workflow with reconciliation and recovery branches.",
+          "why_invalid": "The workflow combines domain-specific states and failure semantics and must route to INLINE_CONTRACT_REQUIRED."
+        }
+      ],
+      "criticality_compatibility": [
+        "CRITICAL",
+        "HIGH",
+        "NORMAL"
+      ],
+      "deterministic_validation_rules": [
+        "All required bindings are present, typed, non-empty, source-grounded, and used by at least one oracle.",
+        "No undeclared binding token remains after rendering.",
+        "Rendered oracles contain no generic or tautological acceptance phrase.",
+        "Requirement type and criticality are compatible with this profile.",
+        "The semantic matcher, binding extractor, and rendered-oracle audit all pass independently."
+      ],
+      "evidence_requirements": [
+        "event family and event identities",
+        "observed order at bound boundary",
+        "policy conformance decision"
+      ],
+      "failure_semantics": "Report policy violation only where PRESERVE is bound; never infer ordering for NOT_REQUIRED.",
+      "matcher_contract": {
+        "keyword_only_match_forbidden": true,
+        "requires_structural_binding_extraction": true,
+        "requires_type_compatibility": true,
+        "semantic_terms": [
+          "processing order",
+          "ordering",
+          "thứ tự xử lý"
+        ]
+      },
+      "observable_verification_contract": "event-family identity, observed processing order, and policy conformance result",
+      "optional_bindings": [
+        {
+          "data_type": "string_list",
+          "description": "Approved decisions that constrain the rendered contract.",
+          "name": "approved_decision_refs",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Full source-section heading used for semantic review.",
+          "name": "source_context_heading",
+          "source_required": true
+        }
+      ],
+      "oracle_templates": {
+        "edge_boundary": "For {event_families}, given interleaved events across bound families, when conformance is reviewed, then the policy is evaluated per family and does not infer cross-family ordering.",
+        "negative": "Given an event family outside {event_families}, when ordering is evaluated, then this profile binding is not used as its ordering authority.",
+        "positive": "Given events from {event_families}, when processing is observed at {observation_boundary}, then behavior conforms to {ordering_policy} without applying another family's policy."
+      },
+      "profile_id": "ACP-EVENT_ORDERING",
+      "prohibited_uses": [
+        "Keyword-only classification without structural and binding validation.",
+        "Complex payment, pricing, promotion, procurement, allocation, fulfillment, refund, fraud/risk, or financial-reconciliation workflow.",
+        "Any use requiring an invented threshold, state, role, actor, failure mode, or technical implementation.",
+        "Any binding that broadens or drops a qualifier, applicability scope, or failure semantic."
+      ],
+      "required_bindings": [
+        {
+          "data_type": "string_list",
+          "description": "Concrete event families extracted from source or an approved decision.",
+          "name": "event_families",
+          "source_required": true
+        },
+        {
+          "data_type": "enum:PRESERVE|NOT_REQUIRED",
+          "description": "Concrete ordering policy extracted from source or an approved decision.",
+          "name": "ordering_policy",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Concrete observation boundary extracted from source or an approved decision.",
+          "name": "observation_boundary",
+          "source_required": true
+        }
+      ],
+      "semantic_intent": "Verify whether explicitly bound event families must preserve or need not preserve processing order.",
+      "supported_requirement_types": [
+        "DESIGN_PRINCIPLE",
+        "INTEGRATION_REQUIREMENT",
+        "BUSINESS_RULE"
+      ],
+      "title": "Event ordering",
+      "valid_examples": [
+        {
+          "bindings": {
+            "event_families": [
+              "event_families_A_example_1",
+              "event_families_B_example_1"
+            ],
+            "observation_boundary": "bound_observation_boundary_example_1",
+            "ordering_policy": "PRESERVE"
+          },
+          "example_id": "ACP-EVENT_ORDERING-EXAMPLE_1",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        },
+        {
+          "bindings": {
+            "event_families": [
+              "event_families_A_example_2",
+              "event_families_B_example_2"
+            ],
+            "observation_boundary": "bound_observation_boundary_example_2",
+            "ordering_policy": "PRESERVE"
+          },
+          "example_id": "ACP-EVENT_ORDERING-EXAMPLE_2",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        }
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "applicability_rules": [
+        "The normative statement and full source section express this profile's semantic intent directly.",
+        "Every required binding is extracted verbatim or normalized deterministically from source/approved decisions.",
+        "Rendered positive, negative, and edge oracles verify the same atomic obligation without solution inference."
+      ],
+      "counterexamples": [
+        {
+          "example_id": "ACP-EVENT_DELIVERY-COUNTEREXAMPLE-1",
+          "statement": "A complex payment and allocation workflow with reconciliation and recovery branches.",
+          "why_invalid": "The workflow combines domain-specific states and failure semantics and must route to INLINE_CONTRACT_REQUIRED."
+        }
+      ],
+      "criticality_compatibility": [
+        "CRITICAL",
+        "HIGH",
+        "NORMAL"
+      ],
+      "deterministic_validation_rules": [
+        "All required bindings are present, typed, non-empty, source-grounded, and used by at least one oracle.",
+        "No undeclared binding token remains after rendering.",
+        "Rendered oracles contain no generic or tautological acceptance phrase.",
+        "Requirement type and criticality are compatible with this profile.",
+        "The semantic matcher, binding extractor, and rendered-oracle audit all pass independently."
+      ],
+      "evidence_requirements": [
+        "event and producer identity",
+        "consumer receipt or rejection",
+        "delivery outcome",
+        "terminal failure evidence"
+      ],
+      "failure_semantics": "Never report delivery success without consumer-bound observable evidence.",
+      "matcher_contract": {
+        "keyword_only_match_forbidden": true,
+        "requires_structural_binding_extraction": true,
+        "requires_type_compatibility": true,
+        "semantic_terms": [
+          "event",
+          "delivery",
+          "publish",
+          "subscribe",
+          "consumer"
+        ]
+      },
+      "observable_verification_contract": "published event identity, consumer receipt/outcome, and terminal delivery evidence",
+      "optional_bindings": [
+        {
+          "data_type": "string_list",
+          "description": "Approved decisions that constrain the rendered contract.",
+          "name": "approved_decision_refs",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Full source-section heading used for semantic review.",
+          "name": "source_context_heading",
+          "source_required": true
+        }
+      ],
+      "oracle_templates": {
+        "edge_boundary": "For {event_name}, given terminal delivery failure, when delivery evidence is inspected, then the final failure and affected event identity are visible for controlled remediation.",
+        "negative": "Given an invalid or unauthorized {event_name}, when delivery is attempted, then it is rejected before producing the bound consumer outcome.",
+        "positive": "Given {producer} emits {event_name}, when delivery to {consumer} is evaluated, then {delivery_outcome} is observable and attributable to the same event identity."
+      },
+      "profile_id": "ACP-EVENT_DELIVERY",
+      "prohibited_uses": [
+        "Keyword-only classification without structural and binding validation.",
+        "Complex payment, pricing, promotion, procurement, allocation, fulfillment, refund, fraud/risk, or financial-reconciliation workflow.",
+        "Any use requiring an invented threshold, state, role, actor, failure mode, or technical implementation.",
+        "Any binding that broadens or drops a qualifier, applicability scope, or failure semantic."
+      ],
+      "required_bindings": [
+        {
+          "data_type": "identifier",
+          "description": "Concrete event name extracted from source or an approved decision.",
+          "name": "event_name",
+          "source_required": true
+        },
+        {
+          "data_type": "identifier",
+          "description": "Concrete producer extracted from source or an approved decision.",
+          "name": "producer",
+          "source_required": true
+        },
+        {
+          "data_type": "identifier",
+          "description": "Concrete consumer extracted from source or an approved decision.",
+          "name": "consumer",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Concrete delivery outcome extracted from source or an approved decision.",
+          "name": "delivery_outcome",
+          "source_required": true
+        }
+      ],
+      "semantic_intent": "Verify an explicit event producer, consumer, delivery outcome, and terminal failure boundary.",
+      "supported_requirement_types": [
+        "INTEGRATION_REQUIREMENT",
+        "BUSINESS_REQUIREMENT",
+        "OPERATIONAL_REQUIREMENT"
+      ],
+      "title": "Event delivery contract",
+      "valid_examples": [
+        {
+          "bindings": {
+            "consumer": "bound_consumer_example_1",
+            "delivery_outcome": "bound_delivery_outcome_example_1",
+            "event_name": "bound_event_name_example_1",
+            "producer": "bound_producer_example_1"
+          },
+          "example_id": "ACP-EVENT_DELIVERY-EXAMPLE_1",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        },
+        {
+          "bindings": {
+            "consumer": "bound_consumer_example_2",
+            "delivery_outcome": "bound_delivery_outcome_example_2",
+            "event_name": "bound_event_name_example_2",
+            "producer": "bound_producer_example_2"
+          },
+          "example_id": "ACP-EVENT_DELIVERY-EXAMPLE_2",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        }
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "applicability_rules": [
+        "The normative statement and full source section express this profile's semantic intent directly.",
+        "Every required binding is extracted verbatim or normalized deterministically from source/approved decisions.",
+        "Rendered positive, negative, and edge oracles verify the same atomic obligation without solution inference."
+      ],
+      "counterexamples": [
+        {
+          "example_id": "ACP-IDEMPOTENT_OPERATION-COUNTEREXAMPLE-1",
+          "statement": "A complex payment and allocation workflow with reconciliation and recovery branches.",
+          "why_invalid": "The workflow combines domain-specific states and failure semantics and must route to INLINE_CONTRACT_REQUIRED."
+        }
+      ],
+      "criticality_compatibility": [
+        "CRITICAL",
+        "HIGH",
+        "NORMAL"
+      ],
+      "deterministic_validation_rules": [
+        "All required bindings are present, typed, non-empty, source-grounded, and used by at least one oracle.",
+        "No undeclared binding token remains after rendering.",
+        "Rendered oracles contain no generic or tautological acceptance phrase.",
+        "Requirement type and criticality are compatible with this profile.",
+        "The semantic matcher, binding extractor, and rendered-oracle audit all pass independently."
+      ],
+      "evidence_requirements": [
+        "attempts and idempotency identity",
+        "business outcome identity",
+        "before/after side-effect count",
+        "decision reason"
+      ],
+      "failure_semantics": "Prevent duplicate business effects for the same bound identity.",
+      "matcher_contract": {
+        "keyword_only_match_forbidden": true,
+        "requires_structural_binding_extraction": true,
+        "requires_type_compatibility": true,
+        "semantic_terms": [
+          "idempot",
+          "duplicate",
+          "dedup",
+          "lặp"
+        ]
+      },
+      "observable_verification_contract": "operation attempts, bound identity, outcome identity, and side-effect comparison",
+      "optional_bindings": [
+        {
+          "data_type": "string_list",
+          "description": "Approved decisions that constrain the rendered contract.",
+          "name": "approved_decision_refs",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Full source-section heading used for semantic review.",
+          "name": "source_context_heading",
+          "source_required": true
+        }
+      ],
+      "oracle_templates": {
+        "edge_boundary": "For {operation}, given an in-flight or partially observed first attempt, when the same identity is retried, then the eventual bound outcome remains singular and traceable.",
+        "negative": "For {operation}, given two requests with different valid identities, when both are processed, then one identity is not incorrectly deduplicated as the other.",
+        "positive": "Given {operation} with {idempotency_identity}, when the same request is repeated, then {stable_outcome} is returned without an additional business side effect."
+      },
+      "profile_id": "ACP-IDEMPOTENT_OPERATION",
+      "prohibited_uses": [
+        "Keyword-only classification without structural and binding validation.",
+        "Complex payment, pricing, promotion, procurement, allocation, fulfillment, refund, fraud/risk, or financial-reconciliation workflow.",
+        "Any use requiring an invented threshold, state, role, actor, failure mode, or technical implementation.",
+        "Any binding that broadens or drops a qualifier, applicability scope, or failure semantic."
+      ],
+      "required_bindings": [
+        {
+          "data_type": "text",
+          "description": "Concrete operation extracted from source or an approved decision.",
+          "name": "operation",
+          "source_required": true
+        },
+        {
+          "data_type": "identifier",
+          "description": "Concrete idempotency identity extracted from source or an approved decision.",
+          "name": "idempotency_identity",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Concrete stable outcome extracted from source or an approved decision.",
+          "name": "stable_outcome",
+          "source_required": true
+        }
+      ],
+      "semantic_intent": "Verify explicit repeated-operation semantics under a bound idempotency identity.",
+      "supported_requirement_types": [
+        "INTEGRATION_REQUIREMENT",
+        "BUSINESS_RULE",
+        "OPERATIONAL_REQUIREMENT"
+      ],
+      "title": "Idempotent operation",
+      "valid_examples": [
+        {
+          "bindings": {
+            "idempotency_identity": "bound_idempotency_identity_example_1",
+            "operation": "bound_operation_example_1",
+            "stable_outcome": "bound_stable_outcome_example_1"
+          },
+          "example_id": "ACP-IDEMPOTENT_OPERATION-EXAMPLE_1",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        },
+        {
+          "bindings": {
+            "idempotency_identity": "bound_idempotency_identity_example_2",
+            "operation": "bound_operation_example_2",
+            "stable_outcome": "bound_stable_outcome_example_2"
+          },
+          "example_id": "ACP-IDEMPOTENT_OPERATION-EXAMPLE_2",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        }
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "applicability_rules": [
+        "The normative statement and full source section express this profile's semantic intent directly.",
+        "Every required binding is extracted verbatim or normalized deterministically from source/approved decisions.",
+        "Rendered positive, negative, and edge oracles verify the same atomic obligation without solution inference."
+      ],
+      "counterexamples": [
+        {
+          "example_id": "ACP-RETRY_AND_TERMINAL_FAILURE-COUNTEREXAMPLE-1",
+          "statement": "A complex payment and allocation workflow with reconciliation and recovery branches.",
+          "why_invalid": "The workflow combines domain-specific states and failure semantics and must route to INLINE_CONTRACT_REQUIRED."
+        }
+      ],
+      "criticality_compatibility": [
+        "CRITICAL",
+        "HIGH",
+        "NORMAL"
+      ],
+      "deterministic_validation_rules": [
+        "All required bindings are present, typed, non-empty, source-grounded, and used by at least one oracle.",
+        "No undeclared binding token remains after rendering.",
+        "Rendered oracles contain no generic or tautological acceptance phrase.",
+        "Requirement type and criticality are compatible with this profile.",
+        "The semantic matcher, binding extractor, and rendered-oracle audit all pass independently."
+      ],
+      "evidence_requirements": [
+        "attempt number and time",
+        "failure classification",
+        "retry policy version",
+        "terminal outcome and operation identity"
+      ],
+      "failure_semantics": "Do not retry outside the bound condition or conceal exhaustion.",
+      "matcher_contract": {
+        "keyword_only_match_forbidden": true,
+        "requires_structural_binding_extraction": true,
+        "requires_type_compatibility": true,
+        "semantic_terms": [
+          "retry",
+          "thử lại",
+          "backoff",
+          "terminal failure",
+          "dead letter"
+        ]
+      },
+      "observable_verification_contract": "attempt sequence, retry reason, applied limit/policy, and terminal outcome",
+      "optional_bindings": [
+        {
+          "data_type": "string_list",
+          "description": "Approved decisions that constrain the rendered contract.",
+          "name": "approved_decision_refs",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Full source-section heading used for semantic review.",
+          "name": "source_context_heading",
+          "source_required": true
+        }
+      ],
+      "oracle_templates": {
+        "edge_boundary": "Given retries reach {retry_limit}, when the final attempt fails, then {terminal_outcome} is emitted exactly as bound and remains operator-visible.",
+        "negative": "For {operation}, given a non-retryable failure, when failure is classified, then no retry is started and the reason is recorded.",
+        "positive": "Given {operation} fails under {retry_condition}, when retry policy applies, then attempts follow {retry_limit} and each attempt is observable."
+      },
+      "profile_id": "ACP-RETRY_AND_TERMINAL_FAILURE",
+      "prohibited_uses": [
+        "Keyword-only classification without structural and binding validation.",
+        "Complex payment, pricing, promotion, procurement, allocation, fulfillment, refund, fraud/risk, or financial-reconciliation workflow.",
+        "Any use requiring an invented threshold, state, role, actor, failure mode, or technical implementation.",
+        "Any binding that broadens or drops a qualifier, applicability scope, or failure semantic."
+      ],
+      "required_bindings": [
+        {
+          "data_type": "text",
+          "description": "Concrete operation extracted from source or an approved decision.",
+          "name": "operation",
+          "source_required": true
+        },
+        {
+          "data_type": "integer_or_policy",
+          "description": "Concrete retry limit extracted from source or an approved decision.",
+          "name": "retry_limit",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Concrete retry condition extracted from source or an approved decision.",
+          "name": "retry_condition",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Concrete terminal outcome extracted from source or an approved decision.",
+          "name": "terminal_outcome",
+          "source_required": true
+        }
+      ],
+      "semantic_intent": "Verify an explicitly bounded retry policy and observable terminal outcome.",
+      "supported_requirement_types": [
+        "OPERATIONAL_REQUIREMENT",
+        "INTEGRATION_REQUIREMENT"
+      ],
+      "title": "Retry and terminal failure",
+      "valid_examples": [
+        {
+          "bindings": {
+            "operation": "bound_operation_example_1",
+            "retry_condition": "bound_retry_condition_example_1",
+            "retry_limit": "approved_retry_limit_example_1",
+            "terminal_outcome": "bound_terminal_outcome_example_1"
+          },
+          "example_id": "ACP-RETRY_AND_TERMINAL_FAILURE-EXAMPLE_1",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        },
+        {
+          "bindings": {
+            "operation": "bound_operation_example_2",
+            "retry_condition": "bound_retry_condition_example_2",
+            "retry_limit": "approved_retry_limit_example_2",
+            "terminal_outcome": "bound_terminal_outcome_example_2"
+          },
+          "example_id": "ACP-RETRY_AND_TERMINAL_FAILURE-EXAMPLE_2",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        }
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "applicability_rules": [
+        "The normative statement and full source section express this profile's semantic intent directly.",
+        "Every required binding is extracted verbatim or normalized deterministically from source/approved decisions.",
+        "Rendered positive, negative, and edge oracles verify the same atomic obligation without solution inference."
+      ],
+      "counterexamples": [
+        {
+          "example_id": "ACP-ROLE_AND_PERMISSION_ENFORCEMENT-COUNTEREXAMPLE-1",
+          "statement": "A complex payment and allocation workflow with reconciliation and recovery branches.",
+          "why_invalid": "The workflow combines domain-specific states and failure semantics and must route to INLINE_CONTRACT_REQUIRED."
+        }
+      ],
+      "criticality_compatibility": [
+        "CRITICAL",
+        "HIGH",
+        "NORMAL"
+      ],
+      "deterministic_validation_rules": [
+        "All required bindings are present, typed, non-empty, source-grounded, and used by at least one oracle.",
+        "No undeclared binding token remains after rendering.",
+        "Rendered oracles contain no generic or tautological acceptance phrase.",
+        "Requirement type and criticality are compatible with this profile.",
+        "The semantic matcher, binding extractor, and rendered-oracle audit all pass independently."
+      ],
+      "evidence_requirements": [
+        "actor and scope attribution",
+        "effective permission",
+        "available and denied action",
+        "resource result",
+        "audit reason"
+      ],
+      "failure_semantics": "Deny access outside the concretely bound actor/resource/action scope.",
+      "matcher_contract": {
+        "keyword_only_match_forbidden": true,
+        "requires_structural_binding_extraction": true,
+        "requires_type_compatibility": true,
+        "semantic_terms": [
+          "permission",
+          "quyền",
+          "chỉ được xem",
+          "access",
+          "role"
+        ]
+      },
+      "observable_verification_contract": "principal and scope, effective permission, available/denied action, protected-state comparison, and audit evidence",
+      "optional_bindings": [
+        {
+          "data_type": "string_list",
+          "description": "Approved decisions that constrain the rendered contract.",
+          "name": "approved_decision_refs",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Full source-section heading used for semantic review.",
+          "name": "source_context_heading",
+          "source_required": true
+        }
+      ],
+      "oracle_templates": {
+        "edge_boundary": "For {actor_scope}, given ownership or scope attribution is missing or conflicting, when access is evaluated, then no broader access is inferred and the unresolved boundary is denied.",
+        "negative": "Given the same actor requests {prohibited_actions}, when authorization is evaluated, then the action is denied and protected state remains unchanged.",
+        "positive": "Given {actor_scope}, when access to {governed_resource} is evaluated, then only {allowed_actions} are available within the bound scope."
+      },
+      "profile_id": "ACP-ROLE_AND_PERMISSION_ENFORCEMENT",
+      "prohibited_uses": [
+        "Keyword-only classification without structural and binding validation.",
+        "Complex payment, pricing, promotion, procurement, allocation, fulfillment, refund, fraud/risk, or financial-reconciliation workflow.",
+        "Any use requiring an invented threshold, state, role, actor, failure mode, or technical implementation.",
+        "Any binding that broadens or drops a qualifier, applicability scope, or failure semantic."
+      ],
+      "required_bindings": [
+        {
+          "data_type": "text",
+          "description": "Concrete actor scope extracted from source or an approved decision.",
+          "name": "actor_scope",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Concrete governed resource extracted from source or an approved decision.",
+          "name": "governed_resource",
+          "source_required": true
+        },
+        {
+          "data_type": "string_list",
+          "description": "Concrete allowed actions extracted from source or an approved decision.",
+          "name": "allowed_actions",
+          "source_required": true
+        },
+        {
+          "data_type": "string_list",
+          "description": "Concrete prohibited actions extracted from source or an approved decision.",
+          "name": "prohibited_actions",
+          "source_required": true
+        }
+      ],
+      "semantic_intent": "Verify explicitly bound actor, resource/action, and permission boundary.",
+      "supported_requirement_types": [
+        "SECURITY_REQUIREMENT",
+        "BUSINESS_RULE",
+        "BUSINESS_REQUIREMENT"
+      ],
+      "title": "Role and permission enforcement",
+      "valid_examples": [
+        {
+          "bindings": {
+            "actor_scope": "bound_actor_scope_example_1",
+            "allowed_actions": [
+              "allowed_actions_A_example_1",
+              "allowed_actions_B_example_1"
+            ],
+            "governed_resource": "bound_governed_resource_example_1",
+            "prohibited_actions": [
+              "prohibited_actions_A_example_1",
+              "prohibited_actions_B_example_1"
+            ]
+          },
+          "example_id": "ACP-ROLE_AND_PERMISSION_ENFORCEMENT-EXAMPLE_1",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        },
+        {
+          "bindings": {
+            "actor_scope": "bound_actor_scope_example_2",
+            "allowed_actions": [
+              "allowed_actions_A_example_2",
+              "allowed_actions_B_example_2"
+            ],
+            "governed_resource": "bound_governed_resource_example_2",
+            "prohibited_actions": [
+              "prohibited_actions_A_example_2",
+              "prohibited_actions_B_example_2"
+            ]
+          },
+          "example_id": "ACP-ROLE_AND_PERMISSION_ENFORCEMENT-EXAMPLE_2",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        }
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "applicability_rules": [
+        "The normative statement and full source section express this profile's semantic intent directly.",
+        "Every required binding is extracted verbatim or normalized deterministically from source/approved decisions.",
+        "Rendered positive, negative, and edge oracles verify the same atomic obligation without solution inference."
+      ],
+      "counterexamples": [
+        {
+          "example_id": "ACP-AUTHENTICATION_REQUIREMENT-COUNTEREXAMPLE-1",
+          "statement": "A complex payment and allocation workflow with reconciliation and recovery branches.",
+          "why_invalid": "The workflow combines domain-specific states and failure semantics and must route to INLINE_CONTRACT_REQUIRED."
+        }
+      ],
+      "criticality_compatibility": [
+        "CRITICAL",
+        "HIGH",
+        "NORMAL"
+      ],
+      "deterministic_validation_rules": [
+        "All required bindings are present, typed, non-empty, source-grounded, and used by at least one oracle.",
+        "No undeclared binding token remains after rendering.",
+        "Rendered oracles contain no generic or tautological acceptance phrase.",
+        "Requirement type and criticality are compatible with this profile.",
+        "The semantic matcher, binding extractor, and rendered-oracle audit all pass independently."
+      ],
+      "evidence_requirements": [
+        "principal identity",
+        "assurance evidence and validity",
+        "authentication decision",
+        "protected-action result",
+        "audit reason"
+      ],
+      "failure_semantics": "Fail closed at the stated assurance boundary.",
+      "matcher_contract": {
+        "keyword_only_match_forbidden": true,
+        "requires_structural_binding_extraction": true,
+        "requires_type_compatibility": true,
+        "semantic_terms": [
+          "authentication",
+          "xác thực",
+          "credential",
+          "đăng nhập"
+        ]
+      },
+      "observable_verification_contract": "principal, assurance evidence, challenge/allow/deny result, and audit reason",
+      "optional_bindings": [
+        {
+          "data_type": "string_list",
+          "description": "Approved decisions that constrain the rendered contract.",
+          "name": "approved_decision_refs",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Full source-section heading used for semantic review.",
+          "name": "source_context_heading",
+          "source_required": true
+        }
+      ],
+      "oracle_templates": {
+        "edge_boundary": "For {principal_type}, given assurance cannot be resolved or has expired, when authentication is evaluated, then no previous success is reused outside its validity boundary.",
+        "negative": "Given missing or invalid assurance evidence, when {protected_action} is attempted, then authentication is denied or challenged without granting the protected action.",
+        "positive": "Given {principal_type} presents evidence satisfying {assurance_requirement}, when {protected_action} is attempted, then authentication succeeds at the bound assurance level."
+      },
+      "profile_id": "ACP-AUTHENTICATION_REQUIREMENT",
+      "prohibited_uses": [
+        "Keyword-only classification without structural and binding validation.",
+        "Complex payment, pricing, promotion, procurement, allocation, fulfillment, refund, fraud/risk, or financial-reconciliation workflow.",
+        "Any use requiring an invented threshold, state, role, actor, failure mode, or technical implementation.",
+        "Any binding that broadens or drops a qualifier, applicability scope, or failure semantic."
+      ],
+      "required_bindings": [
+        {
+          "data_type": "identifier",
+          "description": "Concrete principal type extracted from source or an approved decision.",
+          "name": "principal_type",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Concrete assurance requirement extracted from source or an approved decision.",
+          "name": "assurance_requirement",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Concrete protected action extracted from source or an approved decision.",
+          "name": "protected_action",
+          "source_required": true
+        }
+      ],
+      "semantic_intent": "Verify a named assurance or credential requirement at an authentication boundary.",
+      "supported_requirement_types": [
+        "SECURITY_REQUIREMENT"
+      ],
+      "title": "Authentication requirement",
+      "valid_examples": [
+        {
+          "bindings": {
+            "assurance_requirement": "bound_assurance_requirement_example_1",
+            "principal_type": "bound_principal_type_example_1",
+            "protected_action": "bound_protected_action_example_1"
+          },
+          "example_id": "ACP-AUTHENTICATION_REQUIREMENT-EXAMPLE_1",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        },
+        {
+          "bindings": {
+            "assurance_requirement": "bound_assurance_requirement_example_2",
+            "principal_type": "bound_principal_type_example_2",
+            "protected_action": "bound_protected_action_example_2"
+          },
+          "example_id": "ACP-AUTHENTICATION_REQUIREMENT-EXAMPLE_2",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        }
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "applicability_rules": [
+        "The normative statement and full source section express this profile's semantic intent directly.",
+        "Every required binding is extracted verbatim or normalized deterministically from source/approved decisions.",
+        "Rendered positive, negative, and edge oracles verify the same atomic obligation without solution inference."
+      ],
+      "counterexamples": [
+        {
+          "example_id": "ACP-MFA_ENFORCEMENT-COUNTEREXAMPLE-1",
+          "statement": "A complex payment and allocation workflow with reconciliation and recovery branches.",
+          "why_invalid": "The workflow combines domain-specific states and failure semantics and must route to INLINE_CONTRACT_REQUIRED."
+        }
+      ],
+      "criticality_compatibility": [
+        "CRITICAL",
+        "HIGH",
+        "NORMAL"
+      ],
+      "deterministic_validation_rules": [
+        "All required bindings are present, typed, non-empty, source-grounded, and used by at least one oracle.",
+        "No undeclared binding token remains after rendering.",
+        "Rendered oracles contain no generic or tautological acceptance phrase.",
+        "Requirement type and criticality are compatible with this profile.",
+        "The semantic matcher, binding extractor, and rendered-oracle audit all pass independently."
+      ],
+      "evidence_requirements": [
+        "all applicable MFA policies",
+        "scope resolution trace",
+        "challenge and result",
+        "bypass/recovery decision",
+        "audit record"
+      ],
+      "failure_semantics": "No protected action succeeds while an effective MFA requirement is unsatisfied.",
+      "matcher_contract": {
+        "keyword_only_match_forbidden": true,
+        "requires_structural_binding_extraction": true,
+        "requires_type_compatibility": true,
+        "semantic_terms": [
+          "mfa",
+          "multi-factor"
+        ]
+      },
+      "observable_verification_contract": "scope policies, effective resolution, challenge result, bypass decision, and audit evidence",
+      "optional_bindings": [
+        {
+          "data_type": "string_list",
+          "description": "Approved decisions that constrain the rendered contract.",
+          "name": "approved_decision_refs",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Full source-section heading used for semantic review.",
+          "name": "source_context_heading",
+          "source_required": true
+        }
+      ],
+      "oracle_templates": {
+        "edge_boundary": "For {mfa_scopes}, given overlapping scope policies or an applicable approved recovery flow, when MFA is evaluated, then effective scopes and recovery-specific assurance are explicit without silently disabling MFA.",
+        "negative": "For {mfa_scopes}, given a required challenge is missing, invalid, or bypassed, when the protected action is attempted, then access is denied and the attempt is audited.",
+        "positive": "Given MFA policies at {mfa_scopes} for {principal_types}, when effective policy is resolved, then {challenge_requirement} is presented and must be satisfied."
+      },
+      "profile_id": "ACP-MFA_ENFORCEMENT",
+      "prohibited_uses": [
+        "Keyword-only classification without structural and binding validation.",
+        "Complex payment, pricing, promotion, procurement, allocation, fulfillment, refund, fraud/risk, or financial-reconciliation workflow.",
+        "Any use requiring an invented threshold, state, role, actor, failure mode, or technical implementation.",
+        "Any binding that broadens or drops a qualifier, applicability scope, or failure semantic."
+      ],
+      "required_bindings": [
+        {
+          "data_type": "string_list",
+          "description": "Concrete mfa scopes extracted from source or an approved decision.",
+          "name": "mfa_scopes",
+          "source_required": true
+        },
+        {
+          "data_type": "string_list",
+          "description": "Concrete principal types extracted from source or an approved decision.",
+          "name": "principal_types",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Concrete challenge requirement extracted from source or an approved decision.",
+          "name": "challenge_requirement",
+          "source_required": true
+        }
+      ],
+      "semantic_intent": "Verify MFA policy, effective scope resolution, required challenge, bypass denial, and applicable recovery.",
+      "supported_requirement_types": [
+        "SECURITY_REQUIREMENT"
+      ],
+      "title": "Multi-factor authentication enforcement",
+      "valid_examples": [
+        {
+          "bindings": {
+            "challenge_requirement": "bound_challenge_requirement_example_1",
+            "mfa_scopes": [
+              "mfa_scopes_A_example_1",
+              "mfa_scopes_B_example_1"
+            ],
+            "principal_types": [
+              "principal_types_A_example_1",
+              "principal_types_B_example_1"
+            ]
+          },
+          "example_id": "ACP-MFA_ENFORCEMENT-EXAMPLE_1",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        },
+        {
+          "bindings": {
+            "challenge_requirement": "bound_challenge_requirement_example_2",
+            "mfa_scopes": [
+              "mfa_scopes_A_example_2",
+              "mfa_scopes_B_example_2"
+            ],
+            "principal_types": [
+              "principal_types_A_example_2",
+              "principal_types_B_example_2"
+            ]
+          },
+          "example_id": "ACP-MFA_ENFORCEMENT-EXAMPLE_2",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        }
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "applicability_rules": [
+        "The normative statement and full source section express this profile's semantic intent directly.",
+        "Every required binding is extracted verbatim or normalized deterministically from source/approved decisions.",
+        "Rendered positive, negative, and edge oracles verify the same atomic obligation without solution inference."
+      ],
+      "counterexamples": [
+        {
+          "example_id": "ACP-DATA_ISOLATION-COUNTEREXAMPLE-1",
+          "statement": "A complex payment and allocation workflow with reconciliation and recovery branches.",
+          "why_invalid": "The workflow combines domain-specific states and failure semantics and must route to INLINE_CONTRACT_REQUIRED."
+        }
+      ],
+      "criticality_compatibility": [
+        "CRITICAL",
+        "HIGH",
+        "NORMAL"
+      ],
+      "deterministic_validation_rules": [
+        "All required bindings are present, typed, non-empty, source-grounded, and used by at least one oracle.",
+        "No undeclared binding token remains after rendering.",
+        "Rendered oracles contain no generic or tautological acceptance phrase.",
+        "Requirement type and criticality are compatible with this profile.",
+        "The semantic matcher, binding extractor, and rendered-oracle audit all pass independently."
+      ],
+      "evidence_requirements": [
+        "requesting actor and scope",
+        "record ownership attribution",
+        "returned-record inventory",
+        "mutation or denial result",
+        "audit reason"
+      ],
+      "failure_semantics": "Prevent cross-scope disclosure or mutation.",
+      "matcher_contract": {
+        "keyword_only_match_forbidden": true,
+        "requires_structural_binding_extraction": true,
+        "requires_type_compatibility": true,
+        "semantic_terms": [
+          "isolation",
+          "cô lập",
+          "tenant",
+          "khách hàng của mình",
+          "organization data"
+        ]
+      },
+      "observable_verification_contract": "requesting scope, data ownership, returned records, mutation result, and denial evidence",
+      "optional_bindings": [
+        {
+          "data_type": "string_list",
+          "description": "Approved decisions that constrain the rendered contract.",
+          "name": "approved_decision_refs",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Full source-section heading used for semantic review.",
+          "name": "source_context_heading",
+          "source_required": true
+        }
+      ],
+      "oracle_templates": {
+        "edge_boundary": "For {isolation_scope}, given missing or conflicting ownership attribution, when isolation is evaluated, then broader scope is not inferred and access fails closed.",
+        "negative": "Given a record outside {isolation_scope} or not owned by {allowed_owner}, when access is attempted, then no record or mutation is disclosed and the decision is denied.",
+        "positive": "Given {allowed_owner} in {isolation_scope}, when {data_subject} is read or changed, then only records attributed to that bound owner and scope are available."
+      },
+      "profile_id": "ACP-DATA_ISOLATION",
+      "prohibited_uses": [
+        "Keyword-only classification without structural and binding validation.",
+        "Complex payment, pricing, promotion, procurement, allocation, fulfillment, refund, fraud/risk, or financial-reconciliation workflow.",
+        "Any use requiring an invented threshold, state, role, actor, failure mode, or technical implementation.",
+        "Any binding that broadens or drops a qualifier, applicability scope, or failure semantic."
+      ],
+      "required_bindings": [
+        {
+          "data_type": "text",
+          "description": "Concrete isolation scope extracted from source or an approved decision.",
+          "name": "isolation_scope",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Concrete data subject extracted from source or an approved decision.",
+          "name": "data_subject",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Concrete allowed owner extracted from source or an approved decision.",
+          "name": "allowed_owner",
+          "source_required": true
+        }
+      ],
+      "semantic_intent": "Verify explicit tenant, organization, owner, or subject isolation at read and mutation boundaries.",
+      "supported_requirement_types": [
+        "SECURITY_REQUIREMENT",
+        "PRIVACY_REQUIREMENT",
+        "DATA_REQUIREMENT",
+        "BUSINESS_RULE"
+      ],
+      "title": "Data isolation",
+      "valid_examples": [
+        {
+          "bindings": {
+            "allowed_owner": "bound_allowed_owner_example_1",
+            "data_subject": "bound_data_subject_example_1",
+            "isolation_scope": "bound_isolation_scope_example_1"
+          },
+          "example_id": "ACP-DATA_ISOLATION-EXAMPLE_1",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        },
+        {
+          "bindings": {
+            "allowed_owner": "bound_allowed_owner_example_2",
+            "data_subject": "bound_data_subject_example_2",
+            "isolation_scope": "bound_isolation_scope_example_2"
+          },
+          "example_id": "ACP-DATA_ISOLATION-EXAMPLE_2",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        }
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "applicability_rules": [
+        "The normative statement and full source section express this profile's semantic intent directly.",
+        "Every required binding is extracted verbatim or normalized deterministically from source/approved decisions.",
+        "Rendered positive, negative, and edge oracles verify the same atomic obligation without solution inference."
+      ],
+      "counterexamples": [
+        {
+          "example_id": "ACP-DATA_RETENTION-COUNTEREXAMPLE-1",
+          "statement": "A complex payment and allocation workflow with reconciliation and recovery branches.",
+          "why_invalid": "The workflow combines domain-specific states and failure semantics and must route to INLINE_CONTRACT_REQUIRED."
+        }
+      ],
+      "criticality_compatibility": [
+        "CRITICAL",
+        "HIGH",
+        "NORMAL"
+      ],
+      "deterministic_validation_rules": [
+        "All required bindings are present, typed, non-empty, source-grounded, and used by at least one oracle.",
+        "No undeclared binding token remains after rendering.",
+        "Rendered oracles contain no generic or tautological acceptance phrase.",
+        "Requirement type and criticality are compatible with this profile.",
+        "The semantic matcher, binding extractor, and rendered-oracle audit all pass independently."
+      ],
+      "evidence_requirements": [
+        "data identity and age",
+        "retention policy and duration",
+        "before/after storage class or deletion state",
+        "transition evidence"
+      ],
+      "failure_semantics": "Do not retain or remove data contrary to the bound duration and outcome.",
+      "matcher_contract": {
+        "keyword_only_match_forbidden": true,
+        "requires_structural_binding_extraction": true,
+        "requires_type_compatibility": true,
+        "semantic_terms": [
+          "retention",
+          "lưu trực tuyến",
+          "archive",
+          "lưu giữ"
+        ]
+      },
+      "observable_verification_contract": "data age, online availability, archive/deletion state, transition time, and policy reference",
+      "optional_bindings": [
+        {
+          "data_type": "string_list",
+          "description": "Approved decisions that constrain the rendered contract.",
+          "name": "approved_decision_refs",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Full source-section heading used for semantic review.",
+          "name": "source_context_heading",
+          "source_required": true
+        }
+      ],
+      "oracle_templates": {
+        "edge_boundary": "Given the retention boundary is crossed, when policy applies, then {post_retention_outcome} occurs with transition evidence tied to the same data identity.",
+        "negative": "Given {data_subject} beyond {retention_period}, when online availability is inspected, then it is not retained online contrary to policy.",
+        "positive": "Given {data_subject} within {retention_period}, when availability is inspected, then the bound online or retained state is observable."
+      },
+      "profile_id": "ACP-DATA_RETENTION",
+      "prohibited_uses": [
+        "Keyword-only classification without structural and binding validation.",
+        "Complex payment, pricing, promotion, procurement, allocation, fulfillment, refund, fraud/risk, or financial-reconciliation workflow.",
+        "Any use requiring an invented threshold, state, role, actor, failure mode, or technical implementation.",
+        "Any binding that broadens or drops a qualifier, applicability scope, or failure semantic."
+      ],
+      "required_bindings": [
+        {
+          "data_type": "identifier",
+          "description": "Concrete data subject extracted from source or an approved decision.",
+          "name": "data_subject",
+          "source_required": true
+        },
+        {
+          "data_type": "duration",
+          "description": "Concrete retention period extracted from source or an approved decision.",
+          "name": "retention_period",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Concrete post retention outcome extracted from source or an approved decision.",
+          "name": "post_retention_outcome",
+          "source_required": true
+        }
+      ],
+      "semantic_intent": "Verify an explicit retention duration, online/archive boundary, and post-retention outcome.",
+      "supported_requirement_types": [
+        "PRIVACY_REQUIREMENT",
+        "OPERATIONAL_REQUIREMENT",
+        "BUSINESS_RULE"
+      ],
+      "title": "Data retention",
+      "valid_examples": [
+        {
+          "bindings": {
+            "data_subject": "bound_data_subject_example_1",
+            "post_retention_outcome": "bound_post_retention_outcome_example_1",
+            "retention_period": "bound_retention_period_example_1"
+          },
+          "example_id": "ACP-DATA_RETENTION-EXAMPLE_1",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        },
+        {
+          "bindings": {
+            "data_subject": "bound_data_subject_example_2",
+            "post_retention_outcome": "bound_post_retention_outcome_example_2",
+            "retention_period": "bound_retention_period_example_2"
+          },
+          "example_id": "ACP-DATA_RETENTION-EXAMPLE_2",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        }
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "applicability_rules": [
+        "The normative statement and full source section express this profile's semantic intent directly.",
+        "Every required binding is extracted verbatim or normalized deterministically from source/approved decisions.",
+        "Rendered positive, negative, and edge oracles verify the same atomic obligation without solution inference."
+      ],
+      "counterexamples": [
+        {
+          "example_id": "ACP-AUDITABILITY-COUNTEREXAMPLE-1",
+          "statement": "A complex payment and allocation workflow with reconciliation and recovery branches.",
+          "why_invalid": "The workflow combines domain-specific states and failure semantics and must route to INLINE_CONTRACT_REQUIRED."
+        }
+      ],
+      "criticality_compatibility": [
+        "CRITICAL",
+        "HIGH",
+        "NORMAL"
+      ],
+      "deterministic_validation_rules": [
+        "All required bindings are present, typed, non-empty, source-grounded, and used by at least one oracle.",
+        "No undeclared binding token remains after rendering.",
+        "Rendered oracles contain no generic or tautological acceptance phrase.",
+        "Requirement type and criticality are compatible with this profile.",
+        "The semantic matcher, binding extractor, and rendered-oracle audit all pass independently."
+      ],
+      "evidence_requirements": [
+        "subject identity",
+        "complete audit field inventory",
+        "trigger and outcome linkage",
+        "version references"
+      ],
+      "failure_semantics": "Do not claim auditability from an incomplete or unattributed record.",
+      "matcher_contract": {
+        "keyword_only_match_forbidden": true,
+        "requires_structural_binding_extraction": true,
+        "requires_type_compatibility": true,
+        "semantic_terms": [
+          "audit",
+          "auditable",
+          "kiểm toán"
+        ]
+      },
+      "observable_verification_contract": "audit record tied to subject identity with every bound field resolvable",
+      "optional_bindings": [
+        {
+          "data_type": "string_list",
+          "description": "Approved decisions that constrain the rendered contract.",
+          "name": "approved_decision_refs",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Full source-section heading used for semantic review.",
+          "name": "source_context_heading",
+          "source_required": true
+        }
+      ],
+      "oracle_templates": {
+        "edge_boundary": "For {audited_subject}, given an override, failure, or recovery outcome, when auditing applies, then both original and effective outcome remain distinguishable where bound.",
+        "negative": "For {audited_subject}, given a record missing one bound audit field, when audit completeness is verified, then it is reported non-conforming with the missing field identified.",
+        "positive": "Given {audit_trigger} for {audited_subject}, when the outcome is recorded, then {required_audit_fields} are present and attributable to that same subject."
+      },
+      "profile_id": "ACP-AUDITABILITY",
+      "prohibited_uses": [
+        "Keyword-only classification without structural and binding validation.",
+        "Complex payment, pricing, promotion, procurement, allocation, fulfillment, refund, fraud/risk, or financial-reconciliation workflow.",
+        "Any use requiring an invented threshold, state, role, actor, failure mode, or technical implementation.",
+        "Any binding that broadens or drops a qualifier, applicability scope, or failure semantic."
+      ],
+      "required_bindings": [
+        {
+          "data_type": "text",
+          "description": "Concrete audited subject extracted from source or an approved decision.",
+          "name": "audited_subject",
+          "source_required": true
+        },
+        {
+          "data_type": "string_list",
+          "description": "Concrete required audit fields extracted from source or an approved decision.",
+          "name": "required_audit_fields",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Concrete audit trigger extracted from source or an approved decision.",
+          "name": "audit_trigger",
+          "source_required": true
+        }
+      ],
+      "semantic_intent": "Verify that a named decision or operation records required actor, action, reason, version, and outcome evidence.",
+      "supported_requirement_types": [
+        "OPERATIONAL_REQUIREMENT",
+        "SECURITY_REQUIREMENT",
+        "BUSINESS_RULE"
+      ],
+      "title": "Auditability",
+      "valid_examples": [
+        {
+          "bindings": {
+            "audit_trigger": "bound_audit_trigger_example_1",
+            "audited_subject": "bound_audited_subject_example_1",
+            "required_audit_fields": [
+              "required_audit_fields_A_example_1",
+              "required_audit_fields_B_example_1"
+            ]
+          },
+          "example_id": "ACP-AUDITABILITY-EXAMPLE_1",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        },
+        {
+          "bindings": {
+            "audit_trigger": "bound_audit_trigger_example_2",
+            "audited_subject": "bound_audited_subject_example_2",
+            "required_audit_fields": [
+              "required_audit_fields_A_example_2",
+              "required_audit_fields_B_example_2"
+            ]
+          },
+          "example_id": "ACP-AUDITABILITY-EXAMPLE_2",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        }
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "applicability_rules": [
+        "The normative statement and full source section express this profile's semantic intent directly.",
+        "Every required binding is extracted verbatim or normalized deterministically from source/approved decisions.",
+        "Rendered positive, negative, and edge oracles verify the same atomic obligation without solution inference."
+      ],
+      "counterexamples": [
+        {
+          "example_id": "ACP-CONFIGURATION_LIFECYCLE-COUNTEREXAMPLE-1",
+          "statement": "A complex payment and allocation workflow with reconciliation and recovery branches.",
+          "why_invalid": "The workflow combines domain-specific states and failure semantics and must route to INLINE_CONTRACT_REQUIRED."
+        }
+      ],
+      "criticality_compatibility": [
+        "CRITICAL",
+        "HIGH",
+        "NORMAL"
+      ],
+      "deterministic_validation_rules": [
+        "All required bindings are present, typed, non-empty, source-grounded, and used by at least one oracle.",
+        "No undeclared binding token remains after rendering.",
+        "Rendered oracles contain no generic or tautological acceptance phrase.",
+        "Requirement type and criticality are compatible with this profile.",
+        "The semantic matcher, binding extractor, and rendered-oracle audit all pass independently."
+      ],
+      "evidence_requirements": [
+        "configuration identity and version",
+        "validation evidence",
+        "before/after lifecycle state",
+        "effective-version resolution"
+      ],
+      "failure_semantics": "Prevent invalid, retired, or ambiguous configuration from becoming effective.",
+      "matcher_contract": {
+        "keyword_only_match_forbidden": true,
+        "requires_structural_binding_extraction": true,
+        "requires_type_compatibility": true,
+        "semantic_terms": [
+          "configuration",
+          "cấu hình",
+          "activate",
+          "publish",
+          "version"
+        ]
+      },
+      "observable_verification_contract": "configuration identity/version, before/after state, validation result, and effective selection",
+      "optional_bindings": [
+        {
+          "data_type": "string_list",
+          "description": "Approved decisions that constrain the rendered contract.",
+          "name": "approved_decision_refs",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Full source-section heading used for semantic review.",
+          "name": "source_context_heading",
+          "source_required": true
+        }
+      ],
+      "oracle_templates": {
+        "edge_boundary": "For {configuration_subject}, given replacement or retirement, when effective configuration is resolved, then exactly the intended valid version is selected without silently reviving a retired version.",
+        "negative": "For {configuration_subject}, given invalid or incomplete configuration, when activation is requested, then it does not become effective and the validation reason is observable.",
+        "positive": "Given {configuration_subject} in {lifecycle_states}, when {activation_condition} is satisfied, then the intended version becomes effective with its transition recorded."
+      },
+      "profile_id": "ACP-CONFIGURATION_LIFECYCLE",
+      "prohibited_uses": [
+        "Keyword-only classification without structural and binding validation.",
+        "Complex payment, pricing, promotion, procurement, allocation, fulfillment, refund, fraud/risk, or financial-reconciliation workflow.",
+        "Any use requiring an invented threshold, state, role, actor, failure mode, or technical implementation.",
+        "Any binding that broadens or drops a qualifier, applicability scope, or failure semantic."
+      ],
+      "required_bindings": [
+        {
+          "data_type": "identifier",
+          "description": "Concrete configuration subject extracted from source or an approved decision.",
+          "name": "configuration_subject",
+          "source_required": true
+        },
+        {
+          "data_type": "string_list",
+          "description": "Concrete lifecycle states extracted from source or an approved decision.",
+          "name": "lifecycle_states",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Concrete activation condition extracted from source or an approved decision.",
+          "name": "activation_condition",
+          "source_required": true
+        }
+      ],
+      "semantic_intent": "Verify explicit draft, validation, activation, replacement, and retirement behavior for configuration.",
+      "supported_requirement_types": [
+        "BUSINESS_RULE",
+        "OPERATIONAL_REQUIREMENT",
+        "DESIGN_PRINCIPLE"
+      ],
+      "title": "Configuration lifecycle",
+      "valid_examples": [
+        {
+          "bindings": {
+            "activation_condition": "bound_activation_condition_example_1",
+            "configuration_subject": "bound_configuration_subject_example_1",
+            "lifecycle_states": [
+              "lifecycle_states_A_example_1",
+              "lifecycle_states_B_example_1"
+            ]
+          },
+          "example_id": "ACP-CONFIGURATION_LIFECYCLE-EXAMPLE_1",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        },
+        {
+          "bindings": {
+            "activation_condition": "bound_activation_condition_example_2",
+            "configuration_subject": "bound_configuration_subject_example_2",
+            "lifecycle_states": [
+              "lifecycle_states_A_example_2",
+              "lifecycle_states_B_example_2"
+            ]
+          },
+          "example_id": "ACP-CONFIGURATION_LIFECYCLE-EXAMPLE_2",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        }
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "applicability_rules": [
+        "The normative statement and full source section express this profile's semantic intent directly.",
+        "Every required binding is extracted verbatim or normalized deterministically from source/approved decisions.",
+        "Rendered positive, negative, and edge oracles verify the same atomic obligation without solution inference."
+      ],
+      "counterexamples": [
+        {
+          "example_id": "ACP-APPROVAL_WORKFLOW-COUNTEREXAMPLE-1",
+          "statement": "A complex payment and allocation workflow with reconciliation and recovery branches.",
+          "why_invalid": "The workflow combines domain-specific states and failure semantics and must route to INLINE_CONTRACT_REQUIRED."
+        }
+      ],
+      "criticality_compatibility": [
+        "CRITICAL",
+        "HIGH",
+        "NORMAL"
+      ],
+      "deterministic_validation_rules": [
+        "All required bindings are present, typed, non-empty, source-grounded, and used by at least one oracle.",
+        "No undeclared binding token remains after rendering.",
+        "Rendered oracles contain no generic or tautological acceptance phrase.",
+        "Requirement type and criticality are compatible with this profile.",
+        "The semantic matcher, binding extractor, and rendered-oracle audit all pass independently."
+      ],
+      "evidence_requirements": [
+        "subject and approver identity",
+        "authorization result",
+        "decision and reason",
+        "before/after governed state",
+        "audit record"
+      ],
+      "failure_semantics": "Never treat an unauthorized or incomplete approval as effective.",
+      "matcher_contract": {
+        "keyword_only_match_forbidden": true,
+        "requires_structural_binding_extraction": true,
+        "requires_type_compatibility": true,
+        "semantic_terms": [
+          "approval",
+          "approve",
+          "phê duyệt",
+          "override"
+        ]
+      },
+      "observable_verification_contract": "approver authorization, decision, reason, subject state, and audit evidence",
+      "optional_bindings": [
+        {
+          "data_type": "string_list",
+          "description": "Approved decisions that constrain the rendered contract.",
+          "name": "approved_decision_refs",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Full source-section heading used for semantic review.",
+          "name": "source_context_heading",
+          "source_required": true
+        }
+      ],
+      "oracle_templates": {
+        "edge_boundary": "For {approval_subject}, given approval is withdrawn, expires, or conflicts with a mandatory policy, when effectiveness is resolved, then the mandatory policy prevails and effective state is explicit.",
+        "negative": "For {approval_subject}, given an unauthorized actor or missing mandatory reason, when approval is attempted, then the decision is rejected and the governed action does not proceed.",
+        "positive": "Given {authorized_approver_scope} reviews {approval_subject}, when an outcome in {approval_outcomes} is selected, then {governed_action} follows that decision and records approver and reason."
+      },
+      "profile_id": "ACP-APPROVAL_WORKFLOW",
+      "prohibited_uses": [
+        "Keyword-only classification without structural and binding validation.",
+        "Complex payment, pricing, promotion, procurement, allocation, fulfillment, refund, fraud/risk, or financial-reconciliation workflow.",
+        "Any use requiring an invented threshold, state, role, actor, failure mode, or technical implementation.",
+        "Any binding that broadens or drops a qualifier, applicability scope, or failure semantic."
+      ],
+      "required_bindings": [
+        {
+          "data_type": "text",
+          "description": "Concrete approval subject extracted from source or an approved decision.",
+          "name": "approval_subject",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Concrete authorized approver scope extracted from source or an approved decision.",
+          "name": "authorized_approver_scope",
+          "source_required": true
+        },
+        {
+          "data_type": "string_list",
+          "description": "Concrete approval outcomes extracted from source or an approved decision.",
+          "name": "approval_outcomes",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Concrete governed action extracted from source or an approved decision.",
+          "name": "governed_action",
+          "source_required": true
+        }
+      ],
+      "semantic_intent": "Verify an explicit approval eligibility, decision, reason, and governed action boundary.",
+      "supported_requirement_types": [
+        "BUSINESS_RULE",
+        "SECURITY_REQUIREMENT",
+        "OPERATIONAL_REQUIREMENT"
+      ],
+      "title": "Approval workflow",
+      "valid_examples": [
+        {
+          "bindings": {
+            "approval_outcomes": [
+              "approval_outcomes_A_example_1",
+              "approval_outcomes_B_example_1"
+            ],
+            "approval_subject": "bound_approval_subject_example_1",
+            "authorized_approver_scope": "bound_authorized_approver_scope_example_1",
+            "governed_action": "bound_governed_action_example_1"
+          },
+          "example_id": "ACP-APPROVAL_WORKFLOW-EXAMPLE_1",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        },
+        {
+          "bindings": {
+            "approval_outcomes": [
+              "approval_outcomes_A_example_2",
+              "approval_outcomes_B_example_2"
+            ],
+            "approval_subject": "bound_approval_subject_example_2",
+            "authorized_approver_scope": "bound_authorized_approver_scope_example_2",
+            "governed_action": "bound_governed_action_example_2"
+          },
+          "example_id": "ACP-APPROVAL_WORKFLOW-EXAMPLE_2",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        }
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "applicability_rules": [
+        "The normative statement and full source section express this profile's semantic intent directly.",
+        "Every required binding is extracted verbatim or normalized deterministically from source/approved decisions.",
+        "Rendered positive, negative, and edge oracles verify the same atomic obligation without solution inference."
+      ],
+      "counterexamples": [
+        {
+          "example_id": "ACP-UX_STATE_AND_ACTION-COUNTEREXAMPLE-1",
+          "statement": "A complex payment and allocation workflow with reconciliation and recovery branches.",
+          "why_invalid": "The workflow combines domain-specific states and failure semantics and must route to INLINE_CONTRACT_REQUIRED."
+        }
+      ],
+      "criticality_compatibility": [
+        "CRITICAL",
+        "HIGH",
+        "NORMAL"
+      ],
+      "deterministic_validation_rules": [
+        "All required bindings are present, typed, non-empty, source-grounded, and used by at least one oracle.",
+        "No undeclared binding token remains after rendering.",
+        "Rendered oracles contain no generic or tautological acceptance phrase.",
+        "Requirement type and criticality are compatible with this profile.",
+        "The semantic matcher, binding extractor, and rendered-oracle audit all pass independently."
+      ],
+      "evidence_requirements": [
+        "rendered-state capture",
+        "available and unavailable action inventory",
+        "user-visible confirmation or fallback",
+        "external payload fields where applicable"
+      ],
+      "failure_semantics": "Do not infer success from hidden state; required UI outcome must be observable.",
+      "matcher_contract": {
+        "keyword_only_match_forbidden": true,
+        "requires_structural_binding_extraction": true,
+        "requires_type_compatibility": true,
+        "semantic_terms": [
+          "display",
+          "render",
+          "screen",
+          "action",
+          "button",
+          "navigation",
+          "journey",
+          "hiển thị"
+        ]
+      },
+      "observable_verification_contract": "rendered state, enabled/unavailable actions, visible confirmation, and payload-field inventory",
+      "optional_bindings": [
+        {
+          "data_type": "string_list",
+          "description": "Approved decisions that constrain the rendered contract.",
+          "name": "approved_decision_refs",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Full source-section heading used for semantic review.",
+          "name": "source_context_heading",
+          "source_required": true
+        }
+      ],
+      "oracle_templates": {
+        "edge_boundary": "Given required journey input is unavailable, when the surface renders, then {fallback_outcome} is visible and no prohibited action proceeds.",
+        "negative": "For {ux_surface}, given an action or disclosure outside the bound state, when the surface is inspected, then it is unavailable or absent rather than silently enabled.",
+        "positive": "Given {ux_surface}, when the bound journey state is reached, then {rendered_state} and {available_actions} are directly visible and actionable as specified."
+      },
+      "profile_id": "ACP-UX_STATE_AND_ACTION",
+      "prohibited_uses": [
+        "Keyword-only classification without structural and binding validation.",
+        "Complex payment, pricing, promotion, procurement, allocation, fulfillment, refund, fraud/risk, or financial-reconciliation workflow.",
+        "Any use requiring an invented threshold, state, role, actor, failure mode, or technical implementation.",
+        "Any binding that broadens or drops a qualifier, applicability scope, or failure semantic."
+      ],
+      "required_bindings": [
+        {
+          "data_type": "identifier",
+          "description": "Concrete ux surface extracted from source or an approved decision.",
+          "name": "ux_surface",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Concrete rendered state extracted from source or an approved decision.",
+          "name": "rendered_state",
+          "source_required": true
+        },
+        {
+          "data_type": "string_list",
+          "description": "Concrete available actions extracted from source or an approved decision.",
+          "name": "available_actions",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Concrete fallback outcome extracted from source or an approved decision.",
+          "name": "fallback_outcome",
+          "source_required": true
+        }
+      ],
+      "semantic_intent": "Verify a named rendered state, available action, prohibited disclosure/action, and fallback outcome.",
+      "supported_requirement_types": [
+        "UX_REQUIREMENT"
+      ],
+      "title": "UX state and action",
+      "valid_examples": [
+        {
+          "bindings": {
+            "available_actions": [
+              "available_actions_A_example_1",
+              "available_actions_B_example_1"
+            ],
+            "fallback_outcome": "bound_fallback_outcome_example_1",
+            "rendered_state": "bound_rendered_state_example_1",
+            "ux_surface": "bound_ux_surface_example_1"
+          },
+          "example_id": "ACP-UX_STATE_AND_ACTION-EXAMPLE_1",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        },
+        {
+          "bindings": {
+            "available_actions": [
+              "available_actions_A_example_2",
+              "available_actions_B_example_2"
+            ],
+            "fallback_outcome": "bound_fallback_outcome_example_2",
+            "rendered_state": "bound_rendered_state_example_2",
+            "ux_surface": "bound_ux_surface_example_2"
+          },
+          "example_id": "ACP-UX_STATE_AND_ACTION-EXAMPLE_2",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        }
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "applicability_rules": [
+        "The normative statement and full source section express this profile's semantic intent directly.",
+        "Every required binding is extracted verbatim or normalized deterministically from source/approved decisions.",
+        "Rendered positive, negative, and edge oracles verify the same atomic obligation without solution inference."
+      ],
+      "counterexamples": [
+        {
+          "example_id": "ACP-UX_ACCESSIBILITY-COUNTEREXAMPLE-1",
+          "statement": "A complex payment and allocation workflow with reconciliation and recovery branches.",
+          "why_invalid": "The workflow combines domain-specific states and failure semantics and must route to INLINE_CONTRACT_REQUIRED."
+        }
+      ],
+      "criticality_compatibility": [
+        "CRITICAL",
+        "HIGH",
+        "NORMAL"
+      ],
+      "deterministic_validation_rules": [
+        "All required bindings are present, typed, non-empty, source-grounded, and used by at least one oracle.",
+        "No undeclared binding token remains after rendering.",
+        "Rendered oracles contain no generic or tautological acceptance phrase.",
+        "Requirement type and criticality are compatible with this profile.",
+        "The semantic matcher, binding extractor, and rendered-oracle audit all pass independently."
+      ],
+      "evidence_requirements": [
+        "enabled mode or assistive context",
+        "rendered content and action state",
+        "interaction result",
+        "specific conformance finding"
+      ],
+      "failure_semantics": "Do not claim accessibility from generic rendering evidence.",
+      "matcher_contract": {
+        "keyword_only_match_forbidden": true,
+        "requires_structural_binding_extraction": true,
+        "requires_type_compatibility": true,
+        "semantic_terms": [
+          "accessibility",
+          "high contrast",
+          "keyboard",
+          "screen reader",
+          "wcag",
+          "a11y"
+        ]
+      },
+      "observable_verification_contract": "enabled accessibility state, perceivable content, operable action, fallback, and conformance evidence",
+      "optional_bindings": [
+        {
+          "data_type": "string_list",
+          "description": "Approved decisions that constrain the rendered contract.",
+          "name": "approved_decision_refs",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Full source-section heading used for semantic review.",
+          "name": "source_context_heading",
+          "source_required": true
+        }
+      ],
+      "oracle_templates": {
+        "edge_boundary": "For {ux_surface}, given fallback content or an unavailable primary interaction, when the accessible alternative applies, then the alternative is perceivable, operable, and exposes the same required outcome.",
+        "negative": "For {ux_surface}, given the accessibility capability is absent or broken, when the affected interaction is tested, then conformance fails with the inaccessible content or action identified.",
+        "positive": "Given {accessibility_capability} is enabled on {ux_surface}, when {affected_content_or_action} is rendered or used, then the bound content remains perceivable and the action remains operable."
+      },
+      "profile_id": "ACP-UX_ACCESSIBILITY",
+      "prohibited_uses": [
+        "Keyword-only classification without structural and binding validation.",
+        "Complex payment, pricing, promotion, procurement, allocation, fulfillment, refund, fraud/risk, or financial-reconciliation workflow.",
+        "Any use requiring an invented threshold, state, role, actor, failure mode, or technical implementation.",
+        "Any binding that broadens or drops a qualifier, applicability scope, or failure semantic."
+      ],
+      "required_bindings": [
+        {
+          "data_type": "identifier",
+          "description": "Concrete ux surface extracted from source or an approved decision.",
+          "name": "ux_surface",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Concrete accessibility capability extracted from source or an approved decision.",
+          "name": "accessibility_capability",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Concrete affected content or action extracted from source or an approved decision.",
+          "name": "affected_content_or_action",
+          "source_required": true
+        }
+      ],
+      "semantic_intent": "Verify a specifically named accessibility mode, interaction, or conformance outcome.",
+      "supported_requirement_types": [
+        "ACCESSIBILITY_REQUIREMENT",
+        "UX_REQUIREMENT"
+      ],
+      "title": "UX accessibility outcome",
+      "valid_examples": [
+        {
+          "bindings": {
+            "accessibility_capability": "bound_accessibility_capability_example_1",
+            "affected_content_or_action": "bound_affected_content_or_action_example_1",
+            "ux_surface": "bound_ux_surface_example_1"
+          },
+          "example_id": "ACP-UX_ACCESSIBILITY-EXAMPLE_1",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        },
+        {
+          "bindings": {
+            "accessibility_capability": "bound_accessibility_capability_example_2",
+            "affected_content_or_action": "bound_affected_content_or_action_example_2",
+            "ux_surface": "bound_ux_surface_example_2"
+          },
+          "example_id": "ACP-UX_ACCESSIBILITY-EXAMPLE_2",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        }
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "applicability_rules": [
+        "The normative statement and full source section express this profile's semantic intent directly.",
+        "Every required binding is extracted verbatim or normalized deterministically from source/approved decisions.",
+        "Rendered positive, negative, and edge oracles verify the same atomic obligation without solution inference."
+      ],
+      "counterexamples": [
+        {
+          "example_id": "ACP-UX_PERFORMANCE_BUDGET-COUNTEREXAMPLE-1",
+          "statement": "A complex payment and allocation workflow with reconciliation and recovery branches.",
+          "why_invalid": "The workflow combines domain-specific states and failure semantics and must route to INLINE_CONTRACT_REQUIRED."
+        }
+      ],
+      "criticality_compatibility": [
+        "CRITICAL",
+        "HIGH",
+        "NORMAL"
+      ],
+      "deterministic_validation_rules": [
+        "All required bindings are present, typed, non-empty, source-grounded, and used by at least one oracle.",
+        "No undeclared binding token remains after rendering.",
+        "Rendered oracles contain no generic or tautological acceptance phrase.",
+        "Requirement type and criticality are compatible with this profile.",
+        "The semantic matcher, binding extractor, and rendered-oracle audit all pass independently."
+      ],
+      "evidence_requirements": [
+        "journey and condition",
+        "metric definition",
+        "budget and observed values",
+        "measurement result"
+      ],
+      "failure_semantics": "Never invent a threshold or claim performance without a bound measurement.",
+      "matcher_contract": {
+        "keyword_only_match_forbidden": true,
+        "requires_structural_binding_extraction": true,
+        "requires_type_compatibility": true,
+        "semantic_terms": [
+          "latency",
+          "seconds",
+          "ms",
+          "performance budget",
+          "response time",
+          "thời gian"
+        ]
+      },
+      "observable_verification_contract": "measurement condition, observed metric value, bound budget, and pass/fail result",
+      "optional_bindings": [
+        {
+          "data_type": "string_list",
+          "description": "Approved decisions that constrain the rendered contract.",
+          "name": "approved_decision_refs",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Full source-section heading used for semantic review.",
+          "name": "source_context_heading",
+          "source_required": true
+        }
+      ],
+      "oracle_templates": {
+        "edge_boundary": "For {journey_boundary}, given incomplete measurement conditions or missing samples, when conformance is evaluated, then no budget pass is claimed until the bound condition is met.",
+        "negative": "Given the observed value exceeds {budget}, when conformance is evaluated, then the journey is reported outside budget with the measured value identified.",
+        "positive": "Given {measurement_condition}, when {journey_boundary} is measured, then {metric} is within {budget} and the observed value is recorded."
+      },
+      "profile_id": "ACP-UX_PERFORMANCE_BUDGET",
+      "prohibited_uses": [
+        "Keyword-only classification without structural and binding validation.",
+        "Complex payment, pricing, promotion, procurement, allocation, fulfillment, refund, fraud/risk, or financial-reconciliation workflow.",
+        "Any use requiring an invented threshold, state, role, actor, failure mode, or technical implementation.",
+        "Any binding that broadens or drops a qualifier, applicability scope, or failure semantic."
+      ],
+      "required_bindings": [
+        {
+          "data_type": "text",
+          "description": "Concrete journey boundary extracted from source or an approved decision.",
+          "name": "journey_boundary",
+          "source_required": true
+        },
+        {
+          "data_type": "identifier",
+          "description": "Concrete metric extracted from source or an approved decision.",
+          "name": "metric",
+          "source_required": true
+        },
+        {
+          "data_type": "duration_or_threshold",
+          "description": "Concrete budget extracted from source or an approved decision.",
+          "name": "budget",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Concrete measurement condition extracted from source or an approved decision.",
+          "name": "measurement_condition",
+          "source_required": true
+        }
+      ],
+      "semantic_intent": "Verify an explicit user-visible timing or responsiveness budget at a named journey boundary.",
+      "supported_requirement_types": [
+        "PERFORMANCE_REQUIREMENT",
+        "UX_REQUIREMENT"
+      ],
+      "title": "UX performance budget",
+      "valid_examples": [
+        {
+          "bindings": {
+            "budget": "bound_budget_example_1",
+            "journey_boundary": "bound_journey_boundary_example_1",
+            "measurement_condition": "bound_measurement_condition_example_1",
+            "metric": "bound_metric_example_1"
+          },
+          "example_id": "ACP-UX_PERFORMANCE_BUDGET-EXAMPLE_1",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        },
+        {
+          "bindings": {
+            "budget": "bound_budget_example_2",
+            "journey_boundary": "bound_journey_boundary_example_2",
+            "measurement_condition": "bound_measurement_condition_example_2",
+            "metric": "bound_metric_example_2"
+          },
+          "example_id": "ACP-UX_PERFORMANCE_BUDGET-EXAMPLE_2",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        }
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "applicability_rules": [
+        "The normative statement and full source section express this profile's semantic intent directly.",
+        "Every required binding is extracted verbatim or normalized deterministically from source/approved decisions.",
+        "Rendered positive, negative, and edge oracles verify the same atomic obligation without solution inference."
+      ],
+      "counterexamples": [
+        {
+          "example_id": "ACP-DESIGN_CONFORMANCE_TRACE-COUNTEREXAMPLE-1",
+          "statement": "A complex payment and allocation workflow with reconciliation and recovery branches.",
+          "why_invalid": "The workflow combines domain-specific states and failure semantics and must route to INLINE_CONTRACT_REQUIRED."
+        }
+      ],
+      "criticality_compatibility": [
+        "CRITICAL",
+        "HIGH",
+        "NORMAL"
+      ],
+      "deterministic_validation_rules": [
+        "All required bindings are present, typed, non-empty, source-grounded, and used by at least one oracle.",
+        "No undeclared binding token remains after rendering.",
+        "Rendered oracles contain no generic or tautological acceptance phrase.",
+        "Requirement type and criticality are compatible with this profile.",
+        "The semantic matcher, binding extractor, and rendered-oracle audit all pass independently."
+      ],
+      "evidence_requirements": [
+        "principle identifier",
+        "governed artifact",
+        "complete bound trace",
+        "conformance decision and gap"
+      ],
+      "failure_semantics": "Do not substitute a generic runtime pass for design conformance.",
+      "matcher_contract": {
+        "keyword_only_match_forbidden": true,
+        "requires_structural_binding_extraction": true,
+        "requires_type_compatibility": true,
+        "semantic_terms": [
+          "principle",
+          "first",
+          "driven",
+          "ready",
+          "nền tảng",
+          "architecture",
+          "kiến trúc"
+        ]
+      },
+      "observable_verification_contract": "conformance decision, requirement/design/configuration trace, and named boundary violation",
+      "optional_bindings": [
+        {
+          "data_type": "string_list",
+          "description": "Approved decisions that constrain the rendered contract.",
+          "name": "approved_decision_refs",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Full source-section heading used for semantic review.",
+          "name": "source_context_heading",
+          "source_required": true
+        }
+      ],
+      "oracle_templates": {
+        "edge_boundary": "For {principle}, given the principle is not applicable to an artifact, when review runs, then non-applicability is justified from scope rather than treated as conformance evidence.",
+        "negative": "For {principle}, given a missing trace or direct violation of the bound principle, when conformance is reviewed, then the artifact is reported non-conforming with the exact gap identified.",
+        "positive": "Given {governed_artifact}, when conformance to {principle} is reviewed, then {required_trace} is complete and the applicable design or configuration boundary is explicit."
+      },
+      "profile_id": "ACP-DESIGN_CONFORMANCE_TRACE",
+      "prohibited_uses": [
+        "Keyword-only classification without structural and binding validation.",
+        "Complex payment, pricing, promotion, procurement, allocation, fulfillment, refund, fraud/risk, or financial-reconciliation workflow.",
+        "Any use requiring an invented threshold, state, role, actor, failure mode, or technical implementation.",
+        "Any binding that broadens or drops a qualifier, applicability scope, or failure semantic."
+      ],
+      "required_bindings": [
+        {
+          "data_type": "text",
+          "description": "Concrete principle extracted from source or an approved decision.",
+          "name": "principle",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Concrete governed artifact extracted from source or an approved decision.",
+          "name": "governed_artifact",
+          "source_required": true
+        },
+        {
+          "data_type": "string_list",
+          "description": "Concrete required trace extracted from source or an approved decision.",
+          "name": "required_trace",
+          "source_required": true
+        }
+      ],
+      "semantic_intent": "Verify traceability from a design principle to governed requirements, configuration, and architectural boundary without runtime tautology.",
+      "supported_requirement_types": [
+        "DESIGN_PRINCIPLE",
+        "PERFORMANCE_REQUIREMENT"
+      ],
+      "title": "Design conformance trace",
+      "valid_examples": [
+        {
+          "bindings": {
+            "governed_artifact": "bound_governed_artifact_example_1",
+            "principle": "bound_principle_example_1",
+            "required_trace": [
+              "required_trace_A_example_1",
+              "required_trace_B_example_1"
+            ]
+          },
+          "example_id": "ACP-DESIGN_CONFORMANCE_TRACE-EXAMPLE_1",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        },
+        {
+          "bindings": {
+            "governed_artifact": "bound_governed_artifact_example_2",
+            "principle": "bound_principle_example_2",
+            "required_trace": [
+              "required_trace_A_example_2",
+              "required_trace_B_example_2"
+            ]
+          },
+          "example_id": "ACP-DESIGN_CONFORMANCE_TRACE-EXAMPLE_2",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        }
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "applicability_rules": [
+        "The normative statement and full source section express this profile's semantic intent directly.",
+        "Every required binding is extracted verbatim or normalized deterministically from source/approved decisions.",
+        "Rendered positive, negative, and edge oracles verify the same atomic obligation without solution inference."
+      ],
+      "counterexamples": [
+        {
+          "example_id": "ACP-OPERATION_OBSERVABILITY-COUNTEREXAMPLE-1",
+          "statement": "A complex payment and allocation workflow with reconciliation and recovery branches.",
+          "why_invalid": "The workflow combines domain-specific states and failure semantics and must route to INLINE_CONTRACT_REQUIRED."
+        }
+      ],
+      "criticality_compatibility": [
+        "CRITICAL",
+        "HIGH",
+        "NORMAL"
+      ],
+      "deterministic_validation_rules": [
+        "All required bindings are present, typed, non-empty, source-grounded, and used by at least one oracle.",
+        "No undeclared binding token remains after rendering.",
+        "Rendered oracles contain no generic or tautological acceptance phrase.",
+        "Requirement type and criticality are compatible with this profile.",
+        "The semantic matcher, binding extractor, and rendered-oracle audit all pass independently."
+      ],
+      "evidence_requirements": [
+        "operation identity",
+        "state and outcome",
+        "bound signal names and values",
+        "observation time",
+        "verification result"
+      ],
+      "failure_semantics": "Do not report operational verification success with missing bound evidence.",
+      "matcher_contract": {
+        "keyword_only_match_forbidden": true,
+        "requires_structural_binding_extraction": true,
+        "requires_type_compatibility": true,
+        "semantic_terms": [
+          "observable",
+          "observability",
+          "quan sát",
+          "telemetry",
+          "signal"
+        ]
+      },
+      "observable_verification_contract": "operation identity, current/terminal state, outcome, signal values, and verification failure",
+      "optional_bindings": [
+        {
+          "data_type": "string_list",
+          "description": "Approved decisions that constrain the rendered contract.",
+          "name": "approved_decision_refs",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Full source-section heading used for semantic review.",
+          "name": "source_context_heading",
+          "source_required": true
+        }
+      ],
+      "oracle_templates": {
+        "edge_boundary": "For {operation_subject}, given the operation changes from running to completed or failed, when observations are compared, then the terminal outcome and relevant signals remain attributable to the same operation.",
+        "negative": "For {operation_subject}, given required state, outcome, or signal evidence is absent, when observability is verified, then a detectable failure identifies the missing evidence.",
+        "positive": "Given {operation_subject} is in {required_states}, when an operator inspects it, then the matching state, outcome, and {required_signals} are observable."
+      },
+      "profile_id": "ACP-OPERATION_OBSERVABILITY",
+      "prohibited_uses": [
+        "Keyword-only classification without structural and binding validation.",
+        "Complex payment, pricing, promotion, procurement, allocation, fulfillment, refund, fraud/risk, or financial-reconciliation workflow.",
+        "Any use requiring an invented threshold, state, role, actor, failure mode, or technical implementation.",
+        "Any binding that broadens or drops a qualifier, applicability scope, or failure semantic."
+      ],
+      "required_bindings": [
+        {
+          "data_type": "text",
+          "description": "Concrete operation subject extracted from source or an approved decision.",
+          "name": "operation_subject",
+          "source_required": true
+        },
+        {
+          "data_type": "string_list",
+          "description": "Concrete required states extracted from source or an approved decision.",
+          "name": "required_states",
+          "source_required": true
+        },
+        {
+          "data_type": "string_list",
+          "description": "Concrete required signals extracted from source or an approved decision.",
+          "name": "required_signals",
+          "source_required": true
+        }
+      ],
+      "semantic_intent": "Verify named running/completed/failed state, outcome, signals, and detectable missing-evidence failure.",
+      "supported_requirement_types": [
+        "OPERATIONAL_REQUIREMENT"
+      ],
+      "title": "Operation observability",
+      "valid_examples": [
+        {
+          "bindings": {
+            "operation_subject": "bound_operation_subject_example_1",
+            "required_signals": [
+              "required_signals_A_example_1",
+              "required_signals_B_example_1"
+            ],
+            "required_states": [
+              "required_states_A_example_1",
+              "required_states_B_example_1"
+            ]
+          },
+          "example_id": "ACP-OPERATION_OBSERVABILITY-EXAMPLE_1",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        },
+        {
+          "bindings": {
+            "operation_subject": "bound_operation_subject_example_2",
+            "required_signals": [
+              "required_signals_A_example_2",
+              "required_signals_B_example_2"
+            ],
+            "required_states": [
+              "required_states_A_example_2",
+              "required_states_B_example_2"
+            ]
+          },
+          "example_id": "ACP-OPERATION_OBSERVABILITY-EXAMPLE_2",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        }
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "applicability_rules": [
+        "The normative statement and full source section express this profile's semantic intent directly.",
+        "Every required binding is extracted verbatim or normalized deterministically from source/approved decisions.",
+        "Rendered positive, negative, and edge oracles verify the same atomic obligation without solution inference."
+      ],
+      "counterexamples": [
+        {
+          "example_id": "ACP-INTEGRATION_CONTRACT-COUNTEREXAMPLE-1",
+          "statement": "A complex payment and allocation workflow with reconciliation and recovery branches.",
+          "why_invalid": "The workflow combines domain-specific states and failure semantics and must route to INLINE_CONTRACT_REQUIRED."
+        }
+      ],
+      "criticality_compatibility": [
+        "CRITICAL",
+        "HIGH",
+        "NORMAL"
+      ],
+      "deterministic_validation_rules": [
+        "All required bindings are present, typed, non-empty, source-grounded, and used by at least one oracle.",
+        "No undeclared binding token remains after rendering.",
+        "Rendered oracles contain no generic or tautological acceptance phrase.",
+        "Requirement type and criticality are compatible with this profile.",
+        "The semantic matcher, binding extractor, and rendered-oracle audit all pass independently."
+      ],
+      "evidence_requirements": [
+        "provider and consumer identities",
+        "submitted contract",
+        "accept/reject result",
+        "external outcome",
+        "ownership and reconciliation evidence"
+      ],
+      "failure_semantics": "Do not claim integration success without a bound external interaction outcome.",
+      "matcher_contract": {
+        "keyword_only_match_forbidden": true,
+        "requires_structural_binding_extraction": true,
+        "requires_type_compatibility": true,
+        "semantic_terms": [
+          "api",
+          "integration",
+          "connector",
+          "adapter",
+          "provider",
+          "consumer"
+        ]
+      },
+      "observable_verification_contract": "submitted contract, provider/consumer ownership, accept/reject result, external outcome, and reconciliation evidence where bound",
+      "optional_bindings": [
+        {
+          "data_type": "string_list",
+          "description": "Approved decisions that constrain the rendered contract.",
+          "name": "approved_decision_refs",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Full source-section heading used for semantic review.",
+          "name": "source_context_heading",
+          "source_required": true
+        }
+      ],
+      "oracle_templates": {
+        "edge_boundary": "For {provider}, given external outcome is incomplete or disputed, when boundary ownership is inspected, then the responsible party and reconciliation evidence are explicit.",
+        "negative": "For {provider}, given malformed, unsupported, or unauthorized contract input, when the provider evaluates it, then it is rejected with no false successful external outcome.",
+        "positive": "Given {consumer} submits {contract_input} to {provider}, when the contract is evaluated, then {contract_outcome} is observable at the bound integration boundary."
+      },
+      "profile_id": "ACP-INTEGRATION_CONTRACT",
+      "prohibited_uses": [
+        "Keyword-only classification without structural and binding validation.",
+        "Complex payment, pricing, promotion, procurement, allocation, fulfillment, refund, fraud/risk, or financial-reconciliation workflow.",
+        "Any use requiring an invented threshold, state, role, actor, failure mode, or technical implementation.",
+        "Any binding that broadens or drops a qualifier, applicability scope, or failure semantic."
+      ],
+      "required_bindings": [
+        {
+          "data_type": "identifier",
+          "description": "Concrete provider extracted from source or an approved decision.",
+          "name": "provider",
+          "source_required": true
+        },
+        {
+          "data_type": "identifier",
+          "description": "Concrete consumer extracted from source or an approved decision.",
+          "name": "consumer",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Concrete contract input extracted from source or an approved decision.",
+          "name": "contract_input",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Concrete contract outcome extracted from source or an approved decision.",
+          "name": "contract_outcome",
+          "source_required": true
+        }
+      ],
+      "semantic_intent": "Verify an explicit producer/provider, consumer/client, accepted input/output, ownership boundary, and rejection outcome.",
+      "supported_requirement_types": [
+        "INTEGRATION_REQUIREMENT"
+      ],
+      "title": "Integration contract boundary",
+      "valid_examples": [
+        {
+          "bindings": {
+            "consumer": "bound_consumer_example_1",
+            "contract_input": "bound_contract_input_example_1",
+            "contract_outcome": "bound_contract_outcome_example_1",
+            "provider": "bound_provider_example_1"
+          },
+          "example_id": "ACP-INTEGRATION_CONTRACT-EXAMPLE_1",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        },
+        {
+          "bindings": {
+            "consumer": "bound_consumer_example_2",
+            "contract_input": "bound_contract_input_example_2",
+            "contract_outcome": "bound_contract_outcome_example_2",
+            "provider": "bound_provider_example_2"
+          },
+          "example_id": "ACP-INTEGRATION_CONTRACT-EXAMPLE_2",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        }
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "applicability_rules": [
+        "The normative statement and full source section express this profile's semantic intent directly.",
+        "Every required binding is extracted verbatim or normalized deterministically from source/approved decisions.",
+        "Rendered positive, negative, and edge oracles verify the same atomic obligation without solution inference."
+      ],
+      "counterexamples": [
+        {
+          "example_id": "ACP-SCOPE_EXCLUSION-COUNTEREXAMPLE-1",
+          "statement": "A complex payment and allocation workflow with reconciliation and recovery branches.",
+          "why_invalid": "The workflow combines domain-specific states and failure semantics and must route to INLINE_CONTRACT_REQUIRED."
+        }
+      ],
+      "criticality_compatibility": [
+        "CRITICAL",
+        "HIGH",
+        "NORMAL"
+      ],
+      "deterministic_validation_rules": [
+        "All required bindings are present, typed, non-empty, source-grounded, and used by at least one oracle.",
+        "No undeclared binding token remains after rendering.",
+        "Rendered oracles contain no generic or tautological acceptance phrase.",
+        "Requirement type and criticality are compatible with this profile.",
+        "The semantic matcher, binding extractor, and rendered-oracle audit all pass independently."
+      ],
+      "evidence_requirements": [
+        "baseline and scope marker",
+        "capability inventory",
+        "exposed actions/contracts",
+        "conformance result"
+      ],
+      "failure_semantics": "Prevent future or deferred capability from being counted as active.",
+      "matcher_contract": {
+        "keyword_only_match_forbidden": true,
+        "requires_structural_binding_extraction": true,
+        "requires_type_compatibility": true,
+        "semantic_terms": [
+          "future",
+          "deferred",
+          "out of scope",
+          "chưa triển khai",
+          "phiên bản sau"
+        ]
+      },
+      "observable_verification_contract": "baseline capability inventory, exposed UI/API/action surface, and scope marker",
+      "optional_bindings": [
+        {
+          "data_type": "string_list",
+          "description": "Approved decisions that constrain the rendered contract.",
+          "name": "approved_decision_refs",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Full source-section heading used for semantic review.",
+          "name": "source_context_heading",
+          "source_required": true
+        }
+      ],
+      "oracle_templates": {
+        "edge_boundary": "For {excluded_capability}, given architectural readiness without implementation, when conformance is evaluated, then readiness evidence is distinguishable from active product availability.",
+        "negative": "For {excluded_capability}, given an exposed action or contract claiming the excluded capability is active, when scope conformance is checked, then the claim is rejected as outside the bound baseline.",
+        "positive": "Given {current_baseline}, when capability inventory is inspected, then {excluded_capability} is marked {scope_status} and is not represented as active delivery."
+      },
+      "profile_id": "ACP-SCOPE_EXCLUSION",
+      "prohibited_uses": [
+        "Keyword-only classification without structural and binding validation.",
+        "Complex payment, pricing, promotion, procurement, allocation, fulfillment, refund, fraud/risk, or financial-reconciliation workflow.",
+        "Any use requiring an invented threshold, state, role, actor, failure mode, or technical implementation.",
+        "Any binding that broadens or drops a qualifier, applicability scope, or failure semantic."
+      ],
+      "required_bindings": [
+        {
+          "data_type": "text",
+          "description": "Concrete excluded capability extracted from source or an approved decision.",
+          "name": "excluded_capability",
+          "source_required": true
+        },
+        {
+          "data_type": "enum:FUTURE|DEFERRED|OUT_OF_SCOPE",
+          "description": "Concrete scope status extracted from source or an approved decision.",
+          "name": "scope_status",
+          "source_required": true
+        },
+        {
+          "data_type": "version",
+          "description": "Concrete current baseline extracted from source or an approved decision.",
+          "name": "current_baseline",
+          "source_required": true
+        }
+      ],
+      "semantic_intent": "Verify that an explicitly future, deferred, or excluded capability is not represented as active behavior in the current baseline.",
+      "supported_requirement_types": [
+        "SCOPE_CONSTRAINT",
+        "BUSINESS_DECISION",
+        "DESIGN_PRINCIPLE"
+      ],
+      "title": "Scope exclusion",
+      "valid_examples": [
+        {
+          "bindings": {
+            "current_baseline": "bound_current_baseline_example_1",
+            "excluded_capability": "bound_excluded_capability_example_1",
+            "scope_status": "FUTURE"
+          },
+          "example_id": "ACP-SCOPE_EXCLUSION-EXAMPLE_1",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        },
+        {
+          "bindings": {
+            "current_baseline": "bound_current_baseline_example_2",
+            "excluded_capability": "bound_excluded_capability_example_2",
+            "scope_status": "FUTURE"
+          },
+          "example_id": "ACP-SCOPE_EXCLUSION-EXAMPLE_2",
+          "why_valid": "All bound values are concrete and the rendered oracles preserve this profile's single semantic intent."
+        }
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "applicability_rules": [
+        "The source expresses this single semantic obligation directly.",
+        "All required bindings are source/decision grounded.",
+        "Positive, negative, and edge oracles preserve every qualifier."
+      ],
+      "counterexamples": [
+        {
+          "example_id": "ACP-ATOMIC_CAPABILITY_AVAILABILITY-COUNTEREXAMPLE",
+          "statement": "A payment workflow combining authorization, allocation, settlement, and recovery.",
+          "why_invalid": "Multiple domain states and failure semantics require an inline contract."
+        }
+      ],
+      "criticality_compatibility": [
+        "CRITICAL",
+        "HIGH",
+        "NORMAL"
+      ],
+      "deterministic_validation_rules": [
+        "Every required binding exists and is used.",
+        "Rendered oracles contain no placeholder or generic phrase.",
+        "Type, qualifiers, applicability, and provenance remain compatible.",
+        "Complex-domain statements are rejected."
+      ],
+      "evidence_requirements": [
+        "subject identity",
+        "capability inventory",
+        "observable capability outcome"
+      ],
+      "failure_semantics": "Report the exact missing capability without inferring an implementation.",
+      "observable_verification_contract": "subject identity, capability inventory, observable capability outcome",
+      "optional_bindings": [
+        {
+          "data_type": "string_list",
+          "description": "Approved decision constraints.",
+          "name": "approved_decision_refs",
+          "source_required": true
+        }
+      ],
+      "oracle_templates": {
+        "edge_boundary": "Given {capability_subject} exposes a similarly named but different capability, when conformance for {required_capability} is evaluated, then the substitute is not accepted as evidence.",
+        "negative": "Given {capability_subject} without {required_capability}, when completeness is evaluated, then the missing capability is reported by name and no aggregate capability pass is claimed.",
+        "positive": "Given {capability_subject}, when its available capability inventory is inspected, then {required_capability} is independently present and attributable to that subject."
+      },
+      "profile_id": "ACP-ATOMIC_CAPABILITY_AVAILABILITY",
+      "prohibited_uses": [
+        "Keyword-only matching.",
+        "Compound workflow or financial/risk state machine.",
+        "Missing or inferred bindings.",
+        "Any statement with an additional qualifier not represented by this profile."
+      ],
+      "required_bindings": [
+        {
+          "data_type": "identifier",
+          "description": "Concrete capability subject grounded in source or an approved decision.",
+          "name": "capability_subject",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Concrete required capability grounded in source or an approved decision.",
+          "name": "required_capability",
+          "source_required": true
+        }
+      ],
+      "semantic_intent": "Verify that one explicitly named subject exposes one explicitly named capability.",
+      "status": "CANDIDATE_ADDITION",
+      "supersedes": null,
+      "supported_requirement_types": [
+        "BUSINESS_REQUIREMENT",
+        "BUSINESS_DECISION",
+        "UX_REQUIREMENT",
+        "OPERATIONAL_REQUIREMENT"
+      ],
+      "title": "Atomic capability availability",
+      "valid_examples": [
+        {
+          "bindings": {
+            "capability_subject": "bound_capability_subject_1",
+            "required_capability": "bound_required_capability_1"
+          },
+          "example_id": "ACP-ATOMIC_CAPABILITY_AVAILABILITY-EX1",
+          "why_valid": "Bindings are concrete and all three oracles preserve the single profile intent."
+        },
+        {
+          "bindings": {
+            "capability_subject": "bound_capability_subject_2",
+            "required_capability": "bound_required_capability_2"
+          },
+          "example_id": "ACP-ATOMIC_CAPABILITY_AVAILABILITY-EX2",
+          "why_valid": "Bindings are concrete and all three oracles preserve the single profile intent."
+        }
+      ],
+      "version": "1.1.0"
+    },
+    {
+      "applicability_rules": [
+        "The source expresses this single semantic obligation directly.",
+        "All required bindings are source/decision grounded.",
+        "Positive, negative, and edge oracles preserve every qualifier."
+      ],
+      "counterexamples": [
+        {
+          "example_id": "ACP-BUSINESS_CLASSIFICATION-COUNTEREXAMPLE",
+          "statement": "A payment workflow combining authorization, allocation, settlement, and recovery.",
+          "why_invalid": "Multiple domain states and failure semantics require an inline contract."
+        }
+      ],
+      "criticality_compatibility": [
+        "CRITICAL",
+        "HIGH",
+        "NORMAL"
+      ],
+      "deterministic_validation_rules": [
+        "Every required binding exists and is used.",
+        "Rendered oracles contain no placeholder or generic phrase.",
+        "Type, qualifiers, applicability, and provenance remain compatible.",
+        "Complex-domain statements are rejected."
+      ],
+      "evidence_requirements": [
+        "canonical subject identity",
+        "classification value",
+        "classification provenance"
+      ],
+      "failure_semantics": "Reject incompatible or alias-derived canonical classification.",
+      "observable_verification_contract": "canonical subject identity, classification value, classification provenance",
+      "optional_bindings": [
+        {
+          "data_type": "string_list",
+          "description": "Approved decision constraints.",
+          "name": "approved_decision_refs",
+          "source_required": true
+        }
+      ],
+      "oracle_templates": {
+        "edge_boundary": "Given an alias or presentation label for {classified_subject}, when classification is resolved, then the alias does not replace the canonical {business_classification}.",
+        "negative": "Given {classified_subject} classified as a category incompatible with {business_classification}, when classification integrity is validated, then the conflicting classification is rejected.",
+        "positive": "Given {classified_subject}, when canonical classification metadata is inspected, then it is classified as {business_classification} and the classification is traceable to this requirement."
+      },
+      "profile_id": "ACP-BUSINESS_CLASSIFICATION",
+      "prohibited_uses": [
+        "Keyword-only matching.",
+        "Compound workflow or financial/risk state machine.",
+        "Missing or inferred bindings.",
+        "Any statement with an additional qualifier not represented by this profile."
+      ],
+      "required_bindings": [
+        {
+          "data_type": "identifier",
+          "description": "Concrete classified subject grounded in source or an approved decision.",
+          "name": "classified_subject",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Concrete business classification grounded in source or an approved decision.",
+          "name": "business_classification",
+          "source_required": true
+        }
+      ],
+      "semantic_intent": "Verify that a named canonical subject carries one explicit business classification without substituting another classification.",
+      "status": "CANDIDATE_ADDITION",
+      "supersedes": null,
+      "supported_requirement_types": [
+        "BUSINESS_REQUIREMENT",
+        "BUSINESS_DECISION",
+        "DATA_REQUIREMENT",
+        "DESIGN_PRINCIPLE"
+      ],
+      "title": "Business classification",
+      "valid_examples": [
+        {
+          "bindings": {
+            "business_classification": "bound_business_classification_1",
+            "classified_subject": "bound_classified_subject_1"
+          },
+          "example_id": "ACP-BUSINESS_CLASSIFICATION-EX1",
+          "why_valid": "Bindings are concrete and all three oracles preserve the single profile intent."
+        },
+        {
+          "bindings": {
+            "business_classification": "bound_business_classification_2",
+            "classified_subject": "bound_classified_subject_2"
+          },
+          "example_id": "ACP-BUSINESS_CLASSIFICATION-EX2",
+          "why_valid": "Bindings are concrete and all three oracles preserve the single profile intent."
+        }
+      ],
+      "version": "1.1.0"
+    },
+    {
+      "applicability_rules": [
+        "The source expresses this single semantic obligation directly.",
+        "All required bindings are source/decision grounded.",
+        "Positive, negative, and edge oracles preserve every qualifier."
+      ],
+      "counterexamples": [
+        {
+          "example_id": "ACP-DATA_VALUE_CONSTRAINT-COUNTEREXAMPLE",
+          "statement": "A payment workflow combining authorization, allocation, settlement, and recovery.",
+          "why_invalid": "Multiple domain states and failure semantics require an inline contract."
+        }
+      ],
+      "criticality_compatibility": [
+        "CRITICAL",
+        "HIGH",
+        "NORMAL"
+      ],
+      "deterministic_validation_rules": [
+        "Every required binding exists and is used.",
+        "Rendered oracles contain no placeholder or generic phrase.",
+        "Type, qualifiers, applicability, and provenance remain compatible.",
+        "Complex-domain statements are rejected."
+      ],
+      "evidence_requirements": [
+        "submitted field/value",
+        "constraint definition",
+        "validation and accepted-state outcome"
+      ],
+      "failure_semantics": "Reject values outside the explicitly bound constraint.",
+      "observable_verification_contract": "submitted field/value, constraint definition, validation and accepted-state outcome",
+      "optional_bindings": [
+        {
+          "data_type": "string_list",
+          "description": "Approved decision constraints.",
+          "name": "approved_decision_refs",
+          "source_required": true
+        }
+      ],
+      "oracle_templates": {
+        "edge_boundary": "Given a missing, empty, boundary, or duplicate value where relevant to {value_constraint}, when {data_field} is evaluated, then the exact bound constraint determines acceptance without an inferred default.",
+        "negative": "Given {data_field} violating {value_constraint}, when validation runs, then the value is rejected with the violated constraint identified.",
+        "positive": "Given {data_field} with a value satisfying {value_constraint}, when field validation runs, then the value is accepted and observable in the accepted business state."
+      },
+      "profile_id": "ACP-DATA_VALUE_CONSTRAINT",
+      "prohibited_uses": [
+        "Keyword-only matching.",
+        "Compound workflow or financial/risk state machine.",
+        "Missing or inferred bindings.",
+        "Any statement with an additional qualifier not represented by this profile."
+      ],
+      "required_bindings": [
+        {
+          "data_type": "identifier",
+          "description": "Concrete data field grounded in source or an approved decision.",
+          "name": "data_field",
+          "source_required": true
+        },
+        {
+          "data_type": "text",
+          "description": "Concrete value constraint grounded in source or an approved decision.",
+          "name": "value_constraint",
+          "source_required": true
+        }
+      ],
+      "semantic_intent": "Verify one explicit required, unique, format, range, or allowed-value constraint on a named data field.",
+      "status": "CANDIDATE_ADDITION",
+      "supersedes": null,
+      "supported_requirement_types": [
+        "DATA_REQUIREMENT",
+        "BUSINESS_RULE"
+      ],
+      "title": "Data value constraint",
+      "valid_examples": [
+        {
+          "bindings": {
+            "data_field": "bound_data_field_1",
+            "value_constraint": "bound_value_constraint_1"
+          },
+          "example_id": "ACP-DATA_VALUE_CONSTRAINT-EX1",
+          "why_valid": "Bindings are concrete and all three oracles preserve the single profile intent."
+        },
+        {
+          "bindings": {
+            "data_field": "bound_data_field_2",
+            "value_constraint": "bound_value_constraint_2"
+          },
+          "example_id": "ACP-DATA_VALUE_CONSTRAINT-EX2",
+          "why_valid": "Bindings are concrete and all three oracles preserve the single profile intent."
+        }
+      ],
+      "version": "1.1.0"
+    }
+  ],
+  "removed_or_split_profiles": [
+    {
+      "decision": "SPLIT",
+      "reason": "MFA has challenge, bypass, and recovery semantics not shared by general scoped policy enforcement.",
+      "requested_profile": "POLICY_SCOPE_ENFORCEMENT / MFA_ENFORCEMENT"
+    },
+    {
+      "decision": "SPLIT",
+      "reason": "A single transition oracle cannot prove an invariant across a complete machine.",
+      "requested_profile": "STATE_TRANSITION / STATE_MACHINE_INVARIANT"
+    },
+    {
+      "decision": "SPLIT",
+      "reason": "Delivery outcome and retry exhaustion are independent obligations and retry must not be inferred for every event.",
+      "requested_profile": "EVENT_DELIVERY / RETRY_AND_TERMINAL_FAILURE"
+    },
+    {
+      "decision": "SPLIT",
+      "reason": "Rendered state, accessibility outcome, and measured performance have incompatible evidence and failure semantics.",
+      "requested_profile": "UX_STATE_AND_ACTION / UX_ACCESSIBILITY / UX_PERFORMANCE_BUDGET"
+    }
+  ],
+  "status": "CANDIDATE",
+  "supersedes_if_approved": "1.0.0"
+}

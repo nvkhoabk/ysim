@@ -1,0 +1,5506 @@
+{
+  "artifact": "V23-P2C-ACCEPTANCE-SEMANTIC-CLUSTERS-C3",
+  "candidate_id": "V23-P2C-ACCEPTANCE-MAPPING-C3",
+  "cluster_count": 280,
+  "clusters": [
+    {
+      "cluster_id": "P2C-AC-C3-CL-001",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "BUSINESS_SEMANTIC_DECISION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "UXF-01-R010"
+      ],
+      "target": "P2C-AC-C3-DEC-001",
+      "verification_shape_fingerprints": [
+        "f1a4394ae30ebfc58f327c3b8b81a1e957734634ef6c152f67bff48be79e3ceb"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-002",
+      "criticality_distribution": {
+        "NORMAL": 1
+      },
+      "disposition": "BUSINESS_SEMANTIC_DECISION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BD-13-003"
+      ],
+      "target": "P2C-AC-C3-DEC-002",
+      "verification_shape_fingerprints": [
+        "0ff1518ffc78f9471ed4eadbfd6911a8e611038b820e0fa3843ad32d0e8d1a24"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-003",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "BUSINESS_SEMANTIC_DECISION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BD-16-001"
+      ],
+      "target": "P2C-AC-C3-DEC-003",
+      "verification_shape_fingerprints": [
+        "7c675172456355d4217631e4064532bb8cbb67d530caf913c75f5d53e9f70279"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-004",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "BUSINESS_SEMANTIC_DECISION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-UPDATE-01-R020"
+      ],
+      "target": "P2C-AC-C3-DEC-005",
+      "verification_shape_fingerprints": [
+        "b2b0c588d116fb39a69707b0f32752665a55e12f6dfa14b462a90ddf2e001e04"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-005",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "BUSINESS_SEMANTIC_DECISION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-16-R002"
+      ],
+      "target": "P2C-AC-C3-DEC-009",
+      "verification_shape_fingerprints": [
+        "8a0bec7f1f85f1c3e1fe65cfbccc5545df41b34a99bc632cb147ea824731f4a9"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-006",
+      "criticality_distribution": {
+        "NORMAL": 1
+      },
+      "disposition": "BUSINESS_SEMANTIC_DECISION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "EP-12-006"
+      ],
+      "target": "P2C-AC-C3-DEC-010",
+      "verification_shape_fingerprints": [
+        "3d7c25caca9c9b7c0b02e1c48522ba040f5fab09230e7ec15614668177aa0fd2"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-007",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "BUSINESS_SEMANTIC_DECISION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "EP-12-007"
+      ],
+      "target": "P2C-AC-C3-DEC-011",
+      "verification_shape_fingerprints": [
+        "e7123e2e65e6d0b0ff754b4debe1be8091bb1a38afa144024a2543c4d3cab01c"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-008",
+      "criticality_distribution": {
+        "HIGH": 2
+      },
+      "disposition": "BUSINESS_SEMANTIC_DECISION_REQUIRED",
+      "member_count": 2,
+      "requirement_ids": [
+        "UXF-01-R008",
+        "UXF-01-R011"
+      ],
+      "target": "P2C-AC-C3-DEC-018",
+      "verification_shape_fingerprints": [
+        "f1a4394ae30ebfc58f327c3b8b81a1e957734634ef6c152f67bff48be79e3ceb"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-009",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "BUSINESS_SEMANTIC_DECISION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BD-03-004"
+      ],
+      "target": "P2C-AC-C3-DEC-019",
+      "verification_shape_fingerprints": [
+        "7d000dd0681863283295192b94aa454a5e030ad092fabf481c5131eabe66b0e8"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-010",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "BUSINESS_SEMANTIC_DECISION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-UPDATE-01-R024"
+      ],
+      "target": "P2C-AC-C3-DEC-023",
+      "verification_shape_fingerprints": [
+        "b2b0c588d116fb39a69707b0f32752665a55e12f6dfa14b462a90ddf2e001e04"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-011",
+      "criticality_distribution": {
+        "NORMAL": 1
+      },
+      "disposition": "BUSINESS_SEMANTIC_DECISION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-UPDATE-01-R029"
+      ],
+      "target": "P2C-AC-C3-DEC-027",
+      "verification_shape_fingerprints": [
+        "ce8213f710d9b626a264270bd973e490fb656ebfdc6892c091a594068a561282"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-012",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "BUSINESS_SEMANTIC_DECISION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-11-R002"
+      ],
+      "target": "P2C-AC-C3-DEC-029",
+      "verification_shape_fingerprints": [
+        "554e7f55bc6e47f857db182127d33187948cf3d66fa474394775e095265170ec"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-013",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "BUSINESS_SEMANTIC_DECISION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-11-R003"
+      ],
+      "target": "P2C-AC-C3-DEC-030",
+      "verification_shape_fingerprints": [
+        "8149057314bf9352c0f51e83db84e8d58deae0c25e563d5f95924fe106b2bbd9"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-014",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "BUSINESS_SEMANTIC_DECISION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-15-R004"
+      ],
+      "target": "P2C-AC-C3-DEC-031",
+      "verification_shape_fingerprints": [
+        "3a0e7f260eeaf8a673f8e4672d1593f9a82866d05254edca02077536cb00754f"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-015",
+      "criticality_distribution": {
+        "NORMAL": 1
+      },
+      "disposition": "BUSINESS_SEMANTIC_DECISION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "CAP-P04"
+      ],
+      "target": "P2C-AC-C3-DEC-032",
+      "verification_shape_fingerprints": [
+        "c3d44771a531b9a1e2771ca471eda36583d85638196935639b1af60186ad60bb"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-016",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "BUSINESS_SEMANTIC_DECISION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "UXF-05-R022"
+      ],
+      "target": "P2C-AC-C3-DEC-034",
+      "verification_shape_fingerprints": [
+        "d9593f5ac82e8d20dacc5b28dad012878aebd835b2aa5aa97ea0de3e9994886c"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-017",
+      "criticality_distribution": {
+        "NORMAL": 1
+      },
+      "disposition": "BUSINESS_SEMANTIC_DECISION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "CAP-EP-005"
+      ],
+      "target": "P2C-AC-C3-DEC-035",
+      "verification_shape_fingerprints": [
+        "c984ea21c69a0fc9e3b901c0d970166835a5b9ecc5a449209c5b685001cb495c"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-018",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "BUSINESS_SEMANTIC_DECISION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "UXF-00-R013"
+      ],
+      "target": "P2C-AC-C3-DEC-036",
+      "verification_shape_fingerprints": [
+        "f65a4506ac18a5824eccaa5879d4108c966ce5b7b4dbc108dcc15a7b3e9f1d27"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-019",
+      "criticality_distribution": {
+        "CRITICAL": 2
+      },
+      "disposition": "BUSINESS_SEMANTIC_DECISION_REQUIRED",
+      "member_count": 2,
+      "requirement_ids": [
+        "BD-05-016",
+        "BRD-WS-05-R021"
+      ],
+      "target": "P2C-AC-C3-DEC-PREFULFILLMENT",
+      "verification_shape_fingerprints": [
+        "0d112a9a3d58f48bd76d39187a6a938bd5a3d383aa2226206188d9d41f3bf60a",
+        "64c0d4376ac351c6b30da2c6296f3e068430841180c8bea1201150ac2b46709b"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-020",
+      "criticality_distribution": {
+        "NORMAL": 1
+      },
+      "disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-BO-INDEX-R001"
+      ],
+      "target": "P2C-C3-SN-001",
+      "verification_shape_fingerprints": [
+        "c32abf5de268cd0196409d93f0a713dd4a206a2f27ce7b4669860664877a9a19"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-021",
+      "criticality_distribution": {
+        "NORMAL": 1
+      },
+      "disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-BO-INDEX-R004"
+      ],
+      "target": "P2C-C3-SN-002",
+      "verification_shape_fingerprints": [
+        "409c9d00aa106e2f2d51baed567d82bbe49de059c38c265fb516ba5f72fadfbf"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-022",
+      "criticality_distribution": {
+        "NORMAL": 1
+      },
+      "disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-BO-INDEX-R005"
+      ],
+      "target": "P2C-C3-SN-003",
+      "verification_shape_fingerprints": [
+        "409c9d00aa106e2f2d51baed567d82bbe49de059c38c265fb516ba5f72fadfbf"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-023",
+      "criticality_distribution": {
+        "NORMAL": 1
+      },
+      "disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-BO-INDEX-R006"
+      ],
+      "target": "P2C-C3-SN-004",
+      "verification_shape_fingerprints": [
+        "409c9d00aa106e2f2d51baed567d82bbe49de059c38c265fb516ba5f72fadfbf"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-024",
+      "criticality_distribution": {
+        "NORMAL": 1
+      },
+      "disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-BO-INDEX-R007"
+      ],
+      "target": "P2C-C3-SN-005",
+      "verification_shape_fingerprints": [
+        "8b2fbb44ff240e9d4d43d8bbde17a2db89ffb675328212c8f2554fbc9644901e"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-025",
+      "criticality_distribution": {
+        "NORMAL": 1
+      },
+      "disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-BO-INDEX-R014"
+      ],
+      "target": "P2C-C3-SN-006",
+      "verification_shape_fingerprints": [
+        "a38585fb73931ebd01299b224a8186a8421a5daf0bbbcafdf04cda56f749f7d1"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-026",
+      "criticality_distribution": {
+        "NORMAL": 1
+      },
+      "disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-POLICY-INDEX-R004"
+      ],
+      "target": "P2C-C3-SN-007",
+      "verification_shape_fingerprints": [
+        "bd4fcea8d34f819b096cc92257f9f1eff2495f5e412d3775f3963c729f03c39b"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-027",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-01-R003"
+      ],
+      "target": "P2C-C3-SN-008",
+      "verification_shape_fingerprints": [
+        "317284513d49dedeea8020a126b05698c5328bc0aa74bf511f8f058763773cb5"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-028",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-01-R005"
+      ],
+      "target": "P2C-C3-SN-009",
+      "verification_shape_fingerprints": [
+        "317284513d49dedeea8020a126b05698c5328bc0aa74bf511f8f058763773cb5"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-029",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-01-R006"
+      ],
+      "target": "P2C-C3-SN-010",
+      "verification_shape_fingerprints": [
+        "ae78f006a73feefcddc2c717dbbc6e85d1ba00c5d168d9d41772cb6356094dc0"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-030",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-01-R007"
+      ],
+      "target": "P2C-C3-SN-011",
+      "verification_shape_fingerprints": [
+        "6f32889829fa922e9e2d858f0475b885549552cd76f38af2346b935a3d28b058"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-031",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-01-R008"
+      ],
+      "target": "P2C-C3-SN-012",
+      "verification_shape_fingerprints": [
+        "2eec23d51278e02a55f84c9ea9a57d39ee5d87190b38d8e2e723cc1521da0058"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-032",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-01-R009"
+      ],
+      "target": "P2C-C3-SN-013",
+      "verification_shape_fingerprints": [
+        "2eec23d51278e02a55f84c9ea9a57d39ee5d87190b38d8e2e723cc1521da0058"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-033",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-01-R010"
+      ],
+      "target": "P2C-C3-SN-014",
+      "verification_shape_fingerprints": [
+        "2eec23d51278e02a55f84c9ea9a57d39ee5d87190b38d8e2e723cc1521da0058"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-034",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-01-R011"
+      ],
+      "target": "P2C-C3-SN-015",
+      "verification_shape_fingerprints": [
+        "317284513d49dedeea8020a126b05698c5328bc0aa74bf511f8f058763773cb5"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-035",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-01-R012"
+      ],
+      "target": "P2C-C3-SN-016",
+      "verification_shape_fingerprints": [
+        "317284513d49dedeea8020a126b05698c5328bc0aa74bf511f8f058763773cb5"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-036",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-01-R013"
+      ],
+      "target": "P2C-C3-SN-017",
+      "verification_shape_fingerprints": [
+        "6bd7eedcc584c04454876355a3c32311eb7a357ec877517e642f39877e71af89"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-037",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-01-R014"
+      ],
+      "target": "P2C-C3-SN-018",
+      "verification_shape_fingerprints": [
+        "6f32889829fa922e9e2d858f0475b885549552cd76f38af2346b935a3d28b058"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-038",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-01-R015"
+      ],
+      "target": "P2C-C3-SN-019",
+      "verification_shape_fingerprints": [
+        "317284513d49dedeea8020a126b05698c5328bc0aa74bf511f8f058763773cb5"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-039",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-01-R016"
+      ],
+      "target": "P2C-C3-SN-020",
+      "verification_shape_fingerprints": [
+        "6bd7eedcc584c04454876355a3c32311eb7a357ec877517e642f39877e71af89"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-040",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-01-R017"
+      ],
+      "target": "P2C-C3-SN-021",
+      "verification_shape_fingerprints": [
+        "317284513d49dedeea8020a126b05698c5328bc0aa74bf511f8f058763773cb5"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-041",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-01-R018"
+      ],
+      "target": "P2C-C3-SN-022",
+      "verification_shape_fingerprints": [
+        "84fab4273fb0deff309e7ceb9d7ef1509eebd2853a222e134dc6f4993384baac"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-042",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-01-R019"
+      ],
+      "target": "P2C-C3-SN-023",
+      "verification_shape_fingerprints": [
+        "7295492104fcb677d2734e9ccfa005846d66a72d003cca1011aa23f6df5c3a9c"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-043",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-04-R012"
+      ],
+      "target": "P2C-C3-SN-024",
+      "verification_shape_fingerprints": [
+        "bd4fcea8d34f819b096cc92257f9f1eff2495f5e412d3775f3963c729f03c39b"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-044",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-05-R016"
+      ],
+      "target": "P2C-C3-SN-025",
+      "verification_shape_fingerprints": [
+        "a4ef75fe78de4c0f92e31e1685a9b4f88c13b301795673619896c9a9b8bdf683"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-045",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-05-R017"
+      ],
+      "target": "P2C-C3-SN-026",
+      "verification_shape_fingerprints": [
+        "a4ef75fe78de4c0f92e31e1685a9b4f88c13b301795673619896c9a9b8bdf683"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-046",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-05-R018"
+      ],
+      "target": "P2C-C3-SN-027",
+      "verification_shape_fingerprints": [
+        "7d39a7c8391c40ddffd133b6c9156ca97549b2de8e911c17fd6aa84739469b18"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-047",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-05-R019"
+      ],
+      "target": "P2C-C3-SN-028",
+      "verification_shape_fingerprints": [
+        "2d6e18e6652c23d333f383b5cac3ad7f1e015620103f8319aa3f6a00defc09eb"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-048",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-09-R013"
+      ],
+      "target": "P2C-C3-SN-029",
+      "verification_shape_fingerprints": [
+        "4670326da468ad5b98295b2b8377d6e2378f10ec94fa0f502def6d8e1018504f"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-049",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-13-R015"
+      ],
+      "target": "P2C-C3-SN-030",
+      "verification_shape_fingerprints": [
+        "bf154b677f9b00c66f46f30d730ce4535a70a56732db1c4a48b52b9c8997a094"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-050",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-14-R012"
+      ],
+      "target": "P2C-C3-SN-031",
+      "verification_shape_fingerprints": [
+        "53a339c49b5bfed281608f305c1417fe5eb1340b3a0ec749b42374d4408ace09"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-051",
+      "criticality_distribution": {
+        "NORMAL": 1
+      },
+      "disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-14-R030"
+      ],
+      "target": "P2C-C3-SN-032",
+      "verification_shape_fingerprints": [
+        "ea294de4ed1f8138c46b2f980e9e91cd02e4957e64bae69b25635dd9c9eecbf4"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-052",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-16-R004"
+      ],
+      "target": "P2C-C3-SN-033",
+      "verification_shape_fingerprints": [
+        "d709bb424796b97ff6fc391737f89e541c910c26ee54cc1652b8474a0bff2587"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-053",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-16-R013"
+      ],
+      "target": "P2C-C3-SN-034",
+      "verification_shape_fingerprints": [
+        "d196c17389b31a97cbf3297808b4288cbfad1202e4340cecb00d1319d451c519"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-054",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-16-R014"
+      ],
+      "target": "P2C-C3-SN-035",
+      "verification_shape_fingerprints": [
+        "08975e5bff909fb0dfdd9c2b09e550e2d206a20e644ea95068a5716ab3e81b08"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-055",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-16-R015"
+      ],
+      "target": "P2C-C3-SN-036",
+      "verification_shape_fingerprints": [
+        "a02ffaebd51a549c227169d8ffcf94f9bf17ebcc887795403deb816f29df0be6"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-056",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-16-R016"
+      ],
+      "target": "P2C-C3-SN-037",
+      "verification_shape_fingerprints": [
+        "e5e31c6b77f7093151a474ad5989129bb39b462a75e35b5020517c74938e21da"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-057",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "UXF-00-R031"
+      ],
+      "target": "P2C-C3-SN-038",
+      "verification_shape_fingerprints": [
+        "29f26dc28a139ac775677794930d4209f26fa96d4361d15eb072b484f3510d87"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-058",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "UXF-04-R007"
+      ],
+      "target": "P2C-C3-SN-039",
+      "verification_shape_fingerprints": [
+        "18658c73399a06c44ec6b781a5a6b6c209d7de32f1e3d8ee0aa4bf50f4a02bda"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-059",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "UXF-05-R021"
+      ],
+      "target": "P2C-C3-SN-040",
+      "verification_shape_fingerprints": [
+        "05cd78df74147ad2073750c1ef14365b0bbbbea31a86f2c051fce3129db8e038"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-060",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "UXF-05-R037"
+      ],
+      "target": "P2C-C3-SN-041",
+      "verification_shape_fingerprints": [
+        "e238f00a7d13213c2877caf3961c008a7d162f7751100c637eac3cf5bacea962"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-061",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "EXISTING_PROFILE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 1,
+      "requirement_ids": [
+        "BD-14-016"
+      ],
+      "target": "ACP-AUDITABILITY",
+      "verification_shape_fingerprints": [
+        "289c0dcec89408f7d3bf3cbf9b1bda7597e84f5506660181c96da2abb21f4296"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-062",
+      "criticality_distribution": {
+        "CRITICAL": 3
+      },
+      "disposition": "EXISTING_PROFILE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 3,
+      "requirement_ids": [
+        "BD-09-013",
+        "BRD-WS-09-R014",
+        "UXF-01-R001"
+      ],
+      "target": "ACP-AUTHENTICATION_REQUIREMENT",
+      "verification_shape_fingerprints": [
+        "1bc8a07481eb3e42cc24626d5fda9efa9a44452459ed59c6edd50b1ec3b1f102",
+        "e213b2bd4bcc8737df933bdcd7b4bdb494b5fdb175161c1e6a6001b062b94173"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-063",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "EXISTING_PROFILE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 1,
+      "requirement_ids": [
+        "BD-16-023"
+      ],
+      "target": "ACP-DATA_RETENTION",
+      "verification_shape_fingerprints": [
+        "6839cdecb44a5b63fb0846d88fe89038080ab3dff047b80be5bef2bb535081a3"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-064",
+      "criticality_distribution": {
+        "NORMAL": 1
+      },
+      "disposition": "EXISTING_PROFILE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-UPDATE-01-R030"
+      ],
+      "target": "ACP-DESIGN_CONFORMANCE_TRACE",
+      "verification_shape_fingerprints": [
+        "6aa2a998286c3695b009d0d33d3ca449dbff5851b7857a0ac66dfbb06ddc3665"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-065",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "EXISTING_PROFILE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-CAP-INDEX-R029"
+      ],
+      "target": "ACP-ENUM_REFERENCE_INTEGRITY",
+      "verification_shape_fingerprints": [
+        "802af3827465d0dc3ffd56eee7c5d046ef45b67aea526bdb88ebc04bb89b010c"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-066",
+      "criticality_distribution": {
+        "CRITICAL": 1,
+        "NORMAL": 1
+      },
+      "disposition": "EXISTING_PROFILE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 2,
+      "requirement_ids": [
+        "BRD-EVENT-INDEX-R001",
+        "BRD-EVENT-INDEX-R002"
+      ],
+      "target": "ACP-EVENT_ORDERING",
+      "verification_shape_fingerprints": [
+        "095969cba762e182663d3512f8a9baefe4afb383bcbaa19b5bf129640c157d0a",
+        "340c69c0a24d2c796aa52ad6d355d8d84cb79087158aa768a1898190fe1ea357"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-067",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "EXISTING_PROFILE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 1,
+      "requirement_ids": [
+        "BD-16-003"
+      ],
+      "target": "ACP-MFA_ENFORCEMENT",
+      "verification_shape_fingerprints": [
+        "c9386b27dfc84a0ee16c83f23cf89345c908cf59036ddebaf3186911a4835c46"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-068",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "EXISTING_PROFILE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-17-R026"
+      ],
+      "target": "ACP-OPERATION_OBSERVABILITY",
+      "verification_shape_fingerprints": [
+        "d460b6edf0c0584ad146337def903de14ea6b3efd53f7089877f747f5b927f25"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-069",
+      "criticality_distribution": {
+        "CRITICAL": 2,
+        "HIGH": 9,
+        "NORMAL": 10
+      },
+      "disposition": "EXISTING_PROFILE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 21,
+      "requirement_ids": [
+        "BD-10-010",
+        "BD-11-011",
+        "BD-12-012",
+        "BD-13-001",
+        "BD-13-002",
+        "BD-13-006",
+        "BD-14-001",
+        "BD-14-015",
+        "BD-14-018",
+        "BD-14-019",
+        "BD-14-020",
+        "BD-14-026",
+        "BD-15-019",
+        "BD-17-028",
+        "BD-17-032",
+        "EP-14-008",
+        "EP-14-009",
+        "EP-15-010",
+        "EP-17-006",
+        "POL-EP-008",
+        "SNP-EP-008"
+      ],
+      "target": "ACP-REQUIRED_CAPABILITY_SET",
+      "verification_shape_fingerprints": [
+        "054267773988607aad8450cb5dc3f3c1e706b02cddc87862a157a7a5343a1c77",
+        "0a22e84c2af4b008080fb7404fa48281551407f2f72d4101b5f044f7a8a1a055",
+        "0aa3a39b3b972ca2ed8c54a0bcc7552f8cf4e250d61aebcb21af4eb4df1abbda",
+        "20941d4da54c7f1d21062cf88402432edbec5c471b8601ae143f9f52c95c73c1",
+        "32de4fe64aad271b39c9bf1f4d80d710993297a9ba9b99e585d8840f0603d4a9",
+        "345dd95645ea90784d35ab69cc7e7d5af570366cd57a9d46ba47bd4f92abb387",
+        "3d7c25caca9c9b7c0b02e1c48522ba040f5fab09230e7ec15614668177aa0fd2",
+        "4a609fded9ccec5a99052c2d5b6cc50b9531bdce454cdfa11b01439a8ee052be",
+        "4c873400a6bb3761e1baeccbca340e549c7d969593beb790a9af36df2b959c22",
+        "5de8d5f37cbd30d12fabc2f9519765c8f0beea7afb329541d5967c32ae65b5eb",
+        "7dcb06aec3e13cf4b1cca401b4556ab53340ad5990c80cc0da6baa8ca956313d",
+        "996a986cc7a31c0b7a2dfacf2d88af3dae2c287fadee6110a674918b411c3a27",
+        "99c7df82c5a54fcc32c072dda8e628dade0472fa00c98cc39aeee0eb2c36af47",
+        "ab2e056f2f4b946b686e178203c455d2c5447cf84a92933da46b883ab7506069",
+        "b8f1ebe973b02faadbe7337356515f383feb34d5bb8d1a32103b4eb762796fa4",
+        "d595d62107bd22aab7c5bd07035428d9bf7fe0674aae3b8b21854dd0114c7eb0"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-070",
+      "criticality_distribution": {
+        "CRITICAL": 1,
+        "HIGH": 2
+      },
+      "disposition": "EXISTING_PROFILE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 3,
+      "requirement_ids": [
+        "BRD-WS-03-R005",
+        "BRD-WS-03-R006",
+        "BRD-WS-03-R007"
+      ],
+      "target": "ACP-ROLE_AND_PERMISSION_ENFORCEMENT",
+      "verification_shape_fingerprints": [
+        "7c083cad3bfb661d13711dc30a5c56cdc1a680c748ae9a6c4399b038b0bc8afa",
+        "dcc0e7d7debf7ffccb71af1fbfee522341a0fd177fea7b96a795b323c7113c36"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-071",
+      "criticality_distribution": {
+        "NORMAL": 4
+      },
+      "disposition": "EXISTING_PROFILE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 4,
+      "requirement_ids": [
+        "BD-17-020",
+        "BD-17-031",
+        "BRD-BO-INDEX-R031",
+        "BRD-CAP-INDEX-R020"
+      ],
+      "target": "ACP-SCOPE_EXCLUSION",
+      "verification_shape_fingerprints": [
+        "62a54e7bd736b571379a24ede542dd2c521c52243494705751ea6261cc5001da",
+        "b1716621c1f3abcd8d2ee13f35c928878d31cc9e5d0e9d18b5e0aae960dfddf9",
+        "b789cf79aff5c287fc73b597f1cb40615f792357d9ab9dd9fc1555fd8cdb262b"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-072",
+      "criticality_distribution": {
+        "HIGH": 6
+      },
+      "disposition": "EXISTING_PROFILE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 6,
+      "requirement_ids": [
+        "UXF-01-R006",
+        "UXF-01-R007",
+        "UXF-01-R009",
+        "UXF-02-R003",
+        "UXF-02-R004",
+        "UXF-02-R006"
+      ],
+      "target": "ACP-UX_ACCESSIBILITY",
+      "verification_shape_fingerprints": [
+        "34bf543bdf2a50b18fefdc1aa21f2246a661be16ec02c272089154359f040657",
+        "774fc52663c25b6e418ab5c4df4cdc377fdde44caba161e7f97189f775a1f669"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-073",
+      "criticality_distribution": {
+        "CRITICAL": 28,
+        "HIGH": 2
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 30,
+      "requirement_ids": [
+        "BD-03-009",
+        "BD-14-014",
+        "BD-15-004",
+        "BD-16-002",
+        "BD-16-004",
+        "BD-16-005",
+        "BD-16-007",
+        "BD-16-008",
+        "BD-16-024",
+        "BD-16-030",
+        "BD-17-017",
+        "BRD-WS-13-R004",
+        "BRD-WS-16-R001",
+        "BRD-WS-16-R003",
+        "BRD-WS-16-R010",
+        "BRD-WS-17-R003",
+        "BRD-WS-17-R012",
+        "BRD-WS-17-R016",
+        "BRD-WS-17-R020",
+        "BRD-WS-17-R021",
+        "CAP-R05",
+        "EP-09-005",
+        "EP-11-001",
+        "EP-13-006",
+        "EP-16-002",
+        "EP-16-003",
+        "UXF-01-R002",
+        "UXF-01-R003",
+        "UXF-01-R004",
+        "UXF-04-R005"
+      ],
+      "target": "IAC-ACCESS-AUTHORIZATION",
+      "verification_shape_fingerprints": [
+        "2286fd3eeb246b35bdd9381972ca7d9ff101656d71259d4df72b43993135c4f0",
+        "2da1aedb3703c197a940dbc141117af36cb22964765830171506db95bbd318a6",
+        "3801cdc8b32fcede023903b72a57c1c6f6928432a9cbf9a5fa64aea5d13f84a4",
+        "3c9f0fa56770edfcbf9923813dd871e259ff7e83933ef43e55ca0e3708ea9b0b",
+        "4dc98ba9ced2e7b408c8f4ad5a0a875b371b60b56a2844a9d8f01232c32223b4",
+        "56271229df3bbd8fe531bce1a52486e98f658b7a9bab0ff66ad14debad213e6f",
+        "64f24139fa97f7e7a0e493ad152cf1e46acd047e3fd217322f488dbc25cbdaee",
+        "6cec3348dcbe9237b8c66b0c18eb2f079c75ee427a377c0db2b4bd7c3536dc48",
+        "7fa7b6108a7d3412667711a19232f4c15014974bbdb5f3c2dbc91d737d8872a5",
+        "a834f6f1b311268527d771928fc6d8edd2bf08e583960bfeffa188217ecdedd9",
+        "aa4c73aea0fc4e2e68119ffcc477c06ce3a1825bb06ec91bfe50a0106a271a1f",
+        "bb4057011a5f290715729ad8f091cea2fc3a9cefc1905547a03c1c968600288e",
+        "bf154b677f9b00c66f46f30d730ce4535a70a56732db1c4a48b52b9c8997a094",
+        "d87b0f4e55ac0ac98475559f2fd92f6e3d04a835587e8c8ac194cc3b66e13fc4",
+        "d94b62e5ddf09c81cdaa55c52c6c02923a662a1e0b3a90dd5f822b76457e1155",
+        "dff219b26465bb9a8eb763ac8af595735761c638f2ecf57ed84c59a3f4d44503",
+        "e213b2bd4bcc8737df933bdcd7b4bdb494b5fdb175161c1e6a6001b062b94173",
+        "e56d5b614be6f24315be819b8d460c35c55ef6394ca88941975f53a4b7a5fb6e",
+        "e5ca3a9808bf09d915845117bf5a755167a766961e1a6948af42c76dba2948d8",
+        "e6739a44a7a7ed096e3cb03558699257ff3e347ba66c9385acf92ec8dae80606",
+        "f0c845bb812b4b26860fff18b4b73e901b1dc9cbf06a3c5d57445be945b66cc5",
+        "f1bead0407acada365742a8235018a1656683ef59ba3b57e222155ab9bfcd1bc"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-074",
+      "criticality_distribution": {
+        "CRITICAL": 28,
+        "HIGH": 1,
+        "NORMAL": 1
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 30,
+      "requirement_ids": [
+        "BD-03-013",
+        "BD-10-021",
+        "BD-14-009",
+        "BD-17-021",
+        "BRD-BO-INDEX-R046",
+        "BRD-CAP-INDEX-R027",
+        "BRD-EVENT-INDEX-R028",
+        "BRD-POLICY-INDEX-R006",
+        "BRD-POLICY-INDEX-R024",
+        "BRD-SNAPSHOT-INDEX-R003",
+        "BRD-SNAPSHOT-INDEX-R037",
+        "BRD-SNAPSHOT-INDEX-R040",
+        "BRD-SNAPSHOT-INDEX-R041",
+        "BRD-WS-07-R020",
+        "BRD-WS-08-R006",
+        "BRD-WS-14-R015",
+        "BRD-WS-14-R022",
+        "BRD-WS-15-R016",
+        "BRD-WS-16-R006",
+        "BRD-WS-17-R008",
+        "BRD-WS-17-R009",
+        "BRD-WS-17-R017",
+        "BRD-WS-17-R022",
+        "EP-09-007",
+        "EP-14-006",
+        "EP-17-008",
+        "POL-P06",
+        "SNP-P06",
+        "SNP-P08",
+        "UXF-00-R030"
+      ],
+      "target": "IAC-AUDIT-TRACE-IMMUTABILITY",
+      "verification_shape_fingerprints": [
+        "106119c83a33e9e4fcbdd5c2b0411c53201e352718ee97c39070d9b4fcedc906",
+        "227b7f8309d7a8d6cbee2f9cac462b00fce31fd0d904786c70b2e4a4362bf926",
+        "2d6e18e6652c23d333f383b5cac3ad7f1e015620103f8319aa3f6a00defc09eb",
+        "340d2f1b75c8eed607f78b9fcfc3fc0a9d2101cbba8bf805e2401219f8125363",
+        "348b4dc6414b2fd78976b757416f72d024da2a97f22071f007535cf444dac7f9",
+        "362bb379ac27036fec7225f3d71df0988e45bfe8aa193be762412cbbc94db942",
+        "4987c44646647818137bcd5bfbfc0e5bdc175003753cccbd0adf411266c33ebc",
+        "5941ea5c61977998f41bbeeb9144cdd2e5fb6392e430faa9a74913b7e05d3c09",
+        "6839cdecb44a5b63fb0846d88fe89038080ab3dff047b80be5bef2bb535081a3",
+        "7aa9cf8209d4e08f53afcfba1f7be343571cfe933b506429642afcc0664e1460",
+        "7b648180724482d055ddf3fca46b5ccc910cdd1979c7eda6821cfa075aa33052",
+        "8541a45f823b12056f01b6658577c10c14ff18fbf00677c5168ca2a394ba3cae",
+        "8d155627ff0fa7347c9226ffae60a0b7a42f9b55d0c394838f722915c1822b97",
+        "99c7df82c5a54fcc32c072dda8e628dade0472fa00c98cc39aeee0eb2c36af47",
+        "aab7e08242658b0beb8234b056168b31c9c2853c95b5d3cd1d2f784684b4a312",
+        "bda01b0be325e0c6905103dce9594f543ae2b488005f150bb70895f61da4cbbb",
+        "cfba8ea52ff7fc9e51537c9c1c842a3acc822f62a681f3e7d05bdc06dbfafbac",
+        "d196c17389b31a97cbf3297808b4288cbfad1202e4340cecb00d1319d451c519",
+        "eb4b05dd1cb59280bc18bd32a8be769a7eec721fc731274fdd0d2a597260a2b1",
+        "fb3f5a65e0b78cd7064879b81abac073bd0c513677988a1b2f69480ceb056a05"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-075",
+      "criticality_distribution": {
+        "CRITICAL": 3
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 3,
+      "requirement_ids": [
+        "BD-07-003",
+        "BD-07-016",
+        "EP-07-005"
+      ],
+      "target": "IAC-C3-BUSINESS_OUTCOME-0D112A9A3D",
+      "verification_shape_fingerprints": [
+        "0d112a9a3d58f48bd76d39187a6a938bd5a3d383aa2226206188d9d41f3bf60a"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-076",
+      "criticality_distribution": {
+        "CRITICAL": 4
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 4,
+      "requirement_ids": [
+        "BRD-WS-13-R008",
+        "BRD-WS-13-R009",
+        "BRD-WS-13-R010",
+        "BRD-WS-13-R011"
+      ],
+      "target": "IAC-C3-BUSINESS_OUTCOME-176522CB44",
+      "verification_shape_fingerprints": [
+        "176522cb44675970f6ac7f5a1f1528b22f8d98ce5299d8ff4c7ddf4aec28ea4b"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-077",
+      "criticality_distribution": {
+        "CRITICAL": 2,
+        "NORMAL": 2
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 4,
+      "requirement_ids": [
+        "BD-08-011",
+        "BD-08-013",
+        "BD-10-017",
+        "BD-10-022"
+      ],
+      "target": "IAC-C3-BUSINESS_OUTCOME-1D961718E2",
+      "verification_shape_fingerprints": [
+        "1d961718e23862d282ccf52d196b97a8b78758f379954ca95625d150cfdad019"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-078",
+      "criticality_distribution": {
+        "CRITICAL": 1,
+        "HIGH": 1
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 2,
+      "requirement_ids": [
+        "BRD-WS-07-R018",
+        "BRD-WS-07-R019"
+      ],
+      "target": "IAC-C3-BUSINESS_OUTCOME-2EEC23D512",
+      "verification_shape_fingerprints": [
+        "2eec23d51278e02a55f84c9ea9a57d39ee5d87190b38d8e2e723cc1521da0058"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-079",
+      "criticality_distribution": {
+        "CRITICAL": 1,
+        "HIGH": 1
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 2,
+      "requirement_ids": [
+        "BRD-WS-07-R016",
+        "BRD-WS-07-R017"
+      ],
+      "target": "IAC-C3-BUSINESS_OUTCOME-317284513D",
+      "verification_shape_fingerprints": [
+        "317284513d49dedeea8020a126b05698c5328bc0aa74bf511f8f058763773cb5"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-080",
+      "criticality_distribution": {
+        "CRITICAL": 2,
+        "HIGH": 2
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 4,
+      "requirement_ids": [
+        "BD-07-013",
+        "BD-07-015",
+        "EP-07-002",
+        "EP-09-001"
+      ],
+      "target": "IAC-C3-BUSINESS_OUTCOME-4CC869737B",
+      "verification_shape_fingerprints": [
+        "4cc869737bd907207b7621125aed22c34b7af415a942df101fb2d433c78feca8"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-081",
+      "criticality_distribution": {
+        "HIGH": 3
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 3,
+      "requirement_ids": [
+        "BD-04-004",
+        "BD-04-011",
+        "BRD-WS-04-R009"
+      ],
+      "target": "IAC-C3-BUSINESS_OUTCOME-5D99E1EF82",
+      "verification_shape_fingerprints": [
+        "5d99e1ef82e48e490b617596d6fcc3ee4987f713acaf00a51d6fa408394c1632"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-082",
+      "criticality_distribution": {
+        "CRITICAL": 2,
+        "NORMAL": 1
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 3,
+      "requirement_ids": [
+        "BRD-META-MODEL-R004",
+        "BRD-WS-04-R016",
+        "BRD-WS-08-R011"
+      ],
+      "target": "IAC-C3-BUSINESS_OUTCOME-6A52BD81E4",
+      "verification_shape_fingerprints": [
+        "6a52bd81e4abadac63eebb58810a2aa7f61033a7cd4be3f34b213ec46d65be2f"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-083",
+      "criticality_distribution": {
+        "CRITICAL": 3
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 3,
+      "requirement_ids": [
+        "BD-07-011",
+        "BRD-WS-05-R020",
+        "EP-07-003"
+      ],
+      "target": "IAC-C3-BUSINESS_OUTCOME-6BA023340C",
+      "verification_shape_fingerprints": [
+        "6ba023340cbdf9e07351bf0753b20b3248376acd81c7d9cccb54181ebe3fdc19"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-084",
+      "criticality_distribution": {
+        "NORMAL": 3
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 3,
+      "requirement_ids": [
+        "BRD-WS-15-R011",
+        "BRD-WS-15-R012",
+        "BRD-WS-15-R013"
+      ],
+      "target": "IAC-C3-BUSINESS_OUTCOME-6C0DBD8B06",
+      "verification_shape_fingerprints": [
+        "6c0dbd8b061186d01ededcdba2720fdcd7ca613bd1e37fb5eb33a5202be5e5e0"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-085",
+      "criticality_distribution": {
+        "CRITICAL": 1,
+        "HIGH": 2,
+        "NORMAL": 1
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 4,
+      "requirement_ids": [
+        "BD-04-009",
+        "BD-10-008",
+        "BD-12-002",
+        "BRD-WS-15-R022"
+      ],
+      "target": "IAC-C3-BUSINESS_OUTCOME-7AD45B38CE",
+      "verification_shape_fingerprints": [
+        "7ad45b38ced4f7875c9bf80c2908fdf323f9b45b715cf6a8ab0a337a927604bd"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-086",
+      "criticality_distribution": {
+        "CRITICAL": 1,
+        "HIGH": 1,
+        "NORMAL": 1
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 3,
+      "requirement_ids": [
+        "BRD-WS-07-R008",
+        "BRD-WS-15-R014",
+        "BRD-WS-15-R015"
+      ],
+      "target": "IAC-C3-BUSINESS_OUTCOME-A492B3307E",
+      "verification_shape_fingerprints": [
+        "a492b3307efea4db8f481cc314b95d35e1d514b5bafe6b9fa217e018c6edd877"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-087",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-05-R013"
+      ],
+      "target": "IAC-C3-BUSINESS_OUTCOME-A4EF75FE78",
+      "verification_shape_fingerprints": [
+        "a4ef75fe78de4c0f92e31e1685a9b4f88c13b301795673619896c9a9b8bdf683"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-088",
+      "criticality_distribution": {
+        "NORMAL": 1
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 1,
+      "requirement_ids": [
+        "BD-09-011"
+      ],
+      "target": "IAC-C3-BUSINESS_OUTCOME-A50F32435F",
+      "verification_shape_fingerprints": [
+        "a50f32435f1363e032eb5a9c1826f19ccf7195be5c7ddfaffd56c2ad195f005b"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-089",
+      "criticality_distribution": {
+        "CRITICAL": 2
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 2,
+      "requirement_ids": [
+        "BRD-WS-07-R004",
+        "BRD-WS-08-R005"
+      ],
+      "target": "IAC-C3-BUSINESS_OUTCOME-A62EA42FEF",
+      "verification_shape_fingerprints": [
+        "a62ea42fef3985121cd8d149a2c2a8400cf1d480feeadf7e818522c65030eab1"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-090",
+      "criticality_distribution": {
+        "CRITICAL": 1,
+        "HIGH": 3,
+        "NORMAL": 7
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 11,
+      "requirement_ids": [
+        "BD-09-010",
+        "BD-12-019",
+        "BD-16-029",
+        "BRD-WS-09-R011",
+        "BRD-WS-15-R025",
+        "BRD-WS-17-R011",
+        "BRD-WS-17-R015",
+        "CAP-EP-001",
+        "CAP-P01",
+        "CAP-R01",
+        "EP-10-003"
+      ],
+      "target": "IAC-C3-BUSINESS_OUTCOME-BD4FCEA8D3",
+      "verification_shape_fingerprints": [
+        "bd4fcea8d34f819b096cc92257f9f1eff2495f5e412d3775f3963c729f03c39b"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-091",
+      "criticality_distribution": {
+        "HIGH": 2,
+        "NORMAL": 1
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 3,
+      "requirement_ids": [
+        "BD-12-003",
+        "BD-12-014",
+        "BD-12-018"
+      ],
+      "target": "IAC-C3-BUSINESS_OUTCOME-D4A7E52EA1",
+      "verification_shape_fingerprints": [
+        "d4a7e52ea1958a6acfb59e5d0bba64057e973296eb04f59b580f3b44aabe9c45"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-092",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 1,
+      "requirement_ids": [
+        "EP-10-002"
+      ],
+      "target": "IAC-C3-BUSINESS_OUTCOME-E7D29F727C",
+      "verification_shape_fingerprints": [
+        "e7d29f727c35afb9a61dd8f3e4fa4d72d441a3dfcee0c5ca7e6c3c97e730ec83"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-093",
+      "criticality_distribution": {
+        "CRITICAL": 1,
+        "NORMAL": 5
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 6,
+      "requirement_ids": [
+        "BD-09-012",
+        "BD-11-007",
+        "BRD-WS-04-R015",
+        "BRD-WS-09-R012",
+        "BRD-WS-13-R016",
+        "CAP-P02"
+      ],
+      "target": "IAC-C3-BUSINESS_OUTCOME-F0C0AE0967",
+      "verification_shape_fingerprints": [
+        "f0c0ae0967c8f4138fff534fabb2a0fe5192dbed63889fa10512401e8f20ef0e"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-094",
+      "criticality_distribution": {
+        "HIGH": 4
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 4,
+      "requirement_ids": [
+        "BRD-WS-15-R020",
+        "EP-14-005",
+        "EP-15-008",
+        "UXF-503"
+      ],
+      "target": "IAC-C3-BUSINESS_OUTCOME-F7177F89E1",
+      "verification_shape_fingerprints": [
+        "f7177f89e1a4992d3c30730a8d9b4de12dbc9d82021a9ee6cfea2986a51c2ca3"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-095",
+      "criticality_distribution": {
+        "HIGH": 3
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 3,
+      "requirement_ids": [
+        "BD-15-028",
+        "BRD-WS-15-R023",
+        "EP-15-002"
+      ],
+      "target": "IAC-C3-BUSINESS_OUTCOME-FACDAAF796",
+      "verification_shape_fingerprints": [
+        "facdaaf7967492691b6af9420ed9994ff8bc3a80fbcbc1843b3611cc09187fc5"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-096",
+      "criticality_distribution": {
+        "HIGH": 1,
+        "NORMAL": 5
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 6,
+      "requirement_ids": [
+        "BRD-WS-06-R011",
+        "BRD-WS-06-R012",
+        "BRD-WS-06-R014",
+        "BRD-WS-06-R015",
+        "BRD-WS-06-R016",
+        "BRD-WS-06-R017"
+      ],
+      "target": "IAC-C3-DATA_OUTCOME-7A08CD38EA",
+      "verification_shape_fingerprints": [
+        "7a08cd38ea0dd0f07d7c920efaf765aefd5f2184a34402ef681cd4a3aa1001fd"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-097",
+      "criticality_distribution": {
+        "CRITICAL": 1,
+        "NORMAL": 2
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 3,
+      "requirement_ids": [
+        "BD-15-024",
+        "EP-10-001",
+        "EP-15-003"
+      ],
+      "target": "IAC-C3-DATA_OUTCOME-9F0C4D8FDF",
+      "verification_shape_fingerprints": [
+        "9f0c4d8fdf8b4c957dc9cd7d37d8182ed6bb01b637bc0d795182fd112be2416c"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-098",
+      "criticality_distribution": {
+        "NORMAL": 5
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 5,
+      "requirement_ids": [
+        "BO-EP-006",
+        "BO-EP-008",
+        "BO-EP-009",
+        "BO-P02",
+        "BRD-BO-INDEX-R016"
+      ],
+      "target": "IAC-C3-DATA_OUTCOME-A38585FB73",
+      "verification_shape_fingerprints": [
+        "a38585fb73931ebd01299b224a8186a8421a5daf0bbbcafdf04cda56f749f7d1"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-099",
+      "criticality_distribution": {
+        "NORMAL": 2
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 2,
+      "requirement_ids": [
+        "BRD-BO-INDEX-R048",
+        "CAP-R02"
+      ],
+      "target": "IAC-C3-DATA_OUTCOME-C32ABF5DE2",
+      "verification_shape_fingerprints": [
+        "c32abf5de268cd0196409d93f0a713dd4a206a2f27ce7b4669860664877a9a19"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-100",
+      "criticality_distribution": {
+        "NORMAL": 1
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-SNAPSHOT-INDEX-R032"
+      ],
+      "target": "IAC-C3-DATA_OUTCOME-F406C6D8C9",
+      "verification_shape_fingerprints": [
+        "f406c6d8c9bb3eb0c6de65ce5ba9ee7c60629e21409b7b9d2406af7d10979583"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-101",
+      "criticality_distribution": {
+        "NORMAL": 4
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 4,
+      "requirement_ids": [
+        "BRD-BO-INDEX-R017",
+        "BRD-BO-INDEX-R019",
+        "BRD-BO-INDEX-R020",
+        "BRD-BO-INDEX-R021"
+      ],
+      "target": "IAC-C3-DATA_OUTCOME-F9AEF86126",
+      "verification_shape_fingerprints": [
+        "f9aef86126facba16558b7ef167ec694395facc24b9e75daeeca6732b2af2351"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-102",
+      "criticality_distribution": {
+        "HIGH": 3
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 3,
+      "requirement_ids": [
+        "BRD-UPDATE-01-R025",
+        "BRD-UPDATE-01-R026",
+        "BRD-UPDATE-01-R027"
+      ],
+      "target": "IAC-C3-MULTI-DIMENSION-CONFORMANCE",
+      "verification_shape_fingerprints": [
+        "b2b0c588d116fb39a69707b0f32752665a55e12f6dfa14b462a90ddf2e001e04"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-103",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 1,
+      "requirement_ids": [
+        "EVT-P06"
+      ],
+      "target": "IAC-C3-OBSERVABILITY-CAPABILITY-SET",
+      "verification_shape_fingerprints": [
+        "832044e49183082ad74e2dec8140c4895775907fdf01cb38497f32dda904a9ef"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-104",
+      "criticality_distribution": {
+        "CRITICAL": 11,
+        "HIGH": 21,
+        "NORMAL": 30
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 62,
+      "requirement_ids": [
+        "BD-07-019",
+        "BO-R03",
+        "BRD-BO-INDEX-R003",
+        "BRD-BO-INDEX-R013",
+        "BRD-BO-INDEX-R022",
+        "BRD-BO-INDEX-R049",
+        "BRD-CAP-INDEX-R002",
+        "BRD-META-MODEL-R001",
+        "BRD-POLICY-INDEX-R007",
+        "BRD-POLICY-INDEX-R028",
+        "BRD-SNAPSHOT-INDEX-R004",
+        "BRD-SNAPSHOT-INDEX-R005",
+        "BRD-SNAPSHOT-INDEX-R009",
+        "BRD-SNAPSHOT-INDEX-R042",
+        "BRD-UPDATE-01-R003",
+        "BRD-UPDATE-01-R004",
+        "BRD-UPDATE-01-R005",
+        "BRD-UPDATE-01-R007",
+        "BRD-UPDATE-01-R011",
+        "BRD-UPDATE-01-R033",
+        "BRD-WS-01-R027",
+        "BRD-WS-03-R004",
+        "BRD-WS-04-R002",
+        "BRD-WS-04-R003",
+        "BRD-WS-04-R004",
+        "BRD-WS-04-R005",
+        "BRD-WS-04-R006",
+        "BRD-WS-04-R007",
+        "BRD-WS-04-R008",
+        "BRD-WS-04-R014",
+        "BRD-WS-05-R008",
+        "BRD-WS-06-R001",
+        "BRD-WS-06-R004",
+        "BRD-WS-06-R005",
+        "BRD-WS-06-R006",
+        "BRD-WS-07-R003",
+        "BRD-WS-09-R001",
+        "BRD-WS-10-R003",
+        "BRD-WS-12-R002",
+        "BRD-WS-13-R014",
+        "BRD-WS-13-R023",
+        "BRD-WS-14-R003",
+        "BRD-WS-14-R004",
+        "BRD-WS-14-R009",
+        "BRD-WS-14-R011",
+        "BRD-WS-14-R023",
+        "BRD-WS-14-R024",
+        "BRD-WS-14-R028",
+        "BRD-WS-15-R005",
+        "BRD-WS-15-R007",
+        "BRD-WS-15-R018",
+        "BRD-WS-16-R005",
+        "BRD-WS-16-R007",
+        "BRD-WS-16-R011",
+        "BRD-WS-17-R010",
+        "BRD-WS-17-R031",
+        "EP-15-001",
+        "UXF-00-R016",
+        "UXF-02-R009",
+        "UXF-03-R005",
+        "UXF-04-R006",
+        "UXF-05-R010"
+      ],
+      "target": "IAC-C3-PROHIBITED-OUTCOME-INVARIANT",
+      "verification_shape_fingerprints": [
+        "04ad7a375ea5be523067fa1a0e621f667f02828bf24261ff3f0df442c6f98ce8",
+        "1a7e85ec4d8b68f12861678e161e9bd4e1259c1ee01a51b53084b8a65d5c12c4",
+        "1ba34d844f100b901217c8191cdd38656b12a20740117ce5d9b587dcdb2a87a5",
+        "21ff8a1939ae464ef2abcf2ab81921957861e2c830418ecaa749ff60f458fd67",
+        "22651e06134b89c04b20faccb83038efaadc1359325ad4ee2b6dbbbc90daa54b",
+        "2dfba8fa7e2ccfe24973f32db823717325ef852de0ade85d3f9302ff1eca345c",
+        "3472fc26e75a702eb7c18982098f2dda4c9edf75c4d0f2a3d0b7846795c895eb",
+        "35fd9c424e19c1c049eae8990c6cb4eff46b9033d69fbed15fbe00bc49209683",
+        "425f68ec25c79731b755c6ec9a920259b7a5708ef2c22d281cc3aed3f67c1eba",
+        "4274087ce521a1d9d2f883d7a909654239b06707f2a999cf3062915f6ca46eeb",
+        "460671996d94bd6b8219eb0ea4f05999c109a385ecd821fce0046e6442497215",
+        "47638ad819f8f84713035efee013eae5d15d22b21792bc983514c9dab102c7c1",
+        "48f278c05add030b4af46aa0648b674f2c4f2ad099020fe9ad6a5da846b0c76d",
+        "49b6d08b3ec23daff3f135c0462d6e7d2109b08c77964daf96ad13f58255a4f2",
+        "4d03638e241348957e00c1f03fe93ba7c1d2a4ab23077ec69ea998612792d0c2",
+        "51ed0f838110e68b544467eb791eae679f66b7900505c8d01238f4f293f35dfc",
+        "5a693f7252ddcd45355aea109c4a4f4977b205f7c3e5ed78ba81b93501750f29",
+        "5afd4c0e83e76cc9f87b0064612dd2da93e14cd82a05cf94d784b2f63f0239ef",
+        "5d2e524921a68cfe3ffb4f076774e107ebdb41bda54c8cba23a2c800a47890a3",
+        "81eafb591f8dbf748905cdc7fc1f8872851cfb880ef89f34c4957a22c746e89d",
+        "86cce081a412109546bb0eaa7df26e3c827364607ede1b85fd1d72d0801094aa",
+        "88f8bb2302fa91b1021964a08980d7687ebe95ae69a4509b5dac04e066a661a5",
+        "8adc68a6b6a89e00ac4369b636125bc338159021d7c476655956787c434c89fa",
+        "8f3c2e808ecbd5ebcf2e91def61782c9fc44c757eb9b8f33d6212638cc70249c",
+        "8f41f07e310b76c2b1e82dc8520a64952638cb3d07fe99ce2a02d30197a5195f",
+        "90a4e0628a62c32e8530b519d39ffcdec16cb8f75fdb84c48cb9f0484c025171",
+        "90cb4388243fb8517a249bacffa1b4f400804b569a4d14cc721604ed100e58b6",
+        "9456b0b92d9cf474c8b8cc9ec606e51866e0b46c113b4ce6ffad06c6cd2bfb3f",
+        "96785f706cce97769dcd15031387ef5677e6a4a246e98049d1b22932c2ae2102",
+        "af1c3327bef41e08afb3fb2a67d38ce920329ff2017796093c2a0645dd2d66f2",
+        "b0935419a598ddd39b3f1303be66961992809bcad330a199439cc1cfd438ca60",
+        "bd37b6e23e01c06877c2a8aadece55d74bdbf25b9db7c6293237520af176fe44",
+        "c21a9f65a6ed943e0c005cd5792ac843d912ed9fb2415e31f23464d73c510708",
+        "d3ba859945427fa3a943608c0e0262c2a2af6b0f5c2eed7930da45d4fa06d2f1",
+        "d709bb424796b97ff6fc391737f89e541c910c26ee54cc1652b8474a0bff2587",
+        "e3853324295b0af469bc4a61bc4b5f5d8e60a438e7d9b0ac0bf538fd97750090",
+        "e5458acf8fdfbdf7bc5fafd3169b639cc53808383a35d87e8591a0a67a1fbfcf",
+        "e5e31c6b77f7093151a474ad5989129bb39b462a75e35b5020517c74938e21da",
+        "ec68aa1277c837603f59cc845978dc5986b5e7eb076f85bf831620f5cf9ff5e9",
+        "fa6d4fb7fcb4aaba71829c5a9e407248d14025c817c3e077d6332957c600cc87",
+        "fb515a708f8f634b6b0e689c2423aa5619771ae3627df708e7ddd9cc64eb36e4",
+        "fe6208d88726dc654487382eb99985268f8d08af3e62bf229e83c5148dae9de9"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-105",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-UPDATE-01-R023"
+      ],
+      "target": "IAC-C3-PUBLISH-TIME-CONFORMANCE",
+      "verification_shape_fingerprints": [
+        "1a50dfd218d2867a7b3766351ffe62fea7e298abc3d7dc14f41f3e57f41aa5ba"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-106",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 1,
+      "requirement_ids": [
+        "BO-P04"
+      ],
+      "target": "IAC-C3-TRACEABLE-REFERENCE-SET",
+      "verification_shape_fingerprints": [
+        "26ac0f36dcc41c21d2ebd4425c2f2d949679695aa79e2145a729d9c34b7027be"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-107",
+      "criticality_distribution": {
+        "HIGH": 5
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 5,
+      "requirement_ids": [
+        "UXF-004",
+        "UXF-103",
+        "UXF-201",
+        "UXF-303",
+        "UXF-502"
+      ],
+      "target": "IAC-C3-UX_OUTCOME-29F26DC28A",
+      "verification_shape_fingerprints": [
+        "29f26dc28a139ac775677794930d4209f26fa96d4361d15eb072b484f3510d87"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-108",
+      "criticality_distribution": {
+        "HIGH": 4
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 4,
+      "requirement_ids": [
+        "UXF-009",
+        "UXF-403",
+        "UXF-404",
+        "UXF-504"
+      ],
+      "target": "IAC-C3-UX_OUTCOME-4A6569E847",
+      "verification_shape_fingerprints": [
+        "4a6569e847d294bf675275c47d35646a57a9c799f316d1d6c5ba3fb653f073bd"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-109",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 1,
+      "requirement_ids": [
+        "UXF-406"
+      ],
+      "target": "IAC-C3-UX_OUTCOME-A97CB78D22",
+      "verification_shape_fingerprints": [
+        "a97cb78d22ca0584fb1480f88bcdd6a1722cf508915a236882ed4a04ad27b2fe"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-110",
+      "criticality_distribution": {
+        "NORMAL": 3
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 3,
+      "requirement_ids": [
+        "BRD-BO-INDEX-R002",
+        "BRD-CAP-INDEX-R003",
+        "BRD-EVENT-INDEX-R003"
+      ],
+      "target": "IAC-CANONICAL-IDENTITY-NAMING",
+      "verification_shape_fingerprints": [
+        "6a52bd81e4abadac63eebb58810a2aa7f61033a7cd4be3f34b213ec46d65be2f",
+        "7ad45b38ced4f7875c9bf80c2908fdf323f9b45b715cf6a8ab0a337a927604bd",
+        "bd4fcea8d34f819b096cc92257f9f1eff2495f5e412d3775f3963c729f03c39b"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-111",
+      "criticality_distribution": {
+        "CRITICAL": 5,
+        "HIGH": 24,
+        "NORMAL": 21
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 50,
+      "requirement_ids": [
+        "BD-04-008",
+        "BD-06-009",
+        "BD-07-002",
+        "BD-10-002",
+        "BD-10-018",
+        "BD-10-020",
+        "BD-11-003",
+        "BD-11-005",
+        "BD-11-006",
+        "BD-11-010",
+        "BD-12-009",
+        "BD-12-016",
+        "BD-13-018",
+        "BD-14-005",
+        "BD-14-007",
+        "BD-14-011",
+        "BD-15-008",
+        "BD-15-016",
+        "BD-15-021",
+        "BD-16-011",
+        "BD-16-014",
+        "BD-16-015",
+        "BD-17-003",
+        "BD-17-012",
+        "BD-17-015",
+        "BD-17-025",
+        "BRD-POLICY-INDEX-R001",
+        "BRD-UPDATE-01-R012",
+        "CAP-R06",
+        "EP-11-003",
+        "EP-11-005",
+        "EP-12-005",
+        "EP-13-004",
+        "EP-13-008",
+        "EP-15-009",
+        "EP-17-007",
+        "EVT-EP-009",
+        "EVT-P04",
+        "POL-P03",
+        "SNP-EP-006",
+        "SNP-P03",
+        "SNP-P05",
+        "UXF-00-R019",
+        "UXF-00-R020",
+        "UXF-00-R021",
+        "UXF-00-R022",
+        "UXF-00-R026",
+        "UXF-00-R027",
+        "UXF-00-R028",
+        "UXF-00-R029"
+      ],
+      "target": "IAC-CAPABILITY-AVAILABILITY",
+      "verification_shape_fingerprints": [
+        "005b5f467d5d4f1ad40b9e79ba97d324237b0627acbca88921551eb8ed03962d",
+        "00f1739600905ebb14645c4d6c60f7e4ef8ebb60c523d13b66d71c0588724c56",
+        "04bbcb901a853a3568c54af02640b231365dfcb496c7c6b1cd3716944d3bdeb7",
+        "0a22e84c2af4b008080fb7404fa48281551407f2f72d4101b5f044f7a8a1a055",
+        "0ce481641906555e347cf088c41e2e737aa11a37fffab368939ac11f6f52232e",
+        "103ab574f198801e1b7498e2fd5e3fbada6ddc97c4b24f82dfa158f2e06c19ee",
+        "13eafd2c5f756b376f4ceafc20730607ec6386e3a38ca3d38c649b0c418d05e0",
+        "3d7c25caca9c9b7c0b02e1c48522ba040f5fab09230e7ec15614668177aa0fd2",
+        "419ced840510fce1b8f2153221d62a56edb5c42b18b9a9af05dfab6b694f67a8",
+        "48b8de29e48caba3180bbf2850d5eef0644b854e2bf91a32790e8c3b3cd2d09f",
+        "4f0637836d7067cb2c1f5decb7dfc9ba82ec4e2b7c866ac409b9b20cd76754bd",
+        "52bd90746752bc3cfea4dd07d96ae62d627e285c6e0d2406079ca30a85db00bc",
+        "60d88669e3d24ec5381f2985626c3ab3f3f02d72876726657aeaa7aded85a4de",
+        "630083754ae9f62d3ec319490d81451eaf0af328e1d1c89cbc90c4479506aa8a",
+        "64193fe442b582daf2428eb5538ed7c68be0308e3310f68e99d3c86f79b14f40",
+        "6bfcbb8ecbaa07264766323551ac1d1e73b200626f95bef7b974015ea80365e3",
+        "7bfd32db83ff2a2481f61f4b2be07e5386e010fe148edddeebe2e3b376441a07",
+        "8518f3fce7baa05f81c0b4b270d149eb1465b54975d376d0447cafa6ef655be7",
+        "91c58a03de6f0de459a64da7a2e7c88e3a8fa8e7980eca1ce8b8c0594d0eaaca",
+        "93a63134b013260d8d793e65cddf34f50c06438742d367ad29c8f2dde07f6b89",
+        "940b0db7fdcd93524f46f90c7b17eee9edb32abdf65197dd9d2e1bbf2ee78788",
+        "a2ea5097dc512ba5c010639342481a2a718d3905d07283ebabbe894753f4ffaa",
+        "a351208ca92414fb73ec45a7405dc6b5fbedfe785b74c970a812505be6dbbe9c",
+        "a7d6f2c29ac58395b2ad1247aee676afbaaffeff56dde73906ded9ab8acdf347",
+        "baa9a6a101ff7c5b69298d46e80221f009130e6dbb98a25f208e2a894384f059",
+        "c4b6788a541d409bff5974b4ee31563808f86ba72bc236d49b04c96d710a6d4f",
+        "caeb1b55125c55fa4808f67dba0737deba62232365199e2263f78740ac40d308",
+        "cef2300225f2016412737c175a2de7969c34c0fbf5aebdf06b8bee9ac262394e",
+        "d426134cb8c852e41a13b6c4257d3248d09e3bc9c4eb972af60cf7e4e981819d",
+        "d56f4db46bdea362ed7f3fbc8fa2826faed927fb6781549bb2154df35c680e07",
+        "e00476f241342116f4c7c2d98e903b2fd53606d1e89a67480b473b875e290898",
+        "e4e8080e08750f221884c1027c90a91b3ef172ae13872855ccd812cd9950cd73",
+        "e5ce34d785824e4066852d56d60476f8a0d1b3fee15519f3913d38f71e16eadd",
+        "f210b0988343cd718836d2fbe7cf8f95d151381615a2ba5b64e3661c853d418c",
+        "f70205a9440284b94d11f7ef5c87d54b93c7c93fd886d8a0c46fd659256aa72b"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-112",
+      "criticality_distribution": {
+        "CRITICAL": 16,
+        "HIGH": 26,
+        "NORMAL": 25
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 67,
+      "requirement_ids": [
+        "BD-02-001",
+        "BD-02-004",
+        "BD-02-006",
+        "BD-03-001",
+        "BD-03-005",
+        "BD-04-010",
+        "BD-05-013",
+        "BD-06-003",
+        "BD-06-010",
+        "BD-07-008",
+        "BD-07-009",
+        "BD-08-005",
+        "BD-08-007",
+        "BD-09-005",
+        "BD-11-001",
+        "BD-11-013",
+        "BD-12-004",
+        "BD-12-005",
+        "BD-12-011",
+        "BD-13-009",
+        "BD-13-010",
+        "BD-13-019",
+        "BD-14-012",
+        "BD-15-012",
+        "BD-15-026",
+        "BD-16-013",
+        "BD-17-001",
+        "BD-17-004",
+        "BD-17-008",
+        "BD-17-009",
+        "BD-17-013",
+        "BD-17-022",
+        "BO-EP-001",
+        "BO-EP-010",
+        "BO-P05",
+        "BRD-UPDATE-01-R006",
+        "BRD-WS-01-R001",
+        "BRD-WS-04-R001",
+        "BRD-WS-04-R010",
+        "BRD-WS-15-R003",
+        "BRD-WS-15-R026",
+        "BRD-WS-17-R001",
+        "CAP-EP-010",
+        "CAP-P03",
+        "EP-07-004",
+        "EP-08-005",
+        "EP-09-006",
+        "EP-11-007",
+        "EP-12-004",
+        "EP-13-002",
+        "EP-14-001",
+        "EP-17-003",
+        "EVT-EP-002",
+        "EVT-EP-010",
+        "POL-EP-010",
+        "SNP-EP-001",
+        "SNP-EP-002",
+        "SNP-EP-010",
+        "SNP-P01",
+        "SNP-P02",
+        "UXF-03-R006",
+        "UXF-101",
+        "UXF-102",
+        "UXF-209",
+        "UXF-210",
+        "UXF-309",
+        "UXF-310"
+      ],
+      "target": "IAC-CLASSIFICATION-TAXONOMY",
+      "verification_shape_fingerprints": [
+        "0c9737ba2ed008c7a458d9137fdd08c5f0ab4de79bf0679e38402dd3d8410683",
+        "0feaefc47edb68124fccbcfff6868c84c29a027c00b2675e974a637a019dc397",
+        "15ad7f4945d31a739ecc27b0b59c474dd7b9137bf0522c795dc32a14b75f1528",
+        "182a19e8d3eae51a39fc84e73a7e2f725e1fcc801a3e1f932e28af92fd099fba",
+        "1bd6380ed27a0beffe49e7962ca24e5bb4ea7b2621b875eeea93a0f97726d125",
+        "2662ffa31150270773b540ea4d7174abcd1ae8b106f7219ab17a426593165331",
+        "33a0f3222acd2a277931e43326cbc9b2e4c10db2ce95293984d481050d630e0e",
+        "395c7e81a3db6587180d421be4848978c39cc09aee4d377f72d8c0145b9cf104",
+        "5606883046bebbfcb77368d325097ca1171ae3b9206c0a25d53bc26ff6395a09",
+        "5cd98f3dd31b0af08c2d48dec60a4faa1448db5f59a429c30d19f4c5af7e0202",
+        "5d4b43c0132bdfe8bdf6edaf276f10ea85e1458b97cc0b8df7f98d63d5c5ca69",
+        "6bb0f9d307e46e30bd3437a65ea4430a4dc28e127f4f3eca84a69da270ff8d3b",
+        "6bf701660c8267fd5d9bf2f5843686566ba68c0d1fa6d8d3d3b9cf38c96192c2",
+        "6cda8e6fc2e7c5d9fc00c1231aeb8d9867eccd8f8d730d14415c0cad39c0ebee",
+        "79a88dc1b4f41bdff0f66849cbeb6597c6487e6977f422ff2e47a3bb417c91a9",
+        "7d000dd0681863283295192b94aa454a5e030ad092fabf481c5131eabe66b0e8",
+        "82faf98ff78c48f34ec656f964c7fb2fe384bdd4ea258a50937de75e9703441e",
+        "8c1b4de6f2b0a270c817718bc1986af01c88bbaf9edbf327d4a3601c7394fab7",
+        "923287d9f28d66765a176829612f9ee3efb7b0b9c5cef40a086bda7c70d1330c",
+        "947c2f760dd07f99d6ba8967dc6db52352033297290129ddd1e77d43f8ac3959",
+        "949c1beb8480e9869428b46d1383248b061efe7de2dc44ac522bbae04fab0776",
+        "a030e60271c0d12374103a91c5b298678ba935e7b3410bbfe350b244d112edab",
+        "a0602f9515fca9279e53f4846545c521399ac518fd3928a943bde78e12b7e69b",
+        "a5b62c9576684518a912f29eb75949fca0e9077764ea1b99744ca79341370d80",
+        "a8ff46ad280506d09502ec285c9d3904d3fb015bee1f75dfa8262988fbd7af0f",
+        "ad0124b7600ad30acced8f36f044cc2fe5489bb2c8e8a5c74061defec100fb29",
+        "b4d0ae612845b37a8345cd18451687a8606926d12f2493d2a7b96366c7cf6ea1",
+        "b8b8e16505cbc76a9f4fc68c416d6b1f245d078553374f64a173f4e756afe17d",
+        "be139eb12763b86b63bd886c7badba6bc82199a84a622e325774ba51b7357f50",
+        "c4d272e3ff41301448f2de4c86ea8b7c737eff9cd8b19cfed43ae212ba4935d1",
+        "c9609e119d77a6f5eab1a1813877f8ea133ba70262b8ffdeb3b8c5c124b9f77d",
+        "c9c005bfcd461b0e6b3c9f71cf813b0124703cd78645aa52ced43f33754ec710",
+        "cdd05cf4f9786cda29c06db274c02ce76ea6019b0709c104e7f4dc33336e3b2a",
+        "cea9718eb9c3b1928f8b10f2af2b27aa0e636820c00d7f8980d3a3b60de1aa5d",
+        "e11477b17181adea3ff1090ba1250a5219194dcd9cba29e0b3cc608cd200e672",
+        "ecc7a6671bc5d42be511bb97020ca6e01e7f647cad6191548e7b3bc1ddae26de",
+        "f4a50c7d7d780f2c7b3f862a3a091651c5d90e5b4b5352b6a61b7a3760023193",
+        "f8fae8c40770151380edb8b59847e4152ba7272f71da378974d975508e3fb12e"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-113",
+      "criticality_distribution": {
+        "HIGH": 16,
+        "NORMAL": 10
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 26,
+      "requirement_ids": [
+        "BD-14-002",
+        "BD-14-021",
+        "BD-14-023",
+        "BD-14-024",
+        "BRD-POLICY-INDEX-R002",
+        "BRD-WS-14-R001",
+        "BRD-WS-14-R010",
+        "BRD-WS-14-R034",
+        "BRD-WS-14-R038",
+        "UXF-00-R012",
+        "UXF-00-R023",
+        "UXF-00-R024",
+        "UXF-00-R025",
+        "UXF-001",
+        "UXF-02-R002",
+        "UXF-04-R009",
+        "UXF-04-R010",
+        "UXF-04-R011",
+        "UXF-04-R012",
+        "UXF-04-R013",
+        "UXF-04-R014",
+        "UXF-104",
+        "UXF-204",
+        "UXF-206",
+        "UXF-304",
+        "UXF-401"
+      ],
+      "target": "IAC-CONFIGURATION-RESOLUTION",
+      "verification_shape_fingerprints": [
+        "02eaababb55af9fe0745ac5665441526f1f5d76a4db2891d981dd069489e8643",
+        "0d5cd370bcac3e8a6412b096e4e333dfa9aed7397e1b0a147b39a6e4f8ad142a",
+        "4b48e8ffe9300c417424be2d91bec253471f2b87733e9cd2474b86514ea53d09",
+        "548d45a7d0b5772ac8e772806a5330e14786772cd7646e590fdb39f667672a82",
+        "5fd19ccfd8aa43f73625ff061aa1af7173c2f6ee15ae5d8b44cb74a9c6da2943",
+        "7dec6e38334eba96d658165c052af6b630b6898edb747cd2217ca0e5eca50b33",
+        "88d844d4d82a5aa4d3c2bbf8ed299a15810e56405cdb5623aa0ba635bf6a159b",
+        "8d6c946355931111ab91d9286a7676587e4e99c49e24040107a448f360cdccb0",
+        "a97cb78d22ca0584fb1480f88bcdd6a1722cf508915a236882ed4a04ad27b2fe",
+        "b23c6a57c4e2fc4b315bef7eedc8eb8ad508e273f0f0a3a4586d8219c512d86b",
+        "c8584feec82a11b88942fb08297444791fa629fe994b68ff31f37a5fa46161a2",
+        "c9c005bfcd461b0e6b3c9f71cf813b0124703cd78645aa52ced43f33754ec710",
+        "caeb1b55125c55fa4808f67dba0737deba62232365199e2263f78740ac40d308",
+        "e2b144b0e9edfac2ba5c6ac6509b9af00353a14ae91275054689ecf5a55550a4",
+        "e49331459f4d82229bef111c587cd4cc55913e96045872cde059a990021bcc77",
+        "e9afc6cd4391c179c2ad0beb5cb78e7b79e095e6adcd2a93c1e69cbc1862eae2",
+        "ed18d6e8551da68d7ef97847b2fe79ba7f01e39e12648477f4a87b1afabb521b",
+        "f8fae8c40770151380edb8b59847e4152ba7272f71da378974d975508e3fb12e"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-114",
+      "criticality_distribution": {
+        "CRITICAL": 8,
+        "HIGH": 1
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 9,
+      "requirement_ids": [
+        "BD-11-012",
+        "BD-12-007",
+        "BD-13-014",
+        "BD-16-009",
+        "BD-16-010",
+        "BRD-WS-12-R014",
+        "BRD-WS-16-R008",
+        "EP-11-006",
+        "EP-16-006"
+      ],
+      "target": "IAC-CONSENT-PREFERENCE",
+      "verification_shape_fingerprints": [
+        "0570bb0399923158d1cb6246d04590b309a6cb3fd45a418437694679648645b6",
+        "2e3841dceef81d6a4e2ed1a368a08260ea8c74cc485bc712d911a988ca2b520b",
+        "3e95c74cd84c50ba6ede293065a40e3a65bd27594dac4d2303c3f3dc94dc849a",
+        "92f92c7339c28d6df47b7b7b3311f6c8236761eb46c8ebb884cd7ae534b1fa38",
+        "ab233e4380222ebf967cbfd82099e72608a23f25fe6491ac4d548fafb2ea19c4",
+        "d723f7a897528bd934b09ff28b555e83abf9ac71d40f635f488d06fc70ef2b74",
+        "f393ca05e405db7c9a3461936579c98f5d66d85deb547155137bfb816c36d641",
+        "f5176f512ca65cfc09a7d0c568d4e0c05af83770259146c93f60d6272b0f33b3",
+        "f7e1f868a2e2eac429e5eadf976c31a5953227d1e1548e3fb27f03535d9776ac"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-115",
+      "criticality_distribution": {
+        "HIGH": 6,
+        "NORMAL": 5
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 11,
+      "requirement_ids": [
+        "BD-13-017",
+        "BRD-WS-03-R008",
+        "BRD-WS-03-R010",
+        "BRD-WS-13-R017",
+        "BRD-WS-13-R018",
+        "BRD-WS-13-R019",
+        "UXF-00-R005",
+        "UXF-00-R006",
+        "UXF-00-R007",
+        "UXF-00-R008",
+        "UXF-00-R009"
+      ],
+      "target": "IAC-DATA-ISOLATION-VISIBILITY",
+      "verification_shape_fingerprints": [
+        "0210f0fec7f0445dab1c7b64b0e7791031a022391d362d6f7bc44591683d42fe",
+        "0dc16047f15d2239ef16350cd095f901e4f4a5b641329db517f7fe8ad63d8690",
+        "10068d4665b0aa6fcbb646c9bee733d6e691a98aa567ace9366ad810ca39f7bf",
+        "256e195e0d644146aeb43f33da3a335e9f84b6896930d88c5b137e1bdf851ed4",
+        "5afd4c0e83e76cc9f87b0064612dd2da93e14cd82a05cf94d784b2f63f0239ef",
+        "5e9950d2c02743937f0c35870f1ed3cc6200339d8ce09fd1856a4cec8877eba9",
+        "a1dd4d69096d0fa87110b0241a4bd1dec4b3c7f159d76dc23d879b2b69b09ccc",
+        "e564dd591b3aa58c04c702ba869337844fab7ee89bd1de0b217d4b4968a56380"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-116",
+      "criticality_distribution": {
+        "CRITICAL": 2,
+        "NORMAL": 1
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 3,
+      "requirement_ids": [
+        "BRD-SNAPSHOT-INDEX-R006",
+        "BRD-WS-14-R016",
+        "SNP-P07"
+      ],
+      "target": "IAC-DATA-RETENTION-DELETION",
+      "verification_shape_fingerprints": [
+        "2c008ae692a00a3f2b71af73e93eda83a82d29af7634ae3a6d6e3fa39539741f",
+        "7016ab71e35155580d81064dd50f8dc30f3766f7f9b4d27938ac53d474e188f2",
+        "757647dc6f95829836e704e971acfddeb4f4a6489ba47db14714178811a6c318"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-117",
+      "criticality_distribution": {
+        "CRITICAL": 6,
+        "HIGH": 43,
+        "NORMAL": 8
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 57,
+      "requirement_ids": [
+        "BRD-EVENT-INDEX-R006",
+        "BRD-POLICY-INDEX-R009",
+        "BRD-UPDATE-01-R021",
+        "BRD-UPDATE-01-R022",
+        "BRD-WS-01-R004",
+        "UXF-00-R001",
+        "UXF-00-R002",
+        "UXF-00-R003",
+        "UXF-00-R014",
+        "UXF-00-R015",
+        "UXF-00-R018",
+        "UXF-005",
+        "UXF-01-R005",
+        "UXF-012",
+        "UXF-03-R001",
+        "UXF-03-R002",
+        "UXF-03-R003",
+        "UXF-03-R004",
+        "UXF-03-R007",
+        "UXF-04-R001",
+        "UXF-04-R002",
+        "UXF-04-R003",
+        "UXF-04-R004",
+        "UXF-04-R008",
+        "UXF-05-R001",
+        "UXF-05-R002",
+        "UXF-05-R003",
+        "UXF-05-R004",
+        "UXF-05-R005",
+        "UXF-05-R006",
+        "UXF-05-R007",
+        "UXF-05-R008",
+        "UXF-05-R009",
+        "UXF-05-R011",
+        "UXF-05-R012",
+        "UXF-05-R014",
+        "UXF-05-R015",
+        "UXF-05-R016",
+        "UXF-05-R017",
+        "UXF-05-R018",
+        "UXF-05-R019",
+        "UXF-05-R020",
+        "UXF-105",
+        "UXF-107",
+        "UXF-110",
+        "UXF-202",
+        "UXF-207",
+        "UXF-208",
+        "UXF-305",
+        "UXF-306",
+        "UXF-307",
+        "UXF-408",
+        "UXF-410",
+        "UXF-501",
+        "UXF-505",
+        "UXF-506",
+        "UXF-510"
+      ],
+      "target": "IAC-DESIGN-BOUNDARY",
+      "verification_shape_fingerprints": [
+        "0210f0fec7f0445dab1c7b64b0e7791031a022391d362d6f7bc44591683d42fe",
+        "04091cbcb51d6ef24c340d501b5cb40685ea6b2bf641327eac416cc25ccf0acf",
+        "0d76cb86119f5e4976495958de4839cb7578b1180f394ab52a42f8998bd8bac5",
+        "25a46df5beca5487fde760e142d918d33085008ffa33805f35a22ac931ca6dbf",
+        "29f26dc28a139ac775677794930d4209f26fa96d4361d15eb072b484f3510d87",
+        "2febfad900a7d979095a3eb49fd4af6530ab2dff1412968c2d810ca7039c6808",
+        "30c3c775f0d78646e4aeb17445f00d5d6acd1a98c9b50a1b24d2d9c85b072dfc",
+        "34270b00640e62e033795166a2413002c89e4745cf6c98e9aa3084d7a6ff11d4",
+        "4385fe70fca6f1477edcc1c387abc17cc4ee3a5424a41a6eb183ba1c6435c568",
+        "46236f06f2fa9cf5f97d29e5b1846c4cd11e105c4a60bcded2832b9ab91cd335",
+        "4a6569e847d294bf675275c47d35646a57a9c799f316d1d6c5ba3fb653f073bd",
+        "4ca8c75ad39f6e0d894328155dc3a34510a4717c236a63621eb0ab79c3429da5",
+        "53bddae0e4533eba5efbcdfe240866344af28841d11f93c75fbbcbbe22ab70b3",
+        "5c4044743c52277ccbbd054acacc56c383d115d5f5cb463eb36a16148fccf659",
+        "7227016a210356d0c9c167204c6925f865c476eb9bd68fd8305824f4f8193867",
+        "88398e81d81a1d9536c428acff42537af09da3286ec9ddf87e7111ff50d98432",
+        "90feb52c6bffaea5182ed866054d65f6da4a3c3b2973c54ed1ae2c2eed2f1e2c",
+        "9bce3dbc74efa662c2f197b7f7929655b27e96732110719a69d1805e157d706a",
+        "9eba6d216abcbd5efbdace03703f69556a96e8bdadfbdb36d87b949b8492c046",
+        "9ee6dad7ec362eda9738e728214346341ca27127409f5fe0a42c8fb290a97ca4",
+        "a97cb78d22ca0584fb1480f88bcdd6a1722cf508915a236882ed4a04ad27b2fe",
+        "ae8072a0164dcedc93d57d6eb5093529ad5d95de9818d0fa3cbf99149e5141f4",
+        "beb2f510dc0892726402ad26c359a46f0f94b6092c2b8f0b0f21d45184428e71",
+        "c05891fe1e39b338e60e14aced16c54985f19098e113d0fa2fc8d247d3f7c0a9",
+        "c0b7d9917f2df6c2638c8ce92835f86e1b29160ba4b25d548363e5bb7f4bd721",
+        "c9c005bfcd461b0e6b3c9f71cf813b0124703cd78645aa52ced43f33754ec710",
+        "da597ebf97b4f2cecc4ab5229b1282df3bb2759d34280cb42fa69c17cf1f5067",
+        "db99c11e7a48899ea08bc18240877872d53cab82a3ca276d9e74bd110aa9fce5",
+        "e238f00a7d13213c2877caf3961c008a7d162f7751100c637eac3cf5bacea962",
+        "e251bea5f0c3f71d2d42abcaf4528ac83cfad7d502daf9d44eee11694512227b",
+        "e5ec5ee8f4c221c39d02cb08854739b547cb6dd52d066f8362d4355e4873bfec",
+        "f27deb106418621841705af04cac7968d77eb139739e36eded72290198db70f9"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-118",
+      "criticality_distribution": {
+        "CRITICAL": 8,
+        "HIGH": 3,
+        "NORMAL": 8
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 19,
+      "requirement_ids": [
+        "BD-05-017",
+        "BD-07-012",
+        "BD-17-018",
+        "BRD-SNAPSHOT-INDEX-R031",
+        "BRD-UPDATE-01-R031",
+        "BRD-WS-05-R022",
+        "BRD-WS-05-R023",
+        "BRD-WS-05-R024",
+        "BRD-WS-05-R025",
+        "BRD-WS-05-R026",
+        "BRD-WS-14-R014",
+        "BRD-WS-14-R020",
+        "BRD-WS-14-R021",
+        "BRD-WS-14-R026",
+        "BRD-WS-15-R019",
+        "BRD-WS-17-R006",
+        "EP-09-002",
+        "POL-EP-009",
+        "POL-P05"
+      ],
+      "target": "IAC-ELIGIBILITY-PREREQUISITE",
+      "verification_shape_fingerprints": [
+        "03bdea8c491daaddcfc61fb3bb85b0c6487feafad3dd7e3da4155e8a4d59a981",
+        "05b1e323910844b54dff55a99e440285f912156d34467410bdc0e41d2b2bf54d",
+        "4785109b5da05f99205e90ddb8c792e9c29fc42f90b01d6f507f92e5a406c218",
+        "4bc40d627352d9d2a96451d56718887d9ec044e16e0188fbfba2de6f79f82821",
+        "50d5e97caee542ffac25760dd5b468f4dab3265e51948c6816119848424f4131",
+        "6777c4ee37573f6a83a3c7c5b66b286e6b6b35e15ce2ad41ef76ecedc3894d52",
+        "81ffc9dbb3b1894ce744fcdc5eda51b625bc129e74f4e2caadfa8775dae75690",
+        "b2a9305a2ecb7a093fa24ef2c6dbf1dab0c59cd102afe22bf077d57165552da7",
+        "c753d52b44f67cd690b1fbba720d8365682be64c0124b897d5cc4292d279444b",
+        "d5aeb96de1f215de7b5f23658bda91430c207787ddb4e34296073ebb2b8e8f7d",
+        "da5df59b52e630eb06af3d898a10a94d1148012e333ec267a38a95dc95c9fd93",
+        "f19084f88f18643b5456a0e832b569feca87fd48719673134b9d6d5ca41bf1a6",
+        "f1c007218b17cdb70b2bf372573cd6f11d2d3e1bb72c976dbfa49b0c58d24216",
+        "f7e9ae51abbc45609ed53521126db0fa82429a7a5ffe76a09147fa8d5d88d662"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-119",
+      "criticality_distribution": {
+        "CRITICAL": 15,
+        "HIGH": 17,
+        "NORMAL": 17
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 49,
+      "requirement_ids": [
+        "BD-02-002",
+        "BD-03-002",
+        "BD-03-003",
+        "BD-03-006",
+        "BD-05-010",
+        "BD-05-011",
+        "BD-05-015",
+        "BD-06-005",
+        "BD-06-006",
+        "BD-06-008",
+        "BD-06-015",
+        "BD-08-004",
+        "BD-08-015",
+        "BD-09-001",
+        "BD-09-008",
+        "BD-09-015",
+        "BD-10-009",
+        "BD-10-023",
+        "BD-11-008",
+        "BD-12-001",
+        "BD-15-005",
+        "BD-15-015",
+        "BD-16-019",
+        "BD-17-011",
+        "BO-EP-002",
+        "BO-EP-003",
+        "BO-EP-004",
+        "BO-EP-005",
+        "CAP-EP-002",
+        "CAP-EP-003",
+        "CAP-EP-004",
+        "EP-06-001",
+        "EP-06-003",
+        "EP-07-001",
+        "EP-08-001",
+        "EP-08-002",
+        "EP-08-007",
+        "EP-09-003",
+        "EP-10-004",
+        "EP-10-006",
+        "EP-12-001",
+        "EP-16-007",
+        "EVT-C04",
+        "EVT-EP-003",
+        "EVT-EP-004",
+        "EVT-EP-005",
+        "POL-EP-002",
+        "POL-EP-003",
+        "SNP-EP-005"
+      ],
+      "target": "IAC-ENTITY-IDENTITY-LIFECYCLE",
+      "verification_shape_fingerprints": [
+        "0c9737ba2ed008c7a458d9137fdd08c5f0ab4de79bf0679e38402dd3d8410683",
+        "182a19e8d3eae51a39fc84e73a7e2f725e1fcc801a3e1f932e28af92fd099fba",
+        "1bd6380ed27a0beffe49e7962ca24e5bb4ea7b2621b875eeea93a0f97726d125",
+        "1d961718e23862d282ccf52d196b97a8b78758f379954ca95625d150cfdad019",
+        "1e5720309c09430023434473dd010fc22dcb102a7b5453957aa65f51486c1d63",
+        "31a9dfc0fa4b8851eeb3a2af6fef8f43d34511d330047e8ac2b3bf99f98f34c7",
+        "4e0e1990ebedaea139558964767d4c8883c793139ea71c2ec85f6864a2011b16",
+        "4f43f88cd78b45330c12f38b7bc7cef620e589608e642d5a77e183115551ec3e",
+        "5d4b43c0132bdfe8bdf6edaf276f10ea85e1458b97cc0b8df7f98d63d5c5ca69",
+        "60ee476f3ad88c10a3c01498f9187853fc1f8d7a3f68edb9b48cd298aeff19db",
+        "6c9ad3b0ec5339c7b065f520384a7fddfb7bba5bf6b6ce0037535791191790db",
+        "7ad45b38ced4f7875c9bf80c2908fdf323f9b45b715cf6a8ab0a337a927604bd",
+        "7d000dd0681863283295192b94aa454a5e030ad092fabf481c5131eabe66b0e8",
+        "7ed46e50a6d73eecbdbe5dae6259290d96b365bcb8a3d551399cc429fbdf6767",
+        "861492b165cf38bcc1382b3cc08cce37d5a82567a10b5868cac5711dad1598e6",
+        "8dd8fcd61012fa2be0e7ca66b0f432f6b0cd232928c0be6dc153820ee9cb8791",
+        "940b0db7fdcd93524f46f90c7b17eee9edb32abdf65197dd9d2e1bbf2ee78788",
+        "9493a515bc35985e8f3d1c4b566e857b4fbc34ddb733c02ba5793fa2237005cf",
+        "9f4415ccc57f55f5eb3ebab18b56bf35d393a3fafa800b7c311e6b82e32998d2",
+        "a38585fb73931ebd01299b224a8186a8421a5daf0bbbcafdf04cda56f749f7d1",
+        "a50f32435f1363e032eb5a9c1826f19ccf7195be5c7ddfaffd56c2ad195f005b",
+        "b8b8e16505cbc76a9f4fc68c416d6b1f245d078553374f64a173f4e756afe17d",
+        "bd4fcea8d34f819b096cc92257f9f1eff2495f5e412d3775f3963c729f03c39b",
+        "be9d16b21dc84d8a6fbfeac8e84110ff2d3291e7f90be511d564c58d284e7d1d",
+        "bf154b677f9b00c66f46f30d730ce4535a70a56732db1c4a48b52b9c8997a094",
+        "c2a08324a65502785248cb59764d48a0493d35b9ec978970053f0a4e50bb490e",
+        "cea9718eb9c3b1928f8b10f2af2b27aa0e636820c00d7f8980d3a3b60de1aa5d",
+        "df654fe1c141bfeade81593344c86af73ec68300d2059c67eafa241960e37c3a",
+        "e213b2bd4bcc8737df933bdcd7b4bdb494b5fdb175161c1e6a6001b062b94173",
+        "f7177f89e1a4992d3c30730a8d9b4de12dbc9d82021a9ee6cfea2986a51c2ca3",
+        "feeb31e405e7505f3a338cf715e9113c9f5a5a03ba718af104d196ba90fd8f23"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-120",
+      "criticality_distribution": {
+        "CRITICAL": 3,
+        "HIGH": 24,
+        "NORMAL": 5
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 32,
+      "requirement_ids": [
+        "BD-10-003",
+        "BD-12-010",
+        "BD-15-022",
+        "BD-15-025",
+        "BD-16-027",
+        "BD-17-026",
+        "BO-EP-007",
+        "BRD-EVENT-INDEX-R005",
+        "BRD-EVENT-INDEX-R007",
+        "BRD-EVENT-INDEX-R008",
+        "BRD-EVENT-INDEX-R009",
+        "BRD-EVENT-INDEX-R010",
+        "BRD-EVENT-INDEX-R011",
+        "BRD-EVENT-INDEX-R012",
+        "BRD-EVENT-INDEX-R013",
+        "BRD-EVENT-INDEX-R014",
+        "BRD-META-MODEL-R003",
+        "BRD-WS-10-R004",
+        "BRD-WS-15-R021",
+        "CAP-P07",
+        "CAP-R03",
+        "EP-12-002",
+        "EP-15-004",
+        "EP-15-006",
+        "EVT-C01",
+        "EVT-C02",
+        "EVT-C05",
+        "EVT-EP-001",
+        "EVT-EP-006",
+        "EVT-P02",
+        "SNP-EP-003",
+        "SNP-P04"
+      ],
+      "target": "IAC-EVENT-EMISSION-METADATA",
+      "verification_shape_fingerprints": [
+        "394b0b33d05df2347563189083ecb07d706563e501a33aa81c050a5ac80fe649",
+        "570f58be979be69a231dc53098b4e309c207180a99db3363dbe958f9bcfa9789",
+        "5bebcc49f75c2d0665dbe7c6b1449f2c3185a1bb0f19699592ac3fe87de5691e",
+        "5efcc701c5d63eb4343b626365c653b3d765295674b953732229a30d7e94017f",
+        "92d7f7925a4a5933a939b2a7af61bd192acf67707a42bd5c1de64422593d7e03",
+        "97cb6049b2cbde36d9d85aaff7c2d19ff0ea6d6f936eb231fba09bf091c57011",
+        "a0aab2f93538838152fc61c742119496d6ebce3bc80464aecf9436226072911e",
+        "ab3e4c5ffeca923776546b1d6a671e6be513ddadfde0a87f4cde0765371b8a91",
+        "ae4a370b53f0471075b442431c15eab0690a81f9d74f3c8b3670331a56fdeea8",
+        "ae509d5f32052b6e51e23410cd282352ef6c4fab92015c66b951ff2d3f97150d",
+        "be9d16b21dc84d8a6fbfeac8e84110ff2d3291e7f90be511d564c58d284e7d1d",
+        "c45893155fb4d9bc542e35f85aad7b635ce3af8e9b419f5f58cab9c9cc0cc5a9",
+        "cf59153f362873369a7333dbebc182acb46938de9051db01d10a203a7e5ea853",
+        "dc8a31b13b0b62b8a6823b2b9eea8d0dc7f8f1bedc007d6e4d55b0b6c2f46577",
+        "e7d29f727c35afb9a61dd8f3e4fa4d72d441a3dfcee0c5ca7e6c3c97e730ec83",
+        "f0d4b06e31cd2035ccda8707b5e031edd7c2105d7782dddf8eb32d1166e5f6ce"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-121",
+      "criticality_distribution": {
+        "CRITICAL": 3
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 3,
+      "requirement_ids": [
+        "BD-15-010",
+        "BRD-WS-15-R006",
+        "BRD-WS-15-R017"
+      ],
+      "target": "IAC-EVENT-ORDER-IDEMPOTENCY",
+      "verification_shape_fingerprints": [
+        "30da0df6fbdfeb30772cd82edb6bc750f06210c2dac67a1bd8617fdaee0034ed",
+        "7e1de4b138653bc15264431caf269bac094411aa9df74437e54ffde1c9e49bd3",
+        "e3279288aea00a48a4e68399976a781c3e181b5d8be13b546ddfa96be6296dcd"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-122",
+      "criticality_distribution": {
+        "CRITICAL": 1,
+        "HIGH": 4,
+        "NORMAL": 17
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 22,
+      "requirement_ids": [
+        "BRD-BO-INDEX-R043",
+        "BRD-BO-INDEX-R044",
+        "BRD-BO-INDEX-R045",
+        "BRD-BO-INDEX-R047",
+        "BRD-CAP-INDEX-R024",
+        "BRD-CAP-INDEX-R025",
+        "BRD-CAP-INDEX-R026",
+        "BRD-CAP-INDEX-R028",
+        "BRD-EVENT-INDEX-R025",
+        "BRD-EVENT-INDEX-R026",
+        "BRD-EVENT-INDEX-R027",
+        "BRD-EVENT-INDEX-R029",
+        "BRD-POLICY-INDEX-R020",
+        "BRD-POLICY-INDEX-R021",
+        "BRD-POLICY-INDEX-R022",
+        "BRD-POLICY-INDEX-R023",
+        "BRD-POLICY-INDEX-R025",
+        "BRD-SNAPSHOT-INDEX-R033",
+        "BRD-SNAPSHOT-INDEX-R034",
+        "BRD-SNAPSHOT-INDEX-R035",
+        "BRD-SNAPSHOT-INDEX-R036",
+        "BRD-SNAPSHOT-INDEX-R038"
+      ],
+      "target": "IAC-GOVERNED-DEFINITION-LIFECYCLE",
+      "verification_shape_fingerprints": [
+        "1bc8a07481eb3e42cc24626d5fda9efa9a44452459ed59c6edd50b1ec3b1f102",
+        "5f78b33dd742e36dce052de79a7c7a7ba0fd7f0602823e61622f31b80c7c7a23",
+        "671456c647059b1e09893ce2de7daeec81d96f460e41b9e94da531403ad618fd",
+        "78a6dd89f1e96af67f88d32ae491fc08b54167d84668999ce4a42f5d3c88820b",
+        "89624b4111747bf678d50524888fbdb9e5bbec65f09a7e3d7c5851c973211b27",
+        "a4ef75fe78de4c0f92e31e1685a9b4f88c13b301795673619896c9a9b8bdf683",
+        "dc2b887e5f9931ad140e32f38582d3f1f2e71341a9cab50c40400ad63cd73857",
+        "e074e571706c750face26dd0fac77160faac23e96f5b8e94a4f2a4d55c61dc14",
+        "e654dd3c695f7c4bae5a6937ff51dbf0db09e39d40515ec7e0d455ba7576bd09",
+        "f406c6d8c9bb3eb0c6de65ce5ba9ee7c60629e21409b7b9d2406af7d10979583"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-123",
+      "criticality_distribution": {
+        "CRITICAL": 1,
+        "HIGH": 1
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 2,
+      "requirement_ids": [
+        "BRD-WS-17-R028",
+        "BRD-WS-17-R029"
+      ],
+      "target": "IAC-OPERATIONAL-CONTROL-RECOVERY",
+      "verification_shape_fingerprints": [
+        "03e87c5dc9856604debaed08b54dbe90d61d3f924f60d5b3d6be17ee19ba953d",
+        "dd0d3ea18bc7a42df7da9ac0cde284c420718139c49d2f47f3a5467b4a87ea29"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-124",
+      "criticality_distribution": {
+        "CRITICAL": 6,
+        "HIGH": 9,
+        "NORMAL": 18
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 33,
+      "requirement_ids": [
+        "BD-03-011",
+        "BD-04-006",
+        "BD-08-006",
+        "BD-09-003",
+        "BD-14-022",
+        "BD-17-019",
+        "BO-R06",
+        "BRD-POLICY-INDEX-R005",
+        "BRD-POLICY-INDEX-R008",
+        "BRD-POLICY-INDEX-R026",
+        "BRD-POLICY-INDEX-R027",
+        "BRD-WS-05-R015",
+        "BRD-WS-14-R035",
+        "BRD-WS-17-R007",
+        "BRD-WS-17-R023",
+        "CAP-R04",
+        "EP-14-002",
+        "EP-15-007",
+        "EP-16-004",
+        "EP-17-004",
+        "EVT-C06",
+        "EVT-EP-007",
+        "EVT-P03",
+        "EVT-P05",
+        "POL-EP-001",
+        "POL-EP-004",
+        "POL-P01",
+        "POL-P02",
+        "POL-P07",
+        "POL-P08",
+        "POL-P09",
+        "UXF-00-R010",
+        "UXF-02-R001"
+      ],
+      "target": "IAC-POLICY-OUTCOME-PRECEDENCE",
+      "verification_shape_fingerprints": [
+        "0d8d96cfe943c086ff608fab95365ef62122b105a583c0b639c20cdaa71f7820",
+        "1014ea84461e8c5902e3cb1a88702bf7eb39051fa65e123aac93488b3d2d6629",
+        "28b8a4db87213421b2f7abaf46be5ba56341baca2df409193f1c5d229bb924fe",
+        "394b0b33d05df2347563189083ecb07d706563e501a33aa81c050a5ac80fe649",
+        "5fb9b84392a074af037142a9ecc927b67707bb8efd56532800e3e9a68f5069fd",
+        "5fd19ccfd8aa43f73625ff061aa1af7173c2f6ee15ae5d8b44cb74a9c6da2943",
+        "757647dc6f95829836e704e971acfddeb4f4a6489ba47db14714178811a6c318",
+        "813e2c710658a33982618dd55c0645abaadc432d410014f7287ddd6fb0270ce4",
+        "86b64449563817dcf214d1f3f1eef02ee4dfa48941de838257df5842185d4f5a",
+        "89624b4111747bf678d50524888fbdb9e5bbec65f09a7e3d7c5851c973211b27",
+        "8ad8c8d97b65d6fd8b0af7f8d36487113a3a65e54a20a6cceec57f062152e8da",
+        "8dd8fcd61012fa2be0e7ca66b0f432f6b0cd232928c0be6dc153820ee9cb8791",
+        "91ec66766cf59984e19f2dd1fc40ab590783a9a3869292512611b14e8a2b39bd",
+        "9afbca3a213d0301f595c12873a8b36235cd9eac4a64083cf4bde37bad8181bb",
+        "a27a433ee1c90cef23eb189ed9184a861157bfd5193d1a7c850821b2f0dc32e8",
+        "b45d64fed0c2c70cd2d7cd94645522cadc72e4e171e69bc5e5680feaecf8199c",
+        "b5b076ecc9cfce6badd0a2b46846a950b21814870bf4cef32d892b04ac9a917c",
+        "be6763a8b808903ba9e1352a9085414e244381036b944210d22466c364d6f0f9",
+        "cb84d18a9547bf2d5b4a1860c8fbc99ab10e6433da529645bbd7c15e9ed53f3d",
+        "cf6947d75e5742e65131791c524f50ded2879621902440fa252dcc7f22e38b33",
+        "e5ce34d785824e4066852d56d60476f8a0d1b3fee15519f3913d38f71e16eadd",
+        "e9e5ff4fa8efb55c64093cd1185275bce1c0bbd78fb869162b808825c98a9719",
+        "eeb820d3b8e2ba698cbc48c361e798fa34093ba603020937022c982faf3a4291",
+        "eecbb9fd120e3cb200651b50219b010e200b88305a9c6fbcc7d1b95ca0d5e2c5",
+        "f54d4178badc2d0ef8dc9f0a971dfba614f368f3a8a033f68ba5aaad701400f2",
+        "f70205a9440284b94d11f7ef5c87d54b93c7c93fd886d8a0c46fd659256aa72b"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-125",
+      "criticality_distribution": {
+        "CRITICAL": 23,
+        "HIGH": 16,
+        "NORMAL": 31
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 70,
+      "requirement_ids": [
+        "BD-03-007",
+        "BD-03-008",
+        "BD-03-010",
+        "BD-04-002",
+        "BD-04-003",
+        "BD-05-001",
+        "BD-05-002",
+        "BD-05-003",
+        "BD-05-007",
+        "BD-06-001",
+        "BD-06-002",
+        "BD-06-004",
+        "BD-06-007",
+        "BD-06-011",
+        "BD-07-005",
+        "BD-07-006",
+        "BD-07-010",
+        "BD-07-017",
+        "BD-07-018",
+        "BD-08-001",
+        "BD-08-002",
+        "BD-08-003",
+        "BD-08-009",
+        "BD-08-010",
+        "BD-09-002",
+        "BD-09-006",
+        "BD-09-007",
+        "BD-10-001",
+        "BD-10-005",
+        "BD-10-011",
+        "BD-11-002",
+        "BD-11-004",
+        "BD-12-013",
+        "BD-13-005",
+        "BD-14-025",
+        "BD-15-017",
+        "BD-16-020",
+        "BD-17-024",
+        "BO-P03",
+        "BO-R01",
+        "BO-R02",
+        "BO-R05",
+        "BRD-BO-INDEX-R018",
+        "BRD-UPDATE-01-R032",
+        "BRD-WS-02-R005",
+        "BRD-WS-03-R002",
+        "BRD-WS-06-R007",
+        "BRD-WS-06-R008",
+        "BRD-WS-06-R009",
+        "BRD-WS-06-R013",
+        "BRD-WS-07-R011",
+        "BRD-WS-11-R007",
+        "BRD-WS-13-R012",
+        "BRD-WS-14-R032",
+        "BRD-WS-14-R033",
+        "BRD-WS-14-R036",
+        "BRD-WS-14-R037",
+        "BRD-WS-17-R027",
+        "CAP-P05",
+        "CAP-R07",
+        "EP-06-002",
+        "EP-07-006",
+        "EP-08-003",
+        "EP-11-004",
+        "EP-14-003",
+        "EP-15-005",
+        "EP-16-001",
+        "EVT-C03",
+        "EVT-P07",
+        "UXF-203"
+      ],
+      "target": "IAC-RELATIONSHIP-REFERENCE",
+      "verification_shape_fingerprints": [
+        "05889ce82567aee0bf75c1b5b3d8f3da798c1f39048df6741d996379683cdab7",
+        "08e253a3a4f660c7b7f878f36fafb6d376d7a116a4063ab690e5447011c2d646",
+        "0d008f73caa6976bf0752a603559f9169a2fdcbd1183c3f177e0d43bc5f868ff",
+        "19e87081fc6e6a78928ce1bb23278e425833aa98118c1266eebfb441548e32b5",
+        "238be60d7717283cba12ced0ea60bf3c5ca22ea2c25a0f62dde918802f7bf7a7",
+        "24d0730bbcfd606e9db26ea98ddaf6a6a0a442a22cd5171690f9f4a66c544060",
+        "2a6ad3923b0aed0306e4996948bd0fef5635698c88c8f457b9f661405ee23678",
+        "2df9afa65352da5a6a6de370647b635a39f5b9721a3f974f776ef9d080514aa2",
+        "3274e4dfcb8c34df066626e8eb89ab63ea676cd4e408942896e5720d52802dfe",
+        "3636c569b9df15208b5e11391016e9465bd6e7f14c82cfce527790f16829e2a2",
+        "389dc690d79b7004017a3d155b7e1425090a4ff9fd4a5985b7445ef0174286f6",
+        "3a1e5f8804491121249a0671d5b692145b73d1174e355c0fa09429a9e831cf88",
+        "3baf9b93357b02623d6c470f5fa46f9d1487196871b15fec39d7bac7b4b28678",
+        "3f844a6384d0301d7e5b9a6f1439224958d1a6749deb2a7be93ea0af8e6e47c5",
+        "4385fe70fca6f1477edcc1c387abc17cc4ee3a5424a41a6eb183ba1c6435c568",
+        "44aebc00fefbfa841ab86fd247b8bc9783ac7a7f3405981788866c6e14e7ccf1",
+        "4b9f1872e423c0b1515daf3921a0de9c28ba485c5fa9bd10879817d5c486d66c",
+        "4d014a68305b622081a945c1cd35a243de8d6c368e3e626dd9442562d205e177",
+        "4f98cc6a1a65d359bb703ca518a3dedaf13a42e7bb246059761aa768b58b1385",
+        "53a14ee5a6243c1e1d8df9f7c1ea783d245614c97ae50d16294ae5fcb631423b",
+        "553bb61b41d35d0ce78ba8392acb3fdc33530064d3b755827dac7963ec9146fe",
+        "673305ee012ae149953af4ea7f6e9d7c935c10c32eba224f6707ca655b724892",
+        "6af4f048951fc9f1c3a87aa9f52de7555ff2ea401664ee31392cd291d8670e1e",
+        "6f697e030ac92ca38214c5f60a88fbe8603d7c07480c0ce517d0dd04edf9ee95",
+        "750281ce728591f2477b3270a1d184a585bcc0ff379a22c2557a42112e0af7ba",
+        "75b7140ba18ccd45264ec2d92208a4cf72b7754e7d9cadfd0f958d2ad51d6b5c",
+        "7850c379901b01ad5841e55457d76c121e7dd817465f411089681914dcbee792",
+        "7a24aade689b360558cc1609be5c4ce709cfdfe9be0efc66ce427d423a8e39f6",
+        "81dfdd7b6326284e8d520dc38ae2180cacf1dac7d5509093d0c23e8b45e3f402",
+        "927366f2fa3c969e2b205c3fd826dd075469364e5baf0afd99b5c07e58dd6a5d",
+        "95b4a9c5f2e4818e0aca63ed7ca314af7771887d5f51f067afacd73fc6a8ec2d",
+        "98c3627a128c0343e9899c5092f7da6edc25d3d6dce109a0e0c60ce61ab16226",
+        "a38585fb73931ebd01299b224a8186a8421a5daf0bbbcafdf04cda56f749f7d1",
+        "ad62990a07e9dfaa1a9c5490a4a0a3f7ced1f010ca93bc821db6b28edb4e3292",
+        "c356afaa0aa21fbbf9aef54a6561cd64b5fcd01159fba33b0dbb6e8fa60faea1",
+        "cb58b69d69cc88ef5486703727b7c406b798aefc107b34b86f57d8c9e51c8da3",
+        "cc757d94c1231c05bde3f21403d618335dd1bce88f146b9057ed2755c9a5010a",
+        "cd55852b31570c4c986119bd11afbd4b6acd3a80876a2d51f9297cd96a9c57af",
+        "cd609c743f600cc7de5f9e6f975359b4fcd04acddd74f1c27571d7942fab51e8",
+        "cd8c3e18077f39cf0ffe14cf808606c10c08f89a1611e0ab0f26557e6fd6101c",
+        "d06812f933e421e869db237588e566e69e309c347e6148c33d233647be694cee",
+        "d750d6e4dc237184e14ea0069c6e756302bab40e302b6f7b9121c2911b4934cc",
+        "d9c35a428350bed84f2c513a42bb41d6447d1295fe0f58188234993174cef5c7",
+        "dd88ff0238e28e5bf5168bcf79e0f7df0789fe509f641eae1f12d6540d613bcd",
+        "ded3c20165fefc4bc8fedfa87992a7ff68858f6c61b4af1748e318587d32c869",
+        "e4430821a3812b429b10d74490df2a3c1c7c7188b88c4a2fba7a4be849525c2c",
+        "e78822cbbc973b0b6d29c9244e102eafabcf670bc43f9927ad3db1cdec1ebce6",
+        "ed8e577bfb60751cbb0a182be138376bd2b6aa8896d141dbf37f04bcf1cc0999",
+        "f401a551bfd871aac17ad32119ef11f46a23cc1944b19da3fd23f4e560904cf6",
+        "f9aef86126facba16558b7ef167ec694395facc24b9e75daeeca6732b2af2351",
+        "fa331dd8746b0bcfadadb983963294fb230f260a37db0e4ead4474bc227842b3",
+        "fbaa4b7f8d14223717874a06cba94687aa05b2aea7d96f0f7cddbd54ad617868",
+        "fce1ecb12e16e6240d7fd3ddd8a8a7d5cf3454c69211cc66be48181ab40b68d3"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-126",
+      "criticality_distribution": {
+        "CRITICAL": 2,
+        "HIGH": 4
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 6,
+      "requirement_ids": [
+        "BD-13-008",
+        "BD-13-011",
+        "BRD-WS-13-R002",
+        "BRD-WS-13-R006",
+        "EP-10-005",
+        "EP-13-001"
+      ],
+      "target": "IAC-REPORTING-FRESHNESS-EXPORT",
+      "verification_shape_fingerprints": [
+        "0031a208d1f996a1d3b68a84e7b36867209418047dab9d7270d067b3c77145cd",
+        "6a6160db2faba55e1d00c930c85cbd27baa82b0fef6e2b60b971653c7eaa1fde",
+        "d7c00354dc540c0f1743e398eed91d1294ea9bc4120422acf1ac877e88787a71",
+        "ec5f4251264a73eb0cf27aebb26075fd95b332db90e3f63862516bf5d18c3d82",
+        "f0d4b06e31cd2035ccda8707b5e031edd7c2105d7782dddf8eb32d1166e5f6ce",
+        "f8f366047a03835c3ddea265707d16c4d341a726918542a87e0b151bc6c4f37c"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-127",
+      "criticality_distribution": {
+        "CRITICAL": 15,
+        "HIGH": 9,
+        "NORMAL": 26
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 50,
+      "requirement_ids": [
+        "BD-13-007",
+        "BD-14-008",
+        "BD-14-017",
+        "BD-15-009",
+        "BD-15-011",
+        "BD-15-014",
+        "BD-15-020",
+        "BD-15-030",
+        "BD-16-012",
+        "BD-16-017",
+        "BD-16-018",
+        "BD-16-025",
+        "BD-17-002",
+        "BD-17-014",
+        "BRD-BO-INDEX-R009",
+        "BRD-BO-INDEX-R010",
+        "BRD-BO-INDEX-R011",
+        "BRD-SNAPSHOT-INDEX-R022",
+        "BRD-SNAPSHOT-INDEX-R023",
+        "BRD-SNAPSHOT-INDEX-R024",
+        "BRD-SNAPSHOT-INDEX-R025",
+        "BRD-SNAPSHOT-INDEX-R026",
+        "BRD-SNAPSHOT-INDEX-R027",
+        "BRD-SNAPSHOT-INDEX-R028",
+        "BRD-SNAPSHOT-INDEX-R029",
+        "BRD-SNAPSHOT-INDEX-R030",
+        "BRD-WS-01-R035",
+        "BRD-WS-05-R001",
+        "BRD-WS-05-R002",
+        "BRD-WS-05-R003",
+        "BRD-WS-05-R004",
+        "BRD-WS-05-R005",
+        "BRD-WS-05-R006",
+        "BRD-WS-05-R007",
+        "BRD-WS-05-R011",
+        "BRD-WS-08-R010",
+        "BRD-WS-11-R004",
+        "BRD-WS-11-R005",
+        "BRD-WS-11-R006",
+        "BRD-WS-12-R009",
+        "BRD-WS-12-R010",
+        "BRD-WS-14-R005",
+        "BRD-WS-14-R006",
+        "BRD-WS-14-R007",
+        "BRD-WS-14-R008",
+        "BRD-WS-14-R017",
+        "BRD-WS-14-R018",
+        "BRD-WS-14-R019",
+        "BRD-WS-17-R019",
+        "EP-13-007"
+      ],
+      "target": "IAC-REQUIRED-VALUE-SET",
+      "verification_shape_fingerprints": [
+        "12c4ac0cee2029770e1089a41c2c165f59d08ec1e15952fecba4bf3616b0be48",
+        "163311cdd59abb8768d58fe563fa7d3c8c167dc050b91a763a442bd0857dddda",
+        "19d045f6ef16458e711a8b29700fbb621b5c73b0d6e5ff39961011bc46eaf42d",
+        "19d1a5212fd2a73232e2022313394b6f1ed7b670531485252bd3cc53eebff874",
+        "2cd180f6b9b11ea26e079fb4f74f0d264256834d424f0f9a82a66723ff296bc7",
+        "4150e21c743aaba0fa9b5af51206a7242f7b74625f82e5db13ce58d8dbda1ffe",
+        "422cb8161a7667a628f1e9a2c219981e399447922e9e701db4e8caf49cd8c044",
+        "4c5144ddb32b32d45b63401a3e48666f156da8d33aa976866677c8403ca4a2a5",
+        "52e0c4cb68a55f896e5320ad22b2429510d28e981251bea3b278b8159425c3dd",
+        "608ebf255ab0c4cf5e42f7b5651b9057081ec7db91bbd2c90da5ebaf08bae38f",
+        "7b0b3f4d44ed06c55990c999edca859bd4b44d39e78bf4c83f1fe0d76e7ff541",
+        "861b296825fdd1ceb2098571280b3e232252739b7c91e3b48d1b67946109086e",
+        "9b94a107ff1f514eadbf8ea2f0ac8f0fd6d501732012242087cbf3b0929e540f",
+        "a1dd4d69096d0fa87110b0241a4bd1dec4b3c7f159d76dc23d879b2b69b09ccc",
+        "a492b3307efea4db8f481cc314b95d35e1d514b5bafe6b9fa217e018c6edd877",
+        "a62ea42fef3985121cd8d149a2c2a8400cf1d480feeadf7e818522c65030eab1",
+        "aab8a5e35548face621e20d5eaf974204f2ccc88c67dc67caa4ae9181faa6bf8",
+        "b0a7c3ae153a01992f408c9dc759fa565b636c5ed89067aff9e843bb21aa3562",
+        "b765d24a0e465ade4790120966651ab1e16804c28b5b00aaf6359f5d422c652c",
+        "bb200481bdc39aa81c4a2dcad5de106f0c8f40c8c3e2a816734beed23317f85a",
+        "bf6df61f9898ff30bf98f5f1a0a25df668d4d675001046d97c7127f3ebb3bbbc",
+        "c5ff607dfcf1eae66d82454dff40224578e94ce8b8bb7d039c3dcae13059ea3a",
+        "e5e31c6b77f7093151a474ad5989129bb39b462a75e35b5020517c74938e21da",
+        "ee38a56bd8fb6c5147424b3d6f3d99854daddd39a73bfc66edde6da99dd8dba1",
+        "f17761ee0dbaefcb68bde111ef1b6cf1a39f3fc358497ff7072db0150da70263",
+        "f73895a3db0724edcbcdd0c9cbba1ff733dcbb125ef48d2f0304063465b6804d",
+        "f8c51ccdeb270b43e5db525d08cbe104d5e27b6679c3a60ead04f02a162aaa3f",
+        "fd321ab5eb06bc5ca5d35ba42621d48582c2b0c51a6c22b79954956083425d23"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-128",
+      "criticality_distribution": {
+        "NORMAL": 3
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 3,
+      "requirement_ids": [
+        "BD-13-012",
+        "BRD-BO-INDEX-R033",
+        "BRD-CAP-INDEX-R022"
+      ],
+      "target": "IAC-SCOPE-EXCLUSION",
+      "verification_shape_fingerprints": [
+        "2c4d200aa6904f6aae36d6c78788a40c226c224d55c5c5e2c60deb2b2235e489",
+        "62a54e7bd736b571379a24ede542dd2c521c52243494705751ea6261cc5001da",
+        "b1716621c1f3abcd8d2ee13f35c928878d31cc9e5d0e9d18b5e0aae960dfddf9"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-129",
+      "criticality_distribution": {
+        "CRITICAL": 1,
+        "HIGH": 1
+      },
+      "disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 2,
+      "requirement_ids": [
+        "UXF-00-R017",
+        "UXF-409"
+      ],
+      "target": "IAC-UX-STATE-ACTION-FEEDBACK",
+      "verification_shape_fingerprints": [
+        "386676a4aca9a87947fc8b91a33aba8a12fd5ccb4aac14db6e8bb91f1ff2403f",
+        "a649d9905d5b932cb81c8d929488acc9991dde97c2dd25a3ebd8ebb0cde0c75e"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-130",
+      "criticality_distribution": {
+        "CRITICAL": 3,
+        "HIGH": 26,
+        "NORMAL": 22
+      },
+      "disposition": "NEW_PROFILE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 51,
+      "requirement_ids": [
+        "BD-03-012",
+        "BD-05-006",
+        "BD-10-013",
+        "BD-12-008",
+        "BD-12-015",
+        "BD-12-017",
+        "BD-16-022",
+        "BD-16-026",
+        "BD-17-023",
+        "BD-17-029",
+        "BD-17-030",
+        "BRD-UPDATE-01-R013",
+        "BRD-UPDATE-01-R014",
+        "BRD-UPDATE-01-R015",
+        "BRD-UPDATE-01-R016",
+        "BRD-UPDATE-01-R017",
+        "BRD-UPDATE-01-R018",
+        "BRD-UPDATE-01-R019",
+        "BRD-WS-01-R028",
+        "BRD-WS-01-R029",
+        "BRD-WS-01-R030",
+        "BRD-WS-01-R031",
+        "BRD-WS-01-R032",
+        "BRD-WS-01-R033",
+        "BRD-WS-01-R034",
+        "BRD-WS-01-R036",
+        "BRD-WS-03-R009",
+        "BRD-WS-12-R005",
+        "BRD-WS-12-R006",
+        "BRD-WS-12-R007",
+        "BRD-WS-12-R008",
+        "CAP-EP-007",
+        "CAP-EP-008",
+        "CAP-EP-009",
+        "EP-14-007",
+        "EVT-EP-008",
+        "POL-EP-005",
+        "POL-EP-006",
+        "POL-EP-007",
+        "POL-P04",
+        "UXF-00-R011",
+        "UXF-006",
+        "UXF-007",
+        "UXF-02-R005",
+        "UXF-02-R007",
+        "UXF-02-R008",
+        "UXF-108",
+        "UXF-205",
+        "UXF-407",
+        "UXF-507",
+        "UXF-508"
+      ],
+      "target": "ACP-ATOMIC_CAPABILITY_AVAILABILITY",
+      "verification_shape_fingerprints": [
+        "005b5f467d5d4f1ad40b9e79ba97d324237b0627acbca88921551eb8ed03962d",
+        "21e1184f0c9630c121e99e8b30b5d65c39a7af7387891c45aa9614886d79843d",
+        "30d7dde7694ebdc8a8df420dbe235edfbc7e9a51fc8d117771e807c4a114639e",
+        "32de4fe64aad271b39c9bf1f4d80d710993297a9ba9b99e585d8840f0603d4a9",
+        "3d7c25caca9c9b7c0b02e1c48522ba040f5fab09230e7ec15614668177aa0fd2",
+        "52bd90746752bc3cfea4dd07d96ae62d627e285c6e0d2406079ca30a85db00bc",
+        "60d88669e3d24ec5381f2985626c3ab3f3f02d72876726657aeaa7aded85a4de",
+        "71ccfe717d3ef08bdb49ade02262af0cd360a69c97b25b5f06efc6a1a8903755",
+        "7dd00ec6083f4ab0ac47d79866d32ca7d683865787fef46c5a003b4fe2d470f4",
+        "86be12c7833b682bec764b68fa47fc703a7727974e0673d9b8f8bb5be4f469d4",
+        "8d43c7f72d2fb544acc835bbb701f79134003bbf61d4d836006a73902cf58a72",
+        "8e7de6265ca5b19a21bddb797cec259732b999f2a47a55ca8c2a925781661c9c",
+        "a0a268d8a135c99b18bdc8f12c6ca99e35e4db4c1ee06e048f237cae327f9cdf",
+        "a29428e8cdacb739e9ac5407fd38b10f60070e86118b7df5678d00b6587a13c7",
+        "b23c6a57c4e2fc4b315bef7eedc8eb8ad508e273f0f0a3a4586d8219c512d86b",
+        "ba5af4a1bb6212d34d9b4cd25de5076e11d912c1706cec750f41668b564306a9",
+        "ca79e2602ddee998db0884af5ea831a2a3bbaaf57ae38196c3d3e8d1d6bbe9f3",
+        "f34df3bd28812de26ef6426f4bb9fbde995d560448e93153f06591398aeb43d4",
+        "fa6982611413c1b147e1cd53d4e67708c13f7692e05ef9d50be89d06aa34177d",
+        "fb34b4468fa93715525e2a9efceef167e78d6b8edddbcc06c390592b39269204",
+        "fd2f453bebe54994c95290c0d3979bec46570439f3c34cbfc2abccf126165a39"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-131",
+      "criticality_distribution": {
+        "HIGH": 1,
+        "NORMAL": 4
+      },
+      "disposition": "NEW_PROFILE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 5,
+      "requirement_ids": [
+        "BD-10-006",
+        "BD-11-009",
+        "BD-12-006",
+        "BD-16-028",
+        "BD-17-027"
+      ],
+      "target": "ACP-BUSINESS_CLASSIFICATION",
+      "verification_shape_fingerprints": [
+        "0c9737ba2ed008c7a458d9137fdd08c5f0ab4de79bf0679e38402dd3d8410683",
+        "b8b8e16505cbc76a9f4fc68c416d6b1f245d078553374f64a173f4e756afe17d",
+        "cea9718eb9c3b1928f8b10f2af2b27aa0e636820c00d7f8980d3a3b60de1aa5d"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-132",
+      "criticality_distribution": {
+        "NORMAL": 5
+      },
+      "disposition": "NEW_PROFILE_BINDING_HIGH_CONFIDENCE",
+      "member_count": 5,
+      "requirement_ids": [
+        "BO-P01",
+        "BRD-BO-INDEX-R008",
+        "BRD-BO-INDEX-R012",
+        "BRD-POLICY-INDEX-R003",
+        "BRD-SNAPSHOT-INDEX-R001"
+      ],
+      "target": "ACP-DATA_VALUE_CONSTRAINT",
+      "verification_shape_fingerprints": [
+        "3a1e5f8804491121249a0671d5b692145b73d1174e355c0fa09429a9e831cf88",
+        "8dd8fcd61012fa2be0e7ca66b0f432f6b0cd232928c0be6dc153820ee9cb8791",
+        "9493a515bc35985e8f3d1c4b566e857b4fbc34ddb733c02ba5793fa2237005cf",
+        "a38585fb73931ebd01299b224a8186a8421a5daf0bbbcafdf04cda56f749f7d1"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-133",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "STRUCTURAL_RECONCILIATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BD-14-010"
+      ],
+      "target": "054598307c8687e9eb9f94b1c7754972d3ff3b3f6a73ff516429cf169718fb9a",
+      "verification_shape_fingerprints": [
+        "054598307c8687e9eb9f94b1c7754972d3ff3b3f6a73ff516429cf169718fb9a"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-134",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "STRUCTURAL_RECONCILIATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-CAP-INDEX-R007"
+      ],
+      "target": "0a27e25656fe05e807792c664eb0a5b681b910f1660a5b1a90c60d837a372109",
+      "verification_shape_fingerprints": [
+        "0a27e25656fe05e807792c664eb0a5b681b910f1660a5b1a90c60d837a372109"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-135",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "STRUCTURAL_RECONCILIATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "EP-13-003"
+      ],
+      "target": "10102d0bf2e39152d00430db00206115f2b7d3e6c08d1fd426a8657a61997939",
+      "verification_shape_fingerprints": [
+        "10102d0bf2e39152d00430db00206115f2b7d3e6c08d1fd426a8657a61997939"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-136",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "STRUCTURAL_RECONCILIATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "EP-16-010"
+      ],
+      "target": "19e3ab66a466eb9679823a83b24d9f73bf583976b83afd16ed032fd017f670d8",
+      "verification_shape_fingerprints": [
+        "19e3ab66a466eb9679823a83b24d9f73bf583976b83afd16ed032fd017f670d8"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-137",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "STRUCTURAL_RECONCILIATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BD-15-001"
+      ],
+      "target": "2074e38445b9d686af362529f5f892055812f7055ab2662f270c3fef16d82c64",
+      "verification_shape_fingerprints": [
+        "2074e38445b9d686af362529f5f892055812f7055ab2662f270c3fef16d82c64"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-138",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "STRUCTURAL_RECONCILIATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BD-16-006"
+      ],
+      "target": "2903ceff16bfeaeb295c6e5216ce0ad00229f7844114a516da9c4883736e3b59",
+      "verification_shape_fingerprints": [
+        "2903ceff16bfeaeb295c6e5216ce0ad00229f7844114a516da9c4883736e3b59"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-139",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "STRUCTURAL_RECONCILIATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BD-15-003"
+      ],
+      "target": "2aca209e51763d179b6cbe8e69dee23f70ab08541b2f9962041eff891697e415",
+      "verification_shape_fingerprints": [
+        "2aca209e51763d179b6cbe8e69dee23f70ab08541b2f9962041eff891697e415"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-140",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "STRUCTURAL_RECONCILIATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BD-15-007"
+      ],
+      "target": "3a5ad77c6c7575fff069c64eb38d5238dbd3c2621c89981c3ed2973c082da109",
+      "verification_shape_fingerprints": [
+        "3a5ad77c6c7575fff069c64eb38d5238dbd3c2621c89981c3ed2973c082da109"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-141",
+      "criticality_distribution": {
+        "NORMAL": 1
+      },
+      "disposition": "STRUCTURAL_RECONCILIATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BD-14-004"
+      ],
+      "target": "3f844a6384d0301d7e5b9a6f1439224958d1a6749deb2a7be93ea0af8e6e47c5",
+      "verification_shape_fingerprints": [
+        "3f844a6384d0301d7e5b9a6f1439224958d1a6749deb2a7be93ea0af8e6e47c5"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-142",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "STRUCTURAL_RECONCILIATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BO-P07"
+      ],
+      "target": "4411bddf9f04403acdf1bc3cc491e08072aeda767cbc6b8c3316c10b4136dbb1",
+      "verification_shape_fingerprints": [
+        "4411bddf9f04403acdf1bc3cc491e08072aeda767cbc6b8c3316c10b4136dbb1"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-143",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "STRUCTURAL_RECONCILIATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BO-R04"
+      ],
+      "target": "490d902ea01632d3f2ade0b74856e77ee2c97c802b071bafb70e573140de109b",
+      "verification_shape_fingerprints": [
+        "490d902ea01632d3f2ade0b74856e77ee2c97c802b071bafb70e573140de109b"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-144",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "STRUCTURAL_RECONCILIATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BD-17-006"
+      ],
+      "target": "5fe24736a909c8ea79e2d82568706f64f42abef321fc8b3957ea4c003a6f07e8",
+      "verification_shape_fingerprints": [
+        "5fe24736a909c8ea79e2d82568706f64f42abef321fc8b3957ea4c003a6f07e8"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-145",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "STRUCTURAL_RECONCILIATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BD-17-005"
+      ],
+      "target": "62d058e65ba34937e486adf214f7961a242ae1483026b79599293c3f3be89ea9",
+      "verification_shape_fingerprints": [
+        "62d058e65ba34937e486adf214f7961a242ae1483026b79599293c3f3be89ea9"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-146",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "STRUCTURAL_RECONCILIATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "UXF-05-R054"
+      ],
+      "target": "634e3e30e5cfc6ffe01854525e213710c828081a891ec7b9c5760b3a221f4da7",
+      "verification_shape_fingerprints": [
+        "634e3e30e5cfc6ffe01854525e213710c828081a891ec7b9c5760b3a221f4da7"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-147",
+      "criticality_distribution": {
+        "NORMAL": 1
+      },
+      "disposition": "STRUCTURAL_RECONCILIATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BD-13-020"
+      ],
+      "target": "6855187f00f6d07deb3163bcfab182db41c53a45378e07d9cd6b5a70dbbf23c1",
+      "verification_shape_fingerprints": [
+        "6855187f00f6d07deb3163bcfab182db41c53a45378e07d9cd6b5a70dbbf23c1"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-148",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "STRUCTURAL_RECONCILIATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BD-15-027"
+      ],
+      "target": "782a75db086601256bc8dd8ec55f03d969677168cbd84d9b246693657f06b405",
+      "verification_shape_fingerprints": [
+        "782a75db086601256bc8dd8ec55f03d969677168cbd84d9b246693657f06b405"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-149",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "STRUCTURAL_RECONCILIATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BD-05-008"
+      ],
+      "target": "785aca08bfadf077edab79af55578db0d3f7733be414cdeace9b9356f6059e89",
+      "verification_shape_fingerprints": [
+        "785aca08bfadf077edab79af55578db0d3f7733be414cdeace9b9356f6059e89"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-150",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "STRUCTURAL_RECONCILIATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-17-R030"
+      ],
+      "target": "852c773539813f9b16d94a768463efafface791996cf78a133e7ec8e667cd9b2",
+      "verification_shape_fingerprints": [
+        "852c773539813f9b16d94a768463efafface791996cf78a133e7ec8e667cd9b2"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-151",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "STRUCTURAL_RECONCILIATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BD-13-004"
+      ],
+      "target": "8597ad278adb658cc06d5c38694680dd67c03e4f65985a6b0c70b0dbd2a296bc",
+      "verification_shape_fingerprints": [
+        "8597ad278adb658cc06d5c38694680dd67c03e4f65985a6b0c70b0dbd2a296bc"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-152",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "STRUCTURAL_RECONCILIATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "EP-13-005"
+      ],
+      "target": "a21b93449472001c8a4cbcb3f54b191e3e9b576ad5be6d2a6e98110f40e73e89",
+      "verification_shape_fingerprints": [
+        "a21b93449472001c8a4cbcb3f54b191e3e9b576ad5be6d2a6e98110f40e73e89"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-153",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "STRUCTURAL_RECONCILIATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "EVT-P01"
+      ],
+      "target": "a73a297f977aa93317f45b0bcf5d1a07bd22ea802389c025fb6b94dd125b38c3",
+      "verification_shape_fingerprints": [
+        "a73a297f977aa93317f45b0bcf5d1a07bd22ea802389c025fb6b94dd125b38c3"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-154",
+      "criticality_distribution": {
+        "CRITICAL": 2
+      },
+      "disposition": "STRUCTURAL_RECONCILIATION_REQUIRED",
+      "member_count": 2,
+      "requirement_ids": [
+        "CAP-P08",
+        "POL-P10"
+      ],
+      "target": "adee6824fb820298581ecdfb7d744e06f8b121fb3cb02fdd13334fafebe9f3d9",
+      "verification_shape_fingerprints": [
+        "adee6824fb820298581ecdfb7d744e06f8b121fb3cb02fdd13334fafebe9f3d9"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-155",
+      "criticality_distribution": {
+        "NORMAL": 2
+      },
+      "disposition": "STRUCTURAL_RECONCILIATION_REQUIRED",
+      "member_count": 2,
+      "requirement_ids": [
+        "BRD-CAP-INDEX-R004",
+        "BRD-UPDATE-01-R008"
+      ],
+      "target": "b06f243c9da9651e9bf3096c0c9bca57f2e2f951bc1db87066ed6bc9c4c46f0c",
+      "verification_shape_fingerprints": [
+        "b06f243c9da9651e9bf3096c0c9bca57f2e2f951bc1db87066ed6bc9c4c46f0c"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-156",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "STRUCTURAL_RECONCILIATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BD-17-007"
+      ],
+      "target": "bb5506b7ccaf03803aa63935afba87a241a5bc86d54036ddaef9602d919d38d1",
+      "verification_shape_fingerprints": [
+        "bb5506b7ccaf03803aa63935afba87a241a5bc86d54036ddaef9602d919d38d1"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-157",
+      "criticality_distribution": {
+        "NORMAL": 1
+      },
+      "disposition": "STRUCTURAL_RECONCILIATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BD-14-003"
+      ],
+      "target": "bea10e3034163472690c118f9f7d3b65700ce20f1a98b28bed7a63587344e5bc",
+      "verification_shape_fingerprints": [
+        "bea10e3034163472690c118f9f7d3b65700ce20f1a98b28bed7a63587344e5bc"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-158",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "STRUCTURAL_RECONCILIATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BD-11-014"
+      ],
+      "target": "c325412baee10ce861807401e19ab66e1deaf7328c3a0cca8d60e424d199b345",
+      "verification_shape_fingerprints": [
+        "c325412baee10ce861807401e19ab66e1deaf7328c3a0cca8d60e424d199b345"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-159",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "STRUCTURAL_RECONCILIATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "EVT-P08"
+      ],
+      "target": "c920a16f091755cab221408c0b76779d4d30195c414d988280c81334ad858394",
+      "verification_shape_fingerprints": [
+        "c920a16f091755cab221408c0b76779d4d30195c414d988280c81334ad858394"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-160",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "STRUCTURAL_RECONCILIATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BD-15-006"
+      ],
+      "target": "cacf68e0c0d4cf3dff8c7fc8113c4137e327c4b44a7cb8f0b9041985b851d69c",
+      "verification_shape_fingerprints": [
+        "cacf68e0c0d4cf3dff8c7fc8113c4137e327c4b44a7cb8f0b9041985b851d69c"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-161",
+      "criticality_distribution": {
+        "NORMAL": 2
+      },
+      "disposition": "STRUCTURAL_RECONCILIATION_REQUIRED",
+      "member_count": 2,
+      "requirement_ids": [
+        "BD-14-006",
+        "BD-16-021"
+      ],
+      "target": "dec5053cf716df9b381b89cc0c92ae6eb0ea52f4bbe49be051ad51f6e1fea4c6",
+      "verification_shape_fingerprints": [
+        "dec5053cf716df9b381b89cc0c92ae6eb0ea52f4bbe49be051ad51f6e1fea4c6"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-162",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "STRUCTURAL_RECONCILIATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BD-15-029"
+      ],
+      "target": "e379c84742d5648b7b5d7141397b0a9b5c948a2c80e7ebd63efb9dbadb2a5f97",
+      "verification_shape_fingerprints": [
+        "e379c84742d5648b7b5d7141397b0a9b5c948a2c80e7ebd63efb9dbadb2a5f97"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-163",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "STRUCTURAL_RECONCILIATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BD-16-016"
+      ],
+      "target": "f0969a2e728e53f9904f93e61a63effb8b88bdc84de6ec579e835fc901610297",
+      "verification_shape_fingerprints": [
+        "f0969a2e728e53f9904f93e61a63effb8b88bdc84de6ec579e835fc901610297"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-164",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "STRUCTURAL_RECONCILIATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BD-15-023"
+      ],
+      "target": "f7436e93a8aa408dcf0cbbad95d8cc149eee7798ce8cf439ffeaf423f01d8620",
+      "verification_shape_fingerprints": [
+        "f7436e93a8aa408dcf0cbbad95d8cc149eee7798ce8cf439ffeaf423f01d8620"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-165",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "STRUCTURAL_RECONCILIATION_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BD-13-013"
+      ],
+      "target": "ff2ad936beda7dc5302619aa5b13e7c290d20fd13142670379e7a25258671558",
+      "verification_shape_fingerprints": [
+        "ff2ad936beda7dc5302619aa5b13e7c290d20fd13142670379e7a25258671558"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-166",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BD-10-004"
+      ],
+      "target": "026962a3a38a70b0edf048bc10f32c1f8c760d3a648ad92fd1591ab13fe298ef",
+      "verification_shape_fingerprints": [
+        "026962a3a38a70b0edf048bc10f32c1f8c760d3a648ad92fd1591ab13fe298ef"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-167",
+      "criticality_distribution": {
+        "NORMAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-06-R003"
+      ],
+      "target": "05cdd7f525a3c41b024414c477ae3a4aef2526a94c627319b9631b390e4f3f0f",
+      "verification_shape_fingerprints": [
+        "05cdd7f525a3c41b024414c477ae3a4aef2526a94c627319b9631b390e4f3f0f"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-168",
+      "criticality_distribution": {
+        "NORMAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-SNAPSHOT-INDEX-R010"
+      ],
+      "target": "07d64999d8e6f8612480469d13a5fcda8ecb6cff0738741b8a1690cf56ee2dae",
+      "verification_shape_fingerprints": [
+        "07d64999d8e6f8612480469d13a5fcda8ecb6cff0738741b8a1690cf56ee2dae"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-169",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-07-R005"
+      ],
+      "target": "084cef7f60b8f68ffaf4669ef98b3168de50bdc3d9e3ffb4bbf842b5693defe7",
+      "verification_shape_fingerprints": [
+        "084cef7f60b8f68ffaf4669ef98b3168de50bdc3d9e3ffb4bbf842b5693defe7"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-170",
+      "criticality_distribution": {
+        "NORMAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BD-10-007"
+      ],
+      "target": "0da99affe2e63298eff90109deb0c7e8252fb083cb9ea501285c294e65256bb0",
+      "verification_shape_fingerprints": [
+        "0da99affe2e63298eff90109deb0c7e8252fb083cb9ea501285c294e65256bb0"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-171",
+      "criticality_distribution": {
+        "NORMAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-SNAPSHOT-INDEX-R007"
+      ],
+      "target": "0e10908d16d0c46cdd6f1fca9b10924e9547ad9014dd0991b1c4c36cdddc9eef",
+      "verification_shape_fingerprints": [
+        "0e10908d16d0c46cdd6f1fca9b10924e9547ad9014dd0991b1c4c36cdddc9eef"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-172",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-07-R012"
+      ],
+      "target": "0e5f1ec3ad5c12fbad51845db82b0ba664bacc03536896cbdd8cc5f33f8a060e",
+      "verification_shape_fingerprints": [
+        "0e5f1ec3ad5c12fbad51845db82b0ba664bacc03536896cbdd8cc5f33f8a060e"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-173",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "UXF-302"
+      ],
+      "target": "139fe8fbea422e08319bfc98c2dfe70165697f98522fe3aba66e841c525155f2",
+      "verification_shape_fingerprints": [
+        "139fe8fbea422e08319bfc98c2dfe70165697f98522fe3aba66e841c525155f2"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-174",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-07-R009"
+      ],
+      "target": "16962b34d2ab0b9150c2c048bc2921e9ed159e513741e788e3e7d90883a1ad06",
+      "verification_shape_fingerprints": [
+        "16962b34d2ab0b9150c2c048bc2921e9ed159e513741e788e3e7d90883a1ad06"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-175",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BD-05-014"
+      ],
+      "target": "174d570ddd69419dbe9068c3faee905e778e5eafc1707822cce9c8db4df17b0a",
+      "verification_shape_fingerprints": [
+        "174d570ddd69419dbe9068c3faee905e778e5eafc1707822cce9c8db4df17b0a"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-176",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "EP-17-001"
+      ],
+      "target": "1e603eb56e999174ceb0b91b36e19b254fcca16bab07450365ed3aadfea409cc",
+      "verification_shape_fingerprints": [
+        "1e603eb56e999174ceb0b91b36e19b254fcca16bab07450365ed3aadfea409cc"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-177",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BD-06-013"
+      ],
+      "target": "207d286f0344011d15302d368d6f548d8f2929a1c9873771c083f6e0fe132b9d",
+      "verification_shape_fingerprints": [
+        "207d286f0344011d15302d368d6f548d8f2929a1c9873771c083f6e0fe132b9d"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-178",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "UXF-010"
+      ],
+      "target": "214980ff9e3e5b2e7d9ae9a3d74a989888aa1a817a2f6ebea97cb23b2a0724b6",
+      "verification_shape_fingerprints": [
+        "214980ff9e3e5b2e7d9ae9a3d74a989888aa1a817a2f6ebea97cb23b2a0724b6"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-179",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BD-07-004"
+      ],
+      "target": "25bfcbe90c83a787258d8061fbe577cdd6840730b5c95db8408d1a34c955542c",
+      "verification_shape_fingerprints": [
+        "25bfcbe90c83a787258d8061fbe577cdd6840730b5c95db8408d1a34c955542c"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-180",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BD-05-009"
+      ],
+      "target": "264da195ff09a8320d3c8194074ef22731003733b3c48656e1276a86d0127331",
+      "verification_shape_fingerprints": [
+        "264da195ff09a8320d3c8194074ef22731003733b3c48656e1276a86d0127331"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-181",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "EP-17-002"
+      ],
+      "target": "27429aa6146343fb9a1a0d792e6668ec7592af2c5f1c3c0a7adaef606f2a0edc",
+      "verification_shape_fingerprints": [
+        "27429aa6146343fb9a1a0d792e6668ec7592af2c5f1c3c0a7adaef606f2a0edc"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-182",
+      "criticality_distribution": {
+        "NORMAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-14-R031"
+      ],
+      "target": "28a50c4a29924900356e81733ae04ffed0b397cc1611e6909edb47dc4efb7895",
+      "verification_shape_fingerprints": [
+        "28a50c4a29924900356e81733ae04ffed0b397cc1611e6909edb47dc4efb7895"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-183",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "UXF-008"
+      ],
+      "target": "29cb05905cfc787d040d71cdbf14a2695330f4b171c321e362824b5879c89089",
+      "verification_shape_fingerprints": [
+        "29cb05905cfc787d040d71cdbf14a2695330f4b171c321e362824b5879c89089"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-184",
+      "criticality_distribution": {
+        "HIGH": 2
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 2,
+      "requirement_ids": [
+        "UXF-002",
+        "UXF-301"
+      ],
+      "target": "2b148b6a828782dde69520611e023393bffac32d07735340d92b5ae9132fa985",
+      "verification_shape_fingerprints": [
+        "2b148b6a828782dde69520611e023393bffac32d07735340d92b5ae9132fa985"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-185",
+      "criticality_distribution": {
+        "CRITICAL": 2
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 2,
+      "requirement_ids": [
+        "BD-08-014",
+        "BD-09-004"
+      ],
+      "target": "2be43cda38530c96fd44b1c3dce0e458c2b4fdf88693f1214c955d7ca9660122",
+      "verification_shape_fingerprints": [
+        "2be43cda38530c96fd44b1c3dce0e458c2b4fdf88693f1214c955d7ca9660122"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-186",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BD-08-017"
+      ],
+      "target": "300cd4d6cb5be6a5ba6a09d84c8d7145e6e51e995303d40e3edcdfea1bec3f55",
+      "verification_shape_fingerprints": [
+        "300cd4d6cb5be6a5ba6a09d84c8d7145e6e51e995303d40e3edcdfea1bec3f55"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-187",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-07-R010"
+      ],
+      "target": "311da442eca83f6a8047d18a28ebb671c4d8a3d6e5bb95bb11e4b72ba02e8b7f",
+      "verification_shape_fingerprints": [
+        "311da442eca83f6a8047d18a28ebb671c4d8a3d6e5bb95bb11e4b72ba02e8b7f"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-188",
+      "criticality_distribution": {
+        "NORMAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-03-R003"
+      ],
+      "target": "3b3a6fab6fc139b0aedf18818452fe813e9397b584e6869a0a638ec94207dbd8",
+      "verification_shape_fingerprints": [
+        "3b3a6fab6fc139b0aedf18818452fe813e9397b584e6869a0a638ec94207dbd8"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-189",
+      "criticality_distribution": {
+        "NORMAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-11-R009"
+      ],
+      "target": "3d7102f189559a366946bd6eef617859615296836457efc4e71687ec646ad22c",
+      "verification_shape_fingerprints": [
+        "3d7102f189559a366946bd6eef617859615296836457efc4e71687ec646ad22c"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-190",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BD-09-014"
+      ],
+      "target": "3eb9e3a0f098122ff935c2cc7b68f82648dd72c7b63871f1b1953116a4ee5705",
+      "verification_shape_fingerprints": [
+        "3eb9e3a0f098122ff935c2cc7b68f82648dd72c7b63871f1b1953116a4ee5705"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-191",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BD-02-005"
+      ],
+      "target": "3f5dce866f96f42f351b83279d31a45bcca884a2477c9c1abe798a9c0eda8c8c",
+      "verification_shape_fingerprints": [
+        "3f5dce866f96f42f351b83279d31a45bcca884a2477c9c1abe798a9c0eda8c8c"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-192",
+      "criticality_distribution": {
+        "HIGH": 2
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 2,
+      "requirement_ids": [
+        "BD-13-015",
+        "BRD-WS-13-R013"
+      ],
+      "target": "425362108f535b531b968cf2e5bd5a65a2adfe031b9ae57849a5771667af7793",
+      "verification_shape_fingerprints": [
+        "425362108f535b531b968cf2e5bd5a65a2adfe031b9ae57849a5771667af7793"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-193",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-06-R019"
+      ],
+      "target": "44d7489feaa48bfbaa1d00e5be7c8c2a58d8bce07e7ff9a39a5fa28ae655f38b",
+      "verification_shape_fingerprints": [
+        "44d7489feaa48bfbaa1d00e5be7c8c2a58d8bce07e7ff9a39a5fa28ae655f38b"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-194",
+      "criticality_distribution": {
+        "NORMAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-05-R009"
+      ],
+      "target": "473d8f835481bd7cf77a20dd6d508a26d10f36a160029d97e24697309205830b",
+      "verification_shape_fingerprints": [
+        "473d8f835481bd7cf77a20dd6d508a26d10f36a160029d97e24697309205830b"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-195",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-08-R002"
+      ],
+      "target": "4a85d9b7058465ba7c08904746e219d0be09d3c2e5e2ea99a7a7800704790f42",
+      "verification_shape_fingerprints": [
+        "4a85d9b7058465ba7c08904746e219d0be09d3c2e5e2ea99a7a7800704790f42"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-196",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-UPDATE-01-R028"
+      ],
+      "target": "4cee011c25aab4abb9a17dc082b03019f38d68c9276803874d8fb63d75e5105f",
+      "verification_shape_fingerprints": [
+        "4cee011c25aab4abb9a17dc082b03019f38d68c9276803874d8fb63d75e5105f"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-197",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-08-R013"
+      ],
+      "target": "5133a45406bf24da1535b6bb534b4aa48520591a0cf7ca902810fca92b38948e",
+      "verification_shape_fingerprints": [
+        "5133a45406bf24da1535b6bb534b4aa48520591a0cf7ca902810fca92b38948e"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-198",
+      "criticality_distribution": {
+        "NORMAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-14-R025"
+      ],
+      "target": "52b5d8b48fb725a0c606d2a28013ec6bab05318dff07f924586b34eeac7d448a",
+      "verification_shape_fingerprints": [
+        "52b5d8b48fb725a0c606d2a28013ec6bab05318dff07f924586b34eeac7d448a"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-199",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-07-R001"
+      ],
+      "target": "55508cdcd3b624833134f9415a20ce98426b8c3d7ba1c382d1c31b076a3b2d55",
+      "verification_shape_fingerprints": [
+        "55508cdcd3b624833134f9415a20ce98426b8c3d7ba1c382d1c31b076a3b2d55"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-200",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-09-R008"
+      ],
+      "target": "559ce03a2404a8781da9907857a04ad3caf05f44c5d937bcf6a40110d56833c9",
+      "verification_shape_fingerprints": [
+        "559ce03a2404a8781da9907857a04ad3caf05f44c5d937bcf6a40110d56833c9"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-201",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BD-02-007"
+      ],
+      "target": "56ab3a85cb98a861813be4a5275fcb44f047f1488dfdff5046cbce6f8cbd1201",
+      "verification_shape_fingerprints": [
+        "56ab3a85cb98a861813be4a5275fcb44f047f1488dfdff5046cbce6f8cbd1201"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-202",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "UXF-106"
+      ],
+      "target": "58a66fe232139f44500751051265db240aef196889d0db8cd86c5dd5221597c6",
+      "verification_shape_fingerprints": [
+        "58a66fe232139f44500751051265db240aef196889d0db8cd86c5dd5221597c6"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-203",
+      "criticality_distribution": {
+        "NORMAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-SNAPSHOT-INDEX-R008"
+      ],
+      "target": "5991a265caffda728f8a7c8c7ba10df1183e95e236b13ae7a0e9c6deec30b0dc",
+      "verification_shape_fingerprints": [
+        "5991a265caffda728f8a7c8c7ba10df1183e95e236b13ae7a0e9c6deec30b0dc"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-204",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BD-17-016"
+      ],
+      "target": "59fae2d6aa3891b182ee5ec701cc2796e94cbafce8555e09dbfc8ba65b32f943",
+      "verification_shape_fingerprints": [
+        "59fae2d6aa3891b182ee5ec701cc2796e94cbafce8555e09dbfc8ba65b32f943"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-205",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BD-15-013"
+      ],
+      "target": "5a431950cd82facc12a06e39da50af8fecd84bdd83fb2800996360aadfb570d0",
+      "verification_shape_fingerprints": [
+        "5a431950cd82facc12a06e39da50af8fecd84bdd83fb2800996360aadfb570d0"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-206",
+      "criticality_distribution": {
+        "NORMAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BD-14-013"
+      ],
+      "target": "5d6b07a3ee6927266ce3b9c191214a1cb9caa2f35ab4b60b385fc19b84d27b1a",
+      "verification_shape_fingerprints": [
+        "5d6b07a3ee6927266ce3b9c191214a1cb9caa2f35ab4b60b385fc19b84d27b1a"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-207",
+      "criticality_distribution": {
+        "NORMAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "EP-16-005"
+      ],
+      "target": "5f6dd565d31ebe53597c83010dc3d282911f8ddb34e322a4360a3af81f0a1803",
+      "verification_shape_fingerprints": [
+        "5f6dd565d31ebe53597c83010dc3d282911f8ddb34e322a4360a3af81f0a1803"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-208",
+      "criticality_distribution": {
+        "HIGH": 2
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 2,
+      "requirement_ids": [
+        "BRD-WS-02-R002",
+        "BRD-WS-02-R003"
+      ],
+      "target": "6381daed591d6a984085e5a6d25dc240f2eba9896c7179c87ed541dd8dbdd3d3",
+      "verification_shape_fingerprints": [
+        "6381daed591d6a984085e5a6d25dc240f2eba9896c7179c87ed541dd8dbdd3d3"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-209",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "EP-08-004"
+      ],
+      "target": "63f18e042780c0e272509b9b1b85a79cf6494b5bacf74545f614c12ba209ff34",
+      "verification_shape_fingerprints": [
+        "63f18e042780c0e272509b9b1b85a79cf6494b5bacf74545f614c12ba209ff34"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-210",
+      "criticality_distribution": {
+        "NORMAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-14-R013"
+      ],
+      "target": "642c360bfbfd9c4815b744d07a93b8275c5ea6c184e88924c24533e652dd8465",
+      "verification_shape_fingerprints": [
+        "642c360bfbfd9c4815b744d07a93b8275c5ea6c184e88924c24533e652dd8465"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-211",
+      "criticality_distribution": {
+        "NORMAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-UPDATE-01-R002"
+      ],
+      "target": "6570db9a893f3bde8b880accb468774b0053842c61e8e4d8af282d08095eef17",
+      "verification_shape_fingerprints": [
+        "6570db9a893f3bde8b880accb468774b0053842c61e8e4d8af282d08095eef17"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-212",
+      "criticality_distribution": {
+        "NORMAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-UPDATE-01-R009"
+      ],
+      "target": "67ac936ba28192cce7c1c1e8efe74ab7e95032a00d1adf3ca97317c4d729dfce",
+      "verification_shape_fingerprints": [
+        "67ac936ba28192cce7c1c1e8efe74ab7e95032a00d1adf3ca97317c4d729dfce"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-213",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "EP-12-003"
+      ],
+      "target": "67fb31d5c8631fafbe650981b98684e2c82cddf21ac952bb5d1ee2442b583a16",
+      "verification_shape_fingerprints": [
+        "67fb31d5c8631fafbe650981b98684e2c82cddf21ac952bb5d1ee2442b583a16"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-214",
+      "criticality_distribution": {
+        "CRITICAL": 1,
+        "HIGH": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 2,
+      "requirement_ids": [
+        "BRD-WS-04-R011",
+        "BRD-WS-10-R007"
+      ],
+      "target": "6cba77374b8dd854df0a6f006a307533e177403e86c75781101c30c8d7b2bf5d",
+      "verification_shape_fingerprints": [
+        "6cba77374b8dd854df0a6f006a307533e177403e86c75781101c30c8d7b2bf5d"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-215",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BD-07-001"
+      ],
+      "target": "71b1af414a37cab9214821ab799e78c127d7d85f72f06acb8faf149f3b609e89",
+      "verification_shape_fingerprints": [
+        "71b1af414a37cab9214821ab799e78c127d7d85f72f06acb8faf149f3b609e89"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-216",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-07-R007"
+      ],
+      "target": "7457b64e1db3ebc79a90b619095381bc591879ea8d33557f734e48e794b9242e",
+      "verification_shape_fingerprints": [
+        "7457b64e1db3ebc79a90b619095381bc591879ea8d33557f734e48e794b9242e"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-217",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-16-R012"
+      ],
+      "target": "75cab58485b85cfacd1487fad08c3829c0d64cf4e4a149dd710aa8f13d6eddef",
+      "verification_shape_fingerprints": [
+        "75cab58485b85cfacd1487fad08c3829c0d64cf4e4a149dd710aa8f13d6eddef"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-218",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BD-07-007"
+      ],
+      "target": "769f9f66363df03daf7315dcaf82a3839f473a001b18a3c27ccda23ea007ce00",
+      "verification_shape_fingerprints": [
+        "769f9f66363df03daf7315dcaf82a3839f473a001b18a3c27ccda23ea007ce00"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-219",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-SNAPSHOT-INDEX-R039"
+      ],
+      "target": "7864b98282df786260aef3b96bd73a9c1426d690ec98478db92cca0e17d41cb9",
+      "verification_shape_fingerprints": [
+        "7864b98282df786260aef3b96bd73a9c1426d690ec98478db92cca0e17d41cb9"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-220",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BD-02-003"
+      ],
+      "target": "78a206e189044ed976d07066619e48485bf3b13590bf074f28ebf39a78727ec8",
+      "verification_shape_fingerprints": [
+        "78a206e189044ed976d07066619e48485bf3b13590bf074f28ebf39a78727ec8"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-221",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "UXF-405"
+      ],
+      "target": "7c4b5444847b50301e4018aa3ceef1ce406104041859a7a3f729ac35edc0ffed",
+      "verification_shape_fingerprints": [
+        "7c4b5444847b50301e4018aa3ceef1ce406104041859a7a3f729ac35edc0ffed"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-222",
+      "criticality_distribution": {
+        "CRITICAL": 2
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 2,
+      "requirement_ids": [
+        "BD-08-016",
+        "BD-10-014"
+      ],
+      "target": "7ce6f31209b2ec96c5d2a6df44c6013324784298d09be9a41035f94637538f00",
+      "verification_shape_fingerprints": [
+        "7ce6f31209b2ec96c5d2a6df44c6013324784298d09be9a41035f94637538f00"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-223",
+      "criticality_distribution": {
+        "NORMAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-BO-INDEX-R015"
+      ],
+      "target": "7dda766b31dcb5c4087b37ca0ff4ef8880007dd727788d474285e897b3fc8d2b",
+      "verification_shape_fingerprints": [
+        "7dda766b31dcb5c4087b37ca0ff4ef8880007dd727788d474285e897b3fc8d2b"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-224",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-08-R004"
+      ],
+      "target": "7e92a926b4f19f643ad28e414fa5261eacc00df7c1ae25cd122f71164c65c2b7",
+      "verification_shape_fingerprints": [
+        "7e92a926b4f19f643ad28e414fa5261eacc00df7c1ae25cd122f71164c65c2b7"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-225",
+      "criticality_distribution": {
+        "NORMAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "CAP-P06"
+      ],
+      "target": "7eb1b38459854bacf8fede8fe5fa91f3212511559f2e102e18136f19cdad46bd",
+      "verification_shape_fingerprints": [
+        "7eb1b38459854bacf8fede8fe5fa91f3212511559f2e102e18136f19cdad46bd"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-226",
+      "criticality_distribution": {
+        "NORMAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-15-R009"
+      ],
+      "target": "7f234c35b08ee317c47bc916422aee652087dc59c32a661d9a5dd3f58f66abf4",
+      "verification_shape_fingerprints": [
+        "7f234c35b08ee317c47bc916422aee652087dc59c32a661d9a5dd3f58f66abf4"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-227",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BD-17-010"
+      ],
+      "target": "87190e0cebcb08ffe97314b8a98892f2b952b741e47ace6c4b92bfb6d4534b79",
+      "verification_shape_fingerprints": [
+        "87190e0cebcb08ffe97314b8a98892f2b952b741e47ace6c4b92bfb6d4534b79"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-228",
+      "criticality_distribution": {
+        "CRITICAL": 2
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 2,
+      "requirement_ids": [
+        "BRD-WS-09-R005",
+        "BRD-WS-09-R007"
+      ],
+      "target": "89f6f917cd99dfb80f2128f8922f4d0bf5b18ec769f89ad4f2b9f2528420db05",
+      "verification_shape_fingerprints": [
+        "89f6f917cd99dfb80f2128f8922f4d0bf5b18ec769f89ad4f2b9f2528420db05"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-229",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "EP-11-002"
+      ],
+      "target": "8dddd4cbd9fbfdd2d59c97f449429356efb5e2dff1c99a9b4f636aec4cccb33e",
+      "verification_shape_fingerprints": [
+        "8dddd4cbd9fbfdd2d59c97f449429356efb5e2dff1c99a9b4f636aec4cccb33e"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-230",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-UPDATE-01-R001"
+      ],
+      "target": "8e2069af77a16fe9501b755dbf3ea3c5e83c84b99be87905e4456384c4713a45",
+      "verification_shape_fingerprints": [
+        "8e2069af77a16fe9501b755dbf3ea3c5e83c84b99be87905e4456384c4713a45"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-231",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BD-06-012"
+      ],
+      "target": "91212830ad1215579259b39e24d339f926f78f180de8ad8c8a0923bb6b183974",
+      "verification_shape_fingerprints": [
+        "91212830ad1215579259b39e24d339f926f78f180de8ad8c8a0923bb6b183974"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-232",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-05-R027"
+      ],
+      "target": "92d105f079dbc6eab78c2d38aa5a42278be14ce7ecc66ebd44fabee93550dde3",
+      "verification_shape_fingerprints": [
+        "92d105f079dbc6eab78c2d38aa5a42278be14ce7ecc66ebd44fabee93550dde3"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-233",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-07-R006"
+      ],
+      "target": "9328fb08c5fb2825528e472dd2cadd6ef5c43b044e7069be8e08ccd7e7289af0",
+      "verification_shape_fingerprints": [
+        "9328fb08c5fb2825528e472dd2cadd6ef5c43b044e7069be8e08ccd7e7289af0"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-234",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BD-04-005"
+      ],
+      "target": "987152440e53d0f2a7707e254883128f9083d2b66bfc0811119a520bc8f057b6",
+      "verification_shape_fingerprints": [
+        "987152440e53d0f2a7707e254883128f9083d2b66bfc0811119a520bc8f057b6"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-235",
+      "criticality_distribution": {
+        "NORMAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "EP-14-010"
+      ],
+      "target": "9992dde3c542807ddc67bc58111676918532d12b742e6e40d3e8917c9f3b3ad5",
+      "verification_shape_fingerprints": [
+        "9992dde3c542807ddc67bc58111676918532d12b742e6e40d3e8917c9f3b3ad5"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-236",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BD-09-009"
+      ],
+      "target": "99da7153a365401b35bef95765d357bb57fd24bae73ec75f3391628df2f618b5",
+      "verification_shape_fingerprints": [
+        "99da7153a365401b35bef95765d357bb57fd24bae73ec75f3391628df2f618b5"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-237",
+      "criticality_distribution": {
+        "NORMAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-17-R002"
+      ],
+      "target": "9da82bc148f28289485bbe517858016e15af1d5b7d5f100da227d012707782ac",
+      "verification_shape_fingerprints": [
+        "9da82bc148f28289485bbe517858016e15af1d5b7d5f100da227d012707782ac"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-238",
+      "criticality_distribution": {
+        "NORMAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-10-R002"
+      ],
+      "target": "9ee89e83ac2eb5bb0e49a345c072075c594aa456ded95f0b139ec6a405f4c7fe",
+      "verification_shape_fingerprints": [
+        "9ee89e83ac2eb5bb0e49a345c072075c594aa456ded95f0b139ec6a405f4c7fe"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-239",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BD-05-012"
+      ],
+      "target": "9f1dae911dd7ee42b1fbc60a6c6606377f1218437e48971e494946b35883a1e2",
+      "verification_shape_fingerprints": [
+        "9f1dae911dd7ee42b1fbc60a6c6606377f1218437e48971e494946b35883a1e2"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-240",
+      "criticality_distribution": {
+        "CRITICAL": 2
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 2,
+      "requirement_ids": [
+        "BRD-WS-09-R004",
+        "BRD-WS-09-R006"
+      ],
+      "target": "a009c0df7f94238d5173b837bfba041ddf75a57e059ede19d49f5ee5b8d371dd",
+      "verification_shape_fingerprints": [
+        "a009c0df7f94238d5173b837bfba041ddf75a57e059ede19d49f5ee5b8d371dd"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-241",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BD-06-014"
+      ],
+      "target": "a0e15d2c3e20581fa982cdc37112f775c3fb06e9b8b6c2de78a104e4991607d5",
+      "verification_shape_fingerprints": [
+        "a0e15d2c3e20581fa982cdc37112f775c3fb06e9b8b6c2de78a104e4991607d5"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-242",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-06-R020"
+      ],
+      "target": "a14350e05ea085cd5dae5efedabfcc6a41507af4f3d9414912855fd8f33f5829",
+      "verification_shape_fingerprints": [
+        "a14350e05ea085cd5dae5efedabfcc6a41507af4f3d9414912855fd8f33f5829"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-243",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-07-R015"
+      ],
+      "target": "a1930c89a64c36b9b041c591cf827b9640624ebe9a03e0ee8c4771bb6943a38b",
+      "verification_shape_fingerprints": [
+        "a1930c89a64c36b9b041c591cf827b9640624ebe9a03e0ee8c4771bb6943a38b"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-244",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "UXF-109"
+      ],
+      "target": "a21efd4ea34de855ef5b49e86be03f74ce1a23cb8f041c37b7c7e93802726251",
+      "verification_shape_fingerprints": [
+        "a21efd4ea34de855ef5b49e86be03f74ce1a23cb8f041c37b7c7e93802726251"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-245",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-13-R003"
+      ],
+      "target": "a2b50631cf723fa4716e43c5715d96b9fd302323467f85e0b7a40dfa31075369",
+      "verification_shape_fingerprints": [
+        "a2b50631cf723fa4716e43c5715d96b9fd302323467f85e0b7a40dfa31075369"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-246",
+      "criticality_distribution": {
+        "NORMAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-14-R029"
+      ],
+      "target": "a826265fb3fa886705b50249fc3a5625729b52531b827885cb8508d903765993",
+      "verification_shape_fingerprints": [
+        "a826265fb3fa886705b50249fc3a5625729b52531b827885cb8508d903765993"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-247",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-15-R024"
+      ],
+      "target": "a8d343fdb1fd53b11a8f8bb496ad72705303a77fa6f9757383a5f103d5ceed1e",
+      "verification_shape_fingerprints": [
+        "a8d343fdb1fd53b11a8f8bb496ad72705303a77fa6f9757383a5f103d5ceed1e"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-248",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BD-08-008"
+      ],
+      "target": "ab1c7fe72c06a36969c233424dd3d293a8b7b86d5b27555f2428fc1d975b9568",
+      "verification_shape_fingerprints": [
+        "ab1c7fe72c06a36969c233424dd3d293a8b7b86d5b27555f2428fc1d975b9568"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-249",
+      "criticality_distribution": {
+        "CRITICAL": 2
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 2,
+      "requirement_ids": [
+        "BD-05-004",
+        "EP-08-006"
+      ],
+      "target": "b0dc713f953997b43c89f741bc25e08a080ec59b30348e33c73fc96b83c28ced",
+      "verification_shape_fingerprints": [
+        "b0dc713f953997b43c89f741bc25e08a080ec59b30348e33c73fc96b83c28ced"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-250",
+      "criticality_distribution": {
+        "NORMAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-13-R021"
+      ],
+      "target": "b13c7e55be12db4c77a91eb7db86c184b4fc383c797065b52bd4ec65efbd4ea5",
+      "verification_shape_fingerprints": [
+        "b13c7e55be12db4c77a91eb7db86c184b4fc383c797065b52bd4ec65efbd4ea5"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-251",
+      "criticality_distribution": {
+        "NORMAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "SNP-EP-004"
+      ],
+      "target": "b14764d63f36ff62a4037710f1c0b9a3c6545c16866b176d8eba87ccfb1c4e94",
+      "verification_shape_fingerprints": [
+        "b14764d63f36ff62a4037710f1c0b9a3c6545c16866b176d8eba87ccfb1c4e94"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-252",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BD-04-001"
+      ],
+      "target": "b1f5de3512a1c0abe44b578ccf5dc476576d0f83db78fec5027eae162e0d19e3",
+      "verification_shape_fingerprints": [
+        "b1f5de3512a1c0abe44b578ccf5dc476576d0f83db78fec5027eae162e0d19e3"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-253",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-07-R014"
+      ],
+      "target": "b4093603503e9be5ef31711e82a8c1935b1c1256c8bed6428a2353eae00436b4",
+      "verification_shape_fingerprints": [
+        "b4093603503e9be5ef31711e82a8c1935b1c1256c8bed6428a2353eae00436b4"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-254",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-SNAPSHOT-INDEX-R002"
+      ],
+      "target": "b4878bf768b8989d2fe1eb30567d2aa26a26a9d87d3bcb19c0ef92463d576290",
+      "verification_shape_fingerprints": [
+        "b4878bf768b8989d2fe1eb30567d2aa26a26a9d87d3bcb19c0ef92463d576290"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-255",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "UXF-402"
+      ],
+      "target": "b64fa5f9b7f8629bfb7ac8b9a424567e5b4ab8f8b7d3ee71730aebc077c871ba",
+      "verification_shape_fingerprints": [
+        "b64fa5f9b7f8629bfb7ac8b9a424567e5b4ab8f8b7d3ee71730aebc077c871ba"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-256",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BD-07-014"
+      ],
+      "target": "b92401f28a2119381fc12ec9bc132749f7a9dbff3860a05a08ebda9b8ce9af68",
+      "verification_shape_fingerprints": [
+        "b92401f28a2119381fc12ec9bc132749f7a9dbff3860a05a08ebda9b8ce9af68"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-257",
+      "criticality_distribution": {
+        "NORMAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-EVENT-INDEX-R004"
+      ],
+      "target": "c37ede0fae76b47324f881d5221b630e2ff08053a819bafb1971a6792684a2b2",
+      "verification_shape_fingerprints": [
+        "c37ede0fae76b47324f881d5221b630e2ff08053a819bafb1971a6792684a2b2"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-258",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-05-R012"
+      ],
+      "target": "c5af881c174a490497b8d646c8e9a4f36a1a09bb620fb789895019aec9ca158f",
+      "verification_shape_fingerprints": [
+        "c5af881c174a490497b8d646c8e9a4f36a1a09bb620fb789895019aec9ca158f"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-259",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BD-15-018"
+      ],
+      "target": "c67b2b75ced0647d107ce7612178d86f74eef5982925ac0389b87cc7e67c6f44",
+      "verification_shape_fingerprints": [
+        "c67b2b75ced0647d107ce7612178d86f74eef5982925ac0389b87cc7e67c6f44"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-260",
+      "criticality_distribution": {
+        "NORMAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-15-R008"
+      ],
+      "target": "c691490e71a7c52e6702fd3b666784d6197d2e62e39c16cd5c6a4e6938880687",
+      "verification_shape_fingerprints": [
+        "c691490e71a7c52e6702fd3b666784d6197d2e62e39c16cd5c6a4e6938880687"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-261",
+      "criticality_distribution": {
+        "CRITICAL": 2
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 2,
+      "requirement_ids": [
+        "UXF-308",
+        "UXF-509"
+      ],
+      "target": "c90e0a89c092d2e4cb574eaa7ecc6d071a89b2af5c5bbcb1a79b53e701c3ef2f",
+      "verification_shape_fingerprints": [
+        "c90e0a89c092d2e4cb574eaa7ecc6d071a89b2af5c5bbcb1a79b53e701c3ef2f"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-262",
+      "criticality_distribution": {
+        "CRITICAL": 2
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 2,
+      "requirement_ids": [
+        "BD-05-005",
+        "BD-10-012"
+      ],
+      "target": "cb5aa9091150d5035aafc6d842b6b6900839ad383c6d95f2f22eb6bf7f60e9b9",
+      "verification_shape_fingerprints": [
+        "cb5aa9091150d5035aafc6d842b6b6900839ad383c6d95f2f22eb6bf7f60e9b9"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-263",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BD-13-016"
+      ],
+      "target": "d198318382690e0a5fdaa4d818b4bd905bf098740c8694f0aeb8ac63df37ab90",
+      "verification_shape_fingerprints": [
+        "d198318382690e0a5fdaa4d818b4bd905bf098740c8694f0aeb8ac63df37ab90"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-264",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-17-R018"
+      ],
+      "target": "d93978ae2e81da0fa02d235dbcfec809a2c5a47e66acd2620b39f63373e44c8e",
+      "verification_shape_fingerprints": [
+        "d93978ae2e81da0fa02d235dbcfec809a2c5a47e66acd2620b39f63373e44c8e"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-265",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-09-R003"
+      ],
+      "target": "dbfeb2d5d947b146c8cdaa4be692e9bcddd9f08941e04755cf6df5989081418c",
+      "verification_shape_fingerprints": [
+        "dbfeb2d5d947b146c8cdaa4be692e9bcddd9f08941e04755cf6df5989081418c"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-266",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-02-R006"
+      ],
+      "target": "dc24fd64c76b776b91c8076e3da323c9c9ba6b75c776de9238909eea37e776c0",
+      "verification_shape_fingerprints": [
+        "dc24fd64c76b776b91c8076e3da323c9c9ba6b75c776de9238909eea37e776c0"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-267",
+      "criticality_distribution": {
+        "NORMAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "EP-14-004"
+      ],
+      "target": "e41022f5b5724af98a59ba1fc46958f82027d0adbef6ff34a8b63673284b80c8",
+      "verification_shape_fingerprints": [
+        "e41022f5b5724af98a59ba1fc46958f82027d0adbef6ff34a8b63673284b80c8"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-268",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-05-R029"
+      ],
+      "target": "ea3dc177c02d5f3d99b9237065ea9d64bd2faeadd16bfd8778702f0cf4e3a3b1",
+      "verification_shape_fingerprints": [
+        "ea3dc177c02d5f3d99b9237065ea9d64bd2faeadd16bfd8778702f0cf4e3a3b1"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-269",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-08-R007"
+      ],
+      "target": "eae8abae31abceddfe2f87409d0c6befeeea5d8d968f81b2deeca452da09cddf",
+      "verification_shape_fingerprints": [
+        "eae8abae31abceddfe2f87409d0c6befeeea5d8d968f81b2deeca452da09cddf"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-270",
+      "criticality_distribution": {
+        "NORMAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "UXF-011"
+      ],
+      "target": "ecaac5af023105a3358d9c41335f052e82a554301b4fddb87f8495faa35abcd0",
+      "verification_shape_fingerprints": [
+        "ecaac5af023105a3358d9c41335f052e82a554301b4fddb87f8495faa35abcd0"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-271",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "EP-09-004"
+      ],
+      "target": "ed28bd6e3b5edc1b2e71211f8e590d37e1364b86be181aa5de897460c4656bba",
+      "verification_shape_fingerprints": [
+        "ed28bd6e3b5edc1b2e71211f8e590d37e1364b86be181aa5de897460c4656bba"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-272",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-05-R014"
+      ],
+      "target": "ef8ce7c18a57991ad2adc3774c6dc876b8a8cf6e0f0eff6edac91a234393ed60",
+      "verification_shape_fingerprints": [
+        "ef8ce7c18a57991ad2adc3774c6dc876b8a8cf6e0f0eff6edac91a234393ed60"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-273",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BD-10-019"
+      ],
+      "target": "f3961df27bc8e7325c749d1c3dfb747b196a49d468d83776d8ba879d378eba1d",
+      "verification_shape_fingerprints": [
+        "f3961df27bc8e7325c749d1c3dfb747b196a49d468d83776d8ba879d378eba1d"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-274",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-06-R010"
+      ],
+      "target": "f4237e6d98782bc4726284317ead0bbc45aa2309e4132de794879db8f0e8013a",
+      "verification_shape_fingerprints": [
+        "f4237e6d98782bc4726284317ead0bbc45aa2309e4132de794879db8f0e8013a"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-275",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-META-MODEL-R005"
+      ],
+      "target": "f4b4adb976493c5108b6db193d90738bc5c5c092011554f1f4a7b8b45b70aa42",
+      "verification_shape_fingerprints": [
+        "f4b4adb976493c5108b6db193d90738bc5c5c092011554f1f4a7b8b45b70aa42"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-276",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-15-R010"
+      ],
+      "target": "f605ab5af808a6a8a59f1f442e538b0dde4be33ce1553885cff7fdd86ba85659",
+      "verification_shape_fingerprints": [
+        "f605ab5af808a6a8a59f1f442e538b0dde4be33ce1553885cff7fdd86ba85659"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-277",
+      "criticality_distribution": {
+        "NORMAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-02-R004"
+      ],
+      "target": "f66f1a3c6d1d55a418775ea9c50a3d1ee19e1854d97064bf391c50b245427046",
+      "verification_shape_fingerprints": [
+        "f66f1a3c6d1d55a418775ea9c50a3d1ee19e1854d97064bf391c50b245427046"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-278",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "BRD-WS-08-R003"
+      ],
+      "target": "f8b2117a1c1eea29fffbbdba57030cd0d790af30a6ae3b5d7c0956ef6db3aef7",
+      "verification_shape_fingerprints": [
+        "f8b2117a1c1eea29fffbbdba57030cd0d790af30a6ae3b5d7c0956ef6db3aef7"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-279",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "UXF-003"
+      ],
+      "target": "f9e3f250f95c6b8654ac1cbe829f79307f3f0a404a215c6f79c359e4746a3337",
+      "verification_shape_fingerprints": [
+        "f9e3f250f95c6b8654ac1cbe829f79307f3f0a404a215c6f79c359e4746a3337"
+      ]
+    },
+    {
+      "cluster_id": "P2C-AC-C3-CL-280",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED",
+      "member_count": 1,
+      "requirement_ids": [
+        "SNP-EP-009"
+      ],
+      "target": "fe4741c9633088c3f449cee08e3257cdbe688b2602a0e26a1f5adb4d29a8affe",
+      "verification_shape_fingerprints": [
+        "fe4741c9633088c3f449cee08e3257cdbe688b2602a0e26a1f5adb4d29a8affe"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,273 @@
+{
+  "accepted_catalog_version": "1.0.0",
+  "accepted_model_candidate": "V23-P2C-ACCEPTANCE-MODEL-C1",
+  "approval_block": {
+    "approver": null,
+    "date": null,
+    "decision": "PENDING",
+    "signature": null
+  },
+  "approval_status": "PENDING_HUMAN_APPROVAL",
+  "audit_blocker_resolution": [
+    {
+      "blocker": "GENERIC_OR_UNSUPPORTED_OTHER_REASON_COUNT_369",
+      "resolution_evidence": "All 369 C2 OTHER records receive an enumerated C3 terminal disposition; unsupported_other_count=0.",
+      "resolution_status": "RESOLVED_IN_C3_CANDIDATE"
+    },
+    {
+      "blocker": "NON_DISPOSITIONING_HUMAN_DECISIONS_COUNT_36",
+      "resolution_evidence": "Nine low-risk decisions and approved-precedence cases are deterministic; every remaining option terminates in a non-human disposition.",
+      "resolution_status": "RESOLVED_IN_C3_CANDIDATE"
+    },
+    {
+      "blocker": "REUSABLE_VERIFICATION_SHAPES_HIDDEN_IN_OTHER",
+      "resolution_evidence": "Binding-insensitive verification fingerprints route reusable topologies to profiles or inline archetypes.",
+      "resolution_status": "RESOLVED_IN_C3_CANDIDATE"
+    },
+    {
+      "blocker": "HIGH_CONFIDENCE_EXISTING_PROFILE_OR_ARCHETYPE_MISSES",
+      "resolution_evidence": "BD-04-006, BRD-WS-05-R001..R005, classification groups, and event groups are explicitly remapped.",
+      "resolution_status": "RESOLVED_IN_C3_CANDIDATE"
+    },
+    {
+      "blocker": "MISSING_BINDING_LEVEL_PROVENANCE_FOR_UNIQUE_INLINE",
+      "resolution_evidence": "Every materialized profile, archetype, and unique binding has source/decision provenance with inference=false.",
+      "resolution_status": "RESOLVED_IN_C3_CANDIDATE"
+    },
+    {
+      "blocker": "MISSING_RENDERED_NEGATIVE_AND_BOUNDARY_ORACLES",
+      "resolution_evidence": "All materialized routes, decision options, and remediation plans contain positive, negative, boundary/failure, and evidence previews.",
+      "resolution_status": "RESOLVED_IN_C3_CANDIDATE"
+    },
+    {
+      "blocker": "DEFAULT_DERIVE_LATER_FAILURE_MARKERS",
+      "resolution_evidence": "C2 derivation/default markers and SOURCE_BOUND_ACTION are deterministically normalized before fingerprinting.",
+      "resolution_status": "RESOLVED_IN_C3_CANDIDATE"
+    },
+    {
+      "blocker": "COMPOSITE_OBLIGATIONS_HIDDEN_AS_UNIQUE_INLINE",
+      "resolution_evidence": "Thirty-four audited composites plus two affected principle headers route to structural reconciliation with ALL_CHILDREN and no child IDs.",
+      "resolution_status": "RESOLVED_IN_C3_CANDIDATE"
+    },
+    {
+      "blocker": "BRD_WS_04_R012_MISCLASSIFIED_AS_TRUE_MISSING_SEMANTICS",
+      "resolution_evidence": "BRD-WS-04-R012 routes to deterministic extraction/example normalization.",
+      "resolution_status": "RESOLVED_IN_C3_CANDIDATE"
+    },
+    {
+      "blocker": "PREFULFILLMENT_COMMERCIAL_VALIDATION_GAP_HIDDEN_ACROSS_TWO_RECORDS",
+      "resolution_evidence": "BD-05-016 and BRD-WS-05-R021 share one explicit three-option business-semantic decision.",
+      "resolution_status": "RESOLVED_IN_C3_CANDIDATE"
+    },
+    {
+      "blocker": "MISSING_BINDING_INSENSITIVE_VERIFICATION_SHAPE_FINGERPRINT",
+      "resolution_evidence": "Every one of 1,076 mappings carries a recomputable semantic-sensitive, binding-insensitive SHA-256 fingerprint.",
+      "resolution_status": "RESOLVED_IN_C3_CANDIDATE"
+    },
+    {
+      "blocker": "MECHANICAL_ZERO_INVALID_COUNT_CONTRADICTED_BY_SEMANTIC_AUDIT",
+      "resolution_evidence": "Full-corpus fingerprint, provenance, rendered-contract, source, structural, and accounting validators pass with INVALID_OR_BLOCKED=0.",
+      "resolution_status": "RESOLVED_IN_C3_CANDIDATE"
+    }
+  ],
+  "base_commit": "a989367a6f69f1a03a8269562ce43bda3968b71a",
+  "blocker": "ACCEPTANCE_MAPPING_DECISIONS_NOT_APPROVED",
+  "candidate_id": "V23-P2C-ACCEPTANCE-MAPPING-C3",
+  "final_document_baseline": "NOT_APPROVED",
+  "generated_file_sha256": {
+    "docs/baselines/v2.3/phase-2/ACCEPTANCE_INLINE_ARCHETYPE_CATALOG.md": "8bb3d9106c3b22965f7befd52d27a173be5cc714304092576a36a6796168cd8d",
+    "docs/baselines/v2.3/phase-2/ACCEPTANCE_MAPPING_ARCHETYPE_DECISION_PACK.md": "4feddd90cd6a074dbd02f8de843fb2ce79ec58ef8db6e5daa56efca5f77471a9",
+    "docs/baselines/v2.3/phase-2/ACCEPTANCE_MAPPING_C2_APPROVAL_AUDIT.md": "d8fb3a763736df4c58112a8de0fcb63d3669e8c6c432d49565b6491407c1e71d",
+    "docs/baselines/v2.3/phase-2/ACCEPTANCE_SEMANTIC_CLUSTER_REPORT.md": "122b3b43e3abceb400caf5753780fe8a03e3840180228a3b78a36a96347cbfe4",
+    "docs/baselines/v2.3/phase-2/ACCEPTANCE_SOURCE_NORMALIZATION_PLAN.md": "eb7fcc4290ba0eaa8f916cfe1196a26e63ddb5f9ae5f1ef0d9abee0922d6b0d8",
+    "docs/baselines/v2.3/phase-2/ACCEPTANCE_STRUCTURAL_RECONCILIATION_PLAN.md": "c27165def4a716774f30e9d94ea8a585af8e9f03bf613dcdfec51dbbb8edb528",
+    "docs/baselines/v2.3/phase-2/ACCEPTANCE_VERIFICATION_SHAPE_REPORT.md": "b113b9cb6c2886a2c7dd1a3ef817abe43a07f54034319d9dc6271f2f36092649",
+    "docs/baselines/v2.3/phase-2/acceptance-inline-archetype-catalog.json": "e5d729d4966d60e4fd25c622e30ba10d8371cdd02d9a9ce4ad4528c7ca2d61c0",
+    "docs/baselines/v2.3/phase-2/acceptance-mapping-archetype-decisions.json": "d9bd1c409e91fe222c042ecc829b127812876b60e3267e93182f4e65d9843fcd",
+    "docs/baselines/v2.3/phase-2/acceptance-mapping-c2-approval-audit.json": "09d12e5b908ff9fb676666516e85ccbce230a55b1b954126cb96d379846bb726",
+    "docs/baselines/v2.3/phase-2/acceptance-mapping-c3.json": "9f1e1a62ff16149b7c1af849590db07d7cb87847f523a5c5b4d2bf06d6a145a8",
+    "docs/baselines/v2.3/phase-2/acceptance-semantic-clusters.json": "c0d16237bbc102549ea19fd17ade90885209b86e306cc1797d32698f2a7ad8d5",
+    "docs/baselines/v2.3/phase-2/acceptance-source-normalization-plan.json": "4520b87782b7c259692871608903d78b261a7fd76eaf1ef32927f0b451dfd85a",
+    "docs/baselines/v2.3/phase-2/acceptance-structural-reconciliation-plan.json": "4c7960738e2c6754f21280d767da435e1bc166ef3c065a08787eb0cef5e48c3c",
+    "docs/baselines/v2.3/phase-2/acceptance-verification-shapes.json": "080cbd2f9f2e744ec88beef5a08a1f6cea107fcb5519436911c04acf2bfdcd61",
+    "docs/baselines/v2.3/phase-2/schemas/acceptance-mapping-c3.schema.json": "2d9a1c0c61732063023432339baa40ad534377baaecf8914cd612a13beec115f",
+    "docs/baselines/v2.3/phase-2/schemas/acceptance-verification-shapes.schema.json": "301e3aa40f13bef4900ddc8c1ad3b594269140952842a2654bb96a750b7a8d09"
+  },
+  "generated_payload_aggregate_sha256": "09127e4ead4ab143953d47004d71dc85027e3976c5921f22899037f92aab6df9",
+  "next_gate": "HUMAN_ACCEPTANCE_MAPPING_DECISION_APPROVAL",
+  "semantic_sample_result": "PASS",
+  "status": "CANDIDATE",
+  "summary": {
+    "business_semantic_decision_count": 19,
+    "business_semantic_decision_record_count": 21,
+    "criticality_by_disposition": {
+      "BUSINESS_SEMANTIC_DECISION_REQUIRED": {
+        "CRITICAL": 7,
+        "HIGH": 9,
+        "NORMAL": 5
+      },
+      "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED": {
+        "CRITICAL": 16,
+        "HIGH": 17,
+        "NORMAL": 8
+      },
+      "EXISTING_PROFILE_BINDING_HIGH_CONFIDENCE": {
+        "CRITICAL": 10,
+        "HIGH": 19,
+        "NORMAL": 16
+      },
+      "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE": {
+        "CRITICAL": 210,
+        "HIGH": 266,
+        "NORMAL": 270
+      },
+      "INVALID_OR_BLOCKED": {},
+      "NEW_PROFILE_BINDING_HIGH_CONFIDENCE": {
+        "CRITICAL": 3,
+        "HIGH": 27,
+        "NORMAL": 31
+      },
+      "STRUCTURAL_RECONCILIATION_REQUIRED": {
+        "CRITICAL": 10,
+        "HIGH": 19,
+        "NORMAL": 7
+      },
+      "UNIQUE_INLINE_CONTRACT_REQUIRED": {
+        "CRITICAL": 60,
+        "HIGH": 37,
+        "NORMAL": 29
+      }
+    },
+    "deterministic_source_normalization_count": 41,
+    "disposition_counts": {
+      "BUSINESS_SEMANTIC_DECISION_REQUIRED": 21,
+      "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED": 41,
+      "EXISTING_PROFILE_BINDING_HIGH_CONFIDENCE": 45,
+      "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE": 746,
+      "INVALID_OR_BLOCKED": 0,
+      "NEW_PROFILE_BINDING_HIGH_CONFIDENCE": 61,
+      "STRUCTURAL_RECONCILIATION_REQUIRED": 36,
+      "UNIQUE_INLINE_CONTRACT_REQUIRED": 126
+    },
+    "genuinely_unique_inline_count": 126,
+    "inline_archetype_mapping_counts": {
+      "IAC-ACCESS-AUTHORIZATION": 30,
+      "IAC-AUDIT-TRACE-IMMUTABILITY": 30,
+      "IAC-C3-BUSINESS_OUTCOME-0D112A9A3D": 3,
+      "IAC-C3-BUSINESS_OUTCOME-176522CB44": 4,
+      "IAC-C3-BUSINESS_OUTCOME-1D961718E2": 4,
+      "IAC-C3-BUSINESS_OUTCOME-2EEC23D512": 2,
+      "IAC-C3-BUSINESS_OUTCOME-317284513D": 2,
+      "IAC-C3-BUSINESS_OUTCOME-4CC869737B": 4,
+      "IAC-C3-BUSINESS_OUTCOME-5D99E1EF82": 3,
+      "IAC-C3-BUSINESS_OUTCOME-6A52BD81E4": 3,
+      "IAC-C3-BUSINESS_OUTCOME-6BA023340C": 3,
+      "IAC-C3-BUSINESS_OUTCOME-6C0DBD8B06": 3,
+      "IAC-C3-BUSINESS_OUTCOME-7AD45B38CE": 4,
+      "IAC-C3-BUSINESS_OUTCOME-A492B3307E": 3,
+      "IAC-C3-BUSINESS_OUTCOME-A4EF75FE78": 1,
+      "IAC-C3-BUSINESS_OUTCOME-A50F32435F": 1,
+      "IAC-C3-BUSINESS_OUTCOME-A62EA42FEF": 2,
+      "IAC-C3-BUSINESS_OUTCOME-BD4FCEA8D3": 11,
+      "IAC-C3-BUSINESS_OUTCOME-D4A7E52EA1": 3,
+      "IAC-C3-BUSINESS_OUTCOME-E7D29F727C": 1,
+      "IAC-C3-BUSINESS_OUTCOME-F0C0AE0967": 6,
+      "IAC-C3-BUSINESS_OUTCOME-F7177F89E1": 4,
+      "IAC-C3-BUSINESS_OUTCOME-FACDAAF796": 3,
+      "IAC-C3-DATA_OUTCOME-7A08CD38EA": 6,
+      "IAC-C3-DATA_OUTCOME-9F0C4D8FDF": 3,
+      "IAC-C3-DATA_OUTCOME-A38585FB73": 5,
+      "IAC-C3-DATA_OUTCOME-C32ABF5DE2": 2,
+      "IAC-C3-DATA_OUTCOME-F406C6D8C9": 1,
+      "IAC-C3-DATA_OUTCOME-F9AEF86126": 4,
+      "IAC-C3-MULTI-DIMENSION-CONFORMANCE": 3,
+      "IAC-C3-OBSERVABILITY-CAPABILITY-SET": 1,
+      "IAC-C3-PROHIBITED-OUTCOME-INVARIANT": 62,
+      "IAC-C3-PUBLISH-TIME-CONFORMANCE": 1,
+      "IAC-C3-TRACEABLE-REFERENCE-SET": 1,
+      "IAC-C3-UX_OUTCOME-29F26DC28A": 5,
+      "IAC-C3-UX_OUTCOME-4A6569E847": 4,
+      "IAC-C3-UX_OUTCOME-A97CB78D22": 1,
+      "IAC-CANONICAL-IDENTITY-NAMING": 3,
+      "IAC-CAPABILITY-AVAILABILITY": 50,
+      "IAC-CLASSIFICATION-TAXONOMY": 67,
+      "IAC-CONFIGURATION-RESOLUTION": 26,
+      "IAC-CONSENT-PREFERENCE": 9,
+      "IAC-DATA-ISOLATION-VISIBILITY": 11,
+      "IAC-DATA-RETENTION-DELETION": 3,
+      "IAC-DESIGN-BOUNDARY": 57,
+      "IAC-ELIGIBILITY-PREREQUISITE": 19,
+      "IAC-ENTITY-IDENTITY-LIFECYCLE": 49,
+      "IAC-EVENT-EMISSION-METADATA": 32,
+      "IAC-EVENT-ORDER-IDEMPOTENCY": 3,
+      "IAC-GOVERNED-DEFINITION-LIFECYCLE": 22,
+      "IAC-OPERATIONAL-CONTROL-RECOVERY": 2,
+      "IAC-POLICY-OUTCOME-PRECEDENCE": 33,
+      "IAC-RELATIONSHIP-REFERENCE": 70,
+      "IAC-REPORTING-FRESHNESS-EXPORT": 6,
+      "IAC-REQUIRED-VALUE-SET": 50,
+      "IAC-SCOPE-EXCLUSION": 3,
+      "IAC-UX-STATE-ACTION-FEEDBACK": 2
+    },
+    "missing_binding_provenance_count": 0,
+    "missing_rendered_oracle_count": 0,
+    "profile_mapping_counts": {
+      "ACP-ATOMIC_CAPABILITY_AVAILABILITY": 51,
+      "ACP-AUDITABILITY": 1,
+      "ACP-AUTHENTICATION_REQUIREMENT": 3,
+      "ACP-BUSINESS_CLASSIFICATION": 5,
+      "ACP-DATA_RETENTION": 1,
+      "ACP-DATA_VALUE_CONSTRAINT": 5,
+      "ACP-DESIGN_CONFORMANCE_TRACE": 1,
+      "ACP-ENUM_REFERENCE_INTEGRITY": 1,
+      "ACP-EVENT_ORDERING": 2,
+      "ACP-MFA_ENFORCEMENT": 1,
+      "ACP-OPERATION_OBSERVABILITY": 1,
+      "ACP-REQUIRED_CAPABILITY_SET": 21,
+      "ACP-ROLE_AND_PERMISSION_ENFORCEMENT": 3,
+      "ACP-SCOPE_EXCLUSION": 4,
+      "ACP-UX_ACCESSIBILITY": 6
+    },
+    "repeated_shape_count": 172,
+    "reusable_shape_member_count": 462,
+    "structural_reconciliation_count": 36,
+    "total": 1076,
+    "unique_reason_counts": {
+      "CROSS_DOMAIN_FINANCIAL_INVARIANT": 7,
+      "LOW_VOLUME_REQUIREMENT_SPECIFIC_ATOMIC_INVARIANT": 81,
+      "MULTI_STATE_MACHINE_ORCHESTRATION": 2,
+      "PRICING_OR_PROMOTION_PIPELINE": 9,
+      "PROCUREMENT_ALLOCATION_FULFILLMENT_ORCHESTRATION": 16,
+      "RISK_DECISION_MATRIX": 1,
+      "SETTLEMENT_OR_RECONCILIATION_INVARIANT": 10
+    },
+    "unsupported_other_count": 0,
+    "verification_shape_count": 626
+  },
+  "supersedes": {
+    "candidate_id": "V23-P2C-ACCEPTANCE-MAPPING-C2",
+    "hashes": {
+      "cluster_data_sha256": "fcbf3f688bf0be7f4473b0ac3252ee50f914726154c6f3ec4dfd115bbf5d8a51",
+      "decision_data_sha256": "621d7a37789d01dabf05f3fd3703138b7b8f6659af5b91486d1bbae1762a52bc",
+      "generated_payload_aggregate_sha256": "b0e3239d96a47f08b7a43b872ea2d8154e8923c5e05844b94a47580c920386b3",
+      "inline_archetype_catalog_sha256": "60d1afe30889c171f4c8bb5101ad7c31b1f95bc782cd9ef2e52c9524dde1a989",
+      "manifest_sha256": "ea73447f96862ade1aca5acf86813673b668224b38757e2f03a572f4e05711a1",
+      "mapping_sha256": "b4110c2ac1bf7c2b1279c0fd2e047c06ea135c818a6ada58ed20165edffa9440",
+      "staged_git_content_aggregate_sha256": "51f6ea2ab2bb98581d1388618c661e8b2ae91e6f3930680b5e7620716c59596e"
+    },
+    "reason": "UNSUPPORTED_UNIQUE_REASON_NON_DISPOSITIONING_DECISIONS_AND_HIDDEN_SOURCE_DEFECTS"
+  },
+  "tool_sha256": {
+    "scripts/docs/generate-acceptance-mapping-c3.py": "a8ed1a026c37ca5e5828d9c6da348e870079f9433c5e199c98d674dd89a0b22d",
+    "scripts/docs/validate-acceptance-binding-provenance.py": "7c2f2364658b82a21482696002cb45b789f32a733edf84878b8e735f0e22762d",
+    "scripts/docs/validate-acceptance-inline-archetypes-c3.py": "a7d817934a16334289915970e89318e0c0348f4df566f2508002460d6c471802",
+    "scripts/docs/validate-acceptance-mapping-c3.py": "4853d6c38983ed92ad0f7be255f17402bf7756be8b0b57d1957ff49b065b3de0",
+    "scripts/docs/validate-acceptance-profile-catalog-c3.py": "0a00cf7eb17f645ad640dcf193fb045702af39a0394f1ff9c9f2b842d2049790",
+    "scripts/docs/validate-acceptance-rendered-contracts.py": "aa880036e6da1c611d12f3fae7e35d2d0d399a1981de2841796d6126fbb70a14",
+    "scripts/docs/validate-acceptance-source-normalization.py": "d75ec25e3c7c45ce3f1c6f90cc3dc542c4264bcca9c7b7793172b394ec9db6d6",
+    "scripts/docs/validate-acceptance-structural-reconciliation.py": "b153fb72cbc49147853485dfa255b35c20c4ba75f986faed659357677ced5549",
+    "scripts/docs/validate-acceptance-verification-shapes.py": "135cf143a03586f340cc209daa45680d62563067172818515df706c74321bb64",
+    "scripts/docs/validate-phase-2c-acceptance-mapping-transition.py": "6c7b3e26eaa8df493635a6e71b0891e2806652ee72c49ab07961d8f121a8254d"
+  },
+  "yadf_implementation": "NOT_AUTHORIZED"
+}

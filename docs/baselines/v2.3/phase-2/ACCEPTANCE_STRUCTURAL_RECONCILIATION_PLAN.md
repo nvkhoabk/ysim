@@ -1,0 +1,43 @@
+# Acceptance Structural Reconciliation Plan
+
+- Candidate: `V23-P2C-ACCEPTANCE-MAPPING-C3`
+- Parents: `36`
+- Child IDs: `NOT_ALLOCATED`
+- Source remediation: `NOT_YET_APPLIED`
+
+- `BD-05-008` — `2` child obligation candidates — `ALL_CHILDREN`
+- `BD-11-014` — `2` child obligation candidates — `ALL_CHILDREN`
+- `BD-13-004` — `3` child obligation candidates — `ALL_CHILDREN`
+- `BD-13-013` — `6` child obligation candidates — `ALL_CHILDREN`
+- `BD-13-020` — `3` child obligation candidates — `ALL_CHILDREN`
+- `BD-14-003` — `7` child obligation candidates — `ALL_CHILDREN`
+- `BD-14-004` — `3` child obligation candidates — `ALL_CHILDREN`
+- `BD-14-006` — `3` child obligation candidates — `ALL_CHILDREN`
+- `BD-14-010` — `7` child obligation candidates — `ALL_CHILDREN`
+- `BD-15-001` — `7` child obligation candidates — `ALL_CHILDREN`
+- `BD-15-003` — `3` child obligation candidates — `ALL_CHILDREN`
+- `BD-15-006` — `2` child obligation candidates — `ALL_CHILDREN`
+- `BD-15-007` — `3` child obligation candidates — `ALL_CHILDREN`
+- `BD-15-023` — `9` child obligation candidates — `ALL_CHILDREN`
+- `BD-15-027` — `3` child obligation candidates — `ALL_CHILDREN`
+- `BD-15-029` — `8` child obligation candidates — `ALL_CHILDREN`
+- `BD-16-006` — `9` child obligation candidates — `ALL_CHILDREN`
+- `BD-16-016` — `2` child obligation candidates — `ALL_CHILDREN`
+- `BD-16-021` — `3` child obligation candidates — `ALL_CHILDREN`
+- `BD-17-005` — `3` child obligation candidates — `ALL_CHILDREN`
+- `BD-17-006` — `2` child obligation candidates — `ALL_CHILDREN`
+- `BD-17-007` — `6` child obligation candidates — `ALL_CHILDREN`
+- `BO-P07` — `7` child obligation candidates — `ALL_CHILDREN`
+- `BO-R04` — `3` child obligation candidates — `ALL_CHILDREN`
+- `BRD-CAP-INDEX-R004` — `2` child obligation candidates — `ALL_CHILDREN`
+- `BRD-CAP-INDEX-R007` — `2` child obligation candidates — `ALL_CHILDREN`
+- `BRD-UPDATE-01-R008` — `2` child obligation candidates — `ALL_CHILDREN`
+- `BRD-WS-17-R030` — `2` child obligation candidates — `ALL_CHILDREN`
+- `CAP-P08` — `7` child obligation candidates — `ALL_CHILDREN`
+- `EP-13-003` — `3` child obligation candidates — `ALL_CHILDREN`
+- `EP-13-005` — `3` child obligation candidates — `ALL_CHILDREN`
+- `EP-16-010` — `10` child obligation candidates — `ALL_CHILDREN`
+- `EVT-P01` — `2` child obligation candidates — `ALL_CHILDREN`
+- `EVT-P08` — `7` child obligation candidates — `ALL_CHILDREN`
+- `POL-P10` — `7` child obligation candidates — `ALL_CHILDREN`
+- `UXF-05-R054` — `2` child obligation candidates — `ALL_CHILDREN`

@@ -1,0 +1,1492 @@
+{
+  "acceptance_model": "INLINE_CONTRACT_ARCHETYPE_BINDING",
+  "archetype_count": 57,
+  "archetypes": [
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-ACCESS-AUTHORIZATION",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 30,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "Access Authorization",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-AUDIT-TRACE-IMMUTABILITY",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 30,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "Audit Trace Immutability",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-C3-BUSINESS_OUTCOME-0D112A9A3D",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 3,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "C3 Business_Outcome 0D112A9A3D",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-C3-BUSINESS_OUTCOME-176522CB44",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 4,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "C3 Business_Outcome 176522Cb44",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-C3-BUSINESS_OUTCOME-1D961718E2",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 4,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "C3 Business_Outcome 1D961718E2",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-C3-BUSINESS_OUTCOME-2EEC23D512",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 2,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "C3 Business_Outcome 2Eec23D512",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-C3-BUSINESS_OUTCOME-317284513D",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 2,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "C3 Business_Outcome 317284513D",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-C3-BUSINESS_OUTCOME-4CC869737B",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 4,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "C3 Business_Outcome 4Cc869737B",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-C3-BUSINESS_OUTCOME-5D99E1EF82",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 3,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "C3 Business_Outcome 5D99E1Ef82",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-C3-BUSINESS_OUTCOME-6A52BD81E4",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 3,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "C3 Business_Outcome 6A52Bd81E4",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-C3-BUSINESS_OUTCOME-6BA023340C",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 3,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "C3 Business_Outcome 6Ba023340C",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-C3-BUSINESS_OUTCOME-6C0DBD8B06",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 3,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "C3 Business_Outcome 6C0Dbd8B06",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-C3-BUSINESS_OUTCOME-7AD45B38CE",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 4,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "C3 Business_Outcome 7Ad45B38Ce",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-C3-BUSINESS_OUTCOME-A492B3307E",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 3,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "C3 Business_Outcome A492B3307E",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-C3-BUSINESS_OUTCOME-A4EF75FE78",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 1,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "C3 Business_Outcome A4Ef75Fe78",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-C3-BUSINESS_OUTCOME-A50F32435F",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 1,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "C3 Business_Outcome A50F32435F",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-C3-BUSINESS_OUTCOME-A62EA42FEF",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 2,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "C3 Business_Outcome A62Ea42Fef",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-C3-BUSINESS_OUTCOME-BD4FCEA8D3",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 11,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "C3 Business_Outcome Bd4Fcea8D3",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-C3-BUSINESS_OUTCOME-D4A7E52EA1",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 3,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "C3 Business_Outcome D4A7E52Ea1",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-C3-BUSINESS_OUTCOME-E7D29F727C",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 1,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "C3 Business_Outcome E7D29F727C",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-C3-BUSINESS_OUTCOME-F0C0AE0967",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 6,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "C3 Business_Outcome F0C0Ae0967",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-C3-BUSINESS_OUTCOME-F7177F89E1",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 4,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "C3 Business_Outcome F7177F89E1",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-C3-BUSINESS_OUTCOME-FACDAAF796",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 3,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "C3 Business_Outcome Facdaaf796",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-C3-DATA_OUTCOME-7A08CD38EA",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 6,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "C3 Data_Outcome 7A08Cd38Ea",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-C3-DATA_OUTCOME-9F0C4D8FDF",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 3,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "C3 Data_Outcome 9F0C4D8Fdf",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-C3-DATA_OUTCOME-A38585FB73",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 5,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "C3 Data_Outcome A38585Fb73",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-C3-DATA_OUTCOME-C32ABF5DE2",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 2,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "C3 Data_Outcome C32Abf5De2",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-C3-DATA_OUTCOME-F406C6D8C9",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 1,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "C3 Data_Outcome F406C6D8C9",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-C3-DATA_OUTCOME-F9AEF86126",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 4,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "C3 Data_Outcome F9Aef86126",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-C3-MULTI-DIMENSION-CONFORMANCE",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 3,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "C3 Multi Dimension Conformance",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-C3-OBSERVABILITY-CAPABILITY-SET",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 1,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "C3 Observability Capability Set",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-C3-PROHIBITED-OUTCOME-INVARIANT",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 62,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "C3 Prohibited Outcome Invariant",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-C3-PUBLISH-TIME-CONFORMANCE",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 1,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "C3 Publish Time Conformance",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-C3-TRACEABLE-REFERENCE-SET",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 1,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "C3 Traceable Reference Set",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-C3-UX_OUTCOME-29F26DC28A",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 5,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "C3 Ux_Outcome 29F26Dc28A",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-C3-UX_OUTCOME-4A6569E847",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 4,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "C3 Ux_Outcome 4A6569E847",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-C3-UX_OUTCOME-A97CB78D22",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 1,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "C3 Ux_Outcome A97Cb78D22",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-CANONICAL-IDENTITY-NAMING",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 3,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "Canonical Identity Naming",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-CAPABILITY-AVAILABILITY",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 50,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "Capability Availability",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-CLASSIFICATION-TAXONOMY",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 67,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "Classification Taxonomy",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-CONFIGURATION-RESOLUTION",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 26,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "Configuration Resolution",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-CONSENT-PREFERENCE",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 9,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "Consent Preference",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-DATA-ISOLATION-VISIBILITY",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 11,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "Data Isolation Visibility",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-DATA-RETENTION-DELETION",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 3,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "Data Retention Deletion",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-DESIGN-BOUNDARY",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 57,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "Design Boundary",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-ELIGIBILITY-PREREQUISITE",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 19,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "Eligibility Prerequisite",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-ENTITY-IDENTITY-LIFECYCLE",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 49,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "Entity Identity Lifecycle",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-EVENT-EMISSION-METADATA",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 32,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "Event Emission Metadata",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-EVENT-ORDER-IDEMPOTENCY",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 3,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "Event Order Idempotency",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-GOVERNED-DEFINITION-LIFECYCLE",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 22,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "Governed Definition Lifecycle",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-OPERATIONAL-CONTROL-RECOVERY",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 2,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "Operational Control Recovery",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-POLICY-OUTCOME-PRECEDENCE",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 33,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "Policy Outcome Precedence",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-RELATIONSHIP-REFERENCE",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 70,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "Relationship Reference",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-REPORTING-FRESHNESS-EXPORT",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 6,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "Reporting Freshness Export",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-REQUIRED-VALUE-SET",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 50,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "Required Value Set",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-SCOPE-EXCLUSION",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 3,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "Scope Exclusion",
+      "version": "1.1.0-candidate.3"
+    },
+    {
+      "anti_generic_rule": "Rendered preview must contain requirement-specific bindings and fingerprint.",
+      "archetype_id": "IAC-UX-STATE-ACTION-FEEDBACK",
+      "boundary_failure_case_structure": "materialize qualifier, applicability and failure boundary",
+      "counterexample_rule": "Different verification-shape fingerprint cannot be bulk-applied.",
+      "evidence_structure": "source-bound observable evidence",
+      "mapping_count": 2,
+      "negative_case_structure": "materialize explicit prohibition or statement-specific contradiction",
+      "positive_case_structure": "materialize subject, trigger, target and expected evidence",
+      "prohibited_uses": [
+        "missing provenance",
+        "inference=true",
+        "generic OTHER fallback",
+        "cross-fingerprint bulk mapping"
+      ],
+      "required_bindings": [
+        "subject",
+        "target",
+        "trigger",
+        "qualifier",
+        "prohibited_outcome",
+        "evidence_surface"
+      ],
+      "semantic_intent": "Ux State Action Feedback",
+      "version": "1.1.0-candidate.3"
+    }
+  ],
+  "artifact": "V23-P2C-INLINE-CONTRACT-ARCHETYPE-CATALOG-C3",
+  "candidate_id": "V23-P2C-ACCEPTANCE-MAPPING-C3",
+  "status": "CANDIDATE",
+  "version": "1.1.0-candidate.3"
+}

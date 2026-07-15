@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "candidate_id": {
+      "const": "V23-P2C-ACCEPTANCE-MAPPING-C2"
+    },
+    "mappings": {
+      "maxItems": 1076,
+      "minItems": 1076,
+      "type": "array"
+    }
+  },
+  "required": [
+    "artifact",
+    "candidate_id",
+    "mappings",
+    "summary",
+    "stratified_semantic_sample"
+  ],
+  "type": "object"
+}

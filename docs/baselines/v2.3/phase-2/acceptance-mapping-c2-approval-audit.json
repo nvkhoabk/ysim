@@ -1,0 +1,86 @@
+{
+  "approval_blocker_count": 12,
+  "approval_blockers": [
+    {
+      "blocker_id": "C2-AUDIT-BLOCKER-01",
+      "c3_resolution_required": true,
+      "finding": "GENERIC_OR_UNSUPPORTED_OTHER_REASON_COUNT_369"
+    },
+    {
+      "blocker_id": "C2-AUDIT-BLOCKER-02",
+      "c3_resolution_required": true,
+      "finding": "NON_DISPOSITIONING_HUMAN_DECISIONS_COUNT_36"
+    },
+    {
+      "blocker_id": "C2-AUDIT-BLOCKER-03",
+      "c3_resolution_required": true,
+      "finding": "REUSABLE_VERIFICATION_SHAPES_HIDDEN_IN_OTHER"
+    },
+    {
+      "blocker_id": "C2-AUDIT-BLOCKER-04",
+      "c3_resolution_required": true,
+      "finding": "HIGH_CONFIDENCE_EXISTING_PROFILE_OR_ARCHETYPE_MISSES"
+    },
+    {
+      "blocker_id": "C2-AUDIT-BLOCKER-05",
+      "c3_resolution_required": true,
+      "finding": "MISSING_BINDING_LEVEL_PROVENANCE_FOR_UNIQUE_INLINE"
+    },
+    {
+      "blocker_id": "C2-AUDIT-BLOCKER-06",
+      "c3_resolution_required": true,
+      "finding": "MISSING_RENDERED_NEGATIVE_AND_BOUNDARY_ORACLES"
+    },
+    {
+      "blocker_id": "C2-AUDIT-BLOCKER-07",
+      "c3_resolution_required": true,
+      "finding": "DEFAULT_DERIVE_LATER_FAILURE_MARKERS"
+    },
+    {
+      "blocker_id": "C2-AUDIT-BLOCKER-08",
+      "c3_resolution_required": true,
+      "finding": "COMPOSITE_OBLIGATIONS_HIDDEN_AS_UNIQUE_INLINE"
+    },
+    {
+      "blocker_id": "C2-AUDIT-BLOCKER-09",
+      "c3_resolution_required": true,
+      "finding": "BRD_WS_04_R012_MISCLASSIFIED_AS_TRUE_MISSING_SEMANTICS"
+    },
+    {
+      "blocker_id": "C2-AUDIT-BLOCKER-10",
+      "c3_resolution_required": true,
+      "finding": "PREFULFILLMENT_COMMERCIAL_VALIDATION_GAP_HIDDEN_ACROSS_TWO_RECORDS"
+    },
+    {
+      "blocker_id": "C2-AUDIT-BLOCKER-11",
+      "c3_resolution_required": true,
+      "finding": "MISSING_BINDING_INSENSITIVE_VERIFICATION_SHAPE_FINGERPRINT"
+    },
+    {
+      "blocker_id": "C2-AUDIT-BLOCKER-12",
+      "c3_resolution_required": true,
+      "finding": "MECHANICAL_ZERO_INVALID_COUNT_CONTRADICTED_BY_SEMANTIC_AUDIT"
+    }
+  ],
+  "artifact": "V23-P2C-ACCEPTANCE-MAPPING-C2-APPROVAL-AUDIT",
+  "audit_result": "NEEDS_FOCUSED_C3_CORRECTION",
+  "candidate_id": "V23-P2C-ACCEPTANCE-MAPPING-C2",
+  "hashes": {
+    "cluster_data_sha256": "fcbf3f688bf0be7f4473b0ac3252ee50f914726154c6f3ec4dfd115bbf5d8a51",
+    "decision_data_sha256": "621d7a37789d01dabf05f3fd3703138b7b8f6659af5b91486d1bbae1762a52bc",
+    "generated_payload_aggregate_sha256": "b0e3239d96a47f08b7a43b872ea2d8154e8923c5e05844b94a47580c920386b3",
+    "inline_archetype_catalog_sha256": "60d1afe30889c171f4c8bb5101ad7c31b1f95bc782cd9ef2e52c9524dde1a989",
+    "manifest_sha256": "ea73447f96862ade1aca5acf86813673b668224b38757e2f03a572f4e05711a1",
+    "mapping_sha256": "b4110c2ac1bf7c2b1279c0fd2e047c06ea135c818a6ada58ed20165edffa9440",
+    "staged_git_content_aggregate_sha256": "51f6ea2ab2bb98581d1388618c661e8b2ae91e6f3930680b5e7620716c59596e"
+  },
+  "metrics": {
+    "hidden_composites": 34,
+    "non_dispositioning_decisions": 36,
+    "singleton_clusters": 491,
+    "source_clarifications": 42,
+    "unique_inline": 448,
+    "unsupported_other": 369
+  },
+  "read_only": true
+}

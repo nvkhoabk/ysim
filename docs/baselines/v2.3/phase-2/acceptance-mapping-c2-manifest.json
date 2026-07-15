@@ -1,0 +1,268 @@
+{
+  "accepted_catalog_version": "1.0.0",
+  "accepted_model_candidate": "V23-P2C-ACCEPTANCE-MODEL-C1",
+  "approval_block": {
+    "approver": null,
+    "date": null,
+    "decision": "PENDING",
+    "signature": null
+  },
+  "approval_status": "PENDING_HUMAN_APPROVAL",
+  "base_commit": "a989367a6f69f1a03a8269562ce43bda3968b71a",
+  "blocker": "ACCEPTANCE_MAPPING_ARCHETYPES_NOT_APPROVED",
+  "candidate_id": "V23-P2C-ACCEPTANCE-MAPPING-C2",
+  "catalog_candidate_version": "1.1.0",
+  "decision_count": 68,
+  "final_document_baseline": "NOT_APPROVED",
+  "generated_file_sha256": {
+    "docs/baselines/v2.3/phase-2/ACCEPTANCE_INLINE_ARCHETYPE_CATALOG.md": "dadcf8b98cafab32284a4ec2c5825a320f05c81a3223e77c1b62ac8f9e8aecdc",
+    "docs/baselines/v2.3/phase-2/ACCEPTANCE_MAPPING_ARCHETYPE_DECISION_PACK.md": "72e447cefcd4e1deded0d09f80d3d0a3162b66732a3c6622572e266afbdcb700",
+    "docs/baselines/v2.3/phase-2/ACCEPTANCE_SEMANTIC_CLUSTER_REPORT.md": "219684562eff5639ffffde212a7a693577372bf9f1dc5d333b1de05004ae43ec",
+    "docs/baselines/v2.3/phase-2/acceptance-inline-archetype-catalog.json": "60d1afe30889c171f4c8bb5101ad7c31b1f95bc782cd9ef2e52c9524dde1a989",
+    "docs/baselines/v2.3/phase-2/acceptance-mapping-archetype-decisions.json": "621d7a37789d01dabf05f3fd3703138b7b8f6659af5b91486d1bbae1762a52bc",
+    "docs/baselines/v2.3/phase-2/acceptance-mapping-c2.json": "b4110c2ac1bf7c2b1279c0fd2e047c06ea135c818a6ada58ed20165edffa9440",
+    "docs/baselines/v2.3/phase-2/acceptance-profile-catalog-v1.1-candidate.json": "1de74a34c56d70795e118927bd05c5fd606c666c2784ba7bc174695b0ef7ca1f",
+    "docs/baselines/v2.3/phase-2/acceptance-semantic-clusters.json": "fcbf3f688bf0be7f4473b0ac3252ee50f914726154c6f3ec4dfd115bbf5d8a51",
+    "docs/baselines/v2.3/phase-2/schemas/acceptance-inline-archetype-catalog.schema.json": "9e501de9d6f345e28d6281ed3b81ba067e84e669cba88cd56efedb4fcf27ad1a",
+    "docs/baselines/v2.3/phase-2/schemas/acceptance-mapping-c2.schema.json": "d3d3f809dce04a470fb6d37a27d19203e294641da73008382cdcbc8d52613bb4",
+    "docs/baselines/v2.3/phase-2/schemas/acceptance-semantic-clusters.schema.json": "478200b63731fccc257a31c68a309c9deb8ceada90e12ae7ec1ab002974c7163"
+  },
+  "generated_payload_aggregate_sha256": "b0e3239d96a47f08b7a43b872ea2d8154e8923c5e05844b94a47580c920386b3",
+  "human_archetype_decision_count": 36,
+  "inline_archetype_count": 21,
+  "new_profile_count": 3,
+  "next_gate": "HUMAN_ACCEPTANCE_MAPPING_ARCHETYPE_APPROVAL",
+  "profile_candidate_assessment": {
+    "ACP-ATOMIC_CAPABILITY_AVAILABILITY": 51,
+    "ACP-BUSINESS_CLASSIFICATION": 5,
+    "ACP-DATA_VALUE_CONSTRAINT": 5,
+    "ACP-DESIGN_BOUNDARY_CONFORMANCE": 1,
+    "ACP-LOCALIZATION_COVERAGE": 1,
+    "ACP-NAMED_ATTRIBUTE_SET": 0,
+    "ACP-OPERATIONAL_CONTROL_CAPABILITY": 0,
+    "ACP-POLICY_OUTCOME_ENFORCEMENT": 0,
+    "ACP-RELATIONSHIP_REFERENCE_INTEGRITY": 0,
+    "ACP-UX_OBSERVABLE_STATE_ACTION": 0
+  },
+  "sample_result": "PASS",
+  "sample_size": 624,
+  "source_documents_regenerated": false,
+  "stable_c1_decision_count": 33,
+  "status": "CANDIDATE",
+  "summary": {
+    "acceptance_profile_count": 15,
+    "binding_recovery_provenance_counts": {
+      "APPROVED_FRAMEWORK_OR_PRODUCT_DECISION": 7,
+      "CANONICAL_GLOSSARY_OR_BUSINESS_OBJECT_REGISTRY": 7,
+      "NORMATIVE_STATEMENT": 42,
+      "SOLUTION_INFERENCE_PROHIBITED": 17,
+      "SOURCE_RANGE_EXTRACTION": 6,
+      "SURROUNDING_SOURCE_CONTEXT": 269
+    },
+    "binding_recovery_results": {
+      "RECOVERED": 49,
+      "SOLUTION_INFERENCE_PROHIBITED": 17,
+      "SOURCE_CONTEXT_AVAILABLE_FOR_INLINE_AUTHORING": 267,
+      "SOURCE_CONTEXT_OR_RANGE_REVIEW_REQUIRED": 8
+    },
+    "cluster_count": 533,
+    "cluster_size_distribution": {
+      "1": 491,
+      "2": 7,
+      "3": 7,
+      "4": 5,
+      "5": 3,
+      "6": 2,
+      "7": 2,
+      "9": 1,
+      "11": 1,
+      "16": 1,
+      "18": 1,
+      "21": 1,
+      "22": 1,
+      "25": 1,
+      "27": 1,
+      "30": 2,
+      "41": 1,
+      "45": 1,
+      "46": 1,
+      "48": 1,
+      "49": 1,
+      "51": 1
+    },
+    "criticality_by_disposition": {
+      "EXISTING_PROFILE_BINDING_HIGH_CONFIDENCE": {
+        "CRITICAL": 10,
+        "HIGH": 19,
+        "NORMAL": 16
+      },
+      "HUMAN_ARCHETYPE_DECISION_REQUIRED": {
+        "CRITICAL": 6,
+        "HIGH": 15,
+        "NORMAL": 18
+      },
+      "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE": {
+        "CRITICAL": 138,
+        "HIGH": 154,
+        "NORMAL": 149
+      },
+      "INVALID_OR_BLOCKED": {},
+      "NEW_PROFILE_BINDING_HIGH_CONFIDENCE": {
+        "CRITICAL": 3,
+        "HIGH": 27,
+        "NORMAL": 31
+      },
+      "SOURCE_CLARIFICATION_REQUIRED": {
+        "CRITICAL": 17,
+        "HIGH": 17,
+        "NORMAL": 8
+      },
+      "UNIQUE_INLINE_CONTRACT_REQUIRED": {
+        "CRITICAL": 142,
+        "HIGH": 162,
+        "NORMAL": 144
+      }
+    },
+    "disposition_counts": {
+      "EXISTING_PROFILE_BINDING_HIGH_CONFIDENCE": 45,
+      "HUMAN_ARCHETYPE_DECISION_REQUIRED": 39,
+      "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE": 441,
+      "INVALID_OR_BLOCKED": 0,
+      "NEW_PROFILE_BINDING_HIGH_CONFIDENCE": 61,
+      "SOURCE_CLARIFICATION_REQUIRED": 42,
+      "UNIQUE_INLINE_CONTRACT_REQUIRED": 448
+    },
+    "distinct_authoring_shape_count": 484,
+    "estimated_bespoke_human_semantic_authoring": 529,
+    "inline_archetype_count": 21,
+    "inline_archetype_mapping_counts": {
+      "IAC-ACCESS-AUTHORIZATION": 30,
+      "IAC-AUDIT-TRACE-IMMUTABILITY": 30,
+      "IAC-CANONICAL-IDENTITY-NAMING": 3,
+      "IAC-CAPABILITY-AVAILABILITY": 45,
+      "IAC-CLASSIFICATION-TAXONOMY": 27,
+      "IAC-CONFIGURATION-RESOLUTION": 25,
+      "IAC-CONSENT-PREFERENCE": 9,
+      "IAC-DATA-ISOLATION-VISIBILITY": 11,
+      "IAC-DATA-RETENTION-DELETION": 3,
+      "IAC-DESIGN-BOUNDARY": 48,
+      "IAC-ELIGIBILITY-PREREQUISITE": 4,
+      "IAC-ENTITY-IDENTITY-LIFECYCLE": 49,
+      "IAC-EVENT-EMISSION-METADATA": 18,
+      "IAC-EVENT-ORDER-IDEMPOTENCY": 3,
+      "IAC-GOVERNED-DEFINITION-LIFECYCLE": 22,
+      "IAC-OPERATIONAL-CONTROL-RECOVERY": 2,
+      "IAC-POLICY-OUTCOME-PRECEDENCE": 16,
+      "IAC-RELATIONSHIP-REFERENCE": 46,
+      "IAC-REPORTING-FRESHNESS-EXPORT": 6,
+      "IAC-REQUIRED-VALUE-SET": 41,
+      "IAC-SCOPE-EXCLUSION": 3
+    },
+    "largest_clusters": [
+      {
+        "cluster_id": "P2C-AC-C2-CL-001",
+        "member_count": 51,
+        "semantic_intent": "Acp-Atomic Capability Availability"
+      },
+      {
+        "cluster_id": "P2C-AC-C2-CL-027",
+        "member_count": 49,
+        "semantic_intent": "Iac-Entity-Identity-Lifecycle"
+      },
+      {
+        "cluster_id": "P2C-AC-C2-CL-025",
+        "member_count": 48,
+        "semantic_intent": "Iac-Design-Boundary"
+      },
+      {
+        "cluster_id": "P2C-AC-C2-CL-033",
+        "member_count": 46,
+        "semantic_intent": "Iac-Relationship-Reference"
+      },
+      {
+        "cluster_id": "P2C-AC-C2-CL-019",
+        "member_count": 45,
+        "semantic_intent": "Iac-Capability-Availability"
+      },
+      {
+        "cluster_id": "P2C-AC-C2-CL-035",
+        "member_count": 41,
+        "semantic_intent": "Iac-Required-Value-Set"
+      },
+      {
+        "cluster_id": "P2C-AC-C2-CL-016",
+        "member_count": 30,
+        "semantic_intent": "Iac-Access-Authorization"
+      },
+      {
+        "cluster_id": "P2C-AC-C2-CL-017",
+        "member_count": 30,
+        "semantic_intent": "Iac-Audit-Trace-Immutability"
+      },
+      {
+        "cluster_id": "P2C-AC-C2-CL-020",
+        "member_count": 27,
+        "semantic_intent": "Iac-Classification-Taxonomy"
+      },
+      {
+        "cluster_id": "P2C-AC-C2-CL-021",
+        "member_count": 25,
+        "semantic_intent": "Iac-Configuration-Resolution"
+      }
+    ],
+    "profile_mapping_counts": {
+      "ACP-ATOMIC_CAPABILITY_AVAILABILITY": 51,
+      "ACP-AUDITABILITY": 1,
+      "ACP-AUTHENTICATION_REQUIREMENT": 3,
+      "ACP-BUSINESS_CLASSIFICATION": 5,
+      "ACP-DATA_RETENTION": 1,
+      "ACP-DATA_VALUE_CONSTRAINT": 5,
+      "ACP-DESIGN_CONFORMANCE_TRACE": 1,
+      "ACP-ENUM_REFERENCE_INTEGRITY": 1,
+      "ACP-EVENT_ORDERING": 2,
+      "ACP-MFA_ENFORCEMENT": 1,
+      "ACP-OPERATION_OBSERVABILITY": 1,
+      "ACP-REQUIRED_CAPABILITY_SET": 21,
+      "ACP-ROLE_AND_PERMISSION_ENFORCEMENT": 3,
+      "ACP-SCOPE_EXCLUSION": 4,
+      "ACP-UX_ACCESSIBILITY": 6
+    },
+    "review_population_counts": {
+      "APPROVED_MODEL_CLASSIFICATION": 205,
+      "NO_NARROW_PROFILE_MATCH": 530,
+      "REQUIRED_BINDINGS_NOT_SOURCE_GROUNDED": 341
+    },
+    "singleton_cluster_count": 491,
+    "total": 1076,
+    "unique_inline_contract_count": 448,
+    "unique_reason_counts": {
+      "CROSS_DOMAIN_FINANCIAL_INVARIANT": 7,
+      "MULTI_STATE_MACHINE_ORCHESTRATION": 2,
+      "OTHER_WITH_EXPLICIT_JUSTIFICATION": 369,
+      "PRICING_OR_PROMOTION_PIPELINE": 9,
+      "PROCUREMENT_ALLOCATION_FULFILLMENT_ORCHESTRATION": 16,
+      "REQUIREMENT_SPECIFIC_COMPOSITE_OBLIGATION": 34,
+      "RISK_DECISION_MATRIX": 1,
+      "SETTLEMENT_OR_RECONCILIATION_INVARIANT": 10
+    }
+  },
+  "supersedes": {
+    "candidate_id": "V23-P2C-ACCEPTANCE-MAPPING-C1",
+    "reason": "INLINE_OVERCLASSIFICATION_AND_SINGLETON_CLUSTERING",
+    "signed_hashes": {
+      "cluster_data_sha256": "15a0d048fb324faae6e5b17dfce9461f05b6e999e3edca9dd95ade0d53f73856",
+      "decision_data_sha256": "5044fac24a79a69941896073f4d4cd345e78306e175a5b9d52740a1acc13af1b",
+      "generated_payload_aggregate_sha256": "8484cd24a397316cb0acf3a250a0f0940e4ce5adcce7f1bee4f76d83fc3f1657",
+      "mapping_sha256": "eca6a1eb39f62049a2295dc02cde498c9d36e99238fe5827d93ccd9972fe4272",
+      "staged_aggregate_sha256": "df1ac62d9b2bd6e3ba704f8bdeef6b18e21fbc06e4237e2608234bb01953162c"
+    }
+  },
+  "tool_sha256": {
+    "scripts/docs/generate-acceptance-mapping-candidate.py": "c17f35e5f31f24a960f079fc599485f855b8aafeb7e5fff4610eeb9aa3d73244",
+    "scripts/docs/validate-acceptance-inline-archetypes.py": "23d395793b752684b73da2236f8a09d7bc6d645ae33a642ae78be81b3a7e6727",
+    "scripts/docs/validate-acceptance-mapping-candidate.py": "2ef2aa773e7c459539ccfd856ddb82965170cda2ab904a60275bcade3649fe47",
+    "scripts/docs/validate-acceptance-obligation-graphs.py": "63e24af1ffbc7893fc04b768e88370c62880de7e6b8f26b259e7adce112e99d2",
+    "scripts/docs/validate-acceptance-semantic-clusters.py": "02fe3905b5a5bb8e0782611879d72257770d447f2c9021c334109efbfeeba7ad"
+  },
+  "yadf_implementation": "NOT_AUTHORIZED"
+}

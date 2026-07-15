@@ -1,0 +1,2134 @@
+{
+  "approval_status": "PENDING_HUMAN_APPROVAL",
+  "artifact": "V23-P2C-ACCEPTANCE-MAPPING-DECISIONS-C3",
+  "candidate_id": "V23-P2C-ACCEPTANCE-MAPPING-C3",
+  "decision_count": 19,
+  "decisions": [
+    {
+      "affected_requirements": [
+        "UXF-01-R010"
+      ],
+      "category": "MATERIAL_SEMANTIC_DECISION",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "decision_id": "P2C-AC-C3-DEC-001",
+      "impact_count": 1,
+      "non_claims": [
+        "NOT_SOURCE_REMEDIATION",
+        "NOT_FINAL_ACCEPTANCE_CONTRACT",
+        "NOT_DOCUMENT_BASELINE_APPROVAL",
+        "NOT_YADF_AUTHORIZATION"
+      ],
+      "options": [
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "UXF-01-R010"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='Every experience should support: - Touch interaction', verify that Within v2.3, Every experience should support must produce the bound outcome 'Every experience should support: - Touch interaction' at trigger 'NO_EXPLICIT_TRIGGER' under qualifier 'Every experience should support: - Touch interaction'; contradictory evidence is non-conforming. Source: Every experience should support: - Touch interaction applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "rendered state, available/prohibited action, and user-visible feedback",
+            "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'Every experience should support: - Touch interaction' for Every experience should support; rendered state, available/prohibited action, and user-visible feedback must distinguish rejection/non-conformance from the positive outcome.",
+            "positive_oracle": "Observe Every experience should support at NO_EXPLICIT_TRIGGER; rendered state, available/prohibited action, and user-visible feedback must show the bound CAPABILITY_AVAILABILITY outcome 'Every experience should support: - Touch interaction' under qualifier 'Every experience should support: - Touch interaction'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "rendered state, available/prohibited action, and user-visible feedback",
+              "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+              "qualifier": "Every experience should support: - Touch interaction",
+              "subject": "Every experience should support",
+              "target": "Every experience should support: - Touch interaction",
+              "trigger": "NO_EXPLICIT_TRIGGER"
+            }
+          },
+          "effective_source_meaning": "Within v2.3, Every experience should support must produce the bound outcome 'Every experience should support: - Touch interaction' at trigger 'NO_EXPLICIT_TRIGGER' under qualifier 'Every experience should support: - Touch interaction'; contradictory evidence is non-conforming.",
+          "implementation_impact": "Defines the future acceptance boundary for Every experience should support / Every experience should support: - Touch interaction; it does not authorize implementation.",
+          "label": "ACTIVE_STRONG_OBLIGATION",
+          "option_id": "P2C-AC-C3-DEC-001-OPT-1",
+          "recommended": true,
+          "source_edit_required": true,
+          "target_profile_or_archetype": "IAC-C3-DECISION-MATERIALIZED",
+          "terminal_disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE"
+        },
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "UXF-01-R010"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='Every experience should support: - Touch interaction', verify that Preserve the source's exact modal strength for Every experience should support and verify 'Every experience should support: - Touch interaction' only when trigger 'NO_EXPLICIT_TRIGGER' and qualifier 'Every experience should support: - Touch interaction' apply; do not infer a stronger universal obligation. Source: Every experience should support: - Touch interaction applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "rendered state, available/prohibited action, and user-visible feedback",
+            "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'Every experience should support: - Touch interaction' for Every experience should support; rendered state, available/prohibited action, and user-visible feedback must distinguish rejection/non-conformance from the positive outcome.",
+            "positive_oracle": "Observe Every experience should support at NO_EXPLICIT_TRIGGER; rendered state, available/prohibited action, and user-visible feedback must show the bound CAPABILITY_AVAILABILITY outcome 'Every experience should support: - Touch interaction' under qualifier 'Every experience should support: - Touch interaction'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "rendered state, available/prohibited action, and user-visible feedback",
+              "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+              "qualifier": "Every experience should support: - Touch interaction",
+              "subject": "Every experience should support",
+              "target": "Every experience should support: - Touch interaction",
+              "trigger": "NO_EXPLICIT_TRIGGER"
+            }
+          },
+          "effective_source_meaning": "Preserve the source's exact modal strength for Every experience should support and verify 'Every experience should support: - Touch interaction' only when trigger 'NO_EXPLICIT_TRIGGER' and qualifier 'Every experience should support: - Touch interaction' apply; do not infer a stronger universal obligation.",
+          "implementation_impact": "Defines the future acceptance boundary for Every experience should support / Every experience should support: - Touch interaction; it does not authorize implementation.",
+          "label": "PRESERVE_REQUIREMENT_SPECIFIC_QUALIFIER",
+          "option_id": "P2C-AC-C3-DEC-001-OPT-2",
+          "recommended": false,
+          "source_edit_required": false,
+          "target_profile_or_archetype": null,
+          "terminal_disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED"
+        },
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "UXF-01-R010"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='Every experience should support: - Touch interaction', verify that Before mapping 'Every experience should support: - Touch interaction', revise the source to name Every experience should support's normative strength, ownership, applicability and failure behavior; no active acceptance route is inferred meanwhile. Source: Every experience should support: - Touch interaction applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "rendered state, available/prohibited action, and user-visible feedback",
+            "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'Every experience should support: - Touch interaction' for Every experience should support; rendered state, available/prohibited action, and user-visible feedback must distinguish rejection/non-conformance from the positive outcome.",
+            "positive_oracle": "Observe Every experience should support at NO_EXPLICIT_TRIGGER; rendered state, available/prohibited action, and user-visible feedback must show the bound CAPABILITY_AVAILABILITY outcome 'Every experience should support: - Touch interaction' under qualifier 'Every experience should support: - Touch interaction'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "rendered state, available/prohibited action, and user-visible feedback",
+              "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+              "qualifier": "Every experience should support: - Touch interaction",
+              "subject": "Every experience should support",
+              "target": "Every experience should support: - Touch interaction",
+              "trigger": "NO_EXPLICIT_TRIGGER"
+            }
+          },
+          "effective_source_meaning": "Before mapping 'Every experience should support: - Touch interaction', revise the source to name Every experience should support's normative strength, ownership, applicability and failure behavior; no active acceptance route is inferred meanwhile.",
+          "implementation_impact": "Defines the future acceptance boundary for Every experience should support / Every experience should support: - Touch interaction; it does not authorize implementation.",
+          "label": "SOURCE_NORMALIZATION_BEFORE_MAPPING",
+          "option_id": "P2C-AC-C3-DEC-001-OPT-3",
+          "recommended": false,
+          "source_edit_required": true,
+          "target_profile_or_archetype": null,
+          "terminal_disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED"
+        }
+      ],
+      "selected_option": null,
+      "source_statements": [
+        {
+          "requirement_id": "UXF-01-R010",
+          "statement": "Every experience should support: - Touch interaction"
+        }
+      ],
+      "status": "PENDING_HUMAN_APPROVAL"
+    },
+    {
+      "affected_requirements": [
+        "BD-13-003"
+      ],
+      "category": "MATERIAL_SEMANTIC_DECISION",
+      "criticality_distribution": {
+        "NORMAL": 1
+      },
+      "decision_id": "P2C-AC-C3-DEC-002",
+      "impact_count": 1,
+      "non_claims": [
+        "NOT_SOURCE_REMEDIATION",
+        "NOT_FINAL_ACCEPTANCE_CONTRACT",
+        "NOT_DOCUMENT_BASELINE_APPROVAL",
+        "NOT_YADF_AUTHORIZATION"
+      ],
+      "options": [
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "BD-13-003"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that Within v2.3, KPI Definition must produce the bound outcome 'cấu hình. Kiến trúc hỗ trợ mở rộng thêm các nhóm KPI và tiêu chuẩn đo lường' at trigger 'NO_EXPLICIT_TRIGGER' under qualifier 'NO_EXPLICIT_QUALIFIER'; contradictory evidence is non-conforming. Source: KPI Definition được cấu hình. Kiến trúc hỗ trợ mở rộng thêm các nhóm KPI và tiêu chuẩn đo lường. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "observable policy decision, business state, or customer/operator-visible outcome",
+            "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'cấu hình. Kiến trúc hỗ trợ mở rộng thêm các nhóm KPI và tiêu chuẩn đo lường' for KPI Definition; observable policy decision, business state, or customer/operator-visible outcome must distinguish rejection/non-conformance from the positive outcome.",
+            "positive_oracle": "Observe KPI Definition at NO_EXPLICIT_TRIGGER; observable policy decision, business state, or customer/operator-visible outcome must show the bound CAPABILITY_AVAILABILITY outcome 'cấu hình. Kiến trúc hỗ trợ mở rộng thêm các nhóm KPI và tiêu chuẩn đo lường' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "observable policy decision, business state, or customer/operator-visible outcome",
+              "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+              "qualifier": "NO_EXPLICIT_QUALIFIER",
+              "subject": "KPI Definition",
+              "target": "cấu hình. Kiến trúc hỗ trợ mở rộng thêm các nhóm KPI và tiêu chuẩn đo lường",
+              "trigger": "NO_EXPLICIT_TRIGGER"
+            }
+          },
+          "effective_source_meaning": "Within v2.3, KPI Definition must produce the bound outcome 'cấu hình. Kiến trúc hỗ trợ mở rộng thêm các nhóm KPI và tiêu chuẩn đo lường' at trigger 'NO_EXPLICIT_TRIGGER' under qualifier 'NO_EXPLICIT_QUALIFIER'; contradictory evidence is non-conforming.",
+          "implementation_impact": "Defines the future acceptance boundary for KPI Definition / cấu hình. Kiến trúc hỗ trợ mở rộng thêm các nhóm KPI và tiêu chuẩn đo lường; it does not authorize implementation.",
+          "label": "ACTIVE_STRONG_OBLIGATION",
+          "option_id": "P2C-AC-C3-DEC-002-OPT-1",
+          "recommended": true,
+          "source_edit_required": true,
+          "target_profile_or_archetype": "IAC-C3-DECISION-MATERIALIZED",
+          "terminal_disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE"
+        },
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "BD-13-003"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that Preserve the source's exact modal strength for KPI Definition and verify 'cấu hình. Kiến trúc hỗ trợ mở rộng thêm các nhóm KPI và tiêu chuẩn đo lường' only when trigger 'NO_EXPLICIT_TRIGGER' and qualifier 'NO_EXPLICIT_QUALIFIER' apply; do not infer a stronger universal obligation. Source: KPI Definition được cấu hình. Kiến trúc hỗ trợ mở rộng thêm các nhóm KPI và tiêu chuẩn đo lường. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "observable policy decision, business state, or customer/operator-visible outcome",
+            "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'cấu hình. Kiến trúc hỗ trợ mở rộng thêm các nhóm KPI và tiêu chuẩn đo lường' for KPI Definition; observable policy decision, business state, or customer/operator-visible outcome must distinguish rejection/non-conformance from the positive outcome.",
+            "positive_oracle": "Observe KPI Definition at NO_EXPLICIT_TRIGGER; observable policy decision, business state, or customer/operator-visible outcome must show the bound CAPABILITY_AVAILABILITY outcome 'cấu hình. Kiến trúc hỗ trợ mở rộng thêm các nhóm KPI và tiêu chuẩn đo lường' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "observable policy decision, business state, or customer/operator-visible outcome",
+              "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+              "qualifier": "NO_EXPLICIT_QUALIFIER",
+              "subject": "KPI Definition",
+              "target": "cấu hình. Kiến trúc hỗ trợ mở rộng thêm các nhóm KPI và tiêu chuẩn đo lường",
+              "trigger": "NO_EXPLICIT_TRIGGER"
+            }
+          },
+          "effective_source_meaning": "Preserve the source's exact modal strength for KPI Definition and verify 'cấu hình. Kiến trúc hỗ trợ mở rộng thêm các nhóm KPI và tiêu chuẩn đo lường' only when trigger 'NO_EXPLICIT_TRIGGER' and qualifier 'NO_EXPLICIT_QUALIFIER' apply; do not infer a stronger universal obligation.",
+          "implementation_impact": "Defines the future acceptance boundary for KPI Definition / cấu hình. Kiến trúc hỗ trợ mở rộng thêm các nhóm KPI và tiêu chuẩn đo lường; it does not authorize implementation.",
+          "label": "PRESERVE_REQUIREMENT_SPECIFIC_QUALIFIER",
+          "option_id": "P2C-AC-C3-DEC-002-OPT-2",
+          "recommended": false,
+          "source_edit_required": false,
+          "target_profile_or_archetype": null,
+          "terminal_disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED"
+        },
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "BD-13-003"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that Before mapping 'cấu hình. Kiến trúc hỗ trợ mở rộng thêm các nhóm KPI và tiêu chuẩn đo lường', revise the source to name KPI Definition's normative strength, ownership, applicability and failure behavior; no active acceptance route is inferred meanwhile. Source: KPI Definition được cấu hình. Kiến trúc hỗ trợ mở rộng thêm các nhóm KPI và tiêu chuẩn đo lường. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "observable policy decision, business state, or customer/operator-visible outcome",
+            "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'cấu hình. Kiến trúc hỗ trợ mở rộng thêm các nhóm KPI và tiêu chuẩn đo lường' for KPI Definition; observable policy decision, business state, or customer/operator-visible outcome must distinguish rejection/non-conformance from the positive outcome.",
+            "positive_oracle": "Observe KPI Definition at NO_EXPLICIT_TRIGGER; observable policy decision, business state, or customer/operator-visible outcome must show the bound CAPABILITY_AVAILABILITY outcome 'cấu hình. Kiến trúc hỗ trợ mở rộng thêm các nhóm KPI và tiêu chuẩn đo lường' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "observable policy decision, business state, or customer/operator-visible outcome",
+              "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+              "qualifier": "NO_EXPLICIT_QUALIFIER",
+              "subject": "KPI Definition",
+              "target": "cấu hình. Kiến trúc hỗ trợ mở rộng thêm các nhóm KPI và tiêu chuẩn đo lường",
+              "trigger": "NO_EXPLICIT_TRIGGER"
+            }
+          },
+          "effective_source_meaning": "Before mapping 'cấu hình. Kiến trúc hỗ trợ mở rộng thêm các nhóm KPI và tiêu chuẩn đo lường', revise the source to name KPI Definition's normative strength, ownership, applicability and failure behavior; no active acceptance route is inferred meanwhile.",
+          "implementation_impact": "Defines the future acceptance boundary for KPI Definition / cấu hình. Kiến trúc hỗ trợ mở rộng thêm các nhóm KPI và tiêu chuẩn đo lường; it does not authorize implementation.",
+          "label": "SOURCE_NORMALIZATION_BEFORE_MAPPING",
+          "option_id": "P2C-AC-C3-DEC-002-OPT-3",
+          "recommended": false,
+          "source_edit_required": true,
+          "target_profile_or_archetype": null,
+          "terminal_disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED"
+        }
+      ],
+      "selected_option": null,
+      "source_statements": [
+        {
+          "requirement_id": "BD-13-003",
+          "statement": "KPI Definition được cấu hình. Kiến trúc hỗ trợ mở rộng thêm các nhóm KPI và tiêu chuẩn đo lường."
+        }
+      ],
+      "status": "PENDING_HUMAN_APPROVAL"
+    },
+    {
+      "affected_requirements": [
+        "BD-16-001"
+      ],
+      "category": "MATERIAL_SEMANTIC_DECISION",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "decision_id": "P2C-AC-C3-DEC-003",
+      "impact_count": 1,
+      "non_claims": [
+        "NOT_SOURCE_REMEDIATION",
+        "NOT_FINAL_ACCEPTANCE_CONTRACT",
+        "NOT_DOCUMENT_BASELINE_APPROVAL",
+        "NOT_YADF_AUTHORIZATION"
+      ],
+      "options": [
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "BD-16-001"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that Within v2.3, Identity Platform must produce the bound outcome 'nhiều Identity Provider. Bao gồm: - Local Account - Google - Apple - Facebook - Microsoft - Line - WeChat Kiến trúc hỗ trợ mở rộng thêm Identity Provider trong tương lai' at trigger 'NO_EXPLICIT_TRIGGER' under qualifier 'NO_EXPLICIT_QUALIFIER'; contradictory evidence is non-conforming. Source: Identity Platform hỗ trợ nhiều Identity Provider. Bao gồm: - Local Account - Google - Apple - Facebook - Microsoft - Line - WeChat Kiến trúc hỗ trợ mở rộng thêm Identity Provider trong tương lai. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "observable policy decision, business state, or customer/operator-visible outcome",
+            "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'nhiều Identity Provider. Bao gồm: - Local Account - Google - Apple - Facebook - Microsoft - Line - WeChat Kiến trúc hỗ trợ mở rộng thêm Identity Provider trong tương lai' for Identity Platform; observable policy decision, business state, or customer/operator-visible outcome must distinguish rejection/non-conformance from the positive outcome.",
+            "positive_oracle": "Observe Identity Platform at NO_EXPLICIT_TRIGGER; observable policy decision, business state, or customer/operator-visible outcome must show the bound REQUIRED_SET outcome 'nhiều Identity Provider. Bao gồm: - Local Account - Google - Apple - Facebook - Microsoft - Line - WeChat Kiến trúc hỗ trợ mở rộng thêm Identity Provider trong tương lai' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "observable policy decision, business state, or customer/operator-visible outcome",
+              "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+              "qualifier": "NO_EXPLICIT_QUALIFIER",
+              "subject": "Identity Platform",
+              "target": "nhiều Identity Provider. Bao gồm: - Local Account - Google - Apple - Facebook - Microsoft - Line - WeChat Kiến trúc hỗ trợ mở rộng thêm Identity Provider trong tương lai",
+              "trigger": "NO_EXPLICIT_TRIGGER"
+            }
+          },
+          "effective_source_meaning": "Within v2.3, Identity Platform must produce the bound outcome 'nhiều Identity Provider. Bao gồm: - Local Account - Google - Apple - Facebook - Microsoft - Line - WeChat Kiến trúc hỗ trợ mở rộng thêm Identity Provider trong tương lai' at trigger 'NO_EXPLICIT_TRIGGER' under qualifier 'NO_EXPLICIT_QUALIFIER'; contradictory evidence is non-conforming.",
+          "implementation_impact": "Defines the future acceptance boundary for Identity Platform / nhiều Identity Provider. Bao gồm: - Local Account - Google - Apple - Facebook - Microsoft - Line - WeChat Kiến trúc hỗ trợ mở rộng thêm Identity Provider trong tương lai; it does not authorize implementation.",
+          "label": "ACTIVE_STRONG_OBLIGATION",
+          "option_id": "P2C-AC-C3-DEC-003-OPT-1",
+          "recommended": true,
+          "source_edit_required": true,
+          "target_profile_or_archetype": "IAC-C3-DECISION-MATERIALIZED",
+          "terminal_disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE"
+        },
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "BD-16-001"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that Preserve the source's exact modal strength for Identity Platform and verify 'nhiều Identity Provider. Bao gồm: - Local Account - Google - Apple - Facebook - Microsoft - Line - WeChat Kiến trúc hỗ trợ mở rộng thêm Identity Provider trong tương lai' only when trigger 'NO_EXPLICIT_TRIGGER' and qualifier 'NO_EXPLICIT_QUALIFIER' apply; do not infer a stronger universal obligation. Source: Identity Platform hỗ trợ nhiều Identity Provider. Bao gồm: - Local Account - Google - Apple - Facebook - Microsoft - Line - WeChat Kiến trúc hỗ trợ mở rộng thêm Identity Provider trong tương lai. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "observable policy decision, business state, or customer/operator-visible outcome",
+            "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'nhiều Identity Provider. Bao gồm: - Local Account - Google - Apple - Facebook - Microsoft - Line - WeChat Kiến trúc hỗ trợ mở rộng thêm Identity Provider trong tương lai' for Identity Platform; observable policy decision, business state, or customer/operator-visible outcome must distinguish rejection/non-conformance from the positive outcome.",
+            "positive_oracle": "Observe Identity Platform at NO_EXPLICIT_TRIGGER; observable policy decision, business state, or customer/operator-visible outcome must show the bound REQUIRED_SET outcome 'nhiều Identity Provider. Bao gồm: - Local Account - Google - Apple - Facebook - Microsoft - Line - WeChat Kiến trúc hỗ trợ mở rộng thêm Identity Provider trong tương lai' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "observable policy decision, business state, or customer/operator-visible outcome",
+              "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+              "qualifier": "NO_EXPLICIT_QUALIFIER",
+              "subject": "Identity Platform",
+              "target": "nhiều Identity Provider. Bao gồm: - Local Account - Google - Apple - Facebook - Microsoft - Line - WeChat Kiến trúc hỗ trợ mở rộng thêm Identity Provider trong tương lai",
+              "trigger": "NO_EXPLICIT_TRIGGER"
+            }
+          },
+          "effective_source_meaning": "Preserve the source's exact modal strength for Identity Platform and verify 'nhiều Identity Provider. Bao gồm: - Local Account - Google - Apple - Facebook - Microsoft - Line - WeChat Kiến trúc hỗ trợ mở rộng thêm Identity Provider trong tương lai' only when trigger 'NO_EXPLICIT_TRIGGER' and qualifier 'NO_EXPLICIT_QUALIFIER' apply; do not infer a stronger universal obligation.",
+          "implementation_impact": "Defines the future acceptance boundary for Identity Platform / nhiều Identity Provider. Bao gồm: - Local Account - Google - Apple - Facebook - Microsoft - Line - WeChat Kiến trúc hỗ trợ mở rộng thêm Identity Provider trong tương lai; it does not authorize implementation.",
+          "label": "PRESERVE_REQUIREMENT_SPECIFIC_QUALIFIER",
+          "option_id": "P2C-AC-C3-DEC-003-OPT-2",
+          "recommended": false,
+          "source_edit_required": false,
+          "target_profile_or_archetype": null,
+          "terminal_disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED"
+        },
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "BD-16-001"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that Before mapping 'nhiều Identity Provider. Bao gồm: - Local Account - Google - Apple - Facebook - Microsoft - Line - WeChat Kiến trúc hỗ trợ mở rộng thêm Identity Provider trong tương lai', revise the source to name Identity Platform's normative strength, ownership, applicability and failure behavior; no active acceptance route is inferred meanwhile. Source: Identity Platform hỗ trợ nhiều Identity Provider. Bao gồm: - Local Account - Google - Apple - Facebook - Microsoft - Line - WeChat Kiến trúc hỗ trợ mở rộng thêm Identity Provider trong tương lai. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "observable policy decision, business state, or customer/operator-visible outcome",
+            "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'nhiều Identity Provider. Bao gồm: - Local Account - Google - Apple - Facebook - Microsoft - Line - WeChat Kiến trúc hỗ trợ mở rộng thêm Identity Provider trong tương lai' for Identity Platform; observable policy decision, business state, or customer/operator-visible outcome must distinguish rejection/non-conformance from the positive outcome.",
+            "positive_oracle": "Observe Identity Platform at NO_EXPLICIT_TRIGGER; observable policy decision, business state, or customer/operator-visible outcome must show the bound REQUIRED_SET outcome 'nhiều Identity Provider. Bao gồm: - Local Account - Google - Apple - Facebook - Microsoft - Line - WeChat Kiến trúc hỗ trợ mở rộng thêm Identity Provider trong tương lai' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "observable policy decision, business state, or customer/operator-visible outcome",
+              "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+              "qualifier": "NO_EXPLICIT_QUALIFIER",
+              "subject": "Identity Platform",
+              "target": "nhiều Identity Provider. Bao gồm: - Local Account - Google - Apple - Facebook - Microsoft - Line - WeChat Kiến trúc hỗ trợ mở rộng thêm Identity Provider trong tương lai",
+              "trigger": "NO_EXPLICIT_TRIGGER"
+            }
+          },
+          "effective_source_meaning": "Before mapping 'nhiều Identity Provider. Bao gồm: - Local Account - Google - Apple - Facebook - Microsoft - Line - WeChat Kiến trúc hỗ trợ mở rộng thêm Identity Provider trong tương lai', revise the source to name Identity Platform's normative strength, ownership, applicability and failure behavior; no active acceptance route is inferred meanwhile.",
+          "implementation_impact": "Defines the future acceptance boundary for Identity Platform / nhiều Identity Provider. Bao gồm: - Local Account - Google - Apple - Facebook - Microsoft - Line - WeChat Kiến trúc hỗ trợ mở rộng thêm Identity Provider trong tương lai; it does not authorize implementation.",
+          "label": "SOURCE_NORMALIZATION_BEFORE_MAPPING",
+          "option_id": "P2C-AC-C3-DEC-003-OPT-3",
+          "recommended": false,
+          "source_edit_required": true,
+          "target_profile_or_archetype": null,
+          "terminal_disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED"
+        }
+      ],
+      "selected_option": null,
+      "source_statements": [
+        {
+          "requirement_id": "BD-16-001",
+          "statement": "Identity Platform hỗ trợ nhiều Identity Provider. Bao gồm: - Local Account - Google - Apple - Facebook - Microsoft - Line - WeChat Kiến trúc hỗ trợ mở rộng thêm Identity Provider trong tương lai."
+        }
+      ],
+      "status": "PENDING_HUMAN_APPROVAL"
+    },
+    {
+      "affected_requirements": [
+        "BRD-UPDATE-01-R020"
+      ],
+      "category": "SOURCE_OR_SCOPE_DECISION",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "decision_id": "P2C-AC-C3-DEC-005",
+      "impact_count": 1,
+      "non_claims": [
+        "NOT_SOURCE_REMEDIATION",
+        "NOT_FINAL_ACCEPTANCE_CONTRACT",
+        "NOT_DOCUMENT_BASELINE_APPROVAL",
+        "NOT_YADF_AUTHORIZATION"
+      ],
+      "options": [
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "BRD-UPDATE-01-R020"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that Treat 'Commerce Experience Platform tuân thủ: - Commerce First' as a principle/composite statement for Commerce Experience Platform tuân thủ; it has no direct implementation, acceptance, scope-coverage, or criticality unit and coverage is delegated to reconciled children. Source: Commerce Experience Platform tuân thủ: - Commerce First applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "conformance trace and architectural boundary finding",
+            "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'Commerce Experience Platform tuân thủ: - Commerce First' for Commerce Experience Platform tuân thủ; conformance trace and architectural boundary finding must distinguish rejection/non-conformance from the positive outcome.",
+            "positive_oracle": "Observe Commerce Experience Platform tuân thủ at NO_EXPLICIT_TRIGGER; conformance trace and architectural boundary finding must show the bound BUSINESS_OUTCOME outcome 'Commerce Experience Platform tuân thủ: - Commerce First' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "conformance trace and architectural boundary finding",
+              "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+              "qualifier": "NO_EXPLICIT_QUALIFIER",
+              "subject": "Commerce Experience Platform tuân thủ",
+              "target": "Commerce Experience Platform tuân thủ: - Commerce First",
+              "trigger": "NO_EXPLICIT_TRIGGER"
+            }
+          },
+          "effective_source_meaning": "Treat 'Commerce Experience Platform tuân thủ: - Commerce First' as a principle/composite statement for Commerce Experience Platform tuân thủ; it has no direct implementation, acceptance, scope-coverage, or criticality unit and coverage is delegated to reconciled children.",
+          "implementation_impact": "Defines the future acceptance boundary for Commerce Experience Platform tuân thủ / Commerce Experience Platform tuân thủ: - Commerce First; it does not authorize implementation.",
+          "label": "COMPOSITE_PRINCIPLE_NON_UNIT",
+          "option_id": "P2C-AC-C3-DEC-005-OPT-1",
+          "recommended": true,
+          "source_edit_required": true,
+          "target_profile_or_archetype": null,
+          "terminal_disposition": "STRUCTURAL_RECONCILIATION_REQUIRED"
+        },
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "BRD-UPDATE-01-R020"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that Normalize Commerce Experience Platform tuân thủ's obligation for 'Commerce Experience Platform tuân thủ: - Commerce First' as an active atomic conformance requirement, preserving trigger 'NO_EXPLICIT_TRIGGER' and qualifier 'NO_EXPLICIT_QUALIFIER'. Source: Commerce Experience Platform tuân thủ: - Commerce First applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "conformance trace and architectural boundary finding",
+            "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'Commerce Experience Platform tuân thủ: - Commerce First' for Commerce Experience Platform tuân thủ; conformance trace and architectural boundary finding must distinguish rejection/non-conformance from the positive outcome.",
+            "positive_oracle": "Observe Commerce Experience Platform tuân thủ at NO_EXPLICIT_TRIGGER; conformance trace and architectural boundary finding must show the bound BUSINESS_OUTCOME outcome 'Commerce Experience Platform tuân thủ: - Commerce First' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "conformance trace and architectural boundary finding",
+              "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+              "qualifier": "NO_EXPLICIT_QUALIFIER",
+              "subject": "Commerce Experience Platform tuân thủ",
+              "target": "Commerce Experience Platform tuân thủ: - Commerce First",
+              "trigger": "NO_EXPLICIT_TRIGGER"
+            }
+          },
+          "effective_source_meaning": "Normalize Commerce Experience Platform tuân thủ's obligation for 'Commerce Experience Platform tuân thủ: - Commerce First' as an active atomic conformance requirement, preserving trigger 'NO_EXPLICIT_TRIGGER' and qualifier 'NO_EXPLICIT_QUALIFIER'.",
+          "implementation_impact": "Defines the future acceptance boundary for Commerce Experience Platform tuân thủ / Commerce Experience Platform tuân thủ: - Commerce First; it does not authorize implementation.",
+          "label": "MEASURABLE_ACTIVE_ATOMIC_REQUIREMENT",
+          "option_id": "P2C-AC-C3-DEC-005-OPT-2",
+          "recommended": false,
+          "source_edit_required": true,
+          "target_profile_or_archetype": null,
+          "terminal_disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED"
+        },
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "BRD-UPDATE-01-R020"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that Do not treat 'Commerce Experience Platform tuân thủ: - Commerce First' as active acceptance semantics; normalize its explicit future/deferred scope or obtain a source definition of its measurable boundary. Source: Commerce Experience Platform tuân thủ: - Commerce First applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "conformance trace and architectural boundary finding",
+            "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'Commerce Experience Platform tuân thủ: - Commerce First' for Commerce Experience Platform tuân thủ; conformance trace and architectural boundary finding must distinguish rejection/non-conformance from the positive outcome.",
+            "positive_oracle": "Observe Commerce Experience Platform tuân thủ at NO_EXPLICIT_TRIGGER; conformance trace and architectural boundary finding must show the bound BUSINESS_OUTCOME outcome 'Commerce Experience Platform tuân thủ: - Commerce First' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "conformance trace and architectural boundary finding",
+              "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+              "qualifier": "NO_EXPLICIT_QUALIFIER",
+              "subject": "Commerce Experience Platform tuân thủ",
+              "target": "Commerce Experience Platform tuân thủ: - Commerce First",
+              "trigger": "NO_EXPLICIT_TRIGGER"
+            }
+          },
+          "effective_source_meaning": "Do not treat 'Commerce Experience Platform tuân thủ: - Commerce First' as active acceptance semantics; normalize its explicit future/deferred scope or obtain a source definition of its measurable boundary.",
+          "implementation_impact": "Defines the future acceptance boundary for Commerce Experience Platform tuân thủ / Commerce Experience Platform tuân thủ: - Commerce First; it does not authorize implementation.",
+          "label": "SOURCE_CLARIFICATION_OR_DEFERRED_SCOPE",
+          "option_id": "P2C-AC-C3-DEC-005-OPT-3",
+          "recommended": false,
+          "source_edit_required": true,
+          "target_profile_or_archetype": null,
+          "terminal_disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED"
+        }
+      ],
+      "selected_option": null,
+      "source_statements": [
+        {
+          "requirement_id": "BRD-UPDATE-01-R020",
+          "statement": "Commerce Experience Platform tuân thủ: - Commerce First"
+        }
+      ],
+      "status": "PENDING_HUMAN_APPROVAL"
+    },
+    {
+      "affected_requirements": [
+        "BRD-WS-16-R002"
+      ],
+      "category": "MATERIAL_SEMANTIC_DECISION",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "decision_id": "P2C-AC-C3-DEC-009",
+      "impact_count": 1,
+      "non_claims": [
+        "NOT_SOURCE_REMEDIATION",
+        "NOT_FINAL_ACCEPTANCE_CONTRACT",
+        "NOT_DOCUMENT_BASELINE_APPROVAL",
+        "NOT_YADF_AUTHORIZATION"
+      ],
+      "options": [
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "BRD-WS-16-R002"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that Within v2.3, Authorization must produce the bound outcome 'hỗ trợ mở rộng để đáp ứng các mô hình phân quyền phức tạp trong tương lai' at trigger 'NO_EXPLICIT_TRIGGER' under qualifier 'NO_EXPLICIT_QUALIFIER'; contradictory evidence is non-conforming. Source: Authorization phải hỗ trợ mở rộng để đáp ứng các mô hình phân quyền phức tạp trong tương lai. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "allow/challenge/deny result and audit evidence",
+            "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'hỗ trợ mở rộng để đáp ứng các mô hình phân quyền phức tạp trong tương lai' for Authorization; allow/challenge/deny result and audit evidence must distinguish rejection/non-conformance from the positive outcome.",
+            "positive_oracle": "Observe Authorization at NO_EXPLICIT_TRIGGER; allow/challenge/deny result and audit evidence must show the bound ACCESS_BOUNDARY outcome 'hỗ trợ mở rộng để đáp ứng các mô hình phân quyền phức tạp trong tương lai' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "allow/challenge/deny result and audit evidence",
+              "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+              "qualifier": "NO_EXPLICIT_QUALIFIER",
+              "subject": "Authorization",
+              "target": "hỗ trợ mở rộng để đáp ứng các mô hình phân quyền phức tạp trong tương lai",
+              "trigger": "NO_EXPLICIT_TRIGGER"
+            }
+          },
+          "effective_source_meaning": "Within v2.3, Authorization must produce the bound outcome 'hỗ trợ mở rộng để đáp ứng các mô hình phân quyền phức tạp trong tương lai' at trigger 'NO_EXPLICIT_TRIGGER' under qualifier 'NO_EXPLICIT_QUALIFIER'; contradictory evidence is non-conforming.",
+          "implementation_impact": "Defines the future acceptance boundary for Authorization / hỗ trợ mở rộng để đáp ứng các mô hình phân quyền phức tạp trong tương lai; it does not authorize implementation.",
+          "label": "ACTIVE_STRONG_OBLIGATION",
+          "option_id": "P2C-AC-C3-DEC-009-OPT-1",
+          "recommended": true,
+          "source_edit_required": true,
+          "target_profile_or_archetype": "IAC-C3-DECISION-MATERIALIZED",
+          "terminal_disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE"
+        },
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "BRD-WS-16-R002"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that Preserve the source's exact modal strength for Authorization and verify 'hỗ trợ mở rộng để đáp ứng các mô hình phân quyền phức tạp trong tương lai' only when trigger 'NO_EXPLICIT_TRIGGER' and qualifier 'NO_EXPLICIT_QUALIFIER' apply; do not infer a stronger universal obligation. Source: Authorization phải hỗ trợ mở rộng để đáp ứng các mô hình phân quyền phức tạp trong tương lai. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "allow/challenge/deny result and audit evidence",
+            "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'hỗ trợ mở rộng để đáp ứng các mô hình phân quyền phức tạp trong tương lai' for Authorization; allow/challenge/deny result and audit evidence must distinguish rejection/non-conformance from the positive outcome.",
+            "positive_oracle": "Observe Authorization at NO_EXPLICIT_TRIGGER; allow/challenge/deny result and audit evidence must show the bound ACCESS_BOUNDARY outcome 'hỗ trợ mở rộng để đáp ứng các mô hình phân quyền phức tạp trong tương lai' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "allow/challenge/deny result and audit evidence",
+              "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+              "qualifier": "NO_EXPLICIT_QUALIFIER",
+              "subject": "Authorization",
+              "target": "hỗ trợ mở rộng để đáp ứng các mô hình phân quyền phức tạp trong tương lai",
+              "trigger": "NO_EXPLICIT_TRIGGER"
+            }
+          },
+          "effective_source_meaning": "Preserve the source's exact modal strength for Authorization and verify 'hỗ trợ mở rộng để đáp ứng các mô hình phân quyền phức tạp trong tương lai' only when trigger 'NO_EXPLICIT_TRIGGER' and qualifier 'NO_EXPLICIT_QUALIFIER' apply; do not infer a stronger universal obligation.",
+          "implementation_impact": "Defines the future acceptance boundary for Authorization / hỗ trợ mở rộng để đáp ứng các mô hình phân quyền phức tạp trong tương lai; it does not authorize implementation.",
+          "label": "PRESERVE_REQUIREMENT_SPECIFIC_QUALIFIER",
+          "option_id": "P2C-AC-C3-DEC-009-OPT-2",
+          "recommended": false,
+          "source_edit_required": false,
+          "target_profile_or_archetype": null,
+          "terminal_disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED"
+        },
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "BRD-WS-16-R002"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that Before mapping 'hỗ trợ mở rộng để đáp ứng các mô hình phân quyền phức tạp trong tương lai', revise the source to name Authorization's normative strength, ownership, applicability and failure behavior; no active acceptance route is inferred meanwhile. Source: Authorization phải hỗ trợ mở rộng để đáp ứng các mô hình phân quyền phức tạp trong tương lai. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "allow/challenge/deny result and audit evidence",
+            "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'hỗ trợ mở rộng để đáp ứng các mô hình phân quyền phức tạp trong tương lai' for Authorization; allow/challenge/deny result and audit evidence must distinguish rejection/non-conformance from the positive outcome.",
+            "positive_oracle": "Observe Authorization at NO_EXPLICIT_TRIGGER; allow/challenge/deny result and audit evidence must show the bound ACCESS_BOUNDARY outcome 'hỗ trợ mở rộng để đáp ứng các mô hình phân quyền phức tạp trong tương lai' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "allow/challenge/deny result and audit evidence",
+              "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+              "qualifier": "NO_EXPLICIT_QUALIFIER",
+              "subject": "Authorization",
+              "target": "hỗ trợ mở rộng để đáp ứng các mô hình phân quyền phức tạp trong tương lai",
+              "trigger": "NO_EXPLICIT_TRIGGER"
+            }
+          },
+          "effective_source_meaning": "Before mapping 'hỗ trợ mở rộng để đáp ứng các mô hình phân quyền phức tạp trong tương lai', revise the source to name Authorization's normative strength, ownership, applicability and failure behavior; no active acceptance route is inferred meanwhile.",
+          "implementation_impact": "Defines the future acceptance boundary for Authorization / hỗ trợ mở rộng để đáp ứng các mô hình phân quyền phức tạp trong tương lai; it does not authorize implementation.",
+          "label": "SOURCE_NORMALIZATION_BEFORE_MAPPING",
+          "option_id": "P2C-AC-C3-DEC-009-OPT-3",
+          "recommended": false,
+          "source_edit_required": true,
+          "target_profile_or_archetype": null,
+          "terminal_disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED"
+        }
+      ],
+      "selected_option": null,
+      "source_statements": [
+        {
+          "requirement_id": "BRD-WS-16-R002",
+          "statement": "Authorization phải hỗ trợ mở rộng để đáp ứng các mô hình phân quyền phức tạp trong tương lai."
+        }
+      ],
+      "status": "PENDING_HUMAN_APPROVAL"
+    },
+    {
+      "affected_requirements": [
+        "EP-12-006"
+      ],
+      "category": "MATERIAL_SEMANTIC_DECISION",
+      "criticality_distribution": {
+        "NORMAL": 1
+      },
+      "decision_id": "P2C-AC-C3-DEC-010",
+      "impact_count": 1,
+      "non_claims": [
+        "NOT_SOURCE_REMEDIATION",
+        "NOT_FINAL_ACCEPTANCE_CONTRACT",
+        "NOT_DOCUMENT_BASELINE_APPROVAL",
+        "NOT_YADF_AUTHORIZATION"
+      ],
+      "options": [
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "EP-12-006"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that Within v2.3, Communication Platform must produce the bound outcome 'mở rộng Channel mà không thay đổi Business Logic' at trigger 'NO_EXPLICIT_TRIGGER' under qualifier 'NO_EXPLICIT_QUALIFIER'; contradictory evidence is non-conforming. Source: Communication Platform hỗ trợ mở rộng Channel mà không thay đổi Business Logic. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "observable policy decision, business state, or customer/operator-visible outcome",
+            "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'mở rộng Channel mà không thay đổi Business Logic' for Communication Platform; observable policy decision, business state, or customer/operator-visible outcome must distinguish rejection/non-conformance from the positive outcome.",
+            "positive_oracle": "Observe Communication Platform at NO_EXPLICIT_TRIGGER; observable policy decision, business state, or customer/operator-visible outcome must show the bound CAPABILITY_AVAILABILITY outcome 'mở rộng Channel mà không thay đổi Business Logic' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "observable policy decision, business state, or customer/operator-visible outcome",
+              "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+              "qualifier": "NO_EXPLICIT_QUALIFIER",
+              "subject": "Communication Platform",
+              "target": "mở rộng Channel mà không thay đổi Business Logic",
+              "trigger": "NO_EXPLICIT_TRIGGER"
+            }
+          },
+          "effective_source_meaning": "Within v2.3, Communication Platform must produce the bound outcome 'mở rộng Channel mà không thay đổi Business Logic' at trigger 'NO_EXPLICIT_TRIGGER' under qualifier 'NO_EXPLICIT_QUALIFIER'; contradictory evidence is non-conforming.",
+          "implementation_impact": "Defines the future acceptance boundary for Communication Platform / mở rộng Channel mà không thay đổi Business Logic; it does not authorize implementation.",
+          "label": "ACTIVE_STRONG_OBLIGATION",
+          "option_id": "P2C-AC-C3-DEC-010-OPT-1",
+          "recommended": true,
+          "source_edit_required": true,
+          "target_profile_or_archetype": "IAC-C3-DECISION-MATERIALIZED",
+          "terminal_disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE"
+        },
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "EP-12-006"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that Preserve the source's exact modal strength for Communication Platform and verify 'mở rộng Channel mà không thay đổi Business Logic' only when trigger 'NO_EXPLICIT_TRIGGER' and qualifier 'NO_EXPLICIT_QUALIFIER' apply; do not infer a stronger universal obligation. Source: Communication Platform hỗ trợ mở rộng Channel mà không thay đổi Business Logic. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "observable policy decision, business state, or customer/operator-visible outcome",
+            "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'mở rộng Channel mà không thay đổi Business Logic' for Communication Platform; observable policy decision, business state, or customer/operator-visible outcome must distinguish rejection/non-conformance from the positive outcome.",
+            "positive_oracle": "Observe Communication Platform at NO_EXPLICIT_TRIGGER; observable policy decision, business state, or customer/operator-visible outcome must show the bound CAPABILITY_AVAILABILITY outcome 'mở rộng Channel mà không thay đổi Business Logic' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "observable policy decision, business state, or customer/operator-visible outcome",
+              "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+              "qualifier": "NO_EXPLICIT_QUALIFIER",
+              "subject": "Communication Platform",
+              "target": "mở rộng Channel mà không thay đổi Business Logic",
+              "trigger": "NO_EXPLICIT_TRIGGER"
+            }
+          },
+          "effective_source_meaning": "Preserve the source's exact modal strength for Communication Platform and verify 'mở rộng Channel mà không thay đổi Business Logic' only when trigger 'NO_EXPLICIT_TRIGGER' and qualifier 'NO_EXPLICIT_QUALIFIER' apply; do not infer a stronger universal obligation.",
+          "implementation_impact": "Defines the future acceptance boundary for Communication Platform / mở rộng Channel mà không thay đổi Business Logic; it does not authorize implementation.",
+          "label": "PRESERVE_REQUIREMENT_SPECIFIC_QUALIFIER",
+          "option_id": "P2C-AC-C3-DEC-010-OPT-2",
+          "recommended": false,
+          "source_edit_required": false,
+          "target_profile_or_archetype": null,
+          "terminal_disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED"
+        },
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "EP-12-006"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that Before mapping 'mở rộng Channel mà không thay đổi Business Logic', revise the source to name Communication Platform's normative strength, ownership, applicability and failure behavior; no active acceptance route is inferred meanwhile. Source: Communication Platform hỗ trợ mở rộng Channel mà không thay đổi Business Logic. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "observable policy decision, business state, or customer/operator-visible outcome",
+            "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'mở rộng Channel mà không thay đổi Business Logic' for Communication Platform; observable policy decision, business state, or customer/operator-visible outcome must distinguish rejection/non-conformance from the positive outcome.",
+            "positive_oracle": "Observe Communication Platform at NO_EXPLICIT_TRIGGER; observable policy decision, business state, or customer/operator-visible outcome must show the bound CAPABILITY_AVAILABILITY outcome 'mở rộng Channel mà không thay đổi Business Logic' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "observable policy decision, business state, or customer/operator-visible outcome",
+              "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+              "qualifier": "NO_EXPLICIT_QUALIFIER",
+              "subject": "Communication Platform",
+              "target": "mở rộng Channel mà không thay đổi Business Logic",
+              "trigger": "NO_EXPLICIT_TRIGGER"
+            }
+          },
+          "effective_source_meaning": "Before mapping 'mở rộng Channel mà không thay đổi Business Logic', revise the source to name Communication Platform's normative strength, ownership, applicability and failure behavior; no active acceptance route is inferred meanwhile.",
+          "implementation_impact": "Defines the future acceptance boundary for Communication Platform / mở rộng Channel mà không thay đổi Business Logic; it does not authorize implementation.",
+          "label": "SOURCE_NORMALIZATION_BEFORE_MAPPING",
+          "option_id": "P2C-AC-C3-DEC-010-OPT-3",
+          "recommended": false,
+          "source_edit_required": true,
+          "target_profile_or_archetype": null,
+          "terminal_disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED"
+        }
+      ],
+      "selected_option": null,
+      "source_statements": [
+        {
+          "requirement_id": "EP-12-006",
+          "statement": "Communication Platform hỗ trợ mở rộng Channel mà không thay đổi Business Logic."
+        }
+      ],
+      "status": "PENDING_HUMAN_APPROVAL"
+    },
+    {
+      "affected_requirements": [
+        "EP-12-007"
+      ],
+      "category": "MATERIAL_SEMANTIC_DECISION",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "decision_id": "P2C-AC-C3-DEC-011",
+      "impact_count": 1,
+      "non_claims": [
+        "NOT_SOURCE_REMEDIATION",
+        "NOT_FINAL_ACCEPTANCE_CONTRACT",
+        "NOT_DOCUMENT_BASELINE_APPROVAL",
+        "NOT_YADF_AUTHORIZATION"
+      ],
+      "options": [
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "EP-12-007"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that Within v2.3, Message Queue và Channel Adapter must produce the bound outcome 'nền tảng mở rộng Performance' at trigger 'NO_EXPLICIT_TRIGGER' under qualifier 'NO_EXPLICIT_QUALIFIER'; contradictory evidence is non-conforming. Source: Message Queue và Channel Adapter là nền tảng mở rộng Performance. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "measured business-facing performance result and boundary outcome",
+            "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'nền tảng mở rộng Performance' for Message Queue và Channel Adapter; measured business-facing performance result and boundary outcome must distinguish rejection/non-conformance from the positive outcome.",
+            "positive_oracle": "Observe Message Queue và Channel Adapter at NO_EXPLICIT_TRIGGER; measured business-facing performance result and boundary outcome must show the bound CLASSIFICATION outcome 'nền tảng mở rộng Performance' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "measured business-facing performance result and boundary outcome",
+              "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+              "qualifier": "NO_EXPLICIT_QUALIFIER",
+              "subject": "Message Queue và Channel Adapter",
+              "target": "nền tảng mở rộng Performance",
+              "trigger": "NO_EXPLICIT_TRIGGER"
+            }
+          },
+          "effective_source_meaning": "Within v2.3, Message Queue và Channel Adapter must produce the bound outcome 'nền tảng mở rộng Performance' at trigger 'NO_EXPLICIT_TRIGGER' under qualifier 'NO_EXPLICIT_QUALIFIER'; contradictory evidence is non-conforming.",
+          "implementation_impact": "Defines the future acceptance boundary for Message Queue và Channel Adapter / nền tảng mở rộng Performance; it does not authorize implementation.",
+          "label": "ACTIVE_STRONG_OBLIGATION",
+          "option_id": "P2C-AC-C3-DEC-011-OPT-1",
+          "recommended": true,
+          "source_edit_required": true,
+          "target_profile_or_archetype": "IAC-C3-DECISION-MATERIALIZED",
+          "terminal_disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE"
+        },
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "EP-12-007"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that Preserve the source's exact modal strength for Message Queue và Channel Adapter and verify 'nền tảng mở rộng Performance' only when trigger 'NO_EXPLICIT_TRIGGER' and qualifier 'NO_EXPLICIT_QUALIFIER' apply; do not infer a stronger universal obligation. Source: Message Queue và Channel Adapter là nền tảng mở rộng Performance. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "measured business-facing performance result and boundary outcome",
+            "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'nền tảng mở rộng Performance' for Message Queue và Channel Adapter; measured business-facing performance result and boundary outcome must distinguish rejection/non-conformance from the positive outcome.",
+            "positive_oracle": "Observe Message Queue và Channel Adapter at NO_EXPLICIT_TRIGGER; measured business-facing performance result and boundary outcome must show the bound CLASSIFICATION outcome 'nền tảng mở rộng Performance' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "measured business-facing performance result and boundary outcome",
+              "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+              "qualifier": "NO_EXPLICIT_QUALIFIER",
+              "subject": "Message Queue và Channel Adapter",
+              "target": "nền tảng mở rộng Performance",
+              "trigger": "NO_EXPLICIT_TRIGGER"
+            }
+          },
+          "effective_source_meaning": "Preserve the source's exact modal strength for Message Queue và Channel Adapter and verify 'nền tảng mở rộng Performance' only when trigger 'NO_EXPLICIT_TRIGGER' and qualifier 'NO_EXPLICIT_QUALIFIER' apply; do not infer a stronger universal obligation.",
+          "implementation_impact": "Defines the future acceptance boundary for Message Queue và Channel Adapter / nền tảng mở rộng Performance; it does not authorize implementation.",
+          "label": "PRESERVE_REQUIREMENT_SPECIFIC_QUALIFIER",
+          "option_id": "P2C-AC-C3-DEC-011-OPT-2",
+          "recommended": false,
+          "source_edit_required": false,
+          "target_profile_or_archetype": null,
+          "terminal_disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED"
+        },
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "EP-12-007"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that Before mapping 'nền tảng mở rộng Performance', revise the source to name Message Queue và Channel Adapter's normative strength, ownership, applicability and failure behavior; no active acceptance route is inferred meanwhile. Source: Message Queue và Channel Adapter là nền tảng mở rộng Performance. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "measured business-facing performance result and boundary outcome",
+            "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'nền tảng mở rộng Performance' for Message Queue và Channel Adapter; measured business-facing performance result and boundary outcome must distinguish rejection/non-conformance from the positive outcome.",
+            "positive_oracle": "Observe Message Queue và Channel Adapter at NO_EXPLICIT_TRIGGER; measured business-facing performance result and boundary outcome must show the bound CLASSIFICATION outcome 'nền tảng mở rộng Performance' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "measured business-facing performance result and boundary outcome",
+              "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+              "qualifier": "NO_EXPLICIT_QUALIFIER",
+              "subject": "Message Queue và Channel Adapter",
+              "target": "nền tảng mở rộng Performance",
+              "trigger": "NO_EXPLICIT_TRIGGER"
+            }
+          },
+          "effective_source_meaning": "Before mapping 'nền tảng mở rộng Performance', revise the source to name Message Queue và Channel Adapter's normative strength, ownership, applicability and failure behavior; no active acceptance route is inferred meanwhile.",
+          "implementation_impact": "Defines the future acceptance boundary for Message Queue và Channel Adapter / nền tảng mở rộng Performance; it does not authorize implementation.",
+          "label": "SOURCE_NORMALIZATION_BEFORE_MAPPING",
+          "option_id": "P2C-AC-C3-DEC-011-OPT-3",
+          "recommended": false,
+          "source_edit_required": true,
+          "target_profile_or_archetype": null,
+          "terminal_disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED"
+        }
+      ],
+      "selected_option": null,
+      "source_statements": [
+        {
+          "requirement_id": "EP-12-007",
+          "statement": "Message Queue và Channel Adapter là nền tảng mở rộng Performance."
+        }
+      ],
+      "status": "PENDING_HUMAN_APPROVAL"
+    },
+    {
+      "affected_requirements": [
+        "UXF-01-R008",
+        "UXF-01-R011"
+      ],
+      "category": "MATERIAL_SEMANTIC_DECISION",
+      "criticality_distribution": {
+        "HIGH": 2
+      },
+      "decision_id": "P2C-AC-C3-DEC-018",
+      "impact_count": 2,
+      "non_claims": [
+        "NOT_SOURCE_REMEDIATION",
+        "NOT_FINAL_ACCEPTANCE_CONTRACT",
+        "NOT_DOCUMENT_BASELINE_APPROVAL",
+        "NOT_YADF_AUTHORIZATION"
+      ],
+      "options": [
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "UXF-01-R008",
+            "UXF-01-R011"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='Every experience should support: - Responsive layouts', verify that Within v2.3, Every experience should support must produce the bound outcome 'Every experience should support: - Responsive layouts' at trigger 'NO_EXPLICIT_TRIGGER' under qualifier 'Every experience should support: - Responsive layouts'; contradictory evidence is non-conforming. Source: Every experience should support: - Responsive layouts | Every experience should support: - Mobile-first behavior applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "rendered state, available/prohibited action, and user-visible feedback",
+            "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'Every experience should support: - Responsive layouts' for Every experience should support; rendered state, available/prohibited action, and user-visible feedback must distinguish rejection/non-conformance from the positive outcome.",
+            "positive_oracle": "Observe Every experience should support at NO_EXPLICIT_TRIGGER; rendered state, available/prohibited action, and user-visible feedback must show the bound CAPABILITY_AVAILABILITY outcome 'Every experience should support: - Responsive layouts' under qualifier 'Every experience should support: - Responsive layouts'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "rendered state, available/prohibited action, and user-visible feedback",
+              "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+              "qualifier": "Every experience should support: - Responsive layouts",
+              "subject": "Every experience should support",
+              "target": "Every experience should support: - Responsive layouts",
+              "trigger": "NO_EXPLICIT_TRIGGER"
+            }
+          },
+          "effective_source_meaning": "Within v2.3, Every experience should support must produce the bound outcome 'Every experience should support: - Responsive layouts' at trigger 'NO_EXPLICIT_TRIGGER' under qualifier 'Every experience should support: - Responsive layouts'; contradictory evidence is non-conforming.",
+          "implementation_impact": "Defines the future acceptance boundary for Every experience should support / Every experience should support: - Responsive layouts; it does not authorize implementation.",
+          "label": "ACTIVE_STRONG_OBLIGATION",
+          "option_id": "P2C-AC-C3-DEC-018-OPT-1",
+          "recommended": true,
+          "source_edit_required": true,
+          "target_profile_or_archetype": "IAC-C3-DECISION-MATERIALIZED",
+          "terminal_disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE"
+        },
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "UXF-01-R008",
+            "UXF-01-R011"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='Every experience should support: - Responsive layouts', verify that Preserve the source's exact modal strength for Every experience should support and verify 'Every experience should support: - Responsive layouts' only when trigger 'NO_EXPLICIT_TRIGGER' and qualifier 'Every experience should support: - Responsive layouts' apply; do not infer a stronger universal obligation. Source: Every experience should support: - Responsive layouts | Every experience should support: - Mobile-first behavior applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "rendered state, available/prohibited action, and user-visible feedback",
+            "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'Every experience should support: - Responsive layouts' for Every experience should support; rendered state, available/prohibited action, and user-visible feedback must distinguish rejection/non-conformance from the positive outcome.",
+            "positive_oracle": "Observe Every experience should support at NO_EXPLICIT_TRIGGER; rendered state, available/prohibited action, and user-visible feedback must show the bound CAPABILITY_AVAILABILITY outcome 'Every experience should support: - Responsive layouts' under qualifier 'Every experience should support: - Responsive layouts'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "rendered state, available/prohibited action, and user-visible feedback",
+              "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+              "qualifier": "Every experience should support: - Responsive layouts",
+              "subject": "Every experience should support",
+              "target": "Every experience should support: - Responsive layouts",
+              "trigger": "NO_EXPLICIT_TRIGGER"
+            }
+          },
+          "effective_source_meaning": "Preserve the source's exact modal strength for Every experience should support and verify 'Every experience should support: - Responsive layouts' only when trigger 'NO_EXPLICIT_TRIGGER' and qualifier 'Every experience should support: - Responsive layouts' apply; do not infer a stronger universal obligation.",
+          "implementation_impact": "Defines the future acceptance boundary for Every experience should support / Every experience should support: - Responsive layouts; it does not authorize implementation.",
+          "label": "PRESERVE_REQUIREMENT_SPECIFIC_QUALIFIER",
+          "option_id": "P2C-AC-C3-DEC-018-OPT-2",
+          "recommended": false,
+          "source_edit_required": false,
+          "target_profile_or_archetype": null,
+          "terminal_disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED"
+        },
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "UXF-01-R008",
+            "UXF-01-R011"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='Every experience should support: - Responsive layouts', verify that Before mapping 'Every experience should support: - Responsive layouts', revise the source to name Every experience should support's normative strength, ownership, applicability and failure behavior; no active acceptance route is inferred meanwhile. Source: Every experience should support: - Responsive layouts | Every experience should support: - Mobile-first behavior applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "rendered state, available/prohibited action, and user-visible feedback",
+            "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'Every experience should support: - Responsive layouts' for Every experience should support; rendered state, available/prohibited action, and user-visible feedback must distinguish rejection/non-conformance from the positive outcome.",
+            "positive_oracle": "Observe Every experience should support at NO_EXPLICIT_TRIGGER; rendered state, available/prohibited action, and user-visible feedback must show the bound CAPABILITY_AVAILABILITY outcome 'Every experience should support: - Responsive layouts' under qualifier 'Every experience should support: - Responsive layouts'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "rendered state, available/prohibited action, and user-visible feedback",
+              "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+              "qualifier": "Every experience should support: - Responsive layouts",
+              "subject": "Every experience should support",
+              "target": "Every experience should support: - Responsive layouts",
+              "trigger": "NO_EXPLICIT_TRIGGER"
+            }
+          },
+          "effective_source_meaning": "Before mapping 'Every experience should support: - Responsive layouts', revise the source to name Every experience should support's normative strength, ownership, applicability and failure behavior; no active acceptance route is inferred meanwhile.",
+          "implementation_impact": "Defines the future acceptance boundary for Every experience should support / Every experience should support: - Responsive layouts; it does not authorize implementation.",
+          "label": "SOURCE_NORMALIZATION_BEFORE_MAPPING",
+          "option_id": "P2C-AC-C3-DEC-018-OPT-3",
+          "recommended": false,
+          "source_edit_required": true,
+          "target_profile_or_archetype": null,
+          "terminal_disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED"
+        }
+      ],
+      "selected_option": null,
+      "source_statements": [
+        {
+          "requirement_id": "UXF-01-R008",
+          "statement": "Every experience should support: - Responsive layouts"
+        },
+        {
+          "requirement_id": "UXF-01-R011",
+          "statement": "Every experience should support: - Mobile-first behavior"
+        }
+      ],
+      "status": "PENDING_HUMAN_APPROVAL"
+    },
+    {
+      "affected_requirements": [
+        "BD-03-004"
+      ],
+      "category": "MATERIAL_SEMANTIC_DECISION",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "decision_id": "P2C-AC-C3-DEC-019",
+      "impact_count": 1,
+      "non_claims": [
+        "NOT_SOURCE_REMEDIATION",
+        "NOT_FINAL_ACCEPTANCE_CONTRACT",
+        "NOT_DOCUMENT_BASELINE_APPROVAL",
+        "NOT_YADF_AUTHORIZATION"
+      ],
+      "options": [
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "BD-03-004"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that Within v2.3, Customer Portal must produce the bound outcome 'Storefront mở rộng' at trigger 'NO_EXPLICIT_TRIGGER' under qualifier 'NO_EXPLICIT_QUALIFIER'; contradictory evidence is non-conforming. Source: Customer Portal là Storefront mở rộng. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "observable policy decision, business state, or customer/operator-visible outcome",
+            "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'Storefront mở rộng' for Customer Portal; observable policy decision, business state, or customer/operator-visible outcome must distinguish rejection/non-conformance from the positive outcome.",
+            "positive_oracle": "Observe Customer Portal at NO_EXPLICIT_TRIGGER; observable policy decision, business state, or customer/operator-visible outcome must show the bound CLASSIFICATION outcome 'Storefront mở rộng' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "observable policy decision, business state, or customer/operator-visible outcome",
+              "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+              "qualifier": "NO_EXPLICIT_QUALIFIER",
+              "subject": "Customer Portal",
+              "target": "Storefront mở rộng",
+              "trigger": "NO_EXPLICIT_TRIGGER"
+            }
+          },
+          "effective_source_meaning": "Within v2.3, Customer Portal must produce the bound outcome 'Storefront mở rộng' at trigger 'NO_EXPLICIT_TRIGGER' under qualifier 'NO_EXPLICIT_QUALIFIER'; contradictory evidence is non-conforming.",
+          "implementation_impact": "Defines the future acceptance boundary for Customer Portal / Storefront mở rộng; it does not authorize implementation.",
+          "label": "ACTIVE_STRONG_OBLIGATION",
+          "option_id": "P2C-AC-C3-DEC-019-OPT-1",
+          "recommended": true,
+          "source_edit_required": true,
+          "target_profile_or_archetype": "IAC-C3-DECISION-MATERIALIZED",
+          "terminal_disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE"
+        },
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "BD-03-004"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that Preserve the source's exact modal strength for Customer Portal and verify 'Storefront mở rộng' only when trigger 'NO_EXPLICIT_TRIGGER' and qualifier 'NO_EXPLICIT_QUALIFIER' apply; do not infer a stronger universal obligation. Source: Customer Portal là Storefront mở rộng. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "observable policy decision, business state, or customer/operator-visible outcome",
+            "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'Storefront mở rộng' for Customer Portal; observable policy decision, business state, or customer/operator-visible outcome must distinguish rejection/non-conformance from the positive outcome.",
+            "positive_oracle": "Observe Customer Portal at NO_EXPLICIT_TRIGGER; observable policy decision, business state, or customer/operator-visible outcome must show the bound CLASSIFICATION outcome 'Storefront mở rộng' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "observable policy decision, business state, or customer/operator-visible outcome",
+              "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+              "qualifier": "NO_EXPLICIT_QUALIFIER",
+              "subject": "Customer Portal",
+              "target": "Storefront mở rộng",
+              "trigger": "NO_EXPLICIT_TRIGGER"
+            }
+          },
+          "effective_source_meaning": "Preserve the source's exact modal strength for Customer Portal and verify 'Storefront mở rộng' only when trigger 'NO_EXPLICIT_TRIGGER' and qualifier 'NO_EXPLICIT_QUALIFIER' apply; do not infer a stronger universal obligation.",
+          "implementation_impact": "Defines the future acceptance boundary for Customer Portal / Storefront mở rộng; it does not authorize implementation.",
+          "label": "PRESERVE_REQUIREMENT_SPECIFIC_QUALIFIER",
+          "option_id": "P2C-AC-C3-DEC-019-OPT-2",
+          "recommended": false,
+          "source_edit_required": false,
+          "target_profile_or_archetype": null,
+          "terminal_disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED"
+        },
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "BD-03-004"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that Before mapping 'Storefront mở rộng', revise the source to name Customer Portal's normative strength, ownership, applicability and failure behavior; no active acceptance route is inferred meanwhile. Source: Customer Portal là Storefront mở rộng. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "observable policy decision, business state, or customer/operator-visible outcome",
+            "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'Storefront mở rộng' for Customer Portal; observable policy decision, business state, or customer/operator-visible outcome must distinguish rejection/non-conformance from the positive outcome.",
+            "positive_oracle": "Observe Customer Portal at NO_EXPLICIT_TRIGGER; observable policy decision, business state, or customer/operator-visible outcome must show the bound CLASSIFICATION outcome 'Storefront mở rộng' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "observable policy decision, business state, or customer/operator-visible outcome",
+              "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+              "qualifier": "NO_EXPLICIT_QUALIFIER",
+              "subject": "Customer Portal",
+              "target": "Storefront mở rộng",
+              "trigger": "NO_EXPLICIT_TRIGGER"
+            }
+          },
+          "effective_source_meaning": "Before mapping 'Storefront mở rộng', revise the source to name Customer Portal's normative strength, ownership, applicability and failure behavior; no active acceptance route is inferred meanwhile.",
+          "implementation_impact": "Defines the future acceptance boundary for Customer Portal / Storefront mở rộng; it does not authorize implementation.",
+          "label": "SOURCE_NORMALIZATION_BEFORE_MAPPING",
+          "option_id": "P2C-AC-C3-DEC-019-OPT-3",
+          "recommended": false,
+          "source_edit_required": true,
+          "target_profile_or_archetype": null,
+          "terminal_disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED"
+        }
+      ],
+      "selected_option": null,
+      "source_statements": [
+        {
+          "requirement_id": "BD-03-004",
+          "statement": "Customer Portal là Storefront mở rộng."
+        }
+      ],
+      "status": "PENDING_HUMAN_APPROVAL"
+    },
+    {
+      "affected_requirements": [
+        "BRD-UPDATE-01-R024"
+      ],
+      "category": "SOURCE_OR_SCOPE_DECISION",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "decision_id": "P2C-AC-C3-DEC-023",
+      "impact_count": 1,
+      "non_claims": [
+        "NOT_SOURCE_REMEDIATION",
+        "NOT_FINAL_ACCEPTANCE_CONTRACT",
+        "NOT_DOCUMENT_BASELINE_APPROVAL",
+        "NOT_YADF_AUTHORIZATION"
+      ],
+      "options": [
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "BRD-UPDATE-01-R024"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that Treat 'Commerce Experience Platform tuân thủ: - Multi-tenant' as a principle/composite statement for Commerce Experience Platform tuân thủ; it has no direct implementation, acceptance, scope-coverage, or criticality unit and coverage is delegated to reconciled children. Source: Commerce Experience Platform tuân thủ: - Multi-tenant applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "conformance trace and architectural boundary finding",
+            "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'Commerce Experience Platform tuân thủ: - Multi-tenant' for Commerce Experience Platform tuân thủ; conformance trace and architectural boundary finding must distinguish rejection/non-conformance from the positive outcome.",
+            "positive_oracle": "Observe Commerce Experience Platform tuân thủ at NO_EXPLICIT_TRIGGER; conformance trace and architectural boundary finding must show the bound BUSINESS_OUTCOME outcome 'Commerce Experience Platform tuân thủ: - Multi-tenant' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "conformance trace and architectural boundary finding",
+              "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+              "qualifier": "NO_EXPLICIT_QUALIFIER",
+              "subject": "Commerce Experience Platform tuân thủ",
+              "target": "Commerce Experience Platform tuân thủ: - Multi-tenant",
+              "trigger": "NO_EXPLICIT_TRIGGER"
+            }
+          },
+          "effective_source_meaning": "Treat 'Commerce Experience Platform tuân thủ: - Multi-tenant' as a principle/composite statement for Commerce Experience Platform tuân thủ; it has no direct implementation, acceptance, scope-coverage, or criticality unit and coverage is delegated to reconciled children.",
+          "implementation_impact": "Defines the future acceptance boundary for Commerce Experience Platform tuân thủ / Commerce Experience Platform tuân thủ: - Multi-tenant; it does not authorize implementation.",
+          "label": "COMPOSITE_PRINCIPLE_NON_UNIT",
+          "option_id": "P2C-AC-C3-DEC-023-OPT-1",
+          "recommended": true,
+          "source_edit_required": true,
+          "target_profile_or_archetype": null,
+          "terminal_disposition": "STRUCTURAL_RECONCILIATION_REQUIRED"
+        },
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "BRD-UPDATE-01-R024"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that Normalize Commerce Experience Platform tuân thủ's obligation for 'Commerce Experience Platform tuân thủ: - Multi-tenant' as an active atomic conformance requirement, preserving trigger 'NO_EXPLICIT_TRIGGER' and qualifier 'NO_EXPLICIT_QUALIFIER'. Source: Commerce Experience Platform tuân thủ: - Multi-tenant applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "conformance trace and architectural boundary finding",
+            "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'Commerce Experience Platform tuân thủ: - Multi-tenant' for Commerce Experience Platform tuân thủ; conformance trace and architectural boundary finding must distinguish rejection/non-conformance from the positive outcome.",
+            "positive_oracle": "Observe Commerce Experience Platform tuân thủ at NO_EXPLICIT_TRIGGER; conformance trace and architectural boundary finding must show the bound BUSINESS_OUTCOME outcome 'Commerce Experience Platform tuân thủ: - Multi-tenant' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "conformance trace and architectural boundary finding",
+              "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+              "qualifier": "NO_EXPLICIT_QUALIFIER",
+              "subject": "Commerce Experience Platform tuân thủ",
+              "target": "Commerce Experience Platform tuân thủ: - Multi-tenant",
+              "trigger": "NO_EXPLICIT_TRIGGER"
+            }
+          },
+          "effective_source_meaning": "Normalize Commerce Experience Platform tuân thủ's obligation for 'Commerce Experience Platform tuân thủ: - Multi-tenant' as an active atomic conformance requirement, preserving trigger 'NO_EXPLICIT_TRIGGER' and qualifier 'NO_EXPLICIT_QUALIFIER'.",
+          "implementation_impact": "Defines the future acceptance boundary for Commerce Experience Platform tuân thủ / Commerce Experience Platform tuân thủ: - Multi-tenant; it does not authorize implementation.",
+          "label": "MEASURABLE_ACTIVE_ATOMIC_REQUIREMENT",
+          "option_id": "P2C-AC-C3-DEC-023-OPT-2",
+          "recommended": false,
+          "source_edit_required": true,
+          "target_profile_or_archetype": null,
+          "terminal_disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED"
+        },
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "BRD-UPDATE-01-R024"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that Do not treat 'Commerce Experience Platform tuân thủ: - Multi-tenant' as active acceptance semantics; normalize its explicit future/deferred scope or obtain a source definition of its measurable boundary. Source: Commerce Experience Platform tuân thủ: - Multi-tenant applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "conformance trace and architectural boundary finding",
+            "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'Commerce Experience Platform tuân thủ: - Multi-tenant' for Commerce Experience Platform tuân thủ; conformance trace and architectural boundary finding must distinguish rejection/non-conformance from the positive outcome.",
+            "positive_oracle": "Observe Commerce Experience Platform tuân thủ at NO_EXPLICIT_TRIGGER; conformance trace and architectural boundary finding must show the bound BUSINESS_OUTCOME outcome 'Commerce Experience Platform tuân thủ: - Multi-tenant' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "conformance trace and architectural boundary finding",
+              "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+              "qualifier": "NO_EXPLICIT_QUALIFIER",
+              "subject": "Commerce Experience Platform tuân thủ",
+              "target": "Commerce Experience Platform tuân thủ: - Multi-tenant",
+              "trigger": "NO_EXPLICIT_TRIGGER"
+            }
+          },
+          "effective_source_meaning": "Do not treat 'Commerce Experience Platform tuân thủ: - Multi-tenant' as active acceptance semantics; normalize its explicit future/deferred scope or obtain a source definition of its measurable boundary.",
+          "implementation_impact": "Defines the future acceptance boundary for Commerce Experience Platform tuân thủ / Commerce Experience Platform tuân thủ: - Multi-tenant; it does not authorize implementation.",
+          "label": "SOURCE_CLARIFICATION_OR_DEFERRED_SCOPE",
+          "option_id": "P2C-AC-C3-DEC-023-OPT-3",
+          "recommended": false,
+          "source_edit_required": true,
+          "target_profile_or_archetype": null,
+          "terminal_disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED"
+        }
+      ],
+      "selected_option": null,
+      "source_statements": [
+        {
+          "requirement_id": "BRD-UPDATE-01-R024",
+          "statement": "Commerce Experience Platform tuân thủ: - Multi-tenant"
+        }
+      ],
+      "status": "PENDING_HUMAN_APPROVAL"
+    },
+    {
+      "affected_requirements": [
+        "BRD-UPDATE-01-R029"
+      ],
+      "category": "MATERIAL_SEMANTIC_DECISION",
+      "criticality_distribution": {
+        "NORMAL": 1
+      },
+      "decision_id": "P2C-AC-C3-DEC-027",
+      "impact_count": 1,
+      "non_claims": [
+        "NOT_SOURCE_REMEDIATION",
+        "NOT_FINAL_ACCEPTANCE_CONTRACT",
+        "NOT_DOCUMENT_BASELINE_APPROVAL",
+        "NOT_YADF_AUTHORIZATION"
+      ],
+      "options": [
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "BRD-UPDATE-01-R029"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='Commerce Experience phải ưu tiên trải nghiệm người dùng trong các quyết định trình bày mà không thay đổi hành vi nghiệp vụ chuẩn', verify that Within v2.3, Commerce Experience must produce the bound outcome 'ưu tiên trải nghiệm người dùng trong các quyết định trình bày mà không thay đổi hành vi nghiệp vụ chuẩn' at trigger 'NO_EXPLICIT_TRIGGER' under qualifier 'Commerce Experience phải ưu tiên trải nghiệm người dùng trong các quyết định trình bày mà không thay đổi hành vi nghiệp vụ chuẩn'; contradictory evidence is non-conforming. Source: Commerce Experience phải ưu tiên trải nghiệm người dùng trong các quyết định trình bày mà không thay đổi hành vi nghiệp vụ chuẩn. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "conformance trace and architectural boundary finding",
+            "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'ưu tiên trải nghiệm người dùng trong các quyết định trình bày mà không thay đổi hành vi nghiệp vụ chuẩn' for Commerce Experience; conformance trace and architectural boundary finding must distinguish rejection/non-conformance from the positive outcome.",
+            "positive_oracle": "Observe Commerce Experience at NO_EXPLICIT_TRIGGER; conformance trace and architectural boundary finding must show the bound POLICY_OUTCOME outcome 'ưu tiên trải nghiệm người dùng trong các quyết định trình bày mà không thay đổi hành vi nghiệp vụ chuẩn' under qualifier 'Commerce Experience phải ưu tiên trải nghiệm người dùng trong các quyết định trình bày mà không thay đổi hành vi nghiệp vụ chuẩn'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "conformance trace and architectural boundary finding",
+              "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+              "qualifier": "Commerce Experience phải ưu tiên trải nghiệm người dùng trong các quyết định trình bày mà không thay đổi hành vi nghiệp vụ chuẩn",
+              "subject": "Commerce Experience",
+              "target": "ưu tiên trải nghiệm người dùng trong các quyết định trình bày mà không thay đổi hành vi nghiệp vụ chuẩn",
+              "trigger": "NO_EXPLICIT_TRIGGER"
+            }
+          },
+          "effective_source_meaning": "Within v2.3, Commerce Experience must produce the bound outcome 'ưu tiên trải nghiệm người dùng trong các quyết định trình bày mà không thay đổi hành vi nghiệp vụ chuẩn' at trigger 'NO_EXPLICIT_TRIGGER' under qualifier 'Commerce Experience phải ưu tiên trải nghiệm người dùng trong các quyết định trình bày mà không thay đổi hành vi nghiệp vụ chuẩn'; contradictory evidence is non-conforming.",
+          "implementation_impact": "Defines the future acceptance boundary for Commerce Experience / ưu tiên trải nghiệm người dùng trong các quyết định trình bày mà không thay đổi hành vi nghiệp vụ chuẩn; it does not authorize implementation.",
+          "label": "ACTIVE_STRONG_OBLIGATION",
+          "option_id": "P2C-AC-C3-DEC-027-OPT-1",
+          "recommended": true,
+          "source_edit_required": true,
+          "target_profile_or_archetype": "IAC-C3-DECISION-MATERIALIZED",
+          "terminal_disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE"
+        },
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "BRD-UPDATE-01-R029"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='Commerce Experience phải ưu tiên trải nghiệm người dùng trong các quyết định trình bày mà không thay đổi hành vi nghiệp vụ chuẩn', verify that Preserve the source's exact modal strength for Commerce Experience and verify 'ưu tiên trải nghiệm người dùng trong các quyết định trình bày mà không thay đổi hành vi nghiệp vụ chuẩn' only when trigger 'NO_EXPLICIT_TRIGGER' and qualifier 'Commerce Experience phải ưu tiên trải nghiệm người dùng trong các quyết định trình bày mà không thay đổi hành vi nghiệp vụ chuẩn' apply; do not infer a stronger universal obligation. Source: Commerce Experience phải ưu tiên trải nghiệm người dùng trong các quyết định trình bày mà không thay đổi hành vi nghiệp vụ chuẩn. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "conformance trace and architectural boundary finding",
+            "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'ưu tiên trải nghiệm người dùng trong các quyết định trình bày mà không thay đổi hành vi nghiệp vụ chuẩn' for Commerce Experience; conformance trace and architectural boundary finding must distinguish rejection/non-conformance from the positive outcome.",
+            "positive_oracle": "Observe Commerce Experience at NO_EXPLICIT_TRIGGER; conformance trace and architectural boundary finding must show the bound POLICY_OUTCOME outcome 'ưu tiên trải nghiệm người dùng trong các quyết định trình bày mà không thay đổi hành vi nghiệp vụ chuẩn' under qualifier 'Commerce Experience phải ưu tiên trải nghiệm người dùng trong các quyết định trình bày mà không thay đổi hành vi nghiệp vụ chuẩn'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "conformance trace and architectural boundary finding",
+              "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+              "qualifier": "Commerce Experience phải ưu tiên trải nghiệm người dùng trong các quyết định trình bày mà không thay đổi hành vi nghiệp vụ chuẩn",
+              "subject": "Commerce Experience",
+              "target": "ưu tiên trải nghiệm người dùng trong các quyết định trình bày mà không thay đổi hành vi nghiệp vụ chuẩn",
+              "trigger": "NO_EXPLICIT_TRIGGER"
+            }
+          },
+          "effective_source_meaning": "Preserve the source's exact modal strength for Commerce Experience and verify 'ưu tiên trải nghiệm người dùng trong các quyết định trình bày mà không thay đổi hành vi nghiệp vụ chuẩn' only when trigger 'NO_EXPLICIT_TRIGGER' and qualifier 'Commerce Experience phải ưu tiên trải nghiệm người dùng trong các quyết định trình bày mà không thay đổi hành vi nghiệp vụ chuẩn' apply; do not infer a stronger universal obligation.",
+          "implementation_impact": "Defines the future acceptance boundary for Commerce Experience / ưu tiên trải nghiệm người dùng trong các quyết định trình bày mà không thay đổi hành vi nghiệp vụ chuẩn; it does not authorize implementation.",
+          "label": "PRESERVE_REQUIREMENT_SPECIFIC_QUALIFIER",
+          "option_id": "P2C-AC-C3-DEC-027-OPT-2",
+          "recommended": false,
+          "source_edit_required": false,
+          "target_profile_or_archetype": null,
+          "terminal_disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED"
+        },
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "BRD-UPDATE-01-R029"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='Commerce Experience phải ưu tiên trải nghiệm người dùng trong các quyết định trình bày mà không thay đổi hành vi nghiệp vụ chuẩn', verify that Before mapping 'ưu tiên trải nghiệm người dùng trong các quyết định trình bày mà không thay đổi hành vi nghiệp vụ chuẩn', revise the source to name Commerce Experience's normative strength, ownership, applicability and failure behavior; no active acceptance route is inferred meanwhile. Source: Commerce Experience phải ưu tiên trải nghiệm người dùng trong các quyết định trình bày mà không thay đổi hành vi nghiệp vụ chuẩn. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "conformance trace and architectural boundary finding",
+            "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'ưu tiên trải nghiệm người dùng trong các quyết định trình bày mà không thay đổi hành vi nghiệp vụ chuẩn' for Commerce Experience; conformance trace and architectural boundary finding must distinguish rejection/non-conformance from the positive outcome.",
+            "positive_oracle": "Observe Commerce Experience at NO_EXPLICIT_TRIGGER; conformance trace and architectural boundary finding must show the bound POLICY_OUTCOME outcome 'ưu tiên trải nghiệm người dùng trong các quyết định trình bày mà không thay đổi hành vi nghiệp vụ chuẩn' under qualifier 'Commerce Experience phải ưu tiên trải nghiệm người dùng trong các quyết định trình bày mà không thay đổi hành vi nghiệp vụ chuẩn'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "conformance trace and architectural boundary finding",
+              "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+              "qualifier": "Commerce Experience phải ưu tiên trải nghiệm người dùng trong các quyết định trình bày mà không thay đổi hành vi nghiệp vụ chuẩn",
+              "subject": "Commerce Experience",
+              "target": "ưu tiên trải nghiệm người dùng trong các quyết định trình bày mà không thay đổi hành vi nghiệp vụ chuẩn",
+              "trigger": "NO_EXPLICIT_TRIGGER"
+            }
+          },
+          "effective_source_meaning": "Before mapping 'ưu tiên trải nghiệm người dùng trong các quyết định trình bày mà không thay đổi hành vi nghiệp vụ chuẩn', revise the source to name Commerce Experience's normative strength, ownership, applicability and failure behavior; no active acceptance route is inferred meanwhile.",
+          "implementation_impact": "Defines the future acceptance boundary for Commerce Experience / ưu tiên trải nghiệm người dùng trong các quyết định trình bày mà không thay đổi hành vi nghiệp vụ chuẩn; it does not authorize implementation.",
+          "label": "SOURCE_NORMALIZATION_BEFORE_MAPPING",
+          "option_id": "P2C-AC-C3-DEC-027-OPT-3",
+          "recommended": false,
+          "source_edit_required": true,
+          "target_profile_or_archetype": null,
+          "terminal_disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED"
+        }
+      ],
+      "selected_option": null,
+      "source_statements": [
+        {
+          "requirement_id": "BRD-UPDATE-01-R029",
+          "statement": "Commerce Experience phải ưu tiên trải nghiệm người dùng trong các quyết định trình bày mà không thay đổi hành vi nghiệp vụ chuẩn."
+        }
+      ],
+      "status": "PENDING_HUMAN_APPROVAL"
+    },
+    {
+      "affected_requirements": [
+        "BRD-WS-11-R002"
+      ],
+      "category": "MATERIAL_SEMANTIC_DECISION",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "decision_id": "P2C-AC-C3-DEC-029",
+      "impact_count": 1,
+      "non_claims": [
+        "NOT_SOURCE_REMEDIATION",
+        "NOT_FINAL_ACCEPTANCE_CONTRACT",
+        "NOT_DOCUMENT_BASELINE_APPROVAL",
+        "NOT_YADF_AUTHORIZATION"
+      ],
+      "options": [
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "BRD-WS-11-R002"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='Customer Identity luôn thuộc YSim', verify that Within v2.3, Customer Identity must produce the bound outcome 'thuộc YSim' at trigger 'NO_EXPLICIT_TRIGGER' under qualifier 'Customer Identity luôn thuộc YSim'; contradictory evidence is non-conforming. Source: Customer Identity luôn thuộc YSim. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "conformance trace and architectural boundary finding",
+            "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'thuộc YSim' for Customer Identity; conformance trace and architectural boundary finding must distinguish rejection/non-conformance from the positive outcome.",
+            "positive_oracle": "Observe Customer Identity at NO_EXPLICIT_TRIGGER; conformance trace and architectural boundary finding must show the bound RELATIONSHIP_REFERENCE outcome 'thuộc YSim' under qualifier 'Customer Identity luôn thuộc YSim'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "conformance trace and architectural boundary finding",
+              "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+              "qualifier": "Customer Identity luôn thuộc YSim",
+              "subject": "Customer Identity",
+              "target": "thuộc YSim",
+              "trigger": "NO_EXPLICIT_TRIGGER"
+            }
+          },
+          "effective_source_meaning": "Within v2.3, Customer Identity must produce the bound outcome 'thuộc YSim' at trigger 'NO_EXPLICIT_TRIGGER' under qualifier 'Customer Identity luôn thuộc YSim'; contradictory evidence is non-conforming.",
+          "implementation_impact": "Defines the future acceptance boundary for Customer Identity / thuộc YSim; it does not authorize implementation.",
+          "label": "ACTIVE_STRONG_OBLIGATION",
+          "option_id": "P2C-AC-C3-DEC-029-OPT-1",
+          "recommended": true,
+          "source_edit_required": true,
+          "target_profile_or_archetype": "IAC-C3-DECISION-MATERIALIZED",
+          "terminal_disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE"
+        },
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "BRD-WS-11-R002"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='Customer Identity luôn thuộc YSim', verify that Preserve the source's exact modal strength for Customer Identity and verify 'thuộc YSim' only when trigger 'NO_EXPLICIT_TRIGGER' and qualifier 'Customer Identity luôn thuộc YSim' apply; do not infer a stronger universal obligation. Source: Customer Identity luôn thuộc YSim. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "conformance trace and architectural boundary finding",
+            "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'thuộc YSim' for Customer Identity; conformance trace and architectural boundary finding must distinguish rejection/non-conformance from the positive outcome.",
+            "positive_oracle": "Observe Customer Identity at NO_EXPLICIT_TRIGGER; conformance trace and architectural boundary finding must show the bound RELATIONSHIP_REFERENCE outcome 'thuộc YSim' under qualifier 'Customer Identity luôn thuộc YSim'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "conformance trace and architectural boundary finding",
+              "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+              "qualifier": "Customer Identity luôn thuộc YSim",
+              "subject": "Customer Identity",
+              "target": "thuộc YSim",
+              "trigger": "NO_EXPLICIT_TRIGGER"
+            }
+          },
+          "effective_source_meaning": "Preserve the source's exact modal strength for Customer Identity and verify 'thuộc YSim' only when trigger 'NO_EXPLICIT_TRIGGER' and qualifier 'Customer Identity luôn thuộc YSim' apply; do not infer a stronger universal obligation.",
+          "implementation_impact": "Defines the future acceptance boundary for Customer Identity / thuộc YSim; it does not authorize implementation.",
+          "label": "PRESERVE_REQUIREMENT_SPECIFIC_QUALIFIER",
+          "option_id": "P2C-AC-C3-DEC-029-OPT-2",
+          "recommended": false,
+          "source_edit_required": false,
+          "target_profile_or_archetype": null,
+          "terminal_disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED"
+        },
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "BRD-WS-11-R002"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='Customer Identity luôn thuộc YSim', verify that Before mapping 'thuộc YSim', revise the source to name Customer Identity's normative strength, ownership, applicability and failure behavior; no active acceptance route is inferred meanwhile. Source: Customer Identity luôn thuộc YSim. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "conformance trace and architectural boundary finding",
+            "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'thuộc YSim' for Customer Identity; conformance trace and architectural boundary finding must distinguish rejection/non-conformance from the positive outcome.",
+            "positive_oracle": "Observe Customer Identity at NO_EXPLICIT_TRIGGER; conformance trace and architectural boundary finding must show the bound RELATIONSHIP_REFERENCE outcome 'thuộc YSim' under qualifier 'Customer Identity luôn thuộc YSim'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "conformance trace and architectural boundary finding",
+              "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+              "qualifier": "Customer Identity luôn thuộc YSim",
+              "subject": "Customer Identity",
+              "target": "thuộc YSim",
+              "trigger": "NO_EXPLICIT_TRIGGER"
+            }
+          },
+          "effective_source_meaning": "Before mapping 'thuộc YSim', revise the source to name Customer Identity's normative strength, ownership, applicability and failure behavior; no active acceptance route is inferred meanwhile.",
+          "implementation_impact": "Defines the future acceptance boundary for Customer Identity / thuộc YSim; it does not authorize implementation.",
+          "label": "SOURCE_NORMALIZATION_BEFORE_MAPPING",
+          "option_id": "P2C-AC-C3-DEC-029-OPT-3",
+          "recommended": false,
+          "source_edit_required": true,
+          "target_profile_or_archetype": null,
+          "terminal_disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED"
+        }
+      ],
+      "selected_option": null,
+      "source_statements": [
+        {
+          "requirement_id": "BRD-WS-11-R002",
+          "statement": "Customer Identity luôn thuộc YSim."
+        }
+      ],
+      "status": "PENDING_HUMAN_APPROVAL"
+    },
+    {
+      "affected_requirements": [
+        "BRD-WS-11-R003"
+      ],
+      "category": "MATERIAL_SEMANTIC_DECISION",
+      "criticality_distribution": {
+        "CRITICAL": 1
+      },
+      "decision_id": "P2C-AC-C3-DEC-030",
+      "impact_count": 1,
+      "non_claims": [
+        "NOT_SOURCE_REMEDIATION",
+        "NOT_FINAL_ACCEPTANCE_CONTRACT",
+        "NOT_DOCUMENT_BASELINE_APPROVAL",
+        "NOT_YADF_AUTHORIZATION"
+      ],
+      "options": [
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "BRD-WS-11-R003"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='Organization chỉ được cấp quyền quản lý Relationship', verify that Within v2.3, Organization must produce the bound outcome 'cấp quyền quản lý Relationship' at trigger 'NO_EXPLICIT_TRIGGER' under qualifier 'Organization chỉ được cấp quyền quản lý Relationship'; contradictory evidence is non-conforming. Source: Organization chỉ được cấp quyền quản lý Relationship. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "conformance trace and architectural boundary finding",
+            "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'cấp quyền quản lý Relationship' for Organization; conformance trace and architectural boundary finding must distinguish rejection/non-conformance from the positive outcome.",
+            "positive_oracle": "Observe Organization at NO_EXPLICIT_TRIGGER; conformance trace and architectural boundary finding must show the bound BUSINESS_OUTCOME outcome 'cấp quyền quản lý Relationship' under qualifier 'Organization chỉ được cấp quyền quản lý Relationship'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "conformance trace and architectural boundary finding",
+              "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+              "qualifier": "Organization chỉ được cấp quyền quản lý Relationship",
+              "subject": "Organization",
+              "target": "cấp quyền quản lý Relationship",
+              "trigger": "NO_EXPLICIT_TRIGGER"
+            }
+          },
+          "effective_source_meaning": "Within v2.3, Organization must produce the bound outcome 'cấp quyền quản lý Relationship' at trigger 'NO_EXPLICIT_TRIGGER' under qualifier 'Organization chỉ được cấp quyền quản lý Relationship'; contradictory evidence is non-conforming.",
+          "implementation_impact": "Defines the future acceptance boundary for Organization / cấp quyền quản lý Relationship; it does not authorize implementation.",
+          "label": "ACTIVE_STRONG_OBLIGATION",
+          "option_id": "P2C-AC-C3-DEC-030-OPT-1",
+          "recommended": true,
+          "source_edit_required": true,
+          "target_profile_or_archetype": "IAC-C3-DECISION-MATERIALIZED",
+          "terminal_disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE"
+        },
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "BRD-WS-11-R003"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='Organization chỉ được cấp quyền quản lý Relationship', verify that Preserve the source's exact modal strength for Organization and verify 'cấp quyền quản lý Relationship' only when trigger 'NO_EXPLICIT_TRIGGER' and qualifier 'Organization chỉ được cấp quyền quản lý Relationship' apply; do not infer a stronger universal obligation. Source: Organization chỉ được cấp quyền quản lý Relationship. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "conformance trace and architectural boundary finding",
+            "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'cấp quyền quản lý Relationship' for Organization; conformance trace and architectural boundary finding must distinguish rejection/non-conformance from the positive outcome.",
+            "positive_oracle": "Observe Organization at NO_EXPLICIT_TRIGGER; conformance trace and architectural boundary finding must show the bound BUSINESS_OUTCOME outcome 'cấp quyền quản lý Relationship' under qualifier 'Organization chỉ được cấp quyền quản lý Relationship'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "conformance trace and architectural boundary finding",
+              "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+              "qualifier": "Organization chỉ được cấp quyền quản lý Relationship",
+              "subject": "Organization",
+              "target": "cấp quyền quản lý Relationship",
+              "trigger": "NO_EXPLICIT_TRIGGER"
+            }
+          },
+          "effective_source_meaning": "Preserve the source's exact modal strength for Organization and verify 'cấp quyền quản lý Relationship' only when trigger 'NO_EXPLICIT_TRIGGER' and qualifier 'Organization chỉ được cấp quyền quản lý Relationship' apply; do not infer a stronger universal obligation.",
+          "implementation_impact": "Defines the future acceptance boundary for Organization / cấp quyền quản lý Relationship; it does not authorize implementation.",
+          "label": "PRESERVE_REQUIREMENT_SPECIFIC_QUALIFIER",
+          "option_id": "P2C-AC-C3-DEC-030-OPT-2",
+          "recommended": false,
+          "source_edit_required": false,
+          "target_profile_or_archetype": null,
+          "terminal_disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED"
+        },
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "BRD-WS-11-R003"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='Organization chỉ được cấp quyền quản lý Relationship', verify that Before mapping 'cấp quyền quản lý Relationship', revise the source to name Organization's normative strength, ownership, applicability and failure behavior; no active acceptance route is inferred meanwhile. Source: Organization chỉ được cấp quyền quản lý Relationship. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "conformance trace and architectural boundary finding",
+            "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'cấp quyền quản lý Relationship' for Organization; conformance trace and architectural boundary finding must distinguish rejection/non-conformance from the positive outcome.",
+            "positive_oracle": "Observe Organization at NO_EXPLICIT_TRIGGER; conformance trace and architectural boundary finding must show the bound BUSINESS_OUTCOME outcome 'cấp quyền quản lý Relationship' under qualifier 'Organization chỉ được cấp quyền quản lý Relationship'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "conformance trace and architectural boundary finding",
+              "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+              "qualifier": "Organization chỉ được cấp quyền quản lý Relationship",
+              "subject": "Organization",
+              "target": "cấp quyền quản lý Relationship",
+              "trigger": "NO_EXPLICIT_TRIGGER"
+            }
+          },
+          "effective_source_meaning": "Before mapping 'cấp quyền quản lý Relationship', revise the source to name Organization's normative strength, ownership, applicability and failure behavior; no active acceptance route is inferred meanwhile.",
+          "implementation_impact": "Defines the future acceptance boundary for Organization / cấp quyền quản lý Relationship; it does not authorize implementation.",
+          "label": "SOURCE_NORMALIZATION_BEFORE_MAPPING",
+          "option_id": "P2C-AC-C3-DEC-030-OPT-3",
+          "recommended": false,
+          "source_edit_required": true,
+          "target_profile_or_archetype": null,
+          "terminal_disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED"
+        }
+      ],
+      "selected_option": null,
+      "source_statements": [
+        {
+          "requirement_id": "BRD-WS-11-R003",
+          "statement": "Organization chỉ được cấp quyền quản lý Relationship."
+        }
+      ],
+      "status": "PENDING_HUMAN_APPROVAL"
+    },
+    {
+      "affected_requirements": [
+        "BRD-WS-15-R004"
+      ],
+      "category": "MATERIAL_SEMANTIC_DECISION",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "decision_id": "P2C-AC-C3-DEC-031",
+      "impact_count": 1,
+      "non_claims": [
+        "NOT_SOURCE_REMEDIATION",
+        "NOT_FINAL_ACCEPTANCE_CONTRACT",
+        "NOT_DOCUMENT_BASELINE_APPROVAL",
+        "NOT_YADF_AUTHORIZATION"
+      ],
+      "options": [
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "BRD-WS-15-R004"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='khi cần', qualifier='NO_EXPLICIT_QUALIFIER', verify that Within v2.3, Kiến trúc must produce the bound outcome 'mở rộng thêm Gateway mới khi cần' at trigger 'khi cần' under qualifier 'NO_EXPLICIT_QUALIFIER'; contradictory evidence is non-conforming. Source: Kiến trúc hỗ trợ mở rộng thêm Gateway mới khi cần. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "accepted/rejected contract and external interaction result",
+            "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'mở rộng thêm Gateway mới khi cần' for Kiến trúc; accepted/rejected contract and external interaction result must distinguish rejection/non-conformance from the positive outcome.",
+            "positive_oracle": "Observe Kiến trúc at khi cần; accepted/rejected contract and external interaction result must show the bound CAPABILITY_AVAILABILITY outcome 'mở rộng thêm Gateway mới khi cần' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "accepted/rejected contract and external interaction result",
+              "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+              "qualifier": "NO_EXPLICIT_QUALIFIER",
+              "subject": "Kiến trúc",
+              "target": "mở rộng thêm Gateway mới khi cần",
+              "trigger": "khi cần"
+            }
+          },
+          "effective_source_meaning": "Within v2.3, Kiến trúc must produce the bound outcome 'mở rộng thêm Gateway mới khi cần' at trigger 'khi cần' under qualifier 'NO_EXPLICIT_QUALIFIER'; contradictory evidence is non-conforming.",
+          "implementation_impact": "Defines the future acceptance boundary for Kiến trúc / mở rộng thêm Gateway mới khi cần; it does not authorize implementation.",
+          "label": "ACTIVE_STRONG_OBLIGATION",
+          "option_id": "P2C-AC-C3-DEC-031-OPT-1",
+          "recommended": true,
+          "source_edit_required": true,
+          "target_profile_or_archetype": "IAC-C3-DECISION-MATERIALIZED",
+          "terminal_disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE"
+        },
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "BRD-WS-15-R004"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='khi cần', qualifier='NO_EXPLICIT_QUALIFIER', verify that Preserve the source's exact modal strength for Kiến trúc and verify 'mở rộng thêm Gateway mới khi cần' only when trigger 'khi cần' and qualifier 'NO_EXPLICIT_QUALIFIER' apply; do not infer a stronger universal obligation. Source: Kiến trúc hỗ trợ mở rộng thêm Gateway mới khi cần. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "accepted/rejected contract and external interaction result",
+            "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'mở rộng thêm Gateway mới khi cần' for Kiến trúc; accepted/rejected contract and external interaction result must distinguish rejection/non-conformance from the positive outcome.",
+            "positive_oracle": "Observe Kiến trúc at khi cần; accepted/rejected contract and external interaction result must show the bound CAPABILITY_AVAILABILITY outcome 'mở rộng thêm Gateway mới khi cần' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "accepted/rejected contract and external interaction result",
+              "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+              "qualifier": "NO_EXPLICIT_QUALIFIER",
+              "subject": "Kiến trúc",
+              "target": "mở rộng thêm Gateway mới khi cần",
+              "trigger": "khi cần"
+            }
+          },
+          "effective_source_meaning": "Preserve the source's exact modal strength for Kiến trúc and verify 'mở rộng thêm Gateway mới khi cần' only when trigger 'khi cần' and qualifier 'NO_EXPLICIT_QUALIFIER' apply; do not infer a stronger universal obligation.",
+          "implementation_impact": "Defines the future acceptance boundary for Kiến trúc / mở rộng thêm Gateway mới khi cần; it does not authorize implementation.",
+          "label": "PRESERVE_REQUIREMENT_SPECIFIC_QUALIFIER",
+          "option_id": "P2C-AC-C3-DEC-031-OPT-2",
+          "recommended": false,
+          "source_edit_required": false,
+          "target_profile_or_archetype": null,
+          "terminal_disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED"
+        },
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "BRD-WS-15-R004"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='khi cần', qualifier='NO_EXPLICIT_QUALIFIER', verify that Before mapping 'mở rộng thêm Gateway mới khi cần', revise the source to name Kiến trúc's normative strength, ownership, applicability and failure behavior; no active acceptance route is inferred meanwhile. Source: Kiến trúc hỗ trợ mở rộng thêm Gateway mới khi cần. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "accepted/rejected contract and external interaction result",
+            "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'mở rộng thêm Gateway mới khi cần' for Kiến trúc; accepted/rejected contract and external interaction result must distinguish rejection/non-conformance from the positive outcome.",
+            "positive_oracle": "Observe Kiến trúc at khi cần; accepted/rejected contract and external interaction result must show the bound CAPABILITY_AVAILABILITY outcome 'mở rộng thêm Gateway mới khi cần' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "accepted/rejected contract and external interaction result",
+              "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+              "qualifier": "NO_EXPLICIT_QUALIFIER",
+              "subject": "Kiến trúc",
+              "target": "mở rộng thêm Gateway mới khi cần",
+              "trigger": "khi cần"
+            }
+          },
+          "effective_source_meaning": "Before mapping 'mở rộng thêm Gateway mới khi cần', revise the source to name Kiến trúc's normative strength, ownership, applicability and failure behavior; no active acceptance route is inferred meanwhile.",
+          "implementation_impact": "Defines the future acceptance boundary for Kiến trúc / mở rộng thêm Gateway mới khi cần; it does not authorize implementation.",
+          "label": "SOURCE_NORMALIZATION_BEFORE_MAPPING",
+          "option_id": "P2C-AC-C3-DEC-031-OPT-3",
+          "recommended": false,
+          "source_edit_required": true,
+          "target_profile_or_archetype": null,
+          "terminal_disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED"
+        }
+      ],
+      "selected_option": null,
+      "source_statements": [
+        {
+          "requirement_id": "BRD-WS-15-R004",
+          "statement": "Kiến trúc hỗ trợ mở rộng thêm Gateway mới khi cần."
+        }
+      ],
+      "status": "PENDING_HUMAN_APPROVAL"
+    },
+    {
+      "affected_requirements": [
+        "CAP-P04"
+      ],
+      "category": "MATERIAL_SEMANTIC_DECISION",
+      "criticality_distribution": {
+        "NORMAL": 1
+      },
+      "decision_id": "P2C-AC-C3-DEC-032",
+      "impact_count": 1,
+      "non_claims": [
+        "NOT_SOURCE_REMEDIATION",
+        "NOT_FINAL_ACCEPTANCE_CONTRACT",
+        "NOT_DOCUMENT_BASELINE_APPROVAL",
+        "NOT_YADF_AUTHORIZATION"
+      ],
+      "options": [
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "CAP-P04"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='khi phù hợp', qualifier='Không Hard-code nếu có thể cấu hình', verify that Within v2.3, Capability must produce the bound outcome 'có khả năng được cấu hình khi phù hợp. Không Hard-code nếu có thể cấu hình' at trigger 'khi phù hợp' under qualifier 'Không Hard-code nếu có thể cấu hình'; contradictory evidence is non-conforming. Source: Capability phải có khả năng được cấu hình khi phù hợp. Không Hard-code nếu có thể cấu hình. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "observable policy decision, business state, or customer/operator-visible outcome",
+            "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'có khả năng được cấu hình khi phù hợp. Không Hard-code nếu có thể cấu hình' for Capability; observable policy decision, business state, or customer/operator-visible outcome must distinguish rejection/non-conformance from the positive outcome.",
+            "positive_oracle": "Observe Capability at khi phù hợp; observable policy decision, business state, or customer/operator-visible outcome must show the bound BUSINESS_OUTCOME outcome 'có khả năng được cấu hình khi phù hợp. Không Hard-code nếu có thể cấu hình' under qualifier 'Không Hard-code nếu có thể cấu hình'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "observable policy decision, business state, or customer/operator-visible outcome",
+              "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+              "qualifier": "Không Hard-code nếu có thể cấu hình",
+              "subject": "Capability",
+              "target": "có khả năng được cấu hình khi phù hợp. Không Hard-code nếu có thể cấu hình",
+              "trigger": "khi phù hợp"
+            }
+          },
+          "effective_source_meaning": "Within v2.3, Capability must produce the bound outcome 'có khả năng được cấu hình khi phù hợp. Không Hard-code nếu có thể cấu hình' at trigger 'khi phù hợp' under qualifier 'Không Hard-code nếu có thể cấu hình'; contradictory evidence is non-conforming.",
+          "implementation_impact": "Defines the future acceptance boundary for Capability / có khả năng được cấu hình khi phù hợp. Không Hard-code nếu có thể cấu hình; it does not authorize implementation.",
+          "label": "ACTIVE_STRONG_OBLIGATION",
+          "option_id": "P2C-AC-C3-DEC-032-OPT-1",
+          "recommended": true,
+          "source_edit_required": true,
+          "target_profile_or_archetype": "IAC-C3-DECISION-MATERIALIZED",
+          "terminal_disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE"
+        },
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "CAP-P04"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='khi phù hợp', qualifier='Không Hard-code nếu có thể cấu hình', verify that Preserve the source's exact modal strength for Capability and verify 'có khả năng được cấu hình khi phù hợp. Không Hard-code nếu có thể cấu hình' only when trigger 'khi phù hợp' and qualifier 'Không Hard-code nếu có thể cấu hình' apply; do not infer a stronger universal obligation. Source: Capability phải có khả năng được cấu hình khi phù hợp. Không Hard-code nếu có thể cấu hình. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "observable policy decision, business state, or customer/operator-visible outcome",
+            "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'có khả năng được cấu hình khi phù hợp. Không Hard-code nếu có thể cấu hình' for Capability; observable policy decision, business state, or customer/operator-visible outcome must distinguish rejection/non-conformance from the positive outcome.",
+            "positive_oracle": "Observe Capability at khi phù hợp; observable policy decision, business state, or customer/operator-visible outcome must show the bound BUSINESS_OUTCOME outcome 'có khả năng được cấu hình khi phù hợp. Không Hard-code nếu có thể cấu hình' under qualifier 'Không Hard-code nếu có thể cấu hình'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "observable policy decision, business state, or customer/operator-visible outcome",
+              "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+              "qualifier": "Không Hard-code nếu có thể cấu hình",
+              "subject": "Capability",
+              "target": "có khả năng được cấu hình khi phù hợp. Không Hard-code nếu có thể cấu hình",
+              "trigger": "khi phù hợp"
+            }
+          },
+          "effective_source_meaning": "Preserve the source's exact modal strength for Capability and verify 'có khả năng được cấu hình khi phù hợp. Không Hard-code nếu có thể cấu hình' only when trigger 'khi phù hợp' and qualifier 'Không Hard-code nếu có thể cấu hình' apply; do not infer a stronger universal obligation.",
+          "implementation_impact": "Defines the future acceptance boundary for Capability / có khả năng được cấu hình khi phù hợp. Không Hard-code nếu có thể cấu hình; it does not authorize implementation.",
+          "label": "PRESERVE_REQUIREMENT_SPECIFIC_QUALIFIER",
+          "option_id": "P2C-AC-C3-DEC-032-OPT-2",
+          "recommended": false,
+          "source_edit_required": false,
+          "target_profile_or_archetype": null,
+          "terminal_disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED"
+        },
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "CAP-P04"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='khi phù hợp', qualifier='Không Hard-code nếu có thể cấu hình', verify that Before mapping 'có khả năng được cấu hình khi phù hợp. Không Hard-code nếu có thể cấu hình', revise the source to name Capability's normative strength, ownership, applicability and failure behavior; no active acceptance route is inferred meanwhile. Source: Capability phải có khả năng được cấu hình khi phù hợp. Không Hard-code nếu có thể cấu hình. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "observable policy decision, business state, or customer/operator-visible outcome",
+            "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'có khả năng được cấu hình khi phù hợp. Không Hard-code nếu có thể cấu hình' for Capability; observable policy decision, business state, or customer/operator-visible outcome must distinguish rejection/non-conformance from the positive outcome.",
+            "positive_oracle": "Observe Capability at khi phù hợp; observable policy decision, business state, or customer/operator-visible outcome must show the bound BUSINESS_OUTCOME outcome 'có khả năng được cấu hình khi phù hợp. Không Hard-code nếu có thể cấu hình' under qualifier 'Không Hard-code nếu có thể cấu hình'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "observable policy decision, business state, or customer/operator-visible outcome",
+              "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+              "qualifier": "Không Hard-code nếu có thể cấu hình",
+              "subject": "Capability",
+              "target": "có khả năng được cấu hình khi phù hợp. Không Hard-code nếu có thể cấu hình",
+              "trigger": "khi phù hợp"
+            }
+          },
+          "effective_source_meaning": "Before mapping 'có khả năng được cấu hình khi phù hợp. Không Hard-code nếu có thể cấu hình', revise the source to name Capability's normative strength, ownership, applicability and failure behavior; no active acceptance route is inferred meanwhile.",
+          "implementation_impact": "Defines the future acceptance boundary for Capability / có khả năng được cấu hình khi phù hợp. Không Hard-code nếu có thể cấu hình; it does not authorize implementation.",
+          "label": "SOURCE_NORMALIZATION_BEFORE_MAPPING",
+          "option_id": "P2C-AC-C3-DEC-032-OPT-3",
+          "recommended": false,
+          "source_edit_required": true,
+          "target_profile_or_archetype": null,
+          "terminal_disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED"
+        }
+      ],
+      "selected_option": null,
+      "source_statements": [
+        {
+          "requirement_id": "CAP-P04",
+          "statement": "Capability phải có khả năng được cấu hình khi phù hợp. Không Hard-code nếu có thể cấu hình."
+        }
+      ],
+      "status": "PENDING_HUMAN_APPROVAL"
+    },
+    {
+      "affected_requirements": [
+        "UXF-05-R022"
+      ],
+      "category": "MATERIAL_SEMANTIC_DECISION",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "decision_id": "P2C-AC-C3-DEC-034",
+      "impact_count": 1,
+      "non_claims": [
+        "NOT_SOURCE_REMEDIATION",
+        "NOT_FINAL_ACCEPTANCE_CONTRACT",
+        "NOT_DOCUMENT_BASELINE_APPROVAL",
+        "NOT_YADF_AUTHORIZATION"
+      ],
+      "options": [
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "UXF-05-R022"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='Rendering should continue whenever possible', verify that Within v2.3, Rendering should continue whenever possible must produce the bound outcome 'Rendering should continue whenever possible' at trigger 'NO_EXPLICIT_TRIGGER' under qualifier 'Rendering should continue whenever possible'; contradictory evidence is non-conforming. Source: Rendering should continue whenever possible. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "rendered state, available/prohibited action, and user-visible feedback",
+            "negative_oracle": "Exercise the prohibited outcome 'Rendering should continue whenever possible' for Rendering should continue whenever possible; rendered state, available/prohibited action, and user-visible feedback must show rejection or absence of a compliant state.",
+            "positive_oracle": "Observe Rendering should continue whenever possible at NO_EXPLICIT_TRIGGER; rendered state, available/prohibited action, and user-visible feedback must show the bound PROHIBITED_INVARIANT outcome 'Rendering should continue whenever possible' under qualifier 'Rendering should continue whenever possible'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "rendered state, available/prohibited action, and user-visible feedback",
+              "prohibited_outcome": "Rendering should continue whenever possible",
+              "qualifier": "Rendering should continue whenever possible",
+              "subject": "Rendering should continue whenever possible",
+              "target": "Rendering should continue whenever possible",
+              "trigger": "NO_EXPLICIT_TRIGGER"
+            }
+          },
+          "effective_source_meaning": "Within v2.3, Rendering should continue whenever possible must produce the bound outcome 'Rendering should continue whenever possible' at trigger 'NO_EXPLICIT_TRIGGER' under qualifier 'Rendering should continue whenever possible'; contradictory evidence is non-conforming.",
+          "implementation_impact": "Defines the future acceptance boundary for Rendering should continue whenever possible / Rendering should continue whenever possible; it does not authorize implementation.",
+          "label": "ACTIVE_STRONG_OBLIGATION",
+          "option_id": "P2C-AC-C3-DEC-034-OPT-1",
+          "recommended": true,
+          "source_edit_required": true,
+          "target_profile_or_archetype": "IAC-C3-DECISION-MATERIALIZED",
+          "terminal_disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE"
+        },
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "UXF-05-R022"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='Rendering should continue whenever possible', verify that Preserve the source's exact modal strength for Rendering should continue whenever possible and verify 'Rendering should continue whenever possible' only when trigger 'NO_EXPLICIT_TRIGGER' and qualifier 'Rendering should continue whenever possible' apply; do not infer a stronger universal obligation. Source: Rendering should continue whenever possible. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "rendered state, available/prohibited action, and user-visible feedback",
+            "negative_oracle": "Exercise the prohibited outcome 'Rendering should continue whenever possible' for Rendering should continue whenever possible; rendered state, available/prohibited action, and user-visible feedback must show rejection or absence of a compliant state.",
+            "positive_oracle": "Observe Rendering should continue whenever possible at NO_EXPLICIT_TRIGGER; rendered state, available/prohibited action, and user-visible feedback must show the bound PROHIBITED_INVARIANT outcome 'Rendering should continue whenever possible' under qualifier 'Rendering should continue whenever possible'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "rendered state, available/prohibited action, and user-visible feedback",
+              "prohibited_outcome": "Rendering should continue whenever possible",
+              "qualifier": "Rendering should continue whenever possible",
+              "subject": "Rendering should continue whenever possible",
+              "target": "Rendering should continue whenever possible",
+              "trigger": "NO_EXPLICIT_TRIGGER"
+            }
+          },
+          "effective_source_meaning": "Preserve the source's exact modal strength for Rendering should continue whenever possible and verify 'Rendering should continue whenever possible' only when trigger 'NO_EXPLICIT_TRIGGER' and qualifier 'Rendering should continue whenever possible' apply; do not infer a stronger universal obligation.",
+          "implementation_impact": "Defines the future acceptance boundary for Rendering should continue whenever possible / Rendering should continue whenever possible; it does not authorize implementation.",
+          "label": "PRESERVE_REQUIREMENT_SPECIFIC_QUALIFIER",
+          "option_id": "P2C-AC-C3-DEC-034-OPT-2",
+          "recommended": false,
+          "source_edit_required": false,
+          "target_profile_or_archetype": null,
+          "terminal_disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED"
+        },
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "UXF-05-R022"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='Rendering should continue whenever possible', verify that Before mapping 'Rendering should continue whenever possible', revise the source to name Rendering should continue whenever possible's normative strength, ownership, applicability and failure behavior; no active acceptance route is inferred meanwhile. Source: Rendering should continue whenever possible. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "rendered state, available/prohibited action, and user-visible feedback",
+            "negative_oracle": "Exercise the prohibited outcome 'Rendering should continue whenever possible' for Rendering should continue whenever possible; rendered state, available/prohibited action, and user-visible feedback must show rejection or absence of a compliant state.",
+            "positive_oracle": "Observe Rendering should continue whenever possible at NO_EXPLICIT_TRIGGER; rendered state, available/prohibited action, and user-visible feedback must show the bound PROHIBITED_INVARIANT outcome 'Rendering should continue whenever possible' under qualifier 'Rendering should continue whenever possible'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "rendered state, available/prohibited action, and user-visible feedback",
+              "prohibited_outcome": "Rendering should continue whenever possible",
+              "qualifier": "Rendering should continue whenever possible",
+              "subject": "Rendering should continue whenever possible",
+              "target": "Rendering should continue whenever possible",
+              "trigger": "NO_EXPLICIT_TRIGGER"
+            }
+          },
+          "effective_source_meaning": "Before mapping 'Rendering should continue whenever possible', revise the source to name Rendering should continue whenever possible's normative strength, ownership, applicability and failure behavior; no active acceptance route is inferred meanwhile.",
+          "implementation_impact": "Defines the future acceptance boundary for Rendering should continue whenever possible / Rendering should continue whenever possible; it does not authorize implementation.",
+          "label": "SOURCE_NORMALIZATION_BEFORE_MAPPING",
+          "option_id": "P2C-AC-C3-DEC-034-OPT-3",
+          "recommended": false,
+          "source_edit_required": true,
+          "target_profile_or_archetype": null,
+          "terminal_disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED"
+        }
+      ],
+      "selected_option": null,
+      "source_statements": [
+        {
+          "requirement_id": "UXF-05-R022",
+          "statement": "Rendering should continue whenever possible."
+        }
+      ],
+      "status": "PENDING_HUMAN_APPROVAL"
+    },
+    {
+      "affected_requirements": [
+        "CAP-EP-005"
+      ],
+      "category": "MATERIAL_SEMANTIC_DECISION",
+      "criticality_distribution": {
+        "NORMAL": 1
+      },
+      "decision_id": "P2C-AC-C3-DEC-035",
+      "impact_count": 1,
+      "non_claims": [
+        "NOT_SOURCE_REMEDIATION",
+        "NOT_FINAL_ACCEPTANCE_CONTRACT",
+        "NOT_DOCUMENT_BASELINE_APPROVAL",
+        "NOT_YADF_AUTHORIZATION"
+      ],
+      "options": [
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "CAP-EP-005"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='khi phù hợp', qualifier='NO_EXPLICIT_QUALIFIER', verify that Within v2.3, Capability must produce the bound outcome 'cấu hình thay vì Hard-code khi phù hợp' at trigger 'khi phù hợp' under qualifier 'NO_EXPLICIT_QUALIFIER'; contradictory evidence is non-conforming. Source: Capability được cấu hình thay vì Hard-code khi phù hợp. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "observable policy decision, business state, or customer/operator-visible outcome",
+            "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'cấu hình thay vì Hard-code khi phù hợp' for Capability; observable policy decision, business state, or customer/operator-visible outcome must distinguish rejection/non-conformance from the positive outcome.",
+            "positive_oracle": "Observe Capability at khi phù hợp; observable policy decision, business state, or customer/operator-visible outcome must show the bound BUSINESS_OUTCOME outcome 'cấu hình thay vì Hard-code khi phù hợp' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "observable policy decision, business state, or customer/operator-visible outcome",
+              "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+              "qualifier": "NO_EXPLICIT_QUALIFIER",
+              "subject": "Capability",
+              "target": "cấu hình thay vì Hard-code khi phù hợp",
+              "trigger": "khi phù hợp"
+            }
+          },
+          "effective_source_meaning": "Within v2.3, Capability must produce the bound outcome 'cấu hình thay vì Hard-code khi phù hợp' at trigger 'khi phù hợp' under qualifier 'NO_EXPLICIT_QUALIFIER'; contradictory evidence is non-conforming.",
+          "implementation_impact": "Defines the future acceptance boundary for Capability / cấu hình thay vì Hard-code khi phù hợp; it does not authorize implementation.",
+          "label": "ACTIVE_STRONG_OBLIGATION",
+          "option_id": "P2C-AC-C3-DEC-035-OPT-1",
+          "recommended": true,
+          "source_edit_required": true,
+          "target_profile_or_archetype": "IAC-C3-DECISION-MATERIALIZED",
+          "terminal_disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE"
+        },
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "CAP-EP-005"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='khi phù hợp', qualifier='NO_EXPLICIT_QUALIFIER', verify that Preserve the source's exact modal strength for Capability and verify 'cấu hình thay vì Hard-code khi phù hợp' only when trigger 'khi phù hợp' and qualifier 'NO_EXPLICIT_QUALIFIER' apply; do not infer a stronger universal obligation. Source: Capability được cấu hình thay vì Hard-code khi phù hợp. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "observable policy decision, business state, or customer/operator-visible outcome",
+            "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'cấu hình thay vì Hard-code khi phù hợp' for Capability; observable policy decision, business state, or customer/operator-visible outcome must distinguish rejection/non-conformance from the positive outcome.",
+            "positive_oracle": "Observe Capability at khi phù hợp; observable policy decision, business state, or customer/operator-visible outcome must show the bound BUSINESS_OUTCOME outcome 'cấu hình thay vì Hard-code khi phù hợp' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "observable policy decision, business state, or customer/operator-visible outcome",
+              "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+              "qualifier": "NO_EXPLICIT_QUALIFIER",
+              "subject": "Capability",
+              "target": "cấu hình thay vì Hard-code khi phù hợp",
+              "trigger": "khi phù hợp"
+            }
+          },
+          "effective_source_meaning": "Preserve the source's exact modal strength for Capability and verify 'cấu hình thay vì Hard-code khi phù hợp' only when trigger 'khi phù hợp' and qualifier 'NO_EXPLICIT_QUALIFIER' apply; do not infer a stronger universal obligation.",
+          "implementation_impact": "Defines the future acceptance boundary for Capability / cấu hình thay vì Hard-code khi phù hợp; it does not authorize implementation.",
+          "label": "PRESERVE_REQUIREMENT_SPECIFIC_QUALIFIER",
+          "option_id": "P2C-AC-C3-DEC-035-OPT-2",
+          "recommended": false,
+          "source_edit_required": false,
+          "target_profile_or_archetype": null,
+          "terminal_disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED"
+        },
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "CAP-EP-005"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='khi phù hợp', qualifier='NO_EXPLICIT_QUALIFIER', verify that Before mapping 'cấu hình thay vì Hard-code khi phù hợp', revise the source to name Capability's normative strength, ownership, applicability and failure behavior; no active acceptance route is inferred meanwhile. Source: Capability được cấu hình thay vì Hard-code khi phù hợp. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "observable policy decision, business state, or customer/operator-visible outcome",
+            "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'cấu hình thay vì Hard-code khi phù hợp' for Capability; observable policy decision, business state, or customer/operator-visible outcome must distinguish rejection/non-conformance from the positive outcome.",
+            "positive_oracle": "Observe Capability at khi phù hợp; observable policy decision, business state, or customer/operator-visible outcome must show the bound BUSINESS_OUTCOME outcome 'cấu hình thay vì Hard-code khi phù hợp' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "observable policy decision, business state, or customer/operator-visible outcome",
+              "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+              "qualifier": "NO_EXPLICIT_QUALIFIER",
+              "subject": "Capability",
+              "target": "cấu hình thay vì Hard-code khi phù hợp",
+              "trigger": "khi phù hợp"
+            }
+          },
+          "effective_source_meaning": "Before mapping 'cấu hình thay vì Hard-code khi phù hợp', revise the source to name Capability's normative strength, ownership, applicability and failure behavior; no active acceptance route is inferred meanwhile.",
+          "implementation_impact": "Defines the future acceptance boundary for Capability / cấu hình thay vì Hard-code khi phù hợp; it does not authorize implementation.",
+          "label": "SOURCE_NORMALIZATION_BEFORE_MAPPING",
+          "option_id": "P2C-AC-C3-DEC-035-OPT-3",
+          "recommended": false,
+          "source_edit_required": true,
+          "target_profile_or_archetype": null,
+          "terminal_disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED"
+        }
+      ],
+      "selected_option": null,
+      "source_statements": [
+        {
+          "requirement_id": "CAP-EP-005",
+          "statement": "Capability được cấu hình thay vì Hard-code khi phù hợp."
+        }
+      ],
+      "status": "PENDING_HUMAN_APPROVAL"
+    },
+    {
+      "affected_requirements": [
+        "UXF-00-R013"
+      ],
+      "category": "MATERIAL_SEMANTIC_DECISION",
+      "criticality_distribution": {
+        "HIGH": 1
+      },
+      "decision_id": "P2C-AC-C3-DEC-036",
+      "impact_count": 1,
+      "non_claims": [
+        "NOT_SOURCE_REMEDIATION",
+        "NOT_FINAL_ACCEPTANCE_CONTRACT",
+        "NOT_DOCUMENT_BASELINE_APPROVAL",
+        "NOT_YADF_AUTHORIZATION"
+      ],
+      "options": [
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "UXF-00-R013"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='No runtime request should fail solely because a child configuration is incomplete', verify that Within v2.3, No runtime request should fail solely because a child configuration must produce the bound outcome 'incomplete' at trigger 'NO_EXPLICIT_TRIGGER' under qualifier 'No runtime request should fail solely because a child configuration is incomplete'; contradictory evidence is non-conforming. Source: No runtime request should fail solely because a child configuration is incomplete. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "rendered state, available/prohibited action, and user-visible feedback",
+            "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'incomplete' for No runtime request should fail solely because a child configuration; rendered state, available/prohibited action, and user-visible feedback must distinguish rejection/non-conformance from the positive outcome.",
+            "positive_oracle": "Observe No runtime request should fail solely because a child configuration at NO_EXPLICIT_TRIGGER; rendered state, available/prohibited action, and user-visible feedback must show the bound CLASSIFICATION outcome 'incomplete' under qualifier 'No runtime request should fail solely because a child configuration is incomplete'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "rendered state, available/prohibited action, and user-visible feedback",
+              "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+              "qualifier": "No runtime request should fail solely because a child configuration is incomplete",
+              "subject": "No runtime request should fail solely because a child configuration",
+              "target": "incomplete",
+              "trigger": "NO_EXPLICIT_TRIGGER"
+            }
+          },
+          "effective_source_meaning": "Within v2.3, No runtime request should fail solely because a child configuration must produce the bound outcome 'incomplete' at trigger 'NO_EXPLICIT_TRIGGER' under qualifier 'No runtime request should fail solely because a child configuration is incomplete'; contradictory evidence is non-conforming.",
+          "implementation_impact": "Defines the future acceptance boundary for No runtime request should fail solely because a child configuration / incomplete; it does not authorize implementation.",
+          "label": "ACTIVE_STRONG_OBLIGATION",
+          "option_id": "P2C-AC-C3-DEC-036-OPT-1",
+          "recommended": true,
+          "source_edit_required": true,
+          "target_profile_or_archetype": "IAC-C3-DECISION-MATERIALIZED",
+          "terminal_disposition": "INLINE_ARCHETYPE_BINDING_HIGH_CONFIDENCE"
+        },
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "UXF-00-R013"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='No runtime request should fail solely because a child configuration is incomplete', verify that Preserve the source's exact modal strength for No runtime request should fail solely because a child configuration and verify 'incomplete' only when trigger 'NO_EXPLICIT_TRIGGER' and qualifier 'No runtime request should fail solely because a child configuration is incomplete' apply; do not infer a stronger universal obligation. Source: No runtime request should fail solely because a child configuration is incomplete. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "rendered state, available/prohibited action, and user-visible feedback",
+            "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'incomplete' for No runtime request should fail solely because a child configuration; rendered state, available/prohibited action, and user-visible feedback must distinguish rejection/non-conformance from the positive outcome.",
+            "positive_oracle": "Observe No runtime request should fail solely because a child configuration at NO_EXPLICIT_TRIGGER; rendered state, available/prohibited action, and user-visible feedback must show the bound CLASSIFICATION outcome 'incomplete' under qualifier 'No runtime request should fail solely because a child configuration is incomplete'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "rendered state, available/prohibited action, and user-visible feedback",
+              "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+              "qualifier": "No runtime request should fail solely because a child configuration is incomplete",
+              "subject": "No runtime request should fail solely because a child configuration",
+              "target": "incomplete",
+              "trigger": "NO_EXPLICIT_TRIGGER"
+            }
+          },
+          "effective_source_meaning": "Preserve the source's exact modal strength for No runtime request should fail solely because a child configuration and verify 'incomplete' only when trigger 'NO_EXPLICIT_TRIGGER' and qualifier 'No runtime request should fail solely because a child configuration is incomplete' apply; do not infer a stronger universal obligation.",
+          "implementation_impact": "Defines the future acceptance boundary for No runtime request should fail solely because a child configuration / incomplete; it does not authorize implementation.",
+          "label": "PRESERVE_REQUIREMENT_SPECIFIC_QUALIFIER",
+          "option_id": "P2C-AC-C3-DEC-036-OPT-2",
+          "recommended": false,
+          "source_edit_required": false,
+          "target_profile_or_archetype": null,
+          "terminal_disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED"
+        },
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "UXF-00-R013"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='No runtime request should fail solely because a child configuration is incomplete', verify that Before mapping 'incomplete', revise the source to name No runtime request should fail solely because a child configuration's normative strength, ownership, applicability and failure behavior; no active acceptance route is inferred meanwhile. Source: No runtime request should fail solely because a child configuration is incomplete. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "rendered state, available/prohibited action, and user-visible feedback",
+            "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'incomplete' for No runtime request should fail solely because a child configuration; rendered state, available/prohibited action, and user-visible feedback must distinguish rejection/non-conformance from the positive outcome.",
+            "positive_oracle": "Observe No runtime request should fail solely because a child configuration at NO_EXPLICIT_TRIGGER; rendered state, available/prohibited action, and user-visible feedback must show the bound CLASSIFICATION outcome 'incomplete' under qualifier 'No runtime request should fail solely because a child configuration is incomplete'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "rendered state, available/prohibited action, and user-visible feedback",
+              "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+              "qualifier": "No runtime request should fail solely because a child configuration is incomplete",
+              "subject": "No runtime request should fail solely because a child configuration",
+              "target": "incomplete",
+              "trigger": "NO_EXPLICIT_TRIGGER"
+            }
+          },
+          "effective_source_meaning": "Before mapping 'incomplete', revise the source to name No runtime request should fail solely because a child configuration's normative strength, ownership, applicability and failure behavior; no active acceptance route is inferred meanwhile.",
+          "implementation_impact": "Defines the future acceptance boundary for No runtime request should fail solely because a child configuration / incomplete; it does not authorize implementation.",
+          "label": "SOURCE_NORMALIZATION_BEFORE_MAPPING",
+          "option_id": "P2C-AC-C3-DEC-036-OPT-3",
+          "recommended": false,
+          "source_edit_required": true,
+          "target_profile_or_archetype": null,
+          "terminal_disposition": "DETERMINISTIC_SOURCE_NORMALIZATION_REQUIRED"
+        }
+      ],
+      "selected_option": null,
+      "source_statements": [
+        {
+          "requirement_id": "UXF-00-R013",
+          "statement": "No runtime request should fail solely because a child configuration is incomplete."
+        }
+      ],
+      "status": "PENDING_HUMAN_APPROVAL"
+    },
+    {
+      "affected_requirements": [
+        "BD-05-016",
+        "BRD-WS-05-R021"
+      ],
+      "category": "MATERIAL_SEMANTIC_DECISION",
+      "criticality_distribution": {
+        "CRITICAL": 2
+      },
+      "decision_id": "P2C-AC-C3-DEC-PREFULFILLMENT",
+      "impact_count": 2,
+      "non_claims": [
+        "NOT_SOURCE_REMEDIATION",
+        "NOT_FINAL_ACCEPTANCE_CONTRACT",
+        "NOT_DOCUMENT_BASELINE_APPROVAL",
+        "NOT_YADF_AUTHORIZATION"
+      ],
+      "options": [
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "BD-05-016",
+            "BRD-WS-05-R021"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that Commercial eligibility covers pricing, margin, supplier terms, procurement feasibility, and required approvals. Source: Bắt buộc Pre-Fulfillment Commercial Validation. | Trước khi Fulfillment, hệ thống bắt buộc thực hiện: Pre-Fulfillment Commercial Validation. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "observable policy decision, business state, or customer/operator-visible outcome",
+            "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'Bắt buộc Pre-Fulfillment Commercial Validation' for Bắt buộc Pre-Fulfillment Commercial Validation; observable policy decision, business state, or customer/operator-visible outcome must distinguish rejection/non-conformance from the positive outcome.",
+            "positive_oracle": "Observe Bắt buộc Pre-Fulfillment Commercial Validation at NO_EXPLICIT_TRIGGER; observable policy decision, business state, or customer/operator-visible outcome must show the bound BUSINESS_OUTCOME outcome 'Bắt buộc Pre-Fulfillment Commercial Validation' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "observable policy decision, business state, or customer/operator-visible outcome",
+              "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+              "qualifier": "NO_EXPLICIT_QUALIFIER",
+              "subject": "Bắt buộc Pre-Fulfillment Commercial Validation",
+              "target": "Bắt buộc Pre-Fulfillment Commercial Validation",
+              "trigger": "NO_EXPLICIT_TRIGGER"
+            }
+          },
+          "effective_source_meaning": "Commercial eligibility covers pricing, margin, supplier terms, procurement feasibility, and required approvals.",
+          "implementation_impact": "Defines the future acceptance boundary for Bắt buộc Pre-Fulfillment Commercial Validation / Bắt buộc Pre-Fulfillment Commercial Validation; it does not authorize implementation.",
+          "label": "FULL_COMMERCIAL_ELIGIBILITY",
+          "option_id": "P2C-AC-C3-DEC-PREFULFILLMENT-OPT-1",
+          "recommended": true,
+          "source_edit_required": true,
+          "target_profile_or_archetype": null,
+          "terminal_disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED"
+        },
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "BD-05-016",
+            "BRD-WS-05-R021"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that Commercial validation covers pricing, margin, and approvals; procurement feasibility remains a separate procurement-validation obligation. Source: Bắt buộc Pre-Fulfillment Commercial Validation. | Trước khi Fulfillment, hệ thống bắt buộc thực hiện: Pre-Fulfillment Commercial Validation. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "observable policy decision, business state, or customer/operator-visible outcome",
+            "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'Bắt buộc Pre-Fulfillment Commercial Validation' for Bắt buộc Pre-Fulfillment Commercial Validation; observable policy decision, business state, or customer/operator-visible outcome must distinguish rejection/non-conformance from the positive outcome.",
+            "positive_oracle": "Observe Bắt buộc Pre-Fulfillment Commercial Validation at NO_EXPLICIT_TRIGGER; observable policy decision, business state, or customer/operator-visible outcome must show the bound BUSINESS_OUTCOME outcome 'Bắt buộc Pre-Fulfillment Commercial Validation' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "observable policy decision, business state, or customer/operator-visible outcome",
+              "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+              "qualifier": "NO_EXPLICIT_QUALIFIER",
+              "subject": "Bắt buộc Pre-Fulfillment Commercial Validation",
+              "target": "Bắt buộc Pre-Fulfillment Commercial Validation",
+              "trigger": "NO_EXPLICIT_TRIGGER"
+            }
+          },
+          "effective_source_meaning": "Commercial validation covers pricing, margin, and approvals; procurement feasibility remains a separate procurement-validation obligation.",
+          "implementation_impact": "Defines the future acceptance boundary for Bắt buộc Pre-Fulfillment Commercial Validation / Bắt buộc Pre-Fulfillment Commercial Validation; it does not authorize implementation.",
+          "label": "PRICING_MARGIN_APPROVAL_ONLY",
+          "option_id": "P2C-AC-C3-DEC-PREFULFILLMENT-OPT-2",
+          "recommended": false,
+          "source_edit_required": true,
+          "target_profile_or_archetype": null,
+          "terminal_disposition": "UNIQUE_INLINE_CONTRACT_REQUIRED"
+        },
+        {
+          "acceptance_effect": "Materialize statement-specific positive, negative, and boundary oracles only after this option is selected.",
+          "affected_requirements": [
+            "BD-05-016",
+            "BRD-WS-05-R021"
+          ],
+          "contract_preview": {
+            "boundary_failure_oracle": "At the applicability boundary trigger='NO_EXPLICIT_TRIGGER', qualifier='NO_EXPLICIT_QUALIFIER', verify that Keep the requirement blocked until Pre-Fulfillment Commercial Validation receives an approved business definition. Source: Bắt buộc Pre-Fulfillment Commercial Validation. | Trước khi Fulfillment, hệ thống bắt buộc thực hiện: Pre-Fulfillment Commercial Validation. applies only to the bound scope and that out-of-bound evidence is not accepted as compliance.",
+            "expected_evidence": "observable policy decision, business state, or customer/operator-visible outcome",
+            "negative_oracle": "Exercise an input or state that contradicts the bound outcome 'Bắt buộc Pre-Fulfillment Commercial Validation' for Bắt buộc Pre-Fulfillment Commercial Validation; observable policy decision, business state, or customer/operator-visible outcome must distinguish rejection/non-conformance from the positive outcome.",
+            "positive_oracle": "Observe Bắt buộc Pre-Fulfillment Commercial Validation at NO_EXPLICIT_TRIGGER; observable policy decision, business state, or customer/operator-visible outcome must show the bound BUSINESS_OUTCOME outcome 'Bắt buộc Pre-Fulfillment Commercial Validation' under qualifier 'NO_EXPLICIT_QUALIFIER'.",
+            "requirement_specific_bindings": {
+              "evidence_surface": "observable policy decision, business state, or customer/operator-visible outcome",
+              "prohibited_outcome": "NOT_EXPLICIT_IN_SOURCE",
+              "qualifier": "NO_EXPLICIT_QUALIFIER",
+              "subject": "Bắt buộc Pre-Fulfillment Commercial Validation",
+              "target": "Bắt buộc Pre-Fulfillment Commercial Validation",
+              "trigger": "NO_EXPLICIT_TRIGGER"
+            }
+          },
+          "effective_source_meaning": "Keep the requirement blocked until Pre-Fulfillment Commercial Validation receives an approved business definition.",
+          "implementation_impact": "Defines the future acceptance boundary for Bắt buộc Pre-Fulfillment Commercial Validation / Bắt buộc Pre-Fulfillment Commercial Validation; it does not authorize implementation.",
+          "label": "BLOCK_UNDEFINED_BUSINESS_TERM",
+          "option_id": "P2C-AC-C3-DEC-PREFULFILLMENT-OPT-3",
+          "recommended": false,
+          "source_edit_required": false,
+          "target_profile_or_archetype": null,
+          "terminal_disposition": "INVALID_OR_BLOCKED"
+        }
+      ],
+      "selected_option": null,
+      "source_statements": [
+        {
+          "requirement_id": "BD-05-016",
+          "statement": "Bắt buộc Pre-Fulfillment Commercial Validation."
+        },
+        {
+          "requirement_id": "BRD-WS-05-R021",
+          "statement": "Trước khi Fulfillment, hệ thống bắt buộc thực hiện: Pre-Fulfillment Commercial Validation."
+        }
+      ],
+      "status": "PENDING_HUMAN_APPROVAL"
+    }
+  ],
+  "status": "CANDIDATE"
+}
