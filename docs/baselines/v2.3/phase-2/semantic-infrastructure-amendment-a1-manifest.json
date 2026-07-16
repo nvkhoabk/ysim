@@ -1,0 +1,148 @@
+{
+  "accepted_input_commits": {
+    "operator_binding_type_model_c1": "c11d95116154ff8919c04b49b0a502cf66b3907d",
+    "semantic_oracle_model_c2": "77d10a8c3ccb2e7795724fd1c82cdbea36c54e2e"
+  },
+  "amendment_relationship": "ADDITIVE_DOES_NOT_SUPERSEDE_ACCEPTED_ARTIFACTS",
+  "approval_scope": "OPERATOR_GENERIC_SET_TYPING_AND_CANONICAL_MUTATION_ISOLATION",
+  "approval_status": "PENDING_HUMAN_APPROVAL",
+  "candidate_id": "V23-P2C-SEMANTIC-INFRASTRUCTURE-AMENDMENT-A1",
+  "counts": {
+    "adversarial_tests": 30,
+    "amended_operators": 3,
+    "c4_executions_audited": 531,
+    "c4_fixtures_audited": 177,
+    "reproduced_evidence_hashes": 177,
+    "vulnerable_hashes": 354
+  },
+  "exact_file_inventory": [
+    "docs/baselines/v2.3/phase-2/PHASE_2C_SEMANTIC_INFRASTRUCTURE_AMENDMENT_A1.md",
+    "docs/baselines/v2.3/phase-2/semantic-infrastructure-amendment-a1-manifest.json",
+    "docs/baselines/v2.3/phase-2/semantic-infrastructure-amendment-a1-regressions.json",
+    "docs/baselines/v2.3/phase-2/semantic-infrastructure-brd-ws-14-r031-example-a1.json",
+    "docs/baselines/v2.3/phase-2/semantic-infrastructure-c4-impact-register-a1.json",
+    "docs/baselines/v2.3/phase-2/semantic-infrastructure-generic-set-types-a1.json",
+    "docs/baselines/v2.3/phase-2/semantic-infrastructure-mutation-isolation-a1.json",
+    "scripts/docs/build-phase-2c-semantic-infrastructure-amendment-a1.py",
+    "scripts/docs/semantic_infrastructure_amendment_a1.py",
+    "scripts/docs/tests/test-phase-2c-semantic-infrastructure-amendment-a1.py",
+    "scripts/docs/validate-phase-2c-semantic-infrastructure-amendment-a1.py"
+  ],
+  "generated_payload_aggregate_sha256": "9beda29ad8fe380b9931f128a9747a7a00b042b333259111dc5e1fd8e011926d",
+  "git_identity": {
+    "git_content_aggregate": "RECORDED_AT_HUMAN_GATE_FROM_GIT_INDEX",
+    "self_reference_rule": "THE_MANIFEST_CANNOT_EMBED_THE_HASH_OF_A_GIT_TREE_OR_AGGREGATE_THAT_INCLUDES_ITS_OWN_BYTES",
+    "staged_tree": "RECORDED_AT_HUMAN_GATE_FROM_GIT_INDEX"
+  },
+  "next_gate": "HUMAN_PHASE_2C_SEMANTIC_INFRASTRUCTURE_AMENDMENT_APPROVAL",
+  "non_claims": [
+    "NOT_C4_DOCUMENT_BASELINE_APPROVAL",
+    "NOT_BRD_UXF_REMEDIATION",
+    "NOT_RUNTIME_ADAPTER_VALIDATION",
+    "NOT_RUNTIME_MUTATION_SCORE",
+    "NOT_YADF_AUTHORIZATION",
+    "NOT_PRODUCTION_IMPLEMENTATION",
+    "NOT_APPROVAL_OF_27_PENDING_DECISIONS"
+  ],
+  "preserved_c4": {
+    "backup_object": "24037270c435a80210ab00f1b20f2a38c92ea36f",
+    "backup_ref": "refs/ysim-backups/v2.3/phase-2c-semantic-completion-c4-blocked",
+    "base_commit": "c11d95116154ff8919c04b49b0a502cf66b3907d",
+    "generated_aggregate": "f2c57653024f28f47f80bbaf2da3110bf3d80417a606382613d431db802ededc",
+    "inventory": [
+      {
+        "blob_sha": "52a22dad23b40714f2c244bcd5a88e3d8f244a24",
+        "object_type": "blob",
+        "path": "docs/baselines/v2.3/phase-2/SEMANTIC_COMPLETION_C4_REPORT.md",
+        "sha256": "c93507bea02e0edd2543ae6c4c599272a2fcb442e54d24ba767d8c798a21005b"
+      },
+      {
+        "blob_sha": "bce0b82d31248aab057eeb9bf1b1f5ba5b301bf3",
+        "object_type": "blob",
+        "path": "docs/baselines/v2.3/phase-2/semantic-completion-c4-accounting.json",
+        "sha256": "97a94b0afdff91bb2dadd00323865abd532be46e72894f3cbbbd9545ca986f2a"
+      },
+      {
+        "blob_sha": "05a7cd602484a6d8c77137efd7600c93a4d4b3e6",
+        "object_type": "blob",
+        "path": "docs/baselines/v2.3/phase-2/semantic-completion-c4-audit.json",
+        "sha256": "3869fbbf3d054d84bec0fa72398d4ab58b00fcd5d0ac0808307a174f089b3992"
+      },
+      {
+        "blob_sha": "f6bd08d54e0389ddd46220a92e7a84411499cdd4",
+        "object_type": "blob",
+        "path": "docs/baselines/v2.3/phase-2/semantic-completion-c4-custom-contracts.json",
+        "sha256": "9df659786139adf82938e6a114d41823232731c7073cedc987b460720f888cde"
+      },
+      {
+        "blob_sha": "f3703c3ae6aca07fba9fba046f7e83c7b2f8478c",
+        "object_type": "blob",
+        "path": "docs/baselines/v2.3/phase-2/semantic-completion-c4-decisions.json",
+        "sha256": "001c31965682385e13a6e746708d9d93ba6598e4bd1df37f5583e7fab9ba23ec"
+      },
+      {
+        "blob_sha": "922252e596bc1587925bbae509e61ed9fcad845f",
+        "object_type": "blob",
+        "path": "docs/baselines/v2.3/phase-2/semantic-completion-c4-execution-results.json",
+        "sha256": "b79b0279e9ceee40b454825897643d3ef253504842980ead81739cf7ab1c16e3"
+      },
+      {
+        "blob_sha": "d13fb020e68d4355c37537ac1c59f7f386d260a8",
+        "object_type": "blob",
+        "path": "docs/baselines/v2.3/phase-2/semantic-completion-c4-fixtures.json",
+        "sha256": "2f27b372360f8ca08a1d95959a180e74d3ac14789e6875d99710afd6166362a3"
+      },
+      {
+        "blob_sha": "36ca3bc0b8f7bc53c4c89c99a4e2af2433c0050d",
+        "object_type": "blob",
+        "path": "docs/baselines/v2.3/phase-2/semantic-completion-c4-manifest.json",
+        "sha256": "42630e013ffe05e5292c9bac2bc04f93ae78a792ef87f3f02dd6bf02cd6ed558"
+      },
+      {
+        "blob_sha": "31a897324dabe35faf5861373c28296cc8d13681",
+        "object_type": "blob",
+        "path": "docs/baselines/v2.3/phase-2/semantic-completion-c4-procedures.json",
+        "sha256": "8ab42abf9daa8499541913e51de850579371d8ad779a6a1bc3e2c3f946455a15"
+      },
+      {
+        "blob_sha": "92fe4534f985112292107df75cddc55e76dc285f",
+        "object_type": "blob",
+        "path": "scripts/docs/build-phase-2c-semantic-completion-c4.py",
+        "sha256": "e566df2850f568c6ddf69bbb1ce911287c2e5429b3049f60d8f635776e5537c3"
+      },
+      {
+        "blob_sha": "96f18c9b982abd25de5fddf763bc4b69cd4a1532",
+        "object_type": "blob",
+        "path": "scripts/docs/validate-phase-2c-semantic-completion-c4-reproduction.py",
+        "sha256": "b07d016e591d1e0cc5b60620a92fec9c85064b80acd46b4c5d8237bd5764e67c"
+      },
+      {
+        "blob_sha": "3947557d6cea216dfbcf2369f3a3e163037eb70a",
+        "object_type": "blob",
+        "path": "scripts/docs/validate-phase-2c-semantic-completion-c4.py",
+        "sha256": "26a1fd4adfe22bfb10b0f75fc6af00e2a82420b57c87cf1aa4a2861337385844"
+      }
+    ],
+    "inventory_count": 12,
+    "reproduction": "VALID_BYTE_IDENTICAL_12_OF_12",
+    "tree_sha": "897079721b3e8a808f363480d554e88dc9f8f284",
+    "untracked_content_commit": "c2404b953d1a01a0a1011ea1a32fffd0ca1d2e29"
+  },
+  "signed_file_hashes_excluding_self_referential_manifest": {
+    "docs/baselines/v2.3/phase-2/PHASE_2C_SEMANTIC_INFRASTRUCTURE_AMENDMENT_A1.md": "eeef07fa8c4ad12114df356df5df5f8db957c2269b7ea4a29bac34bc6d21174a",
+    "docs/baselines/v2.3/phase-2/semantic-infrastructure-amendment-a1-regressions.json": "2fe496f76724bcdeb1cf053bd725c88f03ce644260b0ffbe9c8db665fc663ff9",
+    "docs/baselines/v2.3/phase-2/semantic-infrastructure-brd-ws-14-r031-example-a1.json": "f352bd6953fc3f79185d56a18b408591814bc3d7cb57f50b91d3c76c862dc629",
+    "docs/baselines/v2.3/phase-2/semantic-infrastructure-c4-impact-register-a1.json": "6d22d0c7df33c2fe6e74b10cf00ad254151af809fe60f42326949dff8cefa1b4",
+    "docs/baselines/v2.3/phase-2/semantic-infrastructure-generic-set-types-a1.json": "b45ea7be5ef958de3ed630b45f54c4bff986d0452cbde3cab5a9c9f223f23dd2",
+    "docs/baselines/v2.3/phase-2/semantic-infrastructure-mutation-isolation-a1.json": "0f7c6bbc6237c434eb4e61320b151bf6d32668fcbfd8de5c6e3cb05d21365717",
+    "scripts/docs/build-phase-2c-semantic-infrastructure-amendment-a1.py": "798af7c1f21cc30cdefad7725b25e77946890b09e83cf81fc6468f2c64cc71d1",
+    "scripts/docs/semantic_infrastructure_amendment_a1.py": "87c3f385e995ef9d91b82898c5da1ad84949bd3d3e2996972271c362f1600bf4",
+    "scripts/docs/tests/test-phase-2c-semantic-infrastructure-amendment-a1.py": "bd5386b20a20878e8d5b278f87d2fedfa5b3f4b583aadef902c05833b01e7191",
+    "scripts/docs/validate-phase-2c-semantic-infrastructure-amendment-a1.py": "072ea3e9ca46278f53024b1fc497544ea073b8d9d7d682b079c66f37169338f8"
+  },
+  "status": "CANDIDATE",
+  "superseded_behavior": [
+    "SET_OPERATORS_FIXED_TO_CANONICAL_ENUM_VALUE",
+    "MUTATION_OF_GENERATOR_OBJECT_GRAPH_WITH_SHARED_REFERENCES"
+  ]
+}

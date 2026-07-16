@@ -1,0 +1,116 @@
+{
+  "actual_set": {
+    "allowed_target_types": [
+      "CONFIGURATION_KEY",
+      "CAPABILITY_ID"
+    ],
+    "authoritative_source": {
+      "source_id": "YSIM.CONFIGURATION_IMPACT_ANALYSIS.RESULT",
+      "source_type": "EVIDENCE_OBJECT",
+      "version_source": "FIELD.IMPACT_VERSION"
+    },
+    "identifier": "REPORTED_AFFECTED_NODE_REFERENCES",
+    "inference": false,
+    "lifecycle": {
+      "status": "ACTIVE",
+      "version": "2.3"
+    },
+    "namespace": "YSIM.CONFIGURATION_IMPACT_ANALYSIS.NODE_REFERENCE",
+    "origin": {
+      "origin_id": "YSIM.CONFIGURATION_IMPACT_ANALYSIS.EXECUTION_RESULT",
+      "origin_type": "RUNTIME_OBSERVED"
+    },
+    "provenance": {
+      "accepted_type_model_disposition": "CORRECTABLE_WITH_APPROVED_TYPE_MODEL",
+      "inference": false,
+      "source_document": "docs/BRD/BRD-WS-14.md",
+      "source_fingerprint": "39191fa401eda0ef60c152a07a59a1213f121b35e097bd1520ab1997b7054d98",
+      "source_lines": "L815-L855",
+      "source_section": "30. Configuration Dependency Graph"
+    },
+    "resolver_contract": {
+      "deterministic": true,
+      "input_types": [
+        "EVIDENCE_OBJECT_REF"
+      ],
+      "output_type": "SET_OF<REFERENCE_ID>",
+      "resolver_id": "OBSERVE.CONFIGURATION_IMPACT_ANALYSIS.REPORTED_AFFECTED_NODE_REFERENCES",
+      "version": "1.0.0-amendment.a1"
+    },
+    "semantic_type": "RUNTIME_SET_REF<REFERENCE_ID>"
+  },
+  "artifact": "V23-P2C-BRD-WS-14-R031-TYPED-REFERENCE-EXAMPLE-A1",
+  "candidate_id": "V23-P2C-SEMANTIC-INFRASTRUCTURE-AMENDMENT-A1",
+  "expected_observed_independence": {
+    "expected_authority": "VERSIONED_CONFIGURATION_DEPENDENCY_GRAPH",
+    "observed_authority": "IMPACT_ANALYSIS_EVIDENCE_OBJECT",
+    "origin_ids_must_differ": true,
+    "resolver_ids_must_differ": true
+  },
+  "expected_set": {
+    "allowed_target_types": [
+      "CONFIGURATION_KEY",
+      "CAPABILITY_ID"
+    ],
+    "authoritative_source": {
+      "source_id": "YSIM.CONFIGURATION_DEPENDENCY_GRAPH",
+      "source_type": "VERSIONED_CONFIGURATION",
+      "version_source": "FIELD.IMPACT_VERSION"
+    },
+    "identifier": "AFFECTED_NODE_REFERENCES",
+    "inference": false,
+    "lifecycle": {
+      "status": "ACTIVE",
+      "version": "2.3"
+    },
+    "namespace": "YSIM.CONFIGURATION_DEPENDENCY_GRAPH.NODE_REFERENCE",
+    "origin": {
+      "origin_id": "YSIM.CONFIGURATION_DEPENDENCY_GRAPH.VERSIONED_RESOLUTION",
+      "origin_type": "VERSIONED_CONFIGURATION"
+    },
+    "provenance": {
+      "accepted_type_model_disposition": "CORRECTABLE_WITH_APPROVED_TYPE_MODEL",
+      "inference": false,
+      "source_document": "docs/BRD/BRD-WS-14.md",
+      "source_fingerprint": "39191fa401eda0ef60c152a07a59a1213f121b35e097bd1520ab1997b7054d98",
+      "source_lines": "L815-L855",
+      "source_section": "30. Configuration Dependency Graph"
+    },
+    "resolver_contract": {
+      "deterministic": true,
+      "input_types": [
+        "CONFIGURATION_KEY",
+        "HASH"
+      ],
+      "output_type": "SET_OF<REFERENCE_ID>",
+      "resolver_id": "RESOLVE.CONFIGURATION_DEPENDENCY_GRAPH.AFFECTED_NODE_REFERENCES",
+      "version": "1.0.0-amendment.a1"
+    },
+    "semantic_type": "CANONICAL_SET_REF<REFERENCE_ID>"
+  },
+  "inference": false,
+  "operator_id": "SET_EQUALS",
+  "operator_version": "1.1.0-amendment.a1",
+  "required_evidence_fields": [
+    "FIELD.CHANGED_CONFIGURATION_ID",
+    "FIELD.DEPENDENCY_GRAPH",
+    "FIELD.AFFECTED_CONFIGURATION_IDS",
+    "FIELD.AFFECTED_CAPABILITY_IDS",
+    "FIELD.IMPACT_VERSION"
+  ],
+  "requirement_id": "BRD-WS-14-R031",
+  "source_context": {
+    "accepted_type_model_disposition": "SET_EQUALS over dependency-graph resolved expected Configuration/Capability IDs and independently reported impact IDs",
+    "dependency_graph_uses": [
+      "IMPACT_ANALYSIS",
+      "UPGRADE_PLANNING",
+      "VALIDATION",
+      "ROLLBACK",
+      "PUBLISH_CHECKING"
+    ],
+    "source_clarification_required": false
+  },
+  "source_statement": "Nếu một Configuration thay đổi, hệ thống phải xác định toàn bộ các Configuration và Business Capability bị ảnh hưởng.",
+  "status": "READ_ONLY_MODEL_VALIDATION_EXAMPLE",
+  "type_parameter": "REFERENCE_ID"
+}

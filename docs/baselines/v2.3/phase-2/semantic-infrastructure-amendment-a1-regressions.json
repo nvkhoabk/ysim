@@ -1,0 +1,252 @@
+{
+  "alias_regression": {
+    "aliased_changed_paths": [
+      "/observed_state/identifier",
+      "/validation_fixture/comparison/observed/identifier"
+    ],
+    "aliased_hash": "e9aa0328aced18ee1d6c181b6a0b1039423764202aaedb92488955a82fea6711",
+    "aliased_result_rejected": true,
+    "execution_id": "EXEC.P2C-C4-FX-61047493F1B6BF01933A-M1",
+    "fixture_id": "P2C-C4-FX-61047493F1B6BF01933A",
+    "isolated_changed_paths": [
+      "/validation_fixture/comparison/observed/identifier"
+    ],
+    "isolated_hash": "23f0cd102050f812c1da9aae80b21421d17b1ae146f2f557ba1182bfc194ca00",
+    "required_isolated_hash": "23f0cd102050f812c1da9aae80b21421d17b1ae146f2f557ba1182bfc194ca00",
+    "required_rejected_hash": "e9aa0328aced18ee1d6c181b6a0b1039423764202aaedb92488955a82fea6711",
+    "target": "/validation_fixture/comparison/observed"
+  },
+  "artifact": "V23-P2C-SEMANTIC-INFRASTRUCTURE-AMENDMENT-A1-REGRESSIONS",
+  "c4_impact_summary": {
+    "EVIDENCE_OBJECT_REMOVED": {
+      "matched": 177,
+      "total": 177,
+      "vulnerable": 0
+    },
+    "ORIGIN_COLLISION": {
+      "matched": 0,
+      "total": 177,
+      "vulnerable": 177
+    },
+    "SEMANTIC_DIFFERENCE": {
+      "matched": 0,
+      "total": 177,
+      "vulnerable": 177
+    }
+  },
+  "candidate_id": "V23-P2C-SEMANTIC-INFRASTRUCTURE-AMENDMENT-A1",
+  "generic_set_adversarial_count": 30,
+  "generic_set_adversarial_results": [
+    {
+      "actual": "PASS",
+      "case_id": "VALID_REFERENCE_SET",
+      "expected": "PASS",
+      "operator_id": "SET_EQUALS",
+      "result": "PASS"
+    },
+    {
+      "actual": "REJECT:REFERENCE_TYPE_MISMATCH",
+      "case_id": "MISMATCHED_T",
+      "expected": "REJECT:REFERENCE_TYPE_MISMATCH",
+      "operator_id": "SET_EQUALS",
+      "result": "PASS"
+    },
+    {
+      "actual": "REJECT:ORIGIN_COLLISION",
+      "case_id": "SAME_ORIGIN",
+      "expected": "REJECT:ORIGIN_COLLISION",
+      "operator_id": "SET_EQUALS",
+      "result": "PASS"
+    },
+    {
+      "actual": "REJECT:INVALID_SET_MEMBER",
+      "case_id": "SENTENCE_SET_MEMBER",
+      "expected": "REJECT:INVALID_SET_MEMBER",
+      "operator_id": "SET_EQUALS",
+      "result": "PASS"
+    },
+    {
+      "actual": "REJECT:MISSING_RESOLVER",
+      "case_id": "MISSING_RESOLVER",
+      "expected": "REJECT:MISSING_RESOLVER",
+      "operator_id": "SET_EQUALS",
+      "result": "PASS"
+    },
+    {
+      "actual": "REJECT:UNKNOWN_TARGET_TYPE",
+      "case_id": "UNKNOWN_TARGET_TYPE",
+      "expected": "REJECT:UNKNOWN_TARGET_TYPE",
+      "operator_id": "SET_EQUALS",
+      "result": "PASS"
+    },
+    {
+      "actual": "REJECT:SCHEMA_DERIVED_IDENTIFIER",
+      "case_id": "SCHEMA_DERIVED_IDENTIFIER",
+      "expected": "REJECT:SCHEMA_DERIVED_IDENTIFIER",
+      "operator_id": "SET_EQUALS",
+      "result": "PASS"
+    },
+    {
+      "actual": "REJECT:AUTHORITY_COLLISION",
+      "case_id": "SAME_EVIDENCE_SOURCE",
+      "expected": "REJECT:AUTHORITY_COLLISION",
+      "operator_id": "SET_EQUALS",
+      "result": "PASS"
+    },
+    {
+      "actual": "REJECT:INVALID_IDENTIFIER_SHAPE",
+      "case_id": "PROSE_LABEL",
+      "expected": "REJECT:INVALID_IDENTIFIER_SHAPE",
+      "operator_id": "SET_EQUALS",
+      "result": "PASS"
+    },
+    {
+      "actual": "REJECT:SCHEMA_DERIVED_IDENTIFIER",
+      "case_id": "ACTUAL_SCHEMA_IDENTIFIER",
+      "expected": "REJECT:SCHEMA_DERIVED_IDENTIFIER",
+      "operator_id": "SET_EQUALS",
+      "result": "PASS"
+    },
+    {
+      "actual": "PASS",
+      "case_id": "VALID_REFERENCE_SET",
+      "expected": "PASS",
+      "operator_id": "SET_CONTAINS",
+      "result": "PASS"
+    },
+    {
+      "actual": "REJECT:REFERENCE_TYPE_MISMATCH",
+      "case_id": "MISMATCHED_T",
+      "expected": "REJECT:REFERENCE_TYPE_MISMATCH",
+      "operator_id": "SET_CONTAINS",
+      "result": "PASS"
+    },
+    {
+      "actual": "REJECT:ORIGIN_COLLISION",
+      "case_id": "SAME_ORIGIN",
+      "expected": "REJECT:ORIGIN_COLLISION",
+      "operator_id": "SET_CONTAINS",
+      "result": "PASS"
+    },
+    {
+      "actual": "REJECT:INVALID_SET_MEMBER",
+      "case_id": "SENTENCE_SET_MEMBER",
+      "expected": "REJECT:INVALID_SET_MEMBER",
+      "operator_id": "SET_CONTAINS",
+      "result": "PASS"
+    },
+    {
+      "actual": "REJECT:MISSING_RESOLVER",
+      "case_id": "MISSING_RESOLVER",
+      "expected": "REJECT:MISSING_RESOLVER",
+      "operator_id": "SET_CONTAINS",
+      "result": "PASS"
+    },
+    {
+      "actual": "REJECT:UNKNOWN_TARGET_TYPE",
+      "case_id": "UNKNOWN_TARGET_TYPE",
+      "expected": "REJECT:UNKNOWN_TARGET_TYPE",
+      "operator_id": "SET_CONTAINS",
+      "result": "PASS"
+    },
+    {
+      "actual": "REJECT:SCHEMA_DERIVED_IDENTIFIER",
+      "case_id": "SCHEMA_DERIVED_IDENTIFIER",
+      "expected": "REJECT:SCHEMA_DERIVED_IDENTIFIER",
+      "operator_id": "SET_CONTAINS",
+      "result": "PASS"
+    },
+    {
+      "actual": "REJECT:AUTHORITY_COLLISION",
+      "case_id": "SAME_EVIDENCE_SOURCE",
+      "expected": "REJECT:AUTHORITY_COLLISION",
+      "operator_id": "SET_CONTAINS",
+      "result": "PASS"
+    },
+    {
+      "actual": "REJECT:INVALID_IDENTIFIER_SHAPE",
+      "case_id": "PROSE_LABEL",
+      "expected": "REJECT:INVALID_IDENTIFIER_SHAPE",
+      "operator_id": "SET_CONTAINS",
+      "result": "PASS"
+    },
+    {
+      "actual": "REJECT:SCHEMA_DERIVED_IDENTIFIER",
+      "case_id": "ACTUAL_SCHEMA_IDENTIFIER",
+      "expected": "REJECT:SCHEMA_DERIVED_IDENTIFIER",
+      "operator_id": "SET_CONTAINS",
+      "result": "PASS"
+    },
+    {
+      "actual": "PASS",
+      "case_id": "VALID_REFERENCE_SET",
+      "expected": "PASS",
+      "operator_id": "SET_EXCLUDES",
+      "result": "PASS"
+    },
+    {
+      "actual": "REJECT:REFERENCE_TYPE_MISMATCH",
+      "case_id": "MISMATCHED_T",
+      "expected": "REJECT:REFERENCE_TYPE_MISMATCH",
+      "operator_id": "SET_EXCLUDES",
+      "result": "PASS"
+    },
+    {
+      "actual": "REJECT:ORIGIN_COLLISION",
+      "case_id": "SAME_ORIGIN",
+      "expected": "REJECT:ORIGIN_COLLISION",
+      "operator_id": "SET_EXCLUDES",
+      "result": "PASS"
+    },
+    {
+      "actual": "REJECT:INVALID_SET_MEMBER",
+      "case_id": "SENTENCE_SET_MEMBER",
+      "expected": "REJECT:INVALID_SET_MEMBER",
+      "operator_id": "SET_EXCLUDES",
+      "result": "PASS"
+    },
+    {
+      "actual": "REJECT:MISSING_RESOLVER",
+      "case_id": "MISSING_RESOLVER",
+      "expected": "REJECT:MISSING_RESOLVER",
+      "operator_id": "SET_EXCLUDES",
+      "result": "PASS"
+    },
+    {
+      "actual": "REJECT:UNKNOWN_TARGET_TYPE",
+      "case_id": "UNKNOWN_TARGET_TYPE",
+      "expected": "REJECT:UNKNOWN_TARGET_TYPE",
+      "operator_id": "SET_EXCLUDES",
+      "result": "PASS"
+    },
+    {
+      "actual": "REJECT:SCHEMA_DERIVED_IDENTIFIER",
+      "case_id": "SCHEMA_DERIVED_IDENTIFIER",
+      "expected": "REJECT:SCHEMA_DERIVED_IDENTIFIER",
+      "operator_id": "SET_EXCLUDES",
+      "result": "PASS"
+    },
+    {
+      "actual": "REJECT:AUTHORITY_COLLISION",
+      "case_id": "SAME_EVIDENCE_SOURCE",
+      "expected": "REJECT:AUTHORITY_COLLISION",
+      "operator_id": "SET_EXCLUDES",
+      "result": "PASS"
+    },
+    {
+      "actual": "REJECT:INVALID_IDENTIFIER_SHAPE",
+      "case_id": "PROSE_LABEL",
+      "expected": "REJECT:INVALID_IDENTIFIER_SHAPE",
+      "operator_id": "SET_EXCLUDES",
+      "result": "PASS"
+    },
+    {
+      "actual": "REJECT:SCHEMA_DERIVED_IDENTIFIER",
+      "case_id": "ACTUAL_SCHEMA_IDENTIFIER",
+      "expected": "REJECT:SCHEMA_DERIVED_IDENTIFIER",
+      "operator_id": "SET_EXCLUDES",
+      "result": "PASS"
+    }
+  ],
+  "result": "PASS"
+}

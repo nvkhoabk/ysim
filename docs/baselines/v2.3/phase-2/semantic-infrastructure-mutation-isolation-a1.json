@@ -1,0 +1,55 @@
+{
+  "artifact": "V23-P2C-CANONICAL-MUTATION-ISOLATION-CONTRACT-A1",
+  "candidate_id": "V23-P2C-SEMANTIC-INFRASTRUCTURE-AMENDMENT-A1",
+  "canonicalization": {
+    "encoding": "UTF-8",
+    "ensure_ascii": false,
+    "line_endings": "NONE_IN_COMPACT_JSON",
+    "separators": [
+      ",",
+      ":"
+    ],
+    "sort_object_keys": true,
+    "unicode_normalization": "NONE"
+  },
+  "contract_version": "1.0.0-candidate.1",
+  "independent_validator_contract": [
+    "READ_STORED_CANONICAL_FIXTURE_BYTES",
+    "PARSE_FRESH",
+    "APPLY_STORED_MUTATION_DEFINITION",
+    "CANONICAL_SERIALIZE",
+    "HASH",
+    "COMPARE_WITH_STORED_MUTANT_HASH"
+  ],
+  "invariants": [
+    "CANONICAL_SERIALIZED_FIXTURE_BYTES_ARE_THE_ONLY_MUTATION_INPUT",
+    "EVERY_MUTATION_PARSES_A_FRESH_OBJECT_GRAPH",
+    "EXACTLY_ONE_JSON_POINTER_OPERATION_IS_APPLIED",
+    "GENERATOR_OBJECT_REFERENCES_ARE_NEVER_REUSED",
+    "TARGET_MUST_EXIST",
+    "NO_OP_MUTATIONS_ARE_REJECTED",
+    "ALL_CHANGED_LEAVES_MUST_BE_AT_OR_BELOW_THE_DECLARED_TARGET",
+    "SIBLING_AND_MIRRORED_PATH_CHANGES_ARE_REJECTED",
+    "FIXTURE_IDENTITY_AND_PROVENANCE_REMAIN_UNCHANGED_UNLESS_EXPLICITLY_TARGETED",
+    "MUTANT_HASH_IS_COMPUTED_FROM_CANONICAL_POST_MUTATION_BYTES",
+    "EXCEPTIONS_AND_INVALID_MUTATIONS_ARE_NOT_KILLED"
+  ],
+  "mandatory_alias_regression": {
+    "aliased_changed_paths": [
+      "/observed_state/identifier",
+      "/validation_fixture/comparison/observed/identifier"
+    ],
+    "aliased_hash": "e9aa0328aced18ee1d6c181b6a0b1039423764202aaedb92488955a82fea6711",
+    "aliased_result_rejected": true,
+    "execution_id": "EXEC.P2C-C4-FX-61047493F1B6BF01933A-M1",
+    "fixture_id": "P2C-C4-FX-61047493F1B6BF01933A",
+    "isolated_changed_paths": [
+      "/validation_fixture/comparison/observed/identifier"
+    ],
+    "isolated_hash": "23f0cd102050f812c1da9aae80b21421d17b1ae146f2f557ba1182bfc194ca00",
+    "required_isolated_hash": "23f0cd102050f812c1da9aae80b21421d17b1ae146f2f557ba1182bfc194ca00",
+    "required_rejected_hash": "e9aa0328aced18ee1d6c181b6a0b1039423764202aaedb92488955a82fea6711",
+    "target": "/validation_fixture/comparison/observed"
+  },
+  "status": "CANDIDATE"
+}
