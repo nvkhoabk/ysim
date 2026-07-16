@@ -1,0 +1,28 @@
+{
+  "artifact": "V23-P2C-SEMANTIC-COMPLETION-C4-R3-DEPENDENCY-OVERLAP",
+  "candidate_id": "V23-P2C-SEMANTIC-COMPLETION-C4-R3",
+  "dependency_order": [
+    "P2C-SC-C1-DEC-021",
+    "P2C-SC-C1-DEC-022",
+    "P2C-SC-C1-DEC-026",
+    "P2C-SC-C1-DEC-027"
+  ],
+  "overlaps": [
+    {
+      "decisions": [
+        "P2C-SC-C1-DEC-011",
+        "P2C-SC-C1-DEC-012"
+      ],
+      "resolution": "Visibility surfaces remain in DEC-011; Enable/Disable remains in DEC-012; Override Configuration and Configure Parameter remain separate obligations."
+    },
+    {
+      "decisions": [
+        "P2C-SC-C1-DEC-024",
+        "P2C-SC-C1-DEC-025"
+      ],
+      "resolution": "Both bind UXD-07 WCAG 2.2 AA; DEC-024 is theme non-disablement and DEC-025 is mandatory baseline."
+    }
+  ],
+  "result": "PASS",
+  "unresolved_overlaps": 0
+}

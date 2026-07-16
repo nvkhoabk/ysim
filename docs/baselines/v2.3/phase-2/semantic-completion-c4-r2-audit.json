@@ -1,0 +1,85 @@
+{
+  "accepted_infrastructure_amendment": "V23-P2C-SEMANTIC-INFRASTRUCTURE-AMENDMENT-A1",
+  "all_59_sentence_injection_rejected": true,
+  "artifact": "V23-P2C-SEMANTIC-COMPLETION-C4-R2-AUDIT",
+  "audited_approved_clarifications": 6,
+  "audited_assertions": 79,
+  "audited_compound_contracts": 6,
+  "audited_custom_contracts": 59,
+  "audited_evidence_objects": 59,
+  "audited_fixtures": 177,
+  "audited_operator_remap_dispositions": 12,
+  "audited_pending_decisions": 27,
+  "audited_procedures": 156,
+  "candidate_id": "V23-P2C-SEMANTIC-COMPLETION-C4-R2",
+  "former_family_regressions": [
+    {
+      "current_semantic_family_ids": [
+        null,
+        null
+      ],
+      "former_family_id": "SC-HRAF-008",
+      "requirement_ids": [
+        "BRD-EVENT-INDEX-R004",
+        "UXF-109"
+      ],
+      "result": "PASS_INDEPENDENT"
+    },
+    {
+      "current_semantic_family_ids": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "former_family_id": "SC-HRAF-020",
+      "requirement_ids": [
+        "BRD-WS-03-R003",
+        "BRD-WS-05-R014",
+        "BRD-WS-07-R006",
+        "EP-17-002"
+      ],
+      "result": "PASS_INDEPENDENT"
+    },
+    {
+      "current_semantic_family_ids": [
+        null,
+        null
+      ],
+      "former_family_id": "SC-HRAF-030",
+      "requirement_ids": [
+        "BD-07-007",
+        "BRD-META-MODEL-R005"
+      ],
+      "result": "PASS_INDEPENDENT"
+    }
+  ],
+  "mandatory_records": [
+    "BRD-WS-02-R003",
+    "BRD-WS-07-R014",
+    "BRD-WS-08-R004",
+    "BRD-WS-14-R031",
+    "EP-17-002",
+    "BD-04-001"
+  ],
+  "regressions": {
+    "generic_evidence_labels": 0,
+    "invalid_or_blocked": 0,
+    "lost_obligations": 0,
+    "observed_copied_from_expected": 0,
+    "owner_predicates": 0,
+    "placeholder_default_semantic_identifiers": 0,
+    "predicate_as_scalar": 0,
+    "same_origin_expected_observed": 0,
+    "schema_derived_semantic_identifiers": 0,
+    "sentence_copy_vulnerable_operators": 0,
+    "sentence_valued_set_members": 0,
+    "surviving_model_mutations": 0,
+    "type_check_failures": 0,
+    "uncovered_compound_obligations": 0,
+    "unsupported_injected_obligations": 0,
+    "unsupported_operator_mappings": 0,
+    "whole_statement_bindings": 0
+  },
+  "result": "PASS"
+}

@@ -1,0 +1,28 @@
+# Phase 2C Semantic Completion C4-R3 Candidate
+
+- Candidate: `V23-P2C-SEMANTIC-COMPLETION-C4-R3`
+- Supersedes: `V23-P2C-SEMANTIC-COMPLETION-C4-R2`
+- Reason: `INCOMPLETE_DECISION_CONTRACTS_AND_FALSE_OPTION_EFFECT_CLAIMS`
+- Status: `CANDIDATE`
+- Approval: `PENDING_HUMAN_APPROVAL`
+- Next gate: `HUMAN_PHASE_2C_SEMANTIC_COMPLETION_C4_R3_DECISION_AND_CANDIDATE_APPROVAL`
+
+## Results
+
+- Technical core: byte-identical R2 content-addressed payload
+- Decisions complete: 27/27
+- Safe recommended options: 25
+- Business-choice option packs ready: 2
+- Selected options: 0
+- Runtime mutation score: N/A — NOT EXECUTED
+
+## Non-claims
+
+- `NOT_FINAL_BRD_UXF_BASELINE_APPROVAL`
+- `NOT_RUNTIME_ADAPTER_VALIDATION`
+- `NOT_RUNTIME_MUTATION_SCORE`
+- `NOT_YADF_AUTHORIZATION`
+- `NOT_PRODUCTION_IMPLEMENTATION`
+- `NOT_AUTOMATIC_APPROVAL_OF_27_DECISIONS`
+- `NOT_C4_R3_ACCEPTANCE`
+- `NO_SOURCE_EDIT_PERFORMED`

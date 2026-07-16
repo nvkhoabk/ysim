@@ -1,0 +1,637 @@
+{
+  "artifact": "V23-P2C-SEMANTIC-COMPLETION-C4-R2-NORMALIZATION-REGISTER",
+  "candidate_id": "V23-P2C-SEMANTIC-COMPLETION-C4-R2",
+  "record_count": 9,
+  "records": [
+    {
+      "affected_executions": [
+        "EXEC.P2C-C4-R2-FX-5BB956611A8310831791-M1",
+        "EXEC.P2C-C4-R2-FX-5BB956611A8310831791-M2",
+        "EXEC.P2C-C4-R2-FX-5BB956611A8310831791-M3",
+        "EXEC.P2C-C4-R2-FX-C541D7BC20677210AAFF-M1",
+        "EXEC.P2C-C4-R2-FX-C541D7BC20677210AAFF-M2",
+        "EXEC.P2C-C4-R2-FX-C541D7BC20677210AAFF-M3",
+        "EXEC.P2C-C4-R2-FX-029AED71F3DBCF8C184D-M1",
+        "EXEC.P2C-C4-R2-FX-029AED71F3DBCF8C184D-M2",
+        "EXEC.P2C-C4-R2-FX-029AED71F3DBCF8C184D-M3"
+      ],
+      "affected_fixtures": [
+        "P2C-C4-R2-FX-5BB956611A8310831791",
+        "P2C-C4-R2-FX-C541D7BC20677210AAFF",
+        "P2C-C4-R2-FX-029AED71F3DBCF8C184D"
+      ],
+      "business_semantics_changed": false,
+      "identifier_changes": [
+        {
+          "authority": {
+            "source_id": "docs/BRD/BRD-WS-08.md#23. Business Decisions (Locked) > BD-08-017",
+            "source_type": "SOURCE_LITERAL",
+            "version": "148d41ea6961d6c78c50a1f2afd396f50d0859d71ff84090b0e14348e8a23d41"
+          },
+          "binding_name": "actual_set",
+          "namespace": "YSIM.BD-08-017.RESOLVED.COLLECTION",
+          "new_source_grounded_identifier": "RESOLVED_MEMBER_COLLECTION",
+          "old_schema_derived_identifier": "BD-08-017.ACTUAL_SET",
+          "origin": {
+            "origin_id": "BD-08-017.O1.1.SET_CONTAINS.ACTUAL_SET.ORIGIN",
+            "origin_type": "RUNTIME_OBSERVED"
+          },
+          "resolver": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "SET_OF<CANONICAL_ENUM_VALUE>",
+            "resolver_id": "OBSERVE.BD-08-017.RESOLVED_MEMBER_COLLECTION",
+            "version": "1.0.0"
+          },
+          "semantic_type": "RUNTIME_SET_REF<CANONICAL_ENUM_VALUE>"
+        },
+        {
+          "authority": {
+            "source_id": "docs/BRD/BRD-WS-08.md#23. Business Decisions (Locked) > BD-08-017",
+            "source_type": "SOURCE_LITERAL",
+            "version": "148d41ea6961d6c78c50a1f2afd396f50d0859d71ff84090b0e14348e8a23d41"
+          },
+          "binding_name": "required_members",
+          "namespace": "YSIM.BD-08-017.GOVERNED.COLLECTION",
+          "new_source_grounded_identifier": "GOVERNED_MEMBER_COLLECTION",
+          "old_schema_derived_identifier": "BD-08-017.REQUIRED_MEMBERS",
+          "origin": {
+            "origin_id": "BD-08-017.O1.1.SET_CONTAINS.REQUIRED_MEMBERS.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "resolver": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "SET_OF<CANONICAL_ENUM_VALUE>",
+            "resolver_id": "RESOLVE.BD-08-017.GOVERNED_MEMBER_COLLECTION",
+            "version": "1.0.0"
+          },
+          "semantic_type": "CANONICAL_SET_REF<CANONICAL_ENUM_VALUE>"
+        }
+      ],
+      "reason": "A1 forbids schema-property-derived semantic identifiers for generic set references.",
+      "requirement_id": "BD-08-017",
+      "source_clarification_required": false
+    },
+    {
+      "affected_executions": [
+        "EXEC.P2C-C4-R2-FX-51F21E789AF0A272EDF4-M1",
+        "EXEC.P2C-C4-R2-FX-51F21E789AF0A272EDF4-M2",
+        "EXEC.P2C-C4-R2-FX-51F21E789AF0A272EDF4-M3",
+        "EXEC.P2C-C4-R2-FX-EA1245150EADDCBF2F19-M1",
+        "EXEC.P2C-C4-R2-FX-EA1245150EADDCBF2F19-M2",
+        "EXEC.P2C-C4-R2-FX-EA1245150EADDCBF2F19-M3",
+        "EXEC.P2C-C4-R2-FX-758A8D261DFC155B7F44-M1",
+        "EXEC.P2C-C4-R2-FX-758A8D261DFC155B7F44-M2",
+        "EXEC.P2C-C4-R2-FX-758A8D261DFC155B7F44-M3"
+      ],
+      "affected_fixtures": [
+        "P2C-C4-R2-FX-51F21E789AF0A272EDF4",
+        "P2C-C4-R2-FX-EA1245150EADDCBF2F19",
+        "P2C-C4-R2-FX-758A8D261DFC155B7F44"
+      ],
+      "business_semantics_changed": false,
+      "identifier_changes": [
+        {
+          "authority": {
+            "source_id": "docs/BRD/BRD-WS-13.md#29. Business Decisions (Locked) > BD-13-015",
+            "source_type": "SOURCE_LITERAL",
+            "version": "38c2711c90d5060fcedfad8afd307d11311470a21bdd25d760549b9bc6baa2cf"
+          },
+          "binding_name": "actual_set",
+          "namespace": "YSIM.BD-13-015.RESOLVED.COLLECTION",
+          "new_source_grounded_identifier": "RESOLVED_MEMBER_COLLECTION",
+          "old_schema_derived_identifier": "BD-13-015.ACTUAL_SET",
+          "origin": {
+            "origin_id": "BD-13-015.O2.1.SET_EXCLUDES.ACTUAL_SET.ORIGIN",
+            "origin_type": "RUNTIME_OBSERVED"
+          },
+          "resolver": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "SET_OF<CANONICAL_ENUM_VALUE>",
+            "resolver_id": "OBSERVE.BD-13-015.RESOLVED_MEMBER_COLLECTION",
+            "version": "1.0.0"
+          },
+          "semantic_type": "RUNTIME_SET_REF<CANONICAL_ENUM_VALUE>"
+        },
+        {
+          "authority": {
+            "source_id": "docs/BRD/BRD-WS-13.md#29. Business Decisions (Locked) > BD-13-015",
+            "source_type": "SOURCE_LITERAL",
+            "version": "38c2711c90d5060fcedfad8afd307d11311470a21bdd25d760549b9bc6baa2cf"
+          },
+          "binding_name": "prohibited_members",
+          "namespace": "YSIM.BD-13-015.GOVERNED.COLLECTION",
+          "new_source_grounded_identifier": "GOVERNED_MEMBER_COLLECTION",
+          "old_schema_derived_identifier": "BD-13-015.PROHIBITED_MEMBERS",
+          "origin": {
+            "origin_id": "BD-13-015.O2.1.SET_EXCLUDES.PROHIBITED_MEMBERS.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "resolver": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "SET_OF<CANONICAL_ENUM_VALUE>",
+            "resolver_id": "RESOLVE.BD-13-015.GOVERNED_MEMBER_COLLECTION",
+            "version": "1.0.0"
+          },
+          "semantic_type": "CANONICAL_SET_REF<CANONICAL_ENUM_VALUE>"
+        }
+      ],
+      "reason": "A1 forbids schema-property-derived semantic identifiers for generic set references.",
+      "requirement_id": "BD-13-015",
+      "source_clarification_required": false
+    },
+    {
+      "affected_executions": [
+        "EXEC.P2C-C4-R2-FX-3792BAEAD544320CB3A1-M1",
+        "EXEC.P2C-C4-R2-FX-3792BAEAD544320CB3A1-M2",
+        "EXEC.P2C-C4-R2-FX-3792BAEAD544320CB3A1-M3",
+        "EXEC.P2C-C4-R2-FX-0FA05C68938009B233F6-M1",
+        "EXEC.P2C-C4-R2-FX-0FA05C68938009B233F6-M2",
+        "EXEC.P2C-C4-R2-FX-0FA05C68938009B233F6-M3",
+        "EXEC.P2C-C4-R2-FX-E9141CFF3D71F3E5E2DA-M1",
+        "EXEC.P2C-C4-R2-FX-E9141CFF3D71F3E5E2DA-M2",
+        "EXEC.P2C-C4-R2-FX-E9141CFF3D71F3E5E2DA-M3"
+      ],
+      "affected_fixtures": [
+        "P2C-C4-R2-FX-3792BAEAD544320CB3A1",
+        "P2C-C4-R2-FX-0FA05C68938009B233F6",
+        "P2C-C4-R2-FX-E9141CFF3D71F3E5E2DA"
+      ],
+      "business_semantics_changed": false,
+      "identifier_changes": [
+        {
+          "authority": {
+            "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#16. Snapshot Composition Principle",
+            "source_type": "SOURCE_LITERAL",
+            "version": "14703fc43530d77989c2bcd17407d70aff2677628faea2bdb0c6c30d329e3d9a"
+          },
+          "binding_name": "actual_set",
+          "namespace": "YSIM.BRD-SNAPSHOT-INDEX-R008.RESOLVED.COLLECTION",
+          "new_source_grounded_identifier": "RESOLVED_MEMBER_COLLECTION",
+          "old_schema_derived_identifier": "BRD-SNAPSHOT-INDEX-R008.ACTUAL_SET",
+          "origin": {
+            "origin_id": "BRD-SNAPSHOT-INDEX-R008.O1.1.SET_CONTAINS.ACTUAL_SET.ORIGIN",
+            "origin_type": "RUNTIME_OBSERVED"
+          },
+          "resolver": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "SET_OF<CANONICAL_ENUM_VALUE>",
+            "resolver_id": "OBSERVE.BRD-SNAPSHOT-INDEX-R008.RESOLVED_MEMBER_COLLECTION",
+            "version": "1.0.0"
+          },
+          "semantic_type": "RUNTIME_SET_REF<CANONICAL_ENUM_VALUE>"
+        },
+        {
+          "authority": {
+            "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#16. Snapshot Composition Principle",
+            "source_type": "SOURCE_LITERAL",
+            "version": "14703fc43530d77989c2bcd17407d70aff2677628faea2bdb0c6c30d329e3d9a"
+          },
+          "binding_name": "required_members",
+          "namespace": "YSIM.BRD-SNAPSHOT-INDEX-R008.GOVERNED.COLLECTION",
+          "new_source_grounded_identifier": "GOVERNED_MEMBER_COLLECTION",
+          "old_schema_derived_identifier": "BRD-SNAPSHOT-INDEX-R008.REQUIRED_MEMBERS",
+          "origin": {
+            "origin_id": "BRD-SNAPSHOT-INDEX-R008.O1.1.SET_CONTAINS.REQUIRED_MEMBERS.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "resolver": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "SET_OF<CANONICAL_ENUM_VALUE>",
+            "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R008.GOVERNED_MEMBER_COLLECTION",
+            "version": "1.0.0"
+          },
+          "semantic_type": "CANONICAL_SET_REF<CANONICAL_ENUM_VALUE>"
+        }
+      ],
+      "reason": "A1 forbids schema-property-derived semantic identifiers for generic set references.",
+      "requirement_id": "BRD-SNAPSHOT-INDEX-R008",
+      "source_clarification_required": false
+    },
+    {
+      "affected_executions": [
+        "EXEC.P2C-C4-R2-FX-68AE9ACECE66A9667FF6-M1",
+        "EXEC.P2C-C4-R2-FX-68AE9ACECE66A9667FF6-M2",
+        "EXEC.P2C-C4-R2-FX-68AE9ACECE66A9667FF6-M3",
+        "EXEC.P2C-C4-R2-FX-6C31126B17BB862FB600-M1",
+        "EXEC.P2C-C4-R2-FX-6C31126B17BB862FB600-M2",
+        "EXEC.P2C-C4-R2-FX-6C31126B17BB862FB600-M3",
+        "EXEC.P2C-C4-R2-FX-A5247A49295697DB35D6-M1",
+        "EXEC.P2C-C4-R2-FX-A5247A49295697DB35D6-M2",
+        "EXEC.P2C-C4-R2-FX-A5247A49295697DB35D6-M3"
+      ],
+      "affected_fixtures": [
+        "P2C-C4-R2-FX-68AE9ACECE66A9667FF6",
+        "P2C-C4-R2-FX-6C31126B17BB862FB600",
+        "P2C-C4-R2-FX-A5247A49295697DB35D6"
+      ],
+      "business_semantics_changed": false,
+      "identifier_changes": [
+        {
+          "authority": {
+            "source_id": "docs/BRD/BRD-WS-06.md#12. Marketing Attribution",
+            "source_type": "SOURCE_LITERAL",
+            "version": "084cbd6515925bce541e8f6385c15b9b5efb2b95ea237faf91f5dcb304f68d50"
+          },
+          "binding_name": "actual_set",
+          "namespace": "YSIM.BRD-WS-06-R010.RESOLVED.COLLECTION",
+          "new_source_grounded_identifier": "RESOLVED_MEMBER_COLLECTION",
+          "old_schema_derived_identifier": "BRD-WS-06-R010.ACTUAL_SET",
+          "origin": {
+            "origin_id": "BRD-WS-06-R010.O1.1.SET_CONTAINS.ACTUAL_SET.ORIGIN",
+            "origin_type": "RUNTIME_OBSERVED"
+          },
+          "resolver": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "SET_OF<CANONICAL_ENUM_VALUE>",
+            "resolver_id": "OBSERVE.BRD-WS-06-R010.RESOLVED_MEMBER_COLLECTION",
+            "version": "1.0.0"
+          },
+          "semantic_type": "RUNTIME_SET_REF<CANONICAL_ENUM_VALUE>"
+        },
+        {
+          "authority": {
+            "source_id": "docs/BRD/BRD-WS-06.md#12. Marketing Attribution",
+            "source_type": "SOURCE_LITERAL",
+            "version": "084cbd6515925bce541e8f6385c15b9b5efb2b95ea237faf91f5dcb304f68d50"
+          },
+          "binding_name": "required_members",
+          "namespace": "YSIM.BRD-WS-06-R010.GOVERNED.COLLECTION",
+          "new_source_grounded_identifier": "GOVERNED_MEMBER_COLLECTION",
+          "old_schema_derived_identifier": "BRD-WS-06-R010.REQUIRED_MEMBERS",
+          "origin": {
+            "origin_id": "BRD-WS-06-R010.O1.1.SET_CONTAINS.REQUIRED_MEMBERS.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "resolver": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "SET_OF<CANONICAL_ENUM_VALUE>",
+            "resolver_id": "RESOLVE.BRD-WS-06-R010.GOVERNED_MEMBER_COLLECTION",
+            "version": "1.0.0"
+          },
+          "semantic_type": "CANONICAL_SET_REF<CANONICAL_ENUM_VALUE>"
+        }
+      ],
+      "reason": "A1 forbids schema-property-derived semantic identifiers for generic set references.",
+      "requirement_id": "BRD-WS-06-R010",
+      "source_clarification_required": false
+    },
+    {
+      "affected_executions": [
+        "EXEC.P2C-C4-R2-FX-795638C1B4A041F54A7D-M1",
+        "EXEC.P2C-C4-R2-FX-795638C1B4A041F54A7D-M2",
+        "EXEC.P2C-C4-R2-FX-795638C1B4A041F54A7D-M3",
+        "EXEC.P2C-C4-R2-FX-4B2144D285B62939CCE1-M1",
+        "EXEC.P2C-C4-R2-FX-4B2144D285B62939CCE1-M2",
+        "EXEC.P2C-C4-R2-FX-4B2144D285B62939CCE1-M3",
+        "EXEC.P2C-C4-R2-FX-C41D060B2C0F50666E30-M1",
+        "EXEC.P2C-C4-R2-FX-C41D060B2C0F50666E30-M2",
+        "EXEC.P2C-C4-R2-FX-C41D060B2C0F50666E30-M3"
+      ],
+      "affected_fixtures": [
+        "P2C-C4-R2-FX-795638C1B4A041F54A7D",
+        "P2C-C4-R2-FX-4B2144D285B62939CCE1",
+        "P2C-C4-R2-FX-C41D060B2C0F50666E30"
+      ],
+      "business_semantics_changed": false,
+      "identifier_changes": [
+        {
+          "authority": {
+            "source_id": "docs/BRD/BRD-WS-07.md#10. Customer Information",
+            "source_type": "SOURCE_LITERAL",
+            "version": "04aecae66a9dee037eac79a2bcd12a00ae885cc7a0bc7847358a4cb5f18640f1"
+          },
+          "binding_name": "actual_set",
+          "namespace": "YSIM.BRD-WS-07-R006.RESOLVED.COLLECTION",
+          "new_source_grounded_identifier": "RESOLVED_MEMBER_COLLECTION",
+          "old_schema_derived_identifier": "BRD-WS-07-R006.ACTUAL_SET",
+          "origin": {
+            "origin_id": "BRD-WS-07-R006.O1.1.SET_CONTAINS.ACTUAL_SET.ORIGIN",
+            "origin_type": "RUNTIME_OBSERVED"
+          },
+          "resolver": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "SET_OF<CANONICAL_ENUM_VALUE>",
+            "resolver_id": "OBSERVE.BRD-WS-07-R006.RESOLVED_MEMBER_COLLECTION",
+            "version": "1.0.0"
+          },
+          "semantic_type": "RUNTIME_SET_REF<CANONICAL_ENUM_VALUE>"
+        },
+        {
+          "authority": {
+            "source_id": "docs/BRD/BRD-WS-07.md#10. Customer Information",
+            "source_type": "SOURCE_LITERAL",
+            "version": "04aecae66a9dee037eac79a2bcd12a00ae885cc7a0bc7847358a4cb5f18640f1"
+          },
+          "binding_name": "required_members",
+          "namespace": "YSIM.BRD-WS-07-R006.GOVERNED.COLLECTION",
+          "new_source_grounded_identifier": "GOVERNED_MEMBER_COLLECTION",
+          "old_schema_derived_identifier": "BRD-WS-07-R006.REQUIRED_MEMBERS",
+          "origin": {
+            "origin_id": "BRD-WS-07-R006.O1.1.SET_CONTAINS.REQUIRED_MEMBERS.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "resolver": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "SET_OF<CANONICAL_ENUM_VALUE>",
+            "resolver_id": "RESOLVE.BRD-WS-07-R006.GOVERNED_MEMBER_COLLECTION",
+            "version": "1.0.0"
+          },
+          "semantic_type": "CANONICAL_SET_REF<CANONICAL_ENUM_VALUE>"
+        }
+      ],
+      "reason": "A1 forbids schema-property-derived semantic identifiers for generic set references.",
+      "requirement_id": "BRD-WS-07-R006",
+      "source_clarification_required": false
+    },
+    {
+      "affected_executions": [
+        "EXEC.P2C-C4-R2-FX-7B999F7625DE11D96D1E-M1",
+        "EXEC.P2C-C4-R2-FX-7B999F7625DE11D96D1E-M2",
+        "EXEC.P2C-C4-R2-FX-7B999F7625DE11D96D1E-M3",
+        "EXEC.P2C-C4-R2-FX-CBB120B005E9BB3C3CA7-M1",
+        "EXEC.P2C-C4-R2-FX-CBB120B005E9BB3C3CA7-M2",
+        "EXEC.P2C-C4-R2-FX-CBB120B005E9BB3C3CA7-M3",
+        "EXEC.P2C-C4-R2-FX-5A93B5D6B813E964FD66-M1",
+        "EXEC.P2C-C4-R2-FX-5A93B5D6B813E964FD66-M2",
+        "EXEC.P2C-C4-R2-FX-5A93B5D6B813E964FD66-M3"
+      ],
+      "affected_fixtures": [
+        "P2C-C4-R2-FX-7B999F7625DE11D96D1E",
+        "P2C-C4-R2-FX-CBB120B005E9BB3C3CA7",
+        "P2C-C4-R2-FX-5A93B5D6B813E964FD66"
+      ],
+      "business_semantics_changed": false,
+      "identifier_changes": [
+        {
+          "authority": {
+            "source_id": "docs/BRD/BRD-WS-15.md#15. Dead Letter Queue",
+            "source_type": "SOURCE_LITERAL",
+            "version": "14dd716e01b76f04d798b4b55130f05c88778ec7194d7da1279354e1f1e03061"
+          },
+          "binding_name": "actual_set",
+          "namespace": "YSIM.BRD-WS-15-R008.RESOLVED.COLLECTION",
+          "new_source_grounded_identifier": "RESOLVED_MEMBER_COLLECTION",
+          "old_schema_derived_identifier": "BRD-WS-15-R008.ACTUAL_SET",
+          "origin": {
+            "origin_id": "BRD-WS-15-R008.O1.1.SET_CONTAINS.ACTUAL_SET.ORIGIN",
+            "origin_type": "RUNTIME_OBSERVED"
+          },
+          "resolver": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "SET_OF<CANONICAL_ENUM_VALUE>",
+            "resolver_id": "OBSERVE.BRD-WS-15-R008.RESOLVED_MEMBER_COLLECTION",
+            "version": "1.0.0"
+          },
+          "semantic_type": "RUNTIME_SET_REF<CANONICAL_ENUM_VALUE>"
+        },
+        {
+          "authority": {
+            "source_id": "docs/BRD/BRD-WS-15.md#15. Dead Letter Queue",
+            "source_type": "SOURCE_LITERAL",
+            "version": "14dd716e01b76f04d798b4b55130f05c88778ec7194d7da1279354e1f1e03061"
+          },
+          "binding_name": "required_members",
+          "namespace": "YSIM.BRD-WS-15-R008.GOVERNED.COLLECTION",
+          "new_source_grounded_identifier": "GOVERNED_MEMBER_COLLECTION",
+          "old_schema_derived_identifier": "BRD-WS-15-R008.REQUIRED_MEMBERS",
+          "origin": {
+            "origin_id": "BRD-WS-15-R008.O1.1.SET_CONTAINS.REQUIRED_MEMBERS.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "resolver": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "SET_OF<CANONICAL_ENUM_VALUE>",
+            "resolver_id": "RESOLVE.BRD-WS-15-R008.GOVERNED_MEMBER_COLLECTION",
+            "version": "1.0.0"
+          },
+          "semantic_type": "CANONICAL_SET_REF<CANONICAL_ENUM_VALUE>"
+        }
+      ],
+      "reason": "A1 forbids schema-property-derived semantic identifiers for generic set references.",
+      "requirement_id": "BRD-WS-15-R008",
+      "source_clarification_required": false
+    },
+    {
+      "affected_executions": [
+        "EXEC.P2C-C4-R2-FX-CED7FAAFDC2A293BE1FA-M1",
+        "EXEC.P2C-C4-R2-FX-CED7FAAFDC2A293BE1FA-M2",
+        "EXEC.P2C-C4-R2-FX-CED7FAAFDC2A293BE1FA-M3",
+        "EXEC.P2C-C4-R2-FX-9E947CE455965D47AA34-M1",
+        "EXEC.P2C-C4-R2-FX-9E947CE455965D47AA34-M2",
+        "EXEC.P2C-C4-R2-FX-9E947CE455965D47AA34-M3",
+        "EXEC.P2C-C4-R2-FX-732BC7F0E7737AF20053-M1",
+        "EXEC.P2C-C4-R2-FX-732BC7F0E7737AF20053-M2",
+        "EXEC.P2C-C4-R2-FX-732BC7F0E7737AF20053-M3"
+      ],
+      "affected_fixtures": [
+        "P2C-C4-R2-FX-CED7FAAFDC2A293BE1FA",
+        "P2C-C4-R2-FX-9E947CE455965D47AA34",
+        "P2C-C4-R2-FX-732BC7F0E7737AF20053"
+      ],
+      "business_semantics_changed": false,
+      "identifier_changes": [
+        {
+          "authority": {
+            "source_id": "docs/BRD/BRD-WS-15.md#15. Dead Letter Queue",
+            "source_type": "SOURCE_LITERAL",
+            "version": "8ea559bcbbd1fcac430d72b7f0dac1f7df94b681ea905df55e136290e71a701d"
+          },
+          "binding_name": "actual_set",
+          "namespace": "YSIM.BRD-WS-15-R009.RESOLVED.COLLECTION",
+          "new_source_grounded_identifier": "RESOLVED_MEMBER_COLLECTION",
+          "old_schema_derived_identifier": "BRD-WS-15-R009.ACTUAL_SET",
+          "origin": {
+            "origin_id": "BRD-WS-15-R009.O1.1.SET_CONTAINS.ACTUAL_SET.ORIGIN",
+            "origin_type": "RUNTIME_OBSERVED"
+          },
+          "resolver": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "SET_OF<CANONICAL_ENUM_VALUE>",
+            "resolver_id": "OBSERVE.BRD-WS-15-R009.RESOLVED_MEMBER_COLLECTION",
+            "version": "1.0.0"
+          },
+          "semantic_type": "RUNTIME_SET_REF<CANONICAL_ENUM_VALUE>"
+        },
+        {
+          "authority": {
+            "source_id": "docs/BRD/BRD-WS-15.md#15. Dead Letter Queue",
+            "source_type": "SOURCE_LITERAL",
+            "version": "8ea559bcbbd1fcac430d72b7f0dac1f7df94b681ea905df55e136290e71a701d"
+          },
+          "binding_name": "required_members",
+          "namespace": "YSIM.BRD-WS-15-R009.GOVERNED.COLLECTION",
+          "new_source_grounded_identifier": "GOVERNED_MEMBER_COLLECTION",
+          "old_schema_derived_identifier": "BRD-WS-15-R009.REQUIRED_MEMBERS",
+          "origin": {
+            "origin_id": "BRD-WS-15-R009.O1.1.SET_CONTAINS.REQUIRED_MEMBERS.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "resolver": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "SET_OF<CANONICAL_ENUM_VALUE>",
+            "resolver_id": "RESOLVE.BRD-WS-15-R009.GOVERNED_MEMBER_COLLECTION",
+            "version": "1.0.0"
+          },
+          "semantic_type": "CANONICAL_SET_REF<CANONICAL_ENUM_VALUE>"
+        }
+      ],
+      "reason": "A1 forbids schema-property-derived semantic identifiers for generic set references.",
+      "requirement_id": "BRD-WS-15-R009",
+      "source_clarification_required": false
+    },
+    {
+      "affected_executions": [
+        "EXEC.P2C-C4-R2-FX-22B7F6660A5FC429FE9B-M1",
+        "EXEC.P2C-C4-R2-FX-22B7F6660A5FC429FE9B-M2",
+        "EXEC.P2C-C4-R2-FX-22B7F6660A5FC429FE9B-M3",
+        "EXEC.P2C-C4-R2-FX-2EB43C4C69CAF0D897F3-M1",
+        "EXEC.P2C-C4-R2-FX-2EB43C4C69CAF0D897F3-M2",
+        "EXEC.P2C-C4-R2-FX-2EB43C4C69CAF0D897F3-M3",
+        "EXEC.P2C-C4-R2-FX-BA8D91EDB751CDD1D948-M1",
+        "EXEC.P2C-C4-R2-FX-BA8D91EDB751CDD1D948-M2",
+        "EXEC.P2C-C4-R2-FX-BA8D91EDB751CDD1D948-M3"
+      ],
+      "affected_fixtures": [
+        "P2C-C4-R2-FX-22B7F6660A5FC429FE9B",
+        "P2C-C4-R2-FX-2EB43C4C69CAF0D897F3",
+        "P2C-C4-R2-FX-BA8D91EDB751CDD1D948"
+      ],
+      "business_semantics_changed": false,
+      "identifier_changes": [
+        {
+          "authority": {
+            "source_id": "docs/BRD/BRD-WS-15.md#15. Dead Letter Queue",
+            "source_type": "SOURCE_LITERAL",
+            "version": "9f83a8ed5134079b8c647e1023dde12ec5f0884cba14c6f9d9d0aa34d08bfac1"
+          },
+          "binding_name": "actual_set",
+          "namespace": "YSIM.BRD-WS-15-R010.RESOLVED.COLLECTION",
+          "new_source_grounded_identifier": "RESOLVED_MEMBER_COLLECTION",
+          "old_schema_derived_identifier": "BRD-WS-15-R010.ACTUAL_SET",
+          "origin": {
+            "origin_id": "BRD-WS-15-R010.O1.1.SET_CONTAINS.ACTUAL_SET.ORIGIN",
+            "origin_type": "RUNTIME_OBSERVED"
+          },
+          "resolver": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "SET_OF<CANONICAL_ENUM_VALUE>",
+            "resolver_id": "OBSERVE.BRD-WS-15-R010.RESOLVED_MEMBER_COLLECTION",
+            "version": "1.0.0"
+          },
+          "semantic_type": "RUNTIME_SET_REF<CANONICAL_ENUM_VALUE>"
+        },
+        {
+          "authority": {
+            "source_id": "docs/BRD/BRD-WS-15.md#15. Dead Letter Queue",
+            "source_type": "SOURCE_LITERAL",
+            "version": "9f83a8ed5134079b8c647e1023dde12ec5f0884cba14c6f9d9d0aa34d08bfac1"
+          },
+          "binding_name": "required_members",
+          "namespace": "YSIM.BRD-WS-15-R010.GOVERNED.COLLECTION",
+          "new_source_grounded_identifier": "GOVERNED_MEMBER_COLLECTION",
+          "old_schema_derived_identifier": "BRD-WS-15-R010.REQUIRED_MEMBERS",
+          "origin": {
+            "origin_id": "BRD-WS-15-R010.O1.1.SET_CONTAINS.REQUIRED_MEMBERS.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "resolver": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "SET_OF<CANONICAL_ENUM_VALUE>",
+            "resolver_id": "RESOLVE.BRD-WS-15-R010.GOVERNED_MEMBER_COLLECTION",
+            "version": "1.0.0"
+          },
+          "semantic_type": "CANONICAL_SET_REF<CANONICAL_ENUM_VALUE>"
+        }
+      ],
+      "reason": "A1 forbids schema-property-derived semantic identifiers for generic set references.",
+      "requirement_id": "BRD-WS-15-R010",
+      "source_clarification_required": false
+    },
+    {
+      "affected_executions": [
+        "EXEC.P2C-C4-R2-FX-42EFF4E7AE8085FED5C4-M1",
+        "EXEC.P2C-C4-R2-FX-42EFF4E7AE8085FED5C4-M2",
+        "EXEC.P2C-C4-R2-FX-42EFF4E7AE8085FED5C4-M3",
+        "EXEC.P2C-C4-R2-FX-986B43BA6B3ABBBB86E7-M1",
+        "EXEC.P2C-C4-R2-FX-986B43BA6B3ABBBB86E7-M2",
+        "EXEC.P2C-C4-R2-FX-986B43BA6B3ABBBB86E7-M3",
+        "EXEC.P2C-C4-R2-FX-05AA3A76E5C3821D7DDD-M1",
+        "EXEC.P2C-C4-R2-FX-05AA3A76E5C3821D7DDD-M2",
+        "EXEC.P2C-C4-R2-FX-05AA3A76E5C3821D7DDD-M3"
+      ],
+      "affected_fixtures": [
+        "P2C-C4-R2-FX-42EFF4E7AE8085FED5C4",
+        "P2C-C4-R2-FX-986B43BA6B3ABBBB86E7",
+        "P2C-C4-R2-FX-05AA3A76E5C3821D7DDD"
+      ],
+      "business_semantics_changed": false,
+      "identifier_changes": [
+        {
+          "authority": {
+            "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#25. Enterprise Snapshot Principles > SNP-EP-004",
+            "source_type": "SOURCE_LITERAL",
+            "version": "806fd37857b266e16fa974ddd360853695928305a7b2f177f13bab7db6ea1926"
+          },
+          "binding_name": "actual_set",
+          "namespace": "YSIM.SNP-EP-004.RESOLVED.COLLECTION",
+          "new_source_grounded_identifier": "RESOLVED_MEMBER_COLLECTION",
+          "old_schema_derived_identifier": "SNP-EP-004.ACTUAL_SET",
+          "origin": {
+            "origin_id": "SNP-EP-004.O1.1.SET_CONTAINS.ACTUAL_SET.ORIGIN",
+            "origin_type": "RUNTIME_OBSERVED"
+          },
+          "resolver": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "SET_OF<CANONICAL_ENUM_VALUE>",
+            "resolver_id": "OBSERVE.SNP-EP-004.RESOLVED_MEMBER_COLLECTION",
+            "version": "1.0.0"
+          },
+          "semantic_type": "RUNTIME_SET_REF<CANONICAL_ENUM_VALUE>"
+        },
+        {
+          "authority": {
+            "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#25. Enterprise Snapshot Principles > SNP-EP-004",
+            "source_type": "SOURCE_LITERAL",
+            "version": "806fd37857b266e16fa974ddd360853695928305a7b2f177f13bab7db6ea1926"
+          },
+          "binding_name": "required_members",
+          "namespace": "YSIM.SNP-EP-004.GOVERNED.COLLECTION",
+          "new_source_grounded_identifier": "GOVERNED_MEMBER_COLLECTION",
+          "old_schema_derived_identifier": "SNP-EP-004.REQUIRED_MEMBERS",
+          "origin": {
+            "origin_id": "SNP-EP-004.O1.1.SET_CONTAINS.REQUIRED_MEMBERS.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "resolver": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "SET_OF<CANONICAL_ENUM_VALUE>",
+            "resolver_id": "RESOLVE.SNP-EP-004.GOVERNED_MEMBER_COLLECTION",
+            "version": "1.0.0"
+          },
+          "semantic_type": "CANONICAL_SET_REF<CANONICAL_ENUM_VALUE>"
+        }
+      ],
+      "reason": "A1 forbids schema-property-derived semantic identifiers for generic set references.",
+      "requirement_id": "SNP-EP-004",
+      "source_clarification_required": false
+    }
+  ]
+}

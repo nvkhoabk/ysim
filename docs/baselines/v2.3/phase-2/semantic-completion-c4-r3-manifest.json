@@ -1,0 +1,117 @@
+{
+  "accepted_head": "522442635eb0df24dd5de0d42dad84656a5920e0",
+  "approval_block": {
+    "approver": null,
+    "decision": "PENDING",
+    "signature": null
+  },
+  "approval_status": "PENDING_HUMAN_APPROVAL",
+  "candidate_id": "V23-P2C-SEMANTIC-COMPLETION-C4-R3",
+  "decision_audit": {
+    "BUSINESS_DECISION_OPTION_READY": 2,
+    "INVALID_OR_BLOCKED": 0,
+    "REQUIRES_ALTERNATIVE_OPTION": 0,
+    "REQUIRES_INDIVIDUAL_HUMAN_REVIEW": 0,
+    "SAFE_TO_APPROVE_RECOMMENDED_OPTION": 25
+  },
+  "exact_inventory": [
+    "docs/baselines/v2.3/phase-2/SEMANTIC_COMPLETION_C4_R3_CANDIDATE.md",
+    "docs/baselines/v2.3/phase-2/SEMANTIC_COMPLETION_C4_R3_DECISION_REVIEW_PACK.md",
+    "docs/baselines/v2.3/phase-2/semantic-completion-c4-r2-accounting.json",
+    "docs/baselines/v2.3/phase-2/semantic-completion-c4-r2-audit.json",
+    "docs/baselines/v2.3/phase-2/semantic-completion-c4-r2-custom-contracts.json",
+    "docs/baselines/v2.3/phase-2/semantic-completion-c4-r2-execution-results.json",
+    "docs/baselines/v2.3/phase-2/semantic-completion-c4-r2-fixtures.json",
+    "docs/baselines/v2.3/phase-2/semantic-completion-c4-r2-mutation-delta.json",
+    "docs/baselines/v2.3/phase-2/semantic-completion-c4-r2-normalization-register.json",
+    "docs/baselines/v2.3/phase-2/semantic-completion-c4-r2-procedures.json",
+    "docs/baselines/v2.3/phase-2/semantic-completion-c4-r3-decision-audit.json",
+    "docs/baselines/v2.3/phase-2/semantic-completion-c4-r3-decision-contract-options.json",
+    "docs/baselines/v2.3/phase-2/semantic-completion-c4-r3-dependency-overlap-register.json",
+    "docs/baselines/v2.3/phase-2/semantic-completion-c4-r3-manifest.json",
+    "docs/baselines/v2.3/phase-2/semantic-completion-c4-r3-source-provenance-register.json",
+    "scripts/docs/build-phase-2c-semantic-completion-c4-r3.py",
+    "scripts/docs/tests/test-phase-2c-semantic-completion-c4-r3.py",
+    "scripts/docs/validate-phase-2c-semantic-completion-c4-r2-reproduction.py",
+    "scripts/docs/validate-phase-2c-semantic-completion-c4-r3-decisions.py",
+    "scripts/docs/validate-phase-2c-semantic-completion-c4-r3.py"
+  ],
+  "generated_payload_aggregate_sha256": "93b673e5ebb318d401361e6b5f12b294932278aeb6805cb4b0e1ad2be55fcabb",
+  "git_human_gate_identity": {
+    "git_content_aggregate": "RECORDED_FROM_STAGED_GIT_INDEX_AT_HUMAN_GATE",
+    "staged_tree": "RECORDED_FROM_STAGED_GIT_INDEX_AT_HUMAN_GATE"
+  },
+  "next_gate": "HUMAN_PHASE_2C_SEMANTIC_COMPLETION_C4_R3_DECISION_AND_CANDIDATE_APPROVAL",
+  "non_claims": [
+    "NOT_FINAL_BRD_UXF_BASELINE_APPROVAL",
+    "NOT_RUNTIME_ADAPTER_VALIDATION",
+    "NOT_RUNTIME_MUTATION_SCORE",
+    "NOT_YADF_AUTHORIZATION",
+    "NOT_PRODUCTION_IMPLEMENTATION",
+    "NOT_AUTOMATIC_APPROVAL_OF_27_DECISIONS",
+    "NOT_C4_R3_ACCEPTANCE",
+    "NO_SOURCE_EDIT_PERFORMED"
+  ],
+  "per_file_sha256_excluding_manifest": {
+    "docs/baselines/v2.3/phase-2/SEMANTIC_COMPLETION_C4_R3_CANDIDATE.md": "1d5b042f369e7548b668353f73beec0e1a2d742c6f34044b8d417bce4ed12cd0",
+    "docs/baselines/v2.3/phase-2/SEMANTIC_COMPLETION_C4_R3_DECISION_REVIEW_PACK.md": "b130039dc7f17019bc1e34ade37265e32b715a9402dedb335b8aeef56bfdb9a3",
+    "docs/baselines/v2.3/phase-2/semantic-completion-c4-r2-accounting.json": "aae0a120d2c8a98452bd338d84fb5b4b37fafdfbaff9bf783c50825f8c134b39",
+    "docs/baselines/v2.3/phase-2/semantic-completion-c4-r2-audit.json": "9b982e67424caba1671a614031c156097562f90880113694098abc644f4e4455",
+    "docs/baselines/v2.3/phase-2/semantic-completion-c4-r2-custom-contracts.json": "0b594368c591a7634d6d812d5b43f58db6ec4f127b735f20b9ffc4858fac1c45",
+    "docs/baselines/v2.3/phase-2/semantic-completion-c4-r2-execution-results.json": "d7cae7a5904e77add60f925c67e3bac255ae1b96755f83df6267f29d9d5b747d",
+    "docs/baselines/v2.3/phase-2/semantic-completion-c4-r2-fixtures.json": "3180bfddd876cd2b81ad522aa16afc0c4df8850db56541bcdc2e61a69644db85",
+    "docs/baselines/v2.3/phase-2/semantic-completion-c4-r2-mutation-delta.json": "4a8942bea885574adc7e44ad27ba66bfb817f67822db9af83ea3529c53d3058a",
+    "docs/baselines/v2.3/phase-2/semantic-completion-c4-r2-normalization-register.json": "1834934601a8921ed286cf0ac97f833dccbd094b553216232ac4063eb23fdeaa",
+    "docs/baselines/v2.3/phase-2/semantic-completion-c4-r2-procedures.json": "8a28dddaeee968cc5942bb2a82828ba1b081c89f25f51590a8e159794c3b3351",
+    "docs/baselines/v2.3/phase-2/semantic-completion-c4-r3-decision-audit.json": "d385e183578b72894d34473e6a63e8e905b6b17a2af4d2d87f842b0f8600c7f2",
+    "docs/baselines/v2.3/phase-2/semantic-completion-c4-r3-decision-contract-options.json": "dafb933c7bbe50193524b8a4f116e31c07337e96bb94788ce7b077f57302d485",
+    "docs/baselines/v2.3/phase-2/semantic-completion-c4-r3-dependency-overlap-register.json": "af6b29e20618ab4b2e0699e4d4f5f45258becc4007dbc4a6634b4c5853f2ddbc",
+    "docs/baselines/v2.3/phase-2/semantic-completion-c4-r3-source-provenance-register.json": "be3e75dce2bfaf8378890419a1906f5c68053156e22e188e4a3a2b5f8bac0270",
+    "scripts/docs/build-phase-2c-semantic-completion-c4-r3.py": "ed7bc01851f3278c4d31c23805726473fc5c4db5a2c6a17a4d5fc5799de34d01",
+    "scripts/docs/tests/test-phase-2c-semantic-completion-c4-r3.py": "1464e8e8b05b0a1b6d44e7431ac64f44348fd805dd52c9b95e6d84ad4c4e6712",
+    "scripts/docs/validate-phase-2c-semantic-completion-c4-r2-reproduction.py": "8e7f3fd1ea5c48556c78fb03526993523ef5c1cd035921abf670a0fb37c926a9",
+    "scripts/docs/validate-phase-2c-semantic-completion-c4-r3-decisions.py": "3e35e89e1e8cfaa27d32b2696ecf3dbe9837f413173be6c1cfc5ecab81582551",
+    "scripts/docs/validate-phase-2c-semantic-completion-c4-r3.py": "d3aa9a9c929bd022a170d84b724e461b6563d6f9a8b0c2212c51499f17b08dbb"
+  },
+  "r2_preservation": {
+    "backup_object": "24d72df1e1eba625b89983e80b6fad32a973bbb5",
+    "backup_ref": "refs/ysim-backups/v2.3/phase-2c-semantic-completion-c4-r2-decision-incomplete",
+    "generated_aggregate": "34b6d49a6baab01ab4df1e520b238cb3556da6638f11c28ba75246825fea2124",
+    "git_content_aggregate": "cced96cceb2939742c5621cb669b8f7d293745a292de6ad058093cf265e22dcf",
+    "index_tree": "607c36df252de32a14947b8d725f2c6b1f06353a",
+    "manifest_sha256": "0bce1e5e907324eda6b0889527c8570ca1e06cf9d9a635af70142fb045ceb611",
+    "rejection_reason": "INCOMPLETE_DECISION_CONTRACTS_AND_FALSE_OPTION_EFFECT_CLAIMS",
+    "reproduction": "16/16_BYTE_IDENTICAL"
+  },
+  "selected_options": 0,
+  "status": "CANDIDATE",
+  "supersedes": "V23-P2C-SEMANTIC-COMPLETION-C4-R2",
+  "supersession_reason": "INCOMPLETE_DECISION_CONTRACTS_AND_FALSE_OPTION_EFFECT_CLAIMS",
+  "technical_core": {
+    "assertions": 79,
+    "byte_identical_paths": [
+      "docs/baselines/v2.3/phase-2/semantic-completion-c4-r2-custom-contracts.json",
+      "docs/baselines/v2.3/phase-2/semantic-completion-c4-r2-fixtures.json",
+      "docs/baselines/v2.3/phase-2/semantic-completion-c4-r2-execution-results.json",
+      "docs/baselines/v2.3/phase-2/semantic-completion-c4-r2-procedures.json",
+      "docs/baselines/v2.3/phase-2/semantic-completion-c4-r2-accounting.json",
+      "docs/baselines/v2.3/phase-2/semantic-completion-c4-r2-audit.json",
+      "docs/baselines/v2.3/phase-2/semantic-completion-c4-r2-mutation-delta.json",
+      "docs/baselines/v2.3/phase-2/semantic-completion-c4-r2-normalization-register.json",
+      "scripts/docs/validate-phase-2c-semantic-completion-c4-r2-reproduction.py"
+    ],
+    "contracts": 59,
+    "executions": 531,
+    "fixtures": 177,
+    "mutation_isolation_vulnerable": 354,
+    "primary_accounting": {
+      "MUTATION_ISOLATION_RECOMPUTATION": 294,
+      "R031_TYPED_FIXTURE_CHANGE": 9,
+      "SCHEMA_IDENTIFIER_NORMALIZATION": 81,
+      "UNCHANGED": 147,
+      "UNEXPECTED_CHANGE": 0
+    },
+    "procedures": 156,
+    "runtime_mutation_score": null
+  }
+}

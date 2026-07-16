@@ -1,0 +1,20 @@
+{
+  "artifact": "V23-P2C-SEMANTIC-COMPLETION-C4-R3-INDEPENDENT-DECISION-AUDIT",
+  "audited_decisions": 27,
+  "candidate_id": "V23-P2C-SEMANTIC-COMPLETION-C4-R3",
+  "distribution": {
+    "BUSINESS_DECISION_OPTION_READY": 2,
+    "INVALID_OR_BLOCKED": 0,
+    "REQUIRES_ALTERNATIVE_OPTION": 0,
+    "REQUIRES_INDIVIDUAL_HUMAN_REVIEW": 0,
+    "SAFE_TO_APPROVE_RECOMMENDED_OPTION": 25
+  },
+  "false_option_effect_claims": 0,
+  "hidden_runtime_claims": 0,
+  "hidden_yadf_authorizations": 0,
+  "incorrect_source_ranges": 0,
+  "lost_obligations": 0,
+  "missing_recommended_ast_or_binding": 0,
+  "result": "PASS_READY_FOR_HUMAN_SELECTION",
+  "unresolved_overlaps": 0
+}
