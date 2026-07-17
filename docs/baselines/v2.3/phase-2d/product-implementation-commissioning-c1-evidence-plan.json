@@ -1,0 +1,17 @@
+{
+  "candidate_id": "V23-P2D-PRODUCT-IMPLEMENTATION-COMMISSIONING-C1",
+  "evidence_requirements": [
+    {"evidence_id": "COM-EV-001", "fields": ["PATH", "MODE", "SHA256"], "type": "REPOSITORY_TREE"},
+    {"evidence_id": "COM-EV-002", "fields": ["PACKAGE_NAME", "EXACT_VERSION", "LOCKFILE_HASH"], "type": "DEPENDENCY_INVENTORY"},
+    {"evidence_id": "COM-EV-003", "fields": ["COMMAND", "EXIT_CODE", "LOG_SHA256"], "type": "BUILD_TEST_VALIDATION_LOGS"},
+    {"evidence_id": "COM-EV-004", "fields": ["URL", "STATUS", "BODY_SHA256", "PROCESS_LOG_SHA256"], "type": "API_HEALTH_RESPONSE"},
+    {"evidence_id": "COM-EV-005", "fields": ["URL", "STATUS", "SCREENSHOT_SHA256", "PROCESS_LOG_SHA256"], "type": "UI_SMOKE_RESULT"},
+    {"evidence_id": "COM-EV-006", "fields": ["DATABASE_ENGINE_VERSION", "MIGRATION_ID", "SCHEMA_HASH", "DISPOSAL_RESULT"], "type": "EPHEMERAL_MIGRATION_RESULT"},
+    {"evidence_id": "COM-EV-007", "fields": ["COMMIT", "BOOTSTRAP_COMMAND", "EXIT_CODE", "GIT_STATUS"], "type": "CLEAN_CHECKOUT_REPRODUCTION"},
+    {"evidence_id": "COM-EV-008", "fields": ["SCANNER_VERSION", "FINDING_COUNT", "REPORT_SHA256"], "type": "SECRET_SCAN"},
+    {"evidence_id": "COM-EV-009", "fields": ["FORBIDDEN_CLASS", "FINDING_COUNT", "AUDIT_SHA256"], "type": "NO_BUSINESS_LOGIC_AUDIT"}
+  ],
+  "implementation_evidence_present": false,
+  "required_evidence_count": 9,
+  "status": "CANDIDATE"
+}

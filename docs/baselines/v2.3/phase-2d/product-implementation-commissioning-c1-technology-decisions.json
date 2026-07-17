@@ -1,0 +1,87 @@
+{
+  "candidate_id": "V23-P2D-PRODUCT-IMPLEMENTATION-COMMISSIONING-C1",
+  "authority_references": [
+    {
+      "document": "docs/ESPK/ESPK-S00.md",
+      "lines": "45-69,336-342",
+      "supports": "REPOSITORY_BOOTSTRAP_ROOTS_AND_NODE_PNPM_GIT_DOCKER_VALIDATION_CATEGORIES"
+    },
+    {
+      "document": "docs/ABP/ABP-01.md",
+      "lines": "36-46,50-82,86-95,150-185",
+      "supports": "MONOREPO_LAYERING_APPLICATION_PACKAGE_DATABASE_RESPONSIBILITIES_AND_FORWARD_ONLY_MIGRATIONS"
+    },
+    {
+      "document": "docs/ESP/ESP-01.md",
+      "lines": "85-111,150-179",
+      "supports": "STANDARD_ROOT_LAYOUT_PNPM_WORKSPACE_PACKAGE_DEPENDENCY_DIRECTION_AND_IMMUTABLE_MIGRATIONS"
+    },
+    {
+      "document": "docs/DIP/DIP-04.md",
+      "lines": "242-254",
+      "supports": "MANDATORY_ENVIRONMENT_VALIDATION_AND_FAIL_CLOSED_MISSING_DEPENDENCY_RULE"
+    }
+  ],
+  "decisions": [
+    {
+      "authority_gap": "Documents require Node but do not define an exact supported release.",
+      "decision_id": "TECH-COM-001",
+      "required_selection": "EXACT_NODE_VERSION_AND_EXACT_PNPM_VERSION",
+      "selected_option": null,
+      "status": "PENDING_HUMAN_APPROVAL"
+    },
+    {
+      "authority_gap": "Documents require an API application shell but do not select an API framework.",
+      "decision_id": "TECH-COM-002",
+      "required_selection": "API_FRAMEWORK_AND_EXACT_VERSION",
+      "selected_option": null,
+      "status": "PENDING_HUMAN_APPROVAL"
+    },
+    {
+      "authority_gap": "Documents require a web/UI shell but do not select a UI framework or build system.",
+      "decision_id": "TECH-COM-003",
+      "required_selection": "UI_FRAMEWORK_BUILD_SYSTEM_AND_EXACT_VERSIONS",
+      "selected_option": null,
+      "status": "PENDING_HUMAN_APPROVAL"
+    },
+    {
+      "authority_gap": "Platform data architecture is database-technology independent.",
+      "decision_id": "TECH-COM-004",
+      "required_selection": "DATABASE_ENGINE_AND_EXACT_VERSION",
+      "selected_option": null,
+      "status": "PENDING_HUMAN_APPROVAL"
+    },
+    {
+      "authority_gap": "Documents require centralized immutable migrations but do not select a migration or data-access tool.",
+      "decision_id": "TECH-COM-005",
+      "required_selection": "MIGRATION_DATA_ACCESS_TOOL_AND_EXACT_VERSION",
+      "selected_option": null,
+      "status": "PENDING_HUMAN_APPROVAL"
+    },
+    {
+      "authority_gap": "Documents require automated tests but do not select unit or browser test libraries.",
+      "decision_id": "TECH-COM-006",
+      "required_selection": "UNIT_BROWSER_TEST_TOOLCHAIN_AND_EXACT_VERSIONS",
+      "selected_option": null,
+      "status": "PENDING_HUMAN_APPROVAL"
+    },
+    {
+      "authority_gap": "Docker is validated where required but local database orchestration is not selected.",
+      "decision_id": "TECH-COM-007",
+      "required_selection": "LOCAL_EPHEMERAL_DATABASE_ORCHESTRATION",
+      "selected_option": null,
+      "status": "PENDING_HUMAN_APPROVAL"
+    }
+  ],
+  "fixed_stack": {
+    "application_layer": "DEPLOYABLE_SHELLS_UNDER_APPS_WITHOUT_BUSINESS_LOGIC",
+    "database_layer": "CENTRALIZED_FORWARD_ONLY_MIGRATION_HARNESS_UNDER_DATABASE",
+    "package_manager": "PNPM_EXACT_VERSION_PENDING",
+    "package_layer": "CONTRACT_AND_SHARED_PACKAGES_UNDER_PACKAGES",
+    "repository_model": "MONOREPO_DOMAIN_FIRST_MODULE_FIRST_CONTRACT_FIRST",
+    "runtime_category": "NODE_EXACT_VERSION_PENDING",
+    "tooling_validator_runtime": "PYTHON_3_11_OR_LATER_FOR_EXISTING_YSF_ONLY"
+  },
+  "status": "CANDIDATE",
+  "unresolved_decision_count": 7
+}

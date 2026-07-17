@@ -1,0 +1,52 @@
+{
+  "allowed_future_implementation_paths": [
+    ".github/workflows/commissioning.yml",
+    ".node-version",
+    ".npmrc",
+    "apps/api/**",
+    "apps/web/**",
+    "configs/local/**.example",
+    "database/config/**",
+    "database/migrations/**",
+    "database/seed-mechanism/**",
+    "package.json",
+    "packages/contracts/**",
+    "packages/shared/**",
+    "pnpm-lock.yaml",
+    "pnpm-workspace.yaml",
+    "scripts/commissioning/**",
+    "tests/commissioning/**"
+  ],
+  "candidate_id": "V23-P2D-PRODUCT-IMPLEMENTATION-COMMISSIONING-C1",
+  "forbidden_content_classes": [
+    "PRODUCT_CATALOG_STOREFRONT_OR_PRICING_BUSINESS_SCHEMA",
+    "PRODUCT_LIST_OR_PRODUCT_DETAIL_API",
+    "PRODUCT_OR_CATALOG_UI",
+    "BUSINESS_SEED_DATA",
+    "AUTHENTICATION_OR_AUTHORIZATION_ENGINE",
+    "ORGANIZATION_ADMINISTRATION",
+    "CART_CHECKOUT_ORDER_OR_PAYMENT",
+    "INVENTORY_PROCUREMENT_OR_PROVIDER_INTEGRATION",
+    "PROMOTION_TAX_RECOMMENDATION_OR_SEARCH",
+    "PRODUCTION_SECRET",
+    "DEPLOYMENT_CONFIGURATION",
+    "ARCHITECTURE_WIDE_PLATFORM_SERVICE",
+    "VS001_BUSINESS_IMPLEMENTATION"
+  ],
+  "protected_paths": [
+    ".git/**",
+    "ai/**",
+    "docs/BRD/**",
+    "docs/UXF/**",
+    "docs/baselines/v2.3/phase-2/**",
+    "docs/baselines/v2.3/phase-2d/**",
+    "factory/**",
+    "infrastructure/**",
+    "integrations/**",
+    "knowledge/**",
+    "runtime/**",
+    "tools/ysf/**"
+  ],
+  "rule": "DENY_UNLESS_EXPLICITLY_ALLOWED_AND_REJECT_FORBIDDEN_CONTENT",
+  "status": "CANDIDATE"
+}

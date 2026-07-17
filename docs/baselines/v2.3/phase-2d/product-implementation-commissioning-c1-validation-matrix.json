@@ -1,0 +1,17 @@
+{
+  "candidate_id": "V23-P2D-PRODUCT-IMPLEMENTATION-COMMISSIONING-C1",
+  "gates": [
+    {"command": "corepack pnpm install --frozen-lockfile", "evidence": "INSTALL_LOG_AND_LOCKFILE_HASH", "gate_id": "COM-GATE-001", "purpose": "LOCKFILE_ENFORCED_INSTALL"},
+    {"command": "corepack pnpm lint", "evidence": "LINT_LOG", "gate_id": "COM-GATE-002", "purpose": "STATIC_STYLE_AND_DEFECT_CHECK"},
+    {"command": "corepack pnpm typecheck", "evidence": "TYPECHECK_LOG", "gate_id": "COM-GATE-003", "purpose": "STATIC_TYPE_CHECK"},
+    {"command": "corepack pnpm test", "evidence": "UNIT_TEST_LOG", "gate_id": "COM-GATE-004", "purpose": "UNIT_TESTS"},
+    {"command": "corepack pnpm build", "evidence": "BUILD_LOG", "gate_id": "COM-GATE-005", "purpose": "REPRODUCIBLE_BUILD"},
+    {"command": "corepack pnpm smoke:api", "evidence": "HTTP_STATUS_BODY_AND_PROCESS_LOG", "gate_id": "COM-GATE-006", "purpose": "API_PROCESS_AND_HEALTH"},
+    {"command": "corepack pnpm smoke:web", "evidence": "HTTP_STATUS_SCREENSHOT_AND_PROCESS_LOG", "gate_id": "COM-GATE-007", "purpose": "WEB_PROCESS_AND_SMOKE_PAGE"},
+    {"command": "corepack pnpm db:migrate:verify", "evidence": "EPHEMERAL_DATABASE_MIGRATION_LOG_AND_SCHEMA_HASH", "gate_id": "COM-GATE-008", "purpose": "SAFE_FORWARD_MIGRATION_VERIFICATION"},
+    {"command": "corepack pnpm bootstrap:clean-checkout", "evidence": "CLEAN_CHECKOUT_LOG_AND_GIT_STATUS", "gate_id": "COM-GATE-009", "purpose": "CLEAN_CHECKOUT_REPRODUCTION"}
+  ],
+  "implementation_executed": false,
+  "required_gate_count": 9,
+  "status": "CANDIDATE"
+}

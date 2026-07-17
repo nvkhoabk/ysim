@@ -1,0 +1,49 @@
+{
+  "accepted_inputs": {
+    "first_slice_decision_001_accepted": "487e806f03899ebc7571d47e72055ea28236efb4",
+    "progressive_document_baseline_c1_accepted": "9a4e163734f57d0be871f4cd9392a2ad21e3055e"
+  },
+  "approval_status": "PENDING_HUMAN_APPROVAL",
+  "candidate_id": "V23-P2D-PRODUCT-IMPLEMENTATION-COMMISSIONING-C1",
+  "candidate_inventory": [
+    "docs/baselines/v2.3/phase-2d/PRODUCT_IMPLEMENTATION_COMMISSIONING_C1.md",
+    "docs/baselines/v2.3/phase-2d/PRODUCT_IMPLEMENTATION_COMMISSIONING_C1_HUMAN_APPROVAL_PACK.md",
+    "docs/baselines/v2.3/phase-2d/product-implementation-commissioning-c1-evidence-plan.json",
+    "docs/baselines/v2.3/phase-2d/product-implementation-commissioning-c1-execution-contract.json",
+    "docs/baselines/v2.3/phase-2d/product-implementation-commissioning-c1-manifest.json",
+    "docs/baselines/v2.3/phase-2d/product-implementation-commissioning-c1-path-policy.json",
+    "docs/baselines/v2.3/phase-2d/product-implementation-commissioning-c1-technology-decisions.json",
+    "docs/baselines/v2.3/phase-2d/product-implementation-commissioning-c1-validation-matrix.json",
+    "scripts/docs/build-phase-2d-product-implementation-commissioning-c1.py",
+    "scripts/docs/tests/test-phase-2d-product-implementation-commissioning-c1.py",
+    "scripts/docs/validate-phase-2d-product-implementation-commissioning-c1.py"
+  ],
+  "generated_payload_aggregate_sha256": "550f9c5a3759003ed08ae285ee89ce1d503e69302c51193fb2320c9e5fae15cf",
+  "git_identity_model": "COMPUTED_FROM_GIT_INDEX_AT_HUMAN_GATE_MANIFEST_NOT_SELF_SIGNED",
+  "governing_decision": "V23-P2D-FIRST-SLICE-DECISION-001",
+  "implementation_authorized": false,
+  "next_gate": "HUMAN_PHASE_2D_PRODUCT_IMPLEMENTATION_COMMISSIONING_C1_APPROVAL",
+  "non_claims": [
+    "NOT_COMMISSIONING_IMPLEMENTATION",
+    "NOT_BRD_UXF_EDIT",
+    "NOT_VS001_ACCEPTANCE_ELABORATION",
+    "NOT_VS001_BUSINESS_IMPLEMENTATION",
+    "NOT_RUNTIME_ADAPTER_IMPLEMENTATION",
+    "NOT_YADF_PRODUCTION_IMPLEMENTATION",
+    "NOT_DEPLOYMENT_OR_PRODUCTION_AUTHORIZATION"
+  ],
+  "signed_file_sha256": {
+    "docs/baselines/v2.3/phase-2d/PRODUCT_IMPLEMENTATION_COMMISSIONING_C1.md": "020181f7a7437a3441e12a268db477d20f14b5d4edf074d506caa3f2fc7cc30e",
+    "docs/baselines/v2.3/phase-2d/PRODUCT_IMPLEMENTATION_COMMISSIONING_C1_HUMAN_APPROVAL_PACK.md": "3ed2609f9b698c4694b983dd7aed1191425ee2642f7b7bd588e1f19598dd0106",
+    "docs/baselines/v2.3/phase-2d/product-implementation-commissioning-c1-evidence-plan.json": "cc69531e2e8101cb6a5036368125d8ba13147a5abe84d02d866cdc6fa29acf79",
+    "docs/baselines/v2.3/phase-2d/product-implementation-commissioning-c1-execution-contract.json": "05b978e473d38bb230f2e4461a97476b0986e5784eeaf3d20eec4767b518afe1",
+    "docs/baselines/v2.3/phase-2d/product-implementation-commissioning-c1-path-policy.json": "fd85e5d535e69483eeac0a757ab6d3f701b875bb7e7f10d3a703c8e89af8f7d0",
+    "docs/baselines/v2.3/phase-2d/product-implementation-commissioning-c1-technology-decisions.json": "60b9719e8f9b39ae5872ebbc5f9497c560f1a8eb9141bb069f263a648c271e10",
+    "docs/baselines/v2.3/phase-2d/product-implementation-commissioning-c1-validation-matrix.json": "9345c3e68e212f186855cb95ef4c5864bfe30406550d14502aa1ebc41ef3dd11",
+    "scripts/docs/build-phase-2d-product-implementation-commissioning-c1.py": "4d418903459f7e1e883d90721e3fb015822560f51c33a2d7b86f0630318e75a5",
+    "scripts/docs/tests/test-phase-2d-product-implementation-commissioning-c1.py": "3c03d952632fcbe8c09dd058a117c601f392722ba0af3c6690ecac8a9831416f",
+    "scripts/docs/validate-phase-2d-product-implementation-commissioning-c1.py": "fe3c757ec1f7d8c058641cd9f973c57f6c9eba7cc53a2f672708f7a1d78811bb"
+  },
+  "status": "CANDIDATE",
+  "technology_decisions_pending": 7
+}

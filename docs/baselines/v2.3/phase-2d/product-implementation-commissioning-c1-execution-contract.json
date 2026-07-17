@@ -1,0 +1,99 @@
+{
+  "acceptance_criteria": [
+    "EXACT_APPROVED_PATH_INVENTORY_PRESENT",
+    "DEPENDENCY_VERSIONS_EXACT_AND_LOCKED",
+    "FROZEN_LOCKFILE_INSTALL_PASSES",
+    "LINT_PASSES",
+    "TYPECHECK_PASSES",
+    "UNIT_TESTS_PASS",
+    "BUILD_PASSES",
+    "API_NON_BUSINESS_HEALTH_SMOKE_PASSES",
+    "WEB_NON_BUSINESS_SMOKE_PASSES",
+    "EPHEMERAL_MIGRATION_VERIFICATION_PASSES",
+    "SECRET_SCAN_FINDS_ZERO_SECRETS",
+    "NO_BUSINESS_LOGIC_GATE_FINDS_ZERO_FINDINGS",
+    "EVIDENCE_PLAN_COMPLETE",
+    "CLEAN_CHECKOUT_REPRODUCTION_PASSES",
+    "FINAL_GIT_STATUS_CLEAN"
+  ],
+  "approval_status": "PENDING_HUMAN_APPROVAL",
+  "candidate_id": "V23-P2D-PRODUCT-IMPLEMENTATION-COMMISSIONING-C1",
+  "commissioning_responsibilities": {
+    "api_shell": [
+      "START_HTTP_PROCESS",
+      "EXPOSE_LIVENESS_ENDPOINT",
+      "EXPOSE_READINESS_ENDPOINT",
+      "RETURN_BUILD_AND_PROCESS_IDENTITY_WITHOUT_BUSINESS_DATA"
+    ],
+    "database_harness": [
+      "CONNECT_TO_EPHEMERAL_LOCAL_DATABASE",
+      "APPLY_FORWARD_ONLY_EMPTY_BASELINE_MIGRATION",
+      "VERIFY_MIGRATION_STATE",
+      "DISPOSE_EPHEMERAL_DATABASE"
+    ],
+    "shared_packages": [
+      "COMPILE_EMPTY_CONTRACT_PACKAGE",
+      "COMPILE_EMPTY_SHARED_PACKAGE",
+      "ENFORCE_NO_APPLICATION_TO_APPLICATION_DEPENDENCY"
+    ],
+    "web_shell": [
+      "START_WEB_PROCESS",
+      "RENDER_NON_BUSINESS_COMMISSIONING_SMOKE_PAGE",
+      "DISPLAY_API_HEALTH_CONNECTIVITY_ONLY"
+    ]
+  },
+  "correction_pass_limit_after_approval": 2,
+  "governing_decision": "V23-P2D-FIRST-SLICE-DECISION-001",
+  "implementation_authorized": false,
+  "next_gate": "HUMAN_PHASE_2D_PRODUCT_IMPLEMENTATION_COMMISSIONING_C1_APPROVAL",
+  "proposed_directory_tree": [
+    "/package.json",
+    "/pnpm-workspace.yaml",
+    "/pnpm-lock.yaml",
+    "/.npmrc",
+    "/.node-version",
+    "/apps/api/",
+    "/apps/web/",
+    "/packages/contracts/",
+    "/packages/shared/",
+    "/database/config/",
+    "/database/migrations/",
+    "/database/seed-mechanism/",
+    "/configs/local/",
+    "/scripts/commissioning/",
+    "/tests/commissioning/",
+    "/.github/workflows/commissioning.yml"
+  ],
+  "recovery": {
+    "destructive_git_reset_allowed": false,
+    "ephemeral_resources": [
+      "LOCAL_CONTAINERS",
+      "LOCAL_DATABASE_VOLUMES",
+      "GENERATED_LOGS",
+      "CACHES"
+    ],
+    "released_migration_rewrite_allowed": false,
+    "repository_recovery": "GIT_REVERT_COMMISSIONING_IMPLEMENTATION_COMMIT"
+  },
+  "status": "CANDIDATE",
+  "technology_decisions_required": [
+    "TECH-COM-001",
+    "TECH-COM-002",
+    "TECH-COM-003",
+    "TECH-COM-004",
+    "TECH-COM-005",
+    "TECH-COM-006",
+    "TECH-COM-007"
+  ],
+  "validation_commands": [
+    "corepack pnpm install --frozen-lockfile",
+    "corepack pnpm lint",
+    "corepack pnpm typecheck",
+    "corepack pnpm test",
+    "corepack pnpm build",
+    "corepack pnpm smoke:api",
+    "corepack pnpm smoke:web",
+    "corepack pnpm db:migrate:verify",
+    "corepack pnpm bootstrap:clean-checkout"
+  ]
+}
