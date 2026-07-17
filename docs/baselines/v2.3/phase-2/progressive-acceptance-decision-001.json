@@ -1,0 +1,64 @@
+{
+  "approval_basis": "EXACT_HUMAN_AUTHORIZATION_TEXT_AND_SCOPE",
+  "approval_scope": "PROGRESSIVE_ACCEPTANCE_ELABORATION_AND_VERTICAL_SLICE_ENTRY_POLICY",
+  "approval_status": "PENDING_HUMAN_APPROVAL",
+  "authorized_approver": "Khoa, Nguyen",
+  "candidate_id": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+  "decision": {
+    "acceptance_populations": {
+      "acceptance_ready": 59,
+      "active_total": 1152,
+      "pending_vertical_slice_acceptance_elaboration": 1093
+    },
+    "canonical_terms": [
+      "Full acceptance materialization for all 1,152 active requirements is not required before YADF vertical-slice work may begin.",
+      "Exactly 59 independently audited typed custom contracts are currently ACCEPTANCE_READY.",
+      "Exactly 1,093 active requirements are PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION.",
+      "Generic, expected-derived, template-based or placeholder acceptance must not be retained to claim a formal acceptance gap of zero.",
+      "Source statements, stable IDs, scope, criticality, structural reconciliation and the 27 approved business decisions remain effective.",
+      "Before implementation, every vertical slice must declare its exact requirement IDs, elaborate concrete acceptance for every included pending requirement, obtain human approval for that slice acceptance, declare runtime/API/data/UI evidence obligations, and pass clean-checkout validation before slice acceptance.",
+      "Renderer C1 and Renderer C2 remain historical signed artifacts but must not be used as proof of final acceptance outside the 59 independently audited typed contracts.",
+      "V23-P2C-DOCUMENT-BASELINE-C6-R1 is rejected for SYSTEMIC_GENERIC_ACCEPTANCE_AND_EXPECTED_DERIVED_OBSERVATION.",
+      "This decision does not approve any particular vertical slice, source-code implementation, runtime adapters, runtime mutation claims, YADF production implementation, deployment, or final product acceptance.",
+      "Progressive elaboration must not weaken requirement scope, criticality, approved business decisions or evidence obligations."
+    ],
+    "effective_foundations": [
+      "SOURCE_STATEMENTS",
+      "STABLE_IDS",
+      "SCOPE",
+      "CRITICALITY",
+      "STRUCTURAL_RECONCILIATION",
+      "TWENTY_SEVEN_APPROVED_BUSINESS_DECISIONS"
+    ],
+    "prohibited_acceptance_claims": [
+      "GENERIC_ACCEPTANCE",
+      "EXPECTED_DERIVED_ACCEPTANCE",
+      "TEMPLATE_BASED_ACCEPTANCE",
+      "PLACEHOLDER_ACCEPTANCE",
+      "FORMAL_ZERO_GAP_FROM_SYNTHETIC_ACCEPTANCE"
+    ],
+    "rejected_candidate": {
+      "candidate_id": "V23-P2C-DOCUMENT-BASELINE-C6-R1",
+      "reason": "SYSTEMIC_GENERIC_ACCEPTANCE_AND_EXPECTED_DERIVED_OBSERVATION"
+    },
+    "selected_option": "PROGRESSIVE_VERTICAL_SLICE_ACCEPTANCE",
+    "slice_entry_policy": {
+      "acceptance_human_approval_required_before_implementation": true,
+      "clean_checkout_validation_required": true,
+      "concrete_acceptance_required_for_each_included_pending_requirement": true,
+      "exact_requirement_ids_required": true,
+      "runtime_api_data_ui_evidence_obligations_required": true
+    }
+  },
+  "decision_id": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+  "non_claims": [
+    "NOT_ANY_VERTICAL_SLICE_APPROVAL",
+    "NOT_SOURCE_CODE_IMPLEMENTATION_APPROVAL",
+    "NOT_RUNTIME_ADAPTER_APPROVAL",
+    "NOT_RUNTIME_MUTATION_CLAIM",
+    "NOT_YADF_PRODUCTION_IMPLEMENTATION_APPROVAL",
+    "NOT_DEPLOYMENT_APPROVAL",
+    "NOT_FINAL_PRODUCT_ACCEPTANCE"
+  ],
+  "status": "CANDIDATE"
+}

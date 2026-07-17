@@ -1,0 +1,24 @@
+{
+  "approval_scope": "PROGRESSIVE_ACCEPTANCE_ELABORATION_AND_VERTICAL_SLICE_ENTRY_POLICY",
+  "approval_status": "PENDING_HUMAN_APPROVAL",
+  "candidate_inventory": [
+    "docs/baselines/v2.3/phase-2/PROGRESSIVE_ACCEPTANCE_DECISION_001.md",
+    "docs/baselines/v2.3/phase-2/progressive-acceptance-decision-001-manifest.json",
+    "docs/baselines/v2.3/phase-2/progressive-acceptance-decision-001.json",
+    "scripts/docs/validate-progressive-acceptance-decision-001.py"
+  ],
+  "decision_id": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+  "generated_payload_aggregate_sha256": "14a79f9c6a0d69c7600b2d81607b20e4cf79ef65b311795e374d5c5aa2cba781",
+  "hash_identity_model": "DETACHED_NON_SELF_REFERENTIAL_MANIFEST",
+  "rejected_c6_r1_backup": {
+    "backup_object": "8ec2a5381054fc6dddad2e1c2ad15bd4e53a0a28",
+    "content_tree": "699a7de703fc1c0009cca0d851c67766a1d7d333",
+    "reproduced_paths": 46
+  },
+  "signed_file_sha256": {
+    "docs/baselines/v2.3/phase-2/PROGRESSIVE_ACCEPTANCE_DECISION_001.md": "0320b69f77948a80f56129ac475bd769bb8e0cd9405f7175c19f67ce59068ae0",
+    "docs/baselines/v2.3/phase-2/progressive-acceptance-decision-001.json": "19e27dbe8dcc2ca9492b857f4a441e47dee3480748dbc81b3e1220e1513c235b",
+    "scripts/docs/validate-progressive-acceptance-decision-001.py": "013b56c9330fcf2df4a860958e9fe44798e0d4357540758cfcb8ebdaaa7affd0"
+  },
+  "status": "CANDIDATE"
+}
