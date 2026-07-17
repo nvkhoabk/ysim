@@ -1,0 +1,23 @@
+{
+  "artifact": "PHASE_2C_PROGRESSIVE_SLICE_ENTRY_POLICY",
+  "candidate_id": "V23-P2C-PROGRESSIVE-DOCUMENT-BASELINE-C1",
+  "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+  "implementation_entry_rule": "HUMAN_APPROVED_SLICE_ACCEPTANCE_REQUIRED",
+  "pending_requirement_implementation_allowed_without_slice_approval": false,
+  "required_slice_fields": [
+    "slice_id",
+    "objective",
+    "included_requirement_ids",
+    "source_baseline_identity",
+    "acceptance_ready_requirement_ids",
+    "pending_requirements_elaborated_by_slice",
+    "positive_oracles",
+    "negative_oracles",
+    "boundary_oracles",
+    "evidence_contracts",
+    "runtime_api_data_ui_evidence_obligations",
+    "criticality_coverage",
+    "clean_checkout_validation",
+    "human_approval_status"
+  ]
+}

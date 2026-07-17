@@ -1,13 +1,20 @@
 ---
 document_code: "BRD-WS-02"
+document_id: "BRD-WS-02"
 title: "Business Model & Revenue Architecture"
-product_baseline: "2.3"
-document_revision: "2.3.0-draft.1"
+version: "2.3.0-draft.3"
+document_revision: "2.3.0-draft.3"
+status: "V2.3_DRAFT"
 lifecycle_status: "V2.3_DRAFT"
 language: "vi-VN"
+baseline: "2.3"
+product_baseline: "2.3"
+source_lineage: "v2.2 + approved Phase 1/2A/2B + accepted Acceptance Model C1 + accepted Mapping C3"
 source_baseline: "v2.2"
+last_reviewed_date: "2026-07-15"
+last_remediated_on: "2026-07-17"
+applicable_scope: "V2.3_ACTIVE_AND_RETAINED_SCOPE_RECORDS"
 generated_registry_role: "BRD_CANONICAL_SOURCE"
-last_remediated_on: "2026-07-15"
 ---
 ## Thẩm quyền nguồn yêu cầu v2.3
 
@@ -293,9 +300,7 @@ Inventory quản lý:
 - Inventory Status
 - Lifecycle
 
-Inventory luôn tồn tại.
-
-Ngay cả khi Product Item được mua tức thời từ Supplier để phục vụ một đơn hàng cụ thể.
+Trong phạm vi Inventory Strategy v2.3, mỗi Product Item được quản lý trong Inventory phải có đúng một Inventory Record. Inventory Record lưu các dữ liệu áp dụng gồm QR Code, ICCID, Activation Code, Supplier Reference, Purchase Cost, Current Owner, Inventory Status và Lifecycle; quy tắc này vẫn áp dụng khi item được mua tức thời từ Supplier cho một đơn hàng cụ thể.
 
 Inventory là cơ sở cho:
 
@@ -620,7 +625,7 @@ Workshop này là nền tảng cho:
 
 <!-- YSIM:PHASE_2C CANONICAL APPENDIX BEGIN -->
 
-## Phụ lục yêu cầu chuẩn tắc v2.3
+## Phụ lục yêu cầu chuẩn tắc v2.3 — C6-R1
 
 
 
@@ -629,41 +634,37 @@ Workshop này là nền tảng cho:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-02-001-AC001",
-      "given": "the applicable business context, actor, and input for **Decision** Business Entity trung tâm của YSim là Product. **Rationale** Product là đối tượng đ…",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-02-001-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-007",
+        "P2-DEC-008"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BD-02-001-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by **Decision** Business Entity trung tâm của YSim là Product. **Rationale** Product là đối tượng đ…",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BD-02-001-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-02-001",
+      "source_document": "docs/BRD/BRD-WS-02.md",
+      "source_fingerprint": "1f12873fd757d0631fb4e720417af4f653d2afce7011b8635c15af6d9619127a"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-02-001-AC001",
-        "BD-02-001-AC002"
+        "BD-02-001-AC002",
+        "BD-02-001-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-02-001-O001",
@@ -672,35 +673,36 @@ Workshop này là nền tảng cho:
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-02-001 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-02-001 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-02-001 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-02-001 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-02-001 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-02-001 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "BD-02-001 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BD-02-001-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BD-02-001-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-02-001 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-02-001 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -721,9 +723,9 @@ Workshop này là nền tảng cho:
     "source_context_heading": "BD-02-001",
     "source_context_sha256": "d306690cb04d415d1e2342b0f9d1a8204753ce8a48dd776d59a17534c95fe200",
     "source_document": "docs/BRD/BRD-WS-02.md",
-    "source_fingerprint": "8a6d427075df0239b590948b82eecad9f7139d08efce5aeb4996fb4ee5787141",
-    "source_lines": "L448-L457",
-    "source_section": "17. Business Decisions (Locked) > BD-02-001"
+    "source_fingerprint": "1f12873fd757d0631fb4e720417af4f653d2afce7011b8635c15af6d9619127a",
+    "source_lines": "L632-L746",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-02-001"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -748,54 +750,36 @@ Workshop này là nền tảng cho:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "BD-02-002-AC001",
-      "given": "a candidate **Decision** Supplier Product và YSim Product là hai Business Object khác nhau. **Rationale** Su… record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "BD-02-002-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-007"
       ],
-      "when": "the candidate is evaluated against its declared data contract"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "BD-02-002-AC002",
-      "given": "a candidate **Decision** Supplier Product và YSim Product là hai Business Object khác nhau. **Rationale** Su… record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "BD-02-002-O002"
-      ],
-      "when": "the candidate is evaluated against its declared data contract"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "DATA_CONTRACT_REJECTION_V1",
-      "criterion_id": "BD-02-002-AC003",
-      "given": "a **Decision** Supplier Product và YSim Product là hai Business Object khác nhau. **Rationale** Su… candidate containing an unsupported value, inconsistent relationship, or unresolved reference",
-      "observable_evidence": "rejection result, field or relationship reason, unresolved reference, and unchanged persisted state",
-      "then": "the candidate is rejected without persisting the invalid state, and each invalid field or relationship has a deterministic reason",
-      "verifies": [
-        "BD-02-002-O001",
-        "BD-02-002-O002"
-      ],
-      "when": "the candidate is validated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-02-002",
+      "source_document": "docs/BRD/BRD-WS-02.md",
+      "source_fingerprint": "77f301e076ffed907b53e276c51af44cdd789642d1d99337fabd4bfc4eed953a"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-02-002-AC001",
-        "BD-02-002-AC003"
+        "BD-02-002-AC003",
+        "BD-02-002-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-02-002-O001",
@@ -804,7 +788,8 @@ Workshop này là nền tảng cho:
     {
       "acceptance_criterion_references": [
         "BD-02-002-AC002",
-        "BD-02-002-AC003"
+        "BD-02-002-AC003",
+        "BD-02-002-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-02-002-O002",
@@ -829,9 +814,9 @@ Workshop này là nền tảng cho:
     "source_context_heading": "BD-02-001",
     "source_context_sha256": "d306690cb04d415d1e2342b0f9d1a8204753ce8a48dd776d59a17534c95fe200",
     "source_document": "docs/BRD/BRD-WS-02.md",
-    "source_fingerprint": "a6fd6ad5d5f53ab525063619b287517866584c44c8deb76c7a821c70fbe1c0f3",
-    "source_lines": "L460-L471",
-    "source_section": "17. Business Decisions (Locked) > BD-02-002"
+    "source_fingerprint": "77f301e076ffed907b53e276c51af44cdd789642d1d99337fabd4bfc4eed953a",
+    "source_lines": "L748-L837",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-02-002"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -856,61 +841,29 @@ Workshop này là nền tảng cho:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-02-003-AC001",
-      "given": "the applicable business context, actor, and input for **Decision** Allocation Engine chỉ lựa chọn Fulfillment Source. Không quản lý Product Catalog. *…",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-02-003-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-007"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-02-003-AC002",
-      "given": "the applicable business context, actor, and input for **Decision** Allocation Engine chỉ lựa chọn Fulfillment Source. Không quản lý Product Catalog. *…",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "each named business concept has a distinct identity, owner or reference, and lifecycle evidence; an action on one does not implicitly act on the other",
-      "verifies": [
-        "BD-02-003-O002"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BD-02-003-AC003",
-      "given": "an unsupported or invalid business input at the boundary governed by **Decision** Allocation Engine chỉ lựa chọn Fulfillment Source. Không quản lý Product Catalog. *…",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BD-02-003-O001",
-        "BD-02-003-O002"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
-    },
-    {
-      "case": "NEGATIVE_FAIL_CLOSED",
-      "controlled_contract": "REQUIREMENT_SPECIFIC_FAIL_CLOSED_V1",
-      "criterion_id": "BD-02-003-AC004",
-      "given": "an input or attempted state change that violates a mandatory boundary explicitly stated by **Decision** Allocation Engine chỉ lựa chọn Fulfillment Source. Không quản lý Product Catalog. *…",
-      "observable_evidence": "violating input, decision and reason, before/after protected state, and audit or conformance evidence",
-      "then": "the violated obligation produces its specified rejection, denial, block, review, or non-conforming result without recording a contradictory success",
-      "verifies": [
-        "BD-02-003-O001",
-        "BD-02-003-O002"
-      ],
-      "when": "the violating input or action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-02-003",
+      "source_document": "docs/BRD/BRD-WS-02.md",
+      "source_fingerprint": "9cc41f072b0d72211bba3cf7c5183877c272f12144b3c0a2f5221e5a7fb49e61"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
@@ -936,37 +889,37 @@ Workshop này là nền tảng cho:
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-02-003 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-02-003 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-02-003 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-02-003 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-02-003 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-02-003 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
-        "BD-02-003-AC004"
-      ],
-      "status": "APPLICABLE"
+        "BD-02-003-AC003"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BD-02-003-AC001",
         "BD-02-003-AC002"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-02-003 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-02-003 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -986,9 +939,9 @@ Workshop này là nền tảng cho:
     "source_context_heading": "BD-02-001",
     "source_context_sha256": "d306690cb04d415d1e2342b0f9d1a8204753ce8a48dd776d59a17534c95fe200",
     "source_document": "docs/BRD/BRD-WS-02.md",
-    "source_fingerprint": "e62f2d47d04787914c58164c93654e3087e18053f12f5e1c4c8a103987947037",
-    "source_lines": "L474-L485",
-    "source_section": "17. Business Decisions (Locked) > BD-02-003"
+    "source_fingerprint": "9cc41f072b0d72211bba3cf7c5183877c272f12144b3c0a2f5221e5a7fb49e61",
+    "source_lines": "L839-L962",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-02-003"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1013,54 +966,34 @@ Workshop này là nền tảng cho:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-02-004-AC001",
-      "given": "the applicable business context, actor, and input for **Decision** Inventory được định nghĩa là Digital Asset Inventory. Không chỉ là Warehouse. **Rat…",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-02-004-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-02-004-AC002",
-      "given": "the applicable business context, actor, and input for **Decision** Inventory được định nghĩa là Digital Asset Inventory. Không chỉ là Warehouse. **Rat…",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-02-004-O002"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BD-02-004-AC003",
-      "given": "an unsupported or invalid business input at the boundary governed by **Decision** Inventory được định nghĩa là Digital Asset Inventory. Không chỉ là Warehouse. **Rat…",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BD-02-004-O001",
-        "BD-02-004-O002"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-02-004",
+      "source_document": "docs/BRD/BRD-WS-02.md",
+      "source_fingerprint": "f17e338d58414bd804c08bcab882b53038db88284a3eb9058337443188d9bbd3"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-02-004-AC001",
-        "BD-02-004-AC003"
+        "BD-02-004-AC003",
+        "BD-02-004-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-02-004-O001",
@@ -1069,7 +1002,8 @@ Workshop này là nền tảng cho:
     {
       "acceptance_criterion_references": [
         "BD-02-004-AC002",
-        "BD-02-004-AC003"
+        "BD-02-004-AC003",
+        "BD-02-004-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-02-004-O002",
@@ -1092,9 +1026,9 @@ Workshop này là nền tảng cho:
     "source_context_heading": "BD-02-001",
     "source_context_sha256": "d306690cb04d415d1e2342b0f9d1a8204753ce8a48dd776d59a17534c95fe200",
     "source_document": "docs/BRD/BRD-WS-02.md",
-    "source_fingerprint": "8288e8bc0e8fccb7afcd3e76f9e48282b000d72057179f725b7e7a2390a6d0c6",
-    "source_lines": "L488-L499",
-    "source_section": "17. Business Decisions (Locked) > BD-02-004"
+    "source_fingerprint": "f17e338d58414bd804c08bcab882b53038db88284a3eb9058337443188d9bbd3",
+    "source_lines": "L964-L1049",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-02-004"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1119,54 +1053,1982 @@ Workshop này là nền tảng cho:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-02-005-AC001",
-      "given": "an operational task within the scope of **Decision** Mọi Product Item đều phải có Inventory Record. Kể cả mua tức thời. **Rationale** Đả…",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BD-02-005-O001"
+  "acceptance_contract": {
+    "boundary_oracle": [
+      "Immediate purchase and normal procurement have different acquisition paths but the same record obligation"
+    ],
+    "concrete_bindings": [
+      {
+        "allowed_lifecycle_states": {
+          "members": [
+            {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "BD-02-005.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER"
+                ],
+                "source_id": "docs/BRD/BRD-WS-02.md#17. Business Decisions (Locked) > BD-02-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe"
+              },
+              "identifier": "BD-02-005.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-02-005.O1.1.REFERENCE_TARGET_VALID.ALLOWED_LIFECYCLE_STATES.ORIGIN.MEMBER.1",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [
+                  "P2-DEC-008"
+                ],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-02.md",
+                "source_fingerprint": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe",
+                "source_lines": "L502-L513",
+                "source_section": "17. Business Decisions (Locked) > BD-02-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "STATE_ID",
+                "resolver_id": "RESOLVE.BD-02-005.BD-02-005.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER",
+                "version": "1.0.0"
+              },
+              "semantic_type": "STATE_ID"
+            }
+          ],
+          "origin": {
+            "origin_id": "BD-02-005.O1.1.REFERENCE_TARGET_VALID.ALLOWED_LIFECYCLE_STATES.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [
+              "P2-DEC-008"
+            ],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-02.md",
+            "source_fingerprint": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe",
+            "source_lines": "L502-L513",
+            "source_section": "17. Business Decisions (Locked) > BD-02-005"
+          },
+          "semantic_type": "SET_OF<STATE_ID>"
+        },
+        "allowed_states": {
+          "members": [
+            {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "BD-02-005.ALLOWED_STATES.SOURCE.MEMBER"
+                ],
+                "source_id": "docs/BRD/BRD-WS-02.md#17. Business Decisions (Locked) > BD-02-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe"
+              },
+              "identifier": "BD-02-005.ALLOWED_STATES.SOURCE.MEMBER",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-02-005.O1.1.REFERENCE_TARGET_VALID.ALLOWED_STATES.ORIGIN.MEMBER.1",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [
+                  "P2-DEC-008"
+                ],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-02.md",
+                "source_fingerprint": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe",
+                "source_lines": "L502-L513",
+                "source_section": "17. Business Decisions (Locked) > BD-02-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "STATE_ID",
+                "resolver_id": "RESOLVE.BD-02-005.BD-02-005.ALLOWED_STATES.SOURCE.MEMBER",
+                "version": "1.0.0"
+              },
+              "semantic_type": "STATE_ID"
+            }
+          ],
+          "origin": {
+            "origin_id": "BD-02-005.O1.1.REFERENCE_TARGET_VALID.ALLOWED_STATES.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [
+              "P2-DEC-008"
+            ],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-02.md",
+            "source_fingerprint": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe",
+            "source_lines": "L502-L513",
+            "source_section": "17. Business Decisions (Locked) > BD-02-005"
+          },
+          "semantic_type": "SET_OF<STATE_ID>"
+        },
+        "reference": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-WS-02.md#17. Business Decisions (Locked) > BD-02-005",
+            "source_type": "SOURCE_LITERAL",
+            "version": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe"
+          },
+          "identifier": "BD-02-005.REFERENCE",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BD-02-005.O1.1.REFERENCE_TARGET_VALID.REFERENCE.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [
+              "P2-DEC-008"
+            ],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-02.md",
+            "source_fingerprint": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe",
+            "source_lines": "L502-L513",
+            "source_section": "17. Business Decisions (Locked) > BD-02-005"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "REFERENCE_ID",
+            "resolver_id": "RESOLVE.BD-02-005.BD-02-005.REFERENCE",
+            "version": "1.0.0"
+          },
+          "semantic_type": "REFERENCE_ID"
+        },
+        "registry": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-WS-02.md#17. Business Decisions (Locked) > BD-02-005",
+            "source_type": "SOURCE_LITERAL",
+            "version": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe"
+          },
+          "identifier": "BD-02-005.REGISTRY",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BD-02-005.O1.1.REFERENCE_TARGET_VALID.REGISTRY.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [
+              "P2-DEC-008"
+            ],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-02.md",
+            "source_fingerprint": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe",
+            "source_lines": "L502-L513",
+            "source_section": "17. Business Decisions (Locked) > BD-02-005"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "ENTITY_ID",
+            "resolver_id": "RESOLVE.BD-02-005.BD-02-005.REGISTRY",
+            "version": "1.0.0"
+          },
+          "semantic_type": "ENTITY_ID"
+        },
+        "registry_source": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-WS-02.md#17. Business Decisions (Locked) > BD-02-005",
+            "source_type": "SOURCE_LITERAL",
+            "version": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe"
+          },
+          "identifier": "BD-02-005.REGISTRY_SOURCE",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BD-02-005.O1.1.REFERENCE_TARGET_VALID.REGISTRY_SOURCE.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [
+              "P2-DEC-008"
+            ],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-02.md",
+            "source_fingerprint": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe",
+            "source_lines": "L502-L513",
+            "source_section": "17. Business Decisions (Locked) > BD-02-005"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "REFERENCE_ID",
+            "resolver_id": "RESOLVE.BD-02-005.BD-02-005.REGISTRY_SOURCE",
+            "version": "1.0.0"
+          },
+          "semantic_type": "REFERENCE_ID"
+        },
+        "target_id": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-WS-02.md#17. Business Decisions (Locked) > BD-02-005",
+            "source_type": "SOURCE_LITERAL",
+            "version": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe"
+          },
+          "identifier": "BD-02-005.TARGET_ID",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BD-02-005.O1.1.REFERENCE_TARGET_VALID.TARGET_ID.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [
+              "P2-DEC-008"
+            ],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-02.md",
+            "source_fingerprint": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe",
+            "source_lines": "L502-L513",
+            "source_section": "17. Business Decisions (Locked) > BD-02-005"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "ENTITY_ID",
+            "resolver_id": "RESOLVE.BD-02-005.BD-02-005.TARGET_ID",
+            "version": "1.0.0"
+          },
+          "semantic_type": "ENTITY_ID"
+        },
+        "target_type": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-WS-02.md#17. Business Decisions (Locked) > BD-02-005",
+            "source_type": "SOURCE_LITERAL",
+            "version": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe"
+          },
+          "identifier": "BD-02-005.TARGET_TYPE",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BD-02-005.O1.1.REFERENCE_TARGET_VALID.TARGET_TYPE.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [
+              "P2-DEC-008"
+            ],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-02.md",
+            "source_fingerprint": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe",
+            "source_lines": "L502-L513",
+            "source_section": "17. Business Decisions (Locked) > BD-02-005"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "ENTITY_TYPE",
+            "resolver_id": "RESOLVE.BD-02-005.BD-02-005.TARGET_TYPE",
+            "version": "1.0.0"
+          },
+          "semantic_type": "ENTITY_TYPE"
+        }
+      },
+      {
+        "baseline": {
+          "authoritative_source": {
+            "allowed_identifiers": [
+              "BD-02-005.BASELINE"
+            ],
+            "source_id": "docs/BRD/BRD-WS-02.md#17. Business Decisions (Locked) > BD-02-005",
+            "source_type": "SOURCE_LITERAL",
+            "version": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe"
+          },
+          "identifier": "BD-02-005.BASELINE",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BD-02-005.O2.1.SCOPE_ACTIVE.BASELINE.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [
+              "P2-DEC-008"
+            ],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-02.md",
+            "source_fingerprint": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe",
+            "source_lines": "L502-L513",
+            "source_section": "17. Business Decisions (Locked) > BD-02-005"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "CANONICAL_ENUM_VALUE",
+            "resolver_id": "RESOLVE.BD-02-005.BD-02-005.BASELINE",
+            "version": "1.0.0"
+          },
+          "semantic_type": "CANONICAL_ENUM_VALUE"
+        },
+        "scope": {
+          "authoritative_source": {
+            "allowed_identifiers": [
+              "BD-02-005.SCOPE"
+            ],
+            "source_id": "docs/BRD/BRD-WS-02.md#17. Business Decisions (Locked) > BD-02-005",
+            "source_type": "SOURCE_LITERAL",
+            "version": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe"
+          },
+          "identifier": "BD-02-005.SCOPE",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BD-02-005.O2.1.SCOPE_ACTIVE.SCOPE.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [
+              "P2-DEC-008"
+            ],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-02.md",
+            "source_fingerprint": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe",
+            "source_lines": "L502-L513",
+            "source_section": "17. Business Decisions (Locked) > BD-02-005"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "CANONICAL_ENUM_VALUE",
+            "resolver_id": "RESOLVE.BD-02-005.BD-02-005.SCOPE",
+            "version": "1.0.0"
+          },
+          "semantic_type": "CANONICAL_ENUM_VALUE"
+        },
+        "subject": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-WS-02.md#17. Business Decisions (Locked) > BD-02-005",
+            "source_type": "SOURCE_LITERAL",
+            "version": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe"
+          },
+          "identifier": "BD-02-005.SUBJECT",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BD-02-005.O2.1.SCOPE_ACTIVE.SUBJECT.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [
+              "P2-DEC-008"
+            ],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-02.md",
+            "source_fingerprint": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe",
+            "source_lines": "L502-L513",
+            "source_section": "17. Business Decisions (Locked) > BD-02-005"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "ENTITY_ID",
+            "resolver_id": "RESOLVE.BD-02-005.BD-02-005.SUBJECT",
+            "version": "1.0.0"
+          },
+          "semantic_type": "ENTITY_ID"
+        }
+      }
+    ],
+    "contract_id": "P2C.C4.CONTRACT.BD-02-005",
+    "inference": false,
+    "mechanism": "APPROVED_TYPED_CUSTOM_AST",
+    "mechanism_version": "C4-R3",
+    "negative_oracle": [
+      "A Product Item exists without an Inventory Record"
+    ],
+    "operator_composition": [
+      "REFERENCE_TARGET_VALID",
+      "SCOPE_ACTIVE"
+    ],
+    "positive_oracle": [
+      "An Inventory Record is created for every Product Item, including immediate purchase, supporting accounting, audit, traceability, refund and support"
+    ],
+    "provenance": {
+      "approved_decision_references": [
+        "P2-DEC-008"
       ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
+      "inference": false,
+      "source_document": "docs/BRD/BRD-WS-02.md",
+      "source_fingerprint": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe",
+      "source_lines": "L502-L513",
+      "source_section": "17. Business Decisions (Locked) > BD-02-005"
     },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-02-005-AC002",
-      "given": "an operational task within the scope of **Decision** Mọi Product Item đều phải có Inventory Record. Kể cả mua tức thời. **Rationale** Đả…",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BD-02-005-O002"
+    "required_evidence": {
+      "evidence_object_ref": {
+        "authoritative_source": {
+          "source_id": "docs/BRD/BRD-WS-02.md#17. Business Decisions (Locked) > BD-02-005",
+          "source_type": "SOURCE_LITERAL",
+          "version": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe"
+        },
+        "identifier": "BD-02-005.BD-02-005.CONTRACT.EVIDENCE.OBJECT",
+        "inference": false,
+        "lifecycle": {
+          "status": "ACTIVE",
+          "version": "2.3"
+        },
+        "namespace": "YSIM.V2.3",
+        "origin": {
+          "origin_id": "BD-02-005.CONTRACT.EVIDENCE.ORIGIN",
+          "origin_type": "EVIDENCE_OBJECT"
+        },
+        "provenance": {
+          "approved_decision_references": [
+            "P2-DEC-008"
+          ],
+          "inference": false,
+          "source_document": "docs/BRD/BRD-WS-02.md",
+          "source_fingerprint": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe",
+          "source_lines": "L502-L513",
+          "source_section": "17. Business Decisions (Locked) > BD-02-005"
+        },
+        "resolver_contract": {
+          "deterministic": true,
+          "input_types": [],
+          "output_type": "EVIDENCE_OBJECT_REF",
+          "resolver_id": "OBSERVE.BD-02-005.BD-02-005.BD-02-005.CONTRACT.EVIDENCE.OBJECT",
+          "version": "1.0.0"
+        },
+        "semantic_type": "EVIDENCE_OBJECT_REF"
+      },
+      "inference": false,
+      "observed_collection_origin": "BD-02-005.RUNTIME.OBSERVED.FIELDS",
+      "observed_field_ids": [
+        "FIELD.PRODUCT_ITEM_ID",
+        "FIELD.ACQUISITION_PATH",
+        "FIELD.INVENTORY_RECORD_ID",
+        "FIELD.ACCOUNTING_REF",
+        "FIELD.AUDIT_REF",
+        "FIELD.TRACEABILITY_REF"
       ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
+      "producer": "BD-02-005.EVIDENCE.PRODUCER",
+      "required_collection_origin": "BD-02-005.SOURCE.REQUIRED.FIELDS",
+      "required_field_ids": [
+        "FIELD.PRODUCT_ITEM_ID",
+        "FIELD.ACQUISITION_PATH",
+        "FIELD.INVENTORY_RECORD_ID",
+        "FIELD.ACCOUNTING_REF",
+        "FIELD.AUDIT_REF",
+        "FIELD.TRACEABILITY_REF"
+      ],
+      "required_values_or_hashes": [
+        "BD-02-005.EVIDENCE.CONTENT.HASH"
+      ],
+      "retrieval_method": "BD-02-005.EVIDENCE.RETRIEVAL",
+      "version_or_correlation": "BD-02-005.EVIDENCE.VERSION.CORRELATION"
     },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "OPERATIONAL_VERIFICATION_FAILURE_V1",
-      "criterion_id": "BD-02-005-AC003",
-      "given": "an operational task missing an outcome, required signal, audit evidence, or recovery evidence for **Decision** Mọi Product Item đều phải có Inventory Record. Kể cả mua tức thời. **Rationale** Đả…",
-      "observable_evidence": "operator-visible verification result, missing-evidence identifier, operation state, and relevant signal or audit record",
-      "then": "verification reports the specific missing evidence as a detectable failure and does not report the task as conforming",
-      "verifies": [
-        "BD-02-005-O001",
-        "BD-02-005-O002"
+    "runtime_evidence_executed": false,
+    "runtime_status": "RUNTIME_ADAPTER_PENDING",
+    "semantic_obligation_references": [
+      "BD-02-005-O001",
+      "BD-02-005-O002"
+    ],
+    "typed_contract_ast": {
+      "approved_clarification": null,
+      "assertions": [
+        {
+          "assertion_id": "BD-02-005.O1.1.REFERENCE_TARGET_VALID",
+          "evaluator_consumed_bindings": [
+            "allowed_lifecycle_states",
+            "allowed_states",
+            "reference",
+            "registry",
+            "registry_source",
+            "target_id",
+            "target_type"
+          ],
+          "evidence_object": {
+            "authoritative_source": {
+              "source_id": "docs/BRD/BRD-WS-02.md#17. Business Decisions (Locked) > BD-02-005",
+              "source_type": "SOURCE_LITERAL",
+              "version": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe"
+            },
+            "identifier": "BD-02-005.BD-02-005.O1.1.REFERENCE_TARGET_VALID.EVIDENCE.OBJECT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BD-02-005.O1.1.REFERENCE_TARGET_VALID.EVIDENCE.ORIGIN",
+              "origin_type": "EVIDENCE_OBJECT"
+            },
+            "provenance": {
+              "approved_decision_references": [
+                "P2-DEC-008"
+              ],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-WS-02.md",
+              "source_fingerprint": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe",
+              "source_lines": "L502-L513",
+              "source_section": "17. Business Decisions (Locked) > BD-02-005"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "EVIDENCE_OBJECT_REF",
+              "resolver_id": "OBSERVE.BD-02-005.BD-02-005.BD-02-005.O1.1.REFERENCE_TARGET_VALID.EVIDENCE.OBJECT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "EVIDENCE_OBJECT_REF"
+          },
+          "expected_operand": {
+            "authoritative_source": {
+              "source_id": "docs/BRD/BRD-WS-02.md#17. Business Decisions (Locked) > BD-02-005",
+              "source_type": "SOURCE_LITERAL",
+              "version": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe"
+            },
+            "identifier": "BD-02-005.BD-02-005.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BD-02-005.O1.1.REFERENCE_TARGET_VALID.AUTHORITY.ORIGIN",
+              "origin_type": "SOURCE_LITERAL"
+            },
+            "provenance": {
+              "approved_decision_references": [
+                "P2-DEC-008"
+              ],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-WS-02.md",
+              "source_fingerprint": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe",
+              "source_lines": "L502-L513",
+              "source_section": "17. Business Decisions (Locked) > BD-02-005"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "REFERENCE_ID",
+              "resolver_id": "RESOLVE.BD-02-005.BD-02-005.BD-02-005.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "REFERENCE_ID"
+          },
+          "inference": false,
+          "model_conformance_fixture": {
+            "bindings": {
+              "allowed_lifecycle_states": {
+                "members": [
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "BD-02-005.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER"
+                      ],
+                      "source_id": "docs/BRD/BRD-WS-02.md#17. Business Decisions (Locked) > BD-02-005",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe"
+                    },
+                    "identifier": "BD-02-005.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BD-02-005.O1.1.REFERENCE_TARGET_VALID.ALLOWED_LIFECYCLE_STATES.ORIGIN.MEMBER.1",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [
+                        "P2-DEC-008"
+                      ],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-WS-02.md",
+                      "source_fingerprint": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe",
+                      "source_lines": "L502-L513",
+                      "source_section": "17. Business Decisions (Locked) > BD-02-005"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "STATE_ID",
+                      "resolver_id": "RESOLVE.BD-02-005.BD-02-005.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "STATE_ID"
+                  }
+                ],
+                "origin": {
+                  "origin_id": "BD-02-005.O1.1.REFERENCE_TARGET_VALID.ALLOWED_LIFECYCLE_STATES.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [
+                    "P2-DEC-008"
+                  ],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-02.md",
+                  "source_fingerprint": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe",
+                  "source_lines": "L502-L513",
+                  "source_section": "17. Business Decisions (Locked) > BD-02-005"
+                },
+                "semantic_type": "SET_OF<STATE_ID>"
+              },
+              "allowed_states": {
+                "members": [
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "BD-02-005.ALLOWED_STATES.SOURCE.MEMBER"
+                      ],
+                      "source_id": "docs/BRD/BRD-WS-02.md#17. Business Decisions (Locked) > BD-02-005",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe"
+                    },
+                    "identifier": "BD-02-005.ALLOWED_STATES.SOURCE.MEMBER",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BD-02-005.O1.1.REFERENCE_TARGET_VALID.ALLOWED_STATES.ORIGIN.MEMBER.1",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [
+                        "P2-DEC-008"
+                      ],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-WS-02.md",
+                      "source_fingerprint": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe",
+                      "source_lines": "L502-L513",
+                      "source_section": "17. Business Decisions (Locked) > BD-02-005"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "STATE_ID",
+                      "resolver_id": "RESOLVE.BD-02-005.BD-02-005.ALLOWED_STATES.SOURCE.MEMBER",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "STATE_ID"
+                  }
+                ],
+                "origin": {
+                  "origin_id": "BD-02-005.O1.1.REFERENCE_TARGET_VALID.ALLOWED_STATES.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [
+                    "P2-DEC-008"
+                  ],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-02.md",
+                  "source_fingerprint": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe",
+                  "source_lines": "L502-L513",
+                  "source_section": "17. Business Decisions (Locked) > BD-02-005"
+                },
+                "semantic_type": "SET_OF<STATE_ID>"
+              },
+              "reference": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-WS-02.md#17. Business Decisions (Locked) > BD-02-005",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe"
+                },
+                "identifier": "BD-02-005.REFERENCE",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BD-02-005.O1.1.REFERENCE_TARGET_VALID.REFERENCE.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [
+                    "P2-DEC-008"
+                  ],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-02.md",
+                  "source_fingerprint": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe",
+                  "source_lines": "L502-L513",
+                  "source_section": "17. Business Decisions (Locked) > BD-02-005"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "REFERENCE_ID",
+                  "resolver_id": "RESOLVE.BD-02-005.BD-02-005.REFERENCE",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "REFERENCE_ID"
+              },
+              "registry": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-WS-02.md#17. Business Decisions (Locked) > BD-02-005",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe"
+                },
+                "identifier": "BD-02-005.REGISTRY",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BD-02-005.O1.1.REFERENCE_TARGET_VALID.REGISTRY.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [
+                    "P2-DEC-008"
+                  ],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-02.md",
+                  "source_fingerprint": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe",
+                  "source_lines": "L502-L513",
+                  "source_section": "17. Business Decisions (Locked) > BD-02-005"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "ENTITY_ID",
+                  "resolver_id": "RESOLVE.BD-02-005.BD-02-005.REGISTRY",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "ENTITY_ID"
+              },
+              "registry_source": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-WS-02.md#17. Business Decisions (Locked) > BD-02-005",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe"
+                },
+                "identifier": "BD-02-005.REGISTRY_SOURCE",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BD-02-005.O1.1.REFERENCE_TARGET_VALID.REGISTRY_SOURCE.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [
+                    "P2-DEC-008"
+                  ],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-02.md",
+                  "source_fingerprint": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe",
+                  "source_lines": "L502-L513",
+                  "source_section": "17. Business Decisions (Locked) > BD-02-005"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "REFERENCE_ID",
+                  "resolver_id": "RESOLVE.BD-02-005.BD-02-005.REGISTRY_SOURCE",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "REFERENCE_ID"
+              },
+              "target_id": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-WS-02.md#17. Business Decisions (Locked) > BD-02-005",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe"
+                },
+                "identifier": "BD-02-005.TARGET_ID",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BD-02-005.O1.1.REFERENCE_TARGET_VALID.TARGET_ID.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [
+                    "P2-DEC-008"
+                  ],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-02.md",
+                  "source_fingerprint": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe",
+                  "source_lines": "L502-L513",
+                  "source_section": "17. Business Decisions (Locked) > BD-02-005"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "ENTITY_ID",
+                  "resolver_id": "RESOLVE.BD-02-005.BD-02-005.TARGET_ID",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "ENTITY_ID"
+              },
+              "target_type": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-WS-02.md#17. Business Decisions (Locked) > BD-02-005",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe"
+                },
+                "identifier": "BD-02-005.TARGET_TYPE",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BD-02-005.O1.1.REFERENCE_TARGET_VALID.TARGET_TYPE.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [
+                    "P2-DEC-008"
+                  ],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-02.md",
+                  "source_fingerprint": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe",
+                  "source_lines": "L502-L513",
+                  "source_section": "17. Business Decisions (Locked) > BD-02-005"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "ENTITY_TYPE",
+                  "resolver_id": "RESOLVE.BD-02-005.BD-02-005.TARGET_TYPE",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "ENTITY_TYPE"
+              }
+            },
+            "comparison": {
+              "expected": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-WS-02.md#17. Business Decisions (Locked) > BD-02-005",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe"
+                },
+                "identifier": "BD-02-005.BD-02-005.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BD-02-005.O1.1.REFERENCE_TARGET_VALID.AUTHORITY.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [
+                    "P2-DEC-008"
+                  ],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-02.md",
+                  "source_fingerprint": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe",
+                  "source_lines": "L502-L513",
+                  "source_section": "17. Business Decisions (Locked) > BD-02-005"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "REFERENCE_ID",
+                  "resolver_id": "RESOLVE.BD-02-005.BD-02-005.BD-02-005.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "REFERENCE_ID"
+              },
+              "observed": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-WS-02.md#17. Business Decisions (Locked) > BD-02-005",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe"
+                },
+                "identifier": "BD-02-005.BD-02-005.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BD-02-005.O1.1.REFERENCE_TARGET_VALID.OBSERVED.ORIGIN",
+                  "origin_type": "RUNTIME_OBSERVED"
+                },
+                "provenance": {
+                  "approved_decision_references": [
+                    "P2-DEC-008"
+                  ],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-02.md",
+                  "source_fingerprint": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe",
+                  "source_lines": "L502-L513",
+                  "source_section": "17. Business Decisions (Locked) > BD-02-005"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "REFERENCE_ID",
+                  "resolver_id": "OBSERVE.BD-02-005.BD-02-005.BD-02-005.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "REFERENCE_ID"
+              }
+            },
+            "evidence_object": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-WS-02.md#17. Business Decisions (Locked) > BD-02-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe"
+              },
+              "identifier": "BD-02-005.BD-02-005.O1.1.REFERENCE_TARGET_VALID.EVIDENCE.OBJECT",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-02-005.O1.1.REFERENCE_TARGET_VALID.EVIDENCE.ORIGIN",
+                "origin_type": "EVIDENCE_OBJECT"
+              },
+              "provenance": {
+                "approved_decision_references": [
+                  "P2-DEC-008"
+                ],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-02.md",
+                "source_fingerprint": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe",
+                "source_lines": "L502-L513",
+                "source_section": "17. Business Decisions (Locked) > BD-02-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "EVIDENCE_OBJECT_REF",
+                "resolver_id": "OBSERVE.BD-02-005.BD-02-005.BD-02-005.O1.1.REFERENCE_TARGET_VALID.EVIDENCE.OBJECT",
+                "version": "1.0.0"
+              },
+              "semantic_type": "EVIDENCE_OBJECT_REF"
+            },
+            "operator_id": "REFERENCE_TARGET_VALID"
+          },
+          "obligation_id": "BD-02-005-O001",
+          "observed_operand": {
+            "authoritative_source": {
+              "source_id": "docs/BRD/BRD-WS-02.md#17. Business Decisions (Locked) > BD-02-005",
+              "source_type": "SOURCE_LITERAL",
+              "version": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe"
+            },
+            "identifier": "BD-02-005.BD-02-005.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BD-02-005.O1.1.REFERENCE_TARGET_VALID.OBSERVED.ORIGIN",
+              "origin_type": "RUNTIME_OBSERVED"
+            },
+            "provenance": {
+              "approved_decision_references": [
+                "P2-DEC-008"
+              ],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-WS-02.md",
+              "source_fingerprint": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe",
+              "source_lines": "L502-L513",
+              "source_section": "17. Business Decisions (Locked) > BD-02-005"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "REFERENCE_ID",
+              "resolver_id": "OBSERVE.BD-02-005.BD-02-005.BD-02-005.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "REFERENCE_ID"
+          },
+          "operator_id": "REFERENCE_TARGET_VALID",
+          "operator_version": "1.0.0-candidate.2",
+          "typed_bindings": {
+            "allowed_lifecycle_states": {
+              "members": [
+                {
+                  "authoritative_source": {
+                    "allowed_identifiers": [
+                      "BD-02-005.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER"
+                    ],
+                    "source_id": "docs/BRD/BRD-WS-02.md#17. Business Decisions (Locked) > BD-02-005",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe"
+                  },
+                  "identifier": "BD-02-005.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BD-02-005.O1.1.REFERENCE_TARGET_VALID.ALLOWED_LIFECYCLE_STATES.ORIGIN.MEMBER.1",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [
+                      "P2-DEC-008"
+                    ],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-WS-02.md",
+                    "source_fingerprint": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe",
+                    "source_lines": "L502-L513",
+                    "source_section": "17. Business Decisions (Locked) > BD-02-005"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "STATE_ID",
+                    "resolver_id": "RESOLVE.BD-02-005.BD-02-005.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "STATE_ID"
+                }
+              ],
+              "origin": {
+                "origin_id": "BD-02-005.O1.1.REFERENCE_TARGET_VALID.ALLOWED_LIFECYCLE_STATES.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [
+                  "P2-DEC-008"
+                ],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-02.md",
+                "source_fingerprint": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe",
+                "source_lines": "L502-L513",
+                "source_section": "17. Business Decisions (Locked) > BD-02-005"
+              },
+              "semantic_type": "SET_OF<STATE_ID>"
+            },
+            "allowed_states": {
+              "members": [
+                {
+                  "authoritative_source": {
+                    "allowed_identifiers": [
+                      "BD-02-005.ALLOWED_STATES.SOURCE.MEMBER"
+                    ],
+                    "source_id": "docs/BRD/BRD-WS-02.md#17. Business Decisions (Locked) > BD-02-005",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe"
+                  },
+                  "identifier": "BD-02-005.ALLOWED_STATES.SOURCE.MEMBER",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BD-02-005.O1.1.REFERENCE_TARGET_VALID.ALLOWED_STATES.ORIGIN.MEMBER.1",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [
+                      "P2-DEC-008"
+                    ],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-WS-02.md",
+                    "source_fingerprint": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe",
+                    "source_lines": "L502-L513",
+                    "source_section": "17. Business Decisions (Locked) > BD-02-005"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "STATE_ID",
+                    "resolver_id": "RESOLVE.BD-02-005.BD-02-005.ALLOWED_STATES.SOURCE.MEMBER",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "STATE_ID"
+                }
+              ],
+              "origin": {
+                "origin_id": "BD-02-005.O1.1.REFERENCE_TARGET_VALID.ALLOWED_STATES.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [
+                  "P2-DEC-008"
+                ],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-02.md",
+                "source_fingerprint": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe",
+                "source_lines": "L502-L513",
+                "source_section": "17. Business Decisions (Locked) > BD-02-005"
+              },
+              "semantic_type": "SET_OF<STATE_ID>"
+            },
+            "reference": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-WS-02.md#17. Business Decisions (Locked) > BD-02-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe"
+              },
+              "identifier": "BD-02-005.REFERENCE",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-02-005.O1.1.REFERENCE_TARGET_VALID.REFERENCE.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [
+                  "P2-DEC-008"
+                ],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-02.md",
+                "source_fingerprint": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe",
+                "source_lines": "L502-L513",
+                "source_section": "17. Business Decisions (Locked) > BD-02-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "REFERENCE_ID",
+                "resolver_id": "RESOLVE.BD-02-005.BD-02-005.REFERENCE",
+                "version": "1.0.0"
+              },
+              "semantic_type": "REFERENCE_ID"
+            },
+            "registry": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-WS-02.md#17. Business Decisions (Locked) > BD-02-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe"
+              },
+              "identifier": "BD-02-005.REGISTRY",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-02-005.O1.1.REFERENCE_TARGET_VALID.REGISTRY.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [
+                  "P2-DEC-008"
+                ],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-02.md",
+                "source_fingerprint": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe",
+                "source_lines": "L502-L513",
+                "source_section": "17. Business Decisions (Locked) > BD-02-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "ENTITY_ID",
+                "resolver_id": "RESOLVE.BD-02-005.BD-02-005.REGISTRY",
+                "version": "1.0.0"
+              },
+              "semantic_type": "ENTITY_ID"
+            },
+            "registry_source": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-WS-02.md#17. Business Decisions (Locked) > BD-02-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe"
+              },
+              "identifier": "BD-02-005.REGISTRY_SOURCE",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-02-005.O1.1.REFERENCE_TARGET_VALID.REGISTRY_SOURCE.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [
+                  "P2-DEC-008"
+                ],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-02.md",
+                "source_fingerprint": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe",
+                "source_lines": "L502-L513",
+                "source_section": "17. Business Decisions (Locked) > BD-02-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "REFERENCE_ID",
+                "resolver_id": "RESOLVE.BD-02-005.BD-02-005.REGISTRY_SOURCE",
+                "version": "1.0.0"
+              },
+              "semantic_type": "REFERENCE_ID"
+            },
+            "target_id": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-WS-02.md#17. Business Decisions (Locked) > BD-02-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe"
+              },
+              "identifier": "BD-02-005.TARGET_ID",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-02-005.O1.1.REFERENCE_TARGET_VALID.TARGET_ID.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [
+                  "P2-DEC-008"
+                ],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-02.md",
+                "source_fingerprint": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe",
+                "source_lines": "L502-L513",
+                "source_section": "17. Business Decisions (Locked) > BD-02-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "ENTITY_ID",
+                "resolver_id": "RESOLVE.BD-02-005.BD-02-005.TARGET_ID",
+                "version": "1.0.0"
+              },
+              "semantic_type": "ENTITY_ID"
+            },
+            "target_type": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-WS-02.md#17. Business Decisions (Locked) > BD-02-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe"
+              },
+              "identifier": "BD-02-005.TARGET_TYPE",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-02-005.O1.1.REFERENCE_TARGET_VALID.TARGET_TYPE.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [
+                  "P2-DEC-008"
+                ],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-02.md",
+                "source_fingerprint": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe",
+                "source_lines": "L502-L513",
+                "source_section": "17. Business Decisions (Locked) > BD-02-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "ENTITY_TYPE",
+                "resolver_id": "RESOLVE.BD-02-005.BD-02-005.TARGET_TYPE",
+                "version": "1.0.0"
+              },
+              "semantic_type": "ENTITY_TYPE"
+            }
+          }
+        },
+        {
+          "assertion_id": "BD-02-005.O2.1.SCOPE_ACTIVE",
+          "evaluator_consumed_bindings": [
+            "baseline",
+            "scope",
+            "subject"
+          ],
+          "evidence_object": {
+            "authoritative_source": {
+              "source_id": "docs/BRD/BRD-WS-02.md#17. Business Decisions (Locked) > BD-02-005",
+              "source_type": "SOURCE_LITERAL",
+              "version": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe"
+            },
+            "identifier": "BD-02-005.BD-02-005.O2.1.SCOPE_ACTIVE.EVIDENCE.OBJECT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BD-02-005.O2.1.SCOPE_ACTIVE.EVIDENCE.ORIGIN",
+              "origin_type": "EVIDENCE_OBJECT"
+            },
+            "provenance": {
+              "approved_decision_references": [
+                "P2-DEC-008"
+              ],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-WS-02.md",
+              "source_fingerprint": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe",
+              "source_lines": "L502-L513",
+              "source_section": "17. Business Decisions (Locked) > BD-02-005"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "EVIDENCE_OBJECT_REF",
+              "resolver_id": "OBSERVE.BD-02-005.BD-02-005.BD-02-005.O2.1.SCOPE_ACTIVE.EVIDENCE.OBJECT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "EVIDENCE_OBJECT_REF"
+          },
+          "expected_operand": {
+            "authoritative_source": {
+              "source_id": "docs/BRD/BRD-WS-02.md#17. Business Decisions (Locked) > BD-02-005",
+              "source_type": "SOURCE_LITERAL",
+              "version": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe"
+            },
+            "identifier": "BD-02-005.BD-02-005.O2.1.SCOPE_ACTIVE.CANONICAL.RESULT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BD-02-005.O2.1.SCOPE_ACTIVE.AUTHORITY.ORIGIN",
+              "origin_type": "SOURCE_LITERAL"
+            },
+            "provenance": {
+              "approved_decision_references": [
+                "P2-DEC-008"
+              ],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-WS-02.md",
+              "source_fingerprint": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe",
+              "source_lines": "L502-L513",
+              "source_section": "17. Business Decisions (Locked) > BD-02-005"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "ENTITY_ID",
+              "resolver_id": "RESOLVE.BD-02-005.BD-02-005.BD-02-005.O2.1.SCOPE_ACTIVE.CANONICAL.RESULT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "ENTITY_ID"
+          },
+          "inference": false,
+          "model_conformance_fixture": {
+            "bindings": {
+              "baseline": {
+                "authoritative_source": {
+                  "allowed_identifiers": [
+                    "BD-02-005.BASELINE"
+                  ],
+                  "source_id": "docs/BRD/BRD-WS-02.md#17. Business Decisions (Locked) > BD-02-005",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe"
+                },
+                "identifier": "BD-02-005.BASELINE",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BD-02-005.O2.1.SCOPE_ACTIVE.BASELINE.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [
+                    "P2-DEC-008"
+                  ],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-02.md",
+                  "source_fingerprint": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe",
+                  "source_lines": "L502-L513",
+                  "source_section": "17. Business Decisions (Locked) > BD-02-005"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "CANONICAL_ENUM_VALUE",
+                  "resolver_id": "RESOLVE.BD-02-005.BD-02-005.BASELINE",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "CANONICAL_ENUM_VALUE"
+              },
+              "scope": {
+                "authoritative_source": {
+                  "allowed_identifiers": [
+                    "BD-02-005.SCOPE"
+                  ],
+                  "source_id": "docs/BRD/BRD-WS-02.md#17. Business Decisions (Locked) > BD-02-005",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe"
+                },
+                "identifier": "BD-02-005.SCOPE",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BD-02-005.O2.1.SCOPE_ACTIVE.SCOPE.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [
+                    "P2-DEC-008"
+                  ],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-02.md",
+                  "source_fingerprint": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe",
+                  "source_lines": "L502-L513",
+                  "source_section": "17. Business Decisions (Locked) > BD-02-005"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "CANONICAL_ENUM_VALUE",
+                  "resolver_id": "RESOLVE.BD-02-005.BD-02-005.SCOPE",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "CANONICAL_ENUM_VALUE"
+              },
+              "subject": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-WS-02.md#17. Business Decisions (Locked) > BD-02-005",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe"
+                },
+                "identifier": "BD-02-005.SUBJECT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BD-02-005.O2.1.SCOPE_ACTIVE.SUBJECT.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [
+                    "P2-DEC-008"
+                  ],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-02.md",
+                  "source_fingerprint": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe",
+                  "source_lines": "L502-L513",
+                  "source_section": "17. Business Decisions (Locked) > BD-02-005"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "ENTITY_ID",
+                  "resolver_id": "RESOLVE.BD-02-005.BD-02-005.SUBJECT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "ENTITY_ID"
+              }
+            },
+            "comparison": {
+              "expected": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-WS-02.md#17. Business Decisions (Locked) > BD-02-005",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe"
+                },
+                "identifier": "BD-02-005.BD-02-005.O2.1.SCOPE_ACTIVE.CANONICAL.RESULT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BD-02-005.O2.1.SCOPE_ACTIVE.AUTHORITY.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [
+                    "P2-DEC-008"
+                  ],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-02.md",
+                  "source_fingerprint": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe",
+                  "source_lines": "L502-L513",
+                  "source_section": "17. Business Decisions (Locked) > BD-02-005"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "ENTITY_ID",
+                  "resolver_id": "RESOLVE.BD-02-005.BD-02-005.BD-02-005.O2.1.SCOPE_ACTIVE.CANONICAL.RESULT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "ENTITY_ID"
+              },
+              "observed": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-WS-02.md#17. Business Decisions (Locked) > BD-02-005",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe"
+                },
+                "identifier": "BD-02-005.BD-02-005.O2.1.SCOPE_ACTIVE.CANONICAL.RESULT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BD-02-005.O2.1.SCOPE_ACTIVE.OBSERVED.ORIGIN",
+                  "origin_type": "RUNTIME_OBSERVED"
+                },
+                "provenance": {
+                  "approved_decision_references": [
+                    "P2-DEC-008"
+                  ],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-02.md",
+                  "source_fingerprint": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe",
+                  "source_lines": "L502-L513",
+                  "source_section": "17. Business Decisions (Locked) > BD-02-005"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "ENTITY_ID",
+                  "resolver_id": "OBSERVE.BD-02-005.BD-02-005.BD-02-005.O2.1.SCOPE_ACTIVE.CANONICAL.RESULT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "ENTITY_ID"
+              }
+            },
+            "evidence_object": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-WS-02.md#17. Business Decisions (Locked) > BD-02-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe"
+              },
+              "identifier": "BD-02-005.BD-02-005.O2.1.SCOPE_ACTIVE.EVIDENCE.OBJECT",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-02-005.O2.1.SCOPE_ACTIVE.EVIDENCE.ORIGIN",
+                "origin_type": "EVIDENCE_OBJECT"
+              },
+              "provenance": {
+                "approved_decision_references": [
+                  "P2-DEC-008"
+                ],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-02.md",
+                "source_fingerprint": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe",
+                "source_lines": "L502-L513",
+                "source_section": "17. Business Decisions (Locked) > BD-02-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "EVIDENCE_OBJECT_REF",
+                "resolver_id": "OBSERVE.BD-02-005.BD-02-005.BD-02-005.O2.1.SCOPE_ACTIVE.EVIDENCE.OBJECT",
+                "version": "1.0.0"
+              },
+              "semantic_type": "EVIDENCE_OBJECT_REF"
+            },
+            "operator_id": "SCOPE_ACTIVE"
+          },
+          "obligation_id": "BD-02-005-O002",
+          "observed_operand": {
+            "authoritative_source": {
+              "source_id": "docs/BRD/BRD-WS-02.md#17. Business Decisions (Locked) > BD-02-005",
+              "source_type": "SOURCE_LITERAL",
+              "version": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe"
+            },
+            "identifier": "BD-02-005.BD-02-005.O2.1.SCOPE_ACTIVE.CANONICAL.RESULT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BD-02-005.O2.1.SCOPE_ACTIVE.OBSERVED.ORIGIN",
+              "origin_type": "RUNTIME_OBSERVED"
+            },
+            "provenance": {
+              "approved_decision_references": [
+                "P2-DEC-008"
+              ],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-WS-02.md",
+              "source_fingerprint": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe",
+              "source_lines": "L502-L513",
+              "source_section": "17. Business Decisions (Locked) > BD-02-005"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "ENTITY_ID",
+              "resolver_id": "OBSERVE.BD-02-005.BD-02-005.BD-02-005.O2.1.SCOPE_ACTIVE.CANONICAL.RESULT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "ENTITY_ID"
+          },
+          "operator_id": "SCOPE_ACTIVE",
+          "operator_version": "1.0.0-candidate.2",
+          "typed_bindings": {
+            "baseline": {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "BD-02-005.BASELINE"
+                ],
+                "source_id": "docs/BRD/BRD-WS-02.md#17. Business Decisions (Locked) > BD-02-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe"
+              },
+              "identifier": "BD-02-005.BASELINE",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-02-005.O2.1.SCOPE_ACTIVE.BASELINE.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [
+                  "P2-DEC-008"
+                ],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-02.md",
+                "source_fingerprint": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe",
+                "source_lines": "L502-L513",
+                "source_section": "17. Business Decisions (Locked) > BD-02-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CANONICAL_ENUM_VALUE",
+                "resolver_id": "RESOLVE.BD-02-005.BD-02-005.BASELINE",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_ENUM_VALUE"
+            },
+            "scope": {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "BD-02-005.SCOPE"
+                ],
+                "source_id": "docs/BRD/BRD-WS-02.md#17. Business Decisions (Locked) > BD-02-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe"
+              },
+              "identifier": "BD-02-005.SCOPE",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-02-005.O2.1.SCOPE_ACTIVE.SCOPE.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [
+                  "P2-DEC-008"
+                ],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-02.md",
+                "source_fingerprint": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe",
+                "source_lines": "L502-L513",
+                "source_section": "17. Business Decisions (Locked) > BD-02-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CANONICAL_ENUM_VALUE",
+                "resolver_id": "RESOLVE.BD-02-005.BD-02-005.SCOPE",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_ENUM_VALUE"
+            },
+            "subject": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-WS-02.md#17. Business Decisions (Locked) > BD-02-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe"
+              },
+              "identifier": "BD-02-005.SUBJECT",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-02-005.O2.1.SCOPE_ACTIVE.SUBJECT.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [
+                  "P2-DEC-008"
+                ],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-02.md",
+                "source_fingerprint": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe",
+                "source_lines": "L502-L513",
+                "source_section": "17. Business Decisions (Locked) > BD-02-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "ENTITY_ID",
+                "resolver_id": "RESOLVE.BD-02-005.BD-02-005.SUBJECT",
+                "version": "1.0.0"
+              },
+              "semantic_type": "ENTITY_ID"
+            }
+          }
+        }
       ],
-      "when": "operational verification is performed"
+      "boundary_cases": [
+        "Immediate purchase and normal procurement have different acquisition paths but the same record obligation"
+      ],
+      "contract_ast_sha256": "8b90c65da30ced98d2e91a477b4d7b7d878140229dc53694bb4718733ec18464",
+      "contract_id": "P2C.C4.CONTRACT.BD-02-005",
+      "criticality": "CRITICAL",
+      "disposition": "COMPOUND_AST_REQUIRED",
+      "evidence_contract": {
+        "evidence_object_ref": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-WS-02.md#17. Business Decisions (Locked) > BD-02-005",
+            "source_type": "SOURCE_LITERAL",
+            "version": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe"
+          },
+          "identifier": "BD-02-005.BD-02-005.CONTRACT.EVIDENCE.OBJECT",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BD-02-005.CONTRACT.EVIDENCE.ORIGIN",
+            "origin_type": "EVIDENCE_OBJECT"
+          },
+          "provenance": {
+            "approved_decision_references": [
+              "P2-DEC-008"
+            ],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-02.md",
+            "source_fingerprint": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe",
+            "source_lines": "L502-L513",
+            "source_section": "17. Business Decisions (Locked) > BD-02-005"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "EVIDENCE_OBJECT_REF",
+            "resolver_id": "OBSERVE.BD-02-005.BD-02-005.BD-02-005.CONTRACT.EVIDENCE.OBJECT",
+            "version": "1.0.0"
+          },
+          "semantic_type": "EVIDENCE_OBJECT_REF"
+        },
+        "inference": false,
+        "observed_collection_origin": "BD-02-005.RUNTIME.OBSERVED.FIELDS",
+        "observed_field_ids": [
+          "FIELD.PRODUCT_ITEM_ID",
+          "FIELD.ACQUISITION_PATH",
+          "FIELD.INVENTORY_RECORD_ID",
+          "FIELD.ACCOUNTING_REF",
+          "FIELD.AUDIT_REF",
+          "FIELD.TRACEABILITY_REF"
+        ],
+        "producer": "BD-02-005.EVIDENCE.PRODUCER",
+        "required_collection_origin": "BD-02-005.SOURCE.REQUIRED.FIELDS",
+        "required_field_ids": [
+          "FIELD.PRODUCT_ITEM_ID",
+          "FIELD.ACQUISITION_PATH",
+          "FIELD.INVENTORY_RECORD_ID",
+          "FIELD.ACCOUNTING_REF",
+          "FIELD.AUDIT_REF",
+          "FIELD.TRACEABILITY_REF"
+        ],
+        "required_values_or_hashes": [
+          "BD-02-005.EVIDENCE.CONTENT.HASH"
+        ],
+        "retrieval_method": "BD-02-005.EVIDENCE.RETRIEVAL",
+        "version_or_correlation": "BD-02-005.EVIDENCE.VERSION.CORRELATION"
+      },
+      "explicit_non_obligations": [
+        "No runtime implementation topology is authorized by this semantic record.",
+        "No production runtime evidence is claimed by this model-level candidate."
+      ],
+      "fixture_ids": [
+        "P2C-C4-FX-61047493F1B6BF01933A",
+        "P2C-C4-FX-D5A93015A256313F589F",
+        "P2C-C4-FX-FC8EFBE5136DEF9D85D1"
+      ],
+      "high_risk_audit_subset": true,
+      "independent_contract_identity": true,
+      "inference": false,
+      "inherits_contract_ast": null,
+      "negative_oracles": [
+        "A Product Item exists without an Inventory Record"
+      ],
+      "normative_obligations": [
+        {
+          "applicability": "V2.3_ACTIVE",
+          "obligation_id": "BD-02-005-O001",
+          "obligation_text": "**Decision** Mọi Product Item đều phải có Inventory Record"
+        },
+        {
+          "applicability": "V2.3_ACTIVE",
+          "obligation_id": "BD-02-005-O002",
+          "obligation_text": "Kể cả mua tức thời. **Rationale** Đảm bảo Accounting, Audit, Traceability, Refund và Customer Support"
+        }
+      ],
+      "obligation_to_operator_coverage": [
+        {
+          "assertion_ids": [
+            "BD-02-005.O1.1.REFERENCE_TARGET_VALID"
+          ],
+          "coverage_count": 1,
+          "obligation_id": "BD-02-005-O001"
+        },
+        {
+          "assertion_ids": [
+            "BD-02-005.O2.1.SCOPE_ACTIVE"
+          ],
+          "coverage_count": 1,
+          "obligation_id": "BD-02-005-O002"
+        }
+      ],
+      "operator_composition": [
+        "REFERENCE_TARGET_VALID",
+        "SCOPE_ACTIVE"
+      ],
+      "positive_oracles": [
+        "An Inventory Record is created for every Product Item, including immediate purchase, supporting accounting, audit, traceability, refund and support"
+      ],
+      "preconditions": [
+        "A canonical Product Item identity exists"
+      ],
+      "prohibitions": [
+        "A Product Item exists without an Inventory Record"
+      ],
+      "requirement_id": "BD-02-005",
+      "runtime_status": "SLICE_RUNTIME_ADAPTER_REQUIRED",
+      "semantic_family_id": null,
+      "source_provenance": {
+        "approved_decision_references": [
+          "P2-DEC-008"
+        ],
+        "inference": false,
+        "source_document": "docs/BRD/BRD-WS-02.md",
+        "source_fingerprint": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe",
+        "source_lines": "L502-L513",
+        "source_section": "17. Business Decisions (Locked) > BD-02-005"
+      },
+      "source_statement": "**Decision** Mọi Product Item đều phải có Inventory Record. Kể cả mua tức thời. **Rationale** Đảm bảo Accounting, Audit, Traceability, Refund và Customer Support.",
+      "surrounding_source_context": "## BD-02-005\n\n**Decision**\n\nMọi Product Item đều phải có Inventory Record.\n\nKể cả mua tức thời.\n\n**Rationale**\n\nĐảm bảo Accounting, Audit, Traceability, Refund và Customer Support.\n\n---"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "contract_id": "P2C.C4.CONTRACT.BD-02-005",
+    "inference": false,
+    "mechanism": "APPROVED_TYPED_CUSTOM_AST",
+    "mechanism_version": "SEMANTIC_ACCEPTANCE_RENDERER_C2",
+    "runtime_status": "RUNTIME_ADAPTER_PENDING"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "ACCEPTANCE_READY",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-02-005-AC001",
-        "BD-02-005-AC003"
+        "BD-02-005-AC003",
+        "BD-02-005-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-02-005-O001",
@@ -1175,7 +3037,8 @@ Workshop này là nền tảng cho:
     {
       "acceptance_criterion_references": [
         "BD-02-005-AC002",
-        "BD-02-005-AC003"
+        "BD-02-005-AC003",
+        "BD-02-005-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-02-005-O002",
@@ -1184,36 +3047,37 @@ Workshop này là nền tảng cho:
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-02-005 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-02-005 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-02-005 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-02-005 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-02-005 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-02-005 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "BD-02-005 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BD-02-005-AC003"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BD-02-005-AC001",
         "BD-02-005-AC002"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-02-005 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-02-005 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -1233,9 +3097,9 @@ Workshop này là nền tảng cho:
     "source_context_heading": "BD-02-001",
     "source_context_sha256": "d306690cb04d415d1e2342b0f9d1a8204753ce8a48dd776d59a17534c95fe200",
     "source_document": "docs/BRD/BRD-WS-02.md",
-    "source_fingerprint": "2e2e73a64b6338360b13b6999f74bca61893416d8fe14a6382fd93aff2ef8efe",
-    "source_lines": "L502-L513",
-    "source_section": "17. Business Decisions (Locked) > BD-02-005"
+    "source_fingerprint": "19d6c18ce3fa6fb4292491d05eeb73441d3c5a18c5ea63df6aff24f38c62cf38",
+    "source_lines": "L1051-L3120",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-02-005"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1260,41 +3124,37 @@ Workshop này là nền tảng cho:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-02-006-AC001",
-      "given": "the applicable business context, actor, and input for **Decision** Product Intelligence là Business Capability bắt buộc. **Rationale** Giúp đồng bộ Ca…",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-02-006-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-005",
+        "P2-DEC-007"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BD-02-006-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by **Decision** Product Intelligence là Business Capability bắt buộc. **Rationale** Giúp đồng bộ Ca…",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BD-02-006-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-02-006",
+      "source_document": "docs/BRD/BRD-WS-02.md",
+      "source_fingerprint": "f0f66f4297f48d70e46fc74b5b466a6eec6dab90f3663e402a98d3611df41681"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-02-006-AC001",
-        "BD-02-006-AC002"
+        "BD-02-006-AC002",
+        "BD-02-006-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-02-006-O001",
@@ -1320,9 +3180,9 @@ Workshop này là nền tảng cho:
     "source_context_heading": "BD-02-001",
     "source_context_sha256": "d306690cb04d415d1e2342b0f9d1a8204753ce8a48dd776d59a17534c95fe200",
     "source_document": "docs/BRD/BRD-WS-02.md",
-    "source_fingerprint": "62671d6e8bf656c834e5ec8ae9a167d32afe56062d3cd5a5039d6d1b54674afe",
-    "source_lines": "L516-L525",
-    "source_section": "17. Business Decisions (Locked) > BD-02-006"
+    "source_fingerprint": "f0f66f4297f48d70e46fc74b5b466a6eec6dab90f3663e402a98d3611df41681",
+    "source_lines": "L3122-L3203",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-02-006"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1347,41 +3207,34 @@ Workshop này là nền tảng cho:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "BD-02-007-AC001",
-      "given": "a candidate **Decision** Snapshot Pricing là nguyên tắc bắt buộc. **Rationale** Mọi Settlement và nghiệp vụ … record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "BD-02-007-O001"
-      ],
-      "when": "the candidate is evaluated against its declared data contract"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "DATA_CONTRACT_REJECTION_V1",
-      "criterion_id": "BD-02-007-AC002",
-      "given": "a **Decision** Snapshot Pricing là nguyên tắc bắt buộc. **Rationale** Mọi Settlement và nghiệp vụ … candidate containing an unsupported value, inconsistent relationship, or unresolved reference",
-      "observable_evidence": "rejection result, field or relationship reason, unresolved reference, and unchanged persisted state",
-      "then": "the candidate is rejected without persisting the invalid state, and each invalid field or relationship has a deterministic reason",
-      "verifies": [
-        "BD-02-007-O001"
-      ],
-      "when": "the candidate is validated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-02-007",
+      "source_document": "docs/BRD/BRD-WS-02.md",
+      "source_fingerprint": "05576e69f9f3b02cba1a23afd61887a75929bf860a4e95e3d1f3d45d2dd60884"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-02-007-AC001",
-        "BD-02-007-AC002"
+        "BD-02-007-AC002",
+        "BD-02-007-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-02-007-O001",
@@ -1390,35 +3243,36 @@ Workshop này là nền tảng cho:
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-02-007 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-02-007 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-02-007 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-02-007 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-02-007 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-02-007 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "BD-02-007 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BD-02-007-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BD-02-007-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-02-007 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-02-007 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -1436,9 +3290,9 @@ Workshop này là nền tảng cho:
     "source_context_heading": "BD-02-001",
     "source_context_sha256": "d306690cb04d415d1e2342b0f9d1a8204753ce8a48dd776d59a17534c95fe200",
     "source_document": "docs/BRD/BRD-WS-02.md",
-    "source_fingerprint": "7af8eb671480487ce7ad8a69570cd059eeaf894f8c9bfa0f618bd52314efdfc0",
-    "source_lines": "L528-L537",
-    "source_section": "17. Business Decisions (Locked) > BD-02-007"
+    "source_fingerprint": "05576e69f9f3b02cba1a23afd61887a75929bf860a4e95e3d1f3d45d2dd60884",
+    "source_lines": "L3205-L3313",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-02-007"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1463,41 +3317,1308 @@ Workshop này là nền tảng cho:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-02-R002-AC001",
-      "given": "the applicable business context, actor, and input for Mỗi YSim Product phải có Product Specification chuẩn",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-WS-02-R002-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "boundary_oracle": [
+      "Draft may remain incomplete; publication requires the specification"
+    ],
+    "concrete_bindings": [
+      {
+        "allowed_lifecycle_states": {
+          "members": [
+            {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "BRD-WS-02-R002.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER"
+                ],
+                "source_id": "docs/BRD/BRD-WS-02.md#7. Product Specification",
+                "source_type": "SOURCE_LITERAL",
+                "version": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073"
+              },
+              "identifier": "BRD-WS-02-R002.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-WS-02-R002.O1.1.REFERENCE_TARGET_VALID.ALLOWED_LIFECYCLE_STATES.ORIGIN.MEMBER.1",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-02.md",
+                "source_fingerprint": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073",
+                "source_lines": "L173",
+                "source_section": "7. Product Specification"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "STATE_ID",
+                "resolver_id": "RESOLVE.BRD-WS-02-R002.BRD-WS-02-R002.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER",
+                "version": "1.0.0"
+              },
+              "semantic_type": "STATE_ID"
+            }
+          ],
+          "origin": {
+            "origin_id": "BRD-WS-02-R002.O1.1.REFERENCE_TARGET_VALID.ALLOWED_LIFECYCLE_STATES.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-02.md",
+            "source_fingerprint": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073",
+            "source_lines": "L173",
+            "source_section": "7. Product Specification"
+          },
+          "semantic_type": "SET_OF<STATE_ID>"
+        },
+        "allowed_states": {
+          "members": [
+            {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "BRD-WS-02-R002.ALLOWED_STATES.SOURCE.MEMBER"
+                ],
+                "source_id": "docs/BRD/BRD-WS-02.md#7. Product Specification",
+                "source_type": "SOURCE_LITERAL",
+                "version": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073"
+              },
+              "identifier": "BRD-WS-02-R002.ALLOWED_STATES.SOURCE.MEMBER",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-WS-02-R002.O1.1.REFERENCE_TARGET_VALID.ALLOWED_STATES.ORIGIN.MEMBER.1",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-02.md",
+                "source_fingerprint": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073",
+                "source_lines": "L173",
+                "source_section": "7. Product Specification"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "STATE_ID",
+                "resolver_id": "RESOLVE.BRD-WS-02-R002.BRD-WS-02-R002.ALLOWED_STATES.SOURCE.MEMBER",
+                "version": "1.0.0"
+              },
+              "semantic_type": "STATE_ID"
+            }
+          ],
+          "origin": {
+            "origin_id": "BRD-WS-02-R002.O1.1.REFERENCE_TARGET_VALID.ALLOWED_STATES.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-02.md",
+            "source_fingerprint": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073",
+            "source_lines": "L173",
+            "source_section": "7. Product Specification"
+          },
+          "semantic_type": "SET_OF<STATE_ID>"
+        },
+        "reference": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-WS-02.md#7. Product Specification",
+            "source_type": "SOURCE_LITERAL",
+            "version": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073"
+          },
+          "identifier": "BRD-WS-02-R002.REFERENCE",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-WS-02-R002.O1.1.REFERENCE_TARGET_VALID.REFERENCE.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-02.md",
+            "source_fingerprint": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073",
+            "source_lines": "L173",
+            "source_section": "7. Product Specification"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "REFERENCE_ID",
+            "resolver_id": "RESOLVE.BRD-WS-02-R002.BRD-WS-02-R002.REFERENCE",
+            "version": "1.0.0"
+          },
+          "semantic_type": "REFERENCE_ID"
+        },
+        "registry": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-WS-02.md#7. Product Specification",
+            "source_type": "SOURCE_LITERAL",
+            "version": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073"
+          },
+          "identifier": "BRD-WS-02-R002.REGISTRY",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-WS-02-R002.O1.1.REFERENCE_TARGET_VALID.REGISTRY.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-02.md",
+            "source_fingerprint": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073",
+            "source_lines": "L173",
+            "source_section": "7. Product Specification"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "ENTITY_ID",
+            "resolver_id": "RESOLVE.BRD-WS-02-R002.BRD-WS-02-R002.REGISTRY",
+            "version": "1.0.0"
+          },
+          "semantic_type": "ENTITY_ID"
+        },
+        "registry_source": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-WS-02.md#7. Product Specification",
+            "source_type": "SOURCE_LITERAL",
+            "version": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073"
+          },
+          "identifier": "BRD-WS-02-R002.REGISTRY_SOURCE",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-WS-02-R002.O1.1.REFERENCE_TARGET_VALID.REGISTRY_SOURCE.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-02.md",
+            "source_fingerprint": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073",
+            "source_lines": "L173",
+            "source_section": "7. Product Specification"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "REFERENCE_ID",
+            "resolver_id": "RESOLVE.BRD-WS-02-R002.BRD-WS-02-R002.REGISTRY_SOURCE",
+            "version": "1.0.0"
+          },
+          "semantic_type": "REFERENCE_ID"
+        },
+        "target_id": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-WS-02.md#7. Product Specification",
+            "source_type": "SOURCE_LITERAL",
+            "version": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073"
+          },
+          "identifier": "BRD-WS-02-R002.TARGET_ID",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-WS-02-R002.O1.1.REFERENCE_TARGET_VALID.TARGET_ID.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-02.md",
+            "source_fingerprint": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073",
+            "source_lines": "L173",
+            "source_section": "7. Product Specification"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "ENTITY_ID",
+            "resolver_id": "RESOLVE.BRD-WS-02-R002.BRD-WS-02-R002.TARGET_ID",
+            "version": "1.0.0"
+          },
+          "semantic_type": "ENTITY_ID"
+        },
+        "target_type": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-WS-02.md#7. Product Specification",
+            "source_type": "SOURCE_LITERAL",
+            "version": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073"
+          },
+          "identifier": "BRD-WS-02-R002.TARGET_TYPE",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-WS-02-R002.O1.1.REFERENCE_TARGET_VALID.TARGET_TYPE.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-02.md",
+            "source_fingerprint": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073",
+            "source_lines": "L173",
+            "source_section": "7. Product Specification"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "ENTITY_TYPE",
+            "resolver_id": "RESOLVE.BRD-WS-02-R002.BRD-WS-02-R002.TARGET_TYPE",
+            "version": "1.0.0"
+          },
+          "semantic_type": "ENTITY_TYPE"
+        }
+      }
+    ],
+    "contract_id": "P2C.C4.CONTRACT.BRD-WS-02-R002",
+    "inference": false,
+    "mechanism": "APPROVED_TYPED_CUSTOM_AST",
+    "mechanism_version": "C4-R3",
+    "negative_oracle": [
+      "The Product is published without a Product Specification"
+    ],
+    "operator_composition": [
+      "REFERENCE_TARGET_VALID"
+    ],
+    "positive_oracle": [
+      "The Product has a standard Product Specification"
+    ],
+    "provenance": {
+      "approved_decision_references": [],
+      "inference": false,
+      "source_document": "docs/BRD/BRD-WS-02.md",
+      "source_fingerprint": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073",
+      "source_lines": "L173",
+      "source_section": "7. Product Specification"
     },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BRD-WS-02-R002-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Mỗi YSim Product phải có Product Specification chuẩn",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BRD-WS-02-R002-O001"
+    "required_evidence": {
+      "evidence_object_ref": {
+        "authoritative_source": {
+          "source_id": "docs/BRD/BRD-WS-02.md#7. Product Specification",
+          "source_type": "SOURCE_LITERAL",
+          "version": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073"
+        },
+        "identifier": "BRD-WS-02-R002.BRD-WS-02-R002.CONTRACT.EVIDENCE.OBJECT",
+        "inference": false,
+        "lifecycle": {
+          "status": "ACTIVE",
+          "version": "2.3"
+        },
+        "namespace": "YSIM.V2.3",
+        "origin": {
+          "origin_id": "BRD-WS-02-R002.CONTRACT.EVIDENCE.ORIGIN",
+          "origin_type": "EVIDENCE_OBJECT"
+        },
+        "provenance": {
+          "approved_decision_references": [],
+          "inference": false,
+          "source_document": "docs/BRD/BRD-WS-02.md",
+          "source_fingerprint": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073",
+          "source_lines": "L173",
+          "source_section": "7. Product Specification"
+        },
+        "resolver_contract": {
+          "deterministic": true,
+          "input_types": [],
+          "output_type": "EVIDENCE_OBJECT_REF",
+          "resolver_id": "OBSERVE.BRD-WS-02-R002.BRD-WS-02-R002.BRD-WS-02-R002.CONTRACT.EVIDENCE.OBJECT",
+          "version": "1.0.0"
+        },
+        "semantic_type": "EVIDENCE_OBJECT_REF"
+      },
+      "inference": false,
+      "observed_collection_origin": "BRD-WS-02-R002.RUNTIME.OBSERVED.FIELDS",
+      "observed_field_ids": [
+        "FIELD.PRODUCT_ID",
+        "FIELD.SPECIFICATION_ID",
+        "FIELD.SPECIFICATION_VERSION",
+        "FIELD.PUBLISH_STATE",
+        "FIELD.VALIDATION_RESULT"
       ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+      "producer": "BRD-WS-02-R002.EVIDENCE.PRODUCER",
+      "required_collection_origin": "BRD-WS-02-R002.SOURCE.REQUIRED.FIELDS",
+      "required_field_ids": [
+        "FIELD.PRODUCT_ID",
+        "FIELD.SPECIFICATION_ID",
+        "FIELD.SPECIFICATION_VERSION",
+        "FIELD.PUBLISH_STATE",
+        "FIELD.VALIDATION_RESULT"
+      ],
+      "required_values_or_hashes": [
+        "BRD-WS-02-R002.EVIDENCE.CONTENT.HASH"
+      ],
+      "retrieval_method": "BRD-WS-02-R002.EVIDENCE.RETRIEVAL",
+      "version_or_correlation": "BRD-WS-02-R002.EVIDENCE.VERSION.CORRELATION"
+    },
+    "runtime_evidence_executed": false,
+    "runtime_status": "RUNTIME_ADAPTER_PENDING",
+    "semantic_obligation_references": [
+      "BRD-WS-02-R002-O001"
+    ],
+    "typed_contract_ast": {
+      "approved_clarification": null,
+      "assertions": [
+        {
+          "assertion_id": "BRD-WS-02-R002.O1.1.REFERENCE_TARGET_VALID",
+          "evaluator_consumed_bindings": [
+            "allowed_lifecycle_states",
+            "allowed_states",
+            "reference",
+            "registry",
+            "registry_source",
+            "target_id",
+            "target_type"
+          ],
+          "evidence_object": {
+            "authoritative_source": {
+              "source_id": "docs/BRD/BRD-WS-02.md#7. Product Specification",
+              "source_type": "SOURCE_LITERAL",
+              "version": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073"
+            },
+            "identifier": "BRD-WS-02-R002.BRD-WS-02-R002.O1.1.REFERENCE_TARGET_VALID.EVIDENCE.OBJECT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BRD-WS-02-R002.O1.1.REFERENCE_TARGET_VALID.EVIDENCE.ORIGIN",
+              "origin_type": "EVIDENCE_OBJECT"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-WS-02.md",
+              "source_fingerprint": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073",
+              "source_lines": "L173",
+              "source_section": "7. Product Specification"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "EVIDENCE_OBJECT_REF",
+              "resolver_id": "OBSERVE.BRD-WS-02-R002.BRD-WS-02-R002.BRD-WS-02-R002.O1.1.REFERENCE_TARGET_VALID.EVIDENCE.OBJECT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "EVIDENCE_OBJECT_REF"
+          },
+          "expected_operand": {
+            "authoritative_source": {
+              "source_id": "docs/BRD/BRD-WS-02.md#7. Product Specification",
+              "source_type": "SOURCE_LITERAL",
+              "version": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073"
+            },
+            "identifier": "BRD-WS-02-R002.BRD-WS-02-R002.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BRD-WS-02-R002.O1.1.REFERENCE_TARGET_VALID.AUTHORITY.ORIGIN",
+              "origin_type": "SOURCE_LITERAL"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-WS-02.md",
+              "source_fingerprint": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073",
+              "source_lines": "L173",
+              "source_section": "7. Product Specification"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "REFERENCE_ID",
+              "resolver_id": "RESOLVE.BRD-WS-02-R002.BRD-WS-02-R002.BRD-WS-02-R002.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "REFERENCE_ID"
+          },
+          "inference": false,
+          "model_conformance_fixture": {
+            "bindings": {
+              "allowed_lifecycle_states": {
+                "members": [
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "BRD-WS-02-R002.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER"
+                      ],
+                      "source_id": "docs/BRD/BRD-WS-02.md#7. Product Specification",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073"
+                    },
+                    "identifier": "BRD-WS-02-R002.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BRD-WS-02-R002.O1.1.REFERENCE_TARGET_VALID.ALLOWED_LIFECYCLE_STATES.ORIGIN.MEMBER.1",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-WS-02.md",
+                      "source_fingerprint": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073",
+                      "source_lines": "L173",
+                      "source_section": "7. Product Specification"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "STATE_ID",
+                      "resolver_id": "RESOLVE.BRD-WS-02-R002.BRD-WS-02-R002.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "STATE_ID"
+                  }
+                ],
+                "origin": {
+                  "origin_id": "BRD-WS-02-R002.O1.1.REFERENCE_TARGET_VALID.ALLOWED_LIFECYCLE_STATES.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-02.md",
+                  "source_fingerprint": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073",
+                  "source_lines": "L173",
+                  "source_section": "7. Product Specification"
+                },
+                "semantic_type": "SET_OF<STATE_ID>"
+              },
+              "allowed_states": {
+                "members": [
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "BRD-WS-02-R002.ALLOWED_STATES.SOURCE.MEMBER"
+                      ],
+                      "source_id": "docs/BRD/BRD-WS-02.md#7. Product Specification",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073"
+                    },
+                    "identifier": "BRD-WS-02-R002.ALLOWED_STATES.SOURCE.MEMBER",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BRD-WS-02-R002.O1.1.REFERENCE_TARGET_VALID.ALLOWED_STATES.ORIGIN.MEMBER.1",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-WS-02.md",
+                      "source_fingerprint": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073",
+                      "source_lines": "L173",
+                      "source_section": "7. Product Specification"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "STATE_ID",
+                      "resolver_id": "RESOLVE.BRD-WS-02-R002.BRD-WS-02-R002.ALLOWED_STATES.SOURCE.MEMBER",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "STATE_ID"
+                  }
+                ],
+                "origin": {
+                  "origin_id": "BRD-WS-02-R002.O1.1.REFERENCE_TARGET_VALID.ALLOWED_STATES.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-02.md",
+                  "source_fingerprint": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073",
+                  "source_lines": "L173",
+                  "source_section": "7. Product Specification"
+                },
+                "semantic_type": "SET_OF<STATE_ID>"
+              },
+              "reference": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-WS-02.md#7. Product Specification",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073"
+                },
+                "identifier": "BRD-WS-02-R002.REFERENCE",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-WS-02-R002.O1.1.REFERENCE_TARGET_VALID.REFERENCE.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-02.md",
+                  "source_fingerprint": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073",
+                  "source_lines": "L173",
+                  "source_section": "7. Product Specification"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "REFERENCE_ID",
+                  "resolver_id": "RESOLVE.BRD-WS-02-R002.BRD-WS-02-R002.REFERENCE",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "REFERENCE_ID"
+              },
+              "registry": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-WS-02.md#7. Product Specification",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073"
+                },
+                "identifier": "BRD-WS-02-R002.REGISTRY",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-WS-02-R002.O1.1.REFERENCE_TARGET_VALID.REGISTRY.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-02.md",
+                  "source_fingerprint": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073",
+                  "source_lines": "L173",
+                  "source_section": "7. Product Specification"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "ENTITY_ID",
+                  "resolver_id": "RESOLVE.BRD-WS-02-R002.BRD-WS-02-R002.REGISTRY",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "ENTITY_ID"
+              },
+              "registry_source": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-WS-02.md#7. Product Specification",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073"
+                },
+                "identifier": "BRD-WS-02-R002.REGISTRY_SOURCE",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-WS-02-R002.O1.1.REFERENCE_TARGET_VALID.REGISTRY_SOURCE.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-02.md",
+                  "source_fingerprint": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073",
+                  "source_lines": "L173",
+                  "source_section": "7. Product Specification"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "REFERENCE_ID",
+                  "resolver_id": "RESOLVE.BRD-WS-02-R002.BRD-WS-02-R002.REGISTRY_SOURCE",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "REFERENCE_ID"
+              },
+              "target_id": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-WS-02.md#7. Product Specification",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073"
+                },
+                "identifier": "BRD-WS-02-R002.TARGET_ID",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-WS-02-R002.O1.1.REFERENCE_TARGET_VALID.TARGET_ID.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-02.md",
+                  "source_fingerprint": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073",
+                  "source_lines": "L173",
+                  "source_section": "7. Product Specification"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "ENTITY_ID",
+                  "resolver_id": "RESOLVE.BRD-WS-02-R002.BRD-WS-02-R002.TARGET_ID",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "ENTITY_ID"
+              },
+              "target_type": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-WS-02.md#7. Product Specification",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073"
+                },
+                "identifier": "BRD-WS-02-R002.TARGET_TYPE",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-WS-02-R002.O1.1.REFERENCE_TARGET_VALID.TARGET_TYPE.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-02.md",
+                  "source_fingerprint": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073",
+                  "source_lines": "L173",
+                  "source_section": "7. Product Specification"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "ENTITY_TYPE",
+                  "resolver_id": "RESOLVE.BRD-WS-02-R002.BRD-WS-02-R002.TARGET_TYPE",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "ENTITY_TYPE"
+              }
+            },
+            "comparison": {
+              "expected": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-WS-02.md#7. Product Specification",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073"
+                },
+                "identifier": "BRD-WS-02-R002.BRD-WS-02-R002.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-WS-02-R002.O1.1.REFERENCE_TARGET_VALID.AUTHORITY.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-02.md",
+                  "source_fingerprint": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073",
+                  "source_lines": "L173",
+                  "source_section": "7. Product Specification"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "REFERENCE_ID",
+                  "resolver_id": "RESOLVE.BRD-WS-02-R002.BRD-WS-02-R002.BRD-WS-02-R002.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "REFERENCE_ID"
+              },
+              "observed": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-WS-02.md#7. Product Specification",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073"
+                },
+                "identifier": "BRD-WS-02-R002.BRD-WS-02-R002.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-WS-02-R002.O1.1.REFERENCE_TARGET_VALID.OBSERVED.ORIGIN",
+                  "origin_type": "RUNTIME_OBSERVED"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-02.md",
+                  "source_fingerprint": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073",
+                  "source_lines": "L173",
+                  "source_section": "7. Product Specification"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "REFERENCE_ID",
+                  "resolver_id": "OBSERVE.BRD-WS-02-R002.BRD-WS-02-R002.BRD-WS-02-R002.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "REFERENCE_ID"
+              }
+            },
+            "evidence_object": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-WS-02.md#7. Product Specification",
+                "source_type": "SOURCE_LITERAL",
+                "version": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073"
+              },
+              "identifier": "BRD-WS-02-R002.BRD-WS-02-R002.O1.1.REFERENCE_TARGET_VALID.EVIDENCE.OBJECT",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-WS-02-R002.O1.1.REFERENCE_TARGET_VALID.EVIDENCE.ORIGIN",
+                "origin_type": "EVIDENCE_OBJECT"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-02.md",
+                "source_fingerprint": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073",
+                "source_lines": "L173",
+                "source_section": "7. Product Specification"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "EVIDENCE_OBJECT_REF",
+                "resolver_id": "OBSERVE.BRD-WS-02-R002.BRD-WS-02-R002.BRD-WS-02-R002.O1.1.REFERENCE_TARGET_VALID.EVIDENCE.OBJECT",
+                "version": "1.0.0"
+              },
+              "semantic_type": "EVIDENCE_OBJECT_REF"
+            },
+            "operator_id": "REFERENCE_TARGET_VALID"
+          },
+          "obligation_id": "BRD-WS-02-R002-O001",
+          "observed_operand": {
+            "authoritative_source": {
+              "source_id": "docs/BRD/BRD-WS-02.md#7. Product Specification",
+              "source_type": "SOURCE_LITERAL",
+              "version": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073"
+            },
+            "identifier": "BRD-WS-02-R002.BRD-WS-02-R002.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BRD-WS-02-R002.O1.1.REFERENCE_TARGET_VALID.OBSERVED.ORIGIN",
+              "origin_type": "RUNTIME_OBSERVED"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-WS-02.md",
+              "source_fingerprint": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073",
+              "source_lines": "L173",
+              "source_section": "7. Product Specification"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "REFERENCE_ID",
+              "resolver_id": "OBSERVE.BRD-WS-02-R002.BRD-WS-02-R002.BRD-WS-02-R002.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "REFERENCE_ID"
+          },
+          "operator_id": "REFERENCE_TARGET_VALID",
+          "operator_version": "1.0.0-candidate.2",
+          "typed_bindings": {
+            "allowed_lifecycle_states": {
+              "members": [
+                {
+                  "authoritative_source": {
+                    "allowed_identifiers": [
+                      "BRD-WS-02-R002.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER"
+                    ],
+                    "source_id": "docs/BRD/BRD-WS-02.md#7. Product Specification",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073"
+                  },
+                  "identifier": "BRD-WS-02-R002.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BRD-WS-02-R002.O1.1.REFERENCE_TARGET_VALID.ALLOWED_LIFECYCLE_STATES.ORIGIN.MEMBER.1",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-WS-02.md",
+                    "source_fingerprint": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073",
+                    "source_lines": "L173",
+                    "source_section": "7. Product Specification"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "STATE_ID",
+                    "resolver_id": "RESOLVE.BRD-WS-02-R002.BRD-WS-02-R002.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "STATE_ID"
+                }
+              ],
+              "origin": {
+                "origin_id": "BRD-WS-02-R002.O1.1.REFERENCE_TARGET_VALID.ALLOWED_LIFECYCLE_STATES.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-02.md",
+                "source_fingerprint": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073",
+                "source_lines": "L173",
+                "source_section": "7. Product Specification"
+              },
+              "semantic_type": "SET_OF<STATE_ID>"
+            },
+            "allowed_states": {
+              "members": [
+                {
+                  "authoritative_source": {
+                    "allowed_identifiers": [
+                      "BRD-WS-02-R002.ALLOWED_STATES.SOURCE.MEMBER"
+                    ],
+                    "source_id": "docs/BRD/BRD-WS-02.md#7. Product Specification",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073"
+                  },
+                  "identifier": "BRD-WS-02-R002.ALLOWED_STATES.SOURCE.MEMBER",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BRD-WS-02-R002.O1.1.REFERENCE_TARGET_VALID.ALLOWED_STATES.ORIGIN.MEMBER.1",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-WS-02.md",
+                    "source_fingerprint": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073",
+                    "source_lines": "L173",
+                    "source_section": "7. Product Specification"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "STATE_ID",
+                    "resolver_id": "RESOLVE.BRD-WS-02-R002.BRD-WS-02-R002.ALLOWED_STATES.SOURCE.MEMBER",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "STATE_ID"
+                }
+              ],
+              "origin": {
+                "origin_id": "BRD-WS-02-R002.O1.1.REFERENCE_TARGET_VALID.ALLOWED_STATES.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-02.md",
+                "source_fingerprint": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073",
+                "source_lines": "L173",
+                "source_section": "7. Product Specification"
+              },
+              "semantic_type": "SET_OF<STATE_ID>"
+            },
+            "reference": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-WS-02.md#7. Product Specification",
+                "source_type": "SOURCE_LITERAL",
+                "version": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073"
+              },
+              "identifier": "BRD-WS-02-R002.REFERENCE",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-WS-02-R002.O1.1.REFERENCE_TARGET_VALID.REFERENCE.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-02.md",
+                "source_fingerprint": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073",
+                "source_lines": "L173",
+                "source_section": "7. Product Specification"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "REFERENCE_ID",
+                "resolver_id": "RESOLVE.BRD-WS-02-R002.BRD-WS-02-R002.REFERENCE",
+                "version": "1.0.0"
+              },
+              "semantic_type": "REFERENCE_ID"
+            },
+            "registry": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-WS-02.md#7. Product Specification",
+                "source_type": "SOURCE_LITERAL",
+                "version": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073"
+              },
+              "identifier": "BRD-WS-02-R002.REGISTRY",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-WS-02-R002.O1.1.REFERENCE_TARGET_VALID.REGISTRY.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-02.md",
+                "source_fingerprint": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073",
+                "source_lines": "L173",
+                "source_section": "7. Product Specification"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "ENTITY_ID",
+                "resolver_id": "RESOLVE.BRD-WS-02-R002.BRD-WS-02-R002.REGISTRY",
+                "version": "1.0.0"
+              },
+              "semantic_type": "ENTITY_ID"
+            },
+            "registry_source": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-WS-02.md#7. Product Specification",
+                "source_type": "SOURCE_LITERAL",
+                "version": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073"
+              },
+              "identifier": "BRD-WS-02-R002.REGISTRY_SOURCE",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-WS-02-R002.O1.1.REFERENCE_TARGET_VALID.REGISTRY_SOURCE.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-02.md",
+                "source_fingerprint": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073",
+                "source_lines": "L173",
+                "source_section": "7. Product Specification"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "REFERENCE_ID",
+                "resolver_id": "RESOLVE.BRD-WS-02-R002.BRD-WS-02-R002.REGISTRY_SOURCE",
+                "version": "1.0.0"
+              },
+              "semantic_type": "REFERENCE_ID"
+            },
+            "target_id": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-WS-02.md#7. Product Specification",
+                "source_type": "SOURCE_LITERAL",
+                "version": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073"
+              },
+              "identifier": "BRD-WS-02-R002.TARGET_ID",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-WS-02-R002.O1.1.REFERENCE_TARGET_VALID.TARGET_ID.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-02.md",
+                "source_fingerprint": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073",
+                "source_lines": "L173",
+                "source_section": "7. Product Specification"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "ENTITY_ID",
+                "resolver_id": "RESOLVE.BRD-WS-02-R002.BRD-WS-02-R002.TARGET_ID",
+                "version": "1.0.0"
+              },
+              "semantic_type": "ENTITY_ID"
+            },
+            "target_type": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-WS-02.md#7. Product Specification",
+                "source_type": "SOURCE_LITERAL",
+                "version": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073"
+              },
+              "identifier": "BRD-WS-02-R002.TARGET_TYPE",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-WS-02-R002.O1.1.REFERENCE_TARGET_VALID.TARGET_TYPE.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-02.md",
+                "source_fingerprint": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073",
+                "source_lines": "L173",
+                "source_section": "7. Product Specification"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "ENTITY_TYPE",
+                "resolver_id": "RESOLVE.BRD-WS-02-R002.BRD-WS-02-R002.TARGET_TYPE",
+                "version": "1.0.0"
+              },
+              "semantic_type": "ENTITY_TYPE"
+            }
+          }
+        }
+      ],
+      "boundary_cases": [
+        "Draft may remain incomplete; publication requires the specification"
+      ],
+      "contract_ast_sha256": "83d0a25dc36b1a38b2094d4efebdd62d564c9b012d19a5d4cbc349ed65d0541b",
+      "contract_id": "P2C.C4.CONTRACT.BRD-WS-02-R002",
+      "criticality": "HIGH",
+      "disposition": "OPERATOR_REMAP_REQUIRED",
+      "evidence_contract": {
+        "evidence_object_ref": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-WS-02.md#7. Product Specification",
+            "source_type": "SOURCE_LITERAL",
+            "version": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073"
+          },
+          "identifier": "BRD-WS-02-R002.BRD-WS-02-R002.CONTRACT.EVIDENCE.OBJECT",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-WS-02-R002.CONTRACT.EVIDENCE.ORIGIN",
+            "origin_type": "EVIDENCE_OBJECT"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-02.md",
+            "source_fingerprint": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073",
+            "source_lines": "L173",
+            "source_section": "7. Product Specification"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "EVIDENCE_OBJECT_REF",
+            "resolver_id": "OBSERVE.BRD-WS-02-R002.BRD-WS-02-R002.BRD-WS-02-R002.CONTRACT.EVIDENCE.OBJECT",
+            "version": "1.0.0"
+          },
+          "semantic_type": "EVIDENCE_OBJECT_REF"
+        },
+        "inference": false,
+        "observed_collection_origin": "BRD-WS-02-R002.RUNTIME.OBSERVED.FIELDS",
+        "observed_field_ids": [
+          "FIELD.PRODUCT_ID",
+          "FIELD.SPECIFICATION_ID",
+          "FIELD.SPECIFICATION_VERSION",
+          "FIELD.PUBLISH_STATE",
+          "FIELD.VALIDATION_RESULT"
+        ],
+        "producer": "BRD-WS-02-R002.EVIDENCE.PRODUCER",
+        "required_collection_origin": "BRD-WS-02-R002.SOURCE.REQUIRED.FIELDS",
+        "required_field_ids": [
+          "FIELD.PRODUCT_ID",
+          "FIELD.SPECIFICATION_ID",
+          "FIELD.SPECIFICATION_VERSION",
+          "FIELD.PUBLISH_STATE",
+          "FIELD.VALIDATION_RESULT"
+        ],
+        "required_values_or_hashes": [
+          "BRD-WS-02-R002.EVIDENCE.CONTENT.HASH"
+        ],
+        "retrieval_method": "BRD-WS-02-R002.EVIDENCE.RETRIEVAL",
+        "version_or_correlation": "BRD-WS-02-R002.EVIDENCE.VERSION.CORRELATION"
+      },
+      "explicit_non_obligations": [
+        "No runtime implementation topology is authorized by this semantic record.",
+        "No production runtime evidence is claimed by this model-level candidate."
+      ],
+      "fixture_ids": [
+        "P2C-C4-FX-6F6504F3F1E3292DA5C4",
+        "P2C-C4-FX-65F1B0C88FA0CCD0B2A8",
+        "P2C-C4-FX-FD7418A36FE83B1265FB"
+      ],
+      "high_risk_audit_subset": true,
+      "independent_contract_identity": true,
+      "inference": false,
+      "inherits_contract_ast": null,
+      "negative_oracles": [
+        "The Product is published without a Product Specification"
+      ],
+      "normative_obligations": [
+        {
+          "applicability": "V2.3_ACTIVE",
+          "obligation_id": "BRD-WS-02-R002-O001",
+          "obligation_text": "Mỗi YSim Product phải có Product Specification chuẩn"
+        }
+      ],
+      "obligation_to_operator_coverage": [
+        {
+          "assertion_ids": [
+            "BRD-WS-02-R002.O1.1.REFERENCE_TARGET_VALID"
+          ],
+          "coverage_count": 1,
+          "obligation_id": "BRD-WS-02-R002-O001"
+        }
+      ],
+      "operator_composition": [
+        "REFERENCE_TARGET_VALID"
+      ],
+      "positive_oracles": [
+        "The Product has a standard Product Specification"
+      ],
+      "preconditions": [
+        "A canonical Product identity exists"
+      ],
+      "prohibitions": [
+        "The Product is published without a Product Specification"
+      ],
+      "requirement_id": "BRD-WS-02-R002",
+      "runtime_status": "SLICE_RUNTIME_ADAPTER_REQUIRED",
+      "semantic_family_id": null,
+      "source_provenance": {
+        "approved_decision_references": [],
+        "inference": false,
+        "source_document": "docs/BRD/BRD-WS-02.md",
+        "source_fingerprint": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073",
+        "source_lines": "L173",
+        "source_section": "7. Product Specification"
+      },
+      "source_statement": "Mỗi YSim Product phải có Product Specification chuẩn.",
+      "surrounding_source_context": "### BRD-WS-02-R002 — Mỗi YSim Product phải có Product Specification chuẩn"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "contract_id": "P2C.C4.CONTRACT.BRD-WS-02-R002",
+    "inference": false,
+    "mechanism": "APPROVED_TYPED_CUSTOM_AST",
+    "mechanism_version": "SEMANTIC_ACCEPTANCE_RENDERER_C2",
+    "runtime_status": "RUNTIME_ADAPTER_PENDING"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "ACCEPTANCE_READY",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-02-R002-AC001",
-        "BRD-WS-02-R002-AC002"
+        "BRD-WS-02-R002-AC002",
+        "BRD-WS-02-R002-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-02-R002-O001",
@@ -1521,8 +4642,8 @@ Workshop này là nền tảng cho:
     "source_context_sha256": "d7612da5223a59b34cf5f31ed5d0f6b24a088ad9cad981382b42647856dc2e29",
     "source_document": "docs/BRD/BRD-WS-02.md",
     "source_fingerprint": "b84948fb45528791425f4593e62c8fd44b8e15ea95340601b141f32469fa6073",
-    "source_lines": "L173",
-    "source_section": "7. Product Specification"
+    "source_lines": "L3315-L4664",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-02-R002"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1547,41 +4668,1934 @@ Workshop này là nền tảng cho:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-02-R003-AC001",
-      "given": "the applicable business context, actor, and input for Tuy nhiên Product Specification phải phản ánh đúng khả năng sử dụng thực tế của eSIM",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-WS-02-R003-O001"
+  "acceptance_contract": {
+    "boundary_oracle": [
+      "Marketing wording may vary but cannot change actual usage semantics"
+    ],
+    "concrete_bindings": [
+      {
+        "actual_set": {
+          "authoritative_source": {
+            "source_id": "P2C-OBT-C1-BRD-WS-02-R003-OPT-1",
+            "source_type": "APPROVED_DECISION",
+            "version": "2026-07-16"
+          },
+          "identifier": "ESIM.OPERATIONAL.CAPABILITY.RESOLVER.SET",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "YSIM.ESIM_OPERATIONAL_CAPABILITY.RESOLVED_CAPABILITY_SET.RUNTIME_OBSERVED",
+            "origin_type": "RUNTIME_OBSERVED"
+          },
+          "provenance": {
+            "approved_decision_references": [
+              "P2C-OBT-C1-BRD-WS-02-R003-OPT-1"
+            ],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-02.md",
+            "source_fingerprint": "ae96c39e161b05df291f5553a75b7216774b12490e8c08564db14ea303640386",
+            "source_lines": "L193",
+            "source_section": "7. Product Specification"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "SET_OF<CANONICAL_ENUM_VALUE>",
+            "resolver_id": "OBSERVE.BRD-WS-02-R003.ESIM.OPERATIONAL.CAPABILITY.RESOLVER.SET",
+            "version": "1.0.0"
+          },
+          "semantic_type": "RUNTIME_SET_REF<CANONICAL_ENUM_VALUE>"
+        },
+        "expected_set": {
+          "authoritative_source": {
+            "source_id": "P2C-OBT-C1-BRD-WS-02-R003-OPT-1",
+            "source_type": "APPROVED_DECISION",
+            "version": "2026-07-16"
+          },
+          "identifier": "ESIM.CAPABILITY.REGISTRY.ACTIVE.SET",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "YSIM.ESIM_CAPABILITY_REGISTRY.ACTIVE_CAPABILITY_SET.CANONICAL_REGISTRY",
+            "origin_type": "APPROVED_DECISION"
+          },
+          "provenance": {
+            "approved_decision_references": [
+              "P2C-OBT-C1-BRD-WS-02-R003-OPT-1"
+            ],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-02.md",
+            "source_fingerprint": "ae96c39e161b05df291f5553a75b7216774b12490e8c08564db14ea303640386",
+            "source_lines": "L193",
+            "source_section": "7. Product Specification"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "SET_OF<CANONICAL_ENUM_VALUE>",
+            "resolver_id": "RESOLVE.BRD-WS-02-R003.ESIM.CAPABILITY.REGISTRY.ACTIVE.SET",
+            "version": "1.0.0"
+          },
+          "semantic_type": "CANONICAL_SET_REF<CANONICAL_ENUM_VALUE>"
+        }
+      },
+      {
+        "allowed_lifecycle_states": {
+          "members": [
+            {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "BRD-WS-02-R003.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER"
+                ],
+                "source_id": "P2C-OBT-C1-BRD-WS-02-R003-OPT-1",
+                "source_type": "APPROVED_DECISION",
+                "version": "2026-07-16"
+              },
+              "identifier": "BRD-WS-02-R003.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-WS-02-R003.O1.2.REFERENCE_TARGET_VALID.ALLOWED_LIFECYCLE_STATES.ORIGIN.MEMBER.1",
+                "origin_type": "APPROVED_DECISION"
+              },
+              "provenance": {
+                "approved_decision_references": [
+                  "P2C-OBT-C1-BRD-WS-02-R003-OPT-1"
+                ],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-02.md",
+                "source_fingerprint": "ae96c39e161b05df291f5553a75b7216774b12490e8c08564db14ea303640386",
+                "source_lines": "L193",
+                "source_section": "7. Product Specification"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "STATE_ID",
+                "resolver_id": "RESOLVE.BRD-WS-02-R003.BRD-WS-02-R003.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER",
+                "version": "1.0.0"
+              },
+              "semantic_type": "STATE_ID"
+            }
+          ],
+          "origin": {
+            "origin_id": "BRD-WS-02-R003.O1.2.REFERENCE_TARGET_VALID.ALLOWED_LIFECYCLE_STATES.ORIGIN",
+            "origin_type": "APPROVED_DECISION"
+          },
+          "provenance": {
+            "approved_decision_references": [
+              "P2C-OBT-C1-BRD-WS-02-R003-OPT-1"
+            ],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-02.md",
+            "source_fingerprint": "ae96c39e161b05df291f5553a75b7216774b12490e8c08564db14ea303640386",
+            "source_lines": "L193",
+            "source_section": "7. Product Specification"
+          },
+          "semantic_type": "SET_OF<STATE_ID>"
+        },
+        "allowed_states": {
+          "members": [
+            {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "BRD-WS-02-R003.ALLOWED_STATES.SOURCE.MEMBER"
+                ],
+                "source_id": "P2C-OBT-C1-BRD-WS-02-R003-OPT-1",
+                "source_type": "APPROVED_DECISION",
+                "version": "2026-07-16"
+              },
+              "identifier": "BRD-WS-02-R003.ALLOWED_STATES.SOURCE.MEMBER",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-WS-02-R003.O1.2.REFERENCE_TARGET_VALID.ALLOWED_STATES.ORIGIN.MEMBER.1",
+                "origin_type": "APPROVED_DECISION"
+              },
+              "provenance": {
+                "approved_decision_references": [
+                  "P2C-OBT-C1-BRD-WS-02-R003-OPT-1"
+                ],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-02.md",
+                "source_fingerprint": "ae96c39e161b05df291f5553a75b7216774b12490e8c08564db14ea303640386",
+                "source_lines": "L193",
+                "source_section": "7. Product Specification"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "STATE_ID",
+                "resolver_id": "RESOLVE.BRD-WS-02-R003.BRD-WS-02-R003.ALLOWED_STATES.SOURCE.MEMBER",
+                "version": "1.0.0"
+              },
+              "semantic_type": "STATE_ID"
+            }
+          ],
+          "origin": {
+            "origin_id": "BRD-WS-02-R003.O1.2.REFERENCE_TARGET_VALID.ALLOWED_STATES.ORIGIN",
+            "origin_type": "APPROVED_DECISION"
+          },
+          "provenance": {
+            "approved_decision_references": [
+              "P2C-OBT-C1-BRD-WS-02-R003-OPT-1"
+            ],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-02.md",
+            "source_fingerprint": "ae96c39e161b05df291f5553a75b7216774b12490e8c08564db14ea303640386",
+            "source_lines": "L193",
+            "source_section": "7. Product Specification"
+          },
+          "semantic_type": "SET_OF<STATE_ID>"
+        },
+        "reference": {
+          "authoritative_source": {
+            "source_id": "P2C-OBT-C1-BRD-WS-02-R003-OPT-1",
+            "source_type": "APPROVED_DECISION",
+            "version": "2026-07-16"
+          },
+          "identifier": "BRD-WS-02-R003.REFERENCE",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-WS-02-R003.O1.2.REFERENCE_TARGET_VALID.REFERENCE.ORIGIN",
+            "origin_type": "APPROVED_DECISION"
+          },
+          "provenance": {
+            "approved_decision_references": [
+              "P2C-OBT-C1-BRD-WS-02-R003-OPT-1"
+            ],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-02.md",
+            "source_fingerprint": "ae96c39e161b05df291f5553a75b7216774b12490e8c08564db14ea303640386",
+            "source_lines": "L193",
+            "source_section": "7. Product Specification"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "REFERENCE_ID",
+            "resolver_id": "RESOLVE.BRD-WS-02-R003.BRD-WS-02-R003.REFERENCE",
+            "version": "1.0.0"
+          },
+          "semantic_type": "REFERENCE_ID"
+        },
+        "registry": {
+          "authoritative_source": {
+            "source_id": "P2C-OBT-C1-BRD-WS-02-R003-OPT-1",
+            "source_type": "APPROVED_DECISION",
+            "version": "2026-07-16"
+          },
+          "identifier": "BRD-WS-02-R003.REGISTRY",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-WS-02-R003.O1.2.REFERENCE_TARGET_VALID.REGISTRY.ORIGIN",
+            "origin_type": "APPROVED_DECISION"
+          },
+          "provenance": {
+            "approved_decision_references": [
+              "P2C-OBT-C1-BRD-WS-02-R003-OPT-1"
+            ],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-02.md",
+            "source_fingerprint": "ae96c39e161b05df291f5553a75b7216774b12490e8c08564db14ea303640386",
+            "source_lines": "L193",
+            "source_section": "7. Product Specification"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "ENTITY_ID",
+            "resolver_id": "RESOLVE.BRD-WS-02-R003.BRD-WS-02-R003.REGISTRY",
+            "version": "1.0.0"
+          },
+          "semantic_type": "ENTITY_ID"
+        },
+        "registry_source": {
+          "authoritative_source": {
+            "source_id": "P2C-OBT-C1-BRD-WS-02-R003-OPT-1",
+            "source_type": "APPROVED_DECISION",
+            "version": "2026-07-16"
+          },
+          "identifier": "BRD-WS-02-R003.REGISTRY_SOURCE",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-WS-02-R003.O1.2.REFERENCE_TARGET_VALID.REGISTRY_SOURCE.ORIGIN",
+            "origin_type": "APPROVED_DECISION"
+          },
+          "provenance": {
+            "approved_decision_references": [
+              "P2C-OBT-C1-BRD-WS-02-R003-OPT-1"
+            ],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-02.md",
+            "source_fingerprint": "ae96c39e161b05df291f5553a75b7216774b12490e8c08564db14ea303640386",
+            "source_lines": "L193",
+            "source_section": "7. Product Specification"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "REFERENCE_ID",
+            "resolver_id": "RESOLVE.BRD-WS-02-R003.BRD-WS-02-R003.REGISTRY_SOURCE",
+            "version": "1.0.0"
+          },
+          "semantic_type": "REFERENCE_ID"
+        },
+        "target_id": {
+          "authoritative_source": {
+            "source_id": "P2C-OBT-C1-BRD-WS-02-R003-OPT-1",
+            "source_type": "APPROVED_DECISION",
+            "version": "2026-07-16"
+          },
+          "identifier": "BRD-WS-02-R003.TARGET_ID",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-WS-02-R003.O1.2.REFERENCE_TARGET_VALID.TARGET_ID.ORIGIN",
+            "origin_type": "APPROVED_DECISION"
+          },
+          "provenance": {
+            "approved_decision_references": [
+              "P2C-OBT-C1-BRD-WS-02-R003-OPT-1"
+            ],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-02.md",
+            "source_fingerprint": "ae96c39e161b05df291f5553a75b7216774b12490e8c08564db14ea303640386",
+            "source_lines": "L193",
+            "source_section": "7. Product Specification"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "ENTITY_ID",
+            "resolver_id": "RESOLVE.BRD-WS-02-R003.BRD-WS-02-R003.TARGET_ID",
+            "version": "1.0.0"
+          },
+          "semantic_type": "ENTITY_ID"
+        },
+        "target_type": {
+          "authoritative_source": {
+            "source_id": "P2C-OBT-C1-BRD-WS-02-R003-OPT-1",
+            "source_type": "APPROVED_DECISION",
+            "version": "2026-07-16"
+          },
+          "identifier": "BRD-WS-02-R003.TARGET_TYPE",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-WS-02-R003.O1.2.REFERENCE_TARGET_VALID.TARGET_TYPE.ORIGIN",
+            "origin_type": "APPROVED_DECISION"
+          },
+          "provenance": {
+            "approved_decision_references": [
+              "P2C-OBT-C1-BRD-WS-02-R003-OPT-1"
+            ],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-02.md",
+            "source_fingerprint": "ae96c39e161b05df291f5553a75b7216774b12490e8c08564db14ea303640386",
+            "source_lines": "L193",
+            "source_section": "7. Product Specification"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "ENTITY_TYPE",
+            "resolver_id": "RESOLVE.BRD-WS-02-R003.BRD-WS-02-R003.TARGET_TYPE",
+            "version": "1.0.0"
+          },
+          "semantic_type": "ENTITY_TYPE"
+        }
+      }
+    ],
+    "contract_id": "P2C.C4.CONTRACT.BRD-WS-02-R003",
+    "inference": false,
+    "mechanism": "APPROVED_TYPED_CUSTOM_AST",
+    "mechanism_version": "C4-R3",
+    "negative_oracle": [
+      "Specification claims an unsupported capability or omits a required usage constraint"
+    ],
+    "operator_composition": [
+      "SET_EQUALS",
+      "REFERENCE_TARGET_VALID"
+    ],
+    "positive_oracle": [
+      "The Product Specification matches actual eSIM usage capability"
+    ],
+    "provenance": {
+      "approved_decision_references": [
+        "P2C-OBT-C1-BRD-WS-02-R003-OPT-1"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+      "inference": false,
+      "source_document": "docs/BRD/BRD-WS-02.md",
+      "source_fingerprint": "ae96c39e161b05df291f5553a75b7216774b12490e8c08564db14ea303640386",
+      "source_lines": "L193",
+      "source_section": "7. Product Specification"
     },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BRD-WS-02-R003-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Tuy nhiên Product Specification phải phản ánh đúng khả năng sử dụng thực tế của eSIM",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BRD-WS-02-R003-O001"
+    "required_evidence": {
+      "evidence_object_ref": {
+        "authoritative_source": {
+          "source_id": "P2C-OBT-C1-BRD-WS-02-R003-OPT-1",
+          "source_type": "APPROVED_DECISION",
+          "version": "2026-07-16"
+        },
+        "identifier": "BRD-WS-02-R003.BRD-WS-02-R003.CONTRACT.EVIDENCE.OBJECT",
+        "inference": false,
+        "lifecycle": {
+          "status": "ACTIVE",
+          "version": "2.3"
+        },
+        "namespace": "YSIM.V2.3",
+        "origin": {
+          "origin_id": "BRD-WS-02-R003.CONTRACT.EVIDENCE.ORIGIN",
+          "origin_type": "EVIDENCE_OBJECT"
+        },
+        "provenance": {
+          "approved_decision_references": [
+            "P2C-OBT-C1-BRD-WS-02-R003-OPT-1"
+          ],
+          "inference": false,
+          "source_document": "docs/BRD/BRD-WS-02.md",
+          "source_fingerprint": "ae96c39e161b05df291f5553a75b7216774b12490e8c08564db14ea303640386",
+          "source_lines": "L193",
+          "source_section": "7. Product Specification"
+        },
+        "resolver_contract": {
+          "deterministic": true,
+          "input_types": [],
+          "output_type": "EVIDENCE_OBJECT_REF",
+          "resolver_id": "OBSERVE.BRD-WS-02-R003.BRD-WS-02-R003.BRD-WS-02-R003.CONTRACT.EVIDENCE.OBJECT",
+          "version": "1.0.0"
+        },
+        "semantic_type": "EVIDENCE_OBJECT_REF"
+      },
+      "inference": false,
+      "observed_collection_origin": "BRD-WS-02-R003.RUNTIME.OBSERVED.FIELDS",
+      "observed_field_ids": [
+        "FIELD.PRODUCT_ID",
+        "FIELD.SPECIFICATION_CAPABILITIES",
+        "FIELD.ACTUAL_CAPABILITIES",
+        "FIELD.VALIDATION_RESULT",
+        "FIELD.SOURCE_VERSION"
       ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+      "producer": "BRD-WS-02-R003.EVIDENCE.PRODUCER",
+      "required_collection_origin": "BRD-WS-02-R003.SOURCE.REQUIRED.FIELDS",
+      "required_field_ids": [
+        "FIELD.PRODUCT_ID",
+        "FIELD.SPECIFICATION_CAPABILITIES",
+        "FIELD.ACTUAL_CAPABILITIES",
+        "FIELD.VALIDATION_RESULT",
+        "FIELD.SOURCE_VERSION"
+      ],
+      "required_values_or_hashes": [
+        "BRD-WS-02-R003.EVIDENCE.CONTENT.HASH"
+      ],
+      "retrieval_method": "BRD-WS-02-R003.EVIDENCE.RETRIEVAL",
+      "version_or_correlation": "BRD-WS-02-R003.EVIDENCE.VERSION.CORRELATION"
+    },
+    "runtime_evidence_executed": false,
+    "runtime_status": "RUNTIME_ADAPTER_PENDING",
+    "semantic_obligation_references": [
+      "BRD-WS-02-R003-O001"
+    ],
+    "typed_contract_ast": {
+      "approved_clarification": {
+        "meaning": "A versioned canonical eSIM Capability Registry is compared with an independently resolved operational capability set.",
+        "non_inferences": [
+          "No capability member is invented.",
+          "Provider-native schemas need not be identical."
+        ],
+        "option_id": "P2C-OBT-C1-BRD-WS-02-R003-OPT-1"
+      },
+      "assertions": [
+        {
+          "assertion_id": "BRD-WS-02-R003.O1.1.SET_EQUALS",
+          "evaluator_consumed_bindings": [
+            "actual_set",
+            "expected_set"
+          ],
+          "evidence_object": {
+            "authoritative_source": {
+              "source_id": "P2C-OBT-C1-BRD-WS-02-R003-OPT-1",
+              "source_type": "APPROVED_DECISION",
+              "version": "2026-07-16"
+            },
+            "identifier": "BRD-WS-02-R003.BRD-WS-02-R003.O1.1.SET_EQUALS.EVIDENCE.OBJECT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BRD-WS-02-R003.O1.1.SET_EQUALS.EVIDENCE.ORIGIN",
+              "origin_type": "EVIDENCE_OBJECT"
+            },
+            "provenance": {
+              "approved_decision_references": [
+                "P2C-OBT-C1-BRD-WS-02-R003-OPT-1"
+              ],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-WS-02.md",
+              "source_fingerprint": "ae96c39e161b05df291f5553a75b7216774b12490e8c08564db14ea303640386",
+              "source_lines": "L193",
+              "source_section": "7. Product Specification"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "EVIDENCE_OBJECT_REF",
+              "resolver_id": "OBSERVE.BRD-WS-02-R003.BRD-WS-02-R003.BRD-WS-02-R003.O1.1.SET_EQUALS.EVIDENCE.OBJECT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "EVIDENCE_OBJECT_REF"
+          },
+          "expected_operand": {
+            "members": [
+              {
+                "authoritative_source": {
+                  "allowed_identifiers": [
+                    "BRD-WS-02-R003.BRD-WS-02-R003.O1.1.SET_EQUALS.CANONICAL.RESULT.MEMBER"
+                  ],
+                  "source_id": "P2C-OBT-C1-BRD-WS-02-R003-OPT-1",
+                  "source_type": "APPROVED_DECISION",
+                  "version": "2026-07-16"
+                },
+                "identifier": "BRD-WS-02-R003.BRD-WS-02-R003.O1.1.SET_EQUALS.CANONICAL.RESULT.MEMBER",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-WS-02-R003.O1.1.SET_EQUALS.AUTHORITY.ORIGIN.MEMBER.1",
+                  "origin_type": "APPROVED_DECISION"
+                },
+                "provenance": {
+                  "approved_decision_references": [
+                    "P2C-OBT-C1-BRD-WS-02-R003-OPT-1"
+                  ],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-02.md",
+                  "source_fingerprint": "ae96c39e161b05df291f5553a75b7216774b12490e8c08564db14ea303640386",
+                  "source_lines": "L193",
+                  "source_section": "7. Product Specification"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "CANONICAL_ENUM_VALUE",
+                  "resolver_id": "RESOLVE.BRD-WS-02-R003.BRD-WS-02-R003.BRD-WS-02-R003.O1.1.SET_EQUALS.CANONICAL.RESULT.MEMBER",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "CANONICAL_ENUM_VALUE"
+              }
+            ],
+            "origin": {
+              "origin_id": "BRD-WS-02-R003.O1.1.SET_EQUALS.AUTHORITY.ORIGIN",
+              "origin_type": "APPROVED_DECISION"
+            },
+            "provenance": {
+              "approved_decision_references": [
+                "P2C-OBT-C1-BRD-WS-02-R003-OPT-1"
+              ],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-WS-02.md",
+              "source_fingerprint": "ae96c39e161b05df291f5553a75b7216774b12490e8c08564db14ea303640386",
+              "source_lines": "L193",
+              "source_section": "7. Product Specification"
+            },
+            "semantic_type": "SET_OF<CANONICAL_ENUM_VALUE>"
+          },
+          "inference": false,
+          "model_conformance_fixture": {
+            "bindings": {
+              "actual_set": {
+                "authoritative_source": {
+                  "source_id": "P2C-OBT-C1-BRD-WS-02-R003-OPT-1",
+                  "source_type": "APPROVED_DECISION",
+                  "version": "2026-07-16"
+                },
+                "identifier": "ESIM.OPERATIONAL.CAPABILITY.RESOLVER.SET",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "YSIM.ESIM_OPERATIONAL_CAPABILITY.RESOLVED_CAPABILITY_SET.RUNTIME_OBSERVED",
+                  "origin_type": "RUNTIME_OBSERVED"
+                },
+                "provenance": {
+                  "approved_decision_references": [
+                    "P2C-OBT-C1-BRD-WS-02-R003-OPT-1"
+                  ],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-02.md",
+                  "source_fingerprint": "ae96c39e161b05df291f5553a75b7216774b12490e8c08564db14ea303640386",
+                  "source_lines": "L193",
+                  "source_section": "7. Product Specification"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "SET_OF<CANONICAL_ENUM_VALUE>",
+                  "resolver_id": "OBSERVE.BRD-WS-02-R003.ESIM.OPERATIONAL.CAPABILITY.RESOLVER.SET",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "RUNTIME_SET_REF<CANONICAL_ENUM_VALUE>"
+              },
+              "expected_set": {
+                "authoritative_source": {
+                  "source_id": "P2C-OBT-C1-BRD-WS-02-R003-OPT-1",
+                  "source_type": "APPROVED_DECISION",
+                  "version": "2026-07-16"
+                },
+                "identifier": "ESIM.CAPABILITY.REGISTRY.ACTIVE.SET",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "YSIM.ESIM_CAPABILITY_REGISTRY.ACTIVE_CAPABILITY_SET.CANONICAL_REGISTRY",
+                  "origin_type": "APPROVED_DECISION"
+                },
+                "provenance": {
+                  "approved_decision_references": [
+                    "P2C-OBT-C1-BRD-WS-02-R003-OPT-1"
+                  ],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-02.md",
+                  "source_fingerprint": "ae96c39e161b05df291f5553a75b7216774b12490e8c08564db14ea303640386",
+                  "source_lines": "L193",
+                  "source_section": "7. Product Specification"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "SET_OF<CANONICAL_ENUM_VALUE>",
+                  "resolver_id": "RESOLVE.BRD-WS-02-R003.ESIM.CAPABILITY.REGISTRY.ACTIVE.SET",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "CANONICAL_SET_REF<CANONICAL_ENUM_VALUE>"
+              }
+            },
+            "comparison": {
+              "expected": {
+                "members": [
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "BRD-WS-02-R003.BRD-WS-02-R003.O1.1.SET_EQUALS.CANONICAL.RESULT.MEMBER"
+                      ],
+                      "source_id": "P2C-OBT-C1-BRD-WS-02-R003-OPT-1",
+                      "source_type": "APPROVED_DECISION",
+                      "version": "2026-07-16"
+                    },
+                    "identifier": "BRD-WS-02-R003.BRD-WS-02-R003.O1.1.SET_EQUALS.CANONICAL.RESULT.MEMBER",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BRD-WS-02-R003.O1.1.SET_EQUALS.AUTHORITY.ORIGIN.MEMBER.1",
+                      "origin_type": "APPROVED_DECISION"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [
+                        "P2C-OBT-C1-BRD-WS-02-R003-OPT-1"
+                      ],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-WS-02.md",
+                      "source_fingerprint": "ae96c39e161b05df291f5553a75b7216774b12490e8c08564db14ea303640386",
+                      "source_lines": "L193",
+                      "source_section": "7. Product Specification"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "CANONICAL_ENUM_VALUE",
+                      "resolver_id": "RESOLVE.BRD-WS-02-R003.BRD-WS-02-R003.BRD-WS-02-R003.O1.1.SET_EQUALS.CANONICAL.RESULT.MEMBER",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "CANONICAL_ENUM_VALUE"
+                  }
+                ],
+                "origin": {
+                  "origin_id": "BRD-WS-02-R003.O1.1.SET_EQUALS.AUTHORITY.ORIGIN",
+                  "origin_type": "APPROVED_DECISION"
+                },
+                "provenance": {
+                  "approved_decision_references": [
+                    "P2C-OBT-C1-BRD-WS-02-R003-OPT-1"
+                  ],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-02.md",
+                  "source_fingerprint": "ae96c39e161b05df291f5553a75b7216774b12490e8c08564db14ea303640386",
+                  "source_lines": "L193",
+                  "source_section": "7. Product Specification"
+                },
+                "semantic_type": "SET_OF<CANONICAL_ENUM_VALUE>"
+              },
+              "observed": {
+                "members": [
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "BRD-WS-02-R003.BRD-WS-02-R003.O1.1.SET_EQUALS.CANONICAL.RESULT.MEMBER"
+                      ],
+                      "source_id": "P2C-OBT-C1-BRD-WS-02-R003-OPT-1",
+                      "source_type": "APPROVED_DECISION",
+                      "version": "2026-07-16"
+                    },
+                    "identifier": "BRD-WS-02-R003.BRD-WS-02-R003.O1.1.SET_EQUALS.CANONICAL.RESULT.MEMBER",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BRD-WS-02-R003.O1.1.SET_EQUALS.OBSERVED.ORIGIN.MEMBER.1",
+                      "origin_type": "RUNTIME_OBSERVED"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [
+                        "P2C-OBT-C1-BRD-WS-02-R003-OPT-1"
+                      ],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-WS-02.md",
+                      "source_fingerprint": "ae96c39e161b05df291f5553a75b7216774b12490e8c08564db14ea303640386",
+                      "source_lines": "L193",
+                      "source_section": "7. Product Specification"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "CANONICAL_ENUM_VALUE",
+                      "resolver_id": "OBSERVE.BRD-WS-02-R003.BRD-WS-02-R003.BRD-WS-02-R003.O1.1.SET_EQUALS.CANONICAL.RESULT.MEMBER",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "CANONICAL_ENUM_VALUE"
+                  }
+                ],
+                "origin": {
+                  "origin_id": "BRD-WS-02-R003.O1.1.SET_EQUALS.OBSERVED.ORIGIN",
+                  "origin_type": "RUNTIME_OBSERVED"
+                },
+                "provenance": {
+                  "approved_decision_references": [
+                    "P2C-OBT-C1-BRD-WS-02-R003-OPT-1"
+                  ],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-02.md",
+                  "source_fingerprint": "ae96c39e161b05df291f5553a75b7216774b12490e8c08564db14ea303640386",
+                  "source_lines": "L193",
+                  "source_section": "7. Product Specification"
+                },
+                "semantic_type": "SET_OF<CANONICAL_ENUM_VALUE>"
+              }
+            },
+            "evidence_object": {
+              "authoritative_source": {
+                "source_id": "P2C-OBT-C1-BRD-WS-02-R003-OPT-1",
+                "source_type": "APPROVED_DECISION",
+                "version": "2026-07-16"
+              },
+              "identifier": "BRD-WS-02-R003.BRD-WS-02-R003.O1.1.SET_EQUALS.EVIDENCE.OBJECT",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-WS-02-R003.O1.1.SET_EQUALS.EVIDENCE.ORIGIN",
+                "origin_type": "EVIDENCE_OBJECT"
+              },
+              "provenance": {
+                "approved_decision_references": [
+                  "P2C-OBT-C1-BRD-WS-02-R003-OPT-1"
+                ],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-02.md",
+                "source_fingerprint": "ae96c39e161b05df291f5553a75b7216774b12490e8c08564db14ea303640386",
+                "source_lines": "L193",
+                "source_section": "7. Product Specification"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "EVIDENCE_OBJECT_REF",
+                "resolver_id": "OBSERVE.BRD-WS-02-R003.BRD-WS-02-R003.BRD-WS-02-R003.O1.1.SET_EQUALS.EVIDENCE.OBJECT",
+                "version": "1.0.0"
+              },
+              "semantic_type": "EVIDENCE_OBJECT_REF"
+            },
+            "operator_id": "SET_EQUALS"
+          },
+          "obligation_id": "BRD-WS-02-R003-O001",
+          "observed_operand": {
+            "members": [
+              {
+                "authoritative_source": {
+                  "allowed_identifiers": [
+                    "BRD-WS-02-R003.BRD-WS-02-R003.O1.1.SET_EQUALS.CANONICAL.RESULT.MEMBER"
+                  ],
+                  "source_id": "P2C-OBT-C1-BRD-WS-02-R003-OPT-1",
+                  "source_type": "APPROVED_DECISION",
+                  "version": "2026-07-16"
+                },
+                "identifier": "BRD-WS-02-R003.BRD-WS-02-R003.O1.1.SET_EQUALS.CANONICAL.RESULT.MEMBER",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-WS-02-R003.O1.1.SET_EQUALS.OBSERVED.ORIGIN.MEMBER.1",
+                  "origin_type": "RUNTIME_OBSERVED"
+                },
+                "provenance": {
+                  "approved_decision_references": [
+                    "P2C-OBT-C1-BRD-WS-02-R003-OPT-1"
+                  ],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-02.md",
+                  "source_fingerprint": "ae96c39e161b05df291f5553a75b7216774b12490e8c08564db14ea303640386",
+                  "source_lines": "L193",
+                  "source_section": "7. Product Specification"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "CANONICAL_ENUM_VALUE",
+                  "resolver_id": "OBSERVE.BRD-WS-02-R003.BRD-WS-02-R003.BRD-WS-02-R003.O1.1.SET_EQUALS.CANONICAL.RESULT.MEMBER",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "CANONICAL_ENUM_VALUE"
+              }
+            ],
+            "origin": {
+              "origin_id": "BRD-WS-02-R003.O1.1.SET_EQUALS.OBSERVED.ORIGIN",
+              "origin_type": "RUNTIME_OBSERVED"
+            },
+            "provenance": {
+              "approved_decision_references": [
+                "P2C-OBT-C1-BRD-WS-02-R003-OPT-1"
+              ],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-WS-02.md",
+              "source_fingerprint": "ae96c39e161b05df291f5553a75b7216774b12490e8c08564db14ea303640386",
+              "source_lines": "L193",
+              "source_section": "7. Product Specification"
+            },
+            "semantic_type": "SET_OF<CANONICAL_ENUM_VALUE>"
+          },
+          "operator_id": "SET_EQUALS",
+          "operator_version": "1.0.0-candidate.2",
+          "typed_bindings": {
+            "actual_set": {
+              "authoritative_source": {
+                "source_id": "P2C-OBT-C1-BRD-WS-02-R003-OPT-1",
+                "source_type": "APPROVED_DECISION",
+                "version": "2026-07-16"
+              },
+              "identifier": "ESIM.OPERATIONAL.CAPABILITY.RESOLVER.SET",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "YSIM.ESIM_OPERATIONAL_CAPABILITY.RESOLVED_CAPABILITY_SET.RUNTIME_OBSERVED",
+                "origin_type": "RUNTIME_OBSERVED"
+              },
+              "provenance": {
+                "approved_decision_references": [
+                  "P2C-OBT-C1-BRD-WS-02-R003-OPT-1"
+                ],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-02.md",
+                "source_fingerprint": "ae96c39e161b05df291f5553a75b7216774b12490e8c08564db14ea303640386",
+                "source_lines": "L193",
+                "source_section": "7. Product Specification"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "SET_OF<CANONICAL_ENUM_VALUE>",
+                "resolver_id": "OBSERVE.BRD-WS-02-R003.ESIM.OPERATIONAL.CAPABILITY.RESOLVER.SET",
+                "version": "1.0.0"
+              },
+              "semantic_type": "RUNTIME_SET_REF<CANONICAL_ENUM_VALUE>"
+            },
+            "expected_set": {
+              "authoritative_source": {
+                "source_id": "P2C-OBT-C1-BRD-WS-02-R003-OPT-1",
+                "source_type": "APPROVED_DECISION",
+                "version": "2026-07-16"
+              },
+              "identifier": "ESIM.CAPABILITY.REGISTRY.ACTIVE.SET",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "YSIM.ESIM_CAPABILITY_REGISTRY.ACTIVE_CAPABILITY_SET.CANONICAL_REGISTRY",
+                "origin_type": "APPROVED_DECISION"
+              },
+              "provenance": {
+                "approved_decision_references": [
+                  "P2C-OBT-C1-BRD-WS-02-R003-OPT-1"
+                ],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-02.md",
+                "source_fingerprint": "ae96c39e161b05df291f5553a75b7216774b12490e8c08564db14ea303640386",
+                "source_lines": "L193",
+                "source_section": "7. Product Specification"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "SET_OF<CANONICAL_ENUM_VALUE>",
+                "resolver_id": "RESOLVE.BRD-WS-02-R003.ESIM.CAPABILITY.REGISTRY.ACTIVE.SET",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_SET_REF<CANONICAL_ENUM_VALUE>"
+            }
+          }
+        },
+        {
+          "assertion_id": "BRD-WS-02-R003.O1.2.REFERENCE_TARGET_VALID",
+          "evaluator_consumed_bindings": [
+            "allowed_lifecycle_states",
+            "allowed_states",
+            "reference",
+            "registry",
+            "registry_source",
+            "target_id",
+            "target_type"
+          ],
+          "evidence_object": {
+            "authoritative_source": {
+              "source_id": "P2C-OBT-C1-BRD-WS-02-R003-OPT-1",
+              "source_type": "APPROVED_DECISION",
+              "version": "2026-07-16"
+            },
+            "identifier": "BRD-WS-02-R003.BRD-WS-02-R003.O1.2.REFERENCE_TARGET_VALID.EVIDENCE.OBJECT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BRD-WS-02-R003.O1.2.REFERENCE_TARGET_VALID.EVIDENCE.ORIGIN",
+              "origin_type": "EVIDENCE_OBJECT"
+            },
+            "provenance": {
+              "approved_decision_references": [
+                "P2C-OBT-C1-BRD-WS-02-R003-OPT-1"
+              ],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-WS-02.md",
+              "source_fingerprint": "ae96c39e161b05df291f5553a75b7216774b12490e8c08564db14ea303640386",
+              "source_lines": "L193",
+              "source_section": "7. Product Specification"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "EVIDENCE_OBJECT_REF",
+              "resolver_id": "OBSERVE.BRD-WS-02-R003.BRD-WS-02-R003.BRD-WS-02-R003.O1.2.REFERENCE_TARGET_VALID.EVIDENCE.OBJECT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "EVIDENCE_OBJECT_REF"
+          },
+          "expected_operand": {
+            "authoritative_source": {
+              "source_id": "P2C-OBT-C1-BRD-WS-02-R003-OPT-1",
+              "source_type": "APPROVED_DECISION",
+              "version": "2026-07-16"
+            },
+            "identifier": "BRD-WS-02-R003.BRD-WS-02-R003.O1.2.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BRD-WS-02-R003.O1.2.REFERENCE_TARGET_VALID.AUTHORITY.ORIGIN",
+              "origin_type": "APPROVED_DECISION"
+            },
+            "provenance": {
+              "approved_decision_references": [
+                "P2C-OBT-C1-BRD-WS-02-R003-OPT-1"
+              ],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-WS-02.md",
+              "source_fingerprint": "ae96c39e161b05df291f5553a75b7216774b12490e8c08564db14ea303640386",
+              "source_lines": "L193",
+              "source_section": "7. Product Specification"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "REFERENCE_ID",
+              "resolver_id": "RESOLVE.BRD-WS-02-R003.BRD-WS-02-R003.BRD-WS-02-R003.O1.2.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "REFERENCE_ID"
+          },
+          "inference": false,
+          "model_conformance_fixture": {
+            "bindings": {
+              "allowed_lifecycle_states": {
+                "members": [
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "BRD-WS-02-R003.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER"
+                      ],
+                      "source_id": "P2C-OBT-C1-BRD-WS-02-R003-OPT-1",
+                      "source_type": "APPROVED_DECISION",
+                      "version": "2026-07-16"
+                    },
+                    "identifier": "BRD-WS-02-R003.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BRD-WS-02-R003.O1.2.REFERENCE_TARGET_VALID.ALLOWED_LIFECYCLE_STATES.ORIGIN.MEMBER.1",
+                      "origin_type": "APPROVED_DECISION"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [
+                        "P2C-OBT-C1-BRD-WS-02-R003-OPT-1"
+                      ],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-WS-02.md",
+                      "source_fingerprint": "ae96c39e161b05df291f5553a75b7216774b12490e8c08564db14ea303640386",
+                      "source_lines": "L193",
+                      "source_section": "7. Product Specification"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "STATE_ID",
+                      "resolver_id": "RESOLVE.BRD-WS-02-R003.BRD-WS-02-R003.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "STATE_ID"
+                  }
+                ],
+                "origin": {
+                  "origin_id": "BRD-WS-02-R003.O1.2.REFERENCE_TARGET_VALID.ALLOWED_LIFECYCLE_STATES.ORIGIN",
+                  "origin_type": "APPROVED_DECISION"
+                },
+                "provenance": {
+                  "approved_decision_references": [
+                    "P2C-OBT-C1-BRD-WS-02-R003-OPT-1"
+                  ],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-02.md",
+                  "source_fingerprint": "ae96c39e161b05df291f5553a75b7216774b12490e8c08564db14ea303640386",
+                  "source_lines": "L193",
+                  "source_section": "7. Product Specification"
+                },
+                "semantic_type": "SET_OF<STATE_ID>"
+              },
+              "allowed_states": {
+                "members": [
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "BRD-WS-02-R003.ALLOWED_STATES.SOURCE.MEMBER"
+                      ],
+                      "source_id": "P2C-OBT-C1-BRD-WS-02-R003-OPT-1",
+                      "source_type": "APPROVED_DECISION",
+                      "version": "2026-07-16"
+                    },
+                    "identifier": "BRD-WS-02-R003.ALLOWED_STATES.SOURCE.MEMBER",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BRD-WS-02-R003.O1.2.REFERENCE_TARGET_VALID.ALLOWED_STATES.ORIGIN.MEMBER.1",
+                      "origin_type": "APPROVED_DECISION"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [
+                        "P2C-OBT-C1-BRD-WS-02-R003-OPT-1"
+                      ],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-WS-02.md",
+                      "source_fingerprint": "ae96c39e161b05df291f5553a75b7216774b12490e8c08564db14ea303640386",
+                      "source_lines": "L193",
+                      "source_section": "7. Product Specification"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "STATE_ID",
+                      "resolver_id": "RESOLVE.BRD-WS-02-R003.BRD-WS-02-R003.ALLOWED_STATES.SOURCE.MEMBER",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "STATE_ID"
+                  }
+                ],
+                "origin": {
+                  "origin_id": "BRD-WS-02-R003.O1.2.REFERENCE_TARGET_VALID.ALLOWED_STATES.ORIGIN",
+                  "origin_type": "APPROVED_DECISION"
+                },
+                "provenance": {
+                  "approved_decision_references": [
+                    "P2C-OBT-C1-BRD-WS-02-R003-OPT-1"
+                  ],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-02.md",
+                  "source_fingerprint": "ae96c39e161b05df291f5553a75b7216774b12490e8c08564db14ea303640386",
+                  "source_lines": "L193",
+                  "source_section": "7. Product Specification"
+                },
+                "semantic_type": "SET_OF<STATE_ID>"
+              },
+              "reference": {
+                "authoritative_source": {
+                  "source_id": "P2C-OBT-C1-BRD-WS-02-R003-OPT-1",
+                  "source_type": "APPROVED_DECISION",
+                  "version": "2026-07-16"
+                },
+                "identifier": "BRD-WS-02-R003.REFERENCE",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-WS-02-R003.O1.2.REFERENCE_TARGET_VALID.REFERENCE.ORIGIN",
+                  "origin_type": "APPROVED_DECISION"
+                },
+                "provenance": {
+                  "approved_decision_references": [
+                    "P2C-OBT-C1-BRD-WS-02-R003-OPT-1"
+                  ],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-02.md",
+                  "source_fingerprint": "ae96c39e161b05df291f5553a75b7216774b12490e8c08564db14ea303640386",
+                  "source_lines": "L193",
+                  "source_section": "7. Product Specification"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "REFERENCE_ID",
+                  "resolver_id": "RESOLVE.BRD-WS-02-R003.BRD-WS-02-R003.REFERENCE",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "REFERENCE_ID"
+              },
+              "registry": {
+                "authoritative_source": {
+                  "source_id": "P2C-OBT-C1-BRD-WS-02-R003-OPT-1",
+                  "source_type": "APPROVED_DECISION",
+                  "version": "2026-07-16"
+                },
+                "identifier": "BRD-WS-02-R003.REGISTRY",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-WS-02-R003.O1.2.REFERENCE_TARGET_VALID.REGISTRY.ORIGIN",
+                  "origin_type": "APPROVED_DECISION"
+                },
+                "provenance": {
+                  "approved_decision_references": [
+                    "P2C-OBT-C1-BRD-WS-02-R003-OPT-1"
+                  ],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-02.md",
+                  "source_fingerprint": "ae96c39e161b05df291f5553a75b7216774b12490e8c08564db14ea303640386",
+                  "source_lines": "L193",
+                  "source_section": "7. Product Specification"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "ENTITY_ID",
+                  "resolver_id": "RESOLVE.BRD-WS-02-R003.BRD-WS-02-R003.REGISTRY",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "ENTITY_ID"
+              },
+              "registry_source": {
+                "authoritative_source": {
+                  "source_id": "P2C-OBT-C1-BRD-WS-02-R003-OPT-1",
+                  "source_type": "APPROVED_DECISION",
+                  "version": "2026-07-16"
+                },
+                "identifier": "BRD-WS-02-R003.REGISTRY_SOURCE",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-WS-02-R003.O1.2.REFERENCE_TARGET_VALID.REGISTRY_SOURCE.ORIGIN",
+                  "origin_type": "APPROVED_DECISION"
+                },
+                "provenance": {
+                  "approved_decision_references": [
+                    "P2C-OBT-C1-BRD-WS-02-R003-OPT-1"
+                  ],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-02.md",
+                  "source_fingerprint": "ae96c39e161b05df291f5553a75b7216774b12490e8c08564db14ea303640386",
+                  "source_lines": "L193",
+                  "source_section": "7. Product Specification"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "REFERENCE_ID",
+                  "resolver_id": "RESOLVE.BRD-WS-02-R003.BRD-WS-02-R003.REGISTRY_SOURCE",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "REFERENCE_ID"
+              },
+              "target_id": {
+                "authoritative_source": {
+                  "source_id": "P2C-OBT-C1-BRD-WS-02-R003-OPT-1",
+                  "source_type": "APPROVED_DECISION",
+                  "version": "2026-07-16"
+                },
+                "identifier": "BRD-WS-02-R003.TARGET_ID",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-WS-02-R003.O1.2.REFERENCE_TARGET_VALID.TARGET_ID.ORIGIN",
+                  "origin_type": "APPROVED_DECISION"
+                },
+                "provenance": {
+                  "approved_decision_references": [
+                    "P2C-OBT-C1-BRD-WS-02-R003-OPT-1"
+                  ],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-02.md",
+                  "source_fingerprint": "ae96c39e161b05df291f5553a75b7216774b12490e8c08564db14ea303640386",
+                  "source_lines": "L193",
+                  "source_section": "7. Product Specification"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "ENTITY_ID",
+                  "resolver_id": "RESOLVE.BRD-WS-02-R003.BRD-WS-02-R003.TARGET_ID",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "ENTITY_ID"
+              },
+              "target_type": {
+                "authoritative_source": {
+                  "source_id": "P2C-OBT-C1-BRD-WS-02-R003-OPT-1",
+                  "source_type": "APPROVED_DECISION",
+                  "version": "2026-07-16"
+                },
+                "identifier": "BRD-WS-02-R003.TARGET_TYPE",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-WS-02-R003.O1.2.REFERENCE_TARGET_VALID.TARGET_TYPE.ORIGIN",
+                  "origin_type": "APPROVED_DECISION"
+                },
+                "provenance": {
+                  "approved_decision_references": [
+                    "P2C-OBT-C1-BRD-WS-02-R003-OPT-1"
+                  ],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-02.md",
+                  "source_fingerprint": "ae96c39e161b05df291f5553a75b7216774b12490e8c08564db14ea303640386",
+                  "source_lines": "L193",
+                  "source_section": "7. Product Specification"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "ENTITY_TYPE",
+                  "resolver_id": "RESOLVE.BRD-WS-02-R003.BRD-WS-02-R003.TARGET_TYPE",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "ENTITY_TYPE"
+              }
+            },
+            "comparison": {
+              "expected": {
+                "authoritative_source": {
+                  "source_id": "P2C-OBT-C1-BRD-WS-02-R003-OPT-1",
+                  "source_type": "APPROVED_DECISION",
+                  "version": "2026-07-16"
+                },
+                "identifier": "BRD-WS-02-R003.BRD-WS-02-R003.O1.2.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-WS-02-R003.O1.2.REFERENCE_TARGET_VALID.AUTHORITY.ORIGIN",
+                  "origin_type": "APPROVED_DECISION"
+                },
+                "provenance": {
+                  "approved_decision_references": [
+                    "P2C-OBT-C1-BRD-WS-02-R003-OPT-1"
+                  ],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-02.md",
+                  "source_fingerprint": "ae96c39e161b05df291f5553a75b7216774b12490e8c08564db14ea303640386",
+                  "source_lines": "L193",
+                  "source_section": "7. Product Specification"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "REFERENCE_ID",
+                  "resolver_id": "RESOLVE.BRD-WS-02-R003.BRD-WS-02-R003.BRD-WS-02-R003.O1.2.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "REFERENCE_ID"
+              },
+              "observed": {
+                "authoritative_source": {
+                  "source_id": "P2C-OBT-C1-BRD-WS-02-R003-OPT-1",
+                  "source_type": "APPROVED_DECISION",
+                  "version": "2026-07-16"
+                },
+                "identifier": "BRD-WS-02-R003.BRD-WS-02-R003.O1.2.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-WS-02-R003.O1.2.REFERENCE_TARGET_VALID.OBSERVED.ORIGIN",
+                  "origin_type": "RUNTIME_OBSERVED"
+                },
+                "provenance": {
+                  "approved_decision_references": [
+                    "P2C-OBT-C1-BRD-WS-02-R003-OPT-1"
+                  ],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-02.md",
+                  "source_fingerprint": "ae96c39e161b05df291f5553a75b7216774b12490e8c08564db14ea303640386",
+                  "source_lines": "L193",
+                  "source_section": "7. Product Specification"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "REFERENCE_ID",
+                  "resolver_id": "OBSERVE.BRD-WS-02-R003.BRD-WS-02-R003.BRD-WS-02-R003.O1.2.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "REFERENCE_ID"
+              }
+            },
+            "evidence_object": {
+              "authoritative_source": {
+                "source_id": "P2C-OBT-C1-BRD-WS-02-R003-OPT-1",
+                "source_type": "APPROVED_DECISION",
+                "version": "2026-07-16"
+              },
+              "identifier": "BRD-WS-02-R003.BRD-WS-02-R003.O1.2.REFERENCE_TARGET_VALID.EVIDENCE.OBJECT",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-WS-02-R003.O1.2.REFERENCE_TARGET_VALID.EVIDENCE.ORIGIN",
+                "origin_type": "EVIDENCE_OBJECT"
+              },
+              "provenance": {
+                "approved_decision_references": [
+                  "P2C-OBT-C1-BRD-WS-02-R003-OPT-1"
+                ],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-02.md",
+                "source_fingerprint": "ae96c39e161b05df291f5553a75b7216774b12490e8c08564db14ea303640386",
+                "source_lines": "L193",
+                "source_section": "7. Product Specification"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "EVIDENCE_OBJECT_REF",
+                "resolver_id": "OBSERVE.BRD-WS-02-R003.BRD-WS-02-R003.BRD-WS-02-R003.O1.2.REFERENCE_TARGET_VALID.EVIDENCE.OBJECT",
+                "version": "1.0.0"
+              },
+              "semantic_type": "EVIDENCE_OBJECT_REF"
+            },
+            "operator_id": "REFERENCE_TARGET_VALID"
+          },
+          "obligation_id": "BRD-WS-02-R003-O001",
+          "observed_operand": {
+            "authoritative_source": {
+              "source_id": "P2C-OBT-C1-BRD-WS-02-R003-OPT-1",
+              "source_type": "APPROVED_DECISION",
+              "version": "2026-07-16"
+            },
+            "identifier": "BRD-WS-02-R003.BRD-WS-02-R003.O1.2.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BRD-WS-02-R003.O1.2.REFERENCE_TARGET_VALID.OBSERVED.ORIGIN",
+              "origin_type": "RUNTIME_OBSERVED"
+            },
+            "provenance": {
+              "approved_decision_references": [
+                "P2C-OBT-C1-BRD-WS-02-R003-OPT-1"
+              ],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-WS-02.md",
+              "source_fingerprint": "ae96c39e161b05df291f5553a75b7216774b12490e8c08564db14ea303640386",
+              "source_lines": "L193",
+              "source_section": "7. Product Specification"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "REFERENCE_ID",
+              "resolver_id": "OBSERVE.BRD-WS-02-R003.BRD-WS-02-R003.BRD-WS-02-R003.O1.2.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "REFERENCE_ID"
+          },
+          "operator_id": "REFERENCE_TARGET_VALID",
+          "operator_version": "1.0.0-candidate.2",
+          "typed_bindings": {
+            "allowed_lifecycle_states": {
+              "members": [
+                {
+                  "authoritative_source": {
+                    "allowed_identifiers": [
+                      "BRD-WS-02-R003.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER"
+                    ],
+                    "source_id": "P2C-OBT-C1-BRD-WS-02-R003-OPT-1",
+                    "source_type": "APPROVED_DECISION",
+                    "version": "2026-07-16"
+                  },
+                  "identifier": "BRD-WS-02-R003.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BRD-WS-02-R003.O1.2.REFERENCE_TARGET_VALID.ALLOWED_LIFECYCLE_STATES.ORIGIN.MEMBER.1",
+                    "origin_type": "APPROVED_DECISION"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [
+                      "P2C-OBT-C1-BRD-WS-02-R003-OPT-1"
+                    ],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-WS-02.md",
+                    "source_fingerprint": "ae96c39e161b05df291f5553a75b7216774b12490e8c08564db14ea303640386",
+                    "source_lines": "L193",
+                    "source_section": "7. Product Specification"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "STATE_ID",
+                    "resolver_id": "RESOLVE.BRD-WS-02-R003.BRD-WS-02-R003.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "STATE_ID"
+                }
+              ],
+              "origin": {
+                "origin_id": "BRD-WS-02-R003.O1.2.REFERENCE_TARGET_VALID.ALLOWED_LIFECYCLE_STATES.ORIGIN",
+                "origin_type": "APPROVED_DECISION"
+              },
+              "provenance": {
+                "approved_decision_references": [
+                  "P2C-OBT-C1-BRD-WS-02-R003-OPT-1"
+                ],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-02.md",
+                "source_fingerprint": "ae96c39e161b05df291f5553a75b7216774b12490e8c08564db14ea303640386",
+                "source_lines": "L193",
+                "source_section": "7. Product Specification"
+              },
+              "semantic_type": "SET_OF<STATE_ID>"
+            },
+            "allowed_states": {
+              "members": [
+                {
+                  "authoritative_source": {
+                    "allowed_identifiers": [
+                      "BRD-WS-02-R003.ALLOWED_STATES.SOURCE.MEMBER"
+                    ],
+                    "source_id": "P2C-OBT-C1-BRD-WS-02-R003-OPT-1",
+                    "source_type": "APPROVED_DECISION",
+                    "version": "2026-07-16"
+                  },
+                  "identifier": "BRD-WS-02-R003.ALLOWED_STATES.SOURCE.MEMBER",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BRD-WS-02-R003.O1.2.REFERENCE_TARGET_VALID.ALLOWED_STATES.ORIGIN.MEMBER.1",
+                    "origin_type": "APPROVED_DECISION"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [
+                      "P2C-OBT-C1-BRD-WS-02-R003-OPT-1"
+                    ],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-WS-02.md",
+                    "source_fingerprint": "ae96c39e161b05df291f5553a75b7216774b12490e8c08564db14ea303640386",
+                    "source_lines": "L193",
+                    "source_section": "7. Product Specification"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "STATE_ID",
+                    "resolver_id": "RESOLVE.BRD-WS-02-R003.BRD-WS-02-R003.ALLOWED_STATES.SOURCE.MEMBER",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "STATE_ID"
+                }
+              ],
+              "origin": {
+                "origin_id": "BRD-WS-02-R003.O1.2.REFERENCE_TARGET_VALID.ALLOWED_STATES.ORIGIN",
+                "origin_type": "APPROVED_DECISION"
+              },
+              "provenance": {
+                "approved_decision_references": [
+                  "P2C-OBT-C1-BRD-WS-02-R003-OPT-1"
+                ],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-02.md",
+                "source_fingerprint": "ae96c39e161b05df291f5553a75b7216774b12490e8c08564db14ea303640386",
+                "source_lines": "L193",
+                "source_section": "7. Product Specification"
+              },
+              "semantic_type": "SET_OF<STATE_ID>"
+            },
+            "reference": {
+              "authoritative_source": {
+                "source_id": "P2C-OBT-C1-BRD-WS-02-R003-OPT-1",
+                "source_type": "APPROVED_DECISION",
+                "version": "2026-07-16"
+              },
+              "identifier": "BRD-WS-02-R003.REFERENCE",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-WS-02-R003.O1.2.REFERENCE_TARGET_VALID.REFERENCE.ORIGIN",
+                "origin_type": "APPROVED_DECISION"
+              },
+              "provenance": {
+                "approved_decision_references": [
+                  "P2C-OBT-C1-BRD-WS-02-R003-OPT-1"
+                ],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-02.md",
+                "source_fingerprint": "ae96c39e161b05df291f5553a75b7216774b12490e8c08564db14ea303640386",
+                "source_lines": "L193",
+                "source_section": "7. Product Specification"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "REFERENCE_ID",
+                "resolver_id": "RESOLVE.BRD-WS-02-R003.BRD-WS-02-R003.REFERENCE",
+                "version": "1.0.0"
+              },
+              "semantic_type": "REFERENCE_ID"
+            },
+            "registry": {
+              "authoritative_source": {
+                "source_id": "P2C-OBT-C1-BRD-WS-02-R003-OPT-1",
+                "source_type": "APPROVED_DECISION",
+                "version": "2026-07-16"
+              },
+              "identifier": "BRD-WS-02-R003.REGISTRY",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-WS-02-R003.O1.2.REFERENCE_TARGET_VALID.REGISTRY.ORIGIN",
+                "origin_type": "APPROVED_DECISION"
+              },
+              "provenance": {
+                "approved_decision_references": [
+                  "P2C-OBT-C1-BRD-WS-02-R003-OPT-1"
+                ],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-02.md",
+                "source_fingerprint": "ae96c39e161b05df291f5553a75b7216774b12490e8c08564db14ea303640386",
+                "source_lines": "L193",
+                "source_section": "7. Product Specification"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "ENTITY_ID",
+                "resolver_id": "RESOLVE.BRD-WS-02-R003.BRD-WS-02-R003.REGISTRY",
+                "version": "1.0.0"
+              },
+              "semantic_type": "ENTITY_ID"
+            },
+            "registry_source": {
+              "authoritative_source": {
+                "source_id": "P2C-OBT-C1-BRD-WS-02-R003-OPT-1",
+                "source_type": "APPROVED_DECISION",
+                "version": "2026-07-16"
+              },
+              "identifier": "BRD-WS-02-R003.REGISTRY_SOURCE",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-WS-02-R003.O1.2.REFERENCE_TARGET_VALID.REGISTRY_SOURCE.ORIGIN",
+                "origin_type": "APPROVED_DECISION"
+              },
+              "provenance": {
+                "approved_decision_references": [
+                  "P2C-OBT-C1-BRD-WS-02-R003-OPT-1"
+                ],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-02.md",
+                "source_fingerprint": "ae96c39e161b05df291f5553a75b7216774b12490e8c08564db14ea303640386",
+                "source_lines": "L193",
+                "source_section": "7. Product Specification"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "REFERENCE_ID",
+                "resolver_id": "RESOLVE.BRD-WS-02-R003.BRD-WS-02-R003.REGISTRY_SOURCE",
+                "version": "1.0.0"
+              },
+              "semantic_type": "REFERENCE_ID"
+            },
+            "target_id": {
+              "authoritative_source": {
+                "source_id": "P2C-OBT-C1-BRD-WS-02-R003-OPT-1",
+                "source_type": "APPROVED_DECISION",
+                "version": "2026-07-16"
+              },
+              "identifier": "BRD-WS-02-R003.TARGET_ID",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-WS-02-R003.O1.2.REFERENCE_TARGET_VALID.TARGET_ID.ORIGIN",
+                "origin_type": "APPROVED_DECISION"
+              },
+              "provenance": {
+                "approved_decision_references": [
+                  "P2C-OBT-C1-BRD-WS-02-R003-OPT-1"
+                ],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-02.md",
+                "source_fingerprint": "ae96c39e161b05df291f5553a75b7216774b12490e8c08564db14ea303640386",
+                "source_lines": "L193",
+                "source_section": "7. Product Specification"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "ENTITY_ID",
+                "resolver_id": "RESOLVE.BRD-WS-02-R003.BRD-WS-02-R003.TARGET_ID",
+                "version": "1.0.0"
+              },
+              "semantic_type": "ENTITY_ID"
+            },
+            "target_type": {
+              "authoritative_source": {
+                "source_id": "P2C-OBT-C1-BRD-WS-02-R003-OPT-1",
+                "source_type": "APPROVED_DECISION",
+                "version": "2026-07-16"
+              },
+              "identifier": "BRD-WS-02-R003.TARGET_TYPE",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-WS-02-R003.O1.2.REFERENCE_TARGET_VALID.TARGET_TYPE.ORIGIN",
+                "origin_type": "APPROVED_DECISION"
+              },
+              "provenance": {
+                "approved_decision_references": [
+                  "P2C-OBT-C1-BRD-WS-02-R003-OPT-1"
+                ],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-02.md",
+                "source_fingerprint": "ae96c39e161b05df291f5553a75b7216774b12490e8c08564db14ea303640386",
+                "source_lines": "L193",
+                "source_section": "7. Product Specification"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "ENTITY_TYPE",
+                "resolver_id": "RESOLVE.BRD-WS-02-R003.BRD-WS-02-R003.TARGET_TYPE",
+                "version": "1.0.0"
+              },
+              "semantic_type": "ENTITY_TYPE"
+            }
+          }
+        }
+      ],
+      "boundary_cases": [
+        "Marketing wording may vary but cannot change actual usage semantics"
+      ],
+      "contract_ast_sha256": "d8b4b0fc43f80e504489bab23390a56953ccda6d707f292fc4586f23a94d5df8",
+      "contract_id": "P2C.C4.CONTRACT.BRD-WS-02-R003",
+      "criticality": "HIGH",
+      "disposition": "SOURCE_CLARIFICATION_REQUIRED",
+      "evidence_contract": {
+        "evidence_object_ref": {
+          "authoritative_source": {
+            "source_id": "P2C-OBT-C1-BRD-WS-02-R003-OPT-1",
+            "source_type": "APPROVED_DECISION",
+            "version": "2026-07-16"
+          },
+          "identifier": "BRD-WS-02-R003.BRD-WS-02-R003.CONTRACT.EVIDENCE.OBJECT",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-WS-02-R003.CONTRACT.EVIDENCE.ORIGIN",
+            "origin_type": "EVIDENCE_OBJECT"
+          },
+          "provenance": {
+            "approved_decision_references": [
+              "P2C-OBT-C1-BRD-WS-02-R003-OPT-1"
+            ],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-02.md",
+            "source_fingerprint": "ae96c39e161b05df291f5553a75b7216774b12490e8c08564db14ea303640386",
+            "source_lines": "L193",
+            "source_section": "7. Product Specification"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "EVIDENCE_OBJECT_REF",
+            "resolver_id": "OBSERVE.BRD-WS-02-R003.BRD-WS-02-R003.BRD-WS-02-R003.CONTRACT.EVIDENCE.OBJECT",
+            "version": "1.0.0"
+          },
+          "semantic_type": "EVIDENCE_OBJECT_REF"
+        },
+        "inference": false,
+        "observed_collection_origin": "BRD-WS-02-R003.RUNTIME.OBSERVED.FIELDS",
+        "observed_field_ids": [
+          "FIELD.PRODUCT_ID",
+          "FIELD.SPECIFICATION_CAPABILITIES",
+          "FIELD.ACTUAL_CAPABILITIES",
+          "FIELD.VALIDATION_RESULT",
+          "FIELD.SOURCE_VERSION"
+        ],
+        "producer": "BRD-WS-02-R003.EVIDENCE.PRODUCER",
+        "required_collection_origin": "BRD-WS-02-R003.SOURCE.REQUIRED.FIELDS",
+        "required_field_ids": [
+          "FIELD.PRODUCT_ID",
+          "FIELD.SPECIFICATION_CAPABILITIES",
+          "FIELD.ACTUAL_CAPABILITIES",
+          "FIELD.VALIDATION_RESULT",
+          "FIELD.SOURCE_VERSION"
+        ],
+        "required_values_or_hashes": [
+          "BRD-WS-02-R003.EVIDENCE.CONTENT.HASH"
+        ],
+        "retrieval_method": "BRD-WS-02-R003.EVIDENCE.RETRIEVAL",
+        "version_or_correlation": "BRD-WS-02-R003.EVIDENCE.VERSION.CORRELATION"
+      },
+      "explicit_non_obligations": [
+        "No runtime implementation topology is authorized by this semantic record.",
+        "No production runtime evidence is claimed by this model-level candidate."
+      ],
+      "fixture_ids": [
+        "P2C-C4-FX-EC0DA27511453DBC914E",
+        "P2C-C4-FX-D7AD453C6E35892FDF53",
+        "P2C-C4-FX-B387E9104C27FBB1CB95"
+      ],
+      "high_risk_audit_subset": true,
+      "independent_contract_identity": true,
+      "inference": false,
+      "inherits_contract_ast": null,
+      "negative_oracles": [
+        "Specification claims an unsupported capability or omits a required usage constraint"
+      ],
+      "normative_obligations": [
+        {
+          "applicability": "V2.3_ACTIVE",
+          "obligation_id": "BRD-WS-02-R003-O001",
+          "obligation_text": "Tuy nhiên Product Specification phải phản ánh đúng khả năng sử dụng thực tế của eSIM"
+        }
+      ],
+      "obligation_to_operator_coverage": [
+        {
+          "assertion_ids": [
+            "BRD-WS-02-R003.O1.1.SET_EQUALS",
+            "BRD-WS-02-R003.O1.2.REFERENCE_TARGET_VALID"
+          ],
+          "coverage_count": 1,
+          "obligation_id": "BRD-WS-02-R003-O001"
+        }
+      ],
+      "operator_composition": [
+        "SET_EQUALS",
+        "REFERENCE_TARGET_VALID"
+      ],
+      "positive_oracles": [
+        "The Product Specification matches actual eSIM usage capability"
+      ],
+      "preconditions": [
+        "Actual eSIM usage capabilities are known"
+      ],
+      "prohibitions": [
+        "Specification claims an unsupported capability or omits a required usage constraint"
+      ],
+      "requirement_id": "BRD-WS-02-R003",
+      "runtime_status": "SLICE_RUNTIME_ADAPTER_REQUIRED",
+      "semantic_family_id": null,
+      "source_provenance": {
+        "approved_decision_references": [
+          "P2C-OBT-C1-BRD-WS-02-R003-OPT-1"
+        ],
+        "inference": false,
+        "source_document": "docs/BRD/BRD-WS-02.md",
+        "source_fingerprint": "ae96c39e161b05df291f5553a75b7216774b12490e8c08564db14ea303640386",
+        "source_lines": "L193",
+        "source_section": "7. Product Specification"
+      },
+      "source_statement": "Tuy nhiên Product Specification phải phản ánh đúng khả năng sử dụng thực tế của eSIM.",
+      "surrounding_source_context": "### BRD-WS-02-R003 — Tuy nhiên Product Specification phải phản ánh đúng khả năng sử dụng thực tế của eSIM"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "contract_id": "P2C.C4.CONTRACT.BRD-WS-02-R003",
+    "inference": false,
+    "mechanism": "APPROVED_TYPED_CUSTOM_AST",
+    "mechanism_version": "SEMANTIC_ACCEPTANCE_RENDERER_C2",
+    "runtime_status": "RUNTIME_ADAPTER_PENDING"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "ACCEPTANCE_READY",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-02-R003-AC001",
-        "BRD-WS-02-R003-AC002"
+        "BRD-WS-02-R003-AC002",
+        "BRD-WS-02-R003-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-02-R003-O001",
@@ -1605,8 +6619,8 @@ Workshop này là nền tảng cho:
     "source_context_sha256": "d7612da5223a59b34cf5f31ed5d0f6b24a088ad9cad981382b42647856dc2e29",
     "source_document": "docs/BRD/BRD-WS-02.md",
     "source_fingerprint": "ae96c39e161b05df291f5553a75b7216774b12490e8c08564db14ea303640386",
-    "source_lines": "L193",
-    "source_section": "7. Product Specification"
+    "source_lines": "L4666-L6641",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-02-R003"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1627,36 +6641,48 @@ Workshop này là nền tảng cho:
 <!-- YSIM:REQUIREMENT END -->
 
 <!-- YSIM:REQUIREMENT BEGIN -->
-### BRD-WS-02-R004 — Inventory luôn tồn tại
+### BRD-WS-02-R004 — Trong phạm vi Inventory Strategy v2.3, mỗi Product Item được quản lý trong Inventory phải có đúng một Inventory Recor…
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-02-R004-AC001",
-      "given": "the applicable business context, actor, and input for Inventory luôn tồn tại",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-WS-02-R004-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2C-SC-C1-DEC-007/OPT-CLARIFY"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+      "approved_semantic_completion_selection": {
+        "decision_id": "P2C-SC-C1-DEC-007",
+        "option_id": "OPT-CLARIFY"
+      },
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-02-R004",
+      "source_document": "docs/BRD/BRD-WS-02.md",
+      "source_fingerprint": "164d1757848b2601ecac33ae8269e9c8eb05186ee7a2fa879076ec0832843c97"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-WS-02-R004-AC001"
+        "BRD-WS-02-R004-AC001",
+        "BRD-WS-02-R004-AC002",
+        "BRD-WS-02-R004-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-02-R004-O001",
-      "obligation_text": "Inventory luôn tồn tại"
+      "obligation_text": "Trong phạm vi Inventory Strategy v2.3, mỗi Product Item được quản lý trong Inventory phải có đúng một Inventory Record. Inventory Record lưu các dữ liệu áp dụng gồm QR Code, ICCID, Activation Code, Supplier Reference, Purchase Cost, Current Owner, Inventory Status và Lifecycle; quy tắc này vẫn áp dụng khi item được mua tức thời từ Supplier cho một đơn hàng cụ thể"
     }
   ],
   "criticality_applicability": null,
@@ -1664,9 +6690,11 @@ Workshop này là nền tảng cho:
   "delivery_commitment": "COMMITTED_FOR_V2.3",
   "implementation_unit": true,
   "lifecycle": "V2.3_DRAFT",
-  "normative_statement": "Inventory luôn tồn tại.",
+  "normative_statement": "Trong phạm vi Inventory Strategy v2.3, mỗi Product Item được quản lý trong Inventory phải có đúng một Inventory Record. Inventory Record lưu các dữ liệu áp dụng gồm QR Code, ICCID, Activation Code, Supplier Reference, Purchase Cost, Current Owner, Inventory Status và Lifecycle; quy tắc này vẫn áp dụng khi item được mua tức thời từ Supplier cho một đơn hàng cụ thể.",
   "provenance": {
-    "approved_decisions": [],
+    "approved_decisions": [
+      "P2C-SC-C1-DEC-007/OPT-CLARIFY"
+    ],
     "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
     "original_identity": "TMP-BRD-WS-02-004",
     "previous_temporary_key": "TMP-BRD-WS-02-004",
@@ -1675,9 +6703,9 @@ Workshop này là nền tảng cho:
     "source_context_heading": "11. Inventory Strategy",
     "source_context_sha256": "76bbf48c25b2025bff4104c11af6bb8c6c5bb117a75fd18750975701f7918cdc",
     "source_document": "docs/BRD/BRD-WS-02.md",
-    "source_fingerprint": "42cf4a9d51db01c52c656589d8253e7da10ce639572bfabf27c7a36f69937102",
-    "source_lines": "L294",
-    "source_section": "11. Inventory Strategy"
+    "source_fingerprint": "164d1757848b2601ecac33ae8269e9c8eb05186ee7a2fa879076ec0832843c97",
+    "source_lines": "L6643-L6726",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-02-R004"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1691,7 +6719,7 @@ Workshop này là nền tảng cho:
   "scope_coverage_unit": true,
   "scope_status": "V2.3_ACTIVE",
   "stable_id": "BRD-WS-02-R004",
-  "title": "Inventory luôn tồn tại",
+  "title": "Trong phạm vi Inventory Strategy v2.3, mỗi Product Item được quản lý trong Inventory phải có đúng một Inventory Recor…",
   "verification_criticality": "NORMAL"
 }
 ```
@@ -1702,41 +6730,34 @@ Workshop này là nền tảng cho:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-02-R005-AC001",
-      "given": "the applicable business context, actor, and input for Dù theo hình thức nào, mọi Product Item đều phải được ghi nhận vào Inventory",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-WS-02-R005-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BRD-WS-02-R005-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Dù theo hình thức nào, mọi Product Item đều phải được ghi nhận vào Inventory",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BRD-WS-02-R005-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-02-R005",
+      "source_document": "docs/BRD/BRD-WS-02.md",
+      "source_fingerprint": "efe2b9be4bf4ab6bacce8451064efe73631b539bb8a58a6f8c19d56bb8bada9b"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-02-R005-AC001",
-        "BRD-WS-02-R005-AC002"
+        "BRD-WS-02-R005-AC002",
+        "BRD-WS-02-R005-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-02-R005-O001",
@@ -1745,35 +6766,36 @@ Workshop này là nền tảng cho:
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-02-R005 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-02-R005 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-02-R005 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-02-R005 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-02-R005 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-02-R005 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "BRD-WS-02-R005 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BRD-WS-02-R005-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BRD-WS-02-R005-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-02-R005 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-02-R005 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -1792,8 +6814,8 @@ Workshop này là nền tảng cho:
     "source_context_sha256": "377e072cfa8bcc23b6d97045bcb6edf274f97036bdf44a1016faada16fb6d1d6",
     "source_document": "docs/BRD/BRD-WS-02.md",
     "source_fingerprint": "efe2b9be4bf4ab6bacce8451064efe73631b539bb8a58a6f8c19d56bb8bada9b",
-    "source_lines": "L350",
-    "source_section": "13. Procurement"
+    "source_lines": "L6728-L6836",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-02-R005"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1818,41 +6840,34 @@ Workshop này là nền tảng cho:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-02-R006-AC001",
-      "given": "a candidate Toàn bộ Settlement phải sử dụng **Snapshot Pricing** record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "BRD-WS-02-R006-O001"
-      ],
-      "when": "the candidate is evaluated against its declared data contract"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "DATA_CONTRACT_REJECTION_V1",
-      "criterion_id": "BRD-WS-02-R006-AC002",
-      "given": "a Toàn bộ Settlement phải sử dụng **Snapshot Pricing** candidate containing an unsupported value, inconsistent relationship, or unresolved reference",
-      "observable_evidence": "rejection result, field or relationship reason, unresolved reference, and unchanged persisted state",
-      "then": "the candidate is rejected without persisting the invalid state, and each invalid field or relationship has a deterministic reason",
-      "verifies": [
-        "BRD-WS-02-R006-O001"
-      ],
-      "when": "the candidate is validated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-02-R006",
+      "source_document": "docs/BRD/BRD-WS-02.md",
+      "source_fingerprint": "e45959b3c665bf3a011395e1fdeb3e5e4e5dc62721e3867696b09ecca8634bf4"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-02-R006-AC001",
-        "BRD-WS-02-R006-AC002"
+        "BRD-WS-02-R006-AC002",
+        "BRD-WS-02-R006-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-02-R006-O001",
@@ -1861,35 +6876,36 @@ Workshop này là nền tảng cho:
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-02-R006 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-02-R006 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-02-R006 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-02-R006 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-02-R006 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-02-R006 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "BRD-WS-02-R006 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BRD-WS-02-R006-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BRD-WS-02-R006-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-02-R006 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-02-R006 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -1908,8 +6924,8 @@ Workshop này là nền tảng cho:
     "source_context_sha256": "ec06c47a8c4e338f3c476d4ef4899a8d3ae56d8ac9bb9800d8be2675fde0bff1",
     "source_document": "docs/BRD/BRD-WS-02.md",
     "source_fingerprint": "e45959b3c665bf3a011395e1fdeb3e5e4e5dc62721e3867696b09ecca8634bf4",
-    "source_lines": "L438",
-    "source_section": "16. Settlement Model"
+    "source_lines": "L6838-L6946",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-02-R006"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {

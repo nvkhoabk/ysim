@@ -1,13 +1,20 @@
 ---
 document_code: "BRD-WS-12"
+document_id: "BRD-WS-12"
 title: "Communication Platform, Notification & Engagement"
-product_baseline: "2.3"
-document_revision: "2.3.0-draft.1"
+version: "2.3.0-draft.3"
+document_revision: "2.3.0-draft.3"
+status: "V2.3_DRAFT"
 lifecycle_status: "V2.3_DRAFT"
 language: "vi-VN"
+baseline: "2.3"
+product_baseline: "2.3"
+source_lineage: "v2.2 + approved Phase 1/2A/2B + accepted Acceptance Model C1 + accepted Mapping C3"
 source_baseline: "v2.2"
+last_reviewed_date: "2026-07-15"
+last_remediated_on: "2026-07-17"
+applicable_scope: "V2.3_ACTIVE_AND_RETAINED_SCOPE_RECORDS"
 generated_registry_role: "BRD_CANONICAL_SOURCE"
-last_remediated_on: "2026-07-15"
 ---
 ## Thẩm quyền nguồn yêu cầu v2.3
 
@@ -859,7 +866,7 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
 
 <!-- YSIM:PHASE_2C CANONICAL APPENDIX BEGIN -->
 
-## Phụ lục yêu cầu chuẩn tắc v2.3
+## Phụ lục yêu cầu chuẩn tắc v2.3 — C6-R1
 
 
 
@@ -868,28 +875,36 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-12-001-AC001",
-      "given": "the applicable business context, actor, and input for Communication Platform là Platform Capability độc lập",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "each named business concept has a distinct identity, owner or reference, and lifecycle evidence; an action on one does not implicitly act on the other",
-      "verifies": [
-        "BD-12-001-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-005"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-12-001",
+      "source_document": "docs/BRD/BRD-WS-12.md",
+      "source_fingerprint": "074b0454365c0c2b231d58870d3ef142630e82f0edabd388f641dbab68d0399b"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BD-12-001-AC001"
+        "BD-12-001-AC001",
+        "BD-12-001-AC002",
+        "BD-12-001-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-12-001-O001",
@@ -914,9 +929,9 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
     "source_context_heading": "BD-12-001",
     "source_context_sha256": "84f565c7041691e217fdb4ce25d8228f299223e4e080133d2e7dda5e8e8ce5d5",
     "source_document": "docs/BRD/BRD-WS-12.md",
-    "source_fingerprint": "a0c02fb36ec8068f3836e087d997fe4a9a6cd0aad4191e207c9481e4f8c4cdaa",
-    "source_lines": "L636-L639",
-    "source_section": "32. Business Decisions (Locked) > BD-12-001"
+    "source_fingerprint": "074b0454365c0c2b231d58870d3ef142630e82f0edabd388f641dbab68d0399b",
+    "source_lines": "L873-L952",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-12-001"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -941,41 +956,34 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-12-002-AC001",
-      "given": "the applicable business context, actor, and input for Notification sử dụng Event-Driven Architecture",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-12-002-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BD-12-002-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Notification sử dụng Event-Driven Architecture",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BD-12-002-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-12-002",
+      "source_document": "docs/BRD/BRD-WS-12.md",
+      "source_fingerprint": "b8c56cf3d414a934c6bfe374dd5df3b8531c8266e712bbff8729c0f675d3a0e3"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-12-002-AC001",
-        "BD-12-002-AC002"
+        "BD-12-002-AC002",
+        "BD-12-002-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-12-002-O001",
@@ -998,9 +1006,9 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
     "source_context_heading": "BD-12-002",
     "source_context_sha256": "5084214ae5f46abb676a4395d948701b520580f6e8b57fbfaf8064e89339f3fa",
     "source_document": "docs/BRD/BRD-WS-12.md",
-    "source_fingerprint": "ff4fc93634cb4b86db79abe8c8e2a81716f7fdcfcf9475209ca12aedf06ae6ee",
-    "source_lines": "L642-L645",
-    "source_section": "32. Business Decisions (Locked) > BD-12-002"
+    "source_fingerprint": "b8c56cf3d414a934c6bfe374dd5df3b8531c8266e712bbff8729c0f675d3a0e3",
+    "source_lines": "L954-L1029",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-12-002"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1025,41 +1033,34 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-12-003-AC001",
-      "given": "the applicable business context, actor, and input for Notification được quyết định bằng Communication Matrix",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-12-003-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BD-12-003-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Notification được quyết định bằng Communication Matrix",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BD-12-003-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-12-003",
+      "source_document": "docs/BRD/BRD-WS-12.md",
+      "source_fingerprint": "c09260288943aace54e08290cec5da8fd2c876bf09e76571fc71aa79d5a838a0"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-12-003-AC001",
-        "BD-12-003-AC002"
+        "BD-12-003-AC002",
+        "BD-12-003-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-12-003-O001",
@@ -1082,9 +1083,9 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
     "source_context_heading": "BD-12-003",
     "source_context_sha256": "ec0ea77853c1a49415c9efed5178e889cdd46ce70732601bd2ea5b3ed1b759b7",
     "source_document": "docs/BRD/BRD-WS-12.md",
-    "source_fingerprint": "b59981ea8de4d103bb297d569b7eb1a81f3d6e980a4fdb0f2d4490573da5d9d9",
-    "source_lines": "L648-L651",
-    "source_section": "32. Business Decisions (Locked) > BD-12-003"
+    "source_fingerprint": "c09260288943aace54e08290cec5da8fd2c876bf09e76571fc71aa79d5a838a0",
+    "source_lines": "L1031-L1106",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-12-003"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1109,41 +1110,34 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-12-004-AC001",
-      "given": "the applicable business context, actor, and input for Portal Announcement là một Communication Channel",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-12-004-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BD-12-004-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Portal Announcement là một Communication Channel",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BD-12-004-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-12-004",
+      "source_document": "docs/BRD/BRD-WS-12.md",
+      "source_fingerprint": "2d8865eeef25bab7006d8842cde8e9620976c408c5e97eb41d1334fd108acb1c"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-12-004-AC001",
-        "BD-12-004-AC002"
+        "BD-12-004-AC002",
+        "BD-12-004-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-12-004-O001",
@@ -1166,9 +1160,9 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
     "source_context_heading": "8. Portal Announcement",
     "source_context_sha256": "4789f9288084f39e38cd7a5ef1ccdf625132a5c35868251fd289dbfa429e00be",
     "source_document": "docs/BRD/BRD-WS-12.md",
-    "source_fingerprint": "03a181245dbd21637a31530ad1b9de93482f5b951bb01baf09b65b456dae84d4",
-    "source_lines": "L654-L657",
-    "source_section": "32. Business Decisions (Locked) > BD-12-004"
+    "source_fingerprint": "2d8865eeef25bab7006d8842cde8e9620976c408c5e97eb41d1334fd108acb1c",
+    "source_lines": "L1108-L1183",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-12-004"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1193,28 +1187,34 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-12-005-AC001",
-      "given": "the applicable business context, actor, and input for Personal Inbox luôn là Delivery Channel cuối cùng",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-12-005-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-12-005",
+      "source_document": "docs/BRD/BRD-WS-12.md",
+      "source_fingerprint": "55efd1cdedada8d45c5864d194cd8a4e8ab3433a8bef3bb653692415d7b32277"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BD-12-005-AC001"
+        "BD-12-005-AC001",
+        "BD-12-005-AC002",
+        "BD-12-005-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-12-005-O001",
@@ -1237,9 +1237,9 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
     "source_context_heading": "7. Notification Channels",
     "source_context_sha256": "90bd1cf3f3651bd46f29b7ceb59908692086b6ed82da7d9d14025f2b27d4222b",
     "source_document": "docs/BRD/BRD-WS-12.md",
-    "source_fingerprint": "89db25a37d9e71efe97e0efa13762f13a3b58cfd779ea9f56c8ed477495ee823",
-    "source_lines": "L660-L663",
-    "source_section": "32. Business Decisions (Locked) > BD-12-005"
+    "source_fingerprint": "55efd1cdedada8d45c5864d194cd8a4e8ab3433a8bef3bb653692415d7b32277",
+    "source_lines": "L1185-L1260",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-12-005"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1264,28 +1264,34 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "BD-12-006-AC001",
-      "given": "a candidate ContactPoint là Business Object record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "BD-12-006-O001"
-      ],
-      "when": "the candidate is evaluated against its declared data contract"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-12-006",
+      "source_document": "docs/BRD/BRD-WS-12.md",
+      "source_fingerprint": "5a047fe23f1f3fdd7a0459ac1a007c457d7c07353af832d178c80debe5948ab1"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BD-12-006-AC001"
+        "BD-12-006-AC001",
+        "BD-12-006-AC002",
+        "BD-12-006-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-12-006-O001",
@@ -1308,9 +1314,9 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
     "source_context_heading": "10. Contact Point",
     "source_context_sha256": "d1dd5beefa9dc482d525d996b365c2b9e046b25964a79e489bc339354baa6915",
     "source_document": "docs/BRD/BRD-WS-12.md",
-    "source_fingerprint": "5f185020e6cddb4a3e85a5865fa54b8bce2e6f24e1acfcd2a639db33575b67d6",
-    "source_lines": "L666-L669",
-    "source_section": "32. Business Decisions (Locked) > BD-12-006"
+    "source_fingerprint": "5a047fe23f1f3fdd7a0459ac1a007c457d7c07353af832d178c80debe5948ab1",
+    "source_lines": "L1262-L1337",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-12-006"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1335,41 +1341,34 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-12-007-AC001",
-      "given": "the applicable business context, actor, and input for Notification Preference sử dụng Matrix",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-12-007-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BD-12-007-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Notification Preference sử dụng Matrix",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BD-12-007-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-12-007",
+      "source_document": "docs/BRD/BRD-WS-12.md",
+      "source_fingerprint": "b6b467e110b2132d0795a7c0d9c8882e0e6f8a909f5ae5295b364cee4dd4daf3"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-12-007-AC001",
-        "BD-12-007-AC002"
+        "BD-12-007-AC002",
+        "BD-12-007-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-12-007-O001",
@@ -1392,9 +1391,9 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
     "source_context_heading": "BD-12-007",
     "source_context_sha256": "856abdf1a4bae501d02ecc087e6f9f2d60e27d17b45b5f7dd473ec9a5d7c4c04",
     "source_document": "docs/BRD/BRD-WS-12.md",
-    "source_fingerprint": "dbb31a297a1537124414d5b31ce9c6361b688e793825a6ce4e843f8fac8b31fa",
-    "source_lines": "L672-L675",
-    "source_section": "32. Business Decisions (Locked) > BD-12-007"
+    "source_fingerprint": "b6b467e110b2132d0795a7c0d9c8882e0e6f8a909f5ae5295b364cee4dd4daf3",
+    "source_lines": "L1339-L1414",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-12-007"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1419,28 +1418,34 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-12-008-AC001",
-      "given": "the applicable business context, actor, and input for Template hỗ trợ Parent Override",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "an override is accepted only for a policy marked override-eligible, with an explicit reason and the required approval; otherwise the inherited or system policy remains effective",
-      "verifies": [
-        "BD-12-008-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-12-008",
+      "source_document": "docs/BRD/BRD-WS-12.md",
+      "source_fingerprint": "66110ca40bc5e85714f8eb8076c66e877620f9744ec40de54bf66effbdef7efc"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BD-12-008-AC001"
+        "BD-12-008-AC001",
+        "BD-12-008-AC002",
+        "BD-12-008-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-12-008-O001",
@@ -1463,9 +1468,9 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
     "source_context_heading": "BD-12-008",
     "source_context_sha256": "efffcca92f8526e7c4d4410b30cc0f9c9ad7972fae3ea16420e7aea427876d53",
     "source_document": "docs/BRD/BRD-WS-12.md",
-    "source_fingerprint": "d80600888e9327eba88b77fa5e9d48446d8044afff4f2ea477e102044db12324",
-    "source_lines": "L678-L681",
-    "source_section": "32. Business Decisions (Locked) > BD-12-008"
+    "source_fingerprint": "66110ca40bc5e85714f8eb8076c66e877620f9744ec40de54bf66effbdef7efc",
+    "source_lines": "L1416-L1491",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-12-008"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1490,28 +1495,34 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-12-009-AC001",
-      "given": "the applicable business context, actor, and input for Localization hỗ trợ nhiều chuẩn hiển thị",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-12-009-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-12-009",
+      "source_document": "docs/BRD/BRD-WS-12.md",
+      "source_fingerprint": "a2a56af162a55c3ddebee93cf4412b369ea67e0544d56c88c455917e5b0f0b34"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BD-12-009-AC001"
+        "BD-12-009-AC001",
+        "BD-12-009-AC002",
+        "BD-12-009-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-12-009-O001",
@@ -1534,9 +1545,9 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
     "source_context_heading": "BD-12-009",
     "source_context_sha256": "e406450975ee97a60ba44381df20aec293cae86624e5b6a2060188f56bc59d78",
     "source_document": "docs/BRD/BRD-WS-12.md",
-    "source_fingerprint": "25ad65f8d5e4e5e0a3cb028f14d027ddfe270c817c5303689034f1d1fdd88b4c",
-    "source_lines": "L684-L687",
-    "source_section": "32. Business Decisions (Locked) > BD-12-009"
+    "source_fingerprint": "a2a56af162a55c3ddebee93cf4412b369ea67e0544d56c88c455917e5b0f0b34",
+    "source_lines": "L1493-L1568",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-12-009"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1561,41 +1572,34 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-12-010-AC001",
-      "given": "the applicable business context, actor, and input for Notification Routing dựa trên Business Event",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-12-010-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BD-12-010-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Notification Routing dựa trên Business Event",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BD-12-010-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-12-010",
+      "source_document": "docs/BRD/BRD-WS-12.md",
+      "source_fingerprint": "97bde57c5bb12a69a99d33c8a25c6926a777503bfab24d23634f6fbd116795e7"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-12-010-AC001",
-        "BD-12-010-AC002"
+        "BD-12-010-AC002",
+        "BD-12-010-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-12-010-O001",
@@ -1618,9 +1622,9 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
     "source_context_heading": "BD-12-010",
     "source_context_sha256": "f24173fbad650b972a4675ebcc5caacdc1b7a3a0aa5c6b60b2dad98560fafc7f",
     "source_document": "docs/BRD/BRD-WS-12.md",
-    "source_fingerprint": "fc4f6f86fe8c6f0961c87b0bdfbeed0dee9bdf8ba76e40d376801ea7492ceaa4",
-    "source_lines": "L690-L693",
-    "source_section": "32. Business Decisions (Locked) > BD-12-010"
+    "source_fingerprint": "97bde57c5bb12a69a99d33c8a25c6926a777503bfab24d23634f6fbd116795e7",
+    "source_lines": "L1570-L1645",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-12-010"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1645,28 +1649,36 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-12-011-AC001",
-      "given": "the applicable business context, actor, and input for Retry Policy mặc định là 03 lần, cách nhau 05 phút",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-12-011-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-003"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-12-011",
+      "source_document": "docs/BRD/BRD-WS-12.md",
+      "source_fingerprint": "a9503318626c5189a4de89bb4062ced5b1010d14d3d3ce563f51c28d4b2046c2"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BD-12-011-AC001"
+        "BD-12-011-AC001",
+        "BD-12-011-AC002",
+        "BD-12-011-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-12-011-O001",
@@ -1691,9 +1703,9 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
     "source_context_heading": "BD-12-011",
     "source_context_sha256": "2924f4b5a641111002d5b646237d74c05c720f6fd408d40bc5b02808287f10f5",
     "source_document": "docs/BRD/BRD-WS-12.md",
-    "source_fingerprint": "821bc2a315bc4f876c121b4de690dfd7ec8e6fde744037c1ce1ece188b78e4f9",
-    "source_lines": "L696-L699",
-    "source_section": "32. Business Decisions (Locked) > BD-12-011"
+    "source_fingerprint": "a9503318626c5189a4de89bb4062ced5b1010d14d3d3ce563f51c28d4b2046c2",
+    "source_lines": "L1647-L1726",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-12-011"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1718,28 +1730,34 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-12-012-AC001",
-      "given": "the applicable business context, actor, and input for Communication Log hỗ trợ Search, Export và Retention",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-12-012-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-12-012",
+      "source_document": "docs/BRD/BRD-WS-12.md",
+      "source_fingerprint": "a58f2f12357b48988a1ab5895abfdc18403b7f2ce6bc9c212648fc20e46a431a"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BD-12-012-AC001"
+        "BD-12-012-AC001",
+        "BD-12-012-AC002",
+        "BD-12-012-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-12-012-O001",
@@ -1762,9 +1780,9 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
     "source_context_heading": "BD-12-012",
     "source_context_sha256": "9be6de91706ab11192ad2a6bfc1907fba6590ae41837aaa89a9324aa5c7756f1",
     "source_document": "docs/BRD/BRD-WS-12.md",
-    "source_fingerprint": "59f035b98e49a0e8d9f3e06dd4b391d4340853aa673ea26482e749042fffac72",
-    "source_lines": "L702-L705",
-    "source_section": "32. Business Decisions (Locked) > BD-12-012"
+    "source_fingerprint": "a58f2f12357b48988a1ab5895abfdc18403b7f2ce6bc9c212648fc20e46a431a",
+    "source_lines": "L1728-L1803",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-12-012"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1789,41 +1807,34 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-12-013-AC001",
-      "given": "the applicable business context, actor, and input for Notification Subscription và Notification Category sử dụng Reference Data Management",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-12-013-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BD-12-013-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Notification Subscription và Notification Category sử dụng Reference Data Management",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BD-12-013-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-12-013",
+      "source_document": "docs/BRD/BRD-WS-12.md",
+      "source_fingerprint": "041e7bfd5d60b015d164004067ebf821e67618375eae6dc8de5dc67695df0d1b"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-12-013-AC001",
-        "BD-12-013-AC002"
+        "BD-12-013-AC002",
+        "BD-12-013-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-12-013-O001",
@@ -1846,9 +1857,9 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
     "source_context_heading": "BD-12-013",
     "source_context_sha256": "83e099e63968e1f63fd8cef0f1140a0e0e2a0d3c65f203a3e8cd6268ff1b5473",
     "source_document": "docs/BRD/BRD-WS-12.md",
-    "source_fingerprint": "f7335f4ed6e7b3432be1c29b76bb0d69afbe1474cbbc6ce2e7d9e0d388122e6c",
-    "source_lines": "L708-L711",
-    "source_section": "32. Business Decisions (Locked) > BD-12-013"
+    "source_fingerprint": "041e7bfd5d60b015d164004067ebf821e67618375eae6dc8de5dc67695df0d1b",
+    "source_lines": "L1805-L1880",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-12-013"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1873,41 +1884,34 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-12-014-AC001",
-      "given": "the applicable business context, actor, and input for Version 2 sử dụng Real-time Notification",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-12-014-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BD-12-014-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Version 2 sử dụng Real-time Notification",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BD-12-014-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-12-014",
+      "source_document": "docs/BRD/BRD-WS-12.md",
+      "source_fingerprint": "0c8bc5bc0212878d6e112673627f9caf4cd19fec7fde1af6b1b08ad97ab5a438"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-12-014-AC001",
-        "BD-12-014-AC002"
+        "BD-12-014-AC002",
+        "BD-12-014-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-12-014-O001",
@@ -1930,9 +1934,9 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
     "source_context_heading": "BD-12-014",
     "source_context_sha256": "f0245700c68f527ce043e394163376ee697596758a2e5f4f57756773b96f5708",
     "source_document": "docs/BRD/BRD-WS-12.md",
-    "source_fingerprint": "f34907371379ceef0ba2be38cd4c21deb7ab70f58b07c8c754c69fab9dc889b7",
-    "source_lines": "L714-L717",
-    "source_section": "32. Business Decisions (Locked) > BD-12-014"
+    "source_fingerprint": "0c8bc5bc0212878d6e112673627f9caf4cd19fec7fde1af6b1b08ad97ab5a438",
+    "source_lines": "L1882-L1957",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-12-014"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1957,41 +1961,36 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-12-015-AC001",
-      "given": "the applicable business context, actor, and input for Notification hỗ trợ Auto Translation",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-12-015-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-010"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BD-12-015-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Notification hỗ trợ Auto Translation",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BD-12-015-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-12-015",
+      "source_document": "docs/BRD/BRD-WS-12.md",
+      "source_fingerprint": "006bc1caa7993fe4763a7fb17ab33c5a636367120fad2efbbfe6207532ccad6d"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-12-015-AC001",
-        "BD-12-015-AC002"
+        "BD-12-015-AC002",
+        "BD-12-015-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-12-015-O001",
@@ -2016,9 +2015,9 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
     "source_context_heading": "BD-12-015",
     "source_context_sha256": "d8c15e95e28cbb26045a28dab5f8e5854054d95749ba4bada1c0e63aff637360",
     "source_document": "docs/BRD/BRD-WS-12.md",
-    "source_fingerprint": "1b34e4f08f33627a416e705f4f3bfa152e00f2b5b2732e52bd473f1c0fdd5262",
-    "source_lines": "L720-L723",
-    "source_section": "32. Business Decisions (Locked) > BD-12-015"
+    "source_fingerprint": "006bc1caa7993fe4763a7fb17ab33c5a636367120fad2efbbfe6207532ccad6d",
+    "source_lines": "L1959-L2038",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-12-015"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2043,28 +2042,34 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-12-016-AC001",
-      "given": "the applicable business context, actor, and input for Communication Policy hỗ trợ nhiều tầng Override",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "an override is accepted only for a policy marked override-eligible, with an explicit reason and the required approval; otherwise the inherited or system policy remains effective",
-      "verifies": [
-        "BD-12-016-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-12-016",
+      "source_document": "docs/BRD/BRD-WS-12.md",
+      "source_fingerprint": "17a3a1befffa16477af157be03dd573fac4cb072f5146452a2b99b45720267fd"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BD-12-016-AC001"
+        "BD-12-016-AC001",
+        "BD-12-016-AC002",
+        "BD-12-016-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-12-016-O001",
@@ -2087,9 +2092,9 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
     "source_context_heading": "BD-12-016",
     "source_context_sha256": "a446876a2b49a1f811741ec77bec14294a146201b4a61b0106f7da5a0e99a49c",
     "source_document": "docs/BRD/BRD-WS-12.md",
-    "source_fingerprint": "e96b9e50a2866e7d244ba24a869cea71f51196e9d2b31db5a93ff598656c893e",
-    "source_lines": "L726-L729",
-    "source_section": "32. Business Decisions (Locked) > BD-12-016"
+    "source_fingerprint": "17a3a1befffa16477af157be03dd573fac4cb072f5146452a2b99b45720267fd",
+    "source_lines": "L2040-L2115",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-12-016"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2114,41 +2119,34 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-12-017-AC001",
-      "given": "the applicable business context, actor, and input for Do Not Disturb hỗ trợ Emergency Notification",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-12-017-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BD-12-017-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Do Not Disturb hỗ trợ Emergency Notification",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BD-12-017-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-12-017",
+      "source_document": "docs/BRD/BRD-WS-12.md",
+      "source_fingerprint": "3f6c3c2985b882b1b0ee7ba85e948b4972509162042e306b7ccbec1dc256c2e6"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-12-017-AC001",
-        "BD-12-017-AC002"
+        "BD-12-017-AC002",
+        "BD-12-017-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-12-017-O001",
@@ -2171,9 +2169,9 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
     "source_context_heading": "BD-12-017",
     "source_context_sha256": "00a9d13ee530da2f67e3a8a52d5155a0be45c7be481094a34680c933c2a502de",
     "source_document": "docs/BRD/BRD-WS-12.md",
-    "source_fingerprint": "025804be15e2c104b4f6e1a6ecb1dc50bf58f77b6c2c28e574e5a89f81f82336",
-    "source_lines": "L732-L735",
-    "source_section": "32. Business Decisions (Locked) > BD-12-017"
+    "source_fingerprint": "3f6c3c2985b882b1b0ee7ba85e948b4972509162042e306b7ccbec1dc256c2e6",
+    "source_lines": "L2117-L2192",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-12-017"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2198,28 +2196,34 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-12-018-AC001",
-      "given": "the applicable business context, actor, and input for Communication Platform sử dụng Message Queue",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-12-018-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-12-018",
+      "source_document": "docs/BRD/BRD-WS-12.md",
+      "source_fingerprint": "2759219429f90cc5fc5de6a3c65a3dc42d4d0e1e61af1986646f2cebc90dfa80"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BD-12-018-AC001"
+        "BD-12-018-AC001",
+        "BD-12-018-AC002",
+        "BD-12-018-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-12-018-O001",
@@ -2242,9 +2246,9 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
     "source_context_heading": "30. Communication Queue",
     "source_context_sha256": "e435f3b49f43a3bbefdb75ec065376ca27bfb749584307d9c7f5237982eca9e3",
     "source_document": "docs/BRD/BRD-WS-12.md",
-    "source_fingerprint": "eec4c519fc880124c47187addcd7527b6a2f627c7bc96d3a2ddcec336c43f0dd",
-    "source_lines": "L738-L741",
-    "source_section": "32. Business Decisions (Locked) > BD-12-018"
+    "source_fingerprint": "2759219429f90cc5fc5de6a3c65a3dc42d4d0e1e61af1986646f2cebc90dfa80",
+    "source_lines": "L2194-L2269",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-12-018"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2269,41 +2273,36 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-12-019-AC001",
-      "given": "the applicable business context, actor, and input for Communication Platform sử dụng Channel Adapter Pattern",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-12-019-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-006"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BD-12-019-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Communication Platform sử dụng Channel Adapter Pattern",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BD-12-019-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-12-019",
+      "source_document": "docs/BRD/BRD-WS-12.md",
+      "source_fingerprint": "f6f680d7c03cd63024b77e4cc3c2bbe6cc49b763ad36ac7c7e0d0a6abf700795"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-12-019-AC001",
-        "BD-12-019-AC002"
+        "BD-12-019-AC002",
+        "BD-12-019-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-12-019-O001",
@@ -2328,9 +2327,9 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
     "source_context_heading": "BD-12-019",
     "source_context_sha256": "23cab54d784e337b404bb3b4bc814b813d226ea95cf4d66fc3404f1758290cb4",
     "source_document": "docs/BRD/BRD-WS-12.md",
-    "source_fingerprint": "fea6d41f72cee1d5d63ac519541232cb4aa95c5f7c68158070b08d5a7d0fa8b0",
-    "source_lines": "L744-L747",
-    "source_section": "32. Business Decisions (Locked) > BD-12-019"
+    "source_fingerprint": "f6f680d7c03cd63024b77e4cc3c2bbe6cc49b763ad36ac7c7e0d0a6abf700795",
+    "source_lines": "L2271-L2350",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-12-019"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2355,41 +2354,34 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-12-R002-AC001",
-      "given": "the applicable business context, actor, and input for Notification không được phép mất hoàn toàn",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the prohibited decision or state transition is absent, the attempted action has a deterministic rejection outcome, and no contradictory success is recorded",
-      "verifies": [
-        "BRD-WS-12-R002-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BRD-WS-12-R002-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Notification không được phép mất hoàn toàn",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BRD-WS-12-R002-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-12-R002",
+      "source_document": "docs/BRD/BRD-WS-12.md",
+      "source_fingerprint": "380b92e0cffdea70ee40f69b9622589a7dbba7450b4b261237a84d9054007999"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-12-R002-AC001",
-        "BRD-WS-12-R002-AC002"
+        "BRD-WS-12-R002-AC002",
+        "BRD-WS-12-R002-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-12-R002-O001",
@@ -2413,8 +2405,8 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
     "source_context_sha256": "90bd1cf3f3651bd46f29b7ceb59908692086b6ed82da7d9d14025f2b27d4222b",
     "source_document": "docs/BRD/BRD-WS-12.md",
     "source_fingerprint": "380b92e0cffdea70ee40f69b9622589a7dbba7450b4b261237a84d9054007999",
-    "source_lines": "L194",
-    "source_section": "7. Notification Channels"
+    "source_lines": "L2352-L2427",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-12-R002"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2439,9 +2431,20 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "NOT_APPLICABLE_FOR_V2.3",
+    "inference": false,
+    "requirement_id": "BRD-WS-12-R003",
+    "scope_status": "FUTURE"
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "NOT_APPLICABLE_FOR_V2.3",
+    "runtime_status": "NOT_APPLICABLE_FOR_V2.3"
+  },
   "acceptance_rationale": "Requirement is retained for a future baseline and is excluded from v2.3 delivery.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
   "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
   "acceptance_unit": false,
   "atomic_obligations": [],
@@ -2461,9 +2464,9 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
     "source_context_heading": "SOURCE_STATEMENT_FALLBACK",
     "source_context_sha256": "44a4748bf88809027391bc781b8c1b55a2e03112cc82ccbbd2b002f05ea312e4",
     "source_document": "docs/BRD/BRD-WS-12.md",
-    "source_fingerprint": "0c08408b016c87d8fa18f3b17511efb9c58300c2e823856416bcffa6813583ad",
-    "source_lines": "L232-L245",
-    "source_section": "9. Personal Inbox"
+    "source_fingerprint": "44a4748bf88809027391bc781b8c1b55a2e03112cc82ccbbd2b002f05ea312e4",
+    "source_lines": "L2429-L2487",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-12-R003"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2488,9 +2491,20 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "NOT_APPLICABLE_FOR_V2.3",
+    "inference": false,
+    "requirement_id": "BRD-WS-12-R004",
+    "scope_status": "FUTURE"
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "NOT_APPLICABLE_FOR_V2.3",
+    "runtime_status": "NOT_APPLICABLE_FOR_V2.3"
+  },
   "acceptance_rationale": "Requirement is retained for a future baseline and is excluded from v2.3 delivery.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
   "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
   "acceptance_unit": false,
   "atomic_obligations": [],
@@ -2510,9 +2524,9 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
     "source_context_heading": "SOURCE_STATEMENT_FALLBACK",
     "source_context_sha256": "9d58e0ef0e9e6d2953c444f43ec7dcc9a8f9502da6849818caae9d0487f996a1",
     "source_document": "docs/BRD/BRD-WS-12.md",
-    "source_fingerprint": "0908f88d6e022eb89e8e7b787e63cb9667b6ba0d7bbfb4cc460a39eb30b44601",
-    "source_lines": "L331-L350",
-    "source_section": "14. Localization"
+    "source_fingerprint": "9d58e0ef0e9e6d2953c444f43ec7dcc9a8f9502da6849818caae9d0487f996a1",
+    "source_lines": "L2489-L2547",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-12-R004"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2537,28 +2551,34 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-12-R005-AC001",
-      "given": "the applicable business context, actor, and input for Communication Log phải hỗ trợ: - Search",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-WS-12-R005-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-12-R005",
+      "source_document": "docs/BRD/BRD-WS-12.md",
+      "source_fingerprint": "dabd20555e16a650abca847cfa63977533172e20be49aa2d79fb5fd0aadf2ce9"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-WS-12-R005-AC001"
+        "BRD-WS-12-R005-AC001",
+        "BRD-WS-12-R005-AC002",
+        "BRD-WS-12-R005-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-12-R005-O001",
@@ -2582,8 +2602,8 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
     "source_context_sha256": "0ad7e46463be45b126392e9324ee62ad15c4a491921212c41ba9392e1b54ff59",
     "source_document": "docs/BRD/BRD-WS-12.md",
     "source_fingerprint": "dabd20555e16a650abca847cfa63977533172e20be49aa2d79fb5fd0aadf2ce9",
-    "source_lines": "L379-L381",
-    "source_section": "17. Communication Log"
+    "source_lines": "L2549-L2624",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-12-R005"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2608,28 +2628,34 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-12-R006-AC001",
-      "given": "the applicable business context, actor, and input for Communication Log phải hỗ trợ: - Export",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-WS-12-R006-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-12-R006",
+      "source_document": "docs/BRD/BRD-WS-12.md",
+      "source_fingerprint": "7a0e739a39fd05e619b9c424ba50d16a7ca30d5039e9f9ede5fca3e15de98e28"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-WS-12-R006-AC001"
+        "BRD-WS-12-R006-AC001",
+        "BRD-WS-12-R006-AC002",
+        "BRD-WS-12-R006-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-12-R006-O001",
@@ -2652,9 +2678,9 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
     "source_context_heading": "17. Communication Log",
     "source_context_sha256": "0ad7e46463be45b126392e9324ee62ad15c4a491921212c41ba9392e1b54ff59",
     "source_document": "docs/BRD/BRD-WS-12.md",
-    "source_fingerprint": "800aa61c3107c68bbaf7bf872cafb707b6dc47ada0b9257f16928c6a1f305496",
-    "source_lines": "L379-L382",
-    "source_section": "17. Communication Log"
+    "source_fingerprint": "7a0e739a39fd05e619b9c424ba50d16a7ca30d5039e9f9ede5fca3e15de98e28",
+    "source_lines": "L2626-L2701",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-12-R006"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2679,28 +2705,34 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-12-R007-AC001",
-      "given": "the applicable business context, actor, and input for Communication Log phải hỗ trợ: - Retention Policy",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-WS-12-R007-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-12-R007",
+      "source_document": "docs/BRD/BRD-WS-12.md",
+      "source_fingerprint": "b00402e49bd965585129487dd4094e8d5a403a93156c3d51c76b1ff508562a47"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-WS-12-R007-AC001"
+        "BRD-WS-12-R007-AC001",
+        "BRD-WS-12-R007-AC002",
+        "BRD-WS-12-R007-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-12-R007-O001",
@@ -2723,9 +2755,9 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
     "source_context_heading": "17. Communication Log",
     "source_context_sha256": "0ad7e46463be45b126392e9324ee62ad15c4a491921212c41ba9392e1b54ff59",
     "source_document": "docs/BRD/BRD-WS-12.md",
-    "source_fingerprint": "af13aae3545555568dfd8d3114b2e6f71acb7fa85188b5823b8f1741a144c33d",
-    "source_lines": "L379-L383",
-    "source_section": "17. Communication Log"
+    "source_fingerprint": "b00402e49bd965585129487dd4094e8d5a403a93156c3d51c76b1ff508562a47",
+    "source_lines": "L2703-L2778",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-12-R007"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2750,28 +2782,34 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-12-R008-AC001",
-      "given": "the applicable business context, actor, and input for Communication Log phải hỗ trợ: - Auto Rotation",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-WS-12-R008-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-12-R008",
+      "source_document": "docs/BRD/BRD-WS-12.md",
+      "source_fingerprint": "f6e2fad4caf80462ef32e76b4ae011c4f422ea2ded9efbcad82b5290e43d27c9"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-WS-12-R008-AC001"
+        "BRD-WS-12-R008-AC001",
+        "BRD-WS-12-R008-AC002",
+        "BRD-WS-12-R008-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-12-R008-O001",
@@ -2794,9 +2832,9 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
     "source_context_heading": "17. Communication Log",
     "source_context_sha256": "0ad7e46463be45b126392e9324ee62ad15c4a491921212c41ba9392e1b54ff59",
     "source_document": "docs/BRD/BRD-WS-12.md",
-    "source_fingerprint": "194353a1c29ddb4580ed390e23ecc09b08b000d07aaa0fe5d653f61e8b5b2492",
-    "source_lines": "L379-L384",
-    "source_section": "17. Communication Log"
+    "source_fingerprint": "f6e2fad4caf80462ef32e76b4ae011c4f422ea2ded9efbcad82b5290e43d27c9",
+    "source_lines": "L2780-L2855",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-12-R008"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2821,41 +2859,34 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-12-R009-AC001",
-      "given": "the applicable business context, actor, and input for Portal luôn hỗ trợ: - Read",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-WS-12-R009-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BRD-WS-12-R009-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Portal luôn hỗ trợ: - Read",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BRD-WS-12-R009-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-12-R009",
+      "source_document": "docs/BRD/BRD-WS-12.md",
+      "source_fingerprint": "03a08f9c4a9d4b19c7099efae2eb2cb496bcbb15f451e38e39589e113932730d"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-12-R009-AC001",
-        "BRD-WS-12-R009-AC002"
+        "BRD-WS-12-R009-AC002",
+        "BRD-WS-12-R009-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-12-R009-O001",
@@ -2879,8 +2910,8 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
     "source_context_sha256": "66144d8198f032f2a017e345faf5b173eba2ec28865bac31c3babb4f1680bc55",
     "source_document": "docs/BRD/BRD-WS-12.md",
     "source_fingerprint": "03a08f9c4a9d4b19c7099efae2eb2cb496bcbb15f451e38e39589e113932730d",
-    "source_lines": "L394-L396",
-    "source_section": "18. Read Receipt"
+    "source_lines": "L2857-L2932",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-12-R009"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2905,41 +2936,34 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-12-R010-AC001",
-      "given": "the applicable business context, actor, and input for Portal luôn hỗ trợ: - Read Time",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-WS-12-R010-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BRD-WS-12-R010-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Portal luôn hỗ trợ: - Read Time",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BRD-WS-12-R010-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-12-R010",
+      "source_document": "docs/BRD/BRD-WS-12.md",
+      "source_fingerprint": "3a41e3b665e0b75520a16de314d5439eeaebb9aab41d3a56667fd56f7bd48990"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-12-R010-AC001",
-        "BRD-WS-12-R010-AC002"
+        "BRD-WS-12-R010-AC002",
+        "BRD-WS-12-R010-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-12-R010-O001",
@@ -2962,9 +2986,9 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
     "source_context_heading": "18. Read Receipt",
     "source_context_sha256": "66144d8198f032f2a017e345faf5b173eba2ec28865bac31c3babb4f1680bc55",
     "source_document": "docs/BRD/BRD-WS-12.md",
-    "source_fingerprint": "92a37d4858b46fb53eac60713b744de4b5b31421833b3060c56532d5eb186ece",
-    "source_lines": "L394-L397",
-    "source_section": "18. Read Receipt"
+    "source_fingerprint": "3a41e3b665e0b75520a16de314d5439eeaebb9aab41d3a56667fd56f7bd48990",
+    "source_lines": "L2934-L3009",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-12-R010"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2989,9 +3013,20 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "NOT_APPLICABLE_FOR_V2.3",
+    "inference": false,
+    "requirement_id": "BRD-WS-12-R011",
+    "scope_status": "FUTURE"
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "NOT_APPLICABLE_FOR_V2.3",
+    "runtime_status": "NOT_APPLICABLE_FOR_V2.3"
+  },
   "acceptance_rationale": "Requirement is retained for a future baseline and is excluded from v2.3 delivery.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
   "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
   "acceptance_unit": false,
   "atomic_obligations": [],
@@ -3012,8 +3047,8 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
     "source_context_sha256": "e3f9e84cfbf079ac649ba3940d8533a365a99957f34d1966f0774ce33cde08eb",
     "source_document": "docs/BRD/BRD-WS-12.md",
     "source_fingerprint": "e5370aac32111e982d5d32911edcdd6e6e5b374933043a25f2965d5d738ae9b6",
-    "source_lines": "L409",
-    "source_section": "19. Notification Subscription"
+    "source_lines": "L3011-L3069",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-12-R011"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3038,9 +3073,20 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "NOT_APPLICABLE_FOR_V2.3",
+    "inference": false,
+    "requirement_id": "BRD-WS-12-R012",
+    "scope_status": "FUTURE"
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "NOT_APPLICABLE_FOR_V2.3",
+    "runtime_status": "NOT_APPLICABLE_FOR_V2.3"
+  },
   "acceptance_rationale": "Requirement is retained for a future baseline and is excluded from v2.3 delivery.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
   "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
   "acceptance_unit": false,
   "atomic_obligations": [],
@@ -3061,8 +3107,8 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
     "source_context_sha256": "7b2be4033a23acc02b77df0920035c0f413672f8454ad78d887b98b2241ea15b",
     "source_document": "docs/BRD/BRD-WS-12.md",
     "source_fingerprint": "fe5640329f0965d9c83c5021db145df925f82e2a1eb258b700c70b8244550df8",
-    "source_lines": "L465",
-    "source_section": "23. Real-time Communication"
+    "source_lines": "L3071-L3129",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-12-R012"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3087,9 +3133,20 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "NOT_APPLICABLE_FOR_V2.3",
+    "inference": false,
+    "requirement_id": "BRD-WS-12-R013",
+    "scope_status": "OUT_OF_SCOPE"
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "NOT_APPLICABLE_FOR_V2.3",
+    "runtime_status": "NOT_APPLICABLE_FOR_V2.3"
+  },
   "acceptance_rationale": "Requirement is explicitly outside the v2.3 product scope.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
   "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
   "acceptance_unit": false,
   "atomic_obligations": [],
@@ -3109,9 +3166,9 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
     "source_context_heading": "SOURCE_STATEMENT_FALLBACK",
     "source_context_sha256": "f109fce1d00a8982d4b9c7630eb502ac5f29e293f848b39b367c82fa532ade51",
     "source_document": "docs/BRD/BRD-WS-12.md",
-    "source_fingerprint": "7f7e1b6ec362444619a3f7b74e69c9d48be285e0eaa5921a8401e832c100ba91",
-    "source_lines": "L481-L490",
-    "source_section": "25. Attachment"
+    "source_fingerprint": "f109fce1d00a8982d4b9c7630eb502ac5f29e293f848b39b367c82fa532ade51",
+    "source_lines": "L3131-L3189",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-12-R013"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3136,41 +3193,34 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "PRIVACY_POLICY_CONFORMANCE_V1",
-      "criterion_id": "BRD-WS-12-R014-AC001",
-      "given": "a data action with actor, purpose, scope, consent where required, and the effective policies for Communication Consent tuân thủ GDPR",
-      "observable_evidence": "actor, purpose, scope, consent state where applicable, effective policy versions, allow or deny result, exposed data set, reason, and audit record",
-      "then": "the action proceeds only when Compliance Policy and Security Policy permit the stated purpose and scope, with the permitted data outcome and audit evidence aligned",
-      "verifies": [
-        "BRD-WS-12-R014-O001"
-      ],
-      "when": "privacy conformance and the protected data action are evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "PRIVACY_POLICY_DENIAL_V1",
-      "criterion_id": "BRD-WS-12-R014-AC002",
-      "given": "a data action whose purpose, consent, scope, or effective policy does not permit the requested data use under Communication Consent tuân thủ GDPR",
-      "observable_evidence": "actor, purpose, consent and scope, effective policies, denial reason, exposed-data comparison, and audit record",
-      "then": "the data action is denied, no additional protected data is exposed or changed, and the policy reason is audited",
-      "verifies": [
-        "BRD-WS-12-R014-O001"
-      ],
-      "when": "privacy conformance is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-12-R014",
+      "source_document": "docs/BRD/BRD-WS-12.md",
+      "source_fingerprint": "dc38bb4bdf9a9ae2a4efc51aed679ad659b0a249fe52a746576b7145211d29a0"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-12-R014-AC001",
-        "BRD-WS-12-R014-AC002"
+        "BRD-WS-12-R014-AC002",
+        "BRD-WS-12-R014-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-12-R014-O001",
@@ -3179,35 +3229,38 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
-      "criterion_references": [],
-      "rationale": "BRD-WS-12-R014 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BRD-WS-12-R014-AC003"
+      ],
+      "rationale": null
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-12-R014 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-12-R014 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-12-R014 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-12-R014 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "BRD-WS-12-R014 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BRD-WS-12-R014-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BRD-WS-12-R014-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-12-R014 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-12-R014 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -3226,8 +3279,8 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
     "source_context_sha256": "826e9f1b4bc5de78ba4f7cdfb668229fb27c4aa6592fded0e8825e3872eacde1",
     "source_document": "docs/BRD/BRD-WS-12.md",
     "source_fingerprint": "dc38bb4bdf9a9ae2a4efc51aed679ad659b0a249fe52a746576b7145211d29a0",
-    "source_lines": "L568",
-    "source_section": "29. Communication Consent"
+    "source_lines": "L3191-L3301",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-12-R014"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3252,28 +3305,34 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "EP-12-001-AC001",
-      "given": "the applicable business context, actor, and input for Communication Platform độc lập với Business Domain",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "each named business concept has a distinct identity, owner or reference, and lifecycle evidence; an action on one does not implicitly act on the other",
-      "verifies": [
-        "EP-12-001-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "EP-12-001",
+      "source_document": "docs/BRD/BRD-WS-12.md",
+      "source_fingerprint": "890b1cfe2f2d9b98f45fe852af25e5bacf18b5c1e95698131241c939256cea2a"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "EP-12-001-AC001"
+        "EP-12-001-AC001",
+        "EP-12-001-AC002",
+        "EP-12-001-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "EP-12-001-O001",
@@ -3296,9 +3355,9 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
     "source_context_heading": "EP-12-001",
     "source_context_sha256": "6ed33c1419fb6d3ace0c68c57d98ec5c45d5b24e0852e263456cf46c1c8cb578",
     "source_document": "docs/BRD/BRD-WS-12.md",
-    "source_fingerprint": "55f272bf9d277b251bcb74de4365afa549e1106cfa729bff3059be8b3754cf7a",
-    "source_lines": "L752-L755",
-    "source_section": "33. Enterprise Design Principles > EP-12-001"
+    "source_fingerprint": "890b1cfe2f2d9b98f45fe852af25e5bacf18b5c1e95698131241c939256cea2a",
+    "source_lines": "L3303-L3378",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > EP-12-001"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3323,41 +3382,34 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "EP-12-002-AC001",
-      "given": "the applicable business context, actor, and input for Business Domain chỉ Publish Business Event",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "EP-12-002-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "EP-12-002-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Business Domain chỉ Publish Business Event",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "EP-12-002-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "EP-12-002",
+      "source_document": "docs/BRD/BRD-WS-12.md",
+      "source_fingerprint": "7b8371f27605d2da6d97708c9db7fae59debc25c0309d59d4bbc00c595d226b8"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "EP-12-002-AC001",
-        "EP-12-002-AC002"
+        "EP-12-002-AC002",
+        "EP-12-002-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "EP-12-002-O001",
@@ -3380,9 +3432,9 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
     "source_context_heading": "EP-12-002",
     "source_context_sha256": "04703b7655d311f42797f1039521a7be85785506f66a8e8eb97d02422469d37f",
     "source_document": "docs/BRD/BRD-WS-12.md",
-    "source_fingerprint": "992001c742dc1a0365e4a25a558cc4e0cbe8d0803575b517a1e30ed386953992",
-    "source_lines": "L758-L761",
-    "source_section": "33. Enterprise Design Principles > EP-12-002"
+    "source_fingerprint": "7b8371f27605d2da6d97708c9db7fae59debc25c0309d59d4bbc00c595d226b8",
+    "source_lines": "L3380-L3455",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > EP-12-002"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3407,41 +3459,38 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "EP-12-003-AC001",
-      "given": "the applicable business context, actor, and input for Communication Matrix quyết định toàn bộ hành vi gửi Notification",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "EP-12-003-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "EP-12-003-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Communication Matrix quyết định toàn bộ hành vi gửi Notification",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "EP-12-003-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "approved_semantic_completion_selection": {
+        "decision_id": "P2C-SC-C1-DEC-017",
+        "option_id": "OPT-AST"
+      },
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "EP-12-003",
+      "source_document": "docs/BRD/BRD-WS-12.md",
+      "source_fingerprint": "e71995f4da332465a86fb1b978771c0a0825ba87548f52a7e07924a6d655f03b"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "EP-12-003-AC001",
-        "EP-12-003-AC002"
+        "EP-12-003-AC002",
+        "EP-12-003-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "EP-12-003-O001",
@@ -3464,9 +3513,9 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
     "source_context_heading": "5. Communication Matrix",
     "source_context_sha256": "2a489cfe1633eb750fa40b19db53add3f859b2a074404f00e32c7fe48f8024d5",
     "source_document": "docs/BRD/BRD-WS-12.md",
-    "source_fingerprint": "fdf33b8f7e1455ba7ca68c0d93a34c7bd99af4788722ffcdfa1e28fcbf7ae855",
-    "source_lines": "L764-L767",
-    "source_section": "33. Enterprise Design Principles > EP-12-003"
+    "source_fingerprint": "e71995f4da332465a86fb1b978771c0a0825ba87548f52a7e07924a6d655f03b",
+    "source_lines": "L3457-L3536",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > EP-12-003"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3491,41 +3540,34 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "EP-12-004-AC001",
-      "given": "the applicable business context, actor, and input for Personal Inbox là nơi lưu giữ Notification lâu dài",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "EP-12-004-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "EP-12-004-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Personal Inbox là nơi lưu giữ Notification lâu dài",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "EP-12-004-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "EP-12-004",
+      "source_document": "docs/BRD/BRD-WS-12.md",
+      "source_fingerprint": "e4549bda7d0be0c9caca1a47150e4996b0e7fb9146fbcac942ef1fff1cf06087"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "EP-12-004-AC001",
-        "EP-12-004-AC002"
+        "EP-12-004-AC002",
+        "EP-12-004-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "EP-12-004-O001",
@@ -3548,9 +3590,9 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
     "source_context_heading": "EP-12-004",
     "source_context_sha256": "8f62c0f13cd39a7d358a2e3851339f4e90130923b641d2f24285b51a669d46d6",
     "source_document": "docs/BRD/BRD-WS-12.md",
-    "source_fingerprint": "fa3c5793657226f9a15248a09cddb40df0ff602fdcf5e9397be0767f21ecf012",
-    "source_lines": "L770-L773",
-    "source_section": "33. Enterprise Design Principles > EP-12-004"
+    "source_fingerprint": "e4549bda7d0be0c9caca1a47150e4996b0e7fb9146fbcac942ef1fff1cf06087",
+    "source_lines": "L3538-L3613",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > EP-12-004"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3575,41 +3617,36 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "EP-12-005-AC001",
-      "given": "the applicable business context, actor, and input for Notification luôn hỗ trợ Localization và Auto Translation",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "EP-12-005-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-010"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "EP-12-005-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Notification luôn hỗ trợ Localization và Auto Translation",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "EP-12-005-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "EP-12-005",
+      "source_document": "docs/BRD/BRD-WS-12.md",
+      "source_fingerprint": "ccc5e017e918bac9135cf8e6ef5b9911c819f94ddbb48bdd75c5e43ca6a3f6d0"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "EP-12-005-AC001",
-        "EP-12-005-AC002"
+        "EP-12-005-AC002",
+        "EP-12-005-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "EP-12-005-O001",
@@ -3634,9 +3671,9 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
     "source_context_heading": "EP-12-005",
     "source_context_sha256": "d5f8b6b894c8df7f025f64804d8562aec03287916d90f76442acb806848bb7c6",
     "source_document": "docs/BRD/BRD-WS-12.md",
-    "source_fingerprint": "5a07e659932c14e0c4a2f067f806c173fffd113b4f76052f8e0d97b2d1fdf28b",
-    "source_lines": "L776-L779",
-    "source_section": "33. Enterprise Design Principles > EP-12-005"
+    "source_fingerprint": "ccc5e017e918bac9135cf8e6ef5b9911c819f94ddbb48bdd75c5e43ca6a3f6d0",
+    "source_lines": "L3615-L3694",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > EP-12-005"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3657,36 +3694,44 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
 <!-- YSIM:REQUIREMENT END -->
 
 <!-- YSIM:REQUIREMENT BEGIN -->
-### EP-12-006 — Communication Platform hỗ trợ mở rộng Channel mà không thay đổi Business Logic
+### EP-12-006 — Communication Channel or Adapter mới phải có thể được bổ sung mà không sửa domain business logic…
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "EP-12-006-AC001",
-      "given": "the applicable business context, actor, and input for Communication Platform hỗ trợ mở rộng Channel mà không thay đổi Business Logic",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "EP-12-006-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "V23-P2C-ACCEPTANCE-MAPPING-C3"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "EP-12-006",
+      "source_document": "docs/BRD/BRD-WS-12.md",
+      "source_fingerprint": "efe2924e5ee7f5a1b2ec64a15c47421364a437c8593706ce6c033e96c4c586fc"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "EP-12-006-AC001"
+        "EP-12-006-AC001",
+        "EP-12-006-AC002",
+        "EP-12-006-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "EP-12-006-O001",
-      "obligation_text": "Communication Platform hỗ trợ mở rộng Channel mà không thay đổi Business Logic"
+      "obligation_text": "Communication Channel or Adapter mới phải có thể được bổ sung mà không sửa domain business logic và phải tuân thủ governed configuration, credential, approval, security, retry và audit contracts"
     }
   ],
   "criticality_applicability": null,
@@ -3694,20 +3739,28 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
   "delivery_commitment": "COMMITTED_FOR_V2.3",
   "implementation_unit": true,
   "lifecycle": "V2.3_DRAFT",
-  "normative_statement": "Communication Platform hỗ trợ mở rộng Channel mà không thay đổi Business Logic.",
+  "normative_statement": "Communication Channel or Adapter mới phải có thể được bổ sung mà không sửa domain business logic và phải tuân thủ governed configuration, credential, approval, security, retry và audit contracts.",
   "provenance": {
-    "approved_decisions": [],
+    "approved_decisions": [
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
+    ],
     "identity_origin": "PRESERVED_STABLE_ID",
     "original_identity": "EP-12-006",
+    "phase_2c_c3_actions": [
+      "C3_APPROVED_SEMANTIC_DIRECTIVE"
+    ],
     "previous_temporary_key": null,
     "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
     "source_baseline": "v2.2",
     "source_context_heading": "EP-12-006",
     "source_context_sha256": "a1a80a93c20b0452764c32a8e8b16b11f7cbb37f579027ef33ac5abc81f9bde5",
     "source_document": "docs/BRD/BRD-WS-12.md",
-    "source_fingerprint": "d168f3ed2341ffd0ea3416d35adf67ca1efc1da408f946bf5744c7cfcde97744",
-    "source_lines": "L782-L785",
-    "source_section": "33. Enterprise Design Principles > EP-12-006"
+    "source_fingerprint": "efe2924e5ee7f5a1b2ec64a15c47421364a437c8593706ce6c033e96c4c586fc",
+    "source_fingerprint_before_c3": "d168f3ed2341ffd0ea3416d35adf67ca1efc1da408f946bf5744c7cfcde97744",
+    "source_lines": "L3696-L3781",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > EP-12-006"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3721,56 +3774,53 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
   "scope_coverage_unit": true,
   "scope_status": "V2.3_ACTIVE",
   "stable_id": "EP-12-006",
-  "title": "Communication Platform hỗ trợ mở rộng Channel mà không thay đổi Business Logic",
+  "title": "Communication Channel or Adapter mới phải có thể được bổ sung mà không sửa domain business logic…",
   "verification_criticality": "NORMAL"
 }
 ```
 <!-- YSIM:REQUIREMENT END -->
 
 <!-- YSIM:REQUIREMENT BEGIN -->
-### EP-12-007 — Message Queue và Channel Adapter là nền tảng mở rộng Performance
+### EP-12-007 — Message Queue và Channel Adapter phải đáp ứng approved service tier, performance budget, SLO và …
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DESIGN_CONFORMANCE_OBSERVATION_V1",
-      "criterion_id": "EP-12-007-AC001",
-      "given": "a v2.3 capability, configuration, or design change governed by Message Queue và Channel Adapter là nền tảng mở rộng Performance",
-      "observable_evidence": "conformance decision, requirement-to-design trace, applicable configuration evidence, and recorded boundary violations",
-      "then": "the conformance review identifies the applicable principle, links it to the governed requirement and design boundary, and records no prohibited coupling",
-      "verifies": [
-        "EP-12-007-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-006",
+        "P2-DEC-009",
+        "V23-P2C-ACCEPTANCE-MAPPING-C3"
       ],
-      "when": "conformance is reviewed before the change is accepted"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "DESIGN_CONFORMANCE_FAILURE_V1",
-      "criterion_id": "EP-12-007-AC002",
-      "given": "a proposed change with missing traceability or a boundary violation under Message Queue và Channel Adapter là nền tảng mở rộng Performance",
-      "observable_evidence": "conformance result, violated principle, missing trace or configuration evidence, and review record",
-      "then": "the change receives a non-conforming decision identifying the missing trace or violated boundary and is not accepted as conforming",
-      "verifies": [
-        "EP-12-007-O001"
-      ],
-      "when": "design conformance is reviewed"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "EP-12-007",
+      "source_document": "docs/BRD/BRD-WS-12.md",
+      "source_fingerprint": "1c08d6ac5478e1546c37a4465473dae2147718d534a760a7df6ac0adb2d856bb"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "EP-12-007-AC001",
-        "EP-12-007-AC002"
+        "EP-12-007-AC002",
+        "EP-12-007-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "EP-12-007-O001",
-      "obligation_text": "Message Queue và Channel Adapter là nền tảng mở rộng Performance"
+      "obligation_text": "Message Queue và Channel Adapter phải đáp ứng approved service tier, performance budget, SLO và channel-delivery contract, bao gồm capacity scaling, backpressure, observable delivery và failure isolation"
     }
   ],
   "criticality_applicability": null,
@@ -3778,23 +3828,30 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
   "delivery_commitment": "COMMITTED_FOR_V2.3",
   "implementation_unit": true,
   "lifecycle": "V2.3_DRAFT",
-  "normative_statement": "Message Queue và Channel Adapter là nền tảng mở rộng Performance.",
+  "normative_statement": "Message Queue và Channel Adapter phải đáp ứng approved service tier, performance budget, SLO và channel-delivery contract, bao gồm capacity scaling, backpressure, observable delivery và failure isolation.",
   "provenance": {
     "approved_decisions": [
       "P2-DEC-006",
-      "P2-DEC-009"
+      "P2-DEC-009",
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
     ],
     "identity_origin": "PRESERVED_STABLE_ID",
     "original_identity": "EP-12-007",
+    "phase_2c_c3_actions": [
+      "C3_APPROVED_SEMANTIC_DIRECTIVE"
+    ],
     "previous_temporary_key": null,
     "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
     "source_baseline": "v2.2",
     "source_context_heading": "EP-12-007",
     "source_context_sha256": "f3dd7358382f7eb0d5bb37add5b6857ade11d9f5edbb4c20a36e0bdf875fecad",
     "source_document": "docs/BRD/BRD-WS-12.md",
-    "source_fingerprint": "7ce50d9ee2f5e107a6ec83c678b58d50f3102504692cad923537e5d5b1847168",
-    "source_lines": "L788-L791",
-    "source_section": "33. Enterprise Design Principles > EP-12-007"
+    "source_fingerprint": "1c08d6ac5478e1546c37a4465473dae2147718d534a760a7df6ac0adb2d856bb",
+    "source_fingerprint_before_c3": "7ce50d9ee2f5e107a6ec83c678b58d50f3102504692cad923537e5d5b1847168",
+    "source_lines": "L3783-L3872",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > EP-12-007"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3808,7 +3865,7 @@ Workshop này hoàn thiện toàn bộ Communication Platform Domain của YSim.
   "scope_coverage_unit": true,
   "scope_status": "V2.3_ACTIVE",
   "stable_id": "EP-12-007",
-  "title": "Message Queue và Channel Adapter là nền tảng mở rộng Performance",
+  "title": "Message Queue và Channel Adapter phải đáp ứng approved service tier, performance budget, SLO và …",
   "verification_criticality": "HIGH"
 }
 ```

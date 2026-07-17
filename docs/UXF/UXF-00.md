@@ -1,13 +1,20 @@
 ---
 document_code: "UXF-00"
+document_id: "UXF-00"
 title: "User Experience Foundation Overview"
-product_baseline: "2.3"
-document_revision: "2.3.0-draft.1"
+version: "2.3.0-draft.3"
+document_revision: "2.3.0-draft.3"
+status: "V2.3_DRAFT"
 lifecycle_status: "V2.3_DRAFT"
 language: "en"
+baseline: "2.3"
+product_baseline: "2.3"
+source_lineage: "v2.2 + approved Phase 1/2A/2B + accepted Acceptance Model C1 + accepted Mapping C3"
 source_baseline: "v2.2"
+last_reviewed_date: "2026-07-15"
+last_remediated_on: "2026-07-17"
+applicable_scope: "V2.3_ACTIVE_AND_RETAINED_SCOPE_RECORDS"
 generated_registry_role: "UXF_CANONICAL_SOURCE"
-last_remediated_on: "2026-07-15"
 ---
 ## v2.3 requirement authority
 
@@ -692,7 +699,7 @@ This document should be read together with:
 
 <!-- YSIM:PHASE_2C CANONICAL APPENDIX BEGIN -->
 
-## v2.3 normative requirement appendix
+## v2.3 normative requirement appendix — C6-R1
 
 
 
@@ -701,41 +708,34 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-00-R001-AC001",
-      "given": "a user in the applicable channel and context for Every Storefront must be connected to business capabilities",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the rendered output exposes every required content element and action, keeps prohibited content absent, and makes the applicable confirmation or fallback directly observable",
-      "verifies": [
-        "UXF-00-R001-O001"
-      ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
-      "criterion_id": "UXF-00-R001-AC002",
-      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for Every Storefront must be connected to business capabilities",
-      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
-      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
-      "verifies": [
-        "UXF-00-R001-O001"
-      ],
-      "when": "the affected state is rendered or action is requested"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-00-R001",
+      "source_document": "docs/UXF/UXF-00.md",
+      "source_fingerprint": "92d1f71588a560b49a45176ad1114fd76b9b1dd1e1ecb9286de6f41127f98a8d"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-00-R001-AC001",
-        "UXF-00-R001-AC002"
+        "UXF-00-R001-AC002",
+        "UXF-00-R001-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-00-R001-O001",
@@ -759,8 +759,8 @@ This document should be read together with:
     "source_context_sha256": "56080338734e3d9860464e1deffabe913bece6ac6e254fcf2b4e4f26b95f508a",
     "source_document": "docs/UXF/UXF-00.md",
     "source_fingerprint": "92d1f71588a560b49a45176ad1114fd76b9b1dd1e1ecb9286de6f41127f98a8d",
-    "source_lines": "L248",
-    "source_section": "7. Business Binding Principle"
+    "source_lines": "L706-L784",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-00-R001"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -768,7 +768,10 @@ This document should be read together with:
     "aliases": [],
     "coverage_mode": null,
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "UXF-00-R031"
+    ]
   },
   "requirement_type": "UX_REQUIREMENT",
   "scope_coverage_unit": true,
@@ -785,41 +788,34 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-00-R002-AC001",
-      "given": "a user in the applicable channel and context for Without valid business bindings a Storefront **cannot be published**",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the rendered output exposes every required content element and action, keeps prohibited content absent, and makes the applicable confirmation or fallback directly observable",
-      "verifies": [
-        "UXF-00-R002-O001"
-      ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
-      "criterion_id": "UXF-00-R002-AC002",
-      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for Without valid business bindings a Storefront **cannot be published**",
-      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
-      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
-      "verifies": [
-        "UXF-00-R002-O001"
-      ],
-      "when": "the affected state is rendered or action is requested"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-00-R002",
+      "source_document": "docs/UXF/UXF-00.md",
+      "source_fingerprint": "0b75aafa06ab5d1b39d4b0ccc17488c6729743e32c0f8497163caba57f165d32"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-00-R002-AC001",
-        "UXF-00-R002-AC002"
+        "UXF-00-R002-AC002",
+        "UXF-00-R002-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-00-R002-O001",
@@ -843,8 +839,8 @@ This document should be read together with:
     "source_context_sha256": "56080338734e3d9860464e1deffabe913bece6ac6e254fcf2b4e4f26b95f508a",
     "source_document": "docs/UXF/UXF-00.md",
     "source_fingerprint": "0b75aafa06ab5d1b39d4b0ccc17488c6729743e32c0f8497163caba57f165d32",
-    "source_lines": "L262",
-    "source_section": "7. Business Binding Principle"
+    "source_lines": "L786-L864",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-00-R002"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -852,7 +848,10 @@ This document should be read together with:
     "aliases": [],
     "coverage_mode": null,
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "UXF-00-R031"
+    ]
   },
   "requirement_type": "UX_REQUIREMENT",
   "scope_coverage_unit": true,
@@ -869,41 +868,36 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-00-R003-AC001",
-      "given": "a user in the applicable channel and context for Storefronts never communicate with suppliers directly",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the prohibited content or action is absent from both the rendered state and its customer-facing payload, while the permitted journey remains usable",
-      "verifies": [
-        "UXF-00-R003-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-007"
       ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
-      "criterion_id": "UXF-00-R003-AC002",
-      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for Storefronts never communicate with suppliers directly",
-      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
-      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
-      "verifies": [
-        "UXF-00-R003-O001"
-      ],
-      "when": "the affected state is rendered or action is requested"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-00-R003",
+      "source_document": "docs/UXF/UXF-00.md",
+      "source_fingerprint": "37167209c7832f685b7dfbf2d9f00dadd658e9d6d31f30e8f22eb04bad29ee00"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-00-R003-AC001",
-        "UXF-00-R003-AC002"
+        "UXF-00-R003-AC002",
+        "UXF-00-R003-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-00-R003-O001",
@@ -929,8 +923,8 @@ This document should be read together with:
     "source_context_sha256": "4f0bd9a2fc1905a2811a2245e10e7624900db78efcdb96c9c2294c049d8d9679",
     "source_document": "docs/UXF/UXF-00.md",
     "source_fingerprint": "37167209c7832f685b7dfbf2d9f00dadd658e9d6d31f30e8f22eb04bad29ee00",
-    "source_lines": "L270",
-    "source_section": "8. Supplier Isolation Principle"
+    "source_lines": "L866-L948",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-00-R003"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -938,7 +932,10 @@ This document should be read together with:
     "aliases": [],
     "coverage_mode": null,
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "UXF-00-R031"
+    ]
   },
   "requirement_type": "UX_REQUIREMENT",
   "scope_coverage_unit": true,
@@ -955,9 +952,20 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "NOT_APPLICABLE_FOR_V2.3",
+    "inference": false,
+    "requirement_id": "UXF-00-R004",
+    "scope_status": "FUTURE"
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "NOT_APPLICABLE_FOR_V2.3",
+    "runtime_status": "NOT_APPLICABLE_FOR_V2.3"
+  },
   "acceptance_rationale": "Requirement is retained for a future baseline and is excluded from v2.3 delivery.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
   "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
   "acceptance_unit": false,
   "atomic_obligations": [],
@@ -980,8 +988,8 @@ This document should be read together with:
     "source_context_sha256": "4f0bd9a2fc1905a2811a2245e10e7624900db78efcdb96c9c2294c049d8d9679",
     "source_document": "docs/UXF/UXF-00.md",
     "source_fingerprint": "012189671efdafabfc3a1b921170acd4d693c649e86cbd8ef1b2cfb336ea8ad9",
-    "source_lines": "L304",
-    "source_section": "8. Supplier Isolation Principle"
+    "source_lines": "L950-L1013",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-00-R004"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -989,7 +997,10 @@ This document should be read together with:
     "aliases": [],
     "coverage_mode": null,
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "UXF-00-R031"
+    ]
   },
   "requirement_type": "SCOPE_CONSTRAINT",
   "scope_coverage_unit": false,
@@ -1006,41 +1017,36 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-00-R005-AC001",
-      "given": "a user in the applicable channel and context for Supplier products are never exposed to: - Storefront",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the prohibited content or action is absent from both the rendered state and its customer-facing payload, while the permitted journey remains usable",
-      "verifies": [
-        "UXF-00-R005-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-007"
       ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
-      "criterion_id": "UXF-00-R005-AC002",
-      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for Supplier products are never exposed to: - Storefront",
-      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
-      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
-      "verifies": [
-        "UXF-00-R005-O001"
-      ],
-      "when": "the affected state is rendered or action is requested"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-00-R005",
+      "source_document": "docs/UXF/UXF-00.md",
+      "source_fingerprint": "b2f5844d197139710bc0e03bbc90b9f878e62ff8c3620951bbf8a6a9e6eff722"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-00-R005-AC001",
-        "UXF-00-R005-AC002"
+        "UXF-00-R005-AC002",
+        "UXF-00-R005-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-00-R005-O001",
@@ -1066,8 +1072,8 @@ This document should be read together with:
     "source_context_sha256": "b37a243bf303f8bdba0991929cc073ad86c42ae0e4fcf819802c90fd8baed315",
     "source_document": "docs/UXF/UXF-00.md",
     "source_fingerprint": "b2f5844d197139710bc0e03bbc90b9f878e62ff8c3620951bbf8a6a9e6eff722",
-    "source_lines": "L345-L347",
-    "source_section": "10. Product Principle"
+    "source_lines": "L1015-L1097",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-00-R005"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1075,7 +1081,10 @@ This document should be read together with:
     "aliases": [],
     "coverage_mode": null,
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "UXF-00-R031"
+    ]
   },
   "requirement_type": "UX_REQUIREMENT",
   "scope_coverage_unit": true,
@@ -1092,41 +1101,36 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-00-R006-AC001",
-      "given": "a user in the applicable channel and context for Supplier products are never exposed to: - Portal",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the prohibited content or action is absent from both the rendered state and its customer-facing payload, while the permitted journey remains usable",
-      "verifies": [
-        "UXF-00-R006-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-007"
       ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
-      "criterion_id": "UXF-00-R006-AC002",
-      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for Supplier products are never exposed to: - Portal",
-      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
-      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
-      "verifies": [
-        "UXF-00-R006-O001"
-      ],
-      "when": "the affected state is rendered or action is requested"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-00-R006",
+      "source_document": "docs/UXF/UXF-00.md",
+      "source_fingerprint": "8e141203b0a47da600ecea30933256281f6e5d43147cbd987c187f6d4f25b329"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-00-R006-AC001",
-        "UXF-00-R006-AC002"
+        "UXF-00-R006-AC002",
+        "UXF-00-R006-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-00-R006-O001",
@@ -1151,9 +1155,9 @@ This document should be read together with:
     "source_context_heading": "10. Product Principle",
     "source_context_sha256": "b37a243bf303f8bdba0991929cc073ad86c42ae0e4fcf819802c90fd8baed315",
     "source_document": "docs/UXF/UXF-00.md",
-    "source_fingerprint": "7027a695ddd5d9408202fd923bf8ee487659aa7dd35054f6014276be6c8200d1",
-    "source_lines": "L345-L348",
-    "source_section": "10. Product Principle"
+    "source_fingerprint": "8e141203b0a47da600ecea30933256281f6e5d43147cbd987c187f6d4f25b329",
+    "source_lines": "L1099-L1181",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-00-R006"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1161,7 +1165,10 @@ This document should be read together with:
     "aliases": [],
     "coverage_mode": null,
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "UXF-00-R031"
+    ]
   },
   "requirement_type": "UX_REQUIREMENT",
   "scope_coverage_unit": true,
@@ -1178,41 +1185,37 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-00-R007-AC001",
-      "given": "a user in the applicable channel and context for Supplier products are never exposed to: - Customer",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the prohibited content or action is absent from both the rendered state and its customer-facing payload, while the permitted journey remains usable",
-      "verifies": [
-        "UXF-00-R007-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-007",
+        "P2-DEC-008"
       ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
-      "criterion_id": "UXF-00-R007-AC002",
-      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for Supplier products are never exposed to: - Customer",
-      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
-      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
-      "verifies": [
-        "UXF-00-R007-O001"
-      ],
-      "when": "the affected state is rendered or action is requested"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-00-R007",
+      "source_document": "docs/UXF/UXF-00.md",
+      "source_fingerprint": "fdc72831c7e4038f97728192b7c087d6768bcae29b46c9e6fe5a5798e64fa247"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-00-R007-AC001",
-        "UXF-00-R007-AC002"
+        "UXF-00-R007-AC002",
+        "UXF-00-R007-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-00-R007-O001",
@@ -1238,9 +1241,9 @@ This document should be read together with:
     "source_context_heading": "10. Product Principle",
     "source_context_sha256": "b37a243bf303f8bdba0991929cc073ad86c42ae0e4fcf819802c90fd8baed315",
     "source_document": "docs/UXF/UXF-00.md",
-    "source_fingerprint": "4760a88ae1d756ffb3a60c64b1c9c055e5ce81b95b6bebc6564099991f465a16",
-    "source_lines": "L345-L349",
-    "source_section": "10. Product Principle"
+    "source_fingerprint": "fdc72831c7e4038f97728192b7c087d6768bcae29b46c9e6fe5a5798e64fa247",
+    "source_lines": "L1183-L1267",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-00-R007"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1248,7 +1251,10 @@ This document should be read together with:
     "aliases": [],
     "coverage_mode": null,
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "UXF-00-R031"
+    ]
   },
   "requirement_type": "UX_REQUIREMENT",
   "scope_coverage_unit": true,
@@ -1265,41 +1271,36 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-00-R008-AC001",
-      "given": "a user in the applicable channel and context for Supplier products are never exposed to: - Agency",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the prohibited content or action is absent from both the rendered state and its customer-facing payload, while the permitted journey remains usable",
-      "verifies": [
-        "UXF-00-R008-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-007"
       ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
-      "criterion_id": "UXF-00-R008-AC002",
-      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for Supplier products are never exposed to: - Agency",
-      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
-      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
-      "verifies": [
-        "UXF-00-R008-O001"
-      ],
-      "when": "the affected state is rendered or action is requested"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-00-R008",
+      "source_document": "docs/UXF/UXF-00.md",
+      "source_fingerprint": "541aef09996088e61faf7178231daef69d5352708330dceaf47cb1f09b6f7f68"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-00-R008-AC001",
-        "UXF-00-R008-AC002"
+        "UXF-00-R008-AC002",
+        "UXF-00-R008-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-00-R008-O001",
@@ -1324,9 +1325,9 @@ This document should be read together with:
     "source_context_heading": "10. Product Principle",
     "source_context_sha256": "b37a243bf303f8bdba0991929cc073ad86c42ae0e4fcf819802c90fd8baed315",
     "source_document": "docs/UXF/UXF-00.md",
-    "source_fingerprint": "1d63b397beb70b24bbb22f2d6f7a00274431aca0fc1b79258a45612eef4636b5",
-    "source_lines": "L345-L350",
-    "source_section": "10. Product Principle"
+    "source_fingerprint": "541aef09996088e61faf7178231daef69d5352708330dceaf47cb1f09b6f7f68",
+    "source_lines": "L1269-L1351",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-00-R008"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1334,7 +1335,10 @@ This document should be read together with:
     "aliases": [],
     "coverage_mode": null,
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "UXF-00-R031"
+    ]
   },
   "requirement_type": "UX_REQUIREMENT",
   "scope_coverage_unit": true,
@@ -1351,41 +1355,36 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-00-R009-AC001",
-      "given": "a user in the applicable channel and context for Supplier products are never exposed to: - Reseller",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the prohibited content or action is absent from both the rendered state and its customer-facing payload, while the permitted journey remains usable",
-      "verifies": [
-        "UXF-00-R009-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-007"
       ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
-      "criterion_id": "UXF-00-R009-AC002",
-      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for Supplier products are never exposed to: - Reseller",
-      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
-      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
-      "verifies": [
-        "UXF-00-R009-O001"
-      ],
-      "when": "the affected state is rendered or action is requested"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-00-R009",
+      "source_document": "docs/UXF/UXF-00.md",
+      "source_fingerprint": "af434f8496d265fadd59ea1bac17adf49abca75a25b4ecce5f0a01f5057b9bdc"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-00-R009-AC001",
-        "UXF-00-R009-AC002"
+        "UXF-00-R009-AC002",
+        "UXF-00-R009-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-00-R009-O001",
@@ -1410,9 +1409,9 @@ This document should be read together with:
     "source_context_heading": "10. Product Principle",
     "source_context_sha256": "b37a243bf303f8bdba0991929cc073ad86c42ae0e4fcf819802c90fd8baed315",
     "source_document": "docs/UXF/UXF-00.md",
-    "source_fingerprint": "3473749dff7b3ebeb4ae0019d80f6fc51ac2cae3b90a2067bd3b5d293115ada5",
-    "source_lines": "L345-L351",
-    "source_section": "10. Product Principle"
+    "source_fingerprint": "af434f8496d265fadd59ea1bac17adf49abca75a25b4ecce5f0a01f5057b9bdc",
+    "source_lines": "L1353-L1435",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-00-R009"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1420,7 +1419,10 @@ This document should be read together with:
     "aliases": [],
     "coverage_mode": null,
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "UXF-00-R031"
+    ]
   },
   "requirement_type": "UX_REQUIREMENT",
   "scope_coverage_unit": true,
@@ -1437,41 +1439,34 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-00-R010-AC001",
-      "given": "a user in the applicable channel and context for Each level only overrides the required configuration",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the rendered output exposes every required content element and action, keeps prohibited content absent, and makes the applicable confirmation or fallback directly observable",
-      "verifies": [
-        "UXF-00-R010-O001"
-      ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
-      "criterion_id": "UXF-00-R010-AC002",
-      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for Each level only overrides the required configuration",
-      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
-      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
-      "verifies": [
-        "UXF-00-R010-O001"
-      ],
-      "when": "the affected state is rendered or action is requested"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-00-R010",
+      "source_document": "docs/UXF/UXF-00.md",
+      "source_fingerprint": "4e8368f5affb418a03d8a7bf14c437aa1786deb3ac46c145f4c3542a5043a653"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-00-R010-AC001",
-        "UXF-00-R010-AC002"
+        "UXF-00-R010-AC002",
+        "UXF-00-R010-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-00-R010-O001",
@@ -1495,8 +1490,8 @@ This document should be read together with:
     "source_context_sha256": "a613298c65e637ea8a830828d79cd26f1cf6ad4abcf01870d1deecf22ded0d41",
     "source_document": "docs/UXF/UXF-00.md",
     "source_fingerprint": "4e8368f5affb418a03d8a7bf14c437aa1786deb3ac46c145f4c3542a5043a653",
-    "source_lines": "L385",
-    "source_section": "11. Experience Inheritance"
+    "source_lines": "L1437-L1515",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-00-R010"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1504,7 +1499,10 @@ This document should be read together with:
     "aliases": [],
     "coverage_mode": null,
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "UXF-00-R031"
+    ]
   },
   "requirement_type": "UX_REQUIREMENT",
   "scope_coverage_unit": true,
@@ -1521,41 +1519,34 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-00-R011-AC001",
-      "given": "a user in the applicable channel and context for Every runtime configuration must support fallback",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the rendered output identifies the applied runtime context, reflects the values resolved for that context, and contains no unresolved configuration token",
-      "verifies": [
-        "UXF-00-R011-O001"
-      ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
-      "criterion_id": "UXF-00-R011-AC002",
-      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for Every runtime configuration must support fallback",
-      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
-      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
-      "verifies": [
-        "UXF-00-R011-O001"
-      ],
-      "when": "the affected state is rendered or action is requested"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-00-R011",
+      "source_document": "docs/UXF/UXF-00.md",
+      "source_fingerprint": "adfa8e3e62d09fe0a726043a0a990459cf09ab14b48936c9f06fca537d31e419"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-00-R011-AC001",
-        "UXF-00-R011-AC002"
+        "UXF-00-R011-AC002",
+        "UXF-00-R011-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-00-R011-O001",
@@ -1579,8 +1570,8 @@ This document should be read together with:
     "source_context_sha256": "60b4a5e34a152d8e66574e8461c34a0296b318eea1631ec5ff334805aa9c22c3",
     "source_document": "docs/UXF/UXF-00.md",
     "source_fingerprint": "adfa8e3e62d09fe0a726043a0a990459cf09ab14b48936c9f06fca537d31e419",
-    "source_lines": "L393",
-    "source_section": "12. Fallback Experience"
+    "source_lines": "L1517-L1595",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-00-R011"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1588,7 +1579,10 @@ This document should be read together with:
     "aliases": [],
     "coverage_mode": null,
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "UXF-00-R031"
+    ]
   },
   "requirement_type": "UX_REQUIREMENT",
   "scope_coverage_unit": true,
@@ -1605,41 +1599,34 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-00-R012-AC001",
-      "given": "a user in the applicable channel and context for If a configuration cannot be resolved, the runtime automatically falls back to the nearest valid…",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the rendered output identifies the applied runtime context, reflects the values resolved for that context, and contains no unresolved configuration token",
-      "verifies": [
-        "UXF-00-R012-O001"
-      ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_INHERITANCE_FAILURE_V1",
-      "criterion_id": "UXF-00-R012-AC002",
-      "given": "a child experience with no local value and an invalid or unavailable parent configuration for If a configuration cannot be resolved, the runtime automatically falls back to the nearest valid…",
-      "observable_evidence": "child and parent configuration identities, resolution trace, fallback or failure result, and rendered value",
-      "then": "resolution produces the declared deterministic fallback or a visible configuration failure and never renders an unexplained value",
-      "verifies": [
-        "UXF-00-R012-O001"
-      ],
-      "when": "the inherited value is resolved"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-00-R012",
+      "source_document": "docs/UXF/UXF-00.md",
+      "source_fingerprint": "b0b90b345be44d6c45b4319085bd2a17f76c0a7670829a321d6d86ddd083f3b3"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-00-R012-AC001",
-        "UXF-00-R012-AC002"
+        "UXF-00-R012-AC002",
+        "UXF-00-R012-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-00-R012-O001",
@@ -1663,8 +1650,8 @@ This document should be read together with:
     "source_context_sha256": "60b4a5e34a152d8e66574e8461c34a0296b318eea1631ec5ff334805aa9c22c3",
     "source_document": "docs/UXF/UXF-00.md",
     "source_fingerprint": "b0b90b345be44d6c45b4319085bd2a17f76c0a7670829a321d6d86ddd083f3b3",
-    "source_lines": "L409",
-    "source_section": "12. Fallback Experience"
+    "source_lines": "L1597-L1675",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-00-R012"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1672,7 +1659,10 @@ This document should be read together with:
     "aliases": [],
     "coverage_mode": null,
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "UXF-00-R031"
+    ]
   },
   "requirement_type": "UX_REQUIREMENT",
   "scope_coverage_unit": true,
@@ -1685,49 +1675,64 @@ This document should be read together with:
 <!-- YSIM:REQUIREMENT END -->
 
 <!-- YSIM:REQUIREMENT BEGIN -->
-### UXF-00-R013 — No runtime request should fail solely because a child configuration is incomplete
+### UXF-00-R013 — A missing or invalid business-critical configuration must fail closed: checkout, payment, alloca…
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-00-R013-AC001",
-      "given": "a user in the applicable channel and context for No runtime request should fail solely because a child configuration is incomplete",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the rendered output identifies the applied runtime context, reflects the values resolved for that context, and contains no unresolved configuration token",
-      "verifies": [
-        "UXF-00-R013-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "V23-P2C-ACCEPTANCE-MAPPING-C3"
       ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
-      "criterion_id": "UXF-00-R013-AC002",
-      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for No runtime request should fail solely because a child configuration is incomplete",
-      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
-      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
-      "verifies": [
-        "UXF-00-R013-O001"
-      ],
-      "when": "the affected state is rendered or action is requested"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-00-R013",
+      "source_document": "docs/UXF/UXF-00.md",
+      "source_fingerprint": "acc952dfd45e0eeff27343f8c3d28b0434c678cf748e15279ae69423a736e87f"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-00-R013-AC001",
-        "UXF-00-R013-AC002"
+        "UXF-00-R013-AC004",
+        "UXF-00-R013-AC005"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-00-R013-O001",
-      "obligation_text": "No runtime request should fail solely because a child configuration is incomplete"
+      "obligation_text": "Missing or invalid business-critical configuration fails closed"
+    },
+    {
+      "acceptance_criterion_references": [
+        "UXF-00-R013-AC002",
+        "UXF-00-R013-AC004",
+        "UXF-00-R013-AC005"
+      ],
+      "applicability": "V2.3_ACTIVE",
+      "obligation_id": "UXF-00-R013-O002",
+      "obligation_text": "Checkout, payment, allocation, fulfillment, authorization, and security flows do not continue with inferred unsafe defaults"
+    },
+    {
+      "acceptance_criterion_references": [
+        "UXF-00-R013-AC003",
+        "UXF-00-R013-AC004",
+        "UXF-00-R013-AC005"
+      ],
+      "applicability": "V2.3_ACTIVE",
+      "obligation_id": "UXF-00-R013-O003",
+      "obligation_text": "The failure exposes actionable recovery information"
     }
   ],
   "criticality_applicability": null,
@@ -1735,20 +1740,28 @@ This document should be read together with:
   "delivery_commitment": "COMMITTED_FOR_V2.3",
   "implementation_unit": true,
   "lifecycle": "V2.3_DRAFT",
-  "normative_statement": "No runtime request should fail solely because a child configuration is incomplete.",
+  "normative_statement": "A missing or invalid business-critical configuration must fail closed: checkout, payment, allocation, fulfillment, authorization, and security flows must not continue with inferred unsafe defaults, and the failure must expose actionable recovery information.",
   "provenance": {
-    "approved_decisions": [],
+    "approved_decisions": [
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
+    ],
     "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
     "original_identity": "TMP-UXF-00-013",
+    "phase_2c_c3_actions": [
+      "C3_APPROVED_SEMANTIC_DIRECTIVE"
+    ],
     "previous_temporary_key": "TMP-UXF-00-013",
     "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
     "source_baseline": "v2.2",
     "source_context_heading": "12. Fallback Experience",
     "source_context_sha256": "60b4a5e34a152d8e66574e8461c34a0296b318eea1631ec5ff334805aa9c22c3",
     "source_document": "docs/UXF/UXF-00.md",
-    "source_fingerprint": "1796ccb7f406176950afb115a8cf25040721fd9b6a72488039a96d92c5eadadc",
-    "source_lines": "L411",
-    "source_section": "12. Fallback Experience"
+    "source_fingerprint": "acc952dfd45e0eeff27343f8c3d28b0434c678cf748e15279ae69423a736e87f",
+    "source_fingerprint_before_c3": "1796ccb7f406176950afb115a8cf25040721fd9b6a72488039a96d92c5eadadc",
+    "source_lines": "L1677-L1785",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-00-R013"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1756,13 +1769,16 @@ This document should be read together with:
     "aliases": [],
     "coverage_mode": null,
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "UXF-00-R031"
+    ]
   },
   "requirement_type": "UX_REQUIREMENT",
   "scope_coverage_unit": true,
   "scope_status": "V2.3_ACTIVE",
   "stable_id": "UXF-00-R013",
-  "title": "No runtime request should fail solely because a child configuration is incomplete",
+  "title": "A missing or invalid business-critical configuration must fail closed: checkout, payment, alloca…",
   "verification_criticality": "HIGH"
 }
 ```
@@ -1773,41 +1789,34 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-00-R014-AC001",
-      "given": "a user in the applicable channel and context for All applications must reuse the same component library",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the rendered output exposes every required content element and action, keeps prohibited content absent, and makes the applicable confirmation or fallback directly observable",
-      "verifies": [
-        "UXF-00-R014-O001"
-      ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
-      "criterion_id": "UXF-00-R014-AC002",
-      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for All applications must reuse the same component library",
-      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
-      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
-      "verifies": [
-        "UXF-00-R014-O001"
-      ],
-      "when": "the affected state is rendered or action is requested"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-00-R014",
+      "source_document": "docs/UXF/UXF-00.md",
+      "source_fingerprint": "eaa91ef8121d1a90ba037df4326fc1cbd8d9bd14a48d2fa9c4f2d0c440aa3bc1"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-00-R014-AC001",
-        "UXF-00-R014-AC002"
+        "UXF-00-R014-AC002",
+        "UXF-00-R014-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-00-R014-O001",
@@ -1831,8 +1840,8 @@ This document should be read together with:
     "source_context_sha256": "61598e6603bdf638c801c93c93688445670b4d69998c2f2884a9ac45dc770622",
     "source_document": "docs/UXF/UXF-00.md",
     "source_fingerprint": "eaa91ef8121d1a90ba037df4326fc1cbd8d9bd14a48d2fa9c4f2d0c440aa3bc1",
-    "source_lines": "L520",
-    "source_section": "16. Design System Principle"
+    "source_lines": "L1787-L1865",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-00-R014"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1840,7 +1849,10 @@ This document should be read together with:
     "aliases": [],
     "coverage_mode": null,
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "UXF-00-R031"
+    ]
   },
   "requirement_type": "UX_REQUIREMENT",
   "scope_coverage_unit": true,
@@ -1857,41 +1869,34 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-00-R015-AC001",
-      "given": "a user in the applicable channel and context for UI duplication is prohibited",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the prohibited content or action is absent from both the rendered state and its customer-facing payload, while the permitted journey remains usable",
-      "verifies": [
-        "UXF-00-R015-O001"
-      ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
-      "criterion_id": "UXF-00-R015-AC002",
-      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for UI duplication is prohibited",
-      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
-      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
-      "verifies": [
-        "UXF-00-R015-O001"
-      ],
-      "when": "the affected state is rendered or action is requested"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-00-R015",
+      "source_document": "docs/UXF/UXF-00.md",
+      "source_fingerprint": "8962a5e90181b99fd96bf6b16bc9b38e461a918ffa667966b29c4b1837a5fadd"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-00-R015-AC001",
-        "UXF-00-R015-AC002"
+        "UXF-00-R015-AC002",
+        "UXF-00-R015-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-00-R015-O001",
@@ -1915,8 +1920,8 @@ This document should be read together with:
     "source_context_sha256": "61598e6603bdf638c801c93c93688445670b4d69998c2f2884a9ac45dc770622",
     "source_document": "docs/UXF/UXF-00.md",
     "source_fingerprint": "8962a5e90181b99fd96bf6b16bc9b38e461a918ffa667966b29c4b1837a5fadd",
-    "source_lines": "L522",
-    "source_section": "16. Design System Principle"
+    "source_lines": "L1867-L1945",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-00-R015"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1924,7 +1929,10 @@ This document should be read together with:
     "aliases": [],
     "coverage_mode": null,
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "UXF-00-R031"
+    ]
   },
   "requirement_type": "UX_REQUIREMENT",
   "scope_coverage_unit": true,
@@ -1941,28 +1949,34 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DESIGN_CONFORMANCE_OBSERVATION_V1",
-      "criterion_id": "UXF-00-R016-AC001",
-      "given": "a v2.3 capability, configuration, or design change governed by White-label configuration must not require source-code modification",
-      "observable_evidence": "conformance decision, requirement-to-design trace, applicable configuration evidence, and recorded boundary violations",
-      "then": "the conformance evidence identifies the governing configuration and shows that an approved configuration change alters the governed result without a source-code variant",
-      "verifies": [
-        "UXF-00-R016-O001"
-      ],
-      "when": "conformance is reviewed before the change is accepted"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-00-R016",
+      "source_document": "docs/UXF/UXF-00.md",
+      "source_fingerprint": "c1d29364303d17973a158aaaf1005c8a91f12502f035c1ac39088c8b3c84770f"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "UXF-00-R016-AC001"
+        "UXF-00-R016-AC001",
+        "UXF-00-R016-AC002",
+        "UXF-00-R016-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-00-R016-O001",
@@ -1997,9 +2011,9 @@ This document should be read together with:
     "source_context_heading": "17. White-label Principle",
     "source_context_sha256": "6a058263fda34ad832842c30d4c6a5b75122da35cbb2fa3f1f5a7efa062d0236",
     "source_document": "docs/UXF/UXF-00.md",
-    "source_fingerprint": "1dc2c699486bee6347757e644f608b7f9a467ee7e815d2d25b43ccae84f4e046",
-    "source_lines": "L542",
-    "source_section": "17. White-label Principle"
+    "source_fingerprint": "c1d29364303d17973a158aaaf1005c8a91f12502f035c1ac39088c8b3c84770f",
+    "source_lines": "L1947-L2037",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-00-R016"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2007,7 +2021,10 @@ This document should be read together with:
     "aliases": [],
     "coverage_mode": null,
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "UXF-00-R031"
+    ]
   },
   "requirement_type": "DESIGN_PRINCIPLE",
   "scope_coverage_unit": true,
@@ -2024,41 +2041,34 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-00-R017-AC001",
-      "given": "a user in the applicable channel and context for Runtime rendering must use immutable published configurations",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the rendered output identifies the applied runtime context, reflects the values resolved for that context, and contains no unresolved configuration token",
-      "verifies": [
-        "UXF-00-R017-O001"
-      ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
-      "criterion_id": "UXF-00-R017-AC002",
-      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for Runtime rendering must use immutable published configurations",
-      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
-      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
-      "verifies": [
-        "UXF-00-R017-O001"
-      ],
-      "when": "the affected state is rendered or action is requested"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-00-R017",
+      "source_document": "docs/UXF/UXF-00.md",
+      "source_fingerprint": "d3de627d24a1d705c0184609fb63ab03a5cce88d6a9574bd0d16b44330f0f1c4"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-00-R017-AC001",
-        "UXF-00-R017-AC002"
+        "UXF-00-R017-AC002",
+        "UXF-00-R017-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-00-R017-O001",
@@ -2067,35 +2077,36 @@ This document should be read together with:
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "UXF-00-R017 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "UXF-00-R017 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "UXF-00-R017 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "UXF-00-R017 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "UXF-00-R017 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "UXF-00-R017 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "UXF-00-R017 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "UXF-00-R017-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "UXF-00-R017-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "UXF-00-R017 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "UXF-00-R017 does not define a recovery obligation."
     }
   },
   "criticality_dispositions": [
@@ -2123,8 +2134,8 @@ This document should be read together with:
     "source_context_sha256": "5a9bf72c0ba863c7bf431087e49e707e8fc0598f76e6e142f7d8ba0e09f8fd68",
     "source_document": "docs/UXF/UXF-00.md",
     "source_fingerprint": "d3de627d24a1d705c0184609fb63ab03a5cce88d6a9574bd0d16b44330f0f1c4",
-    "source_lines": "L548",
-    "source_section": "18. Published Experience Snapshot"
+    "source_lines": "L2039-L2159",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-00-R017"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2132,7 +2143,10 @@ This document should be read together with:
     "aliases": [],
     "coverage_mode": null,
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "UXF-00-R031"
+    ]
   },
   "requirement_type": "UX_REQUIREMENT",
   "scope_coverage_unit": true,
@@ -2149,41 +2163,34 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-00-R018-AC001",
-      "given": "a user in the applicable channel and context for The runtime never renders directly from editable configurations",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the rendered output identifies the applied runtime context, reflects the values resolved for that context, and contains no unresolved configuration token",
-      "verifies": [
-        "UXF-00-R018-O001"
-      ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
-      "criterion_id": "UXF-00-R018-AC002",
-      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for The runtime never renders directly from editable configurations",
-      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
-      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
-      "verifies": [
-        "UXF-00-R018-O001"
-      ],
-      "when": "the affected state is rendered or action is requested"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-00-R018",
+      "source_document": "docs/UXF/UXF-00.md",
+      "source_fingerprint": "cb34abacfb3ea60573b337a95f0bbe841e0da2bd9b4ff135e173e4eb1e56a6d4"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-00-R018-AC001",
-        "UXF-00-R018-AC002"
+        "UXF-00-R018-AC002",
+        "UXF-00-R018-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-00-R018-O001",
@@ -2207,8 +2214,8 @@ This document should be read together with:
     "source_context_sha256": "5a9bf72c0ba863c7bf431087e49e707e8fc0598f76e6e142f7d8ba0e09f8fd68",
     "source_document": "docs/UXF/UXF-00.md",
     "source_fingerprint": "cb34abacfb3ea60573b337a95f0bbe841e0da2bd9b4ff135e173e4eb1e56a6d4",
-    "source_lines": "L576",
-    "source_section": "18. Published Experience Snapshot"
+    "source_lines": "L2161-L2239",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-00-R018"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2216,7 +2223,10 @@ This document should be read together with:
     "aliases": [],
     "coverage_mode": null,
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "UXF-00-R031"
+    ]
   },
   "requirement_type": "UX_REQUIREMENT",
   "scope_coverage_unit": true,
@@ -2233,41 +2243,34 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-00-R019-AC001",
-      "given": "a user in the applicable channel and context for The Experience Runtime must provide: - Dynamic Rendering",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the rendered output identifies the applied runtime context, reflects the values resolved for that context, and contains no unresolved configuration token",
-      "verifies": [
-        "UXF-00-R019-O001"
-      ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
-      "criterion_id": "UXF-00-R019-AC002",
-      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for The Experience Runtime must provide: - Dynamic Rendering",
-      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
-      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
-      "verifies": [
-        "UXF-00-R019-O001"
-      ],
-      "when": "the affected state is rendered or action is requested"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-00-R019",
+      "source_document": "docs/UXF/UXF-00.md",
+      "source_fingerprint": "bc0a95136e071663ec73def373042c7bf2b9b6734d920e9149ee9877926818af"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-00-R019-AC001",
-        "UXF-00-R019-AC002"
+        "UXF-00-R019-AC002",
+        "UXF-00-R019-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-00-R019-O001",
@@ -2291,8 +2294,8 @@ This document should be read together with:
     "source_context_sha256": "76f7626abb86825c0f22537f994b3c1b8a3de86ed7ccb239ae54c9d44f1cef71",
     "source_document": "docs/UXF/UXF-00.md",
     "source_fingerprint": "bc0a95136e071663ec73def373042c7bf2b9b6734d920e9149ee9877926818af",
-    "source_lines": "L582-L584",
-    "source_section": "19. Experience Runtime Goals"
+    "source_lines": "L2241-L2319",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-00-R019"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2300,7 +2303,10 @@ This document should be read together with:
     "aliases": [],
     "coverage_mode": null,
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "UXF-00-R031"
+    ]
   },
   "requirement_type": "UX_REQUIREMENT",
   "scope_coverage_unit": true,
@@ -2317,41 +2323,34 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-00-R020-AC001",
-      "given": "a user in the applicable channel and context for The Experience Runtime must provide: - White-label Support",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the rendered output identifies the applied runtime context, reflects the values resolved for that context, and contains no unresolved configuration token",
-      "verifies": [
-        "UXF-00-R020-O001"
-      ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
-      "criterion_id": "UXF-00-R020-AC002",
-      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for The Experience Runtime must provide: - White-label Support",
-      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
-      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
-      "verifies": [
-        "UXF-00-R020-O001"
-      ],
-      "when": "the affected state is rendered or action is requested"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-00-R020",
+      "source_document": "docs/UXF/UXF-00.md",
+      "source_fingerprint": "e6250521ed732a508e7a9c9c2c02df6eff9a08fd32f02d300704a10c208ee7d3"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-00-R020-AC001",
-        "UXF-00-R020-AC002"
+        "UXF-00-R020-AC002",
+        "UXF-00-R020-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-00-R020-O001",
@@ -2383,9 +2382,9 @@ This document should be read together with:
     "source_context_heading": "19. Experience Runtime Goals",
     "source_context_sha256": "76f7626abb86825c0f22537f994b3c1b8a3de86ed7ccb239ae54c9d44f1cef71",
     "source_document": "docs/UXF/UXF-00.md",
-    "source_fingerprint": "2767e9f62ee522d1790d7f0211cdc5043584b8e2f04f3ccdbc6825d9b9162210",
-    "source_lines": "L582-L585",
-    "source_section": "19. Experience Runtime Goals"
+    "source_fingerprint": "e6250521ed732a508e7a9c9c2c02df6eff9a08fd32f02d300704a10c208ee7d3",
+    "source_lines": "L2321-L2408",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-00-R020"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2393,7 +2392,10 @@ This document should be read together with:
     "aliases": [],
     "coverage_mode": null,
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "UXF-00-R031"
+    ]
   },
   "requirement_type": "UX_REQUIREMENT",
   "scope_coverage_unit": true,
@@ -2410,41 +2412,34 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-00-R021-AC001",
-      "given": "a user in the applicable channel and context for The Experience Runtime must provide: - Multi-tenant Isolation",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the rendered output identifies the applied runtime context, reflects the values resolved for that context, and contains no unresolved configuration token",
-      "verifies": [
-        "UXF-00-R021-O001"
-      ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
-      "criterion_id": "UXF-00-R021-AC002",
-      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for The Experience Runtime must provide: - Multi-tenant Isolation",
-      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
-      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
-      "verifies": [
-        "UXF-00-R021-O001"
-      ],
-      "when": "the affected state is rendered or action is requested"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-00-R021",
+      "source_document": "docs/UXF/UXF-00.md",
+      "source_fingerprint": "bd00945eaa84d8b84256ad935b55e374bed6f425aec373041b4631c9694ec2b1"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-00-R021-AC001",
-        "UXF-00-R021-AC002"
+        "UXF-00-R021-AC002",
+        "UXF-00-R021-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-00-R021-O001",
@@ -2453,35 +2448,36 @@ This document should be read together with:
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "UXF-00-R021 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "UXF-00-R021 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "UXF-00-R021 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "UXF-00-R021 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "UXF-00-R021 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "UXF-00-R021 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "UXF-00-R021 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "UXF-00-R021-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "UXF-00-R021-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "UXF-00-R021 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "UXF-00-R021 does not define a recovery obligation."
     }
   },
   "criticality_dispositions": [
@@ -2508,9 +2504,9 @@ This document should be read together with:
     "source_context_heading": "19. Experience Runtime Goals",
     "source_context_sha256": "76f7626abb86825c0f22537f994b3c1b8a3de86ed7ccb239ae54c9d44f1cef71",
     "source_document": "docs/UXF/UXF-00.md",
-    "source_fingerprint": "230ccfef4b981f4ff5a6445fd9d1c7c531e21876b10cd5fbd3da561c36349f47",
-    "source_lines": "L582-L586",
-    "source_section": "19. Experience Runtime Goals"
+    "source_fingerprint": "bd00945eaa84d8b84256ad935b55e374bed6f425aec373041b4631c9694ec2b1",
+    "source_lines": "L2410-L2531",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-00-R021"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2518,7 +2514,11 @@ This document should be read together with:
     "aliases": [],
     "coverage_mode": null,
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "UXF-00-R031",
+      "BRD-UPDATE-01-R024"
+    ]
   },
   "requirement_type": "UX_REQUIREMENT",
   "scope_coverage_unit": true,
@@ -2535,41 +2535,34 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-00-R022-AC001",
-      "given": "a user in the applicable channel and context for The Experience Runtime must provide: - Localization",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the rendered output identifies the applied runtime context, reflects the values resolved for that context, and contains no unresolved configuration token",
-      "verifies": [
-        "UXF-00-R022-O001"
-      ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
-      "criterion_id": "UXF-00-R022-AC002",
-      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for The Experience Runtime must provide: - Localization",
-      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
-      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
-      "verifies": [
-        "UXF-00-R022-O001"
-      ],
-      "when": "the affected state is rendered or action is requested"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-00-R022",
+      "source_document": "docs/UXF/UXF-00.md",
+      "source_fingerprint": "2f5845f11f6e5495c83d8a8ccb096e9e2fbd5487ff56d0ec59a138b3f99ee091"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-00-R022-AC001",
-        "UXF-00-R022-AC002"
+        "UXF-00-R022-AC002",
+        "UXF-00-R022-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-00-R022-O001",
@@ -2592,9 +2585,9 @@ This document should be read together with:
     "source_context_heading": "19. Experience Runtime Goals",
     "source_context_sha256": "76f7626abb86825c0f22537f994b3c1b8a3de86ed7ccb239ae54c9d44f1cef71",
     "source_document": "docs/UXF/UXF-00.md",
-    "source_fingerprint": "465cd69038d304d0bf9e3ac91752eeb9cd61da2ec5f24121e875b998a73f5d19",
-    "source_lines": "L582-L587",
-    "source_section": "19. Experience Runtime Goals"
+    "source_fingerprint": "2f5845f11f6e5495c83d8a8ccb096e9e2fbd5487ff56d0ec59a138b3f99ee091",
+    "source_lines": "L2533-L2611",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-00-R022"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2602,7 +2595,10 @@ This document should be read together with:
     "aliases": [],
     "coverage_mode": null,
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "UXF-00-R031"
+    ]
   },
   "requirement_type": "UX_REQUIREMENT",
   "scope_coverage_unit": true,
@@ -2619,41 +2615,34 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-00-R023-AC001",
-      "given": "a user in the applicable channel and context for The Experience Runtime must provide: - Runtime Resolution",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the rendered output identifies the applied runtime context, reflects the values resolved for that context, and contains no unresolved configuration token",
-      "verifies": [
-        "UXF-00-R023-O001"
-      ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
-      "criterion_id": "UXF-00-R023-AC002",
-      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for The Experience Runtime must provide: - Runtime Resolution",
-      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
-      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
-      "verifies": [
-        "UXF-00-R023-O001"
-      ],
-      "when": "the affected state is rendered or action is requested"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-00-R023",
+      "source_document": "docs/UXF/UXF-00.md",
+      "source_fingerprint": "d7c4e37de17e0807232e69d047381fc2438a79cd6b5cad5931fc3558aff83a9a"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-00-R023-AC001",
-        "UXF-00-R023-AC002"
+        "UXF-00-R023-AC002",
+        "UXF-00-R023-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-00-R023-O001",
@@ -2676,9 +2665,9 @@ This document should be read together with:
     "source_context_heading": "19. Experience Runtime Goals",
     "source_context_sha256": "76f7626abb86825c0f22537f994b3c1b8a3de86ed7ccb239ae54c9d44f1cef71",
     "source_document": "docs/UXF/UXF-00.md",
-    "source_fingerprint": "53f6bc53a974857a1069ca868f01fe7a3bde356e74eb44b4c3af8abf07613167",
-    "source_lines": "L582-L588",
-    "source_section": "19. Experience Runtime Goals"
+    "source_fingerprint": "d7c4e37de17e0807232e69d047381fc2438a79cd6b5cad5931fc3558aff83a9a",
+    "source_lines": "L2613-L2691",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-00-R023"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2686,7 +2675,10 @@ This document should be read together with:
     "aliases": [],
     "coverage_mode": null,
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "UXF-00-R031"
+    ]
   },
   "requirement_type": "UX_REQUIREMENT",
   "scope_coverage_unit": true,
@@ -2703,41 +2695,34 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-00-R024-AC001",
-      "given": "a user in the applicable channel and context for The Experience Runtime must provide: - Experience Inheritance",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the rendered output identifies the applied runtime context, reflects the values resolved for that context, and contains no unresolved configuration token",
-      "verifies": [
-        "UXF-00-R024-O001"
-      ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_INHERITANCE_FAILURE_V1",
-      "criterion_id": "UXF-00-R024-AC002",
-      "given": "a child experience with no local value and an invalid or unavailable parent configuration for The Experience Runtime must provide: - Experience Inheritance",
-      "observable_evidence": "child and parent configuration identities, resolution trace, fallback or failure result, and rendered value",
-      "then": "resolution produces the declared deterministic fallback or a visible configuration failure and never renders an unexplained value",
-      "verifies": [
-        "UXF-00-R024-O001"
-      ],
-      "when": "the inherited value is resolved"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-00-R024",
+      "source_document": "docs/UXF/UXF-00.md",
+      "source_fingerprint": "63a76e3f5e2cc7f52b47ab37f76608ff388fe6fa1f5d14ae8995ba2064490128"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-00-R024-AC001",
-        "UXF-00-R024-AC002"
+        "UXF-00-R024-AC002",
+        "UXF-00-R024-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-00-R024-O001",
@@ -2760,9 +2745,9 @@ This document should be read together with:
     "source_context_heading": "19. Experience Runtime Goals",
     "source_context_sha256": "76f7626abb86825c0f22537f994b3c1b8a3de86ed7ccb239ae54c9d44f1cef71",
     "source_document": "docs/UXF/UXF-00.md",
-    "source_fingerprint": "495c00dde3635dc6b12b6752474a3ba65bf780d994ea2b644d8290bc114f5ca7",
-    "source_lines": "L582-L589",
-    "source_section": "19. Experience Runtime Goals"
+    "source_fingerprint": "63a76e3f5e2cc7f52b47ab37f76608ff388fe6fa1f5d14ae8995ba2064490128",
+    "source_lines": "L2693-L2771",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-00-R024"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2770,7 +2755,10 @@ This document should be read together with:
     "aliases": [],
     "coverage_mode": null,
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "UXF-00-R031"
+    ]
   },
   "requirement_type": "UX_REQUIREMENT",
   "scope_coverage_unit": true,
@@ -2787,41 +2775,34 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-00-R025-AC001",
-      "given": "a user in the applicable channel and context for The Experience Runtime must provide: - Safe Fallback",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the rendered output identifies the applied runtime context, reflects the values resolved for that context, and contains no unresolved configuration token",
-      "verifies": [
-        "UXF-00-R025-O001"
-      ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
-      "criterion_id": "UXF-00-R025-AC002",
-      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for The Experience Runtime must provide: - Safe Fallback",
-      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
-      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
-      "verifies": [
-        "UXF-00-R025-O001"
-      ],
-      "when": "the affected state is rendered or action is requested"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-00-R025",
+      "source_document": "docs/UXF/UXF-00.md",
+      "source_fingerprint": "c932e030f4a15c6892039c5a0084d56433f27947b0eece118186f55ba13b62b0"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-00-R025-AC001",
-        "UXF-00-R025-AC002"
+        "UXF-00-R025-AC002",
+        "UXF-00-R025-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-00-R025-O001",
@@ -2844,9 +2825,9 @@ This document should be read together with:
     "source_context_heading": "19. Experience Runtime Goals",
     "source_context_sha256": "76f7626abb86825c0f22537f994b3c1b8a3de86ed7ccb239ae54c9d44f1cef71",
     "source_document": "docs/UXF/UXF-00.md",
-    "source_fingerprint": "a42aee046efc41909cbf43c710b2caf5d408ece5e6d1ef5feb62877b446a1915",
-    "source_lines": "L582-L590",
-    "source_section": "19. Experience Runtime Goals"
+    "source_fingerprint": "c932e030f4a15c6892039c5a0084d56433f27947b0eece118186f55ba13b62b0",
+    "source_lines": "L2773-L2851",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-00-R025"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2854,7 +2835,10 @@ This document should be read together with:
     "aliases": [],
     "coverage_mode": null,
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "UXF-00-R031"
+    ]
   },
   "requirement_type": "UX_REQUIREMENT",
   "scope_coverage_unit": true,
@@ -2871,41 +2855,34 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-00-R026-AC001",
-      "given": "a user in the applicable channel and context for The Experience Runtime must provide: - Versioning",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the rendered output identifies the applied runtime context, reflects the values resolved for that context, and contains no unresolved configuration token",
-      "verifies": [
-        "UXF-00-R026-O001"
-      ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
-      "criterion_id": "UXF-00-R026-AC002",
-      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for The Experience Runtime must provide: - Versioning",
-      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
-      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
-      "verifies": [
-        "UXF-00-R026-O001"
-      ],
-      "when": "the affected state is rendered or action is requested"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-00-R026",
+      "source_document": "docs/UXF/UXF-00.md",
+      "source_fingerprint": "17c48a0414e49698fa82a54715952a883b8fcb401bd4223ef59a1b592ff7e338"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-00-R026-AC001",
-        "UXF-00-R026-AC002"
+        "UXF-00-R026-AC002",
+        "UXF-00-R026-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-00-R026-O001",
@@ -2928,9 +2905,9 @@ This document should be read together with:
     "source_context_heading": "19. Experience Runtime Goals",
     "source_context_sha256": "76f7626abb86825c0f22537f994b3c1b8a3de86ed7ccb239ae54c9d44f1cef71",
     "source_document": "docs/UXF/UXF-00.md",
-    "source_fingerprint": "243a80a03f52da544798efa8139dfbb09dec404ea59d30bdd9a4459c759efeee",
-    "source_lines": "L582-L591",
-    "source_section": "19. Experience Runtime Goals"
+    "source_fingerprint": "17c48a0414e49698fa82a54715952a883b8fcb401bd4223ef59a1b592ff7e338",
+    "source_lines": "L2853-L2931",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-00-R026"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2938,7 +2915,10 @@ This document should be read together with:
     "aliases": [],
     "coverage_mode": null,
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "UXF-00-R031"
+    ]
   },
   "requirement_type": "UX_REQUIREMENT",
   "scope_coverage_unit": true,
@@ -2955,41 +2935,34 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-00-R027-AC001",
-      "given": "a user in the applicable channel and context for The Experience Runtime must provide: - Preview",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the rendered output identifies the applied runtime context, reflects the values resolved for that context, and contains no unresolved configuration token",
-      "verifies": [
-        "UXF-00-R027-O001"
-      ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
-      "criterion_id": "UXF-00-R027-AC002",
-      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for The Experience Runtime must provide: - Preview",
-      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
-      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
-      "verifies": [
-        "UXF-00-R027-O001"
-      ],
-      "when": "the affected state is rendered or action is requested"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-00-R027",
+      "source_document": "docs/UXF/UXF-00.md",
+      "source_fingerprint": "a9b848028c0c51e159a6de8ff022397631b19e4011af5bb127a0a51e668e4977"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-00-R027-AC001",
-        "UXF-00-R027-AC002"
+        "UXF-00-R027-AC002",
+        "UXF-00-R027-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-00-R027-O001",
@@ -3012,9 +2985,9 @@ This document should be read together with:
     "source_context_heading": "19. Experience Runtime Goals",
     "source_context_sha256": "76f7626abb86825c0f22537f994b3c1b8a3de86ed7ccb239ae54c9d44f1cef71",
     "source_document": "docs/UXF/UXF-00.md",
-    "source_fingerprint": "76d77fe2e27fcaeabbd658d752b4133d859cad9513d9f426886233613e0c3e83",
-    "source_lines": "L582-L592",
-    "source_section": "19. Experience Runtime Goals"
+    "source_fingerprint": "a9b848028c0c51e159a6de8ff022397631b19e4011af5bb127a0a51e668e4977",
+    "source_lines": "L2933-L3011",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-00-R027"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3022,7 +2995,10 @@ This document should be read together with:
     "aliases": [],
     "coverage_mode": null,
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "UXF-00-R031"
+    ]
   },
   "requirement_type": "UX_REQUIREMENT",
   "scope_coverage_unit": true,
@@ -3039,41 +3015,34 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-00-R028-AC001",
-      "given": "a user in the applicable channel and context for The Experience Runtime must provide: - Publish",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the rendered output identifies the applied runtime context, reflects the values resolved for that context, and contains no unresolved configuration token",
-      "verifies": [
-        "UXF-00-R028-O001"
-      ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
-      "criterion_id": "UXF-00-R028-AC002",
-      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for The Experience Runtime must provide: - Publish",
-      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
-      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
-      "verifies": [
-        "UXF-00-R028-O001"
-      ],
-      "when": "the affected state is rendered or action is requested"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-00-R028",
+      "source_document": "docs/UXF/UXF-00.md",
+      "source_fingerprint": "9ea0b70f81f91cc804291d962c9bdba6ec1178bd588348aed4265b006cab9c69"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-00-R028-AC001",
-        "UXF-00-R028-AC002"
+        "UXF-00-R028-AC002",
+        "UXF-00-R028-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-00-R028-O001",
@@ -3096,9 +3065,9 @@ This document should be read together with:
     "source_context_heading": "19. Experience Runtime Goals",
     "source_context_sha256": "76f7626abb86825c0f22537f994b3c1b8a3de86ed7ccb239ae54c9d44f1cef71",
     "source_document": "docs/UXF/UXF-00.md",
-    "source_fingerprint": "15aac68432d6c676a917abf95e543037ab44dc78e264dd4cab31e8ebe24514a3",
-    "source_lines": "L582-L593",
-    "source_section": "19. Experience Runtime Goals"
+    "source_fingerprint": "9ea0b70f81f91cc804291d962c9bdba6ec1178bd588348aed4265b006cab9c69",
+    "source_lines": "L3013-L3091",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-00-R028"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3106,7 +3075,10 @@ This document should be read together with:
     "aliases": [],
     "coverage_mode": null,
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "UXF-00-R031"
+    ]
   },
   "requirement_type": "UX_REQUIREMENT",
   "scope_coverage_unit": true,
@@ -3123,41 +3095,34 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-00-R029-AC001",
-      "given": "a user in the applicable channel and context for The Experience Runtime must provide: - Rollback",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the rendered output identifies the applied runtime context, reflects the values resolved for that context, and contains no unresolved configuration token",
-      "verifies": [
-        "UXF-00-R029-O001"
-      ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
-      "criterion_id": "UXF-00-R029-AC002",
-      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for The Experience Runtime must provide: - Rollback",
-      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
-      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
-      "verifies": [
-        "UXF-00-R029-O001"
-      ],
-      "when": "the affected state is rendered or action is requested"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-00-R029",
+      "source_document": "docs/UXF/UXF-00.md",
+      "source_fingerprint": "8df9c94f00419f46f0ad47e4d9cc884af4b1d20b699c4bc6654062c52f51d242"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-00-R029-AC001",
-        "UXF-00-R029-AC002"
+        "UXF-00-R029-AC002",
+        "UXF-00-R029-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-00-R029-O001",
@@ -3180,9 +3145,9 @@ This document should be read together with:
     "source_context_heading": "19. Experience Runtime Goals",
     "source_context_sha256": "76f7626abb86825c0f22537f994b3c1b8a3de86ed7ccb239ae54c9d44f1cef71",
     "source_document": "docs/UXF/UXF-00.md",
-    "source_fingerprint": "4d787db16d34b2a2c52364bb708dd859e801b23f6998dd91c8588e3020d129b6",
-    "source_lines": "L582-L594",
-    "source_section": "19. Experience Runtime Goals"
+    "source_fingerprint": "8df9c94f00419f46f0ad47e4d9cc884af4b1d20b699c4bc6654062c52f51d242",
+    "source_lines": "L3093-L3171",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-00-R029"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3190,7 +3155,10 @@ This document should be read together with:
     "aliases": [],
     "coverage_mode": null,
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "UXF-00-R031"
+    ]
   },
   "requirement_type": "UX_REQUIREMENT",
   "scope_coverage_unit": true,
@@ -3207,41 +3175,34 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "UXF-00-R030-AC001",
-      "given": "an operational task within the scope of The Experience Runtime must provide: - Auditability",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "UXF-00-R030-O001"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "OPERATIONAL_VERIFICATION_FAILURE_V1",
-      "criterion_id": "UXF-00-R030-AC002",
-      "given": "an operational task missing an outcome, required signal, audit evidence, or recovery evidence for The Experience Runtime must provide: - Auditability",
-      "observable_evidence": "operator-visible verification result, missing-evidence identifier, operation state, and relevant signal or audit record",
-      "then": "verification reports the specific missing evidence as a detectable failure and does not report the task as conforming",
-      "verifies": [
-        "UXF-00-R030-O001"
-      ],
-      "when": "operational verification is performed"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-00-R030",
+      "source_document": "docs/UXF/UXF-00.md",
+      "source_fingerprint": "aab19848d2bc46bf37e8db5a857fbed3a07d5d52033143822cc1f9bb1b203964"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-00-R030-AC001",
-        "UXF-00-R030-AC002"
+        "UXF-00-R030-AC002",
+        "UXF-00-R030-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-00-R030-O001",
@@ -3250,35 +3211,36 @@ This document should be read together with:
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "UXF-00-R030 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "UXF-00-R030 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "UXF-00-R030 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "UXF-00-R030 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "UXF-00-R030 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "UXF-00-R030 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "UXF-00-R030 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "UXF-00-R030-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "UXF-00-R030-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "UXF-00-R030 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "UXF-00-R030 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -3296,9 +3258,9 @@ This document should be read together with:
     "source_context_heading": "19. Experience Runtime Goals",
     "source_context_sha256": "76f7626abb86825c0f22537f994b3c1b8a3de86ed7ccb239ae54c9d44f1cef71",
     "source_document": "docs/UXF/UXF-00.md",
-    "source_fingerprint": "d71d51f2507e6f20ca54aa1676fd3ea02ca80b9c3aa290f2d2c06e9b1eadf671",
-    "source_lines": "L582-L595",
-    "source_section": "19. Experience Runtime Goals"
+    "source_fingerprint": "aab19848d2bc46bf37e8db5a857fbed3a07d5d52033143822cc1f9bb1b203964",
+    "source_lines": "L3173-L3284",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-00-R030"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3306,7 +3268,10 @@ This document should be read together with:
     "aliases": [],
     "coverage_mode": null,
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "UXF-00-R031"
+    ]
   },
   "requirement_type": "OPERATIONAL_REQUIREMENT",
   "scope_coverage_unit": true,
@@ -3319,85 +3284,102 @@ This document should be read together with:
 <!-- YSIM:REQUIREMENT END -->
 
 <!-- YSIM:REQUIREMENT BEGIN -->
-### UXF-00-R031 — The following principles are mandatory
+### UXF-00-R031 — The Architectural Principles heading is a composite parent covering the named UXF principle chil…
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-00-R031-AC001",
-      "given": "a user in the applicable channel and context for The following principles are mandatory",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the rendered output exposes every required content element and action, keeps prohibited content absent, and makes the applicable confirmation or fallback directly observable",
-      "verifies": [
-        "UXF-00-R031-O001"
-      ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
-      "criterion_id": "UXF-00-R031-AC002",
-      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for The following principles are mandatory",
-      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
-      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
-      "verifies": [
-        "UXF-00-R031-O001"
-      ],
-      "when": "the affected state is rendered or action is requested"
-    }
-  ],
-  "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
-  "acceptance_unit": true,
-  "atomic_obligations": [
-    {
-      "acceptance_criterion_references": [
-        "UXF-00-R031-AC001",
-        "UXF-00-R031-AC002"
-      ],
-      "applicability": "V2.3_ACTIVE",
-      "obligation_id": "UXF-00-R031-O001",
-      "obligation_text": "The following principles are mandatory"
-    }
-  ],
+  "acceptance_contract": null,
+  "acceptance_mechanism": null,
+  "acceptance_rationale": "Composite parent coverage is satisfied only through ALL_CHILDREN; the parent is not an implementation, acceptance, scope-coverage, or criticality unit.",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "STRUCTURAL_RECORD",
+  "acceptance_unit": false,
+  "atomic_obligations": [],
   "criticality_applicability": null,
-  "criticality_unit": true,
+  "criticality_unit": false,
   "delivery_commitment": "COMMITTED_FOR_V2.3",
-  "implementation_unit": true,
+  "implementation_unit": false,
   "lifecycle": "V2.3_DRAFT",
-  "normative_statement": "The following principles are mandatory.",
+  "normative_statement": "The Architectural Principles heading is a composite parent covering the named UXF principle children and is not an atomic acceptance unit.",
   "provenance": {
-    "approved_decisions": [],
+    "approved_decisions": [
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
+    ],
+    "corrected_source_range": {
+      "document": "docs/UXF/UXF-00.md",
+      "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+      "section": "20. Architectural Principles"
+    },
+    "deterministic_transformation": "EXPAND_RANGE_AND_CONVERT_TO_COMPOSITE_PARENT",
     "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
     "original_identity": "TMP-UXF-00-031",
+    "phase_2c_c3_actions": [
+      "C3_DETERMINISTIC_SOURCE_NORMALIZATION",
+      "C3_SOURCE_NORMALIZATION_TO_COMPOSITE"
+    ],
     "previous_temporary_key": "TMP-UXF-00-031",
     "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
     "source_baseline": "v2.2",
     "source_context_heading": "20. Architectural Principles",
     "source_context_sha256": "71d192fa479ef3e344cf99e4aefe5b668c34e24ae250df91f95329e121c994a7",
     "source_document": "docs/UXF/UXF-00.md",
-    "source_fingerprint": "0182d8f960d53e8fca772781b8717e634251c8e80d1e866ea5070d2da1a5a3e4",
-    "source_lines": "L601",
-    "source_section": "20. Architectural Principles"
+    "source_fingerprint": "1643d9dc2d20e8f2d8e5cd335a2b164d4104d9871e9339e0e04b093523dd8303",
+    "source_fingerprint_before_c3": "1643d9dc2d20e8f2d8e5cd335a2b164d4104d9871e9339e0e04b093523dd8303",
+    "source_lines": "L3286-L3385",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_range_before_c3": {
+      "document": "docs/UXF/UXF-00.md",
+      "lines": "L601",
+      "section": "20. Architectural Principles"
+    },
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-00-R031"
   },
-  "record_kind": "CANONICAL_ATOMIC",
+  "record_kind": "COMPOSITE_PARENT",
   "relationships": {
     "alias_of": null,
     "aliases": [],
-    "coverage_mode": null,
+    "coverage_mode": "ALL_CHILDREN",
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [
+      "UXF-00-R001",
+      "UXF-00-R002",
+      "UXF-00-R003",
+      "UXF-00-R004",
+      "UXF-00-R005",
+      "UXF-00-R006",
+      "UXF-00-R007",
+      "UXF-00-R008",
+      "UXF-00-R009",
+      "UXF-00-R010",
+      "UXF-00-R011",
+      "UXF-00-R012",
+      "UXF-00-R013",
+      "UXF-00-R014",
+      "UXF-00-R015",
+      "UXF-00-R016",
+      "UXF-00-R017",
+      "UXF-00-R018",
+      "UXF-00-R019",
+      "UXF-00-R020",
+      "UXF-00-R021",
+      "UXF-00-R022",
+      "UXF-00-R023",
+      "UXF-00-R024",
+      "UXF-00-R025",
+      "UXF-00-R026",
+      "UXF-00-R027",
+      "UXF-00-R028",
+      "UXF-00-R029",
+      "UXF-00-R030"
+    ]
   },
   "requirement_type": "UX_REQUIREMENT",
-  "scope_coverage_unit": true,
+  "scope_coverage_unit": false,
   "scope_status": "V2.3_ACTIVE",
   "stable_id": "UXF-00-R031",
-  "title": "The following principles are mandatory",
-  "verification_criticality": "HIGH"
+  "title": "The Architectural Principles heading is a composite parent covering the named UXF principle chil…",
+  "verification_criticality": "NOT_APPLICABLE"
 }
 ```
 <!-- YSIM:REQUIREMENT END -->
@@ -3407,41 +3389,36 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-001-AC001",
-      "given": "a user in the applicable channel and context for Experience is resolved at runtime",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the rendered output identifies the applied runtime context, reflects the values resolved for that context, and contains no unresolved configuration token",
-      "verifies": [
-        "UXF-001-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-009"
       ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
-      "criterion_id": "UXF-001-AC002",
-      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for Experience is resolved at runtime",
-      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
-      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
-      "verifies": [
-        "UXF-001-O001"
-      ],
-      "when": "the affected state is rendered or action is requested"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-001",
+      "source_document": "docs/UXF/UXF-00.md",
+      "source_fingerprint": "a3c5ac633024f619f3b4d92970f6532dfe1a3138c93284d8fcd1a78945661dd6"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-001-AC001",
-        "UXF-001-AC002"
+        "UXF-001-AC002",
+        "UXF-001-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-001-O001",
@@ -3519,9 +3496,9 @@ This document should be read together with:
     "source_context_heading": "UXF-001",
     "source_context_sha256": "021be5ae21231270a667ec286bef8624733b0268a88e1d9cc2ebb3e052e44394",
     "source_document": "docs/UXF/UXF-00.md",
-    "source_fingerprint": "8d32021ae2b08d5a1d4e299d6f470517c3a27252e20d87b72a167b8d85aa2835",
-    "source_lines": "L603-L606",
-    "source_section": "20. Architectural Principles > UXF-001"
+    "source_fingerprint": "a3c5ac633024f619f3b4d92970f6532dfe1a3138c93284d8fcd1a78945661dd6",
+    "source_lines": "L3387-L3519",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-001"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3546,41 +3523,38 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-002-AC001",
-      "given": "a user in the applicable channel and context for Storefronts represent commercial experiences rather than websites",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the rendered output exposes every required content element and action, keeps prohibited content absent, and makes the applicable confirmation or fallback directly observable",
-      "verifies": [
-        "UXF-002-O001"
-      ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
-      "criterion_id": "UXF-002-AC002",
-      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for Storefronts represent commercial experiences rather than websites",
-      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
-      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
-      "verifies": [
-        "UXF-002-O001"
-      ],
-      "when": "the affected state is rendered or action is requested"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "approved_semantic_completion_selection": {
+        "decision_id": "P2C-SC-C1-DEC-021",
+        "option_id": "OPT-AST"
+      },
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-002",
+      "source_document": "docs/UXF/UXF-00.md",
+      "source_fingerprint": "63505fce07882b456fbbf0d6175c3cc44ae84444b1a7a8991943795a2edf8010"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-002-AC001",
-        "UXF-002-AC002"
+        "UXF-002-AC002",
+        "UXF-002-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-002-O001",
@@ -3603,9 +3577,9 @@ This document should be read together with:
     "source_context_heading": "UXF-002",
     "source_context_sha256": "c8a0aa5aed237e84f7c13f941f079f890bfd9c94a79f61e2c3d3669411245f59",
     "source_document": "docs/UXF/UXF-00.md",
-    "source_fingerprint": "610e4f9d816853535bcc5c6689c8cd189643194b7e83a1ddddde7dc7bd228710",
-    "source_lines": "L609-L612",
-    "source_section": "20. Architectural Principles > UXF-002"
+    "source_fingerprint": "63505fce07882b456fbbf0d6175c3cc44ae84444b1a7a8991943795a2edf8010",
+    "source_lines": "L3521-L3600",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-002"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3630,41 +3604,38 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-003-AC001",
-      "given": "a user in the applicable channel and context for Storefronts consume YSim Products only",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the rendered output exposes every required content element and action, keeps prohibited content absent, and makes the applicable confirmation or fallback directly observable",
-      "verifies": [
-        "UXF-003-O001"
-      ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
-      "criterion_id": "UXF-003-AC002",
-      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for Storefronts consume YSim Products only",
-      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
-      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
-      "verifies": [
-        "UXF-003-O001"
-      ],
-      "when": "the affected state is rendered or action is requested"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "approved_semantic_completion_selection": {
+        "decision_id": "P2C-SC-C1-DEC-022",
+        "option_id": "OPT-AST"
+      },
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-003",
+      "source_document": "docs/UXF/UXF-00.md",
+      "source_fingerprint": "9f11c5eb650f6180f4a17d61fd8ebb58355ed223202048c7907a5410988bb149"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-003-AC001",
-        "UXF-003-AC002"
+        "UXF-003-AC002",
+        "UXF-003-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-003-O001",
@@ -3687,9 +3658,9 @@ This document should be read together with:
     "source_context_heading": "UXF-003",
     "source_context_sha256": "6940e25ff97d8630368d2207bae3291461afe75f8490653294ec4bd7af010e6e",
     "source_document": "docs/UXF/UXF-00.md",
-    "source_fingerprint": "11303a5a1dd0542d5bd3b70cb99d2448e0384fdf880a4376fb21c09caa57f2e3",
-    "source_lines": "L615-L618",
-    "source_section": "20. Architectural Principles > UXF-003"
+    "source_fingerprint": "9f11c5eb650f6180f4a17d61fd8ebb58355ed223202048c7907a5410988bb149",
+    "source_lines": "L3602-L3681",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-003"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3714,41 +3685,36 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-004-AC001",
-      "given": "a user in the applicable channel and context for Supplier systems are internal infrastructure",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the rendered output exposes every required content element and action, keeps prohibited content absent, and makes the applicable confirmation or fallback directly observable",
-      "verifies": [
-        "UXF-004-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-007"
       ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
-      "criterion_id": "UXF-004-AC002",
-      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for Supplier systems are internal infrastructure",
-      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
-      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
-      "verifies": [
-        "UXF-004-O001"
-      ],
-      "when": "the affected state is rendered or action is requested"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-004",
+      "source_document": "docs/UXF/UXF-00.md",
+      "source_fingerprint": "2307b70f87304132274fdeef32aa28f27852aed794677f52b21c8a2ee81f0e46"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-004-AC001",
-        "UXF-004-AC002"
+        "UXF-004-AC002",
+        "UXF-004-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-004-O001",
@@ -3773,9 +3739,9 @@ This document should be read together with:
     "source_context_heading": "8. Supplier Isolation Principle",
     "source_context_sha256": "4f0bd9a2fc1905a2811a2245e10e7624900db78efcdb96c9c2294c049d8d9679",
     "source_document": "docs/UXF/UXF-00.md",
-    "source_fingerprint": "6e3423c7a536edf235fb43108173193ba26440a7282658db9d941d16cffe08f8",
-    "source_lines": "L621-L624",
-    "source_section": "20. Architectural Principles > UXF-004"
+    "source_fingerprint": "2307b70f87304132274fdeef32aa28f27852aed794677f52b21c8a2ee81f0e46",
+    "source_lines": "L3683-L3762",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-004"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3800,41 +3766,37 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-005-AC001",
-      "given": "a user in the applicable channel and context for Allocation is the only capability allowed to select suppliers",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the rendered output exposes every required content element and action, keeps prohibited content absent, and makes the applicable confirmation or fallback directly observable",
-      "verifies": [
-        "UXF-005-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-005",
+        "P2-DEC-007"
       ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
-      "criterion_id": "UXF-005-AC002",
-      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for Allocation is the only capability allowed to select suppliers",
-      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
-      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
-      "verifies": [
-        "UXF-005-O001"
-      ],
-      "when": "the affected state is rendered or action is requested"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-005",
+      "source_document": "docs/UXF/UXF-00.md",
+      "source_fingerprint": "ae6d804b21bd1d2fd7e5d3bb6db3c34a0458aa63d869c239b2e74626f0245e01"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-005-AC001",
-        "UXF-005-AC002"
+        "UXF-005-AC002",
+        "UXF-005-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-005-O001",
@@ -3843,35 +3805,36 @@ This document should be read together with:
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "UXF-005 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "UXF-005 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "UXF-005 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "UXF-005 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "UXF-005 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "UXF-005 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "UXF-005 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "UXF-005-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "UXF-005-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "UXF-005 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "UXF-005 does not define a recovery obligation."
     }
   },
   "criticality_dispositions": [
@@ -3901,9 +3864,9 @@ This document should be read together with:
     "source_context_heading": "UXF-005",
     "source_context_sha256": "f66fac7050e3c3157876b4471cf1fa2040136c1fbf408dee24ed1c46d0a9a510",
     "source_document": "docs/UXF/UXF-00.md",
-    "source_fingerprint": "30012f0050e7a8e0d6f0526bd429f1451090046ce7e7c4c9099075c826642a09",
-    "source_lines": "L627-L630",
-    "source_section": "20. Architectural Principles > UXF-005"
+    "source_fingerprint": "ae6d804b21bd1d2fd7e5d3bb6db3c34a0458aa63d869c239b2e74626f0245e01",
+    "source_lines": "L3764-L3887",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-005"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3928,41 +3891,34 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-006-AC001",
-      "given": "a user in the applicable channel and context for Every runtime configuration supports inheritance",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the rendered output identifies the applied runtime context, reflects the values resolved for that context, and contains no unresolved configuration token",
-      "verifies": [
-        "UXF-006-O001"
-      ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_INHERITANCE_FAILURE_V1",
-      "criterion_id": "UXF-006-AC002",
-      "given": "a child experience with no local value and an invalid or unavailable parent configuration for Every runtime configuration supports inheritance",
-      "observable_evidence": "child and parent configuration identities, resolution trace, fallback or failure result, and rendered value",
-      "then": "resolution produces the declared deterministic fallback or a visible configuration failure and never renders an unexplained value",
-      "verifies": [
-        "UXF-006-O001"
-      ],
-      "when": "the inherited value is resolved"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-006",
+      "source_document": "docs/UXF/UXF-00.md",
+      "source_fingerprint": "65e18d2ddebf538013ffa818a6a230b60c85ed24716030cb84d14e1f457b7d59"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-006-AC001",
-        "UXF-006-AC002"
+        "UXF-006-AC002",
+        "UXF-006-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-006-O001",
@@ -3985,9 +3941,9 @@ This document should be read together with:
     "source_context_heading": "UXF-006",
     "source_context_sha256": "80e70b5aa5c0b30d3c6cc430abd63daba1ab06103ff418dec9e3855a15a31a69",
     "source_document": "docs/UXF/UXF-00.md",
-    "source_fingerprint": "52b7f40d85ecf7daad1628356d97bc4abfcf9bc8e398552363b73786076f5a72",
-    "source_lines": "L633-L636",
-    "source_section": "20. Architectural Principles > UXF-006"
+    "source_fingerprint": "65e18d2ddebf538013ffa818a6a230b60c85ed24716030cb84d14e1f457b7d59",
+    "source_lines": "L3889-L3964",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-006"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -4012,41 +3968,34 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-007-AC001",
-      "given": "a user in the applicable channel and context for Every runtime configuration supports fallback",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the rendered output identifies the applied runtime context, reflects the values resolved for that context, and contains no unresolved configuration token",
-      "verifies": [
-        "UXF-007-O001"
-      ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
-      "criterion_id": "UXF-007-AC002",
-      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for Every runtime configuration supports fallback",
-      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
-      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
-      "verifies": [
-        "UXF-007-O001"
-      ],
-      "when": "the affected state is rendered or action is requested"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-007",
+      "source_document": "docs/UXF/UXF-00.md",
+      "source_fingerprint": "1f70d81d70cb57b7481189cdaac2a240eaa8ce2542d35f57ad3de9b446105624"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-007-AC001",
-        "UXF-007-AC002"
+        "UXF-007-AC002",
+        "UXF-007-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-007-O001",
@@ -4069,9 +4018,9 @@ This document should be read together with:
     "source_context_heading": "UXF-007",
     "source_context_sha256": "f8ed2e693bb1e04a4ca033eb938dcfc31576565f9a7d4f950750bff0cb02a30c",
     "source_document": "docs/UXF/UXF-00.md",
-    "source_fingerprint": "545204b63308d86e7b400cd37f7f8011b20ad02b68152fc405ba5b91f11461c5",
-    "source_lines": "L639-L642",
-    "source_section": "20. Architectural Principles > UXF-007"
+    "source_fingerprint": "1f70d81d70cb57b7481189cdaac2a240eaa8ce2542d35f57ad3de9b446105624",
+    "source_lines": "L3966-L4041",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-007"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -4096,41 +4045,40 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-008-AC001",
-      "given": "a user in the applicable channel and context for Localization defines customer experience, not only language",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the rendered output exposes every required content element and action, keeps prohibited content absent, and makes the applicable confirmation or fallback directly observable",
-      "verifies": [
-        "UXF-008-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-008"
       ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
-      "criterion_id": "UXF-008-AC002",
-      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for Localization defines customer experience, not only language",
-      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
-      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
-      "verifies": [
-        "UXF-008-O001"
-      ],
-      "when": "the affected state is rendered or action is requested"
+      "approved_semantic_completion_selection": {
+        "decision_id": "P2C-SC-C1-DEC-023",
+        "option_id": "OPT-AST"
+      },
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-008",
+      "source_document": "docs/UXF/UXF-00.md",
+      "source_fingerprint": "86cce49bd9292f723ecdbc9439e9a1169feadf2721b502d51281d32bd855586f"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-008-AC001",
-        "UXF-008-AC002"
+        "UXF-008-AC002",
+        "UXF-008-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-008-O001",
@@ -4155,9 +4103,9 @@ This document should be read together with:
     "source_context_heading": "UXF-008",
     "source_context_sha256": "abd7673b8343b2428339e25d6cf0102b3fdfaa6f8913613413fd5ce6366f185e",
     "source_document": "docs/UXF/UXF-00.md",
-    "source_fingerprint": "20303fc4b812bc36885cb2776af43159c7f4e037effd8d05e7b7405d6f321490",
-    "source_lines": "L645-L648",
-    "source_section": "20. Architectural Principles > UXF-008"
+    "source_fingerprint": "86cce49bd9292f723ecdbc9439e9a1169feadf2721b502d51281d32bd855586f",
+    "source_lines": "L4043-L4126",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-008"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -4182,41 +4130,34 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-009-AC001",
-      "given": "a user in the applicable channel and context for Tracking participates in experience generation",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the rendered output exposes every required content element and action, keeps prohibited content absent, and makes the applicable confirmation or fallback directly observable",
-      "verifies": [
-        "UXF-009-O001"
-      ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
-      "criterion_id": "UXF-009-AC002",
-      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for Tracking participates in experience generation",
-      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
-      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
-      "verifies": [
-        "UXF-009-O001"
-      ],
-      "when": "the affected state is rendered or action is requested"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-009",
+      "source_document": "docs/UXF/UXF-00.md",
+      "source_fingerprint": "6dc52f0e0722d4adb04c226f286eb265417f38a2832e013eaf031bafb671c415"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-009-AC001",
-        "UXF-009-AC002"
+        "UXF-009-AC002",
+        "UXF-009-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-009-O001",
@@ -4239,9 +4180,9 @@ This document should be read together with:
     "source_context_heading": "14. Tracking Context",
     "source_context_sha256": "54cd724c09d3481deab71ae3d4e2a735a3647620e0f884d2f1d5778dd32b84ef",
     "source_document": "docs/UXF/UXF-00.md",
-    "source_fingerprint": "83d11e8292821143b357b909b1baf9b72cd1bf67f9efd35130dcdd2864f68ec3",
-    "source_lines": "L651-L654",
-    "source_section": "20. Architectural Principles > UXF-009"
+    "source_fingerprint": "6dc52f0e0722d4adb04c226f286eb265417f38a2832e013eaf031bafb671c415",
+    "source_lines": "L4128-L4203",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-009"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -4266,41 +4207,1308 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-010-AC001",
-      "given": "a user in the applicable channel and context for Every published storefront must pass business binding validation",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the rendered output exposes every required content element and action, keeps prohibited content absent, and makes the applicable confirmation or fallback directly observable",
-      "verifies": [
-        "UXF-010-O001"
-      ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
+  "acceptance_contract": {
+    "boundary_oracle": [
+      "Draft preview may expose incomplete bindings but cannot become published"
+    ],
+    "concrete_bindings": [
+      {
+        "allowed_lifecycle_states": {
+          "members": [
+            {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "UXF-010.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER"
+                ],
+                "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-010",
+                "source_type": "SOURCE_LITERAL",
+                "version": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc"
+              },
+              "identifier": "UXF-010.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "UXF-010.O1.1.REFERENCE_TARGET_VALID.ALLOWED_LIFECYCLE_STATES.ORIGIN.MEMBER.1",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/UXF/UXF-00.md",
+                "source_fingerprint": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc",
+                "source_lines": "L657-L660",
+                "source_section": "20. Architectural Principles > UXF-010"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "STATE_ID",
+                "resolver_id": "RESOLVE.UXF-010.UXF-010.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER",
+                "version": "1.0.0"
+              },
+              "semantic_type": "STATE_ID"
+            }
+          ],
+          "origin": {
+            "origin_id": "UXF-010.O1.1.REFERENCE_TARGET_VALID.ALLOWED_LIFECYCLE_STATES.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/UXF/UXF-00.md",
+            "source_fingerprint": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc",
+            "source_lines": "L657-L660",
+            "source_section": "20. Architectural Principles > UXF-010"
+          },
+          "semantic_type": "SET_OF<STATE_ID>"
+        },
+        "allowed_states": {
+          "members": [
+            {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "UXF-010.ALLOWED_STATES.SOURCE.MEMBER"
+                ],
+                "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-010",
+                "source_type": "SOURCE_LITERAL",
+                "version": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc"
+              },
+              "identifier": "UXF-010.ALLOWED_STATES.SOURCE.MEMBER",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "UXF-010.O1.1.REFERENCE_TARGET_VALID.ALLOWED_STATES.ORIGIN.MEMBER.1",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/UXF/UXF-00.md",
+                "source_fingerprint": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc",
+                "source_lines": "L657-L660",
+                "source_section": "20. Architectural Principles > UXF-010"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "STATE_ID",
+                "resolver_id": "RESOLVE.UXF-010.UXF-010.ALLOWED_STATES.SOURCE.MEMBER",
+                "version": "1.0.0"
+              },
+              "semantic_type": "STATE_ID"
+            }
+          ],
+          "origin": {
+            "origin_id": "UXF-010.O1.1.REFERENCE_TARGET_VALID.ALLOWED_STATES.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/UXF/UXF-00.md",
+            "source_fingerprint": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc",
+            "source_lines": "L657-L660",
+            "source_section": "20. Architectural Principles > UXF-010"
+          },
+          "semantic_type": "SET_OF<STATE_ID>"
+        },
+        "reference": {
+          "authoritative_source": {
+            "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-010",
+            "source_type": "SOURCE_LITERAL",
+            "version": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc"
+          },
+          "identifier": "UXF-010.REFERENCE",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "UXF-010.O1.1.REFERENCE_TARGET_VALID.REFERENCE.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/UXF/UXF-00.md",
+            "source_fingerprint": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc",
+            "source_lines": "L657-L660",
+            "source_section": "20. Architectural Principles > UXF-010"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "REFERENCE_ID",
+            "resolver_id": "RESOLVE.UXF-010.UXF-010.REFERENCE",
+            "version": "1.0.0"
+          },
+          "semantic_type": "REFERENCE_ID"
+        },
+        "registry": {
+          "authoritative_source": {
+            "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-010",
+            "source_type": "SOURCE_LITERAL",
+            "version": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc"
+          },
+          "identifier": "UXF-010.REGISTRY",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "UXF-010.O1.1.REFERENCE_TARGET_VALID.REGISTRY.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/UXF/UXF-00.md",
+            "source_fingerprint": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc",
+            "source_lines": "L657-L660",
+            "source_section": "20. Architectural Principles > UXF-010"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "ENTITY_ID",
+            "resolver_id": "RESOLVE.UXF-010.UXF-010.REGISTRY",
+            "version": "1.0.0"
+          },
+          "semantic_type": "ENTITY_ID"
+        },
+        "registry_source": {
+          "authoritative_source": {
+            "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-010",
+            "source_type": "SOURCE_LITERAL",
+            "version": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc"
+          },
+          "identifier": "UXF-010.REGISTRY_SOURCE",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "UXF-010.O1.1.REFERENCE_TARGET_VALID.REGISTRY_SOURCE.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/UXF/UXF-00.md",
+            "source_fingerprint": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc",
+            "source_lines": "L657-L660",
+            "source_section": "20. Architectural Principles > UXF-010"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "REFERENCE_ID",
+            "resolver_id": "RESOLVE.UXF-010.UXF-010.REGISTRY_SOURCE",
+            "version": "1.0.0"
+          },
+          "semantic_type": "REFERENCE_ID"
+        },
+        "target_id": {
+          "authoritative_source": {
+            "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-010",
+            "source_type": "SOURCE_LITERAL",
+            "version": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc"
+          },
+          "identifier": "UXF-010.TARGET_ID",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "UXF-010.O1.1.REFERENCE_TARGET_VALID.TARGET_ID.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/UXF/UXF-00.md",
+            "source_fingerprint": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc",
+            "source_lines": "L657-L660",
+            "source_section": "20. Architectural Principles > UXF-010"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "ENTITY_ID",
+            "resolver_id": "RESOLVE.UXF-010.UXF-010.TARGET_ID",
+            "version": "1.0.0"
+          },
+          "semantic_type": "ENTITY_ID"
+        },
+        "target_type": {
+          "authoritative_source": {
+            "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-010",
+            "source_type": "SOURCE_LITERAL",
+            "version": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc"
+          },
+          "identifier": "UXF-010.TARGET_TYPE",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "UXF-010.O1.1.REFERENCE_TARGET_VALID.TARGET_TYPE.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/UXF/UXF-00.md",
+            "source_fingerprint": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc",
+            "source_lines": "L657-L660",
+            "source_section": "20. Architectural Principles > UXF-010"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "ENTITY_TYPE",
+            "resolver_id": "RESOLVE.UXF-010.UXF-010.TARGET_TYPE",
+            "version": "1.0.0"
+          },
+          "semantic_type": "ENTITY_TYPE"
+        }
+      }
+    ],
+    "contract_id": "P2C.C4.CONTRACT.UXF-010",
+    "inference": false,
+    "mechanism": "APPROVED_TYPED_CUSTOM_AST",
+    "mechanism_version": "C4-R3",
+    "negative_oracle": [
+      "Storefront publishes with a missing, dangling or invalid required binding"
+    ],
+    "operator_composition": [
+      "REFERENCE_TARGET_VALID"
+    ],
+    "positive_oracle": [
+      "Publication succeeds only after all required business bindings validate"
+    ],
+    "provenance": {
+      "approved_decision_references": [],
+      "inference": false,
+      "source_document": "docs/UXF/UXF-00.md",
+      "source_fingerprint": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc",
+      "source_lines": "L657-L660",
+      "source_section": "20. Architectural Principles > UXF-010"
     },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
-      "criterion_id": "UXF-010-AC002",
-      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for Every published storefront must pass business binding validation",
-      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
-      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
-      "verifies": [
-        "UXF-010-O001"
+    "required_evidence": {
+      "evidence_object_ref": {
+        "authoritative_source": {
+          "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-010",
+          "source_type": "SOURCE_LITERAL",
+          "version": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc"
+        },
+        "identifier": "UXF-010.UXF-010.CONTRACT.EVIDENCE.OBJECT",
+        "inference": false,
+        "lifecycle": {
+          "status": "ACTIVE",
+          "version": "2.3"
+        },
+        "namespace": "YSIM.V2.3",
+        "origin": {
+          "origin_id": "UXF-010.CONTRACT.EVIDENCE.ORIGIN",
+          "origin_type": "EVIDENCE_OBJECT"
+        },
+        "provenance": {
+          "approved_decision_references": [],
+          "inference": false,
+          "source_document": "docs/UXF/UXF-00.md",
+          "source_fingerprint": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc",
+          "source_lines": "L657-L660",
+          "source_section": "20. Architectural Principles > UXF-010"
+        },
+        "resolver_contract": {
+          "deterministic": true,
+          "input_types": [],
+          "output_type": "EVIDENCE_OBJECT_REF",
+          "resolver_id": "OBSERVE.UXF-010.UXF-010.UXF-010.CONTRACT.EVIDENCE.OBJECT",
+          "version": "1.0.0"
+        },
+        "semantic_type": "EVIDENCE_OBJECT_REF"
+      },
+      "inference": false,
+      "observed_collection_origin": "UXF-010.RUNTIME.OBSERVED.FIELDS",
+      "observed_field_ids": [
+        "FIELD.STOREFRONT_ID",
+        "FIELD.BINDING_IDS",
+        "FIELD.BINDING_VALIDATION_RESULTS",
+        "FIELD.PUBLISH_STATE",
+        "FIELD.PUBLISH_AUDIT"
       ],
-      "when": "the affected state is rendered or action is requested"
+      "producer": "UXF-010.EVIDENCE.PRODUCER",
+      "required_collection_origin": "UXF-010.SOURCE.REQUIRED.FIELDS",
+      "required_field_ids": [
+        "FIELD.STOREFRONT_ID",
+        "FIELD.BINDING_IDS",
+        "FIELD.BINDING_VALIDATION_RESULTS",
+        "FIELD.PUBLISH_STATE",
+        "FIELD.PUBLISH_AUDIT"
+      ],
+      "required_values_or_hashes": [
+        "UXF-010.EVIDENCE.CONTENT.HASH"
+      ],
+      "retrieval_method": "UXF-010.EVIDENCE.RETRIEVAL",
+      "version_or_correlation": "UXF-010.EVIDENCE.VERSION.CORRELATION"
+    },
+    "runtime_evidence_executed": false,
+    "runtime_status": "RUNTIME_ADAPTER_PENDING",
+    "semantic_obligation_references": [
+      "UXF-010-O001"
+    ],
+    "typed_contract_ast": {
+      "approved_clarification": null,
+      "assertions": [
+        {
+          "assertion_id": "UXF-010.O1.1.REFERENCE_TARGET_VALID",
+          "evaluator_consumed_bindings": [
+            "allowed_lifecycle_states",
+            "allowed_states",
+            "reference",
+            "registry",
+            "registry_source",
+            "target_id",
+            "target_type"
+          ],
+          "evidence_object": {
+            "authoritative_source": {
+              "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-010",
+              "source_type": "SOURCE_LITERAL",
+              "version": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc"
+            },
+            "identifier": "UXF-010.UXF-010.O1.1.REFERENCE_TARGET_VALID.EVIDENCE.OBJECT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "UXF-010.O1.1.REFERENCE_TARGET_VALID.EVIDENCE.ORIGIN",
+              "origin_type": "EVIDENCE_OBJECT"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/UXF/UXF-00.md",
+              "source_fingerprint": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc",
+              "source_lines": "L657-L660",
+              "source_section": "20. Architectural Principles > UXF-010"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "EVIDENCE_OBJECT_REF",
+              "resolver_id": "OBSERVE.UXF-010.UXF-010.UXF-010.O1.1.REFERENCE_TARGET_VALID.EVIDENCE.OBJECT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "EVIDENCE_OBJECT_REF"
+          },
+          "expected_operand": {
+            "authoritative_source": {
+              "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-010",
+              "source_type": "SOURCE_LITERAL",
+              "version": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc"
+            },
+            "identifier": "UXF-010.UXF-010.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "UXF-010.O1.1.REFERENCE_TARGET_VALID.AUTHORITY.ORIGIN",
+              "origin_type": "SOURCE_LITERAL"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/UXF/UXF-00.md",
+              "source_fingerprint": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc",
+              "source_lines": "L657-L660",
+              "source_section": "20. Architectural Principles > UXF-010"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "REFERENCE_ID",
+              "resolver_id": "RESOLVE.UXF-010.UXF-010.UXF-010.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "REFERENCE_ID"
+          },
+          "inference": false,
+          "model_conformance_fixture": {
+            "bindings": {
+              "allowed_lifecycle_states": {
+                "members": [
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "UXF-010.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER"
+                      ],
+                      "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-010",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc"
+                    },
+                    "identifier": "UXF-010.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "UXF-010.O1.1.REFERENCE_TARGET_VALID.ALLOWED_LIFECYCLE_STATES.ORIGIN.MEMBER.1",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/UXF/UXF-00.md",
+                      "source_fingerprint": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc",
+                      "source_lines": "L657-L660",
+                      "source_section": "20. Architectural Principles > UXF-010"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "STATE_ID",
+                      "resolver_id": "RESOLVE.UXF-010.UXF-010.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "STATE_ID"
+                  }
+                ],
+                "origin": {
+                  "origin_id": "UXF-010.O1.1.REFERENCE_TARGET_VALID.ALLOWED_LIFECYCLE_STATES.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/UXF/UXF-00.md",
+                  "source_fingerprint": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc",
+                  "source_lines": "L657-L660",
+                  "source_section": "20. Architectural Principles > UXF-010"
+                },
+                "semantic_type": "SET_OF<STATE_ID>"
+              },
+              "allowed_states": {
+                "members": [
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "UXF-010.ALLOWED_STATES.SOURCE.MEMBER"
+                      ],
+                      "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-010",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc"
+                    },
+                    "identifier": "UXF-010.ALLOWED_STATES.SOURCE.MEMBER",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "UXF-010.O1.1.REFERENCE_TARGET_VALID.ALLOWED_STATES.ORIGIN.MEMBER.1",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/UXF/UXF-00.md",
+                      "source_fingerprint": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc",
+                      "source_lines": "L657-L660",
+                      "source_section": "20. Architectural Principles > UXF-010"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "STATE_ID",
+                      "resolver_id": "RESOLVE.UXF-010.UXF-010.ALLOWED_STATES.SOURCE.MEMBER",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "STATE_ID"
+                  }
+                ],
+                "origin": {
+                  "origin_id": "UXF-010.O1.1.REFERENCE_TARGET_VALID.ALLOWED_STATES.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/UXF/UXF-00.md",
+                  "source_fingerprint": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc",
+                  "source_lines": "L657-L660",
+                  "source_section": "20. Architectural Principles > UXF-010"
+                },
+                "semantic_type": "SET_OF<STATE_ID>"
+              },
+              "reference": {
+                "authoritative_source": {
+                  "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-010",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc"
+                },
+                "identifier": "UXF-010.REFERENCE",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "UXF-010.O1.1.REFERENCE_TARGET_VALID.REFERENCE.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/UXF/UXF-00.md",
+                  "source_fingerprint": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc",
+                  "source_lines": "L657-L660",
+                  "source_section": "20. Architectural Principles > UXF-010"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "REFERENCE_ID",
+                  "resolver_id": "RESOLVE.UXF-010.UXF-010.REFERENCE",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "REFERENCE_ID"
+              },
+              "registry": {
+                "authoritative_source": {
+                  "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-010",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc"
+                },
+                "identifier": "UXF-010.REGISTRY",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "UXF-010.O1.1.REFERENCE_TARGET_VALID.REGISTRY.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/UXF/UXF-00.md",
+                  "source_fingerprint": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc",
+                  "source_lines": "L657-L660",
+                  "source_section": "20. Architectural Principles > UXF-010"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "ENTITY_ID",
+                  "resolver_id": "RESOLVE.UXF-010.UXF-010.REGISTRY",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "ENTITY_ID"
+              },
+              "registry_source": {
+                "authoritative_source": {
+                  "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-010",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc"
+                },
+                "identifier": "UXF-010.REGISTRY_SOURCE",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "UXF-010.O1.1.REFERENCE_TARGET_VALID.REGISTRY_SOURCE.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/UXF/UXF-00.md",
+                  "source_fingerprint": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc",
+                  "source_lines": "L657-L660",
+                  "source_section": "20. Architectural Principles > UXF-010"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "REFERENCE_ID",
+                  "resolver_id": "RESOLVE.UXF-010.UXF-010.REGISTRY_SOURCE",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "REFERENCE_ID"
+              },
+              "target_id": {
+                "authoritative_source": {
+                  "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-010",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc"
+                },
+                "identifier": "UXF-010.TARGET_ID",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "UXF-010.O1.1.REFERENCE_TARGET_VALID.TARGET_ID.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/UXF/UXF-00.md",
+                  "source_fingerprint": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc",
+                  "source_lines": "L657-L660",
+                  "source_section": "20. Architectural Principles > UXF-010"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "ENTITY_ID",
+                  "resolver_id": "RESOLVE.UXF-010.UXF-010.TARGET_ID",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "ENTITY_ID"
+              },
+              "target_type": {
+                "authoritative_source": {
+                  "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-010",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc"
+                },
+                "identifier": "UXF-010.TARGET_TYPE",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "UXF-010.O1.1.REFERENCE_TARGET_VALID.TARGET_TYPE.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/UXF/UXF-00.md",
+                  "source_fingerprint": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc",
+                  "source_lines": "L657-L660",
+                  "source_section": "20. Architectural Principles > UXF-010"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "ENTITY_TYPE",
+                  "resolver_id": "RESOLVE.UXF-010.UXF-010.TARGET_TYPE",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "ENTITY_TYPE"
+              }
+            },
+            "comparison": {
+              "expected": {
+                "authoritative_source": {
+                  "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-010",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc"
+                },
+                "identifier": "UXF-010.UXF-010.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "UXF-010.O1.1.REFERENCE_TARGET_VALID.AUTHORITY.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/UXF/UXF-00.md",
+                  "source_fingerprint": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc",
+                  "source_lines": "L657-L660",
+                  "source_section": "20. Architectural Principles > UXF-010"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "REFERENCE_ID",
+                  "resolver_id": "RESOLVE.UXF-010.UXF-010.UXF-010.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "REFERENCE_ID"
+              },
+              "observed": {
+                "authoritative_source": {
+                  "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-010",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc"
+                },
+                "identifier": "UXF-010.UXF-010.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "UXF-010.O1.1.REFERENCE_TARGET_VALID.OBSERVED.ORIGIN",
+                  "origin_type": "RUNTIME_OBSERVED"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/UXF/UXF-00.md",
+                  "source_fingerprint": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc",
+                  "source_lines": "L657-L660",
+                  "source_section": "20. Architectural Principles > UXF-010"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "REFERENCE_ID",
+                  "resolver_id": "OBSERVE.UXF-010.UXF-010.UXF-010.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "REFERENCE_ID"
+              }
+            },
+            "evidence_object": {
+              "authoritative_source": {
+                "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-010",
+                "source_type": "SOURCE_LITERAL",
+                "version": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc"
+              },
+              "identifier": "UXF-010.UXF-010.O1.1.REFERENCE_TARGET_VALID.EVIDENCE.OBJECT",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "UXF-010.O1.1.REFERENCE_TARGET_VALID.EVIDENCE.ORIGIN",
+                "origin_type": "EVIDENCE_OBJECT"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/UXF/UXF-00.md",
+                "source_fingerprint": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc",
+                "source_lines": "L657-L660",
+                "source_section": "20. Architectural Principles > UXF-010"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "EVIDENCE_OBJECT_REF",
+                "resolver_id": "OBSERVE.UXF-010.UXF-010.UXF-010.O1.1.REFERENCE_TARGET_VALID.EVIDENCE.OBJECT",
+                "version": "1.0.0"
+              },
+              "semantic_type": "EVIDENCE_OBJECT_REF"
+            },
+            "operator_id": "REFERENCE_TARGET_VALID"
+          },
+          "obligation_id": "UXF-010-O001",
+          "observed_operand": {
+            "authoritative_source": {
+              "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-010",
+              "source_type": "SOURCE_LITERAL",
+              "version": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc"
+            },
+            "identifier": "UXF-010.UXF-010.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "UXF-010.O1.1.REFERENCE_TARGET_VALID.OBSERVED.ORIGIN",
+              "origin_type": "RUNTIME_OBSERVED"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/UXF/UXF-00.md",
+              "source_fingerprint": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc",
+              "source_lines": "L657-L660",
+              "source_section": "20. Architectural Principles > UXF-010"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "REFERENCE_ID",
+              "resolver_id": "OBSERVE.UXF-010.UXF-010.UXF-010.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "REFERENCE_ID"
+          },
+          "operator_id": "REFERENCE_TARGET_VALID",
+          "operator_version": "1.0.0-candidate.2",
+          "typed_bindings": {
+            "allowed_lifecycle_states": {
+              "members": [
+                {
+                  "authoritative_source": {
+                    "allowed_identifiers": [
+                      "UXF-010.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER"
+                    ],
+                    "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-010",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc"
+                  },
+                  "identifier": "UXF-010.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "UXF-010.O1.1.REFERENCE_TARGET_VALID.ALLOWED_LIFECYCLE_STATES.ORIGIN.MEMBER.1",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/UXF/UXF-00.md",
+                    "source_fingerprint": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc",
+                    "source_lines": "L657-L660",
+                    "source_section": "20. Architectural Principles > UXF-010"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "STATE_ID",
+                    "resolver_id": "RESOLVE.UXF-010.UXF-010.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "STATE_ID"
+                }
+              ],
+              "origin": {
+                "origin_id": "UXF-010.O1.1.REFERENCE_TARGET_VALID.ALLOWED_LIFECYCLE_STATES.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/UXF/UXF-00.md",
+                "source_fingerprint": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc",
+                "source_lines": "L657-L660",
+                "source_section": "20. Architectural Principles > UXF-010"
+              },
+              "semantic_type": "SET_OF<STATE_ID>"
+            },
+            "allowed_states": {
+              "members": [
+                {
+                  "authoritative_source": {
+                    "allowed_identifiers": [
+                      "UXF-010.ALLOWED_STATES.SOURCE.MEMBER"
+                    ],
+                    "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-010",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc"
+                  },
+                  "identifier": "UXF-010.ALLOWED_STATES.SOURCE.MEMBER",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "UXF-010.O1.1.REFERENCE_TARGET_VALID.ALLOWED_STATES.ORIGIN.MEMBER.1",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/UXF/UXF-00.md",
+                    "source_fingerprint": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc",
+                    "source_lines": "L657-L660",
+                    "source_section": "20. Architectural Principles > UXF-010"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "STATE_ID",
+                    "resolver_id": "RESOLVE.UXF-010.UXF-010.ALLOWED_STATES.SOURCE.MEMBER",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "STATE_ID"
+                }
+              ],
+              "origin": {
+                "origin_id": "UXF-010.O1.1.REFERENCE_TARGET_VALID.ALLOWED_STATES.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/UXF/UXF-00.md",
+                "source_fingerprint": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc",
+                "source_lines": "L657-L660",
+                "source_section": "20. Architectural Principles > UXF-010"
+              },
+              "semantic_type": "SET_OF<STATE_ID>"
+            },
+            "reference": {
+              "authoritative_source": {
+                "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-010",
+                "source_type": "SOURCE_LITERAL",
+                "version": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc"
+              },
+              "identifier": "UXF-010.REFERENCE",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "UXF-010.O1.1.REFERENCE_TARGET_VALID.REFERENCE.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/UXF/UXF-00.md",
+                "source_fingerprint": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc",
+                "source_lines": "L657-L660",
+                "source_section": "20. Architectural Principles > UXF-010"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "REFERENCE_ID",
+                "resolver_id": "RESOLVE.UXF-010.UXF-010.REFERENCE",
+                "version": "1.0.0"
+              },
+              "semantic_type": "REFERENCE_ID"
+            },
+            "registry": {
+              "authoritative_source": {
+                "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-010",
+                "source_type": "SOURCE_LITERAL",
+                "version": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc"
+              },
+              "identifier": "UXF-010.REGISTRY",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "UXF-010.O1.1.REFERENCE_TARGET_VALID.REGISTRY.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/UXF/UXF-00.md",
+                "source_fingerprint": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc",
+                "source_lines": "L657-L660",
+                "source_section": "20. Architectural Principles > UXF-010"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "ENTITY_ID",
+                "resolver_id": "RESOLVE.UXF-010.UXF-010.REGISTRY",
+                "version": "1.0.0"
+              },
+              "semantic_type": "ENTITY_ID"
+            },
+            "registry_source": {
+              "authoritative_source": {
+                "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-010",
+                "source_type": "SOURCE_LITERAL",
+                "version": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc"
+              },
+              "identifier": "UXF-010.REGISTRY_SOURCE",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "UXF-010.O1.1.REFERENCE_TARGET_VALID.REGISTRY_SOURCE.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/UXF/UXF-00.md",
+                "source_fingerprint": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc",
+                "source_lines": "L657-L660",
+                "source_section": "20. Architectural Principles > UXF-010"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "REFERENCE_ID",
+                "resolver_id": "RESOLVE.UXF-010.UXF-010.REGISTRY_SOURCE",
+                "version": "1.0.0"
+              },
+              "semantic_type": "REFERENCE_ID"
+            },
+            "target_id": {
+              "authoritative_source": {
+                "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-010",
+                "source_type": "SOURCE_LITERAL",
+                "version": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc"
+              },
+              "identifier": "UXF-010.TARGET_ID",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "UXF-010.O1.1.REFERENCE_TARGET_VALID.TARGET_ID.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/UXF/UXF-00.md",
+                "source_fingerprint": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc",
+                "source_lines": "L657-L660",
+                "source_section": "20. Architectural Principles > UXF-010"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "ENTITY_ID",
+                "resolver_id": "RESOLVE.UXF-010.UXF-010.TARGET_ID",
+                "version": "1.0.0"
+              },
+              "semantic_type": "ENTITY_ID"
+            },
+            "target_type": {
+              "authoritative_source": {
+                "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-010",
+                "source_type": "SOURCE_LITERAL",
+                "version": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc"
+              },
+              "identifier": "UXF-010.TARGET_TYPE",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "UXF-010.O1.1.REFERENCE_TARGET_VALID.TARGET_TYPE.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/UXF/UXF-00.md",
+                "source_fingerprint": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc",
+                "source_lines": "L657-L660",
+                "source_section": "20. Architectural Principles > UXF-010"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "ENTITY_TYPE",
+                "resolver_id": "RESOLVE.UXF-010.UXF-010.TARGET_TYPE",
+                "version": "1.0.0"
+              },
+              "semantic_type": "ENTITY_TYPE"
+            }
+          }
+        }
+      ],
+      "boundary_cases": [
+        "Draft preview may expose incomplete bindings but cannot become published"
+      ],
+      "contract_ast_sha256": "a72fcd0d8c02220d8c303df6bc7b6e2aa70c283ffba08a8740c4731345f26806",
+      "contract_id": "P2C.C4.CONTRACT.UXF-010",
+      "criticality": "HIGH",
+      "disposition": "OPERATOR_REMAP_REQUIRED",
+      "evidence_contract": {
+        "evidence_object_ref": {
+          "authoritative_source": {
+            "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-010",
+            "source_type": "SOURCE_LITERAL",
+            "version": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc"
+          },
+          "identifier": "UXF-010.UXF-010.CONTRACT.EVIDENCE.OBJECT",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "UXF-010.CONTRACT.EVIDENCE.ORIGIN",
+            "origin_type": "EVIDENCE_OBJECT"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/UXF/UXF-00.md",
+            "source_fingerprint": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc",
+            "source_lines": "L657-L660",
+            "source_section": "20. Architectural Principles > UXF-010"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "EVIDENCE_OBJECT_REF",
+            "resolver_id": "OBSERVE.UXF-010.UXF-010.UXF-010.CONTRACT.EVIDENCE.OBJECT",
+            "version": "1.0.0"
+          },
+          "semantic_type": "EVIDENCE_OBJECT_REF"
+        },
+        "inference": false,
+        "observed_collection_origin": "UXF-010.RUNTIME.OBSERVED.FIELDS",
+        "observed_field_ids": [
+          "FIELD.STOREFRONT_ID",
+          "FIELD.BINDING_IDS",
+          "FIELD.BINDING_VALIDATION_RESULTS",
+          "FIELD.PUBLISH_STATE",
+          "FIELD.PUBLISH_AUDIT"
+        ],
+        "producer": "UXF-010.EVIDENCE.PRODUCER",
+        "required_collection_origin": "UXF-010.SOURCE.REQUIRED.FIELDS",
+        "required_field_ids": [
+          "FIELD.STOREFRONT_ID",
+          "FIELD.BINDING_IDS",
+          "FIELD.BINDING_VALIDATION_RESULTS",
+          "FIELD.PUBLISH_STATE",
+          "FIELD.PUBLISH_AUDIT"
+        ],
+        "required_values_or_hashes": [
+          "UXF-010.EVIDENCE.CONTENT.HASH"
+        ],
+        "retrieval_method": "UXF-010.EVIDENCE.RETRIEVAL",
+        "version_or_correlation": "UXF-010.EVIDENCE.VERSION.CORRELATION"
+      },
+      "explicit_non_obligations": [
+        "No runtime implementation topology is authorized by this semantic record.",
+        "No production runtime evidence is claimed by this model-level candidate."
+      ],
+      "fixture_ids": [
+        "P2C-C4-FX-8AB32E29CBB360F60B81",
+        "P2C-C4-FX-9FEF0F3B6B1740C1AABF",
+        "P2C-C4-FX-32B14AF861DCC2F2E211"
+      ],
+      "high_risk_audit_subset": true,
+      "independent_contract_identity": true,
+      "inference": false,
+      "inherits_contract_ast": null,
+      "negative_oracles": [
+        "Storefront publishes with a missing, dangling or invalid required binding"
+      ],
+      "normative_obligations": [
+        {
+          "applicability": "V2.3_ACTIVE",
+          "obligation_id": "UXF-010-O001",
+          "obligation_text": "Every published storefront must pass business binding validation"
+        }
+      ],
+      "obligation_to_operator_coverage": [
+        {
+          "assertion_ids": [
+            "UXF-010.O1.1.REFERENCE_TARGET_VALID"
+          ],
+          "coverage_count": 1,
+          "obligation_id": "UXF-010-O001"
+        }
+      ],
+      "operator_composition": [
+        "REFERENCE_TARGET_VALID"
+      ],
+      "positive_oracles": [
+        "Publication succeeds only after all required business bindings validate"
+      ],
+      "preconditions": [
+        "Required business bindings and referenced canonical objects exist"
+      ],
+      "prohibitions": [
+        "Storefront publishes with a missing, dangling or invalid required binding"
+      ],
+      "requirement_id": "UXF-010",
+      "runtime_status": "SLICE_RUNTIME_ADAPTER_REQUIRED",
+      "semantic_family_id": null,
+      "source_provenance": {
+        "approved_decision_references": [],
+        "inference": false,
+        "source_document": "docs/UXF/UXF-00.md",
+        "source_fingerprint": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc",
+        "source_lines": "L657-L660",
+        "source_section": "20. Architectural Principles > UXF-010"
+      },
+      "source_statement": "Every published storefront must pass business binding validation.",
+      "surrounding_source_context": "### UXF-010\n\nEvery published storefront must pass business binding validation.\n\n---"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "contract_id": "P2C.C4.CONTRACT.UXF-010",
+    "inference": false,
+    "mechanism": "APPROVED_TYPED_CUSTOM_AST",
+    "mechanism_version": "SEMANTIC_ACCEPTANCE_RENDERER_C2",
+    "runtime_status": "RUNTIME_ADAPTER_PENDING"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "ACCEPTANCE_READY",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-010-AC001",
-        "UXF-010-AC002"
+        "UXF-010-AC002",
+        "UXF-010-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-010-O001",
@@ -4323,9 +5531,9 @@ This document should be read together with:
     "source_context_heading": "UXF-010",
     "source_context_sha256": "ed38d445deb7190118fc9f8317ae795c503634c174a6fa288375efc372dc46a1",
     "source_document": "docs/UXF/UXF-00.md",
-    "source_fingerprint": "0ae77a6f7e289ee8f57703d05ba1cef4359dd41d441e5a3220c59766d31c7dbc",
-    "source_lines": "L657-L660",
-    "source_section": "20. Architectural Principles > UXF-010"
+    "source_fingerprint": "cd104e5cbf6dcfbedf7085b6d45ad9733301d29951177d239a8409130e1ef3c9",
+    "source_lines": "L4205-L5554",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-010"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -4350,28 +5558,1304 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "UXF-011-AC001",
-      "given": "a candidate Runtime rendering must use published snapshots record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "UXF-011-O001"
+  "acceptance_contract": {
+    "boundary_oracle": [
+      "Preview may use draft state; public runtime remains on published Snapshot"
+    ],
+    "concrete_bindings": [
+      {
+        "allowed_lifecycle_states": {
+          "members": [
+            {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "UXF-011.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER"
+                ],
+                "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-011",
+                "source_type": "SOURCE_LITERAL",
+                "version": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7"
+              },
+              "identifier": "UXF-011.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "UXF-011.O1.1.REFERENCE_TARGET_VALID.ALLOWED_LIFECYCLE_STATES.ORIGIN.MEMBER.1",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/UXF/UXF-00.md",
+                "source_fingerprint": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7",
+                "source_lines": "L663-L666",
+                "source_section": "20. Architectural Principles > UXF-011"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "STATE_ID",
+                "resolver_id": "RESOLVE.UXF-011.UXF-011.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER",
+                "version": "1.0.0"
+              },
+              "semantic_type": "STATE_ID"
+            }
+          ],
+          "origin": {
+            "origin_id": "UXF-011.O1.1.REFERENCE_TARGET_VALID.ALLOWED_LIFECYCLE_STATES.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/UXF/UXF-00.md",
+            "source_fingerprint": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7",
+            "source_lines": "L663-L666",
+            "source_section": "20. Architectural Principles > UXF-011"
+          },
+          "semantic_type": "SET_OF<STATE_ID>"
+        },
+        "allowed_states": {
+          "members": [
+            {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "UXF-011.ALLOWED_STATES.SOURCE.MEMBER"
+                ],
+                "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-011",
+                "source_type": "SOURCE_LITERAL",
+                "version": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7"
+              },
+              "identifier": "UXF-011.ALLOWED_STATES.SOURCE.MEMBER",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "UXF-011.O1.1.REFERENCE_TARGET_VALID.ALLOWED_STATES.ORIGIN.MEMBER.1",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/UXF/UXF-00.md",
+                "source_fingerprint": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7",
+                "source_lines": "L663-L666",
+                "source_section": "20. Architectural Principles > UXF-011"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "STATE_ID",
+                "resolver_id": "RESOLVE.UXF-011.UXF-011.ALLOWED_STATES.SOURCE.MEMBER",
+                "version": "1.0.0"
+              },
+              "semantic_type": "STATE_ID"
+            }
+          ],
+          "origin": {
+            "origin_id": "UXF-011.O1.1.REFERENCE_TARGET_VALID.ALLOWED_STATES.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/UXF/UXF-00.md",
+            "source_fingerprint": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7",
+            "source_lines": "L663-L666",
+            "source_section": "20. Architectural Principles > UXF-011"
+          },
+          "semantic_type": "SET_OF<STATE_ID>"
+        },
+        "reference": {
+          "authoritative_source": {
+            "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-011",
+            "source_type": "SOURCE_LITERAL",
+            "version": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7"
+          },
+          "identifier": "UXF-011.REFERENCE",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "UXF-011.O1.1.REFERENCE_TARGET_VALID.REFERENCE.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/UXF/UXF-00.md",
+            "source_fingerprint": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7",
+            "source_lines": "L663-L666",
+            "source_section": "20. Architectural Principles > UXF-011"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "REFERENCE_ID",
+            "resolver_id": "RESOLVE.UXF-011.UXF-011.REFERENCE",
+            "version": "1.0.0"
+          },
+          "semantic_type": "REFERENCE_ID"
+        },
+        "registry": {
+          "authoritative_source": {
+            "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-011",
+            "source_type": "SOURCE_LITERAL",
+            "version": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7"
+          },
+          "identifier": "UXF-011.REGISTRY",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "UXF-011.O1.1.REFERENCE_TARGET_VALID.REGISTRY.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/UXF/UXF-00.md",
+            "source_fingerprint": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7",
+            "source_lines": "L663-L666",
+            "source_section": "20. Architectural Principles > UXF-011"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "ENTITY_ID",
+            "resolver_id": "RESOLVE.UXF-011.UXF-011.REGISTRY",
+            "version": "1.0.0"
+          },
+          "semantic_type": "ENTITY_ID"
+        },
+        "registry_source": {
+          "authoritative_source": {
+            "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-011",
+            "source_type": "SOURCE_LITERAL",
+            "version": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7"
+          },
+          "identifier": "UXF-011.REGISTRY_SOURCE",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "UXF-011.O1.1.REFERENCE_TARGET_VALID.REGISTRY_SOURCE.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/UXF/UXF-00.md",
+            "source_fingerprint": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7",
+            "source_lines": "L663-L666",
+            "source_section": "20. Architectural Principles > UXF-011"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "REFERENCE_ID",
+            "resolver_id": "RESOLVE.UXF-011.UXF-011.REGISTRY_SOURCE",
+            "version": "1.0.0"
+          },
+          "semantic_type": "REFERENCE_ID"
+        },
+        "target_id": {
+          "authoritative_source": {
+            "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-011",
+            "source_type": "SOURCE_LITERAL",
+            "version": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7"
+          },
+          "identifier": "UXF-011.TARGET_ID",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "UXF-011.O1.1.REFERENCE_TARGET_VALID.TARGET_ID.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/UXF/UXF-00.md",
+            "source_fingerprint": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7",
+            "source_lines": "L663-L666",
+            "source_section": "20. Architectural Principles > UXF-011"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "ENTITY_ID",
+            "resolver_id": "RESOLVE.UXF-011.UXF-011.TARGET_ID",
+            "version": "1.0.0"
+          },
+          "semantic_type": "ENTITY_ID"
+        },
+        "target_type": {
+          "authoritative_source": {
+            "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-011",
+            "source_type": "SOURCE_LITERAL",
+            "version": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7"
+          },
+          "identifier": "UXF-011.TARGET_TYPE",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "UXF-011.O1.1.REFERENCE_TARGET_VALID.TARGET_TYPE.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/UXF/UXF-00.md",
+            "source_fingerprint": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7",
+            "source_lines": "L663-L666",
+            "source_section": "20. Architectural Principles > UXF-011"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "ENTITY_TYPE",
+            "resolver_id": "RESOLVE.UXF-011.UXF-011.TARGET_TYPE",
+            "version": "1.0.0"
+          },
+          "semantic_type": "ENTITY_TYPE"
+        }
+      }
+    ],
+    "contract_id": "P2C.C4.CONTRACT.UXF-011",
+    "inference": false,
+    "mechanism": "APPROVED_TYPED_CUSTOM_AST",
+    "mechanism_version": "C4-R3",
+    "negative_oracle": [
+      "Runtime renders mutable draft or authoring state"
+    ],
+    "operator_composition": [
+      "REFERENCE_TARGET_VALID"
+    ],
+    "positive_oracle": [
+      "Runtime rendering uses the published Snapshot"
+    ],
+    "provenance": {
+      "approved_decision_references": [],
+      "inference": false,
+      "source_document": "docs/UXF/UXF-00.md",
+      "source_fingerprint": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7",
+      "source_lines": "L663-L666",
+      "source_section": "20. Architectural Principles > UXF-011"
+    },
+    "required_evidence": {
+      "evidence_object_ref": {
+        "authoritative_source": {
+          "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-011",
+          "source_type": "SOURCE_LITERAL",
+          "version": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7"
+        },
+        "identifier": "UXF-011.UXF-011.CONTRACT.EVIDENCE.OBJECT",
+        "inference": false,
+        "lifecycle": {
+          "status": "ACTIVE",
+          "version": "2.3"
+        },
+        "namespace": "YSIM.V2.3",
+        "origin": {
+          "origin_id": "UXF-011.CONTRACT.EVIDENCE.ORIGIN",
+          "origin_type": "EVIDENCE_OBJECT"
+        },
+        "provenance": {
+          "approved_decision_references": [],
+          "inference": false,
+          "source_document": "docs/UXF/UXF-00.md",
+          "source_fingerprint": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7",
+          "source_lines": "L663-L666",
+          "source_section": "20. Architectural Principles > UXF-011"
+        },
+        "resolver_contract": {
+          "deterministic": true,
+          "input_types": [],
+          "output_type": "EVIDENCE_OBJECT_REF",
+          "resolver_id": "OBSERVE.UXF-011.UXF-011.UXF-011.CONTRACT.EVIDENCE.OBJECT",
+          "version": "1.0.0"
+        },
+        "semantic_type": "EVIDENCE_OBJECT_REF"
+      },
+      "inference": false,
+      "observed_collection_origin": "UXF-011.RUNTIME.OBSERVED.FIELDS",
+      "observed_field_ids": [
+        "FIELD.STOREFRONT_ID",
+        "FIELD.PUBLISHED_SNAPSHOT_ID",
+        "FIELD.RUNTIME_SOURCE_ID",
+        "FIELD.RENDER_RESULT"
       ],
-      "when": "the candidate is evaluated against its declared data contract"
+      "producer": "UXF-011.EVIDENCE.PRODUCER",
+      "required_collection_origin": "UXF-011.SOURCE.REQUIRED.FIELDS",
+      "required_field_ids": [
+        "FIELD.STOREFRONT_ID",
+        "FIELD.PUBLISHED_SNAPSHOT_ID",
+        "FIELD.RUNTIME_SOURCE_ID",
+        "FIELD.RENDER_RESULT"
+      ],
+      "required_values_or_hashes": [
+        "UXF-011.EVIDENCE.CONTENT.HASH"
+      ],
+      "retrieval_method": "UXF-011.EVIDENCE.RETRIEVAL",
+      "version_or_correlation": "UXF-011.EVIDENCE.VERSION.CORRELATION"
+    },
+    "runtime_evidence_executed": false,
+    "runtime_status": "RUNTIME_ADAPTER_PENDING",
+    "semantic_obligation_references": [
+      "UXF-011-O001"
+    ],
+    "typed_contract_ast": {
+      "approved_clarification": null,
+      "assertions": [
+        {
+          "assertion_id": "UXF-011.O1.1.REFERENCE_TARGET_VALID",
+          "evaluator_consumed_bindings": [
+            "allowed_lifecycle_states",
+            "allowed_states",
+            "reference",
+            "registry",
+            "registry_source",
+            "target_id",
+            "target_type"
+          ],
+          "evidence_object": {
+            "authoritative_source": {
+              "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-011",
+              "source_type": "SOURCE_LITERAL",
+              "version": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7"
+            },
+            "identifier": "UXF-011.UXF-011.O1.1.REFERENCE_TARGET_VALID.EVIDENCE.OBJECT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "UXF-011.O1.1.REFERENCE_TARGET_VALID.EVIDENCE.ORIGIN",
+              "origin_type": "EVIDENCE_OBJECT"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/UXF/UXF-00.md",
+              "source_fingerprint": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7",
+              "source_lines": "L663-L666",
+              "source_section": "20. Architectural Principles > UXF-011"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "EVIDENCE_OBJECT_REF",
+              "resolver_id": "OBSERVE.UXF-011.UXF-011.UXF-011.O1.1.REFERENCE_TARGET_VALID.EVIDENCE.OBJECT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "EVIDENCE_OBJECT_REF"
+          },
+          "expected_operand": {
+            "authoritative_source": {
+              "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-011",
+              "source_type": "SOURCE_LITERAL",
+              "version": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7"
+            },
+            "identifier": "UXF-011.UXF-011.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "UXF-011.O1.1.REFERENCE_TARGET_VALID.AUTHORITY.ORIGIN",
+              "origin_type": "SOURCE_LITERAL"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/UXF/UXF-00.md",
+              "source_fingerprint": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7",
+              "source_lines": "L663-L666",
+              "source_section": "20. Architectural Principles > UXF-011"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "REFERENCE_ID",
+              "resolver_id": "RESOLVE.UXF-011.UXF-011.UXF-011.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "REFERENCE_ID"
+          },
+          "inference": false,
+          "model_conformance_fixture": {
+            "bindings": {
+              "allowed_lifecycle_states": {
+                "members": [
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "UXF-011.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER"
+                      ],
+                      "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-011",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7"
+                    },
+                    "identifier": "UXF-011.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "UXF-011.O1.1.REFERENCE_TARGET_VALID.ALLOWED_LIFECYCLE_STATES.ORIGIN.MEMBER.1",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/UXF/UXF-00.md",
+                      "source_fingerprint": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7",
+                      "source_lines": "L663-L666",
+                      "source_section": "20. Architectural Principles > UXF-011"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "STATE_ID",
+                      "resolver_id": "RESOLVE.UXF-011.UXF-011.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "STATE_ID"
+                  }
+                ],
+                "origin": {
+                  "origin_id": "UXF-011.O1.1.REFERENCE_TARGET_VALID.ALLOWED_LIFECYCLE_STATES.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/UXF/UXF-00.md",
+                  "source_fingerprint": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7",
+                  "source_lines": "L663-L666",
+                  "source_section": "20. Architectural Principles > UXF-011"
+                },
+                "semantic_type": "SET_OF<STATE_ID>"
+              },
+              "allowed_states": {
+                "members": [
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "UXF-011.ALLOWED_STATES.SOURCE.MEMBER"
+                      ],
+                      "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-011",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7"
+                    },
+                    "identifier": "UXF-011.ALLOWED_STATES.SOURCE.MEMBER",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "UXF-011.O1.1.REFERENCE_TARGET_VALID.ALLOWED_STATES.ORIGIN.MEMBER.1",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/UXF/UXF-00.md",
+                      "source_fingerprint": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7",
+                      "source_lines": "L663-L666",
+                      "source_section": "20. Architectural Principles > UXF-011"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "STATE_ID",
+                      "resolver_id": "RESOLVE.UXF-011.UXF-011.ALLOWED_STATES.SOURCE.MEMBER",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "STATE_ID"
+                  }
+                ],
+                "origin": {
+                  "origin_id": "UXF-011.O1.1.REFERENCE_TARGET_VALID.ALLOWED_STATES.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/UXF/UXF-00.md",
+                  "source_fingerprint": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7",
+                  "source_lines": "L663-L666",
+                  "source_section": "20. Architectural Principles > UXF-011"
+                },
+                "semantic_type": "SET_OF<STATE_ID>"
+              },
+              "reference": {
+                "authoritative_source": {
+                  "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-011",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7"
+                },
+                "identifier": "UXF-011.REFERENCE",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "UXF-011.O1.1.REFERENCE_TARGET_VALID.REFERENCE.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/UXF/UXF-00.md",
+                  "source_fingerprint": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7",
+                  "source_lines": "L663-L666",
+                  "source_section": "20. Architectural Principles > UXF-011"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "REFERENCE_ID",
+                  "resolver_id": "RESOLVE.UXF-011.UXF-011.REFERENCE",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "REFERENCE_ID"
+              },
+              "registry": {
+                "authoritative_source": {
+                  "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-011",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7"
+                },
+                "identifier": "UXF-011.REGISTRY",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "UXF-011.O1.1.REFERENCE_TARGET_VALID.REGISTRY.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/UXF/UXF-00.md",
+                  "source_fingerprint": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7",
+                  "source_lines": "L663-L666",
+                  "source_section": "20. Architectural Principles > UXF-011"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "ENTITY_ID",
+                  "resolver_id": "RESOLVE.UXF-011.UXF-011.REGISTRY",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "ENTITY_ID"
+              },
+              "registry_source": {
+                "authoritative_source": {
+                  "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-011",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7"
+                },
+                "identifier": "UXF-011.REGISTRY_SOURCE",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "UXF-011.O1.1.REFERENCE_TARGET_VALID.REGISTRY_SOURCE.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/UXF/UXF-00.md",
+                  "source_fingerprint": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7",
+                  "source_lines": "L663-L666",
+                  "source_section": "20. Architectural Principles > UXF-011"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "REFERENCE_ID",
+                  "resolver_id": "RESOLVE.UXF-011.UXF-011.REGISTRY_SOURCE",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "REFERENCE_ID"
+              },
+              "target_id": {
+                "authoritative_source": {
+                  "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-011",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7"
+                },
+                "identifier": "UXF-011.TARGET_ID",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "UXF-011.O1.1.REFERENCE_TARGET_VALID.TARGET_ID.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/UXF/UXF-00.md",
+                  "source_fingerprint": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7",
+                  "source_lines": "L663-L666",
+                  "source_section": "20. Architectural Principles > UXF-011"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "ENTITY_ID",
+                  "resolver_id": "RESOLVE.UXF-011.UXF-011.TARGET_ID",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "ENTITY_ID"
+              },
+              "target_type": {
+                "authoritative_source": {
+                  "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-011",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7"
+                },
+                "identifier": "UXF-011.TARGET_TYPE",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "UXF-011.O1.1.REFERENCE_TARGET_VALID.TARGET_TYPE.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/UXF/UXF-00.md",
+                  "source_fingerprint": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7",
+                  "source_lines": "L663-L666",
+                  "source_section": "20. Architectural Principles > UXF-011"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "ENTITY_TYPE",
+                  "resolver_id": "RESOLVE.UXF-011.UXF-011.TARGET_TYPE",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "ENTITY_TYPE"
+              }
+            },
+            "comparison": {
+              "expected": {
+                "authoritative_source": {
+                  "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-011",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7"
+                },
+                "identifier": "UXF-011.UXF-011.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "UXF-011.O1.1.REFERENCE_TARGET_VALID.AUTHORITY.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/UXF/UXF-00.md",
+                  "source_fingerprint": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7",
+                  "source_lines": "L663-L666",
+                  "source_section": "20. Architectural Principles > UXF-011"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "REFERENCE_ID",
+                  "resolver_id": "RESOLVE.UXF-011.UXF-011.UXF-011.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "REFERENCE_ID"
+              },
+              "observed": {
+                "authoritative_source": {
+                  "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-011",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7"
+                },
+                "identifier": "UXF-011.UXF-011.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "UXF-011.O1.1.REFERENCE_TARGET_VALID.OBSERVED.ORIGIN",
+                  "origin_type": "RUNTIME_OBSERVED"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/UXF/UXF-00.md",
+                  "source_fingerprint": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7",
+                  "source_lines": "L663-L666",
+                  "source_section": "20. Architectural Principles > UXF-011"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "REFERENCE_ID",
+                  "resolver_id": "OBSERVE.UXF-011.UXF-011.UXF-011.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "REFERENCE_ID"
+              }
+            },
+            "evidence_object": {
+              "authoritative_source": {
+                "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-011",
+                "source_type": "SOURCE_LITERAL",
+                "version": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7"
+              },
+              "identifier": "UXF-011.UXF-011.O1.1.REFERENCE_TARGET_VALID.EVIDENCE.OBJECT",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "UXF-011.O1.1.REFERENCE_TARGET_VALID.EVIDENCE.ORIGIN",
+                "origin_type": "EVIDENCE_OBJECT"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/UXF/UXF-00.md",
+                "source_fingerprint": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7",
+                "source_lines": "L663-L666",
+                "source_section": "20. Architectural Principles > UXF-011"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "EVIDENCE_OBJECT_REF",
+                "resolver_id": "OBSERVE.UXF-011.UXF-011.UXF-011.O1.1.REFERENCE_TARGET_VALID.EVIDENCE.OBJECT",
+                "version": "1.0.0"
+              },
+              "semantic_type": "EVIDENCE_OBJECT_REF"
+            },
+            "operator_id": "REFERENCE_TARGET_VALID"
+          },
+          "obligation_id": "UXF-011-O001",
+          "observed_operand": {
+            "authoritative_source": {
+              "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-011",
+              "source_type": "SOURCE_LITERAL",
+              "version": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7"
+            },
+            "identifier": "UXF-011.UXF-011.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "UXF-011.O1.1.REFERENCE_TARGET_VALID.OBSERVED.ORIGIN",
+              "origin_type": "RUNTIME_OBSERVED"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/UXF/UXF-00.md",
+              "source_fingerprint": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7",
+              "source_lines": "L663-L666",
+              "source_section": "20. Architectural Principles > UXF-011"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "REFERENCE_ID",
+              "resolver_id": "OBSERVE.UXF-011.UXF-011.UXF-011.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "REFERENCE_ID"
+          },
+          "operator_id": "REFERENCE_TARGET_VALID",
+          "operator_version": "1.0.0-candidate.2",
+          "typed_bindings": {
+            "allowed_lifecycle_states": {
+              "members": [
+                {
+                  "authoritative_source": {
+                    "allowed_identifiers": [
+                      "UXF-011.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER"
+                    ],
+                    "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-011",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7"
+                  },
+                  "identifier": "UXF-011.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "UXF-011.O1.1.REFERENCE_TARGET_VALID.ALLOWED_LIFECYCLE_STATES.ORIGIN.MEMBER.1",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/UXF/UXF-00.md",
+                    "source_fingerprint": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7",
+                    "source_lines": "L663-L666",
+                    "source_section": "20. Architectural Principles > UXF-011"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "STATE_ID",
+                    "resolver_id": "RESOLVE.UXF-011.UXF-011.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "STATE_ID"
+                }
+              ],
+              "origin": {
+                "origin_id": "UXF-011.O1.1.REFERENCE_TARGET_VALID.ALLOWED_LIFECYCLE_STATES.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/UXF/UXF-00.md",
+                "source_fingerprint": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7",
+                "source_lines": "L663-L666",
+                "source_section": "20. Architectural Principles > UXF-011"
+              },
+              "semantic_type": "SET_OF<STATE_ID>"
+            },
+            "allowed_states": {
+              "members": [
+                {
+                  "authoritative_source": {
+                    "allowed_identifiers": [
+                      "UXF-011.ALLOWED_STATES.SOURCE.MEMBER"
+                    ],
+                    "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-011",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7"
+                  },
+                  "identifier": "UXF-011.ALLOWED_STATES.SOURCE.MEMBER",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "UXF-011.O1.1.REFERENCE_TARGET_VALID.ALLOWED_STATES.ORIGIN.MEMBER.1",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/UXF/UXF-00.md",
+                    "source_fingerprint": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7",
+                    "source_lines": "L663-L666",
+                    "source_section": "20. Architectural Principles > UXF-011"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "STATE_ID",
+                    "resolver_id": "RESOLVE.UXF-011.UXF-011.ALLOWED_STATES.SOURCE.MEMBER",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "STATE_ID"
+                }
+              ],
+              "origin": {
+                "origin_id": "UXF-011.O1.1.REFERENCE_TARGET_VALID.ALLOWED_STATES.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/UXF/UXF-00.md",
+                "source_fingerprint": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7",
+                "source_lines": "L663-L666",
+                "source_section": "20. Architectural Principles > UXF-011"
+              },
+              "semantic_type": "SET_OF<STATE_ID>"
+            },
+            "reference": {
+              "authoritative_source": {
+                "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-011",
+                "source_type": "SOURCE_LITERAL",
+                "version": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7"
+              },
+              "identifier": "UXF-011.REFERENCE",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "UXF-011.O1.1.REFERENCE_TARGET_VALID.REFERENCE.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/UXF/UXF-00.md",
+                "source_fingerprint": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7",
+                "source_lines": "L663-L666",
+                "source_section": "20. Architectural Principles > UXF-011"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "REFERENCE_ID",
+                "resolver_id": "RESOLVE.UXF-011.UXF-011.REFERENCE",
+                "version": "1.0.0"
+              },
+              "semantic_type": "REFERENCE_ID"
+            },
+            "registry": {
+              "authoritative_source": {
+                "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-011",
+                "source_type": "SOURCE_LITERAL",
+                "version": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7"
+              },
+              "identifier": "UXF-011.REGISTRY",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "UXF-011.O1.1.REFERENCE_TARGET_VALID.REGISTRY.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/UXF/UXF-00.md",
+                "source_fingerprint": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7",
+                "source_lines": "L663-L666",
+                "source_section": "20. Architectural Principles > UXF-011"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "ENTITY_ID",
+                "resolver_id": "RESOLVE.UXF-011.UXF-011.REGISTRY",
+                "version": "1.0.0"
+              },
+              "semantic_type": "ENTITY_ID"
+            },
+            "registry_source": {
+              "authoritative_source": {
+                "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-011",
+                "source_type": "SOURCE_LITERAL",
+                "version": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7"
+              },
+              "identifier": "UXF-011.REGISTRY_SOURCE",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "UXF-011.O1.1.REFERENCE_TARGET_VALID.REGISTRY_SOURCE.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/UXF/UXF-00.md",
+                "source_fingerprint": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7",
+                "source_lines": "L663-L666",
+                "source_section": "20. Architectural Principles > UXF-011"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "REFERENCE_ID",
+                "resolver_id": "RESOLVE.UXF-011.UXF-011.REGISTRY_SOURCE",
+                "version": "1.0.0"
+              },
+              "semantic_type": "REFERENCE_ID"
+            },
+            "target_id": {
+              "authoritative_source": {
+                "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-011",
+                "source_type": "SOURCE_LITERAL",
+                "version": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7"
+              },
+              "identifier": "UXF-011.TARGET_ID",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "UXF-011.O1.1.REFERENCE_TARGET_VALID.TARGET_ID.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/UXF/UXF-00.md",
+                "source_fingerprint": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7",
+                "source_lines": "L663-L666",
+                "source_section": "20. Architectural Principles > UXF-011"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "ENTITY_ID",
+                "resolver_id": "RESOLVE.UXF-011.UXF-011.TARGET_ID",
+                "version": "1.0.0"
+              },
+              "semantic_type": "ENTITY_ID"
+            },
+            "target_type": {
+              "authoritative_source": {
+                "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-011",
+                "source_type": "SOURCE_LITERAL",
+                "version": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7"
+              },
+              "identifier": "UXF-011.TARGET_TYPE",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "UXF-011.O1.1.REFERENCE_TARGET_VALID.TARGET_TYPE.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/UXF/UXF-00.md",
+                "source_fingerprint": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7",
+                "source_lines": "L663-L666",
+                "source_section": "20. Architectural Principles > UXF-011"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "ENTITY_TYPE",
+                "resolver_id": "RESOLVE.UXF-011.UXF-011.TARGET_TYPE",
+                "version": "1.0.0"
+              },
+              "semantic_type": "ENTITY_TYPE"
+            }
+          }
+        }
+      ],
+      "boundary_cases": [
+        "Preview may use draft state; public runtime remains on published Snapshot"
+      ],
+      "contract_ast_sha256": "d78bd0809b5f003eb98ee6e9abaaabfbabc581ce078a54b42bae509aa42c57c4",
+      "contract_id": "P2C.C4.CONTRACT.UXF-011",
+      "criticality": "NORMAL",
+      "disposition": "OPERATOR_REMAP_REQUIRED",
+      "evidence_contract": {
+        "evidence_object_ref": {
+          "authoritative_source": {
+            "source_id": "docs/UXF/UXF-00.md#20. Architectural Principles > UXF-011",
+            "source_type": "SOURCE_LITERAL",
+            "version": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7"
+          },
+          "identifier": "UXF-011.UXF-011.CONTRACT.EVIDENCE.OBJECT",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "UXF-011.CONTRACT.EVIDENCE.ORIGIN",
+            "origin_type": "EVIDENCE_OBJECT"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/UXF/UXF-00.md",
+            "source_fingerprint": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7",
+            "source_lines": "L663-L666",
+            "source_section": "20. Architectural Principles > UXF-011"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "EVIDENCE_OBJECT_REF",
+            "resolver_id": "OBSERVE.UXF-011.UXF-011.UXF-011.CONTRACT.EVIDENCE.OBJECT",
+            "version": "1.0.0"
+          },
+          "semantic_type": "EVIDENCE_OBJECT_REF"
+        },
+        "inference": false,
+        "observed_collection_origin": "UXF-011.RUNTIME.OBSERVED.FIELDS",
+        "observed_field_ids": [
+          "FIELD.STOREFRONT_ID",
+          "FIELD.PUBLISHED_SNAPSHOT_ID",
+          "FIELD.RUNTIME_SOURCE_ID",
+          "FIELD.RENDER_RESULT"
+        ],
+        "producer": "UXF-011.EVIDENCE.PRODUCER",
+        "required_collection_origin": "UXF-011.SOURCE.REQUIRED.FIELDS",
+        "required_field_ids": [
+          "FIELD.STOREFRONT_ID",
+          "FIELD.PUBLISHED_SNAPSHOT_ID",
+          "FIELD.RUNTIME_SOURCE_ID",
+          "FIELD.RENDER_RESULT"
+        ],
+        "required_values_or_hashes": [
+          "UXF-011.EVIDENCE.CONTENT.HASH"
+        ],
+        "retrieval_method": "UXF-011.EVIDENCE.RETRIEVAL",
+        "version_or_correlation": "UXF-011.EVIDENCE.VERSION.CORRELATION"
+      },
+      "explicit_non_obligations": [
+        "No runtime implementation topology is authorized by this semantic record.",
+        "No production runtime evidence is claimed by this model-level candidate."
+      ],
+      "fixture_ids": [
+        "P2C-C4-FX-2ADEBEC643D8FE33B499",
+        "P2C-C4-FX-730915F92E43E570C395",
+        "P2C-C4-FX-59B43E749E3F81E04429"
+      ],
+      "high_risk_audit_subset": false,
+      "independent_contract_identity": true,
+      "inference": false,
+      "inherits_contract_ast": null,
+      "negative_oracles": [
+        "Runtime renders mutable draft or authoring state"
+      ],
+      "normative_obligations": [
+        {
+          "applicability": "V2.3_ACTIVE",
+          "obligation_id": "UXF-011-O001",
+          "obligation_text": "Runtime rendering must use published snapshots"
+        }
+      ],
+      "obligation_to_operator_coverage": [
+        {
+          "assertion_ids": [
+            "UXF-011.O1.1.REFERENCE_TARGET_VALID"
+          ],
+          "coverage_count": 1,
+          "obligation_id": "UXF-011-O001"
+        }
+      ],
+      "operator_composition": [
+        "REFERENCE_TARGET_VALID"
+      ],
+      "positive_oracles": [
+        "Runtime rendering uses the published Snapshot"
+      ],
+      "preconditions": [
+        "A published Storefront Snapshot is resolved"
+      ],
+      "prohibitions": [
+        "Runtime renders mutable draft or authoring state"
+      ],
+      "requirement_id": "UXF-011",
+      "runtime_status": "SLICE_RUNTIME_ADAPTER_REQUIRED",
+      "semantic_family_id": null,
+      "source_provenance": {
+        "approved_decision_references": [],
+        "inference": false,
+        "source_document": "docs/UXF/UXF-00.md",
+        "source_fingerprint": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7",
+        "source_lines": "L663-L666",
+        "source_section": "20. Architectural Principles > UXF-011"
+      },
+      "source_statement": "Runtime rendering must use published snapshots.",
+      "surrounding_source_context": "### UXF-011\n\nRuntime rendering must use published snapshots.\n\n---"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "contract_id": "P2C.C4.CONTRACT.UXF-011",
+    "inference": false,
+    "mechanism": "APPROVED_TYPED_CUSTOM_AST",
+    "mechanism_version": "SEMANTIC_ACCEPTANCE_RENDERER_C2",
+    "runtime_status": "RUNTIME_ADAPTER_PENDING"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "ACCEPTANCE_READY",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "UXF-011-AC001"
+        "UXF-011-AC001",
+        "UXF-011-AC002",
+        "UXF-011-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-011-O001",
@@ -4394,9 +6878,9 @@ This document should be read together with:
     "source_context_heading": "UXF-011",
     "source_context_sha256": "7c0ef2c1dad3af2dc6b43cbf3ba331259204345c1cc0515a0920441f0dd53e35",
     "source_document": "docs/UXF/UXF-00.md",
-    "source_fingerprint": "06fee0249e722baca5f14cbfea2d508a2315fddc88b7d8ce3fd9fe56616372c7",
-    "source_lines": "L663-L666",
-    "source_section": "20. Architectural Principles > UXF-011"
+    "source_fingerprint": "9445290eaf31654edac7e2c758bf11ef5c938aa98eb54988843cf0718d17b0bd",
+    "source_lines": "L5556-L6901",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-011"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -4421,41 +6905,34 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-012-AC001",
-      "given": "a user in the applicable channel and context for Design System components are shared across every portal",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the rendered output exposes every required content element and action, keeps prohibited content absent, and makes the applicable confirmation or fallback directly observable",
-      "verifies": [
-        "UXF-012-O001"
-      ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
-      "criterion_id": "UXF-012-AC002",
-      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for Design System components are shared across every portal",
-      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
-      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
-      "verifies": [
-        "UXF-012-O001"
-      ],
-      "when": "the affected state is rendered or action is requested"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-012",
+      "source_document": "docs/UXF/UXF-00.md",
+      "source_fingerprint": "8c48c00ebf272ac978132828bfb82a8ae07ae488e23126c39f3373076d6e2353"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-012-AC001",
-        "UXF-012-AC002"
+        "UXF-012-AC002",
+        "UXF-012-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-012-O001",
@@ -4478,9 +6955,9 @@ This document should be read together with:
     "source_context_heading": "UXF-012",
     "source_context_sha256": "ddf4b1f408cba50a83d3478401af65e794d89e0c346315c1ea30a8e124edad1e",
     "source_document": "docs/UXF/UXF-00.md",
-    "source_fingerprint": "d0c1beeda198069e186cc9d1f49e4f5f942b676b58ea3f742e67a51a7898cee1",
-    "source_lines": "L669-L672",
-    "source_section": "20. Architectural Principles > UXF-012"
+    "source_fingerprint": "8c48c00ebf272ac978132828bfb82a8ae07ae488e23126c39f3373076d6e2353",
+    "source_lines": "L6903-L6978",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-012"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {

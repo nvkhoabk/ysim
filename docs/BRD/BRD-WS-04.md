@@ -1,13 +1,20 @@
 ---
 document_code: "BRD-WS-04"
+document_id: "BRD-WS-04"
 title: "Product Catalog, Supplier & Product Intelligence"
-product_baseline: "2.3"
-document_revision: "2.3.0-draft.1"
+version: "2.3.0-draft.3"
+document_revision: "2.3.0-draft.3"
+status: "V2.3_DRAFT"
 lifecycle_status: "V2.3_DRAFT"
 language: "vi-VN"
+baseline: "2.3"
+product_baseline: "2.3"
+source_lineage: "v2.2 + approved Phase 1/2A/2B + accepted Acceptance Model C1 + accepted Mapping C3"
 source_baseline: "v2.2"
+last_reviewed_date: "2026-07-15"
+last_remediated_on: "2026-07-17"
+applicable_scope: "V2.3_ACTIVE_AND_RETAINED_SCOPE_RECORDS"
 generated_registry_role: "BRD_CANONICAL_SOURCE"
-last_remediated_on: "2026-07-15"
 ---
 ## Thẩm quyền nguồn yêu cầu v2.3
 
@@ -698,7 +705,7 @@ Workshop này là Foundation cho:
 
 <!-- YSIM:PHASE_2C CANONICAL APPENDIX BEGIN -->
 
-## Phụ lục yêu cầu chuẩn tắc v2.3
+## Phụ lục yêu cầu chuẩn tắc v2.3 — C6-R1
 
 
 
@@ -707,111 +714,74 @@ Workshop này là Foundation cho:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-04-001-AC001",
-      "given": "the applicable business context, actor, and input for YSim sử dụng mô hình Four-Level Catalog: - Supplier Catalog - Master Catalog - Sales Catalog - S…",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-04-001-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-007"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-04-001-AC002",
-      "given": "the applicable business context, actor, and input for YSim sử dụng mô hình Four-Level Catalog: - Supplier Catalog - Master Catalog - Sales Catalog - S…",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-04-001-O002"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-04-001-AC003",
-      "given": "the applicable business context, actor, and input for YSim sử dụng mô hình Four-Level Catalog: - Supplier Catalog - Master Catalog - Sales Catalog - S…",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-04-001-O003"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-04-001-AC004",
-      "given": "the applicable business context, actor, and input for YSim sử dụng mô hình Four-Level Catalog: - Supplier Catalog - Master Catalog - Sales Catalog - S…",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-04-001-O004"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BD-04-001-AC005",
-      "given": "an unsupported or invalid business input at the boundary governed by YSim sử dụng mô hình Four-Level Catalog: - Supplier Catalog - Master Catalog - Sales Catalog - S…",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BD-04-001-O001",
-        "BD-04-001-O002",
-        "BD-04-001-O003",
-        "BD-04-001-O004"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+      "approved_semantic_completion_selection": {
+        "decision_id": "P2C-SC-C1-DEC-001",
+        "option_id": "OPT-AST"
+      },
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-04-001",
+      "source_document": "docs/BRD/BRD-WS-04.md",
+      "source_fingerprint": "1ca51037474e1df7f7b741fdebc6e681b81ecb203ed3f3e8addd9b5e184cdbf4"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-04-001-AC001",
-        "BD-04-001-AC005"
+        "BD-04-001-AC005",
+        "BD-04-001-AC006"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-04-001-O001",
-      "obligation_text": "YSim sử dụng mô hình Four-Level Catalog: Supplier Catalog."
+      "obligation_text": "YSim sử dụng mô hình Four-Level Catalog: Supplier Catalog"
     },
     {
       "acceptance_criterion_references": [
         "BD-04-001-AC002",
-        "BD-04-001-AC005"
+        "BD-04-001-AC005",
+        "BD-04-001-AC006"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-04-001-O002",
-      "obligation_text": "YSim sử dụng mô hình Four-Level Catalog: Master Catalog."
+      "obligation_text": "YSim sử dụng mô hình Four-Level Catalog: Master Catalog"
     },
     {
       "acceptance_criterion_references": [
         "BD-04-001-AC003",
-        "BD-04-001-AC005"
+        "BD-04-001-AC005",
+        "BD-04-001-AC006"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-04-001-O003",
-      "obligation_text": "YSim sử dụng mô hình Four-Level Catalog: Sales Catalog."
+      "obligation_text": "YSim sử dụng mô hình Four-Level Catalog: Sales Catalog"
     },
     {
       "acceptance_criterion_references": [
         "BD-04-001-AC004",
-        "BD-04-001-AC005"
+        "BD-04-001-AC005",
+        "BD-04-001-AC006"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-04-001-O004",
-      "obligation_text": "YSim sử dụng mô hình Four-Level Catalog: Storefront Catalog."
+      "obligation_text": "YSim sử dụng mô hình Four-Level Catalog: Storefront Catalog"
     }
   ],
   "criticality_applicability": null,
@@ -832,9 +802,9 @@ Workshop này là Foundation cho:
     "source_context_heading": "BD-04-001",
     "source_context_sha256": "678620f32e0db94988f43ea4b56d23e284fd5b41953e9520fb328b5bc66e233d",
     "source_document": "docs/BRD/BRD-WS-04.md",
-    "source_fingerprint": "63df232f43395e2a0fe801be558496ee7e5c652dc21b08b269c0b52ca6e99acf",
-    "source_lines": "L521-L529",
-    "source_section": "24. Business Decisions (Locked) > BD-04-001"
+    "source_fingerprint": "1ca51037474e1df7f7b741fdebc6e681b81ecb203ed3f3e8addd9b5e184cdbf4",
+    "source_lines": "L712-L825",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-04-001"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -859,41 +829,34 @@ Workshop này là Foundation cho:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-04-002-AC001",
-      "given": "the applicable business context, actor, and input for Sales Catalog thuộc Organization",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-04-002-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BD-04-002-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Sales Catalog thuộc Organization",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BD-04-002-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-04-002",
+      "source_document": "docs/BRD/BRD-WS-04.md",
+      "source_fingerprint": "bbc834d4de1541279f743f7b843886f78ceeeabd28f46bc6c78123444db456cb"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-04-002-AC001",
-        "BD-04-002-AC002"
+        "BD-04-002-AC002",
+        "BD-04-002-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-04-002-O001",
@@ -916,9 +879,9 @@ Workshop này là Foundation cho:
     "source_context_heading": "6. Sales Catalog",
     "source_context_sha256": "93060d1ad79d5976f5cfade005f283427b423ec1bc4931f5881ea8338ceb30c8",
     "source_document": "docs/BRD/BRD-WS-04.md",
-    "source_fingerprint": "be311ffaaf3ac0a04057cf20a10930b5a3e9d29994a7e7ca6d4f22bdbecddc73",
-    "source_lines": "L532-L535",
-    "source_section": "24. Business Decisions (Locked) > BD-04-002"
+    "source_fingerprint": "bbc834d4de1541279f743f7b843886f78ceeeabd28f46bc6c78123444db456cb",
+    "source_lines": "L827-L902",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-04-002"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -943,54 +906,34 @@ Workshop này là Foundation cho:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-04-003-AC001",
-      "given": "the applicable business context, actor, and input for Sales Catalog chỉ tham chiếu Master Product. Không sao chép Product",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-04-003-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-04-003-AC002",
-      "given": "the applicable business context, actor, and input for Sales Catalog chỉ tham chiếu Master Product. Không sao chép Product",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-04-003-O002"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BD-04-003-AC003",
-      "given": "an unsupported or invalid business input at the boundary governed by Sales Catalog chỉ tham chiếu Master Product. Không sao chép Product",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BD-04-003-O001",
-        "BD-04-003-O002"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-04-003",
+      "source_document": "docs/BRD/BRD-WS-04.md",
+      "source_fingerprint": "99922282fa8cc6f2c3e58e49b1727d2c54ed404f98b10fa4c607caec271123be"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-04-003-AC001",
-        "BD-04-003-AC003"
+        "BD-04-003-AC003",
+        "BD-04-003-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-04-003-O001",
@@ -999,7 +942,8 @@ Workshop này là Foundation cho:
     {
       "acceptance_criterion_references": [
         "BD-04-003-AC002",
-        "BD-04-003-AC003"
+        "BD-04-003-AC003",
+        "BD-04-003-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-04-003-O002",
@@ -1022,9 +966,9 @@ Workshop này là Foundation cho:
     "source_context_heading": "BD-04-003",
     "source_context_sha256": "314375f19ac326307972255814629ada8cedcc65af444144b2a6e663b7690f36",
     "source_document": "docs/BRD/BRD-WS-04.md",
-    "source_fingerprint": "b4c933ec320c50ad16d7be6facda33019bb8c6857fcbcb69f81d04fe8d00ea5a",
-    "source_lines": "L538-L543",
-    "source_section": "24. Business Decisions (Locked) > BD-04-003"
+    "source_fingerprint": "99922282fa8cc6f2c3e58e49b1727d2c54ed404f98b10fa4c607caec271123be",
+    "source_lines": "L904-L989",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-04-003"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1049,41 +993,34 @@ Workshop này là Foundation cho:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-04-004-AC001",
-      "given": "the applicable business context, actor, and input for Product Specification chỉ được quản lý tại Master Catalog",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-04-004-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BD-04-004-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Product Specification chỉ được quản lý tại Master Catalog",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BD-04-004-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-04-004",
+      "source_document": "docs/BRD/BRD-WS-04.md",
+      "source_fingerprint": "6503dc51d5a466cb212ae1ec8c096c6351a5a93713b4ee0fe9d0a2d80e746963"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-04-004-AC001",
-        "BD-04-004-AC002"
+        "BD-04-004-AC002",
+        "BD-04-004-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-04-004-O001",
@@ -1106,9 +1043,9 @@ Workshop này là Foundation cho:
     "source_context_heading": "BD-04-004",
     "source_context_sha256": "f6db0eee9a0222fac12d792701d207d12e9c92509adc93ba801016d995a878f0",
     "source_document": "docs/BRD/BRD-WS-04.md",
-    "source_fingerprint": "1d9260d8f6a1b3b47f387db94ad87ef606f4f62efab1ef68da4759cfe6eb9623",
-    "source_lines": "L546-L549",
-    "source_section": "24. Business Decisions (Locked) > BD-04-004"
+    "source_fingerprint": "6503dc51d5a466cb212ae1ec8c096c6351a5a93713b4ee0fe9d0a2d80e746963",
+    "source_lines": "L991-L1066",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-04-004"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1133,179 +1070,7956 @@ Workshop này là Foundation cho:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-04-005-AC001",
-      "given": "the applicable business context, actor, and input for Organization chỉ được thay đổi: - Selling Price - Currency - Collection - Visibility - Marketing…",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-04-005-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "boundary_oracle": [
+      "A named field may still be denied by a stricter applicable policy; unnamed fields remain immutable to Organization"
+    ],
+    "concrete_bindings": [
+      {
+        "actual_value": {
+          "authoritative_source": {
+            "allowed_identifiers": [
+              "BD-04-005.OBSERVED.ENUM.VALUE"
+            ],
+            "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+            "source_type": "SOURCE_LITERAL",
+            "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+          },
+          "identifier": "BD-04-005.OBSERVED.ENUM.VALUE",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BD-04-005.O1.1.ENUM_VALUE_ALLOWED.ACTUAL_VALUE.ORIGIN",
+            "origin_type": "RUNTIME_OBSERVED"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-04.md",
+            "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+            "source_lines": "L552-L562",
+            "source_section": "24. Business Decisions (Locked) > BD-04-005"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "CANONICAL_ENUM_VALUE",
+            "resolver_id": "OBSERVE.BD-04-005.BD-04-005.OBSERVED.ENUM.VALUE",
+            "version": "1.0.0"
+          },
+          "semantic_type": "CANONICAL_ENUM_VALUE"
+        },
+        "allowed_values": {
+          "members": [
+            {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "SELLING.PRICE",
+                  "CURRENCY",
+                  "COLLECTION",
+                  "VISIBILITY",
+                  "MARKETING.CONTENT",
+                  "PRODUCT.CODE.PREFIX.POSTFIX"
+                ],
+                "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+              },
+              "identifier": "SELLING.PRICE",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-04-005.O1.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.1",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CANONICAL_ENUM_VALUE",
+                "resolver_id": "RESOLVE.BD-04-005.SELLING.PRICE",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_ENUM_VALUE"
+            },
+            {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "SELLING.PRICE",
+                  "CURRENCY",
+                  "COLLECTION",
+                  "VISIBILITY",
+                  "MARKETING.CONTENT",
+                  "PRODUCT.CODE.PREFIX.POSTFIX"
+                ],
+                "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+              },
+              "identifier": "CURRENCY",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-04-005.O1.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.2",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CANONICAL_ENUM_VALUE",
+                "resolver_id": "RESOLVE.BD-04-005.CURRENCY",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_ENUM_VALUE"
+            },
+            {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "SELLING.PRICE",
+                  "CURRENCY",
+                  "COLLECTION",
+                  "VISIBILITY",
+                  "MARKETING.CONTENT",
+                  "PRODUCT.CODE.PREFIX.POSTFIX"
+                ],
+                "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+              },
+              "identifier": "COLLECTION",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-04-005.O1.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.3",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CANONICAL_ENUM_VALUE",
+                "resolver_id": "RESOLVE.BD-04-005.COLLECTION",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_ENUM_VALUE"
+            },
+            {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "SELLING.PRICE",
+                  "CURRENCY",
+                  "COLLECTION",
+                  "VISIBILITY",
+                  "MARKETING.CONTENT",
+                  "PRODUCT.CODE.PREFIX.POSTFIX"
+                ],
+                "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+              },
+              "identifier": "VISIBILITY",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-04-005.O1.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.4",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CANONICAL_ENUM_VALUE",
+                "resolver_id": "RESOLVE.BD-04-005.VISIBILITY",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_ENUM_VALUE"
+            },
+            {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "SELLING.PRICE",
+                  "CURRENCY",
+                  "COLLECTION",
+                  "VISIBILITY",
+                  "MARKETING.CONTENT",
+                  "PRODUCT.CODE.PREFIX.POSTFIX"
+                ],
+                "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+              },
+              "identifier": "MARKETING.CONTENT",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-04-005.O1.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.5",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CANONICAL_ENUM_VALUE",
+                "resolver_id": "RESOLVE.BD-04-005.MARKETING.CONTENT",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_ENUM_VALUE"
+            },
+            {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "SELLING.PRICE",
+                  "CURRENCY",
+                  "COLLECTION",
+                  "VISIBILITY",
+                  "MARKETING.CONTENT",
+                  "PRODUCT.CODE.PREFIX.POSTFIX"
+                ],
+                "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+              },
+              "identifier": "PRODUCT.CODE.PREFIX.POSTFIX",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-04-005.O1.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.6",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CANONICAL_ENUM_VALUE",
+                "resolver_id": "RESOLVE.BD-04-005.PRODUCT.CODE.PREFIX.POSTFIX",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_ENUM_VALUE"
+            }
+          ],
+          "origin": {
+            "origin_id": "BD-04-005.O1.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-04.md",
+            "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+            "source_lines": "L552-L562",
+            "source_section": "24. Business Decisions (Locked) > BD-04-005"
+          },
+          "semantic_type": "SET_OF<CANONICAL_ENUM_VALUE>"
+        },
+        "field": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+            "source_type": "SOURCE_LITERAL",
+            "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+          },
+          "identifier": "BD-04-005.FIELD",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BD-04-005.O1.1.ENUM_VALUE_ALLOWED.FIELD.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-04.md",
+            "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+            "source_lines": "L552-L562",
+            "source_section": "24. Business Decisions (Locked) > BD-04-005"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "FIELD_ID",
+            "resolver_id": "RESOLVE.BD-04-005.BD-04-005.FIELD",
+            "version": "1.0.0"
+          },
+          "semantic_type": "FIELD_ID"
+        }
+      },
+      {
+        "actual_value": {
+          "authoritative_source": {
+            "allowed_identifiers": [
+              "BD-04-005.OBSERVED.ENUM.VALUE"
+            ],
+            "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+            "source_type": "SOURCE_LITERAL",
+            "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+          },
+          "identifier": "BD-04-005.OBSERVED.ENUM.VALUE",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BD-04-005.O2.1.ENUM_VALUE_ALLOWED.ACTUAL_VALUE.ORIGIN",
+            "origin_type": "RUNTIME_OBSERVED"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-04.md",
+            "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+            "source_lines": "L552-L562",
+            "source_section": "24. Business Decisions (Locked) > BD-04-005"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "CANONICAL_ENUM_VALUE",
+            "resolver_id": "OBSERVE.BD-04-005.BD-04-005.OBSERVED.ENUM.VALUE",
+            "version": "1.0.0"
+          },
+          "semantic_type": "CANONICAL_ENUM_VALUE"
+        },
+        "allowed_values": {
+          "members": [
+            {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "SELLING.PRICE",
+                  "CURRENCY",
+                  "COLLECTION",
+                  "VISIBILITY",
+                  "MARKETING.CONTENT",
+                  "PRODUCT.CODE.PREFIX.POSTFIX"
+                ],
+                "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+              },
+              "identifier": "SELLING.PRICE",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-04-005.O2.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.1",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CANONICAL_ENUM_VALUE",
+                "resolver_id": "RESOLVE.BD-04-005.SELLING.PRICE",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_ENUM_VALUE"
+            },
+            {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "SELLING.PRICE",
+                  "CURRENCY",
+                  "COLLECTION",
+                  "VISIBILITY",
+                  "MARKETING.CONTENT",
+                  "PRODUCT.CODE.PREFIX.POSTFIX"
+                ],
+                "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+              },
+              "identifier": "CURRENCY",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-04-005.O2.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.2",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CANONICAL_ENUM_VALUE",
+                "resolver_id": "RESOLVE.BD-04-005.CURRENCY",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_ENUM_VALUE"
+            },
+            {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "SELLING.PRICE",
+                  "CURRENCY",
+                  "COLLECTION",
+                  "VISIBILITY",
+                  "MARKETING.CONTENT",
+                  "PRODUCT.CODE.PREFIX.POSTFIX"
+                ],
+                "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+              },
+              "identifier": "COLLECTION",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-04-005.O2.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.3",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CANONICAL_ENUM_VALUE",
+                "resolver_id": "RESOLVE.BD-04-005.COLLECTION",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_ENUM_VALUE"
+            },
+            {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "SELLING.PRICE",
+                  "CURRENCY",
+                  "COLLECTION",
+                  "VISIBILITY",
+                  "MARKETING.CONTENT",
+                  "PRODUCT.CODE.PREFIX.POSTFIX"
+                ],
+                "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+              },
+              "identifier": "VISIBILITY",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-04-005.O2.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.4",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CANONICAL_ENUM_VALUE",
+                "resolver_id": "RESOLVE.BD-04-005.VISIBILITY",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_ENUM_VALUE"
+            },
+            {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "SELLING.PRICE",
+                  "CURRENCY",
+                  "COLLECTION",
+                  "VISIBILITY",
+                  "MARKETING.CONTENT",
+                  "PRODUCT.CODE.PREFIX.POSTFIX"
+                ],
+                "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+              },
+              "identifier": "MARKETING.CONTENT",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-04-005.O2.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.5",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CANONICAL_ENUM_VALUE",
+                "resolver_id": "RESOLVE.BD-04-005.MARKETING.CONTENT",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_ENUM_VALUE"
+            },
+            {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "SELLING.PRICE",
+                  "CURRENCY",
+                  "COLLECTION",
+                  "VISIBILITY",
+                  "MARKETING.CONTENT",
+                  "PRODUCT.CODE.PREFIX.POSTFIX"
+                ],
+                "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+              },
+              "identifier": "PRODUCT.CODE.PREFIX.POSTFIX",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-04-005.O2.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.6",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CANONICAL_ENUM_VALUE",
+                "resolver_id": "RESOLVE.BD-04-005.PRODUCT.CODE.PREFIX.POSTFIX",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_ENUM_VALUE"
+            }
+          ],
+          "origin": {
+            "origin_id": "BD-04-005.O2.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-04.md",
+            "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+            "source_lines": "L552-L562",
+            "source_section": "24. Business Decisions (Locked) > BD-04-005"
+          },
+          "semantic_type": "SET_OF<CANONICAL_ENUM_VALUE>"
+        },
+        "field": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+            "source_type": "SOURCE_LITERAL",
+            "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+          },
+          "identifier": "BD-04-005.FIELD",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BD-04-005.O2.1.ENUM_VALUE_ALLOWED.FIELD.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-04.md",
+            "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+            "source_lines": "L552-L562",
+            "source_section": "24. Business Decisions (Locked) > BD-04-005"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "FIELD_ID",
+            "resolver_id": "RESOLVE.BD-04-005.BD-04-005.FIELD",
+            "version": "1.0.0"
+          },
+          "semantic_type": "FIELD_ID"
+        }
+      },
+      {
+        "actual_value": {
+          "authoritative_source": {
+            "allowed_identifiers": [
+              "BD-04-005.OBSERVED.ENUM.VALUE"
+            ],
+            "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+            "source_type": "SOURCE_LITERAL",
+            "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+          },
+          "identifier": "BD-04-005.OBSERVED.ENUM.VALUE",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BD-04-005.O3.1.ENUM_VALUE_ALLOWED.ACTUAL_VALUE.ORIGIN",
+            "origin_type": "RUNTIME_OBSERVED"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-04.md",
+            "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+            "source_lines": "L552-L562",
+            "source_section": "24. Business Decisions (Locked) > BD-04-005"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "CANONICAL_ENUM_VALUE",
+            "resolver_id": "OBSERVE.BD-04-005.BD-04-005.OBSERVED.ENUM.VALUE",
+            "version": "1.0.0"
+          },
+          "semantic_type": "CANONICAL_ENUM_VALUE"
+        },
+        "allowed_values": {
+          "members": [
+            {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "SELLING.PRICE",
+                  "CURRENCY",
+                  "COLLECTION",
+                  "VISIBILITY",
+                  "MARKETING.CONTENT",
+                  "PRODUCT.CODE.PREFIX.POSTFIX"
+                ],
+                "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+              },
+              "identifier": "SELLING.PRICE",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-04-005.O3.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.1",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CANONICAL_ENUM_VALUE",
+                "resolver_id": "RESOLVE.BD-04-005.SELLING.PRICE",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_ENUM_VALUE"
+            },
+            {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "SELLING.PRICE",
+                  "CURRENCY",
+                  "COLLECTION",
+                  "VISIBILITY",
+                  "MARKETING.CONTENT",
+                  "PRODUCT.CODE.PREFIX.POSTFIX"
+                ],
+                "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+              },
+              "identifier": "CURRENCY",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-04-005.O3.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.2",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CANONICAL_ENUM_VALUE",
+                "resolver_id": "RESOLVE.BD-04-005.CURRENCY",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_ENUM_VALUE"
+            },
+            {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "SELLING.PRICE",
+                  "CURRENCY",
+                  "COLLECTION",
+                  "VISIBILITY",
+                  "MARKETING.CONTENT",
+                  "PRODUCT.CODE.PREFIX.POSTFIX"
+                ],
+                "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+              },
+              "identifier": "COLLECTION",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-04-005.O3.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.3",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CANONICAL_ENUM_VALUE",
+                "resolver_id": "RESOLVE.BD-04-005.COLLECTION",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_ENUM_VALUE"
+            },
+            {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "SELLING.PRICE",
+                  "CURRENCY",
+                  "COLLECTION",
+                  "VISIBILITY",
+                  "MARKETING.CONTENT",
+                  "PRODUCT.CODE.PREFIX.POSTFIX"
+                ],
+                "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+              },
+              "identifier": "VISIBILITY",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-04-005.O3.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.4",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CANONICAL_ENUM_VALUE",
+                "resolver_id": "RESOLVE.BD-04-005.VISIBILITY",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_ENUM_VALUE"
+            },
+            {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "SELLING.PRICE",
+                  "CURRENCY",
+                  "COLLECTION",
+                  "VISIBILITY",
+                  "MARKETING.CONTENT",
+                  "PRODUCT.CODE.PREFIX.POSTFIX"
+                ],
+                "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+              },
+              "identifier": "MARKETING.CONTENT",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-04-005.O3.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.5",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CANONICAL_ENUM_VALUE",
+                "resolver_id": "RESOLVE.BD-04-005.MARKETING.CONTENT",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_ENUM_VALUE"
+            },
+            {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "SELLING.PRICE",
+                  "CURRENCY",
+                  "COLLECTION",
+                  "VISIBILITY",
+                  "MARKETING.CONTENT",
+                  "PRODUCT.CODE.PREFIX.POSTFIX"
+                ],
+                "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+              },
+              "identifier": "PRODUCT.CODE.PREFIX.POSTFIX",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-04-005.O3.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.6",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CANONICAL_ENUM_VALUE",
+                "resolver_id": "RESOLVE.BD-04-005.PRODUCT.CODE.PREFIX.POSTFIX",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_ENUM_VALUE"
+            }
+          ],
+          "origin": {
+            "origin_id": "BD-04-005.O3.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-04.md",
+            "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+            "source_lines": "L552-L562",
+            "source_section": "24. Business Decisions (Locked) > BD-04-005"
+          },
+          "semantic_type": "SET_OF<CANONICAL_ENUM_VALUE>"
+        },
+        "field": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+            "source_type": "SOURCE_LITERAL",
+            "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+          },
+          "identifier": "BD-04-005.FIELD",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BD-04-005.O3.1.ENUM_VALUE_ALLOWED.FIELD.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-04.md",
+            "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+            "source_lines": "L552-L562",
+            "source_section": "24. Business Decisions (Locked) > BD-04-005"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "FIELD_ID",
+            "resolver_id": "RESOLVE.BD-04-005.BD-04-005.FIELD",
+            "version": "1.0.0"
+          },
+          "semantic_type": "FIELD_ID"
+        }
+      },
+      {
+        "actual_value": {
+          "authoritative_source": {
+            "allowed_identifiers": [
+              "BD-04-005.OBSERVED.ENUM.VALUE"
+            ],
+            "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+            "source_type": "SOURCE_LITERAL",
+            "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+          },
+          "identifier": "BD-04-005.OBSERVED.ENUM.VALUE",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BD-04-005.O4.1.ENUM_VALUE_ALLOWED.ACTUAL_VALUE.ORIGIN",
+            "origin_type": "RUNTIME_OBSERVED"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-04.md",
+            "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+            "source_lines": "L552-L562",
+            "source_section": "24. Business Decisions (Locked) > BD-04-005"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "CANONICAL_ENUM_VALUE",
+            "resolver_id": "OBSERVE.BD-04-005.BD-04-005.OBSERVED.ENUM.VALUE",
+            "version": "1.0.0"
+          },
+          "semantic_type": "CANONICAL_ENUM_VALUE"
+        },
+        "allowed_values": {
+          "members": [
+            {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "SELLING.PRICE",
+                  "CURRENCY",
+                  "COLLECTION",
+                  "VISIBILITY",
+                  "MARKETING.CONTENT",
+                  "PRODUCT.CODE.PREFIX.POSTFIX"
+                ],
+                "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+              },
+              "identifier": "SELLING.PRICE",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-04-005.O4.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.1",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CANONICAL_ENUM_VALUE",
+                "resolver_id": "RESOLVE.BD-04-005.SELLING.PRICE",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_ENUM_VALUE"
+            },
+            {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "SELLING.PRICE",
+                  "CURRENCY",
+                  "COLLECTION",
+                  "VISIBILITY",
+                  "MARKETING.CONTENT",
+                  "PRODUCT.CODE.PREFIX.POSTFIX"
+                ],
+                "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+              },
+              "identifier": "CURRENCY",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-04-005.O4.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.2",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CANONICAL_ENUM_VALUE",
+                "resolver_id": "RESOLVE.BD-04-005.CURRENCY",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_ENUM_VALUE"
+            },
+            {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "SELLING.PRICE",
+                  "CURRENCY",
+                  "COLLECTION",
+                  "VISIBILITY",
+                  "MARKETING.CONTENT",
+                  "PRODUCT.CODE.PREFIX.POSTFIX"
+                ],
+                "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+              },
+              "identifier": "COLLECTION",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-04-005.O4.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.3",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CANONICAL_ENUM_VALUE",
+                "resolver_id": "RESOLVE.BD-04-005.COLLECTION",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_ENUM_VALUE"
+            },
+            {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "SELLING.PRICE",
+                  "CURRENCY",
+                  "COLLECTION",
+                  "VISIBILITY",
+                  "MARKETING.CONTENT",
+                  "PRODUCT.CODE.PREFIX.POSTFIX"
+                ],
+                "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+              },
+              "identifier": "VISIBILITY",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-04-005.O4.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.4",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CANONICAL_ENUM_VALUE",
+                "resolver_id": "RESOLVE.BD-04-005.VISIBILITY",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_ENUM_VALUE"
+            },
+            {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "SELLING.PRICE",
+                  "CURRENCY",
+                  "COLLECTION",
+                  "VISIBILITY",
+                  "MARKETING.CONTENT",
+                  "PRODUCT.CODE.PREFIX.POSTFIX"
+                ],
+                "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+              },
+              "identifier": "MARKETING.CONTENT",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-04-005.O4.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.5",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CANONICAL_ENUM_VALUE",
+                "resolver_id": "RESOLVE.BD-04-005.MARKETING.CONTENT",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_ENUM_VALUE"
+            },
+            {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "SELLING.PRICE",
+                  "CURRENCY",
+                  "COLLECTION",
+                  "VISIBILITY",
+                  "MARKETING.CONTENT",
+                  "PRODUCT.CODE.PREFIX.POSTFIX"
+                ],
+                "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+              },
+              "identifier": "PRODUCT.CODE.PREFIX.POSTFIX",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-04-005.O4.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.6",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CANONICAL_ENUM_VALUE",
+                "resolver_id": "RESOLVE.BD-04-005.PRODUCT.CODE.PREFIX.POSTFIX",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_ENUM_VALUE"
+            }
+          ],
+          "origin": {
+            "origin_id": "BD-04-005.O4.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-04.md",
+            "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+            "source_lines": "L552-L562",
+            "source_section": "24. Business Decisions (Locked) > BD-04-005"
+          },
+          "semantic_type": "SET_OF<CANONICAL_ENUM_VALUE>"
+        },
+        "field": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+            "source_type": "SOURCE_LITERAL",
+            "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+          },
+          "identifier": "BD-04-005.FIELD",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BD-04-005.O4.1.ENUM_VALUE_ALLOWED.FIELD.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-04.md",
+            "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+            "source_lines": "L552-L562",
+            "source_section": "24. Business Decisions (Locked) > BD-04-005"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "FIELD_ID",
+            "resolver_id": "RESOLVE.BD-04-005.BD-04-005.FIELD",
+            "version": "1.0.0"
+          },
+          "semantic_type": "FIELD_ID"
+        }
+      },
+      {
+        "actual_value": {
+          "authoritative_source": {
+            "allowed_identifiers": [
+              "BD-04-005.OBSERVED.ENUM.VALUE"
+            ],
+            "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+            "source_type": "SOURCE_LITERAL",
+            "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+          },
+          "identifier": "BD-04-005.OBSERVED.ENUM.VALUE",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BD-04-005.O5.1.ENUM_VALUE_ALLOWED.ACTUAL_VALUE.ORIGIN",
+            "origin_type": "RUNTIME_OBSERVED"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-04.md",
+            "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+            "source_lines": "L552-L562",
+            "source_section": "24. Business Decisions (Locked) > BD-04-005"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "CANONICAL_ENUM_VALUE",
+            "resolver_id": "OBSERVE.BD-04-005.BD-04-005.OBSERVED.ENUM.VALUE",
+            "version": "1.0.0"
+          },
+          "semantic_type": "CANONICAL_ENUM_VALUE"
+        },
+        "allowed_values": {
+          "members": [
+            {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "SELLING.PRICE",
+                  "CURRENCY",
+                  "COLLECTION",
+                  "VISIBILITY",
+                  "MARKETING.CONTENT",
+                  "PRODUCT.CODE.PREFIX.POSTFIX"
+                ],
+                "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+              },
+              "identifier": "SELLING.PRICE",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-04-005.O5.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.1",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CANONICAL_ENUM_VALUE",
+                "resolver_id": "RESOLVE.BD-04-005.SELLING.PRICE",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_ENUM_VALUE"
+            },
+            {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "SELLING.PRICE",
+                  "CURRENCY",
+                  "COLLECTION",
+                  "VISIBILITY",
+                  "MARKETING.CONTENT",
+                  "PRODUCT.CODE.PREFIX.POSTFIX"
+                ],
+                "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+              },
+              "identifier": "CURRENCY",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-04-005.O5.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.2",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CANONICAL_ENUM_VALUE",
+                "resolver_id": "RESOLVE.BD-04-005.CURRENCY",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_ENUM_VALUE"
+            },
+            {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "SELLING.PRICE",
+                  "CURRENCY",
+                  "COLLECTION",
+                  "VISIBILITY",
+                  "MARKETING.CONTENT",
+                  "PRODUCT.CODE.PREFIX.POSTFIX"
+                ],
+                "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+              },
+              "identifier": "COLLECTION",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-04-005.O5.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.3",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CANONICAL_ENUM_VALUE",
+                "resolver_id": "RESOLVE.BD-04-005.COLLECTION",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_ENUM_VALUE"
+            },
+            {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "SELLING.PRICE",
+                  "CURRENCY",
+                  "COLLECTION",
+                  "VISIBILITY",
+                  "MARKETING.CONTENT",
+                  "PRODUCT.CODE.PREFIX.POSTFIX"
+                ],
+                "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+              },
+              "identifier": "VISIBILITY",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-04-005.O5.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.4",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CANONICAL_ENUM_VALUE",
+                "resolver_id": "RESOLVE.BD-04-005.VISIBILITY",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_ENUM_VALUE"
+            },
+            {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "SELLING.PRICE",
+                  "CURRENCY",
+                  "COLLECTION",
+                  "VISIBILITY",
+                  "MARKETING.CONTENT",
+                  "PRODUCT.CODE.PREFIX.POSTFIX"
+                ],
+                "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+              },
+              "identifier": "MARKETING.CONTENT",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-04-005.O5.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.5",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CANONICAL_ENUM_VALUE",
+                "resolver_id": "RESOLVE.BD-04-005.MARKETING.CONTENT",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_ENUM_VALUE"
+            },
+            {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "SELLING.PRICE",
+                  "CURRENCY",
+                  "COLLECTION",
+                  "VISIBILITY",
+                  "MARKETING.CONTENT",
+                  "PRODUCT.CODE.PREFIX.POSTFIX"
+                ],
+                "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+              },
+              "identifier": "PRODUCT.CODE.PREFIX.POSTFIX",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-04-005.O5.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.6",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CANONICAL_ENUM_VALUE",
+                "resolver_id": "RESOLVE.BD-04-005.PRODUCT.CODE.PREFIX.POSTFIX",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_ENUM_VALUE"
+            }
+          ],
+          "origin": {
+            "origin_id": "BD-04-005.O5.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-04.md",
+            "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+            "source_lines": "L552-L562",
+            "source_section": "24. Business Decisions (Locked) > BD-04-005"
+          },
+          "semantic_type": "SET_OF<CANONICAL_ENUM_VALUE>"
+        },
+        "field": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+            "source_type": "SOURCE_LITERAL",
+            "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+          },
+          "identifier": "BD-04-005.FIELD",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BD-04-005.O5.1.ENUM_VALUE_ALLOWED.FIELD.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-04.md",
+            "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+            "source_lines": "L552-L562",
+            "source_section": "24. Business Decisions (Locked) > BD-04-005"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "FIELD_ID",
+            "resolver_id": "RESOLVE.BD-04-005.BD-04-005.FIELD",
+            "version": "1.0.0"
+          },
+          "semantic_type": "FIELD_ID"
+        }
+      },
+      {
+        "actual_value": {
+          "authoritative_source": {
+            "allowed_identifiers": [
+              "BD-04-005.OBSERVED.ENUM.VALUE"
+            ],
+            "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+            "source_type": "SOURCE_LITERAL",
+            "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+          },
+          "identifier": "BD-04-005.OBSERVED.ENUM.VALUE",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BD-04-005.O6.1.ENUM_VALUE_ALLOWED.ACTUAL_VALUE.ORIGIN",
+            "origin_type": "RUNTIME_OBSERVED"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-04.md",
+            "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+            "source_lines": "L552-L562",
+            "source_section": "24. Business Decisions (Locked) > BD-04-005"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "CANONICAL_ENUM_VALUE",
+            "resolver_id": "OBSERVE.BD-04-005.BD-04-005.OBSERVED.ENUM.VALUE",
+            "version": "1.0.0"
+          },
+          "semantic_type": "CANONICAL_ENUM_VALUE"
+        },
+        "allowed_values": {
+          "members": [
+            {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "SELLING.PRICE",
+                  "CURRENCY",
+                  "COLLECTION",
+                  "VISIBILITY",
+                  "MARKETING.CONTENT",
+                  "PRODUCT.CODE.PREFIX.POSTFIX"
+                ],
+                "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+              },
+              "identifier": "SELLING.PRICE",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-04-005.O6.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.1",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CANONICAL_ENUM_VALUE",
+                "resolver_id": "RESOLVE.BD-04-005.SELLING.PRICE",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_ENUM_VALUE"
+            },
+            {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "SELLING.PRICE",
+                  "CURRENCY",
+                  "COLLECTION",
+                  "VISIBILITY",
+                  "MARKETING.CONTENT",
+                  "PRODUCT.CODE.PREFIX.POSTFIX"
+                ],
+                "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+              },
+              "identifier": "CURRENCY",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-04-005.O6.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.2",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CANONICAL_ENUM_VALUE",
+                "resolver_id": "RESOLVE.BD-04-005.CURRENCY",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_ENUM_VALUE"
+            },
+            {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "SELLING.PRICE",
+                  "CURRENCY",
+                  "COLLECTION",
+                  "VISIBILITY",
+                  "MARKETING.CONTENT",
+                  "PRODUCT.CODE.PREFIX.POSTFIX"
+                ],
+                "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+              },
+              "identifier": "COLLECTION",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-04-005.O6.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.3",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CANONICAL_ENUM_VALUE",
+                "resolver_id": "RESOLVE.BD-04-005.COLLECTION",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_ENUM_VALUE"
+            },
+            {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "SELLING.PRICE",
+                  "CURRENCY",
+                  "COLLECTION",
+                  "VISIBILITY",
+                  "MARKETING.CONTENT",
+                  "PRODUCT.CODE.PREFIX.POSTFIX"
+                ],
+                "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+              },
+              "identifier": "VISIBILITY",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-04-005.O6.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.4",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CANONICAL_ENUM_VALUE",
+                "resolver_id": "RESOLVE.BD-04-005.VISIBILITY",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_ENUM_VALUE"
+            },
+            {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "SELLING.PRICE",
+                  "CURRENCY",
+                  "COLLECTION",
+                  "VISIBILITY",
+                  "MARKETING.CONTENT",
+                  "PRODUCT.CODE.PREFIX.POSTFIX"
+                ],
+                "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+              },
+              "identifier": "MARKETING.CONTENT",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-04-005.O6.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.5",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CANONICAL_ENUM_VALUE",
+                "resolver_id": "RESOLVE.BD-04-005.MARKETING.CONTENT",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_ENUM_VALUE"
+            },
+            {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "SELLING.PRICE",
+                  "CURRENCY",
+                  "COLLECTION",
+                  "VISIBILITY",
+                  "MARKETING.CONTENT",
+                  "PRODUCT.CODE.PREFIX.POSTFIX"
+                ],
+                "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+              },
+              "identifier": "PRODUCT.CODE.PREFIX.POSTFIX",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-04-005.O6.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.6",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CANONICAL_ENUM_VALUE",
+                "resolver_id": "RESOLVE.BD-04-005.PRODUCT.CODE.PREFIX.POSTFIX",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_ENUM_VALUE"
+            }
+          ],
+          "origin": {
+            "origin_id": "BD-04-005.O6.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-04.md",
+            "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+            "source_lines": "L552-L562",
+            "source_section": "24. Business Decisions (Locked) > BD-04-005"
+          },
+          "semantic_type": "SET_OF<CANONICAL_ENUM_VALUE>"
+        },
+        "field": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+            "source_type": "SOURCE_LITERAL",
+            "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+          },
+          "identifier": "BD-04-005.FIELD",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BD-04-005.O6.1.ENUM_VALUE_ALLOWED.FIELD.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-04.md",
+            "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+            "source_lines": "L552-L562",
+            "source_section": "24. Business Decisions (Locked) > BD-04-005"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "FIELD_ID",
+            "resolver_id": "RESOLVE.BD-04-005.BD-04-005.FIELD",
+            "version": "1.0.0"
+          },
+          "semantic_type": "FIELD_ID"
+        }
+      }
+    ],
+    "contract_id": "P2C.C4.CONTRACT.BD-04-005",
+    "inference": false,
+    "mechanism": "APPROVED_TYPED_CUSTOM_AST",
+    "mechanism_version": "C4-R3",
+    "negative_oracle": [
+      "Any field outside the named set is changed by the Organization"
+    ],
+    "operator_composition": [
+      "ENUM_VALUE_ALLOWED",
+      "ENUM_VALUE_ALLOWED",
+      "ENUM_VALUE_ALLOWED",
+      "ENUM_VALUE_ALLOWED",
+      "ENUM_VALUE_ALLOWED",
+      "ENUM_VALUE_ALLOWED"
+    ],
+    "positive_oracle": [
+      "Only Selling Price, Currency, Collection, Visibility, Marketing Content and Product Code Prefix or Postfix can be changed"
+    ],
+    "provenance": {
+      "approved_decision_references": [],
+      "inference": false,
+      "source_document": "docs/BRD/BRD-WS-04.md",
+      "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+      "source_lines": "L552-L562",
+      "source_section": "24. Business Decisions (Locked) > BD-04-005"
     },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-04-005-AC002",
-      "given": "the applicable business context, actor, and input for Organization chỉ được thay đổi: - Selling Price - Currency - Collection - Visibility - Marketing…",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-04-005-O002"
+    "required_evidence": {
+      "evidence_object_ref": {
+        "authoritative_source": {
+          "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+          "source_type": "SOURCE_LITERAL",
+          "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+        },
+        "identifier": "BD-04-005.BD-04-005.CONTRACT.EVIDENCE.OBJECT",
+        "inference": false,
+        "lifecycle": {
+          "status": "ACTIVE",
+          "version": "2.3"
+        },
+        "namespace": "YSIM.V2.3",
+        "origin": {
+          "origin_id": "BD-04-005.CONTRACT.EVIDENCE.ORIGIN",
+          "origin_type": "EVIDENCE_OBJECT"
+        },
+        "provenance": {
+          "approved_decision_references": [],
+          "inference": false,
+          "source_document": "docs/BRD/BRD-WS-04.md",
+          "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+          "source_lines": "L552-L562",
+          "source_section": "24. Business Decisions (Locked) > BD-04-005"
+        },
+        "resolver_contract": {
+          "deterministic": true,
+          "input_types": [],
+          "output_type": "EVIDENCE_OBJECT_REF",
+          "resolver_id": "OBSERVE.BD-04-005.BD-04-005.BD-04-005.CONTRACT.EVIDENCE.OBJECT",
+          "version": "1.0.0"
+        },
+        "semantic_type": "EVIDENCE_OBJECT_REF"
+      },
+      "inference": false,
+      "observed_collection_origin": "BD-04-005.RUNTIME.OBSERVED.FIELDS",
+      "observed_field_ids": [
+        "FIELD.ORGANIZATION_ID",
+        "FIELD.ACTOR_ID",
+        "FIELD.CHANGED_FIELDS",
+        "FIELD.ALLOWED_FIELDS",
+        "FIELD.PERMISSION_RESULT",
+        "FIELD.AUDIT_RECORD"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+      "producer": "BD-04-005.EVIDENCE.PRODUCER",
+      "required_collection_origin": "BD-04-005.SOURCE.REQUIRED.FIELDS",
+      "required_field_ids": [
+        "FIELD.ORGANIZATION_ID",
+        "FIELD.ACTOR_ID",
+        "FIELD.CHANGED_FIELDS",
+        "FIELD.ALLOWED_FIELDS",
+        "FIELD.PERMISSION_RESULT",
+        "FIELD.AUDIT_RECORD"
+      ],
+      "required_values_or_hashes": [
+        "BD-04-005.EVIDENCE.CONTENT.HASH"
+      ],
+      "retrieval_method": "BD-04-005.EVIDENCE.RETRIEVAL",
+      "version_or_correlation": "BD-04-005.EVIDENCE.VERSION.CORRELATION"
     },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-04-005-AC003",
-      "given": "the applicable business context, actor, and input for Organization chỉ được thay đổi: - Selling Price - Currency - Collection - Visibility - Marketing…",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-04-005-O003"
+    "runtime_evidence_executed": false,
+    "runtime_status": "RUNTIME_ADAPTER_PENDING",
+    "semantic_obligation_references": [
+      "BD-04-005-O001",
+      "BD-04-005-O002",
+      "BD-04-005-O003",
+      "BD-04-005-O004",
+      "BD-04-005-O005",
+      "BD-04-005-O006"
+    ],
+    "typed_contract_ast": {
+      "approved_clarification": null,
+      "assertions": [
+        {
+          "assertion_id": "BD-04-005.O1.1.ENUM_VALUE_ALLOWED",
+          "evaluator_consumed_bindings": [
+            "actual_value",
+            "allowed_values",
+            "field"
+          ],
+          "evidence_object": {
+            "authoritative_source": {
+              "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+              "source_type": "SOURCE_LITERAL",
+              "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+            },
+            "identifier": "BD-04-005.BD-04-005.O1.1.ENUM_VALUE_ALLOWED.EVIDENCE.OBJECT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BD-04-005.O1.1.ENUM_VALUE_ALLOWED.EVIDENCE.ORIGIN",
+              "origin_type": "EVIDENCE_OBJECT"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-WS-04.md",
+              "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+              "source_lines": "L552-L562",
+              "source_section": "24. Business Decisions (Locked) > BD-04-005"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "EVIDENCE_OBJECT_REF",
+              "resolver_id": "OBSERVE.BD-04-005.BD-04-005.BD-04-005.O1.1.ENUM_VALUE_ALLOWED.EVIDENCE.OBJECT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "EVIDENCE_OBJECT_REF"
+          },
+          "expected_operand": {
+            "authoritative_source": {
+              "allowed_identifiers": [
+                "BD-04-005.BD-04-005.O1.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT"
+              ],
+              "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+              "source_type": "SOURCE_LITERAL",
+              "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+            },
+            "identifier": "BD-04-005.BD-04-005.O1.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BD-04-005.O1.1.ENUM_VALUE_ALLOWED.AUTHORITY.ORIGIN",
+              "origin_type": "SOURCE_LITERAL"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-WS-04.md",
+              "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+              "source_lines": "L552-L562",
+              "source_section": "24. Business Decisions (Locked) > BD-04-005"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "CANONICAL_ENUM_VALUE",
+              "resolver_id": "RESOLVE.BD-04-005.BD-04-005.BD-04-005.O1.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "CANONICAL_ENUM_VALUE"
+          },
+          "inference": false,
+          "model_conformance_fixture": {
+            "bindings": {
+              "actual_value": {
+                "authoritative_source": {
+                  "allowed_identifiers": [
+                    "BD-04-005.OBSERVED.ENUM.VALUE"
+                  ],
+                  "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                },
+                "identifier": "BD-04-005.OBSERVED.ENUM.VALUE",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BD-04-005.O1.1.ENUM_VALUE_ALLOWED.ACTUAL_VALUE.ORIGIN",
+                  "origin_type": "RUNTIME_OBSERVED"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-04.md",
+                  "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                  "source_lines": "L552-L562",
+                  "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "CANONICAL_ENUM_VALUE",
+                  "resolver_id": "OBSERVE.BD-04-005.BD-04-005.OBSERVED.ENUM.VALUE",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "CANONICAL_ENUM_VALUE"
+              },
+              "allowed_values": {
+                "members": [
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "SELLING.PRICE",
+                        "CURRENCY",
+                        "COLLECTION",
+                        "VISIBILITY",
+                        "MARKETING.CONTENT",
+                        "PRODUCT.CODE.PREFIX.POSTFIX"
+                      ],
+                      "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                    },
+                    "identifier": "SELLING.PRICE",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BD-04-005.O1.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.1",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-WS-04.md",
+                      "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                      "source_lines": "L552-L562",
+                      "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "CANONICAL_ENUM_VALUE",
+                      "resolver_id": "RESOLVE.BD-04-005.SELLING.PRICE",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "CANONICAL_ENUM_VALUE"
+                  },
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "SELLING.PRICE",
+                        "CURRENCY",
+                        "COLLECTION",
+                        "VISIBILITY",
+                        "MARKETING.CONTENT",
+                        "PRODUCT.CODE.PREFIX.POSTFIX"
+                      ],
+                      "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                    },
+                    "identifier": "CURRENCY",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BD-04-005.O1.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.2",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-WS-04.md",
+                      "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                      "source_lines": "L552-L562",
+                      "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "CANONICAL_ENUM_VALUE",
+                      "resolver_id": "RESOLVE.BD-04-005.CURRENCY",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "CANONICAL_ENUM_VALUE"
+                  },
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "SELLING.PRICE",
+                        "CURRENCY",
+                        "COLLECTION",
+                        "VISIBILITY",
+                        "MARKETING.CONTENT",
+                        "PRODUCT.CODE.PREFIX.POSTFIX"
+                      ],
+                      "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                    },
+                    "identifier": "COLLECTION",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BD-04-005.O1.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.3",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-WS-04.md",
+                      "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                      "source_lines": "L552-L562",
+                      "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "CANONICAL_ENUM_VALUE",
+                      "resolver_id": "RESOLVE.BD-04-005.COLLECTION",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "CANONICAL_ENUM_VALUE"
+                  },
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "SELLING.PRICE",
+                        "CURRENCY",
+                        "COLLECTION",
+                        "VISIBILITY",
+                        "MARKETING.CONTENT",
+                        "PRODUCT.CODE.PREFIX.POSTFIX"
+                      ],
+                      "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                    },
+                    "identifier": "VISIBILITY",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BD-04-005.O1.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.4",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-WS-04.md",
+                      "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                      "source_lines": "L552-L562",
+                      "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "CANONICAL_ENUM_VALUE",
+                      "resolver_id": "RESOLVE.BD-04-005.VISIBILITY",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "CANONICAL_ENUM_VALUE"
+                  },
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "SELLING.PRICE",
+                        "CURRENCY",
+                        "COLLECTION",
+                        "VISIBILITY",
+                        "MARKETING.CONTENT",
+                        "PRODUCT.CODE.PREFIX.POSTFIX"
+                      ],
+                      "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                    },
+                    "identifier": "MARKETING.CONTENT",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BD-04-005.O1.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.5",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-WS-04.md",
+                      "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                      "source_lines": "L552-L562",
+                      "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "CANONICAL_ENUM_VALUE",
+                      "resolver_id": "RESOLVE.BD-04-005.MARKETING.CONTENT",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "CANONICAL_ENUM_VALUE"
+                  },
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "SELLING.PRICE",
+                        "CURRENCY",
+                        "COLLECTION",
+                        "VISIBILITY",
+                        "MARKETING.CONTENT",
+                        "PRODUCT.CODE.PREFIX.POSTFIX"
+                      ],
+                      "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                    },
+                    "identifier": "PRODUCT.CODE.PREFIX.POSTFIX",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BD-04-005.O1.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.6",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-WS-04.md",
+                      "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                      "source_lines": "L552-L562",
+                      "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "CANONICAL_ENUM_VALUE",
+                      "resolver_id": "RESOLVE.BD-04-005.PRODUCT.CODE.PREFIX.POSTFIX",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "CANONICAL_ENUM_VALUE"
+                  }
+                ],
+                "origin": {
+                  "origin_id": "BD-04-005.O1.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-04.md",
+                  "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                  "source_lines": "L552-L562",
+                  "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                },
+                "semantic_type": "SET_OF<CANONICAL_ENUM_VALUE>"
+              },
+              "field": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                },
+                "identifier": "BD-04-005.FIELD",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BD-04-005.O1.1.ENUM_VALUE_ALLOWED.FIELD.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-04.md",
+                  "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                  "source_lines": "L552-L562",
+                  "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "FIELD_ID",
+                  "resolver_id": "RESOLVE.BD-04-005.BD-04-005.FIELD",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "FIELD_ID"
+              }
+            },
+            "comparison": {
+              "expected": {
+                "authoritative_source": {
+                  "allowed_identifiers": [
+                    "BD-04-005.BD-04-005.O1.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT"
+                  ],
+                  "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                },
+                "identifier": "BD-04-005.BD-04-005.O1.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BD-04-005.O1.1.ENUM_VALUE_ALLOWED.AUTHORITY.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-04.md",
+                  "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                  "source_lines": "L552-L562",
+                  "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "CANONICAL_ENUM_VALUE",
+                  "resolver_id": "RESOLVE.BD-04-005.BD-04-005.BD-04-005.O1.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "CANONICAL_ENUM_VALUE"
+              },
+              "observed": {
+                "authoritative_source": {
+                  "allowed_identifiers": [
+                    "BD-04-005.BD-04-005.O1.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT"
+                  ],
+                  "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                },
+                "identifier": "BD-04-005.BD-04-005.O1.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BD-04-005.O1.1.ENUM_VALUE_ALLOWED.OBSERVED.ORIGIN",
+                  "origin_type": "RUNTIME_OBSERVED"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-04.md",
+                  "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                  "source_lines": "L552-L562",
+                  "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "CANONICAL_ENUM_VALUE",
+                  "resolver_id": "OBSERVE.BD-04-005.BD-04-005.BD-04-005.O1.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "CANONICAL_ENUM_VALUE"
+              }
+            },
+            "evidence_object": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+              },
+              "identifier": "BD-04-005.BD-04-005.O1.1.ENUM_VALUE_ALLOWED.EVIDENCE.OBJECT",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-04-005.O1.1.ENUM_VALUE_ALLOWED.EVIDENCE.ORIGIN",
+                "origin_type": "EVIDENCE_OBJECT"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "EVIDENCE_OBJECT_REF",
+                "resolver_id": "OBSERVE.BD-04-005.BD-04-005.BD-04-005.O1.1.ENUM_VALUE_ALLOWED.EVIDENCE.OBJECT",
+                "version": "1.0.0"
+              },
+              "semantic_type": "EVIDENCE_OBJECT_REF"
+            },
+            "operator_id": "ENUM_VALUE_ALLOWED"
+          },
+          "obligation_id": "BD-04-005-O001",
+          "observed_operand": {
+            "authoritative_source": {
+              "allowed_identifiers": [
+                "BD-04-005.BD-04-005.O1.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT"
+              ],
+              "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+              "source_type": "SOURCE_LITERAL",
+              "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+            },
+            "identifier": "BD-04-005.BD-04-005.O1.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BD-04-005.O1.1.ENUM_VALUE_ALLOWED.OBSERVED.ORIGIN",
+              "origin_type": "RUNTIME_OBSERVED"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-WS-04.md",
+              "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+              "source_lines": "L552-L562",
+              "source_section": "24. Business Decisions (Locked) > BD-04-005"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "CANONICAL_ENUM_VALUE",
+              "resolver_id": "OBSERVE.BD-04-005.BD-04-005.BD-04-005.O1.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "CANONICAL_ENUM_VALUE"
+          },
+          "operator_id": "ENUM_VALUE_ALLOWED",
+          "operator_version": "1.0.0-candidate.2",
+          "typed_bindings": {
+            "actual_value": {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "BD-04-005.OBSERVED.ENUM.VALUE"
+                ],
+                "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+              },
+              "identifier": "BD-04-005.OBSERVED.ENUM.VALUE",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-04-005.O1.1.ENUM_VALUE_ALLOWED.ACTUAL_VALUE.ORIGIN",
+                "origin_type": "RUNTIME_OBSERVED"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CANONICAL_ENUM_VALUE",
+                "resolver_id": "OBSERVE.BD-04-005.BD-04-005.OBSERVED.ENUM.VALUE",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_ENUM_VALUE"
+            },
+            "allowed_values": {
+              "members": [
+                {
+                  "authoritative_source": {
+                    "allowed_identifiers": [
+                      "SELLING.PRICE",
+                      "CURRENCY",
+                      "COLLECTION",
+                      "VISIBILITY",
+                      "MARKETING.CONTENT",
+                      "PRODUCT.CODE.PREFIX.POSTFIX"
+                    ],
+                    "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                  },
+                  "identifier": "SELLING.PRICE",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BD-04-005.O1.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.1",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-WS-04.md",
+                    "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                    "source_lines": "L552-L562",
+                    "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "CANONICAL_ENUM_VALUE",
+                    "resolver_id": "RESOLVE.BD-04-005.SELLING.PRICE",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "CANONICAL_ENUM_VALUE"
+                },
+                {
+                  "authoritative_source": {
+                    "allowed_identifiers": [
+                      "SELLING.PRICE",
+                      "CURRENCY",
+                      "COLLECTION",
+                      "VISIBILITY",
+                      "MARKETING.CONTENT",
+                      "PRODUCT.CODE.PREFIX.POSTFIX"
+                    ],
+                    "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                  },
+                  "identifier": "CURRENCY",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BD-04-005.O1.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.2",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-WS-04.md",
+                    "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                    "source_lines": "L552-L562",
+                    "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "CANONICAL_ENUM_VALUE",
+                    "resolver_id": "RESOLVE.BD-04-005.CURRENCY",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "CANONICAL_ENUM_VALUE"
+                },
+                {
+                  "authoritative_source": {
+                    "allowed_identifiers": [
+                      "SELLING.PRICE",
+                      "CURRENCY",
+                      "COLLECTION",
+                      "VISIBILITY",
+                      "MARKETING.CONTENT",
+                      "PRODUCT.CODE.PREFIX.POSTFIX"
+                    ],
+                    "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                  },
+                  "identifier": "COLLECTION",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BD-04-005.O1.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.3",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-WS-04.md",
+                    "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                    "source_lines": "L552-L562",
+                    "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "CANONICAL_ENUM_VALUE",
+                    "resolver_id": "RESOLVE.BD-04-005.COLLECTION",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "CANONICAL_ENUM_VALUE"
+                },
+                {
+                  "authoritative_source": {
+                    "allowed_identifiers": [
+                      "SELLING.PRICE",
+                      "CURRENCY",
+                      "COLLECTION",
+                      "VISIBILITY",
+                      "MARKETING.CONTENT",
+                      "PRODUCT.CODE.PREFIX.POSTFIX"
+                    ],
+                    "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                  },
+                  "identifier": "VISIBILITY",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BD-04-005.O1.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.4",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-WS-04.md",
+                    "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                    "source_lines": "L552-L562",
+                    "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "CANONICAL_ENUM_VALUE",
+                    "resolver_id": "RESOLVE.BD-04-005.VISIBILITY",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "CANONICAL_ENUM_VALUE"
+                },
+                {
+                  "authoritative_source": {
+                    "allowed_identifiers": [
+                      "SELLING.PRICE",
+                      "CURRENCY",
+                      "COLLECTION",
+                      "VISIBILITY",
+                      "MARKETING.CONTENT",
+                      "PRODUCT.CODE.PREFIX.POSTFIX"
+                    ],
+                    "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                  },
+                  "identifier": "MARKETING.CONTENT",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BD-04-005.O1.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.5",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-WS-04.md",
+                    "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                    "source_lines": "L552-L562",
+                    "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "CANONICAL_ENUM_VALUE",
+                    "resolver_id": "RESOLVE.BD-04-005.MARKETING.CONTENT",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "CANONICAL_ENUM_VALUE"
+                },
+                {
+                  "authoritative_source": {
+                    "allowed_identifiers": [
+                      "SELLING.PRICE",
+                      "CURRENCY",
+                      "COLLECTION",
+                      "VISIBILITY",
+                      "MARKETING.CONTENT",
+                      "PRODUCT.CODE.PREFIX.POSTFIX"
+                    ],
+                    "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                  },
+                  "identifier": "PRODUCT.CODE.PREFIX.POSTFIX",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BD-04-005.O1.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.6",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-WS-04.md",
+                    "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                    "source_lines": "L552-L562",
+                    "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "CANONICAL_ENUM_VALUE",
+                    "resolver_id": "RESOLVE.BD-04-005.PRODUCT.CODE.PREFIX.POSTFIX",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "CANONICAL_ENUM_VALUE"
+                }
+              ],
+              "origin": {
+                "origin_id": "BD-04-005.O1.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "semantic_type": "SET_OF<CANONICAL_ENUM_VALUE>"
+            },
+            "field": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+              },
+              "identifier": "BD-04-005.FIELD",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-04-005.O1.1.ENUM_VALUE_ALLOWED.FIELD.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "FIELD_ID",
+                "resolver_id": "RESOLVE.BD-04-005.BD-04-005.FIELD",
+                "version": "1.0.0"
+              },
+              "semantic_type": "FIELD_ID"
+            }
+          }
+        },
+        {
+          "assertion_id": "BD-04-005.O2.1.ENUM_VALUE_ALLOWED",
+          "evaluator_consumed_bindings": [
+            "actual_value",
+            "allowed_values",
+            "field"
+          ],
+          "evidence_object": {
+            "authoritative_source": {
+              "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+              "source_type": "SOURCE_LITERAL",
+              "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+            },
+            "identifier": "BD-04-005.BD-04-005.O2.1.ENUM_VALUE_ALLOWED.EVIDENCE.OBJECT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BD-04-005.O2.1.ENUM_VALUE_ALLOWED.EVIDENCE.ORIGIN",
+              "origin_type": "EVIDENCE_OBJECT"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-WS-04.md",
+              "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+              "source_lines": "L552-L562",
+              "source_section": "24. Business Decisions (Locked) > BD-04-005"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "EVIDENCE_OBJECT_REF",
+              "resolver_id": "OBSERVE.BD-04-005.BD-04-005.BD-04-005.O2.1.ENUM_VALUE_ALLOWED.EVIDENCE.OBJECT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "EVIDENCE_OBJECT_REF"
+          },
+          "expected_operand": {
+            "authoritative_source": {
+              "allowed_identifiers": [
+                "BD-04-005.BD-04-005.O2.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT"
+              ],
+              "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+              "source_type": "SOURCE_LITERAL",
+              "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+            },
+            "identifier": "BD-04-005.BD-04-005.O2.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BD-04-005.O2.1.ENUM_VALUE_ALLOWED.AUTHORITY.ORIGIN",
+              "origin_type": "SOURCE_LITERAL"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-WS-04.md",
+              "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+              "source_lines": "L552-L562",
+              "source_section": "24. Business Decisions (Locked) > BD-04-005"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "CANONICAL_ENUM_VALUE",
+              "resolver_id": "RESOLVE.BD-04-005.BD-04-005.BD-04-005.O2.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "CANONICAL_ENUM_VALUE"
+          },
+          "inference": false,
+          "model_conformance_fixture": {
+            "bindings": {
+              "actual_value": {
+                "authoritative_source": {
+                  "allowed_identifiers": [
+                    "BD-04-005.OBSERVED.ENUM.VALUE"
+                  ],
+                  "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                },
+                "identifier": "BD-04-005.OBSERVED.ENUM.VALUE",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BD-04-005.O2.1.ENUM_VALUE_ALLOWED.ACTUAL_VALUE.ORIGIN",
+                  "origin_type": "RUNTIME_OBSERVED"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-04.md",
+                  "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                  "source_lines": "L552-L562",
+                  "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "CANONICAL_ENUM_VALUE",
+                  "resolver_id": "OBSERVE.BD-04-005.BD-04-005.OBSERVED.ENUM.VALUE",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "CANONICAL_ENUM_VALUE"
+              },
+              "allowed_values": {
+                "members": [
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "SELLING.PRICE",
+                        "CURRENCY",
+                        "COLLECTION",
+                        "VISIBILITY",
+                        "MARKETING.CONTENT",
+                        "PRODUCT.CODE.PREFIX.POSTFIX"
+                      ],
+                      "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                    },
+                    "identifier": "SELLING.PRICE",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BD-04-005.O2.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.1",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-WS-04.md",
+                      "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                      "source_lines": "L552-L562",
+                      "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "CANONICAL_ENUM_VALUE",
+                      "resolver_id": "RESOLVE.BD-04-005.SELLING.PRICE",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "CANONICAL_ENUM_VALUE"
+                  },
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "SELLING.PRICE",
+                        "CURRENCY",
+                        "COLLECTION",
+                        "VISIBILITY",
+                        "MARKETING.CONTENT",
+                        "PRODUCT.CODE.PREFIX.POSTFIX"
+                      ],
+                      "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                    },
+                    "identifier": "CURRENCY",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BD-04-005.O2.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.2",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-WS-04.md",
+                      "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                      "source_lines": "L552-L562",
+                      "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "CANONICAL_ENUM_VALUE",
+                      "resolver_id": "RESOLVE.BD-04-005.CURRENCY",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "CANONICAL_ENUM_VALUE"
+                  },
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "SELLING.PRICE",
+                        "CURRENCY",
+                        "COLLECTION",
+                        "VISIBILITY",
+                        "MARKETING.CONTENT",
+                        "PRODUCT.CODE.PREFIX.POSTFIX"
+                      ],
+                      "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                    },
+                    "identifier": "COLLECTION",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BD-04-005.O2.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.3",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-WS-04.md",
+                      "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                      "source_lines": "L552-L562",
+                      "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "CANONICAL_ENUM_VALUE",
+                      "resolver_id": "RESOLVE.BD-04-005.COLLECTION",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "CANONICAL_ENUM_VALUE"
+                  },
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "SELLING.PRICE",
+                        "CURRENCY",
+                        "COLLECTION",
+                        "VISIBILITY",
+                        "MARKETING.CONTENT",
+                        "PRODUCT.CODE.PREFIX.POSTFIX"
+                      ],
+                      "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                    },
+                    "identifier": "VISIBILITY",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BD-04-005.O2.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.4",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-WS-04.md",
+                      "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                      "source_lines": "L552-L562",
+                      "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "CANONICAL_ENUM_VALUE",
+                      "resolver_id": "RESOLVE.BD-04-005.VISIBILITY",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "CANONICAL_ENUM_VALUE"
+                  },
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "SELLING.PRICE",
+                        "CURRENCY",
+                        "COLLECTION",
+                        "VISIBILITY",
+                        "MARKETING.CONTENT",
+                        "PRODUCT.CODE.PREFIX.POSTFIX"
+                      ],
+                      "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                    },
+                    "identifier": "MARKETING.CONTENT",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BD-04-005.O2.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.5",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-WS-04.md",
+                      "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                      "source_lines": "L552-L562",
+                      "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "CANONICAL_ENUM_VALUE",
+                      "resolver_id": "RESOLVE.BD-04-005.MARKETING.CONTENT",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "CANONICAL_ENUM_VALUE"
+                  },
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "SELLING.PRICE",
+                        "CURRENCY",
+                        "COLLECTION",
+                        "VISIBILITY",
+                        "MARKETING.CONTENT",
+                        "PRODUCT.CODE.PREFIX.POSTFIX"
+                      ],
+                      "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                    },
+                    "identifier": "PRODUCT.CODE.PREFIX.POSTFIX",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BD-04-005.O2.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.6",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-WS-04.md",
+                      "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                      "source_lines": "L552-L562",
+                      "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "CANONICAL_ENUM_VALUE",
+                      "resolver_id": "RESOLVE.BD-04-005.PRODUCT.CODE.PREFIX.POSTFIX",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "CANONICAL_ENUM_VALUE"
+                  }
+                ],
+                "origin": {
+                  "origin_id": "BD-04-005.O2.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-04.md",
+                  "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                  "source_lines": "L552-L562",
+                  "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                },
+                "semantic_type": "SET_OF<CANONICAL_ENUM_VALUE>"
+              },
+              "field": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                },
+                "identifier": "BD-04-005.FIELD",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BD-04-005.O2.1.ENUM_VALUE_ALLOWED.FIELD.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-04.md",
+                  "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                  "source_lines": "L552-L562",
+                  "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "FIELD_ID",
+                  "resolver_id": "RESOLVE.BD-04-005.BD-04-005.FIELD",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "FIELD_ID"
+              }
+            },
+            "comparison": {
+              "expected": {
+                "authoritative_source": {
+                  "allowed_identifiers": [
+                    "BD-04-005.BD-04-005.O2.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT"
+                  ],
+                  "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                },
+                "identifier": "BD-04-005.BD-04-005.O2.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BD-04-005.O2.1.ENUM_VALUE_ALLOWED.AUTHORITY.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-04.md",
+                  "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                  "source_lines": "L552-L562",
+                  "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "CANONICAL_ENUM_VALUE",
+                  "resolver_id": "RESOLVE.BD-04-005.BD-04-005.BD-04-005.O2.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "CANONICAL_ENUM_VALUE"
+              },
+              "observed": {
+                "authoritative_source": {
+                  "allowed_identifiers": [
+                    "BD-04-005.BD-04-005.O2.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT"
+                  ],
+                  "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                },
+                "identifier": "BD-04-005.BD-04-005.O2.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BD-04-005.O2.1.ENUM_VALUE_ALLOWED.OBSERVED.ORIGIN",
+                  "origin_type": "RUNTIME_OBSERVED"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-04.md",
+                  "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                  "source_lines": "L552-L562",
+                  "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "CANONICAL_ENUM_VALUE",
+                  "resolver_id": "OBSERVE.BD-04-005.BD-04-005.BD-04-005.O2.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "CANONICAL_ENUM_VALUE"
+              }
+            },
+            "evidence_object": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+              },
+              "identifier": "BD-04-005.BD-04-005.O2.1.ENUM_VALUE_ALLOWED.EVIDENCE.OBJECT",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-04-005.O2.1.ENUM_VALUE_ALLOWED.EVIDENCE.ORIGIN",
+                "origin_type": "EVIDENCE_OBJECT"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "EVIDENCE_OBJECT_REF",
+                "resolver_id": "OBSERVE.BD-04-005.BD-04-005.BD-04-005.O2.1.ENUM_VALUE_ALLOWED.EVIDENCE.OBJECT",
+                "version": "1.0.0"
+              },
+              "semantic_type": "EVIDENCE_OBJECT_REF"
+            },
+            "operator_id": "ENUM_VALUE_ALLOWED"
+          },
+          "obligation_id": "BD-04-005-O002",
+          "observed_operand": {
+            "authoritative_source": {
+              "allowed_identifiers": [
+                "BD-04-005.BD-04-005.O2.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT"
+              ],
+              "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+              "source_type": "SOURCE_LITERAL",
+              "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+            },
+            "identifier": "BD-04-005.BD-04-005.O2.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BD-04-005.O2.1.ENUM_VALUE_ALLOWED.OBSERVED.ORIGIN",
+              "origin_type": "RUNTIME_OBSERVED"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-WS-04.md",
+              "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+              "source_lines": "L552-L562",
+              "source_section": "24. Business Decisions (Locked) > BD-04-005"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "CANONICAL_ENUM_VALUE",
+              "resolver_id": "OBSERVE.BD-04-005.BD-04-005.BD-04-005.O2.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "CANONICAL_ENUM_VALUE"
+          },
+          "operator_id": "ENUM_VALUE_ALLOWED",
+          "operator_version": "1.0.0-candidate.2",
+          "typed_bindings": {
+            "actual_value": {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "BD-04-005.OBSERVED.ENUM.VALUE"
+                ],
+                "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+              },
+              "identifier": "BD-04-005.OBSERVED.ENUM.VALUE",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-04-005.O2.1.ENUM_VALUE_ALLOWED.ACTUAL_VALUE.ORIGIN",
+                "origin_type": "RUNTIME_OBSERVED"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CANONICAL_ENUM_VALUE",
+                "resolver_id": "OBSERVE.BD-04-005.BD-04-005.OBSERVED.ENUM.VALUE",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_ENUM_VALUE"
+            },
+            "allowed_values": {
+              "members": [
+                {
+                  "authoritative_source": {
+                    "allowed_identifiers": [
+                      "SELLING.PRICE",
+                      "CURRENCY",
+                      "COLLECTION",
+                      "VISIBILITY",
+                      "MARKETING.CONTENT",
+                      "PRODUCT.CODE.PREFIX.POSTFIX"
+                    ],
+                    "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                  },
+                  "identifier": "SELLING.PRICE",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BD-04-005.O2.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.1",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-WS-04.md",
+                    "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                    "source_lines": "L552-L562",
+                    "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "CANONICAL_ENUM_VALUE",
+                    "resolver_id": "RESOLVE.BD-04-005.SELLING.PRICE",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "CANONICAL_ENUM_VALUE"
+                },
+                {
+                  "authoritative_source": {
+                    "allowed_identifiers": [
+                      "SELLING.PRICE",
+                      "CURRENCY",
+                      "COLLECTION",
+                      "VISIBILITY",
+                      "MARKETING.CONTENT",
+                      "PRODUCT.CODE.PREFIX.POSTFIX"
+                    ],
+                    "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                  },
+                  "identifier": "CURRENCY",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BD-04-005.O2.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.2",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-WS-04.md",
+                    "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                    "source_lines": "L552-L562",
+                    "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "CANONICAL_ENUM_VALUE",
+                    "resolver_id": "RESOLVE.BD-04-005.CURRENCY",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "CANONICAL_ENUM_VALUE"
+                },
+                {
+                  "authoritative_source": {
+                    "allowed_identifiers": [
+                      "SELLING.PRICE",
+                      "CURRENCY",
+                      "COLLECTION",
+                      "VISIBILITY",
+                      "MARKETING.CONTENT",
+                      "PRODUCT.CODE.PREFIX.POSTFIX"
+                    ],
+                    "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                  },
+                  "identifier": "COLLECTION",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BD-04-005.O2.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.3",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-WS-04.md",
+                    "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                    "source_lines": "L552-L562",
+                    "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "CANONICAL_ENUM_VALUE",
+                    "resolver_id": "RESOLVE.BD-04-005.COLLECTION",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "CANONICAL_ENUM_VALUE"
+                },
+                {
+                  "authoritative_source": {
+                    "allowed_identifiers": [
+                      "SELLING.PRICE",
+                      "CURRENCY",
+                      "COLLECTION",
+                      "VISIBILITY",
+                      "MARKETING.CONTENT",
+                      "PRODUCT.CODE.PREFIX.POSTFIX"
+                    ],
+                    "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                  },
+                  "identifier": "VISIBILITY",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BD-04-005.O2.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.4",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-WS-04.md",
+                    "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                    "source_lines": "L552-L562",
+                    "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "CANONICAL_ENUM_VALUE",
+                    "resolver_id": "RESOLVE.BD-04-005.VISIBILITY",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "CANONICAL_ENUM_VALUE"
+                },
+                {
+                  "authoritative_source": {
+                    "allowed_identifiers": [
+                      "SELLING.PRICE",
+                      "CURRENCY",
+                      "COLLECTION",
+                      "VISIBILITY",
+                      "MARKETING.CONTENT",
+                      "PRODUCT.CODE.PREFIX.POSTFIX"
+                    ],
+                    "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                  },
+                  "identifier": "MARKETING.CONTENT",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BD-04-005.O2.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.5",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-WS-04.md",
+                    "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                    "source_lines": "L552-L562",
+                    "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "CANONICAL_ENUM_VALUE",
+                    "resolver_id": "RESOLVE.BD-04-005.MARKETING.CONTENT",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "CANONICAL_ENUM_VALUE"
+                },
+                {
+                  "authoritative_source": {
+                    "allowed_identifiers": [
+                      "SELLING.PRICE",
+                      "CURRENCY",
+                      "COLLECTION",
+                      "VISIBILITY",
+                      "MARKETING.CONTENT",
+                      "PRODUCT.CODE.PREFIX.POSTFIX"
+                    ],
+                    "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                  },
+                  "identifier": "PRODUCT.CODE.PREFIX.POSTFIX",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BD-04-005.O2.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.6",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-WS-04.md",
+                    "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                    "source_lines": "L552-L562",
+                    "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "CANONICAL_ENUM_VALUE",
+                    "resolver_id": "RESOLVE.BD-04-005.PRODUCT.CODE.PREFIX.POSTFIX",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "CANONICAL_ENUM_VALUE"
+                }
+              ],
+              "origin": {
+                "origin_id": "BD-04-005.O2.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "semantic_type": "SET_OF<CANONICAL_ENUM_VALUE>"
+            },
+            "field": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+              },
+              "identifier": "BD-04-005.FIELD",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-04-005.O2.1.ENUM_VALUE_ALLOWED.FIELD.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "FIELD_ID",
+                "resolver_id": "RESOLVE.BD-04-005.BD-04-005.FIELD",
+                "version": "1.0.0"
+              },
+              "semantic_type": "FIELD_ID"
+            }
+          }
+        },
+        {
+          "assertion_id": "BD-04-005.O3.1.ENUM_VALUE_ALLOWED",
+          "evaluator_consumed_bindings": [
+            "actual_value",
+            "allowed_values",
+            "field"
+          ],
+          "evidence_object": {
+            "authoritative_source": {
+              "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+              "source_type": "SOURCE_LITERAL",
+              "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+            },
+            "identifier": "BD-04-005.BD-04-005.O3.1.ENUM_VALUE_ALLOWED.EVIDENCE.OBJECT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BD-04-005.O3.1.ENUM_VALUE_ALLOWED.EVIDENCE.ORIGIN",
+              "origin_type": "EVIDENCE_OBJECT"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-WS-04.md",
+              "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+              "source_lines": "L552-L562",
+              "source_section": "24. Business Decisions (Locked) > BD-04-005"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "EVIDENCE_OBJECT_REF",
+              "resolver_id": "OBSERVE.BD-04-005.BD-04-005.BD-04-005.O3.1.ENUM_VALUE_ALLOWED.EVIDENCE.OBJECT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "EVIDENCE_OBJECT_REF"
+          },
+          "expected_operand": {
+            "authoritative_source": {
+              "allowed_identifiers": [
+                "BD-04-005.BD-04-005.O3.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT"
+              ],
+              "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+              "source_type": "SOURCE_LITERAL",
+              "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+            },
+            "identifier": "BD-04-005.BD-04-005.O3.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BD-04-005.O3.1.ENUM_VALUE_ALLOWED.AUTHORITY.ORIGIN",
+              "origin_type": "SOURCE_LITERAL"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-WS-04.md",
+              "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+              "source_lines": "L552-L562",
+              "source_section": "24. Business Decisions (Locked) > BD-04-005"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "CANONICAL_ENUM_VALUE",
+              "resolver_id": "RESOLVE.BD-04-005.BD-04-005.BD-04-005.O3.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "CANONICAL_ENUM_VALUE"
+          },
+          "inference": false,
+          "model_conformance_fixture": {
+            "bindings": {
+              "actual_value": {
+                "authoritative_source": {
+                  "allowed_identifiers": [
+                    "BD-04-005.OBSERVED.ENUM.VALUE"
+                  ],
+                  "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                },
+                "identifier": "BD-04-005.OBSERVED.ENUM.VALUE",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BD-04-005.O3.1.ENUM_VALUE_ALLOWED.ACTUAL_VALUE.ORIGIN",
+                  "origin_type": "RUNTIME_OBSERVED"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-04.md",
+                  "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                  "source_lines": "L552-L562",
+                  "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "CANONICAL_ENUM_VALUE",
+                  "resolver_id": "OBSERVE.BD-04-005.BD-04-005.OBSERVED.ENUM.VALUE",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "CANONICAL_ENUM_VALUE"
+              },
+              "allowed_values": {
+                "members": [
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "SELLING.PRICE",
+                        "CURRENCY",
+                        "COLLECTION",
+                        "VISIBILITY",
+                        "MARKETING.CONTENT",
+                        "PRODUCT.CODE.PREFIX.POSTFIX"
+                      ],
+                      "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                    },
+                    "identifier": "SELLING.PRICE",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BD-04-005.O3.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.1",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-WS-04.md",
+                      "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                      "source_lines": "L552-L562",
+                      "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "CANONICAL_ENUM_VALUE",
+                      "resolver_id": "RESOLVE.BD-04-005.SELLING.PRICE",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "CANONICAL_ENUM_VALUE"
+                  },
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "SELLING.PRICE",
+                        "CURRENCY",
+                        "COLLECTION",
+                        "VISIBILITY",
+                        "MARKETING.CONTENT",
+                        "PRODUCT.CODE.PREFIX.POSTFIX"
+                      ],
+                      "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                    },
+                    "identifier": "CURRENCY",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BD-04-005.O3.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.2",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-WS-04.md",
+                      "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                      "source_lines": "L552-L562",
+                      "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "CANONICAL_ENUM_VALUE",
+                      "resolver_id": "RESOLVE.BD-04-005.CURRENCY",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "CANONICAL_ENUM_VALUE"
+                  },
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "SELLING.PRICE",
+                        "CURRENCY",
+                        "COLLECTION",
+                        "VISIBILITY",
+                        "MARKETING.CONTENT",
+                        "PRODUCT.CODE.PREFIX.POSTFIX"
+                      ],
+                      "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                    },
+                    "identifier": "COLLECTION",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BD-04-005.O3.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.3",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-WS-04.md",
+                      "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                      "source_lines": "L552-L562",
+                      "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "CANONICAL_ENUM_VALUE",
+                      "resolver_id": "RESOLVE.BD-04-005.COLLECTION",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "CANONICAL_ENUM_VALUE"
+                  },
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "SELLING.PRICE",
+                        "CURRENCY",
+                        "COLLECTION",
+                        "VISIBILITY",
+                        "MARKETING.CONTENT",
+                        "PRODUCT.CODE.PREFIX.POSTFIX"
+                      ],
+                      "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                    },
+                    "identifier": "VISIBILITY",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BD-04-005.O3.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.4",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-WS-04.md",
+                      "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                      "source_lines": "L552-L562",
+                      "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "CANONICAL_ENUM_VALUE",
+                      "resolver_id": "RESOLVE.BD-04-005.VISIBILITY",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "CANONICAL_ENUM_VALUE"
+                  },
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "SELLING.PRICE",
+                        "CURRENCY",
+                        "COLLECTION",
+                        "VISIBILITY",
+                        "MARKETING.CONTENT",
+                        "PRODUCT.CODE.PREFIX.POSTFIX"
+                      ],
+                      "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                    },
+                    "identifier": "MARKETING.CONTENT",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BD-04-005.O3.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.5",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-WS-04.md",
+                      "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                      "source_lines": "L552-L562",
+                      "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "CANONICAL_ENUM_VALUE",
+                      "resolver_id": "RESOLVE.BD-04-005.MARKETING.CONTENT",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "CANONICAL_ENUM_VALUE"
+                  },
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "SELLING.PRICE",
+                        "CURRENCY",
+                        "COLLECTION",
+                        "VISIBILITY",
+                        "MARKETING.CONTENT",
+                        "PRODUCT.CODE.PREFIX.POSTFIX"
+                      ],
+                      "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                    },
+                    "identifier": "PRODUCT.CODE.PREFIX.POSTFIX",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BD-04-005.O3.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.6",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-WS-04.md",
+                      "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                      "source_lines": "L552-L562",
+                      "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "CANONICAL_ENUM_VALUE",
+                      "resolver_id": "RESOLVE.BD-04-005.PRODUCT.CODE.PREFIX.POSTFIX",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "CANONICAL_ENUM_VALUE"
+                  }
+                ],
+                "origin": {
+                  "origin_id": "BD-04-005.O3.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-04.md",
+                  "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                  "source_lines": "L552-L562",
+                  "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                },
+                "semantic_type": "SET_OF<CANONICAL_ENUM_VALUE>"
+              },
+              "field": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                },
+                "identifier": "BD-04-005.FIELD",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BD-04-005.O3.1.ENUM_VALUE_ALLOWED.FIELD.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-04.md",
+                  "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                  "source_lines": "L552-L562",
+                  "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "FIELD_ID",
+                  "resolver_id": "RESOLVE.BD-04-005.BD-04-005.FIELD",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "FIELD_ID"
+              }
+            },
+            "comparison": {
+              "expected": {
+                "authoritative_source": {
+                  "allowed_identifiers": [
+                    "BD-04-005.BD-04-005.O3.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT"
+                  ],
+                  "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                },
+                "identifier": "BD-04-005.BD-04-005.O3.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BD-04-005.O3.1.ENUM_VALUE_ALLOWED.AUTHORITY.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-04.md",
+                  "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                  "source_lines": "L552-L562",
+                  "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "CANONICAL_ENUM_VALUE",
+                  "resolver_id": "RESOLVE.BD-04-005.BD-04-005.BD-04-005.O3.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "CANONICAL_ENUM_VALUE"
+              },
+              "observed": {
+                "authoritative_source": {
+                  "allowed_identifiers": [
+                    "BD-04-005.BD-04-005.O3.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT"
+                  ],
+                  "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                },
+                "identifier": "BD-04-005.BD-04-005.O3.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BD-04-005.O3.1.ENUM_VALUE_ALLOWED.OBSERVED.ORIGIN",
+                  "origin_type": "RUNTIME_OBSERVED"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-04.md",
+                  "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                  "source_lines": "L552-L562",
+                  "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "CANONICAL_ENUM_VALUE",
+                  "resolver_id": "OBSERVE.BD-04-005.BD-04-005.BD-04-005.O3.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "CANONICAL_ENUM_VALUE"
+              }
+            },
+            "evidence_object": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+              },
+              "identifier": "BD-04-005.BD-04-005.O3.1.ENUM_VALUE_ALLOWED.EVIDENCE.OBJECT",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-04-005.O3.1.ENUM_VALUE_ALLOWED.EVIDENCE.ORIGIN",
+                "origin_type": "EVIDENCE_OBJECT"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "EVIDENCE_OBJECT_REF",
+                "resolver_id": "OBSERVE.BD-04-005.BD-04-005.BD-04-005.O3.1.ENUM_VALUE_ALLOWED.EVIDENCE.OBJECT",
+                "version": "1.0.0"
+              },
+              "semantic_type": "EVIDENCE_OBJECT_REF"
+            },
+            "operator_id": "ENUM_VALUE_ALLOWED"
+          },
+          "obligation_id": "BD-04-005-O003",
+          "observed_operand": {
+            "authoritative_source": {
+              "allowed_identifiers": [
+                "BD-04-005.BD-04-005.O3.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT"
+              ],
+              "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+              "source_type": "SOURCE_LITERAL",
+              "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+            },
+            "identifier": "BD-04-005.BD-04-005.O3.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BD-04-005.O3.1.ENUM_VALUE_ALLOWED.OBSERVED.ORIGIN",
+              "origin_type": "RUNTIME_OBSERVED"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-WS-04.md",
+              "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+              "source_lines": "L552-L562",
+              "source_section": "24. Business Decisions (Locked) > BD-04-005"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "CANONICAL_ENUM_VALUE",
+              "resolver_id": "OBSERVE.BD-04-005.BD-04-005.BD-04-005.O3.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "CANONICAL_ENUM_VALUE"
+          },
+          "operator_id": "ENUM_VALUE_ALLOWED",
+          "operator_version": "1.0.0-candidate.2",
+          "typed_bindings": {
+            "actual_value": {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "BD-04-005.OBSERVED.ENUM.VALUE"
+                ],
+                "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+              },
+              "identifier": "BD-04-005.OBSERVED.ENUM.VALUE",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-04-005.O3.1.ENUM_VALUE_ALLOWED.ACTUAL_VALUE.ORIGIN",
+                "origin_type": "RUNTIME_OBSERVED"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CANONICAL_ENUM_VALUE",
+                "resolver_id": "OBSERVE.BD-04-005.BD-04-005.OBSERVED.ENUM.VALUE",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_ENUM_VALUE"
+            },
+            "allowed_values": {
+              "members": [
+                {
+                  "authoritative_source": {
+                    "allowed_identifiers": [
+                      "SELLING.PRICE",
+                      "CURRENCY",
+                      "COLLECTION",
+                      "VISIBILITY",
+                      "MARKETING.CONTENT",
+                      "PRODUCT.CODE.PREFIX.POSTFIX"
+                    ],
+                    "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                  },
+                  "identifier": "SELLING.PRICE",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BD-04-005.O3.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.1",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-WS-04.md",
+                    "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                    "source_lines": "L552-L562",
+                    "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "CANONICAL_ENUM_VALUE",
+                    "resolver_id": "RESOLVE.BD-04-005.SELLING.PRICE",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "CANONICAL_ENUM_VALUE"
+                },
+                {
+                  "authoritative_source": {
+                    "allowed_identifiers": [
+                      "SELLING.PRICE",
+                      "CURRENCY",
+                      "COLLECTION",
+                      "VISIBILITY",
+                      "MARKETING.CONTENT",
+                      "PRODUCT.CODE.PREFIX.POSTFIX"
+                    ],
+                    "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                  },
+                  "identifier": "CURRENCY",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BD-04-005.O3.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.2",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-WS-04.md",
+                    "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                    "source_lines": "L552-L562",
+                    "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "CANONICAL_ENUM_VALUE",
+                    "resolver_id": "RESOLVE.BD-04-005.CURRENCY",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "CANONICAL_ENUM_VALUE"
+                },
+                {
+                  "authoritative_source": {
+                    "allowed_identifiers": [
+                      "SELLING.PRICE",
+                      "CURRENCY",
+                      "COLLECTION",
+                      "VISIBILITY",
+                      "MARKETING.CONTENT",
+                      "PRODUCT.CODE.PREFIX.POSTFIX"
+                    ],
+                    "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                  },
+                  "identifier": "COLLECTION",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BD-04-005.O3.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.3",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-WS-04.md",
+                    "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                    "source_lines": "L552-L562",
+                    "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "CANONICAL_ENUM_VALUE",
+                    "resolver_id": "RESOLVE.BD-04-005.COLLECTION",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "CANONICAL_ENUM_VALUE"
+                },
+                {
+                  "authoritative_source": {
+                    "allowed_identifiers": [
+                      "SELLING.PRICE",
+                      "CURRENCY",
+                      "COLLECTION",
+                      "VISIBILITY",
+                      "MARKETING.CONTENT",
+                      "PRODUCT.CODE.PREFIX.POSTFIX"
+                    ],
+                    "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                  },
+                  "identifier": "VISIBILITY",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BD-04-005.O3.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.4",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-WS-04.md",
+                    "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                    "source_lines": "L552-L562",
+                    "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "CANONICAL_ENUM_VALUE",
+                    "resolver_id": "RESOLVE.BD-04-005.VISIBILITY",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "CANONICAL_ENUM_VALUE"
+                },
+                {
+                  "authoritative_source": {
+                    "allowed_identifiers": [
+                      "SELLING.PRICE",
+                      "CURRENCY",
+                      "COLLECTION",
+                      "VISIBILITY",
+                      "MARKETING.CONTENT",
+                      "PRODUCT.CODE.PREFIX.POSTFIX"
+                    ],
+                    "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                  },
+                  "identifier": "MARKETING.CONTENT",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BD-04-005.O3.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.5",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-WS-04.md",
+                    "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                    "source_lines": "L552-L562",
+                    "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "CANONICAL_ENUM_VALUE",
+                    "resolver_id": "RESOLVE.BD-04-005.MARKETING.CONTENT",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "CANONICAL_ENUM_VALUE"
+                },
+                {
+                  "authoritative_source": {
+                    "allowed_identifiers": [
+                      "SELLING.PRICE",
+                      "CURRENCY",
+                      "COLLECTION",
+                      "VISIBILITY",
+                      "MARKETING.CONTENT",
+                      "PRODUCT.CODE.PREFIX.POSTFIX"
+                    ],
+                    "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                  },
+                  "identifier": "PRODUCT.CODE.PREFIX.POSTFIX",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BD-04-005.O3.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.6",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-WS-04.md",
+                    "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                    "source_lines": "L552-L562",
+                    "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "CANONICAL_ENUM_VALUE",
+                    "resolver_id": "RESOLVE.BD-04-005.PRODUCT.CODE.PREFIX.POSTFIX",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "CANONICAL_ENUM_VALUE"
+                }
+              ],
+              "origin": {
+                "origin_id": "BD-04-005.O3.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "semantic_type": "SET_OF<CANONICAL_ENUM_VALUE>"
+            },
+            "field": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+              },
+              "identifier": "BD-04-005.FIELD",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-04-005.O3.1.ENUM_VALUE_ALLOWED.FIELD.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "FIELD_ID",
+                "resolver_id": "RESOLVE.BD-04-005.BD-04-005.FIELD",
+                "version": "1.0.0"
+              },
+              "semantic_type": "FIELD_ID"
+            }
+          }
+        },
+        {
+          "assertion_id": "BD-04-005.O4.1.ENUM_VALUE_ALLOWED",
+          "evaluator_consumed_bindings": [
+            "actual_value",
+            "allowed_values",
+            "field"
+          ],
+          "evidence_object": {
+            "authoritative_source": {
+              "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+              "source_type": "SOURCE_LITERAL",
+              "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+            },
+            "identifier": "BD-04-005.BD-04-005.O4.1.ENUM_VALUE_ALLOWED.EVIDENCE.OBJECT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BD-04-005.O4.1.ENUM_VALUE_ALLOWED.EVIDENCE.ORIGIN",
+              "origin_type": "EVIDENCE_OBJECT"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-WS-04.md",
+              "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+              "source_lines": "L552-L562",
+              "source_section": "24. Business Decisions (Locked) > BD-04-005"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "EVIDENCE_OBJECT_REF",
+              "resolver_id": "OBSERVE.BD-04-005.BD-04-005.BD-04-005.O4.1.ENUM_VALUE_ALLOWED.EVIDENCE.OBJECT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "EVIDENCE_OBJECT_REF"
+          },
+          "expected_operand": {
+            "authoritative_source": {
+              "allowed_identifiers": [
+                "BD-04-005.BD-04-005.O4.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT"
+              ],
+              "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+              "source_type": "SOURCE_LITERAL",
+              "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+            },
+            "identifier": "BD-04-005.BD-04-005.O4.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BD-04-005.O4.1.ENUM_VALUE_ALLOWED.AUTHORITY.ORIGIN",
+              "origin_type": "SOURCE_LITERAL"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-WS-04.md",
+              "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+              "source_lines": "L552-L562",
+              "source_section": "24. Business Decisions (Locked) > BD-04-005"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "CANONICAL_ENUM_VALUE",
+              "resolver_id": "RESOLVE.BD-04-005.BD-04-005.BD-04-005.O4.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "CANONICAL_ENUM_VALUE"
+          },
+          "inference": false,
+          "model_conformance_fixture": {
+            "bindings": {
+              "actual_value": {
+                "authoritative_source": {
+                  "allowed_identifiers": [
+                    "BD-04-005.OBSERVED.ENUM.VALUE"
+                  ],
+                  "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                },
+                "identifier": "BD-04-005.OBSERVED.ENUM.VALUE",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BD-04-005.O4.1.ENUM_VALUE_ALLOWED.ACTUAL_VALUE.ORIGIN",
+                  "origin_type": "RUNTIME_OBSERVED"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-04.md",
+                  "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                  "source_lines": "L552-L562",
+                  "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "CANONICAL_ENUM_VALUE",
+                  "resolver_id": "OBSERVE.BD-04-005.BD-04-005.OBSERVED.ENUM.VALUE",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "CANONICAL_ENUM_VALUE"
+              },
+              "allowed_values": {
+                "members": [
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "SELLING.PRICE",
+                        "CURRENCY",
+                        "COLLECTION",
+                        "VISIBILITY",
+                        "MARKETING.CONTENT",
+                        "PRODUCT.CODE.PREFIX.POSTFIX"
+                      ],
+                      "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                    },
+                    "identifier": "SELLING.PRICE",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BD-04-005.O4.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.1",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-WS-04.md",
+                      "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                      "source_lines": "L552-L562",
+                      "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "CANONICAL_ENUM_VALUE",
+                      "resolver_id": "RESOLVE.BD-04-005.SELLING.PRICE",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "CANONICAL_ENUM_VALUE"
+                  },
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "SELLING.PRICE",
+                        "CURRENCY",
+                        "COLLECTION",
+                        "VISIBILITY",
+                        "MARKETING.CONTENT",
+                        "PRODUCT.CODE.PREFIX.POSTFIX"
+                      ],
+                      "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                    },
+                    "identifier": "CURRENCY",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BD-04-005.O4.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.2",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-WS-04.md",
+                      "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                      "source_lines": "L552-L562",
+                      "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "CANONICAL_ENUM_VALUE",
+                      "resolver_id": "RESOLVE.BD-04-005.CURRENCY",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "CANONICAL_ENUM_VALUE"
+                  },
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "SELLING.PRICE",
+                        "CURRENCY",
+                        "COLLECTION",
+                        "VISIBILITY",
+                        "MARKETING.CONTENT",
+                        "PRODUCT.CODE.PREFIX.POSTFIX"
+                      ],
+                      "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                    },
+                    "identifier": "COLLECTION",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BD-04-005.O4.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.3",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-WS-04.md",
+                      "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                      "source_lines": "L552-L562",
+                      "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "CANONICAL_ENUM_VALUE",
+                      "resolver_id": "RESOLVE.BD-04-005.COLLECTION",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "CANONICAL_ENUM_VALUE"
+                  },
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "SELLING.PRICE",
+                        "CURRENCY",
+                        "COLLECTION",
+                        "VISIBILITY",
+                        "MARKETING.CONTENT",
+                        "PRODUCT.CODE.PREFIX.POSTFIX"
+                      ],
+                      "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                    },
+                    "identifier": "VISIBILITY",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BD-04-005.O4.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.4",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-WS-04.md",
+                      "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                      "source_lines": "L552-L562",
+                      "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "CANONICAL_ENUM_VALUE",
+                      "resolver_id": "RESOLVE.BD-04-005.VISIBILITY",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "CANONICAL_ENUM_VALUE"
+                  },
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "SELLING.PRICE",
+                        "CURRENCY",
+                        "COLLECTION",
+                        "VISIBILITY",
+                        "MARKETING.CONTENT",
+                        "PRODUCT.CODE.PREFIX.POSTFIX"
+                      ],
+                      "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                    },
+                    "identifier": "MARKETING.CONTENT",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BD-04-005.O4.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.5",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-WS-04.md",
+                      "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                      "source_lines": "L552-L562",
+                      "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "CANONICAL_ENUM_VALUE",
+                      "resolver_id": "RESOLVE.BD-04-005.MARKETING.CONTENT",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "CANONICAL_ENUM_VALUE"
+                  },
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "SELLING.PRICE",
+                        "CURRENCY",
+                        "COLLECTION",
+                        "VISIBILITY",
+                        "MARKETING.CONTENT",
+                        "PRODUCT.CODE.PREFIX.POSTFIX"
+                      ],
+                      "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                    },
+                    "identifier": "PRODUCT.CODE.PREFIX.POSTFIX",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BD-04-005.O4.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.6",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-WS-04.md",
+                      "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                      "source_lines": "L552-L562",
+                      "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "CANONICAL_ENUM_VALUE",
+                      "resolver_id": "RESOLVE.BD-04-005.PRODUCT.CODE.PREFIX.POSTFIX",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "CANONICAL_ENUM_VALUE"
+                  }
+                ],
+                "origin": {
+                  "origin_id": "BD-04-005.O4.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-04.md",
+                  "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                  "source_lines": "L552-L562",
+                  "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                },
+                "semantic_type": "SET_OF<CANONICAL_ENUM_VALUE>"
+              },
+              "field": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                },
+                "identifier": "BD-04-005.FIELD",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BD-04-005.O4.1.ENUM_VALUE_ALLOWED.FIELD.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-04.md",
+                  "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                  "source_lines": "L552-L562",
+                  "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "FIELD_ID",
+                  "resolver_id": "RESOLVE.BD-04-005.BD-04-005.FIELD",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "FIELD_ID"
+              }
+            },
+            "comparison": {
+              "expected": {
+                "authoritative_source": {
+                  "allowed_identifiers": [
+                    "BD-04-005.BD-04-005.O4.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT"
+                  ],
+                  "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                },
+                "identifier": "BD-04-005.BD-04-005.O4.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BD-04-005.O4.1.ENUM_VALUE_ALLOWED.AUTHORITY.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-04.md",
+                  "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                  "source_lines": "L552-L562",
+                  "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "CANONICAL_ENUM_VALUE",
+                  "resolver_id": "RESOLVE.BD-04-005.BD-04-005.BD-04-005.O4.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "CANONICAL_ENUM_VALUE"
+              },
+              "observed": {
+                "authoritative_source": {
+                  "allowed_identifiers": [
+                    "BD-04-005.BD-04-005.O4.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT"
+                  ],
+                  "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                },
+                "identifier": "BD-04-005.BD-04-005.O4.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BD-04-005.O4.1.ENUM_VALUE_ALLOWED.OBSERVED.ORIGIN",
+                  "origin_type": "RUNTIME_OBSERVED"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-04.md",
+                  "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                  "source_lines": "L552-L562",
+                  "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "CANONICAL_ENUM_VALUE",
+                  "resolver_id": "OBSERVE.BD-04-005.BD-04-005.BD-04-005.O4.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "CANONICAL_ENUM_VALUE"
+              }
+            },
+            "evidence_object": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+              },
+              "identifier": "BD-04-005.BD-04-005.O4.1.ENUM_VALUE_ALLOWED.EVIDENCE.OBJECT",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-04-005.O4.1.ENUM_VALUE_ALLOWED.EVIDENCE.ORIGIN",
+                "origin_type": "EVIDENCE_OBJECT"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "EVIDENCE_OBJECT_REF",
+                "resolver_id": "OBSERVE.BD-04-005.BD-04-005.BD-04-005.O4.1.ENUM_VALUE_ALLOWED.EVIDENCE.OBJECT",
+                "version": "1.0.0"
+              },
+              "semantic_type": "EVIDENCE_OBJECT_REF"
+            },
+            "operator_id": "ENUM_VALUE_ALLOWED"
+          },
+          "obligation_id": "BD-04-005-O004",
+          "observed_operand": {
+            "authoritative_source": {
+              "allowed_identifiers": [
+                "BD-04-005.BD-04-005.O4.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT"
+              ],
+              "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+              "source_type": "SOURCE_LITERAL",
+              "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+            },
+            "identifier": "BD-04-005.BD-04-005.O4.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BD-04-005.O4.1.ENUM_VALUE_ALLOWED.OBSERVED.ORIGIN",
+              "origin_type": "RUNTIME_OBSERVED"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-WS-04.md",
+              "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+              "source_lines": "L552-L562",
+              "source_section": "24. Business Decisions (Locked) > BD-04-005"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "CANONICAL_ENUM_VALUE",
+              "resolver_id": "OBSERVE.BD-04-005.BD-04-005.BD-04-005.O4.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "CANONICAL_ENUM_VALUE"
+          },
+          "operator_id": "ENUM_VALUE_ALLOWED",
+          "operator_version": "1.0.0-candidate.2",
+          "typed_bindings": {
+            "actual_value": {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "BD-04-005.OBSERVED.ENUM.VALUE"
+                ],
+                "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+              },
+              "identifier": "BD-04-005.OBSERVED.ENUM.VALUE",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-04-005.O4.1.ENUM_VALUE_ALLOWED.ACTUAL_VALUE.ORIGIN",
+                "origin_type": "RUNTIME_OBSERVED"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CANONICAL_ENUM_VALUE",
+                "resolver_id": "OBSERVE.BD-04-005.BD-04-005.OBSERVED.ENUM.VALUE",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_ENUM_VALUE"
+            },
+            "allowed_values": {
+              "members": [
+                {
+                  "authoritative_source": {
+                    "allowed_identifiers": [
+                      "SELLING.PRICE",
+                      "CURRENCY",
+                      "COLLECTION",
+                      "VISIBILITY",
+                      "MARKETING.CONTENT",
+                      "PRODUCT.CODE.PREFIX.POSTFIX"
+                    ],
+                    "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                  },
+                  "identifier": "SELLING.PRICE",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BD-04-005.O4.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.1",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-WS-04.md",
+                    "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                    "source_lines": "L552-L562",
+                    "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "CANONICAL_ENUM_VALUE",
+                    "resolver_id": "RESOLVE.BD-04-005.SELLING.PRICE",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "CANONICAL_ENUM_VALUE"
+                },
+                {
+                  "authoritative_source": {
+                    "allowed_identifiers": [
+                      "SELLING.PRICE",
+                      "CURRENCY",
+                      "COLLECTION",
+                      "VISIBILITY",
+                      "MARKETING.CONTENT",
+                      "PRODUCT.CODE.PREFIX.POSTFIX"
+                    ],
+                    "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                  },
+                  "identifier": "CURRENCY",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BD-04-005.O4.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.2",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-WS-04.md",
+                    "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                    "source_lines": "L552-L562",
+                    "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "CANONICAL_ENUM_VALUE",
+                    "resolver_id": "RESOLVE.BD-04-005.CURRENCY",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "CANONICAL_ENUM_VALUE"
+                },
+                {
+                  "authoritative_source": {
+                    "allowed_identifiers": [
+                      "SELLING.PRICE",
+                      "CURRENCY",
+                      "COLLECTION",
+                      "VISIBILITY",
+                      "MARKETING.CONTENT",
+                      "PRODUCT.CODE.PREFIX.POSTFIX"
+                    ],
+                    "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                  },
+                  "identifier": "COLLECTION",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BD-04-005.O4.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.3",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-WS-04.md",
+                    "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                    "source_lines": "L552-L562",
+                    "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "CANONICAL_ENUM_VALUE",
+                    "resolver_id": "RESOLVE.BD-04-005.COLLECTION",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "CANONICAL_ENUM_VALUE"
+                },
+                {
+                  "authoritative_source": {
+                    "allowed_identifiers": [
+                      "SELLING.PRICE",
+                      "CURRENCY",
+                      "COLLECTION",
+                      "VISIBILITY",
+                      "MARKETING.CONTENT",
+                      "PRODUCT.CODE.PREFIX.POSTFIX"
+                    ],
+                    "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                  },
+                  "identifier": "VISIBILITY",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BD-04-005.O4.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.4",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-WS-04.md",
+                    "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                    "source_lines": "L552-L562",
+                    "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "CANONICAL_ENUM_VALUE",
+                    "resolver_id": "RESOLVE.BD-04-005.VISIBILITY",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "CANONICAL_ENUM_VALUE"
+                },
+                {
+                  "authoritative_source": {
+                    "allowed_identifiers": [
+                      "SELLING.PRICE",
+                      "CURRENCY",
+                      "COLLECTION",
+                      "VISIBILITY",
+                      "MARKETING.CONTENT",
+                      "PRODUCT.CODE.PREFIX.POSTFIX"
+                    ],
+                    "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                  },
+                  "identifier": "MARKETING.CONTENT",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BD-04-005.O4.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.5",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-WS-04.md",
+                    "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                    "source_lines": "L552-L562",
+                    "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "CANONICAL_ENUM_VALUE",
+                    "resolver_id": "RESOLVE.BD-04-005.MARKETING.CONTENT",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "CANONICAL_ENUM_VALUE"
+                },
+                {
+                  "authoritative_source": {
+                    "allowed_identifiers": [
+                      "SELLING.PRICE",
+                      "CURRENCY",
+                      "COLLECTION",
+                      "VISIBILITY",
+                      "MARKETING.CONTENT",
+                      "PRODUCT.CODE.PREFIX.POSTFIX"
+                    ],
+                    "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                  },
+                  "identifier": "PRODUCT.CODE.PREFIX.POSTFIX",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BD-04-005.O4.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.6",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-WS-04.md",
+                    "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                    "source_lines": "L552-L562",
+                    "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "CANONICAL_ENUM_VALUE",
+                    "resolver_id": "RESOLVE.BD-04-005.PRODUCT.CODE.PREFIX.POSTFIX",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "CANONICAL_ENUM_VALUE"
+                }
+              ],
+              "origin": {
+                "origin_id": "BD-04-005.O4.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "semantic_type": "SET_OF<CANONICAL_ENUM_VALUE>"
+            },
+            "field": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+              },
+              "identifier": "BD-04-005.FIELD",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-04-005.O4.1.ENUM_VALUE_ALLOWED.FIELD.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "FIELD_ID",
+                "resolver_id": "RESOLVE.BD-04-005.BD-04-005.FIELD",
+                "version": "1.0.0"
+              },
+              "semantic_type": "FIELD_ID"
+            }
+          }
+        },
+        {
+          "assertion_id": "BD-04-005.O5.1.ENUM_VALUE_ALLOWED",
+          "evaluator_consumed_bindings": [
+            "actual_value",
+            "allowed_values",
+            "field"
+          ],
+          "evidence_object": {
+            "authoritative_source": {
+              "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+              "source_type": "SOURCE_LITERAL",
+              "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+            },
+            "identifier": "BD-04-005.BD-04-005.O5.1.ENUM_VALUE_ALLOWED.EVIDENCE.OBJECT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BD-04-005.O5.1.ENUM_VALUE_ALLOWED.EVIDENCE.ORIGIN",
+              "origin_type": "EVIDENCE_OBJECT"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-WS-04.md",
+              "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+              "source_lines": "L552-L562",
+              "source_section": "24. Business Decisions (Locked) > BD-04-005"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "EVIDENCE_OBJECT_REF",
+              "resolver_id": "OBSERVE.BD-04-005.BD-04-005.BD-04-005.O5.1.ENUM_VALUE_ALLOWED.EVIDENCE.OBJECT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "EVIDENCE_OBJECT_REF"
+          },
+          "expected_operand": {
+            "authoritative_source": {
+              "allowed_identifiers": [
+                "BD-04-005.BD-04-005.O5.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT"
+              ],
+              "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+              "source_type": "SOURCE_LITERAL",
+              "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+            },
+            "identifier": "BD-04-005.BD-04-005.O5.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BD-04-005.O5.1.ENUM_VALUE_ALLOWED.AUTHORITY.ORIGIN",
+              "origin_type": "SOURCE_LITERAL"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-WS-04.md",
+              "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+              "source_lines": "L552-L562",
+              "source_section": "24. Business Decisions (Locked) > BD-04-005"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "CANONICAL_ENUM_VALUE",
+              "resolver_id": "RESOLVE.BD-04-005.BD-04-005.BD-04-005.O5.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "CANONICAL_ENUM_VALUE"
+          },
+          "inference": false,
+          "model_conformance_fixture": {
+            "bindings": {
+              "actual_value": {
+                "authoritative_source": {
+                  "allowed_identifiers": [
+                    "BD-04-005.OBSERVED.ENUM.VALUE"
+                  ],
+                  "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                },
+                "identifier": "BD-04-005.OBSERVED.ENUM.VALUE",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BD-04-005.O5.1.ENUM_VALUE_ALLOWED.ACTUAL_VALUE.ORIGIN",
+                  "origin_type": "RUNTIME_OBSERVED"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-04.md",
+                  "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                  "source_lines": "L552-L562",
+                  "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "CANONICAL_ENUM_VALUE",
+                  "resolver_id": "OBSERVE.BD-04-005.BD-04-005.OBSERVED.ENUM.VALUE",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "CANONICAL_ENUM_VALUE"
+              },
+              "allowed_values": {
+                "members": [
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "SELLING.PRICE",
+                        "CURRENCY",
+                        "COLLECTION",
+                        "VISIBILITY",
+                        "MARKETING.CONTENT",
+                        "PRODUCT.CODE.PREFIX.POSTFIX"
+                      ],
+                      "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                    },
+                    "identifier": "SELLING.PRICE",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BD-04-005.O5.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.1",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-WS-04.md",
+                      "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                      "source_lines": "L552-L562",
+                      "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "CANONICAL_ENUM_VALUE",
+                      "resolver_id": "RESOLVE.BD-04-005.SELLING.PRICE",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "CANONICAL_ENUM_VALUE"
+                  },
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "SELLING.PRICE",
+                        "CURRENCY",
+                        "COLLECTION",
+                        "VISIBILITY",
+                        "MARKETING.CONTENT",
+                        "PRODUCT.CODE.PREFIX.POSTFIX"
+                      ],
+                      "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                    },
+                    "identifier": "CURRENCY",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BD-04-005.O5.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.2",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-WS-04.md",
+                      "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                      "source_lines": "L552-L562",
+                      "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "CANONICAL_ENUM_VALUE",
+                      "resolver_id": "RESOLVE.BD-04-005.CURRENCY",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "CANONICAL_ENUM_VALUE"
+                  },
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "SELLING.PRICE",
+                        "CURRENCY",
+                        "COLLECTION",
+                        "VISIBILITY",
+                        "MARKETING.CONTENT",
+                        "PRODUCT.CODE.PREFIX.POSTFIX"
+                      ],
+                      "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                    },
+                    "identifier": "COLLECTION",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BD-04-005.O5.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.3",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-WS-04.md",
+                      "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                      "source_lines": "L552-L562",
+                      "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "CANONICAL_ENUM_VALUE",
+                      "resolver_id": "RESOLVE.BD-04-005.COLLECTION",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "CANONICAL_ENUM_VALUE"
+                  },
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "SELLING.PRICE",
+                        "CURRENCY",
+                        "COLLECTION",
+                        "VISIBILITY",
+                        "MARKETING.CONTENT",
+                        "PRODUCT.CODE.PREFIX.POSTFIX"
+                      ],
+                      "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                    },
+                    "identifier": "VISIBILITY",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BD-04-005.O5.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.4",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-WS-04.md",
+                      "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                      "source_lines": "L552-L562",
+                      "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "CANONICAL_ENUM_VALUE",
+                      "resolver_id": "RESOLVE.BD-04-005.VISIBILITY",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "CANONICAL_ENUM_VALUE"
+                  },
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "SELLING.PRICE",
+                        "CURRENCY",
+                        "COLLECTION",
+                        "VISIBILITY",
+                        "MARKETING.CONTENT",
+                        "PRODUCT.CODE.PREFIX.POSTFIX"
+                      ],
+                      "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                    },
+                    "identifier": "MARKETING.CONTENT",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BD-04-005.O5.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.5",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-WS-04.md",
+                      "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                      "source_lines": "L552-L562",
+                      "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "CANONICAL_ENUM_VALUE",
+                      "resolver_id": "RESOLVE.BD-04-005.MARKETING.CONTENT",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "CANONICAL_ENUM_VALUE"
+                  },
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "SELLING.PRICE",
+                        "CURRENCY",
+                        "COLLECTION",
+                        "VISIBILITY",
+                        "MARKETING.CONTENT",
+                        "PRODUCT.CODE.PREFIX.POSTFIX"
+                      ],
+                      "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                    },
+                    "identifier": "PRODUCT.CODE.PREFIX.POSTFIX",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BD-04-005.O5.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.6",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-WS-04.md",
+                      "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                      "source_lines": "L552-L562",
+                      "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "CANONICAL_ENUM_VALUE",
+                      "resolver_id": "RESOLVE.BD-04-005.PRODUCT.CODE.PREFIX.POSTFIX",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "CANONICAL_ENUM_VALUE"
+                  }
+                ],
+                "origin": {
+                  "origin_id": "BD-04-005.O5.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-04.md",
+                  "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                  "source_lines": "L552-L562",
+                  "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                },
+                "semantic_type": "SET_OF<CANONICAL_ENUM_VALUE>"
+              },
+              "field": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                },
+                "identifier": "BD-04-005.FIELD",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BD-04-005.O5.1.ENUM_VALUE_ALLOWED.FIELD.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-04.md",
+                  "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                  "source_lines": "L552-L562",
+                  "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "FIELD_ID",
+                  "resolver_id": "RESOLVE.BD-04-005.BD-04-005.FIELD",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "FIELD_ID"
+              }
+            },
+            "comparison": {
+              "expected": {
+                "authoritative_source": {
+                  "allowed_identifiers": [
+                    "BD-04-005.BD-04-005.O5.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT"
+                  ],
+                  "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                },
+                "identifier": "BD-04-005.BD-04-005.O5.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BD-04-005.O5.1.ENUM_VALUE_ALLOWED.AUTHORITY.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-04.md",
+                  "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                  "source_lines": "L552-L562",
+                  "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "CANONICAL_ENUM_VALUE",
+                  "resolver_id": "RESOLVE.BD-04-005.BD-04-005.BD-04-005.O5.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "CANONICAL_ENUM_VALUE"
+              },
+              "observed": {
+                "authoritative_source": {
+                  "allowed_identifiers": [
+                    "BD-04-005.BD-04-005.O5.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT"
+                  ],
+                  "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                },
+                "identifier": "BD-04-005.BD-04-005.O5.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BD-04-005.O5.1.ENUM_VALUE_ALLOWED.OBSERVED.ORIGIN",
+                  "origin_type": "RUNTIME_OBSERVED"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-04.md",
+                  "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                  "source_lines": "L552-L562",
+                  "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "CANONICAL_ENUM_VALUE",
+                  "resolver_id": "OBSERVE.BD-04-005.BD-04-005.BD-04-005.O5.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "CANONICAL_ENUM_VALUE"
+              }
+            },
+            "evidence_object": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+              },
+              "identifier": "BD-04-005.BD-04-005.O5.1.ENUM_VALUE_ALLOWED.EVIDENCE.OBJECT",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-04-005.O5.1.ENUM_VALUE_ALLOWED.EVIDENCE.ORIGIN",
+                "origin_type": "EVIDENCE_OBJECT"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "EVIDENCE_OBJECT_REF",
+                "resolver_id": "OBSERVE.BD-04-005.BD-04-005.BD-04-005.O5.1.ENUM_VALUE_ALLOWED.EVIDENCE.OBJECT",
+                "version": "1.0.0"
+              },
+              "semantic_type": "EVIDENCE_OBJECT_REF"
+            },
+            "operator_id": "ENUM_VALUE_ALLOWED"
+          },
+          "obligation_id": "BD-04-005-O005",
+          "observed_operand": {
+            "authoritative_source": {
+              "allowed_identifiers": [
+                "BD-04-005.BD-04-005.O5.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT"
+              ],
+              "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+              "source_type": "SOURCE_LITERAL",
+              "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+            },
+            "identifier": "BD-04-005.BD-04-005.O5.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BD-04-005.O5.1.ENUM_VALUE_ALLOWED.OBSERVED.ORIGIN",
+              "origin_type": "RUNTIME_OBSERVED"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-WS-04.md",
+              "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+              "source_lines": "L552-L562",
+              "source_section": "24. Business Decisions (Locked) > BD-04-005"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "CANONICAL_ENUM_VALUE",
+              "resolver_id": "OBSERVE.BD-04-005.BD-04-005.BD-04-005.O5.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "CANONICAL_ENUM_VALUE"
+          },
+          "operator_id": "ENUM_VALUE_ALLOWED",
+          "operator_version": "1.0.0-candidate.2",
+          "typed_bindings": {
+            "actual_value": {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "BD-04-005.OBSERVED.ENUM.VALUE"
+                ],
+                "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+              },
+              "identifier": "BD-04-005.OBSERVED.ENUM.VALUE",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-04-005.O5.1.ENUM_VALUE_ALLOWED.ACTUAL_VALUE.ORIGIN",
+                "origin_type": "RUNTIME_OBSERVED"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CANONICAL_ENUM_VALUE",
+                "resolver_id": "OBSERVE.BD-04-005.BD-04-005.OBSERVED.ENUM.VALUE",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_ENUM_VALUE"
+            },
+            "allowed_values": {
+              "members": [
+                {
+                  "authoritative_source": {
+                    "allowed_identifiers": [
+                      "SELLING.PRICE",
+                      "CURRENCY",
+                      "COLLECTION",
+                      "VISIBILITY",
+                      "MARKETING.CONTENT",
+                      "PRODUCT.CODE.PREFIX.POSTFIX"
+                    ],
+                    "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                  },
+                  "identifier": "SELLING.PRICE",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BD-04-005.O5.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.1",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-WS-04.md",
+                    "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                    "source_lines": "L552-L562",
+                    "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "CANONICAL_ENUM_VALUE",
+                    "resolver_id": "RESOLVE.BD-04-005.SELLING.PRICE",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "CANONICAL_ENUM_VALUE"
+                },
+                {
+                  "authoritative_source": {
+                    "allowed_identifiers": [
+                      "SELLING.PRICE",
+                      "CURRENCY",
+                      "COLLECTION",
+                      "VISIBILITY",
+                      "MARKETING.CONTENT",
+                      "PRODUCT.CODE.PREFIX.POSTFIX"
+                    ],
+                    "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                  },
+                  "identifier": "CURRENCY",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BD-04-005.O5.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.2",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-WS-04.md",
+                    "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                    "source_lines": "L552-L562",
+                    "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "CANONICAL_ENUM_VALUE",
+                    "resolver_id": "RESOLVE.BD-04-005.CURRENCY",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "CANONICAL_ENUM_VALUE"
+                },
+                {
+                  "authoritative_source": {
+                    "allowed_identifiers": [
+                      "SELLING.PRICE",
+                      "CURRENCY",
+                      "COLLECTION",
+                      "VISIBILITY",
+                      "MARKETING.CONTENT",
+                      "PRODUCT.CODE.PREFIX.POSTFIX"
+                    ],
+                    "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                  },
+                  "identifier": "COLLECTION",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BD-04-005.O5.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.3",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-WS-04.md",
+                    "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                    "source_lines": "L552-L562",
+                    "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "CANONICAL_ENUM_VALUE",
+                    "resolver_id": "RESOLVE.BD-04-005.COLLECTION",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "CANONICAL_ENUM_VALUE"
+                },
+                {
+                  "authoritative_source": {
+                    "allowed_identifiers": [
+                      "SELLING.PRICE",
+                      "CURRENCY",
+                      "COLLECTION",
+                      "VISIBILITY",
+                      "MARKETING.CONTENT",
+                      "PRODUCT.CODE.PREFIX.POSTFIX"
+                    ],
+                    "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                  },
+                  "identifier": "VISIBILITY",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BD-04-005.O5.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.4",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-WS-04.md",
+                    "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                    "source_lines": "L552-L562",
+                    "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "CANONICAL_ENUM_VALUE",
+                    "resolver_id": "RESOLVE.BD-04-005.VISIBILITY",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "CANONICAL_ENUM_VALUE"
+                },
+                {
+                  "authoritative_source": {
+                    "allowed_identifiers": [
+                      "SELLING.PRICE",
+                      "CURRENCY",
+                      "COLLECTION",
+                      "VISIBILITY",
+                      "MARKETING.CONTENT",
+                      "PRODUCT.CODE.PREFIX.POSTFIX"
+                    ],
+                    "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                  },
+                  "identifier": "MARKETING.CONTENT",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BD-04-005.O5.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.5",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-WS-04.md",
+                    "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                    "source_lines": "L552-L562",
+                    "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "CANONICAL_ENUM_VALUE",
+                    "resolver_id": "RESOLVE.BD-04-005.MARKETING.CONTENT",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "CANONICAL_ENUM_VALUE"
+                },
+                {
+                  "authoritative_source": {
+                    "allowed_identifiers": [
+                      "SELLING.PRICE",
+                      "CURRENCY",
+                      "COLLECTION",
+                      "VISIBILITY",
+                      "MARKETING.CONTENT",
+                      "PRODUCT.CODE.PREFIX.POSTFIX"
+                    ],
+                    "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                  },
+                  "identifier": "PRODUCT.CODE.PREFIX.POSTFIX",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BD-04-005.O5.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.6",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-WS-04.md",
+                    "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                    "source_lines": "L552-L562",
+                    "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "CANONICAL_ENUM_VALUE",
+                    "resolver_id": "RESOLVE.BD-04-005.PRODUCT.CODE.PREFIX.POSTFIX",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "CANONICAL_ENUM_VALUE"
+                }
+              ],
+              "origin": {
+                "origin_id": "BD-04-005.O5.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "semantic_type": "SET_OF<CANONICAL_ENUM_VALUE>"
+            },
+            "field": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+              },
+              "identifier": "BD-04-005.FIELD",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-04-005.O5.1.ENUM_VALUE_ALLOWED.FIELD.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "FIELD_ID",
+                "resolver_id": "RESOLVE.BD-04-005.BD-04-005.FIELD",
+                "version": "1.0.0"
+              },
+              "semantic_type": "FIELD_ID"
+            }
+          }
+        },
+        {
+          "assertion_id": "BD-04-005.O6.1.ENUM_VALUE_ALLOWED",
+          "evaluator_consumed_bindings": [
+            "actual_value",
+            "allowed_values",
+            "field"
+          ],
+          "evidence_object": {
+            "authoritative_source": {
+              "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+              "source_type": "SOURCE_LITERAL",
+              "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+            },
+            "identifier": "BD-04-005.BD-04-005.O6.1.ENUM_VALUE_ALLOWED.EVIDENCE.OBJECT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BD-04-005.O6.1.ENUM_VALUE_ALLOWED.EVIDENCE.ORIGIN",
+              "origin_type": "EVIDENCE_OBJECT"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-WS-04.md",
+              "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+              "source_lines": "L552-L562",
+              "source_section": "24. Business Decisions (Locked) > BD-04-005"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "EVIDENCE_OBJECT_REF",
+              "resolver_id": "OBSERVE.BD-04-005.BD-04-005.BD-04-005.O6.1.ENUM_VALUE_ALLOWED.EVIDENCE.OBJECT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "EVIDENCE_OBJECT_REF"
+          },
+          "expected_operand": {
+            "authoritative_source": {
+              "allowed_identifiers": [
+                "BD-04-005.BD-04-005.O6.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT"
+              ],
+              "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+              "source_type": "SOURCE_LITERAL",
+              "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+            },
+            "identifier": "BD-04-005.BD-04-005.O6.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BD-04-005.O6.1.ENUM_VALUE_ALLOWED.AUTHORITY.ORIGIN",
+              "origin_type": "SOURCE_LITERAL"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-WS-04.md",
+              "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+              "source_lines": "L552-L562",
+              "source_section": "24. Business Decisions (Locked) > BD-04-005"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "CANONICAL_ENUM_VALUE",
+              "resolver_id": "RESOLVE.BD-04-005.BD-04-005.BD-04-005.O6.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "CANONICAL_ENUM_VALUE"
+          },
+          "inference": false,
+          "model_conformance_fixture": {
+            "bindings": {
+              "actual_value": {
+                "authoritative_source": {
+                  "allowed_identifiers": [
+                    "BD-04-005.OBSERVED.ENUM.VALUE"
+                  ],
+                  "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                },
+                "identifier": "BD-04-005.OBSERVED.ENUM.VALUE",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BD-04-005.O6.1.ENUM_VALUE_ALLOWED.ACTUAL_VALUE.ORIGIN",
+                  "origin_type": "RUNTIME_OBSERVED"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-04.md",
+                  "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                  "source_lines": "L552-L562",
+                  "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "CANONICAL_ENUM_VALUE",
+                  "resolver_id": "OBSERVE.BD-04-005.BD-04-005.OBSERVED.ENUM.VALUE",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "CANONICAL_ENUM_VALUE"
+              },
+              "allowed_values": {
+                "members": [
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "SELLING.PRICE",
+                        "CURRENCY",
+                        "COLLECTION",
+                        "VISIBILITY",
+                        "MARKETING.CONTENT",
+                        "PRODUCT.CODE.PREFIX.POSTFIX"
+                      ],
+                      "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                    },
+                    "identifier": "SELLING.PRICE",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BD-04-005.O6.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.1",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-WS-04.md",
+                      "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                      "source_lines": "L552-L562",
+                      "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "CANONICAL_ENUM_VALUE",
+                      "resolver_id": "RESOLVE.BD-04-005.SELLING.PRICE",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "CANONICAL_ENUM_VALUE"
+                  },
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "SELLING.PRICE",
+                        "CURRENCY",
+                        "COLLECTION",
+                        "VISIBILITY",
+                        "MARKETING.CONTENT",
+                        "PRODUCT.CODE.PREFIX.POSTFIX"
+                      ],
+                      "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                    },
+                    "identifier": "CURRENCY",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BD-04-005.O6.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.2",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-WS-04.md",
+                      "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                      "source_lines": "L552-L562",
+                      "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "CANONICAL_ENUM_VALUE",
+                      "resolver_id": "RESOLVE.BD-04-005.CURRENCY",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "CANONICAL_ENUM_VALUE"
+                  },
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "SELLING.PRICE",
+                        "CURRENCY",
+                        "COLLECTION",
+                        "VISIBILITY",
+                        "MARKETING.CONTENT",
+                        "PRODUCT.CODE.PREFIX.POSTFIX"
+                      ],
+                      "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                    },
+                    "identifier": "COLLECTION",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BD-04-005.O6.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.3",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-WS-04.md",
+                      "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                      "source_lines": "L552-L562",
+                      "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "CANONICAL_ENUM_VALUE",
+                      "resolver_id": "RESOLVE.BD-04-005.COLLECTION",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "CANONICAL_ENUM_VALUE"
+                  },
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "SELLING.PRICE",
+                        "CURRENCY",
+                        "COLLECTION",
+                        "VISIBILITY",
+                        "MARKETING.CONTENT",
+                        "PRODUCT.CODE.PREFIX.POSTFIX"
+                      ],
+                      "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                    },
+                    "identifier": "VISIBILITY",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BD-04-005.O6.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.4",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-WS-04.md",
+                      "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                      "source_lines": "L552-L562",
+                      "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "CANONICAL_ENUM_VALUE",
+                      "resolver_id": "RESOLVE.BD-04-005.VISIBILITY",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "CANONICAL_ENUM_VALUE"
+                  },
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "SELLING.PRICE",
+                        "CURRENCY",
+                        "COLLECTION",
+                        "VISIBILITY",
+                        "MARKETING.CONTENT",
+                        "PRODUCT.CODE.PREFIX.POSTFIX"
+                      ],
+                      "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                    },
+                    "identifier": "MARKETING.CONTENT",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BD-04-005.O6.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.5",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-WS-04.md",
+                      "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                      "source_lines": "L552-L562",
+                      "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "CANONICAL_ENUM_VALUE",
+                      "resolver_id": "RESOLVE.BD-04-005.MARKETING.CONTENT",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "CANONICAL_ENUM_VALUE"
+                  },
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "SELLING.PRICE",
+                        "CURRENCY",
+                        "COLLECTION",
+                        "VISIBILITY",
+                        "MARKETING.CONTENT",
+                        "PRODUCT.CODE.PREFIX.POSTFIX"
+                      ],
+                      "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                    },
+                    "identifier": "PRODUCT.CODE.PREFIX.POSTFIX",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BD-04-005.O6.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.6",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-WS-04.md",
+                      "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                      "source_lines": "L552-L562",
+                      "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "CANONICAL_ENUM_VALUE",
+                      "resolver_id": "RESOLVE.BD-04-005.PRODUCT.CODE.PREFIX.POSTFIX",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "CANONICAL_ENUM_VALUE"
+                  }
+                ],
+                "origin": {
+                  "origin_id": "BD-04-005.O6.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-04.md",
+                  "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                  "source_lines": "L552-L562",
+                  "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                },
+                "semantic_type": "SET_OF<CANONICAL_ENUM_VALUE>"
+              },
+              "field": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                },
+                "identifier": "BD-04-005.FIELD",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BD-04-005.O6.1.ENUM_VALUE_ALLOWED.FIELD.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-04.md",
+                  "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                  "source_lines": "L552-L562",
+                  "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "FIELD_ID",
+                  "resolver_id": "RESOLVE.BD-04-005.BD-04-005.FIELD",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "FIELD_ID"
+              }
+            },
+            "comparison": {
+              "expected": {
+                "authoritative_source": {
+                  "allowed_identifiers": [
+                    "BD-04-005.BD-04-005.O6.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT"
+                  ],
+                  "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                },
+                "identifier": "BD-04-005.BD-04-005.O6.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BD-04-005.O6.1.ENUM_VALUE_ALLOWED.AUTHORITY.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-04.md",
+                  "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                  "source_lines": "L552-L562",
+                  "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "CANONICAL_ENUM_VALUE",
+                  "resolver_id": "RESOLVE.BD-04-005.BD-04-005.BD-04-005.O6.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "CANONICAL_ENUM_VALUE"
+              },
+              "observed": {
+                "authoritative_source": {
+                  "allowed_identifiers": [
+                    "BD-04-005.BD-04-005.O6.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT"
+                  ],
+                  "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                },
+                "identifier": "BD-04-005.BD-04-005.O6.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BD-04-005.O6.1.ENUM_VALUE_ALLOWED.OBSERVED.ORIGIN",
+                  "origin_type": "RUNTIME_OBSERVED"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-04.md",
+                  "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                  "source_lines": "L552-L562",
+                  "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "CANONICAL_ENUM_VALUE",
+                  "resolver_id": "OBSERVE.BD-04-005.BD-04-005.BD-04-005.O6.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "CANONICAL_ENUM_VALUE"
+              }
+            },
+            "evidence_object": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+              },
+              "identifier": "BD-04-005.BD-04-005.O6.1.ENUM_VALUE_ALLOWED.EVIDENCE.OBJECT",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-04-005.O6.1.ENUM_VALUE_ALLOWED.EVIDENCE.ORIGIN",
+                "origin_type": "EVIDENCE_OBJECT"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "EVIDENCE_OBJECT_REF",
+                "resolver_id": "OBSERVE.BD-04-005.BD-04-005.BD-04-005.O6.1.ENUM_VALUE_ALLOWED.EVIDENCE.OBJECT",
+                "version": "1.0.0"
+              },
+              "semantic_type": "EVIDENCE_OBJECT_REF"
+            },
+            "operator_id": "ENUM_VALUE_ALLOWED"
+          },
+          "obligation_id": "BD-04-005-O006",
+          "observed_operand": {
+            "authoritative_source": {
+              "allowed_identifiers": [
+                "BD-04-005.BD-04-005.O6.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT"
+              ],
+              "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+              "source_type": "SOURCE_LITERAL",
+              "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+            },
+            "identifier": "BD-04-005.BD-04-005.O6.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BD-04-005.O6.1.ENUM_VALUE_ALLOWED.OBSERVED.ORIGIN",
+              "origin_type": "RUNTIME_OBSERVED"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-WS-04.md",
+              "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+              "source_lines": "L552-L562",
+              "source_section": "24. Business Decisions (Locked) > BD-04-005"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "CANONICAL_ENUM_VALUE",
+              "resolver_id": "OBSERVE.BD-04-005.BD-04-005.BD-04-005.O6.1.ENUM_VALUE_ALLOWED.CANONICAL.RESULT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "CANONICAL_ENUM_VALUE"
+          },
+          "operator_id": "ENUM_VALUE_ALLOWED",
+          "operator_version": "1.0.0-candidate.2",
+          "typed_bindings": {
+            "actual_value": {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "BD-04-005.OBSERVED.ENUM.VALUE"
+                ],
+                "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+              },
+              "identifier": "BD-04-005.OBSERVED.ENUM.VALUE",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-04-005.O6.1.ENUM_VALUE_ALLOWED.ACTUAL_VALUE.ORIGIN",
+                "origin_type": "RUNTIME_OBSERVED"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CANONICAL_ENUM_VALUE",
+                "resolver_id": "OBSERVE.BD-04-005.BD-04-005.OBSERVED.ENUM.VALUE",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_ENUM_VALUE"
+            },
+            "allowed_values": {
+              "members": [
+                {
+                  "authoritative_source": {
+                    "allowed_identifiers": [
+                      "SELLING.PRICE",
+                      "CURRENCY",
+                      "COLLECTION",
+                      "VISIBILITY",
+                      "MARKETING.CONTENT",
+                      "PRODUCT.CODE.PREFIX.POSTFIX"
+                    ],
+                    "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                  },
+                  "identifier": "SELLING.PRICE",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BD-04-005.O6.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.1",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-WS-04.md",
+                    "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                    "source_lines": "L552-L562",
+                    "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "CANONICAL_ENUM_VALUE",
+                    "resolver_id": "RESOLVE.BD-04-005.SELLING.PRICE",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "CANONICAL_ENUM_VALUE"
+                },
+                {
+                  "authoritative_source": {
+                    "allowed_identifiers": [
+                      "SELLING.PRICE",
+                      "CURRENCY",
+                      "COLLECTION",
+                      "VISIBILITY",
+                      "MARKETING.CONTENT",
+                      "PRODUCT.CODE.PREFIX.POSTFIX"
+                    ],
+                    "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                  },
+                  "identifier": "CURRENCY",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BD-04-005.O6.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.2",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-WS-04.md",
+                    "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                    "source_lines": "L552-L562",
+                    "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "CANONICAL_ENUM_VALUE",
+                    "resolver_id": "RESOLVE.BD-04-005.CURRENCY",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "CANONICAL_ENUM_VALUE"
+                },
+                {
+                  "authoritative_source": {
+                    "allowed_identifiers": [
+                      "SELLING.PRICE",
+                      "CURRENCY",
+                      "COLLECTION",
+                      "VISIBILITY",
+                      "MARKETING.CONTENT",
+                      "PRODUCT.CODE.PREFIX.POSTFIX"
+                    ],
+                    "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                  },
+                  "identifier": "COLLECTION",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BD-04-005.O6.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.3",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-WS-04.md",
+                    "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                    "source_lines": "L552-L562",
+                    "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "CANONICAL_ENUM_VALUE",
+                    "resolver_id": "RESOLVE.BD-04-005.COLLECTION",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "CANONICAL_ENUM_VALUE"
+                },
+                {
+                  "authoritative_source": {
+                    "allowed_identifiers": [
+                      "SELLING.PRICE",
+                      "CURRENCY",
+                      "COLLECTION",
+                      "VISIBILITY",
+                      "MARKETING.CONTENT",
+                      "PRODUCT.CODE.PREFIX.POSTFIX"
+                    ],
+                    "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                  },
+                  "identifier": "VISIBILITY",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BD-04-005.O6.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.4",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-WS-04.md",
+                    "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                    "source_lines": "L552-L562",
+                    "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "CANONICAL_ENUM_VALUE",
+                    "resolver_id": "RESOLVE.BD-04-005.VISIBILITY",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "CANONICAL_ENUM_VALUE"
+                },
+                {
+                  "authoritative_source": {
+                    "allowed_identifiers": [
+                      "SELLING.PRICE",
+                      "CURRENCY",
+                      "COLLECTION",
+                      "VISIBILITY",
+                      "MARKETING.CONTENT",
+                      "PRODUCT.CODE.PREFIX.POSTFIX"
+                    ],
+                    "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                  },
+                  "identifier": "MARKETING.CONTENT",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BD-04-005.O6.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.5",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-WS-04.md",
+                    "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                    "source_lines": "L552-L562",
+                    "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "CANONICAL_ENUM_VALUE",
+                    "resolver_id": "RESOLVE.BD-04-005.MARKETING.CONTENT",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "CANONICAL_ENUM_VALUE"
+                },
+                {
+                  "authoritative_source": {
+                    "allowed_identifiers": [
+                      "SELLING.PRICE",
+                      "CURRENCY",
+                      "COLLECTION",
+                      "VISIBILITY",
+                      "MARKETING.CONTENT",
+                      "PRODUCT.CODE.PREFIX.POSTFIX"
+                    ],
+                    "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+                  },
+                  "identifier": "PRODUCT.CODE.PREFIX.POSTFIX",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BD-04-005.O6.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN.MEMBER.6",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-WS-04.md",
+                    "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                    "source_lines": "L552-L562",
+                    "source_section": "24. Business Decisions (Locked) > BD-04-005"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "CANONICAL_ENUM_VALUE",
+                    "resolver_id": "RESOLVE.BD-04-005.PRODUCT.CODE.PREFIX.POSTFIX",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "CANONICAL_ENUM_VALUE"
+                }
+              ],
+              "origin": {
+                "origin_id": "BD-04-005.O6.1.ENUM_VALUE_ALLOWED.ALLOWED_VALUES.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "semantic_type": "SET_OF<CANONICAL_ENUM_VALUE>"
+            },
+            "field": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+                "source_type": "SOURCE_LITERAL",
+                "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+              },
+              "identifier": "BD-04-005.FIELD",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BD-04-005.O6.1.ENUM_VALUE_ALLOWED.FIELD.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-04.md",
+                "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+                "source_lines": "L552-L562",
+                "source_section": "24. Business Decisions (Locked) > BD-04-005"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "FIELD_ID",
+                "resolver_id": "RESOLVE.BD-04-005.BD-04-005.FIELD",
+                "version": "1.0.0"
+              },
+              "semantic_type": "FIELD_ID"
+            }
+          }
+        }
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-04-005-AC004",
-      "given": "the applicable business context, actor, and input for Organization chỉ được thay đổi: - Selling Price - Currency - Collection - Visibility - Marketing…",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-04-005-O004"
+      "boundary_cases": [
+        "A named field may still be denied by a stricter applicable policy; unnamed fields remain immutable to Organization"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-04-005-AC005",
-      "given": "the applicable business context, actor, and input for Organization chỉ được thay đổi: - Selling Price - Currency - Collection - Visibility - Marketing…",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-04-005-O005"
+      "contract_ast_sha256": "b2b8ad35759a993fe86441d207d9eb353d27e9f5906f0efac35f1f4ffc94af37",
+      "contract_id": "P2C.C4.CONTRACT.BD-04-005",
+      "criticality": "CRITICAL",
+      "disposition": "COMPOUND_AST_REQUIRED",
+      "evidence_contract": {
+        "evidence_object_ref": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-WS-04.md#24. Business Decisions (Locked) > BD-04-005",
+            "source_type": "SOURCE_LITERAL",
+            "version": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b"
+          },
+          "identifier": "BD-04-005.BD-04-005.CONTRACT.EVIDENCE.OBJECT",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BD-04-005.CONTRACT.EVIDENCE.ORIGIN",
+            "origin_type": "EVIDENCE_OBJECT"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-04.md",
+            "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+            "source_lines": "L552-L562",
+            "source_section": "24. Business Decisions (Locked) > BD-04-005"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "EVIDENCE_OBJECT_REF",
+            "resolver_id": "OBSERVE.BD-04-005.BD-04-005.BD-04-005.CONTRACT.EVIDENCE.OBJECT",
+            "version": "1.0.0"
+          },
+          "semantic_type": "EVIDENCE_OBJECT_REF"
+        },
+        "inference": false,
+        "observed_collection_origin": "BD-04-005.RUNTIME.OBSERVED.FIELDS",
+        "observed_field_ids": [
+          "FIELD.ORGANIZATION_ID",
+          "FIELD.ACTOR_ID",
+          "FIELD.CHANGED_FIELDS",
+          "FIELD.ALLOWED_FIELDS",
+          "FIELD.PERMISSION_RESULT",
+          "FIELD.AUDIT_RECORD"
+        ],
+        "producer": "BD-04-005.EVIDENCE.PRODUCER",
+        "required_collection_origin": "BD-04-005.SOURCE.REQUIRED.FIELDS",
+        "required_field_ids": [
+          "FIELD.ORGANIZATION_ID",
+          "FIELD.ACTOR_ID",
+          "FIELD.CHANGED_FIELDS",
+          "FIELD.ALLOWED_FIELDS",
+          "FIELD.PERMISSION_RESULT",
+          "FIELD.AUDIT_RECORD"
+        ],
+        "required_values_or_hashes": [
+          "BD-04-005.EVIDENCE.CONTENT.HASH"
+        ],
+        "retrieval_method": "BD-04-005.EVIDENCE.RETRIEVAL",
+        "version_or_correlation": "BD-04-005.EVIDENCE.VERSION.CORRELATION"
+      },
+      "explicit_non_obligations": [
+        "No runtime implementation topology is authorized by this semantic record.",
+        "No production runtime evidence is claimed by this model-level candidate."
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-04-005-AC006",
-      "given": "the applicable business context, actor, and input for Organization chỉ được thay đổi: - Selling Price - Currency - Collection - Visibility - Marketing…",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-04-005-O006"
+      "fixture_ids": [
+        "P2C-C4-FX-3AADE6B801CA4FD16989",
+        "P2C-C4-FX-1BFF9053A1F02BA897A0",
+        "P2C-C4-FX-2DFD204C33D31A4863EE"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BD-04-005-AC007",
-      "given": "an unsupported or invalid business input at the boundary governed by Organization chỉ được thay đổi: - Selling Price - Currency - Collection - Visibility - Marketing…",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BD-04-005-O001",
-        "BD-04-005-O002",
-        "BD-04-005-O003",
-        "BD-04-005-O004",
-        "BD-04-005-O005",
-        "BD-04-005-O006"
+      "high_risk_audit_subset": true,
+      "independent_contract_identity": true,
+      "inference": false,
+      "inherits_contract_ast": null,
+      "negative_oracles": [
+        "Any field outside the named set is changed by the Organization"
       ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+      "normative_obligations": [
+        {
+          "applicability": "V2.3_ACTIVE",
+          "obligation_id": "BD-04-005-O001",
+          "obligation_text": "Organization chỉ được thay đổi: Selling Price"
+        },
+        {
+          "applicability": "V2.3_ACTIVE",
+          "obligation_id": "BD-04-005-O002",
+          "obligation_text": "Organization chỉ được thay đổi: Currency"
+        },
+        {
+          "applicability": "V2.3_ACTIVE",
+          "obligation_id": "BD-04-005-O003",
+          "obligation_text": "Organization chỉ được thay đổi: Collection"
+        },
+        {
+          "applicability": "V2.3_ACTIVE",
+          "obligation_id": "BD-04-005-O004",
+          "obligation_text": "Organization chỉ được thay đổi: Visibility"
+        },
+        {
+          "applicability": "V2.3_ACTIVE",
+          "obligation_id": "BD-04-005-O005",
+          "obligation_text": "Organization chỉ được thay đổi: Marketing Content"
+        },
+        {
+          "applicability": "V2.3_ACTIVE",
+          "obligation_id": "BD-04-005-O006",
+          "obligation_text": "Organization chỉ được thay đổi: Product Code Prefix/Postfix"
+        }
+      ],
+      "obligation_to_operator_coverage": [
+        {
+          "assertion_ids": [
+            "BD-04-005.O1.1.ENUM_VALUE_ALLOWED"
+          ],
+          "coverage_count": 1,
+          "obligation_id": "BD-04-005-O001"
+        },
+        {
+          "assertion_ids": [
+            "BD-04-005.O2.1.ENUM_VALUE_ALLOWED"
+          ],
+          "coverage_count": 1,
+          "obligation_id": "BD-04-005-O002"
+        },
+        {
+          "assertion_ids": [
+            "BD-04-005.O3.1.ENUM_VALUE_ALLOWED"
+          ],
+          "coverage_count": 1,
+          "obligation_id": "BD-04-005-O003"
+        },
+        {
+          "assertion_ids": [
+            "BD-04-005.O4.1.ENUM_VALUE_ALLOWED"
+          ],
+          "coverage_count": 1,
+          "obligation_id": "BD-04-005-O004"
+        },
+        {
+          "assertion_ids": [
+            "BD-04-005.O5.1.ENUM_VALUE_ALLOWED"
+          ],
+          "coverage_count": 1,
+          "obligation_id": "BD-04-005-O005"
+        },
+        {
+          "assertion_ids": [
+            "BD-04-005.O6.1.ENUM_VALUE_ALLOWED"
+          ],
+          "coverage_count": 1,
+          "obligation_id": "BD-04-005-O006"
+        }
+      ],
+      "operator_composition": [
+        "ENUM_VALUE_ALLOWED",
+        "ENUM_VALUE_ALLOWED",
+        "ENUM_VALUE_ALLOWED",
+        "ENUM_VALUE_ALLOWED",
+        "ENUM_VALUE_ALLOWED",
+        "ENUM_VALUE_ALLOWED"
+      ],
+      "positive_oracles": [
+        "Only Selling Price, Currency, Collection, Visibility, Marketing Content and Product Code Prefix or Postfix can be changed"
+      ],
+      "preconditions": [
+        "The actor has catalog-edit permission for the Organization"
+      ],
+      "prohibitions": [
+        "Any field outside the named set is changed by the Organization"
+      ],
+      "requirement_id": "BD-04-005",
+      "runtime_status": "SLICE_RUNTIME_ADAPTER_REQUIRED",
+      "semantic_family_id": null,
+      "source_provenance": {
+        "approved_decision_references": [],
+        "inference": false,
+        "source_document": "docs/BRD/BRD-WS-04.md",
+        "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
+        "source_lines": "L552-L562",
+        "source_section": "24. Business Decisions (Locked) > BD-04-005"
+      },
+      "source_statement": "Organization chỉ được thay đổi: - Selling Price - Currency - Collection - Visibility - Marketing Content - Product Code Prefix/Postfix",
+      "surrounding_source_context": "## BD-04-005\n\nOrganization chỉ được thay đổi:\n\n- Selling Price\n- Currency\n- Collection\n- Visibility\n- Marketing Content\n- Product Code Prefix/Postfix\n\n---"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "contract_id": "P2C.C4.CONTRACT.BD-04-005",
+    "inference": false,
+    "mechanism": "APPROVED_TYPED_CUSTOM_AST",
+    "mechanism_version": "SEMANTIC_ACCEPTANCE_RENDERER_C2",
+    "runtime_status": "RUNTIME_ADAPTER_PENDING"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "ACCEPTANCE_READY",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-04-005-AC001",
-        "BD-04-005-AC007"
+        "BD-04-005-AC007",
+        "BD-04-005-AC008"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-04-005-O001",
-      "obligation_text": "Organization chỉ được thay đổi: Selling Price."
+      "obligation_text": "Organization chỉ được thay đổi: Selling Price"
     },
     {
       "acceptance_criterion_references": [
         "BD-04-005-AC002",
-        "BD-04-005-AC007"
+        "BD-04-005-AC007",
+        "BD-04-005-AC008"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-04-005-O002",
-      "obligation_text": "Organization chỉ được thay đổi: Currency."
+      "obligation_text": "Organization chỉ được thay đổi: Currency"
     },
     {
       "acceptance_criterion_references": [
         "BD-04-005-AC003",
-        "BD-04-005-AC007"
+        "BD-04-005-AC007",
+        "BD-04-005-AC008"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-04-005-O003",
-      "obligation_text": "Organization chỉ được thay đổi: Collection."
+      "obligation_text": "Organization chỉ được thay đổi: Collection"
     },
     {
       "acceptance_criterion_references": [
         "BD-04-005-AC004",
-        "BD-04-005-AC007"
+        "BD-04-005-AC007",
+        "BD-04-005-AC008"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-04-005-O004",
-      "obligation_text": "Organization chỉ được thay đổi: Visibility."
+      "obligation_text": "Organization chỉ được thay đổi: Visibility"
     },
     {
       "acceptance_criterion_references": [
         "BD-04-005-AC005",
-        "BD-04-005-AC007"
+        "BD-04-005-AC007",
+        "BD-04-005-AC008"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-04-005-O005",
-      "obligation_text": "Organization chỉ được thay đổi: Marketing Content."
+      "obligation_text": "Organization chỉ được thay đổi: Marketing Content"
     },
     {
       "acceptance_criterion_references": [
         "BD-04-005-AC006",
-        "BD-04-005-AC007"
+        "BD-04-005-AC007",
+        "BD-04-005-AC008"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-04-005-O006",
-      "obligation_text": "Organization chỉ được thay đổi: Product Code Prefix/Postfix."
+      "obligation_text": "Organization chỉ được thay đổi: Product Code Prefix/Postfix"
     }
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-04-005 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-04-005 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-04-005 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-04-005 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-04-005 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-04-005 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "BD-04-005 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BD-04-005-AC007"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BD-04-005-AC001",
         "BD-04-005-AC002",
@@ -1313,13 +9027,12 @@ Workshop này là Foundation cho:
         "BD-04-005-AC004",
         "BD-04-005-AC005",
         "BD-04-005-AC006"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-04-005 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-04-005 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -1337,9 +9050,9 @@ Workshop này là Foundation cho:
     "source_context_heading": "BD-04-005",
     "source_context_sha256": "24d95e4f0271bbc330b7b12041ecafe1e701df2926c8634bd172b8be41e2e529",
     "source_document": "docs/BRD/BRD-WS-04.md",
-    "source_fingerprint": "eb9138d5d95efdc68909c5ff912c28121c1caaf1cc8b51e5f482d87df77c2f0b",
-    "source_lines": "L552-L562",
-    "source_section": "24. Business Decisions (Locked) > BD-04-005"
+    "source_fingerprint": "2b68384eb42e1a9bb3a44fca9c535553df584ad6c7e506a3f5f7af48a14ff80b",
+    "source_lines": "L1068-L9073",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-04-005"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1364,41 +9077,36 @@ Workshop này là Foundation cho:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-04-006-AC001",
-      "given": "the applicable business context, actor, and input for Product Version được tạo khi Supplier thay đổi Policy hoặc Specification",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-04-006-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-007"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BD-04-006-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Product Version được tạo khi Supplier thay đổi Policy hoặc Specification",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BD-04-006-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-04-006",
+      "source_document": "docs/BRD/BRD-WS-04.md",
+      "source_fingerprint": "99559f70e1d702ef413f4e6a2782ed164d02719c89fff82790e344547a3a4069"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-04-006-AC001",
-        "BD-04-006-AC002"
+        "BD-04-006-AC002",
+        "BD-04-006-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-04-006-O001",
@@ -1423,9 +9131,9 @@ Workshop này là Foundation cho:
     "source_context_heading": "BD-04-006",
     "source_context_sha256": "95a288a64ee23b3b36c6ac9374fb2c7145018b67c6b69b7c58e5bddb165eb31f",
     "source_document": "docs/BRD/BRD-WS-04.md",
-    "source_fingerprint": "2390b42c438c0c93477060d2ddf7da07772be536b6ad6d8d64771fd67cd9fd5e",
-    "source_lines": "L565-L568",
-    "source_section": "24. Business Decisions (Locked) > BD-04-006"
+    "source_fingerprint": "99559f70e1d702ef413f4e6a2782ed164d02719c89fff82790e344547a3a4069",
+    "source_lines": "L9075-L9154",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-04-006"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1450,9 +9158,20 @@ Workshop này là Foundation cho:
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "NOT_APPLICABLE_FOR_V2.3",
+    "inference": false,
+    "requirement_id": "BD-04-007",
+    "scope_status": "OUT_OF_SCOPE"
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "NOT_APPLICABLE_FOR_V2.3",
+    "runtime_status": "NOT_APPLICABLE_FOR_V2.3"
+  },
   "acceptance_rationale": "Requirement is explicitly outside the v2.3 product scope.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
   "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
   "acceptance_unit": false,
   "atomic_obligations": [],
@@ -1486,9 +9205,9 @@ Workshop này là Foundation cho:
     "source_context_heading": "BD-04-007",
     "source_context_sha256": "ad74cdbab86309f762bd8522f6c7e8d3301e0381903feb80431b4d4ed80689c0",
     "source_document": "docs/BRD/BRD-WS-04.md",
-    "source_fingerprint": "d8c31f2ec78bac7b115dd5523d9144523d425ef4fe50d7b49da301e631d6f283",
-    "source_lines": "L571-L574",
-    "source_section": "24. Business Decisions (Locked) > BD-04-007"
+    "source_fingerprint": "4a7346604746c095e46c20a14a3f2039921cff8c1a5634f45b100773ac54d63f",
+    "source_lines": "L9156-L9228",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-04-007"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1513,40 +9232,36 @@ Workshop này là Foundation cho:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-04-008-AC001",
-      "given": "the applicable business context, actor, and input for Supplier Attribute Mapping phải hỗ trợ cấu hình. Không hardcode",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the effective configuration and version are visible in the decision evidence, and an approved configuration change changes the governed result without a code change",
-      "verifies": [
-        "BD-04-008-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-007"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-04-008-AC002",
-      "given": "the applicable business context, actor, and input for Supplier Attribute Mapping phải hỗ trợ cấu hình. Không hardcode",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the effective configuration and version are visible in the decision evidence, and an approved configuration change changes the governed result without a code change",
-      "verifies": [
-        "BD-04-008-O002"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-04-008",
+      "source_document": "docs/BRD/BRD-WS-04.md",
+      "source_fingerprint": "e96c1df7c35275f311725bf4f0b245d3613267a07578fb004488ac927db99cb9"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BD-04-008-AC001"
+        "BD-04-008-AC001",
+        "BD-04-008-AC003",
+        "BD-04-008-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-04-008-O001",
@@ -1554,7 +9269,9 @@ Workshop này là Foundation cho:
     },
     {
       "acceptance_criterion_references": [
-        "BD-04-008-AC002"
+        "BD-04-008-AC002",
+        "BD-04-008-AC003",
+        "BD-04-008-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-04-008-O002",
@@ -1579,9 +9296,9 @@ Workshop này là Foundation cho:
     "source_context_heading": "BD-04-008",
     "source_context_sha256": "6a801dc222070147cc09b1a572a98c06c34b0921c5d60988dd3ddb6af15f2b9a",
     "source_document": "docs/BRD/BRD-WS-04.md",
-    "source_fingerprint": "678aab58550234a0b592f8ccf90524534852790f3abdb11593a95357e6676338",
-    "source_lines": "L577-L582",
-    "source_section": "24. Business Decisions (Locked) > BD-04-008"
+    "source_fingerprint": "e96c1df7c35275f311725bf4f0b245d3613267a07578fb004488ac927db99cb9",
+    "source_lines": "L9230-L9319",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-04-008"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1606,54 +9323,34 @@ Workshop này là Foundation cho:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-04-009-AC001",
-      "given": "the applicable business context, actor, and input for Catalog Publish sử dụng Workflow. Không Publish trực tiếp",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-04-009-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-04-009-AC002",
-      "given": "the applicable business context, actor, and input for Catalog Publish sử dụng Workflow. Không Publish trực tiếp",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-04-009-O002"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BD-04-009-AC003",
-      "given": "an unsupported or invalid business input at the boundary governed by Catalog Publish sử dụng Workflow. Không Publish trực tiếp",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BD-04-009-O001",
-        "BD-04-009-O002"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-04-009",
+      "source_document": "docs/BRD/BRD-WS-04.md",
+      "source_fingerprint": "1be06bde4b159681baddcc0eb62fa995713146ea5449296b517c22a7952996ae"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-04-009-AC001",
-        "BD-04-009-AC003"
+        "BD-04-009-AC003",
+        "BD-04-009-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-04-009-O001",
@@ -1662,7 +9359,8 @@ Workshop này là Foundation cho:
     {
       "acceptance_criterion_references": [
         "BD-04-009-AC002",
-        "BD-04-009-AC003"
+        "BD-04-009-AC003",
+        "BD-04-009-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-04-009-O002",
@@ -1685,9 +9383,9 @@ Workshop này là Foundation cho:
     "source_context_heading": "BD-04-009",
     "source_context_sha256": "e12eb544e70d04f47791f8efba55cd05590b1adfe8285af1759df39ebc478a96",
     "source_document": "docs/BRD/BRD-WS-04.md",
-    "source_fingerprint": "01d70a8a53d1d1530d17335c147365f3037e568d3cafbbc4c3f9763874111389",
-    "source_lines": "L585-L590",
-    "source_section": "24. Business Decisions (Locked) > BD-04-009"
+    "source_fingerprint": "1be06bde4b159681baddcc0eb62fa995713146ea5449296b517c22a7952996ae",
+    "source_lines": "L9321-L9406",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-04-009"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1712,41 +9410,34 @@ Workshop này là Foundation cho:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-04-010-AC001",
-      "given": "the applicable business context, actor, and input for Currency là một phần của Commercial Agreement giữa Organization và Parent",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-04-010-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BD-04-010-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Currency là một phần của Commercial Agreement giữa Organization và Parent",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BD-04-010-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-04-010",
+      "source_document": "docs/BRD/BRD-WS-04.md",
+      "source_fingerprint": "1c1a00e484fccf9e2a4c195708bb45d4a80f22898347353137e502d5ff1b29d4"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-04-010-AC001",
-        "BD-04-010-AC002"
+        "BD-04-010-AC002",
+        "BD-04-010-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-04-010-O001",
@@ -1755,35 +9446,36 @@ Workshop này là Foundation cho:
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-04-010 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-04-010 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-04-010 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-04-010 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-04-010 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-04-010 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "BD-04-010 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BD-04-010-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BD-04-010-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-04-010 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-04-010 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -1801,9 +9493,9 @@ Workshop này là Foundation cho:
     "source_context_heading": "BD-04-010",
     "source_context_sha256": "89425b281051fe06bc32986c908b27503edefdd463b15a4b0c7adf948b6d7095",
     "source_document": "docs/BRD/BRD-WS-04.md",
-    "source_fingerprint": "3607bf1995c38394243af4e86dfcc3e68d5e7edf655cd53b7062e1d9d9853b36",
-    "source_lines": "L593-L596",
-    "source_section": "24. Business Decisions (Locked) > BD-04-010"
+    "source_fingerprint": "1c1a00e484fccf9e2a4c195708bb45d4a80f22898347353137e502d5ff1b29d4",
+    "source_lines": "L9408-L9516",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-04-010"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1828,41 +9520,34 @@ Workshop này là Foundation cho:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-04-011-AC001",
-      "given": "the applicable business context, actor, and input for Product Intelligence phiên bản 2.0 chỉ tập trung vào Synchronization và Difference Detection",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-04-011-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BD-04-011-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Product Intelligence phiên bản 2.0 chỉ tập trung vào Synchronization và Difference Detection",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BD-04-011-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-04-011",
+      "source_document": "docs/BRD/BRD-WS-04.md",
+      "source_fingerprint": "27fb26bfa0c40126ef4188a8469f334425c70ba71fcad2cb5931e83ff944953f"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-04-011-AC001",
-        "BD-04-011-AC002"
+        "BD-04-011-AC002",
+        "BD-04-011-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-04-011-O001",
@@ -1885,9 +9570,9 @@ Workshop này là Foundation cho:
     "source_context_heading": "BD-04-011",
     "source_context_sha256": "18d0be241f786934d094515ebce0c57dda34004475f0a083a219f90eb2d280cd",
     "source_document": "docs/BRD/BRD-WS-04.md",
-    "source_fingerprint": "5e81b5b9e39434126d9da1f4945d05c055fb655c942d404d2e2f24eee4bb575a",
-    "source_lines": "L599-L602",
-    "source_section": "24. Business Decisions (Locked) > BD-04-011"
+    "source_fingerprint": "27fb26bfa0c40126ef4188a8469f334425c70ba71fcad2cb5931e83ff944953f",
+    "source_lines": "L9518-L9593",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-04-011"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1912,41 +9597,34 @@ Workshop này là Foundation cho:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-04-R001-AC001",
-      "given": "the applicable business context, actor, and input for Master Catalog là nguồn dữ liệu chuẩn duy nhất (Single Source of Truth)",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-WS-04-R001-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BRD-WS-04-R001-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Master Catalog là nguồn dữ liệu chuẩn duy nhất (Single Source of Truth)",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BRD-WS-04-R001-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-04-R001",
+      "source_document": "docs/BRD/BRD-WS-04.md",
+      "source_fingerprint": "d8d7e85239280a630ed727ecb05c7fef2b537a7773e0327806cf9488759289cd"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-04-R001-AC001",
-        "BRD-WS-04-R001-AC002"
+        "BRD-WS-04-R001-AC002",
+        "BRD-WS-04-R001-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-04-R001-O001",
@@ -1970,8 +9648,8 @@ Workshop này là Foundation cho:
     "source_context_sha256": "6904959a694aac59e1f248d5fb51198fd6de46b6467223970721c14e264e13c4",
     "source_document": "docs/BRD/BRD-WS-04.md",
     "source_fingerprint": "d8d7e85239280a630ed727ecb05c7fef2b537a7773e0327806cf9488759289cd",
-    "source_lines": "L116",
-    "source_section": "5. Master Catalog"
+    "source_lines": "L9595-L9670",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-04-R001"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1996,41 +9674,34 @@ Workshop này là Foundation cho:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-04-R002-AC001",
-      "given": "the applicable business context, actor, and input for Organization không được phép thay đổi: - Product Specification",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the prohibited decision or state transition is absent, the attempted action has a deterministic rejection outcome, and no contradictory success is recorded",
-      "verifies": [
-        "BRD-WS-04-R002-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BRD-WS-04-R002-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Organization không được phép thay đổi: - Product Specification",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BRD-WS-04-R002-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-04-R002",
+      "source_document": "docs/BRD/BRD-WS-04.md",
+      "source_fingerprint": "39190b821e393a5c136483d87a4b55b15c2ccaaa5f78cf51672e54a0936f58ab"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-04-R002-AC001",
-        "BRD-WS-04-R002-AC002"
+        "BRD-WS-04-R002-AC002",
+        "BRD-WS-04-R002-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-04-R002-O001",
@@ -2054,8 +9725,8 @@ Workshop này là Foundation cho:
     "source_context_sha256": "93060d1ad79d5976f5cfade005f283427b423ec1bc4931f5881ea8338ceb30c8",
     "source_document": "docs/BRD/BRD-WS-04.md",
     "source_fingerprint": "39190b821e393a5c136483d87a4b55b15c2ccaaa5f78cf51672e54a0936f58ab",
-    "source_lines": "L139-L141",
-    "source_section": "6. Sales Catalog"
+    "source_lines": "L9672-L9747",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-04-R002"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2080,41 +9751,34 @@ Workshop này là Foundation cho:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-04-R003-AC001",
-      "given": "the applicable business context, actor, and input for Organization không được phép thay đổi: - Coverage",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the prohibited decision or state transition is absent, the attempted action has a deterministic rejection outcome, and no contradictory success is recorded",
-      "verifies": [
-        "BRD-WS-04-R003-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BRD-WS-04-R003-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Organization không được phép thay đổi: - Coverage",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BRD-WS-04-R003-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-04-R003",
+      "source_document": "docs/BRD/BRD-WS-04.md",
+      "source_fingerprint": "f12d928fe850ddc8154049f0ae64db29c15b01f768f866cd9696a02e92dbf735"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-04-R003-AC001",
-        "BRD-WS-04-R003-AC002"
+        "BRD-WS-04-R003-AC002",
+        "BRD-WS-04-R003-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-04-R003-O001",
@@ -2137,9 +9801,9 @@ Workshop này là Foundation cho:
     "source_context_heading": "6. Sales Catalog",
     "source_context_sha256": "93060d1ad79d5976f5cfade005f283427b423ec1bc4931f5881ea8338ceb30c8",
     "source_document": "docs/BRD/BRD-WS-04.md",
-    "source_fingerprint": "dfe994376efbc43bcfb2f08bb71f2eace62f49c696c43bb7f99a1110bd48892c",
-    "source_lines": "L139-L142",
-    "source_section": "6. Sales Catalog"
+    "source_fingerprint": "f12d928fe850ddc8154049f0ae64db29c15b01f768f866cd9696a02e92dbf735",
+    "source_lines": "L9749-L9824",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-04-R003"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2164,41 +9828,34 @@ Workshop này là Foundation cho:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-04-R004-AC001",
-      "given": "the applicable business context, actor, and input for Organization không được phép thay đổi: - Data Package",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the prohibited decision or state transition is absent, the attempted action has a deterministic rejection outcome, and no contradictory success is recorded",
-      "verifies": [
-        "BRD-WS-04-R004-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BRD-WS-04-R004-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Organization không được phép thay đổi: - Data Package",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BRD-WS-04-R004-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-04-R004",
+      "source_document": "docs/BRD/BRD-WS-04.md",
+      "source_fingerprint": "df3a83bb89510ac8fee953f1d7546d11d86c756713d7a9235fdf6a49bb817fe8"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-04-R004-AC001",
-        "BRD-WS-04-R004-AC002"
+        "BRD-WS-04-R004-AC002",
+        "BRD-WS-04-R004-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-04-R004-O001",
@@ -2221,9 +9878,9 @@ Workshop này là Foundation cho:
     "source_context_heading": "6. Sales Catalog",
     "source_context_sha256": "93060d1ad79d5976f5cfade005f283427b423ec1bc4931f5881ea8338ceb30c8",
     "source_document": "docs/BRD/BRD-WS-04.md",
-    "source_fingerprint": "75bf2951534fa9aabeacfe37214f47e2d5e3e8ad9d09e3eca45dd5ec99a1e008",
-    "source_lines": "L139-L143",
-    "source_section": "6. Sales Catalog"
+    "source_fingerprint": "df3a83bb89510ac8fee953f1d7546d11d86c756713d7a9235fdf6a49bb817fe8",
+    "source_lines": "L9826-L9901",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-04-R004"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2248,41 +9905,34 @@ Workshop này là Foundation cho:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-04-R005-AC001",
-      "given": "the applicable business context, actor, and input for Organization không được phép thay đổi: - Duration",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the prohibited decision or state transition is absent, the attempted action has a deterministic rejection outcome, and no contradictory success is recorded",
-      "verifies": [
-        "BRD-WS-04-R005-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BRD-WS-04-R005-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Organization không được phép thay đổi: - Duration",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BRD-WS-04-R005-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-04-R005",
+      "source_document": "docs/BRD/BRD-WS-04.md",
+      "source_fingerprint": "373af057b744c73463148c052842b6c5a7214295ab6195235537c28402845fe3"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-04-R005-AC001",
-        "BRD-WS-04-R005-AC002"
+        "BRD-WS-04-R005-AC002",
+        "BRD-WS-04-R005-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-04-R005-O001",
@@ -2305,9 +9955,9 @@ Workshop này là Foundation cho:
     "source_context_heading": "6. Sales Catalog",
     "source_context_sha256": "93060d1ad79d5976f5cfade005f283427b423ec1bc4931f5881ea8338ceb30c8",
     "source_document": "docs/BRD/BRD-WS-04.md",
-    "source_fingerprint": "4bfcc3c67f19c7c550458b9ef7bd55dcb9b7c1f2f8d2a6232707894b24e6565e",
-    "source_lines": "L139-L144",
-    "source_section": "6. Sales Catalog"
+    "source_fingerprint": "373af057b744c73463148c052842b6c5a7214295ab6195235537c28402845fe3",
+    "source_lines": "L9903-L9978",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-04-R005"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2332,41 +9982,34 @@ Workshop này là Foundation cho:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-04-R006-AC001",
-      "given": "the applicable business context, actor, and input for Organization không được phép thay đổi: - Activation Policy",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the prohibited decision or state transition is absent, the attempted action has a deterministic rejection outcome, and no contradictory success is recorded",
-      "verifies": [
-        "BRD-WS-04-R006-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BRD-WS-04-R006-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Organization không được phép thay đổi: - Activation Policy",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BRD-WS-04-R006-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-04-R006",
+      "source_document": "docs/BRD/BRD-WS-04.md",
+      "source_fingerprint": "9f460dc0bcbc013734dd3d001ba368912f80394f670043840f360b19dc3e66bb"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-04-R006-AC001",
-        "BRD-WS-04-R006-AC002"
+        "BRD-WS-04-R006-AC002",
+        "BRD-WS-04-R006-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-04-R006-O001",
@@ -2389,9 +10032,9 @@ Workshop này là Foundation cho:
     "source_context_heading": "6. Sales Catalog",
     "source_context_sha256": "93060d1ad79d5976f5cfade005f283427b423ec1bc4931f5881ea8338ceb30c8",
     "source_document": "docs/BRD/BRD-WS-04.md",
-    "source_fingerprint": "91575869ae2b92cc948eabb2c5234c060deb84fd0ee514ac838b01dc3278eb65",
-    "source_lines": "L139-L145",
-    "source_section": "6. Sales Catalog"
+    "source_fingerprint": "9f460dc0bcbc013734dd3d001ba368912f80394f670043840f360b19dc3e66bb",
+    "source_lines": "L9980-L10055",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-04-R006"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2416,41 +10059,34 @@ Workshop này là Foundation cho:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-04-R007-AC001",
-      "given": "the applicable business context, actor, and input for Organization không được phép thay đổi: - Product Attribute chuẩn",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the prohibited decision or state transition is absent, the attempted action has a deterministic rejection outcome, and no contradictory success is recorded",
-      "verifies": [
-        "BRD-WS-04-R007-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BRD-WS-04-R007-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Organization không được phép thay đổi: - Product Attribute chuẩn",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BRD-WS-04-R007-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-04-R007",
+      "source_document": "docs/BRD/BRD-WS-04.md",
+      "source_fingerprint": "0385ac4ab0a3867becfbe53e227a7e8994dbd7ed6c297d4601072f22fc2b1336"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-04-R007-AC001",
-        "BRD-WS-04-R007-AC002"
+        "BRD-WS-04-R007-AC002",
+        "BRD-WS-04-R007-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-04-R007-O001",
@@ -2473,9 +10109,9 @@ Workshop này là Foundation cho:
     "source_context_heading": "6. Sales Catalog",
     "source_context_sha256": "93060d1ad79d5976f5cfade005f283427b423ec1bc4931f5881ea8338ceb30c8",
     "source_document": "docs/BRD/BRD-WS-04.md",
-    "source_fingerprint": "4a1c7adcb2fc7ef67ce1a5462fb8b3c196718cc6469212a64716df250f630d82",
-    "source_lines": "L139-L146",
-    "source_section": "6. Sales Catalog"
+    "source_fingerprint": "0385ac4ab0a3867becfbe53e227a7e8994dbd7ed6c297d4601072f22fc2b1336",
+    "source_lines": "L10057-L10132",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-04-R007"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2500,41 +10136,34 @@ Workshop này là Foundation cho:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-04-R008-AC001",
-      "given": "the applicable business context, actor, and input for Organization không được phép thay đổi: - Product Version",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the prohibited decision or state transition is absent, the attempted action has a deterministic rejection outcome, and no contradictory success is recorded",
-      "verifies": [
-        "BRD-WS-04-R008-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BRD-WS-04-R008-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Organization không được phép thay đổi: - Product Version",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BRD-WS-04-R008-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-04-R008",
+      "source_document": "docs/BRD/BRD-WS-04.md",
+      "source_fingerprint": "a26c7b68c66e64f89284f7630375e55f34079dbbf964986d2de2edd67d39cccc"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-04-R008-AC001",
-        "BRD-WS-04-R008-AC002"
+        "BRD-WS-04-R008-AC002",
+        "BRD-WS-04-R008-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-04-R008-O001",
@@ -2557,9 +10186,9 @@ Workshop này là Foundation cho:
     "source_context_heading": "6. Sales Catalog",
     "source_context_sha256": "93060d1ad79d5976f5cfade005f283427b423ec1bc4931f5881ea8338ceb30c8",
     "source_document": "docs/BRD/BRD-WS-04.md",
-    "source_fingerprint": "3d64b5b95b6fc76c88b1e747429c226654abe2519288e54d612870138015808d",
-    "source_lines": "L139-L147",
-    "source_section": "6. Sales Catalog"
+    "source_fingerprint": "a26c7b68c66e64f89284f7630375e55f34079dbbf964986d2de2edd67d39cccc",
+    "source_lines": "L10134-L10209",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-04-R008"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2584,41 +10213,34 @@ Workshop này là Foundation cho:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-04-R009-AC001",
-      "given": "the applicable business context, actor, and input for Specification chỉ được quản lý tại Master Catalog",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-WS-04-R009-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BRD-WS-04-R009-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Specification chỉ được quản lý tại Master Catalog",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BRD-WS-04-R009-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-04-R009",
+      "source_document": "docs/BRD/BRD-WS-04.md",
+      "source_fingerprint": "2a047573a2af85d14843a52261cba5f8a18984208b73bb0d9b977431d4523f9e"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-04-R009-AC001",
-        "BRD-WS-04-R009-AC002"
+        "BRD-WS-04-R009-AC002",
+        "BRD-WS-04-R009-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-04-R009-O001",
@@ -2642,8 +10264,8 @@ Workshop này là Foundation cho:
     "source_context_sha256": "0e3f3cfb1e6a1e2f5b27c6c3c92f09b2e5cf1510bdbcad1335ed395ea153a5da",
     "source_document": "docs/BRD/BRD-WS-04.md",
     "source_fingerprint": "2a047573a2af85d14843a52261cba5f8a18984208b73bb0d9b977431d4523f9e",
-    "source_lines": "L249",
-    "source_section": "11. Product Specification"
+    "source_lines": "L10211-L10286",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-04-R009"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2668,41 +10290,36 @@ Workshop này là Foundation cho:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-04-R010-AC001",
-      "given": "the applicable business context, actor, and input for UUID mới là Identity duy nhất",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-WS-04-R010-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-008"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BRD-WS-04-R010-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by UUID mới là Identity duy nhất",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BRD-WS-04-R010-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-04-R010",
+      "source_document": "docs/BRD/BRD-WS-04.md",
+      "source_fingerprint": "e2c8b4e01d1c787f40cadd569f0ade53823324592972668b8a93050c2037af8c"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-04-R010-AC001",
-        "BRD-WS-04-R010-AC002"
+        "BRD-WS-04-R010-AC002",
+        "BRD-WS-04-R010-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-04-R010-O001",
@@ -2711,35 +10328,38 @@ Workshop này là Foundation cho:
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
-      "criterion_references": [],
-      "rationale": "BRD-WS-04-R010 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BRD-WS-04-R010-AC003"
+      ],
+      "rationale": null
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-04-R010 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-04-R010 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-04-R010 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-04-R010 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "BRD-WS-04-R010 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BRD-WS-04-R010-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BRD-WS-04-R010-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-04-R010 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-04-R010 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -2760,8 +10380,8 @@ Workshop này là Foundation cho:
     "source_context_sha256": "02b5adf9cb4416c7384d4b32e9be846442912f957aca391d9778d49b6c40337e",
     "source_document": "docs/BRD/BRD-WS-04.md",
     "source_fingerprint": "e2c8b4e01d1c787f40cadd569f0ade53823324592972668b8a93050c2037af8c",
-    "source_lines": "L290",
-    "source_section": "14. Product Code"
+    "source_lines": "L10288-L10402",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-04-R010"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2786,41 +10406,38 @@ Workshop này là Foundation cho:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-04-R011-AC001",
-      "given": "the applicable business context, actor, and input for Version luôn đi kèm Publish Workflow",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-WS-04-R011-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BRD-WS-04-R011-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Version luôn đi kèm Publish Workflow",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BRD-WS-04-R011-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "approved_semantic_completion_selection": {
+        "decision_id": "P2C-SC-C1-DEC-008",
+        "option_id": "OPT-AST"
+      },
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-04-R011",
+      "source_document": "docs/BRD/BRD-WS-04.md",
+      "source_fingerprint": "6bb54d0a12e1641c981d8a0c8e6b57e2d2ce0b1d0557481228ef9aaa7b3b9fb6"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-04-R011-AC001",
-        "BRD-WS-04-R011-AC002"
+        "BRD-WS-04-R011-AC002",
+        "BRD-WS-04-R011-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-04-R011-O001",
@@ -2844,8 +10461,8 @@ Workshop này là Foundation cho:
     "source_context_sha256": "e9410d76d17f90c82beb3d0eaf9adb331f726c739666d65d585cd1d4e4ef325b",
     "source_document": "docs/BRD/BRD-WS-04.md",
     "source_fingerprint": "6bb54d0a12e1641c981d8a0c8e6b57e2d2ce0b1d0557481228ef9aaa7b3b9fb6",
-    "source_lines": "L344",
-    "source_section": "16. Product Version"
+    "source_lines": "L10404-L10483",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-04-R011"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2866,72 +10483,57 @@ Workshop này là Foundation cho:
 <!-- YSIM:REQUIREMENT END -->
 
 <!-- YSIM:REQUIREMENT BEGIN -->
-### BRD-WS-04-R012 — Reason Required
+### BRD-WS-04-R012 — Reason Required chỉ là bước ví dụ trong Catalog Governance và không phải yêu cầu atomic độc lập
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-04-R012-AC001",
-      "given": "the applicable business context, actor, and input for Reason Required",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-WS-04-R012-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BRD-WS-04-R012-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Reason Required",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BRD-WS-04-R012-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
-    }
-  ],
-  "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
-  "acceptance_unit": true,
-  "atomic_obligations": [
-    {
-      "acceptance_criterion_references": [
-        "BRD-WS-04-R012-AC001",
-        "BRD-WS-04-R012-AC002"
-      ],
-      "applicability": "V2.3_ACTIVE",
-      "obligation_id": "BRD-WS-04-R012-O001",
-      "obligation_text": "Reason Required"
-    }
-  ],
+  "acceptance_contract": null,
+  "acceptance_mechanism": null,
+  "acceptance_rationale": "The extracted text is an example or explanatory statement, not a standalone requirement.",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "STRUCTURAL_RECORD",
+  "acceptance_unit": false,
+  "atomic_obligations": [],
   "criticality_applicability": null,
-  "criticality_unit": true,
+  "criticality_unit": false,
   "delivery_commitment": "COMMITTED_FOR_V2.3",
-  "implementation_unit": true,
+  "implementation_unit": false,
   "lifecycle": "V2.3_DRAFT",
-  "normative_statement": "Reason Required",
+  "normative_statement": "Reason Required chỉ là bước ví dụ trong Catalog Governance và không phải yêu cầu atomic độc lập.",
   "provenance": {
-    "approved_decisions": [],
+    "approved_decisions": [
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
+    ],
+    "corrected_source_range": {
+      "document": "docs/BRD/BRD-WS-04.md",
+      "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+      "section": "17. Catalog Governance"
+    },
+    "deterministic_transformation": "EXPAND_RANGE_AND_RETIRE_EXAMPLE_EXTRACTION",
     "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
     "original_identity": "TMP-BRD-WS-04-012",
+    "phase_2c_c3_actions": [
+      "C3_DETERMINISTIC_SOURCE_NORMALIZATION"
+    ],
     "previous_temporary_key": "TMP-BRD-WS-04-012",
     "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
     "source_baseline": "v2.2",
     "source_context_heading": "17. Catalog Governance",
     "source_context_sha256": "5287113b99d41e48aba0d41c3f941a52825e698b73d52e3968e7fe81040b40fe",
     "source_document": "docs/BRD/BRD-WS-04.md",
-    "source_fingerprint": "1ad7dbe6622c151dd37051417ce4fbe800e64b01e46060c31fc80a64dbf6d7ac",
-    "source_lines": "L370",
-    "source_section": "17. Catalog Governance"
+    "source_fingerprint": "a080f3cd971ac15a06c1b347e4e9ff18e489123ca0b0c74857c3e989d352f961",
+    "source_fingerprint_before_c3": "1ad7dbe6622c151dd37051417ce4fbe800e64b01e46060c31fc80a64dbf6d7ac",
+    "source_lines": "L10485-L10553",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_range_before_c3": {
+      "document": "docs/BRD/BRD-WS-04.md",
+      "lines": "L370",
+      "section": "17. Catalog Governance"
+    },
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-04-R012"
   },
-  "record_kind": "CANONICAL_ATOMIC",
+  "record_kind": "RETIRED_RECORD",
   "relationships": {
     "alias_of": null,
     "aliases": [],
@@ -2940,11 +10542,12 @@ Workshop này là Foundation cho:
     "derived_requirements": []
   },
   "requirement_type": "BUSINESS_REQUIREMENT",
-  "scope_coverage_unit": true,
+  "retirement_reason": "EXPAND_RANGE_AND_RETIRE_EXAMPLE_EXTRACTION",
+  "scope_coverage_unit": false,
   "scope_status": "V2.3_ACTIVE",
   "stable_id": "BRD-WS-04-R012",
-  "title": "Reason Required",
-  "verification_criticality": "HIGH"
+  "title": "Reason Required chỉ là bước ví dụ trong Catalog Governance và không phải yêu cầu atomic độc lập",
+  "verification_criticality": "NOT_APPLICABLE"
 }
 ```
 <!-- YSIM:REQUIREMENT END -->
@@ -2954,9 +10557,20 @@ Workshop này là Foundation cho:
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "NOT_APPLICABLE_FOR_V2.3",
+    "inference": false,
+    "requirement_id": "BRD-WS-04-R013",
+    "scope_status": "FUTURE"
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "NOT_APPLICABLE_FOR_V2.3",
+    "runtime_status": "NOT_APPLICABLE_FOR_V2.3"
+  },
   "acceptance_rationale": "Requirement is retained for a future baseline and is excluded from v2.3 delivery.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
   "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
   "acceptance_unit": false,
   "atomic_obligations": [],
@@ -2977,8 +10591,8 @@ Workshop này là Foundation cho:
     "source_context_sha256": "b7f02eb97c2804f5ee01f93e64746281f9d2ba0a695050c0921f015020b51bf9",
     "source_document": "docs/BRD/BRD-WS-04.md",
     "source_fingerprint": "d02b5899938011561e7bb251bde6c97b0f38c6386627dee0b20a20720da5f7be",
-    "source_lines": "L424",
-    "source_section": "19. Product Intelligence"
+    "source_lines": "L10555-L10613",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-04-R013"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3003,41 +10617,34 @@ Workshop này là Foundation cho:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-04-R014-AC001",
-      "given": "the applicable business context, actor, and input for Sales Catalog không được sửa Product Specification",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the prohibited decision or state transition is absent, the attempted action has a deterministic rejection outcome, and no contradictory success is recorded",
-      "verifies": [
-        "BRD-WS-04-R014-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BRD-WS-04-R014-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Sales Catalog không được sửa Product Specification",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BRD-WS-04-R014-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-04-R014",
+      "source_document": "docs/BRD/BRD-WS-04.md",
+      "source_fingerprint": "a86254033bd80e5cec398da0e538b646685b87d1ed5808fec023dbd31f9ba989"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-04-R014-AC001",
-        "BRD-WS-04-R014-AC002"
+        "BRD-WS-04-R014-AC002",
+        "BRD-WS-04-R014-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-04-R014-O001",
@@ -3061,8 +10668,8 @@ Workshop này là Foundation cho:
     "source_context_sha256": "01c984c64cc19a7215e2a0b2b3e54bf3e21fd4331260ffbcf5cde9b9e2b753c6",
     "source_document": "docs/BRD/BRD-WS-04.md",
     "source_fingerprint": "a86254033bd80e5cec398da0e538b646685b87d1ed5808fec023dbd31f9ba989",
-    "source_lines": "L441",
-    "source_section": "20. Sales Catalog Governance"
+    "source_lines": "L10615-L10690",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-04-R014"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3087,41 +10694,37 @@ Workshop này là Foundation cho:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-04-R015-AC001",
-      "given": "the applicable business context, actor, and input for Organization chỉ được sử dụng Currency đã được Parent Organization phê duyệt",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the proposed change remains pending until the required approval decision is recorded, and only an approved decision permits the accepted state change",
-      "verifies": [
-        "BRD-WS-04-R015-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "BDD-27",
+        "SD-03"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_APPROVAL_BOUNDARY_V1",
-      "criterion_id": "BRD-WS-04-R015-AC002",
-      "given": "a governed change with missing, expired, rejected, or unauthorized approval under Organization chỉ được sử dụng Currency đã được Parent Organization phê duyệt",
-      "observable_evidence": "change identity, approval policy and status, approver authorization, rejection or pending reason, and unchanged accepted state",
-      "then": "the change does not enter the accepted state and the approval reason and status remain observable",
-      "verifies": [
-        "BRD-WS-04-R015-O001"
-      ],
-      "when": "the change is requested"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-04-R015",
+      "source_document": "docs/BRD/BRD-WS-04.md",
+      "source_fingerprint": "8283a6799953a079b2cc0e454b9e40ad6c009841073997a546314d14ee10da5f"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-04-R015-AC001",
-        "BRD-WS-04-R015-AC002"
+        "BRD-WS-04-R015-AC002",
+        "BRD-WS-04-R015-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-04-R015-O001",
@@ -3130,35 +10733,36 @@ Workshop này là Foundation cho:
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-04-R015 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-04-R015 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-04-R015 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-04-R015 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-04-R015 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-04-R015 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "BRD-WS-04-R015 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BRD-WS-04-R015-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BRD-WS-04-R015-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-04-R015 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-04-R015 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -3180,8 +10784,8 @@ Workshop này là Foundation cho:
     "source_context_sha256": "813b59bdc4285ee8bd17cc6d2b347e2cc3c353ffdf6fdfbc8ffcb1e432ab5404",
     "source_document": "docs/BRD/BRD-WS-04.md",
     "source_fingerprint": "8283a6799953a079b2cc0e454b9e40ad6c009841073997a546314d14ee10da5f",
-    "source_lines": "L449",
-    "source_section": "21. Currency Governance"
+    "source_lines": "L10692-L10806",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-04-R015"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3206,41 +10810,34 @@ Workshop này là Foundation cho:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-04-R016-AC001",
-      "given": "the applicable business context, actor, and input for Việc thay đổi Exchange Rate phải được thống nhất giữa Organization và Parent",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-WS-04-R016-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BRD-WS-04-R016-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Việc thay đổi Exchange Rate phải được thống nhất giữa Organization và Parent",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BRD-WS-04-R016-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-04-R016",
+      "source_document": "docs/BRD/BRD-WS-04.md",
+      "source_fingerprint": "b33d57c92832b977cdc06843a214f77bf6391496a2abcfca3140fad225d7ae6d"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-04-R016-AC001",
-        "BRD-WS-04-R016-AC002"
+        "BRD-WS-04-R016-AC002",
+        "BRD-WS-04-R016-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-04-R016-O001",
@@ -3249,35 +10846,36 @@ Workshop này là Foundation cho:
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-04-R016 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-04-R016 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-04-R016 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-04-R016 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-04-R016 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-04-R016 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "BRD-WS-04-R016 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BRD-WS-04-R016-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BRD-WS-04-R016-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-04-R016 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-04-R016 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -3296,8 +10894,8 @@ Workshop này là Foundation cho:
     "source_context_sha256": "813b59bdc4285ee8bd17cc6d2b347e2cc3c353ffdf6fdfbc8ffcb1e432ab5404",
     "source_document": "docs/BRD/BRD-WS-04.md",
     "source_fingerprint": "b33d57c92832b977cdc06843a214f77bf6391496a2abcfca3140fad225d7ae6d",
-    "source_lines": "L471",
-    "source_section": "21. Currency Governance"
+    "source_lines": "L10808-L10916",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-04-R016"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {

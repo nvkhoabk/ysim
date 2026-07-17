@@ -1,13 +1,20 @@
 ---
 document_code: "BRD-WS-01"
+document_id: "BRD-WS-01"
 title: "Product Vision & Strategy"
-product_baseline: "2.3"
-document_revision: "2.3.0-draft.1"
+version: "2.3.0-draft.3"
+document_revision: "2.3.0-draft.3"
+status: "V2.3_DRAFT"
 lifecycle_status: "V2.3_DRAFT"
 language: "vi-VN"
+baseline: "2.3"
+product_baseline: "2.3"
+source_lineage: "v2.2 + approved Phase 1/2A/2B + accepted Acceptance Model C1 + accepted Mapping C3"
 source_baseline: "v2.2"
+last_reviewed_date: "2026-07-15"
+last_remediated_on: "2026-07-17"
+applicable_scope: "V2.3_ACTIVE_AND_RETAINED_SCOPE_RECORDS"
 generated_registry_role: "BRD_CANONICAL_SOURCE"
-last_remediated_on: "2026-07-15"
 ---
 ## Thẩm quyền nguồn yêu cầu v2.3
 
@@ -335,7 +342,7 @@ This Business Requirement Set is governed by the following architecture decision
 
 <!-- YSIM:PHASE_2C CANONICAL APPENDIX BEGIN -->
 
-## Phụ lục yêu cầu chuẩn tắc v2.3
+## Phụ lục yêu cầu chuẩn tắc v2.3 — C6-R1
 
 
 
@@ -344,28 +351,34 @@ This Business Requirement Set is governed by the following architecture decision
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DESIGN_CONFORMANCE_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-01-R001-AC001",
-      "given": "a v2.3 capability, configuration, or design change governed by YSim product positioning",
-      "observable_evidence": "conformance decision, requirement-to-design trace, applicable configuration evidence, and recorded boundary violations",
-      "then": "the conformance review identifies the applicable principle, links it to the governed requirement and design boundary, and records no prohibited coupling",
-      "verifies": [
-        "BRD-WS-01-R001-O001"
-      ],
-      "when": "conformance is reviewed before the change is accepted"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-01-R001",
+      "source_document": "docs/BRD/BRD-WS-01.md",
+      "source_fingerprint": "198983665fcb17bcd3ed74ae0869026b2655147e6ddfd3c5a5397270bea9f33e"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-WS-01-R001-AC001"
+        "BRD-WS-01-R001-AC001",
+        "BRD-WS-01-R001-AC002",
+        "BRD-WS-01-R001-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-01-R001-O001",
@@ -401,8 +414,8 @@ This Business Requirement Set is governed by the following architecture decision
     "source_context_sha256": "e948a1e9ea01f121efdf989ead8e06f362626160cac248e570df371bd6972b0e",
     "source_document": "docs/BRD/BRD-WS-01.md",
     "source_fingerprint": "198983665fcb17bcd3ed74ae0869026b2655147e6ddfd3c5a5397270bea9f33e",
-    "source_lines": "L30",
-    "source_section": "2. Product Vision"
+    "source_lines": "L349-L436",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-01-R001"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -427,9 +440,20 @@ This Business Requirement Set is governed by the following architecture decision
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "NOT_APPLICABLE_FOR_V2.3",
+    "inference": false,
+    "requirement_id": "BRD-WS-01-R002",
+    "scope_status": "OUT_OF_SCOPE"
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "NOT_APPLICABLE_FOR_V2.3",
+    "runtime_status": "NOT_APPLICABLE_FOR_V2.3"
+  },
   "acceptance_rationale": "Requirement is explicitly outside the v2.3 product scope.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
   "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
   "acceptance_unit": false,
   "atomic_obligations": [],
@@ -450,8 +474,8 @@ This Business Requirement Set is governed by the following architecture decision
     "source_context_sha256": "5c2d9e49c39650ed65f1885415511ca1436774fafe2ddff640531733950d6a87",
     "source_document": "docs/BRD/BRD-WS-01.md",
     "source_fingerprint": "5825c88bd217ca00eb00a587e79affc88a967fe1095bce60a1b2fad59a3c2143",
-    "source_lines": "L53",
-    "source_section": "3. Product Positioning"
+    "source_lines": "L438-L496",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-01-R002"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -472,49 +496,44 @@ This Business Requirement Set is governed by the following architecture decision
 <!-- YSIM:REQUIREMENT END -->
 
 <!-- YSIM:REQUIREMENT BEGIN -->
-### BRD-WS-01-R003 —  eSIM Commerce
+### BRD-WS-01-R003 — eSIM Commerce is included in the active YSim v2.3 product scope
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-01-R003-AC001",
-      "given": "the applicable business context, actor, and input for  eSIM Commerce",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-WS-01-R003-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "V23-P2C-ACCEPTANCE-MAPPING-C3"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BRD-WS-01-R003-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by  eSIM Commerce",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BRD-WS-01-R003-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-01-R003",
+      "source_document": "docs/BRD/BRD-WS-01.md",
+      "source_fingerprint": "4c037cb3b0f7e499a2b9d502a03051e505b847cbfe46a823d3fd1710d4acf525"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-01-R003-AC001",
-        "BRD-WS-01-R003-AC002"
+        "BRD-WS-01-R003-AC002",
+        "BRD-WS-01-R003-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-01-R003-O001",
-      "obligation_text": "eSIM Commerce"
+      "obligation_text": "eSIM Commerce is included in the active YSim v2.3 product scope"
     }
   ],
   "criticality_applicability": null,
@@ -522,20 +541,39 @@ This Business Requirement Set is governed by the following architecture decision
   "delivery_commitment": "COMMITTED_FOR_V2.3",
   "implementation_unit": true,
   "lifecycle": "V2.3_DRAFT",
-  "normative_statement": "- eSIM Commerce",
+  "normative_statement": "eSIM Commerce is included in the active YSim v2.3 product scope.",
   "provenance": {
-    "approved_decisions": [],
+    "approved_decisions": [
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
+    ],
+    "corrected_source_range": {
+      "document": "docs/BRD/BRD-WS-01.md",
+      "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+      "section": "4. Product Scope > In Scope"
+    },
+    "deterministic_transformation": "RESTORE_IN_SCOPE_PREDICATE",
     "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
     "original_identity": "TMP-BRD-WS-01-003",
+    "phase_2c_c3_actions": [
+      "C3_DETERMINISTIC_SOURCE_NORMALIZATION"
+    ],
     "previous_temporary_key": "TMP-BRD-WS-01-003",
     "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
     "source_baseline": "v2.2",
     "source_context_heading": "In Scope",
     "source_context_sha256": "38d43d01b0fdf81b82681b2fd34a75ff50c90b7ff040edfdda6f619baa2f2e50",
     "source_document": "docs/BRD/BRD-WS-01.md",
-    "source_fingerprint": "3d7e8b249215b7080b48bc4226ef6bb96e1e56b11b3c3b95e651a40dc0690a22",
-    "source_lines": "L61",
-    "source_section": "4. Product Scope > In Scope"
+    "source_fingerprint": "4c037cb3b0f7e499a2b9d502a03051e505b847cbfe46a823d3fd1710d4acf525",
+    "source_fingerprint_before_c3": "3d7e8b249215b7080b48bc4226ef6bb96e1e56b11b3c3b95e651a40dc0690a22",
+    "source_lines": "L498-L594",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_range_before_c3": {
+      "document": "docs/BRD/BRD-WS-01.md",
+      "lines": "L61",
+      "section": "4. Product Scope > In Scope"
+    },
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-01-R003"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -549,7 +587,7 @@ This Business Requirement Set is governed by the following architecture decision
   "scope_coverage_unit": true,
   "scope_status": "V2.3_ACTIVE",
   "stable_id": "BRD-WS-01-R003",
-  "title": " eSIM Commerce",
+  "title": "eSIM Commerce is included in the active YSim v2.3 product scope",
   "verification_criticality": "HIGH"
 }
 ```
@@ -560,28 +598,34 @@ This Business Requirement Set is governed by the following architecture decision
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DESIGN_CONFORMANCE_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-01-R004-AC001",
-      "given": "a v2.3 capability, configuration, or design change governed by White-label commerce principle",
-      "observable_evidence": "conformance decision, requirement-to-design trace, applicable configuration evidence, and recorded boundary violations",
-      "then": "the conformance evidence identifies the governing configuration and shows that an approved configuration change alters the governed result without a source-code variant",
-      "verifies": [
-        "BRD-WS-01-R004-O001"
-      ],
-      "when": "conformance is reviewed before the change is accepted"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-01-R004",
+      "source_document": "docs/BRD/BRD-WS-01.md",
+      "source_fingerprint": "0dd3753938d475e72b75400a04f95f043a96f593d109e19f6b9eb1243ce8b78a"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-WS-01-R004-AC001"
+        "BRD-WS-01-R004-AC001",
+        "BRD-WS-01-R004-AC002",
+        "BRD-WS-01-R004-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-01-R004-O001",
@@ -616,9 +660,9 @@ This Business Requirement Set is governed by the following architecture decision
     "source_context_heading": "In Scope",
     "source_context_sha256": "38d43d01b0fdf81b82681b2fd34a75ff50c90b7ff040edfdda6f619baa2f2e50",
     "source_document": "docs/BRD/BRD-WS-01.md",
-    "source_fingerprint": "63ee15f14e5cd38438fa6dc87359f49b8650293313927fedf8422376628ae168",
-    "source_lines": "L62",
-    "source_section": "4. Product Scope > In Scope"
+    "source_fingerprint": "0dd3753938d475e72b75400a04f95f043a96f593d109e19f6b9eb1243ce8b78a",
+    "source_lines": "L596-L683",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-01-R004"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -639,49 +683,44 @@ This Business Requirement Set is governed by the following architecture decision
 <!-- YSIM:REQUIREMENT END -->
 
 <!-- YSIM:REQUIREMENT BEGIN -->
-### BRD-WS-01-R005 —  Multi-level Distribution
+### BRD-WS-01-R005 — Multi-level Distribution is included in the active YSim v2.3 product scope
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-01-R005-AC001",
-      "given": "the applicable business context, actor, and input for  Multi-level Distribution",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-WS-01-R005-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "V23-P2C-ACCEPTANCE-MAPPING-C3"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BRD-WS-01-R005-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by  Multi-level Distribution",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BRD-WS-01-R005-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-01-R005",
+      "source_document": "docs/BRD/BRD-WS-01.md",
+      "source_fingerprint": "463aa14bc497af5d99c148eac852cec1bea7896dd9f32ed14679659975c87bad"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-01-R005-AC001",
-        "BRD-WS-01-R005-AC002"
+        "BRD-WS-01-R005-AC002",
+        "BRD-WS-01-R005-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-01-R005-O001",
-      "obligation_text": "Multi-level Distribution"
+      "obligation_text": "Multi-level Distribution is included in the active YSim v2.3 product scope"
     }
   ],
   "criticality_applicability": null,
@@ -689,20 +728,39 @@ This Business Requirement Set is governed by the following architecture decision
   "delivery_commitment": "COMMITTED_FOR_V2.3",
   "implementation_unit": true,
   "lifecycle": "V2.3_DRAFT",
-  "normative_statement": "- Multi-level Distribution",
+  "normative_statement": "Multi-level Distribution is included in the active YSim v2.3 product scope.",
   "provenance": {
-    "approved_decisions": [],
+    "approved_decisions": [
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
+    ],
+    "corrected_source_range": {
+      "document": "docs/BRD/BRD-WS-01.md",
+      "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+      "section": "4. Product Scope > In Scope"
+    },
+    "deterministic_transformation": "RESTORE_IN_SCOPE_PREDICATE",
     "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
     "original_identity": "TMP-BRD-WS-01-005",
+    "phase_2c_c3_actions": [
+      "C3_DETERMINISTIC_SOURCE_NORMALIZATION"
+    ],
     "previous_temporary_key": "TMP-BRD-WS-01-005",
     "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
     "source_baseline": "v2.2",
     "source_context_heading": "In Scope",
     "source_context_sha256": "38d43d01b0fdf81b82681b2fd34a75ff50c90b7ff040edfdda6f619baa2f2e50",
     "source_document": "docs/BRD/BRD-WS-01.md",
-    "source_fingerprint": "244fb0a041b03025a3809f69ed1b23d2799e4bc31143915e40949103bac92c63",
-    "source_lines": "L63",
-    "source_section": "4. Product Scope > In Scope"
+    "source_fingerprint": "463aa14bc497af5d99c148eac852cec1bea7896dd9f32ed14679659975c87bad",
+    "source_fingerprint_before_c3": "244fb0a041b03025a3809f69ed1b23d2799e4bc31143915e40949103bac92c63",
+    "source_lines": "L685-L781",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_range_before_c3": {
+      "document": "docs/BRD/BRD-WS-01.md",
+      "lines": "L63",
+      "section": "4. Product Scope > In Scope"
+    },
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-01-R005"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -716,56 +774,52 @@ This Business Requirement Set is governed by the following architecture decision
   "scope_coverage_unit": true,
   "scope_status": "V2.3_ACTIVE",
   "stable_id": "BRD-WS-01-R005",
-  "title": " Multi-level Distribution",
+  "title": "Multi-level Distribution is included in the active YSim v2.3 product scope",
   "verification_criticality": "HIGH"
 }
 ```
 <!-- YSIM:REQUIREMENT END -->
 
 <!-- YSIM:REQUIREMENT BEGIN -->
-### BRD-WS-01-R006 —  Multi-supplier Integration
+### BRD-WS-01-R006 — Multi-supplier Integration is included in the active YSim v2.3 product scope
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "INTEGRATION_BOUNDARY_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-01-R006-AC001",
-      "given": "a contract interaction at the integration boundary defined by  Multi-supplier Integration",
-      "observable_evidence": "contract validation result, boundary ownership record, external outcome, and reconciliation evidence where the contract requires it",
-      "then": "the interaction is accepted only at the declared boundary, names the responsible owner, and exposes the external outcome or reconciliation result required by the contract",
-      "verifies": [
-        "BRD-WS-01-R006-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-007",
+        "V23-P2C-ACCEPTANCE-MAPPING-C3"
       ],
-      "when": "a conforming interaction is submitted and its ownership boundary is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "INTEGRATION_CONTRACT_REJECTION_V1",
-      "criterion_id": "BRD-WS-01-R006-AC002",
-      "given": "an interaction that violates the contract or ownership boundary for  Multi-supplier Integration",
-      "observable_evidence": "contract rejection or reconciliation result, reason, boundary owner, and external outcome",
-      "then": "the interaction is rejected or reconciled according to the declared contract without transferring ownership to the wrong boundary",
-      "verifies": [
-        "BRD-WS-01-R006-O001"
-      ],
-      "when": "the interaction reaches the integration boundary"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-01-R006",
+      "source_document": "docs/BRD/BRD-WS-01.md",
+      "source_fingerprint": "5b379035746f987761c4fb8b44ba3eaf3853c08a4fa914c80457d04c7c1c82c3"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-01-R006-AC001",
-        "BRD-WS-01-R006-AC002"
+        "BRD-WS-01-R006-AC002",
+        "BRD-WS-01-R006-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-01-R006-O001",
-      "obligation_text": "Multi-supplier Integration"
+      "obligation_text": "Multi-supplier Integration is included in the active YSim v2.3 product scope"
     }
   ],
   "criticality_applicability": null,
@@ -773,22 +827,40 @@ This Business Requirement Set is governed by the following architecture decision
   "delivery_commitment": "COMMITTED_FOR_V2.3",
   "implementation_unit": true,
   "lifecycle": "V2.3_DRAFT",
-  "normative_statement": "- Multi-supplier Integration",
+  "normative_statement": "Multi-supplier Integration is included in the active YSim v2.3 product scope.",
   "provenance": {
     "approved_decisions": [
-      "P2-DEC-007"
+      "P2-DEC-007",
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
     ],
+    "corrected_source_range": {
+      "document": "docs/BRD/BRD-WS-01.md",
+      "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+      "section": "4. Product Scope > In Scope"
+    },
+    "deterministic_transformation": "RESTORE_IN_SCOPE_PREDICATE",
     "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
     "original_identity": "TMP-BRD-WS-01-006",
+    "phase_2c_c3_actions": [
+      "C3_DETERMINISTIC_SOURCE_NORMALIZATION"
+    ],
     "previous_temporary_key": "TMP-BRD-WS-01-006",
     "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
     "source_baseline": "v2.2",
     "source_context_heading": "In Scope",
     "source_context_sha256": "38d43d01b0fdf81b82681b2fd34a75ff50c90b7ff040edfdda6f619baa2f2e50",
     "source_document": "docs/BRD/BRD-WS-01.md",
-    "source_fingerprint": "a21a5a4a56ffcaa98d233ed64e857907e3eeb43ae6a6b36a00370a5bc2fefca1",
-    "source_lines": "L64",
-    "source_section": "4. Product Scope > In Scope"
+    "source_fingerprint": "5b379035746f987761c4fb8b44ba3eaf3853c08a4fa914c80457d04c7c1c82c3",
+    "source_fingerprint_before_c3": "a21a5a4a56ffcaa98d233ed64e857907e3eeb43ae6a6b36a00370a5bc2fefca1",
+    "source_lines": "L783-L881",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_range_before_c3": {
+      "document": "docs/BRD/BRD-WS-01.md",
+      "lines": "L64",
+      "section": "4. Product Scope > In Scope"
+    },
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-01-R006"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -802,111 +874,126 @@ This Business Requirement Set is governed by the following architecture decision
   "scope_coverage_unit": true,
   "scope_status": "V2.3_ACTIVE",
   "stable_id": "BRD-WS-01-R006",
-  "title": " Multi-supplier Integration",
+  "title": "Multi-supplier Integration is included in the active YSim v2.3 product scope",
   "verification_criticality": "HIGH"
 }
 ```
 <!-- YSIM:REQUIREMENT END -->
 
 <!-- YSIM:REQUIREMENT BEGIN -->
-### BRD-WS-01-R007 —  Intelligent Allocation Engine
+### BRD-WS-01-R007 — Intelligent Allocation Engine is included in the active YSim v2.3 product scope
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-01-R007-AC001",
-      "given": "the applicable business context, actor, and input for  Intelligent Allocation Engine",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-WS-01-R007-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-007",
+        "V23-P2C-ACCEPTANCE-MAPPING-C3"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BRD-WS-01-R007-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by  Intelligent Allocation Engine",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BRD-WS-01-R007-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-01-R007",
+      "source_document": "docs/BRD/BRD-WS-01.md",
+      "source_fingerprint": "7b572e235ae6e33ae35ed22b52d951d35ed35531211738b374be4b13a3bd82e9"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-01-R007-AC001",
-        "BRD-WS-01-R007-AC002"
+        "BRD-WS-01-R007-AC002",
+        "BRD-WS-01-R007-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-01-R007-O001",
-      "obligation_text": "Intelligent Allocation Engine"
+      "obligation_text": "Intelligent Allocation Engine is included in the active YSim v2.3 product scope"
     }
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-01-R007 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-01-R007 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-01-R007 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-01-R007 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-01-R007 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-01-R007 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "BRD-WS-01-R007 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BRD-WS-01-R007-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BRD-WS-01-R007-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-01-R007 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-01-R007 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
   "delivery_commitment": "COMMITTED_FOR_V2.3",
   "implementation_unit": true,
   "lifecycle": "V2.3_DRAFT",
-  "normative_statement": "- Intelligent Allocation Engine",
+  "normative_statement": "Intelligent Allocation Engine is included in the active YSim v2.3 product scope.",
   "provenance": {
     "approved_decisions": [
-      "P2-DEC-007"
+      "P2-DEC-007",
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
     ],
+    "corrected_source_range": {
+      "document": "docs/BRD/BRD-WS-01.md",
+      "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+      "section": "4. Product Scope > In Scope"
+    },
+    "deterministic_transformation": "RESTORE_IN_SCOPE_PREDICATE",
     "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
     "original_identity": "TMP-BRD-WS-01-007",
+    "phase_2c_c3_actions": [
+      "C3_DETERMINISTIC_SOURCE_NORMALIZATION"
+    ],
     "previous_temporary_key": "TMP-BRD-WS-01-007",
     "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
     "source_baseline": "v2.2",
     "source_context_heading": "In Scope",
     "source_context_sha256": "38d43d01b0fdf81b82681b2fd34a75ff50c90b7ff040edfdda6f619baa2f2e50",
     "source_document": "docs/BRD/BRD-WS-01.md",
-    "source_fingerprint": "d3bc50416e160d27b85486f1bad960b8b118962c7e533a0c3aaad1eb4365d6ea",
-    "source_lines": "L65",
-    "source_section": "4. Product Scope > In Scope"
+    "source_fingerprint": "7b572e235ae6e33ae35ed22b52d951d35ed35531211738b374be4b13a3bd82e9",
+    "source_fingerprint_before_c3": "d3bc50416e160d27b85486f1bad960b8b118962c7e533a0c3aaad1eb4365d6ea",
+    "source_lines": "L883-L1014",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_range_before_c3": {
+      "document": "docs/BRD/BRD-WS-01.md",
+      "lines": "L65",
+      "section": "4. Product Scope > In Scope"
+    },
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-01-R007"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -920,109 +1007,124 @@ This Business Requirement Set is governed by the following architecture decision
   "scope_coverage_unit": true,
   "scope_status": "V2.3_ACTIVE",
   "stable_id": "BRD-WS-01-R007",
-  "title": " Intelligent Allocation Engine",
+  "title": "Intelligent Allocation Engine is included in the active YSim v2.3 product scope",
   "verification_criticality": "CRITICAL"
 }
 ```
 <!-- YSIM:REQUIREMENT END -->
 
 <!-- YSIM:REQUIREMENT BEGIN -->
-### BRD-WS-01-R008 —  Pricing
+### BRD-WS-01-R008 — Pricing is included in the active YSim v2.3 product scope
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-01-R008-AC001",
-      "given": "the applicable business context, actor, and input for  Pricing",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-WS-01-R008-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "V23-P2C-ACCEPTANCE-MAPPING-C3"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BRD-WS-01-R008-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by  Pricing",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BRD-WS-01-R008-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-01-R008",
+      "source_document": "docs/BRD/BRD-WS-01.md",
+      "source_fingerprint": "8a6b36f001c8a05a7fbe68ad273ad0a4072b68ace7c45010aa4718ddceae40e2"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-01-R008-AC001",
-        "BRD-WS-01-R008-AC002"
+        "BRD-WS-01-R008-AC002",
+        "BRD-WS-01-R008-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-01-R008-O001",
-      "obligation_text": "Pricing"
+      "obligation_text": "Pricing is included in the active YSim v2.3 product scope"
     }
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-01-R008 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-01-R008 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-01-R008 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-01-R008 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-01-R008 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-01-R008 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "BRD-WS-01-R008 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BRD-WS-01-R008-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BRD-WS-01-R008-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-01-R008 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-01-R008 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
   "delivery_commitment": "COMMITTED_FOR_V2.3",
   "implementation_unit": true,
   "lifecycle": "V2.3_DRAFT",
-  "normative_statement": "- Pricing",
+  "normative_statement": "Pricing is included in the active YSim v2.3 product scope.",
   "provenance": {
-    "approved_decisions": [],
+    "approved_decisions": [
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
+    ],
+    "corrected_source_range": {
+      "document": "docs/BRD/BRD-WS-01.md",
+      "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+      "section": "4. Product Scope > In Scope"
+    },
+    "deterministic_transformation": "RESTORE_IN_SCOPE_PREDICATE",
     "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
     "original_identity": "TMP-BRD-WS-01-008",
+    "phase_2c_c3_actions": [
+      "C3_DETERMINISTIC_SOURCE_NORMALIZATION"
+    ],
     "previous_temporary_key": "TMP-BRD-WS-01-008",
     "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
     "source_baseline": "v2.2",
     "source_context_heading": "In Scope",
     "source_context_sha256": "38d43d01b0fdf81b82681b2fd34a75ff50c90b7ff040edfdda6f619baa2f2e50",
     "source_document": "docs/BRD/BRD-WS-01.md",
-    "source_fingerprint": "d35805ed6b5b489709e3f3878bff9868d09b4c1db01021abf65a1a24a20a9ec2",
-    "source_lines": "L66",
-    "source_section": "4. Product Scope > In Scope"
+    "source_fingerprint": "8a6b36f001c8a05a7fbe68ad273ad0a4072b68ace7c45010aa4718ddceae40e2",
+    "source_fingerprint_before_c3": "d35805ed6b5b489709e3f3878bff9868d09b4c1db01021abf65a1a24a20a9ec2",
+    "source_lines": "L1016-L1145",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_range_before_c3": {
+      "document": "docs/BRD/BRD-WS-01.md",
+      "lines": "L66",
+      "section": "4. Product Scope > In Scope"
+    },
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-01-R008"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1036,56 +1138,51 @@ This Business Requirement Set is governed by the following architecture decision
   "scope_coverage_unit": true,
   "scope_status": "V2.3_ACTIVE",
   "stable_id": "BRD-WS-01-R008",
-  "title": " Pricing",
+  "title": "Pricing is included in the active YSim v2.3 product scope",
   "verification_criticality": "CRITICAL"
 }
 ```
 <!-- YSIM:REQUIREMENT END -->
 
 <!-- YSIM:REQUIREMENT BEGIN -->
-### BRD-WS-01-R009 —  Promotion
+### BRD-WS-01-R009 — Promotion is included in the active YSim v2.3 product scope
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-01-R009-AC001",
-      "given": "the applicable business context, actor, and input for  Promotion",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-WS-01-R009-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "V23-P2C-ACCEPTANCE-MAPPING-C3"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BRD-WS-01-R009-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by  Promotion",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BRD-WS-01-R009-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-01-R009",
+      "source_document": "docs/BRD/BRD-WS-01.md",
+      "source_fingerprint": "c6cc2ae801c58abcb03352e4191f351cd0cda7114c6f8732a4af1ec0ba346ea3"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-01-R009-AC001",
-        "BRD-WS-01-R009-AC002"
+        "BRD-WS-01-R009-AC002",
+        "BRD-WS-01-R009-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-01-R009-O001",
-      "obligation_text": "Promotion"
+      "obligation_text": "Promotion is included in the active YSim v2.3 product scope"
     }
   ],
   "criticality_applicability": null,
@@ -1093,20 +1190,39 @@ This Business Requirement Set is governed by the following architecture decision
   "delivery_commitment": "COMMITTED_FOR_V2.3",
   "implementation_unit": true,
   "lifecycle": "V2.3_DRAFT",
-  "normative_statement": "- Promotion",
+  "normative_statement": "Promotion is included in the active YSim v2.3 product scope.",
   "provenance": {
-    "approved_decisions": [],
+    "approved_decisions": [
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
+    ],
+    "corrected_source_range": {
+      "document": "docs/BRD/BRD-WS-01.md",
+      "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+      "section": "4. Product Scope > In Scope"
+    },
+    "deterministic_transformation": "RESTORE_IN_SCOPE_PREDICATE",
     "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
     "original_identity": "TMP-BRD-WS-01-009",
+    "phase_2c_c3_actions": [
+      "C3_DETERMINISTIC_SOURCE_NORMALIZATION"
+    ],
     "previous_temporary_key": "TMP-BRD-WS-01-009",
     "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
     "source_baseline": "v2.2",
     "source_context_heading": "In Scope",
     "source_context_sha256": "38d43d01b0fdf81b82681b2fd34a75ff50c90b7ff040edfdda6f619baa2f2e50",
     "source_document": "docs/BRD/BRD-WS-01.md",
-    "source_fingerprint": "978a2387cf21835ffc4d311dd0cc4cd86c412594dac0dffb9faa38d426ab1bc2",
-    "source_lines": "L67",
-    "source_section": "4. Product Scope > In Scope"
+    "source_fingerprint": "c6cc2ae801c58abcb03352e4191f351cd0cda7114c6f8732a4af1ec0ba346ea3",
+    "source_fingerprint_before_c3": "978a2387cf21835ffc4d311dd0cc4cd86c412594dac0dffb9faa38d426ab1bc2",
+    "source_lines": "L1147-L1243",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_range_before_c3": {
+      "document": "docs/BRD/BRD-WS-01.md",
+      "lines": "L67",
+      "section": "4. Product Scope > In Scope"
+    },
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-01-R009"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1120,56 +1236,51 @@ This Business Requirement Set is governed by the following architecture decision
   "scope_coverage_unit": true,
   "scope_status": "V2.3_ACTIVE",
   "stable_id": "BRD-WS-01-R009",
-  "title": " Promotion",
+  "title": "Promotion is included in the active YSim v2.3 product scope",
   "verification_criticality": "HIGH"
 }
 ```
 <!-- YSIM:REQUIREMENT END -->
 
 <!-- YSIM:REQUIREMENT BEGIN -->
-### BRD-WS-01-R010 —  Coupon
+### BRD-WS-01-R010 — Coupon is included in the active YSim v2.3 product scope
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-01-R010-AC001",
-      "given": "the applicable business context, actor, and input for  Coupon",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-WS-01-R010-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "V23-P2C-ACCEPTANCE-MAPPING-C3"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BRD-WS-01-R010-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by  Coupon",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BRD-WS-01-R010-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-01-R010",
+      "source_document": "docs/BRD/BRD-WS-01.md",
+      "source_fingerprint": "816cfcba6eff8ea960f126b598e9f785b33acdf3f0f0f51b10c93c05698d7f1e"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-01-R010-AC001",
-        "BRD-WS-01-R010-AC002"
+        "BRD-WS-01-R010-AC002",
+        "BRD-WS-01-R010-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-01-R010-O001",
-      "obligation_text": "Coupon"
+      "obligation_text": "Coupon is included in the active YSim v2.3 product scope"
     }
   ],
   "criticality_applicability": null,
@@ -1177,20 +1288,39 @@ This Business Requirement Set is governed by the following architecture decision
   "delivery_commitment": "COMMITTED_FOR_V2.3",
   "implementation_unit": true,
   "lifecycle": "V2.3_DRAFT",
-  "normative_statement": "- Coupon",
+  "normative_statement": "Coupon is included in the active YSim v2.3 product scope.",
   "provenance": {
-    "approved_decisions": [],
+    "approved_decisions": [
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
+    ],
+    "corrected_source_range": {
+      "document": "docs/BRD/BRD-WS-01.md",
+      "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+      "section": "4. Product Scope > In Scope"
+    },
+    "deterministic_transformation": "RESTORE_IN_SCOPE_PREDICATE",
     "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
     "original_identity": "TMP-BRD-WS-01-010",
+    "phase_2c_c3_actions": [
+      "C3_DETERMINISTIC_SOURCE_NORMALIZATION"
+    ],
     "previous_temporary_key": "TMP-BRD-WS-01-010",
     "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
     "source_baseline": "v2.2",
     "source_context_heading": "In Scope",
     "source_context_sha256": "38d43d01b0fdf81b82681b2fd34a75ff50c90b7ff040edfdda6f619baa2f2e50",
     "source_document": "docs/BRD/BRD-WS-01.md",
-    "source_fingerprint": "1230c15c28cd776f08c04ce3c94a342bc7782e9de5d78e1c6f9f34606ef61d4b",
-    "source_lines": "L68",
-    "source_section": "4. Product Scope > In Scope"
+    "source_fingerprint": "816cfcba6eff8ea960f126b598e9f785b33acdf3f0f0f51b10c93c05698d7f1e",
+    "source_fingerprint_before_c3": "1230c15c28cd776f08c04ce3c94a342bc7782e9de5d78e1c6f9f34606ef61d4b",
+    "source_lines": "L1245-L1341",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_range_before_c3": {
+      "document": "docs/BRD/BRD-WS-01.md",
+      "lines": "L68",
+      "section": "4. Product Scope > In Scope"
+    },
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-01-R010"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1204,56 +1334,51 @@ This Business Requirement Set is governed by the following architecture decision
   "scope_coverage_unit": true,
   "scope_status": "V2.3_ACTIVE",
   "stable_id": "BRD-WS-01-R010",
-  "title": " Coupon",
+  "title": "Coupon is included in the active YSim v2.3 product scope",
   "verification_criticality": "HIGH"
 }
 ```
 <!-- YSIM:REQUIREMENT END -->
 
 <!-- YSIM:REQUIREMENT BEGIN -->
-### BRD-WS-01-R011 —  Campaign
+### BRD-WS-01-R011 — Campaign is included in the active YSim v2.3 product scope
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-01-R011-AC001",
-      "given": "the applicable business context, actor, and input for  Campaign",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-WS-01-R011-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "V23-P2C-ACCEPTANCE-MAPPING-C3"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BRD-WS-01-R011-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by  Campaign",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BRD-WS-01-R011-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-01-R011",
+      "source_document": "docs/BRD/BRD-WS-01.md",
+      "source_fingerprint": "75a1bc45e27b59e95472acd55031e30239f8761fc50de7f83598d5b03e0a305f"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-01-R011-AC001",
-        "BRD-WS-01-R011-AC002"
+        "BRD-WS-01-R011-AC002",
+        "BRD-WS-01-R011-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-01-R011-O001",
-      "obligation_text": "Campaign"
+      "obligation_text": "Campaign is included in the active YSim v2.3 product scope"
     }
   ],
   "criticality_applicability": null,
@@ -1261,20 +1386,39 @@ This Business Requirement Set is governed by the following architecture decision
   "delivery_commitment": "COMMITTED_FOR_V2.3",
   "implementation_unit": true,
   "lifecycle": "V2.3_DRAFT",
-  "normative_statement": "- Campaign",
+  "normative_statement": "Campaign is included in the active YSim v2.3 product scope.",
   "provenance": {
-    "approved_decisions": [],
+    "approved_decisions": [
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
+    ],
+    "corrected_source_range": {
+      "document": "docs/BRD/BRD-WS-01.md",
+      "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+      "section": "4. Product Scope > In Scope"
+    },
+    "deterministic_transformation": "RESTORE_IN_SCOPE_PREDICATE",
     "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
     "original_identity": "TMP-BRD-WS-01-011",
+    "phase_2c_c3_actions": [
+      "C3_DETERMINISTIC_SOURCE_NORMALIZATION"
+    ],
     "previous_temporary_key": "TMP-BRD-WS-01-011",
     "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
     "source_baseline": "v2.2",
     "source_context_heading": "In Scope",
     "source_context_sha256": "38d43d01b0fdf81b82681b2fd34a75ff50c90b7ff040edfdda6f619baa2f2e50",
     "source_document": "docs/BRD/BRD-WS-01.md",
-    "source_fingerprint": "2523c93260968bd8f104d3045991c752e0611c91b341e5c3d00811feac9bd7b7",
-    "source_lines": "L69",
-    "source_section": "4. Product Scope > In Scope"
+    "source_fingerprint": "75a1bc45e27b59e95472acd55031e30239f8761fc50de7f83598d5b03e0a305f",
+    "source_fingerprint_before_c3": "2523c93260968bd8f104d3045991c752e0611c91b341e5c3d00811feac9bd7b7",
+    "source_lines": "L1343-L1439",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_range_before_c3": {
+      "document": "docs/BRD/BRD-WS-01.md",
+      "lines": "L69",
+      "section": "4. Product Scope > In Scope"
+    },
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-01-R011"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1288,56 +1432,51 @@ This Business Requirement Set is governed by the following architecture decision
   "scope_coverage_unit": true,
   "scope_status": "V2.3_ACTIVE",
   "stable_id": "BRD-WS-01-R011",
-  "title": " Campaign",
+  "title": "Campaign is included in the active YSim v2.3 product scope",
   "verification_criticality": "HIGH"
 }
 ```
 <!-- YSIM:REQUIREMENT END -->
 
 <!-- YSIM:REQUIREMENT BEGIN -->
-### BRD-WS-01-R012 —  Checkout
+### BRD-WS-01-R012 — Checkout is included in the active YSim v2.3 product scope
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-01-R012-AC001",
-      "given": "the applicable business context, actor, and input for  Checkout",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-WS-01-R012-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "V23-P2C-ACCEPTANCE-MAPPING-C3"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BRD-WS-01-R012-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by  Checkout",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BRD-WS-01-R012-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-01-R012",
+      "source_document": "docs/BRD/BRD-WS-01.md",
+      "source_fingerprint": "f7223826576d084a141eef8db8d7665a963e446709121eecfee9affbe5adc878"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-01-R012-AC001",
-        "BRD-WS-01-R012-AC002"
+        "BRD-WS-01-R012-AC002",
+        "BRD-WS-01-R012-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-01-R012-O001",
-      "obligation_text": "Checkout"
+      "obligation_text": "Checkout is included in the active YSim v2.3 product scope"
     }
   ],
   "criticality_applicability": null,
@@ -1345,20 +1484,39 @@ This Business Requirement Set is governed by the following architecture decision
   "delivery_commitment": "COMMITTED_FOR_V2.3",
   "implementation_unit": true,
   "lifecycle": "V2.3_DRAFT",
-  "normative_statement": "- Checkout",
+  "normative_statement": "Checkout is included in the active YSim v2.3 product scope.",
   "provenance": {
-    "approved_decisions": [],
+    "approved_decisions": [
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
+    ],
+    "corrected_source_range": {
+      "document": "docs/BRD/BRD-WS-01.md",
+      "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+      "section": "4. Product Scope > In Scope"
+    },
+    "deterministic_transformation": "RESTORE_IN_SCOPE_PREDICATE",
     "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
     "original_identity": "TMP-BRD-WS-01-012",
+    "phase_2c_c3_actions": [
+      "C3_DETERMINISTIC_SOURCE_NORMALIZATION"
+    ],
     "previous_temporary_key": "TMP-BRD-WS-01-012",
     "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
     "source_baseline": "v2.2",
     "source_context_heading": "In Scope",
     "source_context_sha256": "38d43d01b0fdf81b82681b2fd34a75ff50c90b7ff040edfdda6f619baa2f2e50",
     "source_document": "docs/BRD/BRD-WS-01.md",
-    "source_fingerprint": "d5b73cedb7b7a4366f3a8a2c380d341052fba12df99ee6d54c856e940a4a7aa2",
-    "source_lines": "L70",
-    "source_section": "4. Product Scope > In Scope"
+    "source_fingerprint": "f7223826576d084a141eef8db8d7665a963e446709121eecfee9affbe5adc878",
+    "source_fingerprint_before_c3": "d5b73cedb7b7a4366f3a8a2c380d341052fba12df99ee6d54c856e940a4a7aa2",
+    "source_lines": "L1441-L1537",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_range_before_c3": {
+      "document": "docs/BRD/BRD-WS-01.md",
+      "lines": "L70",
+      "section": "4. Product Scope > In Scope"
+    },
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-01-R012"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1372,109 +1530,124 @@ This Business Requirement Set is governed by the following architecture decision
   "scope_coverage_unit": true,
   "scope_status": "V2.3_ACTIVE",
   "stable_id": "BRD-WS-01-R012",
-  "title": " Checkout",
+  "title": "Checkout is included in the active YSim v2.3 product scope",
   "verification_criticality": "HIGH"
 }
 ```
 <!-- YSIM:REQUIREMENT END -->
 
 <!-- YSIM:REQUIREMENT BEGIN -->
-### BRD-WS-01-R013 —  Payment
+### BRD-WS-01-R013 — Payment is included in the active YSim v2.3 product scope
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-01-R013-AC001",
-      "given": "the applicable business context, actor, and input for  Payment",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-WS-01-R013-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "V23-P2C-ACCEPTANCE-MAPPING-C3"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BRD-WS-01-R013-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by  Payment",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BRD-WS-01-R013-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-01-R013",
+      "source_document": "docs/BRD/BRD-WS-01.md",
+      "source_fingerprint": "5f77af0318f13b4de907b582e1119a5ccf86720504c14eb3192028d557128ea6"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-01-R013-AC001",
-        "BRD-WS-01-R013-AC002"
+        "BRD-WS-01-R013-AC002",
+        "BRD-WS-01-R013-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-01-R013-O001",
-      "obligation_text": "Payment"
+      "obligation_text": "Payment is included in the active YSim v2.3 product scope"
     }
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-01-R013 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-01-R013 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-01-R013 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-01-R013 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-01-R013 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-01-R013 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "BRD-WS-01-R013 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BRD-WS-01-R013-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BRD-WS-01-R013-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-01-R013 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-01-R013 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
   "delivery_commitment": "COMMITTED_FOR_V2.3",
   "implementation_unit": true,
   "lifecycle": "V2.3_DRAFT",
-  "normative_statement": "- Payment",
+  "normative_statement": "Payment is included in the active YSim v2.3 product scope.",
   "provenance": {
-    "approved_decisions": [],
+    "approved_decisions": [
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
+    ],
+    "corrected_source_range": {
+      "document": "docs/BRD/BRD-WS-01.md",
+      "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+      "section": "4. Product Scope > In Scope"
+    },
+    "deterministic_transformation": "RESTORE_IN_SCOPE_PREDICATE",
     "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
     "original_identity": "TMP-BRD-WS-01-013",
+    "phase_2c_c3_actions": [
+      "C3_DETERMINISTIC_SOURCE_NORMALIZATION"
+    ],
     "previous_temporary_key": "TMP-BRD-WS-01-013",
     "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
     "source_baseline": "v2.2",
     "source_context_heading": "In Scope",
     "source_context_sha256": "38d43d01b0fdf81b82681b2fd34a75ff50c90b7ff040edfdda6f619baa2f2e50",
     "source_document": "docs/BRD/BRD-WS-01.md",
-    "source_fingerprint": "f26784e7c96bfd795296d37f67ced0f5ded699f21a6ed197b402e88135f7fd5d",
-    "source_lines": "L71",
-    "source_section": "4. Product Scope > In Scope"
+    "source_fingerprint": "5f77af0318f13b4de907b582e1119a5ccf86720504c14eb3192028d557128ea6",
+    "source_fingerprint_before_c3": "f26784e7c96bfd795296d37f67ced0f5ded699f21a6ed197b402e88135f7fd5d",
+    "source_lines": "L1539-L1668",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_range_before_c3": {
+      "document": "docs/BRD/BRD-WS-01.md",
+      "lines": "L71",
+      "section": "4. Product Scope > In Scope"
+    },
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-01-R013"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1488,109 +1661,124 @@ This Business Requirement Set is governed by the following architecture decision
   "scope_coverage_unit": true,
   "scope_status": "V2.3_ACTIVE",
   "stable_id": "BRD-WS-01-R013",
-  "title": " Payment",
+  "title": "Payment is included in the active YSim v2.3 product scope",
   "verification_criticality": "CRITICAL"
 }
 ```
 <!-- YSIM:REQUIREMENT END -->
 
 <!-- YSIM:REQUIREMENT BEGIN -->
-### BRD-WS-01-R014 —  Fulfillment
+### BRD-WS-01-R014 — Fulfillment is included in the active YSim v2.3 product scope
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-01-R014-AC001",
-      "given": "the applicable business context, actor, and input for  Fulfillment",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-WS-01-R014-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "V23-P2C-ACCEPTANCE-MAPPING-C3"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BRD-WS-01-R014-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by  Fulfillment",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BRD-WS-01-R014-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-01-R014",
+      "source_document": "docs/BRD/BRD-WS-01.md",
+      "source_fingerprint": "819e739e46d5301de44a002a9c45fa1a2706bbd877e7106bb13a055ec8c997c8"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-01-R014-AC001",
-        "BRD-WS-01-R014-AC002"
+        "BRD-WS-01-R014-AC002",
+        "BRD-WS-01-R014-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-01-R014-O001",
-      "obligation_text": "Fulfillment"
+      "obligation_text": "Fulfillment is included in the active YSim v2.3 product scope"
     }
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-01-R014 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-01-R014 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-01-R014 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-01-R014 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-01-R014 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-01-R014 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "BRD-WS-01-R014 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BRD-WS-01-R014-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BRD-WS-01-R014-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-01-R014 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-01-R014 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
   "delivery_commitment": "COMMITTED_FOR_V2.3",
   "implementation_unit": true,
   "lifecycle": "V2.3_DRAFT",
-  "normative_statement": "- Fulfillment",
+  "normative_statement": "Fulfillment is included in the active YSim v2.3 product scope.",
   "provenance": {
-    "approved_decisions": [],
+    "approved_decisions": [
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
+    ],
+    "corrected_source_range": {
+      "document": "docs/BRD/BRD-WS-01.md",
+      "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+      "section": "4. Product Scope > In Scope"
+    },
+    "deterministic_transformation": "RESTORE_IN_SCOPE_PREDICATE",
     "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
     "original_identity": "TMP-BRD-WS-01-014",
+    "phase_2c_c3_actions": [
+      "C3_DETERMINISTIC_SOURCE_NORMALIZATION"
+    ],
     "previous_temporary_key": "TMP-BRD-WS-01-014",
     "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
     "source_baseline": "v2.2",
     "source_context_heading": "In Scope",
     "source_context_sha256": "38d43d01b0fdf81b82681b2fd34a75ff50c90b7ff040edfdda6f619baa2f2e50",
     "source_document": "docs/BRD/BRD-WS-01.md",
-    "source_fingerprint": "597260520ac2da3d42f4c11569f7a7731c2b315f9becd59fb56b7b56e7cdc29b",
-    "source_lines": "L72",
-    "source_section": "4. Product Scope > In Scope"
+    "source_fingerprint": "819e739e46d5301de44a002a9c45fa1a2706bbd877e7106bb13a055ec8c997c8",
+    "source_fingerprint_before_c3": "597260520ac2da3d42f4c11569f7a7731c2b315f9becd59fb56b7b56e7cdc29b",
+    "source_lines": "L1670-L1799",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_range_before_c3": {
+      "document": "docs/BRD/BRD-WS-01.md",
+      "lines": "L72",
+      "section": "4. Product Scope > In Scope"
+    },
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-01-R014"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1604,56 +1792,51 @@ This Business Requirement Set is governed by the following architecture decision
   "scope_coverage_unit": true,
   "scope_status": "V2.3_ACTIVE",
   "stable_id": "BRD-WS-01-R014",
-  "title": " Fulfillment",
+  "title": "Fulfillment is included in the active YSim v2.3 product scope",
   "verification_criticality": "CRITICAL"
 }
 ```
 <!-- YSIM:REQUIREMENT END -->
 
 <!-- YSIM:REQUIREMENT BEGIN -->
-### BRD-WS-01-R015 —  Activation
+### BRD-WS-01-R015 — Activation is included in the active YSim v2.3 product scope
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-01-R015-AC001",
-      "given": "the applicable business context, actor, and input for  Activation",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-WS-01-R015-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "V23-P2C-ACCEPTANCE-MAPPING-C3"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BRD-WS-01-R015-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by  Activation",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BRD-WS-01-R015-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-01-R015",
+      "source_document": "docs/BRD/BRD-WS-01.md",
+      "source_fingerprint": "b0b6e49e1e702b4f8ec567de559b57bf46916b5f0a718ad5658adf9917263fb6"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-01-R015-AC001",
-        "BRD-WS-01-R015-AC002"
+        "BRD-WS-01-R015-AC002",
+        "BRD-WS-01-R015-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-01-R015-O001",
-      "obligation_text": "Activation"
+      "obligation_text": "Activation is included in the active YSim v2.3 product scope"
     }
   ],
   "criticality_applicability": null,
@@ -1661,20 +1844,39 @@ This Business Requirement Set is governed by the following architecture decision
   "delivery_commitment": "COMMITTED_FOR_V2.3",
   "implementation_unit": true,
   "lifecycle": "V2.3_DRAFT",
-  "normative_statement": "- Activation",
+  "normative_statement": "Activation is included in the active YSim v2.3 product scope.",
   "provenance": {
-    "approved_decisions": [],
+    "approved_decisions": [
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
+    ],
+    "corrected_source_range": {
+      "document": "docs/BRD/BRD-WS-01.md",
+      "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+      "section": "4. Product Scope > In Scope"
+    },
+    "deterministic_transformation": "RESTORE_IN_SCOPE_PREDICATE",
     "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
     "original_identity": "TMP-BRD-WS-01-015",
+    "phase_2c_c3_actions": [
+      "C3_DETERMINISTIC_SOURCE_NORMALIZATION"
+    ],
     "previous_temporary_key": "TMP-BRD-WS-01-015",
     "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
     "source_baseline": "v2.2",
     "source_context_heading": "In Scope",
     "source_context_sha256": "38d43d01b0fdf81b82681b2fd34a75ff50c90b7ff040edfdda6f619baa2f2e50",
     "source_document": "docs/BRD/BRD-WS-01.md",
-    "source_fingerprint": "800708fd26837300f9306c09194486bdeebdbbf1e3e3076dbea7c0bbdc6c1915",
-    "source_lines": "L73",
-    "source_section": "4. Product Scope > In Scope"
+    "source_fingerprint": "b0b6e49e1e702b4f8ec567de559b57bf46916b5f0a718ad5658adf9917263fb6",
+    "source_fingerprint_before_c3": "800708fd26837300f9306c09194486bdeebdbbf1e3e3076dbea7c0bbdc6c1915",
+    "source_lines": "L1801-L1897",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_range_before_c3": {
+      "document": "docs/BRD/BRD-WS-01.md",
+      "lines": "L73",
+      "section": "4. Product Scope > In Scope"
+    },
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-01-R015"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1688,56 +1890,51 @@ This Business Requirement Set is governed by the following architecture decision
   "scope_coverage_unit": true,
   "scope_status": "V2.3_ACTIVE",
   "stable_id": "BRD-WS-01-R015",
-  "title": " Activation",
+  "title": "Activation is included in the active YSim v2.3 product scope",
   "verification_criticality": "HIGH"
 }
 ```
 <!-- YSIM:REQUIREMENT END -->
 
 <!-- YSIM:REQUIREMENT BEGIN -->
-### BRD-WS-01-R016 —  Settlement
+### BRD-WS-01-R016 — Settlement is included in the active YSim v2.3 product scope
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-01-R016-AC001",
-      "given": "the applicable business context, actor, and input for  Settlement",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-WS-01-R016-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "V23-P2C-ACCEPTANCE-MAPPING-C3"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BRD-WS-01-R016-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by  Settlement",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BRD-WS-01-R016-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-01-R016",
+      "source_document": "docs/BRD/BRD-WS-01.md",
+      "source_fingerprint": "ec47f44126c40dc34b7a0f011af8f94732f14544964f7e838891421aabae828b"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-01-R016-AC001",
-        "BRD-WS-01-R016-AC002"
+        "BRD-WS-01-R016-AC002",
+        "BRD-WS-01-R016-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-01-R016-O001",
-      "obligation_text": "Settlement"
+      "obligation_text": "Settlement is included in the active YSim v2.3 product scope"
     }
   ],
   "criticality_applicability": null,
@@ -1745,20 +1942,39 @@ This Business Requirement Set is governed by the following architecture decision
   "delivery_commitment": "COMMITTED_FOR_V2.3",
   "implementation_unit": true,
   "lifecycle": "V2.3_DRAFT",
-  "normative_statement": "- Settlement",
+  "normative_statement": "Settlement is included in the active YSim v2.3 product scope.",
   "provenance": {
-    "approved_decisions": [],
+    "approved_decisions": [
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
+    ],
+    "corrected_source_range": {
+      "document": "docs/BRD/BRD-WS-01.md",
+      "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+      "section": "4. Product Scope > In Scope"
+    },
+    "deterministic_transformation": "RESTORE_IN_SCOPE_PREDICATE",
     "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
     "original_identity": "TMP-BRD-WS-01-016",
+    "phase_2c_c3_actions": [
+      "C3_DETERMINISTIC_SOURCE_NORMALIZATION"
+    ],
     "previous_temporary_key": "TMP-BRD-WS-01-016",
     "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
     "source_baseline": "v2.2",
     "source_context_heading": "In Scope",
     "source_context_sha256": "38d43d01b0fdf81b82681b2fd34a75ff50c90b7ff040edfdda6f619baa2f2e50",
     "source_document": "docs/BRD/BRD-WS-01.md",
-    "source_fingerprint": "0cf6da12565e4ffca3f15ea894c72fe257b2de49e0a9c83d10bac993711b26bc",
-    "source_lines": "L74",
-    "source_section": "4. Product Scope > In Scope"
+    "source_fingerprint": "ec47f44126c40dc34b7a0f011af8f94732f14544964f7e838891421aabae828b",
+    "source_fingerprint_before_c3": "0cf6da12565e4ffca3f15ea894c72fe257b2de49e0a9c83d10bac993711b26bc",
+    "source_lines": "L1899-L1995",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_range_before_c3": {
+      "document": "docs/BRD/BRD-WS-01.md",
+      "lines": "L74",
+      "section": "4. Product Scope > In Scope"
+    },
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-01-R016"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1772,56 +1988,51 @@ This Business Requirement Set is governed by the following architecture decision
   "scope_coverage_unit": true,
   "scope_status": "V2.3_ACTIVE",
   "stable_id": "BRD-WS-01-R016",
-  "title": " Settlement",
+  "title": "Settlement is included in the active YSim v2.3 product scope",
   "verification_criticality": "HIGH"
 }
 ```
 <!-- YSIM:REQUIREMENT END -->
 
 <!-- YSIM:REQUIREMENT BEGIN -->
-### BRD-WS-01-R017 —  CRM
+### BRD-WS-01-R017 — CRM is included in the active YSim v2.3 product scope
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-01-R017-AC001",
-      "given": "the applicable business context, actor, and input for  CRM",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-WS-01-R017-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "V23-P2C-ACCEPTANCE-MAPPING-C3"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BRD-WS-01-R017-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by  CRM",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BRD-WS-01-R017-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-01-R017",
+      "source_document": "docs/BRD/BRD-WS-01.md",
+      "source_fingerprint": "5db7aba649823e8890ac24ce07db3e560936828710ccf33ddf528eafd9f2dbd4"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-01-R017-AC001",
-        "BRD-WS-01-R017-AC002"
+        "BRD-WS-01-R017-AC002",
+        "BRD-WS-01-R017-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-01-R017-O001",
-      "obligation_text": "- CRM"
+      "obligation_text": "CRM is included in the active YSim v2.3 product scope"
     }
   ],
   "criticality_applicability": null,
@@ -1829,20 +2040,39 @@ This Business Requirement Set is governed by the following architecture decision
   "delivery_commitment": "COMMITTED_FOR_V2.3",
   "implementation_unit": true,
   "lifecycle": "V2.3_DRAFT",
-  "normative_statement": "- CRM",
+  "normative_statement": "CRM is included in the active YSim v2.3 product scope.",
   "provenance": {
-    "approved_decisions": [],
+    "approved_decisions": [
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
+    ],
+    "corrected_source_range": {
+      "document": "docs/BRD/BRD-WS-01.md",
+      "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+      "section": "4. Product Scope > In Scope"
+    },
+    "deterministic_transformation": "RESTORE_IN_SCOPE_PREDICATE",
     "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
     "original_identity": "TMP-BRD-WS-01-017",
+    "phase_2c_c3_actions": [
+      "C3_DETERMINISTIC_SOURCE_NORMALIZATION"
+    ],
     "previous_temporary_key": "TMP-BRD-WS-01-017",
     "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
     "source_baseline": "v2.2",
     "source_context_heading": "SOURCE_STATEMENT_FALLBACK",
     "source_context_sha256": "15bc5e7009aa63fad237aaca371d34536c478266c20e39d3ecf7f06c9bb54727",
     "source_document": "docs/BRD/BRD-WS-01.md",
-    "source_fingerprint": "15bc5e7009aa63fad237aaca371d34536c478266c20e39d3ecf7f06c9bb54727",
-    "source_lines": "L75",
-    "source_section": "4. Product Scope > In Scope"
+    "source_fingerprint": "5db7aba649823e8890ac24ce07db3e560936828710ccf33ddf528eafd9f2dbd4",
+    "source_fingerprint_before_c3": "15bc5e7009aa63fad237aaca371d34536c478266c20e39d3ecf7f06c9bb54727",
+    "source_lines": "L1997-L2093",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_range_before_c3": {
+      "document": "docs/BRD/BRD-WS-01.md",
+      "lines": "L75",
+      "section": "4. Product Scope > In Scope"
+    },
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-01-R017"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1856,56 +2086,52 @@ This Business Requirement Set is governed by the following architecture decision
   "scope_coverage_unit": true,
   "scope_status": "V2.3_ACTIVE",
   "stable_id": "BRD-WS-01-R017",
-  "title": " CRM",
+  "title": "CRM is included in the active YSim v2.3 product scope",
   "verification_criticality": "HIGH"
 }
 ```
 <!-- YSIM:REQUIREMENT END -->
 
 <!-- YSIM:REQUIREMENT BEGIN -->
-### BRD-WS-01-R018 —  Customer Support
+### BRD-WS-01-R018 — Customer Support is included in the active YSim v2.3 product scope
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-01-R018-AC001",
-      "given": "the applicable business context, actor, and input for  Customer Support",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-WS-01-R018-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-008",
+        "V23-P2C-ACCEPTANCE-MAPPING-C3"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BRD-WS-01-R018-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by  Customer Support",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BRD-WS-01-R018-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-01-R018",
+      "source_document": "docs/BRD/BRD-WS-01.md",
+      "source_fingerprint": "254ee32b511d3541fe1609ed58408b92aaa90bdfa9072b5614b18223903f5664"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-01-R018-AC001",
-        "BRD-WS-01-R018-AC002"
+        "BRD-WS-01-R018-AC002",
+        "BRD-WS-01-R018-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-01-R018-O001",
-      "obligation_text": "Customer Support"
+      "obligation_text": "Customer Support is included in the active YSim v2.3 product scope"
     }
   ],
   "criticality_applicability": null,
@@ -1913,22 +2139,40 @@ This Business Requirement Set is governed by the following architecture decision
   "delivery_commitment": "COMMITTED_FOR_V2.3",
   "implementation_unit": true,
   "lifecycle": "V2.3_DRAFT",
-  "normative_statement": "- Customer Support",
+  "normative_statement": "Customer Support is included in the active YSim v2.3 product scope.",
   "provenance": {
     "approved_decisions": [
-      "P2-DEC-008"
+      "P2-DEC-008",
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
     ],
+    "corrected_source_range": {
+      "document": "docs/BRD/BRD-WS-01.md",
+      "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+      "section": "4. Product Scope > In Scope"
+    },
+    "deterministic_transformation": "RESTORE_IN_SCOPE_PREDICATE",
     "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
     "original_identity": "TMP-BRD-WS-01-018",
+    "phase_2c_c3_actions": [
+      "C3_DETERMINISTIC_SOURCE_NORMALIZATION"
+    ],
     "previous_temporary_key": "TMP-BRD-WS-01-018",
     "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
     "source_baseline": "v2.2",
     "source_context_heading": "In Scope",
     "source_context_sha256": "38d43d01b0fdf81b82681b2fd34a75ff50c90b7ff040edfdda6f619baa2f2e50",
     "source_document": "docs/BRD/BRD-WS-01.md",
-    "source_fingerprint": "d0a10547452260b3866b7c0f0f80c62bee644450ee258e16bb40a3191650b41c",
-    "source_lines": "L76",
-    "source_section": "4. Product Scope > In Scope"
+    "source_fingerprint": "254ee32b511d3541fe1609ed58408b92aaa90bdfa9072b5614b18223903f5664",
+    "source_fingerprint_before_c3": "d0a10547452260b3866b7c0f0f80c62bee644450ee258e16bb40a3191650b41c",
+    "source_lines": "L2095-L2193",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_range_before_c3": {
+      "document": "docs/BRD/BRD-WS-01.md",
+      "lines": "L76",
+      "section": "4. Product Scope > In Scope"
+    },
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-01-R018"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1942,56 +2186,51 @@ This Business Requirement Set is governed by the following architecture decision
   "scope_coverage_unit": true,
   "scope_status": "V2.3_ACTIVE",
   "stable_id": "BRD-WS-01-R018",
-  "title": " Customer Support",
+  "title": "Customer Support is included in the active YSim v2.3 product scope",
   "verification_criticality": "HIGH"
 }
 ```
 <!-- YSIM:REQUIREMENT END -->
 
 <!-- YSIM:REQUIREMENT BEGIN -->
-### BRD-WS-01-R019 —  Analytics
+### BRD-WS-01-R019 — Analytics is included in the active YSim v2.3 product scope
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-01-R019-AC001",
-      "given": "the applicable business context, actor, and input for  Analytics",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-WS-01-R019-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "V23-P2C-ACCEPTANCE-MAPPING-C3"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BRD-WS-01-R019-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by  Analytics",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BRD-WS-01-R019-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-01-R019",
+      "source_document": "docs/BRD/BRD-WS-01.md",
+      "source_fingerprint": "0da2bfbea60512cf3962fc4fd7eead1a809a65817f6fd6ae71e0d8c0be1e9f0e"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-01-R019-AC001",
-        "BRD-WS-01-R019-AC002"
+        "BRD-WS-01-R019-AC002",
+        "BRD-WS-01-R019-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-01-R019-O001",
-      "obligation_text": "Analytics"
+      "obligation_text": "Analytics is included in the active YSim v2.3 product scope"
     }
   ],
   "criticality_applicability": null,
@@ -1999,20 +2238,39 @@ This Business Requirement Set is governed by the following architecture decision
   "delivery_commitment": "COMMITTED_FOR_V2.3",
   "implementation_unit": true,
   "lifecycle": "V2.3_DRAFT",
-  "normative_statement": "- Analytics",
+  "normative_statement": "Analytics is included in the active YSim v2.3 product scope.",
   "provenance": {
-    "approved_decisions": [],
+    "approved_decisions": [
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
+    ],
+    "corrected_source_range": {
+      "document": "docs/BRD/BRD-WS-01.md",
+      "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+      "section": "4. Product Scope > In Scope"
+    },
+    "deterministic_transformation": "RESTORE_IN_SCOPE_PREDICATE",
     "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
     "original_identity": "TMP-BRD-WS-01-019",
+    "phase_2c_c3_actions": [
+      "C3_DETERMINISTIC_SOURCE_NORMALIZATION"
+    ],
     "previous_temporary_key": "TMP-BRD-WS-01-019",
     "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
     "source_baseline": "v2.2",
     "source_context_heading": "In Scope",
     "source_context_sha256": "38d43d01b0fdf81b82681b2fd34a75ff50c90b7ff040edfdda6f619baa2f2e50",
     "source_document": "docs/BRD/BRD-WS-01.md",
-    "source_fingerprint": "843312debf82000c0390f3721a9d9a0acc29836cbc1e852f7e0cde3c4139ce93",
-    "source_lines": "L77",
-    "source_section": "4. Product Scope > In Scope"
+    "source_fingerprint": "0da2bfbea60512cf3962fc4fd7eead1a809a65817f6fd6ae71e0d8c0be1e9f0e",
+    "source_fingerprint_before_c3": "843312debf82000c0390f3721a9d9a0acc29836cbc1e852f7e0cde3c4139ce93",
+    "source_lines": "L2195-L2291",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_range_before_c3": {
+      "document": "docs/BRD/BRD-WS-01.md",
+      "lines": "L77",
+      "section": "4. Product Scope > In Scope"
+    },
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-01-R019"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2026,7 +2284,7 @@ This Business Requirement Set is governed by the following architecture decision
   "scope_coverage_unit": true,
   "scope_status": "V2.3_ACTIVE",
   "stable_id": "BRD-WS-01-R019",
-  "title": " Analytics",
+  "title": "Analytics is included in the active YSim v2.3 product scope",
   "verification_criticality": "HIGH"
 }
 ```
@@ -2037,9 +2295,20 @@ This Business Requirement Set is governed by the following architecture decision
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "NOT_APPLICABLE_FOR_V2.3",
+    "inference": false,
+    "requirement_id": "BRD-WS-01-R020",
+    "scope_status": "OUT_OF_SCOPE"
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "NOT_APPLICABLE_FOR_V2.3",
+    "runtime_status": "NOT_APPLICABLE_FOR_V2.3"
+  },
   "acceptance_rationale": "Requirement is explicitly outside the v2.3 product scope.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
   "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
   "acceptance_unit": false,
   "atomic_obligations": [],
@@ -2060,8 +2329,8 @@ This Business Requirement Set is governed by the following architecture decision
     "source_context_sha256": "83a46d86fc2d2cf60871ce65bb47ab0d6bdb020c0116ab9507dee444c25302f8",
     "source_document": "docs/BRD/BRD-WS-01.md",
     "source_fingerprint": "d1e171be41a3ced2881aff7b70134d82f27ba34bcf4dbfe813cd0d19fb1b862b",
-    "source_lines": "L81",
-    "source_section": "4. Product Scope > Out of Scope"
+    "source_lines": "L2293-L2351",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-01-R020"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2086,9 +2355,20 @@ This Business Requirement Set is governed by the following architecture decision
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "NOT_APPLICABLE_FOR_V2.3",
+    "inference": false,
+    "requirement_id": "BRD-WS-01-R021",
+    "scope_status": "OUT_OF_SCOPE"
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "NOT_APPLICABLE_FOR_V2.3",
+    "runtime_status": "NOT_APPLICABLE_FOR_V2.3"
+  },
   "acceptance_rationale": "Requirement is explicitly outside the v2.3 product scope.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
   "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
   "acceptance_unit": false,
   "atomic_obligations": [],
@@ -2109,8 +2389,8 @@ This Business Requirement Set is governed by the following architecture decision
     "source_context_sha256": "83a46d86fc2d2cf60871ce65bb47ab0d6bdb020c0116ab9507dee444c25302f8",
     "source_document": "docs/BRD/BRD-WS-01.md",
     "source_fingerprint": "b84d7f16056e0828d20010e769a111ff916145ae8cbb825161aeb6b8047c00e7",
-    "source_lines": "L82",
-    "source_section": "4. Product Scope > Out of Scope"
+    "source_lines": "L2353-L2411",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-01-R021"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2135,9 +2415,20 @@ This Business Requirement Set is governed by the following architecture decision
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "NOT_APPLICABLE_FOR_V2.3",
+    "inference": false,
+    "requirement_id": "BRD-WS-01-R022",
+    "scope_status": "OUT_OF_SCOPE"
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "NOT_APPLICABLE_FOR_V2.3",
+    "runtime_status": "NOT_APPLICABLE_FOR_V2.3"
+  },
   "acceptance_rationale": "Requirement is explicitly outside the v2.3 product scope.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
   "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
   "acceptance_unit": false,
   "atomic_obligations": [],
@@ -2158,8 +2449,8 @@ This Business Requirement Set is governed by the following architecture decision
     "source_context_sha256": "662c2009a1daeb9b72ce3ac28273daf914cd4757337a36f30e0bda214850fba2",
     "source_document": "docs/BRD/BRD-WS-01.md",
     "source_fingerprint": "662c2009a1daeb9b72ce3ac28273daf914cd4757337a36f30e0bda214850fba2",
-    "source_lines": "L83",
-    "source_section": "4. Product Scope > Out of Scope"
+    "source_lines": "L2413-L2471",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-01-R022"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2184,9 +2475,20 @@ This Business Requirement Set is governed by the following architecture decision
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "NOT_APPLICABLE_FOR_V2.3",
+    "inference": false,
+    "requirement_id": "BRD-WS-01-R023",
+    "scope_status": "OUT_OF_SCOPE"
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "NOT_APPLICABLE_FOR_V2.3",
+    "runtime_status": "NOT_APPLICABLE_FOR_V2.3"
+  },
   "acceptance_rationale": "Requirement is explicitly outside the v2.3 product scope.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
   "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
   "acceptance_unit": false,
   "atomic_obligations": [],
@@ -2207,8 +2509,8 @@ This Business Requirement Set is governed by the following architecture decision
     "source_context_sha256": "83a46d86fc2d2cf60871ce65bb47ab0d6bdb020c0116ab9507dee444c25302f8",
     "source_document": "docs/BRD/BRD-WS-01.md",
     "source_fingerprint": "618420e7c9ae5fa8f4e09c6320cdf0170e731643b987ff3d54782a9bc1eb01e3",
-    "source_lines": "L84",
-    "source_section": "4. Product Scope > Out of Scope"
+    "source_lines": "L2473-L2531",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-01-R023"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2233,9 +2535,20 @@ This Business Requirement Set is governed by the following architecture decision
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "NOT_APPLICABLE_FOR_V2.3",
+    "inference": false,
+    "requirement_id": "BRD-WS-01-R024",
+    "scope_status": "OUT_OF_SCOPE"
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "NOT_APPLICABLE_FOR_V2.3",
+    "runtime_status": "NOT_APPLICABLE_FOR_V2.3"
+  },
   "acceptance_rationale": "Requirement is explicitly outside the v2.3 product scope.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
   "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
   "acceptance_unit": false,
   "atomic_obligations": [],
@@ -2256,8 +2569,8 @@ This Business Requirement Set is governed by the following architecture decision
     "source_context_sha256": "29eb1ca180d3ff6df7908cb84cad0ff57372a3ac44d5c11df470995e053207c0",
     "source_document": "docs/BRD/BRD-WS-01.md",
     "source_fingerprint": "29eb1ca180d3ff6df7908cb84cad0ff57372a3ac44d5c11df470995e053207c0",
-    "source_lines": "L85",
-    "source_section": "4. Product Scope > Out of Scope"
+    "source_lines": "L2533-L2591",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-01-R024"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2282,9 +2595,20 @@ This Business Requirement Set is governed by the following architecture decision
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "NOT_APPLICABLE_FOR_V2.3",
+    "inference": false,
+    "requirement_id": "BRD-WS-01-R025",
+    "scope_status": "OUT_OF_SCOPE"
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "NOT_APPLICABLE_FOR_V2.3",
+    "runtime_status": "NOT_APPLICABLE_FOR_V2.3"
+  },
   "acceptance_rationale": "Requirement is explicitly outside the v2.3 product scope.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
   "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
   "acceptance_unit": false,
   "atomic_obligations": [],
@@ -2305,8 +2629,8 @@ This Business Requirement Set is governed by the following architecture decision
     "source_context_sha256": "946a29b1356bcf52ed358c0e6f4fc06f8ff5bae87b44e26b98b5939d997fc248",
     "source_document": "docs/BRD/BRD-WS-01.md",
     "source_fingerprint": "946a29b1356bcf52ed358c0e6f4fc06f8ff5bae87b44e26b98b5939d997fc248",
-    "source_lines": "L86",
-    "source_section": "4. Product Scope > Out of Scope"
+    "source_lines": "L2593-L2651",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-01-R025"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2331,9 +2655,20 @@ This Business Requirement Set is governed by the following architecture decision
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "NOT_APPLICABLE_FOR_V2.3",
+    "inference": false,
+    "requirement_id": "BRD-WS-01-R026",
+    "scope_status": "OUT_OF_SCOPE"
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "NOT_APPLICABLE_FOR_V2.3",
+    "runtime_status": "NOT_APPLICABLE_FOR_V2.3"
+  },
   "acceptance_rationale": "Requirement is explicitly outside the v2.3 product scope.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
   "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
   "acceptance_unit": false,
   "atomic_obligations": [],
@@ -2354,8 +2689,8 @@ This Business Requirement Set is governed by the following architecture decision
     "source_context_sha256": "83a46d86fc2d2cf60871ce65bb47ab0d6bdb020c0116ab9507dee444c25302f8",
     "source_document": "docs/BRD/BRD-WS-01.md",
     "source_fingerprint": "4f4b0cbf054638ad840af81de53ce8fbb88bcd85c4b72f1861f850e9bbb56eed",
-    "source_lines": "L87",
-    "source_section": "4. Product Scope > Out of Scope"
+    "source_lines": "L2653-L2711",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-01-R026"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2380,41 +2715,34 @@ This Business Requirement Set is governed by the following architecture decision
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-01-R027-AC001",
-      "given": "the applicable business context, actor, and input for YSim không phải Marketplace",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the prohibited decision or state transition is absent, the attempted action has a deterministic rejection outcome, and no contradictory success is recorded",
-      "verifies": [
-        "BRD-WS-01-R027-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BRD-WS-01-R027-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by YSim không phải Marketplace",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BRD-WS-01-R027-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-01-R027",
+      "source_document": "docs/BRD/BRD-WS-01.md",
+      "source_fingerprint": "58a27ae2d6596b8a8e713124ea6b9f1b16d75c5a4e2fa65bb3641622d25846a9"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-01-R027-AC001",
-        "BRD-WS-01-R027-AC002"
+        "BRD-WS-01-R027-AC002",
+        "BRD-WS-01-R027-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-01-R027-O001",
@@ -2438,8 +2766,8 @@ This Business Requirement Set is governed by the following architecture decision
     "source_context_sha256": "048db5e25271fed906827e45b9ec41f103bb48262eb28fbe05a0930c2247008b",
     "source_document": "docs/BRD/BRD-WS-01.md",
     "source_fingerprint": "58a27ae2d6596b8a8e713124ea6b9f1b16d75c5a4e2fa65bb3641622d25846a9",
-    "source_lines": "L93",
-    "source_section": "5. Product Philosophy"
+    "source_lines": "L2713-L2788",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-01-R027"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2464,41 +2792,34 @@ This Business Requirement Set is governed by the following architecture decision
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-01-R028-AC001",
-      "given": "the applicable business context, actor, and input for Hệ thống phải hỗ trợ: - Direct Website",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-WS-01-R028-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BRD-WS-01-R028-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Hệ thống phải hỗ trợ: - Direct Website",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BRD-WS-01-R028-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-01-R028",
+      "source_document": "docs/BRD/BRD-WS-01.md",
+      "source_fingerprint": "5ee52367d15968631a62c8cb20f0d92a4b5fc3a90cb683f93546644c595f83af"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-01-R028-AC001",
-        "BRD-WS-01-R028-AC002"
+        "BRD-WS-01-R028-AC002",
+        "BRD-WS-01-R028-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-01-R028-O001",
@@ -2522,8 +2843,8 @@ This Business Requirement Set is governed by the following architecture decision
     "source_context_sha256": "c51203f69e40724208e93909b1dff7733e62620546cbf8a408680d28ec69886e",
     "source_document": "docs/BRD/BRD-WS-01.md",
     "source_fingerprint": "5ee52367d15968631a62c8cb20f0d92a4b5fc3a90cb683f93546644c595f83af",
-    "source_lines": "L164-L166",
-    "source_section": "9. Sales Channels"
+    "source_lines": "L2790-L2865",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-01-R028"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2548,41 +2869,34 @@ This Business Requirement Set is governed by the following architecture decision
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-01-R029-AC001",
-      "given": "the applicable business context, actor, and input for Hệ thống phải hỗ trợ: - White-label Website",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-WS-01-R029-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BRD-WS-01-R029-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Hệ thống phải hỗ trợ: - White-label Website",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BRD-WS-01-R029-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-01-R029",
+      "source_document": "docs/BRD/BRD-WS-01.md",
+      "source_fingerprint": "39e109aa723f11c8585e2f57e9bfba6f24de4aa8773caa0bd339f579aebdde73"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-01-R029-AC001",
-        "BRD-WS-01-R029-AC002"
+        "BRD-WS-01-R029-AC002",
+        "BRD-WS-01-R029-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-01-R029-O001",
@@ -2614,9 +2928,9 @@ This Business Requirement Set is governed by the following architecture decision
     "source_context_heading": "9. Sales Channels",
     "source_context_sha256": "c51203f69e40724208e93909b1dff7733e62620546cbf8a408680d28ec69886e",
     "source_document": "docs/BRD/BRD-WS-01.md",
-    "source_fingerprint": "50675fb16b1841aebb6984c76b9714b99f513e47ddb6363b82d17de7f914844a",
-    "source_lines": "L164-L167",
-    "source_section": "9. Sales Channels"
+    "source_fingerprint": "39e109aa723f11c8585e2f57e9bfba6f24de4aa8773caa0bd339f579aebdde73",
+    "source_lines": "L2867-L2951",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-01-R029"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2641,41 +2955,34 @@ This Business Requirement Set is governed by the following architecture decision
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-01-R030-AC001",
-      "given": "the applicable business context, actor, and input for Hệ thống phải hỗ trợ: - Agency",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-WS-01-R030-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BRD-WS-01-R030-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Hệ thống phải hỗ trợ: - Agency",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BRD-WS-01-R030-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-01-R030",
+      "source_document": "docs/BRD/BRD-WS-01.md",
+      "source_fingerprint": "478e83e18c26398341e116b506638f6659f8e3fa177c8ff581eea60ce2490cdd"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-01-R030-AC001",
-        "BRD-WS-01-R030-AC002"
+        "BRD-WS-01-R030-AC002",
+        "BRD-WS-01-R030-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-01-R030-O001",
@@ -2698,9 +3005,9 @@ This Business Requirement Set is governed by the following architecture decision
     "source_context_heading": "9. Sales Channels",
     "source_context_sha256": "c51203f69e40724208e93909b1dff7733e62620546cbf8a408680d28ec69886e",
     "source_document": "docs/BRD/BRD-WS-01.md",
-    "source_fingerprint": "6c21d6c68d7be259b327e00379fd0ae9cedb6b4fcf4f5423646edc4841b7b06f",
-    "source_lines": "L164-L168",
-    "source_section": "9. Sales Channels"
+    "source_fingerprint": "478e83e18c26398341e116b506638f6659f8e3fa177c8ff581eea60ce2490cdd",
+    "source_lines": "L2953-L3028",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-01-R030"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2725,41 +3032,34 @@ This Business Requirement Set is governed by the following architecture decision
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-01-R031-AC001",
-      "given": "the applicable business context, actor, and input for Hệ thống phải hỗ trợ: - Multi-level Distribution",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-WS-01-R031-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BRD-WS-01-R031-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Hệ thống phải hỗ trợ: - Multi-level Distribution",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BRD-WS-01-R031-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-01-R031",
+      "source_document": "docs/BRD/BRD-WS-01.md",
+      "source_fingerprint": "7d978ce0adc64693dff0994784ab663692af1fc626adbf6cbb2c06df4895ce09"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-01-R031-AC001",
-        "BRD-WS-01-R031-AC002"
+        "BRD-WS-01-R031-AC002",
+        "BRD-WS-01-R031-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-01-R031-O001",
@@ -2782,9 +3082,9 @@ This Business Requirement Set is governed by the following architecture decision
     "source_context_heading": "9. Sales Channels",
     "source_context_sha256": "c51203f69e40724208e93909b1dff7733e62620546cbf8a408680d28ec69886e",
     "source_document": "docs/BRD/BRD-WS-01.md",
-    "source_fingerprint": "2448a386d278cb43563e1a7b739e89775fbdc1310374ce87368d80647f456f7c",
-    "source_lines": "L164-L169",
-    "source_section": "9. Sales Channels"
+    "source_fingerprint": "7d978ce0adc64693dff0994784ab663692af1fc626adbf6cbb2c06df4895ce09",
+    "source_lines": "L3030-L3105",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-01-R031"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2809,41 +3109,34 @@ This Business Requirement Set is governed by the following architecture decision
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-01-R032-AC001",
-      "given": "the applicable business context, actor, and input for Hệ thống phải hỗ trợ: - Online Seller",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-WS-01-R032-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BRD-WS-01-R032-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Hệ thống phải hỗ trợ: - Online Seller",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BRD-WS-01-R032-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-01-R032",
+      "source_document": "docs/BRD/BRD-WS-01.md",
+      "source_fingerprint": "642a0a7d76a4dd2f29730e27f7d3366c63a42b472fd43958147bb69fdea57948"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-01-R032-AC001",
-        "BRD-WS-01-R032-AC002"
+        "BRD-WS-01-R032-AC002",
+        "BRD-WS-01-R032-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-01-R032-O001",
@@ -2866,9 +3159,9 @@ This Business Requirement Set is governed by the following architecture decision
     "source_context_heading": "9. Sales Channels",
     "source_context_sha256": "c51203f69e40724208e93909b1dff7733e62620546cbf8a408680d28ec69886e",
     "source_document": "docs/BRD/BRD-WS-01.md",
-    "source_fingerprint": "5c3188b7cfa1c8574766b6c248f2505c73949fa81526067d522ea247ddff5348",
-    "source_lines": "L164-L170",
-    "source_section": "9. Sales Channels"
+    "source_fingerprint": "642a0a7d76a4dd2f29730e27f7d3366c63a42b472fd43958147bb69fdea57948",
+    "source_lines": "L3107-L3182",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-01-R032"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2893,41 +3186,34 @@ This Business Requirement Set is governed by the following architecture decision
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-01-R033-AC001",
-      "given": "the applicable business context, actor, and input for Hệ thống phải hỗ trợ: - Social Commerce",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-WS-01-R033-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BRD-WS-01-R033-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Hệ thống phải hỗ trợ: - Social Commerce",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BRD-WS-01-R033-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-01-R033",
+      "source_document": "docs/BRD/BRD-WS-01.md",
+      "source_fingerprint": "bb0af505b8fc3234f3a21f874a03482d81488f40523c24acd6e9ee13113637cb"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-01-R033-AC001",
-        "BRD-WS-01-R033-AC002"
+        "BRD-WS-01-R033-AC002",
+        "BRD-WS-01-R033-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-01-R033-O001",
@@ -2950,9 +3236,9 @@ This Business Requirement Set is governed by the following architecture decision
     "source_context_heading": "9. Sales Channels",
     "source_context_sha256": "c51203f69e40724208e93909b1dff7733e62620546cbf8a408680d28ec69886e",
     "source_document": "docs/BRD/BRD-WS-01.md",
-    "source_fingerprint": "2bffe6e5547f6d5bc9f58098c4ebc317c79ad8d3965d0304dc7e236f8d341dae",
-    "source_lines": "L164-L171",
-    "source_section": "9. Sales Channels"
+    "source_fingerprint": "bb0af505b8fc3234f3a21f874a03482d81488f40523c24acd6e9ee13113637cb",
+    "source_lines": "L3184-L3259",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-01-R033"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2977,41 +3263,34 @@ This Business Requirement Set is governed by the following architecture decision
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-01-R034-AC001",
-      "given": "the applicable business context, actor, and input for Hệ thống phải hỗ trợ: - Marketplace",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-WS-01-R034-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BRD-WS-01-R034-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Hệ thống phải hỗ trợ: - Marketplace",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BRD-WS-01-R034-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-01-R034",
+      "source_document": "docs/BRD/BRD-WS-01.md",
+      "source_fingerprint": "2af140284c1c5f335f24db4cdeb26ecf2fa0b15814e00beeab35ab9a16ae882e"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-01-R034-AC001",
-        "BRD-WS-01-R034-AC002"
+        "BRD-WS-01-R034-AC002",
+        "BRD-WS-01-R034-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-01-R034-O001",
@@ -3034,9 +3313,9 @@ This Business Requirement Set is governed by the following architecture decision
     "source_context_heading": "9. Sales Channels",
     "source_context_sha256": "c51203f69e40724208e93909b1dff7733e62620546cbf8a408680d28ec69886e",
     "source_document": "docs/BRD/BRD-WS-01.md",
-    "source_fingerprint": "08b296fb673343e9ddc3c4e80290f95b49b6a8f96cf7202a47c125373bf981c6",
-    "source_lines": "L164-L172",
-    "source_section": "9. Sales Channels"
+    "source_fingerprint": "2af140284c1c5f335f24db4cdeb26ecf2fa0b15814e00beeab35ab9a16ae882e",
+    "source_lines": "L3261-L3336",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-01-R034"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3061,41 +3340,34 @@ This Business Requirement Set is governed by the following architecture decision
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "INTEGRATION_BOUNDARY_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-01-R035-AC001",
-      "given": "a contract interaction at the integration boundary defined by Hệ thống phải hỗ trợ: - API Partner",
-      "observable_evidence": "contract validation result, boundary ownership record, external outcome, and reconciliation evidence where the contract requires it",
-      "then": "the interaction is accepted only at the declared boundary, names the responsible owner, and exposes the external outcome or reconciliation result required by the contract",
-      "verifies": [
-        "BRD-WS-01-R035-O001"
-      ],
-      "when": "a conforming interaction is submitted and its ownership boundary is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "INTEGRATION_CONTRACT_REJECTION_V1",
-      "criterion_id": "BRD-WS-01-R035-AC002",
-      "given": "an interaction that violates the contract or ownership boundary for Hệ thống phải hỗ trợ: - API Partner",
-      "observable_evidence": "contract rejection or reconciliation result, reason, boundary owner, and external outcome",
-      "then": "the interaction is rejected or reconciled according to the declared contract without transferring ownership to the wrong boundary",
-      "verifies": [
-        "BRD-WS-01-R035-O001"
-      ],
-      "when": "the interaction reaches the integration boundary"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-01-R035",
+      "source_document": "docs/BRD/BRD-WS-01.md",
+      "source_fingerprint": "ca6381aff7515897f641af7aa57bd052258825d1d05ddbc8650b35c409bdd65b"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-01-R035-AC001",
-        "BRD-WS-01-R035-AC002"
+        "BRD-WS-01-R035-AC002",
+        "BRD-WS-01-R035-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-01-R035-O001",
@@ -3118,9 +3390,9 @@ This Business Requirement Set is governed by the following architecture decision
     "source_context_heading": "9. Sales Channels",
     "source_context_sha256": "c51203f69e40724208e93909b1dff7733e62620546cbf8a408680d28ec69886e",
     "source_document": "docs/BRD/BRD-WS-01.md",
-    "source_fingerprint": "af21b38ae825eb9719cffed823117fa8b7ab4d03e304b7bfdfee8545f0bd5bf2",
-    "source_lines": "L164-L173",
-    "source_section": "9. Sales Channels"
+    "source_fingerprint": "ca6381aff7515897f641af7aa57bd052258825d1d05ddbc8650b35c409bdd65b",
+    "source_lines": "L3338-L3413",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-01-R035"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3145,41 +3417,36 @@ This Business Requirement Set is governed by the following architecture decision
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-01-R036-AC001",
-      "given": "the applicable business context, actor, and input for Hệ thống phải hỗ trợ: - Enterprise Customer",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-WS-01-R036-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-008"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BRD-WS-01-R036-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Hệ thống phải hỗ trợ: - Enterprise Customer",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BRD-WS-01-R036-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-01-R036",
+      "source_document": "docs/BRD/BRD-WS-01.md",
+      "source_fingerprint": "1e948d6e6aecffa3abe6396ba9e4c79316c30bf2ca4b98d5969f55ab5d21b6a0"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-01-R036-AC001",
-        "BRD-WS-01-R036-AC002"
+        "BRD-WS-01-R036-AC002",
+        "BRD-WS-01-R036-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-01-R036-O001",
@@ -3204,9 +3471,9 @@ This Business Requirement Set is governed by the following architecture decision
     "source_context_heading": "9. Sales Channels",
     "source_context_sha256": "c51203f69e40724208e93909b1dff7733e62620546cbf8a408680d28ec69886e",
     "source_document": "docs/BRD/BRD-WS-01.md",
-    "source_fingerprint": "dd0f0cd5467d38497d6c37f460aa0853227662c4b75b8cda7a10efe0bef8c5af",
-    "source_lines": "L164-L174",
-    "source_section": "9. Sales Channels"
+    "source_fingerprint": "1e948d6e6aecffa3abe6396ba9e4c79316c30bf2ca4b98d5969f55ab5d21b6a0",
+    "source_lines": "L3415-L3494",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-01-R036"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {

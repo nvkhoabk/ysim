@@ -1,13 +1,20 @@
 ---
 document_code: "BRD-WS-11"
+document_id: "BRD-WS-11"
 title: "Customer Service, Ticketing & Customer Lifecycle"
-product_baseline: "2.3"
-document_revision: "2.3.0-draft.1"
+version: "2.3.0-draft.3"
+document_revision: "2.3.0-draft.3"
+status: "V2.3_DRAFT"
 lifecycle_status: "V2.3_DRAFT"
 language: "vi-VN"
+baseline: "2.3"
+product_baseline: "2.3"
+source_lineage: "v2.2 + approved Phase 1/2A/2B + accepted Acceptance Model C1 + accepted Mapping C3"
 source_baseline: "v2.2"
+last_reviewed_date: "2026-07-15"
+last_remediated_on: "2026-07-17"
+applicable_scope: "V2.3_ACTIVE_AND_RETAINED_SCOPE_RECORDS"
 generated_registry_role: "BRD_CANONICAL_SOURCE"
-last_remediated_on: "2026-07-15"
 ---
 ## Thẩm quyền nguồn yêu cầu v2.3
 
@@ -818,7 +825,7 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
 
 <!-- YSIM:PHASE_2C CANONICAL APPENDIX BEGIN -->
 
-## Phụ lục yêu cầu chuẩn tắc v2.3
+## Phụ lục yêu cầu chuẩn tắc v2.3 — C6-R1
 
 
 
@@ -827,41 +834,37 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-11-001-AC001",
-      "given": "the applicable business context, actor, and input for Customer Portal là Capability thống nhất của Customer",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-11-001-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-005",
+        "P2-DEC-008"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BD-11-001-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Customer Portal là Capability thống nhất của Customer",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BD-11-001-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-11-001",
+      "source_document": "docs/BRD/BRD-WS-11.md",
+      "source_fingerprint": "48a401e66d3c261871c1fc064969928736a829122b84513d4c6a37e16ae37777"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-11-001-AC001",
-        "BD-11-001-AC002"
+        "BD-11-001-AC002",
+        "BD-11-001-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-11-001-O001",
@@ -887,9 +890,9 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
     "source_context_heading": "5. Customer Portal",
     "source_context_sha256": "b1edef472fca783ec9be9bfc1dd0988af02e50ccfadf3e6fa59b735f0fc25204",
     "source_document": "docs/BRD/BRD-WS-11.md",
-    "source_fingerprint": "57ccba27b9b2f3ff0540333a6ccb46011e8bd2aa6d14524fc3ad9f8e15637e60",
-    "source_lines": "L612-L615",
-    "source_section": "28. Business Decisions (Locked) > BD-11-001"
+    "source_fingerprint": "48a401e66d3c261871c1fc064969928736a829122b84513d4c6a37e16ae37777",
+    "source_lines": "L832-L913",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-11-001"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -914,54 +917,36 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-11-002-AC001",
-      "given": "the applicable business context, actor, and input for Customer Identity thuộc Platform. Customer Relationship thuộc Organization",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-11-002-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-008"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-11-002-AC002",
-      "given": "the applicable business context, actor, and input for Customer Identity thuộc Platform. Customer Relationship thuộc Organization",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-11-002-O002"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BD-11-002-AC003",
-      "given": "an unsupported or invalid business input at the boundary governed by Customer Identity thuộc Platform. Customer Relationship thuộc Organization",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BD-11-002-O001",
-        "BD-11-002-O002"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-11-002",
+      "source_document": "docs/BRD/BRD-WS-11.md",
+      "source_fingerprint": "597327ba51312eea6fee51c814a779122af1bb903b2e4dd7aba8f3cf7c669adc"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-11-002-AC001",
-        "BD-11-002-AC003"
+        "BD-11-002-AC003",
+        "BD-11-002-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-11-002-O001",
@@ -970,7 +955,8 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
     {
       "acceptance_criterion_references": [
         "BD-11-002-AC002",
-        "BD-11-002-AC003"
+        "BD-11-002-AC003",
+        "BD-11-002-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-11-002-O002",
@@ -979,36 +965,39 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
-      "criterion_references": [],
-      "rationale": "BD-11-002 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BD-11-002-AC004"
+      ],
+      "rationale": null
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-11-002 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-11-002 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-11-002 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-11-002 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "BD-11-002 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BD-11-002-AC003"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BD-11-002-AC001",
         "BD-11-002-AC002"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-11-002 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-11-002 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -1028,9 +1017,9 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
     "source_context_heading": "BD-11-002",
     "source_context_sha256": "82d9b57e86d4c8c4d27fdfa0263486952617fe0711ae4899f1d3bfdfc6aef08a",
     "source_document": "docs/BRD/BRD-WS-11.md",
-    "source_fingerprint": "56f3d7615fb2ba346b532c2871c9df47f97aec9700b1bfff829e6718468808a0",
-    "source_lines": "L618-L623",
-    "source_section": "28. Business Decisions (Locked) > BD-11-002"
+    "source_fingerprint": "597327ba51312eea6fee51c814a779122af1bb903b2e4dd7aba8f3cf7c669adc",
+    "source_lines": "L915-L1040",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-11-002"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1055,28 +1044,34 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-11-003-AC001",
-      "given": "the applicable business context, actor, and input for Ticket hỗ trợ nhiều Source",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-11-003-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-11-003",
+      "source_document": "docs/BRD/BRD-WS-11.md",
+      "source_fingerprint": "b846e1a708ccfe7c56039a9fcf8dde75137b588d666e8a647956bc727ce5a9e8"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BD-11-003-AC001"
+        "BD-11-003-AC001",
+        "BD-11-003-AC002",
+        "BD-11-003-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-11-003-O001",
@@ -1099,9 +1094,9 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
     "source_context_heading": "BD-11-003",
     "source_context_sha256": "0fd7e4b62a6645131f8e2c6f7cf08d805cbb1ca9361214f46ce83f367e4521ef",
     "source_document": "docs/BRD/BRD-WS-11.md",
-    "source_fingerprint": "e5fa4ae430e74b4e0bf7a9cf789fbe448dcf1a0b03bad4eb906aa9785523d352",
-    "source_lines": "L626-L629",
-    "source_section": "28. Business Decisions (Locked) > BD-11-003"
+    "source_fingerprint": "b846e1a708ccfe7c56039a9fcf8dde75137b588d666e8a647956bc727ce5a9e8",
+    "source_lines": "L1042-L1117",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-11-003"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1126,28 +1121,34 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-11-004-AC001",
-      "given": "the applicable business context, actor, and input for Ticket Category sử dụng Reference Data Management",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-11-004-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-11-004",
+      "source_document": "docs/BRD/BRD-WS-11.md",
+      "source_fingerprint": "50d105a5e7e903cd3c52d35ffe0185ad34bcb935fed10479f225c518888908c0"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BD-11-004-AC001"
+        "BD-11-004-AC001",
+        "BD-11-004-AC002",
+        "BD-11-004-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-11-004-O001",
@@ -1170,9 +1171,9 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
     "source_context_heading": "BD-11-004",
     "source_context_sha256": "628232c2d2731cb0949b1b2f30422bc700945d3b3046e23d7649108723163ff9",
     "source_document": "docs/BRD/BRD-WS-11.md",
-    "source_fingerprint": "6ae985a2214a7ff5e38245a786247f43b466ba18c65b572e6cfc38f6215f93c2",
-    "source_lines": "L632-L635",
-    "source_section": "28. Business Decisions (Locked) > BD-11-004"
+    "source_fingerprint": "50d105a5e7e903cd3c52d35ffe0185ad34bcb935fed10479f225c518888908c0",
+    "source_lines": "L1119-L1194",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-11-004"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1197,28 +1198,36 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-11-005-AC001",
-      "given": "the applicable business context, actor, and input for Capability Routing quyết định Support Queue",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-11-005-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-005"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-11-005",
+      "source_document": "docs/BRD/BRD-WS-11.md",
+      "source_fingerprint": "18be755155bea32ed1d2a7694f7115b0d8681e2bbcba5e004d8b53dd810d62d8"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BD-11-005-AC001"
+        "BD-11-005-AC001",
+        "BD-11-005-AC002",
+        "BD-11-005-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-11-005-O001",
@@ -1243,9 +1252,9 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
     "source_context_heading": "BD-11-005",
     "source_context_sha256": "d87c95733079fe9eff14f0e72dccc923c55873b5829e6405cbd4110a8f519044",
     "source_document": "docs/BRD/BRD-WS-11.md",
-    "source_fingerprint": "16995cb8c3ea01a17439dd862e874bb601d9ee9fd67a19ce9a028f450d82f004",
-    "source_lines": "L638-L641",
-    "source_section": "28. Business Decisions (Locked) > BD-11-005"
+    "source_fingerprint": "18be755155bea32ed1d2a7694f7115b0d8681e2bbcba5e004d8b53dd810d62d8",
+    "source_lines": "L1196-L1275",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-11-005"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1270,72 +1279,58 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-11-006-AC001",
-      "given": "the applicable business context, actor, and input for Support Policy gồm: - SELF_SUPPORT - PARENT_SUPPORT - HYBRID",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-11-006-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-11-006-AC002",
-      "given": "the applicable business context, actor, and input for Support Policy gồm: - SELF_SUPPORT - PARENT_SUPPORT - HYBRID",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-11-006-O002"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-11-006-AC003",
-      "given": "the applicable business context, actor, and input for Support Policy gồm: - SELF_SUPPORT - PARENT_SUPPORT - HYBRID",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-11-006-O003"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-11-006",
+      "source_document": "docs/BRD/BRD-WS-11.md",
+      "source_fingerprint": "355fbae56739bcac3e233763b9c0a06ba591d6aa58f0ae522ed2cad348b91776"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BD-11-006-AC001"
+        "BD-11-006-AC001",
+        "BD-11-006-AC004",
+        "BD-11-006-AC005"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-11-006-O001",
-      "obligation_text": "Support Policy gồm: SELF_SUPPORT."
+      "obligation_text": "Support Policy gồm: SELF_SUPPORT"
     },
     {
       "acceptance_criterion_references": [
-        "BD-11-006-AC002"
+        "BD-11-006-AC002",
+        "BD-11-006-AC004",
+        "BD-11-006-AC005"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-11-006-O002",
-      "obligation_text": "Support Policy gồm: PARENT_SUPPORT."
+      "obligation_text": "Support Policy gồm: PARENT_SUPPORT"
     },
     {
       "acceptance_criterion_references": [
-        "BD-11-006-AC003"
+        "BD-11-006-AC003",
+        "BD-11-006-AC004",
+        "BD-11-006-AC005"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-11-006-O003",
-      "obligation_text": "Support Policy gồm: HYBRID."
+      "obligation_text": "Support Policy gồm: HYBRID"
     }
   ],
   "criticality_applicability": null,
@@ -1354,9 +1349,9 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
     "source_context_heading": "14. Support Policy",
     "source_context_sha256": "a72d3e71d7b7aac537d275f153378d13fc6cd9d649303f441cd9b9426e54f528",
     "source_document": "docs/BRD/BRD-WS-11.md",
-    "source_fingerprint": "a585d6b4a5165e9c629473ec32b09970cd16794d9a0488a6fcdc95879334ea2a",
-    "source_lines": "L644-L651",
-    "source_section": "28. Business Decisions (Locked) > BD-11-006"
+    "source_fingerprint": "355fbae56739bcac3e233763b9c0a06ba591d6aa58f0ae522ed2cad348b91776",
+    "source_lines": "L1277-L1372",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-11-006"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1381,28 +1376,36 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-11-007-AC001",
-      "given": "the applicable business context, actor, and input for Supplier chỉ nhận Supplier Case",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-11-007-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-007"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-11-007",
+      "source_document": "docs/BRD/BRD-WS-11.md",
+      "source_fingerprint": "e5d2a2f4d2baff85b49ee5ac27617a8b876b6b4b7f769aecc25062b4ee20cfcb"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BD-11-007-AC001"
+        "BD-11-007-AC001",
+        "BD-11-007-AC002",
+        "BD-11-007-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-11-007-O001",
@@ -1427,9 +1430,9 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
     "source_context_heading": "BD-11-007",
     "source_context_sha256": "65e7aa628dc9aa4ade49e7c3eec75657fb3bac7817442f2bc0c0cc51890beb6b",
     "source_document": "docs/BRD/BRD-WS-11.md",
-    "source_fingerprint": "a4c1e68adee18c36fc107010fa43ffb392deba0d9ee5e69d971eb200b9f1fa5e",
-    "source_lines": "L654-L657",
-    "source_section": "28. Business Decisions (Locked) > BD-11-007"
+    "source_fingerprint": "e5d2a2f4d2baff85b49ee5ac27617a8b876b6b4b7f769aecc25062b4ee20cfcb",
+    "source_lines": "L1374-L1453",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-11-007"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1454,28 +1457,36 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-11-008-AC001",
-      "given": "the applicable business context, actor, and input for Knowledge Base, FAQ và Troubleshooting Wizard là ba Capability độc lập",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "each named business concept has a distinct identity, owner or reference, and lifecycle evidence; an action on one does not implicitly act on the other",
-      "verifies": [
-        "BD-11-008-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-005"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-11-008",
+      "source_document": "docs/BRD/BRD-WS-11.md",
+      "source_fingerprint": "0e9c49186c7bf8b8672792ec69c13f27f3ea444fe04c55d553587490ec94d120"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BD-11-008-AC001"
+        "BD-11-008-AC001",
+        "BD-11-008-AC002",
+        "BD-11-008-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-11-008-O001",
@@ -1500,9 +1511,9 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
     "source_context_heading": "BD-11-008",
     "source_context_sha256": "ada24aa4e960116073b1690735521f4e5de63847877fc9da2baf8b65ce83e44b",
     "source_document": "docs/BRD/BRD-WS-11.md",
-    "source_fingerprint": "4a8edd3e0f2b25f09aef2d8fd48552b636fe46a659019e992b89014e9e3de65b",
-    "source_lines": "L660-L663",
-    "source_section": "28. Business Decisions (Locked) > BD-11-008"
+    "source_fingerprint": "0e9c49186c7bf8b8672792ec69c13f27f3ea444fe04c55d553587490ec94d120",
+    "source_lines": "L1455-L1534",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-11-008"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1527,28 +1538,36 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-11-009-AC001",
-      "given": "the applicable business context, actor, and input for Organization Onboarding là Business Capability",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-11-009-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-005"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-11-009",
+      "source_document": "docs/BRD/BRD-WS-11.md",
+      "source_fingerprint": "cbc194eab390da9ea03cba85ed5b212f1907ac14b425047432da80e00e5feb78"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BD-11-009-AC001"
+        "BD-11-009-AC001",
+        "BD-11-009-AC002",
+        "BD-11-009-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-11-009-O001",
@@ -1573,9 +1592,9 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
     "source_context_heading": "BD-11-009",
     "source_context_sha256": "375e8756a949005c564a6a8739897165f9f210f25d9432e7e84a5c21e596bc3b",
     "source_document": "docs/BRD/BRD-WS-11.md",
-    "source_fingerprint": "a8fc90815e1e323410491bd626bf6c9ea2d9cc443977756e52f2631bc8248f86",
-    "source_lines": "L666-L669",
-    "source_section": "28. Business Decisions (Locked) > BD-11-009"
+    "source_fingerprint": "cbc194eab390da9ea03cba85ed5b212f1907ac14b425047432da80e00e5feb78",
+    "source_lines": "L1536-L1615",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-11-009"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1600,112 +1619,40 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "CUSTOMER_FEEDBACK_SOURCE_ATTRIBUTION_V1",
-      "criterion_id": "BD-11-010-AC001",
-      "given": "valid Customer Feedback originating from Product",
-      "observable_evidence": "accepted feedback identity, source=Product, attribution reference, and ingestion outcome",
-      "then": "the feedback is accepted and attributed to Product",
-      "verifies": [
-        "BD-11-010-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-008"
       ],
-      "when": "the feedback is submitted"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "CUSTOMER_FEEDBACK_SOURCE_ATTRIBUTION_V1",
-      "criterion_id": "BD-11-010-AC002",
-      "given": "valid Customer Feedback originating from Fulfillment",
-      "observable_evidence": "accepted feedback identity, source=Fulfillment, attribution reference, and ingestion outcome",
-      "then": "the feedback is accepted and attributed to Fulfillment",
-      "verifies": [
-        "BD-11-010-O002"
-      ],
-      "when": "the feedback is submitted"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "CUSTOMER_FEEDBACK_SOURCE_ATTRIBUTION_V1",
-      "criterion_id": "BD-11-010-AC003",
-      "given": "valid Customer Feedback originating from Ticket",
-      "observable_evidence": "accepted feedback identity, source=Ticket, attribution reference, and ingestion outcome",
-      "then": "the feedback is accepted and attributed to Ticket",
-      "verifies": [
-        "BD-11-010-O003"
-      ],
-      "when": "the feedback is submitted"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "CUSTOMER_FEEDBACK_SOURCE_ATTRIBUTION_V1",
-      "criterion_id": "BD-11-010-AC004",
-      "given": "valid Customer Feedback originating from Customer Portal",
-      "observable_evidence": "accepted feedback identity, source=Customer Portal, attribution reference, and ingestion outcome",
-      "then": "the feedback is accepted and attributed to Customer Portal",
-      "verifies": [
-        "BD-11-010-O004"
-      ],
-      "when": "the feedback is submitted"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "CUSTOMER_FEEDBACK_SOURCE_REJECTION_V1",
-      "criterion_id": "BD-11-010-AC005",
-      "given": "Customer Feedback with an unsupported source or malformed source attribution",
-      "observable_evidence": "submitted source, validation reason, rejection outcome, and absence of accepted feedback identity",
-      "then": "the input is rejected with a deterministic source-validation reason and is not recorded as accepted feedback",
-      "verifies": [
-        "BD-11-010-O005"
-      ],
-      "when": "the feedback is submitted"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-11-010",
+      "source_document": "docs/BRD/BRD-WS-11.md",
+      "source_fingerprint": "f239c38b49f990ec987dd74f56196ef3736b5457164cdf92536d920505e828ae"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BD-11-010-AC001"
-      ],
-      "applicability": "V2.3_ACTIVE",
-      "obligation_id": "BD-11-010-O001",
-      "obligation_text": "Customer Feedback from Product is ingested and attributed to Product."
-    },
-    {
-      "acceptance_criterion_references": [
-        "BD-11-010-AC002"
-      ],
-      "applicability": "V2.3_ACTIVE",
-      "obligation_id": "BD-11-010-O002",
-      "obligation_text": "Customer Feedback from Fulfillment is ingested and attributed to Fulfillment."
-    },
-    {
-      "acceptance_criterion_references": [
+        "BD-11-010-AC001",
+        "BD-11-010-AC002",
         "BD-11-010-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
-      "obligation_id": "BD-11-010-O003",
-      "obligation_text": "Customer Feedback from Ticket is ingested and attributed to Ticket."
-    },
-    {
-      "acceptance_criterion_references": [
-        "BD-11-010-AC004"
-      ],
-      "applicability": "V2.3_ACTIVE",
-      "obligation_id": "BD-11-010-O004",
-      "obligation_text": "Customer Feedback from Customer Portal is ingested and attributed to Customer Portal."
-    },
-    {
-      "acceptance_criterion_references": [
-        "BD-11-010-AC005"
-      ],
-      "applicability": "V2.3_ACTIVE",
-      "obligation_id": "BD-11-010-O005",
-      "obligation_text": "Unsupported or malformed Customer Feedback source input has a deterministic rejection outcome."
+      "obligation_id": "BD-11-010-O001",
+      "obligation_text": "Customer Feedback hỗ trợ nhiều nguồn"
     }
   ],
   "criticality_applicability": null,
@@ -1726,9 +1673,9 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
     "source_context_heading": "BD-11-010",
     "source_context_sha256": "a584ef3f194a2bb4ec05e8b01ce64617b50092461754aea3b14faa4e1a56ed03",
     "source_document": "docs/BRD/BRD-WS-11.md",
-    "source_fingerprint": "6f8d90d64bee7d9030dae0bc234b7c37d2837774c7203748d1cec6ed86b5281e",
-    "source_lines": "L672-L675",
-    "source_section": "28. Business Decisions (Locked) > BD-11-010"
+    "source_fingerprint": "f239c38b49f990ec987dd74f56196ef3736b5457164cdf92536d920505e828ae",
+    "source_lines": "L1617-L1696",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-11-010"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1753,28 +1700,34 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-11-011-AC001",
-      "given": "the applicable business context, actor, and input for Platform hỗ trợ CSAT, CES, NPS và Rating",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-11-011-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-11-011",
+      "source_document": "docs/BRD/BRD-WS-11.md",
+      "source_fingerprint": "95874d4947b5938cf4e3a11e3ca40e21041831a8dcda2e17550d0c90c3c962c5"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BD-11-011-AC001"
+        "BD-11-011-AC001",
+        "BD-11-011-AC002",
+        "BD-11-011-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-11-011-O001",
@@ -1797,9 +1750,9 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
     "source_context_heading": "BD-11-011",
     "source_context_sha256": "025e8d12e5e4c2da9d9361a52d3808718a2523aa2effd780ce6f9583cf1ecbf1",
     "source_document": "docs/BRD/BRD-WS-11.md",
-    "source_fingerprint": "39d7337c51485be888a61f6d3aa16cc98da2a782176fb8e5742efee43615a204",
-    "source_lines": "L678-L681",
-    "source_section": "28. Business Decisions (Locked) > BD-11-011"
+    "source_fingerprint": "95874d4947b5938cf4e3a11e3ca40e21041831a8dcda2e17550d0c90c3c962c5",
+    "source_lines": "L1698-L1773",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-11-011"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1824,47 +1777,27 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "PRIVACY_POLICY_CONFORMANCE_V1",
-      "criterion_id": "BD-11-012-AC001",
-      "given": "a data action with actor, purpose, scope, consent where required, and the effective policies for Support sử dụng Consent Based Data Access",
-      "observable_evidence": "actor, purpose, scope, consent state where applicable, effective policy versions, allow or deny result, exposed data set, reason, and audit record",
-      "then": "the action proceeds only when Compliance Policy and Security Policy permit the stated purpose and scope, with the permitted data outcome and audit evidence aligned",
-      "verifies": [
-        "BD-11-012-O001"
-      ],
-      "when": "privacy conformance and the protected data action are evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "PRIVACY_POLICY_DENIAL_V1",
-      "criterion_id": "BD-11-012-AC002",
-      "given": "a data action whose purpose, consent, scope, or effective policy does not permit the requested data use under Support sử dụng Consent Based Data Access",
-      "observable_evidence": "actor, purpose, consent and scope, effective policies, denial reason, exposed-data comparison, and audit record",
-      "then": "the data action is denied, no additional protected data is exposed or changed, and the policy reason is audited",
-      "verifies": [
-        "BD-11-012-O001"
-      ],
-      "when": "privacy conformance is evaluated"
-    },
-    {
-      "case": "AUTHORIZATION_BOUNDARY",
-      "controlled_contract": "EXPLICIT_AUTHORIZATION_BOUNDARY_V1",
-      "criterion_id": "BD-11-012-AC003",
-      "given": "an actor lacking the permission, role, identity assurance, consent, or access condition stated by Support sử dụng Consent Based Data Access",
-      "observable_evidence": "actor and scope, effective policy or assurance, decision, protected-state comparison, reason, and audit evidence",
-      "then": "access is denied or challenged according to the referenced obligation, protected state remains unchanged, and the decision is auditable",
-      "verifies": [
-        "BD-11-012-O001"
-      ],
-      "when": "the actor attempts the governed action"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-11-012",
+      "source_document": "docs/BRD/BRD-WS-11.md",
+      "source_fingerprint": "d8a0fb4b9c208f4a5d3dbe9f7ddeca7f0a602928fb2f14553002982cb12775f8"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
@@ -1880,36 +1813,38 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BD-11-012-AC003"
       ],
-      "status": "APPLICABLE"
+      "rationale": null
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-11-012 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-11-012 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-11-012 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-11-012 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "BD-11-012 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BD-11-012-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BD-11-012-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-11-012 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-11-012 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -1927,9 +1862,9 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
     "source_context_heading": "BD-11-012",
     "source_context_sha256": "17e41395671d76acc6ead919db625c6fc6b005231df94a3bd430cf0d0d0d84e4",
     "source_document": "docs/BRD/BRD-WS-11.md",
-    "source_fingerprint": "1d1c1966af8d627414229dd66d5337918f04e8dd1bf7749e8745a6f67d3c46f8",
-    "source_lines": "L684-L687",
-    "source_section": "28. Business Decisions (Locked) > BD-11-012"
+    "source_fingerprint": "d8a0fb4b9c208f4a5d3dbe9f7ddeca7f0a602928fb2f14553002982cb12775f8",
+    "source_lines": "L1775-L1885",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-11-012"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1954,28 +1889,36 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-11-013-AC001",
-      "given": "the applicable business context, actor, and input for Feature Request là Business Capability của Platform",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-11-013-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-005"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-11-013",
+      "source_document": "docs/BRD/BRD-WS-11.md",
+      "source_fingerprint": "eb873db4c8d104ad1a3d8c9d3eeb7ede69e1a3d0d909370f81843da9e486f89a"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BD-11-013-AC001"
+        "BD-11-013-AC001",
+        "BD-11-013-AC002",
+        "BD-11-013-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-11-013-O001",
@@ -2000,9 +1943,9 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
     "source_context_heading": "25. Feature Request",
     "source_context_sha256": "b436f55bd70f4c1a97682da99f82fd0303c73e194b963b4dc454c1b436c8a6f3",
     "source_document": "docs/BRD/BRD-WS-11.md",
-    "source_fingerprint": "e6790de2ef3a28be293063e56f9735e5022eae894e34e769a070258c1b32d0a1",
-    "source_lines": "L690-L693",
-    "source_section": "28. Business Decisions (Locked) > BD-11-013"
+    "source_fingerprint": "eb873db4c8d104ad1a3d8c9d3eeb7ede69e1a3d0d909370f81843da9e486f89a",
+    "source_lines": "L1887-L1966",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-11-013"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2027,106 +1970,60 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-11-014-AC001",
-      "given": "the applicable business context, actor, and input for Version 2.0 triển khai Auto Translation. AI Customer Support được giữ chỗ",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-11-014-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-11-014-AC002",
-      "given": "the applicable business context, actor, and input for Version 2.0 triển khai Auto Translation. AI Customer Support được giữ chỗ",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-11-014-O002"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BD-11-014-AC003",
-      "given": "an unsupported or invalid business input at the boundary governed by Version 2.0 triển khai Auto Translation. AI Customer Support được giữ chỗ",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BD-11-014-O001",
-        "BD-11-014-O002"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
-    }
-  ],
-  "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
-  "acceptance_unit": true,
-  "atomic_obligations": [
-    {
-      "acceptance_criterion_references": [
-        "BD-11-014-AC001",
-        "BD-11-014-AC003"
-      ],
-      "applicability": "V2.3_ACTIVE",
-      "obligation_id": "BD-11-014-O001",
-      "obligation_text": "Version 2.0 triển khai Auto Translation"
-    },
-    {
-      "acceptance_criterion_references": [
-        "BD-11-014-AC002",
-        "BD-11-014-AC003"
-      ],
-      "applicability": "V2.3_ACTIVE",
-      "obligation_id": "BD-11-014-O002",
-      "obligation_text": "AI Customer Support được giữ chỗ"
-    }
-  ],
+  "acceptance_contract": null,
+  "acceptance_mechanism": null,
+  "acceptance_rationale": "Composite parent coverage is satisfied only through ALL_CHILDREN; the parent is not an implementation, acceptance, scope-coverage, or criticality unit.",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "STRUCTURAL_RECORD",
+  "acceptance_unit": false,
+  "atomic_obligations": [],
   "criticality_applicability": null,
-  "criticality_unit": true,
+  "criticality_unit": false,
   "delivery_commitment": "COMMITTED_FOR_V2.3",
-  "implementation_unit": true,
+  "implementation_unit": false,
   "lifecycle": "V2.3_DRAFT",
   "normative_statement": "Version 2.0 triển khai Auto Translation. AI Customer Support được giữ chỗ.",
   "provenance": {
     "approved_decisions": [
       "P2-DEC-008",
-      "P2-DEC-010"
+      "P2-DEC-010",
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
     ],
     "identity_origin": "PRESERVED_STABLE_ID",
     "original_identity": "BD-11-014",
+    "phase_2c_c3_actions": [
+      "C3_STRUCTURAL_RECONCILIATION_PARENT"
+    ],
     "previous_temporary_key": null,
     "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
     "source_baseline": "v2.2",
     "source_context_heading": "BD-11-014",
     "source_context_sha256": "be16150cdac5e1af4dc76dd0fe7bd066913d50b895f3dd61f9ab1212324ba1a6",
     "source_document": "docs/BRD/BRD-WS-11.md",
-    "source_fingerprint": "88cc36f91e728d29e24d38e276deed7a73929f5b456a658b7694ef1bc01bdc2b",
-    "source_lines": "L696-L701",
-    "source_section": "28. Business Decisions (Locked) > BD-11-014"
+    "source_fingerprint": "a0176a2063826c369797ce45e2e1e689c841327bb8a94a78cab819c54ee4d1c6",
+    "source_fingerprint_before_c3": "88cc36f91e728d29e24d38e276deed7a73929f5b456a658b7694ef1bc01bdc2b",
+    "source_lines": "L1968-L2029",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-11-014"
   },
-  "record_kind": "CANONICAL_ATOMIC",
+  "record_kind": "COMPOSITE_PARENT",
   "relationships": {
     "alias_of": null,
     "aliases": [],
-    "coverage_mode": null,
+    "coverage_mode": "ALL_CHILDREN",
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [
+      "BRD-WS-11-R018",
+      "BRD-WS-11-R019"
+    ]
   },
   "requirement_type": "BUSINESS_DECISION",
-  "scope_coverage_unit": true,
+  "scope_coverage_unit": false,
   "scope_status": "V2.3_ACTIVE",
   "stable_id": "BD-11-014",
   "title": "Version 2.0 triển khai Auto Translation. AI Customer Support được giữ chỗ",
-  "verification_criticality": "HIGH"
+  "verification_criticality": "NOT_APPLICABLE"
 }
 ```
 <!-- YSIM:REQUIREMENT END -->
@@ -2136,9 +2033,20 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "NOT_APPLICABLE_FOR_V2.3",
+    "inference": false,
+    "requirement_id": "BD-11-015",
+    "scope_status": "FUTURE"
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "NOT_APPLICABLE_FOR_V2.3",
+    "runtime_status": "NOT_APPLICABLE_FOR_V2.3"
+  },
   "acceptance_rationale": "Requirement is retained for a future baseline and is excluded from v2.3 delivery.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
   "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
   "acceptance_unit": false,
   "atomic_obligations": [],
@@ -2160,9 +2068,9 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
     "source_context_heading": "BD-11-015",
     "source_context_sha256": "25bee1d1c16864501db07b5891ed4a215c2fcbe2c1b83e9937d7d690bfc86403",
     "source_document": "docs/BRD/BRD-WS-11.md",
-    "source_fingerprint": "a4f571f234982cc33ff119d6513b593d8c81e53154af81d832e9b7ccc82061cc",
-    "source_lines": "L704-L707",
-    "source_section": "28. Business Decisions (Locked) > BD-11-015"
+    "source_fingerprint": "895f1480dda6aeeb2c47bd909b1367f5da6aa7edbc0b9ad58208c6cf0a84bd94",
+    "source_lines": "L2031-L2091",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-11-015"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2187,9 +2095,20 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "NOT_APPLICABLE_FOR_V2.3",
+    "inference": false,
+    "requirement_id": "BRD-WS-11-R001",
+    "scope_status": "FUTURE"
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "NOT_APPLICABLE_FOR_V2.3",
+    "runtime_status": "NOT_APPLICABLE_FOR_V2.3"
+  },
   "acceptance_rationale": "Requirement is retained for a future baseline and is excluded from v2.3 delivery.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
   "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
   "acceptance_unit": false,
   "atomic_obligations": [],
@@ -2210,8 +2129,8 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
     "source_context_sha256": "d839226d833de8be1f4fa7c4ef837dab8d7131772336c8d6b507021a40d4357b",
     "source_document": "docs/BRD/BRD-WS-11.md",
     "source_fingerprint": "919c286d8f34027e37ce750b513b0865d52427e6526ffcc508229c579e9e7b80",
-    "source_lines": "L98",
-    "source_section": "3. Customer Lifecycle"
+    "source_lines": "L2093-L2151",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-11-R001"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2232,82 +2151,92 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
 <!-- YSIM:REQUIREMENT END -->
 
 <!-- YSIM:REQUIREMENT BEGIN -->
-### BRD-WS-11-R002 — Customer Identity luôn thuộc YSim
+### BRD-WS-11-R002 — Customer Identity là canonical identity record do YSim Platform quản lý; điều này không xác lập …
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DESIGN_CONFORMANCE_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-11-R002-AC001",
-      "given": "a v2.3 capability, configuration, or design change governed by Customer Identity luôn thuộc YSim",
-      "observable_evidence": "conformance decision, requirement-to-design trace, applicable configuration evidence, and recorded boundary violations",
-      "then": "the conformance review identifies the applicable principle, links it to the governed requirement and design boundary, and records no prohibited coupling",
-      "verifies": [
-        "BRD-WS-11-R002-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-008",
+        "V23-P2C-ACCEPTANCE-MAPPING-C3"
       ],
-      "when": "conformance is reviewed before the change is accepted"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "DESIGN_CONFORMANCE_FAILURE_V1",
-      "criterion_id": "BRD-WS-11-R002-AC002",
-      "given": "a proposed change with missing traceability or a boundary violation under Customer Identity luôn thuộc YSim",
-      "observable_evidence": "conformance result, violated principle, missing trace or configuration evidence, and review record",
-      "then": "the change receives a non-conforming decision identifying the missing trace or violated boundary and is not accepted as conforming",
-      "verifies": [
-        "BRD-WS-11-R002-O001"
-      ],
-      "when": "design conformance is reviewed"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-11-R002",
+      "source_document": "docs/BRD/BRD-WS-11.md",
+      "source_fingerprint": "9d0904dfb3fa582b15f6d912c86920a8afbfb57be5785195b0bf0860a20746dc"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-11-R002-AC001",
-        "BRD-WS-11-R002-AC002"
+        "BRD-WS-11-R002-AC003",
+        "BRD-WS-11-R002-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-11-R002-O001",
-      "obligation_text": "Customer Identity luôn thuộc YSim"
+      "obligation_text": "Customer Identity là canonical identity record do YSim Platform quản lý"
+    },
+    {
+      "acceptance_criterion_references": [
+        "BRD-WS-11-R002-AC002",
+        "BRD-WS-11-R002-AC003",
+        "BRD-WS-11-R002-AC004"
+      ],
+      "applicability": "V2.3_ACTIVE",
+      "obligation_id": "BRD-WS-11-R002-O002",
+      "obligation_text": "điều này không xác lập quyền sở hữu pháp lý dữ liệu cá nhân, và Organization chỉ được truy cập, quản lý trong phạm vi relationship, consent, purpose, policy và jurisdiction được phép"
     }
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
-      "criterion_references": [],
-      "rationale": "BRD-WS-11-R002 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BRD-WS-11-R002-AC004"
+      ],
+      "rationale": null
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-11-R002 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-11-R002 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-11-R002 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-11-R002 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "BRD-WS-11-R002 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BRD-WS-11-R002-AC003"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
-        "BRD-WS-11-R002-AC001"
-      ],
-      "status": "APPLICABLE"
+        "BRD-WS-11-R002-AC001",
+        "BRD-WS-11-R002-AC002"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-11-R002 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-11-R002 does not define a recovery obligation."
     }
   },
   "criticality_dispositions": [
@@ -2323,22 +2252,29 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
   "delivery_commitment": "COMMITTED_FOR_V2.3",
   "implementation_unit": true,
   "lifecycle": "V2.3_DRAFT",
-  "normative_statement": "Customer Identity luôn thuộc YSim.",
+  "normative_statement": "Customer Identity là canonical identity record do YSim Platform quản lý; điều này không xác lập quyền sở hữu pháp lý dữ liệu cá nhân, và Organization chỉ được truy cập, quản lý trong phạm vi relationship, consent, purpose, policy và jurisdiction được phép.",
   "provenance": {
     "approved_decisions": [
-      "P2-DEC-008"
+      "P2-DEC-008",
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
     ],
     "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
     "original_identity": "TMP-BRD-WS-11-002",
+    "phase_2c_c3_actions": [
+      "C3_APPROVED_SEMANTIC_DIRECTIVE"
+    ],
     "previous_temporary_key": "TMP-BRD-WS-11-002",
     "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
     "source_baseline": "v2.2",
     "source_context_heading": "4. Enterprise Customer Principle",
     "source_context_sha256": "cfa9fa544137f2b7842d75f211e25bfbee6947004cc59ba6b21a3c2a6dea4f8b",
     "source_document": "docs/BRD/BRD-WS-11.md",
-    "source_fingerprint": "a2a8c12f1b01f70ea27bee878874489bf37b80a4d48ec3e7102ffa7e0317c556",
-    "source_lines": "L108",
-    "source_section": "4. Enterprise Customer Principle"
+    "source_fingerprint": "9d0904dfb3fa582b15f6d912c86920a8afbfb57be5785195b0bf0860a20746dc",
+    "source_fingerprint_before_c3": "a2a8c12f1b01f70ea27bee878874489bf37b80a4d48ec3e7102ffa7e0317c556",
+    "source_lines": "L2153-L2295",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-11-R002"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2352,103 +2288,98 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
   "scope_coverage_unit": true,
   "scope_status": "V2.3_ACTIVE",
   "stable_id": "BRD-WS-11-R002",
-  "title": "Customer Identity luôn thuộc YSim",
+  "title": "Customer Identity là canonical identity record do YSim Platform quản lý; điều này không xác lập …",
   "verification_criticality": "CRITICAL"
 }
 ```
 <!-- YSIM:REQUIREMENT END -->
 
 <!-- YSIM:REQUIREMENT BEGIN -->
-### BRD-WS-11-R003 — Organization chỉ được cấp quyền quản lý Relationship
+### BRD-WS-11-R003 — Organization chỉ được quản lý Organization-scoped Customer Relationship và dữ liệu hoặc quyền đư…
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DESIGN_CONFORMANCE_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-11-R003-AC001",
-      "given": "a v2.3 capability, configuration, or design change governed by Organization chỉ được cấp quyền quản lý Relationship",
-      "observable_evidence": "conformance decision, requirement-to-design trace, applicable configuration evidence, and recorded boundary violations",
-      "then": "the conformance review identifies the applicable principle, links it to the governed requirement and design boundary, and records no prohibited coupling",
-      "verifies": [
-        "BRD-WS-11-R003-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "V23-P2C-ACCEPTANCE-MAPPING-C3"
       ],
-      "when": "conformance is reviewed before the change is accepted"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "DESIGN_CONFORMANCE_FAILURE_V1",
-      "criterion_id": "BRD-WS-11-R003-AC002",
-      "given": "a proposed change with missing traceability or a boundary violation under Organization chỉ được cấp quyền quản lý Relationship",
-      "observable_evidence": "conformance result, violated principle, missing trace or configuration evidence, and review record",
-      "then": "the change receives a non-conforming decision identifying the missing trace or violated boundary and is not accepted as conforming",
-      "verifies": [
-        "BRD-WS-11-R003-O001"
-      ],
-      "when": "design conformance is reviewed"
-    },
-    {
-      "case": "AUTHORIZATION_BOUNDARY",
-      "controlled_contract": "EXPLICIT_AUTHORIZATION_BOUNDARY_V1",
-      "criterion_id": "BRD-WS-11-R003-AC003",
-      "given": "an actor lacking the permission, role, identity assurance, consent, or access condition stated by Organization chỉ được cấp quyền quản lý Relationship",
-      "observable_evidence": "actor and scope, effective policy or assurance, decision, protected-state comparison, reason, and audit evidence",
-      "then": "access is denied or challenged according to the referenced obligation, protected state remains unchanged, and the decision is auditable",
-      "verifies": [
-        "BRD-WS-11-R003-O001"
-      ],
-      "when": "the actor attempts the governed action"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-11-R003",
+      "source_document": "docs/BRD/BRD-WS-11.md",
+      "source_fingerprint": "8b014a3a00a1e523fcfdc825c69d163ace56d18cdbcf1d1e42e40858e701bf25"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-11-R003-AC001",
-        "BRD-WS-11-R003-AC002",
-        "BRD-WS-11-R003-AC003"
+        "BRD-WS-11-R003-AC003",
+        "BRD-WS-11-R003-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-11-R003-O001",
-      "obligation_text": "Organization chỉ được cấp quyền quản lý Relationship"
+      "obligation_text": "Organization chỉ được quản lý Organization-scoped Customer Relationship và dữ liệu hoặc quyền được cấp trong relationship đó"
+    },
+    {
+      "acceptance_criterion_references": [
+        "BRD-WS-11-R003-AC002",
+        "BRD-WS-11-R003-AC003",
+        "BRD-WS-11-R003-AC004"
+      ],
+      "applicability": "V2.3_ACTIVE",
+      "obligation_id": "BRD-WS-11-R003-O002",
+      "obligation_text": "Organization không được chiếm quyền sở hữu, hợp nhất hoặc sửa canonical Customer Identity ngoài policy được phép"
     }
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
-        "BRD-WS-11-R003-AC003"
+        "BRD-WS-11-R003-AC004"
       ],
-      "status": "APPLICABLE"
+      "rationale": null
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-11-R003 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-11-R003 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-11-R003 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-11-R003 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "BRD-WS-11-R003 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BRD-WS-11-R003-AC003"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
-        "BRD-WS-11-R003-AC001"
-      ],
-      "status": "APPLICABLE"
+        "BRD-WS-11-R003-AC001",
+        "BRD-WS-11-R003-AC002"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-11-R003 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-11-R003 does not define a recovery obligation."
     }
   },
   "criticality_dispositions": [
@@ -2464,20 +2395,28 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
   "delivery_commitment": "COMMITTED_FOR_V2.3",
   "implementation_unit": true,
   "lifecycle": "V2.3_DRAFT",
-  "normative_statement": "Organization chỉ được cấp quyền quản lý Relationship.",
+  "normative_statement": "Organization chỉ được quản lý Organization-scoped Customer Relationship và dữ liệu hoặc quyền được cấp trong relationship đó; Organization không được chiếm quyền sở hữu, hợp nhất hoặc sửa canonical Customer Identity ngoài policy được phép.",
   "provenance": {
-    "approved_decisions": [],
+    "approved_decisions": [
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
+    ],
     "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
     "original_identity": "TMP-BRD-WS-11-003",
+    "phase_2c_c3_actions": [
+      "C3_APPROVED_SEMANTIC_DIRECTIVE"
+    ],
     "previous_temporary_key": "TMP-BRD-WS-11-003",
     "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
     "source_baseline": "v2.2",
     "source_context_heading": "4. Enterprise Customer Principle",
     "source_context_sha256": "cfa9fa544137f2b7842d75f211e25bfbee6947004cc59ba6b21a3c2a6dea4f8b",
     "source_document": "docs/BRD/BRD-WS-11.md",
-    "source_fingerprint": "d3e7dc2818ea7c66f717446a5a6b87bf5b6c298dbc7b7c2ede1251b1ed2191d2",
-    "source_lines": "L110",
-    "source_section": "4. Enterprise Customer Principle"
+    "source_fingerprint": "8b014a3a00a1e523fcfdc825c69d163ace56d18cdbcf1d1e42e40858e701bf25",
+    "source_fingerprint_before_c3": "d3e7dc2818ea7c66f717446a5a6b87bf5b6c298dbc7b7c2ede1251b1ed2191d2",
+    "source_lines": "L2297-L2437",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-11-R003"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2491,7 +2430,7 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
   "scope_coverage_unit": true,
   "scope_status": "V2.3_ACTIVE",
   "stable_id": "BRD-WS-11-R003",
-  "title": "Organization chỉ được cấp quyền quản lý Relationship",
+  "title": "Organization chỉ được quản lý Organization-scoped Customer Relationship và dữ liệu hoặc quyền đư…",
   "verification_criticality": "CRITICAL"
 }
 ```
@@ -2502,28 +2441,34 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-11-R004-AC001",
-      "given": "the applicable business context, actor, and input for Ticket luôn lưu: - Source",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-WS-11-R004-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-11-R004",
+      "source_document": "docs/BRD/BRD-WS-11.md",
+      "source_fingerprint": "9140047fe5091d1572ad2617eec30554bc2aeae94e75e00c3a44be280c9c01b1"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-WS-11-R004-AC001"
+        "BRD-WS-11-R004-AC001",
+        "BRD-WS-11-R004-AC002",
+        "BRD-WS-11-R004-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-11-R004-O001",
@@ -2547,8 +2492,8 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
     "source_context_sha256": "7b4c9a0e09dcd84b0017631e492be206e60efcdfcdfb9e128a03aefbf4507437",
     "source_document": "docs/BRD/BRD-WS-11.md",
     "source_fingerprint": "9140047fe5091d1572ad2617eec30554bc2aeae94e75e00c3a44be280c9c01b1",
-    "source_lines": "L236-L238",
-    "source_section": "8. Ticket Management"
+    "source_lines": "L2439-L2514",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-11-R004"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2573,28 +2518,34 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-11-R005-AC001",
-      "given": "the applicable business context, actor, and input for Ticket luôn lưu: - Creator",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-WS-11-R005-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-11-R005",
+      "source_document": "docs/BRD/BRD-WS-11.md",
+      "source_fingerprint": "37f05cd235c2425c4c262a44309a80d9c74cc945eb550dc1c6a5c96604b0849b"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-WS-11-R005-AC001"
+        "BRD-WS-11-R005-AC001",
+        "BRD-WS-11-R005-AC002",
+        "BRD-WS-11-R005-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-11-R005-O001",
@@ -2617,9 +2568,9 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
     "source_context_heading": "8. Ticket Management",
     "source_context_sha256": "7b4c9a0e09dcd84b0017631e492be206e60efcdfcdfb9e128a03aefbf4507437",
     "source_document": "docs/BRD/BRD-WS-11.md",
-    "source_fingerprint": "993a6ccd604c5a1bd035bb494b7a1300c5a931c208be9996a950007566fe61b2",
-    "source_lines": "L236-L239",
-    "source_section": "8. Ticket Management"
+    "source_fingerprint": "37f05cd235c2425c4c262a44309a80d9c74cc945eb550dc1c6a5c96604b0849b",
+    "source_lines": "L2516-L2591",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-11-R005"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2644,28 +2595,34 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-11-R006-AC001",
-      "given": "the applicable business context, actor, and input for Ticket luôn lưu: - Owner",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-WS-11-R006-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-11-R006",
+      "source_document": "docs/BRD/BRD-WS-11.md",
+      "source_fingerprint": "1bf215969b0f478562cf300ea0d6adfa18abdf0ccc49cc4d216a134e6069d8d8"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-WS-11-R006-AC001"
+        "BRD-WS-11-R006-AC001",
+        "BRD-WS-11-R006-AC002",
+        "BRD-WS-11-R006-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-11-R006-O001",
@@ -2688,9 +2645,9 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
     "source_context_heading": "8. Ticket Management",
     "source_context_sha256": "7b4c9a0e09dcd84b0017631e492be206e60efcdfcdfb9e128a03aefbf4507437",
     "source_document": "docs/BRD/BRD-WS-11.md",
-    "source_fingerprint": "9bbbb5a43a6d8807122bbf7b7131b344f86da98d637fad207f707ab48cb1a78c",
-    "source_lines": "L236-L240",
-    "source_section": "8. Ticket Management"
+    "source_fingerprint": "1bf215969b0f478562cf300ea0d6adfa18abdf0ccc49cc4d216a134e6069d8d8",
+    "source_lines": "L2593-L2668",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-11-R006"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2715,28 +2672,36 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-11-R007-AC001",
-      "given": "the applicable business context, actor, and input for Supplier Case luôn được YSim Staff theo dõi",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-WS-11-R007-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-007"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-11-R007",
+      "source_document": "docs/BRD/BRD-WS-11.md",
+      "source_fingerprint": "3da6724c89e641752b6041e9aaca12f54a7ac171d32c773f89675d84252fa009"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-WS-11-R007-AC001"
+        "BRD-WS-11-R007-AC001",
+        "BRD-WS-11-R007-AC002",
+        "BRD-WS-11-R007-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-11-R007-O001",
@@ -2762,8 +2727,8 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
     "source_context_sha256": "0ba80de2bfecde2d441e53cad68ca849f9f14fe818e96aae1bb75b9aa8287500",
     "source_document": "docs/BRD/BRD-WS-11.md",
     "source_fingerprint": "3da6724c89e641752b6041e9aaca12f54a7ac171d32c773f89675d84252fa009",
-    "source_lines": "L389",
-    "source_section": "15. Escalation"
+    "source_lines": "L2670-L2749",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-11-R007"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2788,9 +2753,20 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "NOT_APPLICABLE_FOR_V2.3",
+    "inference": false,
+    "requirement_id": "BRD-WS-11-R008",
+    "scope_status": "FUTURE"
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "NOT_APPLICABLE_FOR_V2.3",
+    "runtime_status": "NOT_APPLICABLE_FOR_V2.3"
+  },
   "acceptance_rationale": "Requirement is retained for a future baseline and is excluded from v2.3 delivery.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
   "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
   "acceptance_unit": false,
   "atomic_obligations": [],
@@ -2811,8 +2787,8 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
     "source_context_sha256": "e5cb123717d7964399535259d5bb35b4980897efeb62b8fa750739cdb8e8035a",
     "source_document": "docs/BRD/BRD-WS-11.md",
     "source_fingerprint": "f6d53e58f387de89950fd9e67809fe13ddbace905228d73c93428c15bdc27e9e",
-    "source_lines": "L420",
-    "source_section": "17. Troubleshooting Wizard"
+    "source_lines": "L2751-L2809",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-11-R008"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2837,72 +2813,62 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-11-R009-AC001",
-      "given": "the applicable business context, actor, and input for Có thể cấu hình: - Always - Random - Disabled",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the effective configuration and version are visible in the decision evidence, and an approved configuration change changes the governed result without a code change",
-      "verifies": [
-        "BRD-WS-11-R009-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-11-R009-AC002",
-      "given": "the applicable business context, actor, and input for Có thể cấu hình: - Always - Random - Disabled",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the effective configuration and version are visible in the decision evidence, and an approved configuration change changes the governed result without a code change",
-      "verifies": [
-        "BRD-WS-11-R009-O002"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-11-R009-AC003",
-      "given": "the applicable business context, actor, and input for Có thể cấu hình: - Always - Random - Disabled",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the effective configuration and version are visible in the decision evidence, and an approved configuration change changes the governed result without a code change",
-      "verifies": [
-        "BRD-WS-11-R009-O003"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "approved_semantic_completion_selection": {
+        "decision_id": "P2C-SC-C1-DEC-010",
+        "option_id": "OPT-AST"
+      },
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-11-R009",
+      "source_document": "docs/BRD/BRD-WS-11.md",
+      "source_fingerprint": "b76ca46f932582704b3dc1e2c4ca890dc1e68b40a6d850e7dbe25f900859eb5d"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-WS-11-R009-AC001"
+        "BRD-WS-11-R009-AC001",
+        "BRD-WS-11-R009-AC004",
+        "BRD-WS-11-R009-AC005"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-11-R009-O001",
-      "obligation_text": "Có thể cấu hình: Always."
+      "obligation_text": "Có thể cấu hình: Always"
     },
     {
       "acceptance_criterion_references": [
-        "BRD-WS-11-R009-AC002"
+        "BRD-WS-11-R009-AC002",
+        "BRD-WS-11-R009-AC004",
+        "BRD-WS-11-R009-AC005"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-11-R009-O002",
-      "obligation_text": "Có thể cấu hình: Random."
+      "obligation_text": "Có thể cấu hình: Random"
     },
     {
       "acceptance_criterion_references": [
-        "BRD-WS-11-R009-AC003"
+        "BRD-WS-11-R009-AC003",
+        "BRD-WS-11-R009-AC004",
+        "BRD-WS-11-R009-AC005"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-11-R009-O003",
-      "obligation_text": "Có thể cấu hình: Disabled."
+      "obligation_text": "Có thể cấu hình: Disabled"
     }
   ],
   "criticality_applicability": null,
@@ -2922,8 +2888,8 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
     "source_context_sha256": "8806162cf1df0bbf7231cb5413e25279dd62867ba20c94ebb0d0709dc704c235",
     "source_document": "docs/BRD/BRD-WS-11.md",
     "source_fingerprint": "b76ca46f932582704b3dc1e2c4ca890dc1e68b40a6d850e7dbe25f900859eb5d",
-    "source_lines": "L488-L492",
-    "source_section": "20. Satisfaction Survey"
+    "source_lines": "L2811-L2910",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-11-R009"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2948,9 +2914,20 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "NOT_APPLICABLE_FOR_V2.3",
+    "inference": false,
+    "requirement_id": "BRD-WS-11-R010",
+    "scope_status": "OUT_OF_SCOPE"
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "NOT_APPLICABLE_FOR_V2.3",
+    "runtime_status": "NOT_APPLICABLE_FOR_V2.3"
+  },
   "acceptance_rationale": "Requirement is explicitly outside the v2.3 product scope.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
   "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
   "acceptance_unit": false,
   "atomic_obligations": [],
@@ -2972,9 +2949,9 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
     "source_context_heading": "SOURCE_STATEMENT_FALLBACK",
     "source_context_sha256": "50e82988ceb8b2081f6e29bdde5d67407e0528ab218b37d7027cde21c04748ed",
     "source_document": "docs/BRD/BRD-WS-11.md",
-    "source_fingerprint": "c966fc046f6deb715dfaf84e5b00eaddac97b3edff992d5152ba2a8fdc812028",
-    "source_lines": "L541-L550",
-    "source_section": "24. Attachment"
+    "source_fingerprint": "50e82988ceb8b2081f6e29bdde5d67407e0528ab218b37d7027cde21c04748ed",
+    "source_lines": "L2912-L2972",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-11-R010"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2999,9 +2976,20 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "NOT_APPLICABLE_FOR_V2.3",
+    "inference": false,
+    "requirement_id": "BRD-WS-11-R011",
+    "scope_status": "FUTURE"
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "NOT_APPLICABLE_FOR_V2.3",
+    "runtime_status": "NOT_APPLICABLE_FOR_V2.3"
+  },
   "acceptance_rationale": "Requirement is retained for a future baseline and is excluded from v2.3 delivery.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
   "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
   "acceptance_unit": false,
   "atomic_obligations": [],
@@ -3024,8 +3012,8 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
     "source_context_sha256": "b5da41892d1bccc8c1dd849d101b4c687ac3da6e8c6a3a867d1b1503c5826d87",
     "source_document": "docs/BRD/BRD-WS-11.md",
     "source_fingerprint": "73c4feb3a06ddd6d7ce8238f4950aafc5b82c034013ed888fc1d46b6ccd4293f",
-    "source_lines": "L592",
-    "source_section": "26. AI & Translation"
+    "source_lines": "L2974-L3034",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-11-R011"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3050,9 +3038,20 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "NOT_APPLICABLE_FOR_V2.3",
+    "inference": false,
+    "requirement_id": "BRD-WS-11-R012",
+    "scope_status": "FUTURE"
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "NOT_APPLICABLE_FOR_V2.3",
+    "runtime_status": "NOT_APPLICABLE_FOR_V2.3"
+  },
   "acceptance_rationale": "Requirement is retained for a future baseline and is excluded from v2.3 delivery.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
   "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
   "acceptance_unit": false,
   "atomic_obligations": [],
@@ -3076,8 +3075,8 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
     "source_context_sha256": "00343bcfac7b2991460da2a67b2b5aa50f513da8cc4544c72b587f39666ba129",
     "source_document": "docs/BRD/BRD-WS-11.md",
     "source_fingerprint": "b083a8d89f7a333c09fe00bb68a222c742d49c3b959ae6f8bfc732ed1771311a",
-    "source_lines": "L598-L600",
-    "source_section": "27. Future Capability"
+    "source_lines": "L3036-L3097",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-11-R012"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3102,9 +3101,20 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "NOT_APPLICABLE_FOR_V2.3",
+    "inference": false,
+    "requirement_id": "BRD-WS-11-R013",
+    "scope_status": "FUTURE"
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "NOT_APPLICABLE_FOR_V2.3",
+    "runtime_status": "NOT_APPLICABLE_FOR_V2.3"
+  },
   "acceptance_rationale": "Requirement is retained for a future baseline and is excluded from v2.3 delivery.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
   "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
   "acceptance_unit": false,
   "atomic_obligations": [],
@@ -3127,9 +3137,9 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
     "source_context_heading": "27. Future Capability",
     "source_context_sha256": "00343bcfac7b2991460da2a67b2b5aa50f513da8cc4544c72b587f39666ba129",
     "source_document": "docs/BRD/BRD-WS-11.md",
-    "source_fingerprint": "ebcd2947652a234ad943bce8ea5c72d9823e94b7bb500161c63675beda586d8b",
-    "source_lines": "L598-L601",
-    "source_section": "27. Future Capability"
+    "source_fingerprint": "bf27ecdd9c45ce63ffe2fdb944942b1afbba8986e2df1c6ca1bda2b7cdf65497",
+    "source_lines": "L3099-L3160",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-11-R013"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3154,9 +3164,20 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "NOT_APPLICABLE_FOR_V2.3",
+    "inference": false,
+    "requirement_id": "BRD-WS-11-R014",
+    "scope_status": "FUTURE"
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "NOT_APPLICABLE_FOR_V2.3",
+    "runtime_status": "NOT_APPLICABLE_FOR_V2.3"
+  },
   "acceptance_rationale": "Requirement is retained for a future baseline and is excluded from v2.3 delivery.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
   "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
   "acceptance_unit": false,
   "atomic_obligations": [],
@@ -3179,9 +3200,9 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
     "source_context_heading": "27. Future Capability",
     "source_context_sha256": "00343bcfac7b2991460da2a67b2b5aa50f513da8cc4544c72b587f39666ba129",
     "source_document": "docs/BRD/BRD-WS-11.md",
-    "source_fingerprint": "9f8968ee10a2c1a85a210de34dd4a8c7ca2b6b155cd9f9dea3dcf411902e4d8e",
-    "source_lines": "L598-L602",
-    "source_section": "27. Future Capability"
+    "source_fingerprint": "109ef5acc89d490738bc738eca27fae5559cbf8a718d2e905e02dbe910a4b9d8",
+    "source_lines": "L3162-L3223",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-11-R014"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3206,9 +3227,20 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "NOT_APPLICABLE_FOR_V2.3",
+    "inference": false,
+    "requirement_id": "BRD-WS-11-R015",
+    "scope_status": "FUTURE"
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "NOT_APPLICABLE_FOR_V2.3",
+    "runtime_status": "NOT_APPLICABLE_FOR_V2.3"
+  },
   "acceptance_rationale": "Requirement is retained for a future baseline and is excluded from v2.3 delivery.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
   "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
   "acceptance_unit": false,
   "atomic_obligations": [],
@@ -3230,9 +3262,9 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
     "source_context_heading": "27. Future Capability",
     "source_context_sha256": "00343bcfac7b2991460da2a67b2b5aa50f513da8cc4544c72b587f39666ba129",
     "source_document": "docs/BRD/BRD-WS-11.md",
-    "source_fingerprint": "7b18f9ff39c2d0e484c74bb1088dbc871f294c48598341cce372fa7b2372923a",
-    "source_lines": "L598-L603",
-    "source_section": "27. Future Capability"
+    "source_fingerprint": "5a591416538c1107d8d2b8e9d6d00f70094de11ad1cfdef098200fe30cd20f29",
+    "source_lines": "L3225-L3285",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-11-R015"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3257,9 +3289,20 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "NOT_APPLICABLE_FOR_V2.3",
+    "inference": false,
+    "requirement_id": "BRD-WS-11-R016",
+    "scope_status": "FUTURE"
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "NOT_APPLICABLE_FOR_V2.3",
+    "runtime_status": "NOT_APPLICABLE_FOR_V2.3"
+  },
   "acceptance_rationale": "Requirement is retained for a future baseline and is excluded from v2.3 delivery.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
   "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
   "acceptance_unit": false,
   "atomic_obligations": [],
@@ -3281,9 +3324,9 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
     "source_context_heading": "27. Future Capability",
     "source_context_sha256": "00343bcfac7b2991460da2a67b2b5aa50f513da8cc4544c72b587f39666ba129",
     "source_document": "docs/BRD/BRD-WS-11.md",
-    "source_fingerprint": "03e2624d984da46f32e14996d552c6f19791b550b30da950bffcfe3a2e9dd1b1",
-    "source_lines": "L598-L604",
-    "source_section": "27. Future Capability"
+    "source_fingerprint": "371048e44d5efd2ea56ef6bee1c91d7e3fddd8d456dc8990d7a6b1fb53966974",
+    "source_lines": "L3287-L3347",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-11-R016"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3308,9 +3351,20 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "NOT_APPLICABLE_FOR_V2.3",
+    "inference": false,
+    "requirement_id": "BRD-WS-11-R017",
+    "scope_status": "FUTURE"
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "NOT_APPLICABLE_FOR_V2.3",
+    "runtime_status": "NOT_APPLICABLE_FOR_V2.3"
+  },
   "acceptance_rationale": "Requirement is retained for a future baseline and is excluded from v2.3 delivery.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
   "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
   "acceptance_unit": false,
   "atomic_obligations": [],
@@ -3333,8 +3387,8 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
     "source_context_sha256": "00343bcfac7b2991460da2a67b2b5aa50f513da8cc4544c72b587f39666ba129",
     "source_document": "docs/BRD/BRD-WS-11.md",
     "source_fingerprint": "869079b684d009dce5ff1052db137de3d82bdc0ba880fd1b67d1ec3ea20998b1",
-    "source_lines": "L606",
-    "source_section": "27. Future Capability"
+    "source_lines": "L3349-L3409",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-11-R017"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3355,45 +3409,215 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
 <!-- YSIM:REQUIREMENT END -->
 
 <!-- YSIM:REQUIREMENT BEGIN -->
+### BRD-WS-11-R018 — Version 2.0 triển khai Auto Translation
+
+```json
+{
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-008",
+        "P2-DEC-010",
+        "V23-P2C-ACCEPTANCE-MAPPING-C3"
+      ],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-11-R018",
+      "source_document": "docs/BRD/BRD-WS-11.md",
+      "source_fingerprint": "44d6949e417a0053ee360012d7c8bab4a112b5a055d94f57e34a3cd64860f4af"
+    }
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
+  "acceptance_rationale": null,
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+  "acceptance_unit": true,
+  "atomic_obligations": [
+    {
+      "acceptance_criterion_references": [
+        "BRD-WS-11-R018-AC001",
+        "BRD-WS-11-R018-AC002",
+        "BRD-WS-11-R018-AC003"
+      ],
+      "applicability": "V2.3_ACTIVE",
+      "obligation_id": "BRD-WS-11-R018-O001",
+      "obligation_text": "Version 2.0 triển khai Auto Translation"
+    }
+  ],
+  "criticality_applicability": null,
+  "criticality_unit": true,
+  "delivery_commitment": "COMMITTED_FOR_V2.3",
+  "implementation_unit": true,
+  "lifecycle": "V2.3_DRAFT",
+  "normative_statement": "Version 2.0 triển khai Auto Translation.",
+  "provenance": {
+    "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+    "approved_decisions": [
+      "P2-DEC-008",
+      "P2-DEC-010",
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
+    ],
+    "derived_from_parent": "BD-11-014",
+    "identity_origin": "PHASE_2C_C3_NEW_STABLE_ID_ALLOCATION",
+    "original_identity": "BRD-WS-11-R018",
+    "phase_2c_c3_actions": [
+      "C3_STRUCTURAL_RECONCILIATION_CHILD"
+    ],
+    "previous_temporary_key": null,
+    "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+    "source_baseline": "v2.2",
+    "source_context_heading": "BD-11-014",
+    "source_context_sha256": "be16150cdac5e1af4dc76dd0fe7bd066913d50b895f3dd61f9ab1212324ba1a6",
+    "source_document": "docs/BRD/BRD-WS-11.md",
+    "source_fingerprint": "44d6949e417a0053ee360012d7c8bab4a112b5a055d94f57e34a3cd64860f4af",
+    "source_fingerprint_before_c3": "44d6949e417a0053ee360012d7c8bab4a112b5a055d94f57e34a3cd64860f4af",
+    "source_lines": "L3411-L3507",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-11-R018"
+  },
+  "record_kind": "CANONICAL_ATOMIC",
+  "relationships": {
+    "alias_of": null,
+    "aliases": [],
+    "coverage_mode": null,
+    "derived_from": [
+      "BD-11-014"
+    ],
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "BD-11-014"
+    ]
+  },
+  "requirement_type": "BUSINESS_DECISION",
+  "scope_coverage_unit": true,
+  "scope_status": "V2.3_ACTIVE",
+  "stable_id": "BRD-WS-11-R018",
+  "title": "Version 2.0 triển khai Auto Translation",
+  "verification_criticality": "HIGH"
+}
+```
+<!-- YSIM:REQUIREMENT END -->
+
+<!-- YSIM:REQUIREMENT BEGIN -->
+### BRD-WS-11-R019 — AI Customer Support được giữ chỗ
+
+```json
+{
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "NOT_APPLICABLE_FOR_V2.3",
+    "inference": false,
+    "requirement_id": "BRD-WS-11-R019",
+    "scope_status": "FUTURE"
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "NOT_APPLICABLE_FOR_V2.3",
+    "runtime_status": "NOT_APPLICABLE_FOR_V2.3"
+  },
+  "acceptance_rationale": "This record is not an active canonical atomic v2.3 acceptance unit.",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
+  "acceptance_unit": false,
+  "atomic_obligations": [],
+  "criticality_applicability": null,
+  "criticality_unit": false,
+  "delivery_commitment": "POST_V2.3",
+  "implementation_unit": false,
+  "lifecycle": "RETAINED_SCOPE_RECORD",
+  "normative_statement": "AI Customer Support được giữ chỗ.",
+  "provenance": {
+    "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+    "approved_decisions": [
+      "P2-DEC-008",
+      "P2-DEC-010",
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
+    ],
+    "derived_from_parent": "BD-11-014",
+    "identity_origin": "PHASE_2C_C3_NEW_STABLE_ID_ALLOCATION",
+    "original_identity": "BRD-WS-11-R019",
+    "phase_2c_c3_actions": [
+      "C3_STRUCTURAL_RECONCILIATION_CHILD"
+    ],
+    "previous_temporary_key": null,
+    "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+    "source_baseline": "v2.2",
+    "source_context_heading": "BD-11-014",
+    "source_context_sha256": "be16150cdac5e1af4dc76dd0fe7bd066913d50b895f3dd61f9ab1212324ba1a6",
+    "source_document": "docs/BRD/BRD-WS-11.md",
+    "source_fingerprint": "a3246827a2ff08e2951791ef68b51de7eb5ce1fb5c7d1d1289fe38907f5a5b29",
+    "source_fingerprint_before_c3": "a3246827a2ff08e2951791ef68b51de7eb5ce1fb5c7d1d1289fe38907f5a5b29",
+    "source_lines": "L3509-L3584",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-11-R019"
+  },
+  "record_kind": "CANONICAL_ATOMIC",
+  "relationships": {
+    "alias_of": null,
+    "aliases": [],
+    "coverage_mode": null,
+    "derived_from": [
+      "BD-11-014"
+    ],
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "BD-11-014"
+    ]
+  },
+  "requirement_type": "BUSINESS_DECISION",
+  "scope_coverage_unit": false,
+  "scope_status": "FUTURE",
+  "stable_id": "BRD-WS-11-R019",
+  "title": "AI Customer Support được giữ chỗ",
+  "verification_criticality": "NOT_APPLICABLE"
+}
+```
+<!-- YSIM:REQUIREMENT END -->
+
+<!-- YSIM:REQUIREMENT BEGIN -->
 ### EP-11-001 — Customer Portal là điểm truy cập thống nhất trong toàn bộ Customer Lifecycle
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "EP-11-001-AC001",
-      "given": "the applicable business context, actor, and input for Customer Portal là điểm truy cập thống nhất trong toàn bộ Customer Lifecycle",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "EP-11-001-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-008"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "EP-11-001-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Customer Portal là điểm truy cập thống nhất trong toàn bộ Customer Lifecycle",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "EP-11-001-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "EP-11-001",
+      "source_document": "docs/BRD/BRD-WS-11.md",
+      "source_fingerprint": "3cc218b893453e30c82dfafa136c91b73db394a2e70dc75065a69fc61af7b4aa"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "EP-11-001-AC001",
-        "EP-11-001-AC002"
+        "EP-11-001-AC002",
+        "EP-11-001-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "EP-11-001-O001",
@@ -3418,9 +3642,9 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
     "source_context_heading": "EP-11-001",
     "source_context_sha256": "2bab1ff8de2e2ff3dc37e08c14561b08afdae4ff9632c3c087b420bd5089d901",
     "source_document": "docs/BRD/BRD-WS-11.md",
-    "source_fingerprint": "77d0721560e731e96839b761924ddbf0ebc3421f06432c372a46a2cb8e520784",
-    "source_lines": "L712-L715",
-    "source_section": "29. Enterprise Design Principles > EP-11-001"
+    "source_fingerprint": "3cc218b893453e30c82dfafa136c91b73db394a2e70dc75065a69fc61af7b4aa",
+    "source_lines": "L3586-L3665",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > EP-11-001"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3445,41 +3669,1386 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "EP-11-002-AC001",
-      "given": "the applicable business context, actor, and input for Customer Identity và Customer Relationship được tách biệt",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "each named business concept has a distinct identity, owner or reference, and lifecycle evidence; an action on one does not implicitly act on the other",
-      "verifies": [
-        "EP-11-002-O001"
+  "acceptance_contract": {
+    "boundary_oracle": [
+      "A Relationship references Identity without transferring canonical identity authority"
+    ],
+    "concrete_bindings": [
+      {
+        "allowed_lifecycle_states": {
+          "members": [
+            {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "EP-11-002.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER"
+                ],
+                "source_id": "docs/BRD/BRD-WS-11.md#29. Enterprise Design Principles > EP-11-002",
+                "source_type": "SOURCE_LITERAL",
+                "version": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426"
+              },
+              "identifier": "EP-11-002.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "EP-11-002.O1.1.REFERENCE_TARGET_VALID.ALLOWED_LIFECYCLE_STATES.ORIGIN.MEMBER.1",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [
+                  "P2-DEC-008"
+                ],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-11.md",
+                "source_fingerprint": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426",
+                "source_lines": "L718-L721",
+                "source_section": "29. Enterprise Design Principles > EP-11-002"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "STATE_ID",
+                "resolver_id": "RESOLVE.EP-11-002.EP-11-002.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER",
+                "version": "1.0.0"
+              },
+              "semantic_type": "STATE_ID"
+            }
+          ],
+          "origin": {
+            "origin_id": "EP-11-002.O1.1.REFERENCE_TARGET_VALID.ALLOWED_LIFECYCLE_STATES.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [
+              "P2-DEC-008"
+            ],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-11.md",
+            "source_fingerprint": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426",
+            "source_lines": "L718-L721",
+            "source_section": "29. Enterprise Design Principles > EP-11-002"
+          },
+          "semantic_type": "SET_OF<STATE_ID>"
+        },
+        "allowed_states": {
+          "members": [
+            {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "EP-11-002.ALLOWED_STATES.SOURCE.MEMBER"
+                ],
+                "source_id": "docs/BRD/BRD-WS-11.md#29. Enterprise Design Principles > EP-11-002",
+                "source_type": "SOURCE_LITERAL",
+                "version": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426"
+              },
+              "identifier": "EP-11-002.ALLOWED_STATES.SOURCE.MEMBER",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "EP-11-002.O1.1.REFERENCE_TARGET_VALID.ALLOWED_STATES.ORIGIN.MEMBER.1",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [
+                  "P2-DEC-008"
+                ],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-11.md",
+                "source_fingerprint": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426",
+                "source_lines": "L718-L721",
+                "source_section": "29. Enterprise Design Principles > EP-11-002"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "STATE_ID",
+                "resolver_id": "RESOLVE.EP-11-002.EP-11-002.ALLOWED_STATES.SOURCE.MEMBER",
+                "version": "1.0.0"
+              },
+              "semantic_type": "STATE_ID"
+            }
+          ],
+          "origin": {
+            "origin_id": "EP-11-002.O1.1.REFERENCE_TARGET_VALID.ALLOWED_STATES.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [
+              "P2-DEC-008"
+            ],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-11.md",
+            "source_fingerprint": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426",
+            "source_lines": "L718-L721",
+            "source_section": "29. Enterprise Design Principles > EP-11-002"
+          },
+          "semantic_type": "SET_OF<STATE_ID>"
+        },
+        "reference": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-WS-11.md#29. Enterprise Design Principles > EP-11-002",
+            "source_type": "SOURCE_LITERAL",
+            "version": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426"
+          },
+          "identifier": "EP-11-002.REFERENCE",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "EP-11-002.O1.1.REFERENCE_TARGET_VALID.REFERENCE.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [
+              "P2-DEC-008"
+            ],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-11.md",
+            "source_fingerprint": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426",
+            "source_lines": "L718-L721",
+            "source_section": "29. Enterprise Design Principles > EP-11-002"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "REFERENCE_ID",
+            "resolver_id": "RESOLVE.EP-11-002.EP-11-002.REFERENCE",
+            "version": "1.0.0"
+          },
+          "semantic_type": "REFERENCE_ID"
+        },
+        "registry": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-WS-11.md#29. Enterprise Design Principles > EP-11-002",
+            "source_type": "SOURCE_LITERAL",
+            "version": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426"
+          },
+          "identifier": "EP-11-002.REGISTRY",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "EP-11-002.O1.1.REFERENCE_TARGET_VALID.REGISTRY.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [
+              "P2-DEC-008"
+            ],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-11.md",
+            "source_fingerprint": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426",
+            "source_lines": "L718-L721",
+            "source_section": "29. Enterprise Design Principles > EP-11-002"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "ENTITY_ID",
+            "resolver_id": "RESOLVE.EP-11-002.EP-11-002.REGISTRY",
+            "version": "1.0.0"
+          },
+          "semantic_type": "ENTITY_ID"
+        },
+        "registry_source": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-WS-11.md#29. Enterprise Design Principles > EP-11-002",
+            "source_type": "SOURCE_LITERAL",
+            "version": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426"
+          },
+          "identifier": "EP-11-002.REGISTRY_SOURCE",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "EP-11-002.O1.1.REFERENCE_TARGET_VALID.REGISTRY_SOURCE.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [
+              "P2-DEC-008"
+            ],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-11.md",
+            "source_fingerprint": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426",
+            "source_lines": "L718-L721",
+            "source_section": "29. Enterprise Design Principles > EP-11-002"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "REFERENCE_ID",
+            "resolver_id": "RESOLVE.EP-11-002.EP-11-002.REGISTRY_SOURCE",
+            "version": "1.0.0"
+          },
+          "semantic_type": "REFERENCE_ID"
+        },
+        "target_id": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-WS-11.md#29. Enterprise Design Principles > EP-11-002",
+            "source_type": "SOURCE_LITERAL",
+            "version": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426"
+          },
+          "identifier": "EP-11-002.TARGET_ID",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "EP-11-002.O1.1.REFERENCE_TARGET_VALID.TARGET_ID.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [
+              "P2-DEC-008"
+            ],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-11.md",
+            "source_fingerprint": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426",
+            "source_lines": "L718-L721",
+            "source_section": "29. Enterprise Design Principles > EP-11-002"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "ENTITY_ID",
+            "resolver_id": "RESOLVE.EP-11-002.EP-11-002.TARGET_ID",
+            "version": "1.0.0"
+          },
+          "semantic_type": "ENTITY_ID"
+        },
+        "target_type": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-WS-11.md#29. Enterprise Design Principles > EP-11-002",
+            "source_type": "SOURCE_LITERAL",
+            "version": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426"
+          },
+          "identifier": "EP-11-002.TARGET_TYPE",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "EP-11-002.O1.1.REFERENCE_TARGET_VALID.TARGET_TYPE.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [
+              "P2-DEC-008"
+            ],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-11.md",
+            "source_fingerprint": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426",
+            "source_lines": "L718-L721",
+            "source_section": "29. Enterprise Design Principles > EP-11-002"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "ENTITY_TYPE",
+            "resolver_id": "RESOLVE.EP-11-002.EP-11-002.TARGET_TYPE",
+            "version": "1.0.0"
+          },
+          "semantic_type": "ENTITY_TYPE"
+        }
+      }
+    ],
+    "contract_id": "P2C.C4.CONTRACT.EP-11-002",
+    "inference": false,
+    "mechanism": "APPROVED_TYPED_CUSTOM_AST",
+    "mechanism_version": "C4-R3",
+    "negative_oracle": [
+      "They are merged into one record or one lifecycle mutation changes the other improperly"
+    ],
+    "operator_composition": [
+      "REFERENCE_TARGET_VALID"
+    ],
+    "positive_oracle": [
+      "Identity and Relationship retain independent identities, ownership references and lifecycles"
+    ],
+    "provenance": {
+      "approved_decision_references": [
+        "P2-DEC-008"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+      "inference": false,
+      "source_document": "docs/BRD/BRD-WS-11.md",
+      "source_fingerprint": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426",
+      "source_lines": "L718-L721",
+      "source_section": "29. Enterprise Design Principles > EP-11-002"
     },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "EP-11-002-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Customer Identity và Customer Relationship được tách biệt",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "EP-11-002-O001"
+    "required_evidence": {
+      "evidence_object_ref": {
+        "authoritative_source": {
+          "source_id": "docs/BRD/BRD-WS-11.md#29. Enterprise Design Principles > EP-11-002",
+          "source_type": "SOURCE_LITERAL",
+          "version": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426"
+        },
+        "identifier": "EP-11-002.EP-11-002.CONTRACT.EVIDENCE.OBJECT",
+        "inference": false,
+        "lifecycle": {
+          "status": "ACTIVE",
+          "version": "2.3"
+        },
+        "namespace": "YSIM.V2.3",
+        "origin": {
+          "origin_id": "EP-11-002.CONTRACT.EVIDENCE.ORIGIN",
+          "origin_type": "EVIDENCE_OBJECT"
+        },
+        "provenance": {
+          "approved_decision_references": [
+            "P2-DEC-008"
+          ],
+          "inference": false,
+          "source_document": "docs/BRD/BRD-WS-11.md",
+          "source_fingerprint": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426",
+          "source_lines": "L718-L721",
+          "source_section": "29. Enterprise Design Principles > EP-11-002"
+        },
+        "resolver_contract": {
+          "deterministic": true,
+          "input_types": [],
+          "output_type": "EVIDENCE_OBJECT_REF",
+          "resolver_id": "OBSERVE.EP-11-002.EP-11-002.EP-11-002.CONTRACT.EVIDENCE.OBJECT",
+          "version": "1.0.0"
+        },
+        "semantic_type": "EVIDENCE_OBJECT_REF"
+      },
+      "inference": false,
+      "observed_collection_origin": "EP-11-002.RUNTIME.OBSERVED.FIELDS",
+      "observed_field_ids": [
+        "FIELD.CUSTOMER_IDENTITY_ID",
+        "FIELD.RELATIONSHIP_ID",
+        "FIELD.ORGANIZATION_ID",
+        "FIELD.IDENTITY_LIFECYCLE",
+        "FIELD.RELATIONSHIP_LIFECYCLE",
+        "FIELD.REFERENCE_RESULT"
       ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+      "producer": "EP-11-002.EVIDENCE.PRODUCER",
+      "required_collection_origin": "EP-11-002.SOURCE.REQUIRED.FIELDS",
+      "required_field_ids": [
+        "FIELD.CUSTOMER_IDENTITY_ID",
+        "FIELD.RELATIONSHIP_ID",
+        "FIELD.ORGANIZATION_ID",
+        "FIELD.IDENTITY_LIFECYCLE",
+        "FIELD.RELATIONSHIP_LIFECYCLE",
+        "FIELD.REFERENCE_RESULT"
+      ],
+      "required_values_or_hashes": [
+        "EP-11-002.EVIDENCE.CONTENT.HASH"
+      ],
+      "retrieval_method": "EP-11-002.EVIDENCE.RETRIEVAL",
+      "version_or_correlation": "EP-11-002.EVIDENCE.VERSION.CORRELATION"
+    },
+    "runtime_evidence_executed": false,
+    "runtime_status": "RUNTIME_ADAPTER_PENDING",
+    "semantic_obligation_references": [
+      "EP-11-002-O001"
+    ],
+    "typed_contract_ast": {
+      "approved_clarification": null,
+      "assertions": [
+        {
+          "assertion_id": "EP-11-002.O1.1.REFERENCE_TARGET_VALID",
+          "evaluator_consumed_bindings": [
+            "allowed_lifecycle_states",
+            "allowed_states",
+            "reference",
+            "registry",
+            "registry_source",
+            "target_id",
+            "target_type"
+          ],
+          "evidence_object": {
+            "authoritative_source": {
+              "source_id": "docs/BRD/BRD-WS-11.md#29. Enterprise Design Principles > EP-11-002",
+              "source_type": "SOURCE_LITERAL",
+              "version": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426"
+            },
+            "identifier": "EP-11-002.EP-11-002.O1.1.REFERENCE_TARGET_VALID.EVIDENCE.OBJECT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "EP-11-002.O1.1.REFERENCE_TARGET_VALID.EVIDENCE.ORIGIN",
+              "origin_type": "EVIDENCE_OBJECT"
+            },
+            "provenance": {
+              "approved_decision_references": [
+                "P2-DEC-008"
+              ],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-WS-11.md",
+              "source_fingerprint": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426",
+              "source_lines": "L718-L721",
+              "source_section": "29. Enterprise Design Principles > EP-11-002"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "EVIDENCE_OBJECT_REF",
+              "resolver_id": "OBSERVE.EP-11-002.EP-11-002.EP-11-002.O1.1.REFERENCE_TARGET_VALID.EVIDENCE.OBJECT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "EVIDENCE_OBJECT_REF"
+          },
+          "expected_operand": {
+            "authoritative_source": {
+              "source_id": "docs/BRD/BRD-WS-11.md#29. Enterprise Design Principles > EP-11-002",
+              "source_type": "SOURCE_LITERAL",
+              "version": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426"
+            },
+            "identifier": "EP-11-002.EP-11-002.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "EP-11-002.O1.1.REFERENCE_TARGET_VALID.AUTHORITY.ORIGIN",
+              "origin_type": "SOURCE_LITERAL"
+            },
+            "provenance": {
+              "approved_decision_references": [
+                "P2-DEC-008"
+              ],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-WS-11.md",
+              "source_fingerprint": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426",
+              "source_lines": "L718-L721",
+              "source_section": "29. Enterprise Design Principles > EP-11-002"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "REFERENCE_ID",
+              "resolver_id": "RESOLVE.EP-11-002.EP-11-002.EP-11-002.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "REFERENCE_ID"
+          },
+          "inference": false,
+          "model_conformance_fixture": {
+            "bindings": {
+              "allowed_lifecycle_states": {
+                "members": [
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "EP-11-002.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER"
+                      ],
+                      "source_id": "docs/BRD/BRD-WS-11.md#29. Enterprise Design Principles > EP-11-002",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426"
+                    },
+                    "identifier": "EP-11-002.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "EP-11-002.O1.1.REFERENCE_TARGET_VALID.ALLOWED_LIFECYCLE_STATES.ORIGIN.MEMBER.1",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [
+                        "P2-DEC-008"
+                      ],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-WS-11.md",
+                      "source_fingerprint": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426",
+                      "source_lines": "L718-L721",
+                      "source_section": "29. Enterprise Design Principles > EP-11-002"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "STATE_ID",
+                      "resolver_id": "RESOLVE.EP-11-002.EP-11-002.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "STATE_ID"
+                  }
+                ],
+                "origin": {
+                  "origin_id": "EP-11-002.O1.1.REFERENCE_TARGET_VALID.ALLOWED_LIFECYCLE_STATES.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [
+                    "P2-DEC-008"
+                  ],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-11.md",
+                  "source_fingerprint": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426",
+                  "source_lines": "L718-L721",
+                  "source_section": "29. Enterprise Design Principles > EP-11-002"
+                },
+                "semantic_type": "SET_OF<STATE_ID>"
+              },
+              "allowed_states": {
+                "members": [
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "EP-11-002.ALLOWED_STATES.SOURCE.MEMBER"
+                      ],
+                      "source_id": "docs/BRD/BRD-WS-11.md#29. Enterprise Design Principles > EP-11-002",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426"
+                    },
+                    "identifier": "EP-11-002.ALLOWED_STATES.SOURCE.MEMBER",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "EP-11-002.O1.1.REFERENCE_TARGET_VALID.ALLOWED_STATES.ORIGIN.MEMBER.1",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [
+                        "P2-DEC-008"
+                      ],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-WS-11.md",
+                      "source_fingerprint": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426",
+                      "source_lines": "L718-L721",
+                      "source_section": "29. Enterprise Design Principles > EP-11-002"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "STATE_ID",
+                      "resolver_id": "RESOLVE.EP-11-002.EP-11-002.ALLOWED_STATES.SOURCE.MEMBER",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "STATE_ID"
+                  }
+                ],
+                "origin": {
+                  "origin_id": "EP-11-002.O1.1.REFERENCE_TARGET_VALID.ALLOWED_STATES.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [
+                    "P2-DEC-008"
+                  ],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-11.md",
+                  "source_fingerprint": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426",
+                  "source_lines": "L718-L721",
+                  "source_section": "29. Enterprise Design Principles > EP-11-002"
+                },
+                "semantic_type": "SET_OF<STATE_ID>"
+              },
+              "reference": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-WS-11.md#29. Enterprise Design Principles > EP-11-002",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426"
+                },
+                "identifier": "EP-11-002.REFERENCE",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "EP-11-002.O1.1.REFERENCE_TARGET_VALID.REFERENCE.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [
+                    "P2-DEC-008"
+                  ],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-11.md",
+                  "source_fingerprint": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426",
+                  "source_lines": "L718-L721",
+                  "source_section": "29. Enterprise Design Principles > EP-11-002"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "REFERENCE_ID",
+                  "resolver_id": "RESOLVE.EP-11-002.EP-11-002.REFERENCE",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "REFERENCE_ID"
+              },
+              "registry": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-WS-11.md#29. Enterprise Design Principles > EP-11-002",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426"
+                },
+                "identifier": "EP-11-002.REGISTRY",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "EP-11-002.O1.1.REFERENCE_TARGET_VALID.REGISTRY.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [
+                    "P2-DEC-008"
+                  ],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-11.md",
+                  "source_fingerprint": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426",
+                  "source_lines": "L718-L721",
+                  "source_section": "29. Enterprise Design Principles > EP-11-002"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "ENTITY_ID",
+                  "resolver_id": "RESOLVE.EP-11-002.EP-11-002.REGISTRY",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "ENTITY_ID"
+              },
+              "registry_source": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-WS-11.md#29. Enterprise Design Principles > EP-11-002",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426"
+                },
+                "identifier": "EP-11-002.REGISTRY_SOURCE",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "EP-11-002.O1.1.REFERENCE_TARGET_VALID.REGISTRY_SOURCE.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [
+                    "P2-DEC-008"
+                  ],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-11.md",
+                  "source_fingerprint": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426",
+                  "source_lines": "L718-L721",
+                  "source_section": "29. Enterprise Design Principles > EP-11-002"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "REFERENCE_ID",
+                  "resolver_id": "RESOLVE.EP-11-002.EP-11-002.REGISTRY_SOURCE",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "REFERENCE_ID"
+              },
+              "target_id": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-WS-11.md#29. Enterprise Design Principles > EP-11-002",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426"
+                },
+                "identifier": "EP-11-002.TARGET_ID",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "EP-11-002.O1.1.REFERENCE_TARGET_VALID.TARGET_ID.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [
+                    "P2-DEC-008"
+                  ],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-11.md",
+                  "source_fingerprint": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426",
+                  "source_lines": "L718-L721",
+                  "source_section": "29. Enterprise Design Principles > EP-11-002"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "ENTITY_ID",
+                  "resolver_id": "RESOLVE.EP-11-002.EP-11-002.TARGET_ID",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "ENTITY_ID"
+              },
+              "target_type": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-WS-11.md#29. Enterprise Design Principles > EP-11-002",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426"
+                },
+                "identifier": "EP-11-002.TARGET_TYPE",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "EP-11-002.O1.1.REFERENCE_TARGET_VALID.TARGET_TYPE.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [
+                    "P2-DEC-008"
+                  ],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-11.md",
+                  "source_fingerprint": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426",
+                  "source_lines": "L718-L721",
+                  "source_section": "29. Enterprise Design Principles > EP-11-002"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "ENTITY_TYPE",
+                  "resolver_id": "RESOLVE.EP-11-002.EP-11-002.TARGET_TYPE",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "ENTITY_TYPE"
+              }
+            },
+            "comparison": {
+              "expected": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-WS-11.md#29. Enterprise Design Principles > EP-11-002",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426"
+                },
+                "identifier": "EP-11-002.EP-11-002.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "EP-11-002.O1.1.REFERENCE_TARGET_VALID.AUTHORITY.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [
+                    "P2-DEC-008"
+                  ],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-11.md",
+                  "source_fingerprint": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426",
+                  "source_lines": "L718-L721",
+                  "source_section": "29. Enterprise Design Principles > EP-11-002"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "REFERENCE_ID",
+                  "resolver_id": "RESOLVE.EP-11-002.EP-11-002.EP-11-002.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "REFERENCE_ID"
+              },
+              "observed": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-WS-11.md#29. Enterprise Design Principles > EP-11-002",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426"
+                },
+                "identifier": "EP-11-002.EP-11-002.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "EP-11-002.O1.1.REFERENCE_TARGET_VALID.OBSERVED.ORIGIN",
+                  "origin_type": "RUNTIME_OBSERVED"
+                },
+                "provenance": {
+                  "approved_decision_references": [
+                    "P2-DEC-008"
+                  ],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-11.md",
+                  "source_fingerprint": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426",
+                  "source_lines": "L718-L721",
+                  "source_section": "29. Enterprise Design Principles > EP-11-002"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "REFERENCE_ID",
+                  "resolver_id": "OBSERVE.EP-11-002.EP-11-002.EP-11-002.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "REFERENCE_ID"
+              }
+            },
+            "evidence_object": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-WS-11.md#29. Enterprise Design Principles > EP-11-002",
+                "source_type": "SOURCE_LITERAL",
+                "version": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426"
+              },
+              "identifier": "EP-11-002.EP-11-002.O1.1.REFERENCE_TARGET_VALID.EVIDENCE.OBJECT",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "EP-11-002.O1.1.REFERENCE_TARGET_VALID.EVIDENCE.ORIGIN",
+                "origin_type": "EVIDENCE_OBJECT"
+              },
+              "provenance": {
+                "approved_decision_references": [
+                  "P2-DEC-008"
+                ],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-11.md",
+                "source_fingerprint": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426",
+                "source_lines": "L718-L721",
+                "source_section": "29. Enterprise Design Principles > EP-11-002"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "EVIDENCE_OBJECT_REF",
+                "resolver_id": "OBSERVE.EP-11-002.EP-11-002.EP-11-002.O1.1.REFERENCE_TARGET_VALID.EVIDENCE.OBJECT",
+                "version": "1.0.0"
+              },
+              "semantic_type": "EVIDENCE_OBJECT_REF"
+            },
+            "operator_id": "REFERENCE_TARGET_VALID"
+          },
+          "obligation_id": "EP-11-002-O001",
+          "observed_operand": {
+            "authoritative_source": {
+              "source_id": "docs/BRD/BRD-WS-11.md#29. Enterprise Design Principles > EP-11-002",
+              "source_type": "SOURCE_LITERAL",
+              "version": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426"
+            },
+            "identifier": "EP-11-002.EP-11-002.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "EP-11-002.O1.1.REFERENCE_TARGET_VALID.OBSERVED.ORIGIN",
+              "origin_type": "RUNTIME_OBSERVED"
+            },
+            "provenance": {
+              "approved_decision_references": [
+                "P2-DEC-008"
+              ],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-WS-11.md",
+              "source_fingerprint": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426",
+              "source_lines": "L718-L721",
+              "source_section": "29. Enterprise Design Principles > EP-11-002"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "REFERENCE_ID",
+              "resolver_id": "OBSERVE.EP-11-002.EP-11-002.EP-11-002.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "REFERENCE_ID"
+          },
+          "operator_id": "REFERENCE_TARGET_VALID",
+          "operator_version": "1.0.0-candidate.2",
+          "typed_bindings": {
+            "allowed_lifecycle_states": {
+              "members": [
+                {
+                  "authoritative_source": {
+                    "allowed_identifiers": [
+                      "EP-11-002.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER"
+                    ],
+                    "source_id": "docs/BRD/BRD-WS-11.md#29. Enterprise Design Principles > EP-11-002",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426"
+                  },
+                  "identifier": "EP-11-002.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "EP-11-002.O1.1.REFERENCE_TARGET_VALID.ALLOWED_LIFECYCLE_STATES.ORIGIN.MEMBER.1",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [
+                      "P2-DEC-008"
+                    ],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-WS-11.md",
+                    "source_fingerprint": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426",
+                    "source_lines": "L718-L721",
+                    "source_section": "29. Enterprise Design Principles > EP-11-002"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "STATE_ID",
+                    "resolver_id": "RESOLVE.EP-11-002.EP-11-002.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "STATE_ID"
+                }
+              ],
+              "origin": {
+                "origin_id": "EP-11-002.O1.1.REFERENCE_TARGET_VALID.ALLOWED_LIFECYCLE_STATES.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [
+                  "P2-DEC-008"
+                ],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-11.md",
+                "source_fingerprint": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426",
+                "source_lines": "L718-L721",
+                "source_section": "29. Enterprise Design Principles > EP-11-002"
+              },
+              "semantic_type": "SET_OF<STATE_ID>"
+            },
+            "allowed_states": {
+              "members": [
+                {
+                  "authoritative_source": {
+                    "allowed_identifiers": [
+                      "EP-11-002.ALLOWED_STATES.SOURCE.MEMBER"
+                    ],
+                    "source_id": "docs/BRD/BRD-WS-11.md#29. Enterprise Design Principles > EP-11-002",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426"
+                  },
+                  "identifier": "EP-11-002.ALLOWED_STATES.SOURCE.MEMBER",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "EP-11-002.O1.1.REFERENCE_TARGET_VALID.ALLOWED_STATES.ORIGIN.MEMBER.1",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [
+                      "P2-DEC-008"
+                    ],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-WS-11.md",
+                    "source_fingerprint": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426",
+                    "source_lines": "L718-L721",
+                    "source_section": "29. Enterprise Design Principles > EP-11-002"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "STATE_ID",
+                    "resolver_id": "RESOLVE.EP-11-002.EP-11-002.ALLOWED_STATES.SOURCE.MEMBER",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "STATE_ID"
+                }
+              ],
+              "origin": {
+                "origin_id": "EP-11-002.O1.1.REFERENCE_TARGET_VALID.ALLOWED_STATES.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [
+                  "P2-DEC-008"
+                ],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-11.md",
+                "source_fingerprint": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426",
+                "source_lines": "L718-L721",
+                "source_section": "29. Enterprise Design Principles > EP-11-002"
+              },
+              "semantic_type": "SET_OF<STATE_ID>"
+            },
+            "reference": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-WS-11.md#29. Enterprise Design Principles > EP-11-002",
+                "source_type": "SOURCE_LITERAL",
+                "version": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426"
+              },
+              "identifier": "EP-11-002.REFERENCE",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "EP-11-002.O1.1.REFERENCE_TARGET_VALID.REFERENCE.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [
+                  "P2-DEC-008"
+                ],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-11.md",
+                "source_fingerprint": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426",
+                "source_lines": "L718-L721",
+                "source_section": "29. Enterprise Design Principles > EP-11-002"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "REFERENCE_ID",
+                "resolver_id": "RESOLVE.EP-11-002.EP-11-002.REFERENCE",
+                "version": "1.0.0"
+              },
+              "semantic_type": "REFERENCE_ID"
+            },
+            "registry": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-WS-11.md#29. Enterprise Design Principles > EP-11-002",
+                "source_type": "SOURCE_LITERAL",
+                "version": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426"
+              },
+              "identifier": "EP-11-002.REGISTRY",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "EP-11-002.O1.1.REFERENCE_TARGET_VALID.REGISTRY.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [
+                  "P2-DEC-008"
+                ],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-11.md",
+                "source_fingerprint": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426",
+                "source_lines": "L718-L721",
+                "source_section": "29. Enterprise Design Principles > EP-11-002"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "ENTITY_ID",
+                "resolver_id": "RESOLVE.EP-11-002.EP-11-002.REGISTRY",
+                "version": "1.0.0"
+              },
+              "semantic_type": "ENTITY_ID"
+            },
+            "registry_source": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-WS-11.md#29. Enterprise Design Principles > EP-11-002",
+                "source_type": "SOURCE_LITERAL",
+                "version": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426"
+              },
+              "identifier": "EP-11-002.REGISTRY_SOURCE",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "EP-11-002.O1.1.REFERENCE_TARGET_VALID.REGISTRY_SOURCE.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [
+                  "P2-DEC-008"
+                ],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-11.md",
+                "source_fingerprint": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426",
+                "source_lines": "L718-L721",
+                "source_section": "29. Enterprise Design Principles > EP-11-002"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "REFERENCE_ID",
+                "resolver_id": "RESOLVE.EP-11-002.EP-11-002.REGISTRY_SOURCE",
+                "version": "1.0.0"
+              },
+              "semantic_type": "REFERENCE_ID"
+            },
+            "target_id": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-WS-11.md#29. Enterprise Design Principles > EP-11-002",
+                "source_type": "SOURCE_LITERAL",
+                "version": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426"
+              },
+              "identifier": "EP-11-002.TARGET_ID",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "EP-11-002.O1.1.REFERENCE_TARGET_VALID.TARGET_ID.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [
+                  "P2-DEC-008"
+                ],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-11.md",
+                "source_fingerprint": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426",
+                "source_lines": "L718-L721",
+                "source_section": "29. Enterprise Design Principles > EP-11-002"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "ENTITY_ID",
+                "resolver_id": "RESOLVE.EP-11-002.EP-11-002.TARGET_ID",
+                "version": "1.0.0"
+              },
+              "semantic_type": "ENTITY_ID"
+            },
+            "target_type": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-WS-11.md#29. Enterprise Design Principles > EP-11-002",
+                "source_type": "SOURCE_LITERAL",
+                "version": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426"
+              },
+              "identifier": "EP-11-002.TARGET_TYPE",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "EP-11-002.O1.1.REFERENCE_TARGET_VALID.TARGET_TYPE.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [
+                  "P2-DEC-008"
+                ],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-11.md",
+                "source_fingerprint": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426",
+                "source_lines": "L718-L721",
+                "source_section": "29. Enterprise Design Principles > EP-11-002"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "ENTITY_TYPE",
+                "resolver_id": "RESOLVE.EP-11-002.EP-11-002.TARGET_TYPE",
+                "version": "1.0.0"
+              },
+              "semantic_type": "ENTITY_TYPE"
+            }
+          }
+        }
+      ],
+      "boundary_cases": [
+        "A Relationship references Identity without transferring canonical identity authority"
+      ],
+      "contract_ast_sha256": "e9a09396f0ca0ddd627d7fa3b768e0325f0485be3d73885d8766e56892fd5843",
+      "contract_id": "P2C.C4.CONTRACT.EP-11-002",
+      "criticality": "CRITICAL",
+      "disposition": "OPERATOR_REMAP_REQUIRED",
+      "evidence_contract": {
+        "evidence_object_ref": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-WS-11.md#29. Enterprise Design Principles > EP-11-002",
+            "source_type": "SOURCE_LITERAL",
+            "version": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426"
+          },
+          "identifier": "EP-11-002.EP-11-002.CONTRACT.EVIDENCE.OBJECT",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "EP-11-002.CONTRACT.EVIDENCE.ORIGIN",
+            "origin_type": "EVIDENCE_OBJECT"
+          },
+          "provenance": {
+            "approved_decision_references": [
+              "P2-DEC-008"
+            ],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-11.md",
+            "source_fingerprint": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426",
+            "source_lines": "L718-L721",
+            "source_section": "29. Enterprise Design Principles > EP-11-002"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "EVIDENCE_OBJECT_REF",
+            "resolver_id": "OBSERVE.EP-11-002.EP-11-002.EP-11-002.CONTRACT.EVIDENCE.OBJECT",
+            "version": "1.0.0"
+          },
+          "semantic_type": "EVIDENCE_OBJECT_REF"
+        },
+        "inference": false,
+        "observed_collection_origin": "EP-11-002.RUNTIME.OBSERVED.FIELDS",
+        "observed_field_ids": [
+          "FIELD.CUSTOMER_IDENTITY_ID",
+          "FIELD.RELATIONSHIP_ID",
+          "FIELD.ORGANIZATION_ID",
+          "FIELD.IDENTITY_LIFECYCLE",
+          "FIELD.RELATIONSHIP_LIFECYCLE",
+          "FIELD.REFERENCE_RESULT"
+        ],
+        "producer": "EP-11-002.EVIDENCE.PRODUCER",
+        "required_collection_origin": "EP-11-002.SOURCE.REQUIRED.FIELDS",
+        "required_field_ids": [
+          "FIELD.CUSTOMER_IDENTITY_ID",
+          "FIELD.RELATIONSHIP_ID",
+          "FIELD.ORGANIZATION_ID",
+          "FIELD.IDENTITY_LIFECYCLE",
+          "FIELD.RELATIONSHIP_LIFECYCLE",
+          "FIELD.REFERENCE_RESULT"
+        ],
+        "required_values_or_hashes": [
+          "EP-11-002.EVIDENCE.CONTENT.HASH"
+        ],
+        "retrieval_method": "EP-11-002.EVIDENCE.RETRIEVAL",
+        "version_or_correlation": "EP-11-002.EVIDENCE.VERSION.CORRELATION"
+      },
+      "explicit_non_obligations": [
+        "No runtime implementation topology is authorized by this semantic record.",
+        "No production runtime evidence is claimed by this model-level candidate."
+      ],
+      "fixture_ids": [
+        "P2C-C4-FX-FB7CDA0110288A7631C7",
+        "P2C-C4-FX-317006A90F0344147F1F",
+        "P2C-C4-FX-46B561282EB30BB265FF"
+      ],
+      "high_risk_audit_subset": true,
+      "independent_contract_identity": true,
+      "inference": false,
+      "inherits_contract_ast": null,
+      "negative_oracles": [
+        "They are merged into one record or one lifecycle mutation changes the other improperly"
+      ],
+      "normative_obligations": [
+        {
+          "applicability": "V2.3_ACTIVE",
+          "obligation_id": "EP-11-002-O001",
+          "obligation_text": "Customer Identity và Customer Relationship được tách biệt"
+        }
+      ],
+      "obligation_to_operator_coverage": [
+        {
+          "assertion_ids": [
+            "EP-11-002.O1.1.REFERENCE_TARGET_VALID"
+          ],
+          "coverage_count": 1,
+          "obligation_id": "EP-11-002-O001"
+        }
+      ],
+      "operator_composition": [
+        "REFERENCE_TARGET_VALID"
+      ],
+      "positive_oracles": [
+        "Identity and Relationship retain independent identities, ownership references and lifecycles"
+      ],
+      "preconditions": [
+        "Canonical Customer Identity and Organization-scoped Relationship identities are available"
+      ],
+      "prohibitions": [
+        "They are merged into one record or one lifecycle mutation changes the other improperly"
+      ],
+      "requirement_id": "EP-11-002",
+      "runtime_status": "SLICE_RUNTIME_ADAPTER_REQUIRED",
+      "semantic_family_id": null,
+      "source_provenance": {
+        "approved_decision_references": [
+          "P2-DEC-008"
+        ],
+        "inference": false,
+        "source_document": "docs/BRD/BRD-WS-11.md",
+        "source_fingerprint": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426",
+        "source_lines": "L718-L721",
+        "source_section": "29. Enterprise Design Principles > EP-11-002"
+      },
+      "source_statement": "Customer Identity và Customer Relationship được tách biệt.",
+      "surrounding_source_context": "## EP-11-002\n\nCustomer Identity và Customer Relationship được tách biệt.\n\n---"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "contract_id": "P2C.C4.CONTRACT.EP-11-002",
+    "inference": false,
+    "mechanism": "APPROVED_TYPED_CUSTOM_AST",
+    "mechanism_version": "SEMANTIC_ACCEPTANCE_RENDERER_C2",
+    "runtime_status": "RUNTIME_ADAPTER_PENDING"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "ACCEPTANCE_READY",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "EP-11-002-AC001",
-        "EP-11-002-AC002"
+        "EP-11-002-AC002",
+        "EP-11-002-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "EP-11-002-O001",
@@ -3488,35 +5057,38 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
-      "criterion_references": [],
-      "rationale": "EP-11-002 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "EP-11-002-AC003"
+      ],
+      "rationale": null
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "EP-11-002 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "EP-11-002 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "EP-11-002 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "EP-11-002 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "EP-11-002 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "EP-11-002-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "EP-11-002-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "EP-11-002 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "EP-11-002 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -3536,9 +5108,9 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
     "source_context_heading": "EP-11-002",
     "source_context_sha256": "cd6d5f521ccee7a970107ab31c30a02e6b894682fe1cceedaf6c54fba168db38",
     "source_document": "docs/BRD/BRD-WS-11.md",
-    "source_fingerprint": "247314328e164073bfb71a5d459f7f538394c2848fe86c77cd48ee63531b1426",
-    "source_lines": "L718-L721",
-    "source_section": "29. Enterprise Design Principles > EP-11-002"
+    "source_fingerprint": "fa4497e97210b4af1a91c036cf17b83acf1747a43c3e3f7efb156f128885b634",
+    "source_lines": "L3667-L5131",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > EP-11-002"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3563,28 +5135,36 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "EP-11-003-AC001",
-      "given": "the applicable business context, actor, and input for Support Routing dựa trên Capability, không dựa trên cấu trúc tổ chức cố định",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "EP-11-003-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-005"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "EP-11-003",
+      "source_document": "docs/BRD/BRD-WS-11.md",
+      "source_fingerprint": "826294142c43895cc1dc8b110be9bd24bc966b20589666fc6f689ef696e36733"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "EP-11-003-AC001"
+        "EP-11-003-AC001",
+        "EP-11-003-AC002",
+        "EP-11-003-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "EP-11-003-O001",
@@ -3609,9 +5189,9 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
     "source_context_heading": "EP-11-003",
     "source_context_sha256": "ba269611c57250000df7282fd01d7ecd69888325485250301412c1f266dffbc1",
     "source_document": "docs/BRD/BRD-WS-11.md",
-    "source_fingerprint": "b0b7583541188d8a83208f9b9abe78109a278472e0b1af7d15e19e944be1dc3d",
-    "source_lines": "L724-L727",
-    "source_section": "29. Enterprise Design Principles > EP-11-003"
+    "source_fingerprint": "826294142c43895cc1dc8b110be9bd24bc966b20589666fc6f689ef696e36733",
+    "source_lines": "L5133-L5212",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > EP-11-003"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3636,28 +5216,34 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "EP-11-004-AC001",
-      "given": "the applicable business context, actor, and input for Reference Data được quản lý tập trung",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "EP-11-004-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "EP-11-004",
+      "source_document": "docs/BRD/BRD-WS-11.md",
+      "source_fingerprint": "5713d0e6b38f2ad58047202c1180ca7a32948ad851b15575019399f7c63e71d9"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "EP-11-004-AC001"
+        "EP-11-004-AC001",
+        "EP-11-004-AC002",
+        "EP-11-004-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "EP-11-004-O001",
@@ -3680,9 +5266,9 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
     "source_context_heading": "EP-11-004",
     "source_context_sha256": "9dd5a6988dc831f14c6e868982ddf375a213ba9b310b6e574a03b74b61b9a9dd",
     "source_document": "docs/BRD/BRD-WS-11.md",
-    "source_fingerprint": "761ee9f49129db0366e1ecb9435285ff8cf3b7e8d6fea80d99951d352ebd4878",
-    "source_lines": "L730-L733",
-    "source_section": "29. Enterprise Design Principles > EP-11-004"
+    "source_fingerprint": "5713d0e6b38f2ad58047202c1180ca7a32948ad851b15575019399f7c63e71d9",
+    "source_lines": "L5214-L5289",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > EP-11-004"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3707,28 +5293,34 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "EP-11-005-AC001",
-      "given": "the applicable business context, actor, and input for Knowledge Management hỗ trợ tái sử dụng nội dung giữa KB, FAQ và Troubleshooting Wizard",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "EP-11-005-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "EP-11-005",
+      "source_document": "docs/BRD/BRD-WS-11.md",
+      "source_fingerprint": "39ee36fc533e84531bd10bb2fe489d2a96180ca421bbd4f58e2fa6118244857e"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "EP-11-005-AC001"
+        "EP-11-005-AC001",
+        "EP-11-005-AC002",
+        "EP-11-005-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "EP-11-005-O001",
@@ -3751,9 +5343,9 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
     "source_context_heading": "EP-11-005",
     "source_context_sha256": "2052bf07c6375849c66a1590eb4132772df46b56ef4146feeeb6aaf979374923",
     "source_document": "docs/BRD/BRD-WS-11.md",
-    "source_fingerprint": "1305a60b48eea00a89c932d553166d26e7b01a3dc4e4d502d1e0e15a1706efe9",
-    "source_lines": "L736-L739",
-    "source_section": "29. Enterprise Design Principles > EP-11-005"
+    "source_fingerprint": "39ee36fc533e84531bd10bb2fe489d2a96180ca421bbd4f58e2fa6118244857e",
+    "source_lines": "L5291-L5366",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > EP-11-005"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3778,67 +5370,36 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "PRIVACY_POLICY_CONFORMANCE_V1",
-      "criterion_id": "EP-11-006-AC001",
-      "given": "a data action with actor, purpose, scope, consent where required, and the effective policies for Customer Privacy tuân thủ Consent Based Data Access",
-      "observable_evidence": "actor, purpose, scope, consent state where applicable, effective policy versions, allow or deny result, exposed data set, reason, and audit record",
-      "then": "the action proceeds only when Compliance Policy and Security Policy permit the stated purpose and scope, with the permitted data outcome and audit evidence aligned",
-      "verifies": [
-        "EP-11-006-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-008"
       ],
-      "when": "privacy conformance and the protected data action are evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "PRIVACY_POLICY_DENIAL_V1",
-      "criterion_id": "EP-11-006-AC002",
-      "given": "a data action whose purpose, consent, scope, or effective policy does not permit the requested data use under Customer Privacy tuân thủ Consent Based Data Access",
-      "observable_evidence": "actor, purpose, consent and scope, effective policies, denial reason, exposed-data comparison, and audit record",
-      "then": "the data action is denied, no additional protected data is exposed or changed, and the policy reason is audited",
-      "verifies": [
-        "EP-11-006-O001"
-      ],
-      "when": "privacy conformance is evaluated"
-    },
-    {
-      "case": "NEGATIVE_FAIL_CLOSED",
-      "controlled_contract": "REQUIREMENT_SPECIFIC_FAIL_CLOSED_V1",
-      "criterion_id": "EP-11-006-AC003",
-      "given": "an input or attempted state change that violates a mandatory boundary explicitly stated by Customer Privacy tuân thủ Consent Based Data Access",
-      "observable_evidence": "violating input, decision and reason, before/after protected state, and audit or conformance evidence",
-      "then": "the violated obligation produces its specified rejection, denial, block, review, or non-conforming result without recording a contradictory success",
-      "verifies": [
-        "EP-11-006-O001"
-      ],
-      "when": "the violating input or action is evaluated"
-    },
-    {
-      "case": "AUTHORIZATION_BOUNDARY",
-      "controlled_contract": "EXPLICIT_AUTHORIZATION_BOUNDARY_V1",
-      "criterion_id": "EP-11-006-AC004",
-      "given": "an actor lacking the permission, role, identity assurance, consent, or access condition stated by Customer Privacy tuân thủ Consent Based Data Access",
-      "observable_evidence": "actor and scope, effective policy or assurance, decision, protected-state comparison, reason, and audit evidence",
-      "then": "access is denied or challenged according to the referenced obligation, protected state remains unchanged, and the decision is auditable",
-      "verifies": [
-        "EP-11-006-O001"
-      ],
-      "when": "the actor attempts the governed action"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "EP-11-006",
+      "source_document": "docs/BRD/BRD-WS-11.md",
+      "source_fingerprint": "c95d2e874963ed165c2efe8bebc0114e390170004a8454f453ef81afe073be3d"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "EP-11-006-AC001",
         "EP-11-006-AC002",
-        "EP-11-006-AC003",
-        "EP-11-006-AC004"
+        "EP-11-006-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "EP-11-006-O001",
@@ -3847,37 +5408,38 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
-      "criterion_references": [
-        "EP-11-006-AC004"
-      ],
-      "status": "APPLICABLE"
-    },
-    "CONCURRENCY": {
-      "criterion_references": [],
-      "rationale": "EP-11-006 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    },
-    "IDEMPOTENCY": {
-      "criterion_references": [],
-      "rationale": "EP-11-006 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    },
-    "NEGATIVE_FAIL_CLOSED": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "EP-11-006-AC003"
       ],
-      "status": "APPLICABLE"
+      "rationale": null
+    },
+    "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "EP-11-006 does not define a concurrency obligation."
+    },
+    "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "EP-11-006 does not define a idempotency obligation."
+    },
+    "NEGATIVE_FAIL_CLOSED": {
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "EP-11-006-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "EP-11-006-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "EP-11-006 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "EP-11-006 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -3897,9 +5459,9 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
     "source_context_heading": "EP-11-006",
     "source_context_sha256": "6e981331f4e2dd452b1d1b2440f7c9aa234375b9299eb5a2ff925408c33af4c8",
     "source_document": "docs/BRD/BRD-WS-11.md",
-    "source_fingerprint": "b6ce395b1e9d9f89e2f9da3f83208258f1a10d8abdbea154897ba1f6453475a4",
-    "source_lines": "L742-L745",
-    "source_section": "29. Enterprise Design Principles > EP-11-006"
+    "source_fingerprint": "c95d2e874963ed165c2efe8bebc0114e390170004a8454f453ef81afe073be3d",
+    "source_lines": "L5368-L5482",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > EP-11-006"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3924,41 +5486,36 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "EP-11-007-AC001",
-      "given": "the applicable business context, actor, and input for Feature Request là một phần của Customer Success Lifecycle",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "EP-11-007-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-008"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "EP-11-007-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Feature Request là một phần của Customer Success Lifecycle",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "EP-11-007-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "EP-11-007",
+      "source_document": "docs/BRD/BRD-WS-11.md",
+      "source_fingerprint": "f43e20290af2f812fa73bc2945df2a743b6172fd9d7cec559924bc1ab017080b"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "EP-11-007-AC001",
-        "EP-11-007-AC002"
+        "EP-11-007-AC002",
+        "EP-11-007-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "EP-11-007-O001",
@@ -3983,9 +5540,9 @@ Workshop này hoàn thiện toàn bộ Customer Success Domain của YSim.
     "source_context_heading": "EP-11-007",
     "source_context_sha256": "033d855c8d19c2a9a5b1a8f8476f5c8279dd79456c1d0ac2a5194d6008b02c99",
     "source_document": "docs/BRD/BRD-WS-11.md",
-    "source_fingerprint": "6701b7f4cce5fde663e6e94bcb94ba9801bd9176c75031a5bc8a06c988273eed",
-    "source_lines": "L748-L751",
-    "source_section": "29. Enterprise Design Principles > EP-11-007"
+    "source_fingerprint": "f43e20290af2f812fa73bc2945df2a743b6172fd9d7cec559924bc1ab017080b",
+    "source_lines": "L5484-L5563",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > EP-11-007"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {

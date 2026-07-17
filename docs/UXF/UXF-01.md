@@ -1,13 +1,20 @@
 ---
 document_code: "UXF-01"
+document_id: "UXF-01"
 title: "Experience Channels, Personas & Navigation"
-product_baseline: "2.3"
-document_revision: "2.3.0-draft.1"
+version: "2.3.0-draft.3"
+document_revision: "2.3.0-draft.3"
+status: "V2.3_DRAFT"
 lifecycle_status: "V2.3_DRAFT"
 language: "en"
+baseline: "2.3"
+product_baseline: "2.3"
+source_lineage: "v2.2 + approved Phase 1/2A/2B + accepted Acceptance Model C1 + accepted Mapping C3"
 source_baseline: "v2.2"
+last_reviewed_date: "2026-07-15"
+last_remediated_on: "2026-07-17"
+applicable_scope: "V2.3_ACTIVE_AND_RETAINED_SCOPE_RECORDS"
 generated_registry_role: "UXF_CANONICAL_SOURCE"
-last_remediated_on: "2026-07-15"
 ---
 ## v2.3 requirement authority
 
@@ -757,7 +764,7 @@ This document should be read together with:
 
 <!-- YSIM:PHASE_2C CANONICAL APPENDIX BEGIN -->
 
-## v2.3 normative requirement appendix
+## v2.3 normative requirement appendix — C6-R1
 
 
 
@@ -766,47 +773,27 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "SECURITY_DECISION_OBSERVATION_V1",
-      "criterion_id": "UXF-01-R001-AC001",
-      "given": "an identified principal, applicable assurance context, and policy inputs for Platform Administration Portal requires authentication",
-      "observable_evidence": "decision result, effective assurance or policy, denied or changed state, reason, and audit evidence",
-      "then": "the effective security policy produces the required allow, challenge, block, review, or denial result; protected state and audit evidence agree with that decision",
-      "verifies": [
-        "UXF-01-R001-O001"
-      ],
-      "when": "the protected decision or action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "SECURITY_FAIL_CLOSED_V1",
-      "criterion_id": "UXF-01-R001-AC002",
-      "given": "a principal or request that does not satisfy the assurance, policy, consent, or authorization boundary for Platform Administration Portal requires authentication",
-      "observable_evidence": "decision result, protected-state comparison, reason, effective policy, and audit record",
-      "then": "the result is challenge, block, review, or denial as required; protected state is unchanged and the reason is audited",
-      "verifies": [
-        "UXF-01-R001-O001"
-      ],
-      "when": "the protected decision or action is attempted"
-    },
-    {
-      "case": "NEGATIVE_FAIL_CLOSED",
-      "controlled_contract": "REQUIREMENT_SPECIFIC_FAIL_CLOSED_V1",
-      "criterion_id": "UXF-01-R001-AC003",
-      "given": "an input or attempted state change that violates a mandatory boundary explicitly stated by Platform Administration Portal requires authentication",
-      "observable_evidence": "violating input, decision and reason, before/after protected state, and audit or conformance evidence",
-      "then": "the violated obligation produces its specified rejection, denial, block, review, or non-conforming result without recording a contradictory success",
-      "verifies": [
-        "UXF-01-R001-O001"
-      ],
-      "when": "the violating input or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-01-R001",
+      "source_document": "docs/UXF/UXF-01.md",
+      "source_fingerprint": "9d5842c07d69be8e915abcecf092016795fe67c7615570a7a26053106ff5d3c5"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
@@ -822,36 +809,36 @@ This document should be read together with:
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "UXF-01-R001 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "UXF-01-R001 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "UXF-01-R001 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "UXF-01-R001 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "UXF-01-R001 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "UXF-01-R001 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
-        "UXF-01-R001-AC003"
-      ],
-      "status": "APPLICABLE"
+        "UXF-01-R001-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "UXF-01-R001-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "UXF-01-R001 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "UXF-01-R001 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -869,9 +856,9 @@ This document should be read together with:
     "source_context_heading": "SOURCE_STATEMENT_FALLBACK",
     "source_context_sha256": "9d5842c07d69be8e915abcecf092016795fe67c7615570a7a26053106ff5d3c5",
     "source_document": "docs/UXF/UXF-01.md",
-    "source_fingerprint": "9d34d98ddf35836b52bd54de3d2ac7df39ccefbc20ccf155aaada155de29c39a",
-    "source_lines": "L61-L86",
-    "source_section": "3. Experience Channels > 3.1 Platform Administration Portal"
+    "source_fingerprint": "9d5842c07d69be8e915abcecf092016795fe67c7615570a7a26053106ff5d3c5",
+    "source_lines": "L771-L879",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-01-R001"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -896,47 +883,27 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "SECURITY_DECISION_OBSERVATION_V1",
-      "criterion_id": "UXF-01-R002-AC001",
-      "given": "an identified principal, applicable assurance context, and policy inputs for Organization Portal requires authentication",
-      "observable_evidence": "decision result, effective assurance or policy, denied or changed state, reason, and audit evidence",
-      "then": "the effective security policy produces the required allow, challenge, block, review, or denial result; protected state and audit evidence agree with that decision",
-      "verifies": [
-        "UXF-01-R002-O001"
-      ],
-      "when": "the protected decision or action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "SECURITY_FAIL_CLOSED_V1",
-      "criterion_id": "UXF-01-R002-AC002",
-      "given": "a principal or request that does not satisfy the assurance, policy, consent, or authorization boundary for Organization Portal requires authentication",
-      "observable_evidence": "decision result, protected-state comparison, reason, effective policy, and audit record",
-      "then": "the result is challenge, block, review, or denial as required; protected state is unchanged and the reason is audited",
-      "verifies": [
-        "UXF-01-R002-O001"
-      ],
-      "when": "the protected decision or action is attempted"
-    },
-    {
-      "case": "NEGATIVE_FAIL_CLOSED",
-      "controlled_contract": "REQUIREMENT_SPECIFIC_FAIL_CLOSED_V1",
-      "criterion_id": "UXF-01-R002-AC003",
-      "given": "an input or attempted state change that violates a mandatory boundary explicitly stated by Organization Portal requires authentication",
-      "observable_evidence": "violating input, decision and reason, before/after protected state, and audit or conformance evidence",
-      "then": "the violated obligation produces its specified rejection, denial, block, review, or non-conforming result without recording a contradictory success",
-      "verifies": [
-        "UXF-01-R002-O001"
-      ],
-      "when": "the violating input or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-01-R002",
+      "source_document": "docs/UXF/UXF-01.md",
+      "source_fingerprint": "0927f384ab3df40429ba15d50e713774ceb0b5f9d491e23a9dd4ab7a4e4a4bc1"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
@@ -952,36 +919,36 @@ This document should be read together with:
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "UXF-01-R002 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "UXF-01-R002 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "UXF-01-R002 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "UXF-01-R002 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "UXF-01-R002 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "UXF-01-R002 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
-        "UXF-01-R002-AC003"
-      ],
-      "status": "APPLICABLE"
+        "UXF-01-R002-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "UXF-01-R002-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "UXF-01-R002 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "UXF-01-R002 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -999,9 +966,9 @@ This document should be read together with:
     "source_context_heading": "SOURCE_STATEMENT_FALLBACK",
     "source_context_sha256": "0927f384ab3df40429ba15d50e713774ceb0b5f9d491e23a9dd4ab7a4e4a4bc1",
     "source_document": "docs/UXF/UXF-01.md",
-    "source_fingerprint": "f727258a7997940764558dd3d309eb97e09944899102c4db111d2dbc3780d112",
-    "source_lines": "L94-L114",
-    "source_section": "3. Experience Channels > 3.2 Organization Portal"
+    "source_fingerprint": "0927f384ab3df40429ba15d50e713774ceb0b5f9d491e23a9dd4ab7a4e4a4bc1",
+    "source_lines": "L881-L989",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-01-R002"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1026,47 +993,27 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "SECURITY_DECISION_OBSERVATION_V1",
-      "criterion_id": "UXF-01-R003-AC001",
-      "given": "an identified principal, applicable assurance context, and policy inputs for Agency Portal requires authentication",
-      "observable_evidence": "decision result, effective assurance or policy, denied or changed state, reason, and audit evidence",
-      "then": "the effective security policy produces the required allow, challenge, block, review, or denial result; protected state and audit evidence agree with that decision",
-      "verifies": [
-        "UXF-01-R003-O001"
-      ],
-      "when": "the protected decision or action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "SECURITY_FAIL_CLOSED_V1",
-      "criterion_id": "UXF-01-R003-AC002",
-      "given": "a principal or request that does not satisfy the assurance, policy, consent, or authorization boundary for Agency Portal requires authentication",
-      "observable_evidence": "decision result, protected-state comparison, reason, effective policy, and audit record",
-      "then": "the result is challenge, block, review, or denial as required; protected state is unchanged and the reason is audited",
-      "verifies": [
-        "UXF-01-R003-O001"
-      ],
-      "when": "the protected decision or action is attempted"
-    },
-    {
-      "case": "NEGATIVE_FAIL_CLOSED",
-      "controlled_contract": "REQUIREMENT_SPECIFIC_FAIL_CLOSED_V1",
-      "criterion_id": "UXF-01-R003-AC003",
-      "given": "an input or attempted state change that violates a mandatory boundary explicitly stated by Agency Portal requires authentication",
-      "observable_evidence": "violating input, decision and reason, before/after protected state, and audit or conformance evidence",
-      "then": "the violated obligation produces its specified rejection, denial, block, review, or non-conforming result without recording a contradictory success",
-      "verifies": [
-        "UXF-01-R003-O001"
-      ],
-      "when": "the violating input or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-01-R003",
+      "source_document": "docs/UXF/UXF-01.md",
+      "source_fingerprint": "93ac95ee690139a1b7d867e2ccb8e6322dc668bef501ea96cc1c3f6b76305205"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
@@ -1082,36 +1029,36 @@ This document should be read together with:
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "UXF-01-R003 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "UXF-01-R003 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "UXF-01-R003 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "UXF-01-R003 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "UXF-01-R003 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "UXF-01-R003 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
-        "UXF-01-R003-AC003"
-      ],
-      "status": "APPLICABLE"
+        "UXF-01-R003-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "UXF-01-R003-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "UXF-01-R003 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "UXF-01-R003 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -1129,9 +1076,9 @@ This document should be read together with:
     "source_context_heading": "SOURCE_STATEMENT_FALLBACK",
     "source_context_sha256": "93ac95ee690139a1b7d867e2ccb8e6322dc668bef501ea96cc1c3f6b76305205",
     "source_document": "docs/UXF/UXF-01.md",
-    "source_fingerprint": "93a42713fa4942158c15b0bcd527011c2feb4b732107fc4b1980e5dc94176078",
-    "source_lines": "L118-L137",
-    "source_section": "3. Experience Channels > 3.3 Agency Portal"
+    "source_fingerprint": "93ac95ee690139a1b7d867e2ccb8e6322dc668bef501ea96cc1c3f6b76305205",
+    "source_lines": "L991-L1099",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-01-R003"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1156,41 +1103,34 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "SECURITY_DECISION_OBSERVATION_V1",
-      "criterion_id": "UXF-01-R004-AC001",
-      "given": "an identified principal, applicable assurance context, and policy inputs for Authentication: Optional or Required depending on Storefront Policy",
-      "observable_evidence": "decision result, effective assurance or policy, denied or changed state, reason, and audit evidence",
-      "then": "the effective security policy produces the required allow, challenge, block, review, or denial result; protected state and audit evidence agree with that decision",
-      "verifies": [
-        "UXF-01-R004-O001"
-      ],
-      "when": "the protected decision or action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "SECURITY_FAIL_CLOSED_V1",
-      "criterion_id": "UXF-01-R004-AC002",
-      "given": "a principal or request that does not satisfy the assurance, policy, consent, or authorization boundary for Authentication: Optional or Required depending on Storefront Policy",
-      "observable_evidence": "decision result, protected-state comparison, reason, effective policy, and audit record",
-      "then": "the result is challenge, block, review, or denial as required; protected state is unchanged and the reason is audited",
-      "verifies": [
-        "UXF-01-R004-O001"
-      ],
-      "when": "the protected decision or action is attempted"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-01-R004",
+      "source_document": "docs/UXF/UXF-01.md",
+      "source_fingerprint": "759041b1f4e3a832a612494420aa9ada99d9ef1bb02dd3f24dfd5246b9028b36"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-01-R004-AC001",
-        "UXF-01-R004-AC002"
+        "UXF-01-R004-AC002",
+        "UXF-01-R004-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-01-R004-O001",
@@ -1199,35 +1139,36 @@ This document should be read together with:
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "UXF-01-R004 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "UXF-01-R004 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "UXF-01-R004 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "UXF-01-R004 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "UXF-01-R004 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "UXF-01-R004 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "UXF-01-R004 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "UXF-01-R004-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "UXF-01-R004-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "UXF-01-R004 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "UXF-01-R004 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -1246,8 +1187,8 @@ This document should be read together with:
     "source_context_sha256": "1c30f1dd76364a5a3e6d97c156112d31cb579933a69530715fd1da97004e79cd",
     "source_document": "docs/UXF/UXF-01.md",
     "source_fingerprint": "759041b1f4e3a832a612494420aa9ada99d9ef1bb02dd3f24dfd5246b9028b36",
-    "source_lines": "L156-L158",
-    "source_section": "3. Experience Channels > 3.4 Customer Portal"
+    "source_lines": "L1101-L1209",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-01-R004"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1272,41 +1213,37 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-01-R005-AC001",
-      "given": "a user in the applicable channel and context for Customers never interact with suppliers",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the prohibited content or action is absent from both the rendered state and its customer-facing payload, while the permitted journey remains usable",
-      "verifies": [
-        "UXF-01-R005-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-007",
+        "P2-DEC-008"
       ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
-      "criterion_id": "UXF-01-R005-AC002",
-      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for Customers never interact with suppliers",
-      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
-      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
-      "verifies": [
-        "UXF-01-R005-O001"
-      ],
-      "when": "the affected state is rendered or action is requested"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-01-R005",
+      "source_document": "docs/UXF/UXF-01.md",
+      "source_fingerprint": "978ce06e8542f5c88b7491dc0bde61cd3e15ef12fb3a1565d127ac6fb6a4845c"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-01-R005-AC001",
-        "UXF-01-R005-AC002"
+        "UXF-01-R005-AC002",
+        "UXF-01-R005-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-01-R005-O001",
@@ -1333,8 +1270,8 @@ This document should be read together with:
     "source_context_sha256": "a79168fde7f3285acb8e0c1353d939d7892aee2d7a6e68eb91bb54d62acd290d",
     "source_document": "docs/UXF/UXF-01.md",
     "source_fingerprint": "978ce06e8542f5c88b7491dc0bde61cd3e15ef12fb3a1565d127ac6fb6a4845c",
-    "source_lines": "L603",
-    "source_section": "10. Customer Journey"
+    "source_lines": "L1211-L1292",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-01-R005"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1359,41 +1296,34 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "ACCESSIBILITY_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "UXF-01-R006-AC001",
-      "given": "the experience state and accessibility mode governed by Every experience should support: - Keyboard navigation",
-      "observable_evidence": "before/after rendered state, enabled accessibility mode, available content and actions, interaction outcome, and any accessibility conformance result declared by the source",
-      "then": "the accessible rendering or interaction is available without removing required content or actions, and its outcome remains perceivable and operable",
-      "verifies": [
-        "UXF-01-R006-O001"
-      ],
-      "when": "the named accessibility capability is enabled and the same content and actions are exercised"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "ACCESSIBILITY_CONFORMANCE_FAILURE_V1",
-      "criterion_id": "UXF-01-R006-AC002",
-      "given": "the experience with the accessibility capability named by Every experience should support: - Keyboard navigation unavailable or producing inaccessible content or actions",
-      "observable_evidence": "enabled mode, rendered state, affected content or action, interaction result, and failed accessibility conformance evidence",
-      "then": "accessibility conformance fails with the unavailable capability or inaccessible element identified; the state is not reported as conforming",
-      "verifies": [
-        "UXF-01-R006-O001"
-      ],
-      "when": "the applicable accessibility mode or interaction is used"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-01-R006",
+      "source_document": "docs/UXF/UXF-01.md",
+      "source_fingerprint": "29a32929825e070638487aa28d29a259e7c7350f60e5760b62c3789233d91597"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-01-R006-AC001",
-        "UXF-01-R006-AC002"
+        "UXF-01-R006-AC002",
+        "UXF-01-R006-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-01-R006-O001",
@@ -1417,8 +1347,8 @@ This document should be read together with:
     "source_context_sha256": "e687762204c9a487689b5b4220ca1696e9bc24ca97ea67b5ebdd0281c6f8c59b",
     "source_document": "docs/UXF/UXF-01.md",
     "source_fingerprint": "29a32929825e070638487aa28d29a259e7c7350f60e5760b62c3789233d91597",
-    "source_lines": "L624-L626",
-    "source_section": "12. Accessibility"
+    "source_lines": "L1294-L1369",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-01-R006"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1443,41 +1373,34 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "ACCESSIBILITY_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "UXF-01-R007-AC001",
-      "given": "the experience state and accessibility mode governed by Every experience should support: - Screen readers",
-      "observable_evidence": "before/after rendered state, enabled accessibility mode, available content and actions, interaction outcome, and any accessibility conformance result declared by the source",
-      "then": "the accessible rendering or interaction is available without removing required content or actions, and its outcome remains perceivable and operable",
-      "verifies": [
-        "UXF-01-R007-O001"
-      ],
-      "when": "the named accessibility capability is enabled and the same content and actions are exercised"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "ACCESSIBILITY_CONFORMANCE_FAILURE_V1",
-      "criterion_id": "UXF-01-R007-AC002",
-      "given": "the experience with the accessibility capability named by Every experience should support: - Screen readers unavailable or producing inaccessible content or actions",
-      "observable_evidence": "enabled mode, rendered state, affected content or action, interaction result, and failed accessibility conformance evidence",
-      "then": "accessibility conformance fails with the unavailable capability or inaccessible element identified; the state is not reported as conforming",
-      "verifies": [
-        "UXF-01-R007-O001"
-      ],
-      "when": "the applicable accessibility mode or interaction is used"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-01-R007",
+      "source_document": "docs/UXF/UXF-01.md",
+      "source_fingerprint": "a55cdba50a7b87694513e11448649496ad895a9a0c0a44b0b6240e5998a110e6"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-01-R007-AC001",
-        "UXF-01-R007-AC002"
+        "UXF-01-R007-AC002",
+        "UXF-01-R007-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-01-R007-O001",
@@ -1500,9 +1423,9 @@ This document should be read together with:
     "source_context_heading": "12. Accessibility",
     "source_context_sha256": "e687762204c9a487689b5b4220ca1696e9bc24ca97ea67b5ebdd0281c6f8c59b",
     "source_document": "docs/UXF/UXF-01.md",
-    "source_fingerprint": "7eaa7a46ea96b284aea6ac8b1db7659d3c805eca1363dddc9c468bb5fe16d796",
-    "source_lines": "L624-L627",
-    "source_section": "12. Accessibility"
+    "source_fingerprint": "a55cdba50a7b87694513e11448649496ad895a9a0c0a44b0b6240e5998a110e6",
+    "source_lines": "L1371-L1446",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-01-R007"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1523,49 +1446,54 @@ This document should be read together with:
 <!-- YSIM:REQUIREMENT END -->
 
 <!-- YSIM:REQUIREMENT BEGIN -->
-### UXF-01-R008 — Every experience should support: - Responsive layouts
+### UXF-01-R008 — Every V2.3_ACTIVE experience channel must use responsive layouts that preserve usable navigation…
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-01-R008-AC001",
-      "given": "a user in the applicable channel and context for Every experience should support: - Responsive layouts",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the rendered output exposes every required content element and action, keeps prohibited content absent, and makes the applicable confirmation or fallback directly observable",
-      "verifies": [
-        "UXF-01-R008-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "V23-P2C-ACCEPTANCE-MAPPING-C3"
       ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
-      "criterion_id": "UXF-01-R008-AC002",
-      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for Every experience should support: - Responsive layouts",
-      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
-      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
-      "verifies": [
-        "UXF-01-R008-O001"
-      ],
-      "when": "the affected state is rendered or action is requested"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-01-R008",
+      "source_document": "docs/UXF/UXF-01.md",
+      "source_fingerprint": "17cf17817605343e900e1e39c28fcde24d8414578762208d763dc95fa701f13b"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-01-R008-AC001",
-        "UXF-01-R008-AC002"
+        "UXF-01-R008-AC003",
+        "UXF-01-R008-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-01-R008-O001",
-      "obligation_text": "Every experience should support: - Responsive layouts"
+      "obligation_text": "Every V2.3_ACTIVE experience channel must use responsive layouts that preserve usable navigation, actions, content, and critical workflows on supported browser, mobile, and WebView viewport ranges"
+    },
+    {
+      "acceptance_criterion_references": [
+        "UXF-01-R008-AC002",
+        "UXF-01-R008-AC003",
+        "UXF-01-R008-AC004"
+      ],
+      "applicability": "V2.3_ACTIVE",
+      "obligation_id": "UXF-01-R008-O002",
+      "obligation_text": "Partner Portal remains outside active scope"
     }
   ],
   "criticality_applicability": null,
@@ -1573,20 +1501,28 @@ This document should be read together with:
   "delivery_commitment": "COMMITTED_FOR_V2.3",
   "implementation_unit": true,
   "lifecycle": "V2.3_DRAFT",
-  "normative_statement": "Every experience should support: - Responsive layouts",
+  "normative_statement": "Every V2.3_ACTIVE experience channel must use responsive layouts that preserve usable navigation, actions, content, and critical workflows on supported browser, mobile, and WebView viewport ranges; Partner Portal remains outside active scope.",
   "provenance": {
-    "approved_decisions": [],
+    "approved_decisions": [
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
+    ],
     "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
     "original_identity": "TMP-UXF-01-008",
+    "phase_2c_c3_actions": [
+      "C3_APPROVED_SEMANTIC_DIRECTIVE"
+    ],
     "previous_temporary_key": "TMP-UXF-01-008",
     "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
     "source_baseline": "v2.2",
     "source_context_heading": "12. Accessibility",
     "source_context_sha256": "e687762204c9a487689b5b4220ca1696e9bc24ca97ea67b5ebdd0281c6f8c59b",
     "source_document": "docs/UXF/UXF-01.md",
-    "source_fingerprint": "fdde4eb101be5365c450cb3dcb0362513eed3ebeb178989cc837a6a599e87a14",
-    "source_lines": "L624-L628",
-    "source_section": "12. Accessibility"
+    "source_fingerprint": "17cf17817605343e900e1e39c28fcde24d8414578762208d763dc95fa701f13b",
+    "source_fingerprint_before_c3": "fdde4eb101be5365c450cb3dcb0362513eed3ebeb178989cc837a6a599e87a14",
+    "source_lines": "L1448-L1543",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-01-R008"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1600,7 +1536,7 @@ This document should be read together with:
   "scope_coverage_unit": true,
   "scope_status": "V2.3_ACTIVE",
   "stable_id": "UXF-01-R008",
-  "title": "Every experience should support: - Responsive layouts",
+  "title": "Every V2.3_ACTIVE experience channel must use responsive layouts that preserve usable navigation…",
   "verification_criticality": "HIGH"
 }
 ```
@@ -1611,41 +1547,34 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "ACCESSIBILITY_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "UXF-01-R009-AC001",
-      "given": "the experience state and accessibility mode governed by Every experience should support: - High contrast themes",
-      "observable_evidence": "before/after rendered state, enabled accessibility mode, available content and actions, interaction outcome, and any accessibility conformance result declared by the source",
-      "then": "the accessible rendering or interaction is available without removing required content or actions, and its outcome remains perceivable and operable",
-      "verifies": [
-        "UXF-01-R009-O001"
-      ],
-      "when": "the named accessibility capability is enabled and the same content and actions are exercised"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "ACCESSIBILITY_CONFORMANCE_FAILURE_V1",
-      "criterion_id": "UXF-01-R009-AC002",
-      "given": "the experience with the accessibility capability named by Every experience should support: - High contrast themes unavailable or producing inaccessible content or actions",
-      "observable_evidence": "enabled mode, rendered state, affected content or action, interaction result, and failed accessibility conformance evidence",
-      "then": "accessibility conformance fails with the unavailable capability or inaccessible element identified; the state is not reported as conforming",
-      "verifies": [
-        "UXF-01-R009-O001"
-      ],
-      "when": "the applicable accessibility mode or interaction is used"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-01-R009",
+      "source_document": "docs/UXF/UXF-01.md",
+      "source_fingerprint": "873b70e52ef5b209ad51667f7adc9d3f0fd52c1b3bb353beea6de9a57548c9e6"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-01-R009-AC001",
-        "UXF-01-R009-AC002"
+        "UXF-01-R009-AC002",
+        "UXF-01-R009-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-01-R009-O001",
@@ -1677,9 +1606,9 @@ This document should be read together with:
     "source_context_heading": "12. Accessibility",
     "source_context_sha256": "e687762204c9a487689b5b4220ca1696e9bc24ca97ea67b5ebdd0281c6f8c59b",
     "source_document": "docs/UXF/UXF-01.md",
-    "source_fingerprint": "1aae44d5e8bd609d4707aa2911a0851dabe6d9d9212dfc7c03a94ce788dcb733",
-    "source_lines": "L624-L629",
-    "source_section": "12. Accessibility"
+    "source_fingerprint": "873b70e52ef5b209ad51667f7adc9d3f0fd52c1b3bb353beea6de9a57548c9e6",
+    "source_lines": "L1545-L1629",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-01-R009"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1700,49 +1629,64 @@ This document should be read together with:
 <!-- YSIM:REQUIREMENT END -->
 
 <!-- YSIM:REQUIREMENT BEGIN -->
-### UXF-01-R010 — Every experience should support: - Touch interaction
+### UXF-01-R010 — Every V2.3_ACTIVE experience channel on supported browsers, mobile devices, and WebViews must pr…
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-01-R010-AC001",
-      "given": "a user in the applicable channel and context for Every experience should support: - Touch interaction",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the rendered output exposes every required content element and action, keeps prohibited content absent, and makes the applicable confirmation or fallback directly observable",
-      "verifies": [
-        "UXF-01-R010-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "V23-P2C-ACCEPTANCE-MAPPING-C3"
       ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
-      "criterion_id": "UXF-01-R010-AC002",
-      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for Every experience should support: - Touch interaction",
-      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
-      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
-      "verifies": [
-        "UXF-01-R010-O001"
-      ],
-      "when": "the affected state is rendered or action is requested"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-01-R010",
+      "source_document": "docs/UXF/UXF-01.md",
+      "source_fingerprint": "80ed1b9407c3e793caf599e66b6a41b1a1f53fa417039c144896985c08b03bf9"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-01-R010-AC001",
-        "UXF-01-R010-AC002"
+        "UXF-01-R010-AC004",
+        "UXF-01-R010-AC005"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-01-R010-O001",
-      "obligation_text": "Every experience should support: - Touch interaction"
+      "obligation_text": "Every V2.3_ACTIVE experience channel on supported browsers, mobile devices, and WebViews must provide touch-usable navigation, actions, and critical workflows"
+    },
+    {
+      "acceptance_criterion_references": [
+        "UXF-01-R010-AC002",
+        "UXF-01-R010-AC004",
+        "UXF-01-R010-AC005"
+      ],
+      "applicability": "V2.3_ACTIVE",
+      "obligation_id": "UXF-01-R010-O002",
+      "obligation_text": "no required interaction may depend on hover alone"
+    },
+    {
+      "acceptance_criterion_references": [
+        "UXF-01-R010-AC003",
+        "UXF-01-R010-AC004",
+        "UXF-01-R010-AC005"
+      ],
+      "applicability": "V2.3_ACTIVE",
+      "obligation_id": "UXF-01-R010-O003",
+      "obligation_text": "Partner Portal is excluded until activated by an approved scope requirement"
     }
   ],
   "criticality_applicability": null,
@@ -1750,20 +1694,28 @@ This document should be read together with:
   "delivery_commitment": "COMMITTED_FOR_V2.3",
   "implementation_unit": true,
   "lifecycle": "V2.3_DRAFT",
-  "normative_statement": "Every experience should support: - Touch interaction",
+  "normative_statement": "Every V2.3_ACTIVE experience channel on supported browsers, mobile devices, and WebViews must provide touch-usable navigation, actions, and critical workflows; no required interaction may depend on hover alone. Partner Portal is excluded until activated by an approved scope requirement.",
   "provenance": {
-    "approved_decisions": [],
+    "approved_decisions": [
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
+    ],
     "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
     "original_identity": "TMP-UXF-01-010",
+    "phase_2c_c3_actions": [
+      "C3_APPROVED_SEMANTIC_DIRECTIVE"
+    ],
     "previous_temporary_key": "TMP-UXF-01-010",
     "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
     "source_baseline": "v2.2",
     "source_context_heading": "12. Accessibility",
     "source_context_sha256": "e687762204c9a487689b5b4220ca1696e9bc24ca97ea67b5ebdd0281c6f8c59b",
     "source_document": "docs/UXF/UXF-01.md",
-    "source_fingerprint": "562c8f28846f7997da0efe8e54d1af52d5a363a631d40964df0371d8e30c27b3",
-    "source_lines": "L624-L630",
-    "source_section": "12. Accessibility"
+    "source_fingerprint": "80ed1b9407c3e793caf599e66b6a41b1a1f53fa417039c144896985c08b03bf9",
+    "source_fingerprint_before_c3": "562c8f28846f7997da0efe8e54d1af52d5a363a631d40964df0371d8e30c27b3",
+    "source_lines": "L1631-L1736",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-01-R010"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1777,56 +1729,61 @@ This document should be read together with:
   "scope_coverage_unit": true,
   "scope_status": "V2.3_ACTIVE",
   "stable_id": "UXF-01-R010",
-  "title": "Every experience should support: - Touch interaction",
+  "title": "Every V2.3_ACTIVE experience channel on supported browsers, mobile devices, and WebViews must pr…",
   "verification_criticality": "HIGH"
 }
 ```
 <!-- YSIM:REQUIREMENT END -->
 
 <!-- YSIM:REQUIREMENT BEGIN -->
-### UXF-01-R011 — Every experience should support: - Mobile-first behavior
+### UXF-01-R011 — Every V2.3_ACTIVE experience channel must provide mobile-first behavior on supported touch-capab…
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-01-R011-AC001",
-      "given": "a user in the applicable channel and context for Every experience should support: - Mobile-first behavior",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the rendered output exposes every required content element and action, keeps prohibited content absent, and makes the applicable confirmation or fallback directly observable",
-      "verifies": [
-        "UXF-01-R011-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "V23-P2C-ACCEPTANCE-MAPPING-C3"
       ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
-      "criterion_id": "UXF-01-R011-AC002",
-      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for Every experience should support: - Mobile-first behavior",
-      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
-      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
-      "verifies": [
-        "UXF-01-R011-O001"
-      ],
-      "when": "the affected state is rendered or action is requested"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-01-R011",
+      "source_document": "docs/UXF/UXF-01.md",
+      "source_fingerprint": "25b194eda2617952c3ecdc381eaa3dafc81e7279ec2fcc45a22a20a8993cf040"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-01-R011-AC001",
-        "UXF-01-R011-AC002"
+        "UXF-01-R011-AC003",
+        "UXF-01-R011-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-01-R011-O001",
-      "obligation_text": "Every experience should support: - Mobile-first behavior"
+      "obligation_text": "Every V2.3_ACTIVE experience channel must provide mobile-first behavior on supported touch-capable mobile and WebView devices without requiring hover-only interaction"
+    },
+    {
+      "acceptance_criterion_references": [
+        "UXF-01-R011-AC002",
+        "UXF-01-R011-AC003",
+        "UXF-01-R011-AC004"
+      ],
+      "applicability": "V2.3_ACTIVE",
+      "obligation_id": "UXF-01-R011-O002",
+      "obligation_text": "Partner Portal remains outside active scope"
     }
   ],
   "criticality_applicability": null,
@@ -1834,20 +1791,28 @@ This document should be read together with:
   "delivery_commitment": "COMMITTED_FOR_V2.3",
   "implementation_unit": true,
   "lifecycle": "V2.3_DRAFT",
-  "normative_statement": "Every experience should support: - Mobile-first behavior",
+  "normative_statement": "Every V2.3_ACTIVE experience channel must provide mobile-first behavior on supported touch-capable mobile and WebView devices without requiring hover-only interaction; Partner Portal remains outside active scope.",
   "provenance": {
-    "approved_decisions": [],
+    "approved_decisions": [
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
+    ],
     "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
     "original_identity": "TMP-UXF-01-011",
+    "phase_2c_c3_actions": [
+      "C3_APPROVED_SEMANTIC_DIRECTIVE"
+    ],
     "previous_temporary_key": "TMP-UXF-01-011",
     "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
     "source_baseline": "v2.2",
     "source_context_heading": "12. Accessibility",
     "source_context_sha256": "e687762204c9a487689b5b4220ca1696e9bc24ca97ea67b5ebdd0281c6f8c59b",
     "source_document": "docs/UXF/UXF-01.md",
-    "source_fingerprint": "ff160db085b669d322b5ec49e5dadc8a688519b38bec4ceee6699d8065b6fc1d",
-    "source_lines": "L624-L631",
-    "source_section": "12. Accessibility"
+    "source_fingerprint": "25b194eda2617952c3ecdc381eaa3dafc81e7279ec2fcc45a22a20a8993cf040",
+    "source_fingerprint_before_c3": "ff160db085b669d322b5ec49e5dadc8a688519b38bec4ceee6699d8065b6fc1d",
+    "source_lines": "L1738-L1833",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-01-R011"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1861,7 +1826,7 @@ This document should be read together with:
   "scope_coverage_unit": true,
   "scope_status": "V2.3_ACTIVE",
   "stable_id": "UXF-01-R011",
-  "title": "Every experience should support: - Mobile-first behavior",
+  "title": "Every V2.3_ACTIVE experience channel must provide mobile-first behavior on supported touch-capab…",
   "verification_criticality": "HIGH"
 }
 ```
@@ -1872,41 +1837,34 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-101-AC001",
-      "given": "a user in the applicable channel and context for Experience is channel-specific",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the rendered output exposes every required content element and action, keeps prohibited content absent, and makes the applicable confirmation or fallback directly observable",
-      "verifies": [
-        "UXF-101-O001"
-      ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
-      "criterion_id": "UXF-101-AC002",
-      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for Experience is channel-specific",
-      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
-      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
-      "verifies": [
-        "UXF-101-O001"
-      ],
-      "when": "the affected state is rendered or action is requested"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-101",
+      "source_document": "docs/UXF/UXF-01.md",
+      "source_fingerprint": "bbc5cd35b9af00cffde722fe59c070c4bfd8ecd525f8a10af27f970535acdaa2"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-101-AC001",
-        "UXF-101-AC002"
+        "UXF-101-AC002",
+        "UXF-101-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-101-O001",
@@ -1929,9 +1887,9 @@ This document should be read together with:
     "source_context_heading": "UXF-101",
     "source_context_sha256": "365d9f730d101074ec68f4d7bc1a1e20d4938059aa7b2d98beea17cea9ba2941",
     "source_document": "docs/UXF/UXF-01.md",
-    "source_fingerprint": "4020c435e933abd0323109a1bcd572708bca5a4f48a15f05a7a2e302ee1fdfec",
-    "source_lines": "L679-L682",
-    "source_section": "15. Experience Principles > UXF-101"
+    "source_fingerprint": "bbc5cd35b9af00cffde722fe59c070c4bfd8ecd525f8a10af27f970535acdaa2",
+    "source_lines": "L1835-L1910",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-101"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1956,41 +1914,36 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-102-AC001",
-      "given": "a user in the applicable channel and context for Navigation is capability-driven",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the rendered output exposes every required content element and action, keeps prohibited content absent, and makes the applicable confirmation or fallback directly observable",
-      "verifies": [
-        "UXF-102-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-005"
       ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
-      "criterion_id": "UXF-102-AC002",
-      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for Navigation is capability-driven",
-      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
-      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
-      "verifies": [
-        "UXF-102-O001"
-      ],
-      "when": "the affected state is rendered or action is requested"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-102",
+      "source_document": "docs/UXF/UXF-01.md",
+      "source_fingerprint": "cb9765cf2d0613e144c1b1ea3197626db2cd127b965fbd885f0b46bc0f3a8e0a"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-102-AC001",
-        "UXF-102-AC002"
+        "UXF-102-AC002",
+        "UXF-102-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-102-O001",
@@ -2015,9 +1968,9 @@ This document should be read together with:
     "source_context_heading": "Principle 2",
     "source_context_sha256": "c3247bcf792fc60b276d2c31c1d39db326510fd140d048c01143acde6e954bba",
     "source_document": "docs/UXF/UXF-01.md",
-    "source_fingerprint": "d8e0507dc7a95e2c6833bb1688bb560fd14ce1145e004451e07f4f7938b43af9",
-    "source_lines": "L685-L688",
-    "source_section": "15. Experience Principles > UXF-102"
+    "source_fingerprint": "cb9765cf2d0613e144c1b1ea3197626db2cd127b965fbd885f0b46bc0f3a8e0a",
+    "source_lines": "L1912-L1991",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-102"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2042,41 +1995,34 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-103-AC001",
-      "given": "a user in the applicable channel and context for Menus are resolved dynamically",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the rendered output identifies the applied runtime context, reflects the values resolved for that context, and contains no unresolved configuration token",
-      "verifies": [
-        "UXF-103-O001"
-      ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
-      "criterion_id": "UXF-103-AC002",
-      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for Menus are resolved dynamically",
-      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
-      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
-      "verifies": [
-        "UXF-103-O001"
-      ],
-      "when": "the affected state is rendered or action is requested"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-103",
+      "source_document": "docs/UXF/UXF-01.md",
+      "source_fingerprint": "6078e875b60f6d932a6572c0d89d2c89f098ff8050562ef9c07c622476bb02d5"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-103-AC001",
-        "UXF-103-AC002"
+        "UXF-103-AC002",
+        "UXF-103-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-103-O001",
@@ -2099,9 +2045,9 @@ This document should be read together with:
     "source_context_heading": "UXF-103",
     "source_context_sha256": "33f4d0583cfa9091a957a7b2f69f01048ad5faf9160b6e36651eae4a432029c2",
     "source_document": "docs/UXF/UXF-01.md",
-    "source_fingerprint": "edf75fb6f01bf5d8af47e7d6f02dacd3b2822a467bc7129ee25765602dac8aa4",
-    "source_lines": "L691-L694",
-    "source_section": "15. Experience Principles > UXF-103"
+    "source_fingerprint": "6078e875b60f6d932a6572c0d89d2c89f098ff8050562ef9c07c622476bb02d5",
+    "source_lines": "L1993-L2068",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-103"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2126,41 +2072,34 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-104-AC001",
-      "given": "a user in the applicable channel and context for Experience inherits from parent configurations",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "a missing child value resolves to the parent configuration, an explicit child override wins only at its declared scope, and the rendered result identifies the effective source",
-      "verifies": [
-        "UXF-104-O001"
-      ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_INHERITANCE_FAILURE_V1",
-      "criterion_id": "UXF-104-AC002",
-      "given": "a child experience with no local value and an invalid or unavailable parent configuration for Experience inherits from parent configurations",
-      "observable_evidence": "child and parent configuration identities, resolution trace, fallback or failure result, and rendered value",
-      "then": "resolution produces the declared deterministic fallback or a visible configuration failure and never renders an unexplained value",
-      "verifies": [
-        "UXF-104-O001"
-      ],
-      "when": "the inherited value is resolved"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-104",
+      "source_document": "docs/UXF/UXF-01.md",
+      "source_fingerprint": "dc69fdbb553ddf2ac5b20bda15c25906f45c84ebea17b066b1a67ec1237d9a84"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-104-AC001",
-        "UXF-104-AC002"
+        "UXF-104-AC002",
+        "UXF-104-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-104-O001",
@@ -2183,9 +2122,9 @@ This document should be read together with:
     "source_context_heading": "UXF-104",
     "source_context_sha256": "6f819330b9b2ef9b41955ab91c83b675835bb661d042f74bd417add1aead22e2",
     "source_document": "docs/UXF/UXF-01.md",
-    "source_fingerprint": "f53484556f8b8ad565d0f4cff7aed1b63c39ce9ea39757a2d22e2ea3520049b0",
-    "source_lines": "L697-L700",
-    "source_section": "15. Experience Principles > UXF-104"
+    "source_fingerprint": "dc69fdbb553ddf2ac5b20bda15c25906f45c84ebea17b066b1a67ec1237d9a84",
+    "source_lines": "L2070-L2145",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-104"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2210,41 +2149,37 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-105-AC001",
-      "given": "a user in the applicable channel and context for Customers never interact directly with suppliers",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the prohibited content or action is absent from both the rendered state and its customer-facing payload, while the permitted journey remains usable",
-      "verifies": [
-        "UXF-105-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-007",
+        "P2-DEC-008"
       ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
-      "criterion_id": "UXF-105-AC002",
-      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for Customers never interact directly with suppliers",
-      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
-      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
-      "verifies": [
-        "UXF-105-O001"
-      ],
-      "when": "the affected state is rendered or action is requested"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-105",
+      "source_document": "docs/UXF/UXF-01.md",
+      "source_fingerprint": "890358db24fe9a33e7a87baa01276ba4cbb6c871d67f94f786af0f66017034d7"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-105-AC001",
-        "UXF-105-AC002"
+        "UXF-105-AC002",
+        "UXF-105-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-105-O001",
@@ -2270,9 +2205,9 @@ This document should be read together with:
     "source_context_heading": "UXF-105",
     "source_context_sha256": "2175b630cfe9d824be35203f423981afa216047c994c162a7c37c38e8f519530",
     "source_document": "docs/UXF/UXF-01.md",
-    "source_fingerprint": "7934f23e211e158fa65da99bae75c49374f07063f8e5445467f11e2fe746a11a",
-    "source_lines": "L703-L706",
-    "source_section": "15. Experience Principles > UXF-105"
+    "source_fingerprint": "890358db24fe9a33e7a87baa01276ba4cbb6c871d67f94f786af0f66017034d7",
+    "source_lines": "L2147-L2228",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-105"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2297,54 +2232,37 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DESIGN_CONFORMANCE_OBSERVATION_V1",
-      "criterion_id": "UXF-106-AC001",
-      "given": "a v2.3 capability, configuration, or design change governed by Internal supplier-selection and allocation mechanics remain invisible in customer journeys; appr…",
-      "observable_evidence": "conformance decision, requirement-to-design trace, applicable configuration evidence, and recorded boundary violations",
-      "then": "the conformance review identifies the applicable principle, links it to the governed requirement and design boundary, and records no prohibited coupling",
-      "verifies": [
-        "UXF-106-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-007",
+        "P2-DEC-008"
       ],
-      "when": "conformance is reviewed before the change is accepted"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DESIGN_CONFORMANCE_OBSERVATION_V1",
-      "criterion_id": "UXF-106-AC002",
-      "given": "a v2.3 capability, configuration, or design change governed by Internal supplier-selection and allocation mechanics remain invisible in customer journeys; appr…",
-      "observable_evidence": "conformance decision, requirement-to-design trace, applicable configuration evidence, and recorded boundary violations",
-      "then": "the conformance review identifies the applicable principle, links it to the governed requirement and design boundary, and records no prohibited coupling",
-      "verifies": [
-        "UXF-106-O002"
-      ],
-      "when": "conformance is reviewed before the change is accepted"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "DESIGN_CONFORMANCE_FAILURE_V1",
-      "criterion_id": "UXF-106-AC003",
-      "given": "a proposed change with missing traceability or a boundary violation under Internal supplier-selection and allocation mechanics remain invisible in customer journeys; appr…",
-      "observable_evidence": "conformance result, violated principle, missing trace or configuration evidence, and review record",
-      "then": "the change receives a non-conforming decision identifying the missing trace or violated boundary and is not accepted as conforming",
-      "verifies": [
-        "UXF-106-O001",
-        "UXF-106-O002"
-      ],
-      "when": "design conformance is reviewed"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-106",
+      "source_document": "docs/UXF/UXF-01.md",
+      "source_fingerprint": "6fdbb4f01ebfb494857e932b2865404f0fc718f18366576f5960946986c931d5"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-106-AC001",
-        "UXF-106-AC003"
+        "UXF-106-AC003",
+        "UXF-106-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-106-O001",
@@ -2353,7 +2271,8 @@ This document should be read together with:
     {
       "acceptance_criterion_references": [
         "UXF-106-AC002",
-        "UXF-106-AC003"
+        "UXF-106-AC003",
+        "UXF-106-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-106-O002",
@@ -2391,9 +2310,9 @@ This document should be read together with:
     "source_context_heading": "UXF-106",
     "source_context_sha256": "f0a770d94fc783c30180cd85445f7774897530899a5a35fa4cfe02ea2d19227b",
     "source_document": "docs/UXF/UXF-01.md",
-    "source_fingerprint": "0b0c49eb1de8f10b40fa45b91d42a3e70b1549d2aaa86450010f662e933ca978",
-    "source_lines": "L709-L712",
-    "source_section": "15. Experience Principles > UXF-106"
+    "source_fingerprint": "6fdbb4f01ebfb494857e932b2865404f0fc718f18366576f5960946986c931d5",
+    "source_lines": "L2230-L2333",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-106"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2418,41 +2337,34 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-107-AC001",
-      "given": "a user in the applicable channel and context for Every channel shares the same design system",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the rendered output exposes every required content element and action, keeps prohibited content absent, and makes the applicable confirmation or fallback directly observable",
-      "verifies": [
-        "UXF-107-O001"
-      ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
-      "criterion_id": "UXF-107-AC002",
-      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for Every channel shares the same design system",
-      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
-      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
-      "verifies": [
-        "UXF-107-O001"
-      ],
-      "when": "the affected state is rendered or action is requested"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-107",
+      "source_document": "docs/UXF/UXF-01.md",
+      "source_fingerprint": "32774b30a97625cc01abb8e6a4ba50d52567d923474707e7860742e2b5297062"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-107-AC001",
-        "UXF-107-AC002"
+        "UXF-107-AC002",
+        "UXF-107-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-107-O001",
@@ -2475,9 +2387,9 @@ This document should be read together with:
     "source_context_heading": "UXF-107",
     "source_context_sha256": "39422afece56d7a0623cc7b54adb691c06ea551fa4f479ef2d3f789c13d740f0",
     "source_document": "docs/UXF/UXF-01.md",
-    "source_fingerprint": "d58dc3e7297dd75da84121935227229422e38db7cf9c839130dbdc06ae524c3d",
-    "source_lines": "L715-L718",
-    "source_section": "15. Experience Principles > UXF-107"
+    "source_fingerprint": "32774b30a97625cc01abb8e6a4ba50d52567d923474707e7860742e2b5297062",
+    "source_lines": "L2335-L2410",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-107"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2502,41 +2414,34 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-108-AC001",
-      "given": "a user in the applicable channel and context for Every navigation tree supports localization",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the rendered output exposes every required content element and action, keeps prohibited content absent, and makes the applicable confirmation or fallback directly observable",
-      "verifies": [
-        "UXF-108-O001"
-      ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
-      "criterion_id": "UXF-108-AC002",
-      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for Every navigation tree supports localization",
-      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
-      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
-      "verifies": [
-        "UXF-108-O001"
-      ],
-      "when": "the affected state is rendered or action is requested"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-108",
+      "source_document": "docs/UXF/UXF-01.md",
+      "source_fingerprint": "c4b307a0bddaa5f8cdb0587925a2d392085517e835294469053488cd9bf085e0"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-108-AC001",
-        "UXF-108-AC002"
+        "UXF-108-AC002",
+        "UXF-108-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-108-O001",
@@ -2559,9 +2464,9 @@ This document should be read together with:
     "source_context_heading": "UXF-108",
     "source_context_sha256": "d8b94ab279cdb87116ab29e3375204b1ca2fb8b3356c2b2373959b6849223813",
     "source_document": "docs/UXF/UXF-01.md",
-    "source_fingerprint": "51fbce77cbecd33bc6a3f46f3e2647377aaccc356fef061fc0a8abae9f22abed",
-    "source_lines": "L721-L724",
-    "source_section": "15. Experience Principles > UXF-108"
+    "source_fingerprint": "c4b307a0bddaa5f8cdb0587925a2d392085517e835294469053488cd9bf085e0",
+    "source_lines": "L2412-L2487",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-108"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2586,41 +2491,904 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "INTEGRATION_BOUNDARY_OBSERVATION_V1",
-      "criterion_id": "UXF-109-AC001",
-      "given": "a contract interaction at the integration boundary defined by Experience must remain consistent across Portal, Storefront and APIs",
-      "observable_evidence": "contract validation result, boundary ownership record, external outcome, and reconciliation evidence where the contract requires it",
-      "then": "the interaction is accepted only at the declared boundary, names the responsible owner, and exposes the external outcome or reconciliation result required by the contract",
-      "verifies": [
-        "UXF-109-O001"
-      ],
-      "when": "a conforming interaction is submitted and its ownership boundary is evaluated"
+  "acceptance_contract": {
+    "boundary_oracle": [
+      "Presentation and interaction may differ while canonical business outcome remains equivalent"
+    ],
+    "concrete_bindings": [
+      {
+        "expected_outcome": {
+          "authoritative_source": {
+            "allowed_identifiers": [
+              "UXF-109.POLICY.OUTCOME.CONFORMING"
+            ],
+            "source_id": "docs/UXF/UXF-01.md#15. Experience Principles > UXF-109",
+            "source_type": "SOURCE_LITERAL",
+            "version": "4b24c0c308560c53f4fc8d0e074f28384fb7f843ba9dcf8257f900aa3ebd997d"
+          },
+          "identifier": "UXF-109.POLICY.OUTCOME.CONFORMING",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "UXF-109.O1.1.POLICY_OUTCOME_EQUALS.EXPECTED_OUTCOME.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/UXF/UXF-01.md",
+            "source_fingerprint": "4b24c0c308560c53f4fc8d0e074f28384fb7f843ba9dcf8257f900aa3ebd997d",
+            "source_lines": "L727-L730",
+            "source_section": "15. Experience Principles > UXF-109"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "CANONICAL_OUTCOME",
+            "resolver_id": "RESOLVE.UXF-109.UXF-109.POLICY.OUTCOME.CONFORMING",
+            "version": "1.0.0"
+          },
+          "semantic_type": "CANONICAL_OUTCOME"
+        },
+        "policy": {
+          "authoritative_source": {
+            "source_id": "docs/UXF/UXF-01.md#15. Experience Principles > UXF-109",
+            "source_type": "SOURCE_LITERAL",
+            "version": "4b24c0c308560c53f4fc8d0e074f28384fb7f843ba9dcf8257f900aa3ebd997d"
+          },
+          "identifier": "UXF-109.POLICY",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "UXF-109.O1.1.POLICY_OUTCOME_EQUALS.POLICY.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/UXF/UXF-01.md",
+            "source_fingerprint": "4b24c0c308560c53f4fc8d0e074f28384fb7f843ba9dcf8257f900aa3ebd997d",
+            "source_lines": "L727-L730",
+            "source_section": "15. Experience Principles > UXF-109"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "POLICY_ID",
+            "resolver_id": "RESOLVE.UXF-109.UXF-109.POLICY",
+            "version": "1.0.0"
+          },
+          "semantic_type": "POLICY_ID"
+        },
+        "policy_inputs": {
+          "authoritative_source": {
+            "source_id": "docs/UXF/UXF-01.md#15. Experience Principles > UXF-109",
+            "source_type": "SOURCE_LITERAL",
+            "version": "4b24c0c308560c53f4fc8d0e074f28384fb7f843ba9dcf8257f900aa3ebd997d"
+          },
+          "identifier": "UXF-109.POLICY_INPUTS",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "UXF-109.O1.1.POLICY_OUTCOME_EQUALS.POLICY_INPUTS.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/UXF/UXF-01.md",
+            "source_fingerprint": "4b24c0c308560c53f4fc8d0e074f28384fb7f843ba9dcf8257f900aa3ebd997d",
+            "source_lines": "L727-L730",
+            "source_section": "15. Experience Principles > UXF-109"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "EVIDENCE_OBJECT_REF",
+            "resolver_id": "RESOLVE.UXF-109.UXF-109.POLICY_INPUTS",
+            "version": "1.0.0"
+          },
+          "semantic_type": "EVIDENCE_OBJECT_REF"
+        },
+        "policy_version": {
+          "authoritative_source": {
+            "source_id": "docs/UXF/UXF-01.md#15. Experience Principles > UXF-109",
+            "source_type": "SOURCE_LITERAL",
+            "version": "4b24c0c308560c53f4fc8d0e074f28384fb7f843ba9dcf8257f900aa3ebd997d"
+          },
+          "identifier": "UXF-109.POLICY_VERSION",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "UXF-109.O1.1.POLICY_OUTCOME_EQUALS.POLICY_VERSION.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/UXF/UXF-01.md",
+            "source_fingerprint": "4b24c0c308560c53f4fc8d0e074f28384fb7f843ba9dcf8257f900aa3ebd997d",
+            "source_lines": "L727-L730",
+            "source_section": "15. Experience Principles > UXF-109"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "POLICY_VERSION",
+            "resolver_id": "RESOLVE.UXF-109.UXF-109.POLICY_VERSION",
+            "version": "1.0.0"
+          },
+          "semantic_type": "POLICY_VERSION"
+        }
+      }
+    ],
+    "contract_id": "P2C.C4.CONTRACT.UXF-109",
+    "inference": false,
+    "mechanism": "APPROVED_TYPED_CUSTOM_AST",
+    "mechanism_version": "C4-R3",
+    "negative_oracle": [
+      "A channel changes canonical pricing, policy, authorization or state semantics"
+    ],
+    "operator_composition": [
+      "POLICY_OUTCOME_EQUALS"
+    ],
+    "positive_oracle": [
+      "Portal, Storefront and API produce equivalent canonical business outcomes"
+    ],
+    "provenance": {
+      "approved_decision_references": [],
+      "inference": false,
+      "source_document": "docs/UXF/UXF-01.md",
+      "source_fingerprint": "4b24c0c308560c53f4fc8d0e074f28384fb7f843ba9dcf8257f900aa3ebd997d",
+      "source_lines": "L727-L730",
+      "source_section": "15. Experience Principles > UXF-109"
     },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "INTEGRATION_CONTRACT_REJECTION_V1",
-      "criterion_id": "UXF-109-AC002",
-      "given": "an interaction that violates the contract or ownership boundary for Experience must remain consistent across Portal, Storefront and APIs",
-      "observable_evidence": "contract rejection or reconciliation result, reason, boundary owner, and external outcome",
-      "then": "the interaction is rejected or reconciled according to the declared contract without transferring ownership to the wrong boundary",
-      "verifies": [
-        "UXF-109-O001"
+    "required_evidence": {
+      "evidence_object_ref": {
+        "authoritative_source": {
+          "source_id": "docs/UXF/UXF-01.md#15. Experience Principles > UXF-109",
+          "source_type": "SOURCE_LITERAL",
+          "version": "4b24c0c308560c53f4fc8d0e074f28384fb7f843ba9dcf8257f900aa3ebd997d"
+        },
+        "identifier": "UXF-109.UXF-109.CONTRACT.EVIDENCE.OBJECT",
+        "inference": false,
+        "lifecycle": {
+          "status": "ACTIVE",
+          "version": "2.3"
+        },
+        "namespace": "YSIM.V2.3",
+        "origin": {
+          "origin_id": "UXF-109.CONTRACT.EVIDENCE.ORIGIN",
+          "origin_type": "EVIDENCE_OBJECT"
+        },
+        "provenance": {
+          "approved_decision_references": [],
+          "inference": false,
+          "source_document": "docs/UXF/UXF-01.md",
+          "source_fingerprint": "4b24c0c308560c53f4fc8d0e074f28384fb7f843ba9dcf8257f900aa3ebd997d",
+          "source_lines": "L727-L730",
+          "source_section": "15. Experience Principles > UXF-109"
+        },
+        "resolver_contract": {
+          "deterministic": true,
+          "input_types": [],
+          "output_type": "EVIDENCE_OBJECT_REF",
+          "resolver_id": "OBSERVE.UXF-109.UXF-109.UXF-109.CONTRACT.EVIDENCE.OBJECT",
+          "version": "1.0.0"
+        },
+        "semantic_type": "EVIDENCE_OBJECT_REF"
+      },
+      "inference": false,
+      "observed_collection_origin": "UXF-109.RUNTIME.OBSERVED.FIELDS",
+      "observed_field_ids": [
+        "FIELD.OPERATION_ID",
+        "FIELD.CHANNEL",
+        "FIELD.POLICY_VERSION",
+        "FIELD.CANONICAL_OBJECT_ID",
+        "FIELD.BUSINESS_OUTCOME",
+        "FIELD.COMPARISON_RESULT"
       ],
-      "when": "the interaction reaches the integration boundary"
+      "producer": "UXF-109.EVIDENCE.PRODUCER",
+      "required_collection_origin": "UXF-109.SOURCE.REQUIRED.FIELDS",
+      "required_field_ids": [
+        "FIELD.OPERATION_ID",
+        "FIELD.CHANNEL",
+        "FIELD.POLICY_VERSION",
+        "FIELD.CANONICAL_OBJECT_ID",
+        "FIELD.BUSINESS_OUTCOME",
+        "FIELD.COMPARISON_RESULT"
+      ],
+      "required_values_or_hashes": [
+        "UXF-109.EVIDENCE.CONTENT.HASH"
+      ],
+      "retrieval_method": "UXF-109.EVIDENCE.RETRIEVAL",
+      "version_or_correlation": "UXF-109.EVIDENCE.VERSION.CORRELATION"
+    },
+    "runtime_evidence_executed": false,
+    "runtime_status": "RUNTIME_ADAPTER_PENDING",
+    "semantic_obligation_references": [
+      "UXF-109-O001"
+    ],
+    "typed_contract_ast": {
+      "approved_clarification": null,
+      "assertions": [
+        {
+          "assertion_id": "UXF-109.O1.1.POLICY_OUTCOME_EQUALS",
+          "evaluator_consumed_bindings": [
+            "expected_outcome",
+            "policy",
+            "policy_inputs",
+            "policy_version"
+          ],
+          "evidence_object": {
+            "authoritative_source": {
+              "source_id": "docs/UXF/UXF-01.md#15. Experience Principles > UXF-109",
+              "source_type": "SOURCE_LITERAL",
+              "version": "4b24c0c308560c53f4fc8d0e074f28384fb7f843ba9dcf8257f900aa3ebd997d"
+            },
+            "identifier": "UXF-109.UXF-109.O1.1.POLICY_OUTCOME_EQUALS.EVIDENCE.OBJECT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "UXF-109.O1.1.POLICY_OUTCOME_EQUALS.EVIDENCE.ORIGIN",
+              "origin_type": "EVIDENCE_OBJECT"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/UXF/UXF-01.md",
+              "source_fingerprint": "4b24c0c308560c53f4fc8d0e074f28384fb7f843ba9dcf8257f900aa3ebd997d",
+              "source_lines": "L727-L730",
+              "source_section": "15. Experience Principles > UXF-109"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "EVIDENCE_OBJECT_REF",
+              "resolver_id": "OBSERVE.UXF-109.UXF-109.UXF-109.O1.1.POLICY_OUTCOME_EQUALS.EVIDENCE.OBJECT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "EVIDENCE_OBJECT_REF"
+          },
+          "expected_operand": {
+            "authoritative_source": {
+              "allowed_identifiers": [
+                "UXF-109.UXF-109.O1.1.POLICY_OUTCOME_EQUALS.CANONICAL.RESULT"
+              ],
+              "source_id": "docs/UXF/UXF-01.md#15. Experience Principles > UXF-109",
+              "source_type": "SOURCE_LITERAL",
+              "version": "4b24c0c308560c53f4fc8d0e074f28384fb7f843ba9dcf8257f900aa3ebd997d"
+            },
+            "identifier": "UXF-109.UXF-109.O1.1.POLICY_OUTCOME_EQUALS.CANONICAL.RESULT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "UXF-109.O1.1.POLICY_OUTCOME_EQUALS.AUTHORITY.ORIGIN",
+              "origin_type": "SOURCE_LITERAL"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/UXF/UXF-01.md",
+              "source_fingerprint": "4b24c0c308560c53f4fc8d0e074f28384fb7f843ba9dcf8257f900aa3ebd997d",
+              "source_lines": "L727-L730",
+              "source_section": "15. Experience Principles > UXF-109"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "CANONICAL_OUTCOME",
+              "resolver_id": "RESOLVE.UXF-109.UXF-109.UXF-109.O1.1.POLICY_OUTCOME_EQUALS.CANONICAL.RESULT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "CANONICAL_OUTCOME"
+          },
+          "inference": false,
+          "model_conformance_fixture": {
+            "bindings": {
+              "expected_outcome": {
+                "authoritative_source": {
+                  "allowed_identifiers": [
+                    "UXF-109.POLICY.OUTCOME.CONFORMING"
+                  ],
+                  "source_id": "docs/UXF/UXF-01.md#15. Experience Principles > UXF-109",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "4b24c0c308560c53f4fc8d0e074f28384fb7f843ba9dcf8257f900aa3ebd997d"
+                },
+                "identifier": "UXF-109.POLICY.OUTCOME.CONFORMING",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "UXF-109.O1.1.POLICY_OUTCOME_EQUALS.EXPECTED_OUTCOME.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/UXF/UXF-01.md",
+                  "source_fingerprint": "4b24c0c308560c53f4fc8d0e074f28384fb7f843ba9dcf8257f900aa3ebd997d",
+                  "source_lines": "L727-L730",
+                  "source_section": "15. Experience Principles > UXF-109"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "CANONICAL_OUTCOME",
+                  "resolver_id": "RESOLVE.UXF-109.UXF-109.POLICY.OUTCOME.CONFORMING",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "CANONICAL_OUTCOME"
+              },
+              "policy": {
+                "authoritative_source": {
+                  "source_id": "docs/UXF/UXF-01.md#15. Experience Principles > UXF-109",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "4b24c0c308560c53f4fc8d0e074f28384fb7f843ba9dcf8257f900aa3ebd997d"
+                },
+                "identifier": "UXF-109.POLICY",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "UXF-109.O1.1.POLICY_OUTCOME_EQUALS.POLICY.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/UXF/UXF-01.md",
+                  "source_fingerprint": "4b24c0c308560c53f4fc8d0e074f28384fb7f843ba9dcf8257f900aa3ebd997d",
+                  "source_lines": "L727-L730",
+                  "source_section": "15. Experience Principles > UXF-109"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "POLICY_ID",
+                  "resolver_id": "RESOLVE.UXF-109.UXF-109.POLICY",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "POLICY_ID"
+              },
+              "policy_inputs": {
+                "authoritative_source": {
+                  "source_id": "docs/UXF/UXF-01.md#15. Experience Principles > UXF-109",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "4b24c0c308560c53f4fc8d0e074f28384fb7f843ba9dcf8257f900aa3ebd997d"
+                },
+                "identifier": "UXF-109.POLICY_INPUTS",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "UXF-109.O1.1.POLICY_OUTCOME_EQUALS.POLICY_INPUTS.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/UXF/UXF-01.md",
+                  "source_fingerprint": "4b24c0c308560c53f4fc8d0e074f28384fb7f843ba9dcf8257f900aa3ebd997d",
+                  "source_lines": "L727-L730",
+                  "source_section": "15. Experience Principles > UXF-109"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "EVIDENCE_OBJECT_REF",
+                  "resolver_id": "RESOLVE.UXF-109.UXF-109.POLICY_INPUTS",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "EVIDENCE_OBJECT_REF"
+              },
+              "policy_version": {
+                "authoritative_source": {
+                  "source_id": "docs/UXF/UXF-01.md#15. Experience Principles > UXF-109",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "4b24c0c308560c53f4fc8d0e074f28384fb7f843ba9dcf8257f900aa3ebd997d"
+                },
+                "identifier": "UXF-109.POLICY_VERSION",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "UXF-109.O1.1.POLICY_OUTCOME_EQUALS.POLICY_VERSION.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/UXF/UXF-01.md",
+                  "source_fingerprint": "4b24c0c308560c53f4fc8d0e074f28384fb7f843ba9dcf8257f900aa3ebd997d",
+                  "source_lines": "L727-L730",
+                  "source_section": "15. Experience Principles > UXF-109"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "POLICY_VERSION",
+                  "resolver_id": "RESOLVE.UXF-109.UXF-109.POLICY_VERSION",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "POLICY_VERSION"
+              }
+            },
+            "comparison": {
+              "expected": {
+                "authoritative_source": {
+                  "allowed_identifiers": [
+                    "UXF-109.UXF-109.O1.1.POLICY_OUTCOME_EQUALS.CANONICAL.RESULT"
+                  ],
+                  "source_id": "docs/UXF/UXF-01.md#15. Experience Principles > UXF-109",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "4b24c0c308560c53f4fc8d0e074f28384fb7f843ba9dcf8257f900aa3ebd997d"
+                },
+                "identifier": "UXF-109.UXF-109.O1.1.POLICY_OUTCOME_EQUALS.CANONICAL.RESULT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "UXF-109.O1.1.POLICY_OUTCOME_EQUALS.AUTHORITY.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/UXF/UXF-01.md",
+                  "source_fingerprint": "4b24c0c308560c53f4fc8d0e074f28384fb7f843ba9dcf8257f900aa3ebd997d",
+                  "source_lines": "L727-L730",
+                  "source_section": "15. Experience Principles > UXF-109"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "CANONICAL_OUTCOME",
+                  "resolver_id": "RESOLVE.UXF-109.UXF-109.UXF-109.O1.1.POLICY_OUTCOME_EQUALS.CANONICAL.RESULT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "CANONICAL_OUTCOME"
+              },
+              "observed": {
+                "authoritative_source": {
+                  "allowed_identifiers": [
+                    "UXF-109.UXF-109.O1.1.POLICY_OUTCOME_EQUALS.CANONICAL.RESULT"
+                  ],
+                  "source_id": "docs/UXF/UXF-01.md#15. Experience Principles > UXF-109",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "4b24c0c308560c53f4fc8d0e074f28384fb7f843ba9dcf8257f900aa3ebd997d"
+                },
+                "identifier": "UXF-109.UXF-109.O1.1.POLICY_OUTCOME_EQUALS.CANONICAL.RESULT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "UXF-109.O1.1.POLICY_OUTCOME_EQUALS.OBSERVED.ORIGIN",
+                  "origin_type": "RUNTIME_OBSERVED"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/UXF/UXF-01.md",
+                  "source_fingerprint": "4b24c0c308560c53f4fc8d0e074f28384fb7f843ba9dcf8257f900aa3ebd997d",
+                  "source_lines": "L727-L730",
+                  "source_section": "15. Experience Principles > UXF-109"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "CANONICAL_OUTCOME",
+                  "resolver_id": "OBSERVE.UXF-109.UXF-109.UXF-109.O1.1.POLICY_OUTCOME_EQUALS.CANONICAL.RESULT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "CANONICAL_OUTCOME"
+              }
+            },
+            "evidence_object": {
+              "authoritative_source": {
+                "source_id": "docs/UXF/UXF-01.md#15. Experience Principles > UXF-109",
+                "source_type": "SOURCE_LITERAL",
+                "version": "4b24c0c308560c53f4fc8d0e074f28384fb7f843ba9dcf8257f900aa3ebd997d"
+              },
+              "identifier": "UXF-109.UXF-109.O1.1.POLICY_OUTCOME_EQUALS.EVIDENCE.OBJECT",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "UXF-109.O1.1.POLICY_OUTCOME_EQUALS.EVIDENCE.ORIGIN",
+                "origin_type": "EVIDENCE_OBJECT"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/UXF/UXF-01.md",
+                "source_fingerprint": "4b24c0c308560c53f4fc8d0e074f28384fb7f843ba9dcf8257f900aa3ebd997d",
+                "source_lines": "L727-L730",
+                "source_section": "15. Experience Principles > UXF-109"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "EVIDENCE_OBJECT_REF",
+                "resolver_id": "OBSERVE.UXF-109.UXF-109.UXF-109.O1.1.POLICY_OUTCOME_EQUALS.EVIDENCE.OBJECT",
+                "version": "1.0.0"
+              },
+              "semantic_type": "EVIDENCE_OBJECT_REF"
+            },
+            "operator_id": "POLICY_OUTCOME_EQUALS"
+          },
+          "obligation_id": "UXF-109-O001",
+          "observed_operand": {
+            "authoritative_source": {
+              "allowed_identifiers": [
+                "UXF-109.UXF-109.O1.1.POLICY_OUTCOME_EQUALS.CANONICAL.RESULT"
+              ],
+              "source_id": "docs/UXF/UXF-01.md#15. Experience Principles > UXF-109",
+              "source_type": "SOURCE_LITERAL",
+              "version": "4b24c0c308560c53f4fc8d0e074f28384fb7f843ba9dcf8257f900aa3ebd997d"
+            },
+            "identifier": "UXF-109.UXF-109.O1.1.POLICY_OUTCOME_EQUALS.CANONICAL.RESULT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "UXF-109.O1.1.POLICY_OUTCOME_EQUALS.OBSERVED.ORIGIN",
+              "origin_type": "RUNTIME_OBSERVED"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/UXF/UXF-01.md",
+              "source_fingerprint": "4b24c0c308560c53f4fc8d0e074f28384fb7f843ba9dcf8257f900aa3ebd997d",
+              "source_lines": "L727-L730",
+              "source_section": "15. Experience Principles > UXF-109"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "CANONICAL_OUTCOME",
+              "resolver_id": "OBSERVE.UXF-109.UXF-109.UXF-109.O1.1.POLICY_OUTCOME_EQUALS.CANONICAL.RESULT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "CANONICAL_OUTCOME"
+          },
+          "operator_id": "POLICY_OUTCOME_EQUALS",
+          "operator_version": "1.0.0-candidate.2",
+          "typed_bindings": {
+            "expected_outcome": {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "UXF-109.POLICY.OUTCOME.CONFORMING"
+                ],
+                "source_id": "docs/UXF/UXF-01.md#15. Experience Principles > UXF-109",
+                "source_type": "SOURCE_LITERAL",
+                "version": "4b24c0c308560c53f4fc8d0e074f28384fb7f843ba9dcf8257f900aa3ebd997d"
+              },
+              "identifier": "UXF-109.POLICY.OUTCOME.CONFORMING",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "UXF-109.O1.1.POLICY_OUTCOME_EQUALS.EXPECTED_OUTCOME.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/UXF/UXF-01.md",
+                "source_fingerprint": "4b24c0c308560c53f4fc8d0e074f28384fb7f843ba9dcf8257f900aa3ebd997d",
+                "source_lines": "L727-L730",
+                "source_section": "15. Experience Principles > UXF-109"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CANONICAL_OUTCOME",
+                "resolver_id": "RESOLVE.UXF-109.UXF-109.POLICY.OUTCOME.CONFORMING",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_OUTCOME"
+            },
+            "policy": {
+              "authoritative_source": {
+                "source_id": "docs/UXF/UXF-01.md#15. Experience Principles > UXF-109",
+                "source_type": "SOURCE_LITERAL",
+                "version": "4b24c0c308560c53f4fc8d0e074f28384fb7f843ba9dcf8257f900aa3ebd997d"
+              },
+              "identifier": "UXF-109.POLICY",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "UXF-109.O1.1.POLICY_OUTCOME_EQUALS.POLICY.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/UXF/UXF-01.md",
+                "source_fingerprint": "4b24c0c308560c53f4fc8d0e074f28384fb7f843ba9dcf8257f900aa3ebd997d",
+                "source_lines": "L727-L730",
+                "source_section": "15. Experience Principles > UXF-109"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "POLICY_ID",
+                "resolver_id": "RESOLVE.UXF-109.UXF-109.POLICY",
+                "version": "1.0.0"
+              },
+              "semantic_type": "POLICY_ID"
+            },
+            "policy_inputs": {
+              "authoritative_source": {
+                "source_id": "docs/UXF/UXF-01.md#15. Experience Principles > UXF-109",
+                "source_type": "SOURCE_LITERAL",
+                "version": "4b24c0c308560c53f4fc8d0e074f28384fb7f843ba9dcf8257f900aa3ebd997d"
+              },
+              "identifier": "UXF-109.POLICY_INPUTS",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "UXF-109.O1.1.POLICY_OUTCOME_EQUALS.POLICY_INPUTS.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/UXF/UXF-01.md",
+                "source_fingerprint": "4b24c0c308560c53f4fc8d0e074f28384fb7f843ba9dcf8257f900aa3ebd997d",
+                "source_lines": "L727-L730",
+                "source_section": "15. Experience Principles > UXF-109"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "EVIDENCE_OBJECT_REF",
+                "resolver_id": "RESOLVE.UXF-109.UXF-109.POLICY_INPUTS",
+                "version": "1.0.0"
+              },
+              "semantic_type": "EVIDENCE_OBJECT_REF"
+            },
+            "policy_version": {
+              "authoritative_source": {
+                "source_id": "docs/UXF/UXF-01.md#15. Experience Principles > UXF-109",
+                "source_type": "SOURCE_LITERAL",
+                "version": "4b24c0c308560c53f4fc8d0e074f28384fb7f843ba9dcf8257f900aa3ebd997d"
+              },
+              "identifier": "UXF-109.POLICY_VERSION",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "UXF-109.O1.1.POLICY_OUTCOME_EQUALS.POLICY_VERSION.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/UXF/UXF-01.md",
+                "source_fingerprint": "4b24c0c308560c53f4fc8d0e074f28384fb7f843ba9dcf8257f900aa3ebd997d",
+                "source_lines": "L727-L730",
+                "source_section": "15. Experience Principles > UXF-109"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "POLICY_VERSION",
+                "resolver_id": "RESOLVE.UXF-109.UXF-109.POLICY_VERSION",
+                "version": "1.0.0"
+              },
+              "semantic_type": "POLICY_VERSION"
+            }
+          }
+        }
+      ],
+      "boundary_cases": [
+        "Presentation and interaction may differ while canonical business outcome remains equivalent"
+      ],
+      "contract_ast_sha256": "c93fdbea5fdda055a99f41cf7f69ef16d8b34d6e62e90267c5f7ae9b566527f5",
+      "contract_id": "P2C.C4.CONTRACT.UXF-109",
+      "criticality": "HIGH",
+      "disposition": "CORRECTABLE_WITH_APPROVED_TYPE_MODEL",
+      "evidence_contract": {
+        "evidence_object_ref": {
+          "authoritative_source": {
+            "source_id": "docs/UXF/UXF-01.md#15. Experience Principles > UXF-109",
+            "source_type": "SOURCE_LITERAL",
+            "version": "4b24c0c308560c53f4fc8d0e074f28384fb7f843ba9dcf8257f900aa3ebd997d"
+          },
+          "identifier": "UXF-109.UXF-109.CONTRACT.EVIDENCE.OBJECT",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "UXF-109.CONTRACT.EVIDENCE.ORIGIN",
+            "origin_type": "EVIDENCE_OBJECT"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/UXF/UXF-01.md",
+            "source_fingerprint": "4b24c0c308560c53f4fc8d0e074f28384fb7f843ba9dcf8257f900aa3ebd997d",
+            "source_lines": "L727-L730",
+            "source_section": "15. Experience Principles > UXF-109"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "EVIDENCE_OBJECT_REF",
+            "resolver_id": "OBSERVE.UXF-109.UXF-109.UXF-109.CONTRACT.EVIDENCE.OBJECT",
+            "version": "1.0.0"
+          },
+          "semantic_type": "EVIDENCE_OBJECT_REF"
+        },
+        "inference": false,
+        "observed_collection_origin": "UXF-109.RUNTIME.OBSERVED.FIELDS",
+        "observed_field_ids": [
+          "FIELD.OPERATION_ID",
+          "FIELD.CHANNEL",
+          "FIELD.POLICY_VERSION",
+          "FIELD.CANONICAL_OBJECT_ID",
+          "FIELD.BUSINESS_OUTCOME",
+          "FIELD.COMPARISON_RESULT"
+        ],
+        "producer": "UXF-109.EVIDENCE.PRODUCER",
+        "required_collection_origin": "UXF-109.SOURCE.REQUIRED.FIELDS",
+        "required_field_ids": [
+          "FIELD.OPERATION_ID",
+          "FIELD.CHANNEL",
+          "FIELD.POLICY_VERSION",
+          "FIELD.CANONICAL_OBJECT_ID",
+          "FIELD.BUSINESS_OUTCOME",
+          "FIELD.COMPARISON_RESULT"
+        ],
+        "required_values_or_hashes": [
+          "UXF-109.EVIDENCE.CONTENT.HASH"
+        ],
+        "retrieval_method": "UXF-109.EVIDENCE.RETRIEVAL",
+        "version_or_correlation": "UXF-109.EVIDENCE.VERSION.CORRELATION"
+      },
+      "explicit_non_obligations": [
+        "No runtime implementation topology is authorized by this semantic record.",
+        "No production runtime evidence is claimed by this model-level candidate."
+      ],
+      "fixture_ids": [
+        "P2C-C4-FX-EC730FC188B790B463DD",
+        "P2C-C4-FX-B84EBBF44FC848C2EDE7",
+        "P2C-C4-FX-413582DE7CCCACD1C660"
+      ],
+      "high_risk_audit_subset": true,
+      "independent_contract_identity": true,
+      "inference": false,
+      "inherits_contract_ast": null,
+      "negative_oracles": [
+        "A channel changes canonical pricing, policy, authorization or state semantics"
+      ],
+      "normative_obligations": [
+        {
+          "applicability": "V2.3_ACTIVE",
+          "obligation_id": "UXF-109-O001",
+          "obligation_text": "Experience must remain consistent across Portal, Storefront and APIs"
+        }
+      ],
+      "obligation_to_operator_coverage": [
+        {
+          "assertion_ids": [
+            "UXF-109.O1.1.POLICY_OUTCOME_EQUALS"
+          ],
+          "coverage_count": 1,
+          "obligation_id": "UXF-109-O001"
+        }
+      ],
+      "operator_composition": [
+        "POLICY_OUTCOME_EQUALS"
+      ],
+      "positive_oracles": [
+        "Portal, Storefront and API produce equivalent canonical business outcomes"
+      ],
+      "preconditions": [
+        "Channels reference the same canonical business policy and object identity"
+      ],
+      "prohibitions": [
+        "A channel changes canonical pricing, policy, authorization or state semantics"
+      ],
+      "requirement_id": "UXF-109",
+      "runtime_status": "SLICE_RUNTIME_ADAPTER_REQUIRED",
+      "semantic_family_id": null,
+      "source_provenance": {
+        "approved_decision_references": [],
+        "inference": false,
+        "source_document": "docs/UXF/UXF-01.md",
+        "source_fingerprint": "4b24c0c308560c53f4fc8d0e074f28384fb7f843ba9dcf8257f900aa3ebd997d",
+        "source_lines": "L727-L730",
+        "source_section": "15. Experience Principles > UXF-109"
+      },
+      "source_statement": "Experience must remain consistent across Portal, Storefront and APIs.",
+      "surrounding_source_context": "### UXF-109\n\nExperience must remain consistent across Portal, Storefront and APIs.\n\n---"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "contract_id": "P2C.C4.CONTRACT.UXF-109",
+    "inference": false,
+    "mechanism": "APPROVED_TYPED_CUSTOM_AST",
+    "mechanism_version": "SEMANTIC_ACCEPTANCE_RENDERER_C2",
+    "runtime_status": "RUNTIME_ADAPTER_PENDING"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "ACCEPTANCE_READY",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-109-AC001",
-        "UXF-109-AC002"
+        "UXF-109-AC002",
+        "UXF-109-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-109-O001",
@@ -2643,9 +3411,9 @@ This document should be read together with:
     "source_context_heading": "UXF-109",
     "source_context_sha256": "34b16f7b7da92b4154f7bb4b2b7c93a94df47c83a18c1010a460e1cb02f7eab1",
     "source_document": "docs/UXF/UXF-01.md",
-    "source_fingerprint": "4b24c0c308560c53f4fc8d0e074f28384fb7f843ba9dcf8257f900aa3ebd997d",
-    "source_lines": "L727-L730",
-    "source_section": "15. Experience Principles > UXF-109"
+    "source_fingerprint": "5882ce3c943ce883c7571df999582e8e1a126d66e5dd3d2b7024a5316ef94da9",
+    "source_lines": "L2489-L3434",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-109"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2670,28 +3438,34 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DESIGN_CONFORMANCE_OBSERVATION_V1",
-      "criterion_id": "UXF-110-AC001",
-      "given": "a v2.3 capability, configuration, or design change governed by Business capabilities remain independent from presentation contracts",
-      "observable_evidence": "conformance decision, requirement-to-design trace, applicable configuration evidence, and recorded boundary violations",
-      "then": "the conformance review identifies the applicable principle, links it to the governed requirement and design boundary, and records no prohibited coupling",
-      "verifies": [
-        "UXF-110-O001"
-      ],
-      "when": "conformance is reviewed before the change is accepted"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-110",
+      "source_document": "docs/UXF/UXF-01.md",
+      "source_fingerprint": "ad84aa4103c9c2bce36e8756c0f64446fb4bea00a898af9e63805be2e7587d03"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "UXF-110-AC001"
+        "UXF-110-AC001",
+        "UXF-110-AC002",
+        "UXF-110-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-110-O001",
@@ -2726,9 +3500,9 @@ This document should be read together with:
     "source_context_heading": "UXF-110",
     "source_context_sha256": "ea590f86dec88b79ce2336dbf53ed354faf5c3133298e9d7330754a0329f8aa3",
     "source_document": "docs/UXF/UXF-01.md",
-    "source_fingerprint": "ab52d4bb348a16d18728d2072b56b6af8bd56ed2a98aabe5e1987834f23bc863",
-    "source_lines": "L733-L736",
-    "source_section": "15. Experience Principles > UXF-110"
+    "source_fingerprint": "ad84aa4103c9c2bce36e8756c0f64446fb4bea00a898af9e63805be2e7587d03",
+    "source_lines": "L3436-L3523",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-110"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {

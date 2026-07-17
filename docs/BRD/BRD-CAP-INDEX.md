@@ -1,13 +1,20 @@
 ---
 document_code: "BRD-CAP-INDEX"
+document_id: "BRD-CAP-INDEX"
 title: "Enterprise Business Capability Registry"
-product_baseline: "2.3"
-document_revision: "2.3.0-draft.1"
+version: "2.3.0-draft.3"
+document_revision: "2.3.0-draft.3"
+status: "V2.3_DRAFT"
 lifecycle_status: "V2.3_DRAFT"
 language: "vi-VN"
+baseline: "2.3"
+product_baseline: "2.3"
+source_lineage: "v2.2 + approved Phase 1/2A/2B + accepted Acceptance Model C1 + accepted Mapping C3"
 source_baseline: "v2.2"
+last_reviewed_date: "2026-07-15"
+last_remediated_on: "2026-07-17"
+applicable_scope: "V2.3_ACTIVE_AND_RETAINED_SCOPE_RECORDS"
 generated_registry_role: "BRD_CANONICAL_SOURCE"
-last_remediated_on: "2026-07-15"
 ---
 ## Thẩm quyền nguồn yêu cầu v2.3
 
@@ -949,7 +956,7 @@ trước khi được sử dụng trong Platform.
 
 <!-- YSIM:PHASE_2C CANONICAL APPENDIX BEGIN -->
 
-## Phụ lục yêu cầu chuẩn tắc v2.3
+## Phụ lục yêu cầu chuẩn tắc v2.3 — C6-R1
 
 
 
@@ -958,9 +965,20 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "NOT_APPLICABLE_FOR_V2.3",
+    "inference": false,
+    "requirement_id": "BRD-CAP-INDEX-R001",
+    "scope_status": "FUTURE"
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "NOT_APPLICABLE_FOR_V2.3",
+    "runtime_status": "NOT_APPLICABLE_FOR_V2.3"
+  },
   "acceptance_rationale": "Requirement is retained for a future baseline and is excluded from v2.3 delivery.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
   "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
   "acceptance_unit": false,
   "atomic_obligations": [],
@@ -983,8 +1001,8 @@ trước khi được sử dụng trong Platform.
     "source_context_sha256": "9f62803020731dac65c52a9a79fb950abf304dc612a946abf06d6fd27d117e10",
     "source_document": "docs/BRD/BRD-CAP-INDEX.md",
     "source_fingerprint": "2a0425a67d37d9d304a1e540c1a857eaf2af6b01c3800767a9a2ca49898a5f99",
-    "source_lines": "L86",
-    "source_section": "3. Scope"
+    "source_lines": "L963-L1023",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-CAP-INDEX-R001"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1009,28 +1027,36 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-CAP-INDEX-R002-AC001",
-      "given": "the applicable business context, actor, and input for Không phải mọi Capability đều khả dụng cho mọi đối tượng",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the prohibited decision or state transition is absent, the attempted action has a deterministic rejection outcome, and no contradictory success is recorded",
-      "verifies": [
-        "BRD-CAP-INDEX-R002-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-005"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-CAP-INDEX-R002",
+      "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+      "source_fingerprint": "c5f750dae413d6dc3c22777ebda6723db51805257f345fcc38d62adb7f57fc10"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-CAP-INDEX-R002-AC001"
+        "BRD-CAP-INDEX-R002-AC001",
+        "BRD-CAP-INDEX-R002-AC002",
+        "BRD-CAP-INDEX-R002-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-CAP-INDEX-R002-O001",
@@ -1056,8 +1082,8 @@ trước khi được sử dụng trong Platform.
     "source_context_sha256": "497c1f8f3bada17bce3e707cded295bc794c641ec3aedd0354c80eb156e715d2",
     "source_document": "docs/BRD/BRD-CAP-INDEX.md",
     "source_fingerprint": "c5f750dae413d6dc3c22777ebda6723db51805257f345fcc38d62adb7f57fc10",
-    "source_lines": "L206",
-    "source_section": "8. Capability Availability"
+    "source_lines": "L1025-L1107",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-CAP-INDEX-R002"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1065,7 +1091,10 @@ trước khi được sử dụng trong Platform.
     "aliases": [],
     "coverage_mode": null,
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "BRD-CAP-INDEX-R004"
+    ]
   },
   "requirement_type": "BUSINESS_REQUIREMENT",
   "scope_coverage_unit": true,
@@ -1082,28 +1111,36 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-CAP-INDEX-R003-AC001",
-      "given": "the applicable business context, actor, and input for Mỗi Capability được cấp một mã định danh duy nhất",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-CAP-INDEX-R003-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-005"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-CAP-INDEX-R003",
+      "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+      "source_fingerprint": "f2cde12ec2a2f83abb8b89ac4a8531af65838f5f90ea7a15ee9ed5ab24430fb3"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-CAP-INDEX-R003-AC001"
+        "BRD-CAP-INDEX-R003-AC001",
+        "BRD-CAP-INDEX-R003-AC002",
+        "BRD-CAP-INDEX-R003-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-CAP-INDEX-R003-O001",
@@ -1129,8 +1166,8 @@ trước khi được sử dụng trong Platform.
     "source_context_sha256": "7b4bb18b28a04779b5f4f5e0dbabeb8464342d61664b566328eed6a94efc1e87",
     "source_document": "docs/BRD/BRD-CAP-INDEX.md",
     "source_fingerprint": "f2cde12ec2a2f83abb8b89ac4a8531af65838f5f90ea7a15ee9ed5ab24430fb3",
-    "source_lines": "L248",
-    "source_section": "10. Capability Identifier"
+    "source_lines": "L1109-L1191",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-CAP-INDEX-R003"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1138,7 +1175,10 @@ trước khi được sử dụng trong Platform.
     "aliases": [],
     "coverage_mode": null,
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "BRD-CAP-INDEX-R004"
+    ]
   },
   "requirement_type": "BUSINESS_REQUIREMENT",
   "scope_coverage_unit": true,
@@ -1155,46 +1195,29 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DESIGN_CONFORMANCE_OBSERVATION_V1",
-      "criterion_id": "BRD-CAP-INDEX-R004-AC001",
-      "given": "a v2.3 capability, configuration, or design change governed by Capability Registry tuân thủ các nguyên tắc sau",
-      "observable_evidence": "conformance decision, requirement-to-design trace, applicable configuration evidence, and recorded boundary violations",
-      "then": "the conformance review identifies the applicable principle, links it to the governed requirement and design boundary, and records no prohibited coupling",
-      "verifies": [
-        "BRD-CAP-INDEX-R004-O001"
-      ],
-      "when": "conformance is reviewed before the change is accepted"
-    }
-  ],
-  "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
-  "acceptance_unit": true,
-  "atomic_obligations": [
-    {
-      "acceptance_criterion_references": [
-        "BRD-CAP-INDEX-R004-AC001"
-      ],
-      "applicability": "V2.3_ACTIVE",
-      "obligation_id": "BRD-CAP-INDEX-R004-O001",
-      "obligation_text": "Capability Registry tuân thủ các nguyên tắc sau"
-    }
-  ],
+  "acceptance_contract": null,
+  "acceptance_mechanism": null,
+  "acceptance_rationale": "Composite parent coverage is satisfied only through ALL_CHILDREN; the parent is not an implementation, acceptance, scope-coverage, or criticality unit.",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "STRUCTURAL_RECORD",
+  "acceptance_unit": false,
+  "atomic_obligations": [],
   "criticality_applicability": null,
-  "criticality_unit": true,
+  "criticality_unit": false,
   "delivery_commitment": "COMMITTED_FOR_V2.3",
-  "implementation_unit": true,
+  "implementation_unit": false,
   "lifecycle": "V2.3_DRAFT",
   "normative_statement": "Capability Registry tuân thủ các nguyên tắc sau.",
   "provenance": {
     "approved_decisions": [
-      "P2-DEC-005"
+      "P2-DEC-005",
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
     ],
     "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
     "original_identity": "TMP-BRD-CAP-INDEX-004",
+    "phase_2c_c3_actions": [
+      "C3_STRUCTURAL_RECONCILIATION_PARENT"
+    ],
     "previous_temporary_key": "TMP-BRD-CAP-INDEX-004",
     "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
     "source_baseline": "v2.2",
@@ -1202,23 +1225,34 @@ trước khi được sử dụng trong Platform.
     "source_context_sha256": "8cc5c2e64651797bcc871a28877ede5204d2ccf7a34543a1760a30bbc3444294",
     "source_document": "docs/BRD/BRD-CAP-INDEX.md",
     "source_fingerprint": "637111fb992fcef4a72f019a72061d027e5f871df94673681ad252e9f7c0f62f",
-    "source_lines": "L277",
-    "source_section": "11. Registry Principles"
+    "source_fingerprint_before_c3": "637111fb992fcef4a72f019a72061d027e5f871df94673681ad252e9f7c0f62f",
+    "source_lines": "L1193-L1258",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-CAP-INDEX-R004"
   },
-  "record_kind": "CANONICAL_ATOMIC",
+  "record_kind": "COMPOSITE_PARENT",
   "relationships": {
     "alias_of": null,
     "aliases": [],
-    "coverage_mode": null,
+    "coverage_mode": "ALL_CHILDREN",
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [
+      "BRD-CAP-INDEX-R002",
+      "BRD-CAP-INDEX-R003",
+      "BRD-CAP-INDEX-R024",
+      "BRD-CAP-INDEX-R025",
+      "BRD-CAP-INDEX-R026",
+      "BRD-CAP-INDEX-R027",
+      "BRD-CAP-INDEX-R028"
+    ]
   },
   "requirement_type": "DESIGN_PRINCIPLE",
-  "scope_coverage_unit": true,
+  "scope_coverage_unit": false,
   "scope_status": "V2.3_ACTIVE",
   "stable_id": "BRD-CAP-INDEX-R004",
   "title": "Capability Registry tuân thủ các nguyên tắc sau",
-  "verification_criticality": "NORMAL"
+  "verification_criticality": "NOT_APPLICABLE"
 }
 ```
 <!-- YSIM:REQUIREMENT END -->
@@ -1228,9 +1262,20 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "NOT_APPLICABLE_FOR_V2.3",
+    "inference": false,
+    "requirement_id": "BRD-CAP-INDEX-R005",
+    "scope_status": "FUTURE"
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "NOT_APPLICABLE_FOR_V2.3",
+    "runtime_status": "NOT_APPLICABLE_FOR_V2.3"
+  },
   "acceptance_rationale": "Requirement is retained for a future baseline and is excluded from v2.3 delivery.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
   "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
   "acceptance_unit": false,
   "atomic_obligations": [],
@@ -1253,9 +1298,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "13.17 Cross Platform Capabilities",
     "source_context_sha256": "0891ca89a0d69d778fae30177c82a932fc6508289c8b09bab6d3c846aa062071",
     "source_document": "docs/BRD/BRD-CAP-INDEX.md",
-    "source_fingerprint": "1f14676a199859466da58922e0f2373362eb36b27222ad141199f64cbec14f34",
-    "source_lines": "L624",
-    "source_section": "13.17 Cross Platform Capabilities"
+    "source_fingerprint": "7fc9d0aac8722228a747ea2c170ec7d33c5f0d40d1a59f2cc6fbd370fbd150af",
+    "source_lines": "L1260-L1321",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-CAP-INDEX-R005"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1280,9 +1325,20 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "NOT_APPLICABLE_FOR_V2.3",
+    "inference": false,
+    "requirement_id": "BRD-CAP-INDEX-R006",
+    "scope_status": "FUTURE"
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "NOT_APPLICABLE_FOR_V2.3",
+    "runtime_status": "NOT_APPLICABLE_FOR_V2.3"
+  },
   "acceptance_rationale": "Requirement is retained for a future baseline and is excluded from v2.3 delivery.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
   "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
   "acceptance_unit": false,
   "atomic_obligations": [],
@@ -1305,9 +1361,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "13.17 Cross Platform Capabilities",
     "source_context_sha256": "0891ca89a0d69d778fae30177c82a932fc6508289c8b09bab6d3c846aa062071",
     "source_document": "docs/BRD/BRD-CAP-INDEX.md",
-    "source_fingerprint": "76cd430ea66a9718d44677b02703b9acea27f7f5b753f003e7bd52c859cfac75",
-    "source_lines": "L625",
-    "source_section": "13.17 Cross Platform Capabilities"
+    "source_fingerprint": "edab623caaf788986a3b41ea30f651a45e285e1344eea24fadcfa50a009fd4ee",
+    "source_lines": "L1323-L1384",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-CAP-INDEX-R006"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1332,69 +1388,13 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "SECURITY_DECISION_OBSERVATION_V1",
-      "criterion_id": "BRD-CAP-INDEX-R007-AC001",
-      "given": "an identified principal, applicable assurance context, and policy inputs for Shared Approval Engine",
-      "observable_evidence": "decision result, effective assurance or policy, denied or changed state, reason, and audit evidence",
-      "then": "the effective security policy produces the required allow, challenge, block, review, or denial result; protected state and audit evidence agree with that decision",
-      "verifies": [
-        "BRD-CAP-INDEX-R007-O001"
-      ],
-      "when": "the protected decision or action is evaluated"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "SECURITY_DECISION_OBSERVATION_V1",
-      "criterion_id": "BRD-CAP-INDEX-R007-AC002",
-      "given": "an identified principal, applicable assurance context, and policy inputs for Shared Approval Engine",
-      "observable_evidence": "decision result, effective assurance or policy, denied or changed state, reason, and audit evidence",
-      "then": "the prohibited security decision path produces no effective permission or protected-state change, and conformance evidence identifies the attempted bypass",
-      "verifies": [
-        "BRD-CAP-INDEX-R007-O002"
-      ],
-      "when": "the protected decision or action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "SECURITY_FAIL_CLOSED_V1",
-      "criterion_id": "BRD-CAP-INDEX-R007-AC003",
-      "given": "a principal or request that does not satisfy the assurance, policy, consent, or authorization boundary for Shared Approval Engine",
-      "observable_evidence": "decision result, protected-state comparison, reason, effective policy, and audit record",
-      "then": "the result is challenge, block, review, or denial as required; protected state is unchanged and the reason is audited",
-      "verifies": [
-        "BRD-CAP-INDEX-R007-O001",
-        "BRD-CAP-INDEX-R007-O002"
-      ],
-      "when": "the protected decision or action is attempted"
-    }
-  ],
-  "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
-  "acceptance_unit": true,
-  "atomic_obligations": [
-    {
-      "acceptance_criterion_references": [
-        "BRD-CAP-INDEX-R007-AC001",
-        "BRD-CAP-INDEX-R007-AC003"
-      ],
-      "applicability": "V2.3_ACTIVE",
-      "obligation_id": "BRD-CAP-INDEX-R007-O001",
-      "obligation_text": "Nền tảng phải cung cấp Shared Approval Engine dùng chung cho ngoại lệ biên lợi nhuận, hoàn tiền, cấu hình, thông tin xác thực, ghi đè rủi ro và các nghiệp vụ BRD quy định"
-    },
-    {
-      "acceptance_criterion_references": [
-        "BRD-CAP-INDEX-R007-AC002",
-        "BRD-CAP-INDEX-R007-AC003"
-      ],
-      "applicability": "V2.3_ACTIVE",
-      "obligation_id": "BRD-CAP-INDEX-R007-O002",
-      "obligation_text": "engine phải hỗ trợ policy, phân giải người duyệt, phân tách nhiệm vụ, hết hạn, escalation, delegation, evidence và immutable audit, đồng thời không được diễn giải thành general-purpose BPM workflow engine"
-    }
-  ],
+  "acceptance_contract": null,
+  "acceptance_mechanism": null,
+  "acceptance_rationale": "Composite parent coverage is satisfied only through ALL_CHILDREN; the parent is not an implementation, acceptance, scope-coverage, or criticality unit.",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "STRUCTURAL_RECORD",
+  "acceptance_unit": false,
+  "atomic_obligations": [],
   "criticality_applicability": null,
   "criticality_dispositions": [
     {
@@ -1405,9 +1405,9 @@ trước khi được sử dụng trong Platform.
       "selected_disposition": "APPROVED_SCOPE_PROMOTION_REMEDIATION"
     }
   ],
-  "criticality_unit": true,
+  "criticality_unit": false,
   "delivery_commitment": "COMMITTED_FOR_V2.3",
-  "implementation_unit": true,
+  "implementation_unit": false,
   "lifecycle": "V2.3_DRAFT",
   "normative_statement": "Nền tảng phải cung cấp Shared Approval Engine dùng chung cho ngoại lệ biên lợi nhuận, hoàn tiền, cấu hình, thông tin xác thực, ghi đè rủi ro và các nghiệp vụ BRD quy định; engine phải hỗ trợ policy, phân giải người duyệt, phân tách nhiệm vụ, hết hạn, escalation, delegation, evidence và immutable audit, đồng thời không được diễn giải thành general-purpose BPM workflow engine.",
   "provenance": {
@@ -1415,10 +1415,14 @@ trước khi được sử dụng trong Platform.
       "BDD-27",
       "P2-DEC-005",
       "P2-DEC-010",
-      "SD-03"
+      "SD-03",
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
     ],
     "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
     "original_identity": "TMP-BRD-CAP-INDEX-007",
+    "phase_2c_c3_actions": [
+      "C3_STRUCTURAL_RECONCILIATION_PARENT"
+    ],
     "previous_temporary_key": "TMP-BRD-CAP-INDEX-007",
     "remediation_contracts": [
       "V23-P2B-CRITICALITY-DECISION-C1"
@@ -1428,24 +1432,30 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "13.17 Cross Platform Capabilities",
     "source_context_sha256": "0891ca89a0d69d778fae30177c82a932fc6508289c8b09bab6d3c846aa062071",
     "source_document": "docs/BRD/BRD-CAP-INDEX.md",
-    "source_fingerprint": "906e4dc6c37245c232bdb378483b08e6091f230e370e05810029517652b9f23e",
-    "source_lines": "L626",
-    "source_section": "13.17 Cross Platform Capabilities"
+    "source_fingerprint": "cea70aaf3de7030c0356aa4c27d74461559e3ff1e2872ac59d49f89341872de8",
+    "source_fingerprint_before_c3": "906e4dc6c37245c232bdb378483b08e6091f230e370e05810029517652b9f23e",
+    "source_lines": "L1386-L1461",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-CAP-INDEX-R007"
   },
-  "record_kind": "CANONICAL_ATOMIC",
+  "record_kind": "COMPOSITE_PARENT",
   "relationships": {
     "alias_of": null,
     "aliases": [],
-    "coverage_mode": null,
+    "coverage_mode": "ALL_CHILDREN",
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [
+      "BRD-CAP-INDEX-R030",
+      "BRD-CAP-INDEX-R031"
+    ]
   },
   "requirement_type": "BUSINESS_REQUIREMENT",
-  "scope_coverage_unit": true,
+  "scope_coverage_unit": false,
   "scope_status": "V2.3_ACTIVE",
   "stable_id": "BRD-CAP-INDEX-R007",
   "title": "Shared Approval Engine",
-  "verification_criticality": "HIGH"
+  "verification_criticality": "NOT_APPLICABLE"
 }
 ```
 <!-- YSIM:REQUIREMENT END -->
@@ -1455,9 +1465,20 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "NOT_APPLICABLE_FOR_V2.3",
+    "inference": false,
+    "requirement_id": "BRD-CAP-INDEX-R009",
+    "scope_status": "FUTURE"
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "NOT_APPLICABLE_FOR_V2.3",
+    "runtime_status": "NOT_APPLICABLE_FOR_V2.3"
+  },
   "acceptance_rationale": "Requirement is retained for a future baseline and is excluded from v2.3 delivery.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
   "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
   "acceptance_unit": false,
   "atomic_obligations": [],
@@ -1480,9 +1501,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "13.18 Future Capability Roadmap",
     "source_context_sha256": "74bbe1636e0ea76e89a41a0d869195feef74ad41cb611b681eb310c34fbb59c3",
     "source_document": "docs/BRD/BRD-CAP-INDEX.md",
-    "source_fingerprint": "631832afe63d2bb34156326d1405f9af8b3ef8d47ba2203ea445dcea5dd4c34f",
-    "source_lines": "L643",
-    "source_section": "13.18 Future Capability Roadmap"
+    "source_fingerprint": "e0f13a705ff26889ecf8bb213fd985dc5bf9af52a606ce023d65b6f47f57b3b9",
+    "source_lines": "L1463-L1524",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-CAP-INDEX-R009"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1507,9 +1528,20 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "NOT_APPLICABLE_FOR_V2.3",
+    "inference": false,
+    "requirement_id": "BRD-CAP-INDEX-R010",
+    "scope_status": "FUTURE"
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "NOT_APPLICABLE_FOR_V2.3",
+    "runtime_status": "NOT_APPLICABLE_FOR_V2.3"
+  },
   "acceptance_rationale": "Requirement is retained for a future baseline and is excluded from v2.3 delivery.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
   "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
   "acceptance_unit": false,
   "atomic_obligations": [],
@@ -1531,9 +1563,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "13.18 Future Capability Roadmap",
     "source_context_sha256": "74bbe1636e0ea76e89a41a0d869195feef74ad41cb611b681eb310c34fbb59c3",
     "source_document": "docs/BRD/BRD-CAP-INDEX.md",
-    "source_fingerprint": "d65432338cbc6374926de12ece12c308cf5f8c0b23b745f81357fec7560b0cb3",
-    "source_lines": "L644",
-    "source_section": "13.18 Future Capability Roadmap"
+    "source_fingerprint": "74dcf9cf6f6ff80826103a0bb6056bf2c6e499b419dfd76837212109d5791364",
+    "source_lines": "L1526-L1586",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-CAP-INDEX-R010"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1558,9 +1590,20 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "NOT_APPLICABLE_FOR_V2.3",
+    "inference": false,
+    "requirement_id": "BRD-CAP-INDEX-R011",
+    "scope_status": "FUTURE"
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "NOT_APPLICABLE_FOR_V2.3",
+    "runtime_status": "NOT_APPLICABLE_FOR_V2.3"
+  },
   "acceptance_rationale": "Requirement is retained for a future baseline and is excluded from v2.3 delivery.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
   "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
   "acceptance_unit": false,
   "atomic_obligations": [],
@@ -1583,9 +1626,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "13.18 Future Capability Roadmap",
     "source_context_sha256": "74bbe1636e0ea76e89a41a0d869195feef74ad41cb611b681eb310c34fbb59c3",
     "source_document": "docs/BRD/BRD-CAP-INDEX.md",
-    "source_fingerprint": "b197937549196f24cba79676cbbb595a220ccd102c3f282870540674c79f345b",
-    "source_lines": "L645",
-    "source_section": "13.18 Future Capability Roadmap"
+    "source_fingerprint": "7f9bb6a197a691369152f2423b65e437e4b6b12f0690032600d9c72b42571d02",
+    "source_lines": "L1588-L1649",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-CAP-INDEX-R011"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1610,9 +1653,20 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "NOT_APPLICABLE_FOR_V2.3",
+    "inference": false,
+    "requirement_id": "BRD-CAP-INDEX-R012",
+    "scope_status": "FUTURE"
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "NOT_APPLICABLE_FOR_V2.3",
+    "runtime_status": "NOT_APPLICABLE_FOR_V2.3"
+  },
   "acceptance_rationale": "Requirement is retained for a future baseline and is excluded from v2.3 delivery.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
   "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
   "acceptance_unit": false,
   "atomic_obligations": [],
@@ -1634,9 +1688,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "13.18 Future Capability Roadmap",
     "source_context_sha256": "74bbe1636e0ea76e89a41a0d869195feef74ad41cb611b681eb310c34fbb59c3",
     "source_document": "docs/BRD/BRD-CAP-INDEX.md",
-    "source_fingerprint": "75678ece2a8f04a354f2b9a064363ae0cc1b906284bff348e2a71b8229013d6b",
-    "source_lines": "L646",
-    "source_section": "13.18 Future Capability Roadmap"
+    "source_fingerprint": "c75744846d8edda05b606c01fb5fc4be11e48724eea9d9a15b8e804e953a3586",
+    "source_lines": "L1651-L1711",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-CAP-INDEX-R012"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1661,9 +1715,20 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "NOT_APPLICABLE_FOR_V2.3",
+    "inference": false,
+    "requirement_id": "BRD-CAP-INDEX-R013",
+    "scope_status": "FUTURE"
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "NOT_APPLICABLE_FOR_V2.3",
+    "runtime_status": "NOT_APPLICABLE_FOR_V2.3"
+  },
   "acceptance_rationale": "Requirement is retained for a future baseline and is excluded from v2.3 delivery.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
   "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
   "acceptance_unit": false,
   "atomic_obligations": [],
@@ -1685,9 +1750,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "13.18 Future Capability Roadmap",
     "source_context_sha256": "74bbe1636e0ea76e89a41a0d869195feef74ad41cb611b681eb310c34fbb59c3",
     "source_document": "docs/BRD/BRD-CAP-INDEX.md",
-    "source_fingerprint": "958c6a52881cf19c05bfbd387ce4a3fe3673d3d0256039b8b069645a86d7931e",
-    "source_lines": "L647",
-    "source_section": "13.18 Future Capability Roadmap"
+    "source_fingerprint": "76572583626859b830b87161ef24c622b4c573bf73f007e6d2cca06a8089e1e1",
+    "source_lines": "L1713-L1773",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-CAP-INDEX-R013"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1712,9 +1777,20 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "NOT_APPLICABLE_FOR_V2.3",
+    "inference": false,
+    "requirement_id": "BRD-CAP-INDEX-R014",
+    "scope_status": "FUTURE"
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "NOT_APPLICABLE_FOR_V2.3",
+    "runtime_status": "NOT_APPLICABLE_FOR_V2.3"
+  },
   "acceptance_rationale": "Requirement is retained for a future baseline and is excluded from v2.3 delivery.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
   "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
   "acceptance_unit": false,
   "atomic_obligations": [],
@@ -1736,9 +1812,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "13.18 Future Capability Roadmap",
     "source_context_sha256": "74bbe1636e0ea76e89a41a0d869195feef74ad41cb611b681eb310c34fbb59c3",
     "source_document": "docs/BRD/BRD-CAP-INDEX.md",
-    "source_fingerprint": "a11278adea1652f36502f5b60fcd948b8e5eff93c15ee629c6901093f63dfa62",
-    "source_lines": "L648",
-    "source_section": "13.18 Future Capability Roadmap"
+    "source_fingerprint": "6893edbea136a79f7fd551d2ca79bced70d1f75e8fe701e968f914718ba3c461",
+    "source_lines": "L1775-L1835",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-CAP-INDEX-R014"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1763,9 +1839,20 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "NOT_APPLICABLE_FOR_V2.3",
+    "inference": false,
+    "requirement_id": "BRD-CAP-INDEX-R015",
+    "scope_status": "FUTURE"
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "NOT_APPLICABLE_FOR_V2.3",
+    "runtime_status": "NOT_APPLICABLE_FOR_V2.3"
+  },
   "acceptance_rationale": "Requirement is retained for a future baseline and is excluded from v2.3 delivery.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
   "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
   "acceptance_unit": false,
   "atomic_obligations": [],
@@ -1787,9 +1874,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "13.18 Future Capability Roadmap",
     "source_context_sha256": "74bbe1636e0ea76e89a41a0d869195feef74ad41cb611b681eb310c34fbb59c3",
     "source_document": "docs/BRD/BRD-CAP-INDEX.md",
-    "source_fingerprint": "a056cb14ef0db972ac059edc4d6116d50db786dcf12ae5234b293a640744a358",
-    "source_lines": "L649",
-    "source_section": "13.18 Future Capability Roadmap"
+    "source_fingerprint": "0d9242d8b6b433505e1ff23c8d55a95898ccd526473f425f64b850e15ecfab16",
+    "source_lines": "L1837-L1897",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-CAP-INDEX-R015"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1814,9 +1901,20 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "NOT_APPLICABLE_FOR_V2.3",
+    "inference": false,
+    "requirement_id": "BRD-CAP-INDEX-R016",
+    "scope_status": "FUTURE"
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "NOT_APPLICABLE_FOR_V2.3",
+    "runtime_status": "NOT_APPLICABLE_FOR_V2.3"
+  },
   "acceptance_rationale": "Requirement is retained for a future baseline and is excluded from v2.3 delivery.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
   "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
   "acceptance_unit": false,
   "atomic_obligations": [],
@@ -1838,9 +1936,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "13.18 Future Capability Roadmap",
     "source_context_sha256": "74bbe1636e0ea76e89a41a0d869195feef74ad41cb611b681eb310c34fbb59c3",
     "source_document": "docs/BRD/BRD-CAP-INDEX.md",
-    "source_fingerprint": "899b2fa7c5cb1fd1b0d8c6a9f2e0434c8140d284b4782224acf386f830aa107b",
-    "source_lines": "L650",
-    "source_section": "13.18 Future Capability Roadmap"
+    "source_fingerprint": "0239fd3f4921ae23bc541a08efdc456c81be3876d4f7c61598cdcc767b07ac07",
+    "source_lines": "L1899-L1959",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-CAP-INDEX-R016"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1865,9 +1963,20 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "NOT_APPLICABLE_FOR_V2.3",
+    "inference": false,
+    "requirement_id": "BRD-CAP-INDEX-R017",
+    "scope_status": "FUTURE"
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "NOT_APPLICABLE_FOR_V2.3",
+    "runtime_status": "NOT_APPLICABLE_FOR_V2.3"
+  },
   "acceptance_rationale": "Requirement is retained for a future baseline and is excluded from v2.3 delivery.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
   "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
   "acceptance_unit": false,
   "atomic_obligations": [],
@@ -1889,9 +1998,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "13.18 Future Capability Roadmap",
     "source_context_sha256": "74bbe1636e0ea76e89a41a0d869195feef74ad41cb611b681eb310c34fbb59c3",
     "source_document": "docs/BRD/BRD-CAP-INDEX.md",
-    "source_fingerprint": "6c2aa30ed9ce8fe00c01a19a9d985c0ebe4174e459790f50b69b57ecc1602279",
-    "source_lines": "L651",
-    "source_section": "13.18 Future Capability Roadmap"
+    "source_fingerprint": "a9a7d374aa6e0d863ccc176e8e3da4b9b581e0971307785ba8ff4e36bbd1116e",
+    "source_lines": "L1961-L2021",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-CAP-INDEX-R017"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1916,9 +2025,20 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "NOT_APPLICABLE_FOR_V2.3",
+    "inference": false,
+    "requirement_id": "BRD-CAP-INDEX-R018",
+    "scope_status": "FUTURE"
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "NOT_APPLICABLE_FOR_V2.3",
+    "runtime_status": "NOT_APPLICABLE_FOR_V2.3"
+  },
   "acceptance_rationale": "Requirement is retained for a future baseline and is excluded from v2.3 delivery.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
   "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
   "acceptance_unit": false,
   "atomic_obligations": [],
@@ -1940,9 +2060,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "13.18 Future Capability Roadmap",
     "source_context_sha256": "74bbe1636e0ea76e89a41a0d869195feef74ad41cb611b681eb310c34fbb59c3",
     "source_document": "docs/BRD/BRD-CAP-INDEX.md",
-    "source_fingerprint": "aeee5e5977785fbe5ea359da9214d953086aebf39913df2a0d548e8a15d7a1ce",
-    "source_lines": "L652",
-    "source_section": "13.18 Future Capability Roadmap"
+    "source_fingerprint": "dcdd265a78974a8966bf5d5b1f7a46916fded8ccf6b77827561e3e4488241399",
+    "source_lines": "L2023-L2083",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-CAP-INDEX-R018"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1967,9 +2087,20 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "NOT_APPLICABLE_FOR_V2.3",
+    "inference": false,
+    "requirement_id": "BRD-CAP-INDEX-R019",
+    "scope_status": "FUTURE"
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "NOT_APPLICABLE_FOR_V2.3",
+    "runtime_status": "NOT_APPLICABLE_FOR_V2.3"
+  },
   "acceptance_rationale": "Requirement is retained for a future baseline and is excluded from v2.3 delivery.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
   "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
   "acceptance_unit": false,
   "atomic_obligations": [],
@@ -1991,9 +2122,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "13.18 Future Capability Roadmap",
     "source_context_sha256": "74bbe1636e0ea76e89a41a0d869195feef74ad41cb611b681eb310c34fbb59c3",
     "source_document": "docs/BRD/BRD-CAP-INDEX.md",
-    "source_fingerprint": "e67e378ced90818c81543e908a798dd46a411413432b5d407c9d688f013ca857",
-    "source_lines": "L653",
-    "source_section": "13.18 Future Capability Roadmap"
+    "source_fingerprint": "551186b55bb67987aef0a930d7e9da0deb44638f4afb6331865cf1b4ba4ccf36",
+    "source_lines": "L2085-L2145",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-CAP-INDEX-R019"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2018,28 +2149,36 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "SCOPE_BOUNDARY_OBSERVATION_V1",
-      "criterion_id": "BRD-CAP-INDEX-R020-AC001",
-      "given": "the v2.3 capability inventory and conformance evidence for | Capability | Planned Version | | Recommendation Engine | Future |",
-      "observable_evidence": "baseline capability inventory, exposed action or API surface, conformance trace, implementation-status evidence, and future-scope marker",
-      "then": "implemented behavior and exposed actions match the statement's active versus future boundary; future-only behavior is not presented as available in v2.3",
-      "verifies": [
-        "BRD-CAP-INDEX-R020-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-005"
       ],
-      "when": "the capability is inspected at the active baseline boundary"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-CAP-INDEX-R020",
+      "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+      "source_fingerprint": "7384742eba405f75cce97a14988c1d2fb87bad7f294899adb0d42aa06b6e2bbd"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-CAP-INDEX-R020-AC001"
+        "BRD-CAP-INDEX-R020-AC001",
+        "BRD-CAP-INDEX-R020-AC002",
+        "BRD-CAP-INDEX-R020-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-CAP-INDEX-R020-O001",
@@ -2064,9 +2203,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "13.18 Future Capability Roadmap",
     "source_context_sha256": "74bbe1636e0ea76e89a41a0d869195feef74ad41cb611b681eb310c34fbb59c3",
     "source_document": "docs/BRD/BRD-CAP-INDEX.md",
-    "source_fingerprint": "120ce66a06a6bfc55ec92f6c9f64b19839cea2c877d70cbddb348e35e4f93615",
-    "source_lines": "L654",
-    "source_section": "13.18 Future Capability Roadmap"
+    "source_fingerprint": "7384742eba405f75cce97a14988c1d2fb87bad7f294899adb0d42aa06b6e2bbd",
+    "source_lines": "L2147-L2226",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-CAP-INDEX-R020"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2091,9 +2230,20 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "NOT_APPLICABLE_FOR_V2.3",
+    "inference": false,
+    "requirement_id": "BRD-CAP-INDEX-R021",
+    "scope_status": "FUTURE"
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "NOT_APPLICABLE_FOR_V2.3",
+    "runtime_status": "NOT_APPLICABLE_FOR_V2.3"
+  },
   "acceptance_rationale": "Requirement is retained for a future baseline and is excluded from v2.3 delivery.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
   "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
   "acceptance_unit": false,
   "atomic_obligations": [],
@@ -2115,9 +2265,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "13.18 Future Capability Roadmap",
     "source_context_sha256": "74bbe1636e0ea76e89a41a0d869195feef74ad41cb611b681eb310c34fbb59c3",
     "source_document": "docs/BRD/BRD-CAP-INDEX.md",
-    "source_fingerprint": "5267c7b388bcaf8fc2670d82278c87b387f1da1406a7e646b8eb83a1444aaf10",
-    "source_lines": "L655",
-    "source_section": "13.18 Future Capability Roadmap"
+    "source_fingerprint": "b7b1100b2789b5829c7a4836de1faa813a7ad9336061ea81204be3e85e03411a",
+    "source_lines": "L2228-L2288",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-CAP-INDEX-R021"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2142,28 +2292,36 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "SCOPE_BOUNDARY_OBSERVATION_V1",
-      "criterion_id": "BRD-CAP-INDEX-R022-AC001",
-      "given": "the v2.3 capability inventory and conformance evidence for | Capability | Planned Version | | Fraud Detection Platform | Future |",
-      "observable_evidence": "baseline capability inventory, exposed action or API surface, conformance trace, implementation-status evidence, and future-scope marker",
-      "then": "implemented behavior and exposed actions match the statement's active versus future boundary; future-only behavior is not presented as available in v2.3",
-      "verifies": [
-        "BRD-CAP-INDEX-R022-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-005"
       ],
-      "when": "the capability is inspected at the active baseline boundary"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-CAP-INDEX-R022",
+      "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+      "source_fingerprint": "7a4b0877ed610f239a894bd6727681def46260e74ab25fc16e1d485ead249ed4"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-CAP-INDEX-R022-AC001"
+        "BRD-CAP-INDEX-R022-AC001",
+        "BRD-CAP-INDEX-R022-AC002",
+        "BRD-CAP-INDEX-R022-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-CAP-INDEX-R022-O001",
@@ -2188,9 +2346,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "13.18 Future Capability Roadmap",
     "source_context_sha256": "74bbe1636e0ea76e89a41a0d869195feef74ad41cb611b681eb310c34fbb59c3",
     "source_document": "docs/BRD/BRD-CAP-INDEX.md",
-    "source_fingerprint": "1df8a9c4122e768074a5892234b22a983178a0de8e16e2f1949e35e379d0f48b",
-    "source_lines": "L656",
-    "source_section": "13.18 Future Capability Roadmap"
+    "source_fingerprint": "7a4b0877ed610f239a894bd6727681def46260e74ab25fc16e1d485ead249ed4",
+    "source_lines": "L2290-L2369",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-CAP-INDEX-R022"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2215,9 +2373,20 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "NOT_APPLICABLE_FOR_V2.3",
+    "inference": false,
+    "requirement_id": "BRD-CAP-INDEX-R023",
+    "scope_status": "FUTURE"
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "NOT_APPLICABLE_FOR_V2.3",
+    "runtime_status": "NOT_APPLICABLE_FOR_V2.3"
+  },
   "acceptance_rationale": "Requirement is retained for a future baseline and is excluded from v2.3 delivery.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
   "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
   "acceptance_unit": false,
   "atomic_obligations": [],
@@ -2240,8 +2409,8 @@ trước khi được sử dụng trong Platform.
     "source_context_sha256": "74bbe1636e0ea76e89a41a0d869195feef74ad41cb611b681eb310c34fbb59c3",
     "source_document": "docs/BRD/BRD-CAP-INDEX.md",
     "source_fingerprint": "20d5a9f9d0296564c9e5fd595860073da26bf07e74d0b5e65f0e47af3bcdbede",
-    "source_lines": "L658",
-    "source_section": "13.18 Future Capability Roadmap"
+    "source_lines": "L2371-L2431",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-CAP-INDEX-R023"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2266,28 +2435,36 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-CAP-INDEX-R024-AC001",
-      "given": "the applicable business context, actor, and input for Mọi Capability mới hoặc thay đổi Capability hiện có phải được: - Architecture Review",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-CAP-INDEX-R024-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-005"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-CAP-INDEX-R024",
+      "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+      "source_fingerprint": "c00e275caa2a8e86cb16d87602d1bdf54b86e90f73e0e37d0865a516adf7d273"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-CAP-INDEX-R024-AC001"
+        "BRD-CAP-INDEX-R024-AC001",
+        "BRD-CAP-INDEX-R024-AC002",
+        "BRD-CAP-INDEX-R024-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-CAP-INDEX-R024-O001",
@@ -2313,8 +2490,8 @@ trước khi được sử dụng trong Platform.
     "source_context_sha256": "9ece934b189815153252f6614c5c19e429ae82c14d328f28871377a0d84b467e",
     "source_document": "docs/BRD/BRD-CAP-INDEX.md",
     "source_fingerprint": "c00e275caa2a8e86cb16d87602d1bdf54b86e90f73e0e37d0865a516adf7d273",
-    "source_lines": "L935-L937",
-    "source_section": "20. Document Status"
+    "source_lines": "L2433-L2516",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-CAP-INDEX-R024"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2322,7 +2499,11 @@ trước khi được sử dụng trong Platform.
     "aliases": [],
     "coverage_mode": null,
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "BRD-CAP-INDEX-R004",
+      "CAP-P08"
+    ]
   },
   "requirement_type": "BUSINESS_REQUIREMENT",
   "scope_coverage_unit": true,
@@ -2339,28 +2520,38 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-CAP-INDEX-R025-AC001",
-      "given": "the applicable business context, actor, and input for Mọi Capability mới hoặc thay đổi Capability hiện có phải được: - Approval",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the proposed change remains pending until the required approval decision is recorded, and only an approved decision permits the accepted state change",
-      "verifies": [
-        "BRD-CAP-INDEX-R025-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "BDD-27",
+        "P2-DEC-005",
+        "SD-03"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-CAP-INDEX-R025",
+      "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+      "source_fingerprint": "c71e8538d270a6d15ff4dc9319caa56b73a38427829f606e542bada976e0f951"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-CAP-INDEX-R025-AC001"
+        "BRD-CAP-INDEX-R025-AC001",
+        "BRD-CAP-INDEX-R025-AC002",
+        "BRD-CAP-INDEX-R025-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-CAP-INDEX-R025-O001",
@@ -2387,9 +2578,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "20. Document Status",
     "source_context_sha256": "9ece934b189815153252f6614c5c19e429ae82c14d328f28871377a0d84b467e",
     "source_document": "docs/BRD/BRD-CAP-INDEX.md",
-    "source_fingerprint": "7fac2abf1a40ac727e4766c8d3793fb2300ff941cc1193c16f6a2a7b8c438bb5",
-    "source_lines": "L935-L938",
-    "source_section": "20. Document Status"
+    "source_fingerprint": "c71e8538d270a6d15ff4dc9319caa56b73a38427829f606e542bada976e0f951",
+    "source_lines": "L2518-L2605",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-CAP-INDEX-R025"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2397,7 +2588,11 @@ trước khi được sử dụng trong Platform.
     "aliases": [],
     "coverage_mode": null,
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "BRD-CAP-INDEX-R004",
+      "CAP-P08"
+    ]
   },
   "requirement_type": "BUSINESS_REQUIREMENT",
   "scope_coverage_unit": true,
@@ -2414,28 +2609,36 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-CAP-INDEX-R026-AC001",
-      "given": "the applicable business context, actor, and input for Mọi Capability mới hoặc thay đổi Capability hiện có phải được: - Versioning",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-CAP-INDEX-R026-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-005"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-CAP-INDEX-R026",
+      "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+      "source_fingerprint": "44c670e995afad8e55af5e200ae2d1d219735733dc58691213f255f46d8b8d0e"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-CAP-INDEX-R026-AC001"
+        "BRD-CAP-INDEX-R026-AC001",
+        "BRD-CAP-INDEX-R026-AC002",
+        "BRD-CAP-INDEX-R026-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-CAP-INDEX-R026-O001",
@@ -2460,9 +2663,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "20. Document Status",
     "source_context_sha256": "9ece934b189815153252f6614c5c19e429ae82c14d328f28871377a0d84b467e",
     "source_document": "docs/BRD/BRD-CAP-INDEX.md",
-    "source_fingerprint": "e0ae02c66d1e3eac7403539c513a03492ff7a8c876cb6c208b42d389ce3be0c1",
-    "source_lines": "L935-L939",
-    "source_section": "20. Document Status"
+    "source_fingerprint": "44c670e995afad8e55af5e200ae2d1d219735733dc58691213f255f46d8b8d0e",
+    "source_lines": "L2607-L2690",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-CAP-INDEX-R026"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2470,7 +2673,11 @@ trước khi được sử dụng trong Platform.
     "aliases": [],
     "coverage_mode": null,
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "BRD-CAP-INDEX-R004",
+      "CAP-P08"
+    ]
   },
   "requirement_type": "BUSINESS_REQUIREMENT",
   "scope_coverage_unit": true,
@@ -2487,41 +2694,36 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-CAP-INDEX-R027-AC001",
-      "given": "an operational task within the scope of Mọi Capability mới hoặc thay đổi Capability hiện có phải được: - Audit",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BRD-CAP-INDEX-R027-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-005"
       ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "OPERATIONAL_VERIFICATION_FAILURE_V1",
-      "criterion_id": "BRD-CAP-INDEX-R027-AC002",
-      "given": "an operational task missing an outcome, required signal, audit evidence, or recovery evidence for Mọi Capability mới hoặc thay đổi Capability hiện có phải được: - Audit",
-      "observable_evidence": "operator-visible verification result, missing-evidence identifier, operation state, and relevant signal or audit record",
-      "then": "verification reports the specific missing evidence as a detectable failure and does not report the task as conforming",
-      "verifies": [
-        "BRD-CAP-INDEX-R027-O001"
-      ],
-      "when": "operational verification is performed"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-CAP-INDEX-R027",
+      "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+      "source_fingerprint": "4bea84939a8346a43760067b38a8b7903400b6f1176943d76168fa00b8fc613e"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-CAP-INDEX-R027-AC001",
-        "BRD-CAP-INDEX-R027-AC002"
+        "BRD-CAP-INDEX-R027-AC002",
+        "BRD-CAP-INDEX-R027-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-CAP-INDEX-R027-O001",
@@ -2530,35 +2732,36 @@ trước khi được sử dụng trong Platform.
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-CAP-INDEX-R027 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-CAP-INDEX-R027 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-CAP-INDEX-R027 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-CAP-INDEX-R027 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-CAP-INDEX-R027 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-CAP-INDEX-R027 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "BRD-CAP-INDEX-R027 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BRD-CAP-INDEX-R027-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BRD-CAP-INDEX-R027-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-CAP-INDEX-R027 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-CAP-INDEX-R027 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -2578,9 +2781,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "20. Document Status",
     "source_context_sha256": "9ece934b189815153252f6614c5c19e429ae82c14d328f28871377a0d84b467e",
     "source_document": "docs/BRD/BRD-CAP-INDEX.md",
-    "source_fingerprint": "4784389292cc7dc00dfb6526409b317a5b355f13ab6864ae7e7ab429a2d8c9ac",
-    "source_lines": "L935-L940",
-    "source_section": "20. Document Status"
+    "source_fingerprint": "4bea84939a8346a43760067b38a8b7903400b6f1176943d76168fa00b8fc613e",
+    "source_lines": "L2692-L2808",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-CAP-INDEX-R027"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2588,7 +2791,11 @@ trước khi được sử dụng trong Platform.
     "aliases": [],
     "coverage_mode": null,
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "BRD-CAP-INDEX-R004",
+      "CAP-P08"
+    ]
   },
   "requirement_type": "OPERATIONAL_REQUIREMENT",
   "scope_coverage_unit": true,
@@ -2605,28 +2812,36 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-CAP-INDEX-R028-AC001",
-      "given": "the applicable business context, actor, and input for Mọi Capability mới hoặc thay đổi Capability hiện có phải được: - Traceability",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-CAP-INDEX-R028-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-005"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-CAP-INDEX-R028",
+      "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+      "source_fingerprint": "98066c34673ff401799a8b6cec361fa4195a607c95e519c8362e842f163596ca"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-CAP-INDEX-R028-AC001"
+        "BRD-CAP-INDEX-R028-AC001",
+        "BRD-CAP-INDEX-R028-AC002",
+        "BRD-CAP-INDEX-R028-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-CAP-INDEX-R028-O001",
@@ -2651,9 +2866,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "20. Document Status",
     "source_context_sha256": "9ece934b189815153252f6614c5c19e429ae82c14d328f28871377a0d84b467e",
     "source_document": "docs/BRD/BRD-CAP-INDEX.md",
-    "source_fingerprint": "d3b25203a743c72f87b6019cdf53714b71d7cc8dc8829dde92c8ad26d688e046",
-    "source_lines": "L935-L941",
-    "source_section": "20. Document Status"
+    "source_fingerprint": "98066c34673ff401799a8b6cec361fa4195a607c95e519c8362e842f163596ca",
+    "source_lines": "L2810-L2893",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-CAP-INDEX-R028"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2661,7 +2876,11 @@ trước khi được sử dụng trong Platform.
     "aliases": [],
     "coverage_mode": null,
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "BRD-CAP-INDEX-R004",
+      "CAP-P08"
+    ]
   },
   "requirement_type": "BUSINESS_REQUIREMENT",
   "scope_coverage_unit": true,
@@ -2678,129 +2897,50 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "CAPABILITY_EVENT_ROLE_ENUM_V1",
-      "criterion_id": "BRD-CAP-INDEX-R029-AC001",
-      "given": "a Capability metadata candidate",
-      "observable_evidence": "submitted value and enum-validation result",
-      "then": "only PUBLISHER, SUBSCRIBER, BOTH, or NONE is accepted",
-      "verifies": [
-        "BRD-CAP-INDEX-R029-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-005"
       ],
-      "when": "event_role is validated"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "CAPABILITY_EVENT_ROLE_LIST_MATRIX_V1",
-      "criterion_id": "BRD-CAP-INDEX-R029-AC002",
-      "given": "Capability metadata for each supported event role",
-      "observable_evidence": "event_role, both submitted lists, and field-level validation results",
-      "then": "NONE accepts only two empty lists; PUBLISHER, SUBSCRIBER, and BOTH accept only the corresponding required non-empty lists",
-      "verifies": [
-        "BRD-CAP-INDEX-R029-O002",
-        "BRD-CAP-INDEX-R029-O003",
-        "BRD-CAP-INDEX-R029-O004",
-        "BRD-CAP-INDEX-R029-O005"
-      ],
-      "when": "role/list consistency is validated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "CAPABILITY_EVENT_ROLE_LIST_MATRIX_V1",
-      "criterion_id": "BRD-CAP-INDEX-R029-AC003",
-      "given": "NONE with at least one non-empty event list",
-      "observable_evidence": "rejection reason, submitted lists, and absence of persisted inconsistent state",
-      "then": "the record is rejected and neither inconsistent list is persisted",
-      "verifies": [
-        "BRD-CAP-INDEX-R029-O002"
-      ],
-      "when": "the metadata is submitted"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "CAPABILITY_EVENT_ROLE_LIST_MATRIX_V1",
-      "criterion_id": "BRD-CAP-INDEX-R029-AC004",
-      "given": "PUBLISHER, SUBSCRIBER, or BOTH with a missing corresponding list",
-      "observable_evidence": "role, submitted lists, missing-list reason, and rejected persistence outcome",
-      "then": "the record is rejected with the missing required list identified",
-      "verifies": [
-        "BRD-CAP-INDEX-R029-O003",
-        "BRD-CAP-INDEX-R029-O004",
-        "BRD-CAP-INDEX-R029-O005"
-      ],
-      "when": "the metadata is submitted"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "CANONICAL_EVENT_REFERENCE_VALIDATION_V1",
-      "criterion_id": "BRD-CAP-INDEX-R029-AC005",
-      "given": "an event list containing an alias, retired, tombstone, unknown, or dangling Event ID",
-      "observable_evidence": "submitted IDs, canonical-resolution result, reference status, and rejection outcome",
-      "then": "the metadata is rejected and every non-canonical reference is identified",
-      "verifies": [
-        "BRD-CAP-INDEX-R029-O006"
-      ],
-      "when": "canonical references are resolved"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-CAP-INDEX-R029",
+      "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+      "source_fingerprint": "e3dfab15f29513c3b688c2b8b565f17b3b4ad9aa32836e6b55e2dc5abf87fea8"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-CAP-INDEX-R029-AC001"
+        "BRD-CAP-INDEX-R029-AC001",
+        "BRD-CAP-INDEX-R029-AC003",
+        "BRD-CAP-INDEX-R029-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-CAP-INDEX-R029-O001",
-      "obligation_text": "event_role accepts only PUBLISHER, SUBSCRIBER, BOTH, or NONE."
+      "obligation_text": "Mỗi Capability phải khai báo event_role là PUBLISHER, SUBSCRIBER, BOTH hoặc NONE cùng published_event_ids và subscribed_event_ids"
     },
     {
       "acceptance_criterion_references": [
         "BRD-CAP-INDEX-R029-AC002",
-        "BRD-CAP-INDEX-R029-AC003"
+        "BRD-CAP-INDEX-R029-AC003",
+        "BRD-CAP-INDEX-R029-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-CAP-INDEX-R029-O002",
-      "obligation_text": "NONE requires published_event_ids and subscribed_event_ids to both be empty."
-    },
-    {
-      "acceptance_criterion_references": [
-        "BRD-CAP-INDEX-R029-AC002",
-        "BRD-CAP-INDEX-R029-AC004"
-      ],
-      "applicability": "V2.3_ACTIVE",
-      "obligation_id": "BRD-CAP-INDEX-R029-O003",
-      "obligation_text": "PUBLISHER requires published_event_ids to be non-empty."
-    },
-    {
-      "acceptance_criterion_references": [
-        "BRD-CAP-INDEX-R029-AC002",
-        "BRD-CAP-INDEX-R029-AC004"
-      ],
-      "applicability": "V2.3_ACTIVE",
-      "obligation_id": "BRD-CAP-INDEX-R029-O004",
-      "obligation_text": "SUBSCRIBER requires subscribed_event_ids to be non-empty."
-    },
-    {
-      "acceptance_criterion_references": [
-        "BRD-CAP-INDEX-R029-AC002",
-        "BRD-CAP-INDEX-R029-AC004"
-      ],
-      "applicability": "V2.3_ACTIVE",
-      "obligation_id": "BRD-CAP-INDEX-R029-O005",
-      "obligation_text": "BOTH requires published_event_ids and subscribed_event_ids to both be non-empty."
-    },
-    {
-      "acceptance_criterion_references": [
-        "BRD-CAP-INDEX-R029-AC005"
-      ],
-      "applicability": "V2.3_ACTIVE",
-      "obligation_id": "BRD-CAP-INDEX-R029-O006",
-      "obligation_text": "Every event reference resolves to a canonical active or approved Event Registry ID and rejects alias, retired, tombstone, or dangling IDs."
+      "obligation_text": "NONE yêu cầu hai danh sách rỗng, các role còn lại yêu cầu danh sách tương ứng không rỗng, và mọi tham chiếu phải trỏ tới Event Registry ID canonical active/approved, không được dùng alias, retired, tombstone hoặc dangling reference"
     }
   ],
   "criticality_applicability": null,
@@ -2850,7 +2990,10 @@ trước khi được sử dụng trong Platform.
     "source_baseline": "v2.2",
     "source_context_heading": "APPROVED_DECISION_CONTRACT",
     "source_context_sha256": "eba829414e616f68141a624b9bc3021d71331d003a4de0be6ca5a914700554b3",
-    "source_document": "docs/BRD/BRD-CAP-INDEX.md"
+    "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+    "source_fingerprint": "e3dfab15f29513c3b688c2b8b565f17b3b4ad9aa32836e6b55e2dc5abf87fea8",
+    "source_lines": "L2895-L3014",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-CAP-INDEX-R029"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2871,32 +3014,250 @@ trước khi được sử dụng trong Platform.
 <!-- YSIM:REQUIREMENT END -->
 
 <!-- YSIM:REQUIREMENT BEGIN -->
-### CAP-EP-001 — Capability phản ánh năng lực của Platform
+### BRD-CAP-INDEX-R030 — Nền tảng phải cung cấp Shared Approval Engine dùng chung cho ngoại lệ biên lợi nhuận, hoàn tiền,…
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "CAP-EP-001-AC001",
-      "given": "the applicable business context, actor, and input for Capability phản ánh năng lực của Platform",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "CAP-EP-001-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "BDD-27",
+        "P2-DEC-005",
+        "P2-DEC-010",
+        "SD-03",
+        "V23-P2C-ACCEPTANCE-MAPPING-C3"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-CAP-INDEX-R030",
+      "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+      "source_fingerprint": "ed4c8b19e2b159c904c5c4b335dc7dc7c2aba00e6873a3934fd7f5c836180047"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "CAP-EP-001-AC001"
+        "BRD-CAP-INDEX-R030-AC001",
+        "BRD-CAP-INDEX-R030-AC002",
+        "BRD-CAP-INDEX-R030-AC003"
+      ],
+      "applicability": "V2.3_ACTIVE",
+      "obligation_id": "BRD-CAP-INDEX-R030-O001",
+      "obligation_text": "Nền tảng phải cung cấp Shared Approval Engine dùng chung cho ngoại lệ biên lợi nhuận, hoàn tiền, cấu hình, thông tin xác thực, ghi đè rủi ro và các nghiệp vụ BRD quy định"
+    }
+  ],
+  "criticality_applicability": null,
+  "criticality_unit": true,
+  "delivery_commitment": "COMMITTED_FOR_V2.3",
+  "implementation_unit": true,
+  "lifecycle": "V2.3_DRAFT",
+  "normative_statement": "Nền tảng phải cung cấp Shared Approval Engine dùng chung cho ngoại lệ biên lợi nhuận, hoàn tiền, cấu hình, thông tin xác thực, ghi đè rủi ro và các nghiệp vụ BRD quy định.",
+  "provenance": {
+    "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+    "approved_decisions": [
+      "BDD-27",
+      "P2-DEC-005",
+      "P2-DEC-010",
+      "SD-03",
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
+    ],
+    "derived_from_parent": "BRD-CAP-INDEX-R007",
+    "identity_origin": "PHASE_2C_C3_NEW_STABLE_ID_ALLOCATION",
+    "original_identity": "BRD-CAP-INDEX-R030",
+    "phase_2c_c3_actions": [
+      "C3_STRUCTURAL_RECONCILIATION_CHILD"
+    ],
+    "previous_temporary_key": null,
+    "remediation_contracts": [
+      "V23-P2B-CRITICALITY-DECISION-C1"
+    ],
+    "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+    "source_baseline": "v2.2",
+    "source_context_heading": "13.17 Cross Platform Capabilities",
+    "source_context_sha256": "0891ca89a0d69d778fae30177c82a932fc6508289c8b09bab6d3c846aa062071",
+    "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+    "source_fingerprint": "ed4c8b19e2b159c904c5c4b335dc7dc7c2aba00e6873a3934fd7f5c836180047",
+    "source_fingerprint_before_c3": "ed4c8b19e2b159c904c5c4b335dc7dc7c2aba00e6873a3934fd7f5c836180047",
+    "source_lines": "L3016-L3119",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-CAP-INDEX-R030"
+  },
+  "record_kind": "CANONICAL_ATOMIC",
+  "relationships": {
+    "alias_of": null,
+    "aliases": [],
+    "coverage_mode": null,
+    "derived_from": [
+      "BRD-CAP-INDEX-R007"
+    ],
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "BRD-CAP-INDEX-R007"
+    ]
+  },
+  "requirement_type": "BUSINESS_REQUIREMENT",
+  "scope_coverage_unit": true,
+  "scope_status": "V2.3_ACTIVE",
+  "stable_id": "BRD-CAP-INDEX-R030",
+  "title": "Nền tảng phải cung cấp Shared Approval Engine dùng chung cho ngoại lệ biên lợi nhuận, hoàn tiền,…",
+  "verification_criticality": "HIGH"
+}
+```
+<!-- YSIM:REQUIREMENT END -->
+
+<!-- YSIM:REQUIREMENT BEGIN -->
+### BRD-CAP-INDEX-R031 — engine phải hỗ trợ policy, phân giải người duyệt, phân tách nhiệm vụ, hết hạn, escalation, deleg…
+
+```json
+{
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "BDD-27",
+        "P2-DEC-005",
+        "P2-DEC-010",
+        "SD-03",
+        "V23-P2C-ACCEPTANCE-MAPPING-C3"
+      ],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-CAP-INDEX-R031",
+      "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+      "source_fingerprint": "33b966aa13b121b8e3b50639249213c7dcd314ecd8a1ba42e0fe917e0bf04186"
+    }
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
+  "acceptance_rationale": null,
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+  "acceptance_unit": true,
+  "atomic_obligations": [
+    {
+      "acceptance_criterion_references": [
+        "BRD-CAP-INDEX-R031-AC001",
+        "BRD-CAP-INDEX-R031-AC002",
+        "BRD-CAP-INDEX-R031-AC003"
+      ],
+      "applicability": "V2.3_ACTIVE",
+      "obligation_id": "BRD-CAP-INDEX-R031-O001",
+      "obligation_text": "engine phải hỗ trợ policy, phân giải người duyệt, phân tách nhiệm vụ, hết hạn, escalation, delegation, evidence và immutable audit, đồng thời không được diễn giải thành general-purpose BPM workflow engine"
+    }
+  ],
+  "criticality_applicability": null,
+  "criticality_unit": true,
+  "delivery_commitment": "COMMITTED_FOR_V2.3",
+  "implementation_unit": true,
+  "lifecycle": "V2.3_DRAFT",
+  "normative_statement": "engine phải hỗ trợ policy, phân giải người duyệt, phân tách nhiệm vụ, hết hạn, escalation, delegation, evidence và immutable audit, đồng thời không được diễn giải thành general-purpose BPM workflow engine.",
+  "provenance": {
+    "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+    "approved_decisions": [
+      "BDD-27",
+      "P2-DEC-005",
+      "P2-DEC-010",
+      "SD-03",
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
+    ],
+    "derived_from_parent": "BRD-CAP-INDEX-R007",
+    "identity_origin": "PHASE_2C_C3_NEW_STABLE_ID_ALLOCATION",
+    "original_identity": "BRD-CAP-INDEX-R031",
+    "phase_2c_c3_actions": [
+      "C3_STRUCTURAL_RECONCILIATION_CHILD"
+    ],
+    "previous_temporary_key": null,
+    "remediation_contracts": [
+      "V23-P2B-CRITICALITY-DECISION-C1"
+    ],
+    "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+    "source_baseline": "v2.2",
+    "source_context_heading": "13.17 Cross Platform Capabilities",
+    "source_context_sha256": "0891ca89a0d69d778fae30177c82a932fc6508289c8b09bab6d3c846aa062071",
+    "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+    "source_fingerprint": "33b966aa13b121b8e3b50639249213c7dcd314ecd8a1ba42e0fe917e0bf04186",
+    "source_fingerprint_before_c3": "33b966aa13b121b8e3b50639249213c7dcd314ecd8a1ba42e0fe917e0bf04186",
+    "source_lines": "L3121-L3224",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-CAP-INDEX-R031"
+  },
+  "record_kind": "CANONICAL_ATOMIC",
+  "relationships": {
+    "alias_of": null,
+    "aliases": [],
+    "coverage_mode": null,
+    "derived_from": [
+      "BRD-CAP-INDEX-R007"
+    ],
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "BRD-CAP-INDEX-R007"
+    ]
+  },
+  "requirement_type": "BUSINESS_REQUIREMENT",
+  "scope_coverage_unit": true,
+  "scope_status": "V2.3_ACTIVE",
+  "stable_id": "BRD-CAP-INDEX-R031",
+  "title": "engine phải hỗ trợ policy, phân giải người duyệt, phân tách nhiệm vụ, hết hạn, escalation, deleg…",
+  "verification_criticality": "HIGH"
+}
+```
+<!-- YSIM:REQUIREMENT END -->
+
+<!-- YSIM:REQUIREMENT BEGIN -->
+### CAP-EP-001 — Capability phản ánh năng lực của Platform
+
+```json
+{
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-005"
+      ],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "CAP-EP-001",
+      "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+      "source_fingerprint": "06809dd4c0b3be7ebc97916110c9c4ec69c55bc2a0662f983009e574bea3a208"
+    }
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
+  "acceptance_rationale": null,
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+  "acceptance_unit": true,
+  "atomic_obligations": [
+    {
+      "acceptance_criterion_references": [
+        "CAP-EP-001-AC001",
+        "CAP-EP-001-AC002",
+        "CAP-EP-001-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "CAP-EP-001-O001",
@@ -2921,9 +3282,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "CAP-EP-001",
     "source_context_sha256": "3e6145672a9c9ff62eab891bf3989b79be3e49bd122c4ea31a8e8755eb1c66fe",
     "source_document": "docs/BRD/BRD-CAP-INDEX.md",
-    "source_fingerprint": "5fccf565ad26fb9edcaccbd890dec7122910cd8fc6d9dbad7f73c782339beefb",
-    "source_lines": "L867-L870",
-    "source_section": "19. Enterprise Capability Principles > CAP-EP-001"
+    "source_fingerprint": "06809dd4c0b3be7ebc97916110c9c4ec69c55bc2a0662f983009e574bea3a208",
+    "source_lines": "L3226-L3305",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > CAP-EP-001"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2948,28 +3309,36 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "CAP-EP-002-AC001",
-      "given": "the applicable business context, actor, and input for Capability độc lập với UI",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "each named business concept has a distinct identity, owner or reference, and lifecycle evidence; an action on one does not implicitly act on the other",
-      "verifies": [
-        "CAP-EP-002-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-005"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "CAP-EP-002",
+      "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+      "source_fingerprint": "e5bda0f59020d011d2593275f0f59d2e011964b5140fe7ee51403bccfb0606bd"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "CAP-EP-002-AC001"
+        "CAP-EP-002-AC001",
+        "CAP-EP-002-AC002",
+        "CAP-EP-002-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "CAP-EP-002-O001",
@@ -2994,9 +3363,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "CAP-EP-002",
     "source_context_sha256": "2734a06e7ed581744053b3dcb461df8ffff2cf9e282d083509e67af6d7f3fbfa",
     "source_document": "docs/BRD/BRD-CAP-INDEX.md",
-    "source_fingerprint": "63c609e86bc2cd1fc6097bf11a18956a8ebbff9b7d3d278be71d25e1dc717f18",
-    "source_lines": "L873-L876",
-    "source_section": "19. Enterprise Capability Principles > CAP-EP-002"
+    "source_fingerprint": "e5bda0f59020d011d2593275f0f59d2e011964b5140fe7ee51403bccfb0606bd",
+    "source_lines": "L3307-L3386",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > CAP-EP-002"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3021,28 +3390,36 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "CAP-EP-003-AC001",
-      "given": "the applicable business context, actor, and input for Capability độc lập với Database",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "each named business concept has a distinct identity, owner or reference, and lifecycle evidence; an action on one does not implicitly act on the other",
-      "verifies": [
-        "CAP-EP-003-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-005"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "CAP-EP-003",
+      "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+      "source_fingerprint": "1fe801e9ac1cf05b6fe686b5e23fbed7e93342462a3401f60b44ff447f1a6ad1"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "CAP-EP-003-AC001"
+        "CAP-EP-003-AC001",
+        "CAP-EP-003-AC002",
+        "CAP-EP-003-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "CAP-EP-003-O001",
@@ -3067,9 +3444,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "CAP-EP-003",
     "source_context_sha256": "5b5662d1e663ede7bb4acb9ec63d1aa881bb0b648443b8980140f6533853b5a2",
     "source_document": "docs/BRD/BRD-CAP-INDEX.md",
-    "source_fingerprint": "f8adccf6af417c9dfdf78f6764ed4b468d492055ecdca8954da04f2e26dde5e0",
-    "source_lines": "L879-L882",
-    "source_section": "19. Enterprise Capability Principles > CAP-EP-003"
+    "source_fingerprint": "1fe801e9ac1cf05b6fe686b5e23fbed7e93342462a3401f60b44ff447f1a6ad1",
+    "source_lines": "L3388-L3467",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > CAP-EP-003"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3094,28 +3471,36 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "CAP-EP-004-AC001",
-      "given": "the applicable business context, actor, and input for Capability độc lập với Source Code",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "each named business concept has a distinct identity, owner or reference, and lifecycle evidence; an action on one does not implicitly act on the other",
-      "verifies": [
-        "CAP-EP-004-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-005"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "CAP-EP-004",
+      "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+      "source_fingerprint": "4723d4ff2ee07475c53b36ab9ac92cfb9d047bf21d0d96631020ed22bc65db72"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "CAP-EP-004-AC001"
+        "CAP-EP-004-AC001",
+        "CAP-EP-004-AC002",
+        "CAP-EP-004-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "CAP-EP-004-O001",
@@ -3140,9 +3525,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "CAP-EP-004",
     "source_context_sha256": "9d4208033298d5860ee6dbc46f7f428f8d4bc294ee33a651e965c86a1c4ff770",
     "source_document": "docs/BRD/BRD-CAP-INDEX.md",
-    "source_fingerprint": "94eb5225cc850d56ab53ed0a21fed879af29c9c1138261a76c05f88f967b2a2c",
-    "source_lines": "L885-L888",
-    "source_section": "19. Enterprise Capability Principles > CAP-EP-004"
+    "source_fingerprint": "4723d4ff2ee07475c53b36ab9ac92cfb9d047bf21d0d96631020ed22bc65db72",
+    "source_lines": "L3469-L3548",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > CAP-EP-004"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3167,70 +3552,56 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "CAP-EP-005-AC001",
-      "given": "the applicable business context, actor, and input for Capability được cấu hình thay vì Hard-code khi phù hợp",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the effective configuration and version are visible in the decision evidence, and an approved configuration change changes the governed result without a code change",
-      "verifies": [
-        "CAP-EP-005-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    }
-  ],
-  "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
-  "acceptance_unit": true,
-  "atomic_obligations": [
-    {
-      "acceptance_criterion_references": [
-        "CAP-EP-005-AC001"
-      ],
-      "applicability": "V2.3_ACTIVE",
-      "obligation_id": "CAP-EP-005-O001",
-      "obligation_text": "Capability được cấu hình thay vì Hard-code khi phù hợp"
-    }
-  ],
+  "acceptance_contract": null,
+  "acceptance_mechanism": null,
+  "acceptance_rationale": "CAP-EP-005 is a supporting alias of canonical requirement CAP-P04.",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "STRUCTURAL_RECORD",
+  "acceptance_unit": false,
+  "atomic_obligations": [],
   "criticality_applicability": null,
-  "criticality_unit": true,
+  "criticality_unit": false,
   "delivery_commitment": "COMMITTED_FOR_V2.3",
-  "implementation_unit": true,
+  "implementation_unit": false,
   "lifecycle": "V2.3_DRAFT",
   "normative_statement": "Capability được cấu hình thay vì Hard-code khi phù hợp.",
   "provenance": {
     "approved_decisions": [
-      "P2-DEC-005"
+      "P2-DEC-005",
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
     ],
     "identity_origin": "PRESERVED_STABLE_ID",
     "original_identity": "CAP-EP-005",
+    "phase_2c_c3_actions": [
+      "C3_APPROVED_ALIAS_RECONCILIATION"
+    ],
     "previous_temporary_key": null,
     "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
     "source_baseline": "v2.2",
     "source_context_heading": "CAP-EP-005",
     "source_context_sha256": "a49edc659b98ae60562e2aa8a6cb63a02d140c7a1b40dfb2156b2c2a5529bdc4",
     "source_document": "docs/BRD/BRD-CAP-INDEX.md",
-    "source_fingerprint": "e12f103e5d7d88502bc54bc8fa15f87a8913401c441f5929e374d380632390e2",
-    "source_lines": "L891-L894",
-    "source_section": "19. Enterprise Capability Principles > CAP-EP-005"
+    "source_fingerprint": "c5ce1d197dc4da4177fc1ff06866b18f264f497339c5987f629c63e1d36c0305",
+    "source_fingerprint_before_c3": "e12f103e5d7d88502bc54bc8fa15f87a8913401c441f5929e374d380632390e2",
+    "source_lines": "L3550-L3607",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > CAP-EP-005"
   },
-  "record_kind": "CANONICAL_ATOMIC",
+  "record_kind": "ALIAS",
   "relationships": {
-    "alias_of": null,
+    "alias_of": "CAP-P04",
     "aliases": [],
     "coverage_mode": null,
     "derived_from": [],
     "derived_requirements": []
   },
   "requirement_type": "BUSINESS_REQUIREMENT",
-  "scope_coverage_unit": true,
+  "scope_coverage_unit": false,
   "scope_status": "V2.3_ACTIVE",
   "stable_id": "CAP-EP-005",
   "title": "Capability được cấu hình thay vì Hard-code khi phù hợp",
-  "verification_criticality": "NORMAL"
+  "verification_criticality": "NOT_APPLICABLE"
 }
 ```
 <!-- YSIM:REQUIREMENT END -->
@@ -3240,10 +3611,11 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": null,
+  "acceptance_mechanism": null,
   "acceptance_rationale": "Alias evidence is inherited from the canonical target; the alias is not an acceptance unit.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "STRUCTURAL_RECORD",
   "acceptance_unit": false,
   "atomic_obligations": [],
   "criticality_applicability": null,
@@ -3264,9 +3636,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "CAP-P07 — Event Driven",
     "source_context_sha256": "44eec2d66aefc3111920af21ae86a614459abefc269240cee0153efdd07ba547",
     "source_document": "docs/BRD/BRD-CAP-INDEX.md",
-    "source_fingerprint": "2f3585de3f3c8852d3268e42940a7c59481d4c8b3a9e9fd11bf2d6ceebb04ad7",
-    "source_lines": "L897-L900",
-    "source_section": "19. Enterprise Capability Principles > CAP-EP-006"
+    "source_fingerprint": "4ea7ce824c8da6953ea4e3b7c6e918065ce4be846a5716b07cd6ed2981ca6811",
+    "source_lines": "L3609-L3659",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > CAP-EP-006"
   },
   "record_kind": "ALIAS",
   "relationships": {
@@ -3291,28 +3663,36 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "CAP-EP-007-AC001",
-      "given": "the applicable business context, actor, and input for Capability hỗ trợ Multi-tenant",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "CAP-EP-007-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-005"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "CAP-EP-007",
+      "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+      "source_fingerprint": "babac978b9674bd19d0ab2823328e404fddbbbfa664ac0c85f6ccc3ba9060d1b"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "CAP-EP-007-AC001"
+        "CAP-EP-007-AC001",
+        "CAP-EP-007-AC002",
+        "CAP-EP-007-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "CAP-EP-007-O001",
@@ -3337,9 +3717,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "CAP-EP-007",
     "source_context_sha256": "490e82c93dd7092f85f7da431e770d935b88cd50c418698187ab49a6152e7b1a",
     "source_document": "docs/BRD/BRD-CAP-INDEX.md",
-    "source_fingerprint": "a2e58eeeab0bcf038c74ffe0aab0c060adfff197b4a8007bd7bc326187e4f6ef",
-    "source_lines": "L903-L906",
-    "source_section": "19. Enterprise Capability Principles > CAP-EP-007"
+    "source_fingerprint": "babac978b9674bd19d0ab2823328e404fddbbbfa664ac0c85f6ccc3ba9060d1b",
+    "source_lines": "L3661-L3740",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > CAP-EP-007"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3364,28 +3744,36 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "CAP-EP-008-AC001",
-      "given": "the applicable business context, actor, and input for Capability hỗ trợ White-label",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "CAP-EP-008-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-005"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "CAP-EP-008",
+      "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+      "source_fingerprint": "359637685d88e62668a0df656a7de2df72f692307eb1299cb8d18b5113d34f2f"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "CAP-EP-008-AC001"
+        "CAP-EP-008-AC001",
+        "CAP-EP-008-AC002",
+        "CAP-EP-008-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "CAP-EP-008-O001",
@@ -3410,9 +3798,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "CAP-EP-008",
     "source_context_sha256": "ca20d0a76fbac4218eec5a2d58d6cc27806d671620e79687092968aab0ab41dd",
     "source_document": "docs/BRD/BRD-CAP-INDEX.md",
-    "source_fingerprint": "aa54d38f72567432854ac7ac57a5c94913f92c2aae177e0e45f456499a04cd43",
-    "source_lines": "L909-L912",
-    "source_section": "19. Enterprise Capability Principles > CAP-EP-008"
+    "source_fingerprint": "359637685d88e62668a0df656a7de2df72f692307eb1299cb8d18b5113d34f2f",
+    "source_lines": "L3742-L3821",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > CAP-EP-008"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3437,28 +3825,36 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "CAP-EP-009-AC001",
-      "given": "the applicable business context, actor, and input for Capability hỗ trợ mở rộng theo Version",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "CAP-EP-009-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-005"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "CAP-EP-009",
+      "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+      "source_fingerprint": "77e665cc022a6340bad78caa84f2f0a871be712ad59734d7b62d38d45388cf19"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "CAP-EP-009-AC001"
+        "CAP-EP-009-AC001",
+        "CAP-EP-009-AC002",
+        "CAP-EP-009-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "CAP-EP-009-O001",
@@ -3483,9 +3879,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "CAP-EP-009",
     "source_context_sha256": "2358662a1d2f1225b575dfb028ea24150183b7437784118a29242e6974ba29f7",
     "source_document": "docs/BRD/BRD-CAP-INDEX.md",
-    "source_fingerprint": "b093231f7874deec20b8e130173991c6fa1474c218231466fb7c39df114af31a",
-    "source_lines": "L915-L918",
-    "source_section": "19. Enterprise Capability Principles > CAP-EP-009"
+    "source_fingerprint": "77e665cc022a6340bad78caa84f2f0a871be712ad59734d7b62d38d45388cf19",
+    "source_lines": "L3823-L3902",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > CAP-EP-009"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3510,28 +3906,36 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "CAP-EP-010-AC001",
-      "given": "the applicable business context, actor, and input for Capability Registry là Enterprise Capability Dictionary của YSim",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "CAP-EP-010-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-005"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "CAP-EP-010",
+      "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+      "source_fingerprint": "a1830ebf26eb8bfe5c45f0f1f1dad61800415358c28aafc41b86ef7cf0ee173c"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "CAP-EP-010-AC001"
+        "CAP-EP-010-AC001",
+        "CAP-EP-010-AC002",
+        "CAP-EP-010-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "CAP-EP-010-O001",
@@ -3556,9 +3960,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "CAP-EP-010",
     "source_context_sha256": "1d58ace3f4de94c4d8bce052260e4434c063d25690f2414ab96bc805264e5cea",
     "source_document": "docs/BRD/BRD-CAP-INDEX.md",
-    "source_fingerprint": "7ef3cd4a1006463eb052476b4e6e5c142fd75f6e849a3b627dab06e907268074",
-    "source_lines": "L921-L924",
-    "source_section": "19. Enterprise Capability Principles > CAP-EP-010"
+    "source_fingerprint": "a1830ebf26eb8bfe5c45f0f1f1dad61800415358c28aafc41b86ef7cf0ee173c",
+    "source_lines": "L3904-L3983",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > CAP-EP-010"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3583,40 +3987,36 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "CAP-P01-AC001",
-      "given": "the applicable business context, actor, and input for Capability phản ánh năng lực nghiệp vụ hoặc nền tảng. Không phản ánh thiết kế kỹ thuật",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "CAP-P01-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-005"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "CAP-P01-AC002",
-      "given": "the applicable business context, actor, and input for Capability phản ánh năng lực nghiệp vụ hoặc nền tảng. Không phản ánh thiết kế kỹ thuật",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "CAP-P01-O002"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "CAP-P01",
+      "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+      "source_fingerprint": "30d6891210ecbcedea50586e0b3b473c4e62041f0654db7f2d535fd233d8abf1"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "CAP-P01-AC001"
+        "CAP-P01-AC001",
+        "CAP-P01-AC003",
+        "CAP-P01-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "CAP-P01-O001",
@@ -3624,7 +4024,9 @@ trước khi được sử dụng trong Platform.
     },
     {
       "acceptance_criterion_references": [
-        "CAP-P01-AC002"
+        "CAP-P01-AC002",
+        "CAP-P01-AC003",
+        "CAP-P01-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "CAP-P01-O002",
@@ -3649,9 +4051,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "CAP-P01 — Business First",
     "source_context_sha256": "51fb4683695d7f4ac5174988b5e7ea3493b6d947bb8cf32fea0ba343b127f5db",
     "source_document": "docs/BRD/BRD-CAP-INDEX.md",
-    "source_fingerprint": "c23994f0db41ef0fc5b265f13ef81fbb4be947451574c2a30b22f4690e552dc4",
-    "source_lines": "L279-L284",
-    "source_section": "11. Registry Principles > CAP-P01 — Business First"
+    "source_fingerprint": "30d6891210ecbcedea50586e0b3b473c4e62041f0654db7f2d535fd233d8abf1",
+    "source_lines": "L3985-L4074",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > CAP-P01"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3676,40 +4078,36 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "CAP-P02-AC001",
-      "given": "the applicable business context, actor, and input for Một Capability chỉ có một định nghĩa duy nhất. Không tồn tại nhiều Capability có cùng ý nghĩa",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "CAP-P02-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-005"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "CAP-P02-AC002",
-      "given": "the applicable business context, actor, and input for Một Capability chỉ có một định nghĩa duy nhất. Không tồn tại nhiều Capability có cùng ý nghĩa",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "CAP-P02-O002"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "CAP-P02",
+      "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+      "source_fingerprint": "a84ad490a9a4053cdabf7ef0784ad753f798b134e4976c595e7199e0c669d334"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "CAP-P02-AC001"
+        "CAP-P02-AC001",
+        "CAP-P02-AC003",
+        "CAP-P02-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "CAP-P02-O001",
@@ -3717,7 +4115,9 @@ trước khi được sử dụng trong Platform.
     },
     {
       "acceptance_criterion_references": [
-        "CAP-P02-AC002"
+        "CAP-P02-AC002",
+        "CAP-P02-AC003",
+        "CAP-P02-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "CAP-P02-O002",
@@ -3742,9 +4142,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "CAP-P02 — Single Source of Truth",
     "source_context_sha256": "fbe51159eaae0f501e00a9cd8f8370e1ed498d251f52625f6abe6f6b7d8a8cd5",
     "source_document": "docs/BRD/BRD-CAP-INDEX.md",
-    "source_fingerprint": "832a3456804d318ee055820044c38476b4fa7c1562bc8beb87e437d1cc7e453a",
-    "source_lines": "L287-L292",
-    "source_section": "11. Registry Principles > CAP-P02 — Single Source of Truth"
+    "source_fingerprint": "a84ad490a9a4053cdabf7ef0784ad753f798b134e4976c595e7199e0c669d334",
+    "source_lines": "L4076-L4165",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > CAP-P02"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3769,40 +4169,36 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "CAP-P03-AC001",
-      "given": "the applicable business context, actor, and input for Capability ID là bất biến. Tên Capability có thể được cải tiến nhưng Capability ID không thay đổ…",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "CAP-P03-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-005"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "CAP-P03-AC002",
-      "given": "the applicable business context, actor, and input for Capability ID là bất biến. Tên Capability có thể được cải tiến nhưng Capability ID không thay đổ…",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "CAP-P03-O002"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "CAP-P03",
+      "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+      "source_fingerprint": "522020e5f3d1792e9530d41892d7f2533f002485eec337c20f4ed1dc9d49b555"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "CAP-P03-AC001"
+        "CAP-P03-AC001",
+        "CAP-P03-AC003",
+        "CAP-P03-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "CAP-P03-O001",
@@ -3810,7 +4206,9 @@ trước khi được sử dụng trong Platform.
     },
     {
       "acceptance_criterion_references": [
-        "CAP-P03-AC002"
+        "CAP-P03-AC002",
+        "CAP-P03-AC003",
+        "CAP-P03-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "CAP-P03-O002",
@@ -3835,9 +4233,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "CAP-P03 — Stable Identifier",
     "source_context_sha256": "163f01ae79dc2bb5d0305a2dc306a03364e0e855273e922eef970406eeb30458",
     "source_document": "docs/BRD/BRD-CAP-INDEX.md",
-    "source_fingerprint": "7955f806e402cf89d9ee0995dc2738d7cb64134abe1ff7947bac8bde5e426127",
-    "source_lines": "L295-L300",
-    "source_section": "11. Registry Principles > CAP-P03 — Stable Identifier"
+    "source_fingerprint": "522020e5f3d1792e9530d41892d7f2533f002485eec337c20f4ed1dc9d49b555",
+    "source_lines": "L4167-L4256",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > CAP-P03"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3858,56 +4256,55 @@ trước khi được sử dụng trong Platform.
 <!-- YSIM:REQUIREMENT END -->
 
 <!-- YSIM:REQUIREMENT BEGIN -->
-### CAP-P04 — Capability phải có khả năng được cấu hình khi phù hợp. Không Hard-code nếu có thể cấu hình
+### CAP-P04 — Behavior thay đổi theo Organization, market, channel, jurisdiction, policy hoặc environment phải…
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "CAP-P04-AC001",
-      "given": "the applicable business context, actor, and input for Capability phải có khả năng được cấu hình khi phù hợp. Không Hard-code nếu có thể cấu hình",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the effective configuration and version are visible in the decision evidence, and an approved configuration change changes the governed result without a code change",
-      "verifies": [
-        "CAP-P04-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-005",
+        "V23-P2C-ACCEPTANCE-MAPPING-C3"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "CAP-P04-AC002",
-      "given": "the applicable business context, actor, and input for Capability phải có khả năng được cấu hình khi phù hợp. Không Hard-code nếu có thể cấu hình",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the effective configuration and version are visible in the decision evidence, and an approved configuration change changes the governed result without a code change",
-      "verifies": [
-        "CAP-P04-O002"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "CAP-P04",
+      "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+      "source_fingerprint": "66c5483200edff50dba147834b59470fbaf9a6954d693a42fd812857a6b0d711"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "CAP-P04-AC001"
+        "CAP-P04-AC001",
+        "CAP-P04-AC003",
+        "CAP-P04-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "CAP-P04-O001",
-      "obligation_text": "Capability phải có khả năng được cấu hình khi phù hợp"
+      "obligation_text": "Behavior thay đổi theo Organization, market, channel, jurisdiction, policy hoặc environment phải được cấu hình thay vì hard-code"
     },
     {
       "acceptance_criterion_references": [
-        "CAP-P04-AC002"
+        "CAP-P04-AC002",
+        "CAP-P04-AC003",
+        "CAP-P04-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "CAP-P04-O002",
-      "obligation_text": "Không Hard-code nếu có thể cấu hình"
+      "obligation_text": "Platform invariant và security invariant có thể được thực thi trong code nhưng phải versioned và auditable"
     }
   ],
   "criticality_applicability": null,
@@ -3915,22 +4312,29 @@ trước khi được sử dụng trong Platform.
   "delivery_commitment": "COMMITTED_FOR_V2.3",
   "implementation_unit": true,
   "lifecycle": "V2.3_DRAFT",
-  "normative_statement": "Capability phải có khả năng được cấu hình khi phù hợp. Không Hard-code nếu có thể cấu hình.",
+  "normative_statement": "Behavior thay đổi theo Organization, market, channel, jurisdiction, policy hoặc environment phải được cấu hình thay vì hard-code; Platform invariant và security invariant có thể được thực thi trong code nhưng phải versioned và auditable.",
   "provenance": {
     "approved_decisions": [
-      "P2-DEC-005"
+      "P2-DEC-005",
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
     ],
     "identity_origin": "PRESERVED_STABLE_ID",
     "original_identity": "CAP-P04",
+    "phase_2c_c3_actions": [
+      "C3_APPROVED_SEMANTIC_DIRECTIVE"
+    ],
     "previous_temporary_key": null,
     "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
     "source_baseline": "v2.2",
     "source_context_heading": "CAP-P04 — Configurable",
     "source_context_sha256": "0744d7d707849991d9b8e554b141e6a7416698c93ecee566b234efec05ce59d2",
     "source_document": "docs/BRD/BRD-CAP-INDEX.md",
-    "source_fingerprint": "e47e67a00e8674339d50ccd391bd3a786c8bac716c74a15d882d7def0275a9e8",
-    "source_lines": "L303-L308",
-    "source_section": "11. Registry Principles > CAP-P04 — Configurable"
+    "source_fingerprint": "66c5483200edff50dba147834b59470fbaf9a6954d693a42fd812857a6b0d711",
+    "source_fingerprint_before_c3": "e47e67a00e8674339d50ccd391bd3a786c8bac716c74a15d882d7def0275a9e8",
+    "source_lines": "L4258-L4355",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > CAP-P04"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3944,7 +4348,7 @@ trước khi được sử dụng trong Platform.
   "scope_coverage_unit": true,
   "scope_status": "V2.3_ACTIVE",
   "stable_id": "CAP-P04",
-  "title": "Capability phải có khả năng được cấu hình khi phù hợp. Không Hard-code nếu có thể cấu hình",
+  "title": "Behavior thay đổi theo Organization, market, channel, jurisdiction, policy hoặc environment phải…",
   "verification_criticality": "NORMAL"
 }
 ```
@@ -3955,82 +4359,36 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "SECURITY_DECISION_OBSERVATION_V1",
-      "criterion_id": "CAP-P05-AC001",
-      "given": "an identified principal, applicable assurance context, and policy inputs for Capability có thể được cấp quyền. Permission luôn tham chiếu Capability",
-      "observable_evidence": "decision result, effective assurance or policy, denied or changed state, reason, and audit evidence",
-      "then": "the effective security policy produces the required allow, challenge, block, review, or denial result; protected state and audit evidence agree with that decision",
-      "verifies": [
-        "CAP-P05-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-005"
       ],
-      "when": "the protected decision or action is evaluated"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "SECURITY_DECISION_OBSERVATION_V1",
-      "criterion_id": "CAP-P05-AC002",
-      "given": "an identified principal, applicable assurance context, and policy inputs for Capability có thể được cấp quyền. Permission luôn tham chiếu Capability",
-      "observable_evidence": "decision result, effective assurance or policy, denied or changed state, reason, and audit evidence",
-      "then": "the effective security policy produces the required allow, challenge, block, review, or denial result; protected state and audit evidence agree with that decision",
-      "verifies": [
-        "CAP-P05-O002"
-      ],
-      "when": "the protected decision or action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "SECURITY_FAIL_CLOSED_V1",
-      "criterion_id": "CAP-P05-AC003",
-      "given": "a principal or request that does not satisfy the assurance, policy, consent, or authorization boundary for Capability có thể được cấp quyền. Permission luôn tham chiếu Capability",
-      "observable_evidence": "decision result, protected-state comparison, reason, effective policy, and audit record",
-      "then": "the result is challenge, block, review, or denial as required; protected state is unchanged and the reason is audited",
-      "verifies": [
-        "CAP-P05-O001",
-        "CAP-P05-O002"
-      ],
-      "when": "the protected decision or action is attempted"
-    },
-    {
-      "case": "NEGATIVE_FAIL_CLOSED",
-      "controlled_contract": "REQUIREMENT_SPECIFIC_FAIL_CLOSED_V1",
-      "criterion_id": "CAP-P05-AC004",
-      "given": "an input or attempted state change that violates a mandatory boundary explicitly stated by Capability có thể được cấp quyền. Permission luôn tham chiếu Capability",
-      "observable_evidence": "violating input, decision and reason, before/after protected state, and audit or conformance evidence",
-      "then": "the violated obligation produces its specified rejection, denial, block, review, or non-conforming result without recording a contradictory success",
-      "verifies": [
-        "CAP-P05-O001",
-        "CAP-P05-O002"
-      ],
-      "when": "the violating input or action is evaluated"
-    },
-    {
-      "case": "AUTHORIZATION_BOUNDARY",
-      "controlled_contract": "EXPLICIT_AUTHORIZATION_BOUNDARY_V1",
-      "criterion_id": "CAP-P05-AC005",
-      "given": "an actor lacking the permission, role, identity assurance, consent, or access condition stated by Capability có thể được cấp quyền. Permission luôn tham chiếu Capability",
-      "observable_evidence": "actor and scope, effective policy or assurance, decision, protected-state comparison, reason, and audit evidence",
-      "then": "access is denied or challenged according to the referenced obligation, protected state remains unchanged, and the decision is auditable",
-      "verifies": [
-        "CAP-P05-O001",
-        "CAP-P05-O002"
-      ],
-      "when": "the actor attempts the governed action"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "CAP-P05",
+      "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+      "source_fingerprint": "b444cb615e278f4aba1bcb0a453bd264017ecbb5096ac2f250845c1d2cb85a2e"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "CAP-P05-AC001",
         "CAP-P05-AC003",
-        "CAP-P05-AC004",
-        "CAP-P05-AC005"
+        "CAP-P05-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "CAP-P05-O001",
@@ -4040,8 +4398,7 @@ trước khi được sử dụng trong Platform.
       "acceptance_criterion_references": [
         "CAP-P05-AC002",
         "CAP-P05-AC003",
-        "CAP-P05-AC004",
-        "CAP-P05-AC005"
+        "CAP-P05-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "CAP-P05-O002",
@@ -4050,38 +4407,39 @@ trước khi được sử dụng trong Platform.
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
-      "criterion_references": [
-        "CAP-P05-AC005"
-      ],
-      "status": "APPLICABLE"
-    },
-    "CONCURRENCY": {
-      "criterion_references": [],
-      "rationale": "CAP-P05 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    },
-    "IDEMPOTENCY": {
-      "criterion_references": [],
-      "rationale": "CAP-P05 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    },
-    "NEGATIVE_FAIL_CLOSED": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "CAP-P05-AC004"
       ],
-      "status": "APPLICABLE"
+      "rationale": null
+    },
+    "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "CAP-P05 does not define a concurrency obligation."
+    },
+    "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "CAP-P05 does not define a idempotency obligation."
+    },
+    "NEGATIVE_FAIL_CLOSED": {
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "CAP-P05-AC003"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "CAP-P05-AC001",
         "CAP-P05-AC002"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "CAP-P05 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "CAP-P05 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -4101,9 +4459,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "CAP-P05 — Permission Aware",
     "source_context_sha256": "1370d24ced6b172f8c7c40c76fea0c5ec31ec1355ac5ac5335733afdbc326507",
     "source_document": "docs/BRD/BRD-CAP-INDEX.md",
-    "source_fingerprint": "f807de4efd10162add2ab6bdcaae8db41c744b894675e38669a3681bd361793f",
-    "source_lines": "L311-L316",
-    "source_section": "11. Registry Principles > CAP-P05 — Permission Aware"
+    "source_fingerprint": "b444cb615e278f4aba1bcb0a453bd264017ecbb5096ac2f250845c1d2cb85a2e",
+    "source_lines": "L4357-L4482",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > CAP-P05"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -4128,28 +4486,1114 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "CAP-P06-AC001",
-      "given": "the applicable business context, actor, and input for Capability có thể được bật hoặc tắt thông qua Feature Flag hoặc Configuration",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the effective configuration and version are visible in the decision evidence, and an approved configuration change changes the governed result without a code change",
-      "verifies": [
-        "CAP-P06-O001"
+  "acceptance_contract": {
+    "boundary_oracle": [
+      "Platform or security invariants not declared configurable remain enforced"
+    ],
+    "concrete_bindings": [
+      {
+        "configuration_key": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-CAP-INDEX.md#11. Registry Principles > CAP-P06 — Feature Toggle Ready",
+            "source_type": "SOURCE_LITERAL",
+            "version": "94968e40b2b6c8fadb2219c42becf236b5b31de4097bbfb70dd168eff61220be"
+          },
+          "identifier": "CAP-P06.CONFIGURATION_KEY",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "CAP-P06.O1.1.CONFIGURATION_RESOLVES.CONFIGURATION_KEY.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [
+              "P2-DEC-005"
+            ],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+            "source_fingerprint": "94968e40b2b6c8fadb2219c42becf236b5b31de4097bbfb70dd168eff61220be",
+            "source_lines": "L319-L322",
+            "source_section": "11. Registry Principles > CAP-P06 — Feature Toggle Ready"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "CONFIGURATION_KEY",
+            "resolver_id": "RESOLVE.CAP-P06.CAP-P06.CONFIGURATION_KEY",
+            "version": "1.0.0"
+          },
+          "semantic_type": "CONFIGURATION_KEY"
+        },
+        "configuration_sources": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-CAP-INDEX.md#11. Registry Principles > CAP-P06 — Feature Toggle Ready",
+            "source_type": "SOURCE_LITERAL",
+            "version": "94968e40b2b6c8fadb2219c42becf236b5b31de4097bbfb70dd168eff61220be"
+          },
+          "identifier": "CAP-P06.CONFIGURATION_SOURCES",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "CAP-P06.O1.1.CONFIGURATION_RESOLVES.CONFIGURATION_SOURCES.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [
+              "P2-DEC-005"
+            ],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+            "source_fingerprint": "94968e40b2b6c8fadb2219c42becf236b5b31de4097bbfb70dd168eff61220be",
+            "source_lines": "L319-L322",
+            "source_section": "11. Registry Principles > CAP-P06 — Feature Toggle Ready"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "SET_OF<CONFIGURATION_SOURCE_ID>",
+            "resolver_id": "RESOLVE.CAP-P06.CAP-P06.CONFIGURATION_SOURCES",
+            "version": "1.0.0"
+          },
+          "semantic_type": "CANONICAL_SET_REF<CONFIGURATION_SOURCE_ID>"
+        },
+        "expected_value": {
+          "authoritative_source": {
+            "allowed_identifiers": [
+              "CAP-P06.CANONICAL.CONFIGURATION.VALUE"
+            ],
+            "source_id": "docs/BRD/BRD-CAP-INDEX.md#11. Registry Principles > CAP-P06 — Feature Toggle Ready",
+            "source_type": "SOURCE_LITERAL",
+            "version": "94968e40b2b6c8fadb2219c42becf236b5b31de4097bbfb70dd168eff61220be"
+          },
+          "identifier": "CAP-P06.CANONICAL.CONFIGURATION.VALUE",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "CAP-P06.O1.1.CONFIGURATION_RESOLVES.EXPECTED_VALUE.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [
+              "P2-DEC-005"
+            ],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+            "source_fingerprint": "94968e40b2b6c8fadb2219c42becf236b5b31de4097bbfb70dd168eff61220be",
+            "source_lines": "L319-L322",
+            "source_section": "11. Registry Principles > CAP-P06 — Feature Toggle Ready"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "CANONICAL_ENUM_VALUE",
+            "resolver_id": "RESOLVE.CAP-P06.CAP-P06.CANONICAL.CONFIGURATION.VALUE",
+            "version": "1.0.0"
+          },
+          "semantic_type": "CANONICAL_ENUM_VALUE"
+        },
+        "resolved_source": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-CAP-INDEX.md#11. Registry Principles > CAP-P06 — Feature Toggle Ready",
+            "source_type": "SOURCE_LITERAL",
+            "version": "94968e40b2b6c8fadb2219c42becf236b5b31de4097bbfb70dd168eff61220be"
+          },
+          "identifier": "CAP-P06.RESOLVED_SOURCE",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "CAP-P06.O1.1.CONFIGURATION_RESOLVES.RESOLVED_SOURCE.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [
+              "P2-DEC-005"
+            ],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+            "source_fingerprint": "94968e40b2b6c8fadb2219c42becf236b5b31de4097bbfb70dd168eff61220be",
+            "source_lines": "L319-L322",
+            "source_section": "11. Registry Principles > CAP-P06 — Feature Toggle Ready"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "CONFIGURATION_SOURCE_ID",
+            "resolver_id": "RESOLVE.CAP-P06.CAP-P06.RESOLVED_SOURCE",
+            "version": "1.0.0"
+          },
+          "semantic_type": "CONFIGURATION_SOURCE_ID"
+        },
+        "source_versions": {
+          "members": [
+            {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-CAP-INDEX.md#11. Registry Principles > CAP-P06 — Feature Toggle Ready",
+                "source_type": "SOURCE_LITERAL",
+                "version": "94968e40b2b6c8fadb2219c42becf236b5b31de4097bbfb70dd168eff61220be"
+              },
+              "identifier": "CAP-P06.SOURCE_VERSIONS.SOURCE.MEMBER",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "CAP-P06.O1.1.CONFIGURATION_RESOLVES.SOURCE_VERSIONS.ORIGIN.MEMBER.1",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [
+                  "P2-DEC-005"
+                ],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+                "source_fingerprint": "94968e40b2b6c8fadb2219c42becf236b5b31de4097bbfb70dd168eff61220be",
+                "source_lines": "L319-L322",
+                "source_section": "11. Registry Principles > CAP-P06 — Feature Toggle Ready"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "POLICY_VERSION",
+                "resolver_id": "RESOLVE.CAP-P06.CAP-P06.SOURCE_VERSIONS.SOURCE.MEMBER",
+                "version": "1.0.0"
+              },
+              "semantic_type": "POLICY_VERSION"
+            }
+          ],
+          "origin": {
+            "origin_id": "CAP-P06.O1.1.CONFIGURATION_RESOLVES.SOURCE_VERSIONS.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [
+              "P2-DEC-005"
+            ],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+            "source_fingerprint": "94968e40b2b6c8fadb2219c42becf236b5b31de4097bbfb70dd168eff61220be",
+            "source_lines": "L319-L322",
+            "source_section": "11. Registry Principles > CAP-P06 — Feature Toggle Ready"
+          },
+          "semantic_type": "SET_OF<POLICY_VERSION>"
+        }
+      }
+    ],
+    "contract_id": "P2C.C4.CONTRACT.CAP-P06",
+    "inference": false,
+    "mechanism": "APPROVED_TYPED_CUSTOM_AST",
+    "mechanism_version": "C4-R3",
+    "negative_oracle": [
+      "Capability state changes outside governed configuration"
+    ],
+    "operator_composition": [
+      "CONFIGURATION_RESOLVES"
+    ],
+    "positive_oracle": [
+      "Capability state resolves from Feature Flag or Configuration"
+    ],
+    "provenance": {
+      "approved_decision_references": [
+        "P2-DEC-005"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+      "inference": false,
+      "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+      "source_fingerprint": "94968e40b2b6c8fadb2219c42becf236b5b31de4097bbfb70dd168eff61220be",
+      "source_lines": "L319-L322",
+      "source_section": "11. Registry Principles > CAP-P06 — Feature Toggle Ready"
+    },
+    "required_evidence": {
+      "evidence_object_ref": {
+        "authoritative_source": {
+          "source_id": "docs/BRD/BRD-CAP-INDEX.md#11. Registry Principles > CAP-P06 — Feature Toggle Ready",
+          "source_type": "SOURCE_LITERAL",
+          "version": "94968e40b2b6c8fadb2219c42becf236b5b31de4097bbfb70dd168eff61220be"
+        },
+        "identifier": "CAP-P06.CAP-P06.CONTRACT.EVIDENCE.OBJECT",
+        "inference": false,
+        "lifecycle": {
+          "status": "ACTIVE",
+          "version": "2.3"
+        },
+        "namespace": "YSIM.V2.3",
+        "origin": {
+          "origin_id": "CAP-P06.CONTRACT.EVIDENCE.ORIGIN",
+          "origin_type": "EVIDENCE_OBJECT"
+        },
+        "provenance": {
+          "approved_decision_references": [
+            "P2-DEC-005"
+          ],
+          "inference": false,
+          "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+          "source_fingerprint": "94968e40b2b6c8fadb2219c42becf236b5b31de4097bbfb70dd168eff61220be",
+          "source_lines": "L319-L322",
+          "source_section": "11. Registry Principles > CAP-P06 — Feature Toggle Ready"
+        },
+        "resolver_contract": {
+          "deterministic": true,
+          "input_types": [],
+          "output_type": "EVIDENCE_OBJECT_REF",
+          "resolver_id": "OBSERVE.CAP-P06.CAP-P06.CAP-P06.CONTRACT.EVIDENCE.OBJECT",
+          "version": "1.0.0"
+        },
+        "semantic_type": "EVIDENCE_OBJECT_REF"
+      },
+      "inference": false,
+      "observed_collection_origin": "CAP-P06.RUNTIME.OBSERVED.FIELDS",
+      "observed_field_ids": [
+        "FIELD.CAPABILITY_ID",
+        "FIELD.FEATURE_FLAG",
+        "FIELD.CONFIGURATION_VALUE",
+        "FIELD.EFFECTIVE_STATE",
+        "FIELD.AUTHORIZATION",
+        "FIELD.AUDIT_RECORD"
+      ],
+      "producer": "CAP-P06.EVIDENCE.PRODUCER",
+      "required_collection_origin": "CAP-P06.SOURCE.REQUIRED.FIELDS",
+      "required_field_ids": [
+        "FIELD.CAPABILITY_ID",
+        "FIELD.FEATURE_FLAG",
+        "FIELD.CONFIGURATION_VALUE",
+        "FIELD.EFFECTIVE_STATE",
+        "FIELD.AUTHORIZATION",
+        "FIELD.AUDIT_RECORD"
+      ],
+      "required_values_or_hashes": [
+        "CAP-P06.EVIDENCE.CONTENT.HASH"
+      ],
+      "retrieval_method": "CAP-P06.EVIDENCE.RETRIEVAL",
+      "version_or_correlation": "CAP-P06.EVIDENCE.VERSION.CORRELATION"
+    },
+    "runtime_evidence_executed": false,
+    "runtime_status": "RUNTIME_ADAPTER_PENDING",
+    "semantic_obligation_references": [
+      "CAP-P06-O001"
+    ],
+    "typed_contract_ast": {
+      "approved_clarification": null,
+      "assertions": [
+        {
+          "assertion_id": "CAP-P06.O1.1.CONFIGURATION_RESOLVES",
+          "evaluator_consumed_bindings": [
+            "configuration_key",
+            "configuration_sources",
+            "expected_value",
+            "resolved_source",
+            "source_versions"
+          ],
+          "evidence_object": {
+            "authoritative_source": {
+              "source_id": "docs/BRD/BRD-CAP-INDEX.md#11. Registry Principles > CAP-P06 — Feature Toggle Ready",
+              "source_type": "SOURCE_LITERAL",
+              "version": "94968e40b2b6c8fadb2219c42becf236b5b31de4097bbfb70dd168eff61220be"
+            },
+            "identifier": "CAP-P06.CAP-P06.O1.1.CONFIGURATION_RESOLVES.EVIDENCE.OBJECT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "CAP-P06.O1.1.CONFIGURATION_RESOLVES.EVIDENCE.ORIGIN",
+              "origin_type": "EVIDENCE_OBJECT"
+            },
+            "provenance": {
+              "approved_decision_references": [
+                "P2-DEC-005"
+              ],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+              "source_fingerprint": "94968e40b2b6c8fadb2219c42becf236b5b31de4097bbfb70dd168eff61220be",
+              "source_lines": "L319-L322",
+              "source_section": "11. Registry Principles > CAP-P06 — Feature Toggle Ready"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "EVIDENCE_OBJECT_REF",
+              "resolver_id": "OBSERVE.CAP-P06.CAP-P06.CAP-P06.O1.1.CONFIGURATION_RESOLVES.EVIDENCE.OBJECT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "EVIDENCE_OBJECT_REF"
+          },
+          "expected_operand": {
+            "authoritative_source": {
+              "allowed_identifiers": [
+                "CAP-P06.CAP-P06.O1.1.CONFIGURATION_RESOLVES.CANONICAL.RESULT"
+              ],
+              "source_id": "docs/BRD/BRD-CAP-INDEX.md#11. Registry Principles > CAP-P06 — Feature Toggle Ready",
+              "source_type": "SOURCE_LITERAL",
+              "version": "94968e40b2b6c8fadb2219c42becf236b5b31de4097bbfb70dd168eff61220be"
+            },
+            "identifier": "CAP-P06.CAP-P06.O1.1.CONFIGURATION_RESOLVES.CANONICAL.RESULT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "CAP-P06.O1.1.CONFIGURATION_RESOLVES.AUTHORITY.ORIGIN",
+              "origin_type": "SOURCE_LITERAL"
+            },
+            "provenance": {
+              "approved_decision_references": [
+                "P2-DEC-005"
+              ],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+              "source_fingerprint": "94968e40b2b6c8fadb2219c42becf236b5b31de4097bbfb70dd168eff61220be",
+              "source_lines": "L319-L322",
+              "source_section": "11. Registry Principles > CAP-P06 — Feature Toggle Ready"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "CANONICAL_ENUM_VALUE",
+              "resolver_id": "RESOLVE.CAP-P06.CAP-P06.CAP-P06.O1.1.CONFIGURATION_RESOLVES.CANONICAL.RESULT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "CANONICAL_ENUM_VALUE"
+          },
+          "inference": false,
+          "model_conformance_fixture": {
+            "bindings": {
+              "configuration_key": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-CAP-INDEX.md#11. Registry Principles > CAP-P06 — Feature Toggle Ready",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "94968e40b2b6c8fadb2219c42becf236b5b31de4097bbfb70dd168eff61220be"
+                },
+                "identifier": "CAP-P06.CONFIGURATION_KEY",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "CAP-P06.O1.1.CONFIGURATION_RESOLVES.CONFIGURATION_KEY.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [
+                    "P2-DEC-005"
+                  ],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+                  "source_fingerprint": "94968e40b2b6c8fadb2219c42becf236b5b31de4097bbfb70dd168eff61220be",
+                  "source_lines": "L319-L322",
+                  "source_section": "11. Registry Principles > CAP-P06 — Feature Toggle Ready"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "CONFIGURATION_KEY",
+                  "resolver_id": "RESOLVE.CAP-P06.CAP-P06.CONFIGURATION_KEY",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "CONFIGURATION_KEY"
+              },
+              "configuration_sources": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-CAP-INDEX.md#11. Registry Principles > CAP-P06 — Feature Toggle Ready",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "94968e40b2b6c8fadb2219c42becf236b5b31de4097bbfb70dd168eff61220be"
+                },
+                "identifier": "CAP-P06.CONFIGURATION_SOURCES",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "CAP-P06.O1.1.CONFIGURATION_RESOLVES.CONFIGURATION_SOURCES.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [
+                    "P2-DEC-005"
+                  ],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+                  "source_fingerprint": "94968e40b2b6c8fadb2219c42becf236b5b31de4097bbfb70dd168eff61220be",
+                  "source_lines": "L319-L322",
+                  "source_section": "11. Registry Principles > CAP-P06 — Feature Toggle Ready"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "SET_OF<CONFIGURATION_SOURCE_ID>",
+                  "resolver_id": "RESOLVE.CAP-P06.CAP-P06.CONFIGURATION_SOURCES",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "CANONICAL_SET_REF<CONFIGURATION_SOURCE_ID>"
+              },
+              "expected_value": {
+                "authoritative_source": {
+                  "allowed_identifiers": [
+                    "CAP-P06.CANONICAL.CONFIGURATION.VALUE"
+                  ],
+                  "source_id": "docs/BRD/BRD-CAP-INDEX.md#11. Registry Principles > CAP-P06 — Feature Toggle Ready",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "94968e40b2b6c8fadb2219c42becf236b5b31de4097bbfb70dd168eff61220be"
+                },
+                "identifier": "CAP-P06.CANONICAL.CONFIGURATION.VALUE",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "CAP-P06.O1.1.CONFIGURATION_RESOLVES.EXPECTED_VALUE.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [
+                    "P2-DEC-005"
+                  ],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+                  "source_fingerprint": "94968e40b2b6c8fadb2219c42becf236b5b31de4097bbfb70dd168eff61220be",
+                  "source_lines": "L319-L322",
+                  "source_section": "11. Registry Principles > CAP-P06 — Feature Toggle Ready"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "CANONICAL_ENUM_VALUE",
+                  "resolver_id": "RESOLVE.CAP-P06.CAP-P06.CANONICAL.CONFIGURATION.VALUE",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "CANONICAL_ENUM_VALUE"
+              },
+              "resolved_source": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-CAP-INDEX.md#11. Registry Principles > CAP-P06 — Feature Toggle Ready",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "94968e40b2b6c8fadb2219c42becf236b5b31de4097bbfb70dd168eff61220be"
+                },
+                "identifier": "CAP-P06.RESOLVED_SOURCE",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "CAP-P06.O1.1.CONFIGURATION_RESOLVES.RESOLVED_SOURCE.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [
+                    "P2-DEC-005"
+                  ],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+                  "source_fingerprint": "94968e40b2b6c8fadb2219c42becf236b5b31de4097bbfb70dd168eff61220be",
+                  "source_lines": "L319-L322",
+                  "source_section": "11. Registry Principles > CAP-P06 — Feature Toggle Ready"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "CONFIGURATION_SOURCE_ID",
+                  "resolver_id": "RESOLVE.CAP-P06.CAP-P06.RESOLVED_SOURCE",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "CONFIGURATION_SOURCE_ID"
+              },
+              "source_versions": {
+                "members": [
+                  {
+                    "authoritative_source": {
+                      "source_id": "docs/BRD/BRD-CAP-INDEX.md#11. Registry Principles > CAP-P06 — Feature Toggle Ready",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "94968e40b2b6c8fadb2219c42becf236b5b31de4097bbfb70dd168eff61220be"
+                    },
+                    "identifier": "CAP-P06.SOURCE_VERSIONS.SOURCE.MEMBER",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "CAP-P06.O1.1.CONFIGURATION_RESOLVES.SOURCE_VERSIONS.ORIGIN.MEMBER.1",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [
+                        "P2-DEC-005"
+                      ],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+                      "source_fingerprint": "94968e40b2b6c8fadb2219c42becf236b5b31de4097bbfb70dd168eff61220be",
+                      "source_lines": "L319-L322",
+                      "source_section": "11. Registry Principles > CAP-P06 — Feature Toggle Ready"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "POLICY_VERSION",
+                      "resolver_id": "RESOLVE.CAP-P06.CAP-P06.SOURCE_VERSIONS.SOURCE.MEMBER",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "POLICY_VERSION"
+                  }
+                ],
+                "origin": {
+                  "origin_id": "CAP-P06.O1.1.CONFIGURATION_RESOLVES.SOURCE_VERSIONS.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [
+                    "P2-DEC-005"
+                  ],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+                  "source_fingerprint": "94968e40b2b6c8fadb2219c42becf236b5b31de4097bbfb70dd168eff61220be",
+                  "source_lines": "L319-L322",
+                  "source_section": "11. Registry Principles > CAP-P06 — Feature Toggle Ready"
+                },
+                "semantic_type": "SET_OF<POLICY_VERSION>"
+              }
+            },
+            "comparison": {
+              "expected": {
+                "authoritative_source": {
+                  "allowed_identifiers": [
+                    "CAP-P06.CAP-P06.O1.1.CONFIGURATION_RESOLVES.CANONICAL.RESULT"
+                  ],
+                  "source_id": "docs/BRD/BRD-CAP-INDEX.md#11. Registry Principles > CAP-P06 — Feature Toggle Ready",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "94968e40b2b6c8fadb2219c42becf236b5b31de4097bbfb70dd168eff61220be"
+                },
+                "identifier": "CAP-P06.CAP-P06.O1.1.CONFIGURATION_RESOLVES.CANONICAL.RESULT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "CAP-P06.O1.1.CONFIGURATION_RESOLVES.AUTHORITY.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [
+                    "P2-DEC-005"
+                  ],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+                  "source_fingerprint": "94968e40b2b6c8fadb2219c42becf236b5b31de4097bbfb70dd168eff61220be",
+                  "source_lines": "L319-L322",
+                  "source_section": "11. Registry Principles > CAP-P06 — Feature Toggle Ready"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "CANONICAL_ENUM_VALUE",
+                  "resolver_id": "RESOLVE.CAP-P06.CAP-P06.CAP-P06.O1.1.CONFIGURATION_RESOLVES.CANONICAL.RESULT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "CANONICAL_ENUM_VALUE"
+              },
+              "observed": {
+                "authoritative_source": {
+                  "allowed_identifiers": [
+                    "CAP-P06.CAP-P06.O1.1.CONFIGURATION_RESOLVES.CANONICAL.RESULT"
+                  ],
+                  "source_id": "docs/BRD/BRD-CAP-INDEX.md#11. Registry Principles > CAP-P06 — Feature Toggle Ready",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "94968e40b2b6c8fadb2219c42becf236b5b31de4097bbfb70dd168eff61220be"
+                },
+                "identifier": "CAP-P06.CAP-P06.O1.1.CONFIGURATION_RESOLVES.CANONICAL.RESULT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "CAP-P06.O1.1.CONFIGURATION_RESOLVES.OBSERVED.ORIGIN",
+                  "origin_type": "RUNTIME_OBSERVED"
+                },
+                "provenance": {
+                  "approved_decision_references": [
+                    "P2-DEC-005"
+                  ],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+                  "source_fingerprint": "94968e40b2b6c8fadb2219c42becf236b5b31de4097bbfb70dd168eff61220be",
+                  "source_lines": "L319-L322",
+                  "source_section": "11. Registry Principles > CAP-P06 — Feature Toggle Ready"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "CANONICAL_ENUM_VALUE",
+                  "resolver_id": "OBSERVE.CAP-P06.CAP-P06.CAP-P06.O1.1.CONFIGURATION_RESOLVES.CANONICAL.RESULT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "CANONICAL_ENUM_VALUE"
+              }
+            },
+            "evidence_object": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-CAP-INDEX.md#11. Registry Principles > CAP-P06 — Feature Toggle Ready",
+                "source_type": "SOURCE_LITERAL",
+                "version": "94968e40b2b6c8fadb2219c42becf236b5b31de4097bbfb70dd168eff61220be"
+              },
+              "identifier": "CAP-P06.CAP-P06.O1.1.CONFIGURATION_RESOLVES.EVIDENCE.OBJECT",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "CAP-P06.O1.1.CONFIGURATION_RESOLVES.EVIDENCE.ORIGIN",
+                "origin_type": "EVIDENCE_OBJECT"
+              },
+              "provenance": {
+                "approved_decision_references": [
+                  "P2-DEC-005"
+                ],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+                "source_fingerprint": "94968e40b2b6c8fadb2219c42becf236b5b31de4097bbfb70dd168eff61220be",
+                "source_lines": "L319-L322",
+                "source_section": "11. Registry Principles > CAP-P06 — Feature Toggle Ready"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "EVIDENCE_OBJECT_REF",
+                "resolver_id": "OBSERVE.CAP-P06.CAP-P06.CAP-P06.O1.1.CONFIGURATION_RESOLVES.EVIDENCE.OBJECT",
+                "version": "1.0.0"
+              },
+              "semantic_type": "EVIDENCE_OBJECT_REF"
+            },
+            "operator_id": "CONFIGURATION_RESOLVES"
+          },
+          "obligation_id": "CAP-P06-O001",
+          "observed_operand": {
+            "authoritative_source": {
+              "allowed_identifiers": [
+                "CAP-P06.CAP-P06.O1.1.CONFIGURATION_RESOLVES.CANONICAL.RESULT"
+              ],
+              "source_id": "docs/BRD/BRD-CAP-INDEX.md#11. Registry Principles > CAP-P06 — Feature Toggle Ready",
+              "source_type": "SOURCE_LITERAL",
+              "version": "94968e40b2b6c8fadb2219c42becf236b5b31de4097bbfb70dd168eff61220be"
+            },
+            "identifier": "CAP-P06.CAP-P06.O1.1.CONFIGURATION_RESOLVES.CANONICAL.RESULT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "CAP-P06.O1.1.CONFIGURATION_RESOLVES.OBSERVED.ORIGIN",
+              "origin_type": "RUNTIME_OBSERVED"
+            },
+            "provenance": {
+              "approved_decision_references": [
+                "P2-DEC-005"
+              ],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+              "source_fingerprint": "94968e40b2b6c8fadb2219c42becf236b5b31de4097bbfb70dd168eff61220be",
+              "source_lines": "L319-L322",
+              "source_section": "11. Registry Principles > CAP-P06 — Feature Toggle Ready"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "CANONICAL_ENUM_VALUE",
+              "resolver_id": "OBSERVE.CAP-P06.CAP-P06.CAP-P06.O1.1.CONFIGURATION_RESOLVES.CANONICAL.RESULT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "CANONICAL_ENUM_VALUE"
+          },
+          "operator_id": "CONFIGURATION_RESOLVES",
+          "operator_version": "1.0.0-candidate.2",
+          "typed_bindings": {
+            "configuration_key": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-CAP-INDEX.md#11. Registry Principles > CAP-P06 — Feature Toggle Ready",
+                "source_type": "SOURCE_LITERAL",
+                "version": "94968e40b2b6c8fadb2219c42becf236b5b31de4097bbfb70dd168eff61220be"
+              },
+              "identifier": "CAP-P06.CONFIGURATION_KEY",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "CAP-P06.O1.1.CONFIGURATION_RESOLVES.CONFIGURATION_KEY.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [
+                  "P2-DEC-005"
+                ],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+                "source_fingerprint": "94968e40b2b6c8fadb2219c42becf236b5b31de4097bbfb70dd168eff61220be",
+                "source_lines": "L319-L322",
+                "source_section": "11. Registry Principles > CAP-P06 — Feature Toggle Ready"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CONFIGURATION_KEY",
+                "resolver_id": "RESOLVE.CAP-P06.CAP-P06.CONFIGURATION_KEY",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CONFIGURATION_KEY"
+            },
+            "configuration_sources": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-CAP-INDEX.md#11. Registry Principles > CAP-P06 — Feature Toggle Ready",
+                "source_type": "SOURCE_LITERAL",
+                "version": "94968e40b2b6c8fadb2219c42becf236b5b31de4097bbfb70dd168eff61220be"
+              },
+              "identifier": "CAP-P06.CONFIGURATION_SOURCES",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "CAP-P06.O1.1.CONFIGURATION_RESOLVES.CONFIGURATION_SOURCES.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [
+                  "P2-DEC-005"
+                ],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+                "source_fingerprint": "94968e40b2b6c8fadb2219c42becf236b5b31de4097bbfb70dd168eff61220be",
+                "source_lines": "L319-L322",
+                "source_section": "11. Registry Principles > CAP-P06 — Feature Toggle Ready"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "SET_OF<CONFIGURATION_SOURCE_ID>",
+                "resolver_id": "RESOLVE.CAP-P06.CAP-P06.CONFIGURATION_SOURCES",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_SET_REF<CONFIGURATION_SOURCE_ID>"
+            },
+            "expected_value": {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "CAP-P06.CANONICAL.CONFIGURATION.VALUE"
+                ],
+                "source_id": "docs/BRD/BRD-CAP-INDEX.md#11. Registry Principles > CAP-P06 — Feature Toggle Ready",
+                "source_type": "SOURCE_LITERAL",
+                "version": "94968e40b2b6c8fadb2219c42becf236b5b31de4097bbfb70dd168eff61220be"
+              },
+              "identifier": "CAP-P06.CANONICAL.CONFIGURATION.VALUE",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "CAP-P06.O1.1.CONFIGURATION_RESOLVES.EXPECTED_VALUE.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [
+                  "P2-DEC-005"
+                ],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+                "source_fingerprint": "94968e40b2b6c8fadb2219c42becf236b5b31de4097bbfb70dd168eff61220be",
+                "source_lines": "L319-L322",
+                "source_section": "11. Registry Principles > CAP-P06 — Feature Toggle Ready"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CANONICAL_ENUM_VALUE",
+                "resolver_id": "RESOLVE.CAP-P06.CAP-P06.CANONICAL.CONFIGURATION.VALUE",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_ENUM_VALUE"
+            },
+            "resolved_source": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-CAP-INDEX.md#11. Registry Principles > CAP-P06 — Feature Toggle Ready",
+                "source_type": "SOURCE_LITERAL",
+                "version": "94968e40b2b6c8fadb2219c42becf236b5b31de4097bbfb70dd168eff61220be"
+              },
+              "identifier": "CAP-P06.RESOLVED_SOURCE",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "CAP-P06.O1.1.CONFIGURATION_RESOLVES.RESOLVED_SOURCE.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [
+                  "P2-DEC-005"
+                ],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+                "source_fingerprint": "94968e40b2b6c8fadb2219c42becf236b5b31de4097bbfb70dd168eff61220be",
+                "source_lines": "L319-L322",
+                "source_section": "11. Registry Principles > CAP-P06 — Feature Toggle Ready"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CONFIGURATION_SOURCE_ID",
+                "resolver_id": "RESOLVE.CAP-P06.CAP-P06.RESOLVED_SOURCE",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CONFIGURATION_SOURCE_ID"
+            },
+            "source_versions": {
+              "members": [
+                {
+                  "authoritative_source": {
+                    "source_id": "docs/BRD/BRD-CAP-INDEX.md#11. Registry Principles > CAP-P06 — Feature Toggle Ready",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "94968e40b2b6c8fadb2219c42becf236b5b31de4097bbfb70dd168eff61220be"
+                  },
+                  "identifier": "CAP-P06.SOURCE_VERSIONS.SOURCE.MEMBER",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "CAP-P06.O1.1.CONFIGURATION_RESOLVES.SOURCE_VERSIONS.ORIGIN.MEMBER.1",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [
+                      "P2-DEC-005"
+                    ],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+                    "source_fingerprint": "94968e40b2b6c8fadb2219c42becf236b5b31de4097bbfb70dd168eff61220be",
+                    "source_lines": "L319-L322",
+                    "source_section": "11. Registry Principles > CAP-P06 — Feature Toggle Ready"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "POLICY_VERSION",
+                    "resolver_id": "RESOLVE.CAP-P06.CAP-P06.SOURCE_VERSIONS.SOURCE.MEMBER",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "POLICY_VERSION"
+                }
+              ],
+              "origin": {
+                "origin_id": "CAP-P06.O1.1.CONFIGURATION_RESOLVES.SOURCE_VERSIONS.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [
+                  "P2-DEC-005"
+                ],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+                "source_fingerprint": "94968e40b2b6c8fadb2219c42becf236b5b31de4097bbfb70dd168eff61220be",
+                "source_lines": "L319-L322",
+                "source_section": "11. Registry Principles > CAP-P06 — Feature Toggle Ready"
+              },
+              "semantic_type": "SET_OF<POLICY_VERSION>"
+            }
+          }
+        }
+      ],
+      "boundary_cases": [
+        "Platform or security invariants not declared configurable remain enforced"
+      ],
+      "contract_ast_sha256": "96c5f2383f7d307bb0587f747eb4c5507badb0cc4d262b6543be667bc360edc7",
+      "contract_id": "P2C.C4.CONTRACT.CAP-P06",
+      "criticality": "NORMAL",
+      "disposition": "CORRECTABLE_WITH_APPROVED_TYPE_MODEL",
+      "evidence_contract": {
+        "evidence_object_ref": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-CAP-INDEX.md#11. Registry Principles > CAP-P06 — Feature Toggle Ready",
+            "source_type": "SOURCE_LITERAL",
+            "version": "94968e40b2b6c8fadb2219c42becf236b5b31de4097bbfb70dd168eff61220be"
+          },
+          "identifier": "CAP-P06.CAP-P06.CONTRACT.EVIDENCE.OBJECT",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "CAP-P06.CONTRACT.EVIDENCE.ORIGIN",
+            "origin_type": "EVIDENCE_OBJECT"
+          },
+          "provenance": {
+            "approved_decision_references": [
+              "P2-DEC-005"
+            ],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+            "source_fingerprint": "94968e40b2b6c8fadb2219c42becf236b5b31de4097bbfb70dd168eff61220be",
+            "source_lines": "L319-L322",
+            "source_section": "11. Registry Principles > CAP-P06 — Feature Toggle Ready"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "EVIDENCE_OBJECT_REF",
+            "resolver_id": "OBSERVE.CAP-P06.CAP-P06.CAP-P06.CONTRACT.EVIDENCE.OBJECT",
+            "version": "1.0.0"
+          },
+          "semantic_type": "EVIDENCE_OBJECT_REF"
+        },
+        "inference": false,
+        "observed_collection_origin": "CAP-P06.RUNTIME.OBSERVED.FIELDS",
+        "observed_field_ids": [
+          "FIELD.CAPABILITY_ID",
+          "FIELD.FEATURE_FLAG",
+          "FIELD.CONFIGURATION_VALUE",
+          "FIELD.EFFECTIVE_STATE",
+          "FIELD.AUTHORIZATION",
+          "FIELD.AUDIT_RECORD"
+        ],
+        "producer": "CAP-P06.EVIDENCE.PRODUCER",
+        "required_collection_origin": "CAP-P06.SOURCE.REQUIRED.FIELDS",
+        "required_field_ids": [
+          "FIELD.CAPABILITY_ID",
+          "FIELD.FEATURE_FLAG",
+          "FIELD.CONFIGURATION_VALUE",
+          "FIELD.EFFECTIVE_STATE",
+          "FIELD.AUTHORIZATION",
+          "FIELD.AUDIT_RECORD"
+        ],
+        "required_values_or_hashes": [
+          "CAP-P06.EVIDENCE.CONTENT.HASH"
+        ],
+        "retrieval_method": "CAP-P06.EVIDENCE.RETRIEVAL",
+        "version_or_correlation": "CAP-P06.EVIDENCE.VERSION.CORRELATION"
+      },
+      "explicit_non_obligations": [
+        "No runtime implementation topology is authorized by this semantic record.",
+        "No production runtime evidence is claimed by this model-level candidate."
+      ],
+      "fixture_ids": [
+        "P2C-C4-FX-83E2C5045074474C0CD6",
+        "P2C-C4-FX-1E87ED066974A7BE9637",
+        "P2C-C4-FX-3903F50772E4294CC3F1"
+      ],
+      "high_risk_audit_subset": false,
+      "independent_contract_identity": true,
+      "inference": false,
+      "inherits_contract_ast": null,
+      "negative_oracles": [
+        "Capability state changes outside governed configuration"
+      ],
+      "normative_obligations": [
+        {
+          "applicability": "V2.3_ACTIVE",
+          "obligation_id": "CAP-P06-O001",
+          "obligation_text": "Capability có thể được bật hoặc tắt thông qua Feature Flag hoặc Configuration"
+        }
+      ],
+      "obligation_to_operator_coverage": [
+        {
+          "assertion_ids": [
+            "CAP-P06.O1.1.CONFIGURATION_RESOLVES"
+          ],
+          "coverage_count": 1,
+          "obligation_id": "CAP-P06-O001"
+        }
+      ],
+      "operator_composition": [
+        "CONFIGURATION_RESOLVES"
+      ],
+      "positive_oracles": [
+        "Capability state resolves from Feature Flag or Configuration"
+      ],
+      "preconditions": [
+        "The applicable Feature Flag or Configuration and authorization exist"
+      ],
+      "prohibitions": [
+        "Capability state changes outside governed configuration"
+      ],
+      "requirement_id": "CAP-P06",
+      "runtime_status": "SLICE_RUNTIME_ADAPTER_REQUIRED",
+      "semantic_family_id": null,
+      "source_provenance": {
+        "approved_decision_references": [
+          "P2-DEC-005"
+        ],
+        "inference": false,
+        "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+        "source_fingerprint": "94968e40b2b6c8fadb2219c42becf236b5b31de4097bbfb70dd168eff61220be",
+        "source_lines": "L319-L322",
+        "source_section": "11. Registry Principles > CAP-P06 — Feature Toggle Ready"
+      },
+      "source_statement": "Capability có thể được bật hoặc tắt thông qua Feature Flag hoặc Configuration.",
+      "surrounding_source_context": "## CAP-P06 — Feature Toggle Ready\n\nCapability có thể được bật hoặc tắt thông qua Feature Flag hoặc Configuration.\n\n---"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "contract_id": "P2C.C4.CONTRACT.CAP-P06",
+    "inference": false,
+    "mechanism": "APPROVED_TYPED_CUSTOM_AST",
+    "mechanism_version": "SEMANTIC_ACCEPTANCE_RENDERER_C2",
+    "runtime_status": "RUNTIME_ADAPTER_PENDING"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "ACCEPTANCE_READY",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "CAP-P06-AC001"
+        "CAP-P06-AC001",
+        "CAP-P06-AC002",
+        "CAP-P06-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "CAP-P06-O001",
@@ -4174,9 +5618,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "CAP-P06 — Feature Toggle Ready",
     "source_context_sha256": "1f7d4e9a2cde309199664e4dcae17c6c7f5bde3c0a133eadcb42daf0817bc2df",
     "source_document": "docs/BRD/BRD-CAP-INDEX.md",
-    "source_fingerprint": "94968e40b2b6c8fadb2219c42becf236b5b31de4097bbfb70dd168eff61220be",
-    "source_lines": "L319-L322",
-    "source_section": "11. Registry Principles > CAP-P06 — Feature Toggle Ready"
+    "source_fingerprint": "972ff68134fd6bc85eb568b7cbf2d6a77f2053476b5fe4c8bfa5d306738f1591",
+    "source_lines": "L4484-L5641",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > CAP-P06"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -4201,41 +5645,36 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "CAP-P07-AC001",
-      "given": "the applicable business context, actor, and input for Capability có thể Publish hoặc Subscribe Business Event",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "CAP-P07-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-005"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "CAP-P07-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Capability có thể Publish hoặc Subscribe Business Event",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "CAP-P07-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "CAP-P07",
+      "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+      "source_fingerprint": "4ea7ce824c8da6953ea4e3b7c6e918065ce4be846a5716b07cd6ed2981ca6811"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "CAP-P07-AC001",
-        "CAP-P07-AC002"
+        "CAP-P07-AC002",
+        "CAP-P07-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "CAP-P07-O001",
@@ -4260,9 +5699,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "CAP-P07 — Event Driven",
     "source_context_sha256": "44eec2d66aefc3111920af21ae86a614459abefc269240cee0153efdd07ba547",
     "source_document": "docs/BRD/BRD-CAP-INDEX.md",
-    "source_fingerprint": "d26f3c19eb047b584e02ff4b67bff7fec074e1f83255aebfb57ef04a72c2da4a",
-    "source_lines": "L325-L328",
-    "source_section": "11. Registry Principles > CAP-P07 — Event Driven"
+    "source_fingerprint": "4ea7ce824c8da6953ea4e3b7c6e918065ce4be846a5716b07cd6ed2981ca6811",
+    "source_lines": "L5643-L5724",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > CAP-P07"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -4289,209 +5728,64 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "CAP-P08-AC001",
-      "given": "an operational task within the scope of Capability Registry là tài liệu nền tảng phục vụ Enterprise Architecture Governance. Mọi Capabil…",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "CAP-P08-O001"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "CAP-P08-AC002",
-      "given": "an operational task within the scope of Capability Registry là tài liệu nền tảng phục vụ Enterprise Architecture Governance. Mọi Capabil…",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "CAP-P08-O002"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "CAP-P08-AC003",
-      "given": "an operational task within the scope of Capability Registry là tài liệu nền tảng phục vụ Enterprise Architecture Governance. Mọi Capabil…",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "CAP-P08-O003"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "CAP-P08-AC004",
-      "given": "an operational task within the scope of Capability Registry là tài liệu nền tảng phục vụ Enterprise Architecture Governance. Mọi Capabil…",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "CAP-P08-O004"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "CAP-P08-AC005",
-      "given": "an operational task within the scope of Capability Registry là tài liệu nền tảng phục vụ Enterprise Architecture Governance. Mọi Capabil…",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "CAP-P08-O005"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "OPERATIONAL_VERIFICATION_FAILURE_V1",
-      "criterion_id": "CAP-P08-AC006",
-      "given": "an operational task missing an outcome, required signal, audit evidence, or recovery evidence for Capability Registry là tài liệu nền tảng phục vụ Enterprise Architecture Governance. Mọi Capabil…",
-      "observable_evidence": "operator-visible verification result, missing-evidence identifier, operation state, and relevant signal or audit record",
-      "then": "verification reports the specific missing evidence as a detectable failure and does not report the task as conforming",
-      "verifies": [
-        "CAP-P08-O001",
-        "CAP-P08-O002",
-        "CAP-P08-O003",
-        "CAP-P08-O004",
-        "CAP-P08-O005"
-      ],
-      "when": "operational verification is performed"
-    }
-  ],
-  "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
-  "acceptance_unit": true,
-  "atomic_obligations": [
-    {
-      "acceptance_criterion_references": [
-        "CAP-P08-AC001",
-        "CAP-P08-AC006"
-      ],
-      "applicability": "V2.3_ACTIVE",
-      "obligation_id": "CAP-P08-O001",
-      "obligation_text": "Capability Registry là tài liệu nền tảng phục vụ Enterprise Architecture Governance. Mọi Capability mới phải trải qua: Architecture Review."
-    },
-    {
-      "acceptance_criterion_references": [
-        "CAP-P08-AC002",
-        "CAP-P08-AC006"
-      ],
-      "applicability": "V2.3_ACTIVE",
-      "obligation_id": "CAP-P08-O002",
-      "obligation_text": "Capability Registry là tài liệu nền tảng phục vụ Enterprise Architecture Governance. Mọi Capability mới phải trải qua: Approval."
-    },
-    {
-      "acceptance_criterion_references": [
-        "CAP-P08-AC003",
-        "CAP-P08-AC006"
-      ],
-      "applicability": "V2.3_ACTIVE",
-      "obligation_id": "CAP-P08-O003",
-      "obligation_text": "Capability Registry là tài liệu nền tảng phục vụ Enterprise Architecture Governance. Mọi Capability mới phải trải qua: Versioning."
-    },
-    {
-      "acceptance_criterion_references": [
-        "CAP-P08-AC004",
-        "CAP-P08-AC006"
-      ],
-      "applicability": "V2.3_ACTIVE",
-      "obligation_id": "CAP-P08-O004",
-      "obligation_text": "Capability Registry là tài liệu nền tảng phục vụ Enterprise Architecture Governance. Mọi Capability mới phải trải qua: Audit."
-    },
-    {
-      "acceptance_criterion_references": [
-        "CAP-P08-AC005",
-        "CAP-P08-AC006"
-      ],
-      "applicability": "V2.3_ACTIVE",
-      "obligation_id": "CAP-P08-O005",
-      "obligation_text": "Capability Registry là tài liệu nền tảng phục vụ Enterprise Architecture Governance. Mọi Capability mới phải trải qua: Traceability."
-    }
-  ],
-  "criticality_applicability": {
-    "AUTHORIZATION_BOUNDARY": {
-      "criterion_references": [],
-      "rationale": "CAP-P08 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    },
-    "CONCURRENCY": {
-      "criterion_references": [],
-      "rationale": "CAP-P08 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    },
-    "IDEMPOTENCY": {
-      "criterion_references": [],
-      "rationale": "CAP-P08 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    },
-    "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "CAP-P08 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    },
-    "POSITIVE": {
-      "criterion_references": [
-        "CAP-P08-AC001",
-        "CAP-P08-AC002",
-        "CAP-P08-AC003",
-        "CAP-P08-AC004",
-        "CAP-P08-AC005"
-      ],
-      "status": "APPLICABLE"
-    },
-    "RECOVERY": {
-      "criterion_references": [],
-      "rationale": "CAP-P08 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    }
-  },
-  "criticality_unit": true,
+  "acceptance_contract": null,
+  "acceptance_mechanism": null,
+  "acceptance_rationale": "Composite parent coverage is satisfied only through ALL_CHILDREN; the parent is not an implementation, acceptance, scope-coverage, or criticality unit.",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "STRUCTURAL_RECORD",
+  "acceptance_unit": false,
+  "atomic_obligations": [],
+  "criticality_applicability": null,
+  "criticality_unit": false,
   "delivery_commitment": "COMMITTED_FOR_V2.3",
-  "implementation_unit": true,
+  "implementation_unit": false,
   "lifecycle": "V2.3_DRAFT",
   "normative_statement": "Capability Registry là tài liệu nền tảng phục vụ Enterprise Architecture Governance. Mọi Capability mới phải trải qua: - Architecture Review - Approval - Versioning - Audit - Traceability",
   "provenance": {
     "approved_decisions": [
       "BDD-27",
       "P2-DEC-005",
-      "SD-03"
+      "SD-03",
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
     ],
     "identity_origin": "PRESERVED_STABLE_ID",
     "original_identity": "CAP-P08",
+    "phase_2c_c3_actions": [
+      "C3_STRUCTURAL_RECONCILIATION_PARENT"
+    ],
     "previous_temporary_key": null,
     "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
     "source_baseline": "v2.2",
     "source_context_heading": "CAP-P08 — Enterprise Governance",
     "source_context_sha256": "35497da0abc5b36caf13a933df633cc4f5eb9beba3ee315cbf461fc1dbea0f59",
     "source_document": "docs/BRD/BRD-CAP-INDEX.md",
-    "source_fingerprint": "89f5d106c0eb1328c31955d5ed7d3a7b72c445aa1b45c3e1d851a63d6239dcc3",
-    "source_lines": "L331-L342",
-    "source_section": "11. Registry Principles > CAP-P08 — Enterprise Governance"
+    "source_fingerprint": "7c2cd7f4f85c991d47e0fd7cec9781d5975384d7bb2452c60aca8e87b56585b2",
+    "source_fingerprint_before_c3": "89f5d106c0eb1328c31955d5ed7d3a7b72c445aa1b45c3e1d851a63d6239dcc3",
+    "source_lines": "L5726-L5791",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > CAP-P08"
   },
-  "record_kind": "CANONICAL_ATOMIC",
+  "record_kind": "COMPOSITE_PARENT",
   "relationships": {
     "alias_of": null,
     "aliases": [],
-    "coverage_mode": null,
+    "coverage_mode": "ALL_CHILDREN",
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [
+      "BRD-CAP-INDEX-R024",
+      "BRD-CAP-INDEX-R025",
+      "BRD-CAP-INDEX-R026",
+      "BRD-CAP-INDEX-R027",
+      "BRD-CAP-INDEX-R028"
+    ]
   },
   "requirement_type": "OPERATIONAL_REQUIREMENT",
-  "scope_coverage_unit": true,
+  "scope_coverage_unit": false,
   "scope_status": "V2.3_ACTIVE",
   "stable_id": "CAP-P08",
   "title": "Capability Registry là tài liệu nền tảng phục vụ Enterprise Architecture Governance. Mọi Capabil…",
-  "verification_criticality": "CRITICAL"
+  "verification_criticality": "NOT_APPLICABLE"
 }
 ```
 <!-- YSIM:REQUIREMENT END -->
@@ -4501,40 +5795,36 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "CAP-R01-AC001",
-      "given": "the applicable business context, actor, and input for Capability phản ánh năng lực nghiệp vụ. Không phản ánh thiết kế kỹ thuật",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "CAP-R01-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-005"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "CAP-R01-AC002",
-      "given": "the applicable business context, actor, and input for Capability phản ánh năng lực nghiệp vụ. Không phản ánh thiết kế kỹ thuật",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "CAP-R01-O002"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "CAP-R01",
+      "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+      "source_fingerprint": "23252c1f7c3f74ac6cccf3f855a62e6f6be8d30151dc8f220d23c3152f7d179b"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "CAP-R01-AC001"
+        "CAP-R01-AC001",
+        "CAP-R01-AC003",
+        "CAP-R01-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "CAP-R01-O001",
@@ -4542,7 +5832,9 @@ trước khi được sử dụng trong Platform.
     },
     {
       "acceptance_criterion_references": [
-        "CAP-R01-AC002"
+        "CAP-R01-AC002",
+        "CAP-R01-AC003",
+        "CAP-R01-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "CAP-R01-O002",
@@ -4567,9 +5859,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "CAP-R01 — Business First",
     "source_context_sha256": "eefeb0dd52a0ba93b71069dd8898bb93aa22c32f52e5af891dc5d539d0a13a8b",
     "source_document": "docs/BRD/BRD-CAP-INDEX.md",
-    "source_fingerprint": "6f310b30607234455e78d03deb9a17b87e0c919dfd7b3abb84671e655475c207",
-    "source_lines": "L723-L728",
-    "source_section": "15. Capability Relationship Principles > CAP-R01 — Business First"
+    "source_fingerprint": "23252c1f7c3f74ac6cccf3f855a62e6f6be8d30151dc8f220d23c3152f7d179b",
+    "source_lines": "L5793-L5882",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > CAP-R01"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -4594,28 +5886,36 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "CAP-R02-AC001",
-      "given": "a candidate Mỗi Capability phải có ít nhất một Business Object chính record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "CAP-R02-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-005"
       ],
-      "when": "the candidate is evaluated against its declared data contract"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "CAP-R02",
+      "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+      "source_fingerprint": "c168ede46f651bff16f26169318d60f251ff4b638cac42d026e96969ebfc091a"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "CAP-R02-AC001"
+        "CAP-R02-AC001",
+        "CAP-R02-AC002",
+        "CAP-R02-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "CAP-R02-O001",
@@ -4640,9 +5940,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "CAP-R02 — Business Object Driven",
     "source_context_sha256": "a3569f8b937228c714efe865dfa14e0efe16669bb9427b11b4213237594620ee",
     "source_document": "docs/BRD/BRD-CAP-INDEX.md",
-    "source_fingerprint": "eaf759447e6ad69d0a572d5d3a73be66e3f6c5aad5807a15a3f04659b9d870b6",
-    "source_lines": "L731-L734",
-    "source_section": "15. Capability Relationship Principles > CAP-R02 — Business Object Driven"
+    "source_fingerprint": "c168ede46f651bff16f26169318d60f251ff4b638cac42d026e96969ebfc091a",
+    "source_lines": "L5884-L5963",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > CAP-R02"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -4667,41 +5967,36 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "CAP-R03-AC001",
-      "given": "the applicable business context, actor, and input for Capability ưu tiên Publish hoặc Subscribe Business Event",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "CAP-R03-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-005"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "CAP-R03-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Capability ưu tiên Publish hoặc Subscribe Business Event",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "CAP-R03-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "CAP-R03",
+      "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+      "source_fingerprint": "ed92b661bfde5bfaf63b76da7f64eca470b9d77f43c2bc55c11d7f73fba6f181"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "CAP-R03-AC001",
-        "CAP-R03-AC002"
+        "CAP-R03-AC002",
+        "CAP-R03-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "CAP-R03-O001",
@@ -4726,9 +6021,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "CAP-R03 — Event Driven",
     "source_context_sha256": "e4589443ace4dfc6a56b32ed7426987f64ad009ae541716f9a5542cb91c222f0",
     "source_document": "docs/BRD/BRD-CAP-INDEX.md",
-    "source_fingerprint": "0c7d9c85ca095abb08fc4c43660bdbbaa6f35c3d472c174987dbaee5d1854a78",
-    "source_lines": "L737-L740",
-    "source_section": "15. Capability Relationship Principles > CAP-R03 — Event Driven"
+    "source_fingerprint": "ed92b661bfde5bfaf63b76da7f64eca470b9d77f43c2bc55c11d7f73fba6f181",
+    "source_lines": "L5965-L6044",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > CAP-R03"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -4753,28 +6048,36 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "CAP-R04-AC001",
-      "given": "the applicable business context, actor, and input for Capability phải ưu tiên Configuration thay vì Hard-code",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the effective configuration and version are visible in the decision evidence, and an approved configuration change changes the governed result without a code change",
-      "verifies": [
-        "CAP-R04-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-005"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "CAP-R04",
+      "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+      "source_fingerprint": "60dd453ba2c4c16f556872ef7878fcebe331a94b89acae4fec0b04d3d2a912ba"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "CAP-R04-AC001"
+        "CAP-R04-AC001",
+        "CAP-R04-AC002",
+        "CAP-R04-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "CAP-R04-O001",
@@ -4799,9 +6102,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "CAP-R04 — Configurable",
     "source_context_sha256": "31b179e99cdc1f6cc6855bcf4a7271facbca0f96c1851a71f1bdf5d9656a486d",
     "source_document": "docs/BRD/BRD-CAP-INDEX.md",
-    "source_fingerprint": "0eb5f611dde434daa87fc935c6ed5dcbe857dc82908922c48711097d36c0e970",
-    "source_lines": "L743-L746",
-    "source_section": "15. Capability Relationship Principles > CAP-R04 — Configurable"
+    "source_fingerprint": "60dd453ba2c4c16f556872ef7878fcebe331a94b89acae4fec0b04d3d2a912ba",
+    "source_lines": "L6046-L6125",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > CAP-R04"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -4826,67 +6129,36 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "SECURITY_DECISION_OBSERVATION_V1",
-      "criterion_id": "CAP-R05-AC001",
-      "given": "an identified principal, applicable assurance context, and policy inputs for Capability được kiểm soát bởi Permission Model",
-      "observable_evidence": "decision result, effective assurance or policy, denied or changed state, reason, and audit evidence",
-      "then": "the effective security policy produces the required allow, challenge, block, review, or denial result; protected state and audit evidence agree with that decision",
-      "verifies": [
-        "CAP-R05-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-005"
       ],
-      "when": "the protected decision or action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "SECURITY_FAIL_CLOSED_V1",
-      "criterion_id": "CAP-R05-AC002",
-      "given": "a principal or request that does not satisfy the assurance, policy, consent, or authorization boundary for Capability được kiểm soát bởi Permission Model",
-      "observable_evidence": "decision result, protected-state comparison, reason, effective policy, and audit record",
-      "then": "the result is challenge, block, review, or denial as required; protected state is unchanged and the reason is audited",
-      "verifies": [
-        "CAP-R05-O001"
-      ],
-      "when": "the protected decision or action is attempted"
-    },
-    {
-      "case": "NEGATIVE_FAIL_CLOSED",
-      "controlled_contract": "REQUIREMENT_SPECIFIC_FAIL_CLOSED_V1",
-      "criterion_id": "CAP-R05-AC003",
-      "given": "an input or attempted state change that violates a mandatory boundary explicitly stated by Capability được kiểm soát bởi Permission Model",
-      "observable_evidence": "violating input, decision and reason, before/after protected state, and audit or conformance evidence",
-      "then": "the violated obligation produces its specified rejection, denial, block, review, or non-conforming result without recording a contradictory success",
-      "verifies": [
-        "CAP-R05-O001"
-      ],
-      "when": "the violating input or action is evaluated"
-    },
-    {
-      "case": "AUTHORIZATION_BOUNDARY",
-      "controlled_contract": "EXPLICIT_AUTHORIZATION_BOUNDARY_V1",
-      "criterion_id": "CAP-R05-AC004",
-      "given": "an actor lacking the permission, role, identity assurance, consent, or access condition stated by Capability được kiểm soát bởi Permission Model",
-      "observable_evidence": "actor and scope, effective policy or assurance, decision, protected-state comparison, reason, and audit evidence",
-      "then": "access is denied or challenged according to the referenced obligation, protected state remains unchanged, and the decision is auditable",
-      "verifies": [
-        "CAP-R05-O001"
-      ],
-      "when": "the actor attempts the governed action"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "CAP-R05",
+      "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+      "source_fingerprint": "34f652372321754b2dd3e0e9224a2ea01f2a9615a4714f908afb74671531a2e6"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "CAP-R05-AC001",
         "CAP-R05-AC002",
-        "CAP-R05-AC003",
-        "CAP-R05-AC004"
+        "CAP-R05-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "CAP-R05-O001",
@@ -4895,37 +6167,38 @@ trước khi được sử dụng trong Platform.
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
-      "criterion_references": [
-        "CAP-R05-AC004"
-      ],
-      "status": "APPLICABLE"
-    },
-    "CONCURRENCY": {
-      "criterion_references": [],
-      "rationale": "CAP-R05 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    },
-    "IDEMPOTENCY": {
-      "criterion_references": [],
-      "rationale": "CAP-R05 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    },
-    "NEGATIVE_FAIL_CLOSED": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "CAP-R05-AC003"
       ],
-      "status": "APPLICABLE"
+      "rationale": null
+    },
+    "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "CAP-R05 does not define a concurrency obligation."
+    },
+    "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "CAP-R05 does not define a idempotency obligation."
+    },
+    "NEGATIVE_FAIL_CLOSED": {
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "CAP-R05-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "CAP-R05-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "CAP-R05 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "CAP-R05 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -4945,9 +6218,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "CAP-R05 — Permission Controlled",
     "source_context_sha256": "01f611c0156d77fc36ae56170c75396ffce7a11813d9fb23c4569f8d8402f104",
     "source_document": "docs/BRD/BRD-CAP-INDEX.md",
-    "source_fingerprint": "f78b9fa93b445776c7dd9f04cb5d110c8e908c9e3b7aa344a19bd99efc3561f9",
-    "source_lines": "L749-L752",
-    "source_section": "15. Capability Relationship Principles > CAP-R05 — Permission Controlled"
+    "source_fingerprint": "34f652372321754b2dd3e0e9224a2ea01f2a9615a4714f908afb74671531a2e6",
+    "source_lines": "L6127-L6241",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > CAP-R05"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -4972,28 +6245,36 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "CAP-R06-AC001",
-      "given": "the applicable business context, actor, and input for Capability có khả năng bật/tắt thông qua Feature Flag",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "CAP-R06-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-005"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "CAP-R06",
+      "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+      "source_fingerprint": "438f6d007806298bbe6c2f7dce618c40a4ce3aebf0aa7671adfd2171a871145e"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "CAP-R06-AC001"
+        "CAP-R06-AC001",
+        "CAP-R06-AC002",
+        "CAP-R06-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "CAP-R06-O001",
@@ -5018,9 +6299,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "CAP-R06 — Feature Toggle Ready",
     "source_context_sha256": "c5b66fdc10fd6900fdf979813c366330ec885afaf32c4572aa437d6b285bdb1d",
     "source_document": "docs/BRD/BRD-CAP-INDEX.md",
-    "source_fingerprint": "f13cd5446a5ba9bb63be694270fca659cc0e2a6cd9d91e0c375cd3cfe7132709",
-    "source_lines": "L755-L758",
-    "source_section": "15. Capability Relationship Principles > CAP-R06 — Feature Toggle Ready"
+    "source_fingerprint": "438f6d007806298bbe6c2f7dce618c40a4ce3aebf0aa7671adfd2171a871145e",
+    "source_lines": "L6243-L6322",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > CAP-R06"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -5045,92 +6326,70 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "CAP-R07-AC001",
-      "given": "the applicable business context, actor, and input for Capability có thể được: - kế thừa từ Parent Organization - Override bởi Organization - giới hạn …",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "CAP-R07-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-005"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "CAP-R07-AC002",
-      "given": "the applicable business context, actor, and input for Capability có thể được: - kế thừa từ Parent Organization - Override bởi Organization - giới hạn …",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "an override is accepted only for a policy marked override-eligible, with an explicit reason and the required approval; otherwise the inherited or system policy remains effective",
-      "verifies": [
-        "CAP-R07-O002"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "CAP-R07-AC003",
-      "given": "the applicable business context, actor, and input for Capability có thể được: - kế thừa từ Parent Organization - Override bởi Organization - giới hạn …",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "CAP-R07-O003"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "CAP-R07-AC004",
-      "given": "the applicable business context, actor, and input for Capability có thể được: - kế thừa từ Parent Organization - Override bởi Organization - giới hạn …",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "CAP-R07-O004"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "CAP-R07",
+      "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+      "source_fingerprint": "895d64d5d78972816f91706e6f818d6e7cf2cc60819b29e70c71e54f23c83bce"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "CAP-R07-AC001"
+        "CAP-R07-AC001",
+        "CAP-R07-AC005",
+        "CAP-R07-AC006"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "CAP-R07-O001",
-      "obligation_text": "Capability có thể được: kế thừa từ Parent Organization."
+      "obligation_text": "Capability có thể được: kế thừa từ Parent Organization"
     },
     {
       "acceptance_criterion_references": [
-        "CAP-R07-AC002"
+        "CAP-R07-AC002",
+        "CAP-R07-AC005",
+        "CAP-R07-AC006"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "CAP-R07-O002",
-      "obligation_text": "Capability có thể được: Override bởi Organization."
+      "obligation_text": "Capability có thể được: Override bởi Organization"
     },
     {
       "acceptance_criterion_references": [
-        "CAP-R07-AC003"
+        "CAP-R07-AC003",
+        "CAP-R07-AC005",
+        "CAP-R07-AC006"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "CAP-R07-O003",
-      "obligation_text": "Capability có thể được: giới hạn theo Commercial Agreement."
+      "obligation_text": "Capability có thể được: giới hạn theo Commercial Agreement"
     },
     {
       "acceptance_criterion_references": [
-        "CAP-R07-AC004"
+        "CAP-R07-AC004",
+        "CAP-R07-AC005",
+        "CAP-R07-AC006"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "CAP-R07-O004",
-      "obligation_text": "Capability có thể được: giới hạn theo Capability Policy."
+      "obligation_text": "Capability có thể được: giới hạn theo Capability Policy"
     }
   ],
   "criticality_applicability": null,
@@ -5151,9 +6410,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "CAP-R07 — Organization Aware",
     "source_context_sha256": "aa12cf963344a828a81e1b09ca94ebf867fb5f5e278de5219a86b0300b45069b",
     "source_document": "docs/BRD/BRD-CAP-INDEX.md",
-    "source_fingerprint": "73fc35ee091988f84ef62a2e13f1db754a05f09d83fad618c7bba59194ce187e",
-    "source_lines": "L761-L769",
-    "source_section": "15. Capability Relationship Principles > CAP-R07 — Organization Aware"
+    "source_fingerprint": "895d64d5d78972816f91706e6f818d6e7cf2cc60819b29e70c71e54f23c83bce",
+    "source_lines": "L6324-L6433",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > CAP-R07"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {

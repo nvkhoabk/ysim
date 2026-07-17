@@ -1,13 +1,20 @@
 ---
 document_code: "BRD-META-MODEL"
+document_id: "BRD-META-MODEL"
 title: "Enterprise Business Meta Model"
-product_baseline: "2.3"
-document_revision: "2.3.0-draft.1"
+version: "2.3.0-draft.3"
+document_revision: "2.3.0-draft.3"
+status: "V2.3_DRAFT"
 lifecycle_status: "V2.3_DRAFT"
 language: "vi-VN"
+baseline: "2.3"
+product_baseline: "2.3"
+source_lineage: "v2.2 + approved Phase 1/2A/2B + accepted Acceptance Model C1 + accepted Mapping C3"
 source_baseline: "v2.2"
+last_reviewed_date: "2026-07-15"
+last_remediated_on: "2026-07-17"
+applicable_scope: "V2.3_ACTIVE_AND_RETAINED_SCOPE_RECORDS"
 generated_registry_role: "BRD_CANONICAL_SOURCE"
-last_remediated_on: "2026-07-15"
 ---
 ## Thẩm quyền nguồn yêu cầu v2.3
 
@@ -325,7 +332,7 @@ Mọi thay đổi đối với Business Capability, Business Object, Business Po
 
 <!-- YSIM:PHASE_2C CANONICAL APPENDIX BEGIN -->
 
-## Phụ lục yêu cầu chuẩn tắc v2.3
+## Phụ lục yêu cầu chuẩn tắc v2.3 — C6-R1
 
 
 
@@ -334,28 +341,34 @@ Mọi thay đổi đối với Business Capability, Business Object, Business Po
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "BRD-META-MODEL-R001-AC001",
-      "given": "a candidate Snapshot không phải History record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns REJECTED when the prohibited value or relationship is present, and no rejected state is persisted",
-      "verifies": [
-        "BRD-META-MODEL-R001-O001"
-      ],
-      "when": "the candidate is evaluated against its declared data contract"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-META-MODEL-R001",
+      "source_document": "docs/BRD/BRD-META-MODEL.md",
+      "source_fingerprint": "c175e74595915cb6092056aec89292bc21c059e3f770606d74a04ced4aa37aa1"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-META-MODEL-R001-AC001"
+        "BRD-META-MODEL-R001-AC001",
+        "BRD-META-MODEL-R001-AC002",
+        "BRD-META-MODEL-R001-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-META-MODEL-R001-O001",
@@ -379,8 +392,8 @@ Mọi thay đổi đối với Business Capability, Business Object, Business Po
     "source_context_sha256": "00228ef1ca6cf1d0b741a6abbf67989dfad1d669b911ce40c25cb0e5bd2bc07a",
     "source_document": "docs/BRD/BRD-META-MODEL.md",
     "source_fingerprint": "c175e74595915cb6092056aec89292bc21c059e3f770606d74a04ced4aa37aa1",
-    "source_lines": "L236",
-    "source_section": "6. Design Principles > Principle 6"
+    "source_lines": "L339-L414",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-META-MODEL-R001"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -405,41 +418,36 @@ Mọi thay đổi đối với Business Capability, Business Object, Business Po
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "BRD-META-MODEL-R003-AC001",
-      "given": "a candidate Mọi thay đổi đối với Business Capability, Business Object, Business Policy, Business Event hoặc … record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "BRD-META-MODEL-R003-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-005"
       ],
-      "when": "the candidate is evaluated against its declared data contract"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "DATA_CONTRACT_REJECTION_V1",
-      "criterion_id": "BRD-META-MODEL-R003-AC002",
-      "given": "a Mọi thay đổi đối với Business Capability, Business Object, Business Policy, Business Event hoặc … candidate containing an unsupported value, inconsistent relationship, or unresolved reference",
-      "observable_evidence": "rejection result, field or relationship reason, unresolved reference, and unchanged persisted state",
-      "then": "the candidate is rejected without persisting the invalid state, and each invalid field or relationship has a deterministic reason",
-      "verifies": [
-        "BRD-META-MODEL-R003-O001"
-      ],
-      "when": "the candidate is validated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-META-MODEL-R003",
+      "source_document": "docs/BRD/BRD-META-MODEL.md",
+      "source_fingerprint": "467c1013d61b65ea0ab9ae922db609dbeeadff1187818ea6e09c6c5e182c998c"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-META-MODEL-R003-AC001",
-        "BRD-META-MODEL-R003-AC002"
+        "BRD-META-MODEL-R003-AC002",
+        "BRD-META-MODEL-R003-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-META-MODEL-R003-O001",
@@ -465,8 +473,8 @@ Mọi thay đổi đối với Business Capability, Business Object, Business Po
     "source_context_sha256": "5b3bf5e66b7dccfbfb4eabaa87f94499d118c1ec171939b1d57b0ffd7ae50b19",
     "source_document": "docs/BRD/BRD-META-MODEL.md",
     "source_fingerprint": "467c1013d61b65ea0ab9ae922db609dbeeadff1187818ea6e09c6c5e182c998c",
-    "source_lines": "L317",
-    "source_section": "Document Status"
+    "source_lines": "L416-L495",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-META-MODEL-R003"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -491,28 +499,34 @@ Mọi thay đổi đối với Business Capability, Business Object, Business Po
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-META-MODEL-R004-AC001",
-      "given": "the applicable business context, actor, and input for Mọi tài liệu kiến trúc phải tuân thủ Business Meta Model này",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-META-MODEL-R004-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-META-MODEL-R004",
+      "source_document": "docs/BRD/BRD-META-MODEL.md",
+      "source_fingerprint": "5bd5a650cf9aa829af19e48e83fbcddeb2bc516c3eb645fad09f283f3e6a0372"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-META-MODEL-R004-AC001"
+        "BRD-META-MODEL-R004-AC001",
+        "BRD-META-MODEL-R004-AC002",
+        "BRD-META-MODEL-R004-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-META-MODEL-R004-O001",
@@ -538,9 +552,9 @@ Mọi thay đổi đối với Business Capability, Business Object, Business Po
     "source_context_heading": "SOURCE_STATEMENT_FALLBACK",
     "source_context_sha256": "5bd5a650cf9aa829af19e48e83fbcddeb2bc516c3eb645fad09f283f3e6a0372",
     "source_document": "docs/BRD/BRD-META-MODEL.md",
-    "source_fingerprint": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06",
-    "source_lines": "L292",
-    "source_section": "8. Relationship to Architecture"
+    "source_fingerprint": "5bd5a650cf9aa829af19e48e83fbcddeb2bc516c3eb645fad09f283f3e6a0372",
+    "source_lines": "L497-L575",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-META-MODEL-R004"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -565,41 +579,1308 @@ Mọi thay đổi đối với Business Capability, Business Object, Business Po
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-META-MODEL-R005-AC001",
-      "given": "the applicable business context, actor, and input for Mọi Commerce Experience phải được xây dựng từ Business Model và Business Blueprint đã được chuẩn…",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-META-MODEL-R005-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "boundary_oracle": [
+      "A new version may reference newer approved sources while preserving prior published lineage"
+    ],
+    "concrete_bindings": [
+      {
+        "allowed_lifecycle_states": {
+          "members": [
+            {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "BRD-META-MODEL-R005.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER"
+                ],
+                "source_id": "docs/BRD/BRD-META-MODEL.md#8. Relationship to Architecture",
+                "source_type": "SOURCE_LITERAL",
+                "version": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06"
+              },
+              "identifier": "BRD-META-MODEL-R005.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-META-MODEL-R005.O1.1.REFERENCE_TARGET_VALID.ALLOWED_LIFECYCLE_STATES.ORIGIN.MEMBER.1",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-META-MODEL.md",
+                "source_fingerprint": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06",
+                "source_lines": "L292",
+                "source_section": "8. Relationship to Architecture"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "STATE_ID",
+                "resolver_id": "RESOLVE.BRD-META-MODEL-R005.BRD-META-MODEL-R005.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER",
+                "version": "1.0.0"
+              },
+              "semantic_type": "STATE_ID"
+            }
+          ],
+          "origin": {
+            "origin_id": "BRD-META-MODEL-R005.O1.1.REFERENCE_TARGET_VALID.ALLOWED_LIFECYCLE_STATES.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-META-MODEL.md",
+            "source_fingerprint": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06",
+            "source_lines": "L292",
+            "source_section": "8. Relationship to Architecture"
+          },
+          "semantic_type": "SET_OF<STATE_ID>"
+        },
+        "allowed_states": {
+          "members": [
+            {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "BRD-META-MODEL-R005.ALLOWED_STATES.SOURCE.MEMBER"
+                ],
+                "source_id": "docs/BRD/BRD-META-MODEL.md#8. Relationship to Architecture",
+                "source_type": "SOURCE_LITERAL",
+                "version": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06"
+              },
+              "identifier": "BRD-META-MODEL-R005.ALLOWED_STATES.SOURCE.MEMBER",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-META-MODEL-R005.O1.1.REFERENCE_TARGET_VALID.ALLOWED_STATES.ORIGIN.MEMBER.1",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-META-MODEL.md",
+                "source_fingerprint": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06",
+                "source_lines": "L292",
+                "source_section": "8. Relationship to Architecture"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "STATE_ID",
+                "resolver_id": "RESOLVE.BRD-META-MODEL-R005.BRD-META-MODEL-R005.ALLOWED_STATES.SOURCE.MEMBER",
+                "version": "1.0.0"
+              },
+              "semantic_type": "STATE_ID"
+            }
+          ],
+          "origin": {
+            "origin_id": "BRD-META-MODEL-R005.O1.1.REFERENCE_TARGET_VALID.ALLOWED_STATES.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-META-MODEL.md",
+            "source_fingerprint": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06",
+            "source_lines": "L292",
+            "source_section": "8. Relationship to Architecture"
+          },
+          "semantic_type": "SET_OF<STATE_ID>"
+        },
+        "reference": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-META-MODEL.md#8. Relationship to Architecture",
+            "source_type": "SOURCE_LITERAL",
+            "version": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06"
+          },
+          "identifier": "BRD-META-MODEL-R005.REFERENCE",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-META-MODEL-R005.O1.1.REFERENCE_TARGET_VALID.REFERENCE.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-META-MODEL.md",
+            "source_fingerprint": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06",
+            "source_lines": "L292",
+            "source_section": "8. Relationship to Architecture"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "REFERENCE_ID",
+            "resolver_id": "RESOLVE.BRD-META-MODEL-R005.BRD-META-MODEL-R005.REFERENCE",
+            "version": "1.0.0"
+          },
+          "semantic_type": "REFERENCE_ID"
+        },
+        "registry": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-META-MODEL.md#8. Relationship to Architecture",
+            "source_type": "SOURCE_LITERAL",
+            "version": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06"
+          },
+          "identifier": "BRD-META-MODEL-R005.REGISTRY",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-META-MODEL-R005.O1.1.REFERENCE_TARGET_VALID.REGISTRY.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-META-MODEL.md",
+            "source_fingerprint": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06",
+            "source_lines": "L292",
+            "source_section": "8. Relationship to Architecture"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "ENTITY_ID",
+            "resolver_id": "RESOLVE.BRD-META-MODEL-R005.BRD-META-MODEL-R005.REGISTRY",
+            "version": "1.0.0"
+          },
+          "semantic_type": "ENTITY_ID"
+        },
+        "registry_source": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-META-MODEL.md#8. Relationship to Architecture",
+            "source_type": "SOURCE_LITERAL",
+            "version": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06"
+          },
+          "identifier": "BRD-META-MODEL-R005.REGISTRY_SOURCE",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-META-MODEL-R005.O1.1.REFERENCE_TARGET_VALID.REGISTRY_SOURCE.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-META-MODEL.md",
+            "source_fingerprint": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06",
+            "source_lines": "L292",
+            "source_section": "8. Relationship to Architecture"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "REFERENCE_ID",
+            "resolver_id": "RESOLVE.BRD-META-MODEL-R005.BRD-META-MODEL-R005.REGISTRY_SOURCE",
+            "version": "1.0.0"
+          },
+          "semantic_type": "REFERENCE_ID"
+        },
+        "target_id": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-META-MODEL.md#8. Relationship to Architecture",
+            "source_type": "SOURCE_LITERAL",
+            "version": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06"
+          },
+          "identifier": "BRD-META-MODEL-R005.TARGET_ID",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-META-MODEL-R005.O1.1.REFERENCE_TARGET_VALID.TARGET_ID.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-META-MODEL.md",
+            "source_fingerprint": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06",
+            "source_lines": "L292",
+            "source_section": "8. Relationship to Architecture"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "ENTITY_ID",
+            "resolver_id": "RESOLVE.BRD-META-MODEL-R005.BRD-META-MODEL-R005.TARGET_ID",
+            "version": "1.0.0"
+          },
+          "semantic_type": "ENTITY_ID"
+        },
+        "target_type": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-META-MODEL.md#8. Relationship to Architecture",
+            "source_type": "SOURCE_LITERAL",
+            "version": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06"
+          },
+          "identifier": "BRD-META-MODEL-R005.TARGET_TYPE",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-META-MODEL-R005.O1.1.REFERENCE_TARGET_VALID.TARGET_TYPE.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-META-MODEL.md",
+            "source_fingerprint": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06",
+            "source_lines": "L292",
+            "source_section": "8. Relationship to Architecture"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "ENTITY_TYPE",
+            "resolver_id": "RESOLVE.BRD-META-MODEL-R005.BRD-META-MODEL-R005.TARGET_TYPE",
+            "version": "1.0.0"
+          },
+          "semantic_type": "ENTITY_TYPE"
+        }
+      }
+    ],
+    "contract_id": "P2C.C4.CONTRACT.BRD-META-MODEL-R005",
+    "inference": false,
+    "mechanism": "APPROVED_TYPED_CUSTOM_AST",
+    "mechanism_version": "C4-R3",
+    "negative_oracle": [
+      "The Experience has no Business Model or Business Blueprint lineage"
+    ],
+    "operator_composition": [
+      "REFERENCE_TARGET_VALID"
+    ],
+    "positive_oracle": [
+      "The Commerce Experience is traceably built from both identified canonical sources"
+    ],
+    "provenance": {
+      "approved_decision_references": [],
+      "inference": false,
+      "source_document": "docs/BRD/BRD-META-MODEL.md",
+      "source_fingerprint": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06",
+      "source_lines": "L292",
+      "source_section": "8. Relationship to Architecture"
     },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BRD-META-MODEL-R005-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Mọi Commerce Experience phải được xây dựng từ Business Model và Business Blueprint đã được chuẩn…",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BRD-META-MODEL-R005-O001"
+    "required_evidence": {
+      "evidence_object_ref": {
+        "authoritative_source": {
+          "source_id": "docs/BRD/BRD-META-MODEL.md#8. Relationship to Architecture",
+          "source_type": "SOURCE_LITERAL",
+          "version": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06"
+        },
+        "identifier": "BRD-META-MODEL-R005.BRD-META-MODEL-R005.CONTRACT.EVIDENCE.OBJECT",
+        "inference": false,
+        "lifecycle": {
+          "status": "ACTIVE",
+          "version": "2.3"
+        },
+        "namespace": "YSIM.V2.3",
+        "origin": {
+          "origin_id": "BRD-META-MODEL-R005.CONTRACT.EVIDENCE.ORIGIN",
+          "origin_type": "EVIDENCE_OBJECT"
+        },
+        "provenance": {
+          "approved_decision_references": [],
+          "inference": false,
+          "source_document": "docs/BRD/BRD-META-MODEL.md",
+          "source_fingerprint": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06",
+          "source_lines": "L292",
+          "source_section": "8. Relationship to Architecture"
+        },
+        "resolver_contract": {
+          "deterministic": true,
+          "input_types": [],
+          "output_type": "EVIDENCE_OBJECT_REF",
+          "resolver_id": "OBSERVE.BRD-META-MODEL-R005.BRD-META-MODEL-R005.BRD-META-MODEL-R005.CONTRACT.EVIDENCE.OBJECT",
+          "version": "1.0.0"
+        },
+        "semantic_type": "EVIDENCE_OBJECT_REF"
+      },
+      "inference": false,
+      "observed_collection_origin": "BRD-META-MODEL-R005.RUNTIME.OBSERVED.FIELDS",
+      "observed_field_ids": [
+        "FIELD.EXPERIENCE_ID",
+        "FIELD.BUSINESS_MODEL_ID",
+        "FIELD.BUSINESS_BLUEPRINT_ID",
+        "FIELD.LINEAGE_REFS",
+        "FIELD.PUBLISH_RESULT"
       ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+      "producer": "BRD-META-MODEL-R005.EVIDENCE.PRODUCER",
+      "required_collection_origin": "BRD-META-MODEL-R005.SOURCE.REQUIRED.FIELDS",
+      "required_field_ids": [
+        "FIELD.EXPERIENCE_ID",
+        "FIELD.BUSINESS_MODEL_ID",
+        "FIELD.BUSINESS_BLUEPRINT_ID",
+        "FIELD.LINEAGE_REFS",
+        "FIELD.PUBLISH_RESULT"
+      ],
+      "required_values_or_hashes": [
+        "BRD-META-MODEL-R005.EVIDENCE.CONTENT.HASH"
+      ],
+      "retrieval_method": "BRD-META-MODEL-R005.EVIDENCE.RETRIEVAL",
+      "version_or_correlation": "BRD-META-MODEL-R005.EVIDENCE.VERSION.CORRELATION"
+    },
+    "runtime_evidence_executed": false,
+    "runtime_status": "RUNTIME_ADAPTER_PENDING",
+    "semantic_obligation_references": [
+      "BRD-META-MODEL-R005-O001"
+    ],
+    "typed_contract_ast": {
+      "approved_clarification": null,
+      "assertions": [
+        {
+          "assertion_id": "BRD-META-MODEL-R005.O1.1.REFERENCE_TARGET_VALID",
+          "evaluator_consumed_bindings": [
+            "allowed_lifecycle_states",
+            "allowed_states",
+            "reference",
+            "registry",
+            "registry_source",
+            "target_id",
+            "target_type"
+          ],
+          "evidence_object": {
+            "authoritative_source": {
+              "source_id": "docs/BRD/BRD-META-MODEL.md#8. Relationship to Architecture",
+              "source_type": "SOURCE_LITERAL",
+              "version": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06"
+            },
+            "identifier": "BRD-META-MODEL-R005.BRD-META-MODEL-R005.O1.1.REFERENCE_TARGET_VALID.EVIDENCE.OBJECT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BRD-META-MODEL-R005.O1.1.REFERENCE_TARGET_VALID.EVIDENCE.ORIGIN",
+              "origin_type": "EVIDENCE_OBJECT"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-META-MODEL.md",
+              "source_fingerprint": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06",
+              "source_lines": "L292",
+              "source_section": "8. Relationship to Architecture"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "EVIDENCE_OBJECT_REF",
+              "resolver_id": "OBSERVE.BRD-META-MODEL-R005.BRD-META-MODEL-R005.BRD-META-MODEL-R005.O1.1.REFERENCE_TARGET_VALID.EVIDENCE.OBJECT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "EVIDENCE_OBJECT_REF"
+          },
+          "expected_operand": {
+            "authoritative_source": {
+              "source_id": "docs/BRD/BRD-META-MODEL.md#8. Relationship to Architecture",
+              "source_type": "SOURCE_LITERAL",
+              "version": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06"
+            },
+            "identifier": "BRD-META-MODEL-R005.BRD-META-MODEL-R005.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BRD-META-MODEL-R005.O1.1.REFERENCE_TARGET_VALID.AUTHORITY.ORIGIN",
+              "origin_type": "SOURCE_LITERAL"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-META-MODEL.md",
+              "source_fingerprint": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06",
+              "source_lines": "L292",
+              "source_section": "8. Relationship to Architecture"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "REFERENCE_ID",
+              "resolver_id": "RESOLVE.BRD-META-MODEL-R005.BRD-META-MODEL-R005.BRD-META-MODEL-R005.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "REFERENCE_ID"
+          },
+          "inference": false,
+          "model_conformance_fixture": {
+            "bindings": {
+              "allowed_lifecycle_states": {
+                "members": [
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "BRD-META-MODEL-R005.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER"
+                      ],
+                      "source_id": "docs/BRD/BRD-META-MODEL.md#8. Relationship to Architecture",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06"
+                    },
+                    "identifier": "BRD-META-MODEL-R005.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BRD-META-MODEL-R005.O1.1.REFERENCE_TARGET_VALID.ALLOWED_LIFECYCLE_STATES.ORIGIN.MEMBER.1",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-META-MODEL.md",
+                      "source_fingerprint": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06",
+                      "source_lines": "L292",
+                      "source_section": "8. Relationship to Architecture"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "STATE_ID",
+                      "resolver_id": "RESOLVE.BRD-META-MODEL-R005.BRD-META-MODEL-R005.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "STATE_ID"
+                  }
+                ],
+                "origin": {
+                  "origin_id": "BRD-META-MODEL-R005.O1.1.REFERENCE_TARGET_VALID.ALLOWED_LIFECYCLE_STATES.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-META-MODEL.md",
+                  "source_fingerprint": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06",
+                  "source_lines": "L292",
+                  "source_section": "8. Relationship to Architecture"
+                },
+                "semantic_type": "SET_OF<STATE_ID>"
+              },
+              "allowed_states": {
+                "members": [
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "BRD-META-MODEL-R005.ALLOWED_STATES.SOURCE.MEMBER"
+                      ],
+                      "source_id": "docs/BRD/BRD-META-MODEL.md#8. Relationship to Architecture",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06"
+                    },
+                    "identifier": "BRD-META-MODEL-R005.ALLOWED_STATES.SOURCE.MEMBER",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BRD-META-MODEL-R005.O1.1.REFERENCE_TARGET_VALID.ALLOWED_STATES.ORIGIN.MEMBER.1",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-META-MODEL.md",
+                      "source_fingerprint": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06",
+                      "source_lines": "L292",
+                      "source_section": "8. Relationship to Architecture"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "STATE_ID",
+                      "resolver_id": "RESOLVE.BRD-META-MODEL-R005.BRD-META-MODEL-R005.ALLOWED_STATES.SOURCE.MEMBER",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "STATE_ID"
+                  }
+                ],
+                "origin": {
+                  "origin_id": "BRD-META-MODEL-R005.O1.1.REFERENCE_TARGET_VALID.ALLOWED_STATES.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-META-MODEL.md",
+                  "source_fingerprint": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06",
+                  "source_lines": "L292",
+                  "source_section": "8. Relationship to Architecture"
+                },
+                "semantic_type": "SET_OF<STATE_ID>"
+              },
+              "reference": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-META-MODEL.md#8. Relationship to Architecture",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06"
+                },
+                "identifier": "BRD-META-MODEL-R005.REFERENCE",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-META-MODEL-R005.O1.1.REFERENCE_TARGET_VALID.REFERENCE.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-META-MODEL.md",
+                  "source_fingerprint": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06",
+                  "source_lines": "L292",
+                  "source_section": "8. Relationship to Architecture"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "REFERENCE_ID",
+                  "resolver_id": "RESOLVE.BRD-META-MODEL-R005.BRD-META-MODEL-R005.REFERENCE",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "REFERENCE_ID"
+              },
+              "registry": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-META-MODEL.md#8. Relationship to Architecture",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06"
+                },
+                "identifier": "BRD-META-MODEL-R005.REGISTRY",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-META-MODEL-R005.O1.1.REFERENCE_TARGET_VALID.REGISTRY.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-META-MODEL.md",
+                  "source_fingerprint": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06",
+                  "source_lines": "L292",
+                  "source_section": "8. Relationship to Architecture"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "ENTITY_ID",
+                  "resolver_id": "RESOLVE.BRD-META-MODEL-R005.BRD-META-MODEL-R005.REGISTRY",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "ENTITY_ID"
+              },
+              "registry_source": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-META-MODEL.md#8. Relationship to Architecture",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06"
+                },
+                "identifier": "BRD-META-MODEL-R005.REGISTRY_SOURCE",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-META-MODEL-R005.O1.1.REFERENCE_TARGET_VALID.REGISTRY_SOURCE.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-META-MODEL.md",
+                  "source_fingerprint": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06",
+                  "source_lines": "L292",
+                  "source_section": "8. Relationship to Architecture"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "REFERENCE_ID",
+                  "resolver_id": "RESOLVE.BRD-META-MODEL-R005.BRD-META-MODEL-R005.REGISTRY_SOURCE",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "REFERENCE_ID"
+              },
+              "target_id": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-META-MODEL.md#8. Relationship to Architecture",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06"
+                },
+                "identifier": "BRD-META-MODEL-R005.TARGET_ID",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-META-MODEL-R005.O1.1.REFERENCE_TARGET_VALID.TARGET_ID.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-META-MODEL.md",
+                  "source_fingerprint": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06",
+                  "source_lines": "L292",
+                  "source_section": "8. Relationship to Architecture"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "ENTITY_ID",
+                  "resolver_id": "RESOLVE.BRD-META-MODEL-R005.BRD-META-MODEL-R005.TARGET_ID",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "ENTITY_ID"
+              },
+              "target_type": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-META-MODEL.md#8. Relationship to Architecture",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06"
+                },
+                "identifier": "BRD-META-MODEL-R005.TARGET_TYPE",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-META-MODEL-R005.O1.1.REFERENCE_TARGET_VALID.TARGET_TYPE.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-META-MODEL.md",
+                  "source_fingerprint": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06",
+                  "source_lines": "L292",
+                  "source_section": "8. Relationship to Architecture"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "ENTITY_TYPE",
+                  "resolver_id": "RESOLVE.BRD-META-MODEL-R005.BRD-META-MODEL-R005.TARGET_TYPE",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "ENTITY_TYPE"
+              }
+            },
+            "comparison": {
+              "expected": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-META-MODEL.md#8. Relationship to Architecture",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06"
+                },
+                "identifier": "BRD-META-MODEL-R005.BRD-META-MODEL-R005.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-META-MODEL-R005.O1.1.REFERENCE_TARGET_VALID.AUTHORITY.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-META-MODEL.md",
+                  "source_fingerprint": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06",
+                  "source_lines": "L292",
+                  "source_section": "8. Relationship to Architecture"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "REFERENCE_ID",
+                  "resolver_id": "RESOLVE.BRD-META-MODEL-R005.BRD-META-MODEL-R005.BRD-META-MODEL-R005.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "REFERENCE_ID"
+              },
+              "observed": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-META-MODEL.md#8. Relationship to Architecture",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06"
+                },
+                "identifier": "BRD-META-MODEL-R005.BRD-META-MODEL-R005.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-META-MODEL-R005.O1.1.REFERENCE_TARGET_VALID.OBSERVED.ORIGIN",
+                  "origin_type": "RUNTIME_OBSERVED"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-META-MODEL.md",
+                  "source_fingerprint": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06",
+                  "source_lines": "L292",
+                  "source_section": "8. Relationship to Architecture"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "REFERENCE_ID",
+                  "resolver_id": "OBSERVE.BRD-META-MODEL-R005.BRD-META-MODEL-R005.BRD-META-MODEL-R005.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "REFERENCE_ID"
+              }
+            },
+            "evidence_object": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-META-MODEL.md#8. Relationship to Architecture",
+                "source_type": "SOURCE_LITERAL",
+                "version": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06"
+              },
+              "identifier": "BRD-META-MODEL-R005.BRD-META-MODEL-R005.O1.1.REFERENCE_TARGET_VALID.EVIDENCE.OBJECT",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-META-MODEL-R005.O1.1.REFERENCE_TARGET_VALID.EVIDENCE.ORIGIN",
+                "origin_type": "EVIDENCE_OBJECT"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-META-MODEL.md",
+                "source_fingerprint": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06",
+                "source_lines": "L292",
+                "source_section": "8. Relationship to Architecture"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "EVIDENCE_OBJECT_REF",
+                "resolver_id": "OBSERVE.BRD-META-MODEL-R005.BRD-META-MODEL-R005.BRD-META-MODEL-R005.O1.1.REFERENCE_TARGET_VALID.EVIDENCE.OBJECT",
+                "version": "1.0.0"
+              },
+              "semantic_type": "EVIDENCE_OBJECT_REF"
+            },
+            "operator_id": "REFERENCE_TARGET_VALID"
+          },
+          "obligation_id": "BRD-META-MODEL-R005-O001",
+          "observed_operand": {
+            "authoritative_source": {
+              "source_id": "docs/BRD/BRD-META-MODEL.md#8. Relationship to Architecture",
+              "source_type": "SOURCE_LITERAL",
+              "version": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06"
+            },
+            "identifier": "BRD-META-MODEL-R005.BRD-META-MODEL-R005.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BRD-META-MODEL-R005.O1.1.REFERENCE_TARGET_VALID.OBSERVED.ORIGIN",
+              "origin_type": "RUNTIME_OBSERVED"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-META-MODEL.md",
+              "source_fingerprint": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06",
+              "source_lines": "L292",
+              "source_section": "8. Relationship to Architecture"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "REFERENCE_ID",
+              "resolver_id": "OBSERVE.BRD-META-MODEL-R005.BRD-META-MODEL-R005.BRD-META-MODEL-R005.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "REFERENCE_ID"
+          },
+          "operator_id": "REFERENCE_TARGET_VALID",
+          "operator_version": "1.0.0-candidate.2",
+          "typed_bindings": {
+            "allowed_lifecycle_states": {
+              "members": [
+                {
+                  "authoritative_source": {
+                    "allowed_identifiers": [
+                      "BRD-META-MODEL-R005.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER"
+                    ],
+                    "source_id": "docs/BRD/BRD-META-MODEL.md#8. Relationship to Architecture",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06"
+                  },
+                  "identifier": "BRD-META-MODEL-R005.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BRD-META-MODEL-R005.O1.1.REFERENCE_TARGET_VALID.ALLOWED_LIFECYCLE_STATES.ORIGIN.MEMBER.1",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-META-MODEL.md",
+                    "source_fingerprint": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06",
+                    "source_lines": "L292",
+                    "source_section": "8. Relationship to Architecture"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "STATE_ID",
+                    "resolver_id": "RESOLVE.BRD-META-MODEL-R005.BRD-META-MODEL-R005.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "STATE_ID"
+                }
+              ],
+              "origin": {
+                "origin_id": "BRD-META-MODEL-R005.O1.1.REFERENCE_TARGET_VALID.ALLOWED_LIFECYCLE_STATES.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-META-MODEL.md",
+                "source_fingerprint": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06",
+                "source_lines": "L292",
+                "source_section": "8. Relationship to Architecture"
+              },
+              "semantic_type": "SET_OF<STATE_ID>"
+            },
+            "allowed_states": {
+              "members": [
+                {
+                  "authoritative_source": {
+                    "allowed_identifiers": [
+                      "BRD-META-MODEL-R005.ALLOWED_STATES.SOURCE.MEMBER"
+                    ],
+                    "source_id": "docs/BRD/BRD-META-MODEL.md#8. Relationship to Architecture",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06"
+                  },
+                  "identifier": "BRD-META-MODEL-R005.ALLOWED_STATES.SOURCE.MEMBER",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BRD-META-MODEL-R005.O1.1.REFERENCE_TARGET_VALID.ALLOWED_STATES.ORIGIN.MEMBER.1",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-META-MODEL.md",
+                    "source_fingerprint": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06",
+                    "source_lines": "L292",
+                    "source_section": "8. Relationship to Architecture"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "STATE_ID",
+                    "resolver_id": "RESOLVE.BRD-META-MODEL-R005.BRD-META-MODEL-R005.ALLOWED_STATES.SOURCE.MEMBER",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "STATE_ID"
+                }
+              ],
+              "origin": {
+                "origin_id": "BRD-META-MODEL-R005.O1.1.REFERENCE_TARGET_VALID.ALLOWED_STATES.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-META-MODEL.md",
+                "source_fingerprint": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06",
+                "source_lines": "L292",
+                "source_section": "8. Relationship to Architecture"
+              },
+              "semantic_type": "SET_OF<STATE_ID>"
+            },
+            "reference": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-META-MODEL.md#8. Relationship to Architecture",
+                "source_type": "SOURCE_LITERAL",
+                "version": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06"
+              },
+              "identifier": "BRD-META-MODEL-R005.REFERENCE",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-META-MODEL-R005.O1.1.REFERENCE_TARGET_VALID.REFERENCE.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-META-MODEL.md",
+                "source_fingerprint": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06",
+                "source_lines": "L292",
+                "source_section": "8. Relationship to Architecture"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "REFERENCE_ID",
+                "resolver_id": "RESOLVE.BRD-META-MODEL-R005.BRD-META-MODEL-R005.REFERENCE",
+                "version": "1.0.0"
+              },
+              "semantic_type": "REFERENCE_ID"
+            },
+            "registry": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-META-MODEL.md#8. Relationship to Architecture",
+                "source_type": "SOURCE_LITERAL",
+                "version": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06"
+              },
+              "identifier": "BRD-META-MODEL-R005.REGISTRY",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-META-MODEL-R005.O1.1.REFERENCE_TARGET_VALID.REGISTRY.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-META-MODEL.md",
+                "source_fingerprint": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06",
+                "source_lines": "L292",
+                "source_section": "8. Relationship to Architecture"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "ENTITY_ID",
+                "resolver_id": "RESOLVE.BRD-META-MODEL-R005.BRD-META-MODEL-R005.REGISTRY",
+                "version": "1.0.0"
+              },
+              "semantic_type": "ENTITY_ID"
+            },
+            "registry_source": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-META-MODEL.md#8. Relationship to Architecture",
+                "source_type": "SOURCE_LITERAL",
+                "version": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06"
+              },
+              "identifier": "BRD-META-MODEL-R005.REGISTRY_SOURCE",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-META-MODEL-R005.O1.1.REFERENCE_TARGET_VALID.REGISTRY_SOURCE.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-META-MODEL.md",
+                "source_fingerprint": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06",
+                "source_lines": "L292",
+                "source_section": "8. Relationship to Architecture"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "REFERENCE_ID",
+                "resolver_id": "RESOLVE.BRD-META-MODEL-R005.BRD-META-MODEL-R005.REGISTRY_SOURCE",
+                "version": "1.0.0"
+              },
+              "semantic_type": "REFERENCE_ID"
+            },
+            "target_id": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-META-MODEL.md#8. Relationship to Architecture",
+                "source_type": "SOURCE_LITERAL",
+                "version": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06"
+              },
+              "identifier": "BRD-META-MODEL-R005.TARGET_ID",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-META-MODEL-R005.O1.1.REFERENCE_TARGET_VALID.TARGET_ID.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-META-MODEL.md",
+                "source_fingerprint": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06",
+                "source_lines": "L292",
+                "source_section": "8. Relationship to Architecture"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "ENTITY_ID",
+                "resolver_id": "RESOLVE.BRD-META-MODEL-R005.BRD-META-MODEL-R005.TARGET_ID",
+                "version": "1.0.0"
+              },
+              "semantic_type": "ENTITY_ID"
+            },
+            "target_type": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-META-MODEL.md#8. Relationship to Architecture",
+                "source_type": "SOURCE_LITERAL",
+                "version": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06"
+              },
+              "identifier": "BRD-META-MODEL-R005.TARGET_TYPE",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-META-MODEL-R005.O1.1.REFERENCE_TARGET_VALID.TARGET_TYPE.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-META-MODEL.md",
+                "source_fingerprint": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06",
+                "source_lines": "L292",
+                "source_section": "8. Relationship to Architecture"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "ENTITY_TYPE",
+                "resolver_id": "RESOLVE.BRD-META-MODEL-R005.BRD-META-MODEL-R005.TARGET_TYPE",
+                "version": "1.0.0"
+              },
+              "semantic_type": "ENTITY_TYPE"
+            }
+          }
+        }
+      ],
+      "boundary_cases": [
+        "A new version may reference newer approved sources while preserving prior published lineage"
+      ],
+      "contract_ast_sha256": "c0b2dce9cc257d1cfa92d0f35cfd644755861ec0956884b1c732bd5b96f3f814",
+      "contract_id": "P2C.C4.CONTRACT.BRD-META-MODEL-R005",
+      "criticality": "HIGH",
+      "disposition": "OPERATOR_REMAP_REQUIRED",
+      "evidence_contract": {
+        "evidence_object_ref": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-META-MODEL.md#8. Relationship to Architecture",
+            "source_type": "SOURCE_LITERAL",
+            "version": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06"
+          },
+          "identifier": "BRD-META-MODEL-R005.BRD-META-MODEL-R005.CONTRACT.EVIDENCE.OBJECT",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-META-MODEL-R005.CONTRACT.EVIDENCE.ORIGIN",
+            "origin_type": "EVIDENCE_OBJECT"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-META-MODEL.md",
+            "source_fingerprint": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06",
+            "source_lines": "L292",
+            "source_section": "8. Relationship to Architecture"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "EVIDENCE_OBJECT_REF",
+            "resolver_id": "OBSERVE.BRD-META-MODEL-R005.BRD-META-MODEL-R005.BRD-META-MODEL-R005.CONTRACT.EVIDENCE.OBJECT",
+            "version": "1.0.0"
+          },
+          "semantic_type": "EVIDENCE_OBJECT_REF"
+        },
+        "inference": false,
+        "observed_collection_origin": "BRD-META-MODEL-R005.RUNTIME.OBSERVED.FIELDS",
+        "observed_field_ids": [
+          "FIELD.EXPERIENCE_ID",
+          "FIELD.BUSINESS_MODEL_ID",
+          "FIELD.BUSINESS_BLUEPRINT_ID",
+          "FIELD.LINEAGE_REFS",
+          "FIELD.PUBLISH_RESULT"
+        ],
+        "producer": "BRD-META-MODEL-R005.EVIDENCE.PRODUCER",
+        "required_collection_origin": "BRD-META-MODEL-R005.SOURCE.REQUIRED.FIELDS",
+        "required_field_ids": [
+          "FIELD.EXPERIENCE_ID",
+          "FIELD.BUSINESS_MODEL_ID",
+          "FIELD.BUSINESS_BLUEPRINT_ID",
+          "FIELD.LINEAGE_REFS",
+          "FIELD.PUBLISH_RESULT"
+        ],
+        "required_values_or_hashes": [
+          "BRD-META-MODEL-R005.EVIDENCE.CONTENT.HASH"
+        ],
+        "retrieval_method": "BRD-META-MODEL-R005.EVIDENCE.RETRIEVAL",
+        "version_or_correlation": "BRD-META-MODEL-R005.EVIDENCE.VERSION.CORRELATION"
+      },
+      "explicit_non_obligations": [
+        "No runtime implementation topology is authorized by this semantic record.",
+        "No production runtime evidence is claimed by this model-level candidate."
+      ],
+      "fixture_ids": [
+        "P2C-C4-FX-F84C32523F74577D2186",
+        "P2C-C4-FX-E085D8AE31E5DFFC770D",
+        "P2C-C4-FX-49828118614F2C0EDFD9"
+      ],
+      "high_risk_audit_subset": true,
+      "independent_contract_identity": true,
+      "inference": false,
+      "inherits_contract_ast": null,
+      "negative_oracles": [
+        "The Experience has no Business Model or Business Blueprint lineage"
+      ],
+      "normative_obligations": [
+        {
+          "applicability": "V2.3_ACTIVE",
+          "obligation_id": "BRD-META-MODEL-R005-O001",
+          "obligation_text": "Mọi Commerce Experience phải được xây dựng từ Business Model và Business Blueprint đã được chuẩn hóa"
+        }
+      ],
+      "obligation_to_operator_coverage": [
+        {
+          "assertion_ids": [
+            "BRD-META-MODEL-R005.O1.1.REFERENCE_TARGET_VALID"
+          ],
+          "coverage_count": 1,
+          "obligation_id": "BRD-META-MODEL-R005-O001"
+        }
+      ],
+      "operator_composition": [
+        "REFERENCE_TARGET_VALID"
+      ],
+      "positive_oracles": [
+        "The Commerce Experience is traceably built from both identified canonical sources"
+      ],
+      "preconditions": [
+        "An identified standardized Business Model and Business Blueprint exist"
+      ],
+      "prohibitions": [
+        "The Experience has no Business Model or Business Blueprint lineage"
+      ],
+      "requirement_id": "BRD-META-MODEL-R005",
+      "runtime_status": "SLICE_RUNTIME_ADAPTER_REQUIRED",
+      "semantic_family_id": null,
+      "source_provenance": {
+        "approved_decision_references": [],
+        "inference": false,
+        "source_document": "docs/BRD/BRD-META-MODEL.md",
+        "source_fingerprint": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06",
+        "source_lines": "L292",
+        "source_section": "8. Relationship to Architecture"
+      },
+      "source_statement": "Mọi Commerce Experience phải được xây dựng từ Business Model và Business Blueprint đã được chuẩn hóa.",
+      "surrounding_source_context": "### BRD-META-MODEL-R005 — Mọi Commerce Experience phải được xây dựng từ Business Model và Business Blueprint đã được chuẩn…"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "contract_id": "P2C.C4.CONTRACT.BRD-META-MODEL-R005",
+    "inference": false,
+    "mechanism": "APPROVED_TYPED_CUSTOM_AST",
+    "mechanism_version": "SEMANTIC_ACCEPTANCE_RENDERER_C2",
+    "runtime_status": "RUNTIME_ADAPTER_PENDING"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "ACCEPTANCE_READY",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-META-MODEL-R005-AC001",
-        "BRD-META-MODEL-R005-AC002"
+        "BRD-META-MODEL-R005-AC002",
+        "BRD-META-MODEL-R005-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-META-MODEL-R005-O001",
@@ -625,9 +1906,9 @@ Mọi thay đổi đối với Business Capability, Business Object, Business Po
     "source_context_heading": "SOURCE_STATEMENT_FALLBACK",
     "source_context_sha256": "42fa440b90875e3aca9e997a32c417e66ae67de0305006c31a7ae07a1c86c1fa",
     "source_document": "docs/BRD/BRD-META-MODEL.md",
-    "source_fingerprint": "ebcf28b207fbe0bb7e2df6fbafebbfc3a8f3db2f023e536b6c518df80c07fb06",
-    "source_lines": "L292",
-    "source_section": "8. Relationship to Architecture"
+    "source_fingerprint": "42fa440b90875e3aca9e997a32c417e66ae67de0305006c31a7ae07a1c86c1fa",
+    "source_lines": "L577-L1929",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-META-MODEL-R005"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -649,7 +1930,7 @@ Mọi thay đổi đối với Business Capability, Business Object, Business Po
 
 
 
-<!-- YSIM:IDENTITY_HISTORY BEGIN -->
+<!-- YSIM:IDENTITY HISTORY BEGIN -->
 
 ```json
 
@@ -3703,9 +4984,94 @@ Mọi thay đổi đối với Business Capability, Business Object, Business Po
   ],
   "newly_allocated": [
     {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-BO-INDEX.md",
+      "stable_id": "BRD-BO-INDEX-R050"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-BO-INDEX.md",
+      "stable_id": "BRD-BO-INDEX-R051"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-BO-INDEX.md",
+      "stable_id": "BRD-BO-INDEX-R052"
+    },
+    {
       "allocation_contract": "P2-ALLOC-001",
       "source_document": "docs/BRD/BRD-CAP-INDEX.md",
       "stable_id": "BRD-CAP-INDEX-R029"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+      "stable_id": "BRD-CAP-INDEX-R030"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-CAP-INDEX.md",
+      "stable_id": "BRD-CAP-INDEX-R031"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-EVENT-INDEX.md",
+      "stable_id": "BRD-EVENT-INDEX-R030"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-EVENT-INDEX.md",
+      "stable_id": "BRD-EVENT-INDEX-R031"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-EVENT-INDEX.md",
+      "stable_id": "BRD-EVENT-INDEX-R032"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-EVENT-INDEX.md",
+      "stable_id": "BRD-EVENT-INDEX-R033"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-EVENT-INDEX.md",
+      "stable_id": "BRD-EVENT-INDEX-R034"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-EVENT-INDEX.md",
+      "stable_id": "BRD-EVENT-INDEX-R035"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-EVENT-INDEX.md",
+      "stable_id": "BRD-EVENT-INDEX-R036"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
+      "stable_id": "BRD-POLICY-INDEX-R029"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
+      "stable_id": "BRD-POLICY-INDEX-R030"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
+      "stable_id": "BRD-POLICY-INDEX-R031"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
+      "stable_id": "BRD-POLICY-INDEX-R032"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
+      "stable_id": "BRD-POLICY-INDEX-R033"
     },
     {
       "allocation_contract": "BUSINESS_PRINCIPLES_CHILD_RECONCILIATION",
@@ -3728,9 +5094,484 @@ Mọi thay đổi đối với Business Capability, Business Object, Business Po
       "stable_id": "BRD-UPDATE-01-R033"
     },
     {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-05.md",
+      "stable_id": "BRD-WS-05-R030"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-05.md",
+      "stable_id": "BRD-WS-05-R031"
+    },
+    {
       "allocation_contract": "FRAUD_RISK_ACTIVE_DEFERRED_SPLIT",
       "source_document": "docs/BRD/BRD-WS-08.md",
       "stable_id": "BRD-WS-08-R013"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-11.md",
+      "stable_id": "BRD-WS-11-R018"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-11.md",
+      "stable_id": "BRD-WS-11-R019"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-13.md",
+      "stable_id": "BRD-WS-13-R026"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-13.md",
+      "stable_id": "BRD-WS-13-R027"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-13.md",
+      "stable_id": "BRD-WS-13-R028"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-13.md",
+      "stable_id": "BRD-WS-13-R029"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-13.md",
+      "stable_id": "BRD-WS-13-R030"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-13.md",
+      "stable_id": "BRD-WS-13-R031"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-13.md",
+      "stable_id": "BRD-WS-13-R032"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-13.md",
+      "stable_id": "BRD-WS-13-R033"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-13.md",
+      "stable_id": "BRD-WS-13-R034"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-13.md",
+      "stable_id": "BRD-WS-13-R035"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-13.md",
+      "stable_id": "BRD-WS-13-R036"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-13.md",
+      "stable_id": "BRD-WS-13-R037"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-13.md",
+      "stable_id": "BRD-WS-13-R038"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-13.md",
+      "stable_id": "BRD-WS-13-R039"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-13.md",
+      "stable_id": "BRD-WS-13-R040"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-13.md",
+      "stable_id": "BRD-WS-13-R041"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-13.md",
+      "stable_id": "BRD-WS-13-R042"
+    },
+    {
+      "allocation_contract": "C3_APPROVED_DECISION_ATOMIC_SPLIT",
+      "source_document": "docs/BRD/BRD-WS-13.md",
+      "stable_id": "BRD-WS-13-R043"
+    },
+    {
+      "allocation_contract": "C3_APPROVED_DECISION_ATOMIC_SPLIT",
+      "source_document": "docs/BRD/BRD-WS-13.md",
+      "stable_id": "BRD-WS-13-R044"
+    },
+    {
+      "allocation_contract": "C3_APPROVED_DECISION_ATOMIC_SPLIT",
+      "source_document": "docs/BRD/BRD-WS-13.md",
+      "stable_id": "BRD-WS-13-R045"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-14.md",
+      "stable_id": "BRD-WS-14-R039"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-14.md",
+      "stable_id": "BRD-WS-14-R040"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-14.md",
+      "stable_id": "BRD-WS-14-R041"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-14.md",
+      "stable_id": "BRD-WS-14-R042"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-14.md",
+      "stable_id": "BRD-WS-14-R043"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-14.md",
+      "stable_id": "BRD-WS-14-R044"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-14.md",
+      "stable_id": "BRD-WS-14-R045"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-14.md",
+      "stable_id": "BRD-WS-14-R046"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-14.md",
+      "stable_id": "BRD-WS-14-R047"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-14.md",
+      "stable_id": "BRD-WS-14-R048"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-14.md",
+      "stable_id": "BRD-WS-14-R049"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-14.md",
+      "stable_id": "BRD-WS-14-R050"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-14.md",
+      "stable_id": "BRD-WS-14-R051"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-14.md",
+      "stable_id": "BRD-WS-14-R052"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-14.md",
+      "stable_id": "BRD-WS-14-R053"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-15.md",
+      "stable_id": "BRD-WS-15-R027"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-15.md",
+      "stable_id": "BRD-WS-15-R028"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-15.md",
+      "stable_id": "BRD-WS-15-R029"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-15.md",
+      "stable_id": "BRD-WS-15-R030"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-15.md",
+      "stable_id": "BRD-WS-15-R031"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-15.md",
+      "stable_id": "BRD-WS-15-R032"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-15.md",
+      "stable_id": "BRD-WS-15-R033"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-15.md",
+      "stable_id": "BRD-WS-15-R034"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-15.md",
+      "stable_id": "BRD-WS-15-R035"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-15.md",
+      "stable_id": "BRD-WS-15-R036"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-15.md",
+      "stable_id": "BRD-WS-15-R037"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-15.md",
+      "stable_id": "BRD-WS-15-R038"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-15.md",
+      "stable_id": "BRD-WS-15-R039"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-15.md",
+      "stable_id": "BRD-WS-15-R040"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-15.md",
+      "stable_id": "BRD-WS-15-R041"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-15.md",
+      "stable_id": "BRD-WS-15-R042"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-15.md",
+      "stable_id": "BRD-WS-15-R043"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-15.md",
+      "stable_id": "BRD-WS-15-R044"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-15.md",
+      "stable_id": "BRD-WS-15-R045"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-15.md",
+      "stable_id": "BRD-WS-15-R046"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-15.md",
+      "stable_id": "BRD-WS-15-R047"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-15.md",
+      "stable_id": "BRD-WS-15-R048"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-15.md",
+      "stable_id": "BRD-WS-15-R049"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-15.md",
+      "stable_id": "BRD-WS-15-R050"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-15.md",
+      "stable_id": "BRD-WS-15-R051"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-15.md",
+      "stable_id": "BRD-WS-15-R052"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-15.md",
+      "stable_id": "BRD-WS-15-R053"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-15.md",
+      "stable_id": "BRD-WS-15-R054"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-15.md",
+      "stable_id": "BRD-WS-15-R055"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-15.md",
+      "stable_id": "BRD-WS-15-R056"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-15.md",
+      "stable_id": "BRD-WS-15-R057"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-16.md",
+      "stable_id": "BRD-WS-16-R017"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-16.md",
+      "stable_id": "BRD-WS-16-R018"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-16.md",
+      "stable_id": "BRD-WS-16-R019"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-16.md",
+      "stable_id": "BRD-WS-16-R020"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-16.md",
+      "stable_id": "BRD-WS-16-R021"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-16.md",
+      "stable_id": "BRD-WS-16-R022"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-16.md",
+      "stable_id": "BRD-WS-16-R023"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-16.md",
+      "stable_id": "BRD-WS-16-R024"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-16.md",
+      "stable_id": "BRD-WS-16-R025"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-16.md",
+      "stable_id": "BRD-WS-16-R026"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-16.md",
+      "stable_id": "BRD-WS-16-R027"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-16.md",
+      "stable_id": "BRD-WS-16-R028"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-16.md",
+      "stable_id": "BRD-WS-16-R029"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-16.md",
+      "stable_id": "BRD-WS-16-R030"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-16.md",
+      "stable_id": "BRD-WS-16-R031"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-16.md",
+      "stable_id": "BRD-WS-16-R032"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-16.md",
+      "stable_id": "BRD-WS-16-R033"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-16.md",
+      "stable_id": "BRD-WS-16-R034"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-16.md",
+      "stable_id": "BRD-WS-16-R035"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-16.md",
+      "stable_id": "BRD-WS-16-R036"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-16.md",
+      "stable_id": "BRD-WS-16-R037"
+    },
+    {
+      "allocation_contract": "C3_APPROVED_DECISION_ATOMIC_SPLIT",
+      "source_document": "docs/BRD/BRD-WS-16.md",
+      "stable_id": "BRD-WS-16-R038"
+    },
+    {
+      "allocation_contract": "C3_APPROVED_DECISION_ATOMIC_SPLIT",
+      "source_document": "docs/BRD/BRD-WS-16.md",
+      "stable_id": "BRD-WS-16-R039"
+    },
+    {
+      "allocation_contract": "C3_APPROVED_DECISION_ATOMIC_SPLIT",
+      "source_document": "docs/BRD/BRD-WS-16.md",
+      "stable_id": "BRD-WS-16-R040"
+    },
+    {
+      "allocation_contract": "C3_APPROVED_DECISION_ATOMIC_SPLIT",
+      "source_document": "docs/BRD/BRD-WS-16.md",
+      "stable_id": "BRD-WS-16-R041"
     },
     {
       "allocation_contract": "ENTERPRISE_OPERATIONS_CHILD_RECONCILIATION",
@@ -3763,9 +5604,89 @@ Mọi thay đổi đối với Business Capability, Business Object, Business Po
       "stable_id": "BRD-WS-17-R031"
     },
     {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "stable_id": "BRD-WS-17-R032"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "stable_id": "BRD-WS-17-R033"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "stable_id": "BRD-WS-17-R034"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "stable_id": "BRD-WS-17-R035"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "stable_id": "BRD-WS-17-R036"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "stable_id": "BRD-WS-17-R037"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "stable_id": "BRD-WS-17-R038"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "stable_id": "BRD-WS-17-R039"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "stable_id": "BRD-WS-17-R040"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "stable_id": "BRD-WS-17-R041"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "stable_id": "BRD-WS-17-R042"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "stable_id": "BRD-WS-17-R043"
+    },
+    {
       "allocation_contract": "P2-ALLOC-002",
       "source_document": "docs/UXF/UXF-05.md",
       "stable_id": "UXF-05-R054"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/UXF/UXF-05.md",
+      "stable_id": "UXF-05-R055"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/UXF/UXF-05.md",
+      "stable_id": "UXF-05-R056"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/UXF/UXF-05.md",
+      "stable_id": "UXF-05-R057"
+    },
+    {
+      "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+      "source_document": "docs/UXF/UXF-05.md",
+      "stable_id": "UXF-05-R058"
     }
   ],
   "preserved": [
@@ -6815,6 +8736,6 @@ Mọi thay đổi đối với Business Capability, Business Object, Business Po
 
 ```
 
-<!-- YSIM:IDENTITY_HISTORY END -->
+<!-- YSIM:IDENTITY HISTORY END -->
 
 <!-- YSIM:PHASE_2C CANONICAL APPENDIX END -->

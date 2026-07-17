@@ -1,13 +1,20 @@
 ---
 document_code: "BRD-UPDATE-01"
+document_id: "BRD-UPDATE-01"
 title: "Commerce Experience Platform (CXP)"
-product_baseline: "2.3"
-document_revision: "2.3.0-draft.1"
+version: "2.3.0-draft.3"
+document_revision: "2.3.0-draft.3"
+status: "V2.3_DRAFT"
 lifecycle_status: "V2.3_DRAFT"
 language: "vi-VN"
+baseline: "2.3"
+product_baseline: "2.3"
+source_lineage: "v2.2 + approved Phase 1/2A/2B + accepted Acceptance Model C1 + accepted Mapping C3"
 source_baseline: "v2.2"
+last_reviewed_date: "2026-07-15"
+last_remediated_on: "2026-07-17"
+applicable_scope: "V2.3_ACTIVE_AND_RETAINED_SCOPE_RECORDS"
 generated_registry_role: "BRD_CANONICAL_SOURCE"
-last_remediated_on: "2026-07-15"
 ---
 ## Thẩm quyền nguồn yêu cầu v2.3
 
@@ -933,7 +940,7 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
 
 <!-- YSIM:PHASE_2C CANONICAL APPENDIX BEGIN -->
 
-## Phụ lục yêu cầu chuẩn tắc v2.3
+## Phụ lục yêu cầu chuẩn tắc v2.3 — C6-R1
 
 
 
@@ -942,41 +949,785 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-UPDATE-01-R001-AC001",
-      "given": "the applicable business context, actor, and input for Đối tác không cần sử dụng nền tảng Website hoặc E-Commerce của bên thứ ba để bán eSIM và các Dig…",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-UPDATE-01-R001-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "boundary_oracle": [
+      "Optional third-party channels may integrate, but are not a prerequisite for direct YSim selling"
+    ],
+    "concrete_bindings": [
+      {
+        "capability": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-UPDATE-01.md#1. Purpose",
+            "source_type": "SOURCE_LITERAL",
+            "version": "8bff1baf03cc3b708e482ff550689d1fdbddabf509eacf81dd0c24b4c03212af"
+          },
+          "identifier": "BRD-UPDATE-01-R001.CAPABILITY",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-UPDATE-01-R001.O1.1.CAPABILITY_AVAILABLE.CAPABILITY.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-UPDATE-01.md",
+            "source_fingerprint": "8bff1baf03cc3b708e482ff550689d1fdbddabf509eacf81dd0c24b4c03212af",
+            "source_lines": "L25",
+            "source_section": "1. Purpose"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "CAPABILITY_ID",
+            "resolver_id": "RESOLVE.BRD-UPDATE-01-R001.BRD-UPDATE-01-R001.CAPABILITY",
+            "version": "1.0.0"
+          },
+          "semantic_type": "CAPABILITY_ID"
+        },
+        "scope": {
+          "authoritative_source": {
+            "allowed_identifiers": [
+              "BRD-UPDATE-01-R001.SCOPE"
+            ],
+            "source_id": "docs/BRD/BRD-UPDATE-01.md#1. Purpose",
+            "source_type": "SOURCE_LITERAL",
+            "version": "8bff1baf03cc3b708e482ff550689d1fdbddabf509eacf81dd0c24b4c03212af"
+          },
+          "identifier": "BRD-UPDATE-01-R001.SCOPE",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-UPDATE-01-R001.O1.1.CAPABILITY_AVAILABLE.SCOPE.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-UPDATE-01.md",
+            "source_fingerprint": "8bff1baf03cc3b708e482ff550689d1fdbddabf509eacf81dd0c24b4c03212af",
+            "source_lines": "L25",
+            "source_section": "1. Purpose"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "CANONICAL_ENUM_VALUE",
+            "resolver_id": "RESOLVE.BRD-UPDATE-01-R001.BRD-UPDATE-01-R001.SCOPE",
+            "version": "1.0.0"
+          },
+          "semantic_type": "CANONICAL_ENUM_VALUE"
+        },
+        "subject": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-UPDATE-01.md#1. Purpose",
+            "source_type": "SOURCE_LITERAL",
+            "version": "8bff1baf03cc3b708e482ff550689d1fdbddabf509eacf81dd0c24b4c03212af"
+          },
+          "identifier": "BRD-UPDATE-01-R001.SUBJECT",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-UPDATE-01-R001.O1.1.CAPABILITY_AVAILABLE.SUBJECT.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-UPDATE-01.md",
+            "source_fingerprint": "8bff1baf03cc3b708e482ff550689d1fdbddabf509eacf81dd0c24b4c03212af",
+            "source_lines": "L25",
+            "source_section": "1. Purpose"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "ENTITY_ID",
+            "resolver_id": "RESOLVE.BRD-UPDATE-01-R001.BRD-UPDATE-01-R001.SUBJECT",
+            "version": "1.0.0"
+          },
+          "semantic_type": "ENTITY_ID"
+        }
+      }
+    ],
+    "contract_id": "P2C.C4.CONTRACT.BRD-UPDATE-01-R001",
+    "inference": false,
+    "mechanism": "APPROVED_TYPED_CUSTOM_AST",
+    "mechanism_version": "C4-R3",
+    "negative_oracle": [
+      "Completion requires a third-party commerce platform"
+    ],
+    "operator_composition": [
+      "CAPABILITY_AVAILABLE"
+    ],
+    "positive_oracle": [
+      "The partner can complete selling without requiring a third-party website or e-commerce platform"
+    ],
+    "provenance": {
+      "approved_decision_references": [],
+      "inference": false,
+      "source_document": "docs/BRD/BRD-UPDATE-01.md",
+      "source_fingerprint": "8bff1baf03cc3b708e482ff550689d1fdbddabf509eacf81dd0c24b4c03212af",
+      "source_lines": "L25",
+      "source_section": "1. Purpose"
     },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BRD-UPDATE-01-R001-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Đối tác không cần sử dụng nền tảng Website hoặc E-Commerce của bên thứ ba để bán eSIM và các Dig…",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BRD-UPDATE-01-R001-O001"
+    "required_evidence": {
+      "evidence_object_ref": {
+        "authoritative_source": {
+          "source_id": "docs/BRD/BRD-UPDATE-01.md#1. Purpose",
+          "source_type": "SOURCE_LITERAL",
+          "version": "8bff1baf03cc3b708e482ff550689d1fdbddabf509eacf81dd0c24b4c03212af"
+        },
+        "identifier": "BRD-UPDATE-01-R001.BRD-UPDATE-01-R001.CONTRACT.EVIDENCE.OBJECT",
+        "inference": false,
+        "lifecycle": {
+          "status": "ACTIVE",
+          "version": "2.3"
+        },
+        "namespace": "YSIM.V2.3",
+        "origin": {
+          "origin_id": "BRD-UPDATE-01-R001.CONTRACT.EVIDENCE.ORIGIN",
+          "origin_type": "EVIDENCE_OBJECT"
+        },
+        "provenance": {
+          "approved_decision_references": [],
+          "inference": false,
+          "source_document": "docs/BRD/BRD-UPDATE-01.md",
+          "source_fingerprint": "8bff1baf03cc3b708e482ff550689d1fdbddabf509eacf81dd0c24b4c03212af",
+          "source_lines": "L25",
+          "source_section": "1. Purpose"
+        },
+        "resolver_contract": {
+          "deterministic": true,
+          "input_types": [],
+          "output_type": "EVIDENCE_OBJECT_REF",
+          "resolver_id": "OBSERVE.BRD-UPDATE-01-R001.BRD-UPDATE-01-R001.BRD-UPDATE-01-R001.CONTRACT.EVIDENCE.OBJECT",
+          "version": "1.0.0"
+        },
+        "semantic_type": "EVIDENCE_OBJECT_REF"
+      },
+      "inference": false,
+      "observed_collection_origin": "BRD-UPDATE-01-R001.RUNTIME.OBSERVED.FIELDS",
+      "observed_field_ids": [
+        "FIELD.PARTNER_ID",
+        "FIELD.PRODUCT_ID",
+        "FIELD.SALES_CHANNEL",
+        "FIELD.CHECKOUT_RESULT",
+        "FIELD.THIRD_PARTY_DEPENDENCY"
       ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+      "producer": "BRD-UPDATE-01-R001.EVIDENCE.PRODUCER",
+      "required_collection_origin": "BRD-UPDATE-01-R001.SOURCE.REQUIRED.FIELDS",
+      "required_field_ids": [
+        "FIELD.PARTNER_ID",
+        "FIELD.PRODUCT_ID",
+        "FIELD.SALES_CHANNEL",
+        "FIELD.CHECKOUT_RESULT",
+        "FIELD.THIRD_PARTY_DEPENDENCY"
+      ],
+      "required_values_or_hashes": [
+        "BRD-UPDATE-01-R001.EVIDENCE.CONTENT.HASH"
+      ],
+      "retrieval_method": "BRD-UPDATE-01-R001.EVIDENCE.RETRIEVAL",
+      "version_or_correlation": "BRD-UPDATE-01-R001.EVIDENCE.VERSION.CORRELATION"
+    },
+    "runtime_evidence_executed": false,
+    "runtime_status": "RUNTIME_ADAPTER_PENDING",
+    "semantic_obligation_references": [
+      "BRD-UPDATE-01-R001-O001"
+    ],
+    "typed_contract_ast": {
+      "approved_clarification": null,
+      "assertions": [
+        {
+          "assertion_id": "BRD-UPDATE-01-R001.O1.1.CAPABILITY_AVAILABLE",
+          "evaluator_consumed_bindings": [
+            "capability",
+            "scope",
+            "subject"
+          ],
+          "evidence_object": {
+            "authoritative_source": {
+              "source_id": "docs/BRD/BRD-UPDATE-01.md#1. Purpose",
+              "source_type": "SOURCE_LITERAL",
+              "version": "8bff1baf03cc3b708e482ff550689d1fdbddabf509eacf81dd0c24b4c03212af"
+            },
+            "identifier": "BRD-UPDATE-01-R001.BRD-UPDATE-01-R001.O1.1.CAPABILITY_AVAILABLE.EVIDENCE.OBJECT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BRD-UPDATE-01-R001.O1.1.CAPABILITY_AVAILABLE.EVIDENCE.ORIGIN",
+              "origin_type": "EVIDENCE_OBJECT"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-UPDATE-01.md",
+              "source_fingerprint": "8bff1baf03cc3b708e482ff550689d1fdbddabf509eacf81dd0c24b4c03212af",
+              "source_lines": "L25",
+              "source_section": "1. Purpose"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "EVIDENCE_OBJECT_REF",
+              "resolver_id": "OBSERVE.BRD-UPDATE-01-R001.BRD-UPDATE-01-R001.BRD-UPDATE-01-R001.O1.1.CAPABILITY_AVAILABLE.EVIDENCE.OBJECT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "EVIDENCE_OBJECT_REF"
+          },
+          "expected_operand": {
+            "authoritative_source": {
+              "source_id": "docs/BRD/BRD-UPDATE-01.md#1. Purpose",
+              "source_type": "SOURCE_LITERAL",
+              "version": "8bff1baf03cc3b708e482ff550689d1fdbddabf509eacf81dd0c24b4c03212af"
+            },
+            "identifier": "BRD-UPDATE-01-R001.BRD-UPDATE-01-R001.O1.1.CAPABILITY_AVAILABLE.CANONICAL.RESULT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BRD-UPDATE-01-R001.O1.1.CAPABILITY_AVAILABLE.AUTHORITY.ORIGIN",
+              "origin_type": "SOURCE_LITERAL"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-UPDATE-01.md",
+              "source_fingerprint": "8bff1baf03cc3b708e482ff550689d1fdbddabf509eacf81dd0c24b4c03212af",
+              "source_lines": "L25",
+              "source_section": "1. Purpose"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "ENTITY_ID",
+              "resolver_id": "RESOLVE.BRD-UPDATE-01-R001.BRD-UPDATE-01-R001.BRD-UPDATE-01-R001.O1.1.CAPABILITY_AVAILABLE.CANONICAL.RESULT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "ENTITY_ID"
+          },
+          "inference": false,
+          "model_conformance_fixture": {
+            "bindings": {
+              "capability": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-UPDATE-01.md#1. Purpose",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "8bff1baf03cc3b708e482ff550689d1fdbddabf509eacf81dd0c24b4c03212af"
+                },
+                "identifier": "BRD-UPDATE-01-R001.CAPABILITY",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-UPDATE-01-R001.O1.1.CAPABILITY_AVAILABLE.CAPABILITY.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-UPDATE-01.md",
+                  "source_fingerprint": "8bff1baf03cc3b708e482ff550689d1fdbddabf509eacf81dd0c24b4c03212af",
+                  "source_lines": "L25",
+                  "source_section": "1. Purpose"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "CAPABILITY_ID",
+                  "resolver_id": "RESOLVE.BRD-UPDATE-01-R001.BRD-UPDATE-01-R001.CAPABILITY",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "CAPABILITY_ID"
+              },
+              "scope": {
+                "authoritative_source": {
+                  "allowed_identifiers": [
+                    "BRD-UPDATE-01-R001.SCOPE"
+                  ],
+                  "source_id": "docs/BRD/BRD-UPDATE-01.md#1. Purpose",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "8bff1baf03cc3b708e482ff550689d1fdbddabf509eacf81dd0c24b4c03212af"
+                },
+                "identifier": "BRD-UPDATE-01-R001.SCOPE",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-UPDATE-01-R001.O1.1.CAPABILITY_AVAILABLE.SCOPE.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-UPDATE-01.md",
+                  "source_fingerprint": "8bff1baf03cc3b708e482ff550689d1fdbddabf509eacf81dd0c24b4c03212af",
+                  "source_lines": "L25",
+                  "source_section": "1. Purpose"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "CANONICAL_ENUM_VALUE",
+                  "resolver_id": "RESOLVE.BRD-UPDATE-01-R001.BRD-UPDATE-01-R001.SCOPE",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "CANONICAL_ENUM_VALUE"
+              },
+              "subject": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-UPDATE-01.md#1. Purpose",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "8bff1baf03cc3b708e482ff550689d1fdbddabf509eacf81dd0c24b4c03212af"
+                },
+                "identifier": "BRD-UPDATE-01-R001.SUBJECT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-UPDATE-01-R001.O1.1.CAPABILITY_AVAILABLE.SUBJECT.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-UPDATE-01.md",
+                  "source_fingerprint": "8bff1baf03cc3b708e482ff550689d1fdbddabf509eacf81dd0c24b4c03212af",
+                  "source_lines": "L25",
+                  "source_section": "1. Purpose"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "ENTITY_ID",
+                  "resolver_id": "RESOLVE.BRD-UPDATE-01-R001.BRD-UPDATE-01-R001.SUBJECT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "ENTITY_ID"
+              }
+            },
+            "comparison": {
+              "expected": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-UPDATE-01.md#1. Purpose",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "8bff1baf03cc3b708e482ff550689d1fdbddabf509eacf81dd0c24b4c03212af"
+                },
+                "identifier": "BRD-UPDATE-01-R001.BRD-UPDATE-01-R001.O1.1.CAPABILITY_AVAILABLE.CANONICAL.RESULT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-UPDATE-01-R001.O1.1.CAPABILITY_AVAILABLE.AUTHORITY.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-UPDATE-01.md",
+                  "source_fingerprint": "8bff1baf03cc3b708e482ff550689d1fdbddabf509eacf81dd0c24b4c03212af",
+                  "source_lines": "L25",
+                  "source_section": "1. Purpose"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "ENTITY_ID",
+                  "resolver_id": "RESOLVE.BRD-UPDATE-01-R001.BRD-UPDATE-01-R001.BRD-UPDATE-01-R001.O1.1.CAPABILITY_AVAILABLE.CANONICAL.RESULT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "ENTITY_ID"
+              },
+              "observed": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-UPDATE-01.md#1. Purpose",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "8bff1baf03cc3b708e482ff550689d1fdbddabf509eacf81dd0c24b4c03212af"
+                },
+                "identifier": "BRD-UPDATE-01-R001.BRD-UPDATE-01-R001.O1.1.CAPABILITY_AVAILABLE.CANONICAL.RESULT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-UPDATE-01-R001.O1.1.CAPABILITY_AVAILABLE.OBSERVED.ORIGIN",
+                  "origin_type": "RUNTIME_OBSERVED"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-UPDATE-01.md",
+                  "source_fingerprint": "8bff1baf03cc3b708e482ff550689d1fdbddabf509eacf81dd0c24b4c03212af",
+                  "source_lines": "L25",
+                  "source_section": "1. Purpose"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "ENTITY_ID",
+                  "resolver_id": "OBSERVE.BRD-UPDATE-01-R001.BRD-UPDATE-01-R001.BRD-UPDATE-01-R001.O1.1.CAPABILITY_AVAILABLE.CANONICAL.RESULT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "ENTITY_ID"
+              }
+            },
+            "evidence_object": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-UPDATE-01.md#1. Purpose",
+                "source_type": "SOURCE_LITERAL",
+                "version": "8bff1baf03cc3b708e482ff550689d1fdbddabf509eacf81dd0c24b4c03212af"
+              },
+              "identifier": "BRD-UPDATE-01-R001.BRD-UPDATE-01-R001.O1.1.CAPABILITY_AVAILABLE.EVIDENCE.OBJECT",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-UPDATE-01-R001.O1.1.CAPABILITY_AVAILABLE.EVIDENCE.ORIGIN",
+                "origin_type": "EVIDENCE_OBJECT"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-UPDATE-01.md",
+                "source_fingerprint": "8bff1baf03cc3b708e482ff550689d1fdbddabf509eacf81dd0c24b4c03212af",
+                "source_lines": "L25",
+                "source_section": "1. Purpose"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "EVIDENCE_OBJECT_REF",
+                "resolver_id": "OBSERVE.BRD-UPDATE-01-R001.BRD-UPDATE-01-R001.BRD-UPDATE-01-R001.O1.1.CAPABILITY_AVAILABLE.EVIDENCE.OBJECT",
+                "version": "1.0.0"
+              },
+              "semantic_type": "EVIDENCE_OBJECT_REF"
+            },
+            "operator_id": "CAPABILITY_AVAILABLE"
+          },
+          "obligation_id": "BRD-UPDATE-01-R001-O001",
+          "observed_operand": {
+            "authoritative_source": {
+              "source_id": "docs/BRD/BRD-UPDATE-01.md#1. Purpose",
+              "source_type": "SOURCE_LITERAL",
+              "version": "8bff1baf03cc3b708e482ff550689d1fdbddabf509eacf81dd0c24b4c03212af"
+            },
+            "identifier": "BRD-UPDATE-01-R001.BRD-UPDATE-01-R001.O1.1.CAPABILITY_AVAILABLE.CANONICAL.RESULT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BRD-UPDATE-01-R001.O1.1.CAPABILITY_AVAILABLE.OBSERVED.ORIGIN",
+              "origin_type": "RUNTIME_OBSERVED"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-UPDATE-01.md",
+              "source_fingerprint": "8bff1baf03cc3b708e482ff550689d1fdbddabf509eacf81dd0c24b4c03212af",
+              "source_lines": "L25",
+              "source_section": "1. Purpose"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "ENTITY_ID",
+              "resolver_id": "OBSERVE.BRD-UPDATE-01-R001.BRD-UPDATE-01-R001.BRD-UPDATE-01-R001.O1.1.CAPABILITY_AVAILABLE.CANONICAL.RESULT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "ENTITY_ID"
+          },
+          "operator_id": "CAPABILITY_AVAILABLE",
+          "operator_version": "1.0.0-candidate.2",
+          "typed_bindings": {
+            "capability": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-UPDATE-01.md#1. Purpose",
+                "source_type": "SOURCE_LITERAL",
+                "version": "8bff1baf03cc3b708e482ff550689d1fdbddabf509eacf81dd0c24b4c03212af"
+              },
+              "identifier": "BRD-UPDATE-01-R001.CAPABILITY",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-UPDATE-01-R001.O1.1.CAPABILITY_AVAILABLE.CAPABILITY.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-UPDATE-01.md",
+                "source_fingerprint": "8bff1baf03cc3b708e482ff550689d1fdbddabf509eacf81dd0c24b4c03212af",
+                "source_lines": "L25",
+                "source_section": "1. Purpose"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CAPABILITY_ID",
+                "resolver_id": "RESOLVE.BRD-UPDATE-01-R001.BRD-UPDATE-01-R001.CAPABILITY",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CAPABILITY_ID"
+            },
+            "scope": {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "BRD-UPDATE-01-R001.SCOPE"
+                ],
+                "source_id": "docs/BRD/BRD-UPDATE-01.md#1. Purpose",
+                "source_type": "SOURCE_LITERAL",
+                "version": "8bff1baf03cc3b708e482ff550689d1fdbddabf509eacf81dd0c24b4c03212af"
+              },
+              "identifier": "BRD-UPDATE-01-R001.SCOPE",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-UPDATE-01-R001.O1.1.CAPABILITY_AVAILABLE.SCOPE.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-UPDATE-01.md",
+                "source_fingerprint": "8bff1baf03cc3b708e482ff550689d1fdbddabf509eacf81dd0c24b4c03212af",
+                "source_lines": "L25",
+                "source_section": "1. Purpose"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CANONICAL_ENUM_VALUE",
+                "resolver_id": "RESOLVE.BRD-UPDATE-01-R001.BRD-UPDATE-01-R001.SCOPE",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_ENUM_VALUE"
+            },
+            "subject": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-UPDATE-01.md#1. Purpose",
+                "source_type": "SOURCE_LITERAL",
+                "version": "8bff1baf03cc3b708e482ff550689d1fdbddabf509eacf81dd0c24b4c03212af"
+              },
+              "identifier": "BRD-UPDATE-01-R001.SUBJECT",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-UPDATE-01-R001.O1.1.CAPABILITY_AVAILABLE.SUBJECT.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-UPDATE-01.md",
+                "source_fingerprint": "8bff1baf03cc3b708e482ff550689d1fdbddabf509eacf81dd0c24b4c03212af",
+                "source_lines": "L25",
+                "source_section": "1. Purpose"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "ENTITY_ID",
+                "resolver_id": "RESOLVE.BRD-UPDATE-01-R001.BRD-UPDATE-01-R001.SUBJECT",
+                "version": "1.0.0"
+              },
+              "semantic_type": "ENTITY_ID"
+            }
+          }
+        }
+      ],
+      "boundary_cases": [
+        "Optional third-party channels may integrate, but are not a prerequisite for direct YSim selling"
+      ],
+      "contract_ast_sha256": "6db42a836d6aec1a0de6baac09724fc03e10a8ebb9a9d84eae455ab1ea3caffc",
+      "contract_id": "P2C.C4.CONTRACT.BRD-UPDATE-01-R001",
+      "criticality": "HIGH",
+      "disposition": "CORRECTABLE_WITH_APPROVED_TYPE_MODEL",
+      "evidence_contract": {
+        "evidence_object_ref": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-UPDATE-01.md#1. Purpose",
+            "source_type": "SOURCE_LITERAL",
+            "version": "8bff1baf03cc3b708e482ff550689d1fdbddabf509eacf81dd0c24b4c03212af"
+          },
+          "identifier": "BRD-UPDATE-01-R001.BRD-UPDATE-01-R001.CONTRACT.EVIDENCE.OBJECT",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-UPDATE-01-R001.CONTRACT.EVIDENCE.ORIGIN",
+            "origin_type": "EVIDENCE_OBJECT"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-UPDATE-01.md",
+            "source_fingerprint": "8bff1baf03cc3b708e482ff550689d1fdbddabf509eacf81dd0c24b4c03212af",
+            "source_lines": "L25",
+            "source_section": "1. Purpose"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "EVIDENCE_OBJECT_REF",
+            "resolver_id": "OBSERVE.BRD-UPDATE-01-R001.BRD-UPDATE-01-R001.BRD-UPDATE-01-R001.CONTRACT.EVIDENCE.OBJECT",
+            "version": "1.0.0"
+          },
+          "semantic_type": "EVIDENCE_OBJECT_REF"
+        },
+        "inference": false,
+        "observed_collection_origin": "BRD-UPDATE-01-R001.RUNTIME.OBSERVED.FIELDS",
+        "observed_field_ids": [
+          "FIELD.PARTNER_ID",
+          "FIELD.PRODUCT_ID",
+          "FIELD.SALES_CHANNEL",
+          "FIELD.CHECKOUT_RESULT",
+          "FIELD.THIRD_PARTY_DEPENDENCY"
+        ],
+        "producer": "BRD-UPDATE-01-R001.EVIDENCE.PRODUCER",
+        "required_collection_origin": "BRD-UPDATE-01-R001.SOURCE.REQUIRED.FIELDS",
+        "required_field_ids": [
+          "FIELD.PARTNER_ID",
+          "FIELD.PRODUCT_ID",
+          "FIELD.SALES_CHANNEL",
+          "FIELD.CHECKOUT_RESULT",
+          "FIELD.THIRD_PARTY_DEPENDENCY"
+        ],
+        "required_values_or_hashes": [
+          "BRD-UPDATE-01-R001.EVIDENCE.CONTENT.HASH"
+        ],
+        "retrieval_method": "BRD-UPDATE-01-R001.EVIDENCE.RETRIEVAL",
+        "version_or_correlation": "BRD-UPDATE-01-R001.EVIDENCE.VERSION.CORRELATION"
+      },
+      "explicit_non_obligations": [
+        "No runtime implementation topology is authorized by this semantic record.",
+        "No production runtime evidence is claimed by this model-level candidate."
+      ],
+      "fixture_ids": [
+        "P2C-C4-FX-3D0C5A26C2319CA1D1E1",
+        "P2C-C4-FX-ECBE2300581506E01871",
+        "P2C-C4-FX-67A6956158C19CF31BE7"
+      ],
+      "high_risk_audit_subset": true,
+      "independent_contract_identity": true,
+      "inference": false,
+      "inherits_contract_ast": null,
+      "negative_oracles": [
+        "Completion requires a third-party commerce platform"
+      ],
+      "normative_obligations": [
+        {
+          "applicability": "V2.3_ACTIVE",
+          "obligation_id": "BRD-UPDATE-01-R001-O001",
+          "obligation_text": "Đối tác không cần sử dụng nền tảng Website hoặc E-Commerce của bên thứ ba để bán eSIM và các Digital Connectivity Products"
+        }
+      ],
+      "obligation_to_operator_coverage": [
+        {
+          "assertion_ids": [
+            "BRD-UPDATE-01-R001.O1.1.CAPABILITY_AVAILABLE"
+          ],
+          "coverage_count": 1,
+          "obligation_id": "BRD-UPDATE-01-R001-O001"
+        }
+      ],
+      "operator_composition": [
+        "CAPABILITY_AVAILABLE"
+      ],
+      "positive_oracles": [
+        "The partner can complete selling without requiring a third-party website or e-commerce platform"
+      ],
+      "preconditions": [
+        "The partner and active product offering exist"
+      ],
+      "prohibitions": [
+        "Completion requires a third-party commerce platform"
+      ],
+      "requirement_id": "BRD-UPDATE-01-R001",
+      "runtime_status": "SLICE_RUNTIME_ADAPTER_REQUIRED",
+      "semantic_family_id": null,
+      "source_provenance": {
+        "approved_decision_references": [],
+        "inference": false,
+        "source_document": "docs/BRD/BRD-UPDATE-01.md",
+        "source_fingerprint": "8bff1baf03cc3b708e482ff550689d1fdbddabf509eacf81dd0c24b4c03212af",
+        "source_lines": "L25",
+        "source_section": "1. Purpose"
+      },
+      "source_statement": "Đối tác không cần sử dụng nền tảng Website hoặc E-Commerce của bên thứ ba để bán eSIM và các Digital Connectivity Products.",
+      "surrounding_source_context": "### BRD-UPDATE-01-R001 — Đối tác không cần sử dụng nền tảng Website hoặc E-Commerce của bên thứ ba để bán eSIM và các Dig…"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "contract_id": "P2C.C4.CONTRACT.BRD-UPDATE-01-R001",
+    "inference": false,
+    "mechanism": "APPROVED_TYPED_CUSTOM_AST",
+    "mechanism_version": "SEMANTIC_ACCEPTANCE_RENDERER_C2",
+    "runtime_status": "RUNTIME_ADAPTER_PENDING"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "ACCEPTANCE_READY",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-UPDATE-01-R001-AC001",
-        "BRD-UPDATE-01-R001-AC002"
+        "BRD-UPDATE-01-R001-AC002",
+        "BRD-UPDATE-01-R001-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-UPDATE-01-R001-O001",
@@ -1000,8 +1751,8 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
     "source_context_sha256": "672b3ffe5ddee5a82b4237a876cf426c17b4be6a1dfeb541322282233dafe79c",
     "source_document": "docs/BRD/BRD-UPDATE-01.md",
     "source_fingerprint": "8bff1baf03cc3b708e482ff550689d1fdbddabf509eacf81dd0c24b4c03212af",
-    "source_lines": "L25",
-    "source_section": "1. Purpose"
+    "source_lines": "L947-L1776",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-UPDATE-01-R001"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1009,7 +1760,10 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
     "aliases": [],
     "coverage_mode": null,
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "BRD-UPDATE-01-R020"
+    ]
   },
   "requirement_type": "BUSINESS_REQUIREMENT",
   "scope_coverage_unit": true,
@@ -1026,28 +1780,789 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-UPDATE-01-R002-AC001",
-      "given": "the applicable business context, actor, and input for CXP phải cho phép: ✓ tạo Store mới",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-UPDATE-01-R002-O001"
+  "acceptance_contract": {
+    "boundary_oracle": [
+      "Invalid or unauthorized input is rejected; valid input creates a Store"
+    ],
+    "concrete_bindings": [
+      {
+        "capability": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-UPDATE-01.md#4. Business Objectives",
+            "source_type": "SOURCE_LITERAL",
+            "version": "6a7b5110e8b85b10d6e50e80b1e726ea6e0bc2af364795d416bf527018755660"
+          },
+          "identifier": "BRD-UPDATE-01-R002.CAPABILITY",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-UPDATE-01-R002.O1.1.CAPABILITY_AVAILABLE.CAPABILITY.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-UPDATE-01.md",
+            "source_fingerprint": "6a7b5110e8b85b10d6e50e80b1e726ea6e0bc2af364795d416bf527018755660",
+            "source_lines": "L62-L64",
+            "source_section": "4. Business Objectives"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "CAPABILITY_ID",
+            "resolver_id": "RESOLVE.BRD-UPDATE-01-R002.BRD-UPDATE-01-R002.CAPABILITY",
+            "version": "1.0.0"
+          },
+          "semantic_type": "CAPABILITY_ID"
+        },
+        "scope": {
+          "authoritative_source": {
+            "allowed_identifiers": [
+              "BRD-UPDATE-01-R002.SCOPE"
+            ],
+            "source_id": "docs/BRD/BRD-UPDATE-01.md#4. Business Objectives",
+            "source_type": "SOURCE_LITERAL",
+            "version": "6a7b5110e8b85b10d6e50e80b1e726ea6e0bc2af364795d416bf527018755660"
+          },
+          "identifier": "BRD-UPDATE-01-R002.SCOPE",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-UPDATE-01-R002.O1.1.CAPABILITY_AVAILABLE.SCOPE.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-UPDATE-01.md",
+            "source_fingerprint": "6a7b5110e8b85b10d6e50e80b1e726ea6e0bc2af364795d416bf527018755660",
+            "source_lines": "L62-L64",
+            "source_section": "4. Business Objectives"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "CANONICAL_ENUM_VALUE",
+            "resolver_id": "RESOLVE.BRD-UPDATE-01-R002.BRD-UPDATE-01-R002.SCOPE",
+            "version": "1.0.0"
+          },
+          "semantic_type": "CANONICAL_ENUM_VALUE"
+        },
+        "subject": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-UPDATE-01.md#4. Business Objectives",
+            "source_type": "SOURCE_LITERAL",
+            "version": "6a7b5110e8b85b10d6e50e80b1e726ea6e0bc2af364795d416bf527018755660"
+          },
+          "identifier": "BRD-UPDATE-01-R002.SUBJECT",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-UPDATE-01-R002.O1.1.CAPABILITY_AVAILABLE.SUBJECT.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-UPDATE-01.md",
+            "source_fingerprint": "6a7b5110e8b85b10d6e50e80b1e726ea6e0bc2af364795d416bf527018755660",
+            "source_lines": "L62-L64",
+            "source_section": "4. Business Objectives"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "ENTITY_ID",
+            "resolver_id": "RESOLVE.BRD-UPDATE-01-R002.BRD-UPDATE-01-R002.SUBJECT",
+            "version": "1.0.0"
+          },
+          "semantic_type": "ENTITY_ID"
+        }
+      }
+    ],
+    "contract_id": "P2C.C4.CONTRACT.BRD-UPDATE-01-R002",
+    "inference": false,
+    "mechanism": "APPROVED_TYPED_CUSTOM_AST",
+    "mechanism_version": "C4-R3",
+    "negative_oracle": [
+      "Store creation is unavailable or only represented by a non-functional control"
+    ],
+    "operator_composition": [
+      "CAPABILITY_AVAILABLE"
+    ],
+    "positive_oracle": [
+      "CXP creates a new Store"
+    ],
+    "provenance": {
+      "approved_decision_references": [],
+      "inference": false,
+      "source_document": "docs/BRD/BRD-UPDATE-01.md",
+      "source_fingerprint": "6a7b5110e8b85b10d6e50e80b1e726ea6e0bc2af364795d416bf527018755660",
+      "source_lines": "L62-L64",
+      "source_section": "4. Business Objectives"
+    },
+    "required_evidence": {
+      "evidence_object_ref": {
+        "authoritative_source": {
+          "source_id": "docs/BRD/BRD-UPDATE-01.md#4. Business Objectives",
+          "source_type": "SOURCE_LITERAL",
+          "version": "6a7b5110e8b85b10d6e50e80b1e726ea6e0bc2af364795d416bf527018755660"
+        },
+        "identifier": "BRD-UPDATE-01-R002.BRD-UPDATE-01-R002.CONTRACT.EVIDENCE.OBJECT",
+        "inference": false,
+        "lifecycle": {
+          "status": "ACTIVE",
+          "version": "2.3"
+        },
+        "namespace": "YSIM.V2.3",
+        "origin": {
+          "origin_id": "BRD-UPDATE-01-R002.CONTRACT.EVIDENCE.ORIGIN",
+          "origin_type": "EVIDENCE_OBJECT"
+        },
+        "provenance": {
+          "approved_decision_references": [],
+          "inference": false,
+          "source_document": "docs/BRD/BRD-UPDATE-01.md",
+          "source_fingerprint": "6a7b5110e8b85b10d6e50e80b1e726ea6e0bc2af364795d416bf527018755660",
+          "source_lines": "L62-L64",
+          "source_section": "4. Business Objectives"
+        },
+        "resolver_contract": {
+          "deterministic": true,
+          "input_types": [],
+          "output_type": "EVIDENCE_OBJECT_REF",
+          "resolver_id": "OBSERVE.BRD-UPDATE-01-R002.BRD-UPDATE-01-R002.BRD-UPDATE-01-R002.CONTRACT.EVIDENCE.OBJECT",
+          "version": "1.0.0"
+        },
+        "semantic_type": "EVIDENCE_OBJECT_REF"
+      },
+      "inference": false,
+      "observed_collection_origin": "BRD-UPDATE-01-R002.RUNTIME.OBSERVED.FIELDS",
+      "observed_field_ids": [
+        "FIELD.ACTOR_ID",
+        "FIELD.ORGANIZATION_ID",
+        "FIELD.STORE_INPUT",
+        "FIELD.AUTHORIZATION_RESULT",
+        "FIELD.STORE_ID",
+        "FIELD.CREATION_RESULT"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+      "producer": "BRD-UPDATE-01-R002.EVIDENCE.PRODUCER",
+      "required_collection_origin": "BRD-UPDATE-01-R002.SOURCE.REQUIRED.FIELDS",
+      "required_field_ids": [
+        "FIELD.ACTOR_ID",
+        "FIELD.ORGANIZATION_ID",
+        "FIELD.STORE_INPUT",
+        "FIELD.AUTHORIZATION_RESULT",
+        "FIELD.STORE_ID",
+        "FIELD.CREATION_RESULT"
+      ],
+      "required_values_or_hashes": [
+        "BRD-UPDATE-01-R002.EVIDENCE.CONTENT.HASH"
+      ],
+      "retrieval_method": "BRD-UPDATE-01-R002.EVIDENCE.RETRIEVAL",
+      "version_or_correlation": "BRD-UPDATE-01-R002.EVIDENCE.VERSION.CORRELATION"
+    },
+    "runtime_evidence_executed": false,
+    "runtime_status": "RUNTIME_ADAPTER_PENDING",
+    "semantic_obligation_references": [
+      "BRD-UPDATE-01-R002-O001"
+    ],
+    "typed_contract_ast": {
+      "approved_clarification": null,
+      "assertions": [
+        {
+          "assertion_id": "BRD-UPDATE-01-R002.O1.1.CAPABILITY_AVAILABLE",
+          "evaluator_consumed_bindings": [
+            "capability",
+            "scope",
+            "subject"
+          ],
+          "evidence_object": {
+            "authoritative_source": {
+              "source_id": "docs/BRD/BRD-UPDATE-01.md#4. Business Objectives",
+              "source_type": "SOURCE_LITERAL",
+              "version": "6a7b5110e8b85b10d6e50e80b1e726ea6e0bc2af364795d416bf527018755660"
+            },
+            "identifier": "BRD-UPDATE-01-R002.BRD-UPDATE-01-R002.O1.1.CAPABILITY_AVAILABLE.EVIDENCE.OBJECT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BRD-UPDATE-01-R002.O1.1.CAPABILITY_AVAILABLE.EVIDENCE.ORIGIN",
+              "origin_type": "EVIDENCE_OBJECT"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-UPDATE-01.md",
+              "source_fingerprint": "6a7b5110e8b85b10d6e50e80b1e726ea6e0bc2af364795d416bf527018755660",
+              "source_lines": "L62-L64",
+              "source_section": "4. Business Objectives"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "EVIDENCE_OBJECT_REF",
+              "resolver_id": "OBSERVE.BRD-UPDATE-01-R002.BRD-UPDATE-01-R002.BRD-UPDATE-01-R002.O1.1.CAPABILITY_AVAILABLE.EVIDENCE.OBJECT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "EVIDENCE_OBJECT_REF"
+          },
+          "expected_operand": {
+            "authoritative_source": {
+              "source_id": "docs/BRD/BRD-UPDATE-01.md#4. Business Objectives",
+              "source_type": "SOURCE_LITERAL",
+              "version": "6a7b5110e8b85b10d6e50e80b1e726ea6e0bc2af364795d416bf527018755660"
+            },
+            "identifier": "BRD-UPDATE-01-R002.BRD-UPDATE-01-R002.O1.1.CAPABILITY_AVAILABLE.CANONICAL.RESULT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BRD-UPDATE-01-R002.O1.1.CAPABILITY_AVAILABLE.AUTHORITY.ORIGIN",
+              "origin_type": "SOURCE_LITERAL"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-UPDATE-01.md",
+              "source_fingerprint": "6a7b5110e8b85b10d6e50e80b1e726ea6e0bc2af364795d416bf527018755660",
+              "source_lines": "L62-L64",
+              "source_section": "4. Business Objectives"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "ENTITY_ID",
+              "resolver_id": "RESOLVE.BRD-UPDATE-01-R002.BRD-UPDATE-01-R002.BRD-UPDATE-01-R002.O1.1.CAPABILITY_AVAILABLE.CANONICAL.RESULT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "ENTITY_ID"
+          },
+          "inference": false,
+          "model_conformance_fixture": {
+            "bindings": {
+              "capability": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-UPDATE-01.md#4. Business Objectives",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "6a7b5110e8b85b10d6e50e80b1e726ea6e0bc2af364795d416bf527018755660"
+                },
+                "identifier": "BRD-UPDATE-01-R002.CAPABILITY",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-UPDATE-01-R002.O1.1.CAPABILITY_AVAILABLE.CAPABILITY.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-UPDATE-01.md",
+                  "source_fingerprint": "6a7b5110e8b85b10d6e50e80b1e726ea6e0bc2af364795d416bf527018755660",
+                  "source_lines": "L62-L64",
+                  "source_section": "4. Business Objectives"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "CAPABILITY_ID",
+                  "resolver_id": "RESOLVE.BRD-UPDATE-01-R002.BRD-UPDATE-01-R002.CAPABILITY",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "CAPABILITY_ID"
+              },
+              "scope": {
+                "authoritative_source": {
+                  "allowed_identifiers": [
+                    "BRD-UPDATE-01-R002.SCOPE"
+                  ],
+                  "source_id": "docs/BRD/BRD-UPDATE-01.md#4. Business Objectives",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "6a7b5110e8b85b10d6e50e80b1e726ea6e0bc2af364795d416bf527018755660"
+                },
+                "identifier": "BRD-UPDATE-01-R002.SCOPE",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-UPDATE-01-R002.O1.1.CAPABILITY_AVAILABLE.SCOPE.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-UPDATE-01.md",
+                  "source_fingerprint": "6a7b5110e8b85b10d6e50e80b1e726ea6e0bc2af364795d416bf527018755660",
+                  "source_lines": "L62-L64",
+                  "source_section": "4. Business Objectives"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "CANONICAL_ENUM_VALUE",
+                  "resolver_id": "RESOLVE.BRD-UPDATE-01-R002.BRD-UPDATE-01-R002.SCOPE",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "CANONICAL_ENUM_VALUE"
+              },
+              "subject": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-UPDATE-01.md#4. Business Objectives",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "6a7b5110e8b85b10d6e50e80b1e726ea6e0bc2af364795d416bf527018755660"
+                },
+                "identifier": "BRD-UPDATE-01-R002.SUBJECT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-UPDATE-01-R002.O1.1.CAPABILITY_AVAILABLE.SUBJECT.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-UPDATE-01.md",
+                  "source_fingerprint": "6a7b5110e8b85b10d6e50e80b1e726ea6e0bc2af364795d416bf527018755660",
+                  "source_lines": "L62-L64",
+                  "source_section": "4. Business Objectives"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "ENTITY_ID",
+                  "resolver_id": "RESOLVE.BRD-UPDATE-01-R002.BRD-UPDATE-01-R002.SUBJECT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "ENTITY_ID"
+              }
+            },
+            "comparison": {
+              "expected": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-UPDATE-01.md#4. Business Objectives",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "6a7b5110e8b85b10d6e50e80b1e726ea6e0bc2af364795d416bf527018755660"
+                },
+                "identifier": "BRD-UPDATE-01-R002.BRD-UPDATE-01-R002.O1.1.CAPABILITY_AVAILABLE.CANONICAL.RESULT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-UPDATE-01-R002.O1.1.CAPABILITY_AVAILABLE.AUTHORITY.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-UPDATE-01.md",
+                  "source_fingerprint": "6a7b5110e8b85b10d6e50e80b1e726ea6e0bc2af364795d416bf527018755660",
+                  "source_lines": "L62-L64",
+                  "source_section": "4. Business Objectives"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "ENTITY_ID",
+                  "resolver_id": "RESOLVE.BRD-UPDATE-01-R002.BRD-UPDATE-01-R002.BRD-UPDATE-01-R002.O1.1.CAPABILITY_AVAILABLE.CANONICAL.RESULT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "ENTITY_ID"
+              },
+              "observed": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-UPDATE-01.md#4. Business Objectives",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "6a7b5110e8b85b10d6e50e80b1e726ea6e0bc2af364795d416bf527018755660"
+                },
+                "identifier": "BRD-UPDATE-01-R002.BRD-UPDATE-01-R002.O1.1.CAPABILITY_AVAILABLE.CANONICAL.RESULT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-UPDATE-01-R002.O1.1.CAPABILITY_AVAILABLE.OBSERVED.ORIGIN",
+                  "origin_type": "RUNTIME_OBSERVED"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-UPDATE-01.md",
+                  "source_fingerprint": "6a7b5110e8b85b10d6e50e80b1e726ea6e0bc2af364795d416bf527018755660",
+                  "source_lines": "L62-L64",
+                  "source_section": "4. Business Objectives"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "ENTITY_ID",
+                  "resolver_id": "OBSERVE.BRD-UPDATE-01-R002.BRD-UPDATE-01-R002.BRD-UPDATE-01-R002.O1.1.CAPABILITY_AVAILABLE.CANONICAL.RESULT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "ENTITY_ID"
+              }
+            },
+            "evidence_object": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-UPDATE-01.md#4. Business Objectives",
+                "source_type": "SOURCE_LITERAL",
+                "version": "6a7b5110e8b85b10d6e50e80b1e726ea6e0bc2af364795d416bf527018755660"
+              },
+              "identifier": "BRD-UPDATE-01-R002.BRD-UPDATE-01-R002.O1.1.CAPABILITY_AVAILABLE.EVIDENCE.OBJECT",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-UPDATE-01-R002.O1.1.CAPABILITY_AVAILABLE.EVIDENCE.ORIGIN",
+                "origin_type": "EVIDENCE_OBJECT"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-UPDATE-01.md",
+                "source_fingerprint": "6a7b5110e8b85b10d6e50e80b1e726ea6e0bc2af364795d416bf527018755660",
+                "source_lines": "L62-L64",
+                "source_section": "4. Business Objectives"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "EVIDENCE_OBJECT_REF",
+                "resolver_id": "OBSERVE.BRD-UPDATE-01-R002.BRD-UPDATE-01-R002.BRD-UPDATE-01-R002.O1.1.CAPABILITY_AVAILABLE.EVIDENCE.OBJECT",
+                "version": "1.0.0"
+              },
+              "semantic_type": "EVIDENCE_OBJECT_REF"
+            },
+            "operator_id": "CAPABILITY_AVAILABLE"
+          },
+          "obligation_id": "BRD-UPDATE-01-R002-O001",
+          "observed_operand": {
+            "authoritative_source": {
+              "source_id": "docs/BRD/BRD-UPDATE-01.md#4. Business Objectives",
+              "source_type": "SOURCE_LITERAL",
+              "version": "6a7b5110e8b85b10d6e50e80b1e726ea6e0bc2af364795d416bf527018755660"
+            },
+            "identifier": "BRD-UPDATE-01-R002.BRD-UPDATE-01-R002.O1.1.CAPABILITY_AVAILABLE.CANONICAL.RESULT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BRD-UPDATE-01-R002.O1.1.CAPABILITY_AVAILABLE.OBSERVED.ORIGIN",
+              "origin_type": "RUNTIME_OBSERVED"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-UPDATE-01.md",
+              "source_fingerprint": "6a7b5110e8b85b10d6e50e80b1e726ea6e0bc2af364795d416bf527018755660",
+              "source_lines": "L62-L64",
+              "source_section": "4. Business Objectives"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "ENTITY_ID",
+              "resolver_id": "OBSERVE.BRD-UPDATE-01-R002.BRD-UPDATE-01-R002.BRD-UPDATE-01-R002.O1.1.CAPABILITY_AVAILABLE.CANONICAL.RESULT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "ENTITY_ID"
+          },
+          "operator_id": "CAPABILITY_AVAILABLE",
+          "operator_version": "1.0.0-candidate.2",
+          "typed_bindings": {
+            "capability": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-UPDATE-01.md#4. Business Objectives",
+                "source_type": "SOURCE_LITERAL",
+                "version": "6a7b5110e8b85b10d6e50e80b1e726ea6e0bc2af364795d416bf527018755660"
+              },
+              "identifier": "BRD-UPDATE-01-R002.CAPABILITY",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-UPDATE-01-R002.O1.1.CAPABILITY_AVAILABLE.CAPABILITY.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-UPDATE-01.md",
+                "source_fingerprint": "6a7b5110e8b85b10d6e50e80b1e726ea6e0bc2af364795d416bf527018755660",
+                "source_lines": "L62-L64",
+                "source_section": "4. Business Objectives"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CAPABILITY_ID",
+                "resolver_id": "RESOLVE.BRD-UPDATE-01-R002.BRD-UPDATE-01-R002.CAPABILITY",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CAPABILITY_ID"
+            },
+            "scope": {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "BRD-UPDATE-01-R002.SCOPE"
+                ],
+                "source_id": "docs/BRD/BRD-UPDATE-01.md#4. Business Objectives",
+                "source_type": "SOURCE_LITERAL",
+                "version": "6a7b5110e8b85b10d6e50e80b1e726ea6e0bc2af364795d416bf527018755660"
+              },
+              "identifier": "BRD-UPDATE-01-R002.SCOPE",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-UPDATE-01-R002.O1.1.CAPABILITY_AVAILABLE.SCOPE.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-UPDATE-01.md",
+                "source_fingerprint": "6a7b5110e8b85b10d6e50e80b1e726ea6e0bc2af364795d416bf527018755660",
+                "source_lines": "L62-L64",
+                "source_section": "4. Business Objectives"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CANONICAL_ENUM_VALUE",
+                "resolver_id": "RESOLVE.BRD-UPDATE-01-R002.BRD-UPDATE-01-R002.SCOPE",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_ENUM_VALUE"
+            },
+            "subject": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-UPDATE-01.md#4. Business Objectives",
+                "source_type": "SOURCE_LITERAL",
+                "version": "6a7b5110e8b85b10d6e50e80b1e726ea6e0bc2af364795d416bf527018755660"
+              },
+              "identifier": "BRD-UPDATE-01-R002.SUBJECT",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-UPDATE-01-R002.O1.1.CAPABILITY_AVAILABLE.SUBJECT.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-UPDATE-01.md",
+                "source_fingerprint": "6a7b5110e8b85b10d6e50e80b1e726ea6e0bc2af364795d416bf527018755660",
+                "source_lines": "L62-L64",
+                "source_section": "4. Business Objectives"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "ENTITY_ID",
+                "resolver_id": "RESOLVE.BRD-UPDATE-01-R002.BRD-UPDATE-01-R002.SUBJECT",
+                "version": "1.0.0"
+              },
+              "semantic_type": "ENTITY_ID"
+            }
+          }
+        }
+      ],
+      "boundary_cases": [
+        "Invalid or unauthorized input is rejected; valid input creates a Store"
+      ],
+      "contract_ast_sha256": "219ce05ee049ad2f61beb43abf1f540e0a19db22cafabd58d14770dafe3cb45c",
+      "contract_id": "P2C.C4.CONTRACT.BRD-UPDATE-01-R002",
+      "criticality": "NORMAL",
+      "disposition": "CORRECTABLE_WITH_APPROVED_TYPE_MODEL",
+      "evidence_contract": {
+        "evidence_object_ref": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-UPDATE-01.md#4. Business Objectives",
+            "source_type": "SOURCE_LITERAL",
+            "version": "6a7b5110e8b85b10d6e50e80b1e726ea6e0bc2af364795d416bf527018755660"
+          },
+          "identifier": "BRD-UPDATE-01-R002.BRD-UPDATE-01-R002.CONTRACT.EVIDENCE.OBJECT",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-UPDATE-01-R002.CONTRACT.EVIDENCE.ORIGIN",
+            "origin_type": "EVIDENCE_OBJECT"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-UPDATE-01.md",
+            "source_fingerprint": "6a7b5110e8b85b10d6e50e80b1e726ea6e0bc2af364795d416bf527018755660",
+            "source_lines": "L62-L64",
+            "source_section": "4. Business Objectives"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "EVIDENCE_OBJECT_REF",
+            "resolver_id": "OBSERVE.BRD-UPDATE-01-R002.BRD-UPDATE-01-R002.BRD-UPDATE-01-R002.CONTRACT.EVIDENCE.OBJECT",
+            "version": "1.0.0"
+          },
+          "semantic_type": "EVIDENCE_OBJECT_REF"
+        },
+        "inference": false,
+        "observed_collection_origin": "BRD-UPDATE-01-R002.RUNTIME.OBSERVED.FIELDS",
+        "observed_field_ids": [
+          "FIELD.ACTOR_ID",
+          "FIELD.ORGANIZATION_ID",
+          "FIELD.STORE_INPUT",
+          "FIELD.AUTHORIZATION_RESULT",
+          "FIELD.STORE_ID",
+          "FIELD.CREATION_RESULT"
+        ],
+        "producer": "BRD-UPDATE-01-R002.EVIDENCE.PRODUCER",
+        "required_collection_origin": "BRD-UPDATE-01-R002.SOURCE.REQUIRED.FIELDS",
+        "required_field_ids": [
+          "FIELD.ACTOR_ID",
+          "FIELD.ORGANIZATION_ID",
+          "FIELD.STORE_INPUT",
+          "FIELD.AUTHORIZATION_RESULT",
+          "FIELD.STORE_ID",
+          "FIELD.CREATION_RESULT"
+        ],
+        "required_values_or_hashes": [
+          "BRD-UPDATE-01-R002.EVIDENCE.CONTENT.HASH"
+        ],
+        "retrieval_method": "BRD-UPDATE-01-R002.EVIDENCE.RETRIEVAL",
+        "version_or_correlation": "BRD-UPDATE-01-R002.EVIDENCE.VERSION.CORRELATION"
+      },
+      "explicit_non_obligations": [
+        "No runtime implementation topology is authorized by this semantic record.",
+        "No production runtime evidence is claimed by this model-level candidate."
+      ],
+      "fixture_ids": [
+        "P2C-C4-FX-DA97C3EFF3EEC35031AA",
+        "P2C-C4-FX-0B99F84709B158765AAA",
+        "P2C-C4-FX-DDD9CF8A5B0170250CDE"
+      ],
+      "high_risk_audit_subset": true,
+      "independent_contract_identity": true,
+      "inference": false,
+      "inherits_contract_ast": null,
+      "negative_oracles": [
+        "Store creation is unavailable or only represented by a non-functional control"
+      ],
+      "normative_obligations": [
+        {
+          "applicability": "V2.3_ACTIVE",
+          "obligation_id": "BRD-UPDATE-01-R002-O001",
+          "obligation_text": "CXP phải cho phép: ✓ tạo Store mới"
+        }
+      ],
+      "obligation_to_operator_coverage": [
+        {
+          "assertion_ids": [
+            "BRD-UPDATE-01-R002.O1.1.CAPABILITY_AVAILABLE"
+          ],
+          "coverage_count": 1,
+          "obligation_id": "BRD-UPDATE-01-R002-O001"
+        }
+      ],
+      "operator_composition": [
+        "CAPABILITY_AVAILABLE"
+      ],
+      "positive_oracles": [
+        "CXP creates a new Store"
+      ],
+      "preconditions": [
+        "Organization context and required Store data are valid"
+      ],
+      "prohibitions": [
+        "Store creation is unavailable or only represented by a non-functional control"
+      ],
+      "requirement_id": "BRD-UPDATE-01-R002",
+      "runtime_status": "SLICE_RUNTIME_ADAPTER_REQUIRED",
+      "semantic_family_id": null,
+      "source_provenance": {
+        "approved_decision_references": [],
+        "inference": false,
+        "source_document": "docs/BRD/BRD-UPDATE-01.md",
+        "source_fingerprint": "6a7b5110e8b85b10d6e50e80b1e726ea6e0bc2af364795d416bf527018755660",
+        "source_lines": "L62-L64",
+        "source_section": "4. Business Objectives"
+      },
+      "source_statement": "CXP phải cho phép: ✓ tạo Store mới.",
+      "surrounding_source_context": "### BRD-UPDATE-01-R002 — CXP phải cho phép: ✓ tạo Store mới"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "contract_id": "P2C.C4.CONTRACT.BRD-UPDATE-01-R002",
+    "inference": false,
+    "mechanism": "APPROVED_TYPED_CUSTOM_AST",
+    "mechanism_version": "SEMANTIC_ACCEPTANCE_RENDERER_C2",
+    "runtime_status": "RUNTIME_ADAPTER_PENDING"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "ACCEPTANCE_READY",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-UPDATE-01-R002-AC001"
+        "BRD-UPDATE-01-R002-AC001",
+        "BRD-UPDATE-01-R002-AC002",
+        "BRD-UPDATE-01-R002-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-UPDATE-01-R002-O001",
@@ -1071,8 +2586,8 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
     "source_context_sha256": "23c080c46e93d52926c86714e2acd9b869876f0b9f57db1e9f1dc04522efefc1",
     "source_document": "docs/BRD/BRD-UPDATE-01.md",
     "source_fingerprint": "6a7b5110e8b85b10d6e50e80b1e726ea6e0bc2af364795d416bf527018755660",
-    "source_lines": "L62-L64",
-    "source_section": "4. Business Objectives"
+    "source_lines": "L1778-L2608",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-UPDATE-01-R002"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1097,41 +2612,34 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-UPDATE-01-R003-AC001",
-      "given": "the applicable business context, actor, and input for Store không được tạo từ đầu một cách thủ công",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the prohibited decision or state transition is absent, the attempted action has a deterministic rejection outcome, and no contradictory success is recorded",
-      "verifies": [
-        "BRD-UPDATE-01-R003-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BRD-UPDATE-01-R003-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Store không được tạo từ đầu một cách thủ công",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BRD-UPDATE-01-R003-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-UPDATE-01-R003",
+      "source_document": "docs/BRD/BRD-UPDATE-01.md",
+      "source_fingerprint": "62429418fb4553779880bb4e7566cbc4bf3be6e7ec7bfb84f92139e67df2244f"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-UPDATE-01-R003-AC001",
-        "BRD-UPDATE-01-R003-AC002"
+        "BRD-UPDATE-01-R003-AC002",
+        "BRD-UPDATE-01-R003-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-UPDATE-01-R003-O001",
@@ -1155,8 +2663,8 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
     "source_context_sha256": "c4d37906a8b566d5287f6032754ed8beacda9395e42de6a99bf8110ce06f18d2",
     "source_document": "docs/BRD/BRD-UPDATE-01.md",
     "source_fingerprint": "62429418fb4553779880bb4e7566cbc4bf3be6e7ec7bfb84f92139e67df2244f",
-    "source_lines": "L200",
-    "source_section": "6A. Commerce Business Model"
+    "source_lines": "L2610-L2688",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-UPDATE-01-R003"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1164,7 +2672,10 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
     "aliases": [],
     "coverage_mode": null,
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "BRD-UPDATE-01-R008"
+    ]
   },
   "requirement_type": "BUSINESS_REQUIREMENT",
   "scope_coverage_unit": true,
@@ -1181,28 +2692,34 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-UPDATE-01-R004-AC001",
-      "given": "the applicable business context, actor, and input for Business Blueprint không phải Source Code",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the prohibited decision or state transition is absent, the attempted action has a deterministic rejection outcome, and no contradictory success is recorded",
-      "verifies": [
-        "BRD-UPDATE-01-R004-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-UPDATE-01-R004",
+      "source_document": "docs/BRD/BRD-UPDATE-01.md",
+      "source_fingerprint": "8f9dd722cf79f0d82c1869853d5077332acc0d00245109776f7fba8ce47b445a"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-UPDATE-01-R004-AC001"
+        "BRD-UPDATE-01-R004-AC001",
+        "BRD-UPDATE-01-R004-AC002",
+        "BRD-UPDATE-01-R004-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-UPDATE-01-R004-O001",
@@ -1226,8 +2743,8 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
     "source_context_sha256": "4373732deda5bd23db6ac2cc78ab192103ef5f913f4cbb5b7996a09a99574361",
     "source_document": "docs/BRD/BRD-UPDATE-01.md",
     "source_fingerprint": "8f9dd722cf79f0d82c1869853d5077332acc0d00245109776f7fba8ce47b445a",
-    "source_lines": "L236",
-    "source_section": "6AA. Business Blueprint"
+    "source_lines": "L2690-L2768",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-UPDATE-01-R004"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1235,7 +2752,10 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
     "aliases": [],
     "coverage_mode": null,
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "BRD-UPDATE-01-R008"
+    ]
   },
   "requirement_type": "BUSINESS_REQUIREMENT",
   "scope_coverage_unit": true,
@@ -1252,28 +2772,34 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-UPDATE-01-R005-AC001",
-      "given": "the applicable business context, actor, and input for Business Blueprint cũng không phải giao diện",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the prohibited decision or state transition is absent, the attempted action has a deterministic rejection outcome, and no contradictory success is recorded",
-      "verifies": [
-        "BRD-UPDATE-01-R005-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-UPDATE-01-R005",
+      "source_document": "docs/BRD/BRD-UPDATE-01.md",
+      "source_fingerprint": "57a336aa8e05c29854d222288b6a2d206c83edd49cb585ed96744650d2bb36e7"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-UPDATE-01-R005-AC001"
+        "BRD-UPDATE-01-R005-AC001",
+        "BRD-UPDATE-01-R005-AC002",
+        "BRD-UPDATE-01-R005-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-UPDATE-01-R005-O001",
@@ -1297,8 +2823,8 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
     "source_context_sha256": "4373732deda5bd23db6ac2cc78ab192103ef5f913f4cbb5b7996a09a99574361",
     "source_document": "docs/BRD/BRD-UPDATE-01.md",
     "source_fingerprint": "57a336aa8e05c29854d222288b6a2d206c83edd49cb585ed96744650d2bb36e7",
-    "source_lines": "L238",
-    "source_section": "6AA. Business Blueprint"
+    "source_lines": "L2770-L2848",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-UPDATE-01-R005"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1306,7 +2832,10 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
     "aliases": [],
     "coverage_mode": null,
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "BRD-UPDATE-01-R008"
+    ]
   },
   "requirement_type": "BUSINESS_REQUIREMENT",
   "scope_coverage_unit": true,
@@ -1323,28 +2852,36 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-UPDATE-01-R006-AC001",
-      "given": "the applicable business context, actor, and input for Business Blueprint là tập hợp các Capability, Business Rules và Experience Flow cần có để triển …",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-UPDATE-01-R006-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-005"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-UPDATE-01-R006",
+      "source_document": "docs/BRD/BRD-UPDATE-01.md",
+      "source_fingerprint": "8fd273252c6c476a9e65598de44fb1305165c8396a0b28f60cd2c7e8e9b1849d"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-UPDATE-01-R006-AC001"
+        "BRD-UPDATE-01-R006-AC001",
+        "BRD-UPDATE-01-R006-AC002",
+        "BRD-UPDATE-01-R006-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-UPDATE-01-R006-O001",
@@ -1370,8 +2907,8 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
     "source_context_sha256": "4373732deda5bd23db6ac2cc78ab192103ef5f913f4cbb5b7996a09a99574361",
     "source_document": "docs/BRD/BRD-UPDATE-01.md",
     "source_fingerprint": "8fd273252c6c476a9e65598de44fb1305165c8396a0b28f60cd2c7e8e9b1849d",
-    "source_lines": "L240",
-    "source_section": "6AA. Business Blueprint"
+    "source_lines": "L2850-L2933",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-UPDATE-01-R006"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1379,7 +2916,11 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
     "aliases": [],
     "coverage_mode": null,
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "BRD-UPDATE-01-R008",
+      "BRD-UPDATE-01-R020"
+    ]
   },
   "requirement_type": "BUSINESS_REQUIREMENT",
   "scope_coverage_unit": true,
@@ -1396,28 +2937,37 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-UPDATE-01-R007-AC001",
-      "given": "the applicable business context, actor, and input for AI không được phép Publish Blueprint khi chưa được phê duyệt",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the prohibited decision or state transition is absent, the attempted action has a deterministic rejection outcome, and no contradictory success is recorded",
-      "verifies": [
-        "BRD-UPDATE-01-R007-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "BDD-27",
+        "SD-03"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-UPDATE-01-R007",
+      "source_document": "docs/BRD/BRD-UPDATE-01.md",
+      "source_fingerprint": "70b6f080ba2d6bebb24ffa45552237158d82cae2d1efe7f27772c4d9b9382b60"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-UPDATE-01-R007-AC001"
+        "BRD-UPDATE-01-R007-AC001",
+        "BRD-UPDATE-01-R007-AC002",
+        "BRD-UPDATE-01-R007-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-UPDATE-01-R007-O001",
@@ -1444,8 +2994,8 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
     "source_context_sha256": "e1f74008bb83e7880bca9d30ddb9997075b97de4972665a33872dc64b6b597bc",
     "source_document": "docs/BRD/BRD-UPDATE-01.md",
     "source_fingerprint": "70b6f080ba2d6bebb24ffa45552237158d82cae2d1efe7f27772c4d9b9382b60",
-    "source_lines": "L417",
-    "source_section": "6AG. AI-assisted Blueprint Generation"
+    "source_lines": "L2935-L3019",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-UPDATE-01-R007"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1453,7 +3003,10 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
     "aliases": [],
     "coverage_mode": null,
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "BRD-UPDATE-01-R008"
+    ]
   },
   "requirement_type": "BUSINESS_REQUIREMENT",
   "scope_coverage_unit": true,
@@ -1470,44 +3023,28 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DESIGN_CONFORMANCE_OBSERVATION_V1",
-      "criterion_id": "BRD-UPDATE-01-R008-AC001",
-      "given": "a v2.3 capability, configuration, or design change governed by Business Blueprint tuân thủ các nguyên tắc sau",
-      "observable_evidence": "conformance decision, requirement-to-design trace, applicable configuration evidence, and recorded boundary violations",
-      "then": "the conformance review identifies the applicable principle, links it to the governed requirement and design boundary, and records no prohibited coupling",
-      "verifies": [
-        "BRD-UPDATE-01-R008-O001"
-      ],
-      "when": "conformance is reviewed before the change is accepted"
-    }
-  ],
-  "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
-  "acceptance_unit": true,
-  "atomic_obligations": [
-    {
-      "acceptance_criterion_references": [
-        "BRD-UPDATE-01-R008-AC001"
-      ],
-      "applicability": "V2.3_ACTIVE",
-      "obligation_id": "BRD-UPDATE-01-R008-O001",
-      "obligation_text": "Business Blueprint tuân thủ các nguyên tắc sau"
-    }
-  ],
+  "acceptance_contract": null,
+  "acceptance_mechanism": null,
+  "acceptance_rationale": "Composite parent coverage is satisfied only through ALL_CHILDREN; the parent is not an implementation, acceptance, scope-coverage, or criticality unit.",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "STRUCTURAL_RECORD",
+  "acceptance_unit": false,
+  "atomic_obligations": [],
   "criticality_applicability": null,
-  "criticality_unit": true,
+  "criticality_unit": false,
   "delivery_commitment": "COMMITTED_FOR_V2.3",
-  "implementation_unit": true,
+  "implementation_unit": false,
   "lifecycle": "V2.3_DRAFT",
   "normative_statement": "Business Blueprint tuân thủ các nguyên tắc sau.",
   "provenance": {
-    "approved_decisions": [],
+    "approved_decisions": [
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
+    ],
     "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
     "original_identity": "TMP-BRD-UPDATE-01-008",
+    "phase_2c_c3_actions": [
+      "C3_STRUCTURAL_RECONCILIATION_PARENT"
+    ],
     "previous_temporary_key": "TMP-BRD-UPDATE-01-008",
     "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
     "source_baseline": "v2.2",
@@ -1515,23 +3052,32 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
     "source_context_sha256": "0d32406878b8d667cfff2752f3188e699323175901751e2151878ed5cc3a2132",
     "source_document": "docs/BRD/BRD-UPDATE-01.md",
     "source_fingerprint": "ede48109dc3361ce5f84123f39a817c6fff446610d46bb79088bb55846c46863",
-    "source_lines": "L423",
-    "source_section": "6AH. Business Principles"
+    "source_fingerprint_before_c3": "ede48109dc3361ce5f84123f39a817c6fff446610d46bb79088bb55846c46863",
+    "source_lines": "L3021-L3083",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-UPDATE-01-R008"
   },
-  "record_kind": "CANONICAL_ATOMIC",
+  "record_kind": "COMPOSITE_PARENT",
   "relationships": {
     "alias_of": null,
     "aliases": [],
-    "coverage_mode": null,
+    "coverage_mode": "ALL_CHILDREN",
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [
+      "BRD-UPDATE-01-R003",
+      "BRD-UPDATE-01-R004",
+      "BRD-UPDATE-01-R005",
+      "BRD-UPDATE-01-R006",
+      "BRD-UPDATE-01-R007"
+    ]
   },
   "requirement_type": "DESIGN_PRINCIPLE",
-  "scope_coverage_unit": true,
+  "scope_coverage_unit": false,
   "scope_status": "V2.3_ACTIVE",
   "stable_id": "BRD-UPDATE-01-R008",
   "title": "Business Blueprint tuân thủ các nguyên tắc sau",
-  "verification_criticality": "NORMAL"
+  "verification_criticality": "NOT_APPLICABLE"
 }
 ```
 <!-- YSIM:REQUIREMENT END -->
@@ -1541,28 +3087,909 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-UPDATE-01-R009-AC001",
-      "given": "the applicable business context, actor, and input for Store chỉ được phép nhận giao dịch khi ở trạng thái **Active**",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the resulting business state equals the declared destination for a valid transition and records the prior state, triggering input, and transition reason",
-      "verifies": [
-        "BRD-UPDATE-01-R009-O001"
+  "acceptance_contract": {
+    "boundary_oracle": [
+      "Active allows evaluation of other rules; it does not guarantee transaction success"
+    ],
+    "concrete_bindings": [
+      {
+        "from_state": {
+          "authoritative_source": {
+            "allowed_identifiers": [
+              "BRD-UPDATE-01-R009.FROM_STATE"
+            ],
+            "source_id": "docs/BRD/BRD-UPDATE-01.md#6G. Store Lifecycle",
+            "source_type": "SOURCE_LITERAL",
+            "version": "6fbadca9061d307322011cf8829e577dea15309bb27e1d78267ff4d5fb03f195"
+          },
+          "identifier": "BRD-UPDATE-01-R009.FROM_STATE",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-UPDATE-01-R009.O1.1.STATE_TRANSITION_REJECTED.FROM_STATE.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-UPDATE-01.md",
+            "source_fingerprint": "6fbadca9061d307322011cf8829e577dea15309bb27e1d78267ff4d5fb03f195",
+            "source_lines": "L599",
+            "source_section": "6G. Store Lifecycle"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "STATE_ID",
+            "resolver_id": "RESOLVE.BRD-UPDATE-01-R009.BRD-UPDATE-01-R009.FROM_STATE",
+            "version": "1.0.0"
+          },
+          "semantic_type": "STATE_ID"
+        },
+        "prohibited_state": {
+          "authoritative_source": {
+            "allowed_identifiers": [
+              "BRD-UPDATE-01-R009.PROHIBITED_STATE"
+            ],
+            "source_id": "docs/BRD/BRD-UPDATE-01.md#6G. Store Lifecycle",
+            "source_type": "SOURCE_LITERAL",
+            "version": "6fbadca9061d307322011cf8829e577dea15309bb27e1d78267ff4d5fb03f195"
+          },
+          "identifier": "BRD-UPDATE-01-R009.PROHIBITED_STATE",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-UPDATE-01-R009.O1.1.STATE_TRANSITION_REJECTED.PROHIBITED_STATE.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-UPDATE-01.md",
+            "source_fingerprint": "6fbadca9061d307322011cf8829e577dea15309bb27e1d78267ff4d5fb03f195",
+            "source_lines": "L599",
+            "source_section": "6G. Store Lifecycle"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "STATE_ID",
+            "resolver_id": "RESOLVE.BRD-UPDATE-01-R009.BRD-UPDATE-01-R009.PROHIBITED_STATE",
+            "version": "1.0.0"
+          },
+          "semantic_type": "STATE_ID"
+        },
+        "state_machine": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-UPDATE-01.md#6G. Store Lifecycle",
+            "source_type": "SOURCE_LITERAL",
+            "version": "6fbadca9061d307322011cf8829e577dea15309bb27e1d78267ff4d5fb03f195"
+          },
+          "identifier": "BRD-UPDATE-01-R009.STATE_MACHINE",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-UPDATE-01-R009.O1.1.STATE_TRANSITION_REJECTED.STATE_MACHINE.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-UPDATE-01.md",
+            "source_fingerprint": "6fbadca9061d307322011cf8829e577dea15309bb27e1d78267ff4d5fb03f195",
+            "source_lines": "L599",
+            "source_section": "6G. Store Lifecycle"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "STATE_MACHINE_ID",
+            "resolver_id": "RESOLVE.BRD-UPDATE-01-R009.BRD-UPDATE-01-R009.STATE_MACHINE",
+            "version": "1.0.0"
+          },
+          "semantic_type": "STATE_MACHINE_ID"
+        },
+        "trigger": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-UPDATE-01.md#6G. Store Lifecycle",
+            "source_type": "SOURCE_LITERAL",
+            "version": "6fbadca9061d307322011cf8829e577dea15309bb27e1d78267ff4d5fb03f195"
+          },
+          "identifier": "BRD-UPDATE-01-R009.TRIGGER",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-UPDATE-01-R009.O1.1.STATE_TRANSITION_REJECTED.TRIGGER.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-UPDATE-01.md",
+            "source_fingerprint": "6fbadca9061d307322011cf8829e577dea15309bb27e1d78267ff4d5fb03f195",
+            "source_lines": "L599",
+            "source_section": "6G. Store Lifecycle"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "ACTION_ID",
+            "resolver_id": "RESOLVE.BRD-UPDATE-01-R009.BRD-UPDATE-01-R009.TRIGGER",
+            "version": "1.0.0"
+          },
+          "semantic_type": "ACTION_ID"
+        }
+      }
+    ],
+    "contract_id": "P2C.C4.CONTRACT.BRD-UPDATE-01-R009",
+    "inference": false,
+    "mechanism": "APPROVED_TYPED_CUSTOM_AST",
+    "mechanism_version": "C4-R3",
+    "negative_oracle": [
+      "A non-Active Store accepts a transaction"
+    ],
+    "operator_composition": [
+      "STATE_TRANSITION_REJECTED"
+    ],
+    "positive_oracle": [
+      "The transaction is accepted only when Store is Active"
+    ],
+    "provenance": {
+      "approved_decision_references": [],
+      "inference": false,
+      "source_document": "docs/BRD/BRD-UPDATE-01.md",
+      "source_fingerprint": "6fbadca9061d307322011cf8829e577dea15309bb27e1d78267ff4d5fb03f195",
+      "source_lines": "L599",
+      "source_section": "6G. Store Lifecycle"
+    },
+    "required_evidence": {
+      "evidence_object_ref": {
+        "authoritative_source": {
+          "source_id": "docs/BRD/BRD-UPDATE-01.md#6G. Store Lifecycle",
+          "source_type": "SOURCE_LITERAL",
+          "version": "6fbadca9061d307322011cf8829e577dea15309bb27e1d78267ff4d5fb03f195"
+        },
+        "identifier": "BRD-UPDATE-01-R009.BRD-UPDATE-01-R009.CONTRACT.EVIDENCE.OBJECT",
+        "inference": false,
+        "lifecycle": {
+          "status": "ACTIVE",
+          "version": "2.3"
+        },
+        "namespace": "YSIM.V2.3",
+        "origin": {
+          "origin_id": "BRD-UPDATE-01-R009.CONTRACT.EVIDENCE.ORIGIN",
+          "origin_type": "EVIDENCE_OBJECT"
+        },
+        "provenance": {
+          "approved_decision_references": [],
+          "inference": false,
+          "source_document": "docs/BRD/BRD-UPDATE-01.md",
+          "source_fingerprint": "6fbadca9061d307322011cf8829e577dea15309bb27e1d78267ff4d5fb03f195",
+          "source_lines": "L599",
+          "source_section": "6G. Store Lifecycle"
+        },
+        "resolver_contract": {
+          "deterministic": true,
+          "input_types": [],
+          "output_type": "EVIDENCE_OBJECT_REF",
+          "resolver_id": "OBSERVE.BRD-UPDATE-01-R009.BRD-UPDATE-01-R009.BRD-UPDATE-01-R009.CONTRACT.EVIDENCE.OBJECT",
+          "version": "1.0.0"
+        },
+        "semantic_type": "EVIDENCE_OBJECT_REF"
+      },
+      "inference": false,
+      "observed_collection_origin": "BRD-UPDATE-01-R009.RUNTIME.OBSERVED.FIELDS",
+      "observed_field_ids": [
+        "FIELD.STORE_ID",
+        "FIELD.STORE_STATE",
+        "FIELD.TRANSACTION_ID",
+        "FIELD.ACCEPTANCE_RESULT",
+        "FIELD.REASON"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+      "producer": "BRD-UPDATE-01-R009.EVIDENCE.PRODUCER",
+      "required_collection_origin": "BRD-UPDATE-01-R009.SOURCE.REQUIRED.FIELDS",
+      "required_field_ids": [
+        "FIELD.STORE_ID",
+        "FIELD.STORE_STATE",
+        "FIELD.TRANSACTION_ID",
+        "FIELD.ACCEPTANCE_RESULT",
+        "FIELD.REASON"
+      ],
+      "required_values_or_hashes": [
+        "BRD-UPDATE-01-R009.EVIDENCE.CONTENT.HASH"
+      ],
+      "retrieval_method": "BRD-UPDATE-01-R009.EVIDENCE.RETRIEVAL",
+      "version_or_correlation": "BRD-UPDATE-01-R009.EVIDENCE.VERSION.CORRELATION"
+    },
+    "runtime_evidence_executed": false,
+    "runtime_status": "RUNTIME_ADAPTER_PENDING",
+    "semantic_obligation_references": [
+      "BRD-UPDATE-01-R009-O001"
+    ],
+    "typed_contract_ast": {
+      "approved_clarification": null,
+      "assertions": [
+        {
+          "assertion_id": "BRD-UPDATE-01-R009.O1.1.STATE_TRANSITION_REJECTED",
+          "evaluator_consumed_bindings": [
+            "from_state",
+            "prohibited_state",
+            "state_machine",
+            "trigger"
+          ],
+          "evidence_object": {
+            "authoritative_source": {
+              "source_id": "docs/BRD/BRD-UPDATE-01.md#6G. Store Lifecycle",
+              "source_type": "SOURCE_LITERAL",
+              "version": "6fbadca9061d307322011cf8829e577dea15309bb27e1d78267ff4d5fb03f195"
+            },
+            "identifier": "BRD-UPDATE-01-R009.BRD-UPDATE-01-R009.O1.1.STATE_TRANSITION_REJECTED.EVIDENCE.OBJECT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BRD-UPDATE-01-R009.O1.1.STATE_TRANSITION_REJECTED.EVIDENCE.ORIGIN",
+              "origin_type": "EVIDENCE_OBJECT"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-UPDATE-01.md",
+              "source_fingerprint": "6fbadca9061d307322011cf8829e577dea15309bb27e1d78267ff4d5fb03f195",
+              "source_lines": "L599",
+              "source_section": "6G. Store Lifecycle"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "EVIDENCE_OBJECT_REF",
+              "resolver_id": "OBSERVE.BRD-UPDATE-01-R009.BRD-UPDATE-01-R009.BRD-UPDATE-01-R009.O1.1.STATE_TRANSITION_REJECTED.EVIDENCE.OBJECT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "EVIDENCE_OBJECT_REF"
+          },
+          "expected_operand": {
+            "authoritative_source": {
+              "allowed_identifiers": [
+                "BRD-UPDATE-01-R009.BRD-UPDATE-01-R009.O1.1.STATE_TRANSITION_REJECTED.CANONICAL.RESULT"
+              ],
+              "source_id": "docs/BRD/BRD-UPDATE-01.md#6G. Store Lifecycle",
+              "source_type": "SOURCE_LITERAL",
+              "version": "6fbadca9061d307322011cf8829e577dea15309bb27e1d78267ff4d5fb03f195"
+            },
+            "identifier": "BRD-UPDATE-01-R009.BRD-UPDATE-01-R009.O1.1.STATE_TRANSITION_REJECTED.CANONICAL.RESULT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BRD-UPDATE-01-R009.O1.1.STATE_TRANSITION_REJECTED.AUTHORITY.ORIGIN",
+              "origin_type": "SOURCE_LITERAL"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-UPDATE-01.md",
+              "source_fingerprint": "6fbadca9061d307322011cf8829e577dea15309bb27e1d78267ff4d5fb03f195",
+              "source_lines": "L599",
+              "source_section": "6G. Store Lifecycle"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "STATE_ID",
+              "resolver_id": "RESOLVE.BRD-UPDATE-01-R009.BRD-UPDATE-01-R009.BRD-UPDATE-01-R009.O1.1.STATE_TRANSITION_REJECTED.CANONICAL.RESULT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "STATE_ID"
+          },
+          "inference": false,
+          "model_conformance_fixture": {
+            "bindings": {
+              "from_state": {
+                "authoritative_source": {
+                  "allowed_identifiers": [
+                    "BRD-UPDATE-01-R009.FROM_STATE"
+                  ],
+                  "source_id": "docs/BRD/BRD-UPDATE-01.md#6G. Store Lifecycle",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "6fbadca9061d307322011cf8829e577dea15309bb27e1d78267ff4d5fb03f195"
+                },
+                "identifier": "BRD-UPDATE-01-R009.FROM_STATE",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-UPDATE-01-R009.O1.1.STATE_TRANSITION_REJECTED.FROM_STATE.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-UPDATE-01.md",
+                  "source_fingerprint": "6fbadca9061d307322011cf8829e577dea15309bb27e1d78267ff4d5fb03f195",
+                  "source_lines": "L599",
+                  "source_section": "6G. Store Lifecycle"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "STATE_ID",
+                  "resolver_id": "RESOLVE.BRD-UPDATE-01-R009.BRD-UPDATE-01-R009.FROM_STATE",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "STATE_ID"
+              },
+              "prohibited_state": {
+                "authoritative_source": {
+                  "allowed_identifiers": [
+                    "BRD-UPDATE-01-R009.PROHIBITED_STATE"
+                  ],
+                  "source_id": "docs/BRD/BRD-UPDATE-01.md#6G. Store Lifecycle",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "6fbadca9061d307322011cf8829e577dea15309bb27e1d78267ff4d5fb03f195"
+                },
+                "identifier": "BRD-UPDATE-01-R009.PROHIBITED_STATE",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-UPDATE-01-R009.O1.1.STATE_TRANSITION_REJECTED.PROHIBITED_STATE.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-UPDATE-01.md",
+                  "source_fingerprint": "6fbadca9061d307322011cf8829e577dea15309bb27e1d78267ff4d5fb03f195",
+                  "source_lines": "L599",
+                  "source_section": "6G. Store Lifecycle"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "STATE_ID",
+                  "resolver_id": "RESOLVE.BRD-UPDATE-01-R009.BRD-UPDATE-01-R009.PROHIBITED_STATE",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "STATE_ID"
+              },
+              "state_machine": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-UPDATE-01.md#6G. Store Lifecycle",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "6fbadca9061d307322011cf8829e577dea15309bb27e1d78267ff4d5fb03f195"
+                },
+                "identifier": "BRD-UPDATE-01-R009.STATE_MACHINE",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-UPDATE-01-R009.O1.1.STATE_TRANSITION_REJECTED.STATE_MACHINE.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-UPDATE-01.md",
+                  "source_fingerprint": "6fbadca9061d307322011cf8829e577dea15309bb27e1d78267ff4d5fb03f195",
+                  "source_lines": "L599",
+                  "source_section": "6G. Store Lifecycle"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "STATE_MACHINE_ID",
+                  "resolver_id": "RESOLVE.BRD-UPDATE-01-R009.BRD-UPDATE-01-R009.STATE_MACHINE",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "STATE_MACHINE_ID"
+              },
+              "trigger": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-UPDATE-01.md#6G. Store Lifecycle",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "6fbadca9061d307322011cf8829e577dea15309bb27e1d78267ff4d5fb03f195"
+                },
+                "identifier": "BRD-UPDATE-01-R009.TRIGGER",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-UPDATE-01-R009.O1.1.STATE_TRANSITION_REJECTED.TRIGGER.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-UPDATE-01.md",
+                  "source_fingerprint": "6fbadca9061d307322011cf8829e577dea15309bb27e1d78267ff4d5fb03f195",
+                  "source_lines": "L599",
+                  "source_section": "6G. Store Lifecycle"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "ACTION_ID",
+                  "resolver_id": "RESOLVE.BRD-UPDATE-01-R009.BRD-UPDATE-01-R009.TRIGGER",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "ACTION_ID"
+              }
+            },
+            "comparison": {
+              "expected": {
+                "authoritative_source": {
+                  "allowed_identifiers": [
+                    "BRD-UPDATE-01-R009.BRD-UPDATE-01-R009.O1.1.STATE_TRANSITION_REJECTED.CANONICAL.RESULT"
+                  ],
+                  "source_id": "docs/BRD/BRD-UPDATE-01.md#6G. Store Lifecycle",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "6fbadca9061d307322011cf8829e577dea15309bb27e1d78267ff4d5fb03f195"
+                },
+                "identifier": "BRD-UPDATE-01-R009.BRD-UPDATE-01-R009.O1.1.STATE_TRANSITION_REJECTED.CANONICAL.RESULT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-UPDATE-01-R009.O1.1.STATE_TRANSITION_REJECTED.AUTHORITY.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-UPDATE-01.md",
+                  "source_fingerprint": "6fbadca9061d307322011cf8829e577dea15309bb27e1d78267ff4d5fb03f195",
+                  "source_lines": "L599",
+                  "source_section": "6G. Store Lifecycle"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "STATE_ID",
+                  "resolver_id": "RESOLVE.BRD-UPDATE-01-R009.BRD-UPDATE-01-R009.BRD-UPDATE-01-R009.O1.1.STATE_TRANSITION_REJECTED.CANONICAL.RESULT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "STATE_ID"
+              },
+              "observed": {
+                "authoritative_source": {
+                  "allowed_identifiers": [
+                    "BRD-UPDATE-01-R009.BRD-UPDATE-01-R009.O1.1.STATE_TRANSITION_REJECTED.CANONICAL.RESULT"
+                  ],
+                  "source_id": "docs/BRD/BRD-UPDATE-01.md#6G. Store Lifecycle",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "6fbadca9061d307322011cf8829e577dea15309bb27e1d78267ff4d5fb03f195"
+                },
+                "identifier": "BRD-UPDATE-01-R009.BRD-UPDATE-01-R009.O1.1.STATE_TRANSITION_REJECTED.CANONICAL.RESULT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-UPDATE-01-R009.O1.1.STATE_TRANSITION_REJECTED.OBSERVED.ORIGIN",
+                  "origin_type": "RUNTIME_OBSERVED"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-UPDATE-01.md",
+                  "source_fingerprint": "6fbadca9061d307322011cf8829e577dea15309bb27e1d78267ff4d5fb03f195",
+                  "source_lines": "L599",
+                  "source_section": "6G. Store Lifecycle"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "STATE_ID",
+                  "resolver_id": "OBSERVE.BRD-UPDATE-01-R009.BRD-UPDATE-01-R009.BRD-UPDATE-01-R009.O1.1.STATE_TRANSITION_REJECTED.CANONICAL.RESULT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "STATE_ID"
+              }
+            },
+            "evidence_object": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-UPDATE-01.md#6G. Store Lifecycle",
+                "source_type": "SOURCE_LITERAL",
+                "version": "6fbadca9061d307322011cf8829e577dea15309bb27e1d78267ff4d5fb03f195"
+              },
+              "identifier": "BRD-UPDATE-01-R009.BRD-UPDATE-01-R009.O1.1.STATE_TRANSITION_REJECTED.EVIDENCE.OBJECT",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-UPDATE-01-R009.O1.1.STATE_TRANSITION_REJECTED.EVIDENCE.ORIGIN",
+                "origin_type": "EVIDENCE_OBJECT"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-UPDATE-01.md",
+                "source_fingerprint": "6fbadca9061d307322011cf8829e577dea15309bb27e1d78267ff4d5fb03f195",
+                "source_lines": "L599",
+                "source_section": "6G. Store Lifecycle"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "EVIDENCE_OBJECT_REF",
+                "resolver_id": "OBSERVE.BRD-UPDATE-01-R009.BRD-UPDATE-01-R009.BRD-UPDATE-01-R009.O1.1.STATE_TRANSITION_REJECTED.EVIDENCE.OBJECT",
+                "version": "1.0.0"
+              },
+              "semantic_type": "EVIDENCE_OBJECT_REF"
+            },
+            "operator_id": "STATE_TRANSITION_REJECTED"
+          },
+          "obligation_id": "BRD-UPDATE-01-R009-O001",
+          "observed_operand": {
+            "authoritative_source": {
+              "allowed_identifiers": [
+                "BRD-UPDATE-01-R009.BRD-UPDATE-01-R009.O1.1.STATE_TRANSITION_REJECTED.CANONICAL.RESULT"
+              ],
+              "source_id": "docs/BRD/BRD-UPDATE-01.md#6G. Store Lifecycle",
+              "source_type": "SOURCE_LITERAL",
+              "version": "6fbadca9061d307322011cf8829e577dea15309bb27e1d78267ff4d5fb03f195"
+            },
+            "identifier": "BRD-UPDATE-01-R009.BRD-UPDATE-01-R009.O1.1.STATE_TRANSITION_REJECTED.CANONICAL.RESULT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BRD-UPDATE-01-R009.O1.1.STATE_TRANSITION_REJECTED.OBSERVED.ORIGIN",
+              "origin_type": "RUNTIME_OBSERVED"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-UPDATE-01.md",
+              "source_fingerprint": "6fbadca9061d307322011cf8829e577dea15309bb27e1d78267ff4d5fb03f195",
+              "source_lines": "L599",
+              "source_section": "6G. Store Lifecycle"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "STATE_ID",
+              "resolver_id": "OBSERVE.BRD-UPDATE-01-R009.BRD-UPDATE-01-R009.BRD-UPDATE-01-R009.O1.1.STATE_TRANSITION_REJECTED.CANONICAL.RESULT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "STATE_ID"
+          },
+          "operator_id": "STATE_TRANSITION_REJECTED",
+          "operator_version": "1.0.0-candidate.2",
+          "typed_bindings": {
+            "from_state": {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "BRD-UPDATE-01-R009.FROM_STATE"
+                ],
+                "source_id": "docs/BRD/BRD-UPDATE-01.md#6G. Store Lifecycle",
+                "source_type": "SOURCE_LITERAL",
+                "version": "6fbadca9061d307322011cf8829e577dea15309bb27e1d78267ff4d5fb03f195"
+              },
+              "identifier": "BRD-UPDATE-01-R009.FROM_STATE",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-UPDATE-01-R009.O1.1.STATE_TRANSITION_REJECTED.FROM_STATE.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-UPDATE-01.md",
+                "source_fingerprint": "6fbadca9061d307322011cf8829e577dea15309bb27e1d78267ff4d5fb03f195",
+                "source_lines": "L599",
+                "source_section": "6G. Store Lifecycle"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "STATE_ID",
+                "resolver_id": "RESOLVE.BRD-UPDATE-01-R009.BRD-UPDATE-01-R009.FROM_STATE",
+                "version": "1.0.0"
+              },
+              "semantic_type": "STATE_ID"
+            },
+            "prohibited_state": {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "BRD-UPDATE-01-R009.PROHIBITED_STATE"
+                ],
+                "source_id": "docs/BRD/BRD-UPDATE-01.md#6G. Store Lifecycle",
+                "source_type": "SOURCE_LITERAL",
+                "version": "6fbadca9061d307322011cf8829e577dea15309bb27e1d78267ff4d5fb03f195"
+              },
+              "identifier": "BRD-UPDATE-01-R009.PROHIBITED_STATE",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-UPDATE-01-R009.O1.1.STATE_TRANSITION_REJECTED.PROHIBITED_STATE.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-UPDATE-01.md",
+                "source_fingerprint": "6fbadca9061d307322011cf8829e577dea15309bb27e1d78267ff4d5fb03f195",
+                "source_lines": "L599",
+                "source_section": "6G. Store Lifecycle"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "STATE_ID",
+                "resolver_id": "RESOLVE.BRD-UPDATE-01-R009.BRD-UPDATE-01-R009.PROHIBITED_STATE",
+                "version": "1.0.0"
+              },
+              "semantic_type": "STATE_ID"
+            },
+            "state_machine": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-UPDATE-01.md#6G. Store Lifecycle",
+                "source_type": "SOURCE_LITERAL",
+                "version": "6fbadca9061d307322011cf8829e577dea15309bb27e1d78267ff4d5fb03f195"
+              },
+              "identifier": "BRD-UPDATE-01-R009.STATE_MACHINE",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-UPDATE-01-R009.O1.1.STATE_TRANSITION_REJECTED.STATE_MACHINE.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-UPDATE-01.md",
+                "source_fingerprint": "6fbadca9061d307322011cf8829e577dea15309bb27e1d78267ff4d5fb03f195",
+                "source_lines": "L599",
+                "source_section": "6G. Store Lifecycle"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "STATE_MACHINE_ID",
+                "resolver_id": "RESOLVE.BRD-UPDATE-01-R009.BRD-UPDATE-01-R009.STATE_MACHINE",
+                "version": "1.0.0"
+              },
+              "semantic_type": "STATE_MACHINE_ID"
+            },
+            "trigger": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-UPDATE-01.md#6G. Store Lifecycle",
+                "source_type": "SOURCE_LITERAL",
+                "version": "6fbadca9061d307322011cf8829e577dea15309bb27e1d78267ff4d5fb03f195"
+              },
+              "identifier": "BRD-UPDATE-01-R009.TRIGGER",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-UPDATE-01-R009.O1.1.STATE_TRANSITION_REJECTED.TRIGGER.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-UPDATE-01.md",
+                "source_fingerprint": "6fbadca9061d307322011cf8829e577dea15309bb27e1d78267ff4d5fb03f195",
+                "source_lines": "L599",
+                "source_section": "6G. Store Lifecycle"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "ACTION_ID",
+                "resolver_id": "RESOLVE.BRD-UPDATE-01-R009.BRD-UPDATE-01-R009.TRIGGER",
+                "version": "1.0.0"
+              },
+              "semantic_type": "ACTION_ID"
+            }
+          }
+        }
+      ],
+      "boundary_cases": [
+        "Active allows evaluation of other rules; it does not guarantee transaction success"
+      ],
+      "contract_ast_sha256": "9fe22cbc2dd23f06df1a60c736ec0b6f114ffab5b54954413bd326a7d7fce8a1",
+      "contract_id": "P2C.C4.CONTRACT.BRD-UPDATE-01-R009",
+      "criticality": "NORMAL",
+      "disposition": "CORRECTABLE_WITH_APPROVED_TYPE_MODEL",
+      "evidence_contract": {
+        "evidence_object_ref": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-UPDATE-01.md#6G. Store Lifecycle",
+            "source_type": "SOURCE_LITERAL",
+            "version": "6fbadca9061d307322011cf8829e577dea15309bb27e1d78267ff4d5fb03f195"
+          },
+          "identifier": "BRD-UPDATE-01-R009.BRD-UPDATE-01-R009.CONTRACT.EVIDENCE.OBJECT",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-UPDATE-01-R009.CONTRACT.EVIDENCE.ORIGIN",
+            "origin_type": "EVIDENCE_OBJECT"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-UPDATE-01.md",
+            "source_fingerprint": "6fbadca9061d307322011cf8829e577dea15309bb27e1d78267ff4d5fb03f195",
+            "source_lines": "L599",
+            "source_section": "6G. Store Lifecycle"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "EVIDENCE_OBJECT_REF",
+            "resolver_id": "OBSERVE.BRD-UPDATE-01-R009.BRD-UPDATE-01-R009.BRD-UPDATE-01-R009.CONTRACT.EVIDENCE.OBJECT",
+            "version": "1.0.0"
+          },
+          "semantic_type": "EVIDENCE_OBJECT_REF"
+        },
+        "inference": false,
+        "observed_collection_origin": "BRD-UPDATE-01-R009.RUNTIME.OBSERVED.FIELDS",
+        "observed_field_ids": [
+          "FIELD.STORE_ID",
+          "FIELD.STORE_STATE",
+          "FIELD.TRANSACTION_ID",
+          "FIELD.ACCEPTANCE_RESULT",
+          "FIELD.REASON"
+        ],
+        "producer": "BRD-UPDATE-01-R009.EVIDENCE.PRODUCER",
+        "required_collection_origin": "BRD-UPDATE-01-R009.SOURCE.REQUIRED.FIELDS",
+        "required_field_ids": [
+          "FIELD.STORE_ID",
+          "FIELD.STORE_STATE",
+          "FIELD.TRANSACTION_ID",
+          "FIELD.ACCEPTANCE_RESULT",
+          "FIELD.REASON"
+        ],
+        "required_values_or_hashes": [
+          "BRD-UPDATE-01-R009.EVIDENCE.CONTENT.HASH"
+        ],
+        "retrieval_method": "BRD-UPDATE-01-R009.EVIDENCE.RETRIEVAL",
+        "version_or_correlation": "BRD-UPDATE-01-R009.EVIDENCE.VERSION.CORRELATION"
+      },
+      "explicit_non_obligations": [
+        "No runtime implementation topology is authorized by this semantic record.",
+        "No production runtime evidence is claimed by this model-level candidate."
+      ],
+      "fixture_ids": [
+        "P2C-C4-FX-310C3EE9BAAD6E418C7C",
+        "P2C-C4-FX-80BCB8C9ECFA626AC266",
+        "P2C-C4-FX-B546DDA17DD3BA3FAF75"
+      ],
+      "high_risk_audit_subset": true,
+      "independent_contract_identity": true,
+      "inference": false,
+      "inherits_contract_ast": null,
+      "negative_oracles": [
+        "A non-Active Store accepts a transaction"
+      ],
+      "normative_obligations": [
+        {
+          "applicability": "V2.3_ACTIVE",
+          "obligation_id": "BRD-UPDATE-01-R009-O001",
+          "obligation_text": "Store chỉ được phép nhận giao dịch khi ở trạng thái **Active**"
+        }
+      ],
+      "obligation_to_operator_coverage": [
+        {
+          "assertion_ids": [
+            "BRD-UPDATE-01-R009.O1.1.STATE_TRANSITION_REJECTED"
+          ],
+          "coverage_count": 1,
+          "obligation_id": "BRD-UPDATE-01-R009-O001"
+        }
+      ],
+      "operator_composition": [
+        "STATE_TRANSITION_REJECTED"
+      ],
+      "positive_oracles": [
+        "The transaction is accepted only when Store is Active"
+      ],
+      "preconditions": [
+        "The Store state is resolved"
+      ],
+      "prohibitions": [
+        "A non-Active Store accepts a transaction"
+      ],
+      "requirement_id": "BRD-UPDATE-01-R009",
+      "runtime_status": "SLICE_RUNTIME_ADAPTER_REQUIRED",
+      "semantic_family_id": null,
+      "source_provenance": {
+        "approved_decision_references": [],
+        "inference": false,
+        "source_document": "docs/BRD/BRD-UPDATE-01.md",
+        "source_fingerprint": "6fbadca9061d307322011cf8829e577dea15309bb27e1d78267ff4d5fb03f195",
+        "source_lines": "L599",
+        "source_section": "6G. Store Lifecycle"
+      },
+      "source_statement": "Store chỉ được phép nhận giao dịch khi ở trạng thái **Active**.",
+      "surrounding_source_context": "### BRD-UPDATE-01-R009 — Store chỉ được phép nhận giao dịch khi ở trạng thái **Active**"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "contract_id": "P2C.C4.CONTRACT.BRD-UPDATE-01-R009",
+    "inference": false,
+    "mechanism": "APPROVED_TYPED_CUSTOM_AST",
+    "mechanism_version": "SEMANTIC_ACCEPTANCE_RENDERER_C2",
+    "runtime_status": "RUNTIME_ADAPTER_PENDING"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "ACCEPTANCE_READY",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-UPDATE-01-R009-AC001"
+        "BRD-UPDATE-01-R009-AC001",
+        "BRD-UPDATE-01-R009-AC002",
+        "BRD-UPDATE-01-R009-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-UPDATE-01-R009-O001",
@@ -1586,8 +4013,8 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
     "source_context_sha256": "35a3df74baf12464d09c9ade44259b3c77cef010e7ff83c8b8cb4493d97cf421",
     "source_document": "docs/BRD/BRD-UPDATE-01.md",
     "source_fingerprint": "6fbadca9061d307322011cf8829e577dea15309bb27e1d78267ff4d5fb03f195",
-    "source_lines": "L599",
-    "source_section": "6G. Store Lifecycle"
+    "source_lines": "L3085-L4038",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-UPDATE-01-R009"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1595,7 +4022,10 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
     "aliases": [],
     "coverage_mode": null,
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "BRD-UPDATE-01-R020"
+    ]
   },
   "requirement_type": "BUSINESS_REQUIREMENT",
   "scope_coverage_unit": true,
@@ -1612,10 +4042,11 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": null,
+  "acceptance_mechanism": null,
   "acceptance_rationale": "Composite parent coverage is satisfied only through ALL_CHILDREN; the parent is not an acceptance unit.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "STRUCTURAL_RECORD",
   "acceptance_unit": false,
   "atomic_obligations": [],
   "criticality_applicability": null,
@@ -1646,9 +4077,9 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
     "source_context_heading": "6I. Business Principles",
     "source_context_sha256": "570dd63c76e846645aa4563a910b0ba891da8c6cb160944ab082cf4f58b5f5ff",
     "source_document": "docs/BRD/BRD-UPDATE-01.md",
-    "source_fingerprint": "bb3af87cb0dedf57d250da1b457790ab1c45c177ccd3f2d55bf6d25c53e64bd8",
-    "source_lines": "L629",
-    "source_section": "6I. Business Principles"
+    "source_fingerprint": "26b2a115e0220dee795a5b3946b8a4bd2f1da925c0d08d4f0ac2ad1433357487",
+    "source_lines": "L4040-L4113",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-UPDATE-01-R010"
   },
   "record_kind": "COMPOSITE_PARENT",
   "relationships": {
@@ -1686,41 +4117,34 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-UPDATE-01-R011-AC001",
-      "given": "the applicable business context, actor, and input for Commerce Experience không được xây dựng bằng cách kết nối trực tiếp từng Business Domain vào gia…",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the prohibited decision or state transition is absent, the attempted action has a deterministic rejection outcome, and no contradictory success is recorded",
-      "verifies": [
-        "BRD-UPDATE-01-R011-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BRD-UPDATE-01-R011-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Commerce Experience không được xây dựng bằng cách kết nối trực tiếp từng Business Domain vào gia…",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BRD-UPDATE-01-R011-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-UPDATE-01-R011",
+      "source_document": "docs/BRD/BRD-UPDATE-01.md",
+      "source_fingerprint": "004dbb0bde6181104507c4e8559af6e54e3182527ae70854f50bd691b998cefa"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-UPDATE-01-R011-AC001",
-        "BRD-UPDATE-01-R011-AC002"
+        "BRD-UPDATE-01-R011-AC002",
+        "BRD-UPDATE-01-R011-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-UPDATE-01-R011-O001",
@@ -1744,8 +4168,8 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
     "source_context_sha256": "0cbbf56355882d8c3553b9ded795417b2bbf3a117f20c6eb5fae22f2063d9fb8",
     "source_document": "docs/BRD/BRD-UPDATE-01.md",
     "source_fingerprint": "004dbb0bde6181104507c4e8559af6e54e3182527ae70854f50bd691b998cefa",
-    "source_lines": "L678",
-    "source_section": "6K. Experience Composition"
+    "source_lines": "L4115-L4193",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-UPDATE-01-R011"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1753,7 +4177,10 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
     "aliases": [],
     "coverage_mode": null,
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "BRD-UPDATE-01-R020"
+    ]
   },
   "requirement_type": "BUSINESS_REQUIREMENT",
   "scope_coverage_unit": true,
@@ -1770,28 +4197,36 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-UPDATE-01-R012-AC001",
-      "given": "the applicable business context, actor, and input for Mỗi Store phải hỗ trợ Tracking xuyên suốt hành trình khách hàng: Visitor",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-UPDATE-01-R012-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-008"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-UPDATE-01-R012",
+      "source_document": "docs/BRD/BRD-UPDATE-01.md",
+      "source_fingerprint": "19eaf9fd454c3382693fc86c0f55f59c4617d35ca94e387a0db4afd2ae5340e0"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-UPDATE-01-R012-AC001"
+        "BRD-UPDATE-01-R012-AC001",
+        "BRD-UPDATE-01-R012-AC002",
+        "BRD-UPDATE-01-R012-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-UPDATE-01-R012-O001",
@@ -1817,8 +4252,8 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
     "source_context_sha256": "798e76f3f42307928252ad9cd500a7dd577b9790af63b30e816fd1c139ccea58",
     "source_document": "docs/BRD/BRD-UPDATE-01.md",
     "source_fingerprint": "19eaf9fd454c3382693fc86c0f55f59c4617d35ca94e387a0db4afd2ae5340e0",
-    "source_lines": "L776-L778",
-    "source_section": "11. Tracking & Analytics"
+    "source_lines": "L4195-L4277",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-UPDATE-01-R012"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1826,7 +4261,10 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
     "aliases": [],
     "coverage_mode": null,
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "BRD-UPDATE-01-R020"
+    ]
   },
   "requirement_type": "BUSINESS_REQUIREMENT",
   "scope_coverage_unit": true,
@@ -1843,28 +4281,34 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-UPDATE-01-R013-AC001",
-      "given": "the applicable business context, actor, and input for Store phải hỗ trợ: - Brand Name",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-UPDATE-01-R013-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-UPDATE-01-R013",
+      "source_document": "docs/BRD/BRD-UPDATE-01.md",
+      "source_fingerprint": "b3dd6e9b72d292fbcbe935b5a87091c877bb35dc7ef51cf3df0c8efe76061d0c"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-UPDATE-01-R013-AC001"
+        "BRD-UPDATE-01-R013-AC001",
+        "BRD-UPDATE-01-R013-AC002",
+        "BRD-UPDATE-01-R013-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-UPDATE-01-R013-O001",
@@ -1888,8 +4332,8 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
     "source_context_sha256": "1d1b19353b25c41ed37be8332501222ca97205d6cb69e00674bfba8042debe4c",
     "source_document": "docs/BRD/BRD-UPDATE-01.md",
     "source_fingerprint": "b3dd6e9b72d292fbcbe935b5a87091c877bb35dc7ef51cf3df0c8efe76061d0c",
-    "source_lines": "L824-L826",
-    "source_section": "12. White-label Capability"
+    "source_lines": "L4279-L4354",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-UPDATE-01-R013"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1914,28 +4358,34 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-UPDATE-01-R014-AC001",
-      "given": "the applicable business context, actor, and input for Store phải hỗ trợ: - Logo",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-UPDATE-01-R014-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-UPDATE-01-R014",
+      "source_document": "docs/BRD/BRD-UPDATE-01.md",
+      "source_fingerprint": "60c55995d476424c6e6b9aff51c2253a4695adb9b82c6d8e8b8ac5d7d0304299"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-UPDATE-01-R014-AC001"
+        "BRD-UPDATE-01-R014-AC001",
+        "BRD-UPDATE-01-R014-AC002",
+        "BRD-UPDATE-01-R014-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-UPDATE-01-R014-O001",
@@ -1958,9 +4408,9 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
     "source_context_heading": "12. White-label Capability",
     "source_context_sha256": "1d1b19353b25c41ed37be8332501222ca97205d6cb69e00674bfba8042debe4c",
     "source_document": "docs/BRD/BRD-UPDATE-01.md",
-    "source_fingerprint": "d155223601312c79769d4e6d1f582f02ee849d63c16de47b6fa589b41f74b775",
-    "source_lines": "L824-L827",
-    "source_section": "12. White-label Capability"
+    "source_fingerprint": "60c55995d476424c6e6b9aff51c2253a4695adb9b82c6d8e8b8ac5d7d0304299",
+    "source_lines": "L4356-L4431",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-UPDATE-01-R014"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1985,28 +4435,34 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-UPDATE-01-R015-AC001",
-      "given": "the applicable business context, actor, and input for Store phải hỗ trợ: - Domain",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-UPDATE-01-R015-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-UPDATE-01-R015",
+      "source_document": "docs/BRD/BRD-UPDATE-01.md",
+      "source_fingerprint": "7205a4720edd64e03146185ec84b6dd8f18e8f2e293002e2662cec9c83b9f91e"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-UPDATE-01-R015-AC001"
+        "BRD-UPDATE-01-R015-AC001",
+        "BRD-UPDATE-01-R015-AC002",
+        "BRD-UPDATE-01-R015-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-UPDATE-01-R015-O001",
@@ -2029,9 +4485,9 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
     "source_context_heading": "12. White-label Capability",
     "source_context_sha256": "1d1b19353b25c41ed37be8332501222ca97205d6cb69e00674bfba8042debe4c",
     "source_document": "docs/BRD/BRD-UPDATE-01.md",
-    "source_fingerprint": "359dc505d5f5df77831058b3fb286df5a00a959afaef320d78a739b5901e8b9c",
-    "source_lines": "L824-L828",
-    "source_section": "12. White-label Capability"
+    "source_fingerprint": "7205a4720edd64e03146185ec84b6dd8f18e8f2e293002e2662cec9c83b9f91e",
+    "source_lines": "L4433-L4508",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-UPDATE-01-R015"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2056,28 +4512,34 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-UPDATE-01-R016-AC001",
-      "given": "the applicable business context, actor, and input for Store phải hỗ trợ: - Theme",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-UPDATE-01-R016-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-UPDATE-01-R016",
+      "source_document": "docs/BRD/BRD-UPDATE-01.md",
+      "source_fingerprint": "1df58e8d7ea28bc3cba5a624f898a79ab9138f1da156e3c9a9c064c2a72195cc"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-UPDATE-01-R016-AC001"
+        "BRD-UPDATE-01-R016-AC001",
+        "BRD-UPDATE-01-R016-AC002",
+        "BRD-UPDATE-01-R016-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-UPDATE-01-R016-O001",
@@ -2100,9 +4562,9 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
     "source_context_heading": "12. White-label Capability",
     "source_context_sha256": "1d1b19353b25c41ed37be8332501222ca97205d6cb69e00674bfba8042debe4c",
     "source_document": "docs/BRD/BRD-UPDATE-01.md",
-    "source_fingerprint": "3f9e724b1e332ec47853aa24618ebadfeb882885cdd2a8df45e67f81b540cf07",
-    "source_lines": "L824-L829",
-    "source_section": "12. White-label Capability"
+    "source_fingerprint": "1df58e8d7ea28bc3cba5a624f898a79ab9138f1da156e3c9a9c064c2a72195cc",
+    "source_lines": "L4510-L4585",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-UPDATE-01-R016"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2127,28 +4589,34 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-UPDATE-01-R017-AC001",
-      "given": "the applicable business context, actor, and input for Store phải hỗ trợ: - Language",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-UPDATE-01-R017-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-UPDATE-01-R017",
+      "source_document": "docs/BRD/BRD-UPDATE-01.md",
+      "source_fingerprint": "8fb82456d6dbee78d22173a12bc2d1ec7e09837cf63b66c3b275c34cd33a2e73"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-UPDATE-01-R017-AC001"
+        "BRD-UPDATE-01-R017-AC001",
+        "BRD-UPDATE-01-R017-AC002",
+        "BRD-UPDATE-01-R017-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-UPDATE-01-R017-O001",
@@ -2171,9 +4639,9 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
     "source_context_heading": "12. White-label Capability",
     "source_context_sha256": "1d1b19353b25c41ed37be8332501222ca97205d6cb69e00674bfba8042debe4c",
     "source_document": "docs/BRD/BRD-UPDATE-01.md",
-    "source_fingerprint": "1b2800a60ae02a0f3ddcdddc80714a0b2e68d92886d20a02bfc3c8563295a55f",
-    "source_lines": "L824-L830",
-    "source_section": "12. White-label Capability"
+    "source_fingerprint": "8fb82456d6dbee78d22173a12bc2d1ec7e09837cf63b66c3b275c34cd33a2e73",
+    "source_lines": "L4587-L4662",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-UPDATE-01-R017"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2198,41 +4666,34 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-UPDATE-01-R018-AC001",
-      "given": "the applicable business context, actor, and input for Store phải hỗ trợ: - Currency",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-UPDATE-01-R018-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BRD-UPDATE-01-R018-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Store phải hỗ trợ: - Currency",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BRD-UPDATE-01-R018-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-UPDATE-01-R018",
+      "source_document": "docs/BRD/BRD-UPDATE-01.md",
+      "source_fingerprint": "2ba3a63c5075dcaca4f6fa1c74e6414f6151924553f2c4bda962cd83d9e9db83"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-UPDATE-01-R018-AC001",
-        "BRD-UPDATE-01-R018-AC002"
+        "BRD-UPDATE-01-R018-AC002",
+        "BRD-UPDATE-01-R018-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-UPDATE-01-R018-O001",
@@ -2264,9 +4725,9 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
     "source_context_heading": "12. White-label Capability",
     "source_context_sha256": "1d1b19353b25c41ed37be8332501222ca97205d6cb69e00674bfba8042debe4c",
     "source_document": "docs/BRD/BRD-UPDATE-01.md",
-    "source_fingerprint": "f56dcc4142718d10f4fc085dd1845ec9461176292b9adf3027c7fd0437158469",
-    "source_lines": "L824-L831",
-    "source_section": "12. White-label Capability"
+    "source_fingerprint": "2ba3a63c5075dcaca4f6fa1c74e6414f6151924553f2c4bda962cd83d9e9db83",
+    "source_lines": "L4664-L4748",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-UPDATE-01-R018"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2291,28 +4752,34 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-UPDATE-01-R019-AC001",
-      "given": "the applicable business context, actor, and input for Store phải hỗ trợ: - Contact Information",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-UPDATE-01-R019-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-UPDATE-01-R019",
+      "source_document": "docs/BRD/BRD-UPDATE-01.md",
+      "source_fingerprint": "83db3df808f73a275b3b348db1fa4312cb9f4353260c02f90c64fbe44ec32311"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-UPDATE-01-R019-AC001"
+        "BRD-UPDATE-01-R019-AC001",
+        "BRD-UPDATE-01-R019-AC002",
+        "BRD-UPDATE-01-R019-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-UPDATE-01-R019-O001",
@@ -2335,9 +4802,9 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
     "source_context_heading": "12. White-label Capability",
     "source_context_sha256": "1d1b19353b25c41ed37be8332501222ca97205d6cb69e00674bfba8042debe4c",
     "source_document": "docs/BRD/BRD-UPDATE-01.md",
-    "source_fingerprint": "d7974287a07814f8a5b6c951667231927be81d22e2cb88d830f3d2fec531f3d2",
-    "source_lines": "L824-L832",
-    "source_section": "12. White-label Capability"
+    "source_fingerprint": "83db3df808f73a275b3b348db1fa4312cb9f4353260c02f90c64fbe44ec32311",
+    "source_lines": "L4750-L4825",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-UPDATE-01-R019"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2362,47 +4829,13 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DESIGN_CONFORMANCE_OBSERVATION_V1",
-      "criterion_id": "BRD-UPDATE-01-R020-AC001",
-      "given": "a v2.3 capability, configuration, or design change governed by Commerce Experience Platform tuân thủ: - Commerce First",
-      "observable_evidence": "conformance decision, requirement-to-design trace, applicable configuration evidence, and recorded boundary violations",
-      "then": "the conformance review identifies the applicable principle, links it to the governed requirement and design boundary, and records no prohibited coupling",
-      "verifies": [
-        "BRD-UPDATE-01-R020-O001"
-      ],
-      "when": "conformance is reviewed before the change is accepted"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "DESIGN_CONFORMANCE_FAILURE_V1",
-      "criterion_id": "BRD-UPDATE-01-R020-AC002",
-      "given": "a proposed change with missing traceability or a boundary violation under Commerce Experience Platform tuân thủ: - Commerce First",
-      "observable_evidence": "conformance result, violated principle, missing trace or configuration evidence, and review record",
-      "then": "the change receives a non-conforming decision identifying the missing trace or violated boundary and is not accepted as conforming",
-      "verifies": [
-        "BRD-UPDATE-01-R020-O001"
-      ],
-      "when": "design conformance is reviewed"
-    }
-  ],
-  "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
-  "acceptance_unit": true,
-  "atomic_obligations": [
-    {
-      "acceptance_criterion_references": [
-        "BRD-UPDATE-01-R020-AC001",
-        "BRD-UPDATE-01-R020-AC002"
-      ],
-      "applicability": "V2.3_ACTIVE",
-      "obligation_id": "BRD-UPDATE-01-R020-O001",
-      "obligation_text": "Commerce Experience Platform tuân thủ: - Commerce First"
-    }
-  ],
+  "acceptance_contract": null,
+  "acceptance_mechanism": null,
+  "acceptance_rationale": "Composite parent coverage is satisfied only through ALL_CHILDREN; the parent is not an implementation, acceptance, scope-coverage, or criticality unit.",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "STRUCTURAL_RECORD",
+  "acceptance_unit": false,
+  "atomic_obligations": [],
   "criticality_applicability": null,
   "criticality_dispositions": [
     {
@@ -2413,15 +4846,20 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
       "selected_disposition": "CONFIRM_HIGH"
     }
   ],
-  "criticality_unit": true,
+  "criticality_unit": false,
   "delivery_commitment": "COMMITTED_FOR_V2.3",
-  "implementation_unit": true,
+  "implementation_unit": false,
   "lifecycle": "V2.3_DRAFT",
   "normative_statement": "Commerce Experience Platform tuân thủ: - Commerce First",
   "provenance": {
-    "approved_decisions": [],
+    "approved_decisions": [
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
+    ],
     "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
     "original_identity": "TMP-BRD-UPDATE-01-020",
+    "phase_2c_c3_actions": [
+      "C3_APPROVED_PRINCIPLE_COMPOSITE_NON_UNIT"
+    ],
     "previous_temporary_key": "TMP-BRD-UPDATE-01-020",
     "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
     "source_baseline": "v2.2",
@@ -2429,23 +4867,32 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
     "source_context_sha256": "63dc655309f8a4806db68f44a8ff990ca5872e6b558f1e8852306197a866f64a",
     "source_document": "docs/BRD/BRD-UPDATE-01.md",
     "source_fingerprint": "1ca769cad82f645025d0be504a2004856406d0bcaa1a282c443b690ce6779b84",
-    "source_lines": "L904-L906",
-    "source_section": "17. Business Principles"
+    "source_fingerprint_before_c3": "1ca769cad82f645025d0be504a2004856406d0bcaa1a282c443b690ce6779b84",
+    "source_lines": "L4827-L4898",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-UPDATE-01-R020"
   },
-  "record_kind": "CANONICAL_ATOMIC",
+  "record_kind": "COMPOSITE_PARENT",
   "relationships": {
     "alias_of": null,
     "aliases": [],
-    "coverage_mode": null,
+    "coverage_mode": "ALL_CHILDREN",
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [
+      "BRD-UPDATE-01-R001",
+      "BRD-UPDATE-01-R006",
+      "BRD-UPDATE-01-R009",
+      "BRD-UPDATE-01-R011",
+      "BRD-UPDATE-01-R012"
+    ]
   },
   "requirement_type": "DESIGN_PRINCIPLE",
-  "scope_coverage_unit": true,
+  "scope_coverage_unit": false,
   "scope_status": "V2.3_ACTIVE",
   "stable_id": "BRD-UPDATE-01-R020",
   "title": "Commerce Experience Platform tuân thủ: - Commerce First",
-  "verification_criticality": "HIGH"
+  "verification_criticality": "NOT_APPLICABLE"
 }
 ```
 <!-- YSIM:REQUIREMENT END -->
@@ -2455,28 +4902,34 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DESIGN_CONFORMANCE_OBSERVATION_V1",
-      "criterion_id": "BRD-UPDATE-01-R021-AC001",
-      "given": "a v2.3 capability, configuration, or design change governed by Configuration over Customization",
-      "observable_evidence": "conformance decision, requirement-to-design trace, applicable configuration evidence, and recorded boundary violations",
-      "then": "the conformance evidence identifies the governing configuration and shows that an approved configuration change alters the governed result without a source-code variant",
-      "verifies": [
-        "BRD-UPDATE-01-R021-O001"
-      ],
-      "when": "conformance is reviewed before the change is accepted"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-UPDATE-01-R021",
+      "source_document": "docs/BRD/BRD-UPDATE-01.md",
+      "source_fingerprint": "65c746e1bd372e427beca3c0189c0029d37c1ee481dabd1f4bf4c097f19decc8"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-UPDATE-01-R021-AC001"
+        "BRD-UPDATE-01-R021-AC001",
+        "BRD-UPDATE-01-R021-AC002",
+        "BRD-UPDATE-01-R021-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-UPDATE-01-R021-O001",
@@ -2508,9 +4961,9 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
     "source_context_heading": "17. Business Principles",
     "source_context_sha256": "63dc655309f8a4806db68f44a8ff990ca5872e6b558f1e8852306197a866f64a",
     "source_document": "docs/BRD/BRD-UPDATE-01.md",
-    "source_fingerprint": "2df6adaae39f88c051ef9be44e137eaa6eb557665aa557f96a1ad2eb5ada2a5f",
-    "source_lines": "L904-L907",
-    "source_section": "17. Business Principles"
+    "source_fingerprint": "65c746e1bd372e427beca3c0189c0029d37c1ee481dabd1f4bf4c097f19decc8",
+    "source_lines": "L4900-L4987",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-UPDATE-01-R021"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2538,41 +4991,34 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DESIGN_CONFORMANCE_OBSERVATION_V1",
-      "criterion_id": "BRD-UPDATE-01-R022-AC001",
-      "given": "a v2.3 capability, configuration, or design change governed by White-label by Default",
-      "observable_evidence": "conformance decision, requirement-to-design trace, applicable configuration evidence, and recorded boundary violations",
-      "then": "the conformance review identifies the applicable principle, links it to the governed requirement and design boundary, and records no prohibited coupling",
-      "verifies": [
-        "BRD-UPDATE-01-R022-O001"
-      ],
-      "when": "conformance is reviewed before the change is accepted"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "DESIGN_CONFORMANCE_FAILURE_V1",
-      "criterion_id": "BRD-UPDATE-01-R022-AC002",
-      "given": "a proposed change with missing traceability or a boundary violation under White-label by Default",
-      "observable_evidence": "conformance result, violated principle, missing trace or configuration evidence, and review record",
-      "then": "the change receives a non-conforming decision identifying the missing trace or violated boundary and is not accepted as conforming",
-      "verifies": [
-        "BRD-UPDATE-01-R022-O001"
-      ],
-      "when": "design conformance is reviewed"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-UPDATE-01-R022",
+      "source_document": "docs/BRD/BRD-UPDATE-01.md",
+      "source_fingerprint": "fb1563447559bd5cccd4722ab198b11f2ed09aa92f42cdcb9e380f5435038731"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-UPDATE-01-R022-AC001",
-        "BRD-UPDATE-01-R022-AC002"
+        "BRD-UPDATE-01-R022-AC002",
+        "BRD-UPDATE-01-R022-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-UPDATE-01-R022-O001",
@@ -2604,9 +5050,9 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
     "source_context_heading": "17. Business Principles",
     "source_context_sha256": "63dc655309f8a4806db68f44a8ff990ca5872e6b558f1e8852306197a866f64a",
     "source_document": "docs/BRD/BRD-UPDATE-01.md",
-    "source_fingerprint": "212c6c8a693b315be9b87a48fc2c643a475d6c40cafc702919dd6a8309f95f2b",
-    "source_lines": "L904-L908",
-    "source_section": "17. Business Principles"
+    "source_fingerprint": "fb1563447559bd5cccd4722ab198b11f2ed09aa92f42cdcb9e380f5435038731",
+    "source_lines": "L4989-L5076",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-UPDATE-01-R022"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2634,41 +5080,34 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DESIGN_CONFORMANCE_OBSERVATION_V1",
-      "criterion_id": "BRD-UPDATE-01-R023-AC001",
-      "given": "a v2.3 capability, configuration, or design change governed by Publish in Minutes",
-      "observable_evidence": "conformance decision, requirement-to-design trace, applicable configuration evidence, and recorded boundary violations",
-      "then": "the conformance review identifies the applicable principle, links it to the governed requirement and design boundary, and records no prohibited coupling",
-      "verifies": [
-        "BRD-UPDATE-01-R023-O001"
-      ],
-      "when": "conformance is reviewed before the change is accepted"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "DESIGN_CONFORMANCE_FAILURE_V1",
-      "criterion_id": "BRD-UPDATE-01-R023-AC002",
-      "given": "a proposed change with missing traceability or a boundary violation under Publish in Minutes",
-      "observable_evidence": "conformance result, violated principle, missing trace or configuration evidence, and review record",
-      "then": "the change receives a non-conforming decision identifying the missing trace or violated boundary and is not accepted as conforming",
-      "verifies": [
-        "BRD-UPDATE-01-R023-O001"
-      ],
-      "when": "design conformance is reviewed"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-UPDATE-01-R023",
+      "source_document": "docs/BRD/BRD-UPDATE-01.md",
+      "source_fingerprint": "83e3478da59dc233787c4d33834fc950ee19bb5e5f4f5739736d20a8cf25e88a"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-UPDATE-01-R023-AC001",
-        "BRD-UPDATE-01-R023-AC002"
+        "BRD-UPDATE-01-R023-AC002",
+        "BRD-UPDATE-01-R023-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-UPDATE-01-R023-O001",
@@ -2700,9 +5139,9 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
     "source_context_heading": "17. Business Principles",
     "source_context_sha256": "63dc655309f8a4806db68f44a8ff990ca5872e6b558f1e8852306197a866f64a",
     "source_document": "docs/BRD/BRD-UPDATE-01.md",
-    "source_fingerprint": "3e4ba4ecc4a01b561a5ef32e2307ee781c3e11ca5ee6d479321a261a5f6ecd01",
-    "source_lines": "L904-L909",
-    "source_section": "17. Business Principles"
+    "source_fingerprint": "83e3478da59dc233787c4d33834fc950ee19bb5e5f4f5739736d20a8cf25e88a",
+    "source_lines": "L5078-L5165",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-UPDATE-01-R023"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2730,80 +5169,14 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DESIGN_CONFORMANCE_OBSERVATION_V1",
-      "criterion_id": "BRD-UPDATE-01-R024-AC001",
-      "given": "a v2.3 capability, configuration, or design change governed by Commerce Experience Platform tuân thủ: - Multi-tenant",
-      "observable_evidence": "conformance decision, requirement-to-design trace, applicable configuration evidence, and recorded boundary violations",
-      "then": "the conformance review identifies the applicable principle, links it to the governed requirement and design boundary, and records no prohibited coupling",
-      "verifies": [
-        "BRD-UPDATE-01-R024-O001"
-      ],
-      "when": "conformance is reviewed before the change is accepted"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "DESIGN_CONFORMANCE_FAILURE_V1",
-      "criterion_id": "BRD-UPDATE-01-R024-AC002",
-      "given": "a proposed change with missing traceability or a boundary violation under Commerce Experience Platform tuân thủ: - Multi-tenant",
-      "observable_evidence": "conformance result, violated principle, missing trace or configuration evidence, and review record",
-      "then": "the change receives a non-conforming decision identifying the missing trace or violated boundary and is not accepted as conforming",
-      "verifies": [
-        "BRD-UPDATE-01-R024-O001"
-      ],
-      "when": "design conformance is reviewed"
-    }
-  ],
-  "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
-  "acceptance_unit": true,
-  "atomic_obligations": [
-    {
-      "acceptance_criterion_references": [
-        "BRD-UPDATE-01-R024-AC001",
-        "BRD-UPDATE-01-R024-AC002"
-      ],
-      "applicability": "V2.3_ACTIVE",
-      "obligation_id": "BRD-UPDATE-01-R024-O001",
-      "obligation_text": "Commerce Experience Platform tuân thủ: - Multi-tenant"
-    }
-  ],
-  "criticality_applicability": {
-    "AUTHORIZATION_BOUNDARY": {
-      "criterion_references": [],
-      "rationale": "BRD-UPDATE-01-R024 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    },
-    "CONCURRENCY": {
-      "criterion_references": [],
-      "rationale": "BRD-UPDATE-01-R024 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    },
-    "IDEMPOTENCY": {
-      "criterion_references": [],
-      "rationale": "BRD-UPDATE-01-R024 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    },
-    "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "BRD-UPDATE-01-R024 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    },
-    "POSITIVE": {
-      "criterion_references": [
-        "BRD-UPDATE-01-R024-AC001"
-      ],
-      "status": "APPLICABLE"
-    },
-    "RECOVERY": {
-      "criterion_references": [],
-      "rationale": "BRD-UPDATE-01-R024 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    }
-  },
+  "acceptance_contract": null,
+  "acceptance_mechanism": null,
+  "acceptance_rationale": "Composite parent coverage is satisfied only through ALL_CHILDREN; the parent is not an implementation, acceptance, scope-coverage, or criticality unit.",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "STRUCTURAL_RECORD",
+  "acceptance_unit": false,
+  "atomic_obligations": [],
+  "criticality_applicability": null,
   "criticality_dispositions": [
     {
       "application_status": "APPLIED_IN_PHASE_2C",
@@ -2813,39 +5186,53 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
       "selected_disposition": "CONFIRM_CRITICAL"
     }
   ],
-  "criticality_unit": true,
+  "criticality_unit": false,
   "delivery_commitment": "COMMITTED_FOR_V2.3",
-  "implementation_unit": true,
+  "implementation_unit": false,
   "lifecycle": "V2.3_DRAFT",
   "normative_statement": "Commerce Experience Platform tuân thủ: - Multi-tenant",
   "provenance": {
-    "approved_decisions": [],
+    "approved_decisions": [
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
+    ],
     "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
     "original_identity": "TMP-BRD-UPDATE-01-024",
+    "phase_2c_c3_actions": [
+      "C3_APPROVED_PRINCIPLE_COMPOSITE_NON_UNIT"
+    ],
     "previous_temporary_key": "TMP-BRD-UPDATE-01-024",
     "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
     "source_baseline": "v2.2",
     "source_context_heading": "17. Business Principles",
     "source_context_sha256": "63dc655309f8a4806db68f44a8ff990ca5872e6b558f1e8852306197a866f64a",
     "source_document": "docs/BRD/BRD-UPDATE-01.md",
-    "source_fingerprint": "100fee1489823de31067dcee0948c1fbc7022a4d73ab9741dca386277ee16140",
-    "source_lines": "L904-L910",
-    "source_section": "17. Business Principles"
+    "source_fingerprint": "1fcb58c047b90b9ea8352178655562185b78a2636973f330e111a2ef683f04d7",
+    "source_fingerprint_before_c3": "100fee1489823de31067dcee0948c1fbc7022a4d73ab9741dca386277ee16140",
+    "source_lines": "L5167-L5238",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-UPDATE-01-R024"
   },
-  "record_kind": "CANONICAL_ATOMIC",
+  "record_kind": "COMPOSITE_PARENT",
   "relationships": {
     "alias_of": null,
     "aliases": [],
-    "coverage_mode": null,
+    "coverage_mode": "ALL_CHILDREN",
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [
+      "UXF-00-R021",
+      "BD-16-006",
+      "EP-16-010",
+      "UXF-203",
+      "BRD-WS-16-R016"
+    ]
   },
   "requirement_type": "DESIGN_PRINCIPLE",
-  "scope_coverage_unit": true,
+  "scope_coverage_unit": false,
   "scope_status": "V2.3_ACTIVE",
   "stable_id": "BRD-UPDATE-01-R024",
   "title": "Commerce Experience Platform tuân thủ: - Multi-tenant",
-  "verification_criticality": "CRITICAL"
+  "verification_criticality": "NOT_APPLICABLE"
 }
 ```
 <!-- YSIM:REQUIREMENT END -->
@@ -2855,41 +5242,34 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DESIGN_CONFORMANCE_OBSERVATION_V1",
-      "criterion_id": "BRD-UPDATE-01-R025-AC001",
-      "given": "a v2.3 capability, configuration, or design change governed by Multi-brand",
-      "observable_evidence": "conformance decision, requirement-to-design trace, applicable configuration evidence, and recorded boundary violations",
-      "then": "the conformance review identifies the applicable principle, links it to the governed requirement and design boundary, and records no prohibited coupling",
-      "verifies": [
-        "BRD-UPDATE-01-R025-O001"
-      ],
-      "when": "conformance is reviewed before the change is accepted"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "DESIGN_CONFORMANCE_FAILURE_V1",
-      "criterion_id": "BRD-UPDATE-01-R025-AC002",
-      "given": "a proposed change with missing traceability or a boundary violation under Multi-brand",
-      "observable_evidence": "conformance result, violated principle, missing trace or configuration evidence, and review record",
-      "then": "the change receives a non-conforming decision identifying the missing trace or violated boundary and is not accepted as conforming",
-      "verifies": [
-        "BRD-UPDATE-01-R025-O001"
-      ],
-      "when": "design conformance is reviewed"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-UPDATE-01-R025",
+      "source_document": "docs/BRD/BRD-UPDATE-01.md",
+      "source_fingerprint": "7052f0f84c6db92b4e5b43bdc142e6a59665878d3c8e629eb4df74b9486a7a0c"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-UPDATE-01-R025-AC001",
-        "BRD-UPDATE-01-R025-AC002"
+        "BRD-UPDATE-01-R025-AC002",
+        "BRD-UPDATE-01-R025-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-UPDATE-01-R025-O001",
@@ -2921,9 +5301,9 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
     "source_context_heading": "17. Business Principles",
     "source_context_sha256": "63dc655309f8a4806db68f44a8ff990ca5872e6b558f1e8852306197a866f64a",
     "source_document": "docs/BRD/BRD-UPDATE-01.md",
-    "source_fingerprint": "a342159d57c5c458443f9e04609918d9367341d99569f1d1399827fd5a1921a7",
-    "source_lines": "L904-L911",
-    "source_section": "17. Business Principles"
+    "source_fingerprint": "7052f0f84c6db92b4e5b43bdc142e6a59665878d3c8e629eb4df74b9486a7a0c",
+    "source_lines": "L5240-L5327",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-UPDATE-01-R025"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2951,41 +5331,34 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DESIGN_CONFORMANCE_OBSERVATION_V1",
-      "criterion_id": "BRD-UPDATE-01-R026-AC001",
-      "given": "a v2.3 capability, configuration, or design change governed by Multi-language",
-      "observable_evidence": "conformance decision, requirement-to-design trace, applicable configuration evidence, and recorded boundary violations",
-      "then": "the conformance review identifies the applicable principle, links it to the governed requirement and design boundary, and records no prohibited coupling",
-      "verifies": [
-        "BRD-UPDATE-01-R026-O001"
-      ],
-      "when": "conformance is reviewed before the change is accepted"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "DESIGN_CONFORMANCE_FAILURE_V1",
-      "criterion_id": "BRD-UPDATE-01-R026-AC002",
-      "given": "a proposed change with missing traceability or a boundary violation under Multi-language",
-      "observable_evidence": "conformance result, violated principle, missing trace or configuration evidence, and review record",
-      "then": "the change receives a non-conforming decision identifying the missing trace or violated boundary and is not accepted as conforming",
-      "verifies": [
-        "BRD-UPDATE-01-R026-O001"
-      ],
-      "when": "design conformance is reviewed"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-UPDATE-01-R026",
+      "source_document": "docs/BRD/BRD-UPDATE-01.md",
+      "source_fingerprint": "60a53a343a6d82b8739959f9f5c4e10ca8e2fca8eec2e94d2782ca861864c87c"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-UPDATE-01-R026-AC001",
-        "BRD-UPDATE-01-R026-AC002"
+        "BRD-UPDATE-01-R026-AC002",
+        "BRD-UPDATE-01-R026-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-UPDATE-01-R026-O001",
@@ -3017,9 +5390,9 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
     "source_context_heading": "17. Business Principles",
     "source_context_sha256": "63dc655309f8a4806db68f44a8ff990ca5872e6b558f1e8852306197a866f64a",
     "source_document": "docs/BRD/BRD-UPDATE-01.md",
-    "source_fingerprint": "3906de07b7270ebc89cca94ad60f720bda554cb36c6629064603eb6a601517c2",
-    "source_lines": "L904-L912",
-    "source_section": "17. Business Principles"
+    "source_fingerprint": "60a53a343a6d82b8739959f9f5c4e10ca8e2fca8eec2e94d2782ca861864c87c",
+    "source_lines": "L5329-L5416",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-UPDATE-01-R026"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3047,41 +5420,34 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DESIGN_CONFORMANCE_OBSERVATION_V1",
-      "criterion_id": "BRD-UPDATE-01-R027-AC001",
-      "given": "a v2.3 capability, configuration, or design change governed by Multi-country",
-      "observable_evidence": "conformance decision, requirement-to-design trace, applicable configuration evidence, and recorded boundary violations",
-      "then": "the conformance review identifies the applicable principle, links it to the governed requirement and design boundary, and records no prohibited coupling",
-      "verifies": [
-        "BRD-UPDATE-01-R027-O001"
-      ],
-      "when": "conformance is reviewed before the change is accepted"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "DESIGN_CONFORMANCE_FAILURE_V1",
-      "criterion_id": "BRD-UPDATE-01-R027-AC002",
-      "given": "a proposed change with missing traceability or a boundary violation under Multi-country",
-      "observable_evidence": "conformance result, violated principle, missing trace or configuration evidence, and review record",
-      "then": "the change receives a non-conforming decision identifying the missing trace or violated boundary and is not accepted as conforming",
-      "verifies": [
-        "BRD-UPDATE-01-R027-O001"
-      ],
-      "when": "design conformance is reviewed"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-UPDATE-01-R027",
+      "source_document": "docs/BRD/BRD-UPDATE-01.md",
+      "source_fingerprint": "a2f8f333a599cad52b128ccad1fd682cf3fa1159fbed22ecbe55729d4c48a89d"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-UPDATE-01-R027-AC001",
-        "BRD-UPDATE-01-R027-AC002"
+        "BRD-UPDATE-01-R027-AC002",
+        "BRD-UPDATE-01-R027-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-UPDATE-01-R027-O001",
@@ -3113,9 +5479,9 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
     "source_context_heading": "17. Business Principles",
     "source_context_sha256": "63dc655309f8a4806db68f44a8ff990ca5872e6b558f1e8852306197a866f64a",
     "source_document": "docs/BRD/BRD-UPDATE-01.md",
-    "source_fingerprint": "98e103833da1ecacd7fb9cd5e799e9de74bd5adc2e0163bec5c1c6e2178f1ae6",
-    "source_lines": "L904-L913",
-    "source_section": "17. Business Principles"
+    "source_fingerprint": "a2f8f333a599cad52b128ccad1fd682cf3fa1159fbed22ecbe55729d4c48a89d",
+    "source_lines": "L5418-L5505",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-UPDATE-01-R027"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3143,41 +5509,38 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "INTEGRATION_BOUNDARY_OBSERVATION_V1",
-      "criterion_id": "BRD-UPDATE-01-R028-AC001",
-      "given": "a contract interaction at the integration boundary defined by API First",
-      "observable_evidence": "contract validation result, boundary ownership record, external outcome, and reconciliation evidence where the contract requires it",
-      "then": "the interaction is accepted only at the declared boundary, names the responsible owner, and exposes the external outcome or reconciliation result required by the contract",
-      "verifies": [
-        "BRD-UPDATE-01-R028-O001"
-      ],
-      "when": "a conforming interaction is submitted and its ownership boundary is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "INTEGRATION_CONTRACT_REJECTION_V1",
-      "criterion_id": "BRD-UPDATE-01-R028-AC002",
-      "given": "an interaction that violates the contract or ownership boundary for API First",
-      "observable_evidence": "contract rejection or reconciliation result, reason, boundary owner, and external outcome",
-      "then": "the interaction is rejected or reconciled according to the declared contract without transferring ownership to the wrong boundary",
-      "verifies": [
-        "BRD-UPDATE-01-R028-O001"
-      ],
-      "when": "the interaction reaches the integration boundary"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "approved_semantic_completion_selection": {
+        "decision_id": "P2C-SC-C1-DEC-006",
+        "option_id": "OPT-AST"
+      },
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-UPDATE-01-R028",
+      "source_document": "docs/BRD/BRD-UPDATE-01.md",
+      "source_fingerprint": "b5f2bdb74a69c7ea86b53bde9dc4e680035543782e082e0303c0aa875c706ac3"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-UPDATE-01-R028-AC001",
-        "BRD-UPDATE-01-R028-AC002"
+        "BRD-UPDATE-01-R028-AC002",
+        "BRD-UPDATE-01-R028-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-UPDATE-01-R028-O001",
@@ -3200,9 +5563,9 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
     "source_context_heading": "17. Business Principles",
     "source_context_sha256": "63dc655309f8a4806db68f44a8ff990ca5872e6b558f1e8852306197a866f64a",
     "source_document": "docs/BRD/BRD-UPDATE-01.md",
-    "source_fingerprint": "35687b54a029a38cbd3f9c7481d908f806e40d5a4816f59162df5fa2bbb7c25a",
-    "source_lines": "L904-L914",
-    "source_section": "17. Business Principles"
+    "source_fingerprint": "b5f2bdb74a69c7ea86b53bde9dc4e680035543782e082e0303c0aa875c706ac3",
+    "source_lines": "L5507-L5589",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-UPDATE-01-R028"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3226,36 +5589,44 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
 <!-- YSIM:REQUIREMENT END -->
 
 <!-- YSIM:REQUIREMENT BEGIN -->
-### BRD-UPDATE-01-R029 — Experience First
+### BRD-UPDATE-01-R029 — Commerce Experience phải ưu tiên UX trong quyết định presentation và composition nhưng không đượ…
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DESIGN_CONFORMANCE_OBSERVATION_V1",
-      "criterion_id": "BRD-UPDATE-01-R029-AC001",
-      "given": "a v2.3 capability, configuration, or design change governed by Experience First",
-      "observable_evidence": "conformance decision, requirement-to-design trace, applicable configuration evidence, and recorded boundary violations",
-      "then": "the conformance review identifies the applicable principle, links it to the governed requirement and design boundary, and records no prohibited coupling",
-      "verifies": [
-        "BRD-UPDATE-01-R029-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "V23-P2C-ACCEPTANCE-MAPPING-C3"
       ],
-      "when": "conformance is reviewed before the change is accepted"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-UPDATE-01-R029",
+      "source_document": "docs/BRD/BRD-UPDATE-01.md",
+      "source_fingerprint": "8b09ec2ad48e09dcce593b09370473b2babdab496d9a9588e4f6bb551556c0f8"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-UPDATE-01-R029-AC001"
+        "BRD-UPDATE-01-R029-AC001",
+        "BRD-UPDATE-01-R029-AC002",
+        "BRD-UPDATE-01-R029-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-UPDATE-01-R029-O001",
-      "obligation_text": "Commerce Experience phải ưu tiên trải nghiệm người dùng trong các quyết định trình bày mà không thay đổi hành vi nghiệp vụ chuẩn"
+      "obligation_text": "Commerce Experience phải ưu tiên UX trong quyết định presentation và composition nhưng không được thay đổi canonical business behavior, pricing, policy, authorization, payment, allocation hoặc fulfillment semantics"
     }
   ],
   "criticality_applicability": null,
@@ -3272,20 +5643,28 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
   "delivery_commitment": "COMMITTED_FOR_V2.3",
   "implementation_unit": true,
   "lifecycle": "V2.3_DRAFT",
-  "normative_statement": "Commerce Experience phải ưu tiên trải nghiệm người dùng trong các quyết định trình bày mà không thay đổi hành vi nghiệp vụ chuẩn.",
+  "normative_statement": "Commerce Experience phải ưu tiên UX trong quyết định presentation và composition nhưng không được thay đổi canonical business behavior, pricing, policy, authorization, payment, allocation hoặc fulfillment semantics.",
   "provenance": {
-    "approved_decisions": [],
+    "approved_decisions": [
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
+    ],
     "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
     "original_identity": "TMP-BRD-UPDATE-01-029",
+    "phase_2c_c3_actions": [
+      "C3_APPROVED_SEMANTIC_DIRECTIVE"
+    ],
     "previous_temporary_key": "TMP-BRD-UPDATE-01-029",
     "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
     "source_baseline": "v2.2",
     "source_context_heading": "17. Business Principles",
     "source_context_sha256": "63dc655309f8a4806db68f44a8ff990ca5872e6b558f1e8852306197a866f64a",
     "source_document": "docs/BRD/BRD-UPDATE-01.md",
-    "source_fingerprint": "8eeaf45d08df3e40528f9792d5fc12fbe58bf6086222b3bd047c3b0bc9e95bad",
-    "source_lines": "L904-L915",
-    "source_section": "17. Business Principles"
+    "source_fingerprint": "8b09ec2ad48e09dcce593b09370473b2babdab496d9a9588e4f6bb551556c0f8",
+    "source_fingerprint_before_c3": "8eeaf45d08df3e40528f9792d5fc12fbe58bf6086222b3bd047c3b0bc9e95bad",
+    "source_lines": "L5591-L5688",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-UPDATE-01-R029"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3302,7 +5681,7 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
   "scope_coverage_unit": true,
   "scope_status": "V2.3_ACTIVE",
   "stable_id": "BRD-UPDATE-01-R029",
-  "title": "Experience First",
+  "title": "Commerce Experience phải ưu tiên UX trong quyết định presentation và composition nhưng không đượ…",
   "verification_criticality": "NORMAL"
 }
 ```
@@ -3313,45 +5692,40 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_MODEL_ROOT_TRACE_V1",
-      "criterion_id": "BRD-UPDATE-01-R030-AC001",
-      "given": "a Commerce Experience candidate with an identified Business Model",
-      "observable_evidence": "Business Model identifier, experience identifier, creation trace, and publication trace",
-      "then": "the accepted experience and publication evidence reference that Business Model as their origin",
-      "verifies": [
-        "BRD-UPDATE-01-R030-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "HUMAN_DECISION_2026-07-14"
       ],
-      "when": "creation or publication is requested"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_MODEL_ROOT_TRACE_V1",
-      "criterion_id": "BRD-UPDATE-01-R030-AC002",
-      "given": "a Commerce Experience candidate with no resolvable Business Model origin",
-      "observable_evidence": "unresolved origin, conformance result, rejection reason, and publication state",
-      "then": "the request is rejected as non-conforming and no unrooted publication is accepted",
-      "verifies": [
-        "BRD-UPDATE-01-R030-O001"
-      ],
-      "when": "creation or publication is requested"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-UPDATE-01-R030",
+      "source_document": "docs/BRD/BRD-UPDATE-01.md",
+      "source_fingerprint": "fa45f64ebf1924e50b817da01cbe7ce19d14178cc67cdaf25baa0e24b3f25079"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-UPDATE-01-R030-AC001",
-        "BRD-UPDATE-01-R030-AC002"
+        "BRD-UPDATE-01-R030-AC002",
+        "BRD-UPDATE-01-R030-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-UPDATE-01-R030-O001",
-      "obligation_text": "Creation and publication of every Commerce Experience is traceably rooted in an identified Business Model."
+      "obligation_text": "Business Model là điểm khởi đầu của mọi Commerce Experience trên nền tảng YSim"
     }
   ],
   "criticality_applicability": null,
@@ -3370,7 +5744,10 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
     "source_baseline": "v2.2",
     "source_context_heading": "6I. Business Principles",
     "source_context_sha256": "570dd63c76e846645aa4563a910b0ba891da8c6cb160944ab082cf4f58b5f5ff",
-    "source_document": "docs/BRD/BRD-UPDATE-01.md"
+    "source_document": "docs/BRD/BRD-UPDATE-01.md",
+    "source_fingerprint": "fa45f64ebf1924e50b817da01cbe7ce19d14178cc67cdaf25baa0e24b3f25079",
+    "source_lines": "L5690-L5773",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-UPDATE-01-R030"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3400,28 +5777,36 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DESIGN_CONFORMANCE_OBSERVATION_V1",
-      "criterion_id": "BRD-UPDATE-01-R031-AC001",
-      "given": "a v2.3 capability, configuration, or design change governed by Template Driven",
-      "observable_evidence": "conformance decision, requirement-to-design trace, applicable configuration evidence, and recorded boundary violations",
-      "then": "the conformance review identifies the applicable principle, links it to the governed requirement and design boundary, and records no prohibited coupling",
-      "verifies": [
-        "BRD-UPDATE-01-R031-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "HUMAN_DECISION_2026-07-14"
       ],
-      "when": "conformance is reviewed before the change is accepted"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-UPDATE-01-R031",
+      "source_document": "docs/BRD/BRD-UPDATE-01.md",
+      "source_fingerprint": "029798f84bc8ea391103f762eea87f18127350d5a00d8294bcc7c01a30ab3b22"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-UPDATE-01-R031-AC001"
+        "BRD-UPDATE-01-R031-AC001",
+        "BRD-UPDATE-01-R031-AC002",
+        "BRD-UPDATE-01-R031-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-UPDATE-01-R031-O001",
@@ -3444,7 +5829,10 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
     "source_baseline": "v2.2",
     "source_context_heading": "SOURCE_STATEMENT_FALLBACK",
     "source_context_sha256": "029798f84bc8ea391103f762eea87f18127350d5a00d8294bcc7c01a30ab3b22",
-    "source_document": "docs/BRD/BRD-UPDATE-01.md"
+    "source_document": "docs/BRD/BRD-UPDATE-01.md",
+    "source_fingerprint": "029798f84bc8ea391103f762eea87f18127350d5a00d8294bcc7c01a30ab3b22",
+    "source_lines": "L5775-L5858",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-UPDATE-01-R031"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3474,28 +5862,36 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DESIGN_CONFORMANCE_OBSERVATION_V1",
-      "criterion_id": "BRD-UPDATE-01-R032-AC001",
-      "given": "a v2.3 capability, configuration, or design change governed by Headless Ready",
-      "observable_evidence": "conformance decision, requirement-to-design trace, applicable configuration evidence, and recorded boundary violations",
-      "then": "the conformance review identifies the applicable principle, links it to the governed requirement and design boundary, and records no prohibited coupling",
-      "verifies": [
-        "BRD-UPDATE-01-R032-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "HUMAN_DECISION_2026-07-14"
       ],
-      "when": "conformance is reviewed before the change is accepted"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-UPDATE-01-R032",
+      "source_document": "docs/BRD/BRD-UPDATE-01.md",
+      "source_fingerprint": "fef28a7d46165c900ba41a8336ee0a8fb884718d2de7fcbe39556fb2e2ad828e"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-UPDATE-01-R032-AC001"
+        "BRD-UPDATE-01-R032-AC001",
+        "BRD-UPDATE-01-R032-AC002",
+        "BRD-UPDATE-01-R032-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-UPDATE-01-R032-O001",
@@ -3518,7 +5914,10 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
     "source_baseline": "v2.2",
     "source_context_heading": "SOURCE_STATEMENT_FALLBACK",
     "source_context_sha256": "fef28a7d46165c900ba41a8336ee0a8fb884718d2de7fcbe39556fb2e2ad828e",
-    "source_document": "docs/BRD/BRD-UPDATE-01.md"
+    "source_document": "docs/BRD/BRD-UPDATE-01.md",
+    "source_fingerprint": "fef28a7d46165c900ba41a8336ee0a8fb884718d2de7fcbe39556fb2e2ad828e",
+    "source_lines": "L5860-L5943",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-UPDATE-01-R032"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3548,40 +5947,36 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DESIGN_CONFORMANCE_OBSERVATION_V1",
-      "criterion_id": "BRD-UPDATE-01-R033-AC001",
-      "given": "a v2.3 capability, configuration, or design change governed by AI Ready",
-      "observable_evidence": "conformance decision, requirement-to-design trace, applicable configuration evidence, and recorded boundary violations",
-      "then": "the conformance review identifies the applicable principle, links it to the governed requirement and design boundary, and records no prohibited coupling",
-      "verifies": [
-        "BRD-UPDATE-01-R033-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "HUMAN_DECISION_2026-07-14"
       ],
-      "when": "conformance is reviewed before the change is accepted"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DESIGN_CONFORMANCE_OBSERVATION_V1",
-      "criterion_id": "BRD-UPDATE-01-R033-AC002",
-      "given": "a v2.3 capability, configuration, or design change governed by AI Ready",
-      "observable_evidence": "conformance decision, requirement-to-design trace, applicable configuration evidence, and recorded boundary violations",
-      "then": "the conformance review identifies the applicable principle, links it to the governed requirement and design boundary, and records no prohibited coupling",
-      "verifies": [
-        "BRD-UPDATE-01-R033-O002"
-      ],
-      "when": "conformance is reviewed before the change is accepted"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-UPDATE-01-R033",
+      "source_document": "docs/BRD/BRD-UPDATE-01.md",
+      "source_fingerprint": "55b257eacf89e41506941ecf65514c622530798ceecffdda75b0e2831e25f741"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-UPDATE-01-R033-AC001"
+        "BRD-UPDATE-01-R033-AC001",
+        "BRD-UPDATE-01-R033-AC003",
+        "BRD-UPDATE-01-R033-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-UPDATE-01-R033-O001",
@@ -3589,7 +5984,9 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
     },
     {
       "acceptance_criterion_references": [
-        "BRD-UPDATE-01-R033-AC002"
+        "BRD-UPDATE-01-R033-AC002",
+        "BRD-UPDATE-01-R033-AC003",
+        "BRD-UPDATE-01-R033-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-UPDATE-01-R033-O002",
@@ -3613,7 +6010,10 @@ CXP trở thành Business Domain chính thức của nền tảng và là nền 
     "source_baseline": "v2.2",
     "source_context_heading": "SOURCE_STATEMENT_FALLBACK",
     "source_context_sha256": "55b257eacf89e41506941ecf65514c622530798ceecffdda75b0e2831e25f741",
-    "source_document": "docs/BRD/BRD-UPDATE-01.md"
+    "source_document": "docs/BRD/BRD-UPDATE-01.md",
+    "source_fingerprint": "55b257eacf89e41506941ecf65514c622530798ceecffdda75b0e2831e25f741",
+    "source_lines": "L5945-L6039",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-UPDATE-01-R033"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {

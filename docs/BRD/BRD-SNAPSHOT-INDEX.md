@@ -1,13 +1,20 @@
 ---
 document_code: "BRD-SNAPSHOT-INDEX"
+document_id: "BRD-SNAPSHOT-INDEX"
 title: "Enterprise Snapshot Registry"
-product_baseline: "2.3"
-document_revision: "2.3.0-draft.1"
+version: "2.3.0-draft.3"
+document_revision: "2.3.0-draft.3"
+status: "V2.3_DRAFT"
 lifecycle_status: "V2.3_DRAFT"
 language: "vi-VN"
+baseline: "2.3"
+product_baseline: "2.3"
+source_lineage: "v2.2 + approved Phase 1/2A/2B + accepted Acceptance Model C1 + accepted Mapping C3"
 source_baseline: "v2.2"
+last_reviewed_date: "2026-07-15"
+last_remediated_on: "2026-07-17"
+applicable_scope: "V2.3_ACTIVE_AND_RETAINED_SCOPE_RECORDS"
 generated_registry_role: "BRD_CANONICAL_SOURCE"
-last_remediated_on: "2026-07-15"
 ---
 ## Thẩm quyền nguồn yêu cầu v2.3
 
@@ -951,7 +958,7 @@ trước khi được sử dụng trong Platform.
 
 <!-- YSIM:PHASE_2C CANONICAL APPENDIX BEGIN -->
 
-## Phụ lục yêu cầu chuẩn tắc v2.3
+## Phụ lục yêu cầu chuẩn tắc v2.3 — C6-R1
 
 
 
@@ -960,28 +967,34 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "BRD-SNAPSHOT-INDEX-R001-AC001",
-      "given": "a candidate Mỗi Snapshot được cấp một mã định danh duy nhất record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "BRD-SNAPSHOT-INDEX-R001-O001"
-      ],
-      "when": "the candidate is evaluated against its declared data contract"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-SNAPSHOT-INDEX-R001",
+      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+      "source_fingerprint": "41f37cccd07fa8865723025b53240edeba8bb89c1e518931d727872f117c4a5d"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-SNAPSHOT-INDEX-R001-AC001"
+        "BRD-SNAPSHOT-INDEX-R001-AC001",
+        "BRD-SNAPSHOT-INDEX-R001-AC002",
+        "BRD-SNAPSHOT-INDEX-R001-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-SNAPSHOT-INDEX-R001-O001",
@@ -1005,8 +1018,8 @@ trước khi được sử dụng trong Platform.
     "source_context_sha256": "8dcb0835c4ec9f25efbd4e09dbf5cf84db0db5f565e30c97c0e2b719da3e78b1",
     "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
     "source_fingerprint": "41f37cccd07fa8865723025b53240edeba8bb89c1e518931d727872f117c4a5d",
-    "source_lines": "L196",
-    "source_section": "8. Snapshot Identifier"
+    "source_lines": "L965-L1040",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-SNAPSHOT-INDEX-R001"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1031,41 +1044,913 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "BRD-SNAPSHOT-INDEX-R002-AC001",
-      "given": "a candidate Nếu dữ liệu nghiệp vụ thay đổi: Platform phải tạo Snapshot mới record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "BRD-SNAPSHOT-INDEX-R002-O001"
-      ],
-      "when": "the candidate is evaluated against its declared data contract"
+  "acceptance_contract": {
+    "boundary_oracle": [
+      "A non-business technical change does not create a business Snapshot unless separately required"
+    ],
+    "concrete_bindings": [
+      {
+        "from_state": {
+          "authoritative_source": {
+            "allowed_identifiers": [
+              "BRD-SNAPSHOT-INDEX-R002.FROM_STATE"
+            ],
+            "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#10. Immutable Principle",
+            "source_type": "SOURCE_LITERAL",
+            "version": "051635b7d42715cb1d418b299a476129f7d947b9abec2033c3e1104c6ab9d2f6"
+          },
+          "identifier": "BRD-SNAPSHOT-INDEX-R002.FROM_STATE",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-SNAPSHOT-INDEX-R002.O1.1.STATE_TRANSITION_ALLOWED.FROM_STATE.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+            "source_fingerprint": "051635b7d42715cb1d418b299a476129f7d947b9abec2033c3e1104c6ab9d2f6",
+            "source_lines": "L261-L263",
+            "source_section": "10. Immutable Principle"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "STATE_ID",
+            "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R002.BRD-SNAPSHOT-INDEX-R002.FROM_STATE",
+            "version": "1.0.0"
+          },
+          "semantic_type": "STATE_ID"
+        },
+        "state_machine": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#10. Immutable Principle",
+            "source_type": "SOURCE_LITERAL",
+            "version": "051635b7d42715cb1d418b299a476129f7d947b9abec2033c3e1104c6ab9d2f6"
+          },
+          "identifier": "BRD-SNAPSHOT-INDEX-R002.STATE_MACHINE",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-SNAPSHOT-INDEX-R002.O1.1.STATE_TRANSITION_ALLOWED.STATE_MACHINE.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+            "source_fingerprint": "051635b7d42715cb1d418b299a476129f7d947b9abec2033c3e1104c6ab9d2f6",
+            "source_lines": "L261-L263",
+            "source_section": "10. Immutable Principle"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "STATE_MACHINE_ID",
+            "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R002.BRD-SNAPSHOT-INDEX-R002.STATE_MACHINE",
+            "version": "1.0.0"
+          },
+          "semantic_type": "STATE_MACHINE_ID"
+        },
+        "to_state": {
+          "authoritative_source": {
+            "allowed_identifiers": [
+              "BRD-SNAPSHOT-INDEX-R002.TO_STATE"
+            ],
+            "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#10. Immutable Principle",
+            "source_type": "SOURCE_LITERAL",
+            "version": "051635b7d42715cb1d418b299a476129f7d947b9abec2033c3e1104c6ab9d2f6"
+          },
+          "identifier": "BRD-SNAPSHOT-INDEX-R002.TO_STATE",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-SNAPSHOT-INDEX-R002.O1.1.STATE_TRANSITION_ALLOWED.TO_STATE.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+            "source_fingerprint": "051635b7d42715cb1d418b299a476129f7d947b9abec2033c3e1104c6ab9d2f6",
+            "source_lines": "L261-L263",
+            "source_section": "10. Immutable Principle"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "STATE_ID",
+            "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R002.BRD-SNAPSHOT-INDEX-R002.TO_STATE",
+            "version": "1.0.0"
+          },
+          "semantic_type": "STATE_ID"
+        },
+        "trigger": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#10. Immutable Principle",
+            "source_type": "SOURCE_LITERAL",
+            "version": "051635b7d42715cb1d418b299a476129f7d947b9abec2033c3e1104c6ab9d2f6"
+          },
+          "identifier": "BRD-SNAPSHOT-INDEX-R002.TRIGGER",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-SNAPSHOT-INDEX-R002.O1.1.STATE_TRANSITION_ALLOWED.TRIGGER.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+            "source_fingerprint": "051635b7d42715cb1d418b299a476129f7d947b9abec2033c3e1104c6ab9d2f6",
+            "source_lines": "L261-L263",
+            "source_section": "10. Immutable Principle"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "ACTION_ID",
+            "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R002.BRD-SNAPSHOT-INDEX-R002.TRIGGER",
+            "version": "1.0.0"
+          },
+          "semantic_type": "ACTION_ID"
+        }
+      }
+    ],
+    "contract_id": "P2C.C4.CONTRACT.BRD-SNAPSHOT-INDEX-R002",
+    "inference": false,
+    "mechanism": "APPROVED_TYPED_CUSTOM_AST",
+    "mechanism_version": "C4-R3",
+    "negative_oracle": [
+      "Existing Snapshot is edited or no new Snapshot is created after the change"
+    ],
+    "operator_composition": [
+      "STATE_TRANSITION_ALLOWED"
+    ],
+    "positive_oracle": [
+      "A new Snapshot is created for the changed business state"
+    ],
+    "provenance": {
+      "approved_decision_references": [],
+      "inference": false,
+      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+      "source_fingerprint": "051635b7d42715cb1d418b299a476129f7d947b9abec2033c3e1104c6ab9d2f6",
+      "source_lines": "L261-L263",
+      "source_section": "10. Immutable Principle"
     },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "DATA_CONTRACT_REJECTION_V1",
-      "criterion_id": "BRD-SNAPSHOT-INDEX-R002-AC002",
-      "given": "a Nếu dữ liệu nghiệp vụ thay đổi: Platform phải tạo Snapshot mới candidate containing an unsupported value, inconsistent relationship, or unresolved reference",
-      "observable_evidence": "rejection result, field or relationship reason, unresolved reference, and unchanged persisted state",
-      "then": "the candidate is rejected without persisting the invalid state, and each invalid field or relationship has a deterministic reason",
-      "verifies": [
-        "BRD-SNAPSHOT-INDEX-R002-O001"
+    "required_evidence": {
+      "evidence_object_ref": {
+        "authoritative_source": {
+          "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#10. Immutable Principle",
+          "source_type": "SOURCE_LITERAL",
+          "version": "051635b7d42715cb1d418b299a476129f7d947b9abec2033c3e1104c6ab9d2f6"
+        },
+        "identifier": "BRD-SNAPSHOT-INDEX-R002.BRD-SNAPSHOT-INDEX-R002.CONTRACT.EVIDENCE.OBJECT",
+        "inference": false,
+        "lifecycle": {
+          "status": "ACTIVE",
+          "version": "2.3"
+        },
+        "namespace": "YSIM.V2.3",
+        "origin": {
+          "origin_id": "BRD-SNAPSHOT-INDEX-R002.CONTRACT.EVIDENCE.ORIGIN",
+          "origin_type": "EVIDENCE_OBJECT"
+        },
+        "provenance": {
+          "approved_decision_references": [],
+          "inference": false,
+          "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+          "source_fingerprint": "051635b7d42715cb1d418b299a476129f7d947b9abec2033c3e1104c6ab9d2f6",
+          "source_lines": "L261-L263",
+          "source_section": "10. Immutable Principle"
+        },
+        "resolver_contract": {
+          "deterministic": true,
+          "input_types": [],
+          "output_type": "EVIDENCE_OBJECT_REF",
+          "resolver_id": "OBSERVE.BRD-SNAPSHOT-INDEX-R002.BRD-SNAPSHOT-INDEX-R002.BRD-SNAPSHOT-INDEX-R002.CONTRACT.EVIDENCE.OBJECT",
+          "version": "1.0.0"
+        },
+        "semantic_type": "EVIDENCE_OBJECT_REF"
+      },
+      "inference": false,
+      "observed_collection_origin": "BRD-SNAPSHOT-INDEX-R002.RUNTIME.OBSERVED.FIELDS",
+      "observed_field_ids": [
+        "FIELD.BUSINESS_OBJECT_ID",
+        "FIELD.CHANGE_ID",
+        "FIELD.PRIOR_SNAPSHOT_ID",
+        "FIELD.NEW_SNAPSHOT_ID",
+        "FIELD.CHANGE_TIME",
+        "FIELD.SNAPSHOT_TIME"
       ],
-      "when": "the candidate is validated"
+      "producer": "BRD-SNAPSHOT-INDEX-R002.EVIDENCE.PRODUCER",
+      "required_collection_origin": "BRD-SNAPSHOT-INDEX-R002.SOURCE.REQUIRED.FIELDS",
+      "required_field_ids": [
+        "FIELD.BUSINESS_OBJECT_ID",
+        "FIELD.CHANGE_ID",
+        "FIELD.PRIOR_SNAPSHOT_ID",
+        "FIELD.NEW_SNAPSHOT_ID",
+        "FIELD.CHANGE_TIME",
+        "FIELD.SNAPSHOT_TIME"
+      ],
+      "required_values_or_hashes": [
+        "BRD-SNAPSHOT-INDEX-R002.EVIDENCE.CONTENT.HASH"
+      ],
+      "retrieval_method": "BRD-SNAPSHOT-INDEX-R002.EVIDENCE.RETRIEVAL",
+      "version_or_correlation": "BRD-SNAPSHOT-INDEX-R002.EVIDENCE.VERSION.CORRELATION"
+    },
+    "runtime_evidence_executed": false,
+    "runtime_status": "RUNTIME_ADAPTER_PENDING",
+    "semantic_obligation_references": [
+      "BRD-SNAPSHOT-INDEX-R002-O001"
+    ],
+    "typed_contract_ast": {
+      "approved_clarification": null,
+      "assertions": [
+        {
+          "assertion_id": "BRD-SNAPSHOT-INDEX-R002.O1.1.STATE_TRANSITION_ALLOWED",
+          "evaluator_consumed_bindings": [
+            "from_state",
+            "state_machine",
+            "to_state",
+            "trigger"
+          ],
+          "evidence_object": {
+            "authoritative_source": {
+              "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#10. Immutable Principle",
+              "source_type": "SOURCE_LITERAL",
+              "version": "051635b7d42715cb1d418b299a476129f7d947b9abec2033c3e1104c6ab9d2f6"
+            },
+            "identifier": "BRD-SNAPSHOT-INDEX-R002.BRD-SNAPSHOT-INDEX-R002.O1.1.STATE_TRANSITION_ALLOWED.EVIDENCE.OBJECT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BRD-SNAPSHOT-INDEX-R002.O1.1.STATE_TRANSITION_ALLOWED.EVIDENCE.ORIGIN",
+              "origin_type": "EVIDENCE_OBJECT"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+              "source_fingerprint": "051635b7d42715cb1d418b299a476129f7d947b9abec2033c3e1104c6ab9d2f6",
+              "source_lines": "L261-L263",
+              "source_section": "10. Immutable Principle"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "EVIDENCE_OBJECT_REF",
+              "resolver_id": "OBSERVE.BRD-SNAPSHOT-INDEX-R002.BRD-SNAPSHOT-INDEX-R002.BRD-SNAPSHOT-INDEX-R002.O1.1.STATE_TRANSITION_ALLOWED.EVIDENCE.OBJECT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "EVIDENCE_OBJECT_REF"
+          },
+          "expected_operand": {
+            "authoritative_source": {
+              "allowed_identifiers": [
+                "BRD-SNAPSHOT-INDEX-R002.BRD-SNAPSHOT-INDEX-R002.O1.1.STATE_TRANSITION_ALLOWED.CANONICAL.RESULT"
+              ],
+              "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#10. Immutable Principle",
+              "source_type": "SOURCE_LITERAL",
+              "version": "051635b7d42715cb1d418b299a476129f7d947b9abec2033c3e1104c6ab9d2f6"
+            },
+            "identifier": "BRD-SNAPSHOT-INDEX-R002.BRD-SNAPSHOT-INDEX-R002.O1.1.STATE_TRANSITION_ALLOWED.CANONICAL.RESULT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BRD-SNAPSHOT-INDEX-R002.O1.1.STATE_TRANSITION_ALLOWED.AUTHORITY.ORIGIN",
+              "origin_type": "SOURCE_LITERAL"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+              "source_fingerprint": "051635b7d42715cb1d418b299a476129f7d947b9abec2033c3e1104c6ab9d2f6",
+              "source_lines": "L261-L263",
+              "source_section": "10. Immutable Principle"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "STATE_ID",
+              "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R002.BRD-SNAPSHOT-INDEX-R002.BRD-SNAPSHOT-INDEX-R002.O1.1.STATE_TRANSITION_ALLOWED.CANONICAL.RESULT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "STATE_ID"
+          },
+          "inference": false,
+          "model_conformance_fixture": {
+            "bindings": {
+              "from_state": {
+                "authoritative_source": {
+                  "allowed_identifiers": [
+                    "BRD-SNAPSHOT-INDEX-R002.FROM_STATE"
+                  ],
+                  "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#10. Immutable Principle",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "051635b7d42715cb1d418b299a476129f7d947b9abec2033c3e1104c6ab9d2f6"
+                },
+                "identifier": "BRD-SNAPSHOT-INDEX-R002.FROM_STATE",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-SNAPSHOT-INDEX-R002.O1.1.STATE_TRANSITION_ALLOWED.FROM_STATE.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                  "source_fingerprint": "051635b7d42715cb1d418b299a476129f7d947b9abec2033c3e1104c6ab9d2f6",
+                  "source_lines": "L261-L263",
+                  "source_section": "10. Immutable Principle"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "STATE_ID",
+                  "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R002.BRD-SNAPSHOT-INDEX-R002.FROM_STATE",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "STATE_ID"
+              },
+              "state_machine": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#10. Immutable Principle",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "051635b7d42715cb1d418b299a476129f7d947b9abec2033c3e1104c6ab9d2f6"
+                },
+                "identifier": "BRD-SNAPSHOT-INDEX-R002.STATE_MACHINE",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-SNAPSHOT-INDEX-R002.O1.1.STATE_TRANSITION_ALLOWED.STATE_MACHINE.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                  "source_fingerprint": "051635b7d42715cb1d418b299a476129f7d947b9abec2033c3e1104c6ab9d2f6",
+                  "source_lines": "L261-L263",
+                  "source_section": "10. Immutable Principle"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "STATE_MACHINE_ID",
+                  "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R002.BRD-SNAPSHOT-INDEX-R002.STATE_MACHINE",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "STATE_MACHINE_ID"
+              },
+              "to_state": {
+                "authoritative_source": {
+                  "allowed_identifiers": [
+                    "BRD-SNAPSHOT-INDEX-R002.TO_STATE"
+                  ],
+                  "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#10. Immutable Principle",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "051635b7d42715cb1d418b299a476129f7d947b9abec2033c3e1104c6ab9d2f6"
+                },
+                "identifier": "BRD-SNAPSHOT-INDEX-R002.TO_STATE",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-SNAPSHOT-INDEX-R002.O1.1.STATE_TRANSITION_ALLOWED.TO_STATE.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                  "source_fingerprint": "051635b7d42715cb1d418b299a476129f7d947b9abec2033c3e1104c6ab9d2f6",
+                  "source_lines": "L261-L263",
+                  "source_section": "10. Immutable Principle"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "STATE_ID",
+                  "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R002.BRD-SNAPSHOT-INDEX-R002.TO_STATE",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "STATE_ID"
+              },
+              "trigger": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#10. Immutable Principle",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "051635b7d42715cb1d418b299a476129f7d947b9abec2033c3e1104c6ab9d2f6"
+                },
+                "identifier": "BRD-SNAPSHOT-INDEX-R002.TRIGGER",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-SNAPSHOT-INDEX-R002.O1.1.STATE_TRANSITION_ALLOWED.TRIGGER.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                  "source_fingerprint": "051635b7d42715cb1d418b299a476129f7d947b9abec2033c3e1104c6ab9d2f6",
+                  "source_lines": "L261-L263",
+                  "source_section": "10. Immutable Principle"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "ACTION_ID",
+                  "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R002.BRD-SNAPSHOT-INDEX-R002.TRIGGER",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "ACTION_ID"
+              }
+            },
+            "comparison": {
+              "expected": {
+                "authoritative_source": {
+                  "allowed_identifiers": [
+                    "BRD-SNAPSHOT-INDEX-R002.BRD-SNAPSHOT-INDEX-R002.O1.1.STATE_TRANSITION_ALLOWED.CANONICAL.RESULT"
+                  ],
+                  "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#10. Immutable Principle",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "051635b7d42715cb1d418b299a476129f7d947b9abec2033c3e1104c6ab9d2f6"
+                },
+                "identifier": "BRD-SNAPSHOT-INDEX-R002.BRD-SNAPSHOT-INDEX-R002.O1.1.STATE_TRANSITION_ALLOWED.CANONICAL.RESULT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-SNAPSHOT-INDEX-R002.O1.1.STATE_TRANSITION_ALLOWED.AUTHORITY.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                  "source_fingerprint": "051635b7d42715cb1d418b299a476129f7d947b9abec2033c3e1104c6ab9d2f6",
+                  "source_lines": "L261-L263",
+                  "source_section": "10. Immutable Principle"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "STATE_ID",
+                  "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R002.BRD-SNAPSHOT-INDEX-R002.BRD-SNAPSHOT-INDEX-R002.O1.1.STATE_TRANSITION_ALLOWED.CANONICAL.RESULT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "STATE_ID"
+              },
+              "observed": {
+                "authoritative_source": {
+                  "allowed_identifiers": [
+                    "BRD-SNAPSHOT-INDEX-R002.BRD-SNAPSHOT-INDEX-R002.O1.1.STATE_TRANSITION_ALLOWED.CANONICAL.RESULT"
+                  ],
+                  "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#10. Immutable Principle",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "051635b7d42715cb1d418b299a476129f7d947b9abec2033c3e1104c6ab9d2f6"
+                },
+                "identifier": "BRD-SNAPSHOT-INDEX-R002.BRD-SNAPSHOT-INDEX-R002.O1.1.STATE_TRANSITION_ALLOWED.CANONICAL.RESULT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-SNAPSHOT-INDEX-R002.O1.1.STATE_TRANSITION_ALLOWED.OBSERVED.ORIGIN",
+                  "origin_type": "RUNTIME_OBSERVED"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                  "source_fingerprint": "051635b7d42715cb1d418b299a476129f7d947b9abec2033c3e1104c6ab9d2f6",
+                  "source_lines": "L261-L263",
+                  "source_section": "10. Immutable Principle"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "STATE_ID",
+                  "resolver_id": "OBSERVE.BRD-SNAPSHOT-INDEX-R002.BRD-SNAPSHOT-INDEX-R002.BRD-SNAPSHOT-INDEX-R002.O1.1.STATE_TRANSITION_ALLOWED.CANONICAL.RESULT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "STATE_ID"
+              }
+            },
+            "evidence_object": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#10. Immutable Principle",
+                "source_type": "SOURCE_LITERAL",
+                "version": "051635b7d42715cb1d418b299a476129f7d947b9abec2033c3e1104c6ab9d2f6"
+              },
+              "identifier": "BRD-SNAPSHOT-INDEX-R002.BRD-SNAPSHOT-INDEX-R002.O1.1.STATE_TRANSITION_ALLOWED.EVIDENCE.OBJECT",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-SNAPSHOT-INDEX-R002.O1.1.STATE_TRANSITION_ALLOWED.EVIDENCE.ORIGIN",
+                "origin_type": "EVIDENCE_OBJECT"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                "source_fingerprint": "051635b7d42715cb1d418b299a476129f7d947b9abec2033c3e1104c6ab9d2f6",
+                "source_lines": "L261-L263",
+                "source_section": "10. Immutable Principle"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "EVIDENCE_OBJECT_REF",
+                "resolver_id": "OBSERVE.BRD-SNAPSHOT-INDEX-R002.BRD-SNAPSHOT-INDEX-R002.BRD-SNAPSHOT-INDEX-R002.O1.1.STATE_TRANSITION_ALLOWED.EVIDENCE.OBJECT",
+                "version": "1.0.0"
+              },
+              "semantic_type": "EVIDENCE_OBJECT_REF"
+            },
+            "operator_id": "STATE_TRANSITION_ALLOWED"
+          },
+          "obligation_id": "BRD-SNAPSHOT-INDEX-R002-O001",
+          "observed_operand": {
+            "authoritative_source": {
+              "allowed_identifiers": [
+                "BRD-SNAPSHOT-INDEX-R002.BRD-SNAPSHOT-INDEX-R002.O1.1.STATE_TRANSITION_ALLOWED.CANONICAL.RESULT"
+              ],
+              "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#10. Immutable Principle",
+              "source_type": "SOURCE_LITERAL",
+              "version": "051635b7d42715cb1d418b299a476129f7d947b9abec2033c3e1104c6ab9d2f6"
+            },
+            "identifier": "BRD-SNAPSHOT-INDEX-R002.BRD-SNAPSHOT-INDEX-R002.O1.1.STATE_TRANSITION_ALLOWED.CANONICAL.RESULT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BRD-SNAPSHOT-INDEX-R002.O1.1.STATE_TRANSITION_ALLOWED.OBSERVED.ORIGIN",
+              "origin_type": "RUNTIME_OBSERVED"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+              "source_fingerprint": "051635b7d42715cb1d418b299a476129f7d947b9abec2033c3e1104c6ab9d2f6",
+              "source_lines": "L261-L263",
+              "source_section": "10. Immutable Principle"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "STATE_ID",
+              "resolver_id": "OBSERVE.BRD-SNAPSHOT-INDEX-R002.BRD-SNAPSHOT-INDEX-R002.BRD-SNAPSHOT-INDEX-R002.O1.1.STATE_TRANSITION_ALLOWED.CANONICAL.RESULT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "STATE_ID"
+          },
+          "operator_id": "STATE_TRANSITION_ALLOWED",
+          "operator_version": "1.0.0-candidate.2",
+          "typed_bindings": {
+            "from_state": {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "BRD-SNAPSHOT-INDEX-R002.FROM_STATE"
+                ],
+                "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#10. Immutable Principle",
+                "source_type": "SOURCE_LITERAL",
+                "version": "051635b7d42715cb1d418b299a476129f7d947b9abec2033c3e1104c6ab9d2f6"
+              },
+              "identifier": "BRD-SNAPSHOT-INDEX-R002.FROM_STATE",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-SNAPSHOT-INDEX-R002.O1.1.STATE_TRANSITION_ALLOWED.FROM_STATE.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                "source_fingerprint": "051635b7d42715cb1d418b299a476129f7d947b9abec2033c3e1104c6ab9d2f6",
+                "source_lines": "L261-L263",
+                "source_section": "10. Immutable Principle"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "STATE_ID",
+                "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R002.BRD-SNAPSHOT-INDEX-R002.FROM_STATE",
+                "version": "1.0.0"
+              },
+              "semantic_type": "STATE_ID"
+            },
+            "state_machine": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#10. Immutable Principle",
+                "source_type": "SOURCE_LITERAL",
+                "version": "051635b7d42715cb1d418b299a476129f7d947b9abec2033c3e1104c6ab9d2f6"
+              },
+              "identifier": "BRD-SNAPSHOT-INDEX-R002.STATE_MACHINE",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-SNAPSHOT-INDEX-R002.O1.1.STATE_TRANSITION_ALLOWED.STATE_MACHINE.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                "source_fingerprint": "051635b7d42715cb1d418b299a476129f7d947b9abec2033c3e1104c6ab9d2f6",
+                "source_lines": "L261-L263",
+                "source_section": "10. Immutable Principle"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "STATE_MACHINE_ID",
+                "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R002.BRD-SNAPSHOT-INDEX-R002.STATE_MACHINE",
+                "version": "1.0.0"
+              },
+              "semantic_type": "STATE_MACHINE_ID"
+            },
+            "to_state": {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "BRD-SNAPSHOT-INDEX-R002.TO_STATE"
+                ],
+                "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#10. Immutable Principle",
+                "source_type": "SOURCE_LITERAL",
+                "version": "051635b7d42715cb1d418b299a476129f7d947b9abec2033c3e1104c6ab9d2f6"
+              },
+              "identifier": "BRD-SNAPSHOT-INDEX-R002.TO_STATE",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-SNAPSHOT-INDEX-R002.O1.1.STATE_TRANSITION_ALLOWED.TO_STATE.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                "source_fingerprint": "051635b7d42715cb1d418b299a476129f7d947b9abec2033c3e1104c6ab9d2f6",
+                "source_lines": "L261-L263",
+                "source_section": "10. Immutable Principle"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "STATE_ID",
+                "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R002.BRD-SNAPSHOT-INDEX-R002.TO_STATE",
+                "version": "1.0.0"
+              },
+              "semantic_type": "STATE_ID"
+            },
+            "trigger": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#10. Immutable Principle",
+                "source_type": "SOURCE_LITERAL",
+                "version": "051635b7d42715cb1d418b299a476129f7d947b9abec2033c3e1104c6ab9d2f6"
+              },
+              "identifier": "BRD-SNAPSHOT-INDEX-R002.TRIGGER",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-SNAPSHOT-INDEX-R002.O1.1.STATE_TRANSITION_ALLOWED.TRIGGER.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                "source_fingerprint": "051635b7d42715cb1d418b299a476129f7d947b9abec2033c3e1104c6ab9d2f6",
+                "source_lines": "L261-L263",
+                "source_section": "10. Immutable Principle"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "ACTION_ID",
+                "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R002.BRD-SNAPSHOT-INDEX-R002.TRIGGER",
+                "version": "1.0.0"
+              },
+              "semantic_type": "ACTION_ID"
+            }
+          }
+        }
+      ],
+      "boundary_cases": [
+        "A non-business technical change does not create a business Snapshot unless separately required"
+      ],
+      "contract_ast_sha256": "76f3b32c3e986a07244ef39ab9fddac0aec814221dbe085bc25ea34acd396f2c",
+      "contract_id": "P2C.C4.CONTRACT.BRD-SNAPSHOT-INDEX-R002",
+      "criticality": "CRITICAL",
+      "disposition": "CORRECTABLE_WITH_APPROVED_TYPE_MODEL",
+      "evidence_contract": {
+        "evidence_object_ref": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#10. Immutable Principle",
+            "source_type": "SOURCE_LITERAL",
+            "version": "051635b7d42715cb1d418b299a476129f7d947b9abec2033c3e1104c6ab9d2f6"
+          },
+          "identifier": "BRD-SNAPSHOT-INDEX-R002.BRD-SNAPSHOT-INDEX-R002.CONTRACT.EVIDENCE.OBJECT",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-SNAPSHOT-INDEX-R002.CONTRACT.EVIDENCE.ORIGIN",
+            "origin_type": "EVIDENCE_OBJECT"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+            "source_fingerprint": "051635b7d42715cb1d418b299a476129f7d947b9abec2033c3e1104c6ab9d2f6",
+            "source_lines": "L261-L263",
+            "source_section": "10. Immutable Principle"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "EVIDENCE_OBJECT_REF",
+            "resolver_id": "OBSERVE.BRD-SNAPSHOT-INDEX-R002.BRD-SNAPSHOT-INDEX-R002.BRD-SNAPSHOT-INDEX-R002.CONTRACT.EVIDENCE.OBJECT",
+            "version": "1.0.0"
+          },
+          "semantic_type": "EVIDENCE_OBJECT_REF"
+        },
+        "inference": false,
+        "observed_collection_origin": "BRD-SNAPSHOT-INDEX-R002.RUNTIME.OBSERVED.FIELDS",
+        "observed_field_ids": [
+          "FIELD.BUSINESS_OBJECT_ID",
+          "FIELD.CHANGE_ID",
+          "FIELD.PRIOR_SNAPSHOT_ID",
+          "FIELD.NEW_SNAPSHOT_ID",
+          "FIELD.CHANGE_TIME",
+          "FIELD.SNAPSHOT_TIME"
+        ],
+        "producer": "BRD-SNAPSHOT-INDEX-R002.EVIDENCE.PRODUCER",
+        "required_collection_origin": "BRD-SNAPSHOT-INDEX-R002.SOURCE.REQUIRED.FIELDS",
+        "required_field_ids": [
+          "FIELD.BUSINESS_OBJECT_ID",
+          "FIELD.CHANGE_ID",
+          "FIELD.PRIOR_SNAPSHOT_ID",
+          "FIELD.NEW_SNAPSHOT_ID",
+          "FIELD.CHANGE_TIME",
+          "FIELD.SNAPSHOT_TIME"
+        ],
+        "required_values_or_hashes": [
+          "BRD-SNAPSHOT-INDEX-R002.EVIDENCE.CONTENT.HASH"
+        ],
+        "retrieval_method": "BRD-SNAPSHOT-INDEX-R002.EVIDENCE.RETRIEVAL",
+        "version_or_correlation": "BRD-SNAPSHOT-INDEX-R002.EVIDENCE.VERSION.CORRELATION"
+      },
+      "explicit_non_obligations": [
+        "No runtime implementation topology is authorized by this semantic record.",
+        "No production runtime evidence is claimed by this model-level candidate."
+      ],
+      "fixture_ids": [
+        "P2C-C4-FX-9FB7B6C737CF0404CCDA",
+        "P2C-C4-FX-A527986521876D198C99",
+        "P2C-C4-FX-7A899C239A276DD37FCB"
+      ],
+      "high_risk_audit_subset": true,
+      "independent_contract_identity": true,
+      "inference": false,
+      "inherits_contract_ast": null,
+      "negative_oracles": [
+        "Existing Snapshot is edited or no new Snapshot is created after the change"
+      ],
+      "normative_obligations": [
+        {
+          "applicability": "V2.3_ACTIVE",
+          "obligation_id": "BRD-SNAPSHOT-INDEX-R002-O001",
+          "obligation_text": "Nếu dữ liệu nghiệp vụ thay đổi: Platform phải tạo Snapshot mới"
+        }
+      ],
+      "obligation_to_operator_coverage": [
+        {
+          "assertion_ids": [
+            "BRD-SNAPSHOT-INDEX-R002.O1.1.STATE_TRANSITION_ALLOWED"
+          ],
+          "coverage_count": 1,
+          "obligation_id": "BRD-SNAPSHOT-INDEX-R002-O001"
+        }
+      ],
+      "operator_composition": [
+        "STATE_TRANSITION_ALLOWED"
+      ],
+      "positive_oracles": [
+        "A new Snapshot is created for the changed business state"
+      ],
+      "preconditions": [
+        "The prior business state and committed change are identifiable"
+      ],
+      "prohibitions": [
+        "Existing Snapshot is edited or no new Snapshot is created after the change"
+      ],
+      "requirement_id": "BRD-SNAPSHOT-INDEX-R002",
+      "runtime_status": "SLICE_RUNTIME_ADAPTER_REQUIRED",
+      "semantic_family_id": null,
+      "source_provenance": {
+        "approved_decision_references": [],
+        "inference": false,
+        "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+        "source_fingerprint": "051635b7d42715cb1d418b299a476129f7d947b9abec2033c3e1104c6ab9d2f6",
+        "source_lines": "L261-L263",
+        "source_section": "10. Immutable Principle"
+      },
+      "source_statement": "Nếu dữ liệu nghiệp vụ thay đổi: Platform phải tạo Snapshot mới.",
+      "surrounding_source_context": "### BRD-SNAPSHOT-INDEX-R002 — Nếu dữ liệu nghiệp vụ thay đổi: Platform phải tạo Snapshot mới"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "contract_id": "P2C.C4.CONTRACT.BRD-SNAPSHOT-INDEX-R002",
+    "inference": false,
+    "mechanism": "APPROVED_TYPED_CUSTOM_AST",
+    "mechanism_version": "SEMANTIC_ACCEPTANCE_RENDERER_C2",
+    "runtime_status": "RUNTIME_ADAPTER_PENDING"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "ACCEPTANCE_READY",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-SNAPSHOT-INDEX-R002-AC001",
-        "BRD-SNAPSHOT-INDEX-R002-AC002"
+        "BRD-SNAPSHOT-INDEX-R002-AC002",
+        "BRD-SNAPSHOT-INDEX-R002-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-SNAPSHOT-INDEX-R002-O001",
@@ -1074,35 +1959,36 @@ trước khi được sử dụng trong Platform.
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-SNAPSHOT-INDEX-R002 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-SNAPSHOT-INDEX-R002 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-SNAPSHOT-INDEX-R002 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-SNAPSHOT-INDEX-R002 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-SNAPSHOT-INDEX-R002 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-SNAPSHOT-INDEX-R002 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "BRD-SNAPSHOT-INDEX-R002 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BRD-SNAPSHOT-INDEX-R002-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BRD-SNAPSHOT-INDEX-R002-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-SNAPSHOT-INDEX-R002 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-SNAPSHOT-INDEX-R002 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -1121,8 +2007,8 @@ trước khi được sử dụng trong Platform.
     "source_context_sha256": "514f52a4bf9b723e0c71a97e83b50f2b220fd282c5bd267f77a6ad52ca1d9910",
     "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
     "source_fingerprint": "051635b7d42715cb1d418b299a476129f7d947b9abec2033c3e1104c6ab9d2f6",
-    "source_lines": "L261-L263",
-    "source_section": "10. Immutable Principle"
+    "source_lines": "L1042-L2029",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-SNAPSHOT-INDEX-R002"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1147,47 +2033,27 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-SNAPSHOT-INDEX-R003-AC001",
-      "given": "an operational task within the scope of Business Snapshot không phải: - Audit Log",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BRD-SNAPSHOT-INDEX-R003-O001"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "OPERATIONAL_VERIFICATION_FAILURE_V1",
-      "criterion_id": "BRD-SNAPSHOT-INDEX-R003-AC002",
-      "given": "an operational task missing an outcome, required signal, audit evidence, or recovery evidence for Business Snapshot không phải: - Audit Log",
-      "observable_evidence": "operator-visible verification result, missing-evidence identifier, operation state, and relevant signal or audit record",
-      "then": "verification reports the specific missing evidence as a detectable failure and does not report the task as conforming",
-      "verifies": [
-        "BRD-SNAPSHOT-INDEX-R003-O001"
-      ],
-      "when": "operational verification is performed"
-    },
-    {
-      "case": "NEGATIVE_FAIL_CLOSED",
-      "controlled_contract": "REQUIREMENT_SPECIFIC_FAIL_CLOSED_V1",
-      "criterion_id": "BRD-SNAPSHOT-INDEX-R003-AC003",
-      "given": "an input or attempted state change that violates a mandatory boundary explicitly stated by Business Snapshot không phải: - Audit Log",
-      "observable_evidence": "violating input, decision and reason, before/after protected state, and audit or conformance evidence",
-      "then": "the violated obligation produces its specified rejection, denial, block, review, or non-conforming result without recording a contradictory success",
-      "verifies": [
-        "BRD-SNAPSHOT-INDEX-R003-O001"
-      ],
-      "when": "the violating input or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-SNAPSHOT-INDEX-R003",
+      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+      "source_fingerprint": "d329bff77b71dccf548a57f9ecc262634d8a7e035bad170339dd5d624bc4e759"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
@@ -1203,36 +2069,36 @@ trước khi được sử dụng trong Platform.
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-SNAPSHOT-INDEX-R003 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-SNAPSHOT-INDEX-R003 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-SNAPSHOT-INDEX-R003 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-SNAPSHOT-INDEX-R003 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-SNAPSHOT-INDEX-R003 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-SNAPSHOT-INDEX-R003 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
-        "BRD-SNAPSHOT-INDEX-R003-AC003"
-      ],
-      "status": "APPLICABLE"
+        "BRD-SNAPSHOT-INDEX-R003-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BRD-SNAPSHOT-INDEX-R003-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-SNAPSHOT-INDEX-R003 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-SNAPSHOT-INDEX-R003 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -1251,8 +2117,8 @@ trước khi được sử dụng trong Platform.
     "source_context_sha256": "390418eb19985a215320f63bad6bc942609c40765a9d243f8b32c548712c6500",
     "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
     "source_fingerprint": "d329bff77b71dccf548a57f9ecc262634d8a7e035bad170339dd5d624bc4e759",
-    "source_lines": "L273-L275",
-    "source_section": "11. Business Evidence Principle"
+    "source_lines": "L2031-L2139",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-SNAPSHOT-INDEX-R003"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1277,28 +2143,34 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "BRD-SNAPSHOT-INDEX-R004-AC001",
-      "given": "a candidate Business Snapshot không phải: - History Record record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns REJECTED when the prohibited value or relationship is present, and no rejected state is persisted",
-      "verifies": [
-        "BRD-SNAPSHOT-INDEX-R004-O001"
-      ],
-      "when": "the candidate is evaluated against its declared data contract"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-SNAPSHOT-INDEX-R004",
+      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+      "source_fingerprint": "4f279af6cc4a838d95b8cfc89adf00a420cb873c1d4b5177ef212e180fa3b19d"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-SNAPSHOT-INDEX-R004-AC001"
+        "BRD-SNAPSHOT-INDEX-R004-AC001",
+        "BRD-SNAPSHOT-INDEX-R004-AC002",
+        "BRD-SNAPSHOT-INDEX-R004-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-SNAPSHOT-INDEX-R004-O001",
@@ -1321,9 +2193,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "11. Business Evidence Principle",
     "source_context_sha256": "390418eb19985a215320f63bad6bc942609c40765a9d243f8b32c548712c6500",
     "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
-    "source_fingerprint": "d0dbda4269278322728b2a2021c57f63f56f0c14916bc18072fe262820bde811",
-    "source_lines": "L273-L276",
-    "source_section": "11. Business Evidence Principle"
+    "source_fingerprint": "4f279af6cc4a838d95b8cfc89adf00a420cb873c1d4b5177ef212e180fa3b19d",
+    "source_lines": "L2141-L2216",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-SNAPSHOT-INDEX-R004"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1348,28 +2220,34 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "BRD-SNAPSHOT-INDEX-R005-AC001",
-      "given": "a candidate Business Snapshot không phải: - Temporary Cache record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns REJECTED when the prohibited value or relationship is present, and no rejected state is persisted",
-      "verifies": [
-        "BRD-SNAPSHOT-INDEX-R005-O001"
-      ],
-      "when": "the candidate is evaluated against its declared data contract"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-SNAPSHOT-INDEX-R005",
+      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+      "source_fingerprint": "b70f2b2049d48521cbdd2d462ebb401605d6e82e2e175527f08ba8cea4ef4f74"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-SNAPSHOT-INDEX-R005-AC001"
+        "BRD-SNAPSHOT-INDEX-R005-AC001",
+        "BRD-SNAPSHOT-INDEX-R005-AC002",
+        "BRD-SNAPSHOT-INDEX-R005-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-SNAPSHOT-INDEX-R005-O001",
@@ -1392,9 +2270,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "11. Business Evidence Principle",
     "source_context_sha256": "390418eb19985a215320f63bad6bc942609c40765a9d243f8b32c548712c6500",
     "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
-    "source_fingerprint": "345cec95fa56693d7dd5474d25b4b5b95c7b1d1168ec6e5c5d794621c0f43515",
-    "source_lines": "L273-L277",
-    "source_section": "11. Business Evidence Principle"
+    "source_fingerprint": "b70f2b2049d48521cbdd2d462ebb401605d6e82e2e175527f08ba8cea4ef4f74",
+    "source_lines": "L2218-L2293",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-SNAPSHOT-INDEX-R005"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1419,28 +2297,34 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "BRD-SNAPSHOT-INDEX-R006-AC001",
-      "given": "a candidate Snapshot tuân thủ Retention Policy record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "BRD-SNAPSHOT-INDEX-R006-O001"
-      ],
-      "when": "the candidate is evaluated against its declared data contract"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-SNAPSHOT-INDEX-R006",
+      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+      "source_fingerprint": "29cb7f87f924a5756aa901510eb95bc5dff237fe268da955b5c1347acce27176"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-SNAPSHOT-INDEX-R006-AC001"
+        "BRD-SNAPSHOT-INDEX-R006-AC001",
+        "BRD-SNAPSHOT-INDEX-R006-AC002",
+        "BRD-SNAPSHOT-INDEX-R006-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-SNAPSHOT-INDEX-R006-O001",
@@ -1464,8 +2348,8 @@ trước khi được sử dụng trong Platform.
     "source_context_sha256": "7e3c42acb5cefb9022dc9845a2b659e22bb4b493c9c7b835055a6890544c9443",
     "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
     "source_fingerprint": "29cb7f87f924a5756aa901510eb95bc5dff237fe268da955b5c1347acce27176",
-    "source_lines": "L299",
-    "source_section": "12. Snapshot Retention"
+    "source_lines": "L2295-L2370",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-SNAPSHOT-INDEX-R006"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1490,28 +2374,2003 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "BRD-SNAPSHOT-INDEX-R007-AC001",
-      "given": "a candidate Snapshot Content vẫn luôn bất biến record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "BRD-SNAPSHOT-INDEX-R007-O001"
+  "acceptance_contract": {
+    "boundary_oracle": [
+      "Creating different content in a new Snapshot is allowed; changing existing content is not"
+    ],
+    "concrete_bindings": [
+      {
+        "after_hash": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#18. Snapshot Version",
+            "source_type": "SOURCE_LITERAL",
+            "version": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951"
+          },
+          "identifier": "BRD-SNAPSHOT-INDEX-R007.AFTER_HASH",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.AFTER_HASH.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+            "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+            "source_lines": "L500",
+            "source_section": "18. Snapshot Version"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "HASH",
+            "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R007.BRD-SNAPSHOT-INDEX-R007.AFTER_HASH",
+            "version": "1.0.0"
+          },
+          "semantic_type": "HASH"
+        },
+        "audit_record": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#18. Snapshot Version",
+            "source_type": "SOURCE_LITERAL",
+            "version": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951"
+          },
+          "identifier": "BRD-SNAPSHOT-INDEX-R007.AUDIT_RECORD",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.AUDIT_RECORD.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+            "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+            "source_lines": "L500",
+            "source_section": "18. Snapshot Version"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "EVIDENCE_OBJECT_REF",
+            "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R007.BRD-SNAPSHOT-INDEX-R007.AUDIT_RECORD",
+            "version": "1.0.0"
+          },
+          "semantic_type": "EVIDENCE_OBJECT_REF"
+        },
+        "before_hash": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#18. Snapshot Version",
+            "source_type": "SOURCE_LITERAL",
+            "version": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951"
+          },
+          "identifier": "BRD-SNAPSHOT-INDEX-R007.BEFORE_HASH",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.BEFORE_HASH.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+            "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+            "source_lines": "L500",
+            "source_section": "18. Snapshot Version"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "HASH",
+            "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R007.BRD-SNAPSHOT-INDEX-R007.BEFORE_HASH",
+            "version": "1.0.0"
+          },
+          "semantic_type": "HASH"
+        },
+        "immutability_boundary": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#18. Snapshot Version",
+            "source_type": "SOURCE_LITERAL",
+            "version": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951"
+          },
+          "identifier": "BRD-SNAPSHOT-INDEX-R007.IMMUTABILITY_BOUNDARY",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.IMMUTABILITY_BOUNDARY.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+            "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+            "source_lines": "L500",
+            "source_section": "18. Snapshot Version"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "POLICY_ID",
+            "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R007.BRD-SNAPSHOT-INDEX-R007.IMMUTABILITY_BOUNDARY",
+            "version": "1.0.0"
+          },
+          "semantic_type": "POLICY_ID"
+        },
+        "protected_fields": {
+          "members": [
+            {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#18. Snapshot Version",
+                "source_type": "SOURCE_LITERAL",
+                "version": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951"
+              },
+              "identifier": "FIELD.SNAPSHOT_ID",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.PROTECTED_FIELDS.ORIGIN.MEMBER.1",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+                "source_lines": "L500",
+                "source_section": "18. Snapshot Version"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "FIELD_ID",
+                "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R007.FIELD.SNAPSHOT_ID",
+                "version": "1.0.0"
+              },
+              "semantic_type": "FIELD_ID"
+            },
+            {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#18. Snapshot Version",
+                "source_type": "SOURCE_LITERAL",
+                "version": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951"
+              },
+              "identifier": "FIELD.CONTENT_HASH_BEFORE",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.PROTECTED_FIELDS.ORIGIN.MEMBER.2",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+                "source_lines": "L500",
+                "source_section": "18. Snapshot Version"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "FIELD_ID",
+                "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R007.FIELD.CONTENT_HASH_BEFORE",
+                "version": "1.0.0"
+              },
+              "semantic_type": "FIELD_ID"
+            },
+            {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#18. Snapshot Version",
+                "source_type": "SOURCE_LITERAL",
+                "version": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951"
+              },
+              "identifier": "FIELD.CONTENT_HASH_AFTER",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.PROTECTED_FIELDS.ORIGIN.MEMBER.3",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+                "source_lines": "L500",
+                "source_section": "18. Snapshot Version"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "FIELD_ID",
+                "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R007.FIELD.CONTENT_HASH_AFTER",
+                "version": "1.0.0"
+              },
+              "semantic_type": "FIELD_ID"
+            },
+            {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#18. Snapshot Version",
+                "source_type": "SOURCE_LITERAL",
+                "version": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951"
+              },
+              "identifier": "FIELD.WRITE_RESULT",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.PROTECTED_FIELDS.ORIGIN.MEMBER.4",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+                "source_lines": "L500",
+                "source_section": "18. Snapshot Version"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "FIELD_ID",
+                "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R007.FIELD.WRITE_RESULT",
+                "version": "1.0.0"
+              },
+              "semantic_type": "FIELD_ID"
+            },
+            {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#18. Snapshot Version",
+                "source_type": "SOURCE_LITERAL",
+                "version": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951"
+              },
+              "identifier": "FIELD.AUDIT_RECORD",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.PROTECTED_FIELDS.ORIGIN.MEMBER.5",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+                "source_lines": "L500",
+                "source_section": "18. Snapshot Version"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "FIELD_ID",
+                "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R007.FIELD.AUDIT_RECORD",
+                "version": "1.0.0"
+              },
+              "semantic_type": "FIELD_ID"
+            }
+          ],
+          "origin": {
+            "origin_id": "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.PROTECTED_FIELDS.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+            "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+            "source_lines": "L500",
+            "source_section": "18. Snapshot Version"
+          },
+          "semantic_type": "SET_OF<FIELD_ID>"
+        },
+        "required_fields": {
+          "members": [
+            {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#18. Snapshot Version",
+                "source_type": "SOURCE_LITERAL",
+                "version": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951"
+              },
+              "identifier": "FIELD.SNAPSHOT_ID",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.REQUIRED_FIELDS.ORIGIN.MEMBER.1",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+                "source_lines": "L500",
+                "source_section": "18. Snapshot Version"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "FIELD_ID",
+                "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R007.FIELD.SNAPSHOT_ID",
+                "version": "1.0.0"
+              },
+              "semantic_type": "FIELD_ID"
+            },
+            {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#18. Snapshot Version",
+                "source_type": "SOURCE_LITERAL",
+                "version": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951"
+              },
+              "identifier": "FIELD.CONTENT_HASH_BEFORE",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.REQUIRED_FIELDS.ORIGIN.MEMBER.2",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+                "source_lines": "L500",
+                "source_section": "18. Snapshot Version"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "FIELD_ID",
+                "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R007.FIELD.CONTENT_HASH_BEFORE",
+                "version": "1.0.0"
+              },
+              "semantic_type": "FIELD_ID"
+            },
+            {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#18. Snapshot Version",
+                "source_type": "SOURCE_LITERAL",
+                "version": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951"
+              },
+              "identifier": "FIELD.CONTENT_HASH_AFTER",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.REQUIRED_FIELDS.ORIGIN.MEMBER.3",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+                "source_lines": "L500",
+                "source_section": "18. Snapshot Version"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "FIELD_ID",
+                "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R007.FIELD.CONTENT_HASH_AFTER",
+                "version": "1.0.0"
+              },
+              "semantic_type": "FIELD_ID"
+            },
+            {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#18. Snapshot Version",
+                "source_type": "SOURCE_LITERAL",
+                "version": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951"
+              },
+              "identifier": "FIELD.WRITE_RESULT",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.REQUIRED_FIELDS.ORIGIN.MEMBER.4",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+                "source_lines": "L500",
+                "source_section": "18. Snapshot Version"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "FIELD_ID",
+                "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R007.FIELD.WRITE_RESULT",
+                "version": "1.0.0"
+              },
+              "semantic_type": "FIELD_ID"
+            },
+            {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#18. Snapshot Version",
+                "source_type": "SOURCE_LITERAL",
+                "version": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951"
+              },
+              "identifier": "FIELD.AUDIT_RECORD",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.REQUIRED_FIELDS.ORIGIN.MEMBER.5",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+                "source_lines": "L500",
+                "source_section": "18. Snapshot Version"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "FIELD_ID",
+                "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R007.FIELD.AUDIT_RECORD",
+                "version": "1.0.0"
+              },
+              "semantic_type": "FIELD_ID"
+            }
+          ],
+          "origin": {
+            "origin_id": "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.REQUIRED_FIELDS.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+            "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+            "source_lines": "L500",
+            "source_section": "18. Snapshot Version"
+          },
+          "semantic_type": "SET_OF<FIELD_ID>"
+        }
+      }
+    ],
+    "contract_id": "P2C.C4.CONTRACT.BRD-SNAPSHOT-INDEX-R007",
+    "inference": false,
+    "mechanism": "APPROVED_TYPED_CUSTOM_AST",
+    "mechanism_version": "C4-R3",
+    "negative_oracle": [
+      "Snapshot Content is modified or deleted"
+    ],
+    "operator_composition": [
+      "AUDIT_IMMUTABLE"
+    ],
+    "positive_oracle": [
+      "Stored Snapshot Content remains unchanged"
+    ],
+    "provenance": {
+      "approved_decision_references": [],
+      "inference": false,
+      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+      "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+      "source_lines": "L500",
+      "source_section": "18. Snapshot Version"
+    },
+    "required_evidence": {
+      "evidence_object_ref": {
+        "authoritative_source": {
+          "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#18. Snapshot Version",
+          "source_type": "SOURCE_LITERAL",
+          "version": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951"
+        },
+        "identifier": "BRD-SNAPSHOT-INDEX-R007.BRD-SNAPSHOT-INDEX-R007.CONTRACT.EVIDENCE.OBJECT",
+        "inference": false,
+        "lifecycle": {
+          "status": "ACTIVE",
+          "version": "2.3"
+        },
+        "namespace": "YSIM.V2.3",
+        "origin": {
+          "origin_id": "BRD-SNAPSHOT-INDEX-R007.CONTRACT.EVIDENCE.ORIGIN",
+          "origin_type": "EVIDENCE_OBJECT"
+        },
+        "provenance": {
+          "approved_decision_references": [],
+          "inference": false,
+          "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+          "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+          "source_lines": "L500",
+          "source_section": "18. Snapshot Version"
+        },
+        "resolver_contract": {
+          "deterministic": true,
+          "input_types": [],
+          "output_type": "EVIDENCE_OBJECT_REF",
+          "resolver_id": "OBSERVE.BRD-SNAPSHOT-INDEX-R007.BRD-SNAPSHOT-INDEX-R007.BRD-SNAPSHOT-INDEX-R007.CONTRACT.EVIDENCE.OBJECT",
+          "version": "1.0.0"
+        },
+        "semantic_type": "EVIDENCE_OBJECT_REF"
+      },
+      "inference": false,
+      "observed_collection_origin": "BRD-SNAPSHOT-INDEX-R007.RUNTIME.OBSERVED.FIELDS",
+      "observed_field_ids": [
+        "FIELD.SNAPSHOT_ID",
+        "FIELD.CONTENT_HASH_BEFORE",
+        "FIELD.CONTENT_HASH_AFTER",
+        "FIELD.WRITE_RESULT",
+        "FIELD.AUDIT_RECORD"
       ],
-      "when": "the candidate is evaluated against its declared data contract"
+      "producer": "BRD-SNAPSHOT-INDEX-R007.EVIDENCE.PRODUCER",
+      "required_collection_origin": "BRD-SNAPSHOT-INDEX-R007.SOURCE.REQUIRED.FIELDS",
+      "required_field_ids": [
+        "FIELD.SNAPSHOT_ID",
+        "FIELD.CONTENT_HASH_BEFORE",
+        "FIELD.CONTENT_HASH_AFTER",
+        "FIELD.WRITE_RESULT",
+        "FIELD.AUDIT_RECORD"
+      ],
+      "required_values_or_hashes": [
+        "BRD-SNAPSHOT-INDEX-R007.EVIDENCE.CONTENT.HASH"
+      ],
+      "retrieval_method": "BRD-SNAPSHOT-INDEX-R007.EVIDENCE.RETRIEVAL",
+      "version_or_correlation": "BRD-SNAPSHOT-INDEX-R007.EVIDENCE.VERSION.CORRELATION"
+    },
+    "runtime_evidence_executed": false,
+    "runtime_status": "RUNTIME_ADAPTER_PENDING",
+    "semantic_obligation_references": [
+      "BRD-SNAPSHOT-INDEX-R007-O001"
+    ],
+    "typed_contract_ast": {
+      "approved_clarification": null,
+      "assertions": [
+        {
+          "assertion_id": "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE",
+          "evaluator_consumed_bindings": [
+            "after_hash",
+            "audit_record",
+            "before_hash",
+            "immutability_boundary",
+            "protected_fields",
+            "required_fields"
+          ],
+          "evidence_object": {
+            "authoritative_source": {
+              "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#18. Snapshot Version",
+              "source_type": "SOURCE_LITERAL",
+              "version": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951"
+            },
+            "identifier": "BRD-SNAPSHOT-INDEX-R007.BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.EVIDENCE.OBJECT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.EVIDENCE.ORIGIN",
+              "origin_type": "EVIDENCE_OBJECT"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+              "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+              "source_lines": "L500",
+              "source_section": "18. Snapshot Version"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "EVIDENCE_OBJECT_REF",
+              "resolver_id": "OBSERVE.BRD-SNAPSHOT-INDEX-R007.BRD-SNAPSHOT-INDEX-R007.BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.EVIDENCE.OBJECT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "EVIDENCE_OBJECT_REF"
+          },
+          "expected_operand": {
+            "authoritative_source": {
+              "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#18. Snapshot Version",
+              "source_type": "SOURCE_LITERAL",
+              "version": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951"
+            },
+            "identifier": "BRD-SNAPSHOT-INDEX-R007.BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.CANONICAL.RESULT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.AUTHORITY.ORIGIN",
+              "origin_type": "SOURCE_LITERAL"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+              "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+              "source_lines": "L500",
+              "source_section": "18. Snapshot Version"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "EVIDENCE_OBJECT_REF",
+              "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R007.BRD-SNAPSHOT-INDEX-R007.BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.CANONICAL.RESULT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "EVIDENCE_OBJECT_REF"
+          },
+          "inference": false,
+          "model_conformance_fixture": {
+            "bindings": {
+              "after_hash": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#18. Snapshot Version",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951"
+                },
+                "identifier": "BRD-SNAPSHOT-INDEX-R007.AFTER_HASH",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.AFTER_HASH.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                  "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+                  "source_lines": "L500",
+                  "source_section": "18. Snapshot Version"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "HASH",
+                  "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R007.BRD-SNAPSHOT-INDEX-R007.AFTER_HASH",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "HASH"
+              },
+              "audit_record": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#18. Snapshot Version",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951"
+                },
+                "identifier": "BRD-SNAPSHOT-INDEX-R007.AUDIT_RECORD",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.AUDIT_RECORD.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                  "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+                  "source_lines": "L500",
+                  "source_section": "18. Snapshot Version"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "EVIDENCE_OBJECT_REF",
+                  "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R007.BRD-SNAPSHOT-INDEX-R007.AUDIT_RECORD",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "EVIDENCE_OBJECT_REF"
+              },
+              "before_hash": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#18. Snapshot Version",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951"
+                },
+                "identifier": "BRD-SNAPSHOT-INDEX-R007.BEFORE_HASH",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.BEFORE_HASH.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                  "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+                  "source_lines": "L500",
+                  "source_section": "18. Snapshot Version"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "HASH",
+                  "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R007.BRD-SNAPSHOT-INDEX-R007.BEFORE_HASH",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "HASH"
+              },
+              "immutability_boundary": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#18. Snapshot Version",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951"
+                },
+                "identifier": "BRD-SNAPSHOT-INDEX-R007.IMMUTABILITY_BOUNDARY",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.IMMUTABILITY_BOUNDARY.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                  "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+                  "source_lines": "L500",
+                  "source_section": "18. Snapshot Version"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "POLICY_ID",
+                  "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R007.BRD-SNAPSHOT-INDEX-R007.IMMUTABILITY_BOUNDARY",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "POLICY_ID"
+              },
+              "protected_fields": {
+                "members": [
+                  {
+                    "authoritative_source": {
+                      "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#18. Snapshot Version",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951"
+                    },
+                    "identifier": "FIELD.SNAPSHOT_ID",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.PROTECTED_FIELDS.ORIGIN.MEMBER.1",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                      "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+                      "source_lines": "L500",
+                      "source_section": "18. Snapshot Version"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "FIELD_ID",
+                      "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R007.FIELD.SNAPSHOT_ID",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "FIELD_ID"
+                  },
+                  {
+                    "authoritative_source": {
+                      "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#18. Snapshot Version",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951"
+                    },
+                    "identifier": "FIELD.CONTENT_HASH_BEFORE",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.PROTECTED_FIELDS.ORIGIN.MEMBER.2",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                      "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+                      "source_lines": "L500",
+                      "source_section": "18. Snapshot Version"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "FIELD_ID",
+                      "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R007.FIELD.CONTENT_HASH_BEFORE",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "FIELD_ID"
+                  },
+                  {
+                    "authoritative_source": {
+                      "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#18. Snapshot Version",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951"
+                    },
+                    "identifier": "FIELD.CONTENT_HASH_AFTER",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.PROTECTED_FIELDS.ORIGIN.MEMBER.3",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                      "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+                      "source_lines": "L500",
+                      "source_section": "18. Snapshot Version"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "FIELD_ID",
+                      "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R007.FIELD.CONTENT_HASH_AFTER",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "FIELD_ID"
+                  },
+                  {
+                    "authoritative_source": {
+                      "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#18. Snapshot Version",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951"
+                    },
+                    "identifier": "FIELD.WRITE_RESULT",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.PROTECTED_FIELDS.ORIGIN.MEMBER.4",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                      "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+                      "source_lines": "L500",
+                      "source_section": "18. Snapshot Version"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "FIELD_ID",
+                      "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R007.FIELD.WRITE_RESULT",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "FIELD_ID"
+                  },
+                  {
+                    "authoritative_source": {
+                      "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#18. Snapshot Version",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951"
+                    },
+                    "identifier": "FIELD.AUDIT_RECORD",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.PROTECTED_FIELDS.ORIGIN.MEMBER.5",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                      "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+                      "source_lines": "L500",
+                      "source_section": "18. Snapshot Version"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "FIELD_ID",
+                      "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R007.FIELD.AUDIT_RECORD",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "FIELD_ID"
+                  }
+                ],
+                "origin": {
+                  "origin_id": "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.PROTECTED_FIELDS.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                  "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+                  "source_lines": "L500",
+                  "source_section": "18. Snapshot Version"
+                },
+                "semantic_type": "SET_OF<FIELD_ID>"
+              },
+              "required_fields": {
+                "members": [
+                  {
+                    "authoritative_source": {
+                      "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#18. Snapshot Version",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951"
+                    },
+                    "identifier": "FIELD.SNAPSHOT_ID",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.REQUIRED_FIELDS.ORIGIN.MEMBER.1",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                      "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+                      "source_lines": "L500",
+                      "source_section": "18. Snapshot Version"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "FIELD_ID",
+                      "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R007.FIELD.SNAPSHOT_ID",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "FIELD_ID"
+                  },
+                  {
+                    "authoritative_source": {
+                      "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#18. Snapshot Version",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951"
+                    },
+                    "identifier": "FIELD.CONTENT_HASH_BEFORE",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.REQUIRED_FIELDS.ORIGIN.MEMBER.2",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                      "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+                      "source_lines": "L500",
+                      "source_section": "18. Snapshot Version"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "FIELD_ID",
+                      "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R007.FIELD.CONTENT_HASH_BEFORE",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "FIELD_ID"
+                  },
+                  {
+                    "authoritative_source": {
+                      "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#18. Snapshot Version",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951"
+                    },
+                    "identifier": "FIELD.CONTENT_HASH_AFTER",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.REQUIRED_FIELDS.ORIGIN.MEMBER.3",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                      "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+                      "source_lines": "L500",
+                      "source_section": "18. Snapshot Version"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "FIELD_ID",
+                      "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R007.FIELD.CONTENT_HASH_AFTER",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "FIELD_ID"
+                  },
+                  {
+                    "authoritative_source": {
+                      "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#18. Snapshot Version",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951"
+                    },
+                    "identifier": "FIELD.WRITE_RESULT",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.REQUIRED_FIELDS.ORIGIN.MEMBER.4",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                      "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+                      "source_lines": "L500",
+                      "source_section": "18. Snapshot Version"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "FIELD_ID",
+                      "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R007.FIELD.WRITE_RESULT",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "FIELD_ID"
+                  },
+                  {
+                    "authoritative_source": {
+                      "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#18. Snapshot Version",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951"
+                    },
+                    "identifier": "FIELD.AUDIT_RECORD",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.REQUIRED_FIELDS.ORIGIN.MEMBER.5",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                      "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+                      "source_lines": "L500",
+                      "source_section": "18. Snapshot Version"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "FIELD_ID",
+                      "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R007.FIELD.AUDIT_RECORD",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "FIELD_ID"
+                  }
+                ],
+                "origin": {
+                  "origin_id": "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.REQUIRED_FIELDS.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                  "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+                  "source_lines": "L500",
+                  "source_section": "18. Snapshot Version"
+                },
+                "semantic_type": "SET_OF<FIELD_ID>"
+              }
+            },
+            "comparison": {
+              "expected": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#18. Snapshot Version",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951"
+                },
+                "identifier": "BRD-SNAPSHOT-INDEX-R007.BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.CANONICAL.RESULT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.AUTHORITY.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                  "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+                  "source_lines": "L500",
+                  "source_section": "18. Snapshot Version"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "EVIDENCE_OBJECT_REF",
+                  "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R007.BRD-SNAPSHOT-INDEX-R007.BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.CANONICAL.RESULT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "EVIDENCE_OBJECT_REF"
+              },
+              "observed": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#18. Snapshot Version",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951"
+                },
+                "identifier": "BRD-SNAPSHOT-INDEX-R007.BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.CANONICAL.RESULT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.OBSERVED.ORIGIN",
+                  "origin_type": "RUNTIME_OBSERVED"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                  "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+                  "source_lines": "L500",
+                  "source_section": "18. Snapshot Version"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "EVIDENCE_OBJECT_REF",
+                  "resolver_id": "OBSERVE.BRD-SNAPSHOT-INDEX-R007.BRD-SNAPSHOT-INDEX-R007.BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.CANONICAL.RESULT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "EVIDENCE_OBJECT_REF"
+              }
+            },
+            "evidence_object": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#18. Snapshot Version",
+                "source_type": "SOURCE_LITERAL",
+                "version": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951"
+              },
+              "identifier": "BRD-SNAPSHOT-INDEX-R007.BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.EVIDENCE.OBJECT",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.EVIDENCE.ORIGIN",
+                "origin_type": "EVIDENCE_OBJECT"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+                "source_lines": "L500",
+                "source_section": "18. Snapshot Version"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "EVIDENCE_OBJECT_REF",
+                "resolver_id": "OBSERVE.BRD-SNAPSHOT-INDEX-R007.BRD-SNAPSHOT-INDEX-R007.BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.EVIDENCE.OBJECT",
+                "version": "1.0.0"
+              },
+              "semantic_type": "EVIDENCE_OBJECT_REF"
+            },
+            "operator_id": "AUDIT_IMMUTABLE"
+          },
+          "obligation_id": "BRD-SNAPSHOT-INDEX-R007-O001",
+          "observed_operand": {
+            "authoritative_source": {
+              "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#18. Snapshot Version",
+              "source_type": "SOURCE_LITERAL",
+              "version": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951"
+            },
+            "identifier": "BRD-SNAPSHOT-INDEX-R007.BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.CANONICAL.RESULT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.OBSERVED.ORIGIN",
+              "origin_type": "RUNTIME_OBSERVED"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+              "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+              "source_lines": "L500",
+              "source_section": "18. Snapshot Version"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "EVIDENCE_OBJECT_REF",
+              "resolver_id": "OBSERVE.BRD-SNAPSHOT-INDEX-R007.BRD-SNAPSHOT-INDEX-R007.BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.CANONICAL.RESULT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "EVIDENCE_OBJECT_REF"
+          },
+          "operator_id": "AUDIT_IMMUTABLE",
+          "operator_version": "1.0.0-candidate.2",
+          "typed_bindings": {
+            "after_hash": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#18. Snapshot Version",
+                "source_type": "SOURCE_LITERAL",
+                "version": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951"
+              },
+              "identifier": "BRD-SNAPSHOT-INDEX-R007.AFTER_HASH",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.AFTER_HASH.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+                "source_lines": "L500",
+                "source_section": "18. Snapshot Version"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "HASH",
+                "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R007.BRD-SNAPSHOT-INDEX-R007.AFTER_HASH",
+                "version": "1.0.0"
+              },
+              "semantic_type": "HASH"
+            },
+            "audit_record": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#18. Snapshot Version",
+                "source_type": "SOURCE_LITERAL",
+                "version": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951"
+              },
+              "identifier": "BRD-SNAPSHOT-INDEX-R007.AUDIT_RECORD",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.AUDIT_RECORD.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+                "source_lines": "L500",
+                "source_section": "18. Snapshot Version"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "EVIDENCE_OBJECT_REF",
+                "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R007.BRD-SNAPSHOT-INDEX-R007.AUDIT_RECORD",
+                "version": "1.0.0"
+              },
+              "semantic_type": "EVIDENCE_OBJECT_REF"
+            },
+            "before_hash": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#18. Snapshot Version",
+                "source_type": "SOURCE_LITERAL",
+                "version": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951"
+              },
+              "identifier": "BRD-SNAPSHOT-INDEX-R007.BEFORE_HASH",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.BEFORE_HASH.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+                "source_lines": "L500",
+                "source_section": "18. Snapshot Version"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "HASH",
+                "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R007.BRD-SNAPSHOT-INDEX-R007.BEFORE_HASH",
+                "version": "1.0.0"
+              },
+              "semantic_type": "HASH"
+            },
+            "immutability_boundary": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#18. Snapshot Version",
+                "source_type": "SOURCE_LITERAL",
+                "version": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951"
+              },
+              "identifier": "BRD-SNAPSHOT-INDEX-R007.IMMUTABILITY_BOUNDARY",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.IMMUTABILITY_BOUNDARY.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+                "source_lines": "L500",
+                "source_section": "18. Snapshot Version"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "POLICY_ID",
+                "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R007.BRD-SNAPSHOT-INDEX-R007.IMMUTABILITY_BOUNDARY",
+                "version": "1.0.0"
+              },
+              "semantic_type": "POLICY_ID"
+            },
+            "protected_fields": {
+              "members": [
+                {
+                  "authoritative_source": {
+                    "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#18. Snapshot Version",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951"
+                  },
+                  "identifier": "FIELD.SNAPSHOT_ID",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.PROTECTED_FIELDS.ORIGIN.MEMBER.1",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                    "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+                    "source_lines": "L500",
+                    "source_section": "18. Snapshot Version"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "FIELD_ID",
+                    "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R007.FIELD.SNAPSHOT_ID",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "FIELD_ID"
+                },
+                {
+                  "authoritative_source": {
+                    "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#18. Snapshot Version",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951"
+                  },
+                  "identifier": "FIELD.CONTENT_HASH_BEFORE",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.PROTECTED_FIELDS.ORIGIN.MEMBER.2",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                    "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+                    "source_lines": "L500",
+                    "source_section": "18. Snapshot Version"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "FIELD_ID",
+                    "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R007.FIELD.CONTENT_HASH_BEFORE",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "FIELD_ID"
+                },
+                {
+                  "authoritative_source": {
+                    "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#18. Snapshot Version",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951"
+                  },
+                  "identifier": "FIELD.CONTENT_HASH_AFTER",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.PROTECTED_FIELDS.ORIGIN.MEMBER.3",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                    "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+                    "source_lines": "L500",
+                    "source_section": "18. Snapshot Version"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "FIELD_ID",
+                    "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R007.FIELD.CONTENT_HASH_AFTER",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "FIELD_ID"
+                },
+                {
+                  "authoritative_source": {
+                    "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#18. Snapshot Version",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951"
+                  },
+                  "identifier": "FIELD.WRITE_RESULT",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.PROTECTED_FIELDS.ORIGIN.MEMBER.4",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                    "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+                    "source_lines": "L500",
+                    "source_section": "18. Snapshot Version"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "FIELD_ID",
+                    "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R007.FIELD.WRITE_RESULT",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "FIELD_ID"
+                },
+                {
+                  "authoritative_source": {
+                    "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#18. Snapshot Version",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951"
+                  },
+                  "identifier": "FIELD.AUDIT_RECORD",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.PROTECTED_FIELDS.ORIGIN.MEMBER.5",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                    "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+                    "source_lines": "L500",
+                    "source_section": "18. Snapshot Version"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "FIELD_ID",
+                    "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R007.FIELD.AUDIT_RECORD",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "FIELD_ID"
+                }
+              ],
+              "origin": {
+                "origin_id": "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.PROTECTED_FIELDS.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+                "source_lines": "L500",
+                "source_section": "18. Snapshot Version"
+              },
+              "semantic_type": "SET_OF<FIELD_ID>"
+            },
+            "required_fields": {
+              "members": [
+                {
+                  "authoritative_source": {
+                    "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#18. Snapshot Version",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951"
+                  },
+                  "identifier": "FIELD.SNAPSHOT_ID",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.REQUIRED_FIELDS.ORIGIN.MEMBER.1",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                    "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+                    "source_lines": "L500",
+                    "source_section": "18. Snapshot Version"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "FIELD_ID",
+                    "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R007.FIELD.SNAPSHOT_ID",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "FIELD_ID"
+                },
+                {
+                  "authoritative_source": {
+                    "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#18. Snapshot Version",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951"
+                  },
+                  "identifier": "FIELD.CONTENT_HASH_BEFORE",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.REQUIRED_FIELDS.ORIGIN.MEMBER.2",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                    "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+                    "source_lines": "L500",
+                    "source_section": "18. Snapshot Version"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "FIELD_ID",
+                    "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R007.FIELD.CONTENT_HASH_BEFORE",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "FIELD_ID"
+                },
+                {
+                  "authoritative_source": {
+                    "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#18. Snapshot Version",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951"
+                  },
+                  "identifier": "FIELD.CONTENT_HASH_AFTER",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.REQUIRED_FIELDS.ORIGIN.MEMBER.3",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                    "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+                    "source_lines": "L500",
+                    "source_section": "18. Snapshot Version"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "FIELD_ID",
+                    "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R007.FIELD.CONTENT_HASH_AFTER",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "FIELD_ID"
+                },
+                {
+                  "authoritative_source": {
+                    "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#18. Snapshot Version",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951"
+                  },
+                  "identifier": "FIELD.WRITE_RESULT",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.REQUIRED_FIELDS.ORIGIN.MEMBER.4",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                    "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+                    "source_lines": "L500",
+                    "source_section": "18. Snapshot Version"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "FIELD_ID",
+                    "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R007.FIELD.WRITE_RESULT",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "FIELD_ID"
+                },
+                {
+                  "authoritative_source": {
+                    "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#18. Snapshot Version",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951"
+                  },
+                  "identifier": "FIELD.AUDIT_RECORD",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.REQUIRED_FIELDS.ORIGIN.MEMBER.5",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                    "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+                    "source_lines": "L500",
+                    "source_section": "18. Snapshot Version"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "FIELD_ID",
+                    "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R007.FIELD.AUDIT_RECORD",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "FIELD_ID"
+                }
+              ],
+              "origin": {
+                "origin_id": "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE.REQUIRED_FIELDS.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+                "source_lines": "L500",
+                "source_section": "18. Snapshot Version"
+              },
+              "semantic_type": "SET_OF<FIELD_ID>"
+            }
+          }
+        }
+      ],
+      "boundary_cases": [
+        "Creating different content in a new Snapshot is allowed; changing existing content is not"
+      ],
+      "contract_ast_sha256": "5153fdfb79432722f7f22de2329aad82ee2555e0df7104288c91591c46219453",
+      "contract_id": "P2C.C4.CONTRACT.BRD-SNAPSHOT-INDEX-R007",
+      "criticality": "NORMAL",
+      "disposition": "CORRECTABLE_WITH_APPROVED_TYPE_MODEL",
+      "evidence_contract": {
+        "evidence_object_ref": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#18. Snapshot Version",
+            "source_type": "SOURCE_LITERAL",
+            "version": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951"
+          },
+          "identifier": "BRD-SNAPSHOT-INDEX-R007.BRD-SNAPSHOT-INDEX-R007.CONTRACT.EVIDENCE.OBJECT",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-SNAPSHOT-INDEX-R007.CONTRACT.EVIDENCE.ORIGIN",
+            "origin_type": "EVIDENCE_OBJECT"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+            "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+            "source_lines": "L500",
+            "source_section": "18. Snapshot Version"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "EVIDENCE_OBJECT_REF",
+            "resolver_id": "OBSERVE.BRD-SNAPSHOT-INDEX-R007.BRD-SNAPSHOT-INDEX-R007.BRD-SNAPSHOT-INDEX-R007.CONTRACT.EVIDENCE.OBJECT",
+            "version": "1.0.0"
+          },
+          "semantic_type": "EVIDENCE_OBJECT_REF"
+        },
+        "inference": false,
+        "observed_collection_origin": "BRD-SNAPSHOT-INDEX-R007.RUNTIME.OBSERVED.FIELDS",
+        "observed_field_ids": [
+          "FIELD.SNAPSHOT_ID",
+          "FIELD.CONTENT_HASH_BEFORE",
+          "FIELD.CONTENT_HASH_AFTER",
+          "FIELD.WRITE_RESULT",
+          "FIELD.AUDIT_RECORD"
+        ],
+        "producer": "BRD-SNAPSHOT-INDEX-R007.EVIDENCE.PRODUCER",
+        "required_collection_origin": "BRD-SNAPSHOT-INDEX-R007.SOURCE.REQUIRED.FIELDS",
+        "required_field_ids": [
+          "FIELD.SNAPSHOT_ID",
+          "FIELD.CONTENT_HASH_BEFORE",
+          "FIELD.CONTENT_HASH_AFTER",
+          "FIELD.WRITE_RESULT",
+          "FIELD.AUDIT_RECORD"
+        ],
+        "required_values_or_hashes": [
+          "BRD-SNAPSHOT-INDEX-R007.EVIDENCE.CONTENT.HASH"
+        ],
+        "retrieval_method": "BRD-SNAPSHOT-INDEX-R007.EVIDENCE.RETRIEVAL",
+        "version_or_correlation": "BRD-SNAPSHOT-INDEX-R007.EVIDENCE.VERSION.CORRELATION"
+      },
+      "explicit_non_obligations": [
+        "No runtime implementation topology is authorized by this semantic record.",
+        "No production runtime evidence is claimed by this model-level candidate."
+      ],
+      "fixture_ids": [
+        "P2C-C4-FX-0D2FA07EE7B028DEF4A7",
+        "P2C-C4-FX-C697285AE81FD7E18DEE",
+        "P2C-C4-FX-FA007196443E92D4C073"
+      ],
+      "high_risk_audit_subset": true,
+      "independent_contract_identity": true,
+      "inference": false,
+      "inherits_contract_ast": null,
+      "negative_oracles": [
+        "Snapshot Content is modified or deleted"
+      ],
+      "normative_obligations": [
+        {
+          "applicability": "V2.3_ACTIVE",
+          "obligation_id": "BRD-SNAPSHOT-INDEX-R007-O001",
+          "obligation_text": "Snapshot Content vẫn luôn bất biến"
+        }
+      ],
+      "obligation_to_operator_coverage": [
+        {
+          "assertion_ids": [
+            "BRD-SNAPSHOT-INDEX-R007.O1.1.AUDIT_IMMUTABLE"
+          ],
+          "coverage_count": 1,
+          "obligation_id": "BRD-SNAPSHOT-INDEX-R007-O001"
+        }
+      ],
+      "operator_composition": [
+        "AUDIT_IMMUTABLE"
+      ],
+      "positive_oracles": [
+        "Stored Snapshot Content remains unchanged"
+      ],
+      "preconditions": [
+        "The Snapshot Content identity and hash exist"
+      ],
+      "prohibitions": [
+        "Snapshot Content is modified or deleted"
+      ],
+      "requirement_id": "BRD-SNAPSHOT-INDEX-R007",
+      "runtime_status": "SLICE_RUNTIME_ADAPTER_REQUIRED",
+      "semantic_family_id": null,
+      "source_provenance": {
+        "approved_decision_references": [],
+        "inference": false,
+        "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+        "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
+        "source_lines": "L500",
+        "source_section": "18. Snapshot Version"
+      },
+      "source_statement": "Snapshot Content vẫn luôn bất biến.",
+      "surrounding_source_context": "### BRD-SNAPSHOT-INDEX-R007 — Snapshot Content vẫn luôn bất biến"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "contract_id": "P2C.C4.CONTRACT.BRD-SNAPSHOT-INDEX-R007",
+    "inference": false,
+    "mechanism": "APPROVED_TYPED_CUSTOM_AST",
+    "mechanism_version": "SEMANTIC_ACCEPTANCE_RENDERER_C2",
+    "runtime_status": "RUNTIME_ADAPTER_PENDING"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "ACCEPTANCE_READY",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-SNAPSHOT-INDEX-R007-AC001"
+        "BRD-SNAPSHOT-INDEX-R007-AC001",
+        "BRD-SNAPSHOT-INDEX-R007-AC002",
+        "BRD-SNAPSHOT-INDEX-R007-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-SNAPSHOT-INDEX-R007-O001",
@@ -1535,8 +4394,8 @@ trước khi được sử dụng trong Platform.
     "source_context_sha256": "3740076553a35d4da15770d92202901baf1c645a1a062074c1aaafa2e51081f8",
     "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
     "source_fingerprint": "b3afe512e328dbfa2d4c6544e182efbeb905f3f92f29415f6710013a1042a951",
-    "source_lines": "L500",
-    "source_section": "18. Snapshot Version"
+    "source_lines": "L2372-L4416",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-SNAPSHOT-INDEX-R007"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1561,28 +4420,757 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "BRD-SNAPSHOT-INDEX-R008-AC001",
-      "given": "a candidate Business Snapshot phải lưu toàn bộ **Business Context** cần thiết để có thể tái hiện chính xác q… record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "the accepted record contains the field named by the obligation, preserves its submitted attribution, and exposes that stored value when the record is inspected",
-      "verifies": [
-        "BRD-SNAPSHOT-INDEX-R008-O001"
+  "acceptance_contract": {
+    "boundary_oracle": [
+      "Later context changes do not alter the historical Snapshot; a new Snapshot captures new context"
+    ],
+    "concrete_bindings": [
+      {
+        "actual_set": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#16. Snapshot Composition Principle",
+            "source_type": "SOURCE_LITERAL",
+            "version": "14703fc43530d77989c2bcd17407d70aff2677628faea2bdb0c6c30d329e3d9a"
+          },
+          "identifier": "RESOLVED_MEMBER_COLLECTION",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.BRD-SNAPSHOT-INDEX-R008.RESOLVED.COLLECTION",
+          "origin": {
+            "origin_id": "YSIM.BRD-SNAPSHOT-INDEX-R008.RESOLVED.COLLECTION.RESOLVED_MEMBER_COLLECTION.RUNTIME_OBSERVED",
+            "origin_type": "RUNTIME_OBSERVED"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+            "source_fingerprint": "14703fc43530d77989c2bcd17407d70aff2677628faea2bdb0c6c30d329e3d9a",
+            "source_lines": "L586",
+            "source_section": "16. Snapshot Composition Principle"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "SET_OF<CANONICAL_ENUM_VALUE>",
+            "resolver_id": "OBSERVE.BRD-SNAPSHOT-INDEX-R008.RESOLVED_MEMBER_COLLECTION",
+            "version": "1.0.0"
+          },
+          "semantic_type": "RUNTIME_SET_REF<CANONICAL_ENUM_VALUE>"
+        },
+        "required_members": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#16. Snapshot Composition Principle",
+            "source_type": "SOURCE_LITERAL",
+            "version": "14703fc43530d77989c2bcd17407d70aff2677628faea2bdb0c6c30d329e3d9a"
+          },
+          "identifier": "GOVERNED_MEMBER_COLLECTION",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.BRD-SNAPSHOT-INDEX-R008.GOVERNED.COLLECTION",
+          "origin": {
+            "origin_id": "BRD-SNAPSHOT-INDEX-R008.O1.1.SET_CONTAINS.REQUIRED_MEMBERS.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+            "source_fingerprint": "14703fc43530d77989c2bcd17407d70aff2677628faea2bdb0c6c30d329e3d9a",
+            "source_lines": "L586",
+            "source_section": "16. Snapshot Composition Principle"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "SET_OF<CANONICAL_ENUM_VALUE>",
+            "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R008.GOVERNED_MEMBER_COLLECTION",
+            "version": "1.0.0"
+          },
+          "semantic_type": "CANONICAL_SET_REF<CANONICAL_ENUM_VALUE>"
+        }
+      }
+    ],
+    "contract_id": "P2C.C4.CONTRACT.BRD-SNAPSHOT-INDEX-R008",
+    "inference": false,
+    "mechanism": "APPROVED_TYPED_CUSTOM_AST",
+    "mechanism_version": "C4-R3",
+    "negative_oracle": [
+      "A required context value or version is absent, preventing exact reproduction"
+    ],
+    "operator_composition": [
+      "SET_CONTAINS"
+    ],
+    "positive_oracle": [
+      "The Snapshot stores all context needed to reproduce the decision as it was made at creation time"
+    ],
+    "provenance": {
+      "approved_decision_references": [],
+      "inference": false,
+      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+      "source_fingerprint": "14703fc43530d77989c2bcd17407d70aff2677628faea2bdb0c6c30d329e3d9a",
+      "source_lines": "L586",
+      "source_section": "16. Snapshot Composition Principle"
+    },
+    "required_evidence": {
+      "evidence_object_ref": {
+        "authoritative_source": {
+          "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#16. Snapshot Composition Principle",
+          "source_type": "SOURCE_LITERAL",
+          "version": "14703fc43530d77989c2bcd17407d70aff2677628faea2bdb0c6c30d329e3d9a"
+        },
+        "identifier": "BRD-SNAPSHOT-INDEX-R008.BRD-SNAPSHOT-INDEX-R008.CONTRACT.EVIDENCE.OBJECT",
+        "inference": false,
+        "lifecycle": {
+          "status": "ACTIVE",
+          "version": "2.3"
+        },
+        "namespace": "YSIM.V2.3",
+        "origin": {
+          "origin_id": "BRD-SNAPSHOT-INDEX-R008.CONTRACT.EVIDENCE.ORIGIN",
+          "origin_type": "EVIDENCE_OBJECT"
+        },
+        "provenance": {
+          "approved_decision_references": [],
+          "inference": false,
+          "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+          "source_fingerprint": "14703fc43530d77989c2bcd17407d70aff2677628faea2bdb0c6c30d329e3d9a",
+          "source_lines": "L586",
+          "source_section": "16. Snapshot Composition Principle"
+        },
+        "resolver_contract": {
+          "deterministic": true,
+          "input_types": [],
+          "output_type": "EVIDENCE_OBJECT_REF",
+          "resolver_id": "OBSERVE.BRD-SNAPSHOT-INDEX-R008.BRD-SNAPSHOT-INDEX-R008.BRD-SNAPSHOT-INDEX-R008.CONTRACT.EVIDENCE.OBJECT",
+          "version": "1.0.0"
+        },
+        "semantic_type": "EVIDENCE_OBJECT_REF"
+      },
+      "inference": false,
+      "observed_collection_origin": "BRD-SNAPSHOT-INDEX-R008.RUNTIME.OBSERVED.FIELDS",
+      "observed_field_ids": [
+        "FIELD.SNAPSHOT_ID",
+        "FIELD.DECISION_ID",
+        "FIELD.CONTEXT_FIELDS",
+        "FIELD.POLICY_VERSIONS",
+        "FIELD.CREATION_TIME",
+        "FIELD.REPLAY_RESULT"
       ],
-      "when": "the candidate is evaluated against its declared data contract"
+      "producer": "BRD-SNAPSHOT-INDEX-R008.EVIDENCE.PRODUCER",
+      "required_collection_origin": "BRD-SNAPSHOT-INDEX-R008.SOURCE.REQUIRED.FIELDS",
+      "required_field_ids": [
+        "FIELD.SNAPSHOT_ID",
+        "FIELD.DECISION_ID",
+        "FIELD.CONTEXT_FIELDS",
+        "FIELD.POLICY_VERSIONS",
+        "FIELD.CREATION_TIME",
+        "FIELD.REPLAY_RESULT"
+      ],
+      "required_values_or_hashes": [
+        "BRD-SNAPSHOT-INDEX-R008.EVIDENCE.CONTENT.HASH"
+      ],
+      "retrieval_method": "BRD-SNAPSHOT-INDEX-R008.EVIDENCE.RETRIEVAL",
+      "version_or_correlation": "BRD-SNAPSHOT-INDEX-R008.EVIDENCE.VERSION.CORRELATION"
+    },
+    "runtime_evidence_executed": false,
+    "runtime_status": "RUNTIME_ADAPTER_PENDING",
+    "semantic_obligation_references": [
+      "BRD-SNAPSHOT-INDEX-R008-O001"
+    ],
+    "typed_contract_ast": {
+      "approved_clarification": null,
+      "assertions": [
+        {
+          "assertion_id": "BRD-SNAPSHOT-INDEX-R008.O1.1.SET_CONTAINS",
+          "evaluator_consumed_bindings": [
+            "actual_set",
+            "required_members"
+          ],
+          "evidence_object": {
+            "authoritative_source": {
+              "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#16. Snapshot Composition Principle",
+              "source_type": "SOURCE_LITERAL",
+              "version": "14703fc43530d77989c2bcd17407d70aff2677628faea2bdb0c6c30d329e3d9a"
+            },
+            "identifier": "BRD-SNAPSHOT-INDEX-R008.BRD-SNAPSHOT-INDEX-R008.O1.1.SET_CONTAINS.EVIDENCE.OBJECT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BRD-SNAPSHOT-INDEX-R008.O1.1.SET_CONTAINS.EVIDENCE.ORIGIN",
+              "origin_type": "EVIDENCE_OBJECT"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+              "source_fingerprint": "14703fc43530d77989c2bcd17407d70aff2677628faea2bdb0c6c30d329e3d9a",
+              "source_lines": "L586",
+              "source_section": "16. Snapshot Composition Principle"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "EVIDENCE_OBJECT_REF",
+              "resolver_id": "OBSERVE.BRD-SNAPSHOT-INDEX-R008.BRD-SNAPSHOT-INDEX-R008.BRD-SNAPSHOT-INDEX-R008.O1.1.SET_CONTAINS.EVIDENCE.OBJECT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "EVIDENCE_OBJECT_REF"
+          },
+          "expected_operand": {
+            "members": [
+              {
+                "authoritative_source": {
+                  "allowed_identifiers": [
+                    "BRD-SNAPSHOT-INDEX-R008.BRD-SNAPSHOT-INDEX-R008.O1.1.SET_CONTAINS.CANONICAL.RESULT.MEMBER"
+                  ],
+                  "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#16. Snapshot Composition Principle",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "14703fc43530d77989c2bcd17407d70aff2677628faea2bdb0c6c30d329e3d9a"
+                },
+                "identifier": "BRD-SNAPSHOT-INDEX-R008.BRD-SNAPSHOT-INDEX-R008.O1.1.SET_CONTAINS.CANONICAL.RESULT.MEMBER",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-SNAPSHOT-INDEX-R008.O1.1.SET_CONTAINS.AUTHORITY.ORIGIN.MEMBER.1",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                  "source_fingerprint": "14703fc43530d77989c2bcd17407d70aff2677628faea2bdb0c6c30d329e3d9a",
+                  "source_lines": "L586",
+                  "source_section": "16. Snapshot Composition Principle"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "CANONICAL_ENUM_VALUE",
+                  "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R008.BRD-SNAPSHOT-INDEX-R008.BRD-SNAPSHOT-INDEX-R008.O1.1.SET_CONTAINS.CANONICAL.RESULT.MEMBER",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "CANONICAL_ENUM_VALUE"
+              }
+            ],
+            "origin": {
+              "origin_id": "BRD-SNAPSHOT-INDEX-R008.O1.1.SET_CONTAINS.AUTHORITY.ORIGIN",
+              "origin_type": "SOURCE_LITERAL"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+              "source_fingerprint": "14703fc43530d77989c2bcd17407d70aff2677628faea2bdb0c6c30d329e3d9a",
+              "source_lines": "L586",
+              "source_section": "16. Snapshot Composition Principle"
+            },
+            "semantic_type": "SET_OF<CANONICAL_ENUM_VALUE>"
+          },
+          "inference": false,
+          "model_conformance_fixture": {
+            "bindings": {
+              "actual_set": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#16. Snapshot Composition Principle",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "14703fc43530d77989c2bcd17407d70aff2677628faea2bdb0c6c30d329e3d9a"
+                },
+                "identifier": "RESOLVED_MEMBER_COLLECTION",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.BRD-SNAPSHOT-INDEX-R008.RESOLVED.COLLECTION",
+                "origin": {
+                  "origin_id": "YSIM.BRD-SNAPSHOT-INDEX-R008.RESOLVED.COLLECTION.RESOLVED_MEMBER_COLLECTION.RUNTIME_OBSERVED",
+                  "origin_type": "RUNTIME_OBSERVED"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                  "source_fingerprint": "14703fc43530d77989c2bcd17407d70aff2677628faea2bdb0c6c30d329e3d9a",
+                  "source_lines": "L586",
+                  "source_section": "16. Snapshot Composition Principle"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "SET_OF<CANONICAL_ENUM_VALUE>",
+                  "resolver_id": "OBSERVE.BRD-SNAPSHOT-INDEX-R008.RESOLVED_MEMBER_COLLECTION",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "RUNTIME_SET_REF<CANONICAL_ENUM_VALUE>"
+              },
+              "required_members": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#16. Snapshot Composition Principle",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "14703fc43530d77989c2bcd17407d70aff2677628faea2bdb0c6c30d329e3d9a"
+                },
+                "identifier": "GOVERNED_MEMBER_COLLECTION",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.BRD-SNAPSHOT-INDEX-R008.GOVERNED.COLLECTION",
+                "origin": {
+                  "origin_id": "BRD-SNAPSHOT-INDEX-R008.O1.1.SET_CONTAINS.REQUIRED_MEMBERS.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                  "source_fingerprint": "14703fc43530d77989c2bcd17407d70aff2677628faea2bdb0c6c30d329e3d9a",
+                  "source_lines": "L586",
+                  "source_section": "16. Snapshot Composition Principle"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "SET_OF<CANONICAL_ENUM_VALUE>",
+                  "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R008.GOVERNED_MEMBER_COLLECTION",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "CANONICAL_SET_REF<CANONICAL_ENUM_VALUE>"
+              }
+            },
+            "comparison": {
+              "expected": {
+                "members": [
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "BRD-SNAPSHOT-INDEX-R008.BRD-SNAPSHOT-INDEX-R008.O1.1.SET_CONTAINS.CANONICAL.RESULT.MEMBER"
+                      ],
+                      "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#16. Snapshot Composition Principle",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "14703fc43530d77989c2bcd17407d70aff2677628faea2bdb0c6c30d329e3d9a"
+                    },
+                    "identifier": "BRD-SNAPSHOT-INDEX-R008.BRD-SNAPSHOT-INDEX-R008.O1.1.SET_CONTAINS.CANONICAL.RESULT.MEMBER",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BRD-SNAPSHOT-INDEX-R008.O1.1.SET_CONTAINS.AUTHORITY.ORIGIN.MEMBER.1",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                      "source_fingerprint": "14703fc43530d77989c2bcd17407d70aff2677628faea2bdb0c6c30d329e3d9a",
+                      "source_lines": "L586",
+                      "source_section": "16. Snapshot Composition Principle"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "CANONICAL_ENUM_VALUE",
+                      "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R008.BRD-SNAPSHOT-INDEX-R008.BRD-SNAPSHOT-INDEX-R008.O1.1.SET_CONTAINS.CANONICAL.RESULT.MEMBER",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "CANONICAL_ENUM_VALUE"
+                  }
+                ],
+                "origin": {
+                  "origin_id": "BRD-SNAPSHOT-INDEX-R008.O1.1.SET_CONTAINS.AUTHORITY.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                  "source_fingerprint": "14703fc43530d77989c2bcd17407d70aff2677628faea2bdb0c6c30d329e3d9a",
+                  "source_lines": "L586",
+                  "source_section": "16. Snapshot Composition Principle"
+                },
+                "semantic_type": "SET_OF<CANONICAL_ENUM_VALUE>"
+              },
+              "observed": {
+                "members": [
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "BRD-SNAPSHOT-INDEX-R008.BRD-SNAPSHOT-INDEX-R008.O1.1.SET_CONTAINS.CANONICAL.RESULT.MEMBER"
+                      ],
+                      "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#16. Snapshot Composition Principle",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "14703fc43530d77989c2bcd17407d70aff2677628faea2bdb0c6c30d329e3d9a"
+                    },
+                    "identifier": "BRD-SNAPSHOT-INDEX-R008.BRD-SNAPSHOT-INDEX-R008.O1.1.SET_CONTAINS.CANONICAL.RESULT.MEMBER",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BRD-SNAPSHOT-INDEX-R008.O1.1.SET_CONTAINS.OBSERVED.ORIGIN.MEMBER.1",
+                      "origin_type": "RUNTIME_OBSERVED"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                      "source_fingerprint": "14703fc43530d77989c2bcd17407d70aff2677628faea2bdb0c6c30d329e3d9a",
+                      "source_lines": "L586",
+                      "source_section": "16. Snapshot Composition Principle"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "CANONICAL_ENUM_VALUE",
+                      "resolver_id": "OBSERVE.BRD-SNAPSHOT-INDEX-R008.BRD-SNAPSHOT-INDEX-R008.BRD-SNAPSHOT-INDEX-R008.O1.1.SET_CONTAINS.CANONICAL.RESULT.MEMBER",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "CANONICAL_ENUM_VALUE"
+                  }
+                ],
+                "origin": {
+                  "origin_id": "BRD-SNAPSHOT-INDEX-R008.O1.1.SET_CONTAINS.OBSERVED.ORIGIN",
+                  "origin_type": "RUNTIME_OBSERVED"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                  "source_fingerprint": "14703fc43530d77989c2bcd17407d70aff2677628faea2bdb0c6c30d329e3d9a",
+                  "source_lines": "L586",
+                  "source_section": "16. Snapshot Composition Principle"
+                },
+                "semantic_type": "SET_OF<CANONICAL_ENUM_VALUE>"
+              }
+            },
+            "evidence_object": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#16. Snapshot Composition Principle",
+                "source_type": "SOURCE_LITERAL",
+                "version": "14703fc43530d77989c2bcd17407d70aff2677628faea2bdb0c6c30d329e3d9a"
+              },
+              "identifier": "BRD-SNAPSHOT-INDEX-R008.BRD-SNAPSHOT-INDEX-R008.O1.1.SET_CONTAINS.EVIDENCE.OBJECT",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-SNAPSHOT-INDEX-R008.O1.1.SET_CONTAINS.EVIDENCE.ORIGIN",
+                "origin_type": "EVIDENCE_OBJECT"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                "source_fingerprint": "14703fc43530d77989c2bcd17407d70aff2677628faea2bdb0c6c30d329e3d9a",
+                "source_lines": "L586",
+                "source_section": "16. Snapshot Composition Principle"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "EVIDENCE_OBJECT_REF",
+                "resolver_id": "OBSERVE.BRD-SNAPSHOT-INDEX-R008.BRD-SNAPSHOT-INDEX-R008.BRD-SNAPSHOT-INDEX-R008.O1.1.SET_CONTAINS.EVIDENCE.OBJECT",
+                "version": "1.0.0"
+              },
+              "semantic_type": "EVIDENCE_OBJECT_REF"
+            },
+            "operator_id": "SET_CONTAINS"
+          },
+          "obligation_id": "BRD-SNAPSHOT-INDEX-R008-O001",
+          "observed_operand": {
+            "members": [
+              {
+                "authoritative_source": {
+                  "allowed_identifiers": [
+                    "BRD-SNAPSHOT-INDEX-R008.BRD-SNAPSHOT-INDEX-R008.O1.1.SET_CONTAINS.CANONICAL.RESULT.MEMBER"
+                  ],
+                  "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#16. Snapshot Composition Principle",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "14703fc43530d77989c2bcd17407d70aff2677628faea2bdb0c6c30d329e3d9a"
+                },
+                "identifier": "BRD-SNAPSHOT-INDEX-R008.BRD-SNAPSHOT-INDEX-R008.O1.1.SET_CONTAINS.CANONICAL.RESULT.MEMBER",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-SNAPSHOT-INDEX-R008.O1.1.SET_CONTAINS.OBSERVED.ORIGIN.MEMBER.1",
+                  "origin_type": "RUNTIME_OBSERVED"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                  "source_fingerprint": "14703fc43530d77989c2bcd17407d70aff2677628faea2bdb0c6c30d329e3d9a",
+                  "source_lines": "L586",
+                  "source_section": "16. Snapshot Composition Principle"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "CANONICAL_ENUM_VALUE",
+                  "resolver_id": "OBSERVE.BRD-SNAPSHOT-INDEX-R008.BRD-SNAPSHOT-INDEX-R008.BRD-SNAPSHOT-INDEX-R008.O1.1.SET_CONTAINS.CANONICAL.RESULT.MEMBER",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "CANONICAL_ENUM_VALUE"
+              }
+            ],
+            "origin": {
+              "origin_id": "BRD-SNAPSHOT-INDEX-R008.O1.1.SET_CONTAINS.OBSERVED.ORIGIN",
+              "origin_type": "RUNTIME_OBSERVED"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+              "source_fingerprint": "14703fc43530d77989c2bcd17407d70aff2677628faea2bdb0c6c30d329e3d9a",
+              "source_lines": "L586",
+              "source_section": "16. Snapshot Composition Principle"
+            },
+            "semantic_type": "SET_OF<CANONICAL_ENUM_VALUE>"
+          },
+          "operator_id": "SET_CONTAINS",
+          "operator_version": "1.0.0-candidate.2",
+          "typed_bindings": {
+            "actual_set": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#16. Snapshot Composition Principle",
+                "source_type": "SOURCE_LITERAL",
+                "version": "14703fc43530d77989c2bcd17407d70aff2677628faea2bdb0c6c30d329e3d9a"
+              },
+              "identifier": "RESOLVED_MEMBER_COLLECTION",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.BRD-SNAPSHOT-INDEX-R008.RESOLVED.COLLECTION",
+              "origin": {
+                "origin_id": "YSIM.BRD-SNAPSHOT-INDEX-R008.RESOLVED.COLLECTION.RESOLVED_MEMBER_COLLECTION.RUNTIME_OBSERVED",
+                "origin_type": "RUNTIME_OBSERVED"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                "source_fingerprint": "14703fc43530d77989c2bcd17407d70aff2677628faea2bdb0c6c30d329e3d9a",
+                "source_lines": "L586",
+                "source_section": "16. Snapshot Composition Principle"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "SET_OF<CANONICAL_ENUM_VALUE>",
+                "resolver_id": "OBSERVE.BRD-SNAPSHOT-INDEX-R008.RESOLVED_MEMBER_COLLECTION",
+                "version": "1.0.0"
+              },
+              "semantic_type": "RUNTIME_SET_REF<CANONICAL_ENUM_VALUE>"
+            },
+            "required_members": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#16. Snapshot Composition Principle",
+                "source_type": "SOURCE_LITERAL",
+                "version": "14703fc43530d77989c2bcd17407d70aff2677628faea2bdb0c6c30d329e3d9a"
+              },
+              "identifier": "GOVERNED_MEMBER_COLLECTION",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.BRD-SNAPSHOT-INDEX-R008.GOVERNED.COLLECTION",
+              "origin": {
+                "origin_id": "BRD-SNAPSHOT-INDEX-R008.O1.1.SET_CONTAINS.REQUIRED_MEMBERS.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                "source_fingerprint": "14703fc43530d77989c2bcd17407d70aff2677628faea2bdb0c6c30d329e3d9a",
+                "source_lines": "L586",
+                "source_section": "16. Snapshot Composition Principle"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "SET_OF<CANONICAL_ENUM_VALUE>",
+                "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R008.GOVERNED_MEMBER_COLLECTION",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_SET_REF<CANONICAL_ENUM_VALUE>"
+            }
+          }
+        }
+      ],
+      "boundary_cases": [
+        "Later context changes do not alter the historical Snapshot; a new Snapshot captures new context"
+      ],
+      "contract_ast_sha256": "fcb596696bc9a0fbef6047c73917b3895facd78fe0745451405f3569385e40a9",
+      "contract_id": "P2C.C4.CONTRACT.BRD-SNAPSHOT-INDEX-R008",
+      "criticality": "NORMAL",
+      "disposition": "CORRECTABLE_WITH_APPROVED_TYPE_MODEL",
+      "evidence_contract": {
+        "evidence_object_ref": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#16. Snapshot Composition Principle",
+            "source_type": "SOURCE_LITERAL",
+            "version": "14703fc43530d77989c2bcd17407d70aff2677628faea2bdb0c6c30d329e3d9a"
+          },
+          "identifier": "BRD-SNAPSHOT-INDEX-R008.BRD-SNAPSHOT-INDEX-R008.CONTRACT.EVIDENCE.OBJECT",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-SNAPSHOT-INDEX-R008.CONTRACT.EVIDENCE.ORIGIN",
+            "origin_type": "EVIDENCE_OBJECT"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+            "source_fingerprint": "14703fc43530d77989c2bcd17407d70aff2677628faea2bdb0c6c30d329e3d9a",
+            "source_lines": "L586",
+            "source_section": "16. Snapshot Composition Principle"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "EVIDENCE_OBJECT_REF",
+            "resolver_id": "OBSERVE.BRD-SNAPSHOT-INDEX-R008.BRD-SNAPSHOT-INDEX-R008.BRD-SNAPSHOT-INDEX-R008.CONTRACT.EVIDENCE.OBJECT",
+            "version": "1.0.0"
+          },
+          "semantic_type": "EVIDENCE_OBJECT_REF"
+        },
+        "inference": false,
+        "observed_collection_origin": "BRD-SNAPSHOT-INDEX-R008.RUNTIME.OBSERVED.FIELDS",
+        "observed_field_ids": [
+          "FIELD.SNAPSHOT_ID",
+          "FIELD.DECISION_ID",
+          "FIELD.CONTEXT_FIELDS",
+          "FIELD.POLICY_VERSIONS",
+          "FIELD.CREATION_TIME",
+          "FIELD.REPLAY_RESULT"
+        ],
+        "producer": "BRD-SNAPSHOT-INDEX-R008.EVIDENCE.PRODUCER",
+        "required_collection_origin": "BRD-SNAPSHOT-INDEX-R008.SOURCE.REQUIRED.FIELDS",
+        "required_field_ids": [
+          "FIELD.SNAPSHOT_ID",
+          "FIELD.DECISION_ID",
+          "FIELD.CONTEXT_FIELDS",
+          "FIELD.POLICY_VERSIONS",
+          "FIELD.CREATION_TIME",
+          "FIELD.REPLAY_RESULT"
+        ],
+        "required_values_or_hashes": [
+          "BRD-SNAPSHOT-INDEX-R008.EVIDENCE.CONTENT.HASH"
+        ],
+        "retrieval_method": "BRD-SNAPSHOT-INDEX-R008.EVIDENCE.RETRIEVAL",
+        "version_or_correlation": "BRD-SNAPSHOT-INDEX-R008.EVIDENCE.VERSION.CORRELATION"
+      },
+      "explicit_non_obligations": [
+        "No runtime implementation topology is authorized by this semantic record.",
+        "No production runtime evidence is claimed by this model-level candidate."
+      ],
+      "fixture_ids": [
+        "P2C-C4-R2-FX-3792BAEAD544320CB3A1",
+        "P2C-C4-R2-FX-0FA05C68938009B233F6",
+        "P2C-C4-R2-FX-E9141CFF3D71F3E5E2DA"
+      ],
+      "high_risk_audit_subset": true,
+      "independent_contract_identity": true,
+      "inference": false,
+      "inherits_contract_ast": null,
+      "negative_oracles": [
+        "A required context value or version is absent, preventing exact reproduction"
+      ],
+      "normative_obligations": [
+        {
+          "applicability": "V2.3_ACTIVE",
+          "obligation_id": "BRD-SNAPSHOT-INDEX-R008-O001",
+          "obligation_text": "Business Snapshot phải lưu toàn bộ **Business Context** cần thiết để có thể tái hiện chính xác quyết định nghiệp vụ tại thời điểm Snapshot được tạo"
+        }
+      ],
+      "obligation_to_operator_coverage": [
+        {
+          "assertion_ids": [
+            "BRD-SNAPSHOT-INDEX-R008.O1.1.SET_CONTAINS"
+          ],
+          "coverage_count": 1,
+          "obligation_id": "BRD-SNAPSHOT-INDEX-R008-O001"
+        }
+      ],
+      "operator_composition": [
+        "SET_CONTAINS"
+      ],
+      "positive_oracles": [
+        "The Snapshot stores all context needed to reproduce the decision as it was made at creation time"
+      ],
+      "preconditions": [
+        "The business decision and its effective context are known"
+      ],
+      "prohibitions": [
+        "A required context value or version is absent, preventing exact reproduction"
+      ],
+      "requirement_id": "BRD-SNAPSHOT-INDEX-R008",
+      "runtime_status": "SLICE_RUNTIME_ADAPTER_REQUIRED",
+      "semantic_family_id": null,
+      "source_provenance": {
+        "approved_decision_references": [],
+        "inference": false,
+        "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+        "source_fingerprint": "14703fc43530d77989c2bcd17407d70aff2677628faea2bdb0c6c30d329e3d9a",
+        "source_lines": "L586",
+        "source_section": "16. Snapshot Composition Principle"
+      },
+      "source_statement": "Business Snapshot phải lưu toàn bộ **Business Context** cần thiết để có thể tái hiện chính xác quyết định nghiệp vụ tại thời điểm Snapshot được tạo.",
+      "surrounding_source_context": "### BRD-SNAPSHOT-INDEX-R008 — Business Snapshot phải lưu toàn bộ **Business Context** cần thiết để có thể tái hiện chính xác q…"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "contract_id": "P2C.C4.CONTRACT.BRD-SNAPSHOT-INDEX-R008",
+    "inference": false,
+    "mechanism": "APPROVED_TYPED_CUSTOM_AST",
+    "mechanism_version": "SEMANTIC_ACCEPTANCE_RENDERER_C2",
+    "runtime_status": "RUNTIME_ADAPTER_PENDING"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "ACCEPTANCE_READY",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-SNAPSHOT-INDEX-R008-AC001"
+        "BRD-SNAPSHOT-INDEX-R008-AC001",
+        "BRD-SNAPSHOT-INDEX-R008-AC002",
+        "BRD-SNAPSHOT-INDEX-R008-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-SNAPSHOT-INDEX-R008-O001",
@@ -1606,8 +5194,8 @@ trước khi được sử dụng trong Platform.
     "source_context_sha256": "b845b8ad2b61ab8dfa787bdf242f43c538eaffbbf997f6914a7160574bfc110e",
     "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
     "source_fingerprint": "14703fc43530d77989c2bcd17407d70aff2677628faea2bdb0c6c30d329e3d9a",
-    "source_lines": "L586",
-    "source_section": "16. Snapshot Composition Principle"
+    "source_lines": "L4418-L5216",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-SNAPSHOT-INDEX-R008"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1632,28 +5220,34 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "BRD-SNAPSHOT-INDEX-R009-AC001",
-      "given": "a candidate Snapshot không được cập nhật để phản ánh trạng thái mới record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns REJECTED when the prohibited value or relationship is present, and no rejected state is persisted",
-      "verifies": [
-        "BRD-SNAPSHOT-INDEX-R009-O001"
-      ],
-      "when": "the candidate is evaluated against its declared data contract"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-SNAPSHOT-INDEX-R009",
+      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+      "source_fingerprint": "86a0e9f3fb3692208b23b8cd27161d70b3389ea85bc0444a5de9939ba7f4c83c"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-SNAPSHOT-INDEX-R009-AC001"
+        "BRD-SNAPSHOT-INDEX-R009-AC001",
+        "BRD-SNAPSHOT-INDEX-R009-AC002",
+        "BRD-SNAPSHOT-INDEX-R009-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-SNAPSHOT-INDEX-R009-O001",
@@ -1677,8 +5271,8 @@ trước khi được sử dụng trong Platform.
     "source_context_sha256": "81526bbe525e34ef718b513e9db39a758cf3dcdcafe59000f27d0d000d2553aa",
     "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
     "source_fingerprint": "86a0e9f3fb3692208b23b8cd27161d70b3389ea85bc0444a5de9939ba7f4c83c",
-    "source_lines": "L677",
-    "source_section": "18. Snapshot Relationship"
+    "source_lines": "L5218-L5293",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-SNAPSHOT-INDEX-R009"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1703,28 +5297,1308 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "BRD-SNAPSHOT-INDEX-R010-AC001",
-      "given": "a candidate Snapshot có thể được nhiều hệ thống sử dụng lại mà không cần đọc dữ liệu Runtime record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "BRD-SNAPSHOT-INDEX-R010-O001"
+  "acceptance_contract": {
+    "boundary_oracle": [
+      "Authorization lookup may occur, but historical business context comes from Snapshot"
+    ],
+    "concrete_bindings": [
+      {
+        "allowed_lifecycle_states": {
+          "members": [
+            {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "BRD-SNAPSHOT-INDEX-R010.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER"
+                ],
+                "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#20. Snapshot Relationship",
+                "source_type": "SOURCE_LITERAL",
+                "version": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328"
+              },
+              "identifier": "BRD-SNAPSHOT-INDEX-R010.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-SNAPSHOT-INDEX-R010.O1.1.REFERENCE_TARGET_VALID.ALLOWED_LIFECYCLE_STATES.ORIGIN.MEMBER.1",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                "source_fingerprint": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328",
+                "source_lines": "L726",
+                "source_section": "20. Snapshot Relationship"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "STATE_ID",
+                "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R010.BRD-SNAPSHOT-INDEX-R010.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER",
+                "version": "1.0.0"
+              },
+              "semantic_type": "STATE_ID"
+            }
+          ],
+          "origin": {
+            "origin_id": "BRD-SNAPSHOT-INDEX-R010.O1.1.REFERENCE_TARGET_VALID.ALLOWED_LIFECYCLE_STATES.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+            "source_fingerprint": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328",
+            "source_lines": "L726",
+            "source_section": "20. Snapshot Relationship"
+          },
+          "semantic_type": "SET_OF<STATE_ID>"
+        },
+        "allowed_states": {
+          "members": [
+            {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "BRD-SNAPSHOT-INDEX-R010.ALLOWED_STATES.SOURCE.MEMBER"
+                ],
+                "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#20. Snapshot Relationship",
+                "source_type": "SOURCE_LITERAL",
+                "version": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328"
+              },
+              "identifier": "BRD-SNAPSHOT-INDEX-R010.ALLOWED_STATES.SOURCE.MEMBER",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-SNAPSHOT-INDEX-R010.O1.1.REFERENCE_TARGET_VALID.ALLOWED_STATES.ORIGIN.MEMBER.1",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                "source_fingerprint": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328",
+                "source_lines": "L726",
+                "source_section": "20. Snapshot Relationship"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "STATE_ID",
+                "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R010.BRD-SNAPSHOT-INDEX-R010.ALLOWED_STATES.SOURCE.MEMBER",
+                "version": "1.0.0"
+              },
+              "semantic_type": "STATE_ID"
+            }
+          ],
+          "origin": {
+            "origin_id": "BRD-SNAPSHOT-INDEX-R010.O1.1.REFERENCE_TARGET_VALID.ALLOWED_STATES.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+            "source_fingerprint": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328",
+            "source_lines": "L726",
+            "source_section": "20. Snapshot Relationship"
+          },
+          "semantic_type": "SET_OF<STATE_ID>"
+        },
+        "reference": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#20. Snapshot Relationship",
+            "source_type": "SOURCE_LITERAL",
+            "version": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328"
+          },
+          "identifier": "BRD-SNAPSHOT-INDEX-R010.REFERENCE",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-SNAPSHOT-INDEX-R010.O1.1.REFERENCE_TARGET_VALID.REFERENCE.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+            "source_fingerprint": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328",
+            "source_lines": "L726",
+            "source_section": "20. Snapshot Relationship"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "REFERENCE_ID",
+            "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R010.BRD-SNAPSHOT-INDEX-R010.REFERENCE",
+            "version": "1.0.0"
+          },
+          "semantic_type": "REFERENCE_ID"
+        },
+        "registry": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#20. Snapshot Relationship",
+            "source_type": "SOURCE_LITERAL",
+            "version": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328"
+          },
+          "identifier": "BRD-SNAPSHOT-INDEX-R010.REGISTRY",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-SNAPSHOT-INDEX-R010.O1.1.REFERENCE_TARGET_VALID.REGISTRY.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+            "source_fingerprint": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328",
+            "source_lines": "L726",
+            "source_section": "20. Snapshot Relationship"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "ENTITY_ID",
+            "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R010.BRD-SNAPSHOT-INDEX-R010.REGISTRY",
+            "version": "1.0.0"
+          },
+          "semantic_type": "ENTITY_ID"
+        },
+        "registry_source": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#20. Snapshot Relationship",
+            "source_type": "SOURCE_LITERAL",
+            "version": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328"
+          },
+          "identifier": "BRD-SNAPSHOT-INDEX-R010.REGISTRY_SOURCE",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-SNAPSHOT-INDEX-R010.O1.1.REFERENCE_TARGET_VALID.REGISTRY_SOURCE.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+            "source_fingerprint": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328",
+            "source_lines": "L726",
+            "source_section": "20. Snapshot Relationship"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "REFERENCE_ID",
+            "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R010.BRD-SNAPSHOT-INDEX-R010.REGISTRY_SOURCE",
+            "version": "1.0.0"
+          },
+          "semantic_type": "REFERENCE_ID"
+        },
+        "target_id": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#20. Snapshot Relationship",
+            "source_type": "SOURCE_LITERAL",
+            "version": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328"
+          },
+          "identifier": "BRD-SNAPSHOT-INDEX-R010.TARGET_ID",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-SNAPSHOT-INDEX-R010.O1.1.REFERENCE_TARGET_VALID.TARGET_ID.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+            "source_fingerprint": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328",
+            "source_lines": "L726",
+            "source_section": "20. Snapshot Relationship"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "ENTITY_ID",
+            "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R010.BRD-SNAPSHOT-INDEX-R010.TARGET_ID",
+            "version": "1.0.0"
+          },
+          "semantic_type": "ENTITY_ID"
+        },
+        "target_type": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#20. Snapshot Relationship",
+            "source_type": "SOURCE_LITERAL",
+            "version": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328"
+          },
+          "identifier": "BRD-SNAPSHOT-INDEX-R010.TARGET_TYPE",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-SNAPSHOT-INDEX-R010.O1.1.REFERENCE_TARGET_VALID.TARGET_TYPE.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+            "source_fingerprint": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328",
+            "source_lines": "L726",
+            "source_section": "20. Snapshot Relationship"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "ENTITY_TYPE",
+            "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R010.BRD-SNAPSHOT-INDEX-R010.TARGET_TYPE",
+            "version": "1.0.0"
+          },
+          "semantic_type": "ENTITY_TYPE"
+        }
+      }
+    ],
+    "contract_id": "P2C.C4.CONTRACT.BRD-SNAPSHOT-INDEX-R010",
+    "inference": false,
+    "mechanism": "APPROVED_TYPED_CUSTOM_AST",
+    "mechanism_version": "C4-R3",
+    "negative_oracle": [
+      "Snapshot consumption requires a mutable Runtime lookup to determine the historical decision"
+    ],
+    "operator_composition": [
+      "REFERENCE_TARGET_VALID"
+    ],
+    "positive_oracle": [
+      "The consumer can use the Snapshot without reading mutable Runtime data"
+    ],
+    "provenance": {
+      "approved_decision_references": [],
+      "inference": false,
+      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+      "source_fingerprint": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328",
+      "source_lines": "L726",
+      "source_section": "20. Snapshot Relationship"
+    },
+    "required_evidence": {
+      "evidence_object_ref": {
+        "authoritative_source": {
+          "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#20. Snapshot Relationship",
+          "source_type": "SOURCE_LITERAL",
+          "version": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328"
+        },
+        "identifier": "BRD-SNAPSHOT-INDEX-R010.BRD-SNAPSHOT-INDEX-R010.CONTRACT.EVIDENCE.OBJECT",
+        "inference": false,
+        "lifecycle": {
+          "status": "ACTIVE",
+          "version": "2.3"
+        },
+        "namespace": "YSIM.V2.3",
+        "origin": {
+          "origin_id": "BRD-SNAPSHOT-INDEX-R010.CONTRACT.EVIDENCE.ORIGIN",
+          "origin_type": "EVIDENCE_OBJECT"
+        },
+        "provenance": {
+          "approved_decision_references": [],
+          "inference": false,
+          "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+          "source_fingerprint": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328",
+          "source_lines": "L726",
+          "source_section": "20. Snapshot Relationship"
+        },
+        "resolver_contract": {
+          "deterministic": true,
+          "input_types": [],
+          "output_type": "EVIDENCE_OBJECT_REF",
+          "resolver_id": "OBSERVE.BRD-SNAPSHOT-INDEX-R010.BRD-SNAPSHOT-INDEX-R010.BRD-SNAPSHOT-INDEX-R010.CONTRACT.EVIDENCE.OBJECT",
+          "version": "1.0.0"
+        },
+        "semantic_type": "EVIDENCE_OBJECT_REF"
+      },
+      "inference": false,
+      "observed_collection_origin": "BRD-SNAPSHOT-INDEX-R010.RUNTIME.OBSERVED.FIELDS",
+      "observed_field_ids": [
+        "FIELD.CONSUMER_ID",
+        "FIELD.SNAPSHOT_ID",
+        "FIELD.AUTHORIZATION_RESULT",
+        "FIELD.RUNTIME_READS",
+        "FIELD.REPLAY_RESULT"
       ],
-      "when": "the candidate is evaluated against its declared data contract"
+      "producer": "BRD-SNAPSHOT-INDEX-R010.EVIDENCE.PRODUCER",
+      "required_collection_origin": "BRD-SNAPSHOT-INDEX-R010.SOURCE.REQUIRED.FIELDS",
+      "required_field_ids": [
+        "FIELD.CONSUMER_ID",
+        "FIELD.SNAPSHOT_ID",
+        "FIELD.AUTHORIZATION_RESULT",
+        "FIELD.RUNTIME_READS",
+        "FIELD.REPLAY_RESULT"
+      ],
+      "required_values_or_hashes": [
+        "BRD-SNAPSHOT-INDEX-R010.EVIDENCE.CONTENT.HASH"
+      ],
+      "retrieval_method": "BRD-SNAPSHOT-INDEX-R010.EVIDENCE.RETRIEVAL",
+      "version_or_correlation": "BRD-SNAPSHOT-INDEX-R010.EVIDENCE.VERSION.CORRELATION"
+    },
+    "runtime_evidence_executed": false,
+    "runtime_status": "RUNTIME_ADAPTER_PENDING",
+    "semantic_obligation_references": [
+      "BRD-SNAPSHOT-INDEX-R010-O001"
+    ],
+    "typed_contract_ast": {
+      "approved_clarification": null,
+      "assertions": [
+        {
+          "assertion_id": "BRD-SNAPSHOT-INDEX-R010.O1.1.REFERENCE_TARGET_VALID",
+          "evaluator_consumed_bindings": [
+            "allowed_lifecycle_states",
+            "allowed_states",
+            "reference",
+            "registry",
+            "registry_source",
+            "target_id",
+            "target_type"
+          ],
+          "evidence_object": {
+            "authoritative_source": {
+              "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#20. Snapshot Relationship",
+              "source_type": "SOURCE_LITERAL",
+              "version": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328"
+            },
+            "identifier": "BRD-SNAPSHOT-INDEX-R010.BRD-SNAPSHOT-INDEX-R010.O1.1.REFERENCE_TARGET_VALID.EVIDENCE.OBJECT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BRD-SNAPSHOT-INDEX-R010.O1.1.REFERENCE_TARGET_VALID.EVIDENCE.ORIGIN",
+              "origin_type": "EVIDENCE_OBJECT"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+              "source_fingerprint": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328",
+              "source_lines": "L726",
+              "source_section": "20. Snapshot Relationship"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "EVIDENCE_OBJECT_REF",
+              "resolver_id": "OBSERVE.BRD-SNAPSHOT-INDEX-R010.BRD-SNAPSHOT-INDEX-R010.BRD-SNAPSHOT-INDEX-R010.O1.1.REFERENCE_TARGET_VALID.EVIDENCE.OBJECT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "EVIDENCE_OBJECT_REF"
+          },
+          "expected_operand": {
+            "authoritative_source": {
+              "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#20. Snapshot Relationship",
+              "source_type": "SOURCE_LITERAL",
+              "version": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328"
+            },
+            "identifier": "BRD-SNAPSHOT-INDEX-R010.BRD-SNAPSHOT-INDEX-R010.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BRD-SNAPSHOT-INDEX-R010.O1.1.REFERENCE_TARGET_VALID.AUTHORITY.ORIGIN",
+              "origin_type": "SOURCE_LITERAL"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+              "source_fingerprint": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328",
+              "source_lines": "L726",
+              "source_section": "20. Snapshot Relationship"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "REFERENCE_ID",
+              "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R010.BRD-SNAPSHOT-INDEX-R010.BRD-SNAPSHOT-INDEX-R010.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "REFERENCE_ID"
+          },
+          "inference": false,
+          "model_conformance_fixture": {
+            "bindings": {
+              "allowed_lifecycle_states": {
+                "members": [
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "BRD-SNAPSHOT-INDEX-R010.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER"
+                      ],
+                      "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#20. Snapshot Relationship",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328"
+                    },
+                    "identifier": "BRD-SNAPSHOT-INDEX-R010.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BRD-SNAPSHOT-INDEX-R010.O1.1.REFERENCE_TARGET_VALID.ALLOWED_LIFECYCLE_STATES.ORIGIN.MEMBER.1",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                      "source_fingerprint": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328",
+                      "source_lines": "L726",
+                      "source_section": "20. Snapshot Relationship"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "STATE_ID",
+                      "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R010.BRD-SNAPSHOT-INDEX-R010.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "STATE_ID"
+                  }
+                ],
+                "origin": {
+                  "origin_id": "BRD-SNAPSHOT-INDEX-R010.O1.1.REFERENCE_TARGET_VALID.ALLOWED_LIFECYCLE_STATES.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                  "source_fingerprint": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328",
+                  "source_lines": "L726",
+                  "source_section": "20. Snapshot Relationship"
+                },
+                "semantic_type": "SET_OF<STATE_ID>"
+              },
+              "allowed_states": {
+                "members": [
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "BRD-SNAPSHOT-INDEX-R010.ALLOWED_STATES.SOURCE.MEMBER"
+                      ],
+                      "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#20. Snapshot Relationship",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328"
+                    },
+                    "identifier": "BRD-SNAPSHOT-INDEX-R010.ALLOWED_STATES.SOURCE.MEMBER",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BRD-SNAPSHOT-INDEX-R010.O1.1.REFERENCE_TARGET_VALID.ALLOWED_STATES.ORIGIN.MEMBER.1",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                      "source_fingerprint": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328",
+                      "source_lines": "L726",
+                      "source_section": "20. Snapshot Relationship"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "STATE_ID",
+                      "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R010.BRD-SNAPSHOT-INDEX-R010.ALLOWED_STATES.SOURCE.MEMBER",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "STATE_ID"
+                  }
+                ],
+                "origin": {
+                  "origin_id": "BRD-SNAPSHOT-INDEX-R010.O1.1.REFERENCE_TARGET_VALID.ALLOWED_STATES.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                  "source_fingerprint": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328",
+                  "source_lines": "L726",
+                  "source_section": "20. Snapshot Relationship"
+                },
+                "semantic_type": "SET_OF<STATE_ID>"
+              },
+              "reference": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#20. Snapshot Relationship",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328"
+                },
+                "identifier": "BRD-SNAPSHOT-INDEX-R010.REFERENCE",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-SNAPSHOT-INDEX-R010.O1.1.REFERENCE_TARGET_VALID.REFERENCE.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                  "source_fingerprint": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328",
+                  "source_lines": "L726",
+                  "source_section": "20. Snapshot Relationship"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "REFERENCE_ID",
+                  "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R010.BRD-SNAPSHOT-INDEX-R010.REFERENCE",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "REFERENCE_ID"
+              },
+              "registry": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#20. Snapshot Relationship",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328"
+                },
+                "identifier": "BRD-SNAPSHOT-INDEX-R010.REGISTRY",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-SNAPSHOT-INDEX-R010.O1.1.REFERENCE_TARGET_VALID.REGISTRY.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                  "source_fingerprint": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328",
+                  "source_lines": "L726",
+                  "source_section": "20. Snapshot Relationship"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "ENTITY_ID",
+                  "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R010.BRD-SNAPSHOT-INDEX-R010.REGISTRY",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "ENTITY_ID"
+              },
+              "registry_source": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#20. Snapshot Relationship",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328"
+                },
+                "identifier": "BRD-SNAPSHOT-INDEX-R010.REGISTRY_SOURCE",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-SNAPSHOT-INDEX-R010.O1.1.REFERENCE_TARGET_VALID.REGISTRY_SOURCE.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                  "source_fingerprint": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328",
+                  "source_lines": "L726",
+                  "source_section": "20. Snapshot Relationship"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "REFERENCE_ID",
+                  "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R010.BRD-SNAPSHOT-INDEX-R010.REGISTRY_SOURCE",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "REFERENCE_ID"
+              },
+              "target_id": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#20. Snapshot Relationship",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328"
+                },
+                "identifier": "BRD-SNAPSHOT-INDEX-R010.TARGET_ID",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-SNAPSHOT-INDEX-R010.O1.1.REFERENCE_TARGET_VALID.TARGET_ID.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                  "source_fingerprint": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328",
+                  "source_lines": "L726",
+                  "source_section": "20. Snapshot Relationship"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "ENTITY_ID",
+                  "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R010.BRD-SNAPSHOT-INDEX-R010.TARGET_ID",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "ENTITY_ID"
+              },
+              "target_type": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#20. Snapshot Relationship",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328"
+                },
+                "identifier": "BRD-SNAPSHOT-INDEX-R010.TARGET_TYPE",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-SNAPSHOT-INDEX-R010.O1.1.REFERENCE_TARGET_VALID.TARGET_TYPE.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                  "source_fingerprint": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328",
+                  "source_lines": "L726",
+                  "source_section": "20. Snapshot Relationship"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "ENTITY_TYPE",
+                  "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R010.BRD-SNAPSHOT-INDEX-R010.TARGET_TYPE",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "ENTITY_TYPE"
+              }
+            },
+            "comparison": {
+              "expected": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#20. Snapshot Relationship",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328"
+                },
+                "identifier": "BRD-SNAPSHOT-INDEX-R010.BRD-SNAPSHOT-INDEX-R010.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-SNAPSHOT-INDEX-R010.O1.1.REFERENCE_TARGET_VALID.AUTHORITY.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                  "source_fingerprint": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328",
+                  "source_lines": "L726",
+                  "source_section": "20. Snapshot Relationship"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "REFERENCE_ID",
+                  "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R010.BRD-SNAPSHOT-INDEX-R010.BRD-SNAPSHOT-INDEX-R010.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "REFERENCE_ID"
+              },
+              "observed": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#20. Snapshot Relationship",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328"
+                },
+                "identifier": "BRD-SNAPSHOT-INDEX-R010.BRD-SNAPSHOT-INDEX-R010.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-SNAPSHOT-INDEX-R010.O1.1.REFERENCE_TARGET_VALID.OBSERVED.ORIGIN",
+                  "origin_type": "RUNTIME_OBSERVED"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                  "source_fingerprint": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328",
+                  "source_lines": "L726",
+                  "source_section": "20. Snapshot Relationship"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "REFERENCE_ID",
+                  "resolver_id": "OBSERVE.BRD-SNAPSHOT-INDEX-R010.BRD-SNAPSHOT-INDEX-R010.BRD-SNAPSHOT-INDEX-R010.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "REFERENCE_ID"
+              }
+            },
+            "evidence_object": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#20. Snapshot Relationship",
+                "source_type": "SOURCE_LITERAL",
+                "version": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328"
+              },
+              "identifier": "BRD-SNAPSHOT-INDEX-R010.BRD-SNAPSHOT-INDEX-R010.O1.1.REFERENCE_TARGET_VALID.EVIDENCE.OBJECT",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-SNAPSHOT-INDEX-R010.O1.1.REFERENCE_TARGET_VALID.EVIDENCE.ORIGIN",
+                "origin_type": "EVIDENCE_OBJECT"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                "source_fingerprint": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328",
+                "source_lines": "L726",
+                "source_section": "20. Snapshot Relationship"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "EVIDENCE_OBJECT_REF",
+                "resolver_id": "OBSERVE.BRD-SNAPSHOT-INDEX-R010.BRD-SNAPSHOT-INDEX-R010.BRD-SNAPSHOT-INDEX-R010.O1.1.REFERENCE_TARGET_VALID.EVIDENCE.OBJECT",
+                "version": "1.0.0"
+              },
+              "semantic_type": "EVIDENCE_OBJECT_REF"
+            },
+            "operator_id": "REFERENCE_TARGET_VALID"
+          },
+          "obligation_id": "BRD-SNAPSHOT-INDEX-R010-O001",
+          "observed_operand": {
+            "authoritative_source": {
+              "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#20. Snapshot Relationship",
+              "source_type": "SOURCE_LITERAL",
+              "version": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328"
+            },
+            "identifier": "BRD-SNAPSHOT-INDEX-R010.BRD-SNAPSHOT-INDEX-R010.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BRD-SNAPSHOT-INDEX-R010.O1.1.REFERENCE_TARGET_VALID.OBSERVED.ORIGIN",
+              "origin_type": "RUNTIME_OBSERVED"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+              "source_fingerprint": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328",
+              "source_lines": "L726",
+              "source_section": "20. Snapshot Relationship"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "REFERENCE_ID",
+              "resolver_id": "OBSERVE.BRD-SNAPSHOT-INDEX-R010.BRD-SNAPSHOT-INDEX-R010.BRD-SNAPSHOT-INDEX-R010.O1.1.REFERENCE_TARGET_VALID.CANONICAL.RESULT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "REFERENCE_ID"
+          },
+          "operator_id": "REFERENCE_TARGET_VALID",
+          "operator_version": "1.0.0-candidate.2",
+          "typed_bindings": {
+            "allowed_lifecycle_states": {
+              "members": [
+                {
+                  "authoritative_source": {
+                    "allowed_identifiers": [
+                      "BRD-SNAPSHOT-INDEX-R010.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER"
+                    ],
+                    "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#20. Snapshot Relationship",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328"
+                  },
+                  "identifier": "BRD-SNAPSHOT-INDEX-R010.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BRD-SNAPSHOT-INDEX-R010.O1.1.REFERENCE_TARGET_VALID.ALLOWED_LIFECYCLE_STATES.ORIGIN.MEMBER.1",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                    "source_fingerprint": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328",
+                    "source_lines": "L726",
+                    "source_section": "20. Snapshot Relationship"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "STATE_ID",
+                    "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R010.BRD-SNAPSHOT-INDEX-R010.ALLOWED_LIFECYCLE_STATES.SOURCE.MEMBER",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "STATE_ID"
+                }
+              ],
+              "origin": {
+                "origin_id": "BRD-SNAPSHOT-INDEX-R010.O1.1.REFERENCE_TARGET_VALID.ALLOWED_LIFECYCLE_STATES.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                "source_fingerprint": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328",
+                "source_lines": "L726",
+                "source_section": "20. Snapshot Relationship"
+              },
+              "semantic_type": "SET_OF<STATE_ID>"
+            },
+            "allowed_states": {
+              "members": [
+                {
+                  "authoritative_source": {
+                    "allowed_identifiers": [
+                      "BRD-SNAPSHOT-INDEX-R010.ALLOWED_STATES.SOURCE.MEMBER"
+                    ],
+                    "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#20. Snapshot Relationship",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328"
+                  },
+                  "identifier": "BRD-SNAPSHOT-INDEX-R010.ALLOWED_STATES.SOURCE.MEMBER",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BRD-SNAPSHOT-INDEX-R010.O1.1.REFERENCE_TARGET_VALID.ALLOWED_STATES.ORIGIN.MEMBER.1",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                    "source_fingerprint": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328",
+                    "source_lines": "L726",
+                    "source_section": "20. Snapshot Relationship"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "STATE_ID",
+                    "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R010.BRD-SNAPSHOT-INDEX-R010.ALLOWED_STATES.SOURCE.MEMBER",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "STATE_ID"
+                }
+              ],
+              "origin": {
+                "origin_id": "BRD-SNAPSHOT-INDEX-R010.O1.1.REFERENCE_TARGET_VALID.ALLOWED_STATES.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                "source_fingerprint": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328",
+                "source_lines": "L726",
+                "source_section": "20. Snapshot Relationship"
+              },
+              "semantic_type": "SET_OF<STATE_ID>"
+            },
+            "reference": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#20. Snapshot Relationship",
+                "source_type": "SOURCE_LITERAL",
+                "version": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328"
+              },
+              "identifier": "BRD-SNAPSHOT-INDEX-R010.REFERENCE",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-SNAPSHOT-INDEX-R010.O1.1.REFERENCE_TARGET_VALID.REFERENCE.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                "source_fingerprint": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328",
+                "source_lines": "L726",
+                "source_section": "20. Snapshot Relationship"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "REFERENCE_ID",
+                "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R010.BRD-SNAPSHOT-INDEX-R010.REFERENCE",
+                "version": "1.0.0"
+              },
+              "semantic_type": "REFERENCE_ID"
+            },
+            "registry": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#20. Snapshot Relationship",
+                "source_type": "SOURCE_LITERAL",
+                "version": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328"
+              },
+              "identifier": "BRD-SNAPSHOT-INDEX-R010.REGISTRY",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-SNAPSHOT-INDEX-R010.O1.1.REFERENCE_TARGET_VALID.REGISTRY.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                "source_fingerprint": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328",
+                "source_lines": "L726",
+                "source_section": "20. Snapshot Relationship"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "ENTITY_ID",
+                "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R010.BRD-SNAPSHOT-INDEX-R010.REGISTRY",
+                "version": "1.0.0"
+              },
+              "semantic_type": "ENTITY_ID"
+            },
+            "registry_source": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#20. Snapshot Relationship",
+                "source_type": "SOURCE_LITERAL",
+                "version": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328"
+              },
+              "identifier": "BRD-SNAPSHOT-INDEX-R010.REGISTRY_SOURCE",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-SNAPSHOT-INDEX-R010.O1.1.REFERENCE_TARGET_VALID.REGISTRY_SOURCE.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                "source_fingerprint": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328",
+                "source_lines": "L726",
+                "source_section": "20. Snapshot Relationship"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "REFERENCE_ID",
+                "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R010.BRD-SNAPSHOT-INDEX-R010.REGISTRY_SOURCE",
+                "version": "1.0.0"
+              },
+              "semantic_type": "REFERENCE_ID"
+            },
+            "target_id": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#20. Snapshot Relationship",
+                "source_type": "SOURCE_LITERAL",
+                "version": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328"
+              },
+              "identifier": "BRD-SNAPSHOT-INDEX-R010.TARGET_ID",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-SNAPSHOT-INDEX-R010.O1.1.REFERENCE_TARGET_VALID.TARGET_ID.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                "source_fingerprint": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328",
+                "source_lines": "L726",
+                "source_section": "20. Snapshot Relationship"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "ENTITY_ID",
+                "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R010.BRD-SNAPSHOT-INDEX-R010.TARGET_ID",
+                "version": "1.0.0"
+              },
+              "semantic_type": "ENTITY_ID"
+            },
+            "target_type": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#20. Snapshot Relationship",
+                "source_type": "SOURCE_LITERAL",
+                "version": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328"
+              },
+              "identifier": "BRD-SNAPSHOT-INDEX-R010.TARGET_TYPE",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-SNAPSHOT-INDEX-R010.O1.1.REFERENCE_TARGET_VALID.TARGET_TYPE.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                "source_fingerprint": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328",
+                "source_lines": "L726",
+                "source_section": "20. Snapshot Relationship"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "ENTITY_TYPE",
+                "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R010.BRD-SNAPSHOT-INDEX-R010.TARGET_TYPE",
+                "version": "1.0.0"
+              },
+              "semantic_type": "ENTITY_TYPE"
+            }
+          }
+        }
+      ],
+      "boundary_cases": [
+        "Authorization lookup may occur, but historical business context comes from Snapshot"
+      ],
+      "contract_ast_sha256": "a0181dec50a483a6c3ba515eb74c4e72bc1485050612116734b292810b14243e",
+      "contract_id": "P2C.C4.CONTRACT.BRD-SNAPSHOT-INDEX-R010",
+      "criticality": "NORMAL",
+      "disposition": "OPERATOR_REMAP_REQUIRED",
+      "evidence_contract": {
+        "evidence_object_ref": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#20. Snapshot Relationship",
+            "source_type": "SOURCE_LITERAL",
+            "version": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328"
+          },
+          "identifier": "BRD-SNAPSHOT-INDEX-R010.BRD-SNAPSHOT-INDEX-R010.CONTRACT.EVIDENCE.OBJECT",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-SNAPSHOT-INDEX-R010.CONTRACT.EVIDENCE.ORIGIN",
+            "origin_type": "EVIDENCE_OBJECT"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+            "source_fingerprint": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328",
+            "source_lines": "L726",
+            "source_section": "20. Snapshot Relationship"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "EVIDENCE_OBJECT_REF",
+            "resolver_id": "OBSERVE.BRD-SNAPSHOT-INDEX-R010.BRD-SNAPSHOT-INDEX-R010.BRD-SNAPSHOT-INDEX-R010.CONTRACT.EVIDENCE.OBJECT",
+            "version": "1.0.0"
+          },
+          "semantic_type": "EVIDENCE_OBJECT_REF"
+        },
+        "inference": false,
+        "observed_collection_origin": "BRD-SNAPSHOT-INDEX-R010.RUNTIME.OBSERVED.FIELDS",
+        "observed_field_ids": [
+          "FIELD.CONSUMER_ID",
+          "FIELD.SNAPSHOT_ID",
+          "FIELD.AUTHORIZATION_RESULT",
+          "FIELD.RUNTIME_READS",
+          "FIELD.REPLAY_RESULT"
+        ],
+        "producer": "BRD-SNAPSHOT-INDEX-R010.EVIDENCE.PRODUCER",
+        "required_collection_origin": "BRD-SNAPSHOT-INDEX-R010.SOURCE.REQUIRED.FIELDS",
+        "required_field_ids": [
+          "FIELD.CONSUMER_ID",
+          "FIELD.SNAPSHOT_ID",
+          "FIELD.AUTHORIZATION_RESULT",
+          "FIELD.RUNTIME_READS",
+          "FIELD.REPLAY_RESULT"
+        ],
+        "required_values_or_hashes": [
+          "BRD-SNAPSHOT-INDEX-R010.EVIDENCE.CONTENT.HASH"
+        ],
+        "retrieval_method": "BRD-SNAPSHOT-INDEX-R010.EVIDENCE.RETRIEVAL",
+        "version_or_correlation": "BRD-SNAPSHOT-INDEX-R010.EVIDENCE.VERSION.CORRELATION"
+      },
+      "explicit_non_obligations": [
+        "No runtime implementation topology is authorized by this semantic record.",
+        "No production runtime evidence is claimed by this model-level candidate."
+      ],
+      "fixture_ids": [
+        "P2C-C4-FX-155F24FDA13F9597C700",
+        "P2C-C4-FX-CA53DB31AC56D84D3FF3",
+        "P2C-C4-FX-8AA30A4AE990BB319AF1"
+      ],
+      "high_risk_audit_subset": true,
+      "independent_contract_identity": true,
+      "inference": false,
+      "inherits_contract_ast": null,
+      "negative_oracles": [
+        "Snapshot consumption requires a mutable Runtime lookup to determine the historical decision"
+      ],
+      "normative_obligations": [
+        {
+          "applicability": "V2.3_ACTIVE",
+          "obligation_id": "BRD-SNAPSHOT-INDEX-R010-O001",
+          "obligation_text": "Snapshot có thể được nhiều hệ thống sử dụng lại mà không cần đọc dữ liệu Runtime"
+        }
+      ],
+      "obligation_to_operator_coverage": [
+        {
+          "assertion_ids": [
+            "BRD-SNAPSHOT-INDEX-R010.O1.1.REFERENCE_TARGET_VALID"
+          ],
+          "coverage_count": 1,
+          "obligation_id": "BRD-SNAPSHOT-INDEX-R010-O001"
+        }
+      ],
+      "operator_composition": [
+        "REFERENCE_TARGET_VALID"
+      ],
+      "positive_oracles": [
+        "The consumer can use the Snapshot without reading mutable Runtime data"
+      ],
+      "preconditions": [
+        "The Snapshot and consumer authorization exist"
+      ],
+      "prohibitions": [
+        "Snapshot consumption requires a mutable Runtime lookup to determine the historical decision"
+      ],
+      "requirement_id": "BRD-SNAPSHOT-INDEX-R010",
+      "runtime_status": "SLICE_RUNTIME_ADAPTER_REQUIRED",
+      "semantic_family_id": null,
+      "source_provenance": {
+        "approved_decision_references": [],
+        "inference": false,
+        "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+        "source_fingerprint": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328",
+        "source_lines": "L726",
+        "source_section": "20. Snapshot Relationship"
+      },
+      "source_statement": "Snapshot có thể được nhiều hệ thống sử dụng lại mà không cần đọc dữ liệu Runtime.",
+      "surrounding_source_context": "### BRD-SNAPSHOT-INDEX-R010 — Snapshot có thể được nhiều hệ thống sử dụng lại mà không cần đọc dữ liệu Runtime"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "contract_id": "P2C.C4.CONTRACT.BRD-SNAPSHOT-INDEX-R010",
+    "inference": false,
+    "mechanism": "APPROVED_TYPED_CUSTOM_AST",
+    "mechanism_version": "SEMANTIC_ACCEPTANCE_RENDERER_C2",
+    "runtime_status": "RUNTIME_ADAPTER_PENDING"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "ACCEPTANCE_READY",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-SNAPSHOT-INDEX-R010-AC001"
+        "BRD-SNAPSHOT-INDEX-R010-AC001",
+        "BRD-SNAPSHOT-INDEX-R010-AC002",
+        "BRD-SNAPSHOT-INDEX-R010-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-SNAPSHOT-INDEX-R010-O001",
@@ -1748,8 +6622,8 @@ trước khi được sử dụng trong Platform.
     "source_context_sha256": "99049378b18d84b9b04ce87e4567d1065229649c9953ea486459e23df7c3250d",
     "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
     "source_fingerprint": "2ace6436ed635bec617a96776998d027f468d4b0ad94ca5b699e6c9b4eee0328",
-    "source_lines": "L726",
-    "source_section": "20. Snapshot Relationship"
+    "source_lines": "L5295-L6644",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-SNAPSHOT-INDEX-R010"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1774,28 +6648,34 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "BRD-SNAPSHOT-INDEX-R022-AC001",
-      "given": "a candidate Mọi Snapshot mới phải có: - Snapshot ID record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "BRD-SNAPSHOT-INDEX-R022-O001"
-      ],
-      "when": "the candidate is evaluated against its declared data contract"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-SNAPSHOT-INDEX-R022",
+      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+      "source_fingerprint": "d79abaeb6233657c4b6738aba199591cc2a7c9eaa210f57b5fd9d4ce7150aa74"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-SNAPSHOT-INDEX-R022-AC001"
+        "BRD-SNAPSHOT-INDEX-R022-AC001",
+        "BRD-SNAPSHOT-INDEX-R022-AC002",
+        "BRD-SNAPSHOT-INDEX-R022-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-SNAPSHOT-INDEX-R022-O001",
@@ -1819,8 +6699,8 @@ trước khi được sử dụng trong Platform.
     "source_context_sha256": "4e01ef7cf97fffd270369a5bba2b860d977cdc58934c032a88d79217d8428c04",
     "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
     "source_fingerprint": "d79abaeb6233657c4b6738aba199591cc2a7c9eaa210f57b5fd9d4ce7150aa74",
-    "source_lines": "L788-L790",
-    "source_section": "23. Snapshot Governance"
+    "source_lines": "L6646-L6721",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-SNAPSHOT-INDEX-R022"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1845,28 +6725,34 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "BRD-SNAPSHOT-INDEX-R023-AC001",
-      "given": "a candidate Mọi Snapshot mới phải có: - Source Business Object record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "BRD-SNAPSHOT-INDEX-R023-O001"
-      ],
-      "when": "the candidate is evaluated against its declared data contract"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-SNAPSHOT-INDEX-R023",
+      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+      "source_fingerprint": "4aff778f04dab8d22803c3f0ee5eafbe4aa757081a96fcdc9aa531a572fbecf1"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-SNAPSHOT-INDEX-R023-AC001"
+        "BRD-SNAPSHOT-INDEX-R023-AC001",
+        "BRD-SNAPSHOT-INDEX-R023-AC002",
+        "BRD-SNAPSHOT-INDEX-R023-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-SNAPSHOT-INDEX-R023-O001",
@@ -1889,9 +6775,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "23. Snapshot Governance",
     "source_context_sha256": "4e01ef7cf97fffd270369a5bba2b860d977cdc58934c032a88d79217d8428c04",
     "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
-    "source_fingerprint": "d487d2dcfef67df8ac19673d7a2ba39896eb324745718bc2a422018e88a93947",
-    "source_lines": "L788-L791",
-    "source_section": "23. Snapshot Governance"
+    "source_fingerprint": "4aff778f04dab8d22803c3f0ee5eafbe4aa757081a96fcdc9aa531a572fbecf1",
+    "source_lines": "L6723-L6798",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-SNAPSHOT-INDEX-R023"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1916,28 +6802,34 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "BRD-SNAPSHOT-INDEX-R024-AC001",
-      "given": "a candidate Mọi Snapshot mới phải có: - Trigger Event record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "BRD-SNAPSHOT-INDEX-R024-O001"
-      ],
-      "when": "the candidate is evaluated against its declared data contract"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-SNAPSHOT-INDEX-R024",
+      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+      "source_fingerprint": "66556071f53b324dda3bf3e647124626df792e1e6b6501dc2753d693ab845d52"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-SNAPSHOT-INDEX-R024-AC001"
+        "BRD-SNAPSHOT-INDEX-R024-AC001",
+        "BRD-SNAPSHOT-INDEX-R024-AC002",
+        "BRD-SNAPSHOT-INDEX-R024-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-SNAPSHOT-INDEX-R024-O001",
@@ -1960,9 +6852,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "23. Snapshot Governance",
     "source_context_sha256": "4e01ef7cf97fffd270369a5bba2b860d977cdc58934c032a88d79217d8428c04",
     "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
-    "source_fingerprint": "72433ef307ab5f5623192e7958768d393262d98cb0ff1b8cb415d5dedf7a0051",
-    "source_lines": "L788-L792",
-    "source_section": "23. Snapshot Governance"
+    "source_fingerprint": "66556071f53b324dda3bf3e647124626df792e1e6b6501dc2753d693ab845d52",
+    "source_lines": "L6800-L6875",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-SNAPSHOT-INDEX-R024"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1987,28 +6879,34 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "BRD-SNAPSHOT-INDEX-R025-AC001",
-      "given": "a candidate Mọi Snapshot mới phải có: - Snapshot Type record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "BRD-SNAPSHOT-INDEX-R025-O001"
-      ],
-      "when": "the candidate is evaluated against its declared data contract"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-SNAPSHOT-INDEX-R025",
+      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+      "source_fingerprint": "f994253ff523c501f95efe06578cba7dcb1801e920a17af868a19307af060791"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-SNAPSHOT-INDEX-R025-AC001"
+        "BRD-SNAPSHOT-INDEX-R025-AC001",
+        "BRD-SNAPSHOT-INDEX-R025-AC002",
+        "BRD-SNAPSHOT-INDEX-R025-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-SNAPSHOT-INDEX-R025-O001",
@@ -2031,9 +6929,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "23. Snapshot Governance",
     "source_context_sha256": "4e01ef7cf97fffd270369a5bba2b860d977cdc58934c032a88d79217d8428c04",
     "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
-    "source_fingerprint": "c22a0f867ac71cd886318b194342707ebd776566bcd54431ef71657fa0fab54a",
-    "source_lines": "L788-L793",
-    "source_section": "23. Snapshot Governance"
+    "source_fingerprint": "f994253ff523c501f95efe06578cba7dcb1801e920a17af868a19307af060791",
+    "source_lines": "L6877-L6952",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-SNAPSHOT-INDEX-R025"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2058,28 +6956,34 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "BRD-SNAPSHOT-INDEX-R026-AC001",
-      "given": "a candidate Mọi Snapshot mới phải có: - Version record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "BRD-SNAPSHOT-INDEX-R026-O001"
-      ],
-      "when": "the candidate is evaluated against its declared data contract"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-SNAPSHOT-INDEX-R026",
+      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+      "source_fingerprint": "40b431be9c4a04f19a7400d54a9f474b87583716c69ecb6961ee7bc1c539e9cf"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-SNAPSHOT-INDEX-R026-AC001"
+        "BRD-SNAPSHOT-INDEX-R026-AC001",
+        "BRD-SNAPSHOT-INDEX-R026-AC002",
+        "BRD-SNAPSHOT-INDEX-R026-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-SNAPSHOT-INDEX-R026-O001",
@@ -2102,9 +7006,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "23. Snapshot Governance",
     "source_context_sha256": "4e01ef7cf97fffd270369a5bba2b860d977cdc58934c032a88d79217d8428c04",
     "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
-    "source_fingerprint": "f5deac80f9174ce98ac190b51aee6f445a03bbe1148451b2bd573f330957f935",
-    "source_lines": "L788-L794",
-    "source_section": "23. Snapshot Governance"
+    "source_fingerprint": "40b431be9c4a04f19a7400d54a9f474b87583716c69ecb6961ee7bc1c539e9cf",
+    "source_lines": "L6954-L7029",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-SNAPSHOT-INDEX-R026"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2129,28 +7033,34 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "BRD-SNAPSHOT-INDEX-R027-AC001",
-      "given": "a candidate Mọi Snapshot mới phải có: - Retention Policy record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "BRD-SNAPSHOT-INDEX-R027-O001"
-      ],
-      "when": "the candidate is evaluated against its declared data contract"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-SNAPSHOT-INDEX-R027",
+      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+      "source_fingerprint": "4d74df792277ca7581f2422eb5dbbd4b44f7bb2a698d9e4c47f21a40bec3de2a"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-SNAPSHOT-INDEX-R027-AC001"
+        "BRD-SNAPSHOT-INDEX-R027-AC001",
+        "BRD-SNAPSHOT-INDEX-R027-AC002",
+        "BRD-SNAPSHOT-INDEX-R027-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-SNAPSHOT-INDEX-R027-O001",
@@ -2173,9 +7083,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "23. Snapshot Governance",
     "source_context_sha256": "4e01ef7cf97fffd270369a5bba2b860d977cdc58934c032a88d79217d8428c04",
     "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
-    "source_fingerprint": "9f99534c05a0aca0613d80c7b883c85920d1c36e5a43b043ba94c518bfad7eea",
-    "source_lines": "L788-L795",
-    "source_section": "23. Snapshot Governance"
+    "source_fingerprint": "4d74df792277ca7581f2422eb5dbbd4b44f7bb2a698d9e4c47f21a40bec3de2a",
+    "source_lines": "L7031-L7106",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-SNAPSHOT-INDEX-R027"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2200,28 +7110,34 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "BRD-SNAPSHOT-INDEX-R028-AC001",
-      "given": "a candidate Mọi Snapshot mới phải có: - Visibility record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "BRD-SNAPSHOT-INDEX-R028-O001"
-      ],
-      "when": "the candidate is evaluated against its declared data contract"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-SNAPSHOT-INDEX-R028",
+      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+      "source_fingerprint": "03d53939959747f058d3fa72528823613d787aeeba1a8ff4c93efe73a9190662"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-SNAPSHOT-INDEX-R028-AC001"
+        "BRD-SNAPSHOT-INDEX-R028-AC001",
+        "BRD-SNAPSHOT-INDEX-R028-AC002",
+        "BRD-SNAPSHOT-INDEX-R028-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-SNAPSHOT-INDEX-R028-O001",
@@ -2244,9 +7160,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "23. Snapshot Governance",
     "source_context_sha256": "4e01ef7cf97fffd270369a5bba2b860d977cdc58934c032a88d79217d8428c04",
     "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
-    "source_fingerprint": "031107b8fa1286afbc468d065fff4bb3dfb9e8ae9dc4ef6b23c5b6fe1040bc88",
-    "source_lines": "L788-L796",
-    "source_section": "23. Snapshot Governance"
+    "source_fingerprint": "03d53939959747f058d3fa72528823613d787aeeba1a8ff4c93efe73a9190662",
+    "source_lines": "L7108-L7183",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-SNAPSHOT-INDEX-R028"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2271,28 +7187,34 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "BRD-SNAPSHOT-INDEX-R029-AC001",
-      "given": "a candidate Mọi Snapshot mới phải có: - Owner record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "BRD-SNAPSHOT-INDEX-R029-O001"
-      ],
-      "when": "the candidate is evaluated against its declared data contract"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-SNAPSHOT-INDEX-R029",
+      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+      "source_fingerprint": "8ae4a551bc35377fb01e5a7ea4c8516438119a31021fe5c6f5f120c3c76c34c0"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-SNAPSHOT-INDEX-R029-AC001"
+        "BRD-SNAPSHOT-INDEX-R029-AC001",
+        "BRD-SNAPSHOT-INDEX-R029-AC002",
+        "BRD-SNAPSHOT-INDEX-R029-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-SNAPSHOT-INDEX-R029-O001",
@@ -2315,9 +7237,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "23. Snapshot Governance",
     "source_context_sha256": "4e01ef7cf97fffd270369a5bba2b860d977cdc58934c032a88d79217d8428c04",
     "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
-    "source_fingerprint": "3b07a28940a2564893c319192f2d7c2feb4c8d4874d1c00cfcb0efc80bbedb7b",
-    "source_lines": "L788-L797",
-    "source_section": "23. Snapshot Governance"
+    "source_fingerprint": "8ae4a551bc35377fb01e5a7ea4c8516438119a31021fe5c6f5f120c3c76c34c0",
+    "source_lines": "L7185-L7260",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-SNAPSHOT-INDEX-R029"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2342,28 +7264,37 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-SNAPSHOT-INDEX-R030-AC001",
-      "given": "the applicable business context, actor, and input for Mọi Snapshot mới phải có: - Approval",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the proposed change remains pending until the required approval decision is recorded, and only an approved decision permits the accepted state change",
-      "verifies": [
-        "BRD-SNAPSHOT-INDEX-R030-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "BDD-27",
+        "SD-03"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-SNAPSHOT-INDEX-R030",
+      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+      "source_fingerprint": "b855dc4db8732531e93270b9d2cadb4763196193cb9028959e4db14d0e95aad4"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-SNAPSHOT-INDEX-R030-AC001"
+        "BRD-SNAPSHOT-INDEX-R030-AC001",
+        "BRD-SNAPSHOT-INDEX-R030-AC002",
+        "BRD-SNAPSHOT-INDEX-R030-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-SNAPSHOT-INDEX-R030-O001",
@@ -2389,9 +7320,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "23. Snapshot Governance",
     "source_context_sha256": "4e01ef7cf97fffd270369a5bba2b860d977cdc58934c032a88d79217d8428c04",
     "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
-    "source_fingerprint": "054e4cf7b3ca340772f181f273e42e3555c1af6936b22f3acbd581d60c837e1b",
-    "source_lines": "L788-L798",
-    "source_section": "23. Snapshot Governance"
+    "source_fingerprint": "b855dc4db8732531e93270b9d2cadb4763196193cb9028959e4db14d0e95aad4",
+    "source_lines": "L7262-L7343",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-SNAPSHOT-INDEX-R030"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2416,28 +7347,34 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "BRD-SNAPSHOT-INDEX-R031-AC001",
-      "given": "a candidate Snapshot chỉ được tạo khi có Business Requirement rõ ràng record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "BRD-SNAPSHOT-INDEX-R031-O001"
-      ],
-      "when": "the candidate is evaluated against its declared data contract"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-SNAPSHOT-INDEX-R031",
+      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+      "source_fingerprint": "c76f97bfbaad890f76cec8779dd7c9f5a2398fabafa5c0f9d895a76f5dea066d"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-SNAPSHOT-INDEX-R031-AC001"
+        "BRD-SNAPSHOT-INDEX-R031-AC001",
+        "BRD-SNAPSHOT-INDEX-R031-AC002",
+        "BRD-SNAPSHOT-INDEX-R031-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-SNAPSHOT-INDEX-R031-O001",
@@ -2461,8 +7398,8 @@ trước khi được sử dụng trong Platform.
     "source_context_sha256": "4e01ef7cf97fffd270369a5bba2b860d977cdc58934c032a88d79217d8428c04",
     "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
     "source_fingerprint": "c76f97bfbaad890f76cec8779dd7c9f5a2398fabafa5c0f9d895a76f5dea066d",
-    "source_lines": "L800",
-    "source_section": "23. Snapshot Governance"
+    "source_lines": "L7345-L7420",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-SNAPSHOT-INDEX-R031"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2487,28 +7424,34 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "BRD-SNAPSHOT-INDEX-R032-AC001",
-      "given": "a candidate Mọi Snapshot mới hoặc thay đổi Snapshot Definition phải trải qua: - Business Review record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "BRD-SNAPSHOT-INDEX-R032-O001"
-      ],
-      "when": "the candidate is evaluated against its declared data contract"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-SNAPSHOT-INDEX-R032",
+      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+      "source_fingerprint": "51df16604a41f2f91fcc16aa188f7e3168b80466074cf44bc7d6273557ee1516"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-SNAPSHOT-INDEX-R032-AC001"
+        "BRD-SNAPSHOT-INDEX-R032-AC001",
+        "BRD-SNAPSHOT-INDEX-R032-AC002",
+        "BRD-SNAPSHOT-INDEX-R032-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-SNAPSHOT-INDEX-R032-O001",
@@ -2532,8 +7475,8 @@ trước khi được sử dụng trong Platform.
     "source_context_sha256": "98965dda7c28f27757b88183c2b5b4f260b78247893888c0f78db1c33286e1c7",
     "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
     "source_fingerprint": "51df16604a41f2f91fcc16aa188f7e3168b80466074cf44bc7d6273557ee1516",
-    "source_lines": "L935-L937",
-    "source_section": "27. Document Status"
+    "source_lines": "L7422-L7497",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-SNAPSHOT-INDEX-R032"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2558,28 +7501,34 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "BRD-SNAPSHOT-INDEX-R033-AC001",
-      "given": "a candidate Mọi Snapshot mới hoặc thay đổi Snapshot Definition phải trải qua: - Architecture Review record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "BRD-SNAPSHOT-INDEX-R033-O001"
-      ],
-      "when": "the candidate is evaluated against its declared data contract"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-SNAPSHOT-INDEX-R033",
+      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+      "source_fingerprint": "0ae585019a02f6852b59af93dff6a9a5e3964e66c4690b81b382e6ba181a5be1"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-SNAPSHOT-INDEX-R033-AC001"
+        "BRD-SNAPSHOT-INDEX-R033-AC001",
+        "BRD-SNAPSHOT-INDEX-R033-AC002",
+        "BRD-SNAPSHOT-INDEX-R033-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-SNAPSHOT-INDEX-R033-O001",
@@ -2602,9 +7551,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "27. Document Status",
     "source_context_sha256": "98965dda7c28f27757b88183c2b5b4f260b78247893888c0f78db1c33286e1c7",
     "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
-    "source_fingerprint": "f92e4189cdd61a69bf91d55bba7296dce174c8d933e39c4086776faff1bd4b2d",
-    "source_lines": "L935-L938",
-    "source_section": "27. Document Status"
+    "source_fingerprint": "0ae585019a02f6852b59af93dff6a9a5e3964e66c4690b81b382e6ba181a5be1",
+    "source_lines": "L7499-L7574",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-SNAPSHOT-INDEX-R033"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2629,28 +7578,37 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-SNAPSHOT-INDEX-R034-AC001",
-      "given": "the applicable business context, actor, and input for Mọi Snapshot mới hoặc thay đổi Snapshot Definition phải trải qua: - Approval",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the proposed change remains pending until the required approval decision is recorded, and only an approved decision permits the accepted state change",
-      "verifies": [
-        "BRD-SNAPSHOT-INDEX-R034-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "BDD-27",
+        "SD-03"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-SNAPSHOT-INDEX-R034",
+      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+      "source_fingerprint": "a78f4cb29360290868ca6e8eebbb5d5fb5f4c0e77c281adabccbaa68401ccb56"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-SNAPSHOT-INDEX-R034-AC001"
+        "BRD-SNAPSHOT-INDEX-R034-AC001",
+        "BRD-SNAPSHOT-INDEX-R034-AC002",
+        "BRD-SNAPSHOT-INDEX-R034-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-SNAPSHOT-INDEX-R034-O001",
@@ -2676,9 +7634,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "27. Document Status",
     "source_context_sha256": "98965dda7c28f27757b88183c2b5b4f260b78247893888c0f78db1c33286e1c7",
     "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
-    "source_fingerprint": "63d01a30e3fc15af396d98ce695e9aeabbb907b918a760e6b4ad6a87bf1bda35",
-    "source_lines": "L935-L939",
-    "source_section": "27. Document Status"
+    "source_fingerprint": "a78f4cb29360290868ca6e8eebbb5d5fb5f4c0e77c281adabccbaa68401ccb56",
+    "source_lines": "L7576-L7657",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-SNAPSHOT-INDEX-R034"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2703,28 +7661,34 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "BRD-SNAPSHOT-INDEX-R035-AC001",
-      "given": "a candidate Mọi Snapshot mới hoặc thay đổi Snapshot Definition phải trải qua: - Versioning record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "BRD-SNAPSHOT-INDEX-R035-O001"
-      ],
-      "when": "the candidate is evaluated against its declared data contract"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-SNAPSHOT-INDEX-R035",
+      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+      "source_fingerprint": "83b833875e57b8098c1346a81822e681e7add76605a3d36f9b1099b949bde61d"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-SNAPSHOT-INDEX-R035-AC001"
+        "BRD-SNAPSHOT-INDEX-R035-AC001",
+        "BRD-SNAPSHOT-INDEX-R035-AC002",
+        "BRD-SNAPSHOT-INDEX-R035-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-SNAPSHOT-INDEX-R035-O001",
@@ -2747,9 +7711,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "27. Document Status",
     "source_context_sha256": "98965dda7c28f27757b88183c2b5b4f260b78247893888c0f78db1c33286e1c7",
     "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
-    "source_fingerprint": "d8120d316e5f2d93b46a1f45d7ead015d34f6ff374060671e8be247a22803a62",
-    "source_lines": "L935-L940",
-    "source_section": "27. Document Status"
+    "source_fingerprint": "83b833875e57b8098c1346a81822e681e7add76605a3d36f9b1099b949bde61d",
+    "source_lines": "L7659-L7734",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-SNAPSHOT-INDEX-R035"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2774,47 +7738,27 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "SECURITY_DECISION_OBSERVATION_V1",
-      "criterion_id": "BRD-SNAPSHOT-INDEX-R036-AC001",
-      "given": "an identified principal, applicable assurance context, and policy inputs for Mọi Snapshot mới hoặc thay đổi Snapshot Definition phải trải qua: - Security Review",
-      "observable_evidence": "decision result, effective assurance or policy, denied or changed state, reason, and audit evidence",
-      "then": "the effective security policy produces the required allow, challenge, block, review, or denial result; protected state and audit evidence agree with that decision",
-      "verifies": [
-        "BRD-SNAPSHOT-INDEX-R036-O001"
-      ],
-      "when": "the protected decision or action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "SECURITY_FAIL_CLOSED_V1",
-      "criterion_id": "BRD-SNAPSHOT-INDEX-R036-AC002",
-      "given": "a principal or request that does not satisfy the assurance, policy, consent, or authorization boundary for Mọi Snapshot mới hoặc thay đổi Snapshot Definition phải trải qua: - Security Review",
-      "observable_evidence": "decision result, protected-state comparison, reason, effective policy, and audit record",
-      "then": "the result is challenge, block, review, or denial as required; protected state is unchanged and the reason is audited",
-      "verifies": [
-        "BRD-SNAPSHOT-INDEX-R036-O001"
-      ],
-      "when": "the protected decision or action is attempted"
-    },
-    {
-      "case": "NEGATIVE_FAIL_CLOSED",
-      "controlled_contract": "REQUIREMENT_SPECIFIC_FAIL_CLOSED_V1",
-      "criterion_id": "BRD-SNAPSHOT-INDEX-R036-AC003",
-      "given": "an input or attempted state change that violates a mandatory boundary explicitly stated by Mọi Snapshot mới hoặc thay đổi Snapshot Definition phải trải qua: - Security Review",
-      "observable_evidence": "violating input, decision and reason, before/after protected state, and audit or conformance evidence",
-      "then": "the violated obligation produces its specified rejection, denial, block, review, or non-conforming result without recording a contradictory success",
-      "verifies": [
-        "BRD-SNAPSHOT-INDEX-R036-O001"
-      ],
-      "when": "the violating input or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-SNAPSHOT-INDEX-R036",
+      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+      "source_fingerprint": "ac0bcd17f2c175d50911f949195b9a6afadffd2d8a4c721809a9be20bcfaf012"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
@@ -2830,36 +7774,38 @@ trước khi được sử dụng trong Platform.
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
-      "criterion_references": [],
-      "rationale": "BRD-SNAPSHOT-INDEX-R036 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    },
-    "CONCURRENCY": {
-      "criterion_references": [],
-      "rationale": "BRD-SNAPSHOT-INDEX-R036 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    },
-    "IDEMPOTENCY": {
-      "criterion_references": [],
-      "rationale": "BRD-SNAPSHOT-INDEX-R036 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    },
-    "NEGATIVE_FAIL_CLOSED": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BRD-SNAPSHOT-INDEX-R036-AC003"
       ],
-      "status": "APPLICABLE"
+      "rationale": null
+    },
+    "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "BRD-SNAPSHOT-INDEX-R036 does not define a concurrency obligation."
+    },
+    "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "BRD-SNAPSHOT-INDEX-R036 does not define a idempotency obligation."
+    },
+    "NEGATIVE_FAIL_CLOSED": {
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BRD-SNAPSHOT-INDEX-R036-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BRD-SNAPSHOT-INDEX-R036-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-SNAPSHOT-INDEX-R036 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-SNAPSHOT-INDEX-R036 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -2877,9 +7823,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "27. Document Status",
     "source_context_sha256": "98965dda7c28f27757b88183c2b5b4f260b78247893888c0f78db1c33286e1c7",
     "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
-    "source_fingerprint": "e7b09b745721a38aea7ca1aa94d219880311ea1b5aa116d40f3b33c21eec32a5",
-    "source_lines": "L935-L941",
-    "source_section": "27. Document Status"
+    "source_fingerprint": "ac0bcd17f2c175d50911f949195b9a6afadffd2d8a4c721809a9be20bcfaf012",
+    "source_lines": "L7736-L7846",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-SNAPSHOT-INDEX-R036"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2904,41 +7850,34 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-SNAPSHOT-INDEX-R037-AC001",
-      "given": "an operational task within the scope of Mọi Snapshot mới hoặc thay đổi Snapshot Definition phải trải qua: - Audit",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BRD-SNAPSHOT-INDEX-R037-O001"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "OPERATIONAL_VERIFICATION_FAILURE_V1",
-      "criterion_id": "BRD-SNAPSHOT-INDEX-R037-AC002",
-      "given": "an operational task missing an outcome, required signal, audit evidence, or recovery evidence for Mọi Snapshot mới hoặc thay đổi Snapshot Definition phải trải qua: - Audit",
-      "observable_evidence": "operator-visible verification result, missing-evidence identifier, operation state, and relevant signal or audit record",
-      "then": "verification reports the specific missing evidence as a detectable failure and does not report the task as conforming",
-      "verifies": [
-        "BRD-SNAPSHOT-INDEX-R037-O001"
-      ],
-      "when": "operational verification is performed"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-SNAPSHOT-INDEX-R037",
+      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+      "source_fingerprint": "bdfcb5fb534c6865932cb22d62aa685105091ea18987554a75d7e120f985ddf5"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-SNAPSHOT-INDEX-R037-AC001",
-        "BRD-SNAPSHOT-INDEX-R037-AC002"
+        "BRD-SNAPSHOT-INDEX-R037-AC002",
+        "BRD-SNAPSHOT-INDEX-R037-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-SNAPSHOT-INDEX-R037-O001",
@@ -2947,35 +7886,36 @@ trước khi được sử dụng trong Platform.
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-SNAPSHOT-INDEX-R037 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-SNAPSHOT-INDEX-R037 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-SNAPSHOT-INDEX-R037 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-SNAPSHOT-INDEX-R037 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-SNAPSHOT-INDEX-R037 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-SNAPSHOT-INDEX-R037 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "BRD-SNAPSHOT-INDEX-R037 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BRD-SNAPSHOT-INDEX-R037-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BRD-SNAPSHOT-INDEX-R037-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-SNAPSHOT-INDEX-R037 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-SNAPSHOT-INDEX-R037 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -2993,9 +7933,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "27. Document Status",
     "source_context_sha256": "98965dda7c28f27757b88183c2b5b4f260b78247893888c0f78db1c33286e1c7",
     "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
-    "source_fingerprint": "ca2315476b08391456cbfe13bb7ad78555b5da1d74ddadf1191df10c53ae1100",
-    "source_lines": "L935-L942",
-    "source_section": "27. Document Status"
+    "source_fingerprint": "bdfcb5fb534c6865932cb22d62aa685105091ea18987554a75d7e120f985ddf5",
+    "source_lines": "L7848-L7956",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-SNAPSHOT-INDEX-R037"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3020,28 +7960,34 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "BRD-SNAPSHOT-INDEX-R038-AC001",
-      "given": "a candidate Mọi Snapshot mới hoặc thay đổi Snapshot Definition phải trải qua: - Traceability record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "BRD-SNAPSHOT-INDEX-R038-O001"
-      ],
-      "when": "the candidate is evaluated against its declared data contract"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-SNAPSHOT-INDEX-R038",
+      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+      "source_fingerprint": "d2cd21efea5ab925ababcf869c03fe134181bf5870b107f4378935d02a117ab9"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-SNAPSHOT-INDEX-R038-AC001"
+        "BRD-SNAPSHOT-INDEX-R038-AC001",
+        "BRD-SNAPSHOT-INDEX-R038-AC002",
+        "BRD-SNAPSHOT-INDEX-R038-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-SNAPSHOT-INDEX-R038-O001",
@@ -3064,9 +8010,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "27. Document Status",
     "source_context_sha256": "98965dda7c28f27757b88183c2b5b4f260b78247893888c0f78db1c33286e1c7",
     "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
-    "source_fingerprint": "96aefb76ce032287bcf2a08467b0e267a1425562690f068abb77fec914e4fd2e",
-    "source_lines": "L935-L943",
-    "source_section": "27. Document Status"
+    "source_fingerprint": "d2cd21efea5ab925ababcf869c03fe134181bf5870b107f4378935d02a117ab9",
+    "source_lines": "L7958-L8033",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-SNAPSHOT-INDEX-R038"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3091,47 +8037,893 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "BRD-SNAPSHOT-INDEX-R039-AC001",
-      "given": "a candidate Nguyên tắc: - Event không thay thế Snapshot record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "BRD-SNAPSHOT-INDEX-R039-O001"
-      ],
-      "when": "the candidate is evaluated against its declared data contract"
+  "acceptance_contract": {
+    "boundary_oracle": [
+      "An Event may reference a Snapshot but cannot remove the Snapshot obligation"
+    ],
+    "concrete_bindings": [
+      {
+        "expected_outcome": {
+          "authoritative_source": {
+            "allowed_identifiers": [
+              "BRD-SNAPSHOT-INDEX-R039.POLICY.OUTCOME.CONFORMING"
+            ],
+            "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#21. Snapshot vs Event vs Audit vs History",
+            "source_type": "SOURCE_LITERAL",
+            "version": "069962b1f0514f9c71e4c64513df50567d5bbb684f3ee37832a90553b2958633"
+          },
+          "identifier": "BRD-SNAPSHOT-INDEX-R039.POLICY.OUTCOME.CONFORMING",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-SNAPSHOT-INDEX-R039.O1.1.POLICY_OUTCOME_EQUALS.EXPECTED_OUTCOME.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+            "source_fingerprint": "069962b1f0514f9c71e4c64513df50567d5bbb684f3ee37832a90553b2958633",
+            "source_lines": "L750-L755",
+            "source_section": "21. Snapshot vs Event vs Audit vs History"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "CANONICAL_OUTCOME",
+            "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R039.BRD-SNAPSHOT-INDEX-R039.POLICY.OUTCOME.CONFORMING",
+            "version": "1.0.0"
+          },
+          "semantic_type": "CANONICAL_OUTCOME"
+        },
+        "policy": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#21. Snapshot vs Event vs Audit vs History",
+            "source_type": "SOURCE_LITERAL",
+            "version": "069962b1f0514f9c71e4c64513df50567d5bbb684f3ee37832a90553b2958633"
+          },
+          "identifier": "BRD-SNAPSHOT-INDEX-R039.POLICY",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-SNAPSHOT-INDEX-R039.O1.1.POLICY_OUTCOME_EQUALS.POLICY.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+            "source_fingerprint": "069962b1f0514f9c71e4c64513df50567d5bbb684f3ee37832a90553b2958633",
+            "source_lines": "L750-L755",
+            "source_section": "21. Snapshot vs Event vs Audit vs History"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "POLICY_ID",
+            "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R039.BRD-SNAPSHOT-INDEX-R039.POLICY",
+            "version": "1.0.0"
+          },
+          "semantic_type": "POLICY_ID"
+        },
+        "policy_inputs": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#21. Snapshot vs Event vs Audit vs History",
+            "source_type": "SOURCE_LITERAL",
+            "version": "069962b1f0514f9c71e4c64513df50567d5bbb684f3ee37832a90553b2958633"
+          },
+          "identifier": "BRD-SNAPSHOT-INDEX-R039.POLICY_INPUTS",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-SNAPSHOT-INDEX-R039.O1.1.POLICY_OUTCOME_EQUALS.POLICY_INPUTS.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+            "source_fingerprint": "069962b1f0514f9c71e4c64513df50567d5bbb684f3ee37832a90553b2958633",
+            "source_lines": "L750-L755",
+            "source_section": "21. Snapshot vs Event vs Audit vs History"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "EVIDENCE_OBJECT_REF",
+            "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R039.BRD-SNAPSHOT-INDEX-R039.POLICY_INPUTS",
+            "version": "1.0.0"
+          },
+          "semantic_type": "EVIDENCE_OBJECT_REF"
+        },
+        "policy_version": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#21. Snapshot vs Event vs Audit vs History",
+            "source_type": "SOURCE_LITERAL",
+            "version": "069962b1f0514f9c71e4c64513df50567d5bbb684f3ee37832a90553b2958633"
+          },
+          "identifier": "BRD-SNAPSHOT-INDEX-R039.POLICY_VERSION",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-SNAPSHOT-INDEX-R039.O1.1.POLICY_OUTCOME_EQUALS.POLICY_VERSION.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+            "source_fingerprint": "069962b1f0514f9c71e4c64513df50567d5bbb684f3ee37832a90553b2958633",
+            "source_lines": "L750-L755",
+            "source_section": "21. Snapshot vs Event vs Audit vs History"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "POLICY_VERSION",
+            "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R039.BRD-SNAPSHOT-INDEX-R039.POLICY_VERSION",
+            "version": "1.0.0"
+          },
+          "semantic_type": "POLICY_VERSION"
+        }
+      }
+    ],
+    "contract_id": "P2C.C4.CONTRACT.BRD-SNAPSHOT-INDEX-R039",
+    "inference": false,
+    "mechanism": "APPROVED_TYPED_CUSTOM_AST",
+    "mechanism_version": "C4-R3",
+    "negative_oracle": [
+      "Event payload is treated as replacement for the required Snapshot"
+    ],
+    "operator_composition": [
+      "POLICY_OUTCOME_EQUALS"
+    ],
+    "positive_oracle": [
+      "Event communicates occurrence while Snapshot preserves reproducible business state"
+    ],
+    "provenance": {
+      "approved_decision_references": [],
+      "inference": false,
+      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+      "source_fingerprint": "069962b1f0514f9c71e4c64513df50567d5bbb684f3ee37832a90553b2958633",
+      "source_lines": "L750-L755",
+      "source_section": "21. Snapshot vs Event vs Audit vs History"
     },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "DATA_CONTRACT_REJECTION_V1",
-      "criterion_id": "BRD-SNAPSHOT-INDEX-R039-AC002",
-      "given": "a Nguyên tắc: - Event không thay thế Snapshot candidate containing an unsupported value, inconsistent relationship, or unresolved reference",
-      "observable_evidence": "rejection result, field or relationship reason, unresolved reference, and unchanged persisted state",
-      "then": "the candidate is rejected without persisting the invalid state, and each invalid field or relationship has a deterministic reason",
-      "verifies": [
-        "BRD-SNAPSHOT-INDEX-R039-O001"
+    "required_evidence": {
+      "evidence_object_ref": {
+        "authoritative_source": {
+          "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#21. Snapshot vs Event vs Audit vs History",
+          "source_type": "SOURCE_LITERAL",
+          "version": "069962b1f0514f9c71e4c64513df50567d5bbb684f3ee37832a90553b2958633"
+        },
+        "identifier": "BRD-SNAPSHOT-INDEX-R039.BRD-SNAPSHOT-INDEX-R039.CONTRACT.EVIDENCE.OBJECT",
+        "inference": false,
+        "lifecycle": {
+          "status": "ACTIVE",
+          "version": "2.3"
+        },
+        "namespace": "YSIM.V2.3",
+        "origin": {
+          "origin_id": "BRD-SNAPSHOT-INDEX-R039.CONTRACT.EVIDENCE.ORIGIN",
+          "origin_type": "EVIDENCE_OBJECT"
+        },
+        "provenance": {
+          "approved_decision_references": [],
+          "inference": false,
+          "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+          "source_fingerprint": "069962b1f0514f9c71e4c64513df50567d5bbb684f3ee37832a90553b2958633",
+          "source_lines": "L750-L755",
+          "source_section": "21. Snapshot vs Event vs Audit vs History"
+        },
+        "resolver_contract": {
+          "deterministic": true,
+          "input_types": [],
+          "output_type": "EVIDENCE_OBJECT_REF",
+          "resolver_id": "OBSERVE.BRD-SNAPSHOT-INDEX-R039.BRD-SNAPSHOT-INDEX-R039.BRD-SNAPSHOT-INDEX-R039.CONTRACT.EVIDENCE.OBJECT",
+          "version": "1.0.0"
+        },
+        "semantic_type": "EVIDENCE_OBJECT_REF"
+      },
+      "inference": false,
+      "observed_collection_origin": "BRD-SNAPSHOT-INDEX-R039.RUNTIME.OBSERVED.FIELDS",
+      "observed_field_ids": [
+        "FIELD.EVENT_ID",
+        "FIELD.SNAPSHOT_ID",
+        "FIELD.EVENT_CONTRACT",
+        "FIELD.SNAPSHOT_CONTRACT",
+        "FIELD.REPLAY_RESULT"
       ],
-      "when": "the candidate is validated"
+      "producer": "BRD-SNAPSHOT-INDEX-R039.EVIDENCE.PRODUCER",
+      "required_collection_origin": "BRD-SNAPSHOT-INDEX-R039.SOURCE.REQUIRED.FIELDS",
+      "required_field_ids": [
+        "FIELD.EVENT_ID",
+        "FIELD.SNAPSHOT_ID",
+        "FIELD.EVENT_CONTRACT",
+        "FIELD.SNAPSHOT_CONTRACT",
+        "FIELD.REPLAY_RESULT"
+      ],
+      "required_values_or_hashes": [
+        "BRD-SNAPSHOT-INDEX-R039.EVIDENCE.CONTENT.HASH"
+      ],
+      "retrieval_method": "BRD-SNAPSHOT-INDEX-R039.EVIDENCE.RETRIEVAL",
+      "version_or_correlation": "BRD-SNAPSHOT-INDEX-R039.EVIDENCE.VERSION.CORRELATION"
     },
-    {
-      "case": "NEGATIVE_FAIL_CLOSED",
-      "controlled_contract": "REQUIREMENT_SPECIFIC_FAIL_CLOSED_V1",
-      "criterion_id": "BRD-SNAPSHOT-INDEX-R039-AC003",
-      "given": "an input or attempted state change that violates a mandatory boundary explicitly stated by Nguyên tắc: - Event không thay thế Snapshot",
-      "observable_evidence": "violating input, decision and reason, before/after protected state, and audit or conformance evidence",
-      "then": "the violated obligation produces its specified rejection, denial, block, review, or non-conforming result without recording a contradictory success",
-      "verifies": [
-        "BRD-SNAPSHOT-INDEX-R039-O001"
+    "runtime_evidence_executed": false,
+    "runtime_status": "RUNTIME_ADAPTER_PENDING",
+    "semantic_obligation_references": [
+      "BRD-SNAPSHOT-INDEX-R039-O001"
+    ],
+    "typed_contract_ast": {
+      "approved_clarification": null,
+      "assertions": [
+        {
+          "assertion_id": "BRD-SNAPSHOT-INDEX-R039.O1.1.POLICY_OUTCOME_EQUALS",
+          "evaluator_consumed_bindings": [
+            "expected_outcome",
+            "policy",
+            "policy_inputs",
+            "policy_version"
+          ],
+          "evidence_object": {
+            "authoritative_source": {
+              "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#21. Snapshot vs Event vs Audit vs History",
+              "source_type": "SOURCE_LITERAL",
+              "version": "069962b1f0514f9c71e4c64513df50567d5bbb684f3ee37832a90553b2958633"
+            },
+            "identifier": "BRD-SNAPSHOT-INDEX-R039.BRD-SNAPSHOT-INDEX-R039.O1.1.POLICY_OUTCOME_EQUALS.EVIDENCE.OBJECT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BRD-SNAPSHOT-INDEX-R039.O1.1.POLICY_OUTCOME_EQUALS.EVIDENCE.ORIGIN",
+              "origin_type": "EVIDENCE_OBJECT"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+              "source_fingerprint": "069962b1f0514f9c71e4c64513df50567d5bbb684f3ee37832a90553b2958633",
+              "source_lines": "L750-L755",
+              "source_section": "21. Snapshot vs Event vs Audit vs History"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "EVIDENCE_OBJECT_REF",
+              "resolver_id": "OBSERVE.BRD-SNAPSHOT-INDEX-R039.BRD-SNAPSHOT-INDEX-R039.BRD-SNAPSHOT-INDEX-R039.O1.1.POLICY_OUTCOME_EQUALS.EVIDENCE.OBJECT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "EVIDENCE_OBJECT_REF"
+          },
+          "expected_operand": {
+            "authoritative_source": {
+              "allowed_identifiers": [
+                "BRD-SNAPSHOT-INDEX-R039.BRD-SNAPSHOT-INDEX-R039.O1.1.POLICY_OUTCOME_EQUALS.CANONICAL.RESULT"
+              ],
+              "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#21. Snapshot vs Event vs Audit vs History",
+              "source_type": "SOURCE_LITERAL",
+              "version": "069962b1f0514f9c71e4c64513df50567d5bbb684f3ee37832a90553b2958633"
+            },
+            "identifier": "BRD-SNAPSHOT-INDEX-R039.BRD-SNAPSHOT-INDEX-R039.O1.1.POLICY_OUTCOME_EQUALS.CANONICAL.RESULT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BRD-SNAPSHOT-INDEX-R039.O1.1.POLICY_OUTCOME_EQUALS.AUTHORITY.ORIGIN",
+              "origin_type": "SOURCE_LITERAL"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+              "source_fingerprint": "069962b1f0514f9c71e4c64513df50567d5bbb684f3ee37832a90553b2958633",
+              "source_lines": "L750-L755",
+              "source_section": "21. Snapshot vs Event vs Audit vs History"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "CANONICAL_OUTCOME",
+              "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R039.BRD-SNAPSHOT-INDEX-R039.BRD-SNAPSHOT-INDEX-R039.O1.1.POLICY_OUTCOME_EQUALS.CANONICAL.RESULT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "CANONICAL_OUTCOME"
+          },
+          "inference": false,
+          "model_conformance_fixture": {
+            "bindings": {
+              "expected_outcome": {
+                "authoritative_source": {
+                  "allowed_identifiers": [
+                    "BRD-SNAPSHOT-INDEX-R039.POLICY.OUTCOME.CONFORMING"
+                  ],
+                  "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#21. Snapshot vs Event vs Audit vs History",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "069962b1f0514f9c71e4c64513df50567d5bbb684f3ee37832a90553b2958633"
+                },
+                "identifier": "BRD-SNAPSHOT-INDEX-R039.POLICY.OUTCOME.CONFORMING",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-SNAPSHOT-INDEX-R039.O1.1.POLICY_OUTCOME_EQUALS.EXPECTED_OUTCOME.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                  "source_fingerprint": "069962b1f0514f9c71e4c64513df50567d5bbb684f3ee37832a90553b2958633",
+                  "source_lines": "L750-L755",
+                  "source_section": "21. Snapshot vs Event vs Audit vs History"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "CANONICAL_OUTCOME",
+                  "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R039.BRD-SNAPSHOT-INDEX-R039.POLICY.OUTCOME.CONFORMING",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "CANONICAL_OUTCOME"
+              },
+              "policy": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#21. Snapshot vs Event vs Audit vs History",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "069962b1f0514f9c71e4c64513df50567d5bbb684f3ee37832a90553b2958633"
+                },
+                "identifier": "BRD-SNAPSHOT-INDEX-R039.POLICY",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-SNAPSHOT-INDEX-R039.O1.1.POLICY_OUTCOME_EQUALS.POLICY.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                  "source_fingerprint": "069962b1f0514f9c71e4c64513df50567d5bbb684f3ee37832a90553b2958633",
+                  "source_lines": "L750-L755",
+                  "source_section": "21. Snapshot vs Event vs Audit vs History"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "POLICY_ID",
+                  "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R039.BRD-SNAPSHOT-INDEX-R039.POLICY",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "POLICY_ID"
+              },
+              "policy_inputs": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#21. Snapshot vs Event vs Audit vs History",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "069962b1f0514f9c71e4c64513df50567d5bbb684f3ee37832a90553b2958633"
+                },
+                "identifier": "BRD-SNAPSHOT-INDEX-R039.POLICY_INPUTS",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-SNAPSHOT-INDEX-R039.O1.1.POLICY_OUTCOME_EQUALS.POLICY_INPUTS.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                  "source_fingerprint": "069962b1f0514f9c71e4c64513df50567d5bbb684f3ee37832a90553b2958633",
+                  "source_lines": "L750-L755",
+                  "source_section": "21. Snapshot vs Event vs Audit vs History"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "EVIDENCE_OBJECT_REF",
+                  "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R039.BRD-SNAPSHOT-INDEX-R039.POLICY_INPUTS",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "EVIDENCE_OBJECT_REF"
+              },
+              "policy_version": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#21. Snapshot vs Event vs Audit vs History",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "069962b1f0514f9c71e4c64513df50567d5bbb684f3ee37832a90553b2958633"
+                },
+                "identifier": "BRD-SNAPSHOT-INDEX-R039.POLICY_VERSION",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-SNAPSHOT-INDEX-R039.O1.1.POLICY_OUTCOME_EQUALS.POLICY_VERSION.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                  "source_fingerprint": "069962b1f0514f9c71e4c64513df50567d5bbb684f3ee37832a90553b2958633",
+                  "source_lines": "L750-L755",
+                  "source_section": "21. Snapshot vs Event vs Audit vs History"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "POLICY_VERSION",
+                  "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R039.BRD-SNAPSHOT-INDEX-R039.POLICY_VERSION",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "POLICY_VERSION"
+              }
+            },
+            "comparison": {
+              "expected": {
+                "authoritative_source": {
+                  "allowed_identifiers": [
+                    "BRD-SNAPSHOT-INDEX-R039.BRD-SNAPSHOT-INDEX-R039.O1.1.POLICY_OUTCOME_EQUALS.CANONICAL.RESULT"
+                  ],
+                  "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#21. Snapshot vs Event vs Audit vs History",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "069962b1f0514f9c71e4c64513df50567d5bbb684f3ee37832a90553b2958633"
+                },
+                "identifier": "BRD-SNAPSHOT-INDEX-R039.BRD-SNAPSHOT-INDEX-R039.O1.1.POLICY_OUTCOME_EQUALS.CANONICAL.RESULT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-SNAPSHOT-INDEX-R039.O1.1.POLICY_OUTCOME_EQUALS.AUTHORITY.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                  "source_fingerprint": "069962b1f0514f9c71e4c64513df50567d5bbb684f3ee37832a90553b2958633",
+                  "source_lines": "L750-L755",
+                  "source_section": "21. Snapshot vs Event vs Audit vs History"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "CANONICAL_OUTCOME",
+                  "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R039.BRD-SNAPSHOT-INDEX-R039.BRD-SNAPSHOT-INDEX-R039.O1.1.POLICY_OUTCOME_EQUALS.CANONICAL.RESULT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "CANONICAL_OUTCOME"
+              },
+              "observed": {
+                "authoritative_source": {
+                  "allowed_identifiers": [
+                    "BRD-SNAPSHOT-INDEX-R039.BRD-SNAPSHOT-INDEX-R039.O1.1.POLICY_OUTCOME_EQUALS.CANONICAL.RESULT"
+                  ],
+                  "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#21. Snapshot vs Event vs Audit vs History",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "069962b1f0514f9c71e4c64513df50567d5bbb684f3ee37832a90553b2958633"
+                },
+                "identifier": "BRD-SNAPSHOT-INDEX-R039.BRD-SNAPSHOT-INDEX-R039.O1.1.POLICY_OUTCOME_EQUALS.CANONICAL.RESULT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-SNAPSHOT-INDEX-R039.O1.1.POLICY_OUTCOME_EQUALS.OBSERVED.ORIGIN",
+                  "origin_type": "RUNTIME_OBSERVED"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                  "source_fingerprint": "069962b1f0514f9c71e4c64513df50567d5bbb684f3ee37832a90553b2958633",
+                  "source_lines": "L750-L755",
+                  "source_section": "21. Snapshot vs Event vs Audit vs History"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "CANONICAL_OUTCOME",
+                  "resolver_id": "OBSERVE.BRD-SNAPSHOT-INDEX-R039.BRD-SNAPSHOT-INDEX-R039.BRD-SNAPSHOT-INDEX-R039.O1.1.POLICY_OUTCOME_EQUALS.CANONICAL.RESULT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "CANONICAL_OUTCOME"
+              }
+            },
+            "evidence_object": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#21. Snapshot vs Event vs Audit vs History",
+                "source_type": "SOURCE_LITERAL",
+                "version": "069962b1f0514f9c71e4c64513df50567d5bbb684f3ee37832a90553b2958633"
+              },
+              "identifier": "BRD-SNAPSHOT-INDEX-R039.BRD-SNAPSHOT-INDEX-R039.O1.1.POLICY_OUTCOME_EQUALS.EVIDENCE.OBJECT",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-SNAPSHOT-INDEX-R039.O1.1.POLICY_OUTCOME_EQUALS.EVIDENCE.ORIGIN",
+                "origin_type": "EVIDENCE_OBJECT"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                "source_fingerprint": "069962b1f0514f9c71e4c64513df50567d5bbb684f3ee37832a90553b2958633",
+                "source_lines": "L750-L755",
+                "source_section": "21. Snapshot vs Event vs Audit vs History"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "EVIDENCE_OBJECT_REF",
+                "resolver_id": "OBSERVE.BRD-SNAPSHOT-INDEX-R039.BRD-SNAPSHOT-INDEX-R039.BRD-SNAPSHOT-INDEX-R039.O1.1.POLICY_OUTCOME_EQUALS.EVIDENCE.OBJECT",
+                "version": "1.0.0"
+              },
+              "semantic_type": "EVIDENCE_OBJECT_REF"
+            },
+            "operator_id": "POLICY_OUTCOME_EQUALS"
+          },
+          "obligation_id": "BRD-SNAPSHOT-INDEX-R039-O001",
+          "observed_operand": {
+            "authoritative_source": {
+              "allowed_identifiers": [
+                "BRD-SNAPSHOT-INDEX-R039.BRD-SNAPSHOT-INDEX-R039.O1.1.POLICY_OUTCOME_EQUALS.CANONICAL.RESULT"
+              ],
+              "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#21. Snapshot vs Event vs Audit vs History",
+              "source_type": "SOURCE_LITERAL",
+              "version": "069962b1f0514f9c71e4c64513df50567d5bbb684f3ee37832a90553b2958633"
+            },
+            "identifier": "BRD-SNAPSHOT-INDEX-R039.BRD-SNAPSHOT-INDEX-R039.O1.1.POLICY_OUTCOME_EQUALS.CANONICAL.RESULT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BRD-SNAPSHOT-INDEX-R039.O1.1.POLICY_OUTCOME_EQUALS.OBSERVED.ORIGIN",
+              "origin_type": "RUNTIME_OBSERVED"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+              "source_fingerprint": "069962b1f0514f9c71e4c64513df50567d5bbb684f3ee37832a90553b2958633",
+              "source_lines": "L750-L755",
+              "source_section": "21. Snapshot vs Event vs Audit vs History"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "CANONICAL_OUTCOME",
+              "resolver_id": "OBSERVE.BRD-SNAPSHOT-INDEX-R039.BRD-SNAPSHOT-INDEX-R039.BRD-SNAPSHOT-INDEX-R039.O1.1.POLICY_OUTCOME_EQUALS.CANONICAL.RESULT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "CANONICAL_OUTCOME"
+          },
+          "operator_id": "POLICY_OUTCOME_EQUALS",
+          "operator_version": "1.0.0-candidate.2",
+          "typed_bindings": {
+            "expected_outcome": {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "BRD-SNAPSHOT-INDEX-R039.POLICY.OUTCOME.CONFORMING"
+                ],
+                "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#21. Snapshot vs Event vs Audit vs History",
+                "source_type": "SOURCE_LITERAL",
+                "version": "069962b1f0514f9c71e4c64513df50567d5bbb684f3ee37832a90553b2958633"
+              },
+              "identifier": "BRD-SNAPSHOT-INDEX-R039.POLICY.OUTCOME.CONFORMING",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-SNAPSHOT-INDEX-R039.O1.1.POLICY_OUTCOME_EQUALS.EXPECTED_OUTCOME.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                "source_fingerprint": "069962b1f0514f9c71e4c64513df50567d5bbb684f3ee37832a90553b2958633",
+                "source_lines": "L750-L755",
+                "source_section": "21. Snapshot vs Event vs Audit vs History"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CANONICAL_OUTCOME",
+                "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R039.BRD-SNAPSHOT-INDEX-R039.POLICY.OUTCOME.CONFORMING",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_OUTCOME"
+            },
+            "policy": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#21. Snapshot vs Event vs Audit vs History",
+                "source_type": "SOURCE_LITERAL",
+                "version": "069962b1f0514f9c71e4c64513df50567d5bbb684f3ee37832a90553b2958633"
+              },
+              "identifier": "BRD-SNAPSHOT-INDEX-R039.POLICY",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-SNAPSHOT-INDEX-R039.O1.1.POLICY_OUTCOME_EQUALS.POLICY.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                "source_fingerprint": "069962b1f0514f9c71e4c64513df50567d5bbb684f3ee37832a90553b2958633",
+                "source_lines": "L750-L755",
+                "source_section": "21. Snapshot vs Event vs Audit vs History"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "POLICY_ID",
+                "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R039.BRD-SNAPSHOT-INDEX-R039.POLICY",
+                "version": "1.0.0"
+              },
+              "semantic_type": "POLICY_ID"
+            },
+            "policy_inputs": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#21. Snapshot vs Event vs Audit vs History",
+                "source_type": "SOURCE_LITERAL",
+                "version": "069962b1f0514f9c71e4c64513df50567d5bbb684f3ee37832a90553b2958633"
+              },
+              "identifier": "BRD-SNAPSHOT-INDEX-R039.POLICY_INPUTS",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-SNAPSHOT-INDEX-R039.O1.1.POLICY_OUTCOME_EQUALS.POLICY_INPUTS.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                "source_fingerprint": "069962b1f0514f9c71e4c64513df50567d5bbb684f3ee37832a90553b2958633",
+                "source_lines": "L750-L755",
+                "source_section": "21. Snapshot vs Event vs Audit vs History"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "EVIDENCE_OBJECT_REF",
+                "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R039.BRD-SNAPSHOT-INDEX-R039.POLICY_INPUTS",
+                "version": "1.0.0"
+              },
+              "semantic_type": "EVIDENCE_OBJECT_REF"
+            },
+            "policy_version": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#21. Snapshot vs Event vs Audit vs History",
+                "source_type": "SOURCE_LITERAL",
+                "version": "069962b1f0514f9c71e4c64513df50567d5bbb684f3ee37832a90553b2958633"
+              },
+              "identifier": "BRD-SNAPSHOT-INDEX-R039.POLICY_VERSION",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-SNAPSHOT-INDEX-R039.O1.1.POLICY_OUTCOME_EQUALS.POLICY_VERSION.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                "source_fingerprint": "069962b1f0514f9c71e4c64513df50567d5bbb684f3ee37832a90553b2958633",
+                "source_lines": "L750-L755",
+                "source_section": "21. Snapshot vs Event vs Audit vs History"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "POLICY_VERSION",
+                "resolver_id": "RESOLVE.BRD-SNAPSHOT-INDEX-R039.BRD-SNAPSHOT-INDEX-R039.POLICY_VERSION",
+                "version": "1.0.0"
+              },
+              "semantic_type": "POLICY_VERSION"
+            }
+          }
+        }
       ],
-      "when": "the violating input or action is evaluated"
+      "boundary_cases": [
+        "An Event may reference a Snapshot but cannot remove the Snapshot obligation"
+      ],
+      "contract_ast_sha256": "7d2ed4024aff95111ed2d651b1b2edfa8b0e06b259209dae398ee2bbb74d544e",
+      "contract_id": "P2C.C4.CONTRACT.BRD-SNAPSHOT-INDEX-R039",
+      "criticality": "CRITICAL",
+      "disposition": "CORRECTABLE_WITH_APPROVED_TYPE_MODEL",
+      "evidence_contract": {
+        "evidence_object_ref": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#21. Snapshot vs Event vs Audit vs History",
+            "source_type": "SOURCE_LITERAL",
+            "version": "069962b1f0514f9c71e4c64513df50567d5bbb684f3ee37832a90553b2958633"
+          },
+          "identifier": "BRD-SNAPSHOT-INDEX-R039.BRD-SNAPSHOT-INDEX-R039.CONTRACT.EVIDENCE.OBJECT",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-SNAPSHOT-INDEX-R039.CONTRACT.EVIDENCE.ORIGIN",
+            "origin_type": "EVIDENCE_OBJECT"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+            "source_fingerprint": "069962b1f0514f9c71e4c64513df50567d5bbb684f3ee37832a90553b2958633",
+            "source_lines": "L750-L755",
+            "source_section": "21. Snapshot vs Event vs Audit vs History"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "EVIDENCE_OBJECT_REF",
+            "resolver_id": "OBSERVE.BRD-SNAPSHOT-INDEX-R039.BRD-SNAPSHOT-INDEX-R039.BRD-SNAPSHOT-INDEX-R039.CONTRACT.EVIDENCE.OBJECT",
+            "version": "1.0.0"
+          },
+          "semantic_type": "EVIDENCE_OBJECT_REF"
+        },
+        "inference": false,
+        "observed_collection_origin": "BRD-SNAPSHOT-INDEX-R039.RUNTIME.OBSERVED.FIELDS",
+        "observed_field_ids": [
+          "FIELD.EVENT_ID",
+          "FIELD.SNAPSHOT_ID",
+          "FIELD.EVENT_CONTRACT",
+          "FIELD.SNAPSHOT_CONTRACT",
+          "FIELD.REPLAY_RESULT"
+        ],
+        "producer": "BRD-SNAPSHOT-INDEX-R039.EVIDENCE.PRODUCER",
+        "required_collection_origin": "BRD-SNAPSHOT-INDEX-R039.SOURCE.REQUIRED.FIELDS",
+        "required_field_ids": [
+          "FIELD.EVENT_ID",
+          "FIELD.SNAPSHOT_ID",
+          "FIELD.EVENT_CONTRACT",
+          "FIELD.SNAPSHOT_CONTRACT",
+          "FIELD.REPLAY_RESULT"
+        ],
+        "required_values_or_hashes": [
+          "BRD-SNAPSHOT-INDEX-R039.EVIDENCE.CONTENT.HASH"
+        ],
+        "retrieval_method": "BRD-SNAPSHOT-INDEX-R039.EVIDENCE.RETRIEVAL",
+        "version_or_correlation": "BRD-SNAPSHOT-INDEX-R039.EVIDENCE.VERSION.CORRELATION"
+      },
+      "explicit_non_obligations": [
+        "No runtime implementation topology is authorized by this semantic record.",
+        "No production runtime evidence is claimed by this model-level candidate."
+      ],
+      "fixture_ids": [
+        "P2C-C4-FX-90AD70B61C5F5BE579C5",
+        "P2C-C4-FX-8AC223E933E54395DCF0",
+        "P2C-C4-FX-5986869CAA59E7EFD7CE"
+      ],
+      "high_risk_audit_subset": true,
+      "independent_contract_identity": true,
+      "inference": false,
+      "inherits_contract_ast": null,
+      "negative_oracles": [
+        "Event payload is treated as replacement for the required Snapshot"
+      ],
+      "normative_obligations": [
+        {
+          "applicability": "V2.3_ACTIVE",
+          "obligation_id": "BRD-SNAPSHOT-INDEX-R039-O001",
+          "obligation_text": "Nguyên tắc: - Event không thay thế Snapshot"
+        }
+      ],
+      "obligation_to_operator_coverage": [
+        {
+          "assertion_ids": [
+            "BRD-SNAPSHOT-INDEX-R039.O1.1.POLICY_OUTCOME_EQUALS"
+          ],
+          "coverage_count": 1,
+          "obligation_id": "BRD-SNAPSHOT-INDEX-R039-O001"
+        }
+      ],
+      "operator_composition": [
+        "POLICY_OUTCOME_EQUALS"
+      ],
+      "positive_oracles": [
+        "Event communicates occurrence while Snapshot preserves reproducible business state"
+      ],
+      "preconditions": [
+        "Both Event and Snapshot contracts are identified"
+      ],
+      "prohibitions": [
+        "Event payload is treated as replacement for the required Snapshot"
+      ],
+      "requirement_id": "BRD-SNAPSHOT-INDEX-R039",
+      "runtime_status": "SLICE_RUNTIME_ADAPTER_REQUIRED",
+      "semantic_family_id": null,
+      "source_provenance": {
+        "approved_decision_references": [],
+        "inference": false,
+        "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+        "source_fingerprint": "069962b1f0514f9c71e4c64513df50567d5bbb684f3ee37832a90553b2958633",
+        "source_lines": "L750-L755",
+        "source_section": "21. Snapshot vs Event vs Audit vs History"
+      },
+      "source_statement": "Nguyên tắc: - Event không thay thế Snapshot.",
+      "surrounding_source_context": "### BRD-SNAPSHOT-INDEX-R039 — Nguyên tắc: - Event không thay thế Snapshot"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "contract_id": "P2C.C4.CONTRACT.BRD-SNAPSHOT-INDEX-R039",
+    "inference": false,
+    "mechanism": "APPROVED_TYPED_CUSTOM_AST",
+    "mechanism_version": "SEMANTIC_ACCEPTANCE_RENDERER_C2",
+    "runtime_status": "RUNTIME_ADAPTER_PENDING"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "ACCEPTANCE_READY",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
@@ -3147,36 +8939,36 @@ trước khi được sử dụng trong Platform.
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-SNAPSHOT-INDEX-R039 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-SNAPSHOT-INDEX-R039 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-SNAPSHOT-INDEX-R039 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-SNAPSHOT-INDEX-R039 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-SNAPSHOT-INDEX-R039 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-SNAPSHOT-INDEX-R039 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
-        "BRD-SNAPSHOT-INDEX-R039-AC003"
-      ],
-      "status": "APPLICABLE"
+        "BRD-SNAPSHOT-INDEX-R039-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BRD-SNAPSHOT-INDEX-R039-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-SNAPSHOT-INDEX-R039 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-SNAPSHOT-INDEX-R039 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -3197,9 +8989,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "6. Snapshot Lifecycle",
     "source_context_sha256": "4a5c772c53fafe9d0340da8bbec9c9925eda952c6f91fabad0c558818d8abb09",
     "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
-    "source_fingerprint": "069962b1f0514f9c71e4c64513df50567d5bbb684f3ee37832a90553b2958633",
-    "source_lines": "L750-L755",
-    "source_section": "21. Snapshot vs Event vs Audit vs History"
+    "source_fingerprint": "213a907e73a724f685f079362a3cc764e5a1c48f3c172636286ddcae7ec30a85",
+    "source_lines": "L8035-L9012",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-SNAPSHOT-INDEX-R039"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3224,47 +9016,27 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-SNAPSHOT-INDEX-R040-AC001",
-      "given": "an operational task within the scope of Nguyên tắc: - Snapshot không thay thế Audit",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BRD-SNAPSHOT-INDEX-R040-O001"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "OPERATIONAL_VERIFICATION_FAILURE_V1",
-      "criterion_id": "BRD-SNAPSHOT-INDEX-R040-AC002",
-      "given": "an operational task missing an outcome, required signal, audit evidence, or recovery evidence for Nguyên tắc: - Snapshot không thay thế Audit",
-      "observable_evidence": "operator-visible verification result, missing-evidence identifier, operation state, and relevant signal or audit record",
-      "then": "verification reports the specific missing evidence as a detectable failure and does not report the task as conforming",
-      "verifies": [
-        "BRD-SNAPSHOT-INDEX-R040-O001"
-      ],
-      "when": "operational verification is performed"
-    },
-    {
-      "case": "NEGATIVE_FAIL_CLOSED",
-      "controlled_contract": "REQUIREMENT_SPECIFIC_FAIL_CLOSED_V1",
-      "criterion_id": "BRD-SNAPSHOT-INDEX-R040-AC003",
-      "given": "an input or attempted state change that violates a mandatory boundary explicitly stated by Nguyên tắc: - Snapshot không thay thế Audit",
-      "observable_evidence": "violating input, decision and reason, before/after protected state, and audit or conformance evidence",
-      "then": "the violated obligation produces its specified rejection, denial, block, review, or non-conforming result without recording a contradictory success",
-      "verifies": [
-        "BRD-SNAPSHOT-INDEX-R040-O001"
-      ],
-      "when": "the violating input or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-SNAPSHOT-INDEX-R040",
+      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+      "source_fingerprint": "4cc4224fc1131e95895f21bfec6423dd811692dace3daeaa9b3c324f197d1446"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
@@ -3280,36 +9052,36 @@ trước khi được sử dụng trong Platform.
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-SNAPSHOT-INDEX-R040 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-SNAPSHOT-INDEX-R040 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-SNAPSHOT-INDEX-R040 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-SNAPSHOT-INDEX-R040 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-SNAPSHOT-INDEX-R040 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-SNAPSHOT-INDEX-R040 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
-        "BRD-SNAPSHOT-INDEX-R040-AC003"
-      ],
-      "status": "APPLICABLE"
+        "BRD-SNAPSHOT-INDEX-R040-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BRD-SNAPSHOT-INDEX-R040-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-SNAPSHOT-INDEX-R040 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-SNAPSHOT-INDEX-R040 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -3330,9 +9102,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "6. Snapshot Lifecycle",
     "source_context_sha256": "4a5c772c53fafe9d0340da8bbec9c9925eda952c6f91fabad0c558818d8abb09",
     "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
-    "source_fingerprint": "069962b1f0514f9c71e4c64513df50567d5bbb684f3ee37832a90553b2958633",
-    "source_lines": "L750-L755",
-    "source_section": "21. Snapshot vs Event vs Audit vs History"
+    "source_fingerprint": "4cc4224fc1131e95895f21bfec6423dd811692dace3daeaa9b3c324f197d1446",
+    "source_lines": "L9014-L9125",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-SNAPSHOT-INDEX-R040"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3357,47 +9129,27 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-SNAPSHOT-INDEX-R041-AC001",
-      "given": "an operational task within the scope of Nguyên tắc: - Audit không thay thế History",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BRD-SNAPSHOT-INDEX-R041-O001"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "OPERATIONAL_VERIFICATION_FAILURE_V1",
-      "criterion_id": "BRD-SNAPSHOT-INDEX-R041-AC002",
-      "given": "an operational task missing an outcome, required signal, audit evidence, or recovery evidence for Nguyên tắc: - Audit không thay thế History",
-      "observable_evidence": "operator-visible verification result, missing-evidence identifier, operation state, and relevant signal or audit record",
-      "then": "verification reports the specific missing evidence as a detectable failure and does not report the task as conforming",
-      "verifies": [
-        "BRD-SNAPSHOT-INDEX-R041-O001"
-      ],
-      "when": "operational verification is performed"
-    },
-    {
-      "case": "NEGATIVE_FAIL_CLOSED",
-      "controlled_contract": "REQUIREMENT_SPECIFIC_FAIL_CLOSED_V1",
-      "criterion_id": "BRD-SNAPSHOT-INDEX-R041-AC003",
-      "given": "an input or attempted state change that violates a mandatory boundary explicitly stated by Nguyên tắc: - Audit không thay thế History",
-      "observable_evidence": "violating input, decision and reason, before/after protected state, and audit or conformance evidence",
-      "then": "the violated obligation produces its specified rejection, denial, block, review, or non-conforming result without recording a contradictory success",
-      "verifies": [
-        "BRD-SNAPSHOT-INDEX-R041-O001"
-      ],
-      "when": "the violating input or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-SNAPSHOT-INDEX-R041",
+      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+      "source_fingerprint": "803d78aa0b7eddf3687d671ba4ad07cef5e7094ad53a5a09bb441aaae5fc1aa5"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
@@ -3413,36 +9165,36 @@ trước khi được sử dụng trong Platform.
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-SNAPSHOT-INDEX-R041 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-SNAPSHOT-INDEX-R041 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-SNAPSHOT-INDEX-R041 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-SNAPSHOT-INDEX-R041 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-SNAPSHOT-INDEX-R041 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-SNAPSHOT-INDEX-R041 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
-        "BRD-SNAPSHOT-INDEX-R041-AC003"
-      ],
-      "status": "APPLICABLE"
+        "BRD-SNAPSHOT-INDEX-R041-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BRD-SNAPSHOT-INDEX-R041-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-SNAPSHOT-INDEX-R041 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-SNAPSHOT-INDEX-R041 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -3463,9 +9215,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "6. Snapshot Lifecycle",
     "source_context_sha256": "4a5c772c53fafe9d0340da8bbec9c9925eda952c6f91fabad0c558818d8abb09",
     "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
-    "source_fingerprint": "069962b1f0514f9c71e4c64513df50567d5bbb684f3ee37832a90553b2958633",
-    "source_lines": "L750-L755",
-    "source_section": "21. Snapshot vs Event vs Audit vs History"
+    "source_fingerprint": "803d78aa0b7eddf3687d671ba4ad07cef5e7094ad53a5a09bb441aaae5fc1aa5",
+    "source_lines": "L9127-L9238",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-SNAPSHOT-INDEX-R041"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3490,47 +9242,27 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-SNAPSHOT-INDEX-R042-AC001",
-      "given": "the applicable business context, actor, and input for Nguyên tắc: - History không phải Business Evidence",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the prohibited decision or state transition is absent, the attempted action has a deterministic rejection outcome, and no contradictory success is recorded",
-      "verifies": [
-        "BRD-SNAPSHOT-INDEX-R042-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BRD-SNAPSHOT-INDEX-R042-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Nguyên tắc: - History không phải Business Evidence",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BRD-SNAPSHOT-INDEX-R042-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
-    },
-    {
-      "case": "NEGATIVE_FAIL_CLOSED",
-      "controlled_contract": "REQUIREMENT_SPECIFIC_FAIL_CLOSED_V1",
-      "criterion_id": "BRD-SNAPSHOT-INDEX-R042-AC003",
-      "given": "an input or attempted state change that violates a mandatory boundary explicitly stated by Nguyên tắc: - History không phải Business Evidence",
-      "observable_evidence": "violating input, decision and reason, before/after protected state, and audit or conformance evidence",
-      "then": "the violated obligation produces its specified rejection, denial, block, review, or non-conforming result without recording a contradictory success",
-      "verifies": [
-        "BRD-SNAPSHOT-INDEX-R042-O001"
-      ],
-      "when": "the violating input or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-SNAPSHOT-INDEX-R042",
+      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+      "source_fingerprint": "c39b552ec4e5ecce5c80fbadcb3caa99da8ba881b34a812c5015b4fb294e730c"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
@@ -3546,36 +9278,36 @@ trước khi được sử dụng trong Platform.
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-SNAPSHOT-INDEX-R042 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-SNAPSHOT-INDEX-R042 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-SNAPSHOT-INDEX-R042 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-SNAPSHOT-INDEX-R042 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-SNAPSHOT-INDEX-R042 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-SNAPSHOT-INDEX-R042 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
-        "BRD-SNAPSHOT-INDEX-R042-AC003"
-      ],
-      "status": "APPLICABLE"
+        "BRD-SNAPSHOT-INDEX-R042-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BRD-SNAPSHOT-INDEX-R042-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-SNAPSHOT-INDEX-R042 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-SNAPSHOT-INDEX-R042 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -3596,9 +9328,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "6. Snapshot Lifecycle",
     "source_context_sha256": "4a5c772c53fafe9d0340da8bbec9c9925eda952c6f91fabad0c558818d8abb09",
     "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
-    "source_fingerprint": "069962b1f0514f9c71e4c64513df50567d5bbb684f3ee37832a90553b2958633",
-    "source_lines": "L750-L755",
-    "source_section": "21. Snapshot vs Event vs Audit vs History"
+    "source_fingerprint": "c39b552ec4e5ecce5c80fbadcb3caa99da8ba881b34a812c5015b4fb294e730c",
+    "source_lines": "L9240-L9351",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-SNAPSHOT-INDEX-R042"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3623,28 +9355,34 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "SNP-EP-001-AC001",
-      "given": "a candidate Snapshot là Business Evidence record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "SNP-EP-001-O001"
-      ],
-      "when": "the candidate is evaluated against its declared data contract"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "SNP-EP-001",
+      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+      "source_fingerprint": "15198451d478e5f4b85819554a4fe750a357896153771ea9354bad66f9f390f4"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "SNP-EP-001-AC001"
+        "SNP-EP-001-AC001",
+        "SNP-EP-001-AC002",
+        "SNP-EP-001-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "SNP-EP-001-O001",
@@ -3667,9 +9405,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "SNP-EP-001",
     "source_context_sha256": "6d84ccafdd3319e0cad5c3877cbe010a15aabbc47a052ce8a1e9125cae81a807",
     "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
-    "source_fingerprint": "1a6f19b28bc75ff872db4d9468e9aea3f70f7a692ae779630c9df24af8a66705",
-    "source_lines": "L853-L856",
-    "source_section": "25. Enterprise Snapshot Principles > SNP-EP-001"
+    "source_fingerprint": "15198451d478e5f4b85819554a4fe750a357896153771ea9354bad66f9f390f4",
+    "source_lines": "L9353-L9428",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > SNP-EP-001"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3694,41 +9432,34 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "SNP-EP-002-AC001",
-      "given": "a candidate Snapshot là Immutable record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "SNP-EP-002-O001"
-      ],
-      "when": "the candidate is evaluated against its declared data contract"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "DATA_CONTRACT_REJECTION_V1",
-      "criterion_id": "SNP-EP-002-AC002",
-      "given": "a Snapshot là Immutable candidate containing an unsupported value, inconsistent relationship, or unresolved reference",
-      "observable_evidence": "rejection result, field or relationship reason, unresolved reference, and unchanged persisted state",
-      "then": "the candidate is rejected without persisting the invalid state, and each invalid field or relationship has a deterministic reason",
-      "verifies": [
-        "SNP-EP-002-O001"
-      ],
-      "when": "the candidate is validated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "SNP-EP-002",
+      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+      "source_fingerprint": "8643d5feafd228d459b7f0d2058484c769d1bf974b6e24d6576dc3ba9a26b3f3"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "SNP-EP-002-AC001",
-        "SNP-EP-002-AC002"
+        "SNP-EP-002-AC002",
+        "SNP-EP-002-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "SNP-EP-002-O001",
@@ -3737,35 +9468,36 @@ trước khi được sử dụng trong Platform.
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "SNP-EP-002 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "SNP-EP-002 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "SNP-EP-002 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "SNP-EP-002 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "SNP-EP-002 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "SNP-EP-002 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "SNP-EP-002 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "SNP-EP-002-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "SNP-EP-002-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "SNP-EP-002 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "SNP-EP-002 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -3783,9 +9515,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "SNP-EP-002",
     "source_context_sha256": "7c4f12cffee86c4e1fe05d1cd084d2da1120e6c86e457d6243d96462bfc1b19d",
     "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
-    "source_fingerprint": "eaba64ec5dbc5c8e8886d2e3424843d523609cc5f6aba1ef69d59044803b3d26",
-    "source_lines": "L859-L862",
-    "source_section": "25. Enterprise Snapshot Principles > SNP-EP-002"
+    "source_fingerprint": "8643d5feafd228d459b7f0d2058484c769d1bf974b6e24d6576dc3ba9a26b3f3",
+    "source_lines": "L9430-L9538",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > SNP-EP-002"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3810,41 +9542,34 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "SNP-EP-003-AC001",
-      "given": "a candidate Snapshot được tạo từ Business Event hoặc Business State Transition record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "SNP-EP-003-O001"
-      ],
-      "when": "the candidate is evaluated against its declared data contract"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "DATA_CONTRACT_REJECTION_V1",
-      "criterion_id": "SNP-EP-003-AC002",
-      "given": "a Snapshot được tạo từ Business Event hoặc Business State Transition candidate containing an unsupported value, inconsistent relationship, or unresolved reference",
-      "observable_evidence": "rejection result, field or relationship reason, unresolved reference, and unchanged persisted state",
-      "then": "the candidate is rejected without persisting the invalid state, and each invalid field or relationship has a deterministic reason",
-      "verifies": [
-        "SNP-EP-003-O001"
-      ],
-      "when": "the candidate is validated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "SNP-EP-003",
+      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+      "source_fingerprint": "349f26e573e66d01d69d3959c82cc682917d382c77cb156795a136b1fba3fa58"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "SNP-EP-003-AC001",
-        "SNP-EP-003-AC002"
+        "SNP-EP-003-AC002",
+        "SNP-EP-003-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "SNP-EP-003-O001",
@@ -3867,9 +9592,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "SNP-EP-003",
     "source_context_sha256": "b7e8e33ed83a948f61632be8d68c708956fa73e8f6986bc6ab4a2eb7b3cb5b8c",
     "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
-    "source_fingerprint": "d2c1d483b57968b35e7dfcdbb6b0883047c58e4af2739c077e3850f6117e7687",
-    "source_lines": "L865-L868",
-    "source_section": "25. Enterprise Snapshot Principles > SNP-EP-003"
+    "source_fingerprint": "349f26e573e66d01d69d3959c82cc682917d382c77cb156795a136b1fba3fa58",
+    "source_lines": "L9540-L9615",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > SNP-EP-003"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3894,28 +9619,753 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "SNP-EP-004-AC001",
-      "given": "a candidate Snapshot phải chứa đầy đủ Business Context để tái hiện quyết định nghiệp vụ record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "SNP-EP-004-O001"
+  "acceptance_contract": {
+    "boundary_oracle": [
+      "Later context changes create a new Snapshot and do not mutate historical context"
+    ],
+    "concrete_bindings": [
+      {
+        "actual_set": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#25. Enterprise Snapshot Principles > SNP-EP-004",
+            "source_type": "SOURCE_LITERAL",
+            "version": "806fd37857b266e16fa974ddd360853695928305a7b2f177f13bab7db6ea1926"
+          },
+          "identifier": "RESOLVED_MEMBER_COLLECTION",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.SNP-EP-004.RESOLVED.COLLECTION",
+          "origin": {
+            "origin_id": "YSIM.SNP-EP-004.RESOLVED.COLLECTION.RESOLVED_MEMBER_COLLECTION.RUNTIME_OBSERVED",
+            "origin_type": "RUNTIME_OBSERVED"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+            "source_fingerprint": "806fd37857b266e16fa974ddd360853695928305a7b2f177f13bab7db6ea1926",
+            "source_lines": "L871-L874",
+            "source_section": "25. Enterprise Snapshot Principles > SNP-EP-004"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "SET_OF<CANONICAL_ENUM_VALUE>",
+            "resolver_id": "OBSERVE.SNP-EP-004.RESOLVED_MEMBER_COLLECTION",
+            "version": "1.0.0"
+          },
+          "semantic_type": "RUNTIME_SET_REF<CANONICAL_ENUM_VALUE>"
+        },
+        "required_members": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#25. Enterprise Snapshot Principles > SNP-EP-004",
+            "source_type": "SOURCE_LITERAL",
+            "version": "806fd37857b266e16fa974ddd360853695928305a7b2f177f13bab7db6ea1926"
+          },
+          "identifier": "GOVERNED_MEMBER_COLLECTION",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.SNP-EP-004.GOVERNED.COLLECTION",
+          "origin": {
+            "origin_id": "SNP-EP-004.O1.1.SET_CONTAINS.REQUIRED_MEMBERS.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+            "source_fingerprint": "806fd37857b266e16fa974ddd360853695928305a7b2f177f13bab7db6ea1926",
+            "source_lines": "L871-L874",
+            "source_section": "25. Enterprise Snapshot Principles > SNP-EP-004"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "SET_OF<CANONICAL_ENUM_VALUE>",
+            "resolver_id": "RESOLVE.SNP-EP-004.GOVERNED_MEMBER_COLLECTION",
+            "version": "1.0.0"
+          },
+          "semantic_type": "CANONICAL_SET_REF<CANONICAL_ENUM_VALUE>"
+        }
+      }
+    ],
+    "contract_id": "P2C.C4.CONTRACT.SNP-EP-004",
+    "inference": false,
+    "mechanism": "APPROVED_TYPED_CUSTOM_AST",
+    "mechanism_version": "C4-R3",
+    "negative_oracle": [
+      "A required input or version is absent and replay differs"
+    ],
+    "operator_composition": [
+      "SET_CONTAINS"
+    ],
+    "positive_oracle": [
+      "Snapshot contains the complete Business Context needed to reproduce the decision"
+    ],
+    "provenance": {
+      "approved_decision_references": [],
+      "inference": false,
+      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+      "source_fingerprint": "806fd37857b266e16fa974ddd360853695928305a7b2f177f13bab7db6ea1926",
+      "source_lines": "L871-L874",
+      "source_section": "25. Enterprise Snapshot Principles > SNP-EP-004"
+    },
+    "required_evidence": {
+      "evidence_object_ref": {
+        "authoritative_source": {
+          "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#25. Enterprise Snapshot Principles > SNP-EP-004",
+          "source_type": "SOURCE_LITERAL",
+          "version": "806fd37857b266e16fa974ddd360853695928305a7b2f177f13bab7db6ea1926"
+        },
+        "identifier": "SNP-EP-004.SNP-EP-004.CONTRACT.EVIDENCE.OBJECT",
+        "inference": false,
+        "lifecycle": {
+          "status": "ACTIVE",
+          "version": "2.3"
+        },
+        "namespace": "YSIM.V2.3",
+        "origin": {
+          "origin_id": "SNP-EP-004.CONTRACT.EVIDENCE.ORIGIN",
+          "origin_type": "EVIDENCE_OBJECT"
+        },
+        "provenance": {
+          "approved_decision_references": [],
+          "inference": false,
+          "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+          "source_fingerprint": "806fd37857b266e16fa974ddd360853695928305a7b2f177f13bab7db6ea1926",
+          "source_lines": "L871-L874",
+          "source_section": "25. Enterprise Snapshot Principles > SNP-EP-004"
+        },
+        "resolver_contract": {
+          "deterministic": true,
+          "input_types": [],
+          "output_type": "EVIDENCE_OBJECT_REF",
+          "resolver_id": "OBSERVE.SNP-EP-004.SNP-EP-004.SNP-EP-004.CONTRACT.EVIDENCE.OBJECT",
+          "version": "1.0.0"
+        },
+        "semantic_type": "EVIDENCE_OBJECT_REF"
+      },
+      "inference": false,
+      "observed_collection_origin": "SNP-EP-004.RUNTIME.OBSERVED.FIELDS",
+      "observed_field_ids": [
+        "FIELD.SNAPSHOT_ID",
+        "FIELD.DECISION_ID",
+        "FIELD.BUSINESS_CONTEXT_FIELDS",
+        "FIELD.POLICY_VERSIONS",
+        "FIELD.REPLAY_RESULT"
       ],
-      "when": "the candidate is evaluated against its declared data contract"
+      "producer": "SNP-EP-004.EVIDENCE.PRODUCER",
+      "required_collection_origin": "SNP-EP-004.SOURCE.REQUIRED.FIELDS",
+      "required_field_ids": [
+        "FIELD.SNAPSHOT_ID",
+        "FIELD.DECISION_ID",
+        "FIELD.BUSINESS_CONTEXT_FIELDS",
+        "FIELD.POLICY_VERSIONS",
+        "FIELD.REPLAY_RESULT"
+      ],
+      "required_values_or_hashes": [
+        "SNP-EP-004.EVIDENCE.CONTENT.HASH"
+      ],
+      "retrieval_method": "SNP-EP-004.EVIDENCE.RETRIEVAL",
+      "version_or_correlation": "SNP-EP-004.EVIDENCE.VERSION.CORRELATION"
+    },
+    "runtime_evidence_executed": false,
+    "runtime_status": "RUNTIME_ADAPTER_PENDING",
+    "semantic_obligation_references": [
+      "SNP-EP-004-O001"
+    ],
+    "typed_contract_ast": {
+      "approved_clarification": null,
+      "assertions": [
+        {
+          "assertion_id": "SNP-EP-004.O1.1.SET_CONTAINS",
+          "evaluator_consumed_bindings": [
+            "actual_set",
+            "required_members"
+          ],
+          "evidence_object": {
+            "authoritative_source": {
+              "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#25. Enterprise Snapshot Principles > SNP-EP-004",
+              "source_type": "SOURCE_LITERAL",
+              "version": "806fd37857b266e16fa974ddd360853695928305a7b2f177f13bab7db6ea1926"
+            },
+            "identifier": "SNP-EP-004.SNP-EP-004.O1.1.SET_CONTAINS.EVIDENCE.OBJECT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "SNP-EP-004.O1.1.SET_CONTAINS.EVIDENCE.ORIGIN",
+              "origin_type": "EVIDENCE_OBJECT"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+              "source_fingerprint": "806fd37857b266e16fa974ddd360853695928305a7b2f177f13bab7db6ea1926",
+              "source_lines": "L871-L874",
+              "source_section": "25. Enterprise Snapshot Principles > SNP-EP-004"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "EVIDENCE_OBJECT_REF",
+              "resolver_id": "OBSERVE.SNP-EP-004.SNP-EP-004.SNP-EP-004.O1.1.SET_CONTAINS.EVIDENCE.OBJECT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "EVIDENCE_OBJECT_REF"
+          },
+          "expected_operand": {
+            "members": [
+              {
+                "authoritative_source": {
+                  "allowed_identifiers": [
+                    "SNP-EP-004.SNP-EP-004.O1.1.SET_CONTAINS.CANONICAL.RESULT.MEMBER"
+                  ],
+                  "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#25. Enterprise Snapshot Principles > SNP-EP-004",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "806fd37857b266e16fa974ddd360853695928305a7b2f177f13bab7db6ea1926"
+                },
+                "identifier": "SNP-EP-004.SNP-EP-004.O1.1.SET_CONTAINS.CANONICAL.RESULT.MEMBER",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "SNP-EP-004.O1.1.SET_CONTAINS.AUTHORITY.ORIGIN.MEMBER.1",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                  "source_fingerprint": "806fd37857b266e16fa974ddd360853695928305a7b2f177f13bab7db6ea1926",
+                  "source_lines": "L871-L874",
+                  "source_section": "25. Enterprise Snapshot Principles > SNP-EP-004"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "CANONICAL_ENUM_VALUE",
+                  "resolver_id": "RESOLVE.SNP-EP-004.SNP-EP-004.SNP-EP-004.O1.1.SET_CONTAINS.CANONICAL.RESULT.MEMBER",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "CANONICAL_ENUM_VALUE"
+              }
+            ],
+            "origin": {
+              "origin_id": "SNP-EP-004.O1.1.SET_CONTAINS.AUTHORITY.ORIGIN",
+              "origin_type": "SOURCE_LITERAL"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+              "source_fingerprint": "806fd37857b266e16fa974ddd360853695928305a7b2f177f13bab7db6ea1926",
+              "source_lines": "L871-L874",
+              "source_section": "25. Enterprise Snapshot Principles > SNP-EP-004"
+            },
+            "semantic_type": "SET_OF<CANONICAL_ENUM_VALUE>"
+          },
+          "inference": false,
+          "model_conformance_fixture": {
+            "bindings": {
+              "actual_set": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#25. Enterprise Snapshot Principles > SNP-EP-004",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "806fd37857b266e16fa974ddd360853695928305a7b2f177f13bab7db6ea1926"
+                },
+                "identifier": "RESOLVED_MEMBER_COLLECTION",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.SNP-EP-004.RESOLVED.COLLECTION",
+                "origin": {
+                  "origin_id": "YSIM.SNP-EP-004.RESOLVED.COLLECTION.RESOLVED_MEMBER_COLLECTION.RUNTIME_OBSERVED",
+                  "origin_type": "RUNTIME_OBSERVED"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                  "source_fingerprint": "806fd37857b266e16fa974ddd360853695928305a7b2f177f13bab7db6ea1926",
+                  "source_lines": "L871-L874",
+                  "source_section": "25. Enterprise Snapshot Principles > SNP-EP-004"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "SET_OF<CANONICAL_ENUM_VALUE>",
+                  "resolver_id": "OBSERVE.SNP-EP-004.RESOLVED_MEMBER_COLLECTION",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "RUNTIME_SET_REF<CANONICAL_ENUM_VALUE>"
+              },
+              "required_members": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#25. Enterprise Snapshot Principles > SNP-EP-004",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "806fd37857b266e16fa974ddd360853695928305a7b2f177f13bab7db6ea1926"
+                },
+                "identifier": "GOVERNED_MEMBER_COLLECTION",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.SNP-EP-004.GOVERNED.COLLECTION",
+                "origin": {
+                  "origin_id": "SNP-EP-004.O1.1.SET_CONTAINS.REQUIRED_MEMBERS.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                  "source_fingerprint": "806fd37857b266e16fa974ddd360853695928305a7b2f177f13bab7db6ea1926",
+                  "source_lines": "L871-L874",
+                  "source_section": "25. Enterprise Snapshot Principles > SNP-EP-004"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "SET_OF<CANONICAL_ENUM_VALUE>",
+                  "resolver_id": "RESOLVE.SNP-EP-004.GOVERNED_MEMBER_COLLECTION",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "CANONICAL_SET_REF<CANONICAL_ENUM_VALUE>"
+              }
+            },
+            "comparison": {
+              "expected": {
+                "members": [
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "SNP-EP-004.SNP-EP-004.O1.1.SET_CONTAINS.CANONICAL.RESULT.MEMBER"
+                      ],
+                      "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#25. Enterprise Snapshot Principles > SNP-EP-004",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "806fd37857b266e16fa974ddd360853695928305a7b2f177f13bab7db6ea1926"
+                    },
+                    "identifier": "SNP-EP-004.SNP-EP-004.O1.1.SET_CONTAINS.CANONICAL.RESULT.MEMBER",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "SNP-EP-004.O1.1.SET_CONTAINS.AUTHORITY.ORIGIN.MEMBER.1",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                      "source_fingerprint": "806fd37857b266e16fa974ddd360853695928305a7b2f177f13bab7db6ea1926",
+                      "source_lines": "L871-L874",
+                      "source_section": "25. Enterprise Snapshot Principles > SNP-EP-004"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "CANONICAL_ENUM_VALUE",
+                      "resolver_id": "RESOLVE.SNP-EP-004.SNP-EP-004.SNP-EP-004.O1.1.SET_CONTAINS.CANONICAL.RESULT.MEMBER",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "CANONICAL_ENUM_VALUE"
+                  }
+                ],
+                "origin": {
+                  "origin_id": "SNP-EP-004.O1.1.SET_CONTAINS.AUTHORITY.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                  "source_fingerprint": "806fd37857b266e16fa974ddd360853695928305a7b2f177f13bab7db6ea1926",
+                  "source_lines": "L871-L874",
+                  "source_section": "25. Enterprise Snapshot Principles > SNP-EP-004"
+                },
+                "semantic_type": "SET_OF<CANONICAL_ENUM_VALUE>"
+              },
+              "observed": {
+                "members": [
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "SNP-EP-004.SNP-EP-004.O1.1.SET_CONTAINS.CANONICAL.RESULT.MEMBER"
+                      ],
+                      "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#25. Enterprise Snapshot Principles > SNP-EP-004",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "806fd37857b266e16fa974ddd360853695928305a7b2f177f13bab7db6ea1926"
+                    },
+                    "identifier": "SNP-EP-004.SNP-EP-004.O1.1.SET_CONTAINS.CANONICAL.RESULT.MEMBER",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "SNP-EP-004.O1.1.SET_CONTAINS.OBSERVED.ORIGIN.MEMBER.1",
+                      "origin_type": "RUNTIME_OBSERVED"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                      "source_fingerprint": "806fd37857b266e16fa974ddd360853695928305a7b2f177f13bab7db6ea1926",
+                      "source_lines": "L871-L874",
+                      "source_section": "25. Enterprise Snapshot Principles > SNP-EP-004"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "CANONICAL_ENUM_VALUE",
+                      "resolver_id": "OBSERVE.SNP-EP-004.SNP-EP-004.SNP-EP-004.O1.1.SET_CONTAINS.CANONICAL.RESULT.MEMBER",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "CANONICAL_ENUM_VALUE"
+                  }
+                ],
+                "origin": {
+                  "origin_id": "SNP-EP-004.O1.1.SET_CONTAINS.OBSERVED.ORIGIN",
+                  "origin_type": "RUNTIME_OBSERVED"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                  "source_fingerprint": "806fd37857b266e16fa974ddd360853695928305a7b2f177f13bab7db6ea1926",
+                  "source_lines": "L871-L874",
+                  "source_section": "25. Enterprise Snapshot Principles > SNP-EP-004"
+                },
+                "semantic_type": "SET_OF<CANONICAL_ENUM_VALUE>"
+              }
+            },
+            "evidence_object": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#25. Enterprise Snapshot Principles > SNP-EP-004",
+                "source_type": "SOURCE_LITERAL",
+                "version": "806fd37857b266e16fa974ddd360853695928305a7b2f177f13bab7db6ea1926"
+              },
+              "identifier": "SNP-EP-004.SNP-EP-004.O1.1.SET_CONTAINS.EVIDENCE.OBJECT",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "SNP-EP-004.O1.1.SET_CONTAINS.EVIDENCE.ORIGIN",
+                "origin_type": "EVIDENCE_OBJECT"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                "source_fingerprint": "806fd37857b266e16fa974ddd360853695928305a7b2f177f13bab7db6ea1926",
+                "source_lines": "L871-L874",
+                "source_section": "25. Enterprise Snapshot Principles > SNP-EP-004"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "EVIDENCE_OBJECT_REF",
+                "resolver_id": "OBSERVE.SNP-EP-004.SNP-EP-004.SNP-EP-004.O1.1.SET_CONTAINS.EVIDENCE.OBJECT",
+                "version": "1.0.0"
+              },
+              "semantic_type": "EVIDENCE_OBJECT_REF"
+            },
+            "operator_id": "SET_CONTAINS"
+          },
+          "obligation_id": "SNP-EP-004-O001",
+          "observed_operand": {
+            "members": [
+              {
+                "authoritative_source": {
+                  "allowed_identifiers": [
+                    "SNP-EP-004.SNP-EP-004.O1.1.SET_CONTAINS.CANONICAL.RESULT.MEMBER"
+                  ],
+                  "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#25. Enterprise Snapshot Principles > SNP-EP-004",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "806fd37857b266e16fa974ddd360853695928305a7b2f177f13bab7db6ea1926"
+                },
+                "identifier": "SNP-EP-004.SNP-EP-004.O1.1.SET_CONTAINS.CANONICAL.RESULT.MEMBER",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "SNP-EP-004.O1.1.SET_CONTAINS.OBSERVED.ORIGIN.MEMBER.1",
+                  "origin_type": "RUNTIME_OBSERVED"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                  "source_fingerprint": "806fd37857b266e16fa974ddd360853695928305a7b2f177f13bab7db6ea1926",
+                  "source_lines": "L871-L874",
+                  "source_section": "25. Enterprise Snapshot Principles > SNP-EP-004"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "CANONICAL_ENUM_VALUE",
+                  "resolver_id": "OBSERVE.SNP-EP-004.SNP-EP-004.SNP-EP-004.O1.1.SET_CONTAINS.CANONICAL.RESULT.MEMBER",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "CANONICAL_ENUM_VALUE"
+              }
+            ],
+            "origin": {
+              "origin_id": "SNP-EP-004.O1.1.SET_CONTAINS.OBSERVED.ORIGIN",
+              "origin_type": "RUNTIME_OBSERVED"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+              "source_fingerprint": "806fd37857b266e16fa974ddd360853695928305a7b2f177f13bab7db6ea1926",
+              "source_lines": "L871-L874",
+              "source_section": "25. Enterprise Snapshot Principles > SNP-EP-004"
+            },
+            "semantic_type": "SET_OF<CANONICAL_ENUM_VALUE>"
+          },
+          "operator_id": "SET_CONTAINS",
+          "operator_version": "1.0.0-candidate.2",
+          "typed_bindings": {
+            "actual_set": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#25. Enterprise Snapshot Principles > SNP-EP-004",
+                "source_type": "SOURCE_LITERAL",
+                "version": "806fd37857b266e16fa974ddd360853695928305a7b2f177f13bab7db6ea1926"
+              },
+              "identifier": "RESOLVED_MEMBER_COLLECTION",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.SNP-EP-004.RESOLVED.COLLECTION",
+              "origin": {
+                "origin_id": "YSIM.SNP-EP-004.RESOLVED.COLLECTION.RESOLVED_MEMBER_COLLECTION.RUNTIME_OBSERVED",
+                "origin_type": "RUNTIME_OBSERVED"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                "source_fingerprint": "806fd37857b266e16fa974ddd360853695928305a7b2f177f13bab7db6ea1926",
+                "source_lines": "L871-L874",
+                "source_section": "25. Enterprise Snapshot Principles > SNP-EP-004"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "SET_OF<CANONICAL_ENUM_VALUE>",
+                "resolver_id": "OBSERVE.SNP-EP-004.RESOLVED_MEMBER_COLLECTION",
+                "version": "1.0.0"
+              },
+              "semantic_type": "RUNTIME_SET_REF<CANONICAL_ENUM_VALUE>"
+            },
+            "required_members": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#25. Enterprise Snapshot Principles > SNP-EP-004",
+                "source_type": "SOURCE_LITERAL",
+                "version": "806fd37857b266e16fa974ddd360853695928305a7b2f177f13bab7db6ea1926"
+              },
+              "identifier": "GOVERNED_MEMBER_COLLECTION",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.SNP-EP-004.GOVERNED.COLLECTION",
+              "origin": {
+                "origin_id": "SNP-EP-004.O1.1.SET_CONTAINS.REQUIRED_MEMBERS.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+                "source_fingerprint": "806fd37857b266e16fa974ddd360853695928305a7b2f177f13bab7db6ea1926",
+                "source_lines": "L871-L874",
+                "source_section": "25. Enterprise Snapshot Principles > SNP-EP-004"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "SET_OF<CANONICAL_ENUM_VALUE>",
+                "resolver_id": "RESOLVE.SNP-EP-004.GOVERNED_MEMBER_COLLECTION",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_SET_REF<CANONICAL_ENUM_VALUE>"
+            }
+          }
+        }
+      ],
+      "boundary_cases": [
+        "Later context changes create a new Snapshot and do not mutate historical context"
+      ],
+      "contract_ast_sha256": "9d06412faf3293473a43214a361a66233655c1e82f40828371dbae223f5d6a3a",
+      "contract_id": "P2C.C4.CONTRACT.SNP-EP-004",
+      "criticality": "NORMAL",
+      "disposition": "CORRECTABLE_WITH_APPROVED_TYPE_MODEL",
+      "evidence_contract": {
+        "evidence_object_ref": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-SNAPSHOT-INDEX.md#25. Enterprise Snapshot Principles > SNP-EP-004",
+            "source_type": "SOURCE_LITERAL",
+            "version": "806fd37857b266e16fa974ddd360853695928305a7b2f177f13bab7db6ea1926"
+          },
+          "identifier": "SNP-EP-004.SNP-EP-004.CONTRACT.EVIDENCE.OBJECT",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "SNP-EP-004.CONTRACT.EVIDENCE.ORIGIN",
+            "origin_type": "EVIDENCE_OBJECT"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+            "source_fingerprint": "806fd37857b266e16fa974ddd360853695928305a7b2f177f13bab7db6ea1926",
+            "source_lines": "L871-L874",
+            "source_section": "25. Enterprise Snapshot Principles > SNP-EP-004"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "EVIDENCE_OBJECT_REF",
+            "resolver_id": "OBSERVE.SNP-EP-004.SNP-EP-004.SNP-EP-004.CONTRACT.EVIDENCE.OBJECT",
+            "version": "1.0.0"
+          },
+          "semantic_type": "EVIDENCE_OBJECT_REF"
+        },
+        "inference": false,
+        "observed_collection_origin": "SNP-EP-004.RUNTIME.OBSERVED.FIELDS",
+        "observed_field_ids": [
+          "FIELD.SNAPSHOT_ID",
+          "FIELD.DECISION_ID",
+          "FIELD.BUSINESS_CONTEXT_FIELDS",
+          "FIELD.POLICY_VERSIONS",
+          "FIELD.REPLAY_RESULT"
+        ],
+        "producer": "SNP-EP-004.EVIDENCE.PRODUCER",
+        "required_collection_origin": "SNP-EP-004.SOURCE.REQUIRED.FIELDS",
+        "required_field_ids": [
+          "FIELD.SNAPSHOT_ID",
+          "FIELD.DECISION_ID",
+          "FIELD.BUSINESS_CONTEXT_FIELDS",
+          "FIELD.POLICY_VERSIONS",
+          "FIELD.REPLAY_RESULT"
+        ],
+        "required_values_or_hashes": [
+          "SNP-EP-004.EVIDENCE.CONTENT.HASH"
+        ],
+        "retrieval_method": "SNP-EP-004.EVIDENCE.RETRIEVAL",
+        "version_or_correlation": "SNP-EP-004.EVIDENCE.VERSION.CORRELATION"
+      },
+      "explicit_non_obligations": [
+        "No runtime implementation topology is authorized by this semantic record.",
+        "No production runtime evidence is claimed by this model-level candidate."
+      ],
+      "fixture_ids": [
+        "P2C-C4-R2-FX-42EFF4E7AE8085FED5C4",
+        "P2C-C4-R2-FX-986B43BA6B3ABBBB86E7",
+        "P2C-C4-R2-FX-05AA3A76E5C3821D7DDD"
+      ],
+      "high_risk_audit_subset": false,
+      "independent_contract_identity": true,
+      "inference": false,
+      "inherits_contract_ast": null,
+      "negative_oracles": [
+        "A required input or version is absent and replay differs"
+      ],
+      "normative_obligations": [
+        {
+          "applicability": "V2.3_ACTIVE",
+          "obligation_id": "SNP-EP-004-O001",
+          "obligation_text": "Snapshot phải chứa đầy đủ Business Context để tái hiện quyết định nghiệp vụ"
+        }
+      ],
+      "obligation_to_operator_coverage": [
+        {
+          "assertion_ids": [
+            "SNP-EP-004.O1.1.SET_CONTAINS"
+          ],
+          "coverage_count": 1,
+          "obligation_id": "SNP-EP-004-O001"
+        }
+      ],
+      "operator_composition": [
+        "SET_CONTAINS"
+      ],
+      "positive_oracles": [
+        "Snapshot contains the complete Business Context needed to reproduce the decision"
+      ],
+      "preconditions": [
+        "The decision inputs and effective policy versions are known"
+      ],
+      "prohibitions": [
+        "A required input or version is absent and replay differs"
+      ],
+      "requirement_id": "SNP-EP-004",
+      "runtime_status": "SLICE_RUNTIME_ADAPTER_REQUIRED",
+      "semantic_family_id": null,
+      "source_provenance": {
+        "approved_decision_references": [],
+        "inference": false,
+        "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+        "source_fingerprint": "806fd37857b266e16fa974ddd360853695928305a7b2f177f13bab7db6ea1926",
+        "source_lines": "L871-L874",
+        "source_section": "25. Enterprise Snapshot Principles > SNP-EP-004"
+      },
+      "source_statement": "Snapshot phải chứa đầy đủ Business Context để tái hiện quyết định nghiệp vụ.",
+      "surrounding_source_context": "## SNP-EP-004\n\nSnapshot phải chứa đầy đủ Business Context để tái hiện quyết định nghiệp vụ.\n\n---"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "contract_id": "P2C.C4.CONTRACT.SNP-EP-004",
+    "inference": false,
+    "mechanism": "APPROVED_TYPED_CUSTOM_AST",
+    "mechanism_version": "SEMANTIC_ACCEPTANCE_RENDERER_C2",
+    "runtime_status": "RUNTIME_ADAPTER_PENDING"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "ACCEPTANCE_READY",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "SNP-EP-004-AC001"
+        "SNP-EP-004-AC001",
+        "SNP-EP-004-AC002",
+        "SNP-EP-004-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "SNP-EP-004-O001",
@@ -3938,9 +10388,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "SNP-EP-004",
     "source_context_sha256": "5c62c7532bb806bd2a3216e8369ceaaf8777666d9abb3881633deea31b44508d",
     "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
-    "source_fingerprint": "806fd37857b266e16fa974ddd360853695928305a7b2f177f13bab7db6ea1926",
-    "source_lines": "L871-L874",
-    "source_section": "25. Enterprise Snapshot Principles > SNP-EP-004"
+    "source_fingerprint": "f8ef82dd3d2b835a0c688cf111da467f9d4abbb027c87e2a93045430b9388dc7",
+    "source_lines": "L9617-L10411",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > SNP-EP-004"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3965,28 +10415,34 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "SNP-EP-005-AC001",
-      "given": "a candidate Snapshot độc lập với Runtime Database record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "SNP-EP-005-O001"
-      ],
-      "when": "the candidate is evaluated against its declared data contract"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "SNP-EP-005",
+      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+      "source_fingerprint": "9f7234ff8adb1ec2097645dd497c9109d7ca48c4b807a4c59944631f85c751d0"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "SNP-EP-005-AC001"
+        "SNP-EP-005-AC001",
+        "SNP-EP-005-AC002",
+        "SNP-EP-005-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "SNP-EP-005-O001",
@@ -4009,9 +10465,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "SNP-EP-005",
     "source_context_sha256": "d0387fd087188164c4898826e78fea7796394d714f210d11867a9feeca8f7aea",
     "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
-    "source_fingerprint": "f90b5f1327452acdc580a21e8b2e3c5cb6016313adba48f67a161b3743101614",
-    "source_lines": "L877-L880",
-    "source_section": "25. Enterprise Snapshot Principles > SNP-EP-005"
+    "source_fingerprint": "9f7234ff8adb1ec2097645dd497c9109d7ca48c4b807a4c59944631f85c751d0",
+    "source_lines": "L10413-L10488",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > SNP-EP-005"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -4036,28 +10492,34 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "SNP-EP-006-AC001",
-      "given": "a candidate Snapshot hỗ trợ Versioning record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "SNP-EP-006-O001"
-      ],
-      "when": "the candidate is evaluated against its declared data contract"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "SNP-EP-006",
+      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+      "source_fingerprint": "09137b2a16c1847f9203fc4635b366110ab36d6b5ea4bc0bc494d1577ae4f7cb"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "SNP-EP-006-AC001"
+        "SNP-EP-006-AC001",
+        "SNP-EP-006-AC002",
+        "SNP-EP-006-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "SNP-EP-006-O001",
@@ -4080,9 +10542,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "SNP-EP-006",
     "source_context_sha256": "a0bfda95caa864291185dd16e018d1cb1d773af45b0a4da9f2ce3537d0538264",
     "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
-    "source_fingerprint": "372f12a419b20ec632a7811865fab56d93cda4132f51a1e2e111e7603eedf0b1",
-    "source_lines": "L883-L886",
-    "source_section": "25. Enterprise Snapshot Principles > SNP-EP-006"
+    "source_fingerprint": "09137b2a16c1847f9203fc4635b366110ab36d6b5ea4bc0bc494d1577ae4f7cb",
+    "source_lines": "L10490-L10565",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > SNP-EP-006"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -4107,10 +10569,11 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": null,
+  "acceptance_mechanism": null,
   "acceptance_rationale": "Alias evidence is inherited from the canonical target; the alias is not an acceptance unit.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "STRUCTURAL_RECORD",
   "acceptance_unit": false,
   "atomic_obligations": [],
   "criticality_applicability": null,
@@ -4129,9 +10592,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "SNP-EP-007",
     "source_context_sha256": "2b278e4e7e78a74ebb9a4818643d1490a7d915e886c95f33b651d901d132c1bf",
     "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
-    "source_fingerprint": "def2ef852578e1bd9e0980babc7d11f8a1103e3a4f4e1d1ff7e8094fb2ed8855",
-    "source_lines": "L889-L892",
-    "source_section": "25. Enterprise Snapshot Principles > SNP-EP-007"
+    "source_fingerprint": "2abaccdbf807675f50262550bca8de9a6cd314d04b4873cf7303b1529c36c021",
+    "source_lines": "L10567-L10615",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > SNP-EP-007"
   },
   "record_kind": "ALIAS",
   "relationships": {
@@ -4156,41 +10619,34 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "SNP-EP-008-AC001",
-      "given": "an operational task within the scope of Snapshot hỗ trợ Audit và Regulatory Compliance",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "SNP-EP-008-O001"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "OPERATIONAL_VERIFICATION_FAILURE_V1",
-      "criterion_id": "SNP-EP-008-AC002",
-      "given": "an operational task missing an outcome, required signal, audit evidence, or recovery evidence for Snapshot hỗ trợ Audit và Regulatory Compliance",
-      "observable_evidence": "operator-visible verification result, missing-evidence identifier, operation state, and relevant signal or audit record",
-      "then": "verification reports the specific missing evidence as a detectable failure and does not report the task as conforming",
-      "verifies": [
-        "SNP-EP-008-O001"
-      ],
-      "when": "operational verification is performed"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "SNP-EP-008",
+      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+      "source_fingerprint": "07d1e0b11e55354bb20bdf8219d29da5050163a3b11eda48afb7b216b7c0e3c7"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "SNP-EP-008-AC001",
-        "SNP-EP-008-AC002"
+        "SNP-EP-008-AC002",
+        "SNP-EP-008-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "SNP-EP-008-O001",
@@ -4199,35 +10655,36 @@ trước khi được sử dụng trong Platform.
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "SNP-EP-008 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "SNP-EP-008 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "SNP-EP-008 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "SNP-EP-008 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "SNP-EP-008 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "SNP-EP-008 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "SNP-EP-008 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "SNP-EP-008-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "SNP-EP-008-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "SNP-EP-008 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "SNP-EP-008 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -4245,9 +10702,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "SNP-EP-008",
     "source_context_sha256": "33df28cfdd6866295d36ccf49ce1c9d999b82019fbab5400505085be4cfa1a0e",
     "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
-    "source_fingerprint": "67c121a632bf9d53c7e3dee94120c40be80394b2a63e24d626c1045f49856596",
-    "source_lines": "L895-L898",
-    "source_section": "25. Enterprise Snapshot Principles > SNP-EP-008"
+    "source_fingerprint": "07d1e0b11e55354bb20bdf8219d29da5050163a3b11eda48afb7b216b7c0e3c7",
+    "source_lines": "L10617-L10725",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > SNP-EP-008"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -4272,41 +10729,34 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "SNP-EP-009-AC001",
-      "given": "a candidate Snapshot là nguồn dữ liệu ưu tiên cho Reporting, Analytics và Settlement record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "SNP-EP-009-O001"
-      ],
-      "when": "the candidate is evaluated against its declared data contract"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "DATA_CONTRACT_REJECTION_V1",
-      "criterion_id": "SNP-EP-009-AC002",
-      "given": "a Snapshot là nguồn dữ liệu ưu tiên cho Reporting, Analytics và Settlement candidate containing an unsupported value, inconsistent relationship, or unresolved reference",
-      "observable_evidence": "rejection result, field or relationship reason, unresolved reference, and unchanged persisted state",
-      "then": "the candidate is rejected without persisting the invalid state, and each invalid field or relationship has a deterministic reason",
-      "verifies": [
-        "SNP-EP-009-O001"
-      ],
-      "when": "the candidate is validated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "SNP-EP-009",
+      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+      "source_fingerprint": "c469f63270652fb0c1a34d0e003943b1b895cbbd5578b2b9518fc8ff9dde418f"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "SNP-EP-009-AC001",
-        "SNP-EP-009-AC002"
+        "SNP-EP-009-AC002",
+        "SNP-EP-009-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "SNP-EP-009-O001",
@@ -4329,9 +10779,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "SNP-EP-009",
     "source_context_sha256": "183ba011992771d49494d62aae619732bed5882fabe815ee83dea16204fb0855",
     "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
-    "source_fingerprint": "2fa23f97c8966201e0af3ba016948bb19554f7567e83b223f53eca2518534ebe",
-    "source_lines": "L901-L904",
-    "source_section": "25. Enterprise Snapshot Principles > SNP-EP-009"
+    "source_fingerprint": "c469f63270652fb0c1a34d0e003943b1b895cbbd5578b2b9518fc8ff9dde418f",
+    "source_lines": "L10727-L10802",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > SNP-EP-009"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -4356,28 +10806,34 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "SNP-EP-010-AC001",
-      "given": "a candidate Enterprise Snapshot Registry là Enterprise Snapshot Dictionary của nền tảng YSim record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "SNP-EP-010-O001"
-      ],
-      "when": "the candidate is evaluated against its declared data contract"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "SNP-EP-010",
+      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+      "source_fingerprint": "9841f64d2eb097c3d413b80d6171844eba6da21954a5b8f03ba063da04b78def"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "SNP-EP-010-AC001"
+        "SNP-EP-010-AC001",
+        "SNP-EP-010-AC002",
+        "SNP-EP-010-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "SNP-EP-010-O001",
@@ -4400,9 +10856,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "SNP-EP-010",
     "source_context_sha256": "4fad0e29b071afd721ea20bab7c0dbfaabb5c828a89e13654402beefda572e46",
     "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
-    "source_fingerprint": "20bf077ebf4fd3faeecc02598e17cb42ddcc8bccb67c02f88696d10532963403",
-    "source_lines": "L907-L910",
-    "source_section": "25. Enterprise Snapshot Principles > SNP-EP-010"
+    "source_fingerprint": "9841f64d2eb097c3d413b80d6171844eba6da21954a5b8f03ba063da04b78def",
+    "source_lines": "L10804-L10879",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > SNP-EP-010"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -4427,41 +10883,34 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "SNP-P01-AC001",
-      "given": "a candidate Snapshot là bất biến record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "SNP-P01-O001"
-      ],
-      "when": "the candidate is evaluated against its declared data contract"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "DATA_CONTRACT_REJECTION_V1",
-      "criterion_id": "SNP-P01-AC002",
-      "given": "a Snapshot là bất biến candidate containing an unsupported value, inconsistent relationship, or unresolved reference",
-      "observable_evidence": "rejection result, field or relationship reason, unresolved reference, and unchanged persisted state",
-      "then": "the candidate is rejected without persisting the invalid state, and each invalid field or relationship has a deterministic reason",
-      "verifies": [
-        "SNP-P01-O001"
-      ],
-      "when": "the candidate is validated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "SNP-P01",
+      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+      "source_fingerprint": "699f6dffc39898c0a6f88e428f249724258b40fe5f9d8191d1880ce7ac8d4068"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "SNP-P01-AC001",
-        "SNP-P01-AC002"
+        "SNP-P01-AC002",
+        "SNP-P01-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "SNP-P01-O001",
@@ -4470,35 +10919,36 @@ trước khi được sử dụng trong Platform.
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "SNP-P01 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "SNP-P01 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "SNP-P01 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "SNP-P01 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "SNP-P01 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "SNP-P01 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "SNP-P01 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "SNP-P01-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "SNP-P01-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "SNP-P01 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "SNP-P01 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -4516,9 +10966,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "10. Immutable Principle",
     "source_context_sha256": "514f52a4bf9b723e0c71a97e83b50f2b220fd282c5bd267f77a6ad52ca1d9910",
     "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
-    "source_fingerprint": "e7e840edb1300c405b298d322e96869c675047e5dd68208b8601bef081852f79",
-    "source_lines": "L323-L326",
-    "source_section": "13. Snapshot Principles > SNP-P01 — Immutable"
+    "source_fingerprint": "699f6dffc39898c0a6f88e428f249724258b40fe5f9d8191d1880ce7ac8d4068",
+    "source_lines": "L10881-L10989",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > SNP-P01"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -4543,28 +10993,34 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "SNP-P02-AC001",
-      "given": "a candidate Snapshot là bằng chứng nghiệp vụ record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "SNP-P02-O001"
-      ],
-      "when": "the candidate is evaluated against its declared data contract"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "SNP-P02",
+      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+      "source_fingerprint": "1351af836702077ecd2eaa3bf38060f7cec68337ee63eb3292dd2944fcfc0fa2"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "SNP-P02-AC001"
+        "SNP-P02-AC001",
+        "SNP-P02-AC002",
+        "SNP-P02-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "SNP-P02-O001",
@@ -4587,9 +11043,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "SNP-P02 — Business Evidence",
     "source_context_sha256": "3e2e67dde04d3cac595b75fb06c84b0804bdfd29e413a57f5063017011f535fc",
     "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
-    "source_fingerprint": "4a223f47d9ea1b63d7014ead965ef10937ee4f1689dda405eb32268c4d02ba64",
-    "source_lines": "L329-L332",
-    "source_section": "13. Snapshot Principles > SNP-P02 — Business Evidence"
+    "source_fingerprint": "1351af836702077ecd2eaa3bf38060f7cec68337ee63eb3292dd2944fcfc0fa2",
+    "source_lines": "L10991-L11066",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > SNP-P02"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -4614,28 +11070,34 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "SNP-P03-AC001",
-      "given": "a candidate Snapshot hỗ trợ Version record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "SNP-P03-O001"
-      ],
-      "when": "the candidate is evaluated against its declared data contract"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "SNP-P03",
+      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+      "source_fingerprint": "ae48312e6dcf717e2bff289c804efc953e17614d9f9e0e1ad4ad4d42bc37c9a7"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "SNP-P03-AC001"
+        "SNP-P03-AC001",
+        "SNP-P03-AC002",
+        "SNP-P03-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "SNP-P03-O001",
@@ -4658,9 +11120,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "SNP-P03 — Versioned",
     "source_context_sha256": "d3f19319cb6a308052f441623cdec6eb8413c3d2855f575f47c30406e4c61001",
     "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
-    "source_fingerprint": "f93086daddde5d8dc0003b3e5210af9c47c6a73d6f817de2b50a11ffacff1405",
-    "source_lines": "L335-L338",
-    "source_section": "13. Snapshot Principles > SNP-P03 — Versioned"
+    "source_fingerprint": "ae48312e6dcf717e2bff289c804efc953e17614d9f9e0e1ad4ad4d42bc37c9a7",
+    "source_lines": "L11068-L11143",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > SNP-P03"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -4685,41 +11147,34 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "SNP-P04-AC001",
-      "given": "a candidate Snapshot được tạo từ Business Event record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "SNP-P04-O001"
-      ],
-      "when": "the candidate is evaluated against its declared data contract"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "DATA_CONTRACT_REJECTION_V1",
-      "criterion_id": "SNP-P04-AC002",
-      "given": "a Snapshot được tạo từ Business Event candidate containing an unsupported value, inconsistent relationship, or unresolved reference",
-      "observable_evidence": "rejection result, field or relationship reason, unresolved reference, and unchanged persisted state",
-      "then": "the candidate is rejected without persisting the invalid state, and each invalid field or relationship has a deterministic reason",
-      "verifies": [
-        "SNP-P04-O001"
-      ],
-      "when": "the candidate is validated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "SNP-P04",
+      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+      "source_fingerprint": "1da06c6c7eccc11a4d9b94c4e1f9679f4a00ef44ed3a42b9594da49a17790bbc"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "SNP-P04-AC001",
-        "SNP-P04-AC002"
+        "SNP-P04-AC002",
+        "SNP-P04-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "SNP-P04-O001",
@@ -4742,9 +11197,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "SNP-P04 — Event Driven",
     "source_context_sha256": "ed2506e05f2443c4689b9a631accbfaf6e44f07a274eb3d35b712217aae58a50",
     "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
-    "source_fingerprint": "ce5c4c220cd4b8818e92b41202d31316010d9e8f714862a8f87202cc2d90a123",
-    "source_lines": "L341-L344",
-    "source_section": "13. Snapshot Principles > SNP-P04 — Event Driven"
+    "source_fingerprint": "1da06c6c7eccc11a4d9b94c4e1f9679f4a00ef44ed3a42b9594da49a17790bbc",
+    "source_lines": "L11145-L11220",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > SNP-P04"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -4769,28 +11224,34 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "SNP-P05-AC001",
-      "given": "a candidate Snapshot hỗ trợ Trace đầy đủ record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "SNP-P05-O001"
-      ],
-      "when": "the candidate is evaluated against its declared data contract"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "SNP-P05",
+      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+      "source_fingerprint": "6e308ffa3b71a4920a95c79ca6daa165cdaf57065e6f83e9ee58b031927e575b"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "SNP-P05-AC001"
+        "SNP-P05-AC001",
+        "SNP-P05-AC002",
+        "SNP-P05-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "SNP-P05-O001",
@@ -4813,9 +11274,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "SNP-P05 — Traceable",
     "source_context_sha256": "dd44f97c49c6ffd720555376f346c745ee11a336704c25c10a1b0d8fc08432da",
     "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
-    "source_fingerprint": "f4e60cad82c48767692880864e29b6b8767a419c2ad6865271c08674657df54c",
-    "source_lines": "L347-L350",
-    "source_section": "13. Snapshot Principles > SNP-P05 — Traceable"
+    "source_fingerprint": "6e308ffa3b71a4920a95c79ca6daa165cdaf57065e6f83e9ee58b031927e575b",
+    "source_lines": "L11222-L11297",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > SNP-P05"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -4840,41 +11301,34 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "SNP-P06-AC001",
-      "given": "an operational task within the scope of Snapshot hỗ trợ Audit",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "SNP-P06-O001"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "OPERATIONAL_VERIFICATION_FAILURE_V1",
-      "criterion_id": "SNP-P06-AC002",
-      "given": "an operational task missing an outcome, required signal, audit evidence, or recovery evidence for Snapshot hỗ trợ Audit",
-      "observable_evidence": "operator-visible verification result, missing-evidence identifier, operation state, and relevant signal or audit record",
-      "then": "verification reports the specific missing evidence as a detectable failure and does not report the task as conforming",
-      "verifies": [
-        "SNP-P06-O001"
-      ],
-      "when": "operational verification is performed"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "SNP-P06",
+      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+      "source_fingerprint": "c5e5059ec400eb32f553676b52ffb0683e5fbf1ebb67ee615c3c155cea412192"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "SNP-P06-AC001",
-        "SNP-P06-AC002"
+        "SNP-P06-AC002",
+        "SNP-P06-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "SNP-P06-O001",
@@ -4883,35 +11337,36 @@ trước khi được sử dụng trong Platform.
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "SNP-P06 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "SNP-P06 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "SNP-P06 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "SNP-P06 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "SNP-P06 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "SNP-P06 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "SNP-P06 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "SNP-P06-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "SNP-P06-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "SNP-P06 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "SNP-P06 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -4929,9 +11384,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "SNP-P06 — Auditable",
     "source_context_sha256": "dede127af75da0268d4a832708e0f412039902057db8ada979e425e249438837",
     "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
-    "source_fingerprint": "fa35c719afd3c31f20766fd9417b169022039668897a9dd216d31b7fc4d74830",
-    "source_lines": "L353-L356",
-    "source_section": "13. Snapshot Principles > SNP-P06 — Auditable"
+    "source_fingerprint": "c5e5059ec400eb32f553676b52ffb0683e5fbf1ebb67ee615c3c155cea412192",
+    "source_lines": "L11299-L11407",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > SNP-P06"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -4956,47 +11411,27 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "SECURITY_DECISION_OBSERVATION_V1",
-      "criterion_id": "SNP-P07-AC001",
-      "given": "an identified principal, applicable assurance context, and policy inputs for Snapshot chịu sự điều khiển của Retention Policy và Security Policy",
-      "observable_evidence": "decision result, effective assurance or policy, denied or changed state, reason, and audit evidence",
-      "then": "the effective security policy produces the required allow, challenge, block, review, or denial result; protected state and audit evidence agree with that decision",
-      "verifies": [
-        "SNP-P07-O001"
-      ],
-      "when": "the protected decision or action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "SECURITY_FAIL_CLOSED_V1",
-      "criterion_id": "SNP-P07-AC002",
-      "given": "a principal or request that does not satisfy the assurance, policy, consent, or authorization boundary for Snapshot chịu sự điều khiển của Retention Policy và Security Policy",
-      "observable_evidence": "decision result, protected-state comparison, reason, effective policy, and audit record",
-      "then": "the result is challenge, block, review, or denial as required; protected state is unchanged and the reason is audited",
-      "verifies": [
-        "SNP-P07-O001"
-      ],
-      "when": "the protected decision or action is attempted"
-    },
-    {
-      "case": "NEGATIVE_FAIL_CLOSED",
-      "controlled_contract": "REQUIREMENT_SPECIFIC_FAIL_CLOSED_V1",
-      "criterion_id": "SNP-P07-AC003",
-      "given": "an input or attempted state change that violates a mandatory boundary explicitly stated by Snapshot chịu sự điều khiển của Retention Policy và Security Policy",
-      "observable_evidence": "violating input, decision and reason, before/after protected state, and audit or conformance evidence",
-      "then": "the violated obligation produces its specified rejection, denial, block, review, or non-conforming result without recording a contradictory success",
-      "verifies": [
-        "SNP-P07-O001"
-      ],
-      "when": "the violating input or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "SNP-P07",
+      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+      "source_fingerprint": "d37981147077bb44d1af1c4ae5a4c1ee292210ed141dd429b642e31b7912c20e"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
@@ -5012,36 +11447,38 @@ trước khi được sử dụng trong Platform.
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
-      "criterion_references": [],
-      "rationale": "SNP-P07 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    },
-    "CONCURRENCY": {
-      "criterion_references": [],
-      "rationale": "SNP-P07 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    },
-    "IDEMPOTENCY": {
-      "criterion_references": [],
-      "rationale": "SNP-P07 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    },
-    "NEGATIVE_FAIL_CLOSED": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "SNP-P07-AC003"
       ],
-      "status": "APPLICABLE"
+      "rationale": null
+    },
+    "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "SNP-P07 does not define a concurrency obligation."
+    },
+    "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "SNP-P07 does not define a idempotency obligation."
+    },
+    "NEGATIVE_FAIL_CLOSED": {
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "SNP-P07-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "SNP-P07-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "SNP-P07 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "SNP-P07 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -5059,9 +11496,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "SNP-P07 — Policy Controlled",
     "source_context_sha256": "a1c3377960ed4f75c9219a0102504b9fa51870830cc6ad2cce3b36a0f780158a",
     "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
-    "source_fingerprint": "165b5c6c3a8718da2fc0e4486aaced8e973a6bce58c137ca173574fafd065730",
-    "source_lines": "L359-L362",
-    "source_section": "13. Snapshot Principles > SNP-P07 — Policy Controlled"
+    "source_fingerprint": "d37981147077bb44d1af1c4ae5a4c1ee292210ed141dd429b642e31b7912c20e",
+    "source_lines": "L11409-L11521",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > SNP-P07"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -5088,92 +11525,71 @@ trước khi được sử dụng trong Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "SNP-P08-AC001",
-      "given": "the applicable business context, actor, and input for Enterprise Snapshot Registry là tài liệu nền tảng phục vụ Snapshot Governance. Mọi Snapshot mới …",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "SNP-P08-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "BDD-27",
+        "SD-03"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "SNP-P08-AC002",
-      "given": "the applicable business context, actor, and input for Enterprise Snapshot Registry là tài liệu nền tảng phục vụ Snapshot Governance. Mọi Snapshot mới …",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the proposed change remains pending until the required approval decision is recorded, and only an approved decision permits the accepted state change",
-      "verifies": [
-        "SNP-P08-O002"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "SNP-P08-AC003",
-      "given": "the applicable business context, actor, and input for Enterprise Snapshot Registry là tài liệu nền tảng phục vụ Snapshot Governance. Mọi Snapshot mới …",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "SNP-P08-O003"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "SNP-P08-AC004",
-      "given": "the applicable business context, actor, and input for Enterprise Snapshot Registry là tài liệu nền tảng phục vụ Snapshot Governance. Mọi Snapshot mới …",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "SNP-P08-O004"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "SNP-P08",
+      "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
+      "source_fingerprint": "89187490bce29468622900c87c16023e8044a57cce155efeb06c539ebe3a5c99"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "SNP-P08-AC001"
+        "SNP-P08-AC001",
+        "SNP-P08-AC005",
+        "SNP-P08-AC006"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "SNP-P08-O001",
-      "obligation_text": "Enterprise Snapshot Registry là tài liệu nền tảng phục vụ Snapshot Governance. Mọi Snapshot mới phải trải qua: Architecture Review."
+      "obligation_text": "Enterprise Snapshot Registry là tài liệu nền tảng phục vụ Snapshot Governance. Mọi Snapshot mới phải trải qua: Architecture Review"
     },
     {
       "acceptance_criterion_references": [
-        "SNP-P08-AC002"
+        "SNP-P08-AC002",
+        "SNP-P08-AC005",
+        "SNP-P08-AC006"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "SNP-P08-O002",
-      "obligation_text": "Enterprise Snapshot Registry là tài liệu nền tảng phục vụ Snapshot Governance. Mọi Snapshot mới phải trải qua: Approval."
+      "obligation_text": "Enterprise Snapshot Registry là tài liệu nền tảng phục vụ Snapshot Governance. Mọi Snapshot mới phải trải qua: Approval"
     },
     {
       "acceptance_criterion_references": [
-        "SNP-P08-AC003"
+        "SNP-P08-AC003",
+        "SNP-P08-AC005",
+        "SNP-P08-AC006"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "SNP-P08-O003",
-      "obligation_text": "Enterprise Snapshot Registry là tài liệu nền tảng phục vụ Snapshot Governance. Mọi Snapshot mới phải trải qua: Versioning."
+      "obligation_text": "Enterprise Snapshot Registry là tài liệu nền tảng phục vụ Snapshot Governance. Mọi Snapshot mới phải trải qua: Versioning"
     },
     {
       "acceptance_criterion_references": [
-        "SNP-P08-AC004"
+        "SNP-P08-AC004",
+        "SNP-P08-AC005",
+        "SNP-P08-AC006"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "SNP-P08-O004",
-      "obligation_text": "Enterprise Snapshot Registry là tài liệu nền tảng phục vụ Snapshot Governance. Mọi Snapshot mới phải trải qua: Traceability."
+      "obligation_text": "Enterprise Snapshot Registry là tài liệu nền tảng phục vụ Snapshot Governance. Mọi Snapshot mới phải trải qua: Traceability"
     }
   ],
   "criticality_applicability": null,
@@ -5195,9 +11611,9 @@ trước khi được sử dụng trong Platform.
     "source_context_heading": "SNP-P08 — Enterprise Governance",
     "source_context_sha256": "6ef4025b1002154498fbfec31759020302ba1157a554968a68688b4077eb6801",
     "source_document": "docs/BRD/BRD-SNAPSHOT-INDEX.md",
-    "source_fingerprint": "49ca8060490a246d0478f6b2124386fb9dfb37eecec9011da914e786199b0d53",
-    "source_lines": "L365-L375",
-    "source_section": "13. Snapshot Principles > SNP-P08 — Enterprise Governance"
+    "source_fingerprint": "89187490bce29468622900c87c16023e8044a57cce155efeb06c539ebe3a5c99",
+    "source_lines": "L11523-L11634",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > SNP-P08"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {

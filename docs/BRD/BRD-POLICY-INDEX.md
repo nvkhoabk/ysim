@@ -1,13 +1,20 @@
 ---
 document_code: "BRD-POLICY-INDEX"
+document_id: "BRD-POLICY-INDEX"
 title: "Enterprise Policy Registry"
-product_baseline: "2.3"
-document_revision: "2.3.0-draft.1"
+version: "2.3.0-draft.3"
+document_revision: "2.3.0-draft.3"
+status: "V2.3_DRAFT"
 lifecycle_status: "V2.3_DRAFT"
 language: "vi-VN"
+baseline: "2.3"
+product_baseline: "2.3"
+source_lineage: "v2.2 + approved Phase 1/2A/2B + accepted Acceptance Model C1 + accepted Mapping C3"
 source_baseline: "v2.2"
+last_reviewed_date: "2026-07-15"
+last_remediated_on: "2026-07-17"
+applicable_scope: "V2.3_ACTIVE_AND_RETAINED_SCOPE_RECORDS"
 generated_registry_role: "BRD_CANONICAL_SOURCE"
-last_remediated_on: "2026-07-15"
 ---
 ## Thẩm quyền nguồn yêu cầu v2.3
 
@@ -942,7 +949,7 @@ trước khi được đưa vào Runtime của Platform.
 
 <!-- YSIM:PHASE_2C CANONICAL APPENDIX BEGIN -->
 
-## Phụ lục yêu cầu chuẩn tắc v2.3
+## Phụ lục yêu cầu chuẩn tắc v2.3 — C6-R1
 
 
 
@@ -951,28 +958,34 @@ trước khi được đưa vào Runtime của Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-POLICY-INDEX-R001-AC001",
-      "given": "the applicable business context, actor, and input for Không phải mọi Policy đều hỗ trợ toàn bộ Scope",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the prohibited decision or state transition is absent, the attempted action has a deterministic rejection outcome, and no contradictory success is recorded",
-      "verifies": [
-        "BRD-POLICY-INDEX-R001-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-POLICY-INDEX-R001",
+      "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
+      "source_fingerprint": "20fbc6e5aa1d3d54c9f4b86b18f871b9369b62c15224ddbee482fc3aadb15a06"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-POLICY-INDEX-R001-AC001"
+        "BRD-POLICY-INDEX-R001-AC001",
+        "BRD-POLICY-INDEX-R001-AC002",
+        "BRD-POLICY-INDEX-R001-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-POLICY-INDEX-R001-O001",
@@ -996,8 +1009,8 @@ trước khi được đưa vào Runtime của Platform.
     "source_context_sha256": "34d9a8b5830a3c61092223e74ef583002adc0651ae961b1cb99106259a0b49f6",
     "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
     "source_fingerprint": "20fbc6e5aa1d3d54c9f4b86b18f871b9369b62c15224ddbee482fc3aadb15a06",
-    "source_lines": "L142",
-    "source_section": "5. Policy Scope"
+    "source_lines": "L956-L1031",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-POLICY-INDEX-R001"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1022,28 +1035,34 @@ trước khi được đưa vào Runtime của Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-POLICY-INDEX-R002-AC001",
-      "given": "the applicable business context, actor, and input for Policy Inheritance phải được quản lý tập trung",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-POLICY-INDEX-R002-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-POLICY-INDEX-R002",
+      "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
+      "source_fingerprint": "822b8721ae0f51071ef8787dec66d5d19575a0575f04c973e534f2d08be9d366"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-POLICY-INDEX-R002-AC001"
+        "BRD-POLICY-INDEX-R002-AC001",
+        "BRD-POLICY-INDEX-R002-AC002",
+        "BRD-POLICY-INDEX-R002-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-POLICY-INDEX-R002-O001",
@@ -1067,8 +1086,8 @@ trước khi được đưa vào Runtime của Platform.
     "source_context_sha256": "c9cbfadd20217ca79389856679a3614c3dccb0ea33097b4b5d14576918e6397a",
     "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
     "source_fingerprint": "822b8721ae0f51071ef8787dec66d5d19575a0575f04c973e534f2d08be9d366",
-    "source_lines": "L175",
-    "source_section": "6. Policy Inheritance"
+    "source_lines": "L1033-L1108",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-POLICY-INDEX-R002"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1093,28 +1112,34 @@ trước khi được đưa vào Runtime của Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-POLICY-INDEX-R003-AC001",
-      "given": "the applicable business context, actor, and input for Mỗi Policy được cấp một mã định danh duy nhất",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-POLICY-INDEX-R003-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-POLICY-INDEX-R003",
+      "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
+      "source_fingerprint": "b441e2c779cbb94f42ae8f77ec9baca70cfcedb1de3a4da5a1d1e3897956fd89"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-POLICY-INDEX-R003-AC001"
+        "BRD-POLICY-INDEX-R003-AC001",
+        "BRD-POLICY-INDEX-R003-AC002",
+        "BRD-POLICY-INDEX-R003-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-POLICY-INDEX-R003-O001",
@@ -1138,8 +1163,8 @@ trước khi được đưa vào Runtime của Platform.
     "source_context_sha256": "92d716710b719c4a8b4bab2866004fe52a665ebf396df1536480587e0a09a37b",
     "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
     "source_fingerprint": "b441e2c779cbb94f42ae8f77ec9baca70cfcedb1de3a4da5a1d1e3897956fd89",
-    "source_lines": "L249",
-    "source_section": "9. Policy Identifier"
+    "source_lines": "L1110-L1185",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-POLICY-INDEX-R003"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1160,36 +1185,44 @@ trước khi được đưa vào Runtime của Platform.
 <!-- YSIM:REQUIREMENT END -->
 
 <!-- YSIM:REQUIREMENT BEGIN -->
-### BRD-POLICY-INDEX-R004 — mà không cần triển khai lại hệ thống
+### BRD-POLICY-INDEX-R004 — Policy scheduling phải hỗ trợ Publish, Activate và Expire mà không cần redeploy hệ thống
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-POLICY-INDEX-R004-AC001",
-      "given": "the applicable business context, actor, and input for mà không cần triển khai lại hệ thống",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-POLICY-INDEX-R004-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "V23-P2C-ACCEPTANCE-MAPPING-C3"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-POLICY-INDEX-R004",
+      "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
+      "source_fingerprint": "dc17db171aa295e702170f70a51183acdc70a06126d3708c408e1101dbf136c1"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-POLICY-INDEX-R004-AC001"
+        "BRD-POLICY-INDEX-R004-AC001",
+        "BRD-POLICY-INDEX-R004-AC002",
+        "BRD-POLICY-INDEX-R004-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-POLICY-INDEX-R004-O001",
-      "obligation_text": "mà không cần triển khai lại hệ thống"
+      "obligation_text": "Policy scheduling phải hỗ trợ Publish, Activate và Expire mà không cần redeploy hệ thống"
     }
   ],
   "criticality_applicability": null,
@@ -1197,20 +1230,39 @@ trước khi được đưa vào Runtime của Platform.
   "delivery_commitment": "COMMITTED_FOR_V2.3",
   "implementation_unit": true,
   "lifecycle": "V2.3_DRAFT",
-  "normative_statement": "mà không cần triển khai lại hệ thống.",
+  "normative_statement": "Policy scheduling phải hỗ trợ Publish, Activate và Expire mà không cần redeploy hệ thống.",
   "provenance": {
-    "approved_decisions": [],
+    "approved_decisions": [
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
+    ],
+    "corrected_source_range": {
+      "document": "docs/BRD/BRD-POLICY-INDEX.md",
+      "range_rule": "INCLUDE_GOVERNED_SUBJECT_TRIGGER_PREDICATE_AND_REQUIRED_LIST",
+      "section": "10. Effective Date"
+    },
+    "deterministic_transformation": "EXPAND_PRECEDING_SUBJECT_AND_ACTION_LIST",
     "identity_origin": "APPROVED_TEMPORARY_KEY_MAPPING",
     "original_identity": "TMP-BRD-POLICY-INDEX-004",
+    "phase_2c_c3_actions": [
+      "C3_DETERMINISTIC_SOURCE_NORMALIZATION"
+    ],
     "previous_temporary_key": "TMP-BRD-POLICY-INDEX-004",
     "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
     "source_baseline": "v2.2",
     "source_context_heading": "10. Effective Date",
     "source_context_sha256": "6365a8620005c6299a4561ebed94dda0a3c8e23acd21758b5de0d3baa3b8ccbc",
     "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
-    "source_fingerprint": "4609a19224cb80841f6599cab41d3dfb2ac6b90e2c03e94447c1b8b33b561dde",
-    "source_lines": "L287",
-    "source_section": "10. Effective Date"
+    "source_fingerprint": "dc17db171aa295e702170f70a51183acdc70a06126d3708c408e1101dbf136c1",
+    "source_fingerprint_before_c3": "4609a19224cb80841f6599cab41d3dfb2ac6b90e2c03e94447c1b8b33b561dde",
+    "source_lines": "L1187-L1283",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_range_before_c3": {
+      "document": "docs/BRD/BRD-POLICY-INDEX.md",
+      "lines": "L287",
+      "section": "10. Effective Date"
+    },
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-POLICY-INDEX-R004"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1224,7 +1276,7 @@ trước khi được đưa vào Runtime của Platform.
   "scope_coverage_unit": true,
   "scope_status": "V2.3_ACTIVE",
   "stable_id": "BRD-POLICY-INDEX-R004",
-  "title": "mà không cần triển khai lại hệ thống",
+  "title": "Policy scheduling phải hỗ trợ Publish, Activate và Expire mà không cần redeploy hệ thống",
   "verification_criticality": "NORMAL"
 }
 ```
@@ -1235,41 +1287,37 @@ trước khi được đưa vào Runtime của Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-POLICY-INDEX-R005-AC001",
-      "given": "the applicable business context, actor, and input for Policy chỉ được Publish sau khi hoàn thành Approval Workflow",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the proposed change remains pending until the required approval decision is recorded, and only an approved decision permits the accepted state change",
-      "verifies": [
-        "BRD-POLICY-INDEX-R005-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "BDD-27",
+        "SD-03"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_APPROVAL_BOUNDARY_V1",
-      "criterion_id": "BRD-POLICY-INDEX-R005-AC002",
-      "given": "a governed change with missing, expired, rejected, or unauthorized approval under Policy chỉ được Publish sau khi hoàn thành Approval Workflow",
-      "observable_evidence": "change identity, approval policy and status, approver authorization, rejection or pending reason, and unchanged accepted state",
-      "then": "the change does not enter the accepted state and the approval reason and status remain observable",
-      "verifies": [
-        "BRD-POLICY-INDEX-R005-O001"
-      ],
-      "when": "the change is requested"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-POLICY-INDEX-R005",
+      "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
+      "source_fingerprint": "d3c9452fbd136e0230216bf30d1badd85fad942a30a090d6e95271a9148cce45"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-POLICY-INDEX-R005-AC001",
-        "BRD-POLICY-INDEX-R005-AC002"
+        "BRD-POLICY-INDEX-R005-AC002",
+        "BRD-POLICY-INDEX-R005-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-POLICY-INDEX-R005-O001",
@@ -1296,8 +1344,8 @@ trước khi được đưa vào Runtime của Platform.
     "source_context_sha256": "cdef4f316d19879bb16bbf6e6a67c594cc9f13bda339f095c0ff6a2e06002089",
     "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
     "source_fingerprint": "d3c9452fbd136e0230216bf30d1badd85fad942a30a090d6e95271a9148cce45",
-    "source_lines": "L293",
-    "source_section": "11. Approval"
+    "source_lines": "L1285-L1366",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-POLICY-INDEX-R005"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1322,41 +1370,37 @@ trước khi được đưa vào Runtime của Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-POLICY-INDEX-R006-AC001",
-      "given": "an operational task within the scope of Mọi Approval phải được ghi Audit",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BRD-POLICY-INDEX-R006-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "BDD-27",
+        "SD-03"
       ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "OPERATIONAL_VERIFICATION_FAILURE_V1",
-      "criterion_id": "BRD-POLICY-INDEX-R006-AC002",
-      "given": "an operational task missing an outcome, required signal, audit evidence, or recovery evidence for Mọi Approval phải được ghi Audit",
-      "observable_evidence": "operator-visible verification result, missing-evidence identifier, operation state, and relevant signal or audit record",
-      "then": "verification reports the specific missing evidence as a detectable failure and does not report the task as conforming",
-      "verifies": [
-        "BRD-POLICY-INDEX-R006-O001"
-      ],
-      "when": "operational verification is performed"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-POLICY-INDEX-R006",
+      "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
+      "source_fingerprint": "24eea879eab7054106efed23811b322e969835db273c520293c142e5c8ad740f"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-POLICY-INDEX-R006-AC001",
-        "BRD-POLICY-INDEX-R006-AC002"
+        "BRD-POLICY-INDEX-R006-AC002",
+        "BRD-POLICY-INDEX-R006-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-POLICY-INDEX-R006-O001",
@@ -1365,35 +1409,36 @@ trước khi được đưa vào Runtime của Platform.
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-POLICY-INDEX-R006 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-POLICY-INDEX-R006 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-POLICY-INDEX-R006 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-POLICY-INDEX-R006 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-POLICY-INDEX-R006 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-POLICY-INDEX-R006 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "BRD-POLICY-INDEX-R006 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BRD-POLICY-INDEX-R006-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BRD-POLICY-INDEX-R006-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-POLICY-INDEX-R006 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-POLICY-INDEX-R006 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -1415,8 +1460,8 @@ trước khi được đưa vào Runtime của Platform.
     "source_context_sha256": "cdef4f316d19879bb16bbf6e6a67c594cc9f13bda339f095c0ff6a2e06002089",
     "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
     "source_fingerprint": "24eea879eab7054106efed23811b322e969835db273c520293c142e5c8ad740f",
-    "source_lines": "L302",
-    "source_section": "11. Approval"
+    "source_lines": "L1368-L1482",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-POLICY-INDEX-R006"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1441,28 +1486,34 @@ trước khi được đưa vào Runtime của Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-POLICY-INDEX-R007-AC001",
-      "given": "the applicable business context, actor, and input for Policy không được Hard-code trong Source Code khi có thể cấu hình",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the effective configuration and version are visible in the decision evidence, and an approved configuration change changes the governed result without a code change",
-      "verifies": [
-        "BRD-POLICY-INDEX-R007-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-POLICY-INDEX-R007",
+      "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
+      "source_fingerprint": "75e338810613993a3ab72d169fb64b54e8989e68da6baeb9d0c8fd48f9cf3423"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-POLICY-INDEX-R007-AC001"
+        "BRD-POLICY-INDEX-R007-AC001",
+        "BRD-POLICY-INDEX-R007-AC002",
+        "BRD-POLICY-INDEX-R007-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-POLICY-INDEX-R007-O001",
@@ -1486,8 +1537,8 @@ trước khi được đưa vào Runtime của Platform.
     "source_context_sha256": "f3aeb7787f9b5cc0ebc7eddf9c4cc088c6989b00812b896be5edd9ad6ecf3f9c",
     "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
     "source_fingerprint": "75e338810613993a3ab72d169fb64b54e8989e68da6baeb9d0c8fd48f9cf3423",
-    "source_lines": "L310",
-    "source_section": "12. Runtime Behaviour"
+    "source_lines": "L1484-L1559",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-POLICY-INDEX-R007"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1512,28 +1563,34 @@ trước khi được đưa vào Runtime của Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-POLICY-INDEX-R008-AC001",
-      "given": "the applicable business context, actor, and input for Platform luôn đánh giá Policy trước",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-POLICY-INDEX-R008-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-POLICY-INDEX-R008",
+      "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
+      "source_fingerprint": "f294b84c836ee5f6c680b85e80309b8b46127bc62a57634d85429fa2b5e00cef"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-POLICY-INDEX-R008-AC001"
+        "BRD-POLICY-INDEX-R008-AC001",
+        "BRD-POLICY-INDEX-R008-AC002",
+        "BRD-POLICY-INDEX-R008-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-POLICY-INDEX-R008-O001",
@@ -1557,8 +1614,8 @@ trước khi được đưa vào Runtime của Platform.
     "source_context_sha256": "9db8ad49640c2b85217d8ec62156218a8e33edf81317a2741e1aea41f8126dfa",
     "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
     "source_fingerprint": "f294b84c836ee5f6c680b85e80309b8b46127bc62a57634d85429fa2b5e00cef",
-    "source_lines": "L633",
-    "source_section": "17. Policy Decision Flow"
+    "source_lines": "L1561-L1636",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-POLICY-INDEX-R008"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1583,28 +1640,34 @@ trước khi được đưa vào Runtime của Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-POLICY-INDEX-R009-AC001",
-      "given": "the applicable business context, actor, and input for Mô hình này giúp thay đổi hành vi nghiệp vụ thông qua cấu hình Policy mà không cần thay đổi mã n…",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the effective configuration and version are visible in the decision evidence, and an approved configuration change changes the governed result without a code change",
-      "verifies": [
-        "BRD-POLICY-INDEX-R009-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-POLICY-INDEX-R009",
+      "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
+      "source_fingerprint": "d2beba6ede61fe451033d2c5d26126da3d62a33fc73586af646a7a21f689191e"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-POLICY-INDEX-R009-AC001"
+        "BRD-POLICY-INDEX-R009-AC001",
+        "BRD-POLICY-INDEX-R009-AC002",
+        "BRD-POLICY-INDEX-R009-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-POLICY-INDEX-R009-O001",
@@ -1628,8 +1691,8 @@ trước khi được đưa vào Runtime của Platform.
     "source_context_sha256": "9db8ad49640c2b85217d8ec62156218a8e33edf81317a2741e1aea41f8126dfa",
     "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
     "source_fingerprint": "d2beba6ede61fe451033d2c5d26126da3d62a33fc73586af646a7a21f689191e",
-    "source_lines": "L669",
-    "source_section": "17. Policy Decision Flow"
+    "source_lines": "L1638-L1713",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-POLICY-INDEX-R009"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1654,28 +1717,34 @@ trước khi được đưa vào Runtime của Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-POLICY-INDEX-R020-AC001",
-      "given": "the applicable business context, actor, and input for Mọi Policy mới hoặc thay đổi Policy hiện có phải trải qua: - Architecture Review",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-POLICY-INDEX-R020-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-POLICY-INDEX-R020",
+      "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
+      "source_fingerprint": "a8b2ba49d182690ff6c798be2649743521183443ef88afb1316496b4c3b862ba"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-POLICY-INDEX-R020-AC001"
+        "BRD-POLICY-INDEX-R020-AC001",
+        "BRD-POLICY-INDEX-R020-AC002",
+        "BRD-POLICY-INDEX-R020-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-POLICY-INDEX-R020-O001",
@@ -1699,8 +1768,8 @@ trước khi được đưa vào Runtime của Platform.
     "source_context_sha256": "4919ee457ea116de0db7e12c801c4c7a9933eeec2926421bfc4c721717936a4f",
     "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
     "source_fingerprint": "a8b2ba49d182690ff6c798be2649743521183443ef88afb1316496b4c3b862ba",
-    "source_lines": "L927-L929",
-    "source_section": "25. Document Status"
+    "source_lines": "L1715-L1790",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-POLICY-INDEX-R020"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1725,28 +1794,37 @@ trước khi được đưa vào Runtime của Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-POLICY-INDEX-R021-AC001",
-      "given": "the applicable business context, actor, and input for Mọi Policy mới hoặc thay đổi Policy hiện có phải trải qua: - Approval",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the proposed change remains pending until the required approval decision is recorded, and only an approved decision permits the accepted state change",
-      "verifies": [
-        "BRD-POLICY-INDEX-R021-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "BDD-27",
+        "SD-03"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-POLICY-INDEX-R021",
+      "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
+      "source_fingerprint": "3bcb4ef5c9ca3d206835b9c0671152b849ce85e1160f6b1f24d9018b83731055"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-POLICY-INDEX-R021-AC001"
+        "BRD-POLICY-INDEX-R021-AC001",
+        "BRD-POLICY-INDEX-R021-AC002",
+        "BRD-POLICY-INDEX-R021-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-POLICY-INDEX-R021-O001",
@@ -1772,9 +1850,9 @@ trước khi được đưa vào Runtime của Platform.
     "source_context_heading": "25. Document Status",
     "source_context_sha256": "4919ee457ea116de0db7e12c801c4c7a9933eeec2926421bfc4c721717936a4f",
     "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
-    "source_fingerprint": "fe887bbbc685ffda2cf70165937a01399b2a29ffdc4a712a7e12ab95330b3a2e",
-    "source_lines": "L927-L930",
-    "source_section": "25. Document Status"
+    "source_fingerprint": "3bcb4ef5c9ca3d206835b9c0671152b849ce85e1160f6b1f24d9018b83731055",
+    "source_lines": "L1792-L1873",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-POLICY-INDEX-R021"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1799,28 +1877,34 @@ trước khi được đưa vào Runtime của Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-POLICY-INDEX-R022-AC001",
-      "given": "the applicable business context, actor, and input for Mọi Policy mới hoặc thay đổi Policy hiện có phải trải qua: - Versioning",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-POLICY-INDEX-R022-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-POLICY-INDEX-R022",
+      "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
+      "source_fingerprint": "19f866b7c72f124d22f260f53eb57c68a249858082947f12c1268b4bf2d92d93"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-POLICY-INDEX-R022-AC001"
+        "BRD-POLICY-INDEX-R022-AC001",
+        "BRD-POLICY-INDEX-R022-AC002",
+        "BRD-POLICY-INDEX-R022-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-POLICY-INDEX-R022-O001",
@@ -1843,9 +1927,9 @@ trước khi được đưa vào Runtime của Platform.
     "source_context_heading": "25. Document Status",
     "source_context_sha256": "4919ee457ea116de0db7e12c801c4c7a9933eeec2926421bfc4c721717936a4f",
     "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
-    "source_fingerprint": "6d3f3d39b8d065930d8258b2865dc190e7a99e0623b03abc3ac7d9c578326e0c",
-    "source_lines": "L927-L931",
-    "source_section": "25. Document Status"
+    "source_fingerprint": "19f866b7c72f124d22f260f53eb57c68a249858082947f12c1268b4bf2d92d93",
+    "source_lines": "L1875-L1950",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-POLICY-INDEX-R022"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1870,28 +1954,34 @@ trước khi được đưa vào Runtime của Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-POLICY-INDEX-R023-AC001",
-      "given": "the applicable business context, actor, and input for Mọi Policy mới hoặc thay đổi Policy hiện có phải trải qua: - Effective Date",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-POLICY-INDEX-R023-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-POLICY-INDEX-R023",
+      "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
+      "source_fingerprint": "323d85cf99b6e6a826a26b99c7d5bf2c7042029c9a05103c7c3d62264b3bc83f"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-POLICY-INDEX-R023-AC001"
+        "BRD-POLICY-INDEX-R023-AC001",
+        "BRD-POLICY-INDEX-R023-AC002",
+        "BRD-POLICY-INDEX-R023-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-POLICY-INDEX-R023-O001",
@@ -1914,9 +2004,9 @@ trước khi được đưa vào Runtime của Platform.
     "source_context_heading": "25. Document Status",
     "source_context_sha256": "4919ee457ea116de0db7e12c801c4c7a9933eeec2926421bfc4c721717936a4f",
     "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
-    "source_fingerprint": "2eaad09557781434bb0126e2957b0c032c08f37762180286e82a2e2048992a1a",
-    "source_lines": "L927-L932",
-    "source_section": "25. Document Status"
+    "source_fingerprint": "323d85cf99b6e6a826a26b99c7d5bf2c7042029c9a05103c7c3d62264b3bc83f",
+    "source_lines": "L1952-L2027",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-POLICY-INDEX-R023"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1941,41 +2031,34 @@ trước khi được đưa vào Runtime của Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-POLICY-INDEX-R024-AC001",
-      "given": "an operational task within the scope of Mọi Policy mới hoặc thay đổi Policy hiện có phải trải qua: - Audit",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BRD-POLICY-INDEX-R024-O001"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "OPERATIONAL_VERIFICATION_FAILURE_V1",
-      "criterion_id": "BRD-POLICY-INDEX-R024-AC002",
-      "given": "an operational task missing an outcome, required signal, audit evidence, or recovery evidence for Mọi Policy mới hoặc thay đổi Policy hiện có phải trải qua: - Audit",
-      "observable_evidence": "operator-visible verification result, missing-evidence identifier, operation state, and relevant signal or audit record",
-      "then": "verification reports the specific missing evidence as a detectable failure and does not report the task as conforming",
-      "verifies": [
-        "BRD-POLICY-INDEX-R024-O001"
-      ],
-      "when": "operational verification is performed"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-POLICY-INDEX-R024",
+      "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
+      "source_fingerprint": "96837d423b1aeba248e9f2c3ff2c845abacac42d0de4959bed2dd09ec3819be2"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-POLICY-INDEX-R024-AC001",
-        "BRD-POLICY-INDEX-R024-AC002"
+        "BRD-POLICY-INDEX-R024-AC002",
+        "BRD-POLICY-INDEX-R024-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-POLICY-INDEX-R024-O001",
@@ -1984,35 +2067,36 @@ trước khi được đưa vào Runtime của Platform.
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-POLICY-INDEX-R024 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-POLICY-INDEX-R024 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-POLICY-INDEX-R024 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-POLICY-INDEX-R024 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-POLICY-INDEX-R024 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-POLICY-INDEX-R024 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "BRD-POLICY-INDEX-R024 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BRD-POLICY-INDEX-R024-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BRD-POLICY-INDEX-R024-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-POLICY-INDEX-R024 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-POLICY-INDEX-R024 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -2030,9 +2114,9 @@ trước khi được đưa vào Runtime của Platform.
     "source_context_heading": "25. Document Status",
     "source_context_sha256": "4919ee457ea116de0db7e12c801c4c7a9933eeec2926421bfc4c721717936a4f",
     "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
-    "source_fingerprint": "e1637d1d0ef6438815e752a05bae811fb531cc9d1eabbfbb5ac531d71a5f22b9",
-    "source_lines": "L927-L933",
-    "source_section": "25. Document Status"
+    "source_fingerprint": "96837d423b1aeba248e9f2c3ff2c845abacac42d0de4959bed2dd09ec3819be2",
+    "source_lines": "L2029-L2137",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-POLICY-INDEX-R024"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2057,28 +2141,34 @@ trước khi được đưa vào Runtime của Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-POLICY-INDEX-R025-AC001",
-      "given": "the applicable business context, actor, and input for Mọi Policy mới hoặc thay đổi Policy hiện có phải trải qua: - Traceability",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-POLICY-INDEX-R025-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-POLICY-INDEX-R025",
+      "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
+      "source_fingerprint": "c62f757e5a730206213f18a45e289e26d990ec41297621a31f6c1dcebcfd83ca"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-POLICY-INDEX-R025-AC001"
+        "BRD-POLICY-INDEX-R025-AC001",
+        "BRD-POLICY-INDEX-R025-AC002",
+        "BRD-POLICY-INDEX-R025-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-POLICY-INDEX-R025-O001",
@@ -2101,9 +2191,9 @@ trước khi được đưa vào Runtime của Platform.
     "source_context_heading": "25. Document Status",
     "source_context_sha256": "4919ee457ea116de0db7e12c801c4c7a9933eeec2926421bfc4c721717936a4f",
     "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
-    "source_fingerprint": "bc168a871a130210d841b9c1a5870d4c0f9d86f11a277c24dba162994f23e1ff",
-    "source_lines": "L927-L934",
-    "source_section": "25. Document Status"
+    "source_fingerprint": "c62f757e5a730206213f18a45e289e26d990ec41297621a31f6c1dcebcfd83ca",
+    "source_lines": "L2139-L2214",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-POLICY-INDEX-R025"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2128,28 +2218,34 @@ trước khi được đưa vào Runtime của Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-POLICY-INDEX-R026-AC001",
-      "given": "the applicable business context, actor, and input for Nguyên tắc: - Scope thấp hơn ưu tiên kế thừa",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-POLICY-INDEX-R026-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-POLICY-INDEX-R026",
+      "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
+      "source_fingerprint": "04e25c56333d50b5d443ea3b0fc7478933bee2569fe2b02ad60e43f86742a289"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-POLICY-INDEX-R026-AC001"
+        "BRD-POLICY-INDEX-R026-AC001",
+        "BRD-POLICY-INDEX-R026-AC002",
+        "BRD-POLICY-INDEX-R026-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-POLICY-INDEX-R026-O001",
@@ -2175,9 +2271,9 @@ trước khi được đưa vào Runtime của Platform.
     "source_context_heading": "18. Policy Inheritance Matrix",
     "source_context_sha256": "937afbac2c05ef6280329dcccb2044708ad9b7fd11ed81b9def34213a1a0e00f",
     "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
-    "source_fingerprint": "d26388f52e8ded44ba12e92f54a9f2e888d81ff1d6b6544f3b5163499c83fc17",
-    "source_lines": "L685-L689",
-    "source_section": "18. Policy Inheritance Matrix"
+    "source_fingerprint": "04e25c56333d50b5d443ea3b0fc7478933bee2569fe2b02ad60e43f86742a289",
+    "source_lines": "L2216-L2294",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-POLICY-INDEX-R026"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2202,28 +2298,34 @@ trước khi được đưa vào Runtime của Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-POLICY-INDEX-R027-AC001",
-      "given": "the applicable business context, actor, and input for Nguyên tắc: - Chỉ Override khi thực sự cần thiết",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "an override is accepted only for a policy marked override-eligible, with an explicit reason and the required approval; otherwise the inherited or system policy remains effective",
-      "verifies": [
-        "BRD-POLICY-INDEX-R027-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-POLICY-INDEX-R027",
+      "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
+      "source_fingerprint": "3c3bb7bcfa9748efd6111f280a9f8f6b2db4d48b4b1d606434e3058894ea3c88"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-POLICY-INDEX-R027-AC001"
+        "BRD-POLICY-INDEX-R027-AC001",
+        "BRD-POLICY-INDEX-R027-AC002",
+        "BRD-POLICY-INDEX-R027-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-POLICY-INDEX-R027-O001",
@@ -2249,9 +2351,9 @@ trước khi được đưa vào Runtime của Platform.
     "source_context_heading": "18. Policy Inheritance Matrix",
     "source_context_sha256": "937afbac2c05ef6280329dcccb2044708ad9b7fd11ed81b9def34213a1a0e00f",
     "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
-    "source_fingerprint": "d26388f52e8ded44ba12e92f54a9f2e888d81ff1d6b6544f3b5163499c83fc17",
-    "source_lines": "L685-L689",
-    "source_section": "18. Policy Inheritance Matrix"
+    "source_fingerprint": "3c3bb7bcfa9748efd6111f280a9f8f6b2db4d48b4b1d606434e3058894ea3c88",
+    "source_lines": "L2296-L2374",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-POLICY-INDEX-R027"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2276,28 +2378,34 @@ trước khi được đưa vào Runtime của Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-POLICY-INDEX-R028-AC001",
-      "given": "the applicable business context, actor, and input for Nguyên tắc: - Không được Override các System Policy bắt buộc",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the prohibited decision or state transition is absent, the attempted action has a deterministic rejection outcome, and no contradictory success is recorded",
-      "verifies": [
-        "BRD-POLICY-INDEX-R028-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-POLICY-INDEX-R028",
+      "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
+      "source_fingerprint": "e2222992ae22e28ddbc62e1b9d1ad12dc841480bc00fa5cdf3fc777e1a617220"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-POLICY-INDEX-R028-AC001"
+        "BRD-POLICY-INDEX-R028-AC001",
+        "BRD-POLICY-INDEX-R028-AC002",
+        "BRD-POLICY-INDEX-R028-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-POLICY-INDEX-R028-O001",
@@ -2323,9 +2431,9 @@ trước khi được đưa vào Runtime của Platform.
     "source_context_heading": "18. Policy Inheritance Matrix",
     "source_context_sha256": "937afbac2c05ef6280329dcccb2044708ad9b7fd11ed81b9def34213a1a0e00f",
     "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
-    "source_fingerprint": "d26388f52e8ded44ba12e92f54a9f2e888d81ff1d6b6544f3b5163499c83fc17",
-    "source_lines": "L685-L689",
-    "source_section": "18. Policy Inheritance Matrix"
+    "source_fingerprint": "e2222992ae22e28ddbc62e1b9d1ad12dc841480bc00fa5cdf3fc777e1a617220",
+    "source_lines": "L2376-L2454",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-POLICY-INDEX-R028"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2346,32 +2454,748 @@ trước khi được đưa vào Runtime của Platform.
 <!-- YSIM:REQUIREMENT END -->
 
 <!-- YSIM:REQUIREMENT BEGIN -->
-### POL-EP-001 — Policy phản ánh quyết định nghiệp vụ
+### BRD-POLICY-INDEX-R029 — Enterprise Policy Registry là tài liệu nền tảng phục vụ Enterprise Policy Governance. Mọi Policy…
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "POL-EP-001-AC001",
-      "given": "the applicable business context, actor, and input for Policy phản ánh quyết định nghiệp vụ",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "POL-EP-001-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "BDD-27",
+        "SD-03",
+        "V23-P2C-ACCEPTANCE-MAPPING-C3"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-POLICY-INDEX-R029",
+      "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
+      "source_fingerprint": "e162eb3c362cfff60291516cafa2490178832f74713b9b4b47d9befe96325c53"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "POL-EP-001-AC001"
+        "BRD-POLICY-INDEX-R029-AC001",
+        "BRD-POLICY-INDEX-R029-AC003",
+        "BRD-POLICY-INDEX-R029-AC004"
+      ],
+      "applicability": "V2.3_ACTIVE",
+      "obligation_id": "BRD-POLICY-INDEX-R029-O001",
+      "obligation_text": "Enterprise Policy Registry là tài liệu nền tảng phục vụ Enterprise Policy Governance"
+    },
+    {
+      "acceptance_criterion_references": [
+        "BRD-POLICY-INDEX-R029-AC002",
+        "BRD-POLICY-INDEX-R029-AC003",
+        "BRD-POLICY-INDEX-R029-AC004"
+      ],
+      "applicability": "V2.3_ACTIVE",
+      "obligation_id": "BRD-POLICY-INDEX-R029-O002",
+      "obligation_text": "Mọi Policy mới phải trải qua: Architecture Review"
+    }
+  ],
+  "criticality_applicability": {
+    "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "BRD-POLICY-INDEX-R029 does not define a authorization boundary obligation."
+    },
+    "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "BRD-POLICY-INDEX-R029 does not define a concurrency obligation."
+    },
+    "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "BRD-POLICY-INDEX-R029 does not define a idempotency obligation."
+    },
+    "NEGATIVE_FAIL_CLOSED": {
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BRD-POLICY-INDEX-R029-AC003"
+      ]
+    },
+    "POSITIVE": {
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BRD-POLICY-INDEX-R029-AC001",
+        "BRD-POLICY-INDEX-R029-AC002"
+      ]
+    },
+    "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "BRD-POLICY-INDEX-R029 does not define a recovery obligation."
+    }
+  },
+  "criticality_unit": true,
+  "delivery_commitment": "COMMITTED_FOR_V2.3",
+  "implementation_unit": true,
+  "lifecycle": "V2.3_DRAFT",
+  "normative_statement": "Enterprise Policy Registry là tài liệu nền tảng phục vụ Enterprise Policy Governance. Mọi Policy mới phải trải qua: Architecture Review.",
+  "provenance": {
+    "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+    "approved_decisions": [
+      "BDD-27",
+      "SD-03",
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
+    ],
+    "derived_from_parent": "POL-P10",
+    "identity_origin": "PHASE_2C_C3_NEW_STABLE_ID_ALLOCATION",
+    "original_identity": "BRD-POLICY-INDEX-R029",
+    "phase_2c_c3_actions": [
+      "C3_STRUCTURAL_RECONCILIATION_CHILD"
+    ],
+    "previous_temporary_key": null,
+    "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+    "source_baseline": "v2.2",
+    "source_context_heading": "POL-P10 — Enterprise Governance",
+    "source_context_sha256": "d75e2a532d3025daa8bda2543b0d948ad6e54482c4e0aafd3337a14bc5f21837",
+    "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
+    "source_fingerprint": "e162eb3c362cfff60291516cafa2490178832f74713b9b4b47d9befe96325c53",
+    "source_fingerprint_before_c3": "e162eb3c362cfff60291516cafa2490178832f74713b9b4b47d9befe96325c53",
+    "source_lines": "L2456-L2596",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-POLICY-INDEX-R029"
+  },
+  "record_kind": "CANONICAL_ATOMIC",
+  "relationships": {
+    "alias_of": null,
+    "aliases": [],
+    "coverage_mode": null,
+    "derived_from": [
+      "POL-P10"
+    ],
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "POL-P10"
+    ]
+  },
+  "requirement_type": "OPERATIONAL_REQUIREMENT",
+  "scope_coverage_unit": true,
+  "scope_status": "V2.3_ACTIVE",
+  "stable_id": "BRD-POLICY-INDEX-R029",
+  "title": "Enterprise Policy Registry là tài liệu nền tảng phục vụ Enterprise Policy Governance. Mọi Policy…",
+  "verification_criticality": "CRITICAL"
+}
+```
+<!-- YSIM:REQUIREMENT END -->
+
+<!-- YSIM:REQUIREMENT BEGIN -->
+### BRD-POLICY-INDEX-R030 — Enterprise Policy Registry là tài liệu nền tảng phục vụ Enterprise Policy Governance. Mọi Policy…
+
+```json
+{
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "BDD-27",
+        "SD-03",
+        "V23-P2C-ACCEPTANCE-MAPPING-C3"
+      ],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-POLICY-INDEX-R030",
+      "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
+      "source_fingerprint": "f0f6eb3a98b9d558c01756ed3df0d8d06dc74f655369837d01ecb07d7312a3da"
+    }
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
+  "acceptance_rationale": null,
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+  "acceptance_unit": true,
+  "atomic_obligations": [
+    {
+      "acceptance_criterion_references": [
+        "BRD-POLICY-INDEX-R030-AC001",
+        "BRD-POLICY-INDEX-R030-AC003",
+        "BRD-POLICY-INDEX-R030-AC004"
+      ],
+      "applicability": "V2.3_ACTIVE",
+      "obligation_id": "BRD-POLICY-INDEX-R030-O001",
+      "obligation_text": "Enterprise Policy Registry là tài liệu nền tảng phục vụ Enterprise Policy Governance"
+    },
+    {
+      "acceptance_criterion_references": [
+        "BRD-POLICY-INDEX-R030-AC002",
+        "BRD-POLICY-INDEX-R030-AC003",
+        "BRD-POLICY-INDEX-R030-AC004"
+      ],
+      "applicability": "V2.3_ACTIVE",
+      "obligation_id": "BRD-POLICY-INDEX-R030-O002",
+      "obligation_text": "Mọi Policy mới phải trải qua: Approval"
+    }
+  ],
+  "criticality_applicability": {
+    "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "BRD-POLICY-INDEX-R030 does not define a authorization boundary obligation."
+    },
+    "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "BRD-POLICY-INDEX-R030 does not define a concurrency obligation."
+    },
+    "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "BRD-POLICY-INDEX-R030 does not define a idempotency obligation."
+    },
+    "NEGATIVE_FAIL_CLOSED": {
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BRD-POLICY-INDEX-R030-AC003"
+      ]
+    },
+    "POSITIVE": {
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BRD-POLICY-INDEX-R030-AC001",
+        "BRD-POLICY-INDEX-R030-AC002"
+      ]
+    },
+    "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "BRD-POLICY-INDEX-R030 does not define a recovery obligation."
+    }
+  },
+  "criticality_unit": true,
+  "delivery_commitment": "COMMITTED_FOR_V2.3",
+  "implementation_unit": true,
+  "lifecycle": "V2.3_DRAFT",
+  "normative_statement": "Enterprise Policy Registry là tài liệu nền tảng phục vụ Enterprise Policy Governance. Mọi Policy mới phải trải qua: Approval.",
+  "provenance": {
+    "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+    "approved_decisions": [
+      "BDD-27",
+      "SD-03",
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
+    ],
+    "derived_from_parent": "POL-P10",
+    "identity_origin": "PHASE_2C_C3_NEW_STABLE_ID_ALLOCATION",
+    "original_identity": "BRD-POLICY-INDEX-R030",
+    "phase_2c_c3_actions": [
+      "C3_STRUCTURAL_RECONCILIATION_CHILD"
+    ],
+    "previous_temporary_key": null,
+    "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+    "source_baseline": "v2.2",
+    "source_context_heading": "POL-P10 — Enterprise Governance",
+    "source_context_sha256": "d75e2a532d3025daa8bda2543b0d948ad6e54482c4e0aafd3337a14bc5f21837",
+    "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
+    "source_fingerprint": "f0f6eb3a98b9d558c01756ed3df0d8d06dc74f655369837d01ecb07d7312a3da",
+    "source_fingerprint_before_c3": "f0f6eb3a98b9d558c01756ed3df0d8d06dc74f655369837d01ecb07d7312a3da",
+    "source_lines": "L2598-L2738",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-POLICY-INDEX-R030"
+  },
+  "record_kind": "CANONICAL_ATOMIC",
+  "relationships": {
+    "alias_of": null,
+    "aliases": [],
+    "coverage_mode": null,
+    "derived_from": [
+      "POL-P10"
+    ],
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "POL-P10"
+    ]
+  },
+  "requirement_type": "OPERATIONAL_REQUIREMENT",
+  "scope_coverage_unit": true,
+  "scope_status": "V2.3_ACTIVE",
+  "stable_id": "BRD-POLICY-INDEX-R030",
+  "title": "Enterprise Policy Registry là tài liệu nền tảng phục vụ Enterprise Policy Governance. Mọi Policy…",
+  "verification_criticality": "CRITICAL"
+}
+```
+<!-- YSIM:REQUIREMENT END -->
+
+<!-- YSIM:REQUIREMENT BEGIN -->
+### BRD-POLICY-INDEX-R031 — Enterprise Policy Registry là tài liệu nền tảng phục vụ Enterprise Policy Governance. Mọi Policy…
+
+```json
+{
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "BDD-27",
+        "SD-03",
+        "V23-P2C-ACCEPTANCE-MAPPING-C3"
+      ],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-POLICY-INDEX-R031",
+      "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
+      "source_fingerprint": "7c2746b758753b6e090a2c0b7a35625273680cbbbfa8f9edd0ff1a9c8aa170db"
+    }
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
+  "acceptance_rationale": null,
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+  "acceptance_unit": true,
+  "atomic_obligations": [
+    {
+      "acceptance_criterion_references": [
+        "BRD-POLICY-INDEX-R031-AC001",
+        "BRD-POLICY-INDEX-R031-AC003",
+        "BRD-POLICY-INDEX-R031-AC004"
+      ],
+      "applicability": "V2.3_ACTIVE",
+      "obligation_id": "BRD-POLICY-INDEX-R031-O001",
+      "obligation_text": "Enterprise Policy Registry là tài liệu nền tảng phục vụ Enterprise Policy Governance"
+    },
+    {
+      "acceptance_criterion_references": [
+        "BRD-POLICY-INDEX-R031-AC002",
+        "BRD-POLICY-INDEX-R031-AC003",
+        "BRD-POLICY-INDEX-R031-AC004"
+      ],
+      "applicability": "V2.3_ACTIVE",
+      "obligation_id": "BRD-POLICY-INDEX-R031-O002",
+      "obligation_text": "Mọi Policy mới phải trải qua: Versioning"
+    }
+  ],
+  "criticality_applicability": {
+    "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "BRD-POLICY-INDEX-R031 does not define a authorization boundary obligation."
+    },
+    "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "BRD-POLICY-INDEX-R031 does not define a concurrency obligation."
+    },
+    "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "BRD-POLICY-INDEX-R031 does not define a idempotency obligation."
+    },
+    "NEGATIVE_FAIL_CLOSED": {
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BRD-POLICY-INDEX-R031-AC003"
+      ]
+    },
+    "POSITIVE": {
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BRD-POLICY-INDEX-R031-AC001",
+        "BRD-POLICY-INDEX-R031-AC002"
+      ]
+    },
+    "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "BRD-POLICY-INDEX-R031 does not define a recovery obligation."
+    }
+  },
+  "criticality_unit": true,
+  "delivery_commitment": "COMMITTED_FOR_V2.3",
+  "implementation_unit": true,
+  "lifecycle": "V2.3_DRAFT",
+  "normative_statement": "Enterprise Policy Registry là tài liệu nền tảng phục vụ Enterprise Policy Governance. Mọi Policy mới phải trải qua: Versioning.",
+  "provenance": {
+    "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+    "approved_decisions": [
+      "BDD-27",
+      "SD-03",
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
+    ],
+    "derived_from_parent": "POL-P10",
+    "identity_origin": "PHASE_2C_C3_NEW_STABLE_ID_ALLOCATION",
+    "original_identity": "BRD-POLICY-INDEX-R031",
+    "phase_2c_c3_actions": [
+      "C3_STRUCTURAL_RECONCILIATION_CHILD"
+    ],
+    "previous_temporary_key": null,
+    "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+    "source_baseline": "v2.2",
+    "source_context_heading": "POL-P10 — Enterprise Governance",
+    "source_context_sha256": "d75e2a532d3025daa8bda2543b0d948ad6e54482c4e0aafd3337a14bc5f21837",
+    "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
+    "source_fingerprint": "7c2746b758753b6e090a2c0b7a35625273680cbbbfa8f9edd0ff1a9c8aa170db",
+    "source_fingerprint_before_c3": "7c2746b758753b6e090a2c0b7a35625273680cbbbfa8f9edd0ff1a9c8aa170db",
+    "source_lines": "L2740-L2880",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-POLICY-INDEX-R031"
+  },
+  "record_kind": "CANONICAL_ATOMIC",
+  "relationships": {
+    "alias_of": null,
+    "aliases": [],
+    "coverage_mode": null,
+    "derived_from": [
+      "POL-P10"
+    ],
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "POL-P10"
+    ]
+  },
+  "requirement_type": "OPERATIONAL_REQUIREMENT",
+  "scope_coverage_unit": true,
+  "scope_status": "V2.3_ACTIVE",
+  "stable_id": "BRD-POLICY-INDEX-R031",
+  "title": "Enterprise Policy Registry là tài liệu nền tảng phục vụ Enterprise Policy Governance. Mọi Policy…",
+  "verification_criticality": "CRITICAL"
+}
+```
+<!-- YSIM:REQUIREMENT END -->
+
+<!-- YSIM:REQUIREMENT BEGIN -->
+### BRD-POLICY-INDEX-R032 — Enterprise Policy Registry là tài liệu nền tảng phục vụ Enterprise Policy Governance. Mọi Policy…
+
+```json
+{
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "BDD-27",
+        "SD-03",
+        "V23-P2C-ACCEPTANCE-MAPPING-C3"
+      ],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-POLICY-INDEX-R032",
+      "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
+      "source_fingerprint": "76b33876a98d8a7a419c3dff5087471f0e1cc35fa0018d5593f9a9a69379ae04"
+    }
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
+  "acceptance_rationale": null,
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+  "acceptance_unit": true,
+  "atomic_obligations": [
+    {
+      "acceptance_criterion_references": [
+        "BRD-POLICY-INDEX-R032-AC001",
+        "BRD-POLICY-INDEX-R032-AC003",
+        "BRD-POLICY-INDEX-R032-AC004"
+      ],
+      "applicability": "V2.3_ACTIVE",
+      "obligation_id": "BRD-POLICY-INDEX-R032-O001",
+      "obligation_text": "Enterprise Policy Registry là tài liệu nền tảng phục vụ Enterprise Policy Governance"
+    },
+    {
+      "acceptance_criterion_references": [
+        "BRD-POLICY-INDEX-R032-AC002",
+        "BRD-POLICY-INDEX-R032-AC003",
+        "BRD-POLICY-INDEX-R032-AC004"
+      ],
+      "applicability": "V2.3_ACTIVE",
+      "obligation_id": "BRD-POLICY-INDEX-R032-O002",
+      "obligation_text": "Mọi Policy mới phải trải qua: Audit"
+    }
+  ],
+  "criticality_applicability": {
+    "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "BRD-POLICY-INDEX-R032 does not define a authorization boundary obligation."
+    },
+    "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "BRD-POLICY-INDEX-R032 does not define a concurrency obligation."
+    },
+    "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "BRD-POLICY-INDEX-R032 does not define a idempotency obligation."
+    },
+    "NEGATIVE_FAIL_CLOSED": {
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BRD-POLICY-INDEX-R032-AC003"
+      ]
+    },
+    "POSITIVE": {
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BRD-POLICY-INDEX-R032-AC001",
+        "BRD-POLICY-INDEX-R032-AC002"
+      ]
+    },
+    "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "BRD-POLICY-INDEX-R032 does not define a recovery obligation."
+    }
+  },
+  "criticality_unit": true,
+  "delivery_commitment": "COMMITTED_FOR_V2.3",
+  "implementation_unit": true,
+  "lifecycle": "V2.3_DRAFT",
+  "normative_statement": "Enterprise Policy Registry là tài liệu nền tảng phục vụ Enterprise Policy Governance. Mọi Policy mới phải trải qua: Audit.",
+  "provenance": {
+    "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+    "approved_decisions": [
+      "BDD-27",
+      "SD-03",
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
+    ],
+    "derived_from_parent": "POL-P10",
+    "identity_origin": "PHASE_2C_C3_NEW_STABLE_ID_ALLOCATION",
+    "original_identity": "BRD-POLICY-INDEX-R032",
+    "phase_2c_c3_actions": [
+      "C3_STRUCTURAL_RECONCILIATION_CHILD"
+    ],
+    "previous_temporary_key": null,
+    "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+    "source_baseline": "v2.2",
+    "source_context_heading": "POL-P10 — Enterprise Governance",
+    "source_context_sha256": "d75e2a532d3025daa8bda2543b0d948ad6e54482c4e0aafd3337a14bc5f21837",
+    "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
+    "source_fingerprint": "76b33876a98d8a7a419c3dff5087471f0e1cc35fa0018d5593f9a9a69379ae04",
+    "source_fingerprint_before_c3": "76b33876a98d8a7a419c3dff5087471f0e1cc35fa0018d5593f9a9a69379ae04",
+    "source_lines": "L2882-L3022",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-POLICY-INDEX-R032"
+  },
+  "record_kind": "CANONICAL_ATOMIC",
+  "relationships": {
+    "alias_of": null,
+    "aliases": [],
+    "coverage_mode": null,
+    "derived_from": [
+      "POL-P10"
+    ],
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "POL-P10"
+    ]
+  },
+  "requirement_type": "OPERATIONAL_REQUIREMENT",
+  "scope_coverage_unit": true,
+  "scope_status": "V2.3_ACTIVE",
+  "stable_id": "BRD-POLICY-INDEX-R032",
+  "title": "Enterprise Policy Registry là tài liệu nền tảng phục vụ Enterprise Policy Governance. Mọi Policy…",
+  "verification_criticality": "CRITICAL"
+}
+```
+<!-- YSIM:REQUIREMENT END -->
+
+<!-- YSIM:REQUIREMENT BEGIN -->
+### BRD-POLICY-INDEX-R033 — Enterprise Policy Registry là tài liệu nền tảng phục vụ Enterprise Policy Governance. Mọi Policy…
+
+```json
+{
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "BDD-27",
+        "SD-03",
+        "V23-P2C-ACCEPTANCE-MAPPING-C3"
+      ],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-POLICY-INDEX-R033",
+      "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
+      "source_fingerprint": "6eb9c70f70de73399e894f0559ae12ec62a1fce9a0147c35278af97bf17f8e2a"
+    }
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
+  "acceptance_rationale": null,
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+  "acceptance_unit": true,
+  "atomic_obligations": [
+    {
+      "acceptance_criterion_references": [
+        "BRD-POLICY-INDEX-R033-AC001",
+        "BRD-POLICY-INDEX-R033-AC003",
+        "BRD-POLICY-INDEX-R033-AC004"
+      ],
+      "applicability": "V2.3_ACTIVE",
+      "obligation_id": "BRD-POLICY-INDEX-R033-O001",
+      "obligation_text": "Enterprise Policy Registry là tài liệu nền tảng phục vụ Enterprise Policy Governance"
+    },
+    {
+      "acceptance_criterion_references": [
+        "BRD-POLICY-INDEX-R033-AC002",
+        "BRD-POLICY-INDEX-R033-AC003",
+        "BRD-POLICY-INDEX-R033-AC004"
+      ],
+      "applicability": "V2.3_ACTIVE",
+      "obligation_id": "BRD-POLICY-INDEX-R033-O002",
+      "obligation_text": "Mọi Policy mới phải trải qua: Traceability"
+    }
+  ],
+  "criticality_applicability": {
+    "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "BRD-POLICY-INDEX-R033 does not define a authorization boundary obligation."
+    },
+    "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "BRD-POLICY-INDEX-R033 does not define a concurrency obligation."
+    },
+    "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "BRD-POLICY-INDEX-R033 does not define a idempotency obligation."
+    },
+    "NEGATIVE_FAIL_CLOSED": {
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BRD-POLICY-INDEX-R033-AC003"
+      ]
+    },
+    "POSITIVE": {
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BRD-POLICY-INDEX-R033-AC001",
+        "BRD-POLICY-INDEX-R033-AC002"
+      ]
+    },
+    "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "BRD-POLICY-INDEX-R033 does not define a recovery obligation."
+    }
+  },
+  "criticality_unit": true,
+  "delivery_commitment": "COMMITTED_FOR_V2.3",
+  "implementation_unit": true,
+  "lifecycle": "V2.3_DRAFT",
+  "normative_statement": "Enterprise Policy Registry là tài liệu nền tảng phục vụ Enterprise Policy Governance. Mọi Policy mới phải trải qua: Traceability.",
+  "provenance": {
+    "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+    "approved_decisions": [
+      "BDD-27",
+      "SD-03",
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
+    ],
+    "derived_from_parent": "POL-P10",
+    "identity_origin": "PHASE_2C_C3_NEW_STABLE_ID_ALLOCATION",
+    "original_identity": "BRD-POLICY-INDEX-R033",
+    "phase_2c_c3_actions": [
+      "C3_STRUCTURAL_RECONCILIATION_CHILD"
+    ],
+    "previous_temporary_key": null,
+    "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+    "source_baseline": "v2.2",
+    "source_context_heading": "POL-P10 — Enterprise Governance",
+    "source_context_sha256": "d75e2a532d3025daa8bda2543b0d948ad6e54482c4e0aafd3337a14bc5f21837",
+    "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
+    "source_fingerprint": "6eb9c70f70de73399e894f0559ae12ec62a1fce9a0147c35278af97bf17f8e2a",
+    "source_fingerprint_before_c3": "6eb9c70f70de73399e894f0559ae12ec62a1fce9a0147c35278af97bf17f8e2a",
+    "source_lines": "L3024-L3164",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-POLICY-INDEX-R033"
+  },
+  "record_kind": "CANONICAL_ATOMIC",
+  "relationships": {
+    "alias_of": null,
+    "aliases": [],
+    "coverage_mode": null,
+    "derived_from": [
+      "POL-P10"
+    ],
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "POL-P10"
+    ]
+  },
+  "requirement_type": "OPERATIONAL_REQUIREMENT",
+  "scope_coverage_unit": true,
+  "scope_status": "V2.3_ACTIVE",
+  "stable_id": "BRD-POLICY-INDEX-R033",
+  "title": "Enterprise Policy Registry là tài liệu nền tảng phục vụ Enterprise Policy Governance. Mọi Policy…",
+  "verification_criticality": "CRITICAL"
+}
+```
+<!-- YSIM:REQUIREMENT END -->
+
+<!-- YSIM:REQUIREMENT BEGIN -->
+### POL-EP-001 — Policy phản ánh quyết định nghiệp vụ
+
+```json
+{
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "POL-EP-001",
+      "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
+      "source_fingerprint": "558c0dcc269b3f98562ec892324abdc6b4c45e8c3afd55e07cb744e08da960ef"
+    }
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
+  "acceptance_rationale": null,
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+  "acceptance_unit": true,
+  "atomic_obligations": [
+    {
+      "acceptance_criterion_references": [
+        "POL-EP-001-AC001",
+        "POL-EP-001-AC002",
+        "POL-EP-001-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "POL-EP-001-O001",
@@ -2394,9 +3218,9 @@ trước khi được đưa vào Runtime của Platform.
     "source_context_heading": "POL-P08 — Business Driven",
     "source_context_sha256": "c4b192d53589bf500334080ecc376cdb79467abdc71e8486592c2e51fd1562c9",
     "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
-    "source_fingerprint": "f9bd03cae0b89a174553144300be1691211a4e3fdd41893b3f469bdd71021600",
-    "source_lines": "L843-L846",
-    "source_section": "23. Enterprise Policy Principles > POL-EP-001"
+    "source_fingerprint": "558c0dcc269b3f98562ec892324abdc6b4c45e8c3afd55e07cb744e08da960ef",
+    "source_lines": "L3166-L3241",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > POL-EP-001"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2421,28 +3245,34 @@ trước khi được đưa vào Runtime của Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "POL-EP-002-AC001",
-      "given": "the applicable business context, actor, and input for Policy độc lập với Source Code",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "each named business concept has a distinct identity, owner or reference, and lifecycle evidence; an action on one does not implicitly act on the other",
-      "verifies": [
-        "POL-EP-002-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "POL-EP-002",
+      "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
+      "source_fingerprint": "a28fb022cd529a9dfb6b0b3ac9248cbecb4a8e7dad55c28a432a2547a04ee400"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "POL-EP-002-AC001"
+        "POL-EP-002-AC001",
+        "POL-EP-002-AC002",
+        "POL-EP-002-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "POL-EP-002-O001",
@@ -2465,9 +3295,9 @@ trước khi được đưa vào Runtime của Platform.
     "source_context_heading": "POL-EP-002",
     "source_context_sha256": "d53176dad5d08ad69b3db0b1f459ec6a63b22beb9d13b07d3a6ab9b0f7d81d5e",
     "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
-    "source_fingerprint": "1d32f0f927a05c52b922dc690bbe74e77ffc8349e01f0d1478af359894f70858",
-    "source_lines": "L849-L852",
-    "source_section": "23. Enterprise Policy Principles > POL-EP-002"
+    "source_fingerprint": "a28fb022cd529a9dfb6b0b3ac9248cbecb4a8e7dad55c28a432a2547a04ee400",
+    "source_lines": "L3243-L3318",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > POL-EP-002"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2492,28 +3322,34 @@ trước khi được đưa vào Runtime của Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "POL-EP-003-AC001",
-      "given": "the applicable business context, actor, and input for Policy độc lập với Database",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "each named business concept has a distinct identity, owner or reference, and lifecycle evidence; an action on one does not implicitly act on the other",
-      "verifies": [
-        "POL-EP-003-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "POL-EP-003",
+      "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
+      "source_fingerprint": "49dcfb18de7c010f8695abbfbe92b3fba934e72180605dca032b351cc006e31a"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "POL-EP-003-AC001"
+        "POL-EP-003-AC001",
+        "POL-EP-003-AC002",
+        "POL-EP-003-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "POL-EP-003-O001",
@@ -2536,9 +3372,9 @@ trước khi được đưa vào Runtime của Platform.
     "source_context_heading": "POL-EP-003",
     "source_context_sha256": "44db2b94220426e96c7df8e4793cf594be5f6f4d1169b5368726c68f1dc023bf",
     "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
-    "source_fingerprint": "a4dde9f3da9905f58a34955f8e696d0f0badc333cc7a526fdf900a32bff54989",
-    "source_lines": "L855-L858",
-    "source_section": "23. Enterprise Policy Principles > POL-EP-003"
+    "source_fingerprint": "49dcfb18de7c010f8695abbfbe92b3fba934e72180605dca032b351cc006e31a",
+    "source_lines": "L3320-L3395",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > POL-EP-003"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2563,28 +3399,34 @@ trước khi được đưa vào Runtime của Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "POL-EP-004-AC001",
-      "given": "the applicable business context, actor, and input for Policy ưu tiên Configuration",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the effective configuration and version are visible in the decision evidence, and an approved configuration change changes the governed result without a code change",
-      "verifies": [
-        "POL-EP-004-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "POL-EP-004",
+      "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
+      "source_fingerprint": "cbf42bbf0d0026492e7352f6d6aec0c3007ddd08f94959e82a81f10a944b2bbd"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "POL-EP-004-AC001"
+        "POL-EP-004-AC001",
+        "POL-EP-004-AC002",
+        "POL-EP-004-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "POL-EP-004-O001",
@@ -2607,9 +3449,9 @@ trước khi được đưa vào Runtime của Platform.
     "source_context_heading": "POL-EP-004",
     "source_context_sha256": "2632b91e179ac8694d7911e2d46ed97657293ce6c96fc67800d3e6e77b2bb965",
     "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
-    "source_fingerprint": "74b1fd99523a4ee5cffc0fbdbd94ee9455d35fd88394e185319cb1662e2e2d20",
-    "source_lines": "L861-L864",
-    "source_section": "23. Enterprise Policy Principles > POL-EP-004"
+    "source_fingerprint": "cbf42bbf0d0026492e7352f6d6aec0c3007ddd08f94959e82a81f10a944b2bbd",
+    "source_lines": "L3397-L3472",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > POL-EP-004"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2634,28 +3476,34 @@ trước khi được đưa vào Runtime của Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "POL-EP-005-AC001",
-      "given": "the applicable business context, actor, and input for Policy hỗ trợ Runtime Reload",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "POL-EP-005-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "POL-EP-005",
+      "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
+      "source_fingerprint": "12fa93c66a9f6799f4157bd2e192e6849a56b00461df5420daac1823c454a3e5"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "POL-EP-005-AC001"
+        "POL-EP-005-AC001",
+        "POL-EP-005-AC002",
+        "POL-EP-005-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "POL-EP-005-O001",
@@ -2678,9 +3526,9 @@ trước khi được đưa vào Runtime của Platform.
     "source_context_heading": "POL-EP-005",
     "source_context_sha256": "1062baeed1c627f0138f115afd959fedc0e4cbff7daaf202c0c495e5c890ca46",
     "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
-    "source_fingerprint": "7c4c79aac0853038c651e7e23fd134a60030a54eaafed318fa2c9276c95e0010",
-    "source_lines": "L867-L870",
-    "source_section": "23. Enterprise Policy Principles > POL-EP-005"
+    "source_fingerprint": "12fa93c66a9f6799f4157bd2e192e6849a56b00461df5420daac1823c454a3e5",
+    "source_lines": "L3474-L3549",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > POL-EP-005"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2705,28 +3553,34 @@ trước khi được đưa vào Runtime của Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "POL-EP-006-AC001",
-      "given": "the applicable business context, actor, and input for Policy hỗ trợ Versioning",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "POL-EP-006-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "POL-EP-006",
+      "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
+      "source_fingerprint": "2d4cce3178c92ff2adb452c26b89a9b7278a32ad4288c855271d87805df23ee4"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "POL-EP-006-AC001"
+        "POL-EP-006-AC001",
+        "POL-EP-006-AC002",
+        "POL-EP-006-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "POL-EP-006-O001",
@@ -2749,9 +3603,9 @@ trước khi được đưa vào Runtime của Platform.
     "source_context_heading": "POL-EP-006",
     "source_context_sha256": "a3f79cba61b0634ce1c7b079323a021331be6ab867f89eacaf55b8242ca77aaa",
     "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
-    "source_fingerprint": "f1d5bde3ee99048504e4f0096c91aaf23dfe146532499a84e58371afc253576d",
-    "source_lines": "L873-L876",
-    "source_section": "23. Enterprise Policy Principles > POL-EP-006"
+    "source_fingerprint": "2d4cce3178c92ff2adb452c26b89a9b7278a32ad4288c855271d87805df23ee4",
+    "source_lines": "L3551-L3626",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > POL-EP-006"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2776,28 +3630,34 @@ trước khi được đưa vào Runtime của Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "POL-EP-007-AC001",
-      "given": "the applicable business context, actor, and input for Policy hỗ trợ Inheritance",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "POL-EP-007-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "POL-EP-007",
+      "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
+      "source_fingerprint": "236ef00bf1c5ba3361194ccbafa88fff363c03b417a60903adb352f37f9f2af6"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "POL-EP-007-AC001"
+        "POL-EP-007-AC001",
+        "POL-EP-007-AC002",
+        "POL-EP-007-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "POL-EP-007-O001",
@@ -2820,9 +3680,9 @@ trước khi được đưa vào Runtime của Platform.
     "source_context_heading": "POL-EP-007",
     "source_context_sha256": "e14b45fedecf869dbe5d0905fd9d28f2e6eca0fe6a92730435ccbe1f7c6e3c2f",
     "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
-    "source_fingerprint": "bde553a3424634809f14fcd99dfb52d190950cca280c1435c49663cd072a7228",
-    "source_lines": "L879-L882",
-    "source_section": "23. Enterprise Policy Principles > POL-EP-007"
+    "source_fingerprint": "236ef00bf1c5ba3361194ccbafa88fff363c03b417a60903adb352f37f9f2af6",
+    "source_lines": "L3628-L3703",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > POL-EP-007"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2847,41 +3707,37 @@ trước khi được đưa vào Runtime của Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "POL-EP-008-AC001",
-      "given": "an operational task within the scope of Policy hỗ trợ Approval và Audit",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "POL-EP-008-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "BDD-27",
+        "SD-03"
       ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "OPERATIONAL_VERIFICATION_FAILURE_V1",
-      "criterion_id": "POL-EP-008-AC002",
-      "given": "an operational task missing an outcome, required signal, audit evidence, or recovery evidence for Policy hỗ trợ Approval và Audit",
-      "observable_evidence": "operator-visible verification result, missing-evidence identifier, operation state, and relevant signal or audit record",
-      "then": "verification reports the specific missing evidence as a detectable failure and does not report the task as conforming",
-      "verifies": [
-        "POL-EP-008-O001"
-      ],
-      "when": "operational verification is performed"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "POL-EP-008",
+      "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
+      "source_fingerprint": "9265640d117e5f32c9696ba89867d9ebbdf3fdf6cf83ddd746c15f8242d5327a"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "POL-EP-008-AC001",
-        "POL-EP-008-AC002"
+        "POL-EP-008-AC002",
+        "POL-EP-008-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "POL-EP-008-O001",
@@ -2890,35 +3746,36 @@ trước khi được đưa vào Runtime của Platform.
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "POL-EP-008 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "POL-EP-008 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "POL-EP-008 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "POL-EP-008 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "POL-EP-008 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "POL-EP-008 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "POL-EP-008 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "POL-EP-008-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "POL-EP-008-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "POL-EP-008 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "POL-EP-008 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -2939,9 +3796,9 @@ trước khi được đưa vào Runtime của Platform.
     "source_context_heading": "POL-EP-008",
     "source_context_sha256": "53ff6a4b1816b1b39993ac88433698574868663b97111405e1394dcc00cf7960",
     "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
-    "source_fingerprint": "25a9d6be419182395199bf0e0e91543a1a73b45f87bf1134cbc201e8a3e68926",
-    "source_lines": "L885-L888",
-    "source_section": "23. Enterprise Policy Principles > POL-EP-008"
+    "source_fingerprint": "9265640d117e5f32c9696ba89867d9ebbdf3fdf6cf83ddd746c15f8242d5327a",
+    "source_lines": "L3705-L3819",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > POL-EP-008"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2966,28 +3823,36 @@ trước khi được đưa vào Runtime của Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "POL-EP-009-AC001",
-      "given": "the applicable business context, actor, and input for Policy được Policy Decision Engine đánh giá trước khi Capability được thực thi",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "POL-EP-009-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-005"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "POL-EP-009",
+      "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
+      "source_fingerprint": "63430466cfe2d07e1119b2088bbeceb152e46b78434ac28e506c9c48362bafef"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "POL-EP-009-AC001"
+        "POL-EP-009-AC001",
+        "POL-EP-009-AC002",
+        "POL-EP-009-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "POL-EP-009-O001",
@@ -3012,9 +3877,9 @@ trước khi được đưa vào Runtime của Platform.
     "source_context_heading": "POL-EP-009",
     "source_context_sha256": "c8bc2404ace6bb02391bb1089693d2af07c62b6dc0ee0092ffb89af1885cb015",
     "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
-    "source_fingerprint": "9db9f1e9c4a86fa2acbfa135f9cfeeac79b75df83dab32879bd10c5ecdf31014",
-    "source_lines": "L891-L894",
-    "source_section": "23. Enterprise Policy Principles > POL-EP-009"
+    "source_fingerprint": "63430466cfe2d07e1119b2088bbeceb152e46b78434ac28e506c9c48362bafef",
+    "source_lines": "L3821-L3900",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > POL-EP-009"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3039,28 +3904,34 @@ trước khi được đưa vào Runtime của Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "POL-EP-010-AC001",
-      "given": "the applicable business context, actor, and input for Enterprise Policy Registry là Enterprise Policy Dictionary của nền tảng YSim",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "POL-EP-010-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "POL-EP-010",
+      "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
+      "source_fingerprint": "44a50558e567b2bcfe563706a8de108e4529eb84424b018842d7687221cfc6af"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "POL-EP-010-AC001"
+        "POL-EP-010-AC001",
+        "POL-EP-010-AC002",
+        "POL-EP-010-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "POL-EP-010-O001",
@@ -3083,9 +3954,9 @@ trước khi được đưa vào Runtime của Platform.
     "source_context_heading": "POL-EP-010",
     "source_context_sha256": "8e8afdee32197b54daf3607fff91badfea6cf2566ccc87305f9f939377a2448e",
     "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
-    "source_fingerprint": "0a9d437ffe0082a8a67bfafa3ad17ecb1c1b45299263edc875bf7bd1ad202020",
-    "source_lines": "L897-L900",
-    "source_section": "23. Enterprise Policy Principles > POL-EP-010"
+    "source_fingerprint": "44a50558e567b2bcfe563706a8de108e4529eb84424b018842d7687221cfc6af",
+    "source_lines": "L3902-L3977",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > POL-EP-010"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3110,40 +3981,34 @@ trước khi được đưa vào Runtime của Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "POL-P01-AC001",
-      "given": "the applicable business context, actor, and input for Policy ưu tiên được cấu hình. Không Hard-code khi có thể cấu hình",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the effective configuration and version are visible in the decision evidence, and an approved configuration change changes the governed result without a code change",
-      "verifies": [
-        "POL-P01-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "POL-P01-AC002",
-      "given": "the applicable business context, actor, and input for Policy ưu tiên được cấu hình. Không Hard-code khi có thể cấu hình",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the effective configuration and version are visible in the decision evidence, and an approved configuration change changes the governed result without a code change",
-      "verifies": [
-        "POL-P01-O002"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "POL-P01",
+      "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
+      "source_fingerprint": "e6489f38b215baf5bca86ec34f1035750b4d0b254c1dc4cbbed2175888962cd9"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "POL-P01-AC001"
+        "POL-P01-AC001",
+        "POL-P01-AC003",
+        "POL-P01-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "POL-P01-O001",
@@ -3151,7 +4016,9 @@ trước khi được đưa vào Runtime của Platform.
     },
     {
       "acceptance_criterion_references": [
-        "POL-P01-AC002"
+        "POL-P01-AC002",
+        "POL-P01-AC003",
+        "POL-P01-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "POL-P01-O002",
@@ -3174,9 +4041,9 @@ trước khi được đưa vào Runtime của Platform.
     "source_context_heading": "POL-P01 — Configuration First",
     "source_context_sha256": "88ca6b21fdfb83a64388f6da22f53260941392cc5d71eccb6a9fc7f26280ebda",
     "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
-    "source_fingerprint": "00acb5404bfafac5368bacebaaae3fee645a332a22f20f79c0cb50d6ae044bf5",
-    "source_lines": "L325-L330",
-    "source_section": "13. Policy Principles > POL-P01 — Configuration First"
+    "source_fingerprint": "e6489f38b215baf5bca86ec34f1035750b4d0b254c1dc4cbbed2175888962cd9",
+    "source_lines": "L3979-L4064",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > POL-P01"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3201,40 +4068,34 @@ trước khi được đưa vào Runtime của Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "POL-P02-AC001",
-      "given": "the applicable business context, actor, and input for Policy ưu tiên kế thừa. Chỉ Override khi thực sự cần thiết",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "POL-P02-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "POL-P02-AC002",
-      "given": "the applicable business context, actor, and input for Policy ưu tiên kế thừa. Chỉ Override khi thực sự cần thiết",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "an override is accepted only for a policy marked override-eligible, with an explicit reason and the required approval; otherwise the inherited or system policy remains effective",
-      "verifies": [
-        "POL-P02-O002"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "POL-P02",
+      "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
+      "source_fingerprint": "4620eef7d213552c656fd24705238efc8904397d389c2ed44581be4e2645a7b9"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "POL-P02-AC001"
+        "POL-P02-AC001",
+        "POL-P02-AC003",
+        "POL-P02-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "POL-P02-O001",
@@ -3242,7 +4103,9 @@ trước khi được đưa vào Runtime của Platform.
     },
     {
       "acceptance_criterion_references": [
-        "POL-P02-AC002"
+        "POL-P02-AC002",
+        "POL-P02-AC003",
+        "POL-P02-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "POL-P02-O002",
@@ -3265,9 +4128,9 @@ trước khi được đưa vào Runtime của Platform.
     "source_context_heading": "POL-P02 — Inheritance",
     "source_context_sha256": "db0a39465cb4a29f84d4d2eef0ac503b63f279bb1a8f119c7b6b28db311dd770",
     "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
-    "source_fingerprint": "e33f4ad7c611d2261c6b560e19a8593f5dfeb5210c967798e838512fb646fa52",
-    "source_lines": "L333-L338",
-    "source_section": "13. Policy Principles > POL-P02 — Inheritance"
+    "source_fingerprint": "4620eef7d213552c656fd24705238efc8904397d389c2ed44581be4e2645a7b9",
+    "source_lines": "L4066-L4151",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > POL-P02"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3292,28 +4155,34 @@ trước khi được đưa vào Runtime của Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "POL-P03-AC001",
-      "given": "the applicable business context, actor, and input for Policy luôn hỗ trợ Version",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "POL-P03-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "POL-P03",
+      "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
+      "source_fingerprint": "6de2072a36839706d017f9d2b88a25c7ac7259517fb26a7b87e89ea1aa0115c2"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "POL-P03-AC001"
+        "POL-P03-AC001",
+        "POL-P03-AC002",
+        "POL-P03-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "POL-P03-O001",
@@ -3336,9 +4205,9 @@ trước khi được đưa vào Runtime của Platform.
     "source_context_heading": "POL-P03 — Versioned",
     "source_context_sha256": "fde6fbc0a32454feb502d4050241a435b7f9f29752e56b43b4bb1bbec8df3bbd",
     "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
-    "source_fingerprint": "fb20023400335c322821ac1b1cc47d00842785c90bcef25b1874294b36b2bb6f",
-    "source_lines": "L341-L344",
-    "source_section": "13. Policy Principles > POL-P03 — Versioned"
+    "source_fingerprint": "6de2072a36839706d017f9d2b88a25c7ac7259517fb26a7b87e89ea1aa0115c2",
+    "source_lines": "L4153-L4228",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > POL-P03"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3363,28 +4232,34 @@ trước khi được đưa vào Runtime của Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "POL-P04-AC001",
-      "given": "the applicable business context, actor, and input for Policy hỗ trợ Effective Date",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "POL-P04-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "POL-P04",
+      "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
+      "source_fingerprint": "41e9f2fac4bfea184ecbd3b3f4eda2ff119d67cab3d07c2ba9ebcc2cc4917169"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "POL-P04-AC001"
+        "POL-P04-AC001",
+        "POL-P04-AC002",
+        "POL-P04-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "POL-P04-O001",
@@ -3407,9 +4282,9 @@ trước khi được đưa vào Runtime của Platform.
     "source_context_heading": "POL-P04 — Effective Date",
     "source_context_sha256": "91cd6f94d3b2f6029096802ce64a3dccb04edecaa6f09c738f05e032adcb7c7a",
     "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
-    "source_fingerprint": "8de63a8a2e8184743fde5b682c340d66136a38bfba173e7d1b81335c98b54609",
-    "source_lines": "L347-L350",
-    "source_section": "13. Policy Principles > POL-P04 — Effective Date"
+    "source_fingerprint": "41e9f2fac4bfea184ecbd3b3f4eda2ff119d67cab3d07c2ba9ebcc2cc4917169",
+    "source_lines": "L4230-L4305",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > POL-P04"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3434,28 +4309,37 @@ trước khi được đưa vào Runtime của Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "POL-P05-AC001",
-      "given": "the applicable business context, actor, and input for Policy chỉ có hiệu lực sau Approval",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the proposed change remains pending until the required approval decision is recorded, and only an approved decision permits the accepted state change",
-      "verifies": [
-        "POL-P05-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "BDD-27",
+        "SD-03"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "POL-P05",
+      "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
+      "source_fingerprint": "1f76aede58bc7540e23df10a5bbce29ce52246b80e5b91c2c7165fadb91887f5"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "POL-P05-AC001"
+        "POL-P05-AC001",
+        "POL-P05-AC002",
+        "POL-P05-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "POL-P05-O001",
@@ -3481,9 +4365,9 @@ trước khi được đưa vào Runtime của Platform.
     "source_context_heading": "POL-P05 — Approval Required",
     "source_context_sha256": "3855924285656847d9cd8da63e84358b81e40e26be24286612a10dc957b44528",
     "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
-    "source_fingerprint": "d128edfee753299bd3a4681145406c4ccd4939c65bbc152006b736d3d686fad0",
-    "source_lines": "L353-L356",
-    "source_section": "13. Policy Principles > POL-P05 — Approval Required"
+    "source_fingerprint": "1f76aede58bc7540e23df10a5bbce29ce52246b80e5b91c2c7165fadb91887f5",
+    "source_lines": "L4307-L4388",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > POL-P05"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3508,41 +4392,34 @@ trước khi được đưa vào Runtime của Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "POL-P06-AC001",
-      "given": "an operational task within the scope of Mọi thay đổi Policy phải được Audit",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "POL-P06-O001"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "OPERATIONAL_VERIFICATION_FAILURE_V1",
-      "criterion_id": "POL-P06-AC002",
-      "given": "an operational task missing an outcome, required signal, audit evidence, or recovery evidence for Mọi thay đổi Policy phải được Audit",
-      "observable_evidence": "operator-visible verification result, missing-evidence identifier, operation state, and relevant signal or audit record",
-      "then": "verification reports the specific missing evidence as a detectable failure and does not report the task as conforming",
-      "verifies": [
-        "POL-P06-O001"
-      ],
-      "when": "operational verification is performed"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "POL-P06",
+      "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
+      "source_fingerprint": "e7b5d5e4991ac6d41413adc14443cba4b43858ac59aa4eefd533506b7137e893"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "POL-P06-AC001",
-        "POL-P06-AC002"
+        "POL-P06-AC002",
+        "POL-P06-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "POL-P06-O001",
@@ -3551,35 +4428,36 @@ trước khi được đưa vào Runtime của Platform.
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "POL-P06 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "POL-P06 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "POL-P06 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "POL-P06 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "POL-P06 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "POL-P06 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "POL-P06 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "POL-P06-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "POL-P06-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "POL-P06 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "POL-P06 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -3597,9 +4475,9 @@ trước khi được đưa vào Runtime của Platform.
     "source_context_heading": "POL-P06 — Auditable",
     "source_context_sha256": "371b7e73f5fba02dc9551045738108a0dbfb492b538b33c9e049e9201dcaa86e",
     "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
-    "source_fingerprint": "623be2af9f8eda0bf4a1cda12e8300b2cc3ca1c0aa5600a1b9ccc22d3754141c",
-    "source_lines": "L359-L362",
-    "source_section": "13. Policy Principles > POL-P06 — Auditable"
+    "source_fingerprint": "e7b5d5e4991ac6d41413adc14443cba4b43858ac59aa4eefd533506b7137e893",
+    "source_lines": "L4390-L4498",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > POL-P06"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3624,28 +4502,34 @@ trước khi được đưa vào Runtime của Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "POL-P07-AC001",
-      "given": "the applicable business context, actor, and input for Policy được Runtime Engine sử dụng trực tiếp",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "POL-P07-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "POL-P07",
+      "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
+      "source_fingerprint": "21c7b4e0a0aa016ca0362c547f5f1a2456278f8b4e280e896f72df0c642307f2"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "POL-P07-AC001"
+        "POL-P07-AC001",
+        "POL-P07-AC002",
+        "POL-P07-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "POL-P07-O001",
@@ -3668,9 +4552,9 @@ trước khi được đưa vào Runtime của Platform.
     "source_context_heading": "POL-P07 — Runtime Ready",
     "source_context_sha256": "76315587359072fa6af2beb29722671fda7fcd99c088ca67ec19a7bb66cfe287",
     "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
-    "source_fingerprint": "2c5e33395c50b7b9f2d9634e79ffa85451874e571e768e9f889349ee777135f5",
-    "source_lines": "L365-L368",
-    "source_section": "13. Policy Principles > POL-P07 — Runtime Ready"
+    "source_fingerprint": "21c7b4e0a0aa016ca0362c547f5f1a2456278f8b4e280e896f72df0c642307f2",
+    "source_lines": "L4500-L4575",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > POL-P07"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3695,40 +4579,34 @@ trước khi được đưa vào Runtime của Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "POL-P08-AC001",
-      "given": "the applicable business context, actor, and input for Policy phản ánh quyết định nghiệp vụ. Không phản ánh thiết kế kỹ thuật",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "POL-P08-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "POL-P08-AC002",
-      "given": "the applicable business context, actor, and input for Policy phản ánh quyết định nghiệp vụ. Không phản ánh thiết kế kỹ thuật",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "POL-P08-O002"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "POL-P08",
+      "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
+      "source_fingerprint": "ccce0392eb2bd9e62db990893846479d0d8bff5470ddb7bb81fe6d21e5a06e58"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "POL-P08-AC001"
+        "POL-P08-AC001",
+        "POL-P08-AC003",
+        "POL-P08-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "POL-P08-O001",
@@ -3736,7 +4614,9 @@ trước khi được đưa vào Runtime của Platform.
     },
     {
       "acceptance_criterion_references": [
-        "POL-P08-AC002"
+        "POL-P08-AC002",
+        "POL-P08-AC003",
+        "POL-P08-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "POL-P08-O002",
@@ -3759,9 +4639,9 @@ trước khi được đưa vào Runtime của Platform.
     "source_context_heading": "POL-P08 — Business Driven",
     "source_context_sha256": "c4b192d53589bf500334080ecc376cdb79467abdc71e8486592c2e51fd1562c9",
     "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
-    "source_fingerprint": "8a212d9eaba03540e47fa3fb5162a7d9bf6a323ed1ae7391aa8ea452759e6729",
-    "source_lines": "L371-L376",
-    "source_section": "13. Policy Principles > POL-P08 — Business Driven"
+    "source_fingerprint": "ccce0392eb2bd9e62db990893846479d0d8bff5470ddb7bb81fe6d21e5a06e58",
+    "source_lines": "L4577-L4662",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > POL-P08"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3786,28 +4666,34 @@ trước khi được đưa vào Runtime của Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "POL-P09-AC001",
-      "given": "the applicable business context, actor, and input for Policy phải có cơ chế xử lý xung đột giữa các Scope",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "POL-P09-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "POL-P09",
+      "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
+      "source_fingerprint": "b6fb0966f89d4875095340097a8c404c402d4bf7ded7227118dddd33ec932484"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "POL-P09-AC001"
+        "POL-P09-AC001",
+        "POL-P09-AC002",
+        "POL-P09-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "POL-P09-O001",
@@ -3830,9 +4716,9 @@ trước khi được đưa vào Runtime của Platform.
     "source_context_heading": "POL-P09 — Conflict Managed",
     "source_context_sha256": "511ca4d8d9f7a069347a14a36e91733f24076d23d7bb9ba542695944b26c7087",
     "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
-    "source_fingerprint": "b7f4c7aa514fc3cc2100a036eb944e1cad9fc84870b079f651410cfd784f0ceb",
-    "source_lines": "L379-L382",
-    "source_section": "13. Policy Principles > POL-P09 — Conflict Managed"
+    "source_fingerprint": "b6fb0966f89d4875095340097a8c404c402d4bf7ded7227118dddd33ec932484",
+    "source_lines": "L4664-L4739",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > POL-P09"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3857,208 +4743,63 @@ trước khi được đưa vào Runtime của Platform.
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "POL-P10-AC001",
-      "given": "an operational task within the scope of Enterprise Policy Registry là tài liệu nền tảng phục vụ Enterprise Policy Governance. Mọi Policy…",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "POL-P10-O001"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "POL-P10-AC002",
-      "given": "an operational task within the scope of Enterprise Policy Registry là tài liệu nền tảng phục vụ Enterprise Policy Governance. Mọi Policy…",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "POL-P10-O002"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "POL-P10-AC003",
-      "given": "an operational task within the scope of Enterprise Policy Registry là tài liệu nền tảng phục vụ Enterprise Policy Governance. Mọi Policy…",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "POL-P10-O003"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "POL-P10-AC004",
-      "given": "an operational task within the scope of Enterprise Policy Registry là tài liệu nền tảng phục vụ Enterprise Policy Governance. Mọi Policy…",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "POL-P10-O004"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "POL-P10-AC005",
-      "given": "an operational task within the scope of Enterprise Policy Registry là tài liệu nền tảng phục vụ Enterprise Policy Governance. Mọi Policy…",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "POL-P10-O005"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "OPERATIONAL_VERIFICATION_FAILURE_V1",
-      "criterion_id": "POL-P10-AC006",
-      "given": "an operational task missing an outcome, required signal, audit evidence, or recovery evidence for Enterprise Policy Registry là tài liệu nền tảng phục vụ Enterprise Policy Governance. Mọi Policy…",
-      "observable_evidence": "operator-visible verification result, missing-evidence identifier, operation state, and relevant signal or audit record",
-      "then": "verification reports the specific missing evidence as a detectable failure and does not report the task as conforming",
-      "verifies": [
-        "POL-P10-O001",
-        "POL-P10-O002",
-        "POL-P10-O003",
-        "POL-P10-O004",
-        "POL-P10-O005"
-      ],
-      "when": "operational verification is performed"
-    }
-  ],
-  "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
-  "acceptance_unit": true,
-  "atomic_obligations": [
-    {
-      "acceptance_criterion_references": [
-        "POL-P10-AC001",
-        "POL-P10-AC006"
-      ],
-      "applicability": "V2.3_ACTIVE",
-      "obligation_id": "POL-P10-O001",
-      "obligation_text": "Enterprise Policy Registry là tài liệu nền tảng phục vụ Enterprise Policy Governance. Mọi Policy mới phải trải qua: Architecture Review."
-    },
-    {
-      "acceptance_criterion_references": [
-        "POL-P10-AC002",
-        "POL-P10-AC006"
-      ],
-      "applicability": "V2.3_ACTIVE",
-      "obligation_id": "POL-P10-O002",
-      "obligation_text": "Enterprise Policy Registry là tài liệu nền tảng phục vụ Enterprise Policy Governance. Mọi Policy mới phải trải qua: Approval."
-    },
-    {
-      "acceptance_criterion_references": [
-        "POL-P10-AC003",
-        "POL-P10-AC006"
-      ],
-      "applicability": "V2.3_ACTIVE",
-      "obligation_id": "POL-P10-O003",
-      "obligation_text": "Enterprise Policy Registry là tài liệu nền tảng phục vụ Enterprise Policy Governance. Mọi Policy mới phải trải qua: Versioning."
-    },
-    {
-      "acceptance_criterion_references": [
-        "POL-P10-AC004",
-        "POL-P10-AC006"
-      ],
-      "applicability": "V2.3_ACTIVE",
-      "obligation_id": "POL-P10-O004",
-      "obligation_text": "Enterprise Policy Registry là tài liệu nền tảng phục vụ Enterprise Policy Governance. Mọi Policy mới phải trải qua: Audit."
-    },
-    {
-      "acceptance_criterion_references": [
-        "POL-P10-AC005",
-        "POL-P10-AC006"
-      ],
-      "applicability": "V2.3_ACTIVE",
-      "obligation_id": "POL-P10-O005",
-      "obligation_text": "Enterprise Policy Registry là tài liệu nền tảng phục vụ Enterprise Policy Governance. Mọi Policy mới phải trải qua: Traceability."
-    }
-  ],
-  "criticality_applicability": {
-    "AUTHORIZATION_BOUNDARY": {
-      "criterion_references": [],
-      "rationale": "POL-P10 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    },
-    "CONCURRENCY": {
-      "criterion_references": [],
-      "rationale": "POL-P10 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    },
-    "IDEMPOTENCY": {
-      "criterion_references": [],
-      "rationale": "POL-P10 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    },
-    "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "POL-P10 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    },
-    "POSITIVE": {
-      "criterion_references": [
-        "POL-P10-AC001",
-        "POL-P10-AC002",
-        "POL-P10-AC003",
-        "POL-P10-AC004",
-        "POL-P10-AC005"
-      ],
-      "status": "APPLICABLE"
-    },
-    "RECOVERY": {
-      "criterion_references": [],
-      "rationale": "POL-P10 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    }
-  },
-  "criticality_unit": true,
+  "acceptance_contract": null,
+  "acceptance_mechanism": null,
+  "acceptance_rationale": "Composite parent coverage is satisfied only through ALL_CHILDREN; the parent is not an implementation, acceptance, scope-coverage, or criticality unit.",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "STRUCTURAL_RECORD",
+  "acceptance_unit": false,
+  "atomic_obligations": [],
+  "criticality_applicability": null,
+  "criticality_unit": false,
   "delivery_commitment": "COMMITTED_FOR_V2.3",
-  "implementation_unit": true,
+  "implementation_unit": false,
   "lifecycle": "V2.3_DRAFT",
   "normative_statement": "Enterprise Policy Registry là tài liệu nền tảng phục vụ Enterprise Policy Governance. Mọi Policy mới phải trải qua: - Architecture Review - Approval - Versioning - Audit - Traceability",
   "provenance": {
     "approved_decisions": [
       "BDD-27",
-      "SD-03"
+      "SD-03",
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
     ],
     "identity_origin": "PRESERVED_STABLE_ID",
     "original_identity": "POL-P10",
+    "phase_2c_c3_actions": [
+      "C3_STRUCTURAL_RECONCILIATION_PARENT"
+    ],
     "previous_temporary_key": null,
     "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
     "source_baseline": "v2.2",
     "source_context_heading": "POL-P10 — Enterprise Governance",
     "source_context_sha256": "d75e2a532d3025daa8bda2543b0d948ad6e54482c4e0aafd3337a14bc5f21837",
     "source_document": "docs/BRD/BRD-POLICY-INDEX.md",
-    "source_fingerprint": "90e5c7232a187a2d7bb5f34e22879f9d463f1703fa3ce361c3aba2742a2a79fc",
-    "source_lines": "L385-L396",
-    "source_section": "13. Policy Principles > POL-P10 — Enterprise Governance"
+    "source_fingerprint": "66ff1e5c63ddf47133f348bb18615313db863c86e8ec3fc530641c2a2fbda710",
+    "source_fingerprint_before_c3": "90e5c7232a187a2d7bb5f34e22879f9d463f1703fa3ce361c3aba2742a2a79fc",
+    "source_lines": "L4741-L4805",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > POL-P10"
   },
-  "record_kind": "CANONICAL_ATOMIC",
+  "record_kind": "COMPOSITE_PARENT",
   "relationships": {
     "alias_of": null,
     "aliases": [],
-    "coverage_mode": null,
+    "coverage_mode": "ALL_CHILDREN",
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [
+      "BRD-POLICY-INDEX-R029",
+      "BRD-POLICY-INDEX-R030",
+      "BRD-POLICY-INDEX-R031",
+      "BRD-POLICY-INDEX-R032",
+      "BRD-POLICY-INDEX-R033"
+    ]
   },
   "requirement_type": "OPERATIONAL_REQUIREMENT",
-  "scope_coverage_unit": true,
+  "scope_coverage_unit": false,
   "scope_status": "V2.3_ACTIVE",
   "stable_id": "POL-P10",
   "title": "Enterprise Policy Registry là tài liệu nền tảng phục vụ Enterprise Policy Governance. Mọi Policy…",
-  "verification_criticality": "CRITICAL"
+  "verification_criticality": "NOT_APPLICABLE"
 }
 ```
 <!-- YSIM:REQUIREMENT END -->

@@ -1,13 +1,20 @@
 ---
 document_code: "UXF-02"
+document_id: "UXF-02"
 title: "Design System, Theme & Experience Inheritance"
-product_baseline: "2.3"
-document_revision: "2.3.0-draft.1"
+version: "2.3.0-draft.3"
+document_revision: "2.3.0-draft.3"
+status: "V2.3_DRAFT"
 lifecycle_status: "V2.3_DRAFT"
 language: "en"
+baseline: "2.3"
+product_baseline: "2.3"
+source_lineage: "v2.2 + approved Phase 1/2A/2B + accepted Acceptance Model C1 + accepted Mapping C3"
 source_baseline: "v2.2"
+last_reviewed_date: "2026-07-15"
+last_remediated_on: "2026-07-17"
+applicable_scope: "V2.3_ACTIVE_AND_RETAINED_SCOPE_RECORDS"
 generated_registry_role: "UXF_CANONICAL_SOURCE"
-last_remediated_on: "2026-07-15"
 ---
 ## v2.3 requirement authority
 
@@ -657,7 +664,7 @@ This document should be read together with:
 
 <!-- YSIM:PHASE_2C CANONICAL APPENDIX BEGIN -->
 
-## v2.3 normative requirement appendix
+## v2.3 normative requirement appendix — C6-R1
 
 
 
@@ -666,28 +673,34 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-02-R001-AC001",
-      "given": "a user in the applicable channel and context for Each level overrides only required properties",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the rendered output exposes every required content element and action, keeps prohibited content absent, and makes the applicable confirmation or fallback directly observable",
-      "verifies": [
-        "UXF-02-R001-O001"
-      ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-02-R001",
+      "source_document": "docs/UXF/UXF-02.md",
+      "source_fingerprint": "ff2f28e78e949a0660ada234089bb62088e42b28e4b9df1593baf2afbb092ee3"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "UXF-02-R001-AC001"
+        "UXF-02-R001-AC001",
+        "UXF-02-R001-AC002",
+        "UXF-02-R001-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-02-R001-O001",
@@ -720,8 +733,8 @@ This document should be read together with:
     "source_context_sha256": "5dc9e734b8b4aebf62c32b62531fea465e9103546d9064c2de61035cc1cad474",
     "source_document": "docs/UXF/UXF-02.md",
     "source_fingerprint": "ff2f28e78e949a0660ada234089bb62088e42b28e4b9df1593baf2afbb092ee3",
-    "source_lines": "L302",
-    "source_section": "9. Theme Inheritance"
+    "source_lines": "L671-L755",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-02-R001"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -746,41 +759,34 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-02-R002-AC001",
-      "given": "a user in the applicable channel and context for If a configuration cannot be resolved, runtime falls back to the nearest valid parent",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the rendered output identifies the applied runtime context, reflects the values resolved for that context, and contains no unresolved configuration token",
-      "verifies": [
-        "UXF-02-R002-O001"
-      ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
-      "criterion_id": "UXF-02-R002-AC002",
-      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for If a configuration cannot be resolved, runtime falls back to the nearest valid parent",
-      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
-      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
-      "verifies": [
-        "UXF-02-R002-O001"
-      ],
-      "when": "the affected state is rendered or action is requested"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-02-R002",
+      "source_document": "docs/UXF/UXF-02.md",
+      "source_fingerprint": "3cd3bf3026049326881f933c933bbdda3dbd18d69fd20fc8c229d3e85473ef24"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-02-R002-AC001",
-        "UXF-02-R002-AC002"
+        "UXF-02-R002-AC002",
+        "UXF-02-R002-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-02-R002-O001",
@@ -804,8 +810,8 @@ This document should be read together with:
     "source_context_sha256": "3cee0633abdf2029603658d7939f9f631c05d647109c5ba337daf2dc390c5564",
     "source_document": "docs/UXF/UXF-02.md",
     "source_fingerprint": "3cd3bf3026049326881f933c933bbdda3dbd18d69fd20fc8c229d3e85473ef24",
-    "source_lines": "L330",
-    "source_section": "11. Fallback Strategy"
+    "source_lines": "L757-L832",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-02-R002"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -830,41 +836,34 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "ACCESSIBILITY_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "UXF-02-R003-AC001",
-      "given": "the experience state and accessibility mode governed by Every component must support: - Keyboard Navigation",
-      "observable_evidence": "before/after rendered state, enabled accessibility mode, available content and actions, interaction outcome, and any accessibility conformance result declared by the source",
-      "then": "the accessible rendering or interaction is available without removing required content or actions, and its outcome remains perceivable and operable",
-      "verifies": [
-        "UXF-02-R003-O001"
-      ],
-      "when": "the named accessibility capability is enabled and the same content and actions are exercised"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "ACCESSIBILITY_CONFORMANCE_FAILURE_V1",
-      "criterion_id": "UXF-02-R003-AC002",
-      "given": "the experience with the accessibility capability named by Every component must support: - Keyboard Navigation unavailable or producing inaccessible content or actions",
-      "observable_evidence": "enabled mode, rendered state, affected content or action, interaction result, and failed accessibility conformance evidence",
-      "then": "accessibility conformance fails with the unavailable capability or inaccessible element identified; the state is not reported as conforming",
-      "verifies": [
-        "UXF-02-R003-O001"
-      ],
-      "when": "the applicable accessibility mode or interaction is used"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-02-R003",
+      "source_document": "docs/UXF/UXF-02.md",
+      "source_fingerprint": "efbb5c92b988996fa766f2e8eeba00eaf4f815406e98cb746742ed8783ca3084"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-02-R003-AC001",
-        "UXF-02-R003-AC002"
+        "UXF-02-R003-AC002",
+        "UXF-02-R003-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-02-R003-O001",
@@ -888,8 +887,8 @@ This document should be read together with:
     "source_context_sha256": "005d03136b01fbfc51aecdb4957e3fd361c068c92883677b8242c37948911b84",
     "source_document": "docs/UXF/UXF-02.md",
     "source_fingerprint": "efbb5c92b988996fa766f2e8eeba00eaf4f815406e98cb746742ed8783ca3084",
-    "source_lines": "L531-L533",
-    "source_section": "18. Design Accessibility"
+    "source_lines": "L834-L909",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-02-R003"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -914,41 +913,34 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "ACCESSIBILITY_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "UXF-02-R004-AC001",
-      "given": "the experience state and accessibility mode governed by Every component must support: - Screen Readers",
-      "observable_evidence": "before/after rendered state, enabled accessibility mode, available content and actions, interaction outcome, and any accessibility conformance result declared by the source",
-      "then": "the accessible rendering or interaction is available without removing required content or actions, and its outcome remains perceivable and operable",
-      "verifies": [
-        "UXF-02-R004-O001"
-      ],
-      "when": "the named accessibility capability is enabled and the same content and actions are exercised"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "ACCESSIBILITY_CONFORMANCE_FAILURE_V1",
-      "criterion_id": "UXF-02-R004-AC002",
-      "given": "the experience with the accessibility capability named by Every component must support: - Screen Readers unavailable or producing inaccessible content or actions",
-      "observable_evidence": "enabled mode, rendered state, affected content or action, interaction result, and failed accessibility conformance evidence",
-      "then": "accessibility conformance fails with the unavailable capability or inaccessible element identified; the state is not reported as conforming",
-      "verifies": [
-        "UXF-02-R004-O001"
-      ],
-      "when": "the applicable accessibility mode or interaction is used"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-02-R004",
+      "source_document": "docs/UXF/UXF-02.md",
+      "source_fingerprint": "8aef9afb69a20df7da0d4221100e387a024b6a185e124ab65040a7ec11012bda"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-02-R004-AC001",
-        "UXF-02-R004-AC002"
+        "UXF-02-R004-AC002",
+        "UXF-02-R004-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-02-R004-O001",
@@ -971,9 +963,9 @@ This document should be read together with:
     "source_context_heading": "18. Design Accessibility",
     "source_context_sha256": "005d03136b01fbfc51aecdb4957e3fd361c068c92883677b8242c37948911b84",
     "source_document": "docs/UXF/UXF-02.md",
-    "source_fingerprint": "646d186836291a4c69bec732b7ea52f538af18fabbe854d499cd4e009d77fce4",
-    "source_lines": "L531-L534",
-    "source_section": "18. Design Accessibility"
+    "source_fingerprint": "8aef9afb69a20df7da0d4221100e387a024b6a185e124ab65040a7ec11012bda",
+    "source_lines": "L911-L986",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-02-R004"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -998,41 +990,34 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-02-R005-AC001",
-      "given": "a user in the applicable channel and context for Every component must support: - Responsive Layout",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the rendered output exposes every required content element and action, keeps prohibited content absent, and makes the applicable confirmation or fallback directly observable",
-      "verifies": [
-        "UXF-02-R005-O001"
-      ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
-      "criterion_id": "UXF-02-R005-AC002",
-      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for Every component must support: - Responsive Layout",
-      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
-      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
-      "verifies": [
-        "UXF-02-R005-O001"
-      ],
-      "when": "the affected state is rendered or action is requested"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-02-R005",
+      "source_document": "docs/UXF/UXF-02.md",
+      "source_fingerprint": "585d027ef135d99a8bd7e809d092ed4fecbe55a73de6fdce22c5c61ede0264da"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-02-R005-AC001",
-        "UXF-02-R005-AC002"
+        "UXF-02-R005-AC002",
+        "UXF-02-R005-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-02-R005-O001",
@@ -1055,9 +1040,9 @@ This document should be read together with:
     "source_context_heading": "18. Design Accessibility",
     "source_context_sha256": "005d03136b01fbfc51aecdb4957e3fd361c068c92883677b8242c37948911b84",
     "source_document": "docs/UXF/UXF-02.md",
-    "source_fingerprint": "40cd7a7e8d060d8d29f2dec8bffc1c4d988c9f5421dc2ea10e835164c5070c68",
-    "source_lines": "L531-L535",
-    "source_section": "18. Design Accessibility"
+    "source_fingerprint": "585d027ef135d99a8bd7e809d092ed4fecbe55a73de6fdce22c5c61ede0264da",
+    "source_lines": "L988-L1063",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-02-R005"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1082,41 +1067,34 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "ACCESSIBILITY_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "UXF-02-R006-AC001",
-      "given": "the experience state and accessibility mode governed by Every component must support: - High Contrast",
-      "observable_evidence": "before/after rendered state, enabled accessibility mode, available content and actions, interaction outcome, and any accessibility conformance result declared by the source",
-      "then": "the accessible rendering or interaction is available without removing required content or actions, and its outcome remains perceivable and operable",
-      "verifies": [
-        "UXF-02-R006-O001"
-      ],
-      "when": "the named accessibility capability is enabled and the same content and actions are exercised"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "ACCESSIBILITY_CONFORMANCE_FAILURE_V1",
-      "criterion_id": "UXF-02-R006-AC002",
-      "given": "the experience with the accessibility capability named by Every component must support: - High Contrast unavailable or producing inaccessible content or actions",
-      "observable_evidence": "enabled mode, rendered state, affected content or action, interaction result, and failed accessibility conformance evidence",
-      "then": "accessibility conformance fails with the unavailable capability or inaccessible element identified; the state is not reported as conforming",
-      "verifies": [
-        "UXF-02-R006-O001"
-      ],
-      "when": "the applicable accessibility mode or interaction is used"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-02-R006",
+      "source_document": "docs/UXF/UXF-02.md",
+      "source_fingerprint": "1cffb584f29626086e3effb7aed86a130673f43fb4dc8ce87fef498d0bf3c9be"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-02-R006-AC001",
-        "UXF-02-R006-AC002"
+        "UXF-02-R006-AC002",
+        "UXF-02-R006-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-02-R006-O001",
@@ -1139,9 +1117,9 @@ This document should be read together with:
     "source_context_heading": "18. Design Accessibility",
     "source_context_sha256": "005d03136b01fbfc51aecdb4957e3fd361c068c92883677b8242c37948911b84",
     "source_document": "docs/UXF/UXF-02.md",
-    "source_fingerprint": "4e97038ab2333b346cfcc4ae9175480315dd6da17fd5c537bd317fbb9380de4b",
-    "source_lines": "L531-L536",
-    "source_section": "18. Design Accessibility"
+    "source_fingerprint": "1cffb584f29626086e3effb7aed86a130673f43fb4dc8ce87fef498d0bf3c9be",
+    "source_lines": "L1065-L1140",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-02-R006"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1166,41 +1144,34 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-02-R007-AC001",
-      "given": "a user in the applicable channel and context for Every component must support: - Focus Indicators",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the rendered output exposes every required content element and action, keeps prohibited content absent, and makes the applicable confirmation or fallback directly observable",
-      "verifies": [
-        "UXF-02-R007-O001"
-      ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
-      "criterion_id": "UXF-02-R007-AC002",
-      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for Every component must support: - Focus Indicators",
-      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
-      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
-      "verifies": [
-        "UXF-02-R007-O001"
-      ],
-      "when": "the affected state is rendered or action is requested"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-02-R007",
+      "source_document": "docs/UXF/UXF-02.md",
+      "source_fingerprint": "c47f1a2ff4ef8a1297155aa5c7cb501b1205751497359e763269906ac13876a4"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-02-R007-AC001",
-        "UXF-02-R007-AC002"
+        "UXF-02-R007-AC002",
+        "UXF-02-R007-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-02-R007-O001",
@@ -1223,9 +1194,9 @@ This document should be read together with:
     "source_context_heading": "18. Design Accessibility",
     "source_context_sha256": "005d03136b01fbfc51aecdb4957e3fd361c068c92883677b8242c37948911b84",
     "source_document": "docs/UXF/UXF-02.md",
-    "source_fingerprint": "f5d66b351e58194c70d1923bd217005efb97e30edf0fe34170872bf41aa175b5",
-    "source_lines": "L531-L537",
-    "source_section": "18. Design Accessibility"
+    "source_fingerprint": "c47f1a2ff4ef8a1297155aa5c7cb501b1205751497359e763269906ac13876a4",
+    "source_lines": "L1142-L1217",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-02-R007"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1250,41 +1221,34 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-02-R008-AC001",
-      "given": "a user in the applicable channel and context for Every component must support: - Touch Interaction",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the rendered output exposes every required content element and action, keeps prohibited content absent, and makes the applicable confirmation or fallback directly observable",
-      "verifies": [
-        "UXF-02-R008-O001"
-      ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
-      "criterion_id": "UXF-02-R008-AC002",
-      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for Every component must support: - Touch Interaction",
-      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
-      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
-      "verifies": [
-        "UXF-02-R008-O001"
-      ],
-      "when": "the affected state is rendered or action is requested"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-02-R008",
+      "source_document": "docs/UXF/UXF-02.md",
+      "source_fingerprint": "c7779f2a44860ef0c8acf3b0b419a595ed7d6a660c980edf6a94bce4746869a6"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-02-R008-AC001",
-        "UXF-02-R008-AC002"
+        "UXF-02-R008-AC002",
+        "UXF-02-R008-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-02-R008-O001",
@@ -1307,9 +1271,9 @@ This document should be read together with:
     "source_context_heading": "18. Design Accessibility",
     "source_context_sha256": "005d03136b01fbfc51aecdb4957e3fd361c068c92883677b8242c37948911b84",
     "source_document": "docs/UXF/UXF-02.md",
-    "source_fingerprint": "d66da1fbef66ac045aa392985dc6ecfd0d1dfdccb410b078cb7d334a917f9182",
-    "source_lines": "L531-L538",
-    "source_section": "18. Design Accessibility"
+    "source_fingerprint": "c7779f2a44860ef0c8acf3b0b419a595ed7d6a660c980edf6a94bce4746869a6",
+    "source_lines": "L1219-L1294",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-02-R008"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1334,41 +1298,38 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "ACCESSIBILITY_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "UXF-02-R009-AC001",
-      "given": "the experience state and accessibility mode governed by Accessibility cannot be disabled by Themes",
-      "observable_evidence": "before/after rendered state, enabled accessibility mode, available content and actions, interaction outcome, and any accessibility conformance result declared by the source",
-      "then": "the accessible rendering or interaction is available without removing required content or actions, and its outcome remains perceivable and operable",
-      "verifies": [
-        "UXF-02-R009-O001"
-      ],
-      "when": "the named accessibility capability is enabled and the same content and actions are exercised"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "ACCESSIBILITY_CONFORMANCE_FAILURE_V1",
-      "criterion_id": "UXF-02-R009-AC002",
-      "given": "the experience with the accessibility capability named by Accessibility cannot be disabled by Themes unavailable or producing inaccessible content or actions",
-      "observable_evidence": "enabled mode, rendered state, affected content or action, interaction result, and failed accessibility conformance evidence",
-      "then": "accessibility conformance fails with the unavailable capability or inaccessible element identified; the state is not reported as conforming",
-      "verifies": [
-        "UXF-02-R009-O001"
-      ],
-      "when": "the applicable accessibility mode or interaction is used"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "approved_semantic_completion_selection": {
+        "decision_id": "P2C-SC-C1-DEC-024",
+        "option_id": "OPT-AST"
+      },
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-02-R009",
+      "source_document": "docs/UXF/UXF-02.md",
+      "source_fingerprint": "d27ea5dc7317fe49df4515b2158c294433af56d1cb2c82e9b2cd97edef310640"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-02-R009-AC001",
-        "UXF-02-R009-AC002"
+        "UXF-02-R009-AC002",
+        "UXF-02-R009-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-02-R009-O001",
@@ -1401,8 +1362,8 @@ This document should be read together with:
     "source_context_sha256": "005d03136b01fbfc51aecdb4957e3fd361c068c92883677b8242c37948911b84",
     "source_document": "docs/UXF/UXF-02.md",
     "source_fingerprint": "d27ea5dc7317fe49df4515b2158c294433af56d1cb2c82e9b2cd97edef310640",
-    "source_lines": "L540",
-    "source_section": "18. Design Accessibility"
+    "source_lines": "L1296-L1384",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-02-R009"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1427,41 +1388,34 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-201-AC001",
-      "given": "a user in the applicable channel and context for One platform uses one Design System",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the rendered output exposes every required content element and action, keeps prohibited content absent, and makes the applicable confirmation or fallback directly observable",
-      "verifies": [
-        "UXF-201-O001"
-      ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
-      "criterion_id": "UXF-201-AC002",
-      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for One platform uses one Design System",
-      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
-      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
-      "verifies": [
-        "UXF-201-O001"
-      ],
-      "when": "the affected state is rendered or action is requested"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-201",
+      "source_document": "docs/UXF/UXF-02.md",
+      "source_fingerprint": "e5d0c9e56a39d827e32929f391c2436d733981b7346bb48d2b66a26e2a2ff8c7"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-201-AC001",
-        "UXF-201-AC002"
+        "UXF-201-AC002",
+        "UXF-201-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-201-O001",
@@ -1484,9 +1438,9 @@ This document should be read together with:
     "source_context_heading": "UXF-201",
     "source_context_sha256": "4248e919b7a92402cb8bf1101d8ae98dedffa3b0f5c3b6c5e9e98e3d50bd4699",
     "source_document": "docs/UXF/UXF-02.md",
-    "source_fingerprint": "d88247dc3155ce90c93042b273dfc35ee79e8f17934b9325f4a6c08689bc2497",
-    "source_lines": "L562-L565",
-    "source_section": "20. Design Principles > UXF-201"
+    "source_fingerprint": "e5d0c9e56a39d827e32929f391c2436d733981b7346bb48d2b66a26e2a2ff8c7",
+    "source_lines": "L1386-L1461",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-201"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1511,28 +1465,34 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DESIGN_CONFORMANCE_OBSERVATION_V1",
-      "criterion_id": "UXF-202-AC001",
-      "given": "a v2.3 capability, configuration, or design change governed by Themes are versioned configuration objects rather than source-code variants",
-      "observable_evidence": "conformance decision, requirement-to-design trace, applicable configuration evidence, and recorded boundary violations",
-      "then": "the conformance evidence identifies the governing configuration and shows that an approved configuration change alters the governed result without a source-code variant",
-      "verifies": [
-        "UXF-202-O001"
-      ],
-      "when": "conformance is reviewed before the change is accepted"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-202",
+      "source_document": "docs/UXF/UXF-02.md",
+      "source_fingerprint": "0e8459de723c9342d6b4a0adf0b85cae9fb9feff40f16002b0c9d4df4a7da50a"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "UXF-202-AC001"
+        "UXF-202-AC001",
+        "UXF-202-AC002",
+        "UXF-202-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-202-O001",
@@ -1567,9 +1527,9 @@ This document should be read together with:
     "source_context_heading": "UXF-202",
     "source_context_sha256": "70554271efc30f67ac846911b1d3d9a3c6b4cb1186dd5ec6af4624f0e5591ca1",
     "source_document": "docs/UXF/UXF-02.md",
-    "source_fingerprint": "6381b8b1454608536dc94487be94b75e703cfabb73923aa17c91fb4eb106749f",
-    "source_lines": "L568-L571",
-    "source_section": "20. Design Principles > UXF-202"
+    "source_fingerprint": "0e8459de723c9342d6b4a0adf0b85cae9fb9feff40f16002b0c9d4df4a7da50a",
+    "source_lines": "L1463-L1550",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-202"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1594,28 +1554,34 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DESIGN_CONFORMANCE_OBSERVATION_V1",
-      "criterion_id": "UXF-203-AC001",
-      "given": "a v2.3 capability, configuration, or design change governed by Experience Profiles extend Themes through governed configuration",
-      "observable_evidence": "conformance decision, requirement-to-design trace, applicable configuration evidence, and recorded boundary violations",
-      "then": "the conformance evidence identifies the governing configuration and shows that an approved configuration change alters the governed result without a source-code variant",
-      "verifies": [
-        "UXF-203-O001"
-      ],
-      "when": "conformance is reviewed before the change is accepted"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-203",
+      "source_document": "docs/UXF/UXF-02.md",
+      "source_fingerprint": "7237113bffc1154f8b68bf88ee97715a76a7fe9daba50442c17eae3533c89367"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "UXF-203-AC001"
+        "UXF-203-AC001",
+        "UXF-203-AC002",
+        "UXF-203-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-203-O001",
@@ -1650,9 +1616,9 @@ This document should be read together with:
     "source_context_heading": "UXF-203",
     "source_context_sha256": "2bc30fc1bead888652b7468c9678a3066c8990452e967979fbc446642db393f1",
     "source_document": "docs/UXF/UXF-02.md",
-    "source_fingerprint": "d32379ca5de696b63d8c4ff2ca56d306fa8643b26aea312fce3cba17e178b595",
-    "source_lines": "L574-L577",
-    "source_section": "20. Design Principles > UXF-203"
+    "source_fingerprint": "7237113bffc1154f8b68bf88ee97715a76a7fe9daba50442c17eae3533c89367",
+    "source_lines": "L1552-L1642",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-203"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1660,7 +1626,10 @@ This document should be read together with:
     "aliases": [],
     "coverage_mode": null,
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "BRD-UPDATE-01-R024"
+    ]
   },
   "requirement_type": "DESIGN_PRINCIPLE",
   "scope_coverage_unit": true,
@@ -1677,28 +1646,34 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DESIGN_CONFORMANCE_OBSERVATION_V1",
-      "criterion_id": "UXF-204-AC001",
-      "given": "a v2.3 capability, configuration, or design change governed by Theme inheritance resolves deterministically through the approved configuration hierarchy",
-      "observable_evidence": "conformance decision, requirement-to-design trace, applicable configuration evidence, and recorded boundary violations",
-      "then": "the conformance evidence identifies the governing configuration and shows that an approved configuration change alters the governed result without a source-code variant",
-      "verifies": [
-        "UXF-204-O001"
-      ],
-      "when": "conformance is reviewed before the change is accepted"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-204",
+      "source_document": "docs/UXF/UXF-02.md",
+      "source_fingerprint": "cb4c20c6b920ffbf9f10b8507c6e9a20c070aa3e30309f7546287b360313869a"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "UXF-204-AC001"
+        "UXF-204-AC001",
+        "UXF-204-AC002",
+        "UXF-204-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-204-O001",
@@ -1733,9 +1708,9 @@ This document should be read together with:
     "source_context_heading": "9. Theme Inheritance",
     "source_context_sha256": "5dc9e734b8b4aebf62c32b62531fea465e9103546d9064c2de61035cc1cad474",
     "source_document": "docs/UXF/UXF-02.md",
-    "source_fingerprint": "b4d646974deaf3be952211a8ba36437bcaf7b429c8b4962d4b52eee4657194a2",
-    "source_lines": "L580-L583",
-    "source_section": "20. Design Principles > UXF-204"
+    "source_fingerprint": "cb4c20c6b920ffbf9f10b8507c6e9a20c070aa3e30309f7546287b360313869a",
+    "source_lines": "L1644-L1731",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-204"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1760,41 +1735,34 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-205-AC001",
-      "given": "a user in the applicable channel and context for Every configurable property supports fallback",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the rendered output exposes every required content element and action, keeps prohibited content absent, and makes the applicable confirmation or fallback directly observable",
-      "verifies": [
-        "UXF-205-O001"
-      ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
-      "criterion_id": "UXF-205-AC002",
-      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for Every configurable property supports fallback",
-      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
-      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
-      "verifies": [
-        "UXF-205-O001"
-      ],
-      "when": "the affected state is rendered or action is requested"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-205",
+      "source_document": "docs/UXF/UXF-02.md",
+      "source_fingerprint": "175793623c78f85cd1d30c574aa3f7b9c4c3115d0f4c53a693de4da44b744b69"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-205-AC001",
-        "UXF-205-AC002"
+        "UXF-205-AC002",
+        "UXF-205-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-205-O001",
@@ -1817,9 +1785,9 @@ This document should be read together with:
     "source_context_heading": "UXF-205",
     "source_context_sha256": "0aa6cb83fef65e84ece116e231a46838af1754186867d52503389265df9e68ee",
     "source_document": "docs/UXF/UXF-02.md",
-    "source_fingerprint": "b1efdf8a5626ec522725a7f9c5fd147c1051743bf97791b48633cdfaf7d820f6",
-    "source_lines": "L586-L589",
-    "source_section": "20. Design Principles > UXF-205"
+    "source_fingerprint": "175793623c78f85cd1d30c574aa3f7b9c4c3115d0f4c53a693de4da44b744b69",
+    "source_lines": "L1733-L1808",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-205"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1844,41 +1812,34 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-206-AC001",
-      "given": "a user in the applicable channel and context for Assets participate in runtime resolution",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the rendered output identifies the applied runtime context, reflects the values resolved for that context, and contains no unresolved configuration token",
-      "verifies": [
-        "UXF-206-O001"
-      ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
-      "criterion_id": "UXF-206-AC002",
-      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for Assets participate in runtime resolution",
-      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
-      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
-      "verifies": [
-        "UXF-206-O001"
-      ],
-      "when": "the affected state is rendered or action is requested"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-206",
+      "source_document": "docs/UXF/UXF-02.md",
+      "source_fingerprint": "d924a940c94b860bc036677c42fc3dd036cd58b3b7ef59f332c573c6fea3d111"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-206-AC001",
-        "UXF-206-AC002"
+        "UXF-206-AC002",
+        "UXF-206-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-206-O001",
@@ -1901,9 +1862,9 @@ This document should be read together with:
     "source_context_heading": "UXF-206",
     "source_context_sha256": "92ed4e37693c4c6916dbf7f4d7343be7398e82e81a1fcf109079cd02d6a8f3e3",
     "source_document": "docs/UXF/UXF-02.md",
-    "source_fingerprint": "7302f56377ae7918d8bc95993e4735d734db941b76893e930b231ec2f6565f9c",
-    "source_lines": "L592-L595",
-    "source_section": "20. Design Principles > UXF-206"
+    "source_fingerprint": "d924a940c94b860bc036677c42fc3dd036cd58b3b7ef59f332c573c6fea3d111",
+    "source_lines": "L1810-L1885",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-206"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1928,41 +1889,34 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "UX_JOURNEY_OBSERVATION_V1",
-      "criterion_id": "UXF-207-AC001",
-      "given": "a user in the applicable channel and context for Component libraries are shared across all applications",
-      "observable_evidence": "rendered UI state, enabled or unavailable action, user-visible confirmation or fallback, and exposed payload fields",
-      "then": "the rendered output exposes every required content element and action, keeps prohibited content absent, and makes the applicable confirmation or fallback directly observable",
-      "verifies": [
-        "UXF-207-O001"
-      ],
-      "when": "the user reaches the relevant journey state or invokes the available action"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "UX_BOUNDARY_FAILURE_V1",
-      "criterion_id": "UXF-207-AC002",
-      "given": "a missing, prohibited, inaccessible, or inapplicable journey input for Component libraries are shared across all applications",
-      "observable_evidence": "rendered state, payload-field inspection, unavailable action or fallback, and user-visible outcome",
-      "then": "the prohibited information remains absent and the action is unavailable or follows the requirement-specific fallback with a visible outcome",
-      "verifies": [
-        "UXF-207-O001"
-      ],
-      "when": "the affected state is rendered or action is requested"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-207",
+      "source_document": "docs/UXF/UXF-02.md",
+      "source_fingerprint": "2ac7fcd36af17b23fe4f932aa8e9f456a14741cd2c26fc568751d72346dd822b"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-207-AC001",
-        "UXF-207-AC002"
+        "UXF-207-AC002",
+        "UXF-207-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-207-O001",
@@ -1985,9 +1939,9 @@ This document should be read together with:
     "source_context_heading": "UXF-207",
     "source_context_sha256": "274af73e9c245c7a1b3a201db3cae532b9bfa7f3a47bf37915907f58340ee04c",
     "source_document": "docs/UXF/UXF-02.md",
-    "source_fingerprint": "6a5f765181a11b894aef2372b5f4902bd7e4bced33a6548e370f29868766fb93",
-    "source_lines": "L598-L601",
-    "source_section": "20. Design Principles > UXF-207"
+    "source_fingerprint": "2ac7fcd36af17b23fe4f932aa8e9f456a14741cd2c26fc568751d72346dd822b",
+    "source_lines": "L1887-L1962",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-207"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2012,28 +1966,34 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DESIGN_CONFORMANCE_OBSERVATION_V1",
-      "criterion_id": "UXF-208-AC001",
-      "given": "a v2.3 capability, configuration, or design change governed by Business behavior remains independent from presentation composition",
-      "observable_evidence": "conformance decision, requirement-to-design trace, applicable configuration evidence, and recorded boundary violations",
-      "then": "the conformance review identifies the applicable principle, links it to the governed requirement and design boundary, and records no prohibited coupling",
-      "verifies": [
-        "UXF-208-O001"
-      ],
-      "when": "conformance is reviewed before the change is accepted"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-208",
+      "source_document": "docs/UXF/UXF-02.md",
+      "source_fingerprint": "ea3471c0d6794503d80a1ad88002be52b19d35f78d2d56d9bb5fb89ae319529d"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "UXF-208-AC001"
+        "UXF-208-AC001",
+        "UXF-208-AC002",
+        "UXF-208-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-208-O001",
@@ -2068,9 +2028,9 @@ This document should be read together with:
     "source_context_heading": "UXF-208",
     "source_context_sha256": "d4d175ee3f61a413eac6184a502e4c0c1071c0bc7b76eae90cc454aa4ed990f0",
     "source_document": "docs/UXF/UXF-02.md",
-    "source_fingerprint": "0bc74316f7d4db9b48bf72b687b255a6941a34dc5bacdac92e2b2f9bced15866",
-    "source_lines": "L604-L607",
-    "source_section": "20. Design Principles > UXF-208"
+    "source_fingerprint": "ea3471c0d6794503d80a1ad88002be52b19d35f78d2d56d9bb5fb89ae319529d",
+    "source_lines": "L1964-L2051",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-208"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2095,41 +2055,38 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "ACCESSIBILITY_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "UXF-209-AC001",
-      "given": "the experience state and accessibility mode governed by Accessibility is mandatory",
-      "observable_evidence": "before/after rendered state, enabled accessibility mode, available content and actions, interaction outcome, and any accessibility conformance result declared by the source",
-      "then": "the accessible rendering or interaction is available without removing required content or actions, and its outcome remains perceivable and operable",
-      "verifies": [
-        "UXF-209-O001"
-      ],
-      "when": "the named accessibility capability is enabled and the same content and actions are exercised"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "ACCESSIBILITY_CONFORMANCE_FAILURE_V1",
-      "criterion_id": "UXF-209-AC002",
-      "given": "the experience with the accessibility capability named by Accessibility is mandatory unavailable or producing inaccessible content or actions",
-      "observable_evidence": "enabled mode, rendered state, affected content or action, interaction result, and failed accessibility conformance evidence",
-      "then": "accessibility conformance fails with the unavailable capability or inaccessible element identified; the state is not reported as conforming",
-      "verifies": [
-        "UXF-209-O001"
-      ],
-      "when": "the applicable accessibility mode or interaction is used"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "approved_semantic_completion_selection": {
+        "decision_id": "P2C-SC-C1-DEC-025",
+        "option_id": "OPT-AST"
+      },
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-209",
+      "source_document": "docs/UXF/UXF-02.md",
+      "source_fingerprint": "7b164066e6e54df0a706772cc1cff47aab3dc1e5f3fe9d65ad26b59e7fae0cd7"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-209-AC001",
-        "UXF-209-AC002"
+        "UXF-209-AC002",
+        "UXF-209-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-209-O001",
@@ -2152,9 +2109,9 @@ This document should be read together with:
     "source_context_heading": "UXF-209",
     "source_context_sha256": "3ec3e154e2514f1f8cb977d5567106ff41a872d7919d3a885dec673bbb8f2383",
     "source_document": "docs/UXF/UXF-02.md",
-    "source_fingerprint": "47d5cf0d2b9ba787c7919421eac0228594fba22381b7d6a86a679e5f55cdc92c",
-    "source_lines": "L610-L613",
-    "source_section": "20. Design Principles > UXF-209"
+    "source_fingerprint": "7b164066e6e54df0a706772cc1cff47aab3dc1e5f3fe9d65ad26b59e7fae0cd7",
+    "source_lines": "L2053-L2132",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-209"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2179,41 +2136,34 @@ This document should be read together with:
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "SECURITY_DECISION_OBSERVATION_V1",
-      "criterion_id": "UXF-210-AC001",
-      "given": "an identified principal, applicable assurance context, and policy inputs for Responsive behavior is defined by Design Tokens",
-      "observable_evidence": "decision result, effective assurance or policy, denied or changed state, reason, and audit evidence",
-      "then": "the effective security policy produces the required allow, challenge, block, review, or denial result; protected state and audit evidence agree with that decision",
-      "verifies": [
-        "UXF-210-O001"
-      ],
-      "when": "the protected decision or action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "SECURITY_FAIL_CLOSED_V1",
-      "criterion_id": "UXF-210-AC002",
-      "given": "a principal or request that does not satisfy the assurance, policy, consent, or authorization boundary for Responsive behavior is defined by Design Tokens",
-      "observable_evidence": "decision result, protected-state comparison, reason, effective policy, and audit record",
-      "then": "the result is challenge, block, review, or denial as required; protected state is unchanged and the reason is audited",
-      "verifies": [
-        "UXF-210-O001"
-      ],
-      "when": "the protected decision or action is attempted"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "UXF-210",
+      "source_document": "docs/UXF/UXF-02.md",
+      "source_fingerprint": "05bd715bb6a85af8de9a7ca10d386c03a51b8d13675fbcbbe088404ba3be691d"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "UXF-210-AC001",
-        "UXF-210-AC002"
+        "UXF-210-AC002",
+        "UXF-210-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "UXF-210-O001",
@@ -2222,35 +2172,38 @@ This document should be read together with:
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
-      "criterion_references": [],
-      "rationale": "UXF-210 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "UXF-210-AC003"
+      ],
+      "rationale": null
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "UXF-210 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "UXF-210 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "UXF-210 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "UXF-210 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "UXF-210 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "UXF-210-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "UXF-210-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "UXF-210 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "UXF-210 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -2268,9 +2221,9 @@ This document should be read together with:
     "source_context_heading": "UXF-210",
     "source_context_sha256": "cfbfe7eedba072c25a3ffff4d84032354f2b27bf8479deb28bcffe01b9f03fb8",
     "source_document": "docs/UXF/UXF-02.md",
-    "source_fingerprint": "e170a425dc60222d14d0adf4ef04d24d23ce726a25d0bbb8c4498d318f9bdfde",
-    "source_lines": "L616-L619",
-    "source_section": "20. Design Principles > UXF-210"
+    "source_fingerprint": "05bd715bb6a85af8de9a7ca10d386c03a51b8d13675fbcbbe088404ba3be691d",
+    "source_lines": "L2134-L2244",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > UXF-210"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {

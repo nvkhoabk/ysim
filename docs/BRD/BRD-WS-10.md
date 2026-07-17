@@ -1,13 +1,20 @@
 ---
 document_code: "BRD-WS-10"
+document_id: "BRD-WS-10"
 title: "Settlement, Revenue Sharing & Financial Lifecycle"
-product_baseline: "2.3"
-document_revision: "2.3.0-draft.1"
+version: "2.3.0-draft.3"
+document_revision: "2.3.0-draft.3"
+status: "V2.3_DRAFT"
 lifecycle_status: "V2.3_DRAFT"
 language: "vi-VN"
+baseline: "2.3"
+product_baseline: "2.3"
+source_lineage: "v2.2 + approved Phase 1/2A/2B + accepted Acceptance Model C1 + accepted Mapping C3"
 source_baseline: "v2.2"
+last_reviewed_date: "2026-07-15"
+last_remediated_on: "2026-07-17"
+applicable_scope: "V2.3_ACTIVE_AND_RETAINED_SCOPE_RECORDS"
 generated_registry_role: "BRD_CANONICAL_SOURCE"
-last_remediated_on: "2026-07-15"
 ---
 ## Thẩm quyền nguồn yêu cầu v2.3
 
@@ -902,7 +909,7 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
 
 <!-- YSIM:PHASE_2C CANONICAL APPENDIX BEGIN -->
 
-## Phụ lục yêu cầu chuẩn tắc v2.3
+## Phụ lục yêu cầu chuẩn tắc v2.3 — C6-R1
 
 
 
@@ -911,41 +918,34 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-10-001-AC001",
-      "given": "the applicable business context, actor, and input for Settlement thực hiện theo SalesOrder",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-10-001-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BD-10-001-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Settlement thực hiện theo SalesOrder",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BD-10-001-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-10-001",
+      "source_document": "docs/BRD/BRD-WS-10.md",
+      "source_fingerprint": "b275245ae67c26db295d9b01975e06b291bed5fcb3ca65ad3534e9dbc8452ed2"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-10-001-AC001",
-        "BD-10-001-AC002"
+        "BD-10-001-AC002",
+        "BD-10-001-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-10-001-O001",
@@ -968,9 +968,9 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
     "source_context_heading": "BD-10-001",
     "source_context_sha256": "bf5240f1f93af4239a9dff51fbc3ed1ace07b3e0ad7f4ca7313dea5791bb0f83",
     "source_document": "docs/BRD/BRD-WS-10.md",
-    "source_fingerprint": "c75e77d3da8df3db779e985438aebad0ab9d67cf210ab6484622a2304cec9abd",
-    "source_lines": "L645-L648",
-    "source_section": "30. Business Decisions (Locked) > BD-10-001"
+    "source_fingerprint": "b275245ae67c26db295d9b01975e06b291bed5fcb3ca65ad3534e9dbc8452ed2",
+    "source_lines": "L916-L991",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-10-001"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -995,28 +995,34 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-10-002-AC001",
-      "given": "the applicable business context, actor, and input for Settlement hỗ trợ chu kỳ cố định hoặc khoảng thời gian tùy chỉnh (≤ 03 tháng)",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-10-002-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-10-002",
+      "source_document": "docs/BRD/BRD-WS-10.md",
+      "source_fingerprint": "1c5df516ab75554ede45ac8921f524e246c0c56e70966cab4cd89d723f540b6d"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BD-10-002-AC001"
+        "BD-10-002-AC001",
+        "BD-10-002-AC002",
+        "BD-10-002-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-10-002-O001",
@@ -1039,9 +1045,9 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
     "source_context_heading": "BD-10-002",
     "source_context_sha256": "cfdaafaea8409e5c2374e905a8d9840f4334af95c26c1f629e12a614a350409c",
     "source_document": "docs/BRD/BRD-WS-10.md",
-    "source_fingerprint": "e2a4d5545d7bcd548c5fbed08d063004704b3d8cb2f68b30c69d81627cf9384a",
-    "source_lines": "L651-L654",
-    "source_section": "30. Business Decisions (Locked) > BD-10-002"
+    "source_fingerprint": "1c5df516ab75554ede45ac8921f524e246c0c56e70966cab4cd89d723f540b6d",
+    "source_lines": "L993-L1068",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-10-002"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1066,41 +1072,34 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-10-003-AC001",
-      "given": "the applicable business context, actor, and input for Mọi Transaction đều sinh FinancialEvent",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-10-003-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BD-10-003-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Mọi Transaction đều sinh FinancialEvent",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BD-10-003-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-10-003",
+      "source_document": "docs/BRD/BRD-WS-10.md",
+      "source_fingerprint": "603fbd624389ea7f5a43974b048da63d8dee41723dab55ddee4714996bfac728"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-10-003-AC001",
-        "BD-10-003-AC002"
+        "BD-10-003-AC002",
+        "BD-10-003-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-10-003-O001",
@@ -1109,35 +1108,36 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-10-003 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-10-003 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-10-003 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-10-003 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-10-003 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-10-003 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "BD-10-003 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BD-10-003-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BD-10-003-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-10-003 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-10-003 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -1155,9 +1155,9 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
     "source_context_heading": "BD-10-003",
     "source_context_sha256": "b7864c7b3c808821df0dbc7a803ae0710303adff1f350e86de6098cf4a3e22d6",
     "source_document": "docs/BRD/BRD-WS-10.md",
-    "source_fingerprint": "e250a795ac70e0361be91e83b8b4041d147d8967db6e0049d1c91ad456d0c702",
-    "source_lines": "L657-L660",
-    "source_section": "30. Business Decisions (Locked) > BD-10-003"
+    "source_fingerprint": "603fbd624389ea7f5a43974b048da63d8dee41723dab55ddee4714996bfac728",
+    "source_lines": "L1070-L1178",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-10-003"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1182,41 +1182,34 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "BD-10-004-AC001",
-      "given": "a candidate CommissionSnapshot phát sinh sau Payment Success và ở trạng thái Pending cho đến khi Settlement … record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "BD-10-004-O001"
-      ],
-      "when": "the candidate is evaluated against its declared data contract"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "DATA_CONTRACT_REJECTION_V1",
-      "criterion_id": "BD-10-004-AC002",
-      "given": "a CommissionSnapshot phát sinh sau Payment Success và ở trạng thái Pending cho đến khi Settlement … candidate containing an unsupported value, inconsistent relationship, or unresolved reference",
-      "observable_evidence": "rejection result, field or relationship reason, unresolved reference, and unchanged persisted state",
-      "then": "the candidate is rejected without persisting the invalid state, and each invalid field or relationship has a deterministic reason",
-      "verifies": [
-        "BD-10-004-O001"
-      ],
-      "when": "the candidate is validated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-10-004",
+      "source_document": "docs/BRD/BRD-WS-10.md",
+      "source_fingerprint": "8b62605a0bb1c5a4f5527bd01a57a85870f4fe3deae095eb6b58d420a8f37dc7"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-10-004-AC001",
-        "BD-10-004-AC002"
+        "BD-10-004-AC002",
+        "BD-10-004-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-10-004-O001",
@@ -1225,35 +1218,36 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-10-004 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-10-004 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-10-004 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-10-004 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-10-004 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-10-004 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "BD-10-004 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BD-10-004-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BD-10-004-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-10-004 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-10-004 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -1271,9 +1265,9 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
     "source_context_heading": "BD-10-004",
     "source_context_sha256": "b7361db884afdadd4c7d3be5a412ef088110c47e47fb36c5baab3430baea7406",
     "source_document": "docs/BRD/BRD-WS-10.md",
-    "source_fingerprint": "6a50fb8fe3668c2638571610a7740b0d6cb316e793d7653efc95ecb40a0fd1bf",
-    "source_lines": "L663-L666",
-    "source_section": "30. Business Decisions (Locked) > BD-10-004"
+    "source_fingerprint": "8b62605a0bb1c5a4f5527bd01a57a85870f4fe3deae095eb6b58d420a8f37dc7",
+    "source_lines": "L1180-L1288",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-10-004"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1298,28 +1292,34 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-10-005-AC001",
-      "given": "the applicable business context, actor, and input for Revenue Sharing tính theo Bottom-Up Distribution",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-10-005-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-10-005",
+      "source_document": "docs/BRD/BRD-WS-10.md",
+      "source_fingerprint": "bc88fbda37ad197d405acdb988385fb9549f9d4659a53f0801649b4363d90cc3"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BD-10-005-AC001"
+        "BD-10-005-AC001",
+        "BD-10-005-AC002",
+        "BD-10-005-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-10-005-O001",
@@ -1342,9 +1342,9 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
     "source_context_heading": "BD-10-005",
     "source_context_sha256": "5e10d231595619f0a9a47c7327428f4056155b9e0aa19055b1e841f171aa53d3",
     "source_document": "docs/BRD/BRD-WS-10.md",
-    "source_fingerprint": "80f684f2a46d220ffb8c4d310d0ffba0e9b7a34f7d946087683b034d8c6b1a78",
-    "source_lines": "L669-L672",
-    "source_section": "30. Business Decisions (Locked) > BD-10-005"
+    "source_fingerprint": "bc88fbda37ad197d405acdb988385fb9549f9d4659a53f0801649b4363d90cc3",
+    "source_lines": "L1290-L1365",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-10-005"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1369,28 +1369,34 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "BD-10-006-AC001",
-      "given": "a candidate RevenueRecipient là Business Object record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "BD-10-006-O001"
-      ],
-      "when": "the candidate is evaluated against its declared data contract"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-10-006",
+      "source_document": "docs/BRD/BRD-WS-10.md",
+      "source_fingerprint": "c6b4c84e2a9324828b178d1218ee2481184a44f250f1b82504bc6e4075f96fe7"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BD-10-006-AC001"
+        "BD-10-006-AC001",
+        "BD-10-006-AC002",
+        "BD-10-006-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-10-006-O001",
@@ -1413,9 +1419,9 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
     "source_context_heading": "10. Revenue Recipient",
     "source_context_sha256": "a647554ddef26139d541a9028a61ec94ed32dd9e1d94807e33b5883345e690b3",
     "source_document": "docs/BRD/BRD-WS-10.md",
-    "source_fingerprint": "fa8416806d499d87161e71ff8cf5536e8865a0dc272e9c7cd3e897b787904135",
-    "source_lines": "L675-L678",
-    "source_section": "30. Business Decisions (Locked) > BD-10-006"
+    "source_fingerprint": "c6b4c84e2a9324828b178d1218ee2481184a44f250f1b82504bc6e4075f96fe7",
+    "source_lines": "L1367-L1442",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-10-006"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1440,28 +1446,34 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "BD-10-007-AC001",
-      "given": "a candidate SettlementSnapshot lưu đầy đủ Multi-level Cost và Multi-level Price record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "BD-10-007-O001"
-      ],
-      "when": "the candidate is evaluated against its declared data contract"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-10-007",
+      "source_document": "docs/BRD/BRD-WS-10.md",
+      "source_fingerprint": "99426e022c800a44e2f786845622f9e16816e18edcc3cc5770301cacec92c971"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BD-10-007-AC001"
+        "BD-10-007-AC001",
+        "BD-10-007-AC002",
+        "BD-10-007-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-10-007-O001",
@@ -1484,9 +1496,9 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
     "source_context_heading": "BD-10-007",
     "source_context_sha256": "67f0a8ffbe93a307b1405be02b6f45edaadd6abda63b7db4d72116ff2f4dc2f5",
     "source_document": "docs/BRD/BRD-WS-10.md",
-    "source_fingerprint": "5548054fa4c6319bf47dc8db85fbca2dae74867178f333e490e226fe558677a1",
-    "source_lines": "L681-L684",
-    "source_section": "30. Business Decisions (Locked) > BD-10-007"
+    "source_fingerprint": "99426e022c800a44e2f786845622f9e16816e18edcc3cc5770301cacec92c971",
+    "source_lines": "L1444-L1519",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-10-007"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1511,41 +1523,34 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-10-008-AC001",
-      "given": "the applicable business context, actor, and input for YSim sử dụng Event Ledger",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-10-008-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BD-10-008-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by YSim sử dụng Event Ledger",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BD-10-008-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-10-008",
+      "source_document": "docs/BRD/BRD-WS-10.md",
+      "source_fingerprint": "be9313171ebe4bc987ed4287fe6e453342f5fcdbe5e914daae40b18f7b4f4b35"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-10-008-AC001",
-        "BD-10-008-AC002"
+        "BD-10-008-AC002",
+        "BD-10-008-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-10-008-O001",
@@ -1554,35 +1559,36 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-10-008 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-10-008 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-10-008 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-10-008 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-10-008 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-10-008 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "BD-10-008 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BD-10-008-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BD-10-008-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-10-008 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-10-008 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -1600,9 +1606,9 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
     "source_context_heading": "BD-10-008",
     "source_context_sha256": "46c9d6904c55d8c1ddd1555939e4c36957f0b86ea8257092c2102954948c6032",
     "source_document": "docs/BRD/BRD-WS-10.md",
-    "source_fingerprint": "83e65c1ed783297eb1a188df179b319203b9b9ef281a72879ce664d596fdffd2",
-    "source_lines": "L687-L690",
-    "source_section": "30. Business Decisions (Locked) > BD-10-008"
+    "source_fingerprint": "be9313171ebe4bc987ed4287fe6e453342f5fcdbe5e914daae40b18f7b4f4b35",
+    "source_lines": "L1521-L1629",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-10-008"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1627,47 +1633,27 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "BD-10-009-AC001",
-      "given": "a candidate FinancialAccount là Business Object độc lập record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "BD-10-009-O001"
-      ],
-      "when": "the candidate is evaluated against its declared data contract"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "DATA_CONTRACT_REJECTION_V1",
-      "criterion_id": "BD-10-009-AC002",
-      "given": "a FinancialAccount là Business Object độc lập candidate containing an unsupported value, inconsistent relationship, or unresolved reference",
-      "observable_evidence": "rejection result, field or relationship reason, unresolved reference, and unchanged persisted state",
-      "then": "the candidate is rejected without persisting the invalid state, and each invalid field or relationship has a deterministic reason",
-      "verifies": [
-        "BD-10-009-O001"
-      ],
-      "when": "the candidate is validated"
-    },
-    {
-      "case": "NEGATIVE_FAIL_CLOSED",
-      "controlled_contract": "REQUIREMENT_SPECIFIC_FAIL_CLOSED_V1",
-      "criterion_id": "BD-10-009-AC003",
-      "given": "an input or attempted state change that violates a mandatory boundary explicitly stated by FinancialAccount là Business Object độc lập",
-      "observable_evidence": "violating input, decision and reason, before/after protected state, and audit or conformance evidence",
-      "then": "the violated obligation produces its specified rejection, denial, block, review, or non-conforming result without recording a contradictory success",
-      "verifies": [
-        "BD-10-009-O001"
-      ],
-      "when": "the violating input or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-10-009",
+      "source_document": "docs/BRD/BRD-WS-10.md",
+      "source_fingerprint": "d616cfc74ed3ce4f84f702777e332ef6896558a8c62b877567adbc5d43e3131a"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
@@ -1683,36 +1669,38 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
-      "criterion_references": [],
-      "rationale": "BD-10-009 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    },
-    "CONCURRENCY": {
-      "criterion_references": [],
-      "rationale": "BD-10-009 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    },
-    "IDEMPOTENCY": {
-      "criterion_references": [],
-      "rationale": "BD-10-009 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    },
-    "NEGATIVE_FAIL_CLOSED": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BD-10-009-AC003"
       ],
-      "status": "APPLICABLE"
+      "rationale": null
+    },
+    "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "BD-10-009 does not define a concurrency obligation."
+    },
+    "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "BD-10-009 does not define a idempotency obligation."
+    },
+    "NEGATIVE_FAIL_CLOSED": {
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BD-10-009-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BD-10-009-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-10-009 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-10-009 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -1730,9 +1718,9 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
     "source_context_heading": "BD-10-009",
     "source_context_sha256": "d0371218f6394f4f56ff369edf8e9bc1b195fa2239489ceca084a63d5ef26b6c",
     "source_document": "docs/BRD/BRD-WS-10.md",
-    "source_fingerprint": "39168c7505b700169dfe828784eb4431a2824a2904f0c3084c05c9736c7f018e",
-    "source_lines": "L693-L696",
-    "source_section": "30. Business Decisions (Locked) > BD-10-009"
+    "source_fingerprint": "d616cfc74ed3ce4f84f702777e332ef6896558a8c62b877567adbc5d43e3131a",
+    "source_lines": "L1631-L1741",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-10-009"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1757,28 +1745,34 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-10-010-AC001",
-      "given": "the applicable business context, actor, and input for Wallet hỗ trợ Organization và Collaborator",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-10-010-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-10-010",
+      "source_document": "docs/BRD/BRD-WS-10.md",
+      "source_fingerprint": "fbcfb468aaaf83b373af9686942929ca28293983acd06cdf0e3ecf63c1b0e200"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BD-10-010-AC001"
+        "BD-10-010-AC001",
+        "BD-10-010-AC002",
+        "BD-10-010-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-10-010-O001",
@@ -1801,9 +1795,9 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
     "source_context_heading": "BD-10-010",
     "source_context_sha256": "2adb885eb01fcb9a7452c89f505bec884665c7e1da3fbcb402d85613d2c05c5d",
     "source_document": "docs/BRD/BRD-WS-10.md",
-    "source_fingerprint": "71cea7a3cf90fe5d24af59b305e764f041c4c826b8e53ff1c15a3b73e6b761a1",
-    "source_lines": "L699-L702",
-    "source_section": "30. Business Decisions (Locked) > BD-10-010"
+    "source_fingerprint": "fbcfb468aaaf83b373af9686942929ca28293983acd06cdf0e3ecf63c1b0e200",
+    "source_lines": "L1743-L1818",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-10-010"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1828,41 +1822,36 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-10-011-AC001",
-      "given": "the applicable business context, actor, and input for Supplier Settlement thuộc Financial Domain",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-10-011-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-007"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BD-10-011-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Supplier Settlement thuộc Financial Domain",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BD-10-011-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-10-011",
+      "source_document": "docs/BRD/BRD-WS-10.md",
+      "source_fingerprint": "3a0bc08d4f73ba3e021e860682001fd3b7fb39039258401f0330cb7d67f2ef1d"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-10-011-AC001",
-        "BD-10-011-AC002"
+        "BD-10-011-AC002",
+        "BD-10-011-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-10-011-O001",
@@ -1871,35 +1860,36 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-10-011 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-10-011 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-10-011 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-10-011 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-10-011 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-10-011 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "BD-10-011 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BD-10-011-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BD-10-011-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-10-011 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-10-011 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -1919,9 +1909,9 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
     "source_context_heading": "BD-10-011",
     "source_context_sha256": "a4a861591038a37a84b198e8f9327399181fcccc75c560ed4633b9653cf63cfa",
     "source_document": "docs/BRD/BRD-WS-10.md",
-    "source_fingerprint": "70bf02e119a38229db461aef71a8e478b86b92189998493c28b92096b3501149",
-    "source_lines": "L705-L708",
-    "source_section": "30. Business Decisions (Locked) > BD-10-011"
+    "source_fingerprint": "3a0bc08d4f73ba3e021e860682001fd3b7fb39039258401f0330cb7d67f2ef1d",
+    "source_lines": "L1820-L1932",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-10-011"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1946,41 +1936,34 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-10-012-AC001",
-      "given": "the applicable business context, actor, and input for Settlement sử dụng Settlement Currency theo Commercial Agreement",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-10-012-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BD-10-012-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Settlement sử dụng Settlement Currency theo Commercial Agreement",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BD-10-012-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-10-012",
+      "source_document": "docs/BRD/BRD-WS-10.md",
+      "source_fingerprint": "f3304e1eaf639a40e97c47297d19fe62e3d7a2ae921abbf374bf829f6e2e3726"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-10-012-AC001",
-        "BD-10-012-AC002"
+        "BD-10-012-AC002",
+        "BD-10-012-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-10-012-O001",
@@ -1989,35 +1972,36 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-10-012 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-10-012 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-10-012 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-10-012 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-10-012 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-10-012 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "BD-10-012 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BD-10-012-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BD-10-012-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-10-012 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-10-012 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -2035,9 +2019,9 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
     "source_context_heading": "BD-10-012",
     "source_context_sha256": "f9aec2084f3e1d8496e852b24c816bbcba0b6f942d89a7ae218b237c7d69d74f",
     "source_document": "docs/BRD/BRD-WS-10.md",
-    "source_fingerprint": "398ae82c321b590bab3f8e5bb0e7ba8472b307f28bd14601e53ae2ff30a143fa",
-    "source_lines": "L711-L714",
-    "source_section": "30. Business Decisions (Locked) > BD-10-012"
+    "source_fingerprint": "f3304e1eaf639a40e97c47297d19fe62e3d7a2ae921abbf374bf829f6e2e3726",
+    "source_lines": "L1934-L2042",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-10-012"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2062,41 +2046,34 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-10-013-AC001",
-      "given": "the applicable business context, actor, and input for Financial Domain hỗ trợ FX Gain/Loss",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-10-013-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BD-10-013-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Financial Domain hỗ trợ FX Gain/Loss",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BD-10-013-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-10-013",
+      "source_document": "docs/BRD/BRD-WS-10.md",
+      "source_fingerprint": "489635ea098e27cee9b865773a6026ec8cee7cdffee848adb1e506c02a149e60"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-10-013-AC001",
-        "BD-10-013-AC002"
+        "BD-10-013-AC002",
+        "BD-10-013-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-10-013-O001",
@@ -2105,35 +2082,36 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-10-013 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-10-013 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-10-013 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-10-013 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-10-013 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-10-013 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "BD-10-013 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BD-10-013-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BD-10-013-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-10-013 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-10-013 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -2151,9 +2129,9 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
     "source_context_heading": "BD-10-013",
     "source_context_sha256": "af3550398f77b7fd607d95b76ea07114814de610e8831691bad1aa9433635e09",
     "source_document": "docs/BRD/BRD-WS-10.md",
-    "source_fingerprint": "9e57fb2978a07e5f6a53bd189bc0daa19cad5cf9ea7b22db2ecb18eb2cb744b2",
-    "source_lines": "L717-L720",
-    "source_section": "30. Business Decisions (Locked) > BD-10-013"
+    "source_fingerprint": "489635ea098e27cee9b865773a6026ec8cee7cdffee848adb1e506c02a149e60",
+    "source_lines": "L2044-L2152",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-10-013"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2178,47 +2156,27 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-10-014-AC001",
-      "given": "the applicable business context, actor, and input for Refund thực hiện Rollback Settlement",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-10-014-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BD-10-014-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Refund thực hiện Rollback Settlement",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BD-10-014-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
-    },
-    {
-      "case": "RECOVERY",
-      "controlled_contract": "EXPLICIT_RECOVERY_CONTRACT_V1",
-      "criterion_id": "BD-10-014-AC003",
-      "given": "a failed or interrupted case for which Refund thực hiện Rollback Settlement explicitly defines recovery, restore, rollback, or fallback behavior",
-      "observable_evidence": "pre-failure state, recovery action, resulting state, outcome, and recovery evidence named by the obligation",
-      "then": "the resulting state and outcome follow the requirement-specific recovery obligation and expose whether recovery completed or failed",
-      "verifies": [
-        "BD-10-014-O001"
-      ],
-      "when": "the declared recovery path is invoked"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-10-014",
+      "source_document": "docs/BRD/BRD-WS-10.md",
+      "source_fingerprint": "216fd1020ccb89c614ed83da3d839145c2ff4f282d1333991ea5531f80267364"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
@@ -2234,36 +2192,36 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-10-014 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-10-014 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-10-014 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-10-014 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-10-014 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-10-014 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "BD-10-014 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BD-10-014-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BD-10-014-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
-      "criterion_references": [
-        "BD-10-014-AC003"
-      ],
-      "status": "APPLICABLE"
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "BD-10-014 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -2281,9 +2239,9 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
     "source_context_heading": "BD-10-014",
     "source_context_sha256": "e11e07f50b9a3531201fb6335b928ecb7faf79551eda6b05a9304ce3b7bf6e47",
     "source_document": "docs/BRD/BRD-WS-10.md",
-    "source_fingerprint": "9826de69db809dceec60e3ae8b568eb9b972f2939a5dbe269a9bb0f83a1549b4",
-    "source_lines": "L723-L726",
-    "source_section": "30. Business Decisions (Locked) > BD-10-014"
+    "source_fingerprint": "216fd1020ccb89c614ed83da3d839145c2ff4f282d1333991ea5531f80267364",
+    "source_lines": "L2154-L2262",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-10-014"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2308,9 +2266,20 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "NOT_APPLICABLE_FOR_V2.3",
+    "inference": false,
+    "requirement_id": "BD-10-015",
+    "scope_status": "FUTURE"
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "NOT_APPLICABLE_FOR_V2.3",
+    "runtime_status": "NOT_APPLICABLE_FOR_V2.3"
+  },
   "acceptance_rationale": "Requirement is retained for a future baseline and is excluded from v2.3 delivery.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
   "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
   "acceptance_unit": false,
   "atomic_obligations": [],
@@ -2330,9 +2299,9 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
     "source_context_heading": "BD-10-015",
     "source_context_sha256": "bd3876ba9fa8dd2c96d03f50d5e39eabdd3935bae37d1ded3190161e598d97a8",
     "source_document": "docs/BRD/BRD-WS-10.md",
-    "source_fingerprint": "60df769f0c3d9f4b31ec5316612c16031af495a44ec6e1f2a8c8807268ef9a42",
-    "source_lines": "L729-L732",
-    "source_section": "30. Business Decisions (Locked) > BD-10-015"
+    "source_fingerprint": "96b9a434cfddb4850c1543a1d8e3a6093f54311c08e373b5f40a26f2c2289ff9",
+    "source_lines": "L2264-L2322",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-10-015"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2357,9 +2326,20 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "NOT_APPLICABLE_FOR_V2.3",
+    "inference": false,
+    "requirement_id": "BD-10-016",
+    "scope_status": "OUT_OF_SCOPE"
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "NOT_APPLICABLE_FOR_V2.3",
+    "runtime_status": "NOT_APPLICABLE_FOR_V2.3"
+  },
   "acceptance_rationale": "Requirement is explicitly outside the v2.3 product scope.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
   "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
   "acceptance_unit": false,
   "atomic_obligations": [],
@@ -2379,9 +2359,9 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
     "source_context_heading": "BD-10-016",
     "source_context_sha256": "4ba793eb532f0843ddd29fb7785a4e883af4252e65476948a5a49cf2bd0f16ad",
     "source_document": "docs/BRD/BRD-WS-10.md",
-    "source_fingerprint": "5f5ab4824902b692486742f5e1f536ac378443252785b2786c6cd98f2b2546ec",
-    "source_lines": "L735-L738",
-    "source_section": "30. Business Decisions (Locked) > BD-10-016"
+    "source_fingerprint": "b50ce0de4074940b025d3513cb96c6dcd131136f7600277179c8db663dbcba38",
+    "source_lines": "L2324-L2382",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-10-016"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2406,28 +2386,37 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-10-017-AC001",
-      "given": "the applicable business context, actor, and input for SettlementBatch yêu cầu Approval",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the proposed change remains pending until the required approval decision is recorded, and only an approved decision permits the accepted state change",
-      "verifies": [
-        "BD-10-017-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "BDD-27",
+        "SD-03"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-10-017",
+      "source_document": "docs/BRD/BRD-WS-10.md",
+      "source_fingerprint": "3be2374982d5f641c7048b15e96e849dfbf649f90a87a8b6cd0f52aa741663bd"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BD-10-017-AC001"
+        "BD-10-017-AC001",
+        "BD-10-017-AC002",
+        "BD-10-017-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-10-017-O001",
@@ -2453,9 +2442,9 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
     "source_context_heading": "21. Settlement Approval",
     "source_context_sha256": "83d3943518089db79e9913e22ff86b00c1a492e92b8120aad25d57349036e552",
     "source_document": "docs/BRD/BRD-WS-10.md",
-    "source_fingerprint": "191b1fb1a1cd18b324fc15d8f09cda209762503ed9a6ebe385902db5cc770b61",
-    "source_lines": "L741-L744",
-    "source_section": "30. Business Decisions (Locked) > BD-10-017"
+    "source_fingerprint": "3be2374982d5f641c7048b15e96e849dfbf649f90a87a8b6cd0f52aa741663bd",
+    "source_lines": "L2384-L2465",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-10-017"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2480,41 +2469,34 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "INTEGRATION_BOUNDARY_OBSERVATION_V1",
-      "criterion_id": "BD-10-018-AC001",
-      "given": "a contract interaction at the integration boundary defined by FinancialExport hỗ trợ Excel, CSV và REST API",
-      "observable_evidence": "contract validation result, boundary ownership record, external outcome, and reconciliation evidence where the contract requires it",
-      "then": "the interaction is accepted only at the declared boundary, names the responsible owner, and exposes the external outcome or reconciliation result required by the contract",
-      "verifies": [
-        "BD-10-018-O001"
-      ],
-      "when": "a conforming interaction is submitted and its ownership boundary is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "INTEGRATION_CONTRACT_REJECTION_V1",
-      "criterion_id": "BD-10-018-AC002",
-      "given": "an interaction that violates the contract or ownership boundary for FinancialExport hỗ trợ Excel, CSV và REST API",
-      "observable_evidence": "contract rejection or reconciliation result, reason, boundary owner, and external outcome",
-      "then": "the interaction is rejected or reconciled according to the declared contract without transferring ownership to the wrong boundary",
-      "verifies": [
-        "BD-10-018-O001"
-      ],
-      "when": "the interaction reaches the integration boundary"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-10-018",
+      "source_document": "docs/BRD/BRD-WS-10.md",
+      "source_fingerprint": "2373855eb7a044369965a3c155e8b5f18c2ccfb2f5c5ad653a72b00ff038bbc2"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-10-018-AC001",
-        "BD-10-018-AC002"
+        "BD-10-018-AC002",
+        "BD-10-018-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-10-018-O001",
@@ -2523,35 +2505,36 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-10-018 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-10-018 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-10-018 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-10-018 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-10-018 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-10-018 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "BD-10-018 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BD-10-018-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BD-10-018-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-10-018 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-10-018 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -2569,9 +2552,9 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
     "source_context_heading": "BD-10-018",
     "source_context_sha256": "bb8412a67c18942cd9b532002e45f3a218d2d6224ad93308c02dffdeeab6b1ea",
     "source_document": "docs/BRD/BRD-WS-10.md",
-    "source_fingerprint": "7dcc0bf7b23112eb7b34b90e616e403198840bd83b1d10681ff8006bbe806f78",
-    "source_lines": "L747-L750",
-    "source_section": "30. Business Decisions (Locked) > BD-10-018"
+    "source_fingerprint": "2373855eb7a044369965a3c155e8b5f18c2ccfb2f5c5ad653a72b00ff038bbc2",
+    "source_lines": "L2467-L2575",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-10-018"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2596,41 +2579,34 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "BD-10-019-AC001",
-      "given": "a candidate FinancialSnapshot là đầu vào duy nhất của Settlement record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "BD-10-019-O001"
-      ],
-      "when": "the candidate is evaluated against its declared data contract"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "DATA_CONTRACT_REJECTION_V1",
-      "criterion_id": "BD-10-019-AC002",
-      "given": "a FinancialSnapshot là đầu vào duy nhất của Settlement candidate containing an unsupported value, inconsistent relationship, or unresolved reference",
-      "observable_evidence": "rejection result, field or relationship reason, unresolved reference, and unchanged persisted state",
-      "then": "the candidate is rejected without persisting the invalid state, and each invalid field or relationship has a deterministic reason",
-      "verifies": [
-        "BD-10-019-O001"
-      ],
-      "when": "the candidate is validated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-10-019",
+      "source_document": "docs/BRD/BRD-WS-10.md",
+      "source_fingerprint": "dcdaf60f66b36b0b9383fa684e007b4ade3fceb519c5f2a201336bfa4ec19eb8"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-10-019-AC001",
-        "BD-10-019-AC002"
+        "BD-10-019-AC002",
+        "BD-10-019-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-10-019-O001",
@@ -2639,35 +2615,36 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-10-019 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-10-019 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-10-019 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-10-019 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-10-019 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-10-019 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "BD-10-019 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BD-10-019-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BD-10-019-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-10-019 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-10-019 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -2685,9 +2662,9 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
     "source_context_heading": "23. Financial Snapshot",
     "source_context_sha256": "80cb7d1475ebdb006ffe0cc149f46dff7c5df5b845d3dc1a052a96164d32db19",
     "source_document": "docs/BRD/BRD-WS-10.md",
-    "source_fingerprint": "8bce1713451bff6983f45794c3cceebad85720cda6556925d6a955d3bbb17c94",
-    "source_lines": "L753-L756",
-    "source_section": "30. Business Decisions (Locked) > BD-10-019"
+    "source_fingerprint": "dcdaf60f66b36b0b9383fa684e007b4ade3fceb519c5f2a201336bfa4ec19eb8",
+    "source_lines": "L2577-L2685",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-10-019"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2712,41 +2689,34 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-10-020-AC001",
-      "given": "the applicable business context, actor, and input for Settlement hỗ trợ Reconciliation",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-10-020-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BD-10-020-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Settlement hỗ trợ Reconciliation",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BD-10-020-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-10-020",
+      "source_document": "docs/BRD/BRD-WS-10.md",
+      "source_fingerprint": "7a32134cc79b95a1a9096068054806c77feacddfe5dfdfce588433892e0cc1ef"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-10-020-AC001",
-        "BD-10-020-AC002"
+        "BD-10-020-AC002",
+        "BD-10-020-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-10-020-O001",
@@ -2755,35 +2725,36 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-10-020 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-10-020 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-10-020 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-10-020 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-10-020 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-10-020 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "BD-10-020 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BD-10-020-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BD-10-020-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-10-020 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-10-020 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -2801,9 +2772,9 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
     "source_context_heading": "25. Reconciliation",
     "source_context_sha256": "5bf80d817853e0472ec23887c08ed2ba3299707592328e87d23799d0a92b5493",
     "source_document": "docs/BRD/BRD-WS-10.md",
-    "source_fingerprint": "c4ff1d02348355c58d0f5f3ff29633ae36edb50f6eec2e429e9ad42c70602629",
-    "source_lines": "L759-L762",
-    "source_section": "30. Business Decisions (Locked) > BD-10-020"
+    "source_fingerprint": "7a32134cc79b95a1a9096068054806c77feacddfe5dfdfce588433892e0cc1ef",
+    "source_lines": "L2687-L2795",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-10-020"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2828,47 +2799,30 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-10-021-AC001",
-      "given": "an operational task within the scope of ManualAdjustment yêu cầu Approval và Audit",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BD-10-021-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "BDD-27",
+        "SD-03"
       ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "OPERATIONAL_VERIFICATION_FAILURE_V1",
-      "criterion_id": "BD-10-021-AC002",
-      "given": "an operational task missing an outcome, required signal, audit evidence, or recovery evidence for ManualAdjustment yêu cầu Approval và Audit",
-      "observable_evidence": "operator-visible verification result, missing-evidence identifier, operation state, and relevant signal or audit record",
-      "then": "verification reports the specific missing evidence as a detectable failure and does not report the task as conforming",
-      "verifies": [
-        "BD-10-021-O001"
-      ],
-      "when": "operational verification is performed"
-    },
-    {
-      "case": "NEGATIVE_FAIL_CLOSED",
-      "controlled_contract": "REQUIREMENT_SPECIFIC_FAIL_CLOSED_V1",
-      "criterion_id": "BD-10-021-AC003",
-      "given": "an input or attempted state change that violates a mandatory boundary explicitly stated by ManualAdjustment yêu cầu Approval và Audit",
-      "observable_evidence": "violating input, decision and reason, before/after protected state, and audit or conformance evidence",
-      "then": "the violated obligation produces its specified rejection, denial, block, review, or non-conforming result without recording a contradictory success",
-      "verifies": [
-        "BD-10-021-O001"
-      ],
-      "when": "the violating input or action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-10-021",
+      "source_document": "docs/BRD/BRD-WS-10.md",
+      "source_fingerprint": "00dde5514e5f386950a4881c3e0b2b8da09ee659afb38696197daa549b9bde87"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
@@ -2884,36 +2838,36 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-10-021 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-10-021 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-10-021 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-10-021 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-10-021 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-10-021 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
-        "BD-10-021-AC003"
-      ],
-      "status": "APPLICABLE"
+        "BD-10-021-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BD-10-021-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-10-021 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-10-021 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -2934,9 +2888,9 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
     "source_context_heading": "BD-10-021",
     "source_context_sha256": "d6777ecfdb26c6eb50098c6f16bafcb5e3748a557c25c0883adba3fc567d8eb1",
     "source_document": "docs/BRD/BRD-WS-10.md",
-    "source_fingerprint": "0c9e5474fdd1807651673c0ab8b16581413d31c167d70e53a0456b9daea66fae",
-    "source_lines": "L765-L768",
-    "source_section": "30. Business Decisions (Locked) > BD-10-021"
+    "source_fingerprint": "00dde5514e5f386950a4881c3e0b2b8da09ee659afb38696197daa549b9bde87",
+    "source_lines": "L2797-L2911",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-10-021"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2961,28 +2915,34 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-10-022-AC001",
-      "given": "the applicable business context, actor, and input for Settlement không sửa dữ liệu giao dịch gốc",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-10-022-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-10-022",
+      "source_document": "docs/BRD/BRD-WS-10.md",
+      "source_fingerprint": "52810a4e31f0e4f333961f20c7cd1d0fea3705ca2af88c6072fadf5a0f167ca7"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BD-10-022-AC001"
+        "BD-10-022-AC001",
+        "BD-10-022-AC002",
+        "BD-10-022-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-10-022-O001",
@@ -3005,9 +2965,9 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
     "source_context_heading": "BD-10-022",
     "source_context_sha256": "9b04a1b0c84f6d4d7d35578e17ba08ce8c8264b9e11a4c321812e29790552719",
     "source_document": "docs/BRD/BRD-WS-10.md",
-    "source_fingerprint": "6b43d5655323da243b9003da2412ee5fb48ffca4b4d5345c9167f46987772fc2",
-    "source_lines": "L771-L774",
-    "source_section": "30. Business Decisions (Locked) > BD-10-022"
+    "source_fingerprint": "52810a4e31f0e4f333961f20c7cd1d0fea3705ca2af88c6072fadf5a0f167ca7",
+    "source_lines": "L2913-L2988",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-10-022"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3032,41 +2992,34 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-10-023-AC001",
-      "given": "the applicable business context, actor, and input for Money Flow và Product Flow là hai Business Flow độc lập",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "each named business concept has a distinct identity, owner or reference, and lifecycle evidence; an action on one does not implicitly act on the other",
-      "verifies": [
-        "BD-10-023-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BD-10-023-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Money Flow và Product Flow là hai Business Flow độc lập",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BD-10-023-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-10-023",
+      "source_document": "docs/BRD/BRD-WS-10.md",
+      "source_fingerprint": "eabc3fca0826ad89fc6699edcefad0ab0d5779a899a232ab9c35274045fc6e3d"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-10-023-AC001",
-        "BD-10-023-AC002"
+        "BD-10-023-AC002",
+        "BD-10-023-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-10-023-O001",
@@ -3089,9 +3042,9 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
     "source_context_heading": "BD-10-023",
     "source_context_sha256": "03e13923e7dcee54c74b8608b2aa92e3db5d70558facae2176361b797e5ef94d",
     "source_document": "docs/BRD/BRD-WS-10.md",
-    "source_fingerprint": "b956002dab1af5979816d99c757d81c030c98cf2759a15e546921852fd7e0a9c",
-    "source_lines": "L777-L780",
-    "source_section": "30. Business Decisions (Locked) > BD-10-023"
+    "source_fingerprint": "eabc3fca0826ad89fc6699edcefad0ab0d5779a899a232ab9c35274045fc6e3d",
+    "source_lines": "L2990-L3065",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-10-023"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3116,9 +3069,20 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "NOT_APPLICABLE_FOR_V2.3",
+    "inference": false,
+    "requirement_id": "BRD-WS-10-R001",
+    "scope_status": "FUTURE"
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "NOT_APPLICABLE_FOR_V2.3",
+    "runtime_status": "NOT_APPLICABLE_FOR_V2.3"
+  },
   "acceptance_rationale": "Requirement is retained for a future baseline and is excluded from v2.3 delivery.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
   "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
   "acceptance_unit": false,
   "atomic_obligations": [],
@@ -3139,8 +3103,8 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
     "source_context_sha256": "6e4e2bd143074d6c0afb1136b401fd6e1ace10f08c8580c2cb46b5d05f4b8c5e",
     "source_document": "docs/BRD/BRD-WS-10.md",
     "source_fingerprint": "dd837da59e89fc5e879bc2668cc95f0cda744a84109e71aefad140192708eba4",
-    "source_lines": "L183",
-    "source_section": "7. Settlement Scope"
+    "source_lines": "L3067-L3125",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-10-R001"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3165,28 +3129,34 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-10-R002-AC001",
-      "given": "a candidate Settlement luôn dựa trên Snapshot record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "BRD-WS-10-R002-O001"
-      ],
-      "when": "the candidate is evaluated against its declared data contract"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-10-R002",
+      "source_document": "docs/BRD/BRD-WS-10.md",
+      "source_fingerprint": "08a4b0a624725a5fe402cdaf46f4359476ec0df95807436aa9c6195ba26dac41"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-WS-10-R002-AC001"
+        "BRD-WS-10-R002-AC001",
+        "BRD-WS-10-R002-AC002",
+        "BRD-WS-10-R002-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-10-R002-O001",
@@ -3210,8 +3180,8 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
     "source_context_sha256": "6589a361810793b161cfdabd4e380005e158f57bf57c5f320a789d87806440b5",
     "source_document": "docs/BRD/BRD-WS-10.md",
     "source_fingerprint": "08a4b0a624725a5fe402cdaf46f4359476ec0df95807436aa9c6195ba26dac41",
-    "source_lines": "L288",
-    "source_section": "11. Settlement Snapshot"
+    "source_lines": "L3127-L3202",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-10-R002"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3236,47 +3206,27 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-10-R003-AC001",
-      "given": "the applicable business context, actor, and input for Event Ledger không phải hệ thống kế toán",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the prohibited decision or state transition is absent, the attempted action has a deterministic rejection outcome, and no contradictory success is recorded",
-      "verifies": [
-        "BRD-WS-10-R003-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BRD-WS-10-R003-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Event Ledger không phải hệ thống kế toán",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BRD-WS-10-R003-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
-    },
-    {
-      "case": "NEGATIVE_FAIL_CLOSED",
-      "controlled_contract": "REQUIREMENT_SPECIFIC_FAIL_CLOSED_V1",
-      "criterion_id": "BRD-WS-10-R003-AC003",
-      "given": "an input or attempted state change that violates a mandatory boundary explicitly stated by Event Ledger không phải hệ thống kế toán",
-      "observable_evidence": "violating input, decision and reason, before/after protected state, and audit or conformance evidence",
-      "then": "the violated obligation produces its specified rejection, denial, block, review, or non-conforming result without recording a contradictory success",
-      "verifies": [
-        "BRD-WS-10-R003-O001"
-      ],
-      "when": "the violating input or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-10-R003",
+      "source_document": "docs/BRD/BRD-WS-10.md",
+      "source_fingerprint": "6fb2593b7502a26d026518f874c4a5fe4dde80ce16f1e76b603347d744ae6e1c"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
@@ -3292,36 +3242,36 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-10-R003 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-10-R003 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-10-R003 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-10-R003 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-10-R003 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-10-R003 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
-        "BRD-WS-10-R003-AC003"
-      ],
-      "status": "APPLICABLE"
+        "BRD-WS-10-R003-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BRD-WS-10-R003-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-10-R003 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-10-R003 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -3340,8 +3290,8 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
     "source_context_sha256": "7f58ed52440d636766659dd85d045674132eb94c0363aa3037d326592dc2777a",
     "source_document": "docs/BRD/BRD-WS-10.md",
     "source_fingerprint": "6fb2593b7502a26d026518f874c4a5fe4dde80ce16f1e76b603347d744ae6e1c",
-    "source_lines": "L298",
-    "source_section": "12. Event Ledger"
+    "source_lines": "L3204-L3312",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-10-R003"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3366,47 +3316,27 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-10-R004-AC001",
-      "given": "the applicable business context, actor, and input for Rollback luôn sinh FinancialEvent mới",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-WS-10-R004-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BRD-WS-10-R004-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Rollback luôn sinh FinancialEvent mới",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BRD-WS-10-R004-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
-    },
-    {
-      "case": "RECOVERY",
-      "controlled_contract": "EXPLICIT_RECOVERY_CONTRACT_V1",
-      "criterion_id": "BRD-WS-10-R004-AC003",
-      "given": "a failed or interrupted case for which Rollback luôn sinh FinancialEvent mới explicitly defines recovery, restore, rollback, or fallback behavior",
-      "observable_evidence": "pre-failure state, recovery action, resulting state, outcome, and recovery evidence named by the obligation",
-      "then": "the resulting state and outcome follow the requirement-specific recovery obligation and expose whether recovery completed or failed",
-      "verifies": [
-        "BRD-WS-10-R004-O001"
-      ],
-      "when": "the declared recovery path is invoked"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-10-R004",
+      "source_document": "docs/BRD/BRD-WS-10.md",
+      "source_fingerprint": "708cb6cf150654ad0e1992328ec9fbfe140d6486f7a9e977904a95458233911d"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
@@ -3422,36 +3352,36 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-10-R004 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-10-R004 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-10-R004 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-10-R004 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-10-R004 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-10-R004 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "BRD-WS-10-R004 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BRD-WS-10-R004-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BRD-WS-10-R004-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
-      "criterion_references": [
-        "BRD-WS-10-R004-AC003"
-      ],
-      "status": "APPLICABLE"
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "BRD-WS-10-R004 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -3470,8 +3400,8 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
     "source_context_sha256": "f2373cac4723cf8c780219f06e6223a3863a5f3db3e431fc3dfdac12426ccb95",
     "source_document": "docs/BRD/BRD-WS-10.md",
     "source_fingerprint": "708cb6cf150654ad0e1992328ec9fbfe140d6486f7a9e977904a95458233911d",
-    "source_lines": "L394",
-    "source_section": "18. Refund Settlement"
+    "source_lines": "L3314-L3422",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-10-R004"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3496,41 +3426,780 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-10-R007-AC001",
-      "given": "the applicable business context, actor, and input for ManualAdjustment luôn sinh: FinancialEvent",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-WS-10-R007-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "boundary_oracle": [
+      "Rejected adjustment emits no committed-adjustment FinancialEvent"
+    ],
+    "concrete_bindings": [
+      {
+        "correlation_id": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-WS-10.md#27. Manual Adjustment",
+            "source_type": "SOURCE_LITERAL",
+            "version": "1fe18692979f3eb5dee187e2fa0b8edfcc2bc18e6cae16028ecf919a3b665fed"
+          },
+          "identifier": "BRD-WS-10-R007.CORRELATION_ID",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-WS-10-R007.O1.1.EVENT_EMITTED.CORRELATION_ID.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-10.md",
+            "source_fingerprint": "1fe18692979f3eb5dee187e2fa0b8edfcc2bc18e6cae16028ecf919a3b665fed",
+            "source_lines": "L562-L564",
+            "source_section": "27. Manual Adjustment"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "CORRELATION_ID",
+            "resolver_id": "RESOLVE.BRD-WS-10-R007.BRD-WS-10-R007.CORRELATION_ID",
+            "version": "1.0.0"
+          },
+          "semantic_type": "CORRELATION_ID"
+        },
+        "event_id": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-WS-10.md#27. Manual Adjustment",
+            "source_type": "SOURCE_LITERAL",
+            "version": "1fe18692979f3eb5dee187e2fa0b8edfcc2bc18e6cae16028ecf919a3b665fed"
+          },
+          "identifier": "BRD-WS-10-R007.EVENT_ID",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-WS-10-R007.O1.1.EVENT_EMITTED.EVENT_ID.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-10.md",
+            "source_fingerprint": "1fe18692979f3eb5dee187e2fa0b8edfcc2bc18e6cae16028ecf919a3b665fed",
+            "source_lines": "L562-L564",
+            "source_section": "27. Manual Adjustment"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "EVENT_TYPE_ID",
+            "resolver_id": "RESOLVE.BRD-WS-10-R007.BRD-WS-10-R007.EVENT_ID",
+            "version": "1.0.0"
+          },
+          "semantic_type": "EVENT_TYPE_ID"
+        },
+        "trigger": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-WS-10.md#27. Manual Adjustment",
+            "source_type": "SOURCE_LITERAL",
+            "version": "1fe18692979f3eb5dee187e2fa0b8edfcc2bc18e6cae16028ecf919a3b665fed"
+          },
+          "identifier": "BRD-WS-10-R007.TRIGGER",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-WS-10-R007.O1.1.EVENT_EMITTED.TRIGGER.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-10.md",
+            "source_fingerprint": "1fe18692979f3eb5dee187e2fa0b8edfcc2bc18e6cae16028ecf919a3b665fed",
+            "source_lines": "L562-L564",
+            "source_section": "27. Manual Adjustment"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "ACTION_ID",
+            "resolver_id": "RESOLVE.BRD-WS-10-R007.BRD-WS-10-R007.TRIGGER",
+            "version": "1.0.0"
+          },
+          "semantic_type": "ACTION_ID"
+        }
+      }
+    ],
+    "contract_id": "P2C.C4.CONTRACT.BRD-WS-10-R007",
+    "inference": false,
+    "mechanism": "APPROVED_TYPED_CUSTOM_AST",
+    "mechanism_version": "C4-R3",
+    "negative_oracle": [
+      "The FinancialEvent is suppressed or duplicated"
+    ],
+    "operator_composition": [
+      "EVENT_EMITTED"
+    ],
+    "positive_oracle": [
+      "Exactly one FinancialEvent is emitted for the ManualAdjustment"
+    ],
+    "provenance": {
+      "approved_decision_references": [],
+      "inference": false,
+      "source_document": "docs/BRD/BRD-WS-10.md",
+      "source_fingerprint": "1fe18692979f3eb5dee187e2fa0b8edfcc2bc18e6cae16028ecf919a3b665fed",
+      "source_lines": "L562-L564",
+      "source_section": "27. Manual Adjustment"
     },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BRD-WS-10-R007-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by ManualAdjustment luôn sinh: FinancialEvent",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BRD-WS-10-R007-O001"
+    "required_evidence": {
+      "evidence_object_ref": {
+        "authoritative_source": {
+          "source_id": "docs/BRD/BRD-WS-10.md#27. Manual Adjustment",
+          "source_type": "SOURCE_LITERAL",
+          "version": "1fe18692979f3eb5dee187e2fa0b8edfcc2bc18e6cae16028ecf919a3b665fed"
+        },
+        "identifier": "BRD-WS-10-R007.BRD-WS-10-R007.CONTRACT.EVIDENCE.OBJECT",
+        "inference": false,
+        "lifecycle": {
+          "status": "ACTIVE",
+          "version": "2.3"
+        },
+        "namespace": "YSIM.V2.3",
+        "origin": {
+          "origin_id": "BRD-WS-10-R007.CONTRACT.EVIDENCE.ORIGIN",
+          "origin_type": "EVIDENCE_OBJECT"
+        },
+        "provenance": {
+          "approved_decision_references": [],
+          "inference": false,
+          "source_document": "docs/BRD/BRD-WS-10.md",
+          "source_fingerprint": "1fe18692979f3eb5dee187e2fa0b8edfcc2bc18e6cae16028ecf919a3b665fed",
+          "source_lines": "L562-L564",
+          "source_section": "27. Manual Adjustment"
+        },
+        "resolver_contract": {
+          "deterministic": true,
+          "input_types": [],
+          "output_type": "EVIDENCE_OBJECT_REF",
+          "resolver_id": "OBSERVE.BRD-WS-10-R007.BRD-WS-10-R007.BRD-WS-10-R007.CONTRACT.EVIDENCE.OBJECT",
+          "version": "1.0.0"
+        },
+        "semantic_type": "EVIDENCE_OBJECT_REF"
+      },
+      "inference": false,
+      "observed_collection_origin": "BRD-WS-10-R007.RUNTIME.OBSERVED.FIELDS",
+      "observed_field_ids": [
+        "FIELD.MANUAL_ADJUSTMENT_ID",
+        "FIELD.FINANCIAL_EVENT_ID",
+        "FIELD.EVENT_COUNT",
+        "FIELD.CORRELATION_ID",
+        "FIELD.COMMIT_TIME",
+        "FIELD.EVENT_TIME"
       ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+      "producer": "BRD-WS-10-R007.EVIDENCE.PRODUCER",
+      "required_collection_origin": "BRD-WS-10-R007.SOURCE.REQUIRED.FIELDS",
+      "required_field_ids": [
+        "FIELD.MANUAL_ADJUSTMENT_ID",
+        "FIELD.FINANCIAL_EVENT_ID",
+        "FIELD.EVENT_COUNT",
+        "FIELD.CORRELATION_ID",
+        "FIELD.COMMIT_TIME",
+        "FIELD.EVENT_TIME"
+      ],
+      "required_values_or_hashes": [
+        "BRD-WS-10-R007.EVIDENCE.CONTENT.HASH"
+      ],
+      "retrieval_method": "BRD-WS-10-R007.EVIDENCE.RETRIEVAL",
+      "version_or_correlation": "BRD-WS-10-R007.EVIDENCE.VERSION.CORRELATION"
+    },
+    "runtime_evidence_executed": false,
+    "runtime_status": "RUNTIME_ADAPTER_PENDING",
+    "semantic_obligation_references": [
+      "BRD-WS-10-R007-O001"
+    ],
+    "typed_contract_ast": {
+      "approved_clarification": null,
+      "assertions": [
+        {
+          "assertion_id": "BRD-WS-10-R007.O1.1.EVENT_EMITTED",
+          "evaluator_consumed_bindings": [
+            "correlation_id",
+            "event_id",
+            "trigger"
+          ],
+          "evidence_object": {
+            "authoritative_source": {
+              "source_id": "docs/BRD/BRD-WS-10.md#27. Manual Adjustment",
+              "source_type": "SOURCE_LITERAL",
+              "version": "1fe18692979f3eb5dee187e2fa0b8edfcc2bc18e6cae16028ecf919a3b665fed"
+            },
+            "identifier": "BRD-WS-10-R007.BRD-WS-10-R007.O1.1.EVENT_EMITTED.EVIDENCE.OBJECT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BRD-WS-10-R007.O1.1.EVENT_EMITTED.EVIDENCE.ORIGIN",
+              "origin_type": "EVIDENCE_OBJECT"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-WS-10.md",
+              "source_fingerprint": "1fe18692979f3eb5dee187e2fa0b8edfcc2bc18e6cae16028ecf919a3b665fed",
+              "source_lines": "L562-L564",
+              "source_section": "27. Manual Adjustment"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "EVIDENCE_OBJECT_REF",
+              "resolver_id": "OBSERVE.BRD-WS-10-R007.BRD-WS-10-R007.BRD-WS-10-R007.O1.1.EVENT_EMITTED.EVIDENCE.OBJECT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "EVIDENCE_OBJECT_REF"
+          },
+          "expected_operand": {
+            "authoritative_source": {
+              "source_id": "docs/BRD/BRD-WS-10.md#27. Manual Adjustment",
+              "source_type": "SOURCE_LITERAL",
+              "version": "1fe18692979f3eb5dee187e2fa0b8edfcc2bc18e6cae16028ecf919a3b665fed"
+            },
+            "identifier": "BRD-WS-10-R007.BRD-WS-10-R007.O1.1.EVENT_EMITTED.CANONICAL.RESULT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BRD-WS-10-R007.O1.1.EVENT_EMITTED.AUTHORITY.ORIGIN",
+              "origin_type": "SOURCE_LITERAL"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-WS-10.md",
+              "source_fingerprint": "1fe18692979f3eb5dee187e2fa0b8edfcc2bc18e6cae16028ecf919a3b665fed",
+              "source_lines": "L562-L564",
+              "source_section": "27. Manual Adjustment"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "EVENT_TYPE_ID",
+              "resolver_id": "RESOLVE.BRD-WS-10-R007.BRD-WS-10-R007.BRD-WS-10-R007.O1.1.EVENT_EMITTED.CANONICAL.RESULT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "EVENT_TYPE_ID"
+          },
+          "inference": false,
+          "model_conformance_fixture": {
+            "bindings": {
+              "correlation_id": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-WS-10.md#27. Manual Adjustment",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "1fe18692979f3eb5dee187e2fa0b8edfcc2bc18e6cae16028ecf919a3b665fed"
+                },
+                "identifier": "BRD-WS-10-R007.CORRELATION_ID",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-WS-10-R007.O1.1.EVENT_EMITTED.CORRELATION_ID.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-10.md",
+                  "source_fingerprint": "1fe18692979f3eb5dee187e2fa0b8edfcc2bc18e6cae16028ecf919a3b665fed",
+                  "source_lines": "L562-L564",
+                  "source_section": "27. Manual Adjustment"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "CORRELATION_ID",
+                  "resolver_id": "RESOLVE.BRD-WS-10-R007.BRD-WS-10-R007.CORRELATION_ID",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "CORRELATION_ID"
+              },
+              "event_id": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-WS-10.md#27. Manual Adjustment",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "1fe18692979f3eb5dee187e2fa0b8edfcc2bc18e6cae16028ecf919a3b665fed"
+                },
+                "identifier": "BRD-WS-10-R007.EVENT_ID",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-WS-10-R007.O1.1.EVENT_EMITTED.EVENT_ID.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-10.md",
+                  "source_fingerprint": "1fe18692979f3eb5dee187e2fa0b8edfcc2bc18e6cae16028ecf919a3b665fed",
+                  "source_lines": "L562-L564",
+                  "source_section": "27. Manual Adjustment"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "EVENT_TYPE_ID",
+                  "resolver_id": "RESOLVE.BRD-WS-10-R007.BRD-WS-10-R007.EVENT_ID",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "EVENT_TYPE_ID"
+              },
+              "trigger": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-WS-10.md#27. Manual Adjustment",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "1fe18692979f3eb5dee187e2fa0b8edfcc2bc18e6cae16028ecf919a3b665fed"
+                },
+                "identifier": "BRD-WS-10-R007.TRIGGER",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-WS-10-R007.O1.1.EVENT_EMITTED.TRIGGER.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-10.md",
+                  "source_fingerprint": "1fe18692979f3eb5dee187e2fa0b8edfcc2bc18e6cae16028ecf919a3b665fed",
+                  "source_lines": "L562-L564",
+                  "source_section": "27. Manual Adjustment"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "ACTION_ID",
+                  "resolver_id": "RESOLVE.BRD-WS-10-R007.BRD-WS-10-R007.TRIGGER",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "ACTION_ID"
+              }
+            },
+            "comparison": {
+              "expected": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-WS-10.md#27. Manual Adjustment",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "1fe18692979f3eb5dee187e2fa0b8edfcc2bc18e6cae16028ecf919a3b665fed"
+                },
+                "identifier": "BRD-WS-10-R007.BRD-WS-10-R007.O1.1.EVENT_EMITTED.CANONICAL.RESULT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-WS-10-R007.O1.1.EVENT_EMITTED.AUTHORITY.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-10.md",
+                  "source_fingerprint": "1fe18692979f3eb5dee187e2fa0b8edfcc2bc18e6cae16028ecf919a3b665fed",
+                  "source_lines": "L562-L564",
+                  "source_section": "27. Manual Adjustment"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "EVENT_TYPE_ID",
+                  "resolver_id": "RESOLVE.BRD-WS-10-R007.BRD-WS-10-R007.BRD-WS-10-R007.O1.1.EVENT_EMITTED.CANONICAL.RESULT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "EVENT_TYPE_ID"
+              },
+              "observed": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-WS-10.md#27. Manual Adjustment",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "1fe18692979f3eb5dee187e2fa0b8edfcc2bc18e6cae16028ecf919a3b665fed"
+                },
+                "identifier": "BRD-WS-10-R007.BRD-WS-10-R007.O1.1.EVENT_EMITTED.CANONICAL.RESULT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-WS-10-R007.O1.1.EVENT_EMITTED.OBSERVED.ORIGIN",
+                  "origin_type": "RUNTIME_OBSERVED"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-10.md",
+                  "source_fingerprint": "1fe18692979f3eb5dee187e2fa0b8edfcc2bc18e6cae16028ecf919a3b665fed",
+                  "source_lines": "L562-L564",
+                  "source_section": "27. Manual Adjustment"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "EVENT_TYPE_ID",
+                  "resolver_id": "OBSERVE.BRD-WS-10-R007.BRD-WS-10-R007.BRD-WS-10-R007.O1.1.EVENT_EMITTED.CANONICAL.RESULT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "EVENT_TYPE_ID"
+              }
+            },
+            "evidence_object": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-WS-10.md#27. Manual Adjustment",
+                "source_type": "SOURCE_LITERAL",
+                "version": "1fe18692979f3eb5dee187e2fa0b8edfcc2bc18e6cae16028ecf919a3b665fed"
+              },
+              "identifier": "BRD-WS-10-R007.BRD-WS-10-R007.O1.1.EVENT_EMITTED.EVIDENCE.OBJECT",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-WS-10-R007.O1.1.EVENT_EMITTED.EVIDENCE.ORIGIN",
+                "origin_type": "EVIDENCE_OBJECT"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-10.md",
+                "source_fingerprint": "1fe18692979f3eb5dee187e2fa0b8edfcc2bc18e6cae16028ecf919a3b665fed",
+                "source_lines": "L562-L564",
+                "source_section": "27. Manual Adjustment"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "EVIDENCE_OBJECT_REF",
+                "resolver_id": "OBSERVE.BRD-WS-10-R007.BRD-WS-10-R007.BRD-WS-10-R007.O1.1.EVENT_EMITTED.EVIDENCE.OBJECT",
+                "version": "1.0.0"
+              },
+              "semantic_type": "EVIDENCE_OBJECT_REF"
+            },
+            "operator_id": "EVENT_EMITTED"
+          },
+          "obligation_id": "BRD-WS-10-R007-O001",
+          "observed_operand": {
+            "authoritative_source": {
+              "source_id": "docs/BRD/BRD-WS-10.md#27. Manual Adjustment",
+              "source_type": "SOURCE_LITERAL",
+              "version": "1fe18692979f3eb5dee187e2fa0b8edfcc2bc18e6cae16028ecf919a3b665fed"
+            },
+            "identifier": "BRD-WS-10-R007.BRD-WS-10-R007.O1.1.EVENT_EMITTED.CANONICAL.RESULT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BRD-WS-10-R007.O1.1.EVENT_EMITTED.OBSERVED.ORIGIN",
+              "origin_type": "RUNTIME_OBSERVED"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-WS-10.md",
+              "source_fingerprint": "1fe18692979f3eb5dee187e2fa0b8edfcc2bc18e6cae16028ecf919a3b665fed",
+              "source_lines": "L562-L564",
+              "source_section": "27. Manual Adjustment"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "EVENT_TYPE_ID",
+              "resolver_id": "OBSERVE.BRD-WS-10-R007.BRD-WS-10-R007.BRD-WS-10-R007.O1.1.EVENT_EMITTED.CANONICAL.RESULT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "EVENT_TYPE_ID"
+          },
+          "operator_id": "EVENT_EMITTED",
+          "operator_version": "1.0.0-candidate.2",
+          "typed_bindings": {
+            "correlation_id": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-WS-10.md#27. Manual Adjustment",
+                "source_type": "SOURCE_LITERAL",
+                "version": "1fe18692979f3eb5dee187e2fa0b8edfcc2bc18e6cae16028ecf919a3b665fed"
+              },
+              "identifier": "BRD-WS-10-R007.CORRELATION_ID",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-WS-10-R007.O1.1.EVENT_EMITTED.CORRELATION_ID.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-10.md",
+                "source_fingerprint": "1fe18692979f3eb5dee187e2fa0b8edfcc2bc18e6cae16028ecf919a3b665fed",
+                "source_lines": "L562-L564",
+                "source_section": "27. Manual Adjustment"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CORRELATION_ID",
+                "resolver_id": "RESOLVE.BRD-WS-10-R007.BRD-WS-10-R007.CORRELATION_ID",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CORRELATION_ID"
+            },
+            "event_id": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-WS-10.md#27. Manual Adjustment",
+                "source_type": "SOURCE_LITERAL",
+                "version": "1fe18692979f3eb5dee187e2fa0b8edfcc2bc18e6cae16028ecf919a3b665fed"
+              },
+              "identifier": "BRD-WS-10-R007.EVENT_ID",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-WS-10-R007.O1.1.EVENT_EMITTED.EVENT_ID.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-10.md",
+                "source_fingerprint": "1fe18692979f3eb5dee187e2fa0b8edfcc2bc18e6cae16028ecf919a3b665fed",
+                "source_lines": "L562-L564",
+                "source_section": "27. Manual Adjustment"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "EVENT_TYPE_ID",
+                "resolver_id": "RESOLVE.BRD-WS-10-R007.BRD-WS-10-R007.EVENT_ID",
+                "version": "1.0.0"
+              },
+              "semantic_type": "EVENT_TYPE_ID"
+            },
+            "trigger": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-WS-10.md#27. Manual Adjustment",
+                "source_type": "SOURCE_LITERAL",
+                "version": "1fe18692979f3eb5dee187e2fa0b8edfcc2bc18e6cae16028ecf919a3b665fed"
+              },
+              "identifier": "BRD-WS-10-R007.TRIGGER",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-WS-10-R007.O1.1.EVENT_EMITTED.TRIGGER.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-10.md",
+                "source_fingerprint": "1fe18692979f3eb5dee187e2fa0b8edfcc2bc18e6cae16028ecf919a3b665fed",
+                "source_lines": "L562-L564",
+                "source_section": "27. Manual Adjustment"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "ACTION_ID",
+                "resolver_id": "RESOLVE.BRD-WS-10-R007.BRD-WS-10-R007.TRIGGER",
+                "version": "1.0.0"
+              },
+              "semantic_type": "ACTION_ID"
+            }
+          }
+        }
+      ],
+      "boundary_cases": [
+        "Rejected adjustment emits no committed-adjustment FinancialEvent"
+      ],
+      "contract_ast_sha256": "01323968d40d1e3a9d2406aa63325abe2fac888310b3d542a50ad0f437015b3b",
+      "contract_id": "P2C.C4.CONTRACT.BRD-WS-10-R007",
+      "criticality": "CRITICAL",
+      "disposition": "CORRECTABLE_WITH_APPROVED_TYPE_MODEL",
+      "evidence_contract": {
+        "evidence_object_ref": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-WS-10.md#27. Manual Adjustment",
+            "source_type": "SOURCE_LITERAL",
+            "version": "1fe18692979f3eb5dee187e2fa0b8edfcc2bc18e6cae16028ecf919a3b665fed"
+          },
+          "identifier": "BRD-WS-10-R007.BRD-WS-10-R007.CONTRACT.EVIDENCE.OBJECT",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-WS-10-R007.CONTRACT.EVIDENCE.ORIGIN",
+            "origin_type": "EVIDENCE_OBJECT"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-10.md",
+            "source_fingerprint": "1fe18692979f3eb5dee187e2fa0b8edfcc2bc18e6cae16028ecf919a3b665fed",
+            "source_lines": "L562-L564",
+            "source_section": "27. Manual Adjustment"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "EVIDENCE_OBJECT_REF",
+            "resolver_id": "OBSERVE.BRD-WS-10-R007.BRD-WS-10-R007.BRD-WS-10-R007.CONTRACT.EVIDENCE.OBJECT",
+            "version": "1.0.0"
+          },
+          "semantic_type": "EVIDENCE_OBJECT_REF"
+        },
+        "inference": false,
+        "observed_collection_origin": "BRD-WS-10-R007.RUNTIME.OBSERVED.FIELDS",
+        "observed_field_ids": [
+          "FIELD.MANUAL_ADJUSTMENT_ID",
+          "FIELD.FINANCIAL_EVENT_ID",
+          "FIELD.EVENT_COUNT",
+          "FIELD.CORRELATION_ID",
+          "FIELD.COMMIT_TIME",
+          "FIELD.EVENT_TIME"
+        ],
+        "producer": "BRD-WS-10-R007.EVIDENCE.PRODUCER",
+        "required_collection_origin": "BRD-WS-10-R007.SOURCE.REQUIRED.FIELDS",
+        "required_field_ids": [
+          "FIELD.MANUAL_ADJUSTMENT_ID",
+          "FIELD.FINANCIAL_EVENT_ID",
+          "FIELD.EVENT_COUNT",
+          "FIELD.CORRELATION_ID",
+          "FIELD.COMMIT_TIME",
+          "FIELD.EVENT_TIME"
+        ],
+        "required_values_or_hashes": [
+          "BRD-WS-10-R007.EVIDENCE.CONTENT.HASH"
+        ],
+        "retrieval_method": "BRD-WS-10-R007.EVIDENCE.RETRIEVAL",
+        "version_or_correlation": "BRD-WS-10-R007.EVIDENCE.VERSION.CORRELATION"
+      },
+      "explicit_non_obligations": [
+        "No runtime implementation topology is authorized by this semantic record.",
+        "No production runtime evidence is claimed by this model-level candidate."
+      ],
+      "fixture_ids": [
+        "P2C-C4-FX-1F662F0EB1D9FB63ADE9",
+        "P2C-C4-FX-C505E4288B8AD85BDD6B",
+        "P2C-C4-FX-FA2BB234AE4C982DEB18"
+      ],
+      "high_risk_audit_subset": true,
+      "independent_contract_identity": true,
+      "inference": false,
+      "inherits_contract_ast": null,
+      "negative_oracles": [
+        "The FinancialEvent is suppressed or duplicated"
+      ],
+      "normative_obligations": [
+        {
+          "applicability": "V2.3_ACTIVE",
+          "obligation_id": "BRD-WS-10-R007-O001",
+          "obligation_text": "ManualAdjustment luôn sinh: FinancialEvent"
+        }
+      ],
+      "obligation_to_operator_coverage": [
+        {
+          "assertion_ids": [
+            "BRD-WS-10-R007.O1.1.EVENT_EMITTED"
+          ],
+          "coverage_count": 1,
+          "obligation_id": "BRD-WS-10-R007-O001"
+        }
+      ],
+      "operator_composition": [
+        "EVENT_EMITTED"
+      ],
+      "positive_oracles": [
+        "Exactly one FinancialEvent is emitted for the ManualAdjustment"
+      ],
+      "preconditions": [
+        "The adjustment identity and correlation context exist"
+      ],
+      "prohibitions": [
+        "The FinancialEvent is suppressed or duplicated"
+      ],
+      "requirement_id": "BRD-WS-10-R007",
+      "runtime_status": "SLICE_RUNTIME_ADAPTER_REQUIRED",
+      "semantic_family_id": null,
+      "source_provenance": {
+        "approved_decision_references": [],
+        "inference": false,
+        "source_document": "docs/BRD/BRD-WS-10.md",
+        "source_fingerprint": "1fe18692979f3eb5dee187e2fa0b8edfcc2bc18e6cae16028ecf919a3b665fed",
+        "source_lines": "L562-L564",
+        "source_section": "27. Manual Adjustment"
+      },
+      "source_statement": "ManualAdjustment luôn sinh: FinancialEvent.",
+      "surrounding_source_context": "### BRD-WS-10-R007 — ManualAdjustment luôn sinh: FinancialEvent"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "contract_id": "P2C.C4.CONTRACT.BRD-WS-10-R007",
+    "inference": false,
+    "mechanism": "APPROVED_TYPED_CUSTOM_AST",
+    "mechanism_version": "SEMANTIC_ACCEPTANCE_RENDERER_C2",
+    "runtime_status": "RUNTIME_ADAPTER_PENDING"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "ACCEPTANCE_READY",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-10-R007-AC001",
-        "BRD-WS-10-R007-AC002"
+        "BRD-WS-10-R007-AC002",
+        "BRD-WS-10-R007-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-10-R007-O001",
@@ -3539,35 +4208,36 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-10-R007 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-10-R007 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-10-R007 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-10-R007 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-10-R007 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-10-R007 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "BRD-WS-10-R007 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BRD-WS-10-R007-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BRD-WS-10-R007-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-10-R007 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-10-R007 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -3586,8 +4256,8 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
     "source_context_sha256": "964fb40e3cb66358a9f58f87a28142b3134181c02086fe7281f908c2be5fb65f",
     "source_document": "docs/BRD/BRD-WS-10.md",
     "source_fingerprint": "1fe18692979f3eb5dee187e2fa0b8edfcc2bc18e6cae16028ecf919a3b665fed",
-    "source_lines": "L562-L564",
-    "source_section": "27. Manual Adjustment"
+    "source_lines": "L3424-L4278",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-10-R007"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3612,47 +4282,27 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "EP-10-001-AC001",
-      "given": "a candidate Financial Domain chỉ đọc Snapshot, không sửa Transaction record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "EP-10-001-O001"
-      ],
-      "when": "the candidate is evaluated against its declared data contract"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "DATA_CONTRACT_REJECTION_V1",
-      "criterion_id": "EP-10-001-AC002",
-      "given": "a Financial Domain chỉ đọc Snapshot, không sửa Transaction candidate containing an unsupported value, inconsistent relationship, or unresolved reference",
-      "observable_evidence": "rejection result, field or relationship reason, unresolved reference, and unchanged persisted state",
-      "then": "the candidate is rejected without persisting the invalid state, and each invalid field or relationship has a deterministic reason",
-      "verifies": [
-        "EP-10-001-O001"
-      ],
-      "when": "the candidate is validated"
-    },
-    {
-      "case": "NEGATIVE_FAIL_CLOSED",
-      "controlled_contract": "REQUIREMENT_SPECIFIC_FAIL_CLOSED_V1",
-      "criterion_id": "EP-10-001-AC003",
-      "given": "an input or attempted state change that violates a mandatory boundary explicitly stated by Financial Domain chỉ đọc Snapshot, không sửa Transaction",
-      "observable_evidence": "violating input, decision and reason, before/after protected state, and audit or conformance evidence",
-      "then": "the violated obligation produces its specified rejection, denial, block, review, or non-conforming result without recording a contradictory success",
-      "verifies": [
-        "EP-10-001-O001"
-      ],
-      "when": "the violating input or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "EP-10-001",
+      "source_document": "docs/BRD/BRD-WS-10.md",
+      "source_fingerprint": "067a060ea32799962d39cacdbd792fa297019e5f840e35cf6f6613412fe35a9e"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
@@ -3668,36 +4318,36 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "EP-10-001 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "EP-10-001 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "EP-10-001 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "EP-10-001 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "EP-10-001 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "EP-10-001 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
-        "EP-10-001-AC003"
-      ],
-      "status": "APPLICABLE"
+        "EP-10-001-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "EP-10-001-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "EP-10-001 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "EP-10-001 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -3715,9 +4365,9 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
     "source_context_heading": "EP-10-001",
     "source_context_sha256": "30634a2697075a8f1ca3d6b5b656e2ebb6ad25231d8e242219c9c90f84a8b515",
     "source_document": "docs/BRD/BRD-WS-10.md",
-    "source_fingerprint": "8c58cdb30e5780f7c8a05c5dcdf89ac5c9b8937348e2ba37c60008fc582059c1",
-    "source_lines": "L785-L788",
-    "source_section": "31. Enterprise Design Principles > EP-10-001"
+    "source_fingerprint": "067a060ea32799962d39cacdbd792fa297019e5f840e35cf6f6613412fe35a9e",
+    "source_lines": "L4280-L4388",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > EP-10-001"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3742,41 +4392,34 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "EP-10-002-AC001",
-      "given": "the applicable business context, actor, and input for Mọi điều chỉnh tài chính đều được biểu diễn bằng FinancialEvent mới",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "EP-10-002-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "EP-10-002-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Mọi điều chỉnh tài chính đều được biểu diễn bằng FinancialEvent mới",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "EP-10-002-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "EP-10-002",
+      "source_document": "docs/BRD/BRD-WS-10.md",
+      "source_fingerprint": "1ed9bab70ef6a92ba502b10eb1b43bffceef89da09675590057f7ea3f51b0c35"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "EP-10-002-AC001",
-        "EP-10-002-AC002"
+        "EP-10-002-AC002",
+        "EP-10-002-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "EP-10-002-O001",
@@ -3785,35 +4428,36 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "EP-10-002 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "EP-10-002 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "EP-10-002 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "EP-10-002 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "EP-10-002 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "EP-10-002 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "EP-10-002 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "EP-10-002-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "EP-10-002-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "EP-10-002 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "EP-10-002 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -3831,9 +4475,9 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
     "source_context_heading": "EP-10-002",
     "source_context_sha256": "f9ca36def95b0f3779394e0dea331e10d4ffa899319582dfe204e06424a1c825",
     "source_document": "docs/BRD/BRD-WS-10.md",
-    "source_fingerprint": "e25ee4aee100a5e428f7c8bec1ddb2d310579ee861f1c5beafd7128dbbbd6ba3",
-    "source_lines": "L791-L794",
-    "source_section": "31. Enterprise Design Principles > EP-10-002"
+    "source_fingerprint": "1ed9bab70ef6a92ba502b10eb1b43bffceef89da09675590057f7ea3f51b0c35",
+    "source_lines": "L4390-L4498",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > EP-10-002"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3858,41 +4502,34 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "EP-10-003-AC001",
-      "given": "the applicable business context, actor, and input for Financial Visibility tuân thủ Distribution Hierarchy",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "EP-10-003-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "EP-10-003-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Financial Visibility tuân thủ Distribution Hierarchy",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "EP-10-003-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "EP-10-003",
+      "source_document": "docs/BRD/BRD-WS-10.md",
+      "source_fingerprint": "6f1827493478a23721174a01f6c4913fe4d3a6ad7cd4cf4a5d0fc1b000f567fd"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "EP-10-003-AC001",
-        "EP-10-003-AC002"
+        "EP-10-003-AC002",
+        "EP-10-003-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "EP-10-003-O001",
@@ -3901,35 +4538,36 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "EP-10-003 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "EP-10-003 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "EP-10-003 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "EP-10-003 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "EP-10-003 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "EP-10-003 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "EP-10-003 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "EP-10-003-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "EP-10-003-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "EP-10-003 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "EP-10-003 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -3947,9 +4585,9 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
     "source_context_heading": "EP-10-003",
     "source_context_sha256": "f0b74be6baaf961b16a04db7332e48ad45bf5a4d80c22e9ada5ed03c71735347",
     "source_document": "docs/BRD/BRD-WS-10.md",
-    "source_fingerprint": "0111c71d770c98646893b142e8e9b85c4c50380d40d5b345335bae2530eb631f",
-    "source_lines": "L797-L800",
-    "source_section": "31. Enterprise Design Principles > EP-10-003"
+    "source_fingerprint": "6f1827493478a23721174a01f6c4913fe4d3a6ad7cd4cf4a5d0fc1b000f567fd",
+    "source_lines": "L4500-L4608",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > EP-10-003"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3974,47 +4612,29 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "EP-10-004-AC001",
-      "given": "the applicable business context, actor, and input for Settlement và Reconciliation là hai Capability độc lập",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "each named business concept has a distinct identity, owner or reference, and lifecycle evidence; an action on one does not implicitly act on the other",
-      "verifies": [
-        "EP-10-004-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-005"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "EP-10-004-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Settlement và Reconciliation là hai Capability độc lập",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "EP-10-004-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
-    },
-    {
-      "case": "NEGATIVE_FAIL_CLOSED",
-      "controlled_contract": "REQUIREMENT_SPECIFIC_FAIL_CLOSED_V1",
-      "criterion_id": "EP-10-004-AC003",
-      "given": "an input or attempted state change that violates a mandatory boundary explicitly stated by Settlement và Reconciliation là hai Capability độc lập",
-      "observable_evidence": "violating input, decision and reason, before/after protected state, and audit or conformance evidence",
-      "then": "the violated obligation produces its specified rejection, denial, block, review, or non-conforming result without recording a contradictory success",
-      "verifies": [
-        "EP-10-004-O001"
-      ],
-      "when": "the violating input or action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "EP-10-004",
+      "source_document": "docs/BRD/BRD-WS-10.md",
+      "source_fingerprint": "9e22d2f7d6aa40ef1e16cefb4e6b7fcb6a43871b7e8389ead13aa9ad3be458be"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
@@ -4030,36 +4650,38 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
-      "criterion_references": [],
-      "rationale": "EP-10-004 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    },
-    "CONCURRENCY": {
-      "criterion_references": [],
-      "rationale": "EP-10-004 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    },
-    "IDEMPOTENCY": {
-      "criterion_references": [],
-      "rationale": "EP-10-004 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    },
-    "NEGATIVE_FAIL_CLOSED": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "EP-10-004-AC003"
       ],
-      "status": "APPLICABLE"
+      "rationale": null
+    },
+    "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "EP-10-004 does not define a concurrency obligation."
+    },
+    "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "EP-10-004 does not define a idempotency obligation."
+    },
+    "NEGATIVE_FAIL_CLOSED": {
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "EP-10-004-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "EP-10-004-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "EP-10-004 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "EP-10-004 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -4079,9 +4701,9 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
     "source_context_heading": "EP-10-004",
     "source_context_sha256": "9ea68cc6fc060eb5bb15418cc2ae0e37afe35d629e51b6a8cdd0664454df00d7",
     "source_document": "docs/BRD/BRD-WS-10.md",
-    "source_fingerprint": "772e598c5f08b9c024ab96a66e3630865d7463ffb3b5a6d2c5f3a960c5ae1ade",
-    "source_lines": "L803-L806",
-    "source_section": "31. Enterprise Design Principles > EP-10-004"
+    "source_fingerprint": "9e22d2f7d6aa40ef1e16cefb4e6b7fcb6a43871b7e8389ead13aa9ad3be458be",
+    "source_lines": "L4610-L4724",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > EP-10-004"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -4106,41 +4728,34 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "EP-10-005-AC001",
-      "given": "the applicable business context, actor, and input for Event Ledger là nguồn dữ liệu chuẩn cho Reporting và Financial Export",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "EP-10-005-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "EP-10-005-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Event Ledger là nguồn dữ liệu chuẩn cho Reporting và Financial Export",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "EP-10-005-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "EP-10-005",
+      "source_document": "docs/BRD/BRD-WS-10.md",
+      "source_fingerprint": "342564e39575fa542acf1bd2da6d65db304d2a1563011b71b5feabd66b78f37b"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "EP-10-005-AC001",
-        "EP-10-005-AC002"
+        "EP-10-005-AC002",
+        "EP-10-005-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "EP-10-005-O001",
@@ -4149,35 +4764,36 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "EP-10-005 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "EP-10-005 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "EP-10-005 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "EP-10-005 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "EP-10-005 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "EP-10-005 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "EP-10-005 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "EP-10-005-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "EP-10-005-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "EP-10-005 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "EP-10-005 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -4195,9 +4811,9 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
     "source_context_heading": "EP-10-005",
     "source_context_sha256": "797d46369459ea89d131a6565d0a326b98cfab101322cb35189ab535cf2175f1",
     "source_document": "docs/BRD/BRD-WS-10.md",
-    "source_fingerprint": "d57bcb680849e8536bbcd2f6bbd63f36dcb9e9c3ecf7ed19f5c5d2b2a1cde6b3",
-    "source_lines": "L809-L812",
-    "source_section": "31. Enterprise Design Principles > EP-10-005"
+    "source_fingerprint": "342564e39575fa542acf1bd2da6d65db304d2a1563011b71b5feabd66b78f37b",
+    "source_lines": "L4726-L4834",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > EP-10-005"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -4222,41 +4838,34 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "EP-10-006-AC001",
-      "given": "the applicable business context, actor, and input for Money Flow độc lập với Product Flow",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "each named business concept has a distinct identity, owner or reference, and lifecycle evidence; an action on one does not implicitly act on the other",
-      "verifies": [
-        "EP-10-006-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "EP-10-006-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Money Flow độc lập với Product Flow",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "EP-10-006-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "EP-10-006",
+      "source_document": "docs/BRD/BRD-WS-10.md",
+      "source_fingerprint": "e8ad3c81f3c3df889d10853f6ba8cb110e6316d4971c8e1c2096ee6dcc43bbfc"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "EP-10-006-AC001",
-        "EP-10-006-AC002"
+        "EP-10-006-AC002",
+        "EP-10-006-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "EP-10-006-O001",
@@ -4279,9 +4888,9 @@ Workshop này hoàn thiện toàn bộ Financial Domain và Transaction Domain c
     "source_context_heading": "29. Money Flow ≠ Product Flow",
     "source_context_sha256": "0574cced1eedbfc1e397d1c8087c357fcd097692c5e216087802f442853b4bf3",
     "source_document": "docs/BRD/BRD-WS-10.md",
-    "source_fingerprint": "dd34b5c3c377f650d0899c6ca9cd0b8743d1b648383840994e743acf352aaeb0",
-    "source_lines": "L815-L818",
-    "source_section": "31. Enterprise Design Principles > EP-10-006"
+    "source_fingerprint": "e8ad3c81f3c3df889d10853f6ba8cb110e6316d4971c8e1c2096ee6dcc43bbfc",
+    "source_lines": "L4836-L4911",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > EP-10-006"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {

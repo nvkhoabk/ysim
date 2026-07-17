@@ -1,0 +1,14 @@
+{
+  "artifact": "PHASE_2C_PROGRESSIVE_SEMANTIC_AUDIT",
+  "candidate_id": "V23-P2C-PROGRESSIVE-DOCUMENT-BASELINE-C1",
+  "findings": {
+    "candidate_derived_semantic_identifiers": 0,
+    "false_acceptance_ready_claims": 0,
+    "generated_procedure_templates": 0,
+    "generic_acceptance_wrappers": 0,
+    "invalid_acceptance_claims": 0,
+    "pending_records_with_acceptance_content": 0,
+    "unsupported_or_lost_source_obligations": 0
+  },
+  "result": "PASS"
+}

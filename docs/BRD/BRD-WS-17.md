@@ -1,13 +1,20 @@
 ---
 document_code: "BRD-WS-17"
+document_id: "BRD-WS-17"
 title: "Platform Operations, Monitoring, Scheduler & Background Processing"
-product_baseline: "2.3"
-document_revision: "2.3.0-draft.1"
+version: "2.3.0-draft.3"
+document_revision: "2.3.0-draft.3"
+status: "V2.3_DRAFT"
 lifecycle_status: "V2.3_DRAFT"
 language: "vi-VN"
+baseline: "2.3"
+product_baseline: "2.3"
+source_lineage: "v2.2 + approved Phase 1/2A/2B + accepted Acceptance Model C1 + accepted Mapping C3"
 source_baseline: "v2.2"
+last_reviewed_date: "2026-07-15"
+last_remediated_on: "2026-07-17"
+applicable_scope: "V2.3_ACTIVE_AND_RETAINED_SCOPE_RECORDS"
 generated_registry_role: "BRD_CANONICAL_SOURCE"
-last_remediated_on: "2026-07-15"
 ---
 ## Thẩm quyền nguồn yêu cầu v2.3
 
@@ -1465,7 +1472,7 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 <!-- YSIM:PHASE_2C CANONICAL APPENDIX BEGIN -->
 
-## Phụ lục yêu cầu chuẩn tắc v2.3
+## Phụ lục yêu cầu chuẩn tắc v2.3 — C6-R1
 
 
 
@@ -1474,54 +1481,34 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-17-001-AC001",
-      "given": "an operational task within the scope of Platform có một Platform Operations Center thống nhất. Operations Center là trung tâm điều hành …",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BD-17-001-O001"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-17-001-AC002",
-      "given": "an operational task within the scope of Platform có một Platform Operations Center thống nhất. Operations Center là trung tâm điều hành …",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BD-17-001-O002"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "OPERATIONAL_VERIFICATION_FAILURE_V1",
-      "criterion_id": "BD-17-001-AC003",
-      "given": "an operational task missing an outcome, required signal, audit evidence, or recovery evidence for Platform có một Platform Operations Center thống nhất. Operations Center là trung tâm điều hành …",
-      "observable_evidence": "operator-visible verification result, missing-evidence identifier, operation state, and relevant signal or audit record",
-      "then": "verification reports the specific missing evidence as a detectable failure and does not report the task as conforming",
-      "verifies": [
-        "BD-17-001-O001",
-        "BD-17-001-O002"
-      ],
-      "when": "operational verification is performed"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-17-001",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "9ade89830ed7bb45429a1e98f369119b566f9a8b0e040b7df5c0ee5c4a70259b"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-17-001-AC001",
-        "BD-17-001-AC003"
+        "BD-17-001-AC003",
+        "BD-17-001-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-001-O001",
@@ -1530,7 +1517,8 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     {
       "acceptance_criterion_references": [
         "BD-17-001-AC002",
-        "BD-17-001-AC003"
+        "BD-17-001-AC003",
+        "BD-17-001-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-001-O002",
@@ -1553,9 +1541,9 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_heading": "3. Platform Operations Center",
     "source_context_sha256": "6f313bff0676a2a75ceb119b5d9e08390c018ce16405f0ee72f081b150946add",
     "source_document": "docs/BRD/BRD-WS-17.md",
-    "source_fingerprint": "7471a04fa66239d0bba59aa3f84120358482520b7a7dbd29ad2c4448a7c78473",
-    "source_lines": "L967-L972",
-    "source_section": "37. Business Decisions (Locked) > BD-17-001"
+    "source_fingerprint": "9ade89830ed7bb45429a1e98f369119b566f9a8b0e040b7df5c0ee5c4a70259b",
+    "source_lines": "L1479-L1564",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-17-001"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1580,289 +1568,166 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-17-002-AC001",
-      "given": "an operational task within the scope of Monitoring bao phủ toàn Platform. Bao gồm: - Business - API - Queue - Worker - Scheduler - Conne…",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BD-17-002-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-006"
       ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-17-002-AC002",
-      "given": "an operational task within the scope of Monitoring bao phủ toàn Platform. Bao gồm: - Business - API - Queue - Worker - Scheduler - Conne…",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BD-17-002-O002"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-17-002-AC003",
-      "given": "an operational task within the scope of Monitoring bao phủ toàn Platform. Bao gồm: - Business - API - Queue - Worker - Scheduler - Conne…",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BD-17-002-O003"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-17-002-AC004",
-      "given": "an operational task within the scope of Monitoring bao phủ toàn Platform. Bao gồm: - Business - API - Queue - Worker - Scheduler - Conne…",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BD-17-002-O004"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-17-002-AC005",
-      "given": "an operational task within the scope of Monitoring bao phủ toàn Platform. Bao gồm: - Business - API - Queue - Worker - Scheduler - Conne…",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BD-17-002-O005"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-17-002-AC006",
-      "given": "an operational task within the scope of Monitoring bao phủ toàn Platform. Bao gồm: - Business - API - Queue - Worker - Scheduler - Conne…",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BD-17-002-O006"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-17-002-AC007",
-      "given": "an operational task within the scope of Monitoring bao phủ toàn Platform. Bao gồm: - Business - API - Queue - Worker - Scheduler - Conne…",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BD-17-002-O007"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-17-002-AC008",
-      "given": "an operational task within the scope of Monitoring bao phủ toàn Platform. Bao gồm: - Business - API - Queue - Worker - Scheduler - Conne…",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BD-17-002-O008"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-17-002-AC009",
-      "given": "an operational task within the scope of Monitoring bao phủ toàn Platform. Bao gồm: - Business - API - Queue - Worker - Scheduler - Conne…",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BD-17-002-O009"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-17-002-AC010",
-      "given": "an operational task within the scope of Monitoring bao phủ toàn Platform. Bao gồm: - Business - API - Queue - Worker - Scheduler - Conne…",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BD-17-002-O010"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-17-002-AC011",
-      "given": "an operational task within the scope of Monitoring bao phủ toàn Platform. Bao gồm: - Business - API - Queue - Worker - Scheduler - Conne…",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BD-17-002-O011"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "OPERATIONAL_VERIFICATION_FAILURE_V1",
-      "criterion_id": "BD-17-002-AC012",
-      "given": "an operational task missing an outcome, required signal, audit evidence, or recovery evidence for Monitoring bao phủ toàn Platform. Bao gồm: - Business - API - Queue - Worker - Scheduler - Conne…",
-      "observable_evidence": "operator-visible verification result, missing-evidence identifier, operation state, and relevant signal or audit record",
-      "then": "verification reports the specific missing evidence as a detectable failure and does not report the task as conforming",
-      "verifies": [
-        "BD-17-002-O001",
-        "BD-17-002-O002",
-        "BD-17-002-O003",
-        "BD-17-002-O004",
-        "BD-17-002-O005",
-        "BD-17-002-O006",
-        "BD-17-002-O007",
-        "BD-17-002-O008",
-        "BD-17-002-O009",
-        "BD-17-002-O010",
-        "BD-17-002-O011"
-      ],
-      "when": "operational verification is performed"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-17-002",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "dd428ee138959684bce7044f71e753a6f748b4e86ed818f15406924274bfcece"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-17-002-AC001",
-        "BD-17-002-AC012"
+        "BD-17-002-AC012",
+        "BD-17-002-AC013"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-002-O001",
-      "obligation_text": "Monitoring bao phủ toàn Platform. Bao gồm: Business."
+      "obligation_text": "Monitoring bao phủ toàn Platform. Bao gồm: Business"
     },
     {
       "acceptance_criterion_references": [
         "BD-17-002-AC002",
-        "BD-17-002-AC012"
+        "BD-17-002-AC012",
+        "BD-17-002-AC013"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-002-O002",
-      "obligation_text": "Monitoring bao phủ toàn Platform. Bao gồm: API."
+      "obligation_text": "Monitoring bao phủ toàn Platform. Bao gồm: API"
     },
     {
       "acceptance_criterion_references": [
         "BD-17-002-AC003",
-        "BD-17-002-AC012"
+        "BD-17-002-AC012",
+        "BD-17-002-AC013"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-002-O003",
-      "obligation_text": "Monitoring bao phủ toàn Platform. Bao gồm: Queue."
+      "obligation_text": "Monitoring bao phủ toàn Platform. Bao gồm: Queue"
     },
     {
       "acceptance_criterion_references": [
         "BD-17-002-AC004",
-        "BD-17-002-AC012"
+        "BD-17-002-AC012",
+        "BD-17-002-AC013"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-002-O004",
-      "obligation_text": "Monitoring bao phủ toàn Platform. Bao gồm: Worker."
+      "obligation_text": "Monitoring bao phủ toàn Platform. Bao gồm: Worker"
     },
     {
       "acceptance_criterion_references": [
         "BD-17-002-AC005",
-        "BD-17-002-AC012"
+        "BD-17-002-AC012",
+        "BD-17-002-AC013"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-002-O005",
-      "obligation_text": "Monitoring bao phủ toàn Platform. Bao gồm: Scheduler."
+      "obligation_text": "Monitoring bao phủ toàn Platform. Bao gồm: Scheduler"
     },
     {
       "acceptance_criterion_references": [
         "BD-17-002-AC006",
-        "BD-17-002-AC012"
+        "BD-17-002-AC012",
+        "BD-17-002-AC013"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-002-O006",
-      "obligation_text": "Monitoring bao phủ toàn Platform. Bao gồm: Connector."
+      "obligation_text": "Monitoring bao phủ toàn Platform. Bao gồm: Connector"
     },
     {
       "acceptance_criterion_references": [
         "BD-17-002-AC007",
-        "BD-17-002-AC012"
+        "BD-17-002-AC012",
+        "BD-17-002-AC013"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-002-O007",
-      "obligation_text": "Monitoring bao phủ toàn Platform. Bao gồm: Payment."
+      "obligation_text": "Monitoring bao phủ toàn Platform. Bao gồm: Payment"
     },
     {
       "acceptance_criterion_references": [
         "BD-17-002-AC008",
-        "BD-17-002-AC012"
+        "BD-17-002-AC012",
+        "BD-17-002-AC013"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-002-O008",
-      "obligation_text": "Monitoring bao phủ toàn Platform. Bao gồm: Notification."
+      "obligation_text": "Monitoring bao phủ toàn Platform. Bao gồm: Notification"
     },
     {
       "acceptance_criterion_references": [
         "BD-17-002-AC009",
-        "BD-17-002-AC012"
+        "BD-17-002-AC012",
+        "BD-17-002-AC013"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-002-O009",
-      "obligation_text": "Monitoring bao phủ toàn Platform. Bao gồm: Database."
+      "obligation_text": "Monitoring bao phủ toàn Platform. Bao gồm: Database"
     },
     {
       "acceptance_criterion_references": [
         "BD-17-002-AC010",
-        "BD-17-002-AC012"
+        "BD-17-002-AC012",
+        "BD-17-002-AC013"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-002-O010",
-      "obligation_text": "Monitoring bao phủ toàn Platform. Bao gồm: Cache."
+      "obligation_text": "Monitoring bao phủ toàn Platform. Bao gồm: Cache"
     },
     {
       "acceptance_criterion_references": [
         "BD-17-002-AC011",
-        "BD-17-002-AC012"
+        "BD-17-002-AC012",
+        "BD-17-002-AC013"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-002-O011",
-      "obligation_text": "Monitoring bao phủ toàn Platform. Bao gồm: Infrastructure."
+      "obligation_text": "Monitoring bao phủ toàn Platform. Bao gồm: Infrastructure"
     }
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-17-002 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-17-002 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-17-002 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-17-002 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-17-002 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-17-002 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "BD-17-002 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BD-17-002-AC012"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BD-17-002-AC001",
         "BD-17-002-AC002",
@@ -1875,13 +1740,12 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
         "BD-17-002-AC009",
         "BD-17-002-AC010",
         "BD-17-002-AC011"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-17-002 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-17-002 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -1901,9 +1765,9 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_heading": "BD-17-002",
     "source_context_sha256": "6a6836d4eaf27e9a6920f740020dc0e76da2bfa538f48221b42752d9a86dd45d",
     "source_document": "docs/BRD/BRD-WS-17.md",
-    "source_fingerprint": "982d9c3416dda4d7295348e3cb4c4484ef8fa0a11b44f43e39cec3a0163aea6d",
-    "source_lines": "L975-L992",
-    "source_section": "37. Business Decisions (Locked) > BD-17-002"
+    "source_fingerprint": "dd428ee138959684bce7044f71e753a6f748b4e86ed818f15406924274bfcece",
+    "source_lines": "L1566-L1788",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-17-002"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -1928,40 +1792,34 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-17-003-AC001",
-      "given": "the applicable business context, actor, and input for Health Check hỗ trợ đầy đủ các thành phần của Platform. Health Status được chuẩn hóa",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-17-003-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-17-003-AC002",
-      "given": "the applicable business context, actor, and input for Health Check hỗ trợ đầy đủ các thành phần của Platform. Health Status được chuẩn hóa",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the resulting business state equals the declared destination for a valid transition and records the prior state, triggering input, and transition reason",
-      "verifies": [
-        "BD-17-003-O002"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-17-003",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "6e1da3ed522235b8b1d2ff3d98823d4abc99bdbcfee2d4ec65c4b088182e4abc"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BD-17-003-AC001"
+        "BD-17-003-AC001",
+        "BD-17-003-AC003",
+        "BD-17-003-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-003-O001",
@@ -1969,7 +1827,9 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     },
     {
       "acceptance_criterion_references": [
-        "BD-17-003-AC002"
+        "BD-17-003-AC002",
+        "BD-17-003-AC003",
+        "BD-17-003-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-003-O002",
@@ -1992,9 +1852,9 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_heading": "BD-17-003",
     "source_context_sha256": "cc7aba8681bfaf48783f96ec033e7be98250f0c97d3ee952ab867e4647c12f4c",
     "source_document": "docs/BRD/BRD-WS-17.md",
-    "source_fingerprint": "52ae28cabe782c14be55149392b59b09a04d9b8264ecd77ec6689d0e8789ee55",
-    "source_lines": "L995-L1000",
-    "source_section": "37. Business Decisions (Locked) > BD-17-003"
+    "source_fingerprint": "6e1da3ed522235b8b1d2ff3d98823d4abc99bdbcfee2d4ec65c4b088182e4abc",
+    "source_lines": "L1790-L1875",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-17-003"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2019,133 +1879,80 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-17-004-AC001",
-      "given": "an operational task within the scope of Metrics được chuẩn hóa. Metrics là nguồn dữ liệu cho: - Dashboard - Alert - Capacity Planning - …",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BD-17-004-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-010"
       ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-17-004-AC002",
-      "given": "an operational task within the scope of Metrics được chuẩn hóa. Metrics là nguồn dữ liệu cho: - Dashboard - Alert - Capacity Planning - …",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BD-17-004-O002"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-17-004-AC003",
-      "given": "an operational task within the scope of Metrics được chuẩn hóa. Metrics là nguồn dữ liệu cho: - Dashboard - Alert - Capacity Planning - …",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BD-17-004-O003"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-17-004-AC004",
-      "given": "an operational task within the scope of Metrics được chuẩn hóa. Metrics là nguồn dữ liệu cho: - Dashboard - Alert - Capacity Planning - …",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BD-17-004-O004"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-17-004-AC005",
-      "given": "an operational task within the scope of Metrics được chuẩn hóa. Metrics là nguồn dữ liệu cho: - Dashboard - Alert - Capacity Planning - …",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BD-17-004-O005"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "OPERATIONAL_VERIFICATION_FAILURE_V1",
-      "criterion_id": "BD-17-004-AC006",
-      "given": "an operational task missing an outcome, required signal, audit evidence, or recovery evidence for Metrics được chuẩn hóa. Metrics là nguồn dữ liệu cho: - Dashboard - Alert - Capacity Planning - …",
-      "observable_evidence": "operator-visible verification result, missing-evidence identifier, operation state, and relevant signal or audit record",
-      "then": "verification reports the specific missing evidence as a detectable failure and does not report the task as conforming",
-      "verifies": [
-        "BD-17-004-O001",
-        "BD-17-004-O002",
-        "BD-17-004-O003",
-        "BD-17-004-O004",
-        "BD-17-004-O005"
-      ],
-      "when": "operational verification is performed"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-17-004",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "eb0a43bacec1cb60b4498d050886f4d83747050c5bd4b4171476b902c017376a"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-17-004-AC001",
-        "BD-17-004-AC006"
+        "BD-17-004-AC006",
+        "BD-17-004-AC007"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-004-O001",
-      "obligation_text": "Metrics được chuẩn hóa. Metrics là nguồn dữ liệu cho: Dashboard."
+      "obligation_text": "Metrics được chuẩn hóa. Metrics là nguồn dữ liệu cho: Dashboard"
     },
     {
       "acceptance_criterion_references": [
         "BD-17-004-AC002",
-        "BD-17-004-AC006"
+        "BD-17-004-AC006",
+        "BD-17-004-AC007"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-004-O002",
-      "obligation_text": "Metrics được chuẩn hóa. Metrics là nguồn dữ liệu cho: Alert."
+      "obligation_text": "Metrics được chuẩn hóa. Metrics là nguồn dữ liệu cho: Alert"
     },
     {
       "acceptance_criterion_references": [
         "BD-17-004-AC003",
-        "BD-17-004-AC006"
+        "BD-17-004-AC006",
+        "BD-17-004-AC007"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-004-O003",
-      "obligation_text": "Metrics được chuẩn hóa. Metrics là nguồn dữ liệu cho: Capacity Planning."
+      "obligation_text": "Metrics được chuẩn hóa. Metrics là nguồn dữ liệu cho: Capacity Planning"
     },
     {
       "acceptance_criterion_references": [
         "BD-17-004-AC004",
-        "BD-17-004-AC006"
+        "BD-17-004-AC006",
+        "BD-17-004-AC007"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-004-O004",
-      "obligation_text": "Metrics được chuẩn hóa. Metrics là nguồn dữ liệu cho: SLO."
+      "obligation_text": "Metrics được chuẩn hóa. Metrics là nguồn dữ liệu cho: SLO"
     },
     {
       "acceptance_criterion_references": [
         "BD-17-004-AC005",
-        "BD-17-004-AC006"
+        "BD-17-004-AC006",
+        "BD-17-004-AC007"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-004-O005",
-      "obligation_text": "Metrics được chuẩn hóa. Metrics là nguồn dữ liệu cho: SLA."
+      "obligation_text": "Metrics được chuẩn hóa. Metrics là nguồn dữ liệu cho: SLA"
     }
   ],
   "criticality_applicability": null,
@@ -2166,9 +1973,9 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_heading": "BD-17-004",
     "source_context_sha256": "8665c4437b590e1611f3ed6ab0ff3e7c972f7da6f1d33ead96d35fbbb43b7284",
     "source_document": "docs/BRD/BRD-WS-17.md",
-    "source_fingerprint": "30eb38829b83a50e215a3858b5fee45312b024032dee17e01a31762da2dc9ed4",
-    "source_lines": "L1003-L1014",
-    "source_section": "37. Business Decisions (Locked) > BD-17-004"
+    "source_fingerprint": "eb0a43bacec1cb60b4498d050886f4d83747050c5bd4b4171476b902c017376a",
+    "source_lines": "L1877-L1996",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-17-004"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2193,125 +2000,59 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-17-005-AC001",
-      "given": "an operational task within the scope of Alert Rule là Business Object. Alert Rule được cấu hình. Không Hard-code",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BD-17-005-O001"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-17-005-AC002",
-      "given": "an operational task within the scope of Alert Rule là Business Object. Alert Rule được cấu hình. Không Hard-code",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BD-17-005-O002"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-17-005-AC003",
-      "given": "an operational task within the scope of Alert Rule là Business Object. Alert Rule được cấu hình. Không Hard-code",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BD-17-005-O003"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "OPERATIONAL_VERIFICATION_FAILURE_V1",
-      "criterion_id": "BD-17-005-AC004",
-      "given": "an operational task missing an outcome, required signal, audit evidence, or recovery evidence for Alert Rule là Business Object. Alert Rule được cấu hình. Không Hard-code",
-      "observable_evidence": "operator-visible verification result, missing-evidence identifier, operation state, and relevant signal or audit record",
-      "then": "verification reports the specific missing evidence as a detectable failure and does not report the task as conforming",
-      "verifies": [
-        "BD-17-005-O001",
-        "BD-17-005-O002",
-        "BD-17-005-O003"
-      ],
-      "when": "operational verification is performed"
-    }
-  ],
-  "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
-  "acceptance_unit": true,
-  "atomic_obligations": [
-    {
-      "acceptance_criterion_references": [
-        "BD-17-005-AC001",
-        "BD-17-005-AC004"
-      ],
-      "applicability": "V2.3_ACTIVE",
-      "obligation_id": "BD-17-005-O001",
-      "obligation_text": "Alert Rule là Business Object"
-    },
-    {
-      "acceptance_criterion_references": [
-        "BD-17-005-AC002",
-        "BD-17-005-AC004"
-      ],
-      "applicability": "V2.3_ACTIVE",
-      "obligation_id": "BD-17-005-O002",
-      "obligation_text": "Alert Rule được cấu hình"
-    },
-    {
-      "acceptance_criterion_references": [
-        "BD-17-005-AC003",
-        "BD-17-005-AC004"
-      ],
-      "applicability": "V2.3_ACTIVE",
-      "obligation_id": "BD-17-005-O003",
-      "obligation_text": "Không Hard-code"
-    }
-  ],
+  "acceptance_contract": null,
+  "acceptance_mechanism": null,
+  "acceptance_rationale": "Composite parent coverage is satisfied only through ALL_CHILDREN; the parent is not an implementation, acceptance, scope-coverage, or criticality unit.",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "STRUCTURAL_RECORD",
+  "acceptance_unit": false,
+  "atomic_obligations": [],
   "criticality_applicability": null,
-  "criticality_unit": true,
+  "criticality_unit": false,
   "delivery_commitment": "COMMITTED_FOR_V2.3",
-  "implementation_unit": true,
+  "implementation_unit": false,
   "lifecycle": "V2.3_DRAFT",
   "normative_statement": "Alert Rule là Business Object. Alert Rule được cấu hình. Không Hard-code.",
   "provenance": {
-    "approved_decisions": [],
+    "approved_decisions": [
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
+    ],
     "identity_origin": "PRESERVED_STABLE_ID",
     "original_identity": "BD-17-005",
+    "phase_2c_c3_actions": [
+      "C3_STRUCTURAL_RECONCILIATION_PARENT"
+    ],
     "previous_temporary_key": null,
     "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
     "source_baseline": "v2.2",
     "source_context_heading": "7. Alert Rule",
     "source_context_sha256": "20268973697bfc64bdd4536c7deca7ea62de0777e79a4ef2903bd3f315dcad18",
     "source_document": "docs/BRD/BRD-WS-17.md",
-    "source_fingerprint": "d7d2758777eb46a2c6e43cfba30bdcfe3d106c345ac8a6d1fa325b2610e98c87",
-    "source_lines": "L1017-L1024",
-    "source_section": "37. Business Decisions (Locked) > BD-17-005"
+    "source_fingerprint": "0351806295bddbe1be0f5303d8c5b3052077f5cc7e09f72ff3a41bbcca0578dc",
+    "source_fingerprint_before_c3": "d7d2758777eb46a2c6e43cfba30bdcfe3d106c345ac8a6d1fa325b2610e98c87",
+    "source_lines": "L1998-L2058",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-17-005"
   },
-  "record_kind": "CANONICAL_ATOMIC",
+  "record_kind": "COMPOSITE_PARENT",
   "relationships": {
     "alias_of": null,
     "aliases": [],
-    "coverage_mode": null,
+    "coverage_mode": "ALL_CHILDREN",
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [
+      "BRD-WS-17-R032",
+      "BRD-WS-17-R033",
+      "BRD-WS-17-R034"
+    ]
   },
   "requirement_type": "OPERATIONAL_REQUIREMENT",
-  "scope_coverage_unit": true,
+  "scope_coverage_unit": false,
   "scope_status": "V2.3_ACTIVE",
   "stable_id": "BD-17-005",
   "title": "Alert Rule là Business Object. Alert Rule được cấu hình. Không Hard-code",
-  "verification_criticality": "HIGH"
+  "verification_criticality": "NOT_APPLICABLE"
 }
 ```
 <!-- YSIM:REQUIREMENT END -->
@@ -2321,103 +2062,58 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-17-006-AC001",
-      "given": "an operational task within the scope of Alert được gửi theo Notification Preference. Personal Inbox luôn là kênh nhận mặc định",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BD-17-006-O001"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-17-006-AC002",
-      "given": "an operational task within the scope of Alert được gửi theo Notification Preference. Personal Inbox luôn là kênh nhận mặc định",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BD-17-006-O002"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "OPERATIONAL_VERIFICATION_FAILURE_V1",
-      "criterion_id": "BD-17-006-AC003",
-      "given": "an operational task missing an outcome, required signal, audit evidence, or recovery evidence for Alert được gửi theo Notification Preference. Personal Inbox luôn là kênh nhận mặc định",
-      "observable_evidence": "operator-visible verification result, missing-evidence identifier, operation state, and relevant signal or audit record",
-      "then": "verification reports the specific missing evidence as a detectable failure and does not report the task as conforming",
-      "verifies": [
-        "BD-17-006-O001",
-        "BD-17-006-O002"
-      ],
-      "when": "operational verification is performed"
-    }
-  ],
-  "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
-  "acceptance_unit": true,
-  "atomic_obligations": [
-    {
-      "acceptance_criterion_references": [
-        "BD-17-006-AC001",
-        "BD-17-006-AC003"
-      ],
-      "applicability": "V2.3_ACTIVE",
-      "obligation_id": "BD-17-006-O001",
-      "obligation_text": "Alert được gửi theo Notification Preference"
-    },
-    {
-      "acceptance_criterion_references": [
-        "BD-17-006-AC002",
-        "BD-17-006-AC003"
-      ],
-      "applicability": "V2.3_ACTIVE",
-      "obligation_id": "BD-17-006-O002",
-      "obligation_text": "Personal Inbox luôn là kênh nhận mặc định"
-    }
-  ],
+  "acceptance_contract": null,
+  "acceptance_mechanism": null,
+  "acceptance_rationale": "Composite parent coverage is satisfied only through ALL_CHILDREN; the parent is not an implementation, acceptance, scope-coverage, or criticality unit.",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "STRUCTURAL_RECORD",
+  "acceptance_unit": false,
+  "atomic_obligations": [],
   "criticality_applicability": null,
-  "criticality_unit": true,
+  "criticality_unit": false,
   "delivery_commitment": "COMMITTED_FOR_V2.3",
-  "implementation_unit": true,
+  "implementation_unit": false,
   "lifecycle": "V2.3_DRAFT",
   "normative_statement": "Alert được gửi theo Notification Preference. Personal Inbox luôn là kênh nhận mặc định.",
   "provenance": {
-    "approved_decisions": [],
+    "approved_decisions": [
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
+    ],
     "identity_origin": "PRESERVED_STABLE_ID",
     "original_identity": "BD-17-006",
+    "phase_2c_c3_actions": [
+      "C3_STRUCTURAL_RECONCILIATION_PARENT"
+    ],
     "previous_temporary_key": null,
     "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
     "source_baseline": "v2.2",
     "source_context_heading": "BD-17-006",
     "source_context_sha256": "da00372cb2b839eb3d3445a3cb7fb61416558a5cc85f95e72c2bf933f422f32b",
     "source_document": "docs/BRD/BRD-WS-17.md",
-    "source_fingerprint": "667c30202eebbbf2c1922910c1f6b9da85f46983123ed38501eb73dec81196c7",
-    "source_lines": "L1027-L1032",
-    "source_section": "37. Business Decisions (Locked) > BD-17-006"
+    "source_fingerprint": "81c188ab89c8da5d5cec6fd15e138d69c23fa10c559fbe445bcbc997e5d72ceb",
+    "source_fingerprint_before_c3": "667c30202eebbbf2c1922910c1f6b9da85f46983123ed38501eb73dec81196c7",
+    "source_lines": "L2060-L2119",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-17-006"
   },
-  "record_kind": "CANONICAL_ATOMIC",
+  "record_kind": "COMPOSITE_PARENT",
   "relationships": {
     "alias_of": null,
     "aliases": [],
-    "coverage_mode": null,
+    "coverage_mode": "ALL_CHILDREN",
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [
+      "BRD-WS-17-R035",
+      "BRD-WS-17-R036"
+    ]
   },
   "requirement_type": "OPERATIONAL_REQUIREMENT",
-  "scope_coverage_unit": true,
+  "scope_coverage_unit": false,
   "scope_status": "V2.3_ACTIVE",
   "stable_id": "BD-17-006",
   "title": "Alert được gửi theo Notification Preference. Personal Inbox luôn là kênh nhận mặc định",
-  "verification_criticality": "HIGH"
+  "verification_criticality": "NOT_APPLICABLE"
 }
 ```
 <!-- YSIM:REQUIREMENT END -->
@@ -2427,147 +2123,60 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "BD-17-007-AC001",
-      "given": "a candidate Scheduler là Business Object. Scheduler hỗ trợ: - Cron - Fixed Interval - Manual Trigger - Busin… record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "BD-17-007-O001"
-      ],
-      "when": "the candidate is evaluated against its declared data contract"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "BD-17-007-AC002",
-      "given": "a candidate Scheduler là Business Object. Scheduler hỗ trợ: - Cron - Fixed Interval - Manual Trigger - Busin… record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "BD-17-007-O002"
-      ],
-      "when": "the candidate is evaluated against its declared data contract"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "BD-17-007-AC003",
-      "given": "a candidate Scheduler là Business Object. Scheduler hỗ trợ: - Cron - Fixed Interval - Manual Trigger - Busin… record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "BD-17-007-O003"
-      ],
-      "when": "the candidate is evaluated against its declared data contract"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "BD-17-007-AC004",
-      "given": "a candidate Scheduler là Business Object. Scheduler hỗ trợ: - Cron - Fixed Interval - Manual Trigger - Busin… record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "BD-17-007-O004"
-      ],
-      "when": "the candidate is evaluated against its declared data contract"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "DATA_CONTRACT_REJECTION_V1",
-      "criterion_id": "BD-17-007-AC005",
-      "given": "a Scheduler là Business Object. Scheduler hỗ trợ: - Cron - Fixed Interval - Manual Trigger - Busin… candidate containing an unsupported value, inconsistent relationship, or unresolved reference",
-      "observable_evidence": "rejection result, field or relationship reason, unresolved reference, and unchanged persisted state",
-      "then": "the candidate is rejected without persisting the invalid state, and each invalid field or relationship has a deterministic reason",
-      "verifies": [
-        "BD-17-007-O001",
-        "BD-17-007-O002",
-        "BD-17-007-O003",
-        "BD-17-007-O004"
-      ],
-      "when": "the candidate is validated"
-    }
-  ],
-  "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
-  "acceptance_unit": true,
-  "atomic_obligations": [
-    {
-      "acceptance_criterion_references": [
-        "BD-17-007-AC001",
-        "BD-17-007-AC005"
-      ],
-      "applicability": "V2.3_ACTIVE",
-      "obligation_id": "BD-17-007-O001",
-      "obligation_text": "Scheduler là Business Object. Scheduler hỗ trợ: Cron."
-    },
-    {
-      "acceptance_criterion_references": [
-        "BD-17-007-AC002",
-        "BD-17-007-AC005"
-      ],
-      "applicability": "V2.3_ACTIVE",
-      "obligation_id": "BD-17-007-O002",
-      "obligation_text": "Scheduler là Business Object. Scheduler hỗ trợ: Fixed Interval."
-    },
-    {
-      "acceptance_criterion_references": [
-        "BD-17-007-AC003",
-        "BD-17-007-AC005"
-      ],
-      "applicability": "V2.3_ACTIVE",
-      "obligation_id": "BD-17-007-O003",
-      "obligation_text": "Scheduler là Business Object. Scheduler hỗ trợ: Manual Trigger."
-    },
-    {
-      "acceptance_criterion_references": [
-        "BD-17-007-AC004",
-        "BD-17-007-AC005"
-      ],
-      "applicability": "V2.3_ACTIVE",
-      "obligation_id": "BD-17-007-O004",
-      "obligation_text": "Scheduler là Business Object. Scheduler hỗ trợ: Business Event Trigger."
-    }
-  ],
+  "acceptance_contract": null,
+  "acceptance_mechanism": null,
+  "acceptance_rationale": "Composite parent coverage is satisfied only through ALL_CHILDREN; the parent is not an implementation, acceptance, scope-coverage, or criticality unit.",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "STRUCTURAL_RECORD",
+  "acceptance_unit": false,
+  "atomic_obligations": [],
   "criticality_applicability": null,
-  "criticality_unit": true,
+  "criticality_unit": false,
   "delivery_commitment": "COMMITTED_FOR_V2.3",
-  "implementation_unit": true,
+  "implementation_unit": false,
   "lifecycle": "V2.3_DRAFT",
   "normative_statement": "Scheduler là Business Object. Scheduler hỗ trợ: - Cron - Fixed Interval - Manual Trigger - Business Event Trigger",
   "provenance": {
-    "approved_decisions": [],
+    "approved_decisions": [
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
+    ],
     "identity_origin": "PRESERVED_STABLE_ID",
     "original_identity": "BD-17-007",
+    "phase_2c_c3_actions": [
+      "C3_STRUCTURAL_RECONCILIATION_PARENT"
+    ],
     "previous_temporary_key": null,
     "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
     "source_baseline": "v2.2",
     "source_context_heading": "9. Scheduler",
     "source_context_sha256": "867847cfa5f35a218d9ca4c09054fad6f3806ef2db0bd26361426efbaad00983",
     "source_document": "docs/BRD/BRD-WS-17.md",
-    "source_fingerprint": "11ffc66ac3a680ed0c555ce7ca04285c49e6868880290ea13a6f46af400d5cd3",
-    "source_lines": "L1035-L1045",
-    "source_section": "37. Business Decisions (Locked) > BD-17-007"
+    "source_fingerprint": "ef940dda20d74c0c7752f25358f9ebfe041820f877c32b3438a45a2d5b31ea86",
+    "source_fingerprint_before_c3": "11ffc66ac3a680ed0c555ce7ca04285c49e6868880290ea13a6f46af400d5cd3",
+    "source_lines": "L2121-L2182",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-17-007"
   },
-  "record_kind": "CANONICAL_ATOMIC",
+  "record_kind": "COMPOSITE_PARENT",
   "relationships": {
     "alias_of": null,
     "aliases": [],
-    "coverage_mode": null,
+    "coverage_mode": "ALL_CHILDREN",
     "derived_from": [],
-    "derived_requirements": []
+    "derived_requirements": [
+      "BRD-WS-17-R037",
+      "BRD-WS-17-R038",
+      "BRD-WS-17-R039",
+      "BRD-WS-17-R040"
+    ]
   },
   "requirement_type": "DATA_REQUIREMENT",
-  "scope_coverage_unit": true,
+  "scope_coverage_unit": false,
   "scope_status": "V2.3_ACTIVE",
   "stable_id": "BD-17-007",
   "title": "Scheduler là Business Object. Scheduler hỗ trợ: - Cron - Fixed Interval - Manual Trigger - Busin…",
-  "verification_criticality": "HIGH"
+  "verification_criticality": "NOT_APPLICABLE"
 }
 ```
 <!-- YSIM:REQUIREMENT END -->
@@ -2577,40 +2186,34 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "BD-17-008-AC001",
-      "given": "a candidate Job Execution là Business Object. Mọi Job đều sinh Job Execution record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "BD-17-008-O001"
-      ],
-      "when": "the candidate is evaluated against its declared data contract"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "BD-17-008-AC002",
-      "given": "a candidate Job Execution là Business Object. Mọi Job đều sinh Job Execution record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "BD-17-008-O002"
-      ],
-      "when": "the candidate is evaluated against its declared data contract"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-17-008",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "139d655a19d91e6a93b310f226c8c1845dfeadfd65d72735739105381e5a13c0"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BD-17-008-AC001"
+        "BD-17-008-AC001",
+        "BD-17-008-AC003",
+        "BD-17-008-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-008-O001",
@@ -2618,7 +2221,9 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     },
     {
       "acceptance_criterion_references": [
-        "BD-17-008-AC002"
+        "BD-17-008-AC002",
+        "BD-17-008-AC003",
+        "BD-17-008-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-008-O002",
@@ -2641,9 +2246,9 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_heading": "11. Job Execution",
     "source_context_sha256": "3aa3cbed38956908b99936821c2069982c56bb29365731aac2a5c41680a3f107",
     "source_document": "docs/BRD/BRD-WS-17.md",
-    "source_fingerprint": "2ce810bed5e4f372b7a36e9397495157502e1e889224f18c743d4fb8a586903a",
-    "source_lines": "L1048-L1053",
-    "source_section": "37. Business Decisions (Locked) > BD-17-008"
+    "source_fingerprint": "139d655a19d91e6a93b310f226c8c1845dfeadfd65d72735739105381e5a13c0",
+    "source_lines": "L2184-L2269",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-17-008"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2668,40 +2273,34 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "BD-17-009-AC001",
-      "given": "a candidate Worker là Business Object. Một Job có thể được xử lý bởi nhiều Worker record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "BD-17-009-O001"
-      ],
-      "when": "the candidate is evaluated against its declared data contract"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "BD-17-009-AC002",
-      "given": "a candidate Worker là Business Object. Một Job có thể được xử lý bởi nhiều Worker record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "BD-17-009-O002"
-      ],
-      "when": "the candidate is evaluated against its declared data contract"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-17-009",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "18fd72a3e36383b4db254f76c07aa060e768e8dfc9b13032f587ec5cd2b2884b"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BD-17-009-AC001"
+        "BD-17-009-AC001",
+        "BD-17-009-AC003",
+        "BD-17-009-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-009-O001",
@@ -2709,7 +2308,9 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     },
     {
       "acceptance_criterion_references": [
-        "BD-17-009-AC002"
+        "BD-17-009-AC002",
+        "BD-17-009-AC003",
+        "BD-17-009-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-009-O002",
@@ -2732,9 +2333,9 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_heading": "12. Worker",
     "source_context_sha256": "880d22bb4db3afdca137719395ef76a347207d0830bd82043c053c81ad2bf8cd",
     "source_document": "docs/BRD/BRD-WS-17.md",
-    "source_fingerprint": "fddfc5b010a454632100a735029dfd1ba87d74cb7ec2469e25d7e2136ede544d",
-    "source_lines": "L1056-L1061",
-    "source_section": "37. Business Decisions (Locked) > BD-17-009"
+    "source_fingerprint": "18fd72a3e36383b4db254f76c07aa060e768e8dfc9b13032f587ec5cd2b2884b",
+    "source_lines": "L2271-L2356",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-17-009"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2759,155 +2360,90 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-17-010-AC001",
-      "given": "an operational task within the scope of Queue Monitoring hỗ trợ nhiều trạng thái. Bao gồm: - Pending - Processing - Completed - Retry - …",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BD-17-010-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-003"
       ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-17-010-AC002",
-      "given": "an operational task within the scope of Queue Monitoring hỗ trợ nhiều trạng thái. Bao gồm: - Pending - Processing - Completed - Retry - …",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BD-17-010-O002"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-17-010-AC003",
-      "given": "an operational task within the scope of Queue Monitoring hỗ trợ nhiều trạng thái. Bao gồm: - Pending - Processing - Completed - Retry - …",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BD-17-010-O003"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-17-010-AC004",
-      "given": "an operational task within the scope of Queue Monitoring hỗ trợ nhiều trạng thái. Bao gồm: - Pending - Processing - Completed - Retry - …",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BD-17-010-O004"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-17-010-AC005",
-      "given": "an operational task within the scope of Queue Monitoring hỗ trợ nhiều trạng thái. Bao gồm: - Pending - Processing - Completed - Retry - …",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BD-17-010-O005"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-17-010-AC006",
-      "given": "an operational task within the scope of Queue Monitoring hỗ trợ nhiều trạng thái. Bao gồm: - Pending - Processing - Completed - Retry - …",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BD-17-010-O006"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "OPERATIONAL_VERIFICATION_FAILURE_V1",
-      "criterion_id": "BD-17-010-AC007",
-      "given": "an operational task missing an outcome, required signal, audit evidence, or recovery evidence for Queue Monitoring hỗ trợ nhiều trạng thái. Bao gồm: - Pending - Processing - Completed - Retry - …",
-      "observable_evidence": "operator-visible verification result, missing-evidence identifier, operation state, and relevant signal or audit record",
-      "then": "verification reports the specific missing evidence as a detectable failure and does not report the task as conforming",
-      "verifies": [
-        "BD-17-010-O001",
-        "BD-17-010-O002",
-        "BD-17-010-O003",
-        "BD-17-010-O004",
-        "BD-17-010-O005",
-        "BD-17-010-O006"
-      ],
-      "when": "operational verification is performed"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-17-010",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "0b42b390c5f77c401b956a2b01ea0304bfb5392397de4fa97927e1b70492e19d"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-17-010-AC001",
-        "BD-17-010-AC007"
+        "BD-17-010-AC007",
+        "BD-17-010-AC008"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-010-O001",
-      "obligation_text": "Queue Monitoring hỗ trợ nhiều trạng thái. Bao gồm: Pending."
+      "obligation_text": "Queue Monitoring hỗ trợ nhiều trạng thái. Bao gồm: Pending"
     },
     {
       "acceptance_criterion_references": [
         "BD-17-010-AC002",
-        "BD-17-010-AC007"
+        "BD-17-010-AC007",
+        "BD-17-010-AC008"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-010-O002",
-      "obligation_text": "Queue Monitoring hỗ trợ nhiều trạng thái. Bao gồm: Processing."
+      "obligation_text": "Queue Monitoring hỗ trợ nhiều trạng thái. Bao gồm: Processing"
     },
     {
       "acceptance_criterion_references": [
         "BD-17-010-AC003",
-        "BD-17-010-AC007"
+        "BD-17-010-AC007",
+        "BD-17-010-AC008"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-010-O003",
-      "obligation_text": "Queue Monitoring hỗ trợ nhiều trạng thái. Bao gồm: Completed."
+      "obligation_text": "Queue Monitoring hỗ trợ nhiều trạng thái. Bao gồm: Completed"
     },
     {
       "acceptance_criterion_references": [
         "BD-17-010-AC004",
-        "BD-17-010-AC007"
+        "BD-17-010-AC007",
+        "BD-17-010-AC008"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-010-O004",
-      "obligation_text": "Queue Monitoring hỗ trợ nhiều trạng thái. Bao gồm: Retry."
+      "obligation_text": "Queue Monitoring hỗ trợ nhiều trạng thái. Bao gồm: Retry"
     },
     {
       "acceptance_criterion_references": [
         "BD-17-010-AC005",
-        "BD-17-010-AC007"
+        "BD-17-010-AC007",
+        "BD-17-010-AC008"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-010-O005",
-      "obligation_text": "Queue Monitoring hỗ trợ nhiều trạng thái. Bao gồm: Failed."
+      "obligation_text": "Queue Monitoring hỗ trợ nhiều trạng thái. Bao gồm: Failed"
     },
     {
       "acceptance_criterion_references": [
         "BD-17-010-AC006",
-        "BD-17-010-AC007"
+        "BD-17-010-AC007",
+        "BD-17-010-AC008"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-010-O006",
-      "obligation_text": "Queue Monitoring hỗ trợ nhiều trạng thái. Bao gồm: DLQ."
+      "obligation_text": "Queue Monitoring hỗ trợ nhiều trạng thái. Bao gồm: DLQ"
     }
   ],
   "criticality_applicability": null,
@@ -2928,9 +2464,9 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_heading": "BD-17-010",
     "source_context_sha256": "300c92ef518b31c11f79f3ec9892d6e349c92da139617c8514226c1732e50182",
     "source_document": "docs/BRD/BRD-WS-17.md",
-    "source_fingerprint": "2fdd75e0efeb59f7d76525e431b8b00a60765df506259f03c4bd077158de858a",
-    "source_lines": "L1064-L1076",
-    "source_section": "37. Business Decisions (Locked) > BD-17-010"
+    "source_fingerprint": "0b42b390c5f77c401b956a2b01ea0304bfb5392397de4fa97927e1b70492e19d",
+    "source_lines": "L2358-L2487",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-17-010"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -2955,41 +2491,37 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-17-011-AC001",
-      "given": "an operational task within the scope of Operation Retry độc lập Connector Retry",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BD-17-011-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-003",
+        "P2-DEC-006"
       ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "OPERATIONAL_VERIFICATION_FAILURE_V1",
-      "criterion_id": "BD-17-011-AC002",
-      "given": "an operational task missing an outcome, required signal, audit evidence, or recovery evidence for Operation Retry độc lập Connector Retry",
-      "observable_evidence": "operator-visible verification result, missing-evidence identifier, operation state, and relevant signal or audit record",
-      "then": "verification reports the specific missing evidence as a detectable failure and does not report the task as conforming",
-      "verifies": [
-        "BD-17-011-O001"
-      ],
-      "when": "operational verification is performed"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-17-011",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "2182c0fb868876035b46a98a806d187921bb0de85494a038eca637e05bb86701"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-17-011-AC001",
-        "BD-17-011-AC002"
+        "BD-17-011-AC002",
+        "BD-17-011-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-011-O001",
@@ -3015,9 +2547,9 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_heading": "BD-17-011",
     "source_context_sha256": "2aebb9cc529851f28c32018d00f73946f21a29a8a0cf36843bbafce05b2b2f8a",
     "source_document": "docs/BRD/BRD-WS-17.md",
-    "source_fingerprint": "c63e0bbffcb52c28a1fbaf53e6fb917c1ca1ce77d8491cd62b81587fbb7f4c88",
-    "source_lines": "L1079-L1082",
-    "source_section": "37. Business Decisions (Locked) > BD-17-011"
+    "source_fingerprint": "2182c0fb868876035b46a98a806d187921bb0de85494a038eca637e05bb86701",
+    "source_lines": "L2489-L2572",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-17-011"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3044,54 +2576,36 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "BD-17-012-AC001",
-      "given": "a candidate Maintenance Window là Business Object. Maintenance hỗ trợ nhiều cấp record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "BD-17-012-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-004"
       ],
-      "when": "the candidate is evaluated against its declared data contract"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "BD-17-012-AC002",
-      "given": "a candidate Maintenance Window là Business Object. Maintenance hỗ trợ nhiều cấp record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "BD-17-012-O002"
-      ],
-      "when": "the candidate is evaluated against its declared data contract"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "DATA_CONTRACT_REJECTION_V1",
-      "criterion_id": "BD-17-012-AC003",
-      "given": "a Maintenance Window là Business Object. Maintenance hỗ trợ nhiều cấp candidate containing an unsupported value, inconsistent relationship, or unresolved reference",
-      "observable_evidence": "rejection result, field or relationship reason, unresolved reference, and unchanged persisted state",
-      "then": "the candidate is rejected without persisting the invalid state, and each invalid field or relationship has a deterministic reason",
-      "verifies": [
-        "BD-17-012-O001",
-        "BD-17-012-O002"
-      ],
-      "when": "the candidate is validated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-17-012",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "95c8a4d1ede1d9c6a0ddf17f000513b255b7644ba7ab22ddf32727bd7e232d04"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-17-012-AC001",
-        "BD-17-012-AC003"
+        "BD-17-012-AC003",
+        "BD-17-012-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-012-O001",
@@ -3100,7 +2614,8 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     {
       "acceptance_criterion_references": [
         "BD-17-012-AC002",
-        "BD-17-012-AC003"
+        "BD-17-012-AC003",
+        "BD-17-012-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-012-O002",
@@ -3125,9 +2640,9 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_heading": "15. Maintenance Window",
     "source_context_sha256": "7a1f5d1e44bec1cf2eab35e66698d5dce984973fa8f5122f9c9a3ce7bc328540",
     "source_document": "docs/BRD/BRD-WS-17.md",
-    "source_fingerprint": "b79f3b809789831b77ab5d5356dbf276029ec82bbaf5082f716cc623e96948af",
-    "source_lines": "L1085-L1090",
-    "source_section": "37. Business Decisions (Locked) > BD-17-012"
+    "source_fingerprint": "95c8a4d1ede1d9c6a0ddf17f000513b255b7644ba7ab22ddf32727bd7e232d04",
+    "source_lines": "L2574-L2663",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-17-012"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3152,41 +2667,34 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-17-013-AC001",
-      "given": "an operational task within the scope of Backup Policy là Business Object",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BD-17-013-O001"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "OPERATIONAL_VERIFICATION_FAILURE_V1",
-      "criterion_id": "BD-17-013-AC002",
-      "given": "an operational task missing an outcome, required signal, audit evidence, or recovery evidence for Backup Policy là Business Object",
-      "observable_evidence": "operator-visible verification result, missing-evidence identifier, operation state, and relevant signal or audit record",
-      "then": "verification reports the specific missing evidence as a detectable failure and does not report the task as conforming",
-      "verifies": [
-        "BD-17-013-O001"
-      ],
-      "when": "operational verification is performed"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-17-013",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "ba35acd2b5cef6100721b0707dcdce5bb881ab37b6c95b9354e422bf04428dd4"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-17-013-AC001",
-        "BD-17-013-AC002"
+        "BD-17-013-AC002",
+        "BD-17-013-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-013-O001",
@@ -3209,9 +2717,9 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_heading": "16. Backup Policy",
     "source_context_sha256": "9d90a4ec4c3934844154e16311f5fdb4d455b8f4ef513fd16d3ceeff8b8797f9",
     "source_document": "docs/BRD/BRD-WS-17.md",
-    "source_fingerprint": "68821decdd0a8e08f95f4a1c5f6b01006368d7a83a5aa2a1eb0efcd6ceda6793",
-    "source_lines": "L1093-L1096",
-    "source_section": "37. Business Decisions (Locked) > BD-17-013"
+    "source_fingerprint": "ba35acd2b5cef6100721b0707dcdce5bb881ab37b6c95b9354e422bf04428dd4",
+    "source_lines": "L2665-L2740",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-17-013"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3236,75 +2744,27 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-17-014-AC001",
-      "given": "an operational task within the scope of Platform hỗ trợ Disaster Recovery. Kiến trúc hỗ trợ: - Manual - Semi Automatic - Automatic",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BD-17-014-O001"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-17-014-AC002",
-      "given": "an operational task within the scope of Platform hỗ trợ Disaster Recovery. Kiến trúc hỗ trợ: - Manual - Semi Automatic - Automatic",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BD-17-014-O002"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-17-014-AC003",
-      "given": "an operational task within the scope of Platform hỗ trợ Disaster Recovery. Kiến trúc hỗ trợ: - Manual - Semi Automatic - Automatic",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BD-17-014-O003"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "OPERATIONAL_VERIFICATION_FAILURE_V1",
-      "criterion_id": "BD-17-014-AC004",
-      "given": "an operational task missing an outcome, required signal, audit evidence, or recovery evidence for Platform hỗ trợ Disaster Recovery. Kiến trúc hỗ trợ: - Manual - Semi Automatic - Automatic",
-      "observable_evidence": "operator-visible verification result, missing-evidence identifier, operation state, and relevant signal or audit record",
-      "then": "verification reports the specific missing evidence as a detectable failure and does not report the task as conforming",
-      "verifies": [
-        "BD-17-014-O001",
-        "BD-17-014-O002",
-        "BD-17-014-O003"
-      ],
-      "when": "operational verification is performed"
-    },
-    {
-      "case": "RECOVERY",
-      "controlled_contract": "EXPLICIT_RECOVERY_CONTRACT_V1",
-      "criterion_id": "BD-17-014-AC005",
-      "given": "a failed or interrupted case for which Platform hỗ trợ Disaster Recovery. Kiến trúc hỗ trợ: - Manual - Semi Automatic - Automatic explicitly defines recovery, restore, rollback, or fallback behavior",
-      "observable_evidence": "pre-failure state, recovery action, resulting state, outcome, and recovery evidence named by the obligation",
-      "then": "the resulting state and outcome follow the requirement-specific recovery obligation and expose whether recovery completed or failed",
-      "verifies": [
-        "BD-17-014-O001",
-        "BD-17-014-O002",
-        "BD-17-014-O003"
-      ],
-      "when": "the declared recovery path is invoked"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-17-014",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "8069966a4baad2d65a7615a735319b361e49d8038c02d17e3a5d3f4418bcb93a"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
@@ -3315,7 +2775,7 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-014-O001",
-      "obligation_text": "Platform hỗ trợ Disaster Recovery. Kiến trúc hỗ trợ: Manual."
+      "obligation_text": "Platform hỗ trợ Disaster Recovery. Kiến trúc hỗ trợ: Manual"
     },
     {
       "acceptance_criterion_references": [
@@ -3325,7 +2785,7 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-014-O002",
-      "obligation_text": "Platform hỗ trợ Disaster Recovery. Kiến trúc hỗ trợ: Semi Automatic."
+      "obligation_text": "Platform hỗ trợ Disaster Recovery. Kiến trúc hỗ trợ: Semi Automatic"
     },
     {
       "acceptance_criterion_references": [
@@ -3335,43 +2795,45 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-014-O003",
-      "obligation_text": "Platform hỗ trợ Disaster Recovery. Kiến trúc hỗ trợ: Automatic."
+      "obligation_text": "Platform hỗ trợ Disaster Recovery. Kiến trúc hỗ trợ: Automatic"
     }
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-17-014 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-17-014 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-17-014 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-17-014 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-17-014 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-17-014 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "BD-17-014 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BD-17-014-AC004"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BD-17-014-AC001",
         "BD-17-014-AC002",
         "BD-17-014-AC003"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BD-17-014-AC005"
       ],
-      "status": "APPLICABLE"
+      "rationale": null
     }
   },
   "criticality_unit": true,
@@ -3389,9 +2851,9 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_heading": "17. Disaster Recovery",
     "source_context_sha256": "6d609055052f25e77fe8d7fedfb4d2b91c0ac5f8ede21a504a9f77d851a579d3",
     "source_document": "docs/BRD/BRD-WS-17.md",
-    "source_fingerprint": "1823643f650dffd3c92a8362c8f7b4516ad95534f249d7b87ff419e50d7ce1c2",
-    "source_lines": "L1099-L1108",
-    "source_section": "37. Business Decisions (Locked) > BD-17-014"
+    "source_fingerprint": "8069966a4baad2d65a7615a735319b361e49d8038c02d17e3a5d3f4418bcb93a",
+    "source_lines": "L2742-L2874",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-17-014"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3416,40 +2878,34 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "BD-17-015-AC001",
-      "given": "a candidate Capacity Policy là Business Object. Kiến trúc hỗ trợ Auto Scaling trong tương lai record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "BD-17-015-O001"
-      ],
-      "when": "the candidate is evaluated against its declared data contract"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "BD-17-015-AC002",
-      "given": "a candidate Capacity Policy là Business Object. Kiến trúc hỗ trợ Auto Scaling trong tương lai record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "BD-17-015-O002"
-      ],
-      "when": "the candidate is evaluated against its declared data contract"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-17-015",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "393f3362575152d056af55474705ed3fabf370a0f6b7f9694216313ede253da8"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BD-17-015-AC001"
+        "BD-17-015-AC001",
+        "BD-17-015-AC003",
+        "BD-17-015-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-015-O001",
@@ -3457,7 +2913,9 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     },
     {
       "acceptance_criterion_references": [
-        "BD-17-015-AC002"
+        "BD-17-015-AC002",
+        "BD-17-015-AC003",
+        "BD-17-015-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-015-O002",
@@ -3480,9 +2938,9 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_heading": "18. Capacity Policy",
     "source_context_sha256": "35b46362ca2e055de876727569c50112df05ff0fe3cbeaf3ca4fc668418aefaa",
     "source_document": "docs/BRD/BRD-WS-17.md",
-    "source_fingerprint": "a9ab188559afbfa6b89deaae23d4c7237a8c02f344d4b3e73ccdc028d5d666f0",
-    "source_lines": "L1111-L1116",
-    "source_section": "37. Business Decisions (Locked) > BD-17-015"
+    "source_fingerprint": "393f3362575152d056af55474705ed3fabf370a0f6b7f9694216313ede253da8",
+    "source_lines": "L2876-L2961",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-17-015"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3507,41 +2965,38 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-17-016-AC001",
-      "given": "an operational task within the scope of Platform có Operational Dashboard dành riêng cho Operator",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BD-17-016-O001"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "OPERATIONAL_VERIFICATION_FAILURE_V1",
-      "criterion_id": "BD-17-016-AC002",
-      "given": "an operational task missing an outcome, required signal, audit evidence, or recovery evidence for Platform có Operational Dashboard dành riêng cho Operator",
-      "observable_evidence": "operator-visible verification result, missing-evidence identifier, operation state, and relevant signal or audit record",
-      "then": "verification reports the specific missing evidence as a detectable failure and does not report the task as conforming",
-      "verifies": [
-        "BD-17-016-O001"
-      ],
-      "when": "operational verification is performed"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "approved_semantic_completion_selection": {
+        "decision_id": "P2C-SC-C1-DEC-005",
+        "option_id": "OPT-AST"
+      },
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-17-016",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "6ac1ce9e5c28386ad19da131b8d6da87eb34c025be958b6b981ba026aacb7e9b"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-17-016-AC001",
-        "BD-17-016-AC002"
+        "BD-17-016-AC002",
+        "BD-17-016-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-016-O001",
@@ -3564,9 +3019,9 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_heading": "BD-17-016",
     "source_context_sha256": "82d6cb771db89481d4e8731831abec1fbc8c2661d3489995ede0fada4ac3f04e",
     "source_document": "docs/BRD/BRD-WS-17.md",
-    "source_fingerprint": "17e38bcd71e76d2fe1ef49a7f95fcf01e1dd856afed132ee752c4889990a0012",
-    "source_lines": "L1119-L1122",
-    "source_section": "37. Business Decisions (Locked) > BD-17-016"
+    "source_fingerprint": "6ac1ce9e5c28386ad19da131b8d6da87eb34c025be958b6b981ba026aacb7e9b",
+    "source_lines": "L2963-L3042",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-17-016"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3591,82 +3046,34 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "SECURITY_DECISION_OBSERVATION_V1",
-      "criterion_id": "BD-17-017-AC001",
-      "given": "an identified principal, applicable assurance context, and policy inputs for Operator sử dụng Permission riêng. Mọi thao tác đều được Security Platform kiểm soát",
-      "observable_evidence": "decision result, effective assurance or policy, denied or changed state, reason, and audit evidence",
-      "then": "the effective security policy produces the required allow, challenge, block, review, or denial result; protected state and audit evidence agree with that decision",
-      "verifies": [
-        "BD-17-017-O001"
-      ],
-      "when": "the protected decision or action is evaluated"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "SECURITY_DECISION_OBSERVATION_V1",
-      "criterion_id": "BD-17-017-AC002",
-      "given": "an identified principal, applicable assurance context, and policy inputs for Operator sử dụng Permission riêng. Mọi thao tác đều được Security Platform kiểm soát",
-      "observable_evidence": "decision result, effective assurance or policy, denied or changed state, reason, and audit evidence",
-      "then": "the effective security policy produces the required allow, challenge, block, review, or denial result; protected state and audit evidence agree with that decision",
-      "verifies": [
-        "BD-17-017-O002"
-      ],
-      "when": "the protected decision or action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "SECURITY_FAIL_CLOSED_V1",
-      "criterion_id": "BD-17-017-AC003",
-      "given": "a principal or request that does not satisfy the assurance, policy, consent, or authorization boundary for Operator sử dụng Permission riêng. Mọi thao tác đều được Security Platform kiểm soát",
-      "observable_evidence": "decision result, protected-state comparison, reason, effective policy, and audit record",
-      "then": "the result is challenge, block, review, or denial as required; protected state is unchanged and the reason is audited",
-      "verifies": [
-        "BD-17-017-O001",
-        "BD-17-017-O002"
-      ],
-      "when": "the protected decision or action is attempted"
-    },
-    {
-      "case": "NEGATIVE_FAIL_CLOSED",
-      "controlled_contract": "REQUIREMENT_SPECIFIC_FAIL_CLOSED_V1",
-      "criterion_id": "BD-17-017-AC004",
-      "given": "an input or attempted state change that violates a mandatory boundary explicitly stated by Operator sử dụng Permission riêng. Mọi thao tác đều được Security Platform kiểm soát",
-      "observable_evidence": "violating input, decision and reason, before/after protected state, and audit or conformance evidence",
-      "then": "the violated obligation produces its specified rejection, denial, block, review, or non-conforming result without recording a contradictory success",
-      "verifies": [
-        "BD-17-017-O001",
-        "BD-17-017-O002"
-      ],
-      "when": "the violating input or action is evaluated"
-    },
-    {
-      "case": "AUTHORIZATION_BOUNDARY",
-      "controlled_contract": "EXPLICIT_AUTHORIZATION_BOUNDARY_V1",
-      "criterion_id": "BD-17-017-AC005",
-      "given": "an actor lacking the permission, role, identity assurance, consent, or access condition stated by Operator sử dụng Permission riêng. Mọi thao tác đều được Security Platform kiểm soát",
-      "observable_evidence": "actor and scope, effective policy or assurance, decision, protected-state comparison, reason, and audit evidence",
-      "then": "access is denied or challenged according to the referenced obligation, protected state remains unchanged, and the decision is auditable",
-      "verifies": [
-        "BD-17-017-O001",
-        "BD-17-017-O002"
-      ],
-      "when": "the actor attempts the governed action"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-17-017",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "30d383c39c3351e46e9662675407bd4d13b8f9501a7f5d14f52b90f05f624cff"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-17-017-AC001",
         "BD-17-017-AC003",
-        "BD-17-017-AC004",
-        "BD-17-017-AC005"
+        "BD-17-017-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-017-O001",
@@ -3676,8 +3083,7 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
       "acceptance_criterion_references": [
         "BD-17-017-AC002",
         "BD-17-017-AC003",
-        "BD-17-017-AC004",
-        "BD-17-017-AC005"
+        "BD-17-017-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-017-O002",
@@ -3686,38 +3092,39 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
-      "criterion_references": [
-        "BD-17-017-AC005"
-      ],
-      "status": "APPLICABLE"
-    },
-    "CONCURRENCY": {
-      "criterion_references": [],
-      "rationale": "BD-17-017 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    },
-    "IDEMPOTENCY": {
-      "criterion_references": [],
-      "rationale": "BD-17-017 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    },
-    "NEGATIVE_FAIL_CLOSED": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BD-17-017-AC004"
       ],
-      "status": "APPLICABLE"
+      "rationale": null
+    },
+    "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "BD-17-017 does not define a concurrency obligation."
+    },
+    "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "BD-17-017 does not define a idempotency obligation."
+    },
+    "NEGATIVE_FAIL_CLOSED": {
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BD-17-017-AC003"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BD-17-017-AC001",
         "BD-17-017-AC002"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-17-017 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-17-017 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -3735,9 +3142,9 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_heading": "20. Operation Permission",
     "source_context_sha256": "6d40656f50a9ead910dd75e3bc79e99ac8f3f397474048d45d6a87a735d3271d",
     "source_document": "docs/BRD/BRD-WS-17.md",
-    "source_fingerprint": "1c9bbaf545761d347eb3730c3f3564c4f2dadf1aa4df524c32a6676b9e42fbe3",
-    "source_lines": "L1125-L1130",
-    "source_section": "37. Business Decisions (Locked) > BD-17-017"
+    "source_fingerprint": "30d383c39c3351e46e9662675407bd4d13b8f9501a7f5d14f52b90f05f624cff",
+    "source_lines": "L3044-L3165",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-17-017"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3762,41 +3169,36 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-17-018-AC001",
-      "given": "the applicable business context, actor, and input for Maintenance phải gửi Notification trước khi thực hiện",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-17-018-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-004"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BD-17-018-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Maintenance phải gửi Notification trước khi thực hiện",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BD-17-018-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-17-018",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "0e4e9db1814bedf6dab0ae680daf75328f4ecbc0f3497797f7a60a76993331bb"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-17-018-AC001",
-        "BD-17-018-AC002"
+        "BD-17-018-AC002",
+        "BD-17-018-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-018-O001",
@@ -3821,9 +3223,9 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_heading": "BD-17-018",
     "source_context_sha256": "c3a5eda4f2bf660e5fa1c35cd855b49015e53e74a4d145fd94b5d40fa6acd924",
     "source_document": "docs/BRD/BRD-WS-17.md",
-    "source_fingerprint": "18361f3e827b4345a10b6ba1d44498fd42c171f818ee8a0a614ad60beceedcf0",
-    "source_lines": "L1133-L1136",
-    "source_section": "37. Business Decisions (Locked) > BD-17-018"
+    "source_fingerprint": "0e4e9db1814bedf6dab0ae680daf75328f4ecbc0f3497797f7a60a76993331bb",
+    "source_lines": "L3167-L3246",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-17-018"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3848,40 +3250,34 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-17-019-AC001",
-      "given": "the applicable business context, actor, and input for Scheduler hỗ trợ Priority. Business Critical Job luôn được ưu tiên",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-17-019-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-17-019-AC002",
-      "given": "the applicable business context, actor, and input for Scheduler hỗ trợ Priority. Business Critical Job luôn được ưu tiên",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-17-019-O002"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-17-019",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "65a0a392e23b87840f76c1c0f3b41e6884f70840c80da72ccb95c9d089e514b9"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BD-17-019-AC001"
+        "BD-17-019-AC001",
+        "BD-17-019-AC003",
+        "BD-17-019-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-019-O001",
@@ -3889,7 +3285,9 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     },
     {
       "acceptance_criterion_references": [
-        "BD-17-019-AC002"
+        "BD-17-019-AC002",
+        "BD-17-019-AC003",
+        "BD-17-019-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-019-O002",
@@ -3912,9 +3310,9 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_heading": "22. Scheduler Priority",
     "source_context_sha256": "ee849292348f3551510bfd40a7a6460b6f49278dea438ab576df64843cb65a03",
     "source_document": "docs/BRD/BRD-WS-17.md",
-    "source_fingerprint": "6d378a72b0286b79212b1925c27595fa145c5a822132275dd59a0218d48ac617",
-    "source_lines": "L1139-L1144",
-    "source_section": "37. Business Decisions (Locked) > BD-17-019"
+    "source_fingerprint": "65a0a392e23b87840f76c1c0f3b41e6884f70840c80da72ccb95c9d089e514b9",
+    "source_lines": "L3248-L3333",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-17-019"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -3939,40 +3337,34 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "SCOPE_BOUNDARY_OBSERVATION_V1",
-      "criterion_id": "BD-17-020-AC001",
-      "given": "the v2.3 capability inventory and conformance evidence for Kiến trúc hỗ trợ Auto Scaling. Version hiện tại chưa triển khai",
-      "observable_evidence": "baseline capability inventory, exposed action or API surface, conformance trace, implementation-status evidence, and future-scope marker",
-      "then": "implemented behavior and exposed actions match the statement's active versus future boundary; future-only behavior is not presented as available in v2.3",
-      "verifies": [
-        "BD-17-020-O001"
-      ],
-      "when": "the capability is inspected at the active baseline boundary"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "SCOPE_BOUNDARY_OBSERVATION_V1",
-      "criterion_id": "BD-17-020-AC002",
-      "given": "the v2.3 capability inventory and conformance evidence for Kiến trúc hỗ trợ Auto Scaling. Version hiện tại chưa triển khai",
-      "observable_evidence": "baseline capability inventory, exposed action or API surface, conformance trace, implementation-status evidence, and future-scope marker",
-      "then": "implemented behavior and exposed actions match the statement's active versus future boundary; future-only behavior is not presented as available in v2.3",
-      "verifies": [
-        "BD-17-020-O002"
-      ],
-      "when": "the capability is inspected at the active baseline boundary"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-17-020",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "73437e33183cf1e523da41d3b6c2a26a915bcf3ad7693d9b9f355e32218cb029"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BD-17-020-AC001"
+        "BD-17-020-AC001",
+        "BD-17-020-AC003",
+        "BD-17-020-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-020-O001",
@@ -3980,7 +3372,9 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     },
     {
       "acceptance_criterion_references": [
-        "BD-17-020-AC002"
+        "BD-17-020-AC002",
+        "BD-17-020-AC003",
+        "BD-17-020-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-020-O002",
@@ -4003,9 +3397,9 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_heading": "BD-17-020",
     "source_context_sha256": "2391c6384af6aab5ec39c690363542f386694968c28f1841191b25e4eccd90b5",
     "source_document": "docs/BRD/BRD-WS-17.md",
-    "source_fingerprint": "3ea335bf379ee684322e2da3b69c917694a7bdf95b1375aa3ba9decb3de6a911",
-    "source_lines": "L1147-L1152",
-    "source_section": "37. Business Decisions (Locked) > BD-17-020"
+    "source_fingerprint": "73437e33183cf1e523da41d3b6c2a26a915bcf3ad7693d9b9f355e32218cb029",
+    "source_lines": "L3335-L3420",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-17-020"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -4030,41 +3424,34 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-17-021-AC001",
-      "given": "an operational task within the scope of Operational Audit ghi nhận toàn bộ thao tác vận hành",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BD-17-021-O001"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "OPERATIONAL_VERIFICATION_FAILURE_V1",
-      "criterion_id": "BD-17-021-AC002",
-      "given": "an operational task missing an outcome, required signal, audit evidence, or recovery evidence for Operational Audit ghi nhận toàn bộ thao tác vận hành",
-      "observable_evidence": "operator-visible verification result, missing-evidence identifier, operation state, and relevant signal or audit record",
-      "then": "verification reports the specific missing evidence as a detectable failure and does not report the task as conforming",
-      "verifies": [
-        "BD-17-021-O001"
-      ],
-      "when": "operational verification is performed"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-17-021",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "1ec9921967a9781ee18eba2d824890c4f7e75c47656cf3fa2f2861684f5a2d3d"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-17-021-AC001",
-        "BD-17-021-AC002"
+        "BD-17-021-AC002",
+        "BD-17-021-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-021-O001",
@@ -4073,35 +3460,36 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-17-021 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-17-021 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-17-021 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-17-021 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-17-021 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-17-021 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "BD-17-021 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BD-17-021-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BD-17-021-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BD-17-021 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BD-17-021 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -4119,9 +3507,9 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_heading": "BD-17-021",
     "source_context_sha256": "a78fd5b3ee3fa05b89efc1e2f95dd6d9f198f5ec0f6adf808c550d90c63a342a",
     "source_document": "docs/BRD/BRD-WS-17.md",
-    "source_fingerprint": "cc0f6602d8a490995fc827ad99617aa74edc17df97ffeefc2588450e09b24f6a",
-    "source_lines": "L1155-L1158",
-    "source_section": "37. Business Decisions (Locked) > BD-17-021"
+    "source_fingerprint": "1ec9921967a9781ee18eba2d824890c4f7e75c47656cf3fa2f2861684f5a2d3d",
+    "source_lines": "L3422-L3530",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-17-021"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -4146,54 +3534,34 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-17-022-AC001",
-      "given": "an operational task within the scope of Operation Policy là Business Object. Operation Policy được Versioning",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BD-17-022-O001"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-17-022-AC002",
-      "given": "an operational task within the scope of Operation Policy là Business Object. Operation Policy được Versioning",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BD-17-022-O002"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "OPERATIONAL_VERIFICATION_FAILURE_V1",
-      "criterion_id": "BD-17-022-AC003",
-      "given": "an operational task missing an outcome, required signal, audit evidence, or recovery evidence for Operation Policy là Business Object. Operation Policy được Versioning",
-      "observable_evidence": "operator-visible verification result, missing-evidence identifier, operation state, and relevant signal or audit record",
-      "then": "verification reports the specific missing evidence as a detectable failure and does not report the task as conforming",
-      "verifies": [
-        "BD-17-022-O001",
-        "BD-17-022-O002"
-      ],
-      "when": "operational verification is performed"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-17-022",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "e378d49ffef94577d5c810933eec19b98e4fe3aef2a05fcea2385f531f6d9565"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-17-022-AC001",
-        "BD-17-022-AC003"
+        "BD-17-022-AC003",
+        "BD-17-022-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-022-O001",
@@ -4202,7 +3570,8 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     {
       "acceptance_criterion_references": [
         "BD-17-022-AC002",
-        "BD-17-022-AC003"
+        "BD-17-022-AC003",
+        "BD-17-022-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-022-O002",
@@ -4225,9 +3594,9 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_heading": "25. Operation Policy",
     "source_context_sha256": "60c1917802a618eff2f187c3e98750eecbc31c464cb1885596ecb0b29b871998",
     "source_document": "docs/BRD/BRD-WS-17.md",
-    "source_fingerprint": "e19ec9da6d152e046328c0d0826326eddb1f42be97b2676298cd18f4767ca41c",
-    "source_lines": "L1161-L1166",
-    "source_section": "37. Business Decisions (Locked) > BD-17-022"
+    "source_fingerprint": "e378d49ffef94577d5c810933eec19b98e4fe3aef2a05fcea2385f531f6d9565",
+    "source_lines": "L3532-L3617",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-17-022"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -4252,41 +3621,34 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-17-023-AC001",
-      "given": "the applicable business context, actor, and input for Scheduler hỗ trợ Business Event Trigger",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-17-023-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BD-17-023-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Scheduler hỗ trợ Business Event Trigger",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BD-17-023-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-17-023",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "37c90eb0b19c87167abb887ae59148cdbf99a1ed5ffdd5a2bf67cfac764fb328"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-17-023-AC001",
-        "BD-17-023-AC002"
+        "BD-17-023-AC002",
+        "BD-17-023-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-023-O001",
@@ -4309,9 +3671,9 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_heading": "BD-17-023",
     "source_context_sha256": "e9b4f43845ddedbd5a1fda9dd7a30a60d586e518ca5ea0f2b85cf31301a4e327",
     "source_document": "docs/BRD/BRD-WS-17.md",
-    "source_fingerprint": "0cee25d0714e6bf9b8e340627650bb42fb7f72264b73cbfabd714d7604373c0a",
-    "source_lines": "L1169-L1172",
-    "source_section": "37. Business Decisions (Locked) > BD-17-023"
+    "source_fingerprint": "37c90eb0b19c87167abb887ae59148cdbf99a1ed5ffdd5a2bf67cfac764fb328",
+    "source_lines": "L3619-L3694",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-17-023"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -4336,54 +3698,36 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-17-024-AC001",
-      "given": "an operational task within the scope of Organization không có Operations Capability. Operations chỉ thuộc Platform",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BD-17-024-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-005"
       ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-17-024-AC002",
-      "given": "an operational task within the scope of Organization không có Operations Capability. Operations chỉ thuộc Platform",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BD-17-024-O002"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "OPERATIONAL_VERIFICATION_FAILURE_V1",
-      "criterion_id": "BD-17-024-AC003",
-      "given": "an operational task missing an outcome, required signal, audit evidence, or recovery evidence for Organization không có Operations Capability. Operations chỉ thuộc Platform",
-      "observable_evidence": "operator-visible verification result, missing-evidence identifier, operation state, and relevant signal or audit record",
-      "then": "verification reports the specific missing evidence as a detectable failure and does not report the task as conforming",
-      "verifies": [
-        "BD-17-024-O001",
-        "BD-17-024-O002"
-      ],
-      "when": "operational verification is performed"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-17-024",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "25c70ae43f472acdce61236f41124eaf1f5b5757db13c1d80c72d68f958c3984"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-17-024-AC001",
-        "BD-17-024-AC003"
+        "BD-17-024-AC003",
+        "BD-17-024-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-024-O001",
@@ -4392,7 +3736,8 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     {
       "acceptance_criterion_references": [
         "BD-17-024-AC002",
-        "BD-17-024-AC003"
+        "BD-17-024-AC003",
+        "BD-17-024-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-024-O002",
@@ -4417,9 +3762,9 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_heading": "BD-17-024",
     "source_context_sha256": "cfcb2e10d1891c18b84fc1ecaebcfcbf4d60e4dfe8e3d3de3099436ba61ad234",
     "source_document": "docs/BRD/BRD-WS-17.md",
-    "source_fingerprint": "545c27e8a48744d1afcbe33837e0840d51a7267cda3a5b2f382ab563e3f0dc39",
-    "source_lines": "L1175-L1180",
-    "source_section": "37. Business Decisions (Locked) > BD-17-024"
+    "source_fingerprint": "25c70ae43f472acdce61236f41124eaf1f5b5757db13c1d80c72d68f958c3984",
+    "source_lines": "L3696-L3785",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-17-024"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -4444,41 +3789,36 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-17-025-AC001",
-      "given": "the applicable business context, actor, and input for Maintenance hỗ trợ nhiều Scope",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-17-025-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-004"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BD-17-025-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Maintenance hỗ trợ nhiều Scope",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BD-17-025-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-17-025",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "85c8ef2707c18439269868739e9f474a532ab2a827925c09b6a46317e3cc83e2"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-17-025-AC001",
-        "BD-17-025-AC002"
+        "BD-17-025-AC002",
+        "BD-17-025-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-025-O001",
@@ -4503,9 +3843,9 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_heading": "BD-17-025",
     "source_context_sha256": "1a80e711ceb369a386e5893c702c18e882fced427e927a2f47e75012fe52dea9",
     "source_document": "docs/BRD/BRD-WS-17.md",
-    "source_fingerprint": "e5c7c0795da6409edb0d23c91e5c70e85d8fdef340ee5db3ac5e6e3bf237b561",
-    "source_lines": "L1183-L1186",
-    "source_section": "37. Business Decisions (Locked) > BD-17-025"
+    "source_fingerprint": "85c8ef2707c18439269868739e9f474a532ab2a827925c09b6a46317e3cc83e2",
+    "source_lines": "L3787-L3866",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-17-025"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -4530,41 +3870,34 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-17-026-AC001",
-      "given": "an operational task within the scope of Operations Platform Publish Business Event",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BD-17-026-O001"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "OPERATIONAL_VERIFICATION_FAILURE_V1",
-      "criterion_id": "BD-17-026-AC002",
-      "given": "an operational task missing an outcome, required signal, audit evidence, or recovery evidence for Operations Platform Publish Business Event",
-      "observable_evidence": "operator-visible verification result, missing-evidence identifier, operation state, and relevant signal or audit record",
-      "then": "verification reports the specific missing evidence as a detectable failure and does not report the task as conforming",
-      "verifies": [
-        "BD-17-026-O001"
-      ],
-      "when": "operational verification is performed"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-17-026",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "2d6ab7828fff5926a1ff83d7a6f945bb080760411b88cf84663dd41e02544bbc"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-17-026-AC001",
-        "BD-17-026-AC002"
+        "BD-17-026-AC002",
+        "BD-17-026-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-026-O001",
@@ -4587,9 +3920,9 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_heading": "29. Operation Business Events",
     "source_context_sha256": "ab56286c8a4ab9a35eda380fb856a41d2c3038d4f5c35c93c36835f9e4844bc8",
     "source_document": "docs/BRD/BRD-WS-17.md",
-    "source_fingerprint": "b840e626d6693864672ac166cb63f493aba25b734f3fddc9c8232bc96a0a8ebb",
-    "source_lines": "L1189-L1192",
-    "source_section": "37. Business Decisions (Locked) > BD-17-026"
+    "source_fingerprint": "2d6ab7828fff5926a1ff83d7a6f945bb080760411b88cf84663dd41e02544bbc",
+    "source_lines": "L3868-L3945",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-17-026"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -4616,41 +3949,36 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "DATA_CONTRACT_OBSERVATION_V1",
-      "criterion_id": "BD-17-027-AC001",
-      "given": "a candidate Runbook là Business Object record and the canonical records it references",
-      "observable_evidence": "validation outcome, accepted field values, resolved canonical references, and resulting persisted business state",
-      "then": "validation returns ACCEPTED only with all required values present, relationship cardinalities satisfied, canonical references resolved, and the resulting business record exposing those evaluated values",
-      "verifies": [
-        "BD-17-027-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-004"
       ],
-      "when": "the candidate is evaluated against its declared data contract"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "DATA_CONTRACT_REJECTION_V1",
-      "criterion_id": "BD-17-027-AC002",
-      "given": "a Runbook là Business Object candidate containing an unsupported value, inconsistent relationship, or unresolved reference",
-      "observable_evidence": "rejection result, field or relationship reason, unresolved reference, and unchanged persisted state",
-      "then": "the candidate is rejected without persisting the invalid state, and each invalid field or relationship has a deterministic reason",
-      "verifies": [
-        "BD-17-027-O001"
-      ],
-      "when": "the candidate is validated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-17-027",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "61fcc8024ddec9ff5e5751a0fc9077a108d945dda508355ce35b352ad166be90"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-17-027-AC001",
-        "BD-17-027-AC002"
+        "BD-17-027-AC002",
+        "BD-17-027-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-027-O001",
@@ -4675,9 +4003,9 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_heading": "31. Runbook",
     "source_context_sha256": "0a53caf54c8ce30adb45c717be6663db1967f1b85d15de5829ae1e1ecec451b4",
     "source_document": "docs/BRD/BRD-WS-17.md",
-    "source_fingerprint": "26bc1a2acf8d5762786c180eea2c57586ce2463e45f3d4becfb55c60be7ba473",
-    "source_lines": "L1195-L1198",
-    "source_section": "37. Business Decisions (Locked) > BD-17-027"
+    "source_fingerprint": "61fcc8024ddec9ff5e5751a0fc9077a108d945dda508355ce35b352ad166be90",
+    "source_lines": "L3947-L4026",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-17-027"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -4702,28 +4030,34 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-17-028-AC001",
-      "given": "the applicable business context, actor, and input for Platform hỗ trợ Feature Flag và Kill Switch",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BD-17-028-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-17-028",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "7b92ca6093a9e3d16cdd4d7e18ca707ddec774e91ee4e438ae7c8f007fb2d8c0"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BD-17-028-AC001"
+        "BD-17-028-AC001",
+        "BD-17-028-AC002",
+        "BD-17-028-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-028-O001",
@@ -4746,9 +4080,9 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_heading": "BD-17-028",
     "source_context_sha256": "0f20242bcc1e11401db1c54c141059ce5ca4305fc42048118296482ad058af16",
     "source_document": "docs/BRD/BRD-WS-17.md",
-    "source_fingerprint": "96195d890597e852763886782925f6189742340c3517c3e003913c870d72c1c4",
-    "source_lines": "L1201-L1204",
-    "source_section": "37. Business Decisions (Locked) > BD-17-028"
+    "source_fingerprint": "7b92ca6093a9e3d16cdd4d7e18ca707ddec774e91ee4e438ae7c8f007fb2d8c0",
+    "source_lines": "L4028-L4103",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-17-028"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -4773,41 +4107,34 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-17-029-AC001",
-      "given": "an operational task within the scope of Platform hỗ trợ Operational Command Center",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BD-17-029-O001"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "OPERATIONAL_VERIFICATION_FAILURE_V1",
-      "criterion_id": "BD-17-029-AC002",
-      "given": "an operational task missing an outcome, required signal, audit evidence, or recovery evidence for Platform hỗ trợ Operational Command Center",
-      "observable_evidence": "operator-visible verification result, missing-evidence identifier, operation state, and relevant signal or audit record",
-      "then": "verification reports the specific missing evidence as a detectable failure and does not report the task as conforming",
-      "verifies": [
-        "BD-17-029-O001"
-      ],
-      "when": "operational verification is performed"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-17-029",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "67da15addfab30702dfae17d1c83473ed5676da6e741501ffcfb39c718917936"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-17-029-AC001",
-        "BD-17-029-AC002"
+        "BD-17-029-AC002",
+        "BD-17-029-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-029-O001",
@@ -4830,9 +4157,9 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_heading": "BD-17-029",
     "source_context_sha256": "f4617410542f0c347907810bcb430dd265f1915a53166fadf57584f343c29b86",
     "source_document": "docs/BRD/BRD-WS-17.md",
-    "source_fingerprint": "68cee7db78de1fb72a50164752a4954080bb8ff9115e82db925e230cd1dcad15",
-    "source_lines": "L1207-L1210",
-    "source_section": "37. Business Decisions (Locked) > BD-17-029"
+    "source_fingerprint": "67da15addfab30702dfae17d1c83473ed5676da6e741501ffcfb39c718917936",
+    "source_lines": "L4105-L4180",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-17-029"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -4857,41 +4184,34 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-17-030-AC001",
-      "given": "an operational task within the scope of Platform hỗ trợ Replay",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BD-17-030-O001"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "OPERATIONAL_VERIFICATION_FAILURE_V1",
-      "criterion_id": "BD-17-030-AC002",
-      "given": "an operational task missing an outcome, required signal, audit evidence, or recovery evidence for Platform hỗ trợ Replay",
-      "observable_evidence": "operator-visible verification result, missing-evidence identifier, operation state, and relevant signal or audit record",
-      "then": "verification reports the specific missing evidence as a detectable failure and does not report the task as conforming",
-      "verifies": [
-        "BD-17-030-O001"
-      ],
-      "when": "operational verification is performed"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-17-030",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "153d41eda48201d3bb1b9dd5a1446390ca3d4b18144ca128c4023779e60bc972"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-17-030-AC001",
-        "BD-17-030-AC002"
+        "BD-17-030-AC002",
+        "BD-17-030-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-030-O001",
@@ -4914,9 +4234,9 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_heading": "34. Replay Platform",
     "source_context_sha256": "e3b46ff8ab39ade87f8ba8a9f09000c1364d0d744774b2b40fb23ec7c966c147",
     "source_document": "docs/BRD/BRD-WS-17.md",
-    "source_fingerprint": "cbdc7e348e5efee0c404b3f6f37acac6e5c016c06b59166ded293e3927fb8171",
-    "source_lines": "L1213-L1216",
-    "source_section": "37. Business Decisions (Locked) > BD-17-030"
+    "source_fingerprint": "153d41eda48201d3bb1b9dd5a1446390ca3d4b18144ca128c4023779e60bc972",
+    "source_lines": "L4182-L4257",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-17-030"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -4941,40 +4261,34 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "SCOPE_BOUNDARY_OBSERVATION_V1",
-      "criterion_id": "BD-17-031-AC001",
-      "given": "the v2.3 capability inventory and conformance evidence for Kiến trúc hỗ trợ Chaos Readiness. Version hiện tại chưa triển khai",
-      "observable_evidence": "baseline capability inventory, exposed action or API surface, conformance trace, implementation-status evidence, and future-scope marker",
-      "then": "implemented behavior and exposed actions match the statement's active versus future boundary; future-only behavior is not presented as available in v2.3",
-      "verifies": [
-        "BD-17-031-O001"
-      ],
-      "when": "the capability is inspected at the active baseline boundary"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "SCOPE_BOUNDARY_OBSERVATION_V1",
-      "criterion_id": "BD-17-031-AC002",
-      "given": "the v2.3 capability inventory and conformance evidence for Kiến trúc hỗ trợ Chaos Readiness. Version hiện tại chưa triển khai",
-      "observable_evidence": "baseline capability inventory, exposed action or API surface, conformance trace, implementation-status evidence, and future-scope marker",
-      "then": "implemented behavior and exposed actions match the statement's active versus future boundary; future-only behavior is not presented as available in v2.3",
-      "verifies": [
-        "BD-17-031-O002"
-      ],
-      "when": "the capability is inspected at the active baseline boundary"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-17-031",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "168e09b2fcd95316298b4cacf5f0a4e6cbda4de538705c5304f0e05133eb9c6e"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BD-17-031-AC001"
+        "BD-17-031-AC001",
+        "BD-17-031-AC003",
+        "BD-17-031-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-031-O001",
@@ -4982,7 +4296,9 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     },
     {
       "acceptance_criterion_references": [
-        "BD-17-031-AC002"
+        "BD-17-031-AC002",
+        "BD-17-031-AC003",
+        "BD-17-031-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-031-O002",
@@ -5005,9 +4321,9 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_heading": "35. Chaos Readiness",
     "source_context_sha256": "7ad31828e1954900121ef58910f0778d0e86628804d20e1962c93b86018944b1",
     "source_document": "docs/BRD/BRD-WS-17.md",
-    "source_fingerprint": "18ecc2ef97afc4605e672bfb712bca8e20e6dac0e74a0625c4aaaefea42feaf8",
-    "source_lines": "L1219-L1224",
-    "source_section": "37. Business Decisions (Locked) > BD-17-031"
+    "source_fingerprint": "168e09b2fcd95316298b4cacf5f0a4e6cbda4de538705c5304f0e05133eb9c6e",
+    "source_lines": "L4259-L4344",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-17-031"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -5032,41 +4348,36 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BD-17-032-AC001",
-      "given": "an operational task within the scope of Platform hỗ trợ SLO và SLA Monitoring",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BD-17-032-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-010"
       ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "OPERATIONAL_VERIFICATION_FAILURE_V1",
-      "criterion_id": "BD-17-032-AC002",
-      "given": "an operational task missing an outcome, required signal, audit evidence, or recovery evidence for Platform hỗ trợ SLO và SLA Monitoring",
-      "observable_evidence": "operator-visible verification result, missing-evidence identifier, operation state, and relevant signal or audit record",
-      "then": "verification reports the specific missing evidence as a detectable failure and does not report the task as conforming",
-      "verifies": [
-        "BD-17-032-O001"
-      ],
-      "when": "operational verification is performed"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BD-17-032",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "27470bb20635847a073a4d70a675fe4ec6ef76a8585d6c0ea6f2f8cc34d506f3"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BD-17-032-AC001",
-        "BD-17-032-AC002"
+        "BD-17-032-AC002",
+        "BD-17-032-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BD-17-032-O001",
@@ -5091,9 +4402,9 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_heading": "BD-17-032",
     "source_context_sha256": "515996d9e450b86b38587407b7a1995b5bfcdd71ebbdf22b0ff6c8283130b555",
     "source_document": "docs/BRD/BRD-WS-17.md",
-    "source_fingerprint": "5661f1a7f2176424645465c184f00f4137cb210b70ad56ba73023445fb553eee",
-    "source_lines": "L1227-L1230",
-    "source_section": "37. Business Decisions (Locked) > BD-17-032"
+    "source_fingerprint": "27470bb20635847a073a4d70a675fe4ec6ef76a8585d6c0ea6f2f8cc34d506f3",
+    "source_lines": "L4346-L4425",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BD-17-032"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -5118,28 +4429,34 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-17-R001-AC001",
-      "given": "the applicable business context, actor, and input for Personal Inbox là kênh bắt buộc",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-WS-17-R001-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-17-R001",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "3e9a9f0fad04d7aff926749d1d7cff1cb15b05d5d636e680cd14d98c1f16ce20"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-WS-17-R001-AC001"
+        "BRD-WS-17-R001-AC001",
+        "BRD-WS-17-R001-AC002",
+        "BRD-WS-17-R001-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-17-R001-O001",
@@ -5163,8 +4480,8 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_sha256": "1162d9cd178e0c92904ae963d450169cc9bf63b27e6653c1c585698b3357407f",
     "source_document": "docs/BRD/BRD-WS-17.md",
     "source_fingerprint": "3e9a9f0fad04d7aff926749d1d7cff1cb15b05d5d636e680cd14d98c1f16ce20",
-    "source_lines": "L234",
-    "source_section": "8. Alert Channel"
+    "source_lines": "L4427-L4502",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-17-R001"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -5189,28 +4506,1058 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-17-R002-AC001",
-      "given": "the applicable business context, actor, and input for Scheduler Trigger được cấu hình và có thể thay đổi mà không cần sửa mã nguồn",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the effective configuration and version are visible in the decision evidence, and an approved configuration change changes the governed result without a code change",
-      "verifies": [
-        "BRD-WS-17-R002-O001"
+  "acceptance_contract": {
+    "boundary_oracle": [
+      "Platform invariant changes remain governed separately; operational scheduling remains configurable"
+    ],
+    "concrete_bindings": [
+      {
+        "configuration_key": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-WS-17.md#10. Scheduler Trigger",
+            "source_type": "SOURCE_LITERAL",
+            "version": "dc57ad841afe185bd3463dd10e976f5d73faa947b4bb7dd672459f478f250677"
+          },
+          "identifier": "BRD-WS-17-R002.CONFIGURATION_KEY",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-WS-17-R002.O1.1.CONFIGURATION_RESOLVES.CONFIGURATION_KEY.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-17.md",
+            "source_fingerprint": "dc57ad841afe185bd3463dd10e976f5d73faa947b4bb7dd672459f478f250677",
+            "source_lines": "L288",
+            "source_section": "10. Scheduler Trigger"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "CONFIGURATION_KEY",
+            "resolver_id": "RESOLVE.BRD-WS-17-R002.BRD-WS-17-R002.CONFIGURATION_KEY",
+            "version": "1.0.0"
+          },
+          "semantic_type": "CONFIGURATION_KEY"
+        },
+        "configuration_sources": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-WS-17.md#10. Scheduler Trigger",
+            "source_type": "SOURCE_LITERAL",
+            "version": "dc57ad841afe185bd3463dd10e976f5d73faa947b4bb7dd672459f478f250677"
+          },
+          "identifier": "BRD-WS-17-R002.CONFIGURATION_SOURCES",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-WS-17-R002.O1.1.CONFIGURATION_RESOLVES.CONFIGURATION_SOURCES.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-17.md",
+            "source_fingerprint": "dc57ad841afe185bd3463dd10e976f5d73faa947b4bb7dd672459f478f250677",
+            "source_lines": "L288",
+            "source_section": "10. Scheduler Trigger"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "SET_OF<CONFIGURATION_SOURCE_ID>",
+            "resolver_id": "RESOLVE.BRD-WS-17-R002.BRD-WS-17-R002.CONFIGURATION_SOURCES",
+            "version": "1.0.0"
+          },
+          "semantic_type": "CANONICAL_SET_REF<CONFIGURATION_SOURCE_ID>"
+        },
+        "expected_value": {
+          "authoritative_source": {
+            "allowed_identifiers": [
+              "BRD-WS-17-R002.CANONICAL.CONFIGURATION.VALUE"
+            ],
+            "source_id": "docs/BRD/BRD-WS-17.md#10. Scheduler Trigger",
+            "source_type": "SOURCE_LITERAL",
+            "version": "dc57ad841afe185bd3463dd10e976f5d73faa947b4bb7dd672459f478f250677"
+          },
+          "identifier": "BRD-WS-17-R002.CANONICAL.CONFIGURATION.VALUE",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-WS-17-R002.O1.1.CONFIGURATION_RESOLVES.EXPECTED_VALUE.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-17.md",
+            "source_fingerprint": "dc57ad841afe185bd3463dd10e976f5d73faa947b4bb7dd672459f478f250677",
+            "source_lines": "L288",
+            "source_section": "10. Scheduler Trigger"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "CANONICAL_ENUM_VALUE",
+            "resolver_id": "RESOLVE.BRD-WS-17-R002.BRD-WS-17-R002.CANONICAL.CONFIGURATION.VALUE",
+            "version": "1.0.0"
+          },
+          "semantic_type": "CANONICAL_ENUM_VALUE"
+        },
+        "resolved_source": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-WS-17.md#10. Scheduler Trigger",
+            "source_type": "SOURCE_LITERAL",
+            "version": "dc57ad841afe185bd3463dd10e976f5d73faa947b4bb7dd672459f478f250677"
+          },
+          "identifier": "BRD-WS-17-R002.RESOLVED_SOURCE",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-WS-17-R002.O1.1.CONFIGURATION_RESOLVES.RESOLVED_SOURCE.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-17.md",
+            "source_fingerprint": "dc57ad841afe185bd3463dd10e976f5d73faa947b4bb7dd672459f478f250677",
+            "source_lines": "L288",
+            "source_section": "10. Scheduler Trigger"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "CONFIGURATION_SOURCE_ID",
+            "resolver_id": "RESOLVE.BRD-WS-17-R002.BRD-WS-17-R002.RESOLVED_SOURCE",
+            "version": "1.0.0"
+          },
+          "semantic_type": "CONFIGURATION_SOURCE_ID"
+        },
+        "source_versions": {
+          "members": [
+            {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-WS-17.md#10. Scheduler Trigger",
+                "source_type": "SOURCE_LITERAL",
+                "version": "dc57ad841afe185bd3463dd10e976f5d73faa947b4bb7dd672459f478f250677"
+              },
+              "identifier": "BRD-WS-17-R002.SOURCE_VERSIONS.SOURCE.MEMBER",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-WS-17-R002.O1.1.CONFIGURATION_RESOLVES.SOURCE_VERSIONS.ORIGIN.MEMBER.1",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-17.md",
+                "source_fingerprint": "dc57ad841afe185bd3463dd10e976f5d73faa947b4bb7dd672459f478f250677",
+                "source_lines": "L288",
+                "source_section": "10. Scheduler Trigger"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "POLICY_VERSION",
+                "resolver_id": "RESOLVE.BRD-WS-17-R002.BRD-WS-17-R002.SOURCE_VERSIONS.SOURCE.MEMBER",
+                "version": "1.0.0"
+              },
+              "semantic_type": "POLICY_VERSION"
+            }
+          ],
+          "origin": {
+            "origin_id": "BRD-WS-17-R002.O1.1.CONFIGURATION_RESOLVES.SOURCE_VERSIONS.ORIGIN",
+            "origin_type": "SOURCE_LITERAL"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-17.md",
+            "source_fingerprint": "dc57ad841afe185bd3463dd10e976f5d73faa947b4bb7dd672459f478f250677",
+            "source_lines": "L288",
+            "source_section": "10. Scheduler Trigger"
+          },
+          "semantic_type": "SET_OF<POLICY_VERSION>"
+        }
+      }
+    ],
+    "contract_id": "P2C.C4.CONTRACT.BRD-WS-17-R002",
+    "inference": false,
+    "mechanism": "APPROVED_TYPED_CUSTOM_AST",
+    "mechanism_version": "C4-R3",
+    "negative_oracle": [
+      "Changing trigger behavior requires source-code modification or bypasses configuration"
+    ],
+    "operator_composition": [
+      "CONFIGURATION_RESOLVES"
+    ],
+    "positive_oracle": [
+      "Trigger behavior changes through configuration without source-code modification"
+    ],
+    "provenance": {
+      "approved_decision_references": [],
+      "inference": false,
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "dc57ad841afe185bd3463dd10e976f5d73faa947b4bb7dd672459f478f250677",
+      "source_lines": "L288",
+      "source_section": "10. Scheduler Trigger"
+    },
+    "required_evidence": {
+      "evidence_object_ref": {
+        "authoritative_source": {
+          "source_id": "docs/BRD/BRD-WS-17.md#10. Scheduler Trigger",
+          "source_type": "SOURCE_LITERAL",
+          "version": "dc57ad841afe185bd3463dd10e976f5d73faa947b4bb7dd672459f478f250677"
+        },
+        "identifier": "BRD-WS-17-R002.BRD-WS-17-R002.CONTRACT.EVIDENCE.OBJECT",
+        "inference": false,
+        "lifecycle": {
+          "status": "ACTIVE",
+          "version": "2.3"
+        },
+        "namespace": "YSIM.V2.3",
+        "origin": {
+          "origin_id": "BRD-WS-17-R002.CONTRACT.EVIDENCE.ORIGIN",
+          "origin_type": "EVIDENCE_OBJECT"
+        },
+        "provenance": {
+          "approved_decision_references": [],
+          "inference": false,
+          "source_document": "docs/BRD/BRD-WS-17.md",
+          "source_fingerprint": "dc57ad841afe185bd3463dd10e976f5d73faa947b4bb7dd672459f478f250677",
+          "source_lines": "L288",
+          "source_section": "10. Scheduler Trigger"
+        },
+        "resolver_contract": {
+          "deterministic": true,
+          "input_types": [],
+          "output_type": "EVIDENCE_OBJECT_REF",
+          "resolver_id": "OBSERVE.BRD-WS-17-R002.BRD-WS-17-R002.BRD-WS-17-R002.CONTRACT.EVIDENCE.OBJECT",
+          "version": "1.0.0"
+        },
+        "semantic_type": "EVIDENCE_OBJECT_REF"
+      },
+      "inference": false,
+      "observed_collection_origin": "BRD-WS-17-R002.RUNTIME.OBSERVED.FIELDS",
+      "observed_field_ids": [
+        "FIELD.TRIGGER_ID",
+        "FIELD.CONFIGURATION_BEFORE",
+        "FIELD.CONFIGURATION_AFTER",
+        "FIELD.CODE_DIFF",
+        "FIELD.AUTHORIZATION",
+        "FIELD.AUDIT_RECORD"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+      "producer": "BRD-WS-17-R002.EVIDENCE.PRODUCER",
+      "required_collection_origin": "BRD-WS-17-R002.SOURCE.REQUIRED.FIELDS",
+      "required_field_ids": [
+        "FIELD.TRIGGER_ID",
+        "FIELD.CONFIGURATION_BEFORE",
+        "FIELD.CONFIGURATION_AFTER",
+        "FIELD.CODE_DIFF",
+        "FIELD.AUTHORIZATION",
+        "FIELD.AUDIT_RECORD"
+      ],
+      "required_values_or_hashes": [
+        "BRD-WS-17-R002.EVIDENCE.CONTENT.HASH"
+      ],
+      "retrieval_method": "BRD-WS-17-R002.EVIDENCE.RETRIEVAL",
+      "version_or_correlation": "BRD-WS-17-R002.EVIDENCE.VERSION.CORRELATION"
+    },
+    "runtime_evidence_executed": false,
+    "runtime_status": "RUNTIME_ADAPTER_PENDING",
+    "semantic_obligation_references": [
+      "BRD-WS-17-R002-O001"
+    ],
+    "typed_contract_ast": {
+      "approved_clarification": null,
+      "assertions": [
+        {
+          "assertion_id": "BRD-WS-17-R002.O1.1.CONFIGURATION_RESOLVES",
+          "evaluator_consumed_bindings": [
+            "configuration_key",
+            "configuration_sources",
+            "expected_value",
+            "resolved_source",
+            "source_versions"
+          ],
+          "evidence_object": {
+            "authoritative_source": {
+              "source_id": "docs/BRD/BRD-WS-17.md#10. Scheduler Trigger",
+              "source_type": "SOURCE_LITERAL",
+              "version": "dc57ad841afe185bd3463dd10e976f5d73faa947b4bb7dd672459f478f250677"
+            },
+            "identifier": "BRD-WS-17-R002.BRD-WS-17-R002.O1.1.CONFIGURATION_RESOLVES.EVIDENCE.OBJECT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BRD-WS-17-R002.O1.1.CONFIGURATION_RESOLVES.EVIDENCE.ORIGIN",
+              "origin_type": "EVIDENCE_OBJECT"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-WS-17.md",
+              "source_fingerprint": "dc57ad841afe185bd3463dd10e976f5d73faa947b4bb7dd672459f478f250677",
+              "source_lines": "L288",
+              "source_section": "10. Scheduler Trigger"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "EVIDENCE_OBJECT_REF",
+              "resolver_id": "OBSERVE.BRD-WS-17-R002.BRD-WS-17-R002.BRD-WS-17-R002.O1.1.CONFIGURATION_RESOLVES.EVIDENCE.OBJECT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "EVIDENCE_OBJECT_REF"
+          },
+          "expected_operand": {
+            "authoritative_source": {
+              "allowed_identifiers": [
+                "BRD-WS-17-R002.BRD-WS-17-R002.O1.1.CONFIGURATION_RESOLVES.CANONICAL.RESULT"
+              ],
+              "source_id": "docs/BRD/BRD-WS-17.md#10. Scheduler Trigger",
+              "source_type": "SOURCE_LITERAL",
+              "version": "dc57ad841afe185bd3463dd10e976f5d73faa947b4bb7dd672459f478f250677"
+            },
+            "identifier": "BRD-WS-17-R002.BRD-WS-17-R002.O1.1.CONFIGURATION_RESOLVES.CANONICAL.RESULT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BRD-WS-17-R002.O1.1.CONFIGURATION_RESOLVES.AUTHORITY.ORIGIN",
+              "origin_type": "SOURCE_LITERAL"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-WS-17.md",
+              "source_fingerprint": "dc57ad841afe185bd3463dd10e976f5d73faa947b4bb7dd672459f478f250677",
+              "source_lines": "L288",
+              "source_section": "10. Scheduler Trigger"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "CANONICAL_ENUM_VALUE",
+              "resolver_id": "RESOLVE.BRD-WS-17-R002.BRD-WS-17-R002.BRD-WS-17-R002.O1.1.CONFIGURATION_RESOLVES.CANONICAL.RESULT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "CANONICAL_ENUM_VALUE"
+          },
+          "inference": false,
+          "model_conformance_fixture": {
+            "bindings": {
+              "configuration_key": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-WS-17.md#10. Scheduler Trigger",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "dc57ad841afe185bd3463dd10e976f5d73faa947b4bb7dd672459f478f250677"
+                },
+                "identifier": "BRD-WS-17-R002.CONFIGURATION_KEY",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-WS-17-R002.O1.1.CONFIGURATION_RESOLVES.CONFIGURATION_KEY.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-17.md",
+                  "source_fingerprint": "dc57ad841afe185bd3463dd10e976f5d73faa947b4bb7dd672459f478f250677",
+                  "source_lines": "L288",
+                  "source_section": "10. Scheduler Trigger"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "CONFIGURATION_KEY",
+                  "resolver_id": "RESOLVE.BRD-WS-17-R002.BRD-WS-17-R002.CONFIGURATION_KEY",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "CONFIGURATION_KEY"
+              },
+              "configuration_sources": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-WS-17.md#10. Scheduler Trigger",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "dc57ad841afe185bd3463dd10e976f5d73faa947b4bb7dd672459f478f250677"
+                },
+                "identifier": "BRD-WS-17-R002.CONFIGURATION_SOURCES",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-WS-17-R002.O1.1.CONFIGURATION_RESOLVES.CONFIGURATION_SOURCES.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-17.md",
+                  "source_fingerprint": "dc57ad841afe185bd3463dd10e976f5d73faa947b4bb7dd672459f478f250677",
+                  "source_lines": "L288",
+                  "source_section": "10. Scheduler Trigger"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "SET_OF<CONFIGURATION_SOURCE_ID>",
+                  "resolver_id": "RESOLVE.BRD-WS-17-R002.BRD-WS-17-R002.CONFIGURATION_SOURCES",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "CANONICAL_SET_REF<CONFIGURATION_SOURCE_ID>"
+              },
+              "expected_value": {
+                "authoritative_source": {
+                  "allowed_identifiers": [
+                    "BRD-WS-17-R002.CANONICAL.CONFIGURATION.VALUE"
+                  ],
+                  "source_id": "docs/BRD/BRD-WS-17.md#10. Scheduler Trigger",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "dc57ad841afe185bd3463dd10e976f5d73faa947b4bb7dd672459f478f250677"
+                },
+                "identifier": "BRD-WS-17-R002.CANONICAL.CONFIGURATION.VALUE",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-WS-17-R002.O1.1.CONFIGURATION_RESOLVES.EXPECTED_VALUE.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-17.md",
+                  "source_fingerprint": "dc57ad841afe185bd3463dd10e976f5d73faa947b4bb7dd672459f478f250677",
+                  "source_lines": "L288",
+                  "source_section": "10. Scheduler Trigger"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "CANONICAL_ENUM_VALUE",
+                  "resolver_id": "RESOLVE.BRD-WS-17-R002.BRD-WS-17-R002.CANONICAL.CONFIGURATION.VALUE",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "CANONICAL_ENUM_VALUE"
+              },
+              "resolved_source": {
+                "authoritative_source": {
+                  "source_id": "docs/BRD/BRD-WS-17.md#10. Scheduler Trigger",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "dc57ad841afe185bd3463dd10e976f5d73faa947b4bb7dd672459f478f250677"
+                },
+                "identifier": "BRD-WS-17-R002.RESOLVED_SOURCE",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-WS-17-R002.O1.1.CONFIGURATION_RESOLVES.RESOLVED_SOURCE.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-17.md",
+                  "source_fingerprint": "dc57ad841afe185bd3463dd10e976f5d73faa947b4bb7dd672459f478f250677",
+                  "source_lines": "L288",
+                  "source_section": "10. Scheduler Trigger"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "CONFIGURATION_SOURCE_ID",
+                  "resolver_id": "RESOLVE.BRD-WS-17-R002.BRD-WS-17-R002.RESOLVED_SOURCE",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "CONFIGURATION_SOURCE_ID"
+              },
+              "source_versions": {
+                "members": [
+                  {
+                    "authoritative_source": {
+                      "source_id": "docs/BRD/BRD-WS-17.md#10. Scheduler Trigger",
+                      "source_type": "SOURCE_LITERAL",
+                      "version": "dc57ad841afe185bd3463dd10e976f5d73faa947b4bb7dd672459f478f250677"
+                    },
+                    "identifier": "BRD-WS-17-R002.SOURCE_VERSIONS.SOURCE.MEMBER",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "BRD-WS-17-R002.O1.1.CONFIGURATION_RESOLVES.SOURCE_VERSIONS.ORIGIN.MEMBER.1",
+                      "origin_type": "SOURCE_LITERAL"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-WS-17.md",
+                      "source_fingerprint": "dc57ad841afe185bd3463dd10e976f5d73faa947b4bb7dd672459f478f250677",
+                      "source_lines": "L288",
+                      "source_section": "10. Scheduler Trigger"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "POLICY_VERSION",
+                      "resolver_id": "RESOLVE.BRD-WS-17-R002.BRD-WS-17-R002.SOURCE_VERSIONS.SOURCE.MEMBER",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "POLICY_VERSION"
+                  }
+                ],
+                "origin": {
+                  "origin_id": "BRD-WS-17-R002.O1.1.CONFIGURATION_RESOLVES.SOURCE_VERSIONS.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-17.md",
+                  "source_fingerprint": "dc57ad841afe185bd3463dd10e976f5d73faa947b4bb7dd672459f478f250677",
+                  "source_lines": "L288",
+                  "source_section": "10. Scheduler Trigger"
+                },
+                "semantic_type": "SET_OF<POLICY_VERSION>"
+              }
+            },
+            "comparison": {
+              "expected": {
+                "authoritative_source": {
+                  "allowed_identifiers": [
+                    "BRD-WS-17-R002.BRD-WS-17-R002.O1.1.CONFIGURATION_RESOLVES.CANONICAL.RESULT"
+                  ],
+                  "source_id": "docs/BRD/BRD-WS-17.md#10. Scheduler Trigger",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "dc57ad841afe185bd3463dd10e976f5d73faa947b4bb7dd672459f478f250677"
+                },
+                "identifier": "BRD-WS-17-R002.BRD-WS-17-R002.O1.1.CONFIGURATION_RESOLVES.CANONICAL.RESULT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-WS-17-R002.O1.1.CONFIGURATION_RESOLVES.AUTHORITY.ORIGIN",
+                  "origin_type": "SOURCE_LITERAL"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-17.md",
+                  "source_fingerprint": "dc57ad841afe185bd3463dd10e976f5d73faa947b4bb7dd672459f478f250677",
+                  "source_lines": "L288",
+                  "source_section": "10. Scheduler Trigger"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "CANONICAL_ENUM_VALUE",
+                  "resolver_id": "RESOLVE.BRD-WS-17-R002.BRD-WS-17-R002.BRD-WS-17-R002.O1.1.CONFIGURATION_RESOLVES.CANONICAL.RESULT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "CANONICAL_ENUM_VALUE"
+              },
+              "observed": {
+                "authoritative_source": {
+                  "allowed_identifiers": [
+                    "BRD-WS-17-R002.BRD-WS-17-R002.O1.1.CONFIGURATION_RESOLVES.CANONICAL.RESULT"
+                  ],
+                  "source_id": "docs/BRD/BRD-WS-17.md#10. Scheduler Trigger",
+                  "source_type": "SOURCE_LITERAL",
+                  "version": "dc57ad841afe185bd3463dd10e976f5d73faa947b4bb7dd672459f478f250677"
+                },
+                "identifier": "BRD-WS-17-R002.BRD-WS-17-R002.O1.1.CONFIGURATION_RESOLVES.CANONICAL.RESULT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "BRD-WS-17-R002.O1.1.CONFIGURATION_RESOLVES.OBSERVED.ORIGIN",
+                  "origin_type": "RUNTIME_OBSERVED"
+                },
+                "provenance": {
+                  "approved_decision_references": [],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-17.md",
+                  "source_fingerprint": "dc57ad841afe185bd3463dd10e976f5d73faa947b4bb7dd672459f478f250677",
+                  "source_lines": "L288",
+                  "source_section": "10. Scheduler Trigger"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "CANONICAL_ENUM_VALUE",
+                  "resolver_id": "OBSERVE.BRD-WS-17-R002.BRD-WS-17-R002.BRD-WS-17-R002.O1.1.CONFIGURATION_RESOLVES.CANONICAL.RESULT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "CANONICAL_ENUM_VALUE"
+              }
+            },
+            "evidence_object": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-WS-17.md#10. Scheduler Trigger",
+                "source_type": "SOURCE_LITERAL",
+                "version": "dc57ad841afe185bd3463dd10e976f5d73faa947b4bb7dd672459f478f250677"
+              },
+              "identifier": "BRD-WS-17-R002.BRD-WS-17-R002.O1.1.CONFIGURATION_RESOLVES.EVIDENCE.OBJECT",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-WS-17-R002.O1.1.CONFIGURATION_RESOLVES.EVIDENCE.ORIGIN",
+                "origin_type": "EVIDENCE_OBJECT"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-17.md",
+                "source_fingerprint": "dc57ad841afe185bd3463dd10e976f5d73faa947b4bb7dd672459f478f250677",
+                "source_lines": "L288",
+                "source_section": "10. Scheduler Trigger"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "EVIDENCE_OBJECT_REF",
+                "resolver_id": "OBSERVE.BRD-WS-17-R002.BRD-WS-17-R002.BRD-WS-17-R002.O1.1.CONFIGURATION_RESOLVES.EVIDENCE.OBJECT",
+                "version": "1.0.0"
+              },
+              "semantic_type": "EVIDENCE_OBJECT_REF"
+            },
+            "operator_id": "CONFIGURATION_RESOLVES"
+          },
+          "obligation_id": "BRD-WS-17-R002-O001",
+          "observed_operand": {
+            "authoritative_source": {
+              "allowed_identifiers": [
+                "BRD-WS-17-R002.BRD-WS-17-R002.O1.1.CONFIGURATION_RESOLVES.CANONICAL.RESULT"
+              ],
+              "source_id": "docs/BRD/BRD-WS-17.md#10. Scheduler Trigger",
+              "source_type": "SOURCE_LITERAL",
+              "version": "dc57ad841afe185bd3463dd10e976f5d73faa947b4bb7dd672459f478f250677"
+            },
+            "identifier": "BRD-WS-17-R002.BRD-WS-17-R002.O1.1.CONFIGURATION_RESOLVES.CANONICAL.RESULT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "BRD-WS-17-R002.O1.1.CONFIGURATION_RESOLVES.OBSERVED.ORIGIN",
+              "origin_type": "RUNTIME_OBSERVED"
+            },
+            "provenance": {
+              "approved_decision_references": [],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-WS-17.md",
+              "source_fingerprint": "dc57ad841afe185bd3463dd10e976f5d73faa947b4bb7dd672459f478f250677",
+              "source_lines": "L288",
+              "source_section": "10. Scheduler Trigger"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "CANONICAL_ENUM_VALUE",
+              "resolver_id": "OBSERVE.BRD-WS-17-R002.BRD-WS-17-R002.BRD-WS-17-R002.O1.1.CONFIGURATION_RESOLVES.CANONICAL.RESULT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "CANONICAL_ENUM_VALUE"
+          },
+          "operator_id": "CONFIGURATION_RESOLVES",
+          "operator_version": "1.0.0-candidate.2",
+          "typed_bindings": {
+            "configuration_key": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-WS-17.md#10. Scheduler Trigger",
+                "source_type": "SOURCE_LITERAL",
+                "version": "dc57ad841afe185bd3463dd10e976f5d73faa947b4bb7dd672459f478f250677"
+              },
+              "identifier": "BRD-WS-17-R002.CONFIGURATION_KEY",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-WS-17-R002.O1.1.CONFIGURATION_RESOLVES.CONFIGURATION_KEY.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-17.md",
+                "source_fingerprint": "dc57ad841afe185bd3463dd10e976f5d73faa947b4bb7dd672459f478f250677",
+                "source_lines": "L288",
+                "source_section": "10. Scheduler Trigger"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CONFIGURATION_KEY",
+                "resolver_id": "RESOLVE.BRD-WS-17-R002.BRD-WS-17-R002.CONFIGURATION_KEY",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CONFIGURATION_KEY"
+            },
+            "configuration_sources": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-WS-17.md#10. Scheduler Trigger",
+                "source_type": "SOURCE_LITERAL",
+                "version": "dc57ad841afe185bd3463dd10e976f5d73faa947b4bb7dd672459f478f250677"
+              },
+              "identifier": "BRD-WS-17-R002.CONFIGURATION_SOURCES",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-WS-17-R002.O1.1.CONFIGURATION_RESOLVES.CONFIGURATION_SOURCES.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-17.md",
+                "source_fingerprint": "dc57ad841afe185bd3463dd10e976f5d73faa947b4bb7dd672459f478f250677",
+                "source_lines": "L288",
+                "source_section": "10. Scheduler Trigger"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "SET_OF<CONFIGURATION_SOURCE_ID>",
+                "resolver_id": "RESOLVE.BRD-WS-17-R002.BRD-WS-17-R002.CONFIGURATION_SOURCES",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_SET_REF<CONFIGURATION_SOURCE_ID>"
+            },
+            "expected_value": {
+              "authoritative_source": {
+                "allowed_identifiers": [
+                  "BRD-WS-17-R002.CANONICAL.CONFIGURATION.VALUE"
+                ],
+                "source_id": "docs/BRD/BRD-WS-17.md#10. Scheduler Trigger",
+                "source_type": "SOURCE_LITERAL",
+                "version": "dc57ad841afe185bd3463dd10e976f5d73faa947b4bb7dd672459f478f250677"
+              },
+              "identifier": "BRD-WS-17-R002.CANONICAL.CONFIGURATION.VALUE",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-WS-17-R002.O1.1.CONFIGURATION_RESOLVES.EXPECTED_VALUE.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-17.md",
+                "source_fingerprint": "dc57ad841afe185bd3463dd10e976f5d73faa947b4bb7dd672459f478f250677",
+                "source_lines": "L288",
+                "source_section": "10. Scheduler Trigger"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CANONICAL_ENUM_VALUE",
+                "resolver_id": "RESOLVE.BRD-WS-17-R002.BRD-WS-17-R002.CANONICAL.CONFIGURATION.VALUE",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_ENUM_VALUE"
+            },
+            "resolved_source": {
+              "authoritative_source": {
+                "source_id": "docs/BRD/BRD-WS-17.md#10. Scheduler Trigger",
+                "source_type": "SOURCE_LITERAL",
+                "version": "dc57ad841afe185bd3463dd10e976f5d73faa947b4bb7dd672459f478f250677"
+              },
+              "identifier": "BRD-WS-17-R002.RESOLVED_SOURCE",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "BRD-WS-17-R002.O1.1.CONFIGURATION_RESOLVES.RESOLVED_SOURCE.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-17.md",
+                "source_fingerprint": "dc57ad841afe185bd3463dd10e976f5d73faa947b4bb7dd672459f478f250677",
+                "source_lines": "L288",
+                "source_section": "10. Scheduler Trigger"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "CONFIGURATION_SOURCE_ID",
+                "resolver_id": "RESOLVE.BRD-WS-17-R002.BRD-WS-17-R002.RESOLVED_SOURCE",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CONFIGURATION_SOURCE_ID"
+            },
+            "source_versions": {
+              "members": [
+                {
+                  "authoritative_source": {
+                    "source_id": "docs/BRD/BRD-WS-17.md#10. Scheduler Trigger",
+                    "source_type": "SOURCE_LITERAL",
+                    "version": "dc57ad841afe185bd3463dd10e976f5d73faa947b4bb7dd672459f478f250677"
+                  },
+                  "identifier": "BRD-WS-17-R002.SOURCE_VERSIONS.SOURCE.MEMBER",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "BRD-WS-17-R002.O1.1.CONFIGURATION_RESOLVES.SOURCE_VERSIONS.ORIGIN.MEMBER.1",
+                    "origin_type": "SOURCE_LITERAL"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-WS-17.md",
+                    "source_fingerprint": "dc57ad841afe185bd3463dd10e976f5d73faa947b4bb7dd672459f478f250677",
+                    "source_lines": "L288",
+                    "source_section": "10. Scheduler Trigger"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "POLICY_VERSION",
+                    "resolver_id": "RESOLVE.BRD-WS-17-R002.BRD-WS-17-R002.SOURCE_VERSIONS.SOURCE.MEMBER",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "POLICY_VERSION"
+                }
+              ],
+              "origin": {
+                "origin_id": "BRD-WS-17-R002.O1.1.CONFIGURATION_RESOLVES.SOURCE_VERSIONS.ORIGIN",
+                "origin_type": "SOURCE_LITERAL"
+              },
+              "provenance": {
+                "approved_decision_references": [],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-17.md",
+                "source_fingerprint": "dc57ad841afe185bd3463dd10e976f5d73faa947b4bb7dd672459f478f250677",
+                "source_lines": "L288",
+                "source_section": "10. Scheduler Trigger"
+              },
+              "semantic_type": "SET_OF<POLICY_VERSION>"
+            }
+          }
+        }
+      ],
+      "boundary_cases": [
+        "Platform invariant changes remain governed separately; operational scheduling remains configurable"
+      ],
+      "contract_ast_sha256": "073012d9ad7a4b11410534d1dac6e3a792e532c7c68fa76a208b0118866f5a2e",
+      "contract_id": "P2C.C4.CONTRACT.BRD-WS-17-R002",
+      "criticality": "NORMAL",
+      "disposition": "CORRECTABLE_WITH_APPROVED_TYPE_MODEL",
+      "evidence_contract": {
+        "evidence_object_ref": {
+          "authoritative_source": {
+            "source_id": "docs/BRD/BRD-WS-17.md#10. Scheduler Trigger",
+            "source_type": "SOURCE_LITERAL",
+            "version": "dc57ad841afe185bd3463dd10e976f5d73faa947b4bb7dd672459f478f250677"
+          },
+          "identifier": "BRD-WS-17-R002.BRD-WS-17-R002.CONTRACT.EVIDENCE.OBJECT",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "BRD-WS-17-R002.CONTRACT.EVIDENCE.ORIGIN",
+            "origin_type": "EVIDENCE_OBJECT"
+          },
+          "provenance": {
+            "approved_decision_references": [],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-17.md",
+            "source_fingerprint": "dc57ad841afe185bd3463dd10e976f5d73faa947b4bb7dd672459f478f250677",
+            "source_lines": "L288",
+            "source_section": "10. Scheduler Trigger"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "EVIDENCE_OBJECT_REF",
+            "resolver_id": "OBSERVE.BRD-WS-17-R002.BRD-WS-17-R002.BRD-WS-17-R002.CONTRACT.EVIDENCE.OBJECT",
+            "version": "1.0.0"
+          },
+          "semantic_type": "EVIDENCE_OBJECT_REF"
+        },
+        "inference": false,
+        "observed_collection_origin": "BRD-WS-17-R002.RUNTIME.OBSERVED.FIELDS",
+        "observed_field_ids": [
+          "FIELD.TRIGGER_ID",
+          "FIELD.CONFIGURATION_BEFORE",
+          "FIELD.CONFIGURATION_AFTER",
+          "FIELD.CODE_DIFF",
+          "FIELD.AUTHORIZATION",
+          "FIELD.AUDIT_RECORD"
+        ],
+        "producer": "BRD-WS-17-R002.EVIDENCE.PRODUCER",
+        "required_collection_origin": "BRD-WS-17-R002.SOURCE.REQUIRED.FIELDS",
+        "required_field_ids": [
+          "FIELD.TRIGGER_ID",
+          "FIELD.CONFIGURATION_BEFORE",
+          "FIELD.CONFIGURATION_AFTER",
+          "FIELD.CODE_DIFF",
+          "FIELD.AUTHORIZATION",
+          "FIELD.AUDIT_RECORD"
+        ],
+        "required_values_or_hashes": [
+          "BRD-WS-17-R002.EVIDENCE.CONTENT.HASH"
+        ],
+        "retrieval_method": "BRD-WS-17-R002.EVIDENCE.RETRIEVAL",
+        "version_or_correlation": "BRD-WS-17-R002.EVIDENCE.VERSION.CORRELATION"
+      },
+      "explicit_non_obligations": [
+        "No runtime implementation topology is authorized by this semantic record.",
+        "No production runtime evidence is claimed by this model-level candidate."
+      ],
+      "fixture_ids": [
+        "P2C-C4-FX-EFBEAA632EE4DF7C066F",
+        "P2C-C4-FX-A6538B23452ED4614296",
+        "P2C-C4-FX-4F8D7AAFF644138B8024"
+      ],
+      "high_risk_audit_subset": false,
+      "independent_contract_identity": true,
+      "inference": false,
+      "inherits_contract_ast": null,
+      "negative_oracles": [
+        "Changing trigger behavior requires source-code modification or bypasses configuration"
+      ],
+      "normative_obligations": [
+        {
+          "applicability": "V2.3_ACTIVE",
+          "obligation_id": "BRD-WS-17-R002-O001",
+          "obligation_text": "Scheduler Trigger được cấu hình và có thể thay đổi mà không cần sửa mã nguồn"
+        }
+      ],
+      "obligation_to_operator_coverage": [
+        {
+          "assertion_ids": [
+            "BRD-WS-17-R002.O1.1.CONFIGURATION_RESOLVES"
+          ],
+          "coverage_count": 1,
+          "obligation_id": "BRD-WS-17-R002-O001"
+        }
+      ],
+      "operator_composition": [
+        "CONFIGURATION_RESOLVES"
+      ],
+      "positive_oracles": [
+        "Trigger behavior changes through configuration without source-code modification"
+      ],
+      "preconditions": [
+        "The actor is authorized and configuration version is valid"
+      ],
+      "prohibitions": [
+        "Changing trigger behavior requires source-code modification or bypasses configuration"
+      ],
+      "requirement_id": "BRD-WS-17-R002",
+      "runtime_status": "SLICE_RUNTIME_ADAPTER_REQUIRED",
+      "semantic_family_id": null,
+      "source_provenance": {
+        "approved_decision_references": [],
+        "inference": false,
+        "source_document": "docs/BRD/BRD-WS-17.md",
+        "source_fingerprint": "dc57ad841afe185bd3463dd10e976f5d73faa947b4bb7dd672459f478f250677",
+        "source_lines": "L288",
+        "source_section": "10. Scheduler Trigger"
+      },
+      "source_statement": "Scheduler Trigger được cấu hình và có thể thay đổi mà không cần sửa mã nguồn.",
+      "surrounding_source_context": "### BRD-WS-17-R002 — Scheduler Trigger được cấu hình và có thể thay đổi mà không cần sửa mã nguồn"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "contract_id": "P2C.C4.CONTRACT.BRD-WS-17-R002",
+    "inference": false,
+    "mechanism": "APPROVED_TYPED_CUSTOM_AST",
+    "mechanism_version": "SEMANTIC_ACCEPTANCE_RENDERER_C2",
+    "runtime_status": "RUNTIME_ADAPTER_PENDING"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "ACCEPTANCE_READY",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-WS-17-R002-AC001"
+        "BRD-WS-17-R002-AC001",
+        "BRD-WS-17-R002-AC002",
+        "BRD-WS-17-R002-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-17-R002-O001",
@@ -5234,8 +5581,8 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_sha256": "c6119caa8d765ea8c152715c930f2749ca218179059862a8e99b83b2dec2d395",
     "source_document": "docs/BRD/BRD-WS-17.md",
     "source_fingerprint": "dc57ad841afe185bd3463dd10e976f5d73faa947b4bb7dd672459f478f250677",
-    "source_lines": "L288",
-    "source_section": "10. Scheduler Trigger"
+    "source_lines": "L4504-L5603",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-17-R002"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -5260,80 +5607,36 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "SECURITY_DECISION_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-17-R003-AC001",
-      "given": "an identified principal, applicable assurance context, and policy inputs for Operation Retry chỉ được thực hiện bởi Operator có Permission phù hợp",
-      "observable_evidence": "decision result, effective assurance or policy, denied or changed state, reason, and audit evidence",
-      "then": "the effective security policy produces the required allow, challenge, block, review, or denial result; protected state and audit evidence agree with that decision",
-      "verifies": [
-        "BRD-WS-17-R003-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-003"
       ],
-      "when": "the protected decision or action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "SECURITY_FAIL_CLOSED_V1",
-      "criterion_id": "BRD-WS-17-R003-AC002",
-      "given": "a principal or request that does not satisfy the assurance, policy, consent, or authorization boundary for Operation Retry chỉ được thực hiện bởi Operator có Permission phù hợp",
-      "observable_evidence": "decision result, protected-state comparison, reason, effective policy, and audit record",
-      "then": "the result is challenge, block, review, or denial as required; protected state is unchanged and the reason is audited",
-      "verifies": [
-        "BRD-WS-17-R003-O001"
-      ],
-      "when": "the protected decision or action is attempted"
-    },
-    {
-      "case": "NEGATIVE_FAIL_CLOSED",
-      "controlled_contract": "REQUIREMENT_SPECIFIC_FAIL_CLOSED_V1",
-      "criterion_id": "BRD-WS-17-R003-AC003",
-      "given": "an input or attempted state change that violates a mandatory boundary explicitly stated by Operation Retry chỉ được thực hiện bởi Operator có Permission phù hợp",
-      "observable_evidence": "violating input, decision and reason, before/after protected state, and audit or conformance evidence",
-      "then": "the violated obligation produces its specified rejection, denial, block, review, or non-conforming result without recording a contradictory success",
-      "verifies": [
-        "BRD-WS-17-R003-O001"
-      ],
-      "when": "the violating input or action is evaluated"
-    },
-    {
-      "case": "IDEMPOTENCY",
-      "controlled_contract": "EXPLICIT_IDEMPOTENCY_CONTRACT_V1",
-      "criterion_id": "BRD-WS-17-R003-AC004",
-      "given": "a repeated request, retry, replay, or duplicate explicitly governed by Operation Retry chỉ được thực hiện bởi Operator có Permission phù hợp",
-      "observable_evidence": "original and repeated action identities, both outcomes, side-effect count, and resulting business state",
-      "then": "the repeated action produces the requirement-specific stable result without an additional prohibited side effect",
-      "verifies": [
-        "BRD-WS-17-R003-O001"
-      ],
-      "when": "the same governed action is presented again under the declared identity or deduplication boundary"
-    },
-    {
-      "case": "AUTHORIZATION_BOUNDARY",
-      "controlled_contract": "EXPLICIT_AUTHORIZATION_BOUNDARY_V1",
-      "criterion_id": "BRD-WS-17-R003-AC005",
-      "given": "an actor lacking the permission, role, identity assurance, consent, or access condition stated by Operation Retry chỉ được thực hiện bởi Operator có Permission phù hợp",
-      "observable_evidence": "actor and scope, effective policy or assurance, decision, protected-state comparison, reason, and audit evidence",
-      "then": "access is denied or challenged according to the referenced obligation, protected state remains unchanged, and the decision is auditable",
-      "verifies": [
-        "BRD-WS-17-R003-O001"
-      ],
-      "when": "the actor attempts the governed action"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-17-R003",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "1478d8ae4653f0b2e8679dd61d41e04ed7ae6cea584187c4c2546b0990fdbbe7"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-17-R003-AC001",
         "BRD-WS-17-R003-AC002",
-        "BRD-WS-17-R003-AC003",
-        "BRD-WS-17-R003-AC004",
-        "BRD-WS-17-R003-AC005"
+        "BRD-WS-17-R003-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-17-R003-O001",
@@ -5342,38 +5645,38 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
-      "criterion_references": [
-        "BRD-WS-17-R003-AC005"
-      ],
-      "status": "APPLICABLE"
-    },
-    "CONCURRENCY": {
-      "criterion_references": [],
-      "rationale": "BRD-WS-17-R003 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    },
-    "IDEMPOTENCY": {
-      "criterion_references": [
-        "BRD-WS-17-R003-AC004"
-      ],
-      "status": "APPLICABLE"
-    },
-    "NEGATIVE_FAIL_CLOSED": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BRD-WS-17-R003-AC003"
       ],
-      "status": "APPLICABLE"
+      "rationale": null
+    },
+    "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "BRD-WS-17-R003 does not define a concurrency obligation."
+    },
+    "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "BRD-WS-17-R003 does not define a idempotency obligation."
+    },
+    "NEGATIVE_FAIL_CLOSED": {
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BRD-WS-17-R003-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BRD-WS-17-R003-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-17-R003 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-17-R003 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -5394,8 +5697,8 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_sha256": "9532dadb38743befd53f646d6a673b9e3caeeaf24daca6f85ac9dff6efff8fa0",
     "source_document": "docs/BRD/BRD-WS-17.md",
     "source_fingerprint": "1478d8ae4653f0b2e8679dd61d41e04ed7ae6cea584187c4c2546b0990fdbbe7",
-    "source_lines": "L386",
-    "source_section": "14. Operation Retry"
+    "source_lines": "L5605-L5719",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-17-R003"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -5420,9 +5723,20 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "NOT_APPLICABLE_FOR_V2.3",
+    "inference": false,
+    "requirement_id": "BRD-WS-17-R004",
+    "scope_status": "FUTURE"
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "NOT_APPLICABLE_FOR_V2.3",
+    "runtime_status": "NOT_APPLICABLE_FOR_V2.3"
+  },
   "acceptance_rationale": "Requirement is retained for a future baseline and is excluded from v2.3 delivery.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
   "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
   "acceptance_unit": false,
   "atomic_obligations": [],
@@ -5443,8 +5757,8 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_sha256": "35b46362ca2e055de876727569c50112df05ff0fe3cbeaf3ca4fc668418aefaa",
     "source_document": "docs/BRD/BRD-WS-17.md",
     "source_fingerprint": "e7904b528d9a6fbee267e2fdb0f2cd63f6094a124e442a430d96c522bf31e23b",
-    "source_lines": "L494",
-    "source_section": "18. Capacity Policy"
+    "source_lines": "L5721-L5779",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-17-R004"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -5469,41 +5783,36 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-17-R006-AC001",
-      "given": "the applicable business context, actor, and input for Maintenance phải gửi Notification trước khi bắt đầu",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-WS-17-R006-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-004"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BRD-WS-17-R006-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Maintenance phải gửi Notification trước khi bắt đầu",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BRD-WS-17-R006-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-17-R006",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "8bef3cbd28dc1442900398f96a31bb8cc3bb94f392c4102172cd08cfaad34413"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-17-R006-AC001",
-        "BRD-WS-17-R006-AC002"
+        "BRD-WS-17-R006-AC002",
+        "BRD-WS-17-R006-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-17-R006-O001",
@@ -5529,8 +5838,8 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_sha256": "56deb435130e3cb1321717655401f7570e5c7f83c05f16e5b38fd02b838c71eb",
     "source_document": "docs/BRD/BRD-WS-17.md",
     "source_fingerprint": "8bef3cbd28dc1442900398f96a31bb8cc3bb94f392c4102172cd08cfaad34413",
-    "source_lines": "L555",
-    "source_section": "21. Maintenance Notification"
+    "source_lines": "L5781-L5860",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-17-R006"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -5555,28 +5864,34 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-17-R007-AC001",
-      "given": "the applicable business context, actor, and input for Business Critical Job luôn được ưu tiên",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-WS-17-R007-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-17-R007",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "7a791da18ef300931d66290da3513663adfb7afa4665bb6e1b313ac9ec206a52"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-WS-17-R007-AC001"
+        "BRD-WS-17-R007-AC001",
+        "BRD-WS-17-R007-AC002",
+        "BRD-WS-17-R007-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-17-R007-O001",
@@ -5600,8 +5915,8 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_sha256": "ee849292348f3551510bfd40a7a6460b6f49278dea438ab576df64843cb65a03",
     "source_document": "docs/BRD/BRD-WS-17.md",
     "source_fingerprint": "7a791da18ef300931d66290da3513663adfb7afa4665bb6e1b313ac9ec206a52",
-    "source_lines": "L589",
-    "source_section": "22. Scheduler Priority"
+    "source_lines": "L5862-L5937",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-17-R007"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -5626,47 +5941,27 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "SECURITY_DECISION_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-17-R008-AC001",
-      "given": "an identified principal, applicable assurance context, and policy inputs for Operational Audit tuân thủ Security Policy",
-      "observable_evidence": "decision result, effective assurance or policy, denied or changed state, reason, and audit evidence",
-      "then": "the effective security policy produces the required allow, challenge, block, review, or denial result; protected state and audit evidence agree with that decision",
-      "verifies": [
-        "BRD-WS-17-R008-O001"
-      ],
-      "when": "the protected decision or action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "SECURITY_FAIL_CLOSED_V1",
-      "criterion_id": "BRD-WS-17-R008-AC002",
-      "given": "a principal or request that does not satisfy the assurance, policy, consent, or authorization boundary for Operational Audit tuân thủ Security Policy",
-      "observable_evidence": "decision result, protected-state comparison, reason, effective policy, and audit record",
-      "then": "the result is challenge, block, review, or denial as required; protected state is unchanged and the reason is audited",
-      "verifies": [
-        "BRD-WS-17-R008-O001"
-      ],
-      "when": "the protected decision or action is attempted"
-    },
-    {
-      "case": "NEGATIVE_FAIL_CLOSED",
-      "controlled_contract": "REQUIREMENT_SPECIFIC_FAIL_CLOSED_V1",
-      "criterion_id": "BRD-WS-17-R008-AC003",
-      "given": "an input or attempted state change that violates a mandatory boundary explicitly stated by Operational Audit tuân thủ Security Policy",
-      "observable_evidence": "violating input, decision and reason, before/after protected state, and audit or conformance evidence",
-      "then": "the violated obligation produces its specified rejection, denial, block, review, or non-conforming result without recording a contradictory success",
-      "verifies": [
-        "BRD-WS-17-R008-O001"
-      ],
-      "when": "the violating input or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-17-R008",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "6a3e985b004030dba0d688881419fbc53afd181a2cb945687b454df456c61465"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
@@ -5682,36 +5977,38 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
-      "criterion_references": [],
-      "rationale": "BRD-WS-17-R008 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    },
-    "CONCURRENCY": {
-      "criterion_references": [],
-      "rationale": "BRD-WS-17-R008 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    },
-    "IDEMPOTENCY": {
-      "criterion_references": [],
-      "rationale": "BRD-WS-17-R008 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    },
-    "NEGATIVE_FAIL_CLOSED": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BRD-WS-17-R008-AC003"
       ],
-      "status": "APPLICABLE"
+      "rationale": null
+    },
+    "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "BRD-WS-17-R008 does not define a concurrency obligation."
+    },
+    "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "BRD-WS-17-R008 does not define a idempotency obligation."
+    },
+    "NEGATIVE_FAIL_CLOSED": {
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BRD-WS-17-R008-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BRD-WS-17-R008-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-17-R008 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-17-R008 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -5730,8 +6027,8 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_sha256": "cc4ae75b5a2eaf34a905c3c16264813f494f23dd4c3606f917d75c14ec1e36e5",
     "source_document": "docs/BRD/BRD-WS-17.md",
     "source_fingerprint": "6a3e985b004030dba0d688881419fbc53afd181a2cb945687b454df456c61465",
-    "source_lines": "L654",
-    "source_section": "24. Operational Audit"
+    "source_lines": "L5939-L6049",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-17-R008"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -5756,47 +6053,27 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-17-R009-AC001",
-      "given": "an operational task within the scope of Audit không được phép chỉnh sửa",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BRD-WS-17-R009-O001"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "OPERATIONAL_VERIFICATION_FAILURE_V1",
-      "criterion_id": "BRD-WS-17-R009-AC002",
-      "given": "an operational task missing an outcome, required signal, audit evidence, or recovery evidence for Audit không được phép chỉnh sửa",
-      "observable_evidence": "operator-visible verification result, missing-evidence identifier, operation state, and relevant signal or audit record",
-      "then": "verification reports the specific missing evidence as a detectable failure and does not report the task as conforming",
-      "verifies": [
-        "BRD-WS-17-R009-O001"
-      ],
-      "when": "operational verification is performed"
-    },
-    {
-      "case": "NEGATIVE_FAIL_CLOSED",
-      "controlled_contract": "REQUIREMENT_SPECIFIC_FAIL_CLOSED_V1",
-      "criterion_id": "BRD-WS-17-R009-AC003",
-      "given": "an input or attempted state change that violates a mandatory boundary explicitly stated by Audit không được phép chỉnh sửa",
-      "observable_evidence": "violating input, decision and reason, before/after protected state, and audit or conformance evidence",
-      "then": "the violated obligation produces its specified rejection, denial, block, review, or non-conforming result without recording a contradictory success",
-      "verifies": [
-        "BRD-WS-17-R009-O001"
-      ],
-      "when": "the violating input or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-17-R009",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "b8c4a9f6d3d9e3a88468f0c11410ed311a06fcbac64398c0584dac0ec439f1c4"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
@@ -5812,36 +6089,36 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-17-R009 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-17-R009 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-17-R009 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-17-R009 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-17-R009 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-17-R009 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
-        "BRD-WS-17-R009-AC003"
-      ],
-      "status": "APPLICABLE"
+        "BRD-WS-17-R009-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BRD-WS-17-R009-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-17-R009 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-17-R009 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -5860,8 +6137,8 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_sha256": "cc4ae75b5a2eaf34a905c3c16264813f494f23dd4c3606f917d75c14ec1e36e5",
     "source_document": "docs/BRD/BRD-WS-17.md",
     "source_fingerprint": "b8c4a9f6d3d9e3a88468f0c11410ed311a06fcbac64398c0584dac0ec439f1c4",
-    "source_lines": "L656",
-    "source_section": "24. Operational Audit"
+    "source_lines": "L6051-L6159",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-17-R009"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -5886,41 +6163,34 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-17-R010-AC001",
-      "given": "an operational task within the scope of Operation Policy không được Hard-code",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BRD-WS-17-R010-O001"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "OPERATIONAL_VERIFICATION_FAILURE_V1",
-      "criterion_id": "BRD-WS-17-R010-AC002",
-      "given": "an operational task missing an outcome, required signal, audit evidence, or recovery evidence for Operation Policy không được Hard-code",
-      "observable_evidence": "operator-visible verification result, missing-evidence identifier, operation state, and relevant signal or audit record",
-      "then": "verification reports the specific missing evidence as a detectable failure and does not report the task as conforming",
-      "verifies": [
-        "BRD-WS-17-R010-O001"
-      ],
-      "when": "operational verification is performed"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-17-R010",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "35a32976cbaeb0e2f67ba64f6dc74c37b7755b992055bed46dfb2e4b44f66359"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-17-R010-AC001",
-        "BRD-WS-17-R010-AC002"
+        "BRD-WS-17-R010-AC002",
+        "BRD-WS-17-R010-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-17-R010-O001",
@@ -5944,8 +6214,8 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_sha256": "60c1917802a618eff2f187c3e98750eecbc31c464cb1885596ecb0b29b871998",
     "source_document": "docs/BRD/BRD-WS-17.md",
     "source_fingerprint": "35a32976cbaeb0e2f67ba64f6dc74c37b7755b992055bed46dfb2e4b44f66359",
-    "source_lines": "L685",
-    "source_section": "25. Operation Policy"
+    "source_lines": "L6161-L6236",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-17-R010"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -5970,28 +6240,34 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-17-R011-AC001",
-      "given": "the applicable business context, actor, and input for Business Scheduler giúp tự động hóa quy trình nghiệp vụ mà không cần lập trình bổ sung",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-WS-17-R011-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-17-R011",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "2cb6912c4c0dda41dd1ce554823d7617d5b37ef0692c578bada05b13ab078dab"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-WS-17-R011-AC001"
+        "BRD-WS-17-R011-AC001",
+        "BRD-WS-17-R011-AC002",
+        "BRD-WS-17-R011-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-17-R011-O001",
@@ -6015,8 +6291,8 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_sha256": "ad179cdf9dfbeeb1ce566ff2c261073edaa9553c1610d0d7e5f9f224475f81a6",
     "source_document": "docs/BRD/BRD-WS-17.md",
     "source_fingerprint": "2cb6912c4c0dda41dd1ce554823d7617d5b37ef0692c578bada05b13ab078dab",
-    "source_lines": "L719",
-    "source_section": "26. Business Scheduler"
+    "source_lines": "L6238-L6313",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-17-R011"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -6041,67 +6317,34 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "SECURITY_DECISION_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-17-R012-AC001",
-      "given": "an identified principal, applicable assurance context, and policy inputs for Organization chỉ được xem các thông tin Monitoring được Platform chia sẻ theo Permission",
-      "observable_evidence": "decision result, effective assurance or policy, denied or changed state, reason, and audit evidence",
-      "then": "the actor can retrieve only customer identities attributed to that actor; a customer attributed to another actor is absent and access to it is denied",
-      "verifies": [
-        "BRD-WS-17-R012-O001"
-      ],
-      "when": "the protected decision or action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "SECURITY_FAIL_CLOSED_V1",
-      "criterion_id": "BRD-WS-17-R012-AC002",
-      "given": "a principal or request that does not satisfy the assurance, policy, consent, or authorization boundary for Organization chỉ được xem các thông tin Monitoring được Platform chia sẻ theo Permission",
-      "observable_evidence": "decision result, protected-state comparison, reason, effective policy, and audit record",
-      "then": "the result is challenge, block, review, or denial as required; protected state is unchanged and the reason is audited",
-      "verifies": [
-        "BRD-WS-17-R012-O001"
-      ],
-      "when": "the protected decision or action is attempted"
-    },
-    {
-      "case": "NEGATIVE_FAIL_CLOSED",
-      "controlled_contract": "REQUIREMENT_SPECIFIC_FAIL_CLOSED_V1",
-      "criterion_id": "BRD-WS-17-R012-AC003",
-      "given": "an input or attempted state change that violates a mandatory boundary explicitly stated by Organization chỉ được xem các thông tin Monitoring được Platform chia sẻ theo Permission",
-      "observable_evidence": "violating input, decision and reason, before/after protected state, and audit or conformance evidence",
-      "then": "the violated obligation produces its specified rejection, denial, block, review, or non-conforming result without recording a contradictory success",
-      "verifies": [
-        "BRD-WS-17-R012-O001"
-      ],
-      "when": "the violating input or action is evaluated"
-    },
-    {
-      "case": "AUTHORIZATION_BOUNDARY",
-      "controlled_contract": "EXPLICIT_AUTHORIZATION_BOUNDARY_V1",
-      "criterion_id": "BRD-WS-17-R012-AC004",
-      "given": "an actor lacking the permission, role, identity assurance, consent, or access condition stated by Organization chỉ được xem các thông tin Monitoring được Platform chia sẻ theo Permission",
-      "observable_evidence": "actor and scope, effective policy or assurance, decision, protected-state comparison, reason, and audit evidence",
-      "then": "access is denied or challenged according to the referenced obligation, protected state remains unchanged, and the decision is auditable",
-      "verifies": [
-        "BRD-WS-17-R012-O001"
-      ],
-      "when": "the actor attempts the governed action"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-17-R012",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "2d0c094a633795fe359c4b1690973719c1215c942aadc96a7370b833f55a7637"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-17-R012-AC001",
         "BRD-WS-17-R012-AC002",
-        "BRD-WS-17-R012-AC003",
-        "BRD-WS-17-R012-AC004"
+        "BRD-WS-17-R012-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-17-R012-O001",
@@ -6110,37 +6353,38 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
-      "criterion_references": [
-        "BRD-WS-17-R012-AC004"
-      ],
-      "status": "APPLICABLE"
-    },
-    "CONCURRENCY": {
-      "criterion_references": [],
-      "rationale": "BRD-WS-17-R012 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    },
-    "IDEMPOTENCY": {
-      "criterion_references": [],
-      "rationale": "BRD-WS-17-R012 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    },
-    "NEGATIVE_FAIL_CLOSED": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BRD-WS-17-R012-AC003"
       ],
-      "status": "APPLICABLE"
+      "rationale": null
+    },
+    "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "BRD-WS-17-R012 does not define a concurrency obligation."
+    },
+    "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "BRD-WS-17-R012 does not define a idempotency obligation."
+    },
+    "NEGATIVE_FAIL_CLOSED": {
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BRD-WS-17-R012-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BRD-WS-17-R012-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-17-R012 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-17-R012 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -6159,8 +6403,8 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_sha256": "1e9b4e7ab644e83d0662c572ab048fcb697c1a0d4d26c255f4781c9c840f27bb",
     "source_document": "docs/BRD/BRD-WS-17.md",
     "source_fingerprint": "2d0c094a633795fe359c4b1690973719c1215c942aadc96a7370b833f55a7637",
-    "source_lines": "L739",
-    "source_section": "27. Organization Operations"
+    "source_lines": "L6315-L6425",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-17-R012"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -6185,10 +6429,11 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": null,
+  "acceptance_mechanism": null,
   "acceptance_rationale": "Composite parent coverage is satisfied only through ALL_CHILDREN; the parent is not an acceptance unit.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "STRUCTURAL_RECORD",
   "acceptance_unit": false,
   "atomic_obligations": [],
   "criticality_applicability": null,
@@ -6219,9 +6464,9 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_heading": "30. Enterprise Operations Principle",
     "source_context_sha256": "f4b6aeebc35c74925667ca32adae5d22b689e2ba373fa7cae75a6f8c6fe8ee2a",
     "source_document": "docs/BRD/BRD-WS-17.md",
-    "source_fingerprint": "3a8f29c73a1ed34989919fa2841f9b35d9a7bd34e0d192c28fbd07e3c0c670a1",
-    "source_lines": "L798-L800",
-    "source_section": "30. Enterprise Operations Principle"
+    "source_fingerprint": "e1d040c6778da69d2e91e9f4155a5a0c8cb1d335f2097728f95682c03d440c5b",
+    "source_lines": "L6427-L6494",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-17-R013"
   },
   "record_kind": "COMPOSITE_PARENT",
   "relationships": {
@@ -6253,9 +6498,20 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "NOT_APPLICABLE_FOR_V2.3",
+    "inference": false,
+    "requirement_id": "BRD-WS-17-R014",
+    "scope_status": "FUTURE"
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "NOT_APPLICABLE_FOR_V2.3",
+    "runtime_status": "NOT_APPLICABLE_FOR_V2.3"
+  },
   "acceptance_rationale": "Requirement is retained for a future baseline and is excluded from v2.3 delivery.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
   "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
   "acceptance_unit": false,
   "atomic_obligations": [],
@@ -6276,8 +6532,8 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_sha256": "b1fab09e2bbba39c1dc093b64eb36cf0b05d880b5fc3ee672e3b591743889301",
     "source_document": "docs/BRD/BRD-WS-17.md",
     "source_fingerprint": "7e038f8589bcdd2b065f23deb2aa88573b2487c3fca823dd13e0f539f6adede0",
-    "source_lines": "L855",
-    "source_section": "32. Feature Flag & Kill Switch"
+    "source_lines": "L6496-L6554",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-17-R014"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -6302,28 +6558,34 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-17-R015-AC001",
-      "given": "the applicable business context, actor, and input for Không cần Deploy lại hệ thống",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-WS-17-R015-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-17-R015",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "5cc3dee11d43504e5b59a94962000a27e91ad7c086815db1c9974c5ddab0c3a3"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-WS-17-R015-AC001"
+        "BRD-WS-17-R015-AC001",
+        "BRD-WS-17-R015-AC002",
+        "BRD-WS-17-R015-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-17-R015-O001",
@@ -6347,8 +6609,8 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_sha256": "b1fab09e2bbba39c1dc093b64eb36cf0b05d880b5fc3ee672e3b591743889301",
     "source_document": "docs/BRD/BRD-WS-17.md",
     "source_fingerprint": "5cc3dee11d43504e5b59a94962000a27e91ad7c086815db1c9974c5ddab0c3a3",
-    "source_lines": "L866",
-    "source_section": "32. Feature Flag & Kill Switch"
+    "source_lines": "L6556-L6631",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-17-R015"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -6373,67 +6635,34 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "SECURITY_DECISION_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-17-R016-AC001",
-      "given": "an identified principal, applicable assurance context, and policy inputs for Mọi thao tác yêu cầu: - Permission",
-      "observable_evidence": "decision result, effective assurance or policy, denied or changed state, reason, and audit evidence",
-      "then": "the effective security policy produces the required allow, challenge, block, review, or denial result; protected state and audit evidence agree with that decision",
-      "verifies": [
-        "BRD-WS-17-R016-O001"
-      ],
-      "when": "the protected decision or action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "SECURITY_FAIL_CLOSED_V1",
-      "criterion_id": "BRD-WS-17-R016-AC002",
-      "given": "a principal or request that does not satisfy the assurance, policy, consent, or authorization boundary for Mọi thao tác yêu cầu: - Permission",
-      "observable_evidence": "decision result, protected-state comparison, reason, effective policy, and audit record",
-      "then": "the result is challenge, block, review, or denial as required; protected state is unchanged and the reason is audited",
-      "verifies": [
-        "BRD-WS-17-R016-O001"
-      ],
-      "when": "the protected decision or action is attempted"
-    },
-    {
-      "case": "NEGATIVE_FAIL_CLOSED",
-      "controlled_contract": "REQUIREMENT_SPECIFIC_FAIL_CLOSED_V1",
-      "criterion_id": "BRD-WS-17-R016-AC003",
-      "given": "an input or attempted state change that violates a mandatory boundary explicitly stated by Mọi thao tác yêu cầu: - Permission",
-      "observable_evidence": "violating input, decision and reason, before/after protected state, and audit or conformance evidence",
-      "then": "the violated obligation produces its specified rejection, denial, block, review, or non-conforming result without recording a contradictory success",
-      "verifies": [
-        "BRD-WS-17-R016-O001"
-      ],
-      "when": "the violating input or action is evaluated"
-    },
-    {
-      "case": "AUTHORIZATION_BOUNDARY",
-      "controlled_contract": "EXPLICIT_AUTHORIZATION_BOUNDARY_V1",
-      "criterion_id": "BRD-WS-17-R016-AC004",
-      "given": "an actor lacking the permission, role, identity assurance, consent, or access condition stated by Mọi thao tác yêu cầu: - Permission",
-      "observable_evidence": "actor and scope, effective policy or assurance, decision, protected-state comparison, reason, and audit evidence",
-      "then": "access is denied or challenged according to the referenced obligation, protected state remains unchanged, and the decision is auditable",
-      "verifies": [
-        "BRD-WS-17-R016-O001"
-      ],
-      "when": "the actor attempts the governed action"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-17-R016",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "e8cfc87088db14d2f89cb2249b5028d1ad941c11d9f1c621e84f0f126e30e121"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-17-R016-AC001",
         "BRD-WS-17-R016-AC002",
-        "BRD-WS-17-R016-AC003",
-        "BRD-WS-17-R016-AC004"
+        "BRD-WS-17-R016-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-17-R016-O001",
@@ -6442,37 +6671,38 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
-      "criterion_references": [
-        "BRD-WS-17-R016-AC004"
-      ],
-      "status": "APPLICABLE"
-    },
-    "CONCURRENCY": {
-      "criterion_references": [],
-      "rationale": "BRD-WS-17-R016 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    },
-    "IDEMPOTENCY": {
-      "criterion_references": [],
-      "rationale": "BRD-WS-17-R016 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    },
-    "NEGATIVE_FAIL_CLOSED": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BRD-WS-17-R016-AC003"
       ],
-      "status": "APPLICABLE"
+      "rationale": null
+    },
+    "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "BRD-WS-17-R016 does not define a concurrency obligation."
+    },
+    "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "BRD-WS-17-R016 does not define a idempotency obligation."
+    },
+    "NEGATIVE_FAIL_CLOSED": {
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BRD-WS-17-R016-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BRD-WS-17-R016-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-17-R016 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-17-R016 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -6491,8 +6721,8 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_sha256": "074268adc5f33a1a97020d3107da534eb5dfc62ce3bea438d4c3a1d39abe7664",
     "source_document": "docs/BRD/BRD-WS-17.md",
     "source_fingerprint": "e8cfc87088db14d2f89cb2249b5028d1ad941c11d9f1c621e84f0f126e30e121",
-    "source_lines": "L891-L893",
-    "source_section": "33. Operational Command Center"
+    "source_lines": "L6633-L6743",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-17-R016"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -6517,47 +6747,27 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-17-R017-AC001",
-      "given": "an operational task within the scope of Mọi thao tác yêu cầu: - Audit",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BRD-WS-17-R017-O001"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "OPERATIONAL_VERIFICATION_FAILURE_V1",
-      "criterion_id": "BRD-WS-17-R017-AC002",
-      "given": "an operational task missing an outcome, required signal, audit evidence, or recovery evidence for Mọi thao tác yêu cầu: - Audit",
-      "observable_evidence": "operator-visible verification result, missing-evidence identifier, operation state, and relevant signal or audit record",
-      "then": "verification reports the specific missing evidence as a detectable failure and does not report the task as conforming",
-      "verifies": [
-        "BRD-WS-17-R017-O001"
-      ],
-      "when": "operational verification is performed"
-    },
-    {
-      "case": "NEGATIVE_FAIL_CLOSED",
-      "controlled_contract": "REQUIREMENT_SPECIFIC_FAIL_CLOSED_V1",
-      "criterion_id": "BRD-WS-17-R017-AC003",
-      "given": "an input or attempted state change that violates a mandatory boundary explicitly stated by Mọi thao tác yêu cầu: - Audit",
-      "observable_evidence": "violating input, decision and reason, before/after protected state, and audit or conformance evidence",
-      "then": "the violated obligation produces its specified rejection, denial, block, review, or non-conforming result without recording a contradictory success",
-      "verifies": [
-        "BRD-WS-17-R017-O001"
-      ],
-      "when": "the violating input or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-17-R017",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "c6df0a9f58e48d6bf50ca4a3d43c34221cb71518395e446dcf833dc0270ea6eb"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
@@ -6573,36 +6783,36 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-17-R017 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-17-R017 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-17-R017 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-17-R017 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-17-R017 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-17-R017 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
-        "BRD-WS-17-R017-AC003"
-      ],
-      "status": "APPLICABLE"
+        "BRD-WS-17-R017-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BRD-WS-17-R017-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-17-R017 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-17-R017 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -6620,9 +6830,9 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_heading": "33. Operational Command Center",
     "source_context_sha256": "074268adc5f33a1a97020d3107da534eb5dfc62ce3bea438d4c3a1d39abe7664",
     "source_document": "docs/BRD/BRD-WS-17.md",
-    "source_fingerprint": "c45736bd62f283d9b0cf99d73847444881aeb69221470655ccb78c797730351b",
-    "source_lines": "L891-L894",
-    "source_section": "33. Operational Command Center"
+    "source_fingerprint": "c6df0a9f58e48d6bf50ca4a3d43c34221cb71518395e446dcf833dc0270ea6eb",
+    "source_lines": "L6745-L6853",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-17-R017"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -6647,41 +6857,40 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-17-R018-AC001",
-      "given": "the applicable business context, actor, and input for Mọi thao tác yêu cầu: - Runbook (nếu có)",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "BRD-WS-17-R018-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-004"
       ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "BUSINESS_BOUNDARY_FAILURE_V1",
-      "criterion_id": "BRD-WS-17-R018-AC002",
-      "given": "an unsupported or invalid business input at the boundary governed by Mọi thao tác yêu cầu: - Runbook (nếu có)",
-      "observable_evidence": "input, policy or rule decision, before/after state, reason, and customer/operator-visible result",
-      "then": "no unsupported success or state transition is recorded; a deterministic business outcome and reason identify the violated obligation",
-      "verifies": [
-        "BRD-WS-17-R018-O001"
-      ],
-      "when": "the governing policy, rule, calculation, transition, or action is evaluated"
+      "approved_semantic_completion_selection": {
+        "decision_id": "P2C-SC-C1-DEC-015",
+        "option_id": "OPT-AST"
+      },
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-17-R018",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "3301044192559d18d5fb73956b72ebd76088bb59006e7b29b33cf8b372b776e6"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-17-R018-AC001",
-        "BRD-WS-17-R018-AC002"
+        "BRD-WS-17-R018-AC002",
+        "BRD-WS-17-R018-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-17-R018-O001",
@@ -6706,9 +6915,9 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_heading": "33. Operational Command Center",
     "source_context_sha256": "074268adc5f33a1a97020d3107da534eb5dfc62ce3bea438d4c3a1d39abe7664",
     "source_document": "docs/BRD/BRD-WS-17.md",
-    "source_fingerprint": "57dd50fec5957bdc57ef356fe966ca977458ee75a1c1e22a218c545a0186684d",
-    "source_lines": "L891-L895",
-    "source_section": "33. Operational Command Center"
+    "source_fingerprint": "3301044192559d18d5fb73956b72ebd76088bb59006e7b29b33cf8b372b776e6",
+    "source_lines": "L6855-L6938",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-17-R018"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -6733,41 +6942,34 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-17-R019-AC001",
-      "given": "an operational task within the scope of Replay giúp xử lý các trường hợp lỗi mà không cần viết Script hoặc thao tác trực tiếp trên Datab…",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BRD-WS-17-R019-O001"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "OPERATIONAL_VERIFICATION_FAILURE_V1",
-      "criterion_id": "BRD-WS-17-R019-AC002",
-      "given": "an operational task missing an outcome, required signal, audit evidence, or recovery evidence for Replay giúp xử lý các trường hợp lỗi mà không cần viết Script hoặc thao tác trực tiếp trên Datab…",
-      "observable_evidence": "operator-visible verification result, missing-evidence identifier, operation state, and relevant signal or audit record",
-      "then": "verification reports the specific missing evidence as a detectable failure and does not report the task as conforming",
-      "verifies": [
-        "BRD-WS-17-R019-O001"
-      ],
-      "when": "operational verification is performed"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-17-R019",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "f5cfd574986664a91b67439ea300127f8091f0bad99077f1cfcbe224a00fc040"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-17-R019-AC001",
-        "BRD-WS-17-R019-AC002"
+        "BRD-WS-17-R019-AC002",
+        "BRD-WS-17-R019-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-17-R019-O001",
@@ -6791,8 +6993,8 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_sha256": "e3b46ff8ab39ade87f8ba8a9f09000c1364d0d744774b2b40fb23ec7c966c147",
     "source_document": "docs/BRD/BRD-WS-17.md",
     "source_fingerprint": "f5cfd574986664a91b67439ea300127f8091f0bad99077f1cfcbe224a00fc040",
-    "source_lines": "L912",
-    "source_section": "34. Replay Platform"
+    "source_lines": "L6940-L7015",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-17-R019"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -6817,80 +7019,34 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "SECURITY_DECISION_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-17-R020-AC001",
-      "given": "an identified principal, applicable assurance context, and policy inputs for Replay chỉ được thực hiện bởi Operator có Permission phù hợp",
-      "observable_evidence": "decision result, effective assurance or policy, denied or changed state, reason, and audit evidence",
-      "then": "the effective security policy produces the required allow, challenge, block, review, or denial result; protected state and audit evidence agree with that decision",
-      "verifies": [
-        "BRD-WS-17-R020-O001"
-      ],
-      "when": "the protected decision or action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "SECURITY_FAIL_CLOSED_V1",
-      "criterion_id": "BRD-WS-17-R020-AC002",
-      "given": "a principal or request that does not satisfy the assurance, policy, consent, or authorization boundary for Replay chỉ được thực hiện bởi Operator có Permission phù hợp",
-      "observable_evidence": "decision result, protected-state comparison, reason, effective policy, and audit record",
-      "then": "the result is challenge, block, review, or denial as required; protected state is unchanged and the reason is audited",
-      "verifies": [
-        "BRD-WS-17-R020-O001"
-      ],
-      "when": "the protected decision or action is attempted"
-    },
-    {
-      "case": "NEGATIVE_FAIL_CLOSED",
-      "controlled_contract": "REQUIREMENT_SPECIFIC_FAIL_CLOSED_V1",
-      "criterion_id": "BRD-WS-17-R020-AC003",
-      "given": "an input or attempted state change that violates a mandatory boundary explicitly stated by Replay chỉ được thực hiện bởi Operator có Permission phù hợp",
-      "observable_evidence": "violating input, decision and reason, before/after protected state, and audit or conformance evidence",
-      "then": "the violated obligation produces its specified rejection, denial, block, review, or non-conforming result without recording a contradictory success",
-      "verifies": [
-        "BRD-WS-17-R020-O001"
-      ],
-      "when": "the violating input or action is evaluated"
-    },
-    {
-      "case": "IDEMPOTENCY",
-      "controlled_contract": "EXPLICIT_IDEMPOTENCY_CONTRACT_V1",
-      "criterion_id": "BRD-WS-17-R020-AC004",
-      "given": "a repeated request, retry, replay, or duplicate explicitly governed by Replay chỉ được thực hiện bởi Operator có Permission phù hợp",
-      "observable_evidence": "original and repeated action identities, both outcomes, side-effect count, and resulting business state",
-      "then": "the repeated action produces the requirement-specific stable result without an additional prohibited side effect",
-      "verifies": [
-        "BRD-WS-17-R020-O001"
-      ],
-      "when": "the same governed action is presented again under the declared identity or deduplication boundary"
-    },
-    {
-      "case": "AUTHORIZATION_BOUNDARY",
-      "controlled_contract": "EXPLICIT_AUTHORIZATION_BOUNDARY_V1",
-      "criterion_id": "BRD-WS-17-R020-AC005",
-      "given": "an actor lacking the permission, role, identity assurance, consent, or access condition stated by Replay chỉ được thực hiện bởi Operator có Permission phù hợp",
-      "observable_evidence": "actor and scope, effective policy or assurance, decision, protected-state comparison, reason, and audit evidence",
-      "then": "access is denied or challenged according to the referenced obligation, protected state remains unchanged, and the decision is auditable",
-      "verifies": [
-        "BRD-WS-17-R020-O001"
-      ],
-      "when": "the actor attempts the governed action"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-17-R020",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "c9677296a14f6a3523d046d3051b0b9b6e6fdfa119b34e433afe8082ff6bdb07"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-17-R020-AC001",
         "BRD-WS-17-R020-AC002",
-        "BRD-WS-17-R020-AC003",
-        "BRD-WS-17-R020-AC004",
-        "BRD-WS-17-R020-AC005"
+        "BRD-WS-17-R020-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-17-R020-O001",
@@ -6899,38 +7055,38 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
-      "criterion_references": [
-        "BRD-WS-17-R020-AC005"
-      ],
-      "status": "APPLICABLE"
-    },
-    "CONCURRENCY": {
-      "criterion_references": [],
-      "rationale": "BRD-WS-17-R020 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    },
-    "IDEMPOTENCY": {
-      "criterion_references": [
-        "BRD-WS-17-R020-AC004"
-      ],
-      "status": "APPLICABLE"
-    },
-    "NEGATIVE_FAIL_CLOSED": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BRD-WS-17-R020-AC003"
       ],
-      "status": "APPLICABLE"
+      "rationale": null
+    },
+    "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "BRD-WS-17-R020 does not define a concurrency obligation."
+    },
+    "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "BRD-WS-17-R020 does not define a idempotency obligation."
+    },
+    "NEGATIVE_FAIL_CLOSED": {
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BRD-WS-17-R020-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BRD-WS-17-R020-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-17-R020 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-17-R020 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -6949,8 +7105,8 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_sha256": "e3b46ff8ab39ade87f8ba8a9f09000c1364d0d744774b2b40fb23ec7c966c147",
     "source_document": "docs/BRD/BRD-WS-17.md",
     "source_fingerprint": "c9677296a14f6a3523d046d3051b0b9b6e6fdfa119b34e433afe8082ff6bdb07",
-    "source_lines": "L914",
-    "source_section": "34. Replay Platform"
+    "source_lines": "L7017-L7127",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-17-R020"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -6975,67 +7131,34 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "SECURITY_DECISION_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-17-R021-AC001",
-      "given": "an identified principal, applicable assurance context, and policy inputs for Mọi thao tác đều: - Kiểm tra Permission",
-      "observable_evidence": "decision result, effective assurance or policy, denied or changed state, reason, and audit evidence",
-      "then": "the effective security policy produces the required allow, challenge, block, review, or denial result; protected state and audit evidence agree with that decision",
-      "verifies": [
-        "BRD-WS-17-R021-O001"
-      ],
-      "when": "the protected decision or action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "SECURITY_FAIL_CLOSED_V1",
-      "criterion_id": "BRD-WS-17-R021-AC002",
-      "given": "a principal or request that does not satisfy the assurance, policy, consent, or authorization boundary for Mọi thao tác đều: - Kiểm tra Permission",
-      "observable_evidence": "decision result, protected-state comparison, reason, effective policy, and audit record",
-      "then": "the result is challenge, block, review, or denial as required; protected state is unchanged and the reason is audited",
-      "verifies": [
-        "BRD-WS-17-R021-O001"
-      ],
-      "when": "the protected decision or action is attempted"
-    },
-    {
-      "case": "NEGATIVE_FAIL_CLOSED",
-      "controlled_contract": "REQUIREMENT_SPECIFIC_FAIL_CLOSED_V1",
-      "criterion_id": "BRD-WS-17-R021-AC003",
-      "given": "an input or attempted state change that violates a mandatory boundary explicitly stated by Mọi thao tác đều: - Kiểm tra Permission",
-      "observable_evidence": "violating input, decision and reason, before/after protected state, and audit or conformance evidence",
-      "then": "the violated obligation produces its specified rejection, denial, block, review, or non-conforming result without recording a contradictory success",
-      "verifies": [
-        "BRD-WS-17-R021-O001"
-      ],
-      "when": "the violating input or action is evaluated"
-    },
-    {
-      "case": "AUTHORIZATION_BOUNDARY",
-      "controlled_contract": "EXPLICIT_AUTHORIZATION_BOUNDARY_V1",
-      "criterion_id": "BRD-WS-17-R021-AC004",
-      "given": "an actor lacking the permission, role, identity assurance, consent, or access condition stated by Mọi thao tác đều: - Kiểm tra Permission",
-      "observable_evidence": "actor and scope, effective policy or assurance, decision, protected-state comparison, reason, and audit evidence",
-      "then": "access is denied or challenged according to the referenced obligation, protected state remains unchanged, and the decision is auditable",
-      "verifies": [
-        "BRD-WS-17-R021-O001"
-      ],
-      "when": "the actor attempts the governed action"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-17-R021",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "ed8ea67d43c881192de2ed7048f2964a9424d5b92cd120498543fb394cfebd3f"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-17-R021-AC001",
         "BRD-WS-17-R021-AC002",
-        "BRD-WS-17-R021-AC003",
-        "BRD-WS-17-R021-AC004"
+        "BRD-WS-17-R021-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-17-R021-O001",
@@ -7044,37 +7167,38 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
-      "criterion_references": [
-        "BRD-WS-17-R021-AC004"
-      ],
-      "status": "APPLICABLE"
-    },
-    "CONCURRENCY": {
-      "criterion_references": [],
-      "rationale": "BRD-WS-17-R021 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    },
-    "IDEMPOTENCY": {
-      "criterion_references": [],
-      "rationale": "BRD-WS-17-R021 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    },
-    "NEGATIVE_FAIL_CLOSED": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BRD-WS-17-R021-AC003"
       ],
-      "status": "APPLICABLE"
+      "rationale": null
+    },
+    "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "BRD-WS-17-R021 does not define a concurrency obligation."
+    },
+    "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "BRD-WS-17-R021 does not define a idempotency obligation."
+    },
+    "NEGATIVE_FAIL_CLOSED": {
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BRD-WS-17-R021-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BRD-WS-17-R021-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-17-R021 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-17-R021 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -7095,9 +7219,9 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_heading": "20. Operation Permission",
     "source_context_sha256": "6d40656f50a9ead910dd75e3bc79e99ac8f3f397474048d45d6a87a735d3271d",
     "source_document": "docs/BRD/BRD-WS-17.md",
-    "source_fingerprint": "d218c6fa7e3720fab8613bd35f68b36cf4fff1e944a728a6136a18f14d45d453",
-    "source_lines": "L545-L549",
-    "source_section": "20. Operation Permission"
+    "source_fingerprint": "ed8ea67d43c881192de2ed7048f2964a9424d5b92cd120498543fb394cfebd3f",
+    "source_lines": "L7129-L7242",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-17-R021"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -7122,41 +7246,34 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-17-R022-AC001",
-      "given": "an operational task within the scope of Mọi thao tác đều: - Ghi Audit",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BRD-WS-17-R022-O001"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "OPERATIONAL_VERIFICATION_FAILURE_V1",
-      "criterion_id": "BRD-WS-17-R022-AC002",
-      "given": "an operational task missing an outcome, required signal, audit evidence, or recovery evidence for Mọi thao tác đều: - Ghi Audit",
-      "observable_evidence": "operator-visible verification result, missing-evidence identifier, operation state, and relevant signal or audit record",
-      "then": "verification reports the specific missing evidence as a detectable failure and does not report the task as conforming",
-      "verifies": [
-        "BRD-WS-17-R022-O001"
-      ],
-      "when": "operational verification is performed"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-17-R022",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "b4ee276b1597c86a8e08f5d6b4a715a27a5a898d7cb4135d1258535b2e241b8f"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-17-R022-AC001",
-        "BRD-WS-17-R022-AC002"
+        "BRD-WS-17-R022-AC002",
+        "BRD-WS-17-R022-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-17-R022-O001",
@@ -7165,35 +7282,36 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-17-R022 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-17-R022 does not define a authorization boundary obligation."
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-17-R022 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-17-R022 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-17-R022 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-17-R022 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "BRD-WS-17-R022 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BRD-WS-17-R022-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BRD-WS-17-R022-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-17-R022 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-17-R022 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -7214,9 +7332,9 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_heading": "20. Operation Permission",
     "source_context_sha256": "6d40656f50a9ead910dd75e3bc79e99ac8f3f397474048d45d6a87a735d3271d",
     "source_document": "docs/BRD/BRD-WS-17.md",
-    "source_fingerprint": "d218c6fa7e3720fab8613bd35f68b36cf4fff1e944a728a6136a18f14d45d453",
-    "source_lines": "L545-L549",
-    "source_section": "20. Operation Permission"
+    "source_fingerprint": "b4ee276b1597c86a8e08f5d6b4a715a27a5a898d7cb4135d1258535b2e241b8f",
+    "source_lines": "L7244-L7355",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-17-R022"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -7241,47 +7359,27 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "SECURITY_DECISION_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-17-R023-AC001",
-      "given": "an identified principal, applicable assurance context, and policy inputs for Mọi thao tác đều: - Tuân thủ Security Policy",
-      "observable_evidence": "decision result, effective assurance or policy, denied or changed state, reason, and audit evidence",
-      "then": "the effective security policy produces the required allow, challenge, block, review, or denial result; protected state and audit evidence agree with that decision",
-      "verifies": [
-        "BRD-WS-17-R023-O001"
-      ],
-      "when": "the protected decision or action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "SECURITY_FAIL_CLOSED_V1",
-      "criterion_id": "BRD-WS-17-R023-AC002",
-      "given": "a principal or request that does not satisfy the assurance, policy, consent, or authorization boundary for Mọi thao tác đều: - Tuân thủ Security Policy",
-      "observable_evidence": "decision result, protected-state comparison, reason, effective policy, and audit record",
-      "then": "the result is challenge, block, review, or denial as required; protected state is unchanged and the reason is audited",
-      "verifies": [
-        "BRD-WS-17-R023-O001"
-      ],
-      "when": "the protected decision or action is attempted"
-    },
-    {
-      "case": "NEGATIVE_FAIL_CLOSED",
-      "controlled_contract": "REQUIREMENT_SPECIFIC_FAIL_CLOSED_V1",
-      "criterion_id": "BRD-WS-17-R023-AC003",
-      "given": "an input or attempted state change that violates a mandatory boundary explicitly stated by Mọi thao tác đều: - Tuân thủ Security Policy",
-      "observable_evidence": "violating input, decision and reason, before/after protected state, and audit or conformance evidence",
-      "then": "the violated obligation produces its specified rejection, denial, block, review, or non-conforming result without recording a contradictory success",
-      "verifies": [
-        "BRD-WS-17-R023-O001"
-      ],
-      "when": "the violating input or action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-17-R023",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "2b5884ab755c0b6c3d1dac9084900f87075dc6736d7cf972e025ddc1d1b7909d"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
@@ -7297,36 +7395,38 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
-      "criterion_references": [],
-      "rationale": "BRD-WS-17-R023 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    },
-    "CONCURRENCY": {
-      "criterion_references": [],
-      "rationale": "BRD-WS-17-R023 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    },
-    "IDEMPOTENCY": {
-      "criterion_references": [],
-      "rationale": "BRD-WS-17-R023 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    },
-    "NEGATIVE_FAIL_CLOSED": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BRD-WS-17-R023-AC003"
       ],
-      "status": "APPLICABLE"
+      "rationale": null
+    },
+    "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "BRD-WS-17-R023 does not define a concurrency obligation."
+    },
+    "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "BRD-WS-17-R023 does not define a idempotency obligation."
+    },
+    "NEGATIVE_FAIL_CLOSED": {
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BRD-WS-17-R023-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BRD-WS-17-R023-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-17-R023 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-17-R023 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -7347,9 +7447,9 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_heading": "20. Operation Permission",
     "source_context_sha256": "6d40656f50a9ead910dd75e3bc79e99ac8f3f397474048d45d6a87a735d3271d",
     "source_document": "docs/BRD/BRD-WS-17.md",
-    "source_fingerprint": "d218c6fa7e3720fab8613bd35f68b36cf4fff1e944a728a6136a18f14d45d453",
-    "source_lines": "L545-L549",
-    "source_section": "20. Operation Permission"
+    "source_fingerprint": "2b5884ab755c0b6c3d1dac9084900f87075dc6736d7cf972e025ddc1d1b7909d",
+    "source_lines": "L7357-L7470",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-17-R023"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -7374,9 +7474,20 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "NOT_APPLICABLE_FOR_V2.3",
+    "inference": false,
+    "requirement_id": "BRD-WS-17-R024",
+    "scope_status": "OUT_OF_SCOPE"
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "NOT_APPLICABLE_FOR_V2.3",
+    "runtime_status": "NOT_APPLICABLE_FOR_V2.3"
+  },
   "acceptance_rationale": "Requirement is explicitly outside the v2.3 product scope.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
   "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
   "acceptance_unit": false,
   "atomic_obligations": [],
@@ -7400,8 +7511,8 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_sha256": "bcf29d688f47334aa40500bdc112e9bfc515f9f4e3da2b5333277f4b6d7b29cf",
     "source_document": "docs/BRD/BRD-WS-17.md",
     "source_fingerprint": "15c04dacca91afb1cbccef27e95d9cbce439040ae79f49897d89b77d79599660",
-    "source_lines": "L612",
-    "source_section": "23. Auto Scaling"
+    "source_lines": "L7472-L7533",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-17-R024"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -7426,9 +7537,20 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "NOT_APPLICABLE_FOR_V2.3",
+    "inference": false,
+    "requirement_id": "BRD-WS-17-R025",
+    "scope_status": "OUT_OF_SCOPE"
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "NOT_APPLICABLE_FOR_V2.3",
+    "runtime_status": "NOT_APPLICABLE_FOR_V2.3"
+  },
   "acceptance_rationale": "Requirement is explicitly outside the v2.3 product scope.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
   "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
   "acceptance_unit": false,
   "atomic_obligations": [],
@@ -7452,8 +7574,8 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_sha256": "7ad31828e1954900121ef58910f0778d0e86628804d20e1962c93b86018944b1",
     "source_document": "docs/BRD/BRD-WS-17.md",
     "source_fingerprint": "c1b028d739304fa3ded7b96da5a24d694ea7261810de5d4769abd4de3499712e",
-    "source_lines": "L922",
-    "source_section": "35. Chaos Readiness"
+    "source_lines": "L7535-L7596",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-17-R025"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -7478,92 +7600,42 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_TASK_OBSERVABILITY_V1",
-      "criterion_id": "BRD-WS-17-R026-AC001",
-      "given": "a running operational task",
-      "observable_evidence": "operation identity, running state, signal names and values, and observation time",
-      "then": "current running state and the relevant operational signals are available",
-      "verifies": [
-        "BRD-WS-17-R026-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-003",
+        "P2-DEC-004",
+        "P2-DEC-010"
       ],
-      "when": "an operator inspects the task"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_TASK_OBSERVABILITY_V1",
-      "criterion_id": "BRD-WS-17-R026-AC002",
-      "given": "a completed operational task",
-      "observable_evidence": "operation identity, completed state, outcome, completion time, and evidence reference",
-      "then": "terminal completion state and outcome evidence are available",
-      "verifies": [
-        "BRD-WS-17-R026-O002"
-      ],
-      "when": "an operator inspects the task"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_TASK_OBSERVABILITY_V1",
-      "criterion_id": "BRD-WS-17-R026-AC003",
-      "given": "a failed operational task",
-      "observable_evidence": "operation identity, failed state, reason, diagnostic signal, and observation time",
-      "then": "failed state, failure outcome, and relevant diagnostic signal are available",
-      "verifies": [
-        "BRD-WS-17-R026-O003"
-      ],
-      "when": "an operator inspects the task"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "OPERATIONAL_OBSERVABILITY_VERIFICATION_V1",
-      "criterion_id": "BRD-WS-17-R026-AC004",
-      "given": "an operational task missing required state, outcome, or signal evidence",
-      "observable_evidence": "failed verification result, operation identity, and missing-evidence identifiers",
-      "then": "verification produces a detectable failure naming the missing evidence",
-      "verifies": [
-        "BRD-WS-17-R026-O004"
-      ],
-      "when": "operational observability is verified"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-17-R026",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "a79af721e98177ae2ee4ce93043222408069001dbfc98fdc120b80c6fb2c3180"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "BRD-WS-17-R026-AC001"
-      ],
-      "applicability": "V2.3_ACTIVE",
-      "obligation_id": "BRD-WS-17-R026-O001",
-      "obligation_text": "A running operational task exposes its current state and relevant operational signals."
-    },
-    {
-      "acceptance_criterion_references": [
-        "BRD-WS-17-R026-AC002"
-      ],
-      "applicability": "V2.3_ACTIVE",
-      "obligation_id": "BRD-WS-17-R026-O002",
-      "obligation_text": "A completed operational task exposes its outcome and completion evidence."
-    },
-    {
-      "acceptance_criterion_references": [
+        "BRD-WS-17-R026-AC001",
+        "BRD-WS-17-R026-AC002",
         "BRD-WS-17-R026-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
-      "obligation_id": "BRD-WS-17-R026-O003",
-      "obligation_text": "A failed operational task exposes its failure outcome and relevant diagnostic signal."
-    },
-    {
-      "acceptance_criterion_references": [
-        "BRD-WS-17-R026-AC004"
-      ],
-      "applicability": "V2.3_ACTIVE",
-      "obligation_id": "BRD-WS-17-R026-O004",
-      "obligation_text": "Missing required observability evidence produces a detectable operational verification failure."
+      "obligation_id": "BRD-WS-17-R026-O001",
+      "obligation_text": "Mọi tác vụ vận hành phải có khả năng quan sát được thông qua trạng thái, kết quả và tín hiệu vận hành phù hợp"
     }
   ],
   "criticality_applicability": null,
@@ -7584,7 +7656,10 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_baseline": "v2.2",
     "source_context_heading": "30. Enterprise Operations Principle",
     "source_context_sha256": "f4b6aeebc35c74925667ca32adae5d22b689e2ba373fa7cae75a6f8c6fe8ee2a",
-    "source_document": "docs/BRD/BRD-WS-17.md"
+    "source_document": "docs/BRD/BRD-WS-17.md",
+    "source_fingerprint": "a79af721e98177ae2ee4ce93043222408069001dbfc98fdc120b80c6fb2c3180",
+    "source_lines": "L7598-L7685",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-17-R026"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -7614,41 +7689,38 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "SECURITY_DECISION_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-17-R027-AC001",
-      "given": "an identified principal, applicable assurance context, and policy inputs for Auditable operational task",
-      "observable_evidence": "decision result, effective assurance or policy, denied or changed state, reason, and audit evidence",
-      "then": "the effective security policy produces the required allow, challenge, block, review, or denial result; protected state and audit evidence agree with that decision",
-      "verifies": [
-        "BRD-WS-17-R027-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-003",
+        "P2-DEC-004",
+        "P2-DEC-010"
       ],
-      "when": "the protected decision or action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "SECURITY_FAIL_CLOSED_V1",
-      "criterion_id": "BRD-WS-17-R027-AC002",
-      "given": "a principal or request that does not satisfy the assurance, policy, consent, or authorization boundary for Auditable operational task",
-      "observable_evidence": "decision result, protected-state comparison, reason, effective policy, and audit record",
-      "then": "the result is challenge, block, review, or denial as required; protected state is unchanged and the reason is audited",
-      "verifies": [
-        "BRD-WS-17-R027-O001"
-      ],
-      "when": "the protected decision or action is attempted"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-17-R027",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "d0b6531f91b7878c18a3753a5c57abc40619fa6b16f3246e1d5206fa687c9a78"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-17-R027-AC001",
-        "BRD-WS-17-R027-AC002"
+        "BRD-WS-17-R027-AC002",
+        "BRD-WS-17-R027-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-17-R027-O001",
@@ -7657,35 +7729,38 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
-      "criterion_references": [],
-      "rationale": "BRD-WS-17-R027 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BRD-WS-17-R027-AC003"
+      ],
+      "rationale": null
     },
     "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-17-R027 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-17-R027 does not define a concurrency obligation."
     },
     "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-17-R027 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-17-R027 does not define a idempotency obligation."
     },
     "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "BRD-WS-17-R027 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BRD-WS-17-R027-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BRD-WS-17-R027-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-17-R027 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-17-R027 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -7759,7 +7834,10 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_baseline": "v2.2",
     "source_context_heading": "30. Enterprise Operations Principle",
     "source_context_sha256": "f4b6aeebc35c74925667ca32adae5d22b689e2ba373fa7cae75a6f8c6fe8ee2a",
-    "source_document": "docs/BRD/BRD-WS-17.md"
+    "source_document": "docs/BRD/BRD-WS-17.md",
+    "source_fingerprint": "d0b6531f91b7878c18a3753a5c57abc40619fa6b16f3246e1d5206fa687c9a78",
+    "source_lines": "L7687-L7863",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-17-R027"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -7789,41 +7867,38 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-17-R028-AC001",
-      "given": "an operational task within the scope of Configurable operational task",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BRD-WS-17-R028-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-003",
+        "P2-DEC-004",
+        "P2-DEC-010"
       ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "OPERATIONAL_VERIFICATION_FAILURE_V1",
-      "criterion_id": "BRD-WS-17-R028-AC002",
-      "given": "an operational task missing an outcome, required signal, audit evidence, or recovery evidence for Configurable operational task",
-      "observable_evidence": "operator-visible verification result, missing-evidence identifier, operation state, and relevant signal or audit record",
-      "then": "verification reports the specific missing evidence as a detectable failure and does not report the task as conforming",
-      "verifies": [
-        "BRD-WS-17-R028-O001"
-      ],
-      "when": "operational verification is performed"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-17-R028",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "18dc80c3f8c8bd92977150986277835851309786421785ccef304dbe30789c6b"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "BRD-WS-17-R028-AC001",
-        "BRD-WS-17-R028-AC002"
+        "BRD-WS-17-R028-AC002",
+        "BRD-WS-17-R028-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "BRD-WS-17-R028-O001",
@@ -7848,7 +7923,10 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_baseline": "v2.2",
     "source_context_heading": "30. Enterprise Operations Principle",
     "source_context_sha256": "f4b6aeebc35c74925667ca32adae5d22b689e2ba373fa7cae75a6f8c6fe8ee2a",
-    "source_document": "docs/BRD/BRD-WS-17.md"
+    "source_document": "docs/BRD/BRD-WS-17.md",
+    "source_fingerprint": "18dc80c3f8c8bd92977150986277835851309786421785ccef304dbe30789c6b",
+    "source_lines": "L7865-L7952",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-17-R028"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -7878,47 +7956,35 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "SECURITY_DECISION_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-17-R029-AC001",
-      "given": "an identified principal, applicable assurance context, and policy inputs for Recoverable operational task",
-      "observable_evidence": "decision result, effective assurance or policy, denied or changed state, reason, and audit evidence",
-      "then": "the effective security policy produces the required allow, challenge, block, review, or denial result; protected state and audit evidence agree with that decision",
-      "verifies": [
-        "BRD-WS-17-R029-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-003",
+        "P2-DEC-004",
+        "P2-DEC-010"
       ],
-      "when": "the protected decision or action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "SECURITY_FAIL_CLOSED_V1",
-      "criterion_id": "BRD-WS-17-R029-AC002",
-      "given": "a principal or request that does not satisfy the assurance, policy, consent, or authorization boundary for Recoverable operational task",
-      "observable_evidence": "decision result, protected-state comparison, reason, effective policy, and audit record",
-      "then": "the result is challenge, block, review, or denial as required; protected state is unchanged and the reason is audited",
-      "verifies": [
-        "BRD-WS-17-R029-O001"
-      ],
-      "when": "the protected decision or action is attempted"
-    },
-    {
-      "case": "RECOVERY",
-      "controlled_contract": "EXPLICIT_RECOVERY_CONTRACT_V1",
-      "criterion_id": "BRD-WS-17-R029-AC003",
-      "given": "a failed or interrupted case for which Recoverable operational task explicitly defines recovery, restore, rollback, or fallback behavior",
-      "observable_evidence": "pre-failure state, recovery action, resulting state, outcome, and recovery evidence named by the obligation",
-      "then": "the resulting state and outcome follow the requirement-specific recovery obligation and expose whether recovery completed or failed",
-      "verifies": [
-        "BRD-WS-17-R029-O001"
-      ],
-      "when": "the declared recovery path is invoked"
+      "approved_semantic_completion_selection": {
+        "decision_id": "P2C-SC-C1-DEC-016",
+        "option_id": "OPT-AST"
+      },
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-17-R029",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "fc5f7ec5de6d8864e25caf5d82f93c916e2337015ffdf40ff18590f73a07aa05"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
@@ -7934,36 +8000,38 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
-      "criterion_references": [],
-      "rationale": "BRD-WS-17-R029 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    },
-    "CONCURRENCY": {
-      "criterion_references": [],
-      "rationale": "BRD-WS-17-R029 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    },
-    "IDEMPOTENCY": {
-      "criterion_references": [],
-      "rationale": "BRD-WS-17-R029 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    },
-    "NEGATIVE_FAIL_CLOSED": {
-      "criterion_references": [],
-      "rationale": "BRD-WS-17-R029 does not define a negative fail closed obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    },
-    "POSITIVE": {
-      "criterion_references": [
-        "BRD-WS-17-R029-AC001"
-      ],
-      "status": "APPLICABLE"
-    },
-    "RECOVERY": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BRD-WS-17-R029-AC003"
       ],
-      "status": "APPLICABLE"
+      "rationale": null
+    },
+    "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "BRD-WS-17-R029 does not define a concurrency obligation."
+    },
+    "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "BRD-WS-17-R029 does not define a idempotency obligation."
+    },
+    "NEGATIVE_FAIL_CLOSED": {
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BRD-WS-17-R029-AC002"
+      ]
+    },
+    "POSITIVE": {
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BRD-WS-17-R029-AC001"
+      ]
+    },
+    "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "BRD-WS-17-R029 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -8116,7 +8184,10 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_baseline": "v2.2",
     "source_context_heading": "30. Enterprise Operations Principle",
     "source_context_sha256": "f4b6aeebc35c74925667ca32adae5d22b689e2ba373fa7cae75a6f8c6fe8ee2a",
-    "source_document": "docs/BRD/BRD-WS-17.md"
+    "source_document": "docs/BRD/BRD-WS-17.md",
+    "source_fingerprint": "fc5f7ec5de6d8864e25caf5d82f93c916e2337015ffdf40ff18590f73a07aa05",
+    "source_lines": "L7954-L8213",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-17-R029"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -8146,51 +8217,17 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-17-R030-AC001",
-      "given": "an operational task within the scope of Automatable operational task",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "BRD-WS-17-R030-O001"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "OPERATIONAL_VERIFICATION_FAILURE_V1",
-      "criterion_id": "BRD-WS-17-R030-AC002",
-      "given": "an operational task missing an outcome, required signal, audit evidence, or recovery evidence for Automatable operational task",
-      "observable_evidence": "operator-visible verification result, missing-evidence identifier, operation state, and relevant signal or audit record",
-      "then": "verification reports the specific missing evidence as a detectable failure and does not report the task as conforming",
-      "verifies": [
-        "BRD-WS-17-R030-O001"
-      ],
-      "when": "operational verification is performed"
-    }
-  ],
-  "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
-  "acceptance_unit": true,
-  "atomic_obligations": [
-    {
-      "acceptance_criterion_references": [
-        "BRD-WS-17-R030-AC001",
-        "BRD-WS-17-R030-AC002"
-      ],
-      "applicability": "V2.3_ACTIVE",
-      "obligation_id": "BRD-WS-17-R030-O001",
-      "obligation_text": "Mọi tác vụ vận hành phải có contract cho phép tự động hóa có kiểm soát, permission và audit"
-    }
-  ],
+  "acceptance_contract": null,
+  "acceptance_mechanism": null,
+  "acceptance_rationale": "Composite parent coverage is satisfied only through ALL_CHILDREN; the parent is not an implementation, acceptance, scope-coverage, or criticality unit.",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "STRUCTURAL_RECORD",
+  "acceptance_unit": false,
+  "atomic_obligations": [],
   "criticality_applicability": null,
-  "criticality_unit": true,
+  "criticality_unit": false,
   "delivery_commitment": "COMMITTED_FOR_V2.3",
-  "implementation_unit": true,
+  "implementation_unit": false,
   "lifecycle": "V2.3_DRAFT",
   "normative_statement": "Mọi tác vụ vận hành phải có contract cho phép tự động hóa có kiểm soát, permission và audit.",
   "provenance": {
@@ -8198,34 +8235,48 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "approved_decisions": [
       "P2-DEC-003",
       "P2-DEC-004",
-      "P2-DEC-010"
+      "P2-DEC-010",
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
     ],
     "identity_origin": "PHASE_2C_NEW_ALLOCATION",
+    "phase_2c_c3_actions": [
+      "C3_STRUCTURAL_RECONCILIATION_PARENT"
+    ],
     "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
     "source_baseline": "v2.2",
     "source_context_heading": "30. Enterprise Operations Principle",
     "source_context_sha256": "f4b6aeebc35c74925667ca32adae5d22b689e2ba373fa7cae75a6f8c6fe8ee2a",
-    "source_document": "docs/BRD/BRD-WS-17.md"
+    "source_document": "docs/BRD/BRD-WS-17.md",
+    "source_fingerprint": "998ff8a61e478a1159db77563dc727563b24e3850e7ffaf90f8ab44da6ed004e",
+    "source_fingerprint_before_c3": null,
+    "source_lines": "L8215-L8282",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-17-R030"
   },
-  "record_kind": "CANONICAL_ATOMIC",
+  "record_kind": "COMPOSITE_PARENT",
   "relationships": {
     "alias_of": null,
     "aliases": [],
-    "coverage_mode": null,
+    "coverage_mode": "ALL_CHILDREN",
     "derived_from": [
       "BRD-WS-17-R013"
     ],
-    "derived_requirements": [],
+    "derived_requirements": [
+      "BRD-WS-17-R041",
+      "BRD-WS-17-R042",
+      "BRD-WS-17-R043"
+    ],
     "satisfies_composite_parents": [
       "BRD-WS-17-R013"
     ]
   },
   "requirement_type": "OPERATIONAL_REQUIREMENT",
-  "scope_coverage_unit": true,
+  "scope_coverage_unit": false,
   "scope_status": "V2.3_ACTIVE",
   "stable_id": "BRD-WS-17-R030",
   "title": "Automatable operational task",
-  "verification_criticality": "HIGH"
+  "verification_criticality": "NOT_APPLICABLE"
 }
 ```
 <!-- YSIM:REQUIREMENT END -->
@@ -8235,47 +8286,31 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "SECURITY_DECISION_OBSERVATION_V1",
-      "criterion_id": "BRD-WS-17-R031-AC001",
-      "given": "an identified principal, applicable assurance context, and policy inputs for No direct infrastructure manipulation",
-      "observable_evidence": "decision result, effective assurance or policy, denied or changed state, reason, and audit evidence",
-      "then": "the prohibited security decision path produces no effective permission or protected-state change, and conformance evidence identifies the attempted bypass",
-      "verifies": [
-        "BRD-WS-17-R031-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-003",
+        "P2-DEC-004",
+        "P2-DEC-010"
       ],
-      "when": "the protected decision or action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "SECURITY_FAIL_CLOSED_V1",
-      "criterion_id": "BRD-WS-17-R031-AC002",
-      "given": "a principal or request that does not satisfy the assurance, policy, consent, or authorization boundary for No direct infrastructure manipulation",
-      "observable_evidence": "decision result, protected-state comparison, reason, effective policy, and audit record",
-      "then": "the result is challenge, block, review, or denial as required; protected state is unchanged and the reason is audited",
-      "verifies": [
-        "BRD-WS-17-R031-O001"
-      ],
-      "when": "the protected decision or action is attempted"
-    },
-    {
-      "case": "NEGATIVE_FAIL_CLOSED",
-      "controlled_contract": "REQUIREMENT_SPECIFIC_FAIL_CLOSED_V1",
-      "criterion_id": "BRD-WS-17-R031-AC003",
-      "given": "an input or attempted state change that violates a mandatory boundary explicitly stated by No direct infrastructure manipulation",
-      "observable_evidence": "violating input, decision and reason, before/after protected state, and audit or conformance evidence",
-      "then": "the violated obligation produces its specified rejection, denial, block, review, or non-conforming result without recording a contradictory success",
-      "verifies": [
-        "BRD-WS-17-R031-O001"
-      ],
-      "when": "the violating input or action is evaluated"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-17-R031",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "6cb5dec3517d16a8f4fbc8c9bd5d5509b5da04093f49c55dd9b1ba000f7f58de"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
@@ -8291,36 +8326,38 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
-      "criterion_references": [],
-      "rationale": "BRD-WS-17-R031 does not define a authorization boundary obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    },
-    "CONCURRENCY": {
-      "criterion_references": [],
-      "rationale": "BRD-WS-17-R031 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    },
-    "IDEMPOTENCY": {
-      "criterion_references": [],
-      "rationale": "BRD-WS-17-R031 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    },
-    "NEGATIVE_FAIL_CLOSED": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BRD-WS-17-R031-AC003"
       ],
-      "status": "APPLICABLE"
+      "rationale": null
+    },
+    "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "BRD-WS-17-R031 does not define a concurrency obligation."
+    },
+    "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "BRD-WS-17-R031 does not define a idempotency obligation."
+    },
+    "NEGATIVE_FAIL_CLOSED": {
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "BRD-WS-17-R031-AC002"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "BRD-WS-17-R031-AC001"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "BRD-WS-17-R031 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "BRD-WS-17-R031 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -8340,7 +8377,10 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_baseline": "v2.2",
     "source_context_heading": "30. Enterprise Operations Principle",
     "source_context_sha256": "f4b6aeebc35c74925667ca32adae5d22b689e2ba373fa7cae75a6f8c6fe8ee2a",
-    "source_document": "docs/BRD/BRD-WS-17.md"
+    "source_document": "docs/BRD/BRD-WS-17.md",
+    "source_fingerprint": "6cb5dec3517d16a8f4fbc8c9bd5d5509b5da04093f49c55dd9b1ba000f7f58de",
+    "source_lines": "L8284-L8406",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-17-R031"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -8366,45 +8406,1228 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 <!-- YSIM:REQUIREMENT END -->
 
 <!-- YSIM:REQUIREMENT BEGIN -->
+### BRD-WS-17-R032 — Alert Rule là Business Object
+
+```json
+{
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "V23-P2C-ACCEPTANCE-MAPPING-C3"
+      ],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-17-R032",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "b757bac6b5a2073797eea638dd84e0f3faecfc0b75240c3a4bc28be82a2d968a"
+    }
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
+  "acceptance_rationale": null,
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+  "acceptance_unit": true,
+  "atomic_obligations": [
+    {
+      "acceptance_criterion_references": [
+        "BRD-WS-17-R032-AC001",
+        "BRD-WS-17-R032-AC002",
+        "BRD-WS-17-R032-AC003"
+      ],
+      "applicability": "V2.3_ACTIVE",
+      "obligation_id": "BRD-WS-17-R032-O001",
+      "obligation_text": "Alert Rule là Business Object"
+    }
+  ],
+  "criticality_applicability": null,
+  "criticality_unit": true,
+  "delivery_commitment": "COMMITTED_FOR_V2.3",
+  "implementation_unit": true,
+  "lifecycle": "V2.3_DRAFT",
+  "normative_statement": "Alert Rule là Business Object.",
+  "provenance": {
+    "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+    "approved_decisions": [
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
+    ],
+    "derived_from_parent": "BD-17-005",
+    "identity_origin": "PHASE_2C_C3_NEW_STABLE_ID_ALLOCATION",
+    "original_identity": "BRD-WS-17-R032",
+    "phase_2c_c3_actions": [
+      "C3_STRUCTURAL_RECONCILIATION_CHILD"
+    ],
+    "previous_temporary_key": null,
+    "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+    "source_baseline": "v2.2",
+    "source_context_heading": "7. Alert Rule",
+    "source_context_sha256": "20268973697bfc64bdd4536c7deca7ea62de0777e79a4ef2903bd3f315dcad18",
+    "source_document": "docs/BRD/BRD-WS-17.md",
+    "source_fingerprint": "b757bac6b5a2073797eea638dd84e0f3faecfc0b75240c3a4bc28be82a2d968a",
+    "source_fingerprint_before_c3": "b757bac6b5a2073797eea638dd84e0f3faecfc0b75240c3a4bc28be82a2d968a",
+    "source_lines": "L8408-L8500",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-17-R032"
+  },
+  "record_kind": "CANONICAL_ATOMIC",
+  "relationships": {
+    "alias_of": null,
+    "aliases": [],
+    "coverage_mode": null,
+    "derived_from": [
+      "BD-17-005"
+    ],
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "BD-17-005"
+    ]
+  },
+  "requirement_type": "OPERATIONAL_REQUIREMENT",
+  "scope_coverage_unit": true,
+  "scope_status": "V2.3_ACTIVE",
+  "stable_id": "BRD-WS-17-R032",
+  "title": "Alert Rule là Business Object",
+  "verification_criticality": "HIGH"
+}
+```
+<!-- YSIM:REQUIREMENT END -->
+
+<!-- YSIM:REQUIREMENT BEGIN -->
+### BRD-WS-17-R033 — Alert Rule được cấu hình
+
+```json
+{
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "V23-P2C-ACCEPTANCE-MAPPING-C3"
+      ],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-17-R033",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "9464c3992afb49e38d16abdace1d46e27152f00917da3e5c813875d64aa750f0"
+    }
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
+  "acceptance_rationale": null,
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+  "acceptance_unit": true,
+  "atomic_obligations": [
+    {
+      "acceptance_criterion_references": [
+        "BRD-WS-17-R033-AC001",
+        "BRD-WS-17-R033-AC002",
+        "BRD-WS-17-R033-AC003"
+      ],
+      "applicability": "V2.3_ACTIVE",
+      "obligation_id": "BRD-WS-17-R033-O001",
+      "obligation_text": "Alert Rule được cấu hình"
+    }
+  ],
+  "criticality_applicability": null,
+  "criticality_unit": true,
+  "delivery_commitment": "COMMITTED_FOR_V2.3",
+  "implementation_unit": true,
+  "lifecycle": "V2.3_DRAFT",
+  "normative_statement": "Alert Rule được cấu hình.",
+  "provenance": {
+    "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+    "approved_decisions": [
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
+    ],
+    "derived_from_parent": "BD-17-005",
+    "identity_origin": "PHASE_2C_C3_NEW_STABLE_ID_ALLOCATION",
+    "original_identity": "BRD-WS-17-R033",
+    "phase_2c_c3_actions": [
+      "C3_STRUCTURAL_RECONCILIATION_CHILD"
+    ],
+    "previous_temporary_key": null,
+    "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+    "source_baseline": "v2.2",
+    "source_context_heading": "7. Alert Rule",
+    "source_context_sha256": "20268973697bfc64bdd4536c7deca7ea62de0777e79a4ef2903bd3f315dcad18",
+    "source_document": "docs/BRD/BRD-WS-17.md",
+    "source_fingerprint": "9464c3992afb49e38d16abdace1d46e27152f00917da3e5c813875d64aa750f0",
+    "source_fingerprint_before_c3": "9464c3992afb49e38d16abdace1d46e27152f00917da3e5c813875d64aa750f0",
+    "source_lines": "L8502-L8594",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-17-R033"
+  },
+  "record_kind": "CANONICAL_ATOMIC",
+  "relationships": {
+    "alias_of": null,
+    "aliases": [],
+    "coverage_mode": null,
+    "derived_from": [
+      "BD-17-005"
+    ],
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "BD-17-005"
+    ]
+  },
+  "requirement_type": "OPERATIONAL_REQUIREMENT",
+  "scope_coverage_unit": true,
+  "scope_status": "V2.3_ACTIVE",
+  "stable_id": "BRD-WS-17-R033",
+  "title": "Alert Rule được cấu hình",
+  "verification_criticality": "HIGH"
+}
+```
+<!-- YSIM:REQUIREMENT END -->
+
+<!-- YSIM:REQUIREMENT BEGIN -->
+### BRD-WS-17-R034 — Không Hard-code
+
+```json
+{
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "V23-P2C-ACCEPTANCE-MAPPING-C3"
+      ],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-17-R034",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "4a4f9fc70196c62582583bd1f5a465fcfd49191969988f4db3f00452e0acf501"
+    }
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
+  "acceptance_rationale": null,
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+  "acceptance_unit": true,
+  "atomic_obligations": [
+    {
+      "acceptance_criterion_references": [
+        "BRD-WS-17-R034-AC001",
+        "BRD-WS-17-R034-AC002",
+        "BRD-WS-17-R034-AC003"
+      ],
+      "applicability": "V2.3_ACTIVE",
+      "obligation_id": "BRD-WS-17-R034-O001",
+      "obligation_text": "Không Hard-code"
+    }
+  ],
+  "criticality_applicability": null,
+  "criticality_unit": true,
+  "delivery_commitment": "COMMITTED_FOR_V2.3",
+  "implementation_unit": true,
+  "lifecycle": "V2.3_DRAFT",
+  "normative_statement": "Không Hard-code.",
+  "provenance": {
+    "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+    "approved_decisions": [
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
+    ],
+    "derived_from_parent": "BD-17-005",
+    "identity_origin": "PHASE_2C_C3_NEW_STABLE_ID_ALLOCATION",
+    "original_identity": "BRD-WS-17-R034",
+    "phase_2c_c3_actions": [
+      "C3_STRUCTURAL_RECONCILIATION_CHILD"
+    ],
+    "previous_temporary_key": null,
+    "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+    "source_baseline": "v2.2",
+    "source_context_heading": "7. Alert Rule",
+    "source_context_sha256": "20268973697bfc64bdd4536c7deca7ea62de0777e79a4ef2903bd3f315dcad18",
+    "source_document": "docs/BRD/BRD-WS-17.md",
+    "source_fingerprint": "4a4f9fc70196c62582583bd1f5a465fcfd49191969988f4db3f00452e0acf501",
+    "source_fingerprint_before_c3": "4a4f9fc70196c62582583bd1f5a465fcfd49191969988f4db3f00452e0acf501",
+    "source_lines": "L8596-L8688",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-17-R034"
+  },
+  "record_kind": "CANONICAL_ATOMIC",
+  "relationships": {
+    "alias_of": null,
+    "aliases": [],
+    "coverage_mode": null,
+    "derived_from": [
+      "BD-17-005"
+    ],
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "BD-17-005"
+    ]
+  },
+  "requirement_type": "OPERATIONAL_REQUIREMENT",
+  "scope_coverage_unit": true,
+  "scope_status": "V2.3_ACTIVE",
+  "stable_id": "BRD-WS-17-R034",
+  "title": "Không Hard-code",
+  "verification_criticality": "HIGH"
+}
+```
+<!-- YSIM:REQUIREMENT END -->
+
+<!-- YSIM:REQUIREMENT BEGIN -->
+### BRD-WS-17-R035 — Alert được gửi theo Notification Preference
+
+```json
+{
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "V23-P2C-ACCEPTANCE-MAPPING-C3"
+      ],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-17-R035",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "9456566f656a118dc88dc9ce0b35336606c7775fa6a64cc9c220f791388e07f6"
+    }
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
+  "acceptance_rationale": null,
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+  "acceptance_unit": true,
+  "atomic_obligations": [
+    {
+      "acceptance_criterion_references": [
+        "BRD-WS-17-R035-AC001",
+        "BRD-WS-17-R035-AC002",
+        "BRD-WS-17-R035-AC003"
+      ],
+      "applicability": "V2.3_ACTIVE",
+      "obligation_id": "BRD-WS-17-R035-O001",
+      "obligation_text": "Alert được gửi theo Notification Preference"
+    }
+  ],
+  "criticality_applicability": null,
+  "criticality_unit": true,
+  "delivery_commitment": "COMMITTED_FOR_V2.3",
+  "implementation_unit": true,
+  "lifecycle": "V2.3_DRAFT",
+  "normative_statement": "Alert được gửi theo Notification Preference.",
+  "provenance": {
+    "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+    "approved_decisions": [
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
+    ],
+    "derived_from_parent": "BD-17-006",
+    "identity_origin": "PHASE_2C_C3_NEW_STABLE_ID_ALLOCATION",
+    "original_identity": "BRD-WS-17-R035",
+    "phase_2c_c3_actions": [
+      "C3_STRUCTURAL_RECONCILIATION_CHILD"
+    ],
+    "previous_temporary_key": null,
+    "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+    "source_baseline": "v2.2",
+    "source_context_heading": "BD-17-006",
+    "source_context_sha256": "da00372cb2b839eb3d3445a3cb7fb61416558a5cc85f95e72c2bf933f422f32b",
+    "source_document": "docs/BRD/BRD-WS-17.md",
+    "source_fingerprint": "9456566f656a118dc88dc9ce0b35336606c7775fa6a64cc9c220f791388e07f6",
+    "source_fingerprint_before_c3": "9456566f656a118dc88dc9ce0b35336606c7775fa6a64cc9c220f791388e07f6",
+    "source_lines": "L8690-L8782",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-17-R035"
+  },
+  "record_kind": "CANONICAL_ATOMIC",
+  "relationships": {
+    "alias_of": null,
+    "aliases": [],
+    "coverage_mode": null,
+    "derived_from": [
+      "BD-17-006"
+    ],
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "BD-17-006"
+    ]
+  },
+  "requirement_type": "OPERATIONAL_REQUIREMENT",
+  "scope_coverage_unit": true,
+  "scope_status": "V2.3_ACTIVE",
+  "stable_id": "BRD-WS-17-R035",
+  "title": "Alert được gửi theo Notification Preference",
+  "verification_criticality": "HIGH"
+}
+```
+<!-- YSIM:REQUIREMENT END -->
+
+<!-- YSIM:REQUIREMENT BEGIN -->
+### BRD-WS-17-R036 — Personal Inbox luôn là kênh nhận mặc định
+
+```json
+{
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "V23-P2C-ACCEPTANCE-MAPPING-C3"
+      ],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-17-R036",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "f35e2a44d8dd5c489d011c36443261322d385378594d1030bc2bb9f131914df8"
+    }
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
+  "acceptance_rationale": null,
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+  "acceptance_unit": true,
+  "atomic_obligations": [
+    {
+      "acceptance_criterion_references": [
+        "BRD-WS-17-R036-AC001",
+        "BRD-WS-17-R036-AC002",
+        "BRD-WS-17-R036-AC003"
+      ],
+      "applicability": "V2.3_ACTIVE",
+      "obligation_id": "BRD-WS-17-R036-O001",
+      "obligation_text": "Personal Inbox luôn là kênh nhận mặc định"
+    }
+  ],
+  "criticality_applicability": null,
+  "criticality_unit": true,
+  "delivery_commitment": "COMMITTED_FOR_V2.3",
+  "implementation_unit": true,
+  "lifecycle": "V2.3_DRAFT",
+  "normative_statement": "Personal Inbox luôn là kênh nhận mặc định.",
+  "provenance": {
+    "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+    "approved_decisions": [
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
+    ],
+    "derived_from_parent": "BD-17-006",
+    "identity_origin": "PHASE_2C_C3_NEW_STABLE_ID_ALLOCATION",
+    "original_identity": "BRD-WS-17-R036",
+    "phase_2c_c3_actions": [
+      "C3_STRUCTURAL_RECONCILIATION_CHILD"
+    ],
+    "previous_temporary_key": null,
+    "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+    "source_baseline": "v2.2",
+    "source_context_heading": "BD-17-006",
+    "source_context_sha256": "da00372cb2b839eb3d3445a3cb7fb61416558a5cc85f95e72c2bf933f422f32b",
+    "source_document": "docs/BRD/BRD-WS-17.md",
+    "source_fingerprint": "f35e2a44d8dd5c489d011c36443261322d385378594d1030bc2bb9f131914df8",
+    "source_fingerprint_before_c3": "f35e2a44d8dd5c489d011c36443261322d385378594d1030bc2bb9f131914df8",
+    "source_lines": "L8784-L8876",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-17-R036"
+  },
+  "record_kind": "CANONICAL_ATOMIC",
+  "relationships": {
+    "alias_of": null,
+    "aliases": [],
+    "coverage_mode": null,
+    "derived_from": [
+      "BD-17-006"
+    ],
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "BD-17-006"
+    ]
+  },
+  "requirement_type": "OPERATIONAL_REQUIREMENT",
+  "scope_coverage_unit": true,
+  "scope_status": "V2.3_ACTIVE",
+  "stable_id": "BRD-WS-17-R036",
+  "title": "Personal Inbox luôn là kênh nhận mặc định",
+  "verification_criticality": "HIGH"
+}
+```
+<!-- YSIM:REQUIREMENT END -->
+
+<!-- YSIM:REQUIREMENT BEGIN -->
+### BRD-WS-17-R037 — Scheduler là Business Object. Scheduler hỗ trợ: Cron
+
+```json
+{
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "V23-P2C-ACCEPTANCE-MAPPING-C3"
+      ],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-17-R037",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "2e4110182479f13f22ccf98ee8454161bc787af581700a985eb5fb387a45ec72"
+    }
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
+  "acceptance_rationale": null,
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+  "acceptance_unit": true,
+  "atomic_obligations": [
+    {
+      "acceptance_criterion_references": [
+        "BRD-WS-17-R037-AC001",
+        "BRD-WS-17-R037-AC003",
+        "BRD-WS-17-R037-AC004"
+      ],
+      "applicability": "V2.3_ACTIVE",
+      "obligation_id": "BRD-WS-17-R037-O001",
+      "obligation_text": "Scheduler là Business Object"
+    },
+    {
+      "acceptance_criterion_references": [
+        "BRD-WS-17-R037-AC002",
+        "BRD-WS-17-R037-AC003",
+        "BRD-WS-17-R037-AC004"
+      ],
+      "applicability": "V2.3_ACTIVE",
+      "obligation_id": "BRD-WS-17-R037-O002",
+      "obligation_text": "Scheduler hỗ trợ: Cron"
+    }
+  ],
+  "criticality_applicability": null,
+  "criticality_unit": true,
+  "delivery_commitment": "COMMITTED_FOR_V2.3",
+  "implementation_unit": true,
+  "lifecycle": "V2.3_DRAFT",
+  "normative_statement": "Scheduler là Business Object. Scheduler hỗ trợ: Cron.",
+  "provenance": {
+    "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+    "approved_decisions": [
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
+    ],
+    "derived_from_parent": "BD-17-007",
+    "identity_origin": "PHASE_2C_C3_NEW_STABLE_ID_ALLOCATION",
+    "original_identity": "BRD-WS-17-R037",
+    "phase_2c_c3_actions": [
+      "C3_STRUCTURAL_RECONCILIATION_CHILD"
+    ],
+    "previous_temporary_key": null,
+    "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+    "source_baseline": "v2.2",
+    "source_context_heading": "9. Scheduler",
+    "source_context_sha256": "867847cfa5f35a218d9ca4c09054fad6f3806ef2db0bd26361426efbaad00983",
+    "source_document": "docs/BRD/BRD-WS-17.md",
+    "source_fingerprint": "2e4110182479f13f22ccf98ee8454161bc787af581700a985eb5fb387a45ec72",
+    "source_fingerprint_before_c3": "2e4110182479f13f22ccf98ee8454161bc787af581700a985eb5fb387a45ec72",
+    "source_lines": "L8878-L8980",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-17-R037"
+  },
+  "record_kind": "CANONICAL_ATOMIC",
+  "relationships": {
+    "alias_of": null,
+    "aliases": [],
+    "coverage_mode": null,
+    "derived_from": [
+      "BD-17-007"
+    ],
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "BD-17-007"
+    ]
+  },
+  "requirement_type": "DATA_REQUIREMENT",
+  "scope_coverage_unit": true,
+  "scope_status": "V2.3_ACTIVE",
+  "stable_id": "BRD-WS-17-R037",
+  "title": "Scheduler là Business Object. Scheduler hỗ trợ: Cron",
+  "verification_criticality": "HIGH"
+}
+```
+<!-- YSIM:REQUIREMENT END -->
+
+<!-- YSIM:REQUIREMENT BEGIN -->
+### BRD-WS-17-R038 — Scheduler là Business Object. Scheduler hỗ trợ: Fixed Interval
+
+```json
+{
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "V23-P2C-ACCEPTANCE-MAPPING-C3"
+      ],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-17-R038",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "62abd614da4eed656b0387b9709829ced44755c94fb894e61658d82b6f982fdc"
+    }
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
+  "acceptance_rationale": null,
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+  "acceptance_unit": true,
+  "atomic_obligations": [
+    {
+      "acceptance_criterion_references": [
+        "BRD-WS-17-R038-AC001",
+        "BRD-WS-17-R038-AC003",
+        "BRD-WS-17-R038-AC004"
+      ],
+      "applicability": "V2.3_ACTIVE",
+      "obligation_id": "BRD-WS-17-R038-O001",
+      "obligation_text": "Scheduler là Business Object"
+    },
+    {
+      "acceptance_criterion_references": [
+        "BRD-WS-17-R038-AC002",
+        "BRD-WS-17-R038-AC003",
+        "BRD-WS-17-R038-AC004"
+      ],
+      "applicability": "V2.3_ACTIVE",
+      "obligation_id": "BRD-WS-17-R038-O002",
+      "obligation_text": "Scheduler hỗ trợ: Fixed Interval"
+    }
+  ],
+  "criticality_applicability": null,
+  "criticality_unit": true,
+  "delivery_commitment": "COMMITTED_FOR_V2.3",
+  "implementation_unit": true,
+  "lifecycle": "V2.3_DRAFT",
+  "normative_statement": "Scheduler là Business Object. Scheduler hỗ trợ: Fixed Interval.",
+  "provenance": {
+    "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+    "approved_decisions": [
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
+    ],
+    "derived_from_parent": "BD-17-007",
+    "identity_origin": "PHASE_2C_C3_NEW_STABLE_ID_ALLOCATION",
+    "original_identity": "BRD-WS-17-R038",
+    "phase_2c_c3_actions": [
+      "C3_STRUCTURAL_RECONCILIATION_CHILD"
+    ],
+    "previous_temporary_key": null,
+    "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+    "source_baseline": "v2.2",
+    "source_context_heading": "9. Scheduler",
+    "source_context_sha256": "867847cfa5f35a218d9ca4c09054fad6f3806ef2db0bd26361426efbaad00983",
+    "source_document": "docs/BRD/BRD-WS-17.md",
+    "source_fingerprint": "62abd614da4eed656b0387b9709829ced44755c94fb894e61658d82b6f982fdc",
+    "source_fingerprint_before_c3": "62abd614da4eed656b0387b9709829ced44755c94fb894e61658d82b6f982fdc",
+    "source_lines": "L8982-L9084",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-17-R038"
+  },
+  "record_kind": "CANONICAL_ATOMIC",
+  "relationships": {
+    "alias_of": null,
+    "aliases": [],
+    "coverage_mode": null,
+    "derived_from": [
+      "BD-17-007"
+    ],
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "BD-17-007"
+    ]
+  },
+  "requirement_type": "DATA_REQUIREMENT",
+  "scope_coverage_unit": true,
+  "scope_status": "V2.3_ACTIVE",
+  "stable_id": "BRD-WS-17-R038",
+  "title": "Scheduler là Business Object. Scheduler hỗ trợ: Fixed Interval",
+  "verification_criticality": "HIGH"
+}
+```
+<!-- YSIM:REQUIREMENT END -->
+
+<!-- YSIM:REQUIREMENT BEGIN -->
+### BRD-WS-17-R039 — Scheduler là Business Object. Scheduler hỗ trợ: Manual Trigger
+
+```json
+{
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "V23-P2C-ACCEPTANCE-MAPPING-C3"
+      ],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-17-R039",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "112d2e1b18471752254f132009692c975c3c30f772fbda2f83e927954671c55a"
+    }
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
+  "acceptance_rationale": null,
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+  "acceptance_unit": true,
+  "atomic_obligations": [
+    {
+      "acceptance_criterion_references": [
+        "BRD-WS-17-R039-AC001",
+        "BRD-WS-17-R039-AC003",
+        "BRD-WS-17-R039-AC004"
+      ],
+      "applicability": "V2.3_ACTIVE",
+      "obligation_id": "BRD-WS-17-R039-O001",
+      "obligation_text": "Scheduler là Business Object"
+    },
+    {
+      "acceptance_criterion_references": [
+        "BRD-WS-17-R039-AC002",
+        "BRD-WS-17-R039-AC003",
+        "BRD-WS-17-R039-AC004"
+      ],
+      "applicability": "V2.3_ACTIVE",
+      "obligation_id": "BRD-WS-17-R039-O002",
+      "obligation_text": "Scheduler hỗ trợ: Manual Trigger"
+    }
+  ],
+  "criticality_applicability": null,
+  "criticality_unit": true,
+  "delivery_commitment": "COMMITTED_FOR_V2.3",
+  "implementation_unit": true,
+  "lifecycle": "V2.3_DRAFT",
+  "normative_statement": "Scheduler là Business Object. Scheduler hỗ trợ: Manual Trigger.",
+  "provenance": {
+    "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+    "approved_decisions": [
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
+    ],
+    "derived_from_parent": "BD-17-007",
+    "identity_origin": "PHASE_2C_C3_NEW_STABLE_ID_ALLOCATION",
+    "original_identity": "BRD-WS-17-R039",
+    "phase_2c_c3_actions": [
+      "C3_STRUCTURAL_RECONCILIATION_CHILD"
+    ],
+    "previous_temporary_key": null,
+    "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+    "source_baseline": "v2.2",
+    "source_context_heading": "9. Scheduler",
+    "source_context_sha256": "867847cfa5f35a218d9ca4c09054fad6f3806ef2db0bd26361426efbaad00983",
+    "source_document": "docs/BRD/BRD-WS-17.md",
+    "source_fingerprint": "112d2e1b18471752254f132009692c975c3c30f772fbda2f83e927954671c55a",
+    "source_fingerprint_before_c3": "112d2e1b18471752254f132009692c975c3c30f772fbda2f83e927954671c55a",
+    "source_lines": "L9086-L9188",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-17-R039"
+  },
+  "record_kind": "CANONICAL_ATOMIC",
+  "relationships": {
+    "alias_of": null,
+    "aliases": [],
+    "coverage_mode": null,
+    "derived_from": [
+      "BD-17-007"
+    ],
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "BD-17-007"
+    ]
+  },
+  "requirement_type": "DATA_REQUIREMENT",
+  "scope_coverage_unit": true,
+  "scope_status": "V2.3_ACTIVE",
+  "stable_id": "BRD-WS-17-R039",
+  "title": "Scheduler là Business Object. Scheduler hỗ trợ: Manual Trigger",
+  "verification_criticality": "HIGH"
+}
+```
+<!-- YSIM:REQUIREMENT END -->
+
+<!-- YSIM:REQUIREMENT BEGIN -->
+### BRD-WS-17-R040 — Scheduler là Business Object. Scheduler hỗ trợ: Business Event Trigger
+
+```json
+{
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "V23-P2C-ACCEPTANCE-MAPPING-C3"
+      ],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-17-R040",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "2d15fd0c813776d2977f859c14d2ce9c3fb5b85c9e6869495788d86d4a3df639"
+    }
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
+  "acceptance_rationale": null,
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+  "acceptance_unit": true,
+  "atomic_obligations": [
+    {
+      "acceptance_criterion_references": [
+        "BRD-WS-17-R040-AC001",
+        "BRD-WS-17-R040-AC003",
+        "BRD-WS-17-R040-AC004"
+      ],
+      "applicability": "V2.3_ACTIVE",
+      "obligation_id": "BRD-WS-17-R040-O001",
+      "obligation_text": "Scheduler là Business Object"
+    },
+    {
+      "acceptance_criterion_references": [
+        "BRD-WS-17-R040-AC002",
+        "BRD-WS-17-R040-AC003",
+        "BRD-WS-17-R040-AC004"
+      ],
+      "applicability": "V2.3_ACTIVE",
+      "obligation_id": "BRD-WS-17-R040-O002",
+      "obligation_text": "Scheduler hỗ trợ: Business Event Trigger"
+    }
+  ],
+  "criticality_applicability": null,
+  "criticality_unit": true,
+  "delivery_commitment": "COMMITTED_FOR_V2.3",
+  "implementation_unit": true,
+  "lifecycle": "V2.3_DRAFT",
+  "normative_statement": "Scheduler là Business Object. Scheduler hỗ trợ: Business Event Trigger.",
+  "provenance": {
+    "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+    "approved_decisions": [
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
+    ],
+    "derived_from_parent": "BD-17-007",
+    "identity_origin": "PHASE_2C_C3_NEW_STABLE_ID_ALLOCATION",
+    "original_identity": "BRD-WS-17-R040",
+    "phase_2c_c3_actions": [
+      "C3_STRUCTURAL_RECONCILIATION_CHILD"
+    ],
+    "previous_temporary_key": null,
+    "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+    "source_baseline": "v2.2",
+    "source_context_heading": "9. Scheduler",
+    "source_context_sha256": "867847cfa5f35a218d9ca4c09054fad6f3806ef2db0bd26361426efbaad00983",
+    "source_document": "docs/BRD/BRD-WS-17.md",
+    "source_fingerprint": "2d15fd0c813776d2977f859c14d2ce9c3fb5b85c9e6869495788d86d4a3df639",
+    "source_fingerprint_before_c3": "2d15fd0c813776d2977f859c14d2ce9c3fb5b85c9e6869495788d86d4a3df639",
+    "source_lines": "L9190-L9292",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-17-R040"
+  },
+  "record_kind": "CANONICAL_ATOMIC",
+  "relationships": {
+    "alias_of": null,
+    "aliases": [],
+    "coverage_mode": null,
+    "derived_from": [
+      "BD-17-007"
+    ],
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "BD-17-007"
+    ]
+  },
+  "requirement_type": "DATA_REQUIREMENT",
+  "scope_coverage_unit": true,
+  "scope_status": "V2.3_ACTIVE",
+  "stable_id": "BRD-WS-17-R040",
+  "title": "Scheduler là Business Object. Scheduler hỗ trợ: Business Event Trigger",
+  "verification_criticality": "HIGH"
+}
+```
+<!-- YSIM:REQUIREMENT END -->
+
+<!-- YSIM:REQUIREMENT BEGIN -->
+### BRD-WS-17-R041 — Tác vụ vận hành phải có contract automation có kiểm soát
+
+```json
+{
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-003",
+        "P2-DEC-004",
+        "P2-DEC-010",
+        "V23-P2C-ACCEPTANCE-MAPPING-C3"
+      ],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-17-R041",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "a5c4b6af38c37fd6ef1ab9f6d3c1b6f33bd1c66585ebab7f363f005af22c1e54"
+    }
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
+  "acceptance_rationale": null,
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+  "acceptance_unit": true,
+  "atomic_obligations": [
+    {
+      "acceptance_criterion_references": [
+        "BRD-WS-17-R041-AC001",
+        "BRD-WS-17-R041-AC002",
+        "BRD-WS-17-R041-AC003"
+      ],
+      "applicability": "V2.3_ACTIVE",
+      "obligation_id": "BRD-WS-17-R041-O001",
+      "obligation_text": "Tác vụ vận hành phải có contract automation có kiểm soát"
+    }
+  ],
+  "criticality_applicability": null,
+  "criticality_unit": true,
+  "delivery_commitment": "COMMITTED_FOR_V2.3",
+  "implementation_unit": true,
+  "lifecycle": "V2.3_DRAFT",
+  "normative_statement": "Tác vụ vận hành phải có contract automation có kiểm soát.",
+  "provenance": {
+    "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+    "approved_decisions": [
+      "P2-DEC-003",
+      "P2-DEC-004",
+      "P2-DEC-010",
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
+    ],
+    "derived_from_parent": "BRD-WS-17-R030",
+    "identity_origin": "PHASE_2C_C3_NEW_STABLE_ID_ALLOCATION",
+    "original_identity": "BRD-WS-17-R041",
+    "phase_2c_c3_actions": [
+      "C3_STRUCTURAL_RECONCILIATION_CHILD"
+    ],
+    "previous_temporary_key": null,
+    "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+    "source_baseline": "v2.2",
+    "source_context_heading": "30. Enterprise Operations Principle",
+    "source_context_sha256": "f4b6aeebc35c74925667ca32adae5d22b689e2ba373fa7cae75a6f8c6fe8ee2a",
+    "source_document": "docs/BRD/BRD-WS-17.md",
+    "source_fingerprint": "a5c4b6af38c37fd6ef1ab9f6d3c1b6f33bd1c66585ebab7f363f005af22c1e54",
+    "source_fingerprint_before_c3": "a5c4b6af38c37fd6ef1ab9f6d3c1b6f33bd1c66585ebab7f363f005af22c1e54",
+    "source_lines": "L9294-L9392",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-17-R041"
+  },
+  "record_kind": "CANONICAL_ATOMIC",
+  "relationships": {
+    "alias_of": null,
+    "aliases": [],
+    "coverage_mode": null,
+    "derived_from": [
+      "BRD-WS-17-R030"
+    ],
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "BRD-WS-17-R030"
+    ]
+  },
+  "requirement_type": "OPERATIONAL_REQUIREMENT",
+  "scope_coverage_unit": true,
+  "scope_status": "V2.3_ACTIVE",
+  "stable_id": "BRD-WS-17-R041",
+  "title": "Tác vụ vận hành phải có contract automation có kiểm soát",
+  "verification_criticality": "HIGH"
+}
+```
+<!-- YSIM:REQUIREMENT END -->
+
+<!-- YSIM:REQUIREMENT BEGIN -->
+### BRD-WS-17-R042 — Automation tác vụ vận hành phải enforce Permission
+
+```json
+{
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-003",
+        "P2-DEC-004",
+        "P2-DEC-010",
+        "V23-P2C-ACCEPTANCE-MAPPING-C3"
+      ],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-17-R042",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "73361f533504bbec94510cb62b67e7b108183eb70337c013640cbf6f59ae94d1"
+    }
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
+  "acceptance_rationale": null,
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+  "acceptance_unit": true,
+  "atomic_obligations": [
+    {
+      "acceptance_criterion_references": [
+        "BRD-WS-17-R042-AC001",
+        "BRD-WS-17-R042-AC002",
+        "BRD-WS-17-R042-AC003"
+      ],
+      "applicability": "V2.3_ACTIVE",
+      "obligation_id": "BRD-WS-17-R042-O001",
+      "obligation_text": "Automation tác vụ vận hành phải enforce Permission"
+    }
+  ],
+  "criticality_applicability": null,
+  "criticality_unit": true,
+  "delivery_commitment": "COMMITTED_FOR_V2.3",
+  "implementation_unit": true,
+  "lifecycle": "V2.3_DRAFT",
+  "normative_statement": "Automation tác vụ vận hành phải enforce Permission.",
+  "provenance": {
+    "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+    "approved_decisions": [
+      "P2-DEC-003",
+      "P2-DEC-004",
+      "P2-DEC-010",
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
+    ],
+    "derived_from_parent": "BRD-WS-17-R030",
+    "identity_origin": "PHASE_2C_C3_NEW_STABLE_ID_ALLOCATION",
+    "original_identity": "BRD-WS-17-R042",
+    "phase_2c_c3_actions": [
+      "C3_STRUCTURAL_RECONCILIATION_CHILD"
+    ],
+    "previous_temporary_key": null,
+    "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+    "source_baseline": "v2.2",
+    "source_context_heading": "30. Enterprise Operations Principle",
+    "source_context_sha256": "f4b6aeebc35c74925667ca32adae5d22b689e2ba373fa7cae75a6f8c6fe8ee2a",
+    "source_document": "docs/BRD/BRD-WS-17.md",
+    "source_fingerprint": "73361f533504bbec94510cb62b67e7b108183eb70337c013640cbf6f59ae94d1",
+    "source_fingerprint_before_c3": "73361f533504bbec94510cb62b67e7b108183eb70337c013640cbf6f59ae94d1",
+    "source_lines": "L9394-L9492",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-17-R042"
+  },
+  "record_kind": "CANONICAL_ATOMIC",
+  "relationships": {
+    "alias_of": null,
+    "aliases": [],
+    "coverage_mode": null,
+    "derived_from": [
+      "BRD-WS-17-R030"
+    ],
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "BRD-WS-17-R030"
+    ]
+  },
+  "requirement_type": "OPERATIONAL_REQUIREMENT",
+  "scope_coverage_unit": true,
+  "scope_status": "V2.3_ACTIVE",
+  "stable_id": "BRD-WS-17-R042",
+  "title": "Automation tác vụ vận hành phải enforce Permission",
+  "verification_criticality": "HIGH"
+}
+```
+<!-- YSIM:REQUIREMENT END -->
+
+<!-- YSIM:REQUIREMENT BEGIN -->
+### BRD-WS-17-R043 — Automation tác vụ vận hành phải tạo Audit evidence
+
+```json
+{
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-003",
+        "P2-DEC-004",
+        "P2-DEC-010",
+        "V23-P2C-ACCEPTANCE-MAPPING-C3"
+      ],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "BRD-WS-17-R043",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "7c5ee629b2853e0f983e6775abb68e3d772d7bf793b41333127feffd27779dfd"
+    }
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
+  "acceptance_rationale": null,
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+  "acceptance_unit": true,
+  "atomic_obligations": [
+    {
+      "acceptance_criterion_references": [
+        "BRD-WS-17-R043-AC001",
+        "BRD-WS-17-R043-AC002",
+        "BRD-WS-17-R043-AC003"
+      ],
+      "applicability": "V2.3_ACTIVE",
+      "obligation_id": "BRD-WS-17-R043-O001",
+      "obligation_text": "Automation tác vụ vận hành phải tạo Audit evidence"
+    }
+  ],
+  "criticality_applicability": null,
+  "criticality_unit": true,
+  "delivery_commitment": "COMMITTED_FOR_V2.3",
+  "implementation_unit": true,
+  "lifecycle": "V2.3_DRAFT",
+  "normative_statement": "Automation tác vụ vận hành phải tạo Audit evidence.",
+  "provenance": {
+    "allocation_contract": "C3_STRUCTURAL_RECONCILIATION_CHILD",
+    "approved_decisions": [
+      "P2-DEC-003",
+      "P2-DEC-004",
+      "P2-DEC-010",
+      "V23-P2C-ACCEPTANCE-MAPPING-C3"
+    ],
+    "derived_from_parent": "BRD-WS-17-R030",
+    "identity_origin": "PHASE_2C_C3_NEW_STABLE_ID_ALLOCATION",
+    "original_identity": "BRD-WS-17-R043",
+    "phase_2c_c3_actions": [
+      "C3_STRUCTURAL_RECONCILIATION_CHILD"
+    ],
+    "previous_temporary_key": null,
+    "shared_glossary": "V23_SHARED_CANONICAL_GLOSSARY",
+    "source_baseline": "v2.2",
+    "source_context_heading": "30. Enterprise Operations Principle",
+    "source_context_sha256": "f4b6aeebc35c74925667ca32adae5d22b689e2ba373fa7cae75a6f8c6fe8ee2a",
+    "source_document": "docs/BRD/BRD-WS-17.md",
+    "source_fingerprint": "7c5ee629b2853e0f983e6775abb68e3d772d7bf793b41333127feffd27779dfd",
+    "source_fingerprint_before_c3": "7c5ee629b2853e0f983e6775abb68e3d772d7bf793b41333127feffd27779dfd",
+    "source_lines": "L9494-L9592",
+    "source_mapping_decision_commit": "a90476e8b053bf86c11638477736c8c418a33025",
+    "source_mapping_decision_tag": "baseline/v2.3/phase-2/acceptance-mapping/c3-accepted",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > BRD-WS-17-R043"
+  },
+  "record_kind": "CANONICAL_ATOMIC",
+  "relationships": {
+    "alias_of": null,
+    "aliases": [],
+    "coverage_mode": null,
+    "derived_from": [
+      "BRD-WS-17-R030"
+    ],
+    "derived_requirements": [],
+    "satisfies_composite_parents": [
+      "BRD-WS-17-R030"
+    ]
+  },
+  "requirement_type": "OPERATIONAL_REQUIREMENT",
+  "scope_coverage_unit": true,
+  "scope_status": "V2.3_ACTIVE",
+  "stable_id": "BRD-WS-17-R043",
+  "title": "Automation tác vụ vận hành phải tạo Audit evidence",
+  "verification_criticality": "HIGH"
+}
+```
+<!-- YSIM:REQUIREMENT END -->
+
+<!-- YSIM:REQUIREMENT BEGIN -->
 ### EP-17-001 — Platform Operations được quản lý tập trung thông qua Platform Operations Center
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "EP-17-001-AC001",
-      "given": "an operational task within the scope of Platform Operations được quản lý tập trung thông qua Platform Operations Center",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "EP-17-001-O001"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "OPERATIONAL_VERIFICATION_FAILURE_V1",
-      "criterion_id": "EP-17-001-AC002",
-      "given": "an operational task missing an outcome, required signal, audit evidence, or recovery evidence for Platform Operations được quản lý tập trung thông qua Platform Operations Center",
-      "observable_evidence": "operator-visible verification result, missing-evidence identifier, operation state, and relevant signal or audit record",
-      "then": "verification reports the specific missing evidence as a detectable failure and does not report the task as conforming",
-      "verifies": [
-        "EP-17-001-O001"
-      ],
-      "when": "operational verification is performed"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "approved_semantic_completion_selection": {
+        "decision_id": "P2C-SC-C1-DEC-020",
+        "option_id": "OPT-AST"
+      },
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "EP-17-001",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "fee1a2f6f49163a911ab0e0b6572734fab1456866d77a59d914f21d143872033"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "EP-17-001-AC001",
-        "EP-17-001-AC002"
+        "EP-17-001-AC002",
+        "EP-17-001-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "EP-17-001-O001",
@@ -8427,9 +9650,9 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_heading": "EP-17-001",
     "source_context_sha256": "c579432cbfd1b21e18bda6a2a172c5080577cc9674839abd731ab2582202cc37",
     "source_document": "docs/BRD/BRD-WS-17.md",
-    "source_fingerprint": "3432d499946cd991216482e77997e52d778909b7efef8aeec8995e90921cdb93",
-    "source_lines": "L1235-L1238",
-    "source_section": "38. Enterprise Design Principles > EP-17-001"
+    "source_fingerprint": "fee1a2f6f49163a911ab0e0b6572734fab1456866d77a59d914f21d143872033",
+    "source_lines": "L9594-L9673",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > EP-17-001"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -8454,41 +9677,1634 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "EP-17-002-AC001",
-      "given": "an operational task within the scope of Monitoring phải bao phủ toàn Platform",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "EP-17-002-O001"
+  "acceptance_contract": {
+    "boundary_oracle": [
+      "A deliberately excluded non-platform dependency is documented and not counted as a platform component"
+    ],
+    "concrete_bindings": [
+      {
+        "actual_set": {
+          "authoritative_source": {
+            "source_id": "P2C-OBT-C1-EP-17-002-OPT-1",
+            "source_type": "APPROVED_DECISION",
+            "version": "2026-07-16"
+          },
+          "identifier": "MONITORING.REGISTRATION.OBSERVED.COMPONENT.SET",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "YSIM.MONITORING_COVERAGE.OBSERVED_COMPONENT_COVERAGE.RUNTIME_OBSERVED",
+            "origin_type": "RUNTIME_OBSERVED"
+          },
+          "provenance": {
+            "approved_decision_references": [
+              "P2C-OBT-C1-EP-17-002-OPT-1"
+            ],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-17.md",
+            "source_fingerprint": "117cb8abdc971d858c33dbdfc3361ec33c2eb3865b73b255329488772567fcae",
+            "source_lines": "L1241-L1244",
+            "source_section": "38. Enterprise Design Principles > EP-17-002"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "SET_OF<CANONICAL_ENUM_VALUE>",
+            "resolver_id": "OBSERVE.EP-17-002.MONITORING.REGISTRATION.OBSERVED.COMPONENT.SET",
+            "version": "1.0.0"
+          },
+          "semantic_type": "RUNTIME_SET_REF<CANONICAL_ENUM_VALUE>"
+        },
+        "expected_set": {
+          "authoritative_source": {
+            "source_id": "P2C-OBT-C1-EP-17-002-OPT-1",
+            "source_type": "APPROVED_DECISION",
+            "version": "2026-07-16"
+          },
+          "identifier": "PLATFORM.COMPONENT.INVENTORY.ACTIVE.SET",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "YSIM.PLATFORM_COMPONENT_INVENTORY.ACTIVE_COMPONENT_SET.CANONICAL_REGISTRY",
+            "origin_type": "APPROVED_DECISION"
+          },
+          "provenance": {
+            "approved_decision_references": [
+              "P2C-OBT-C1-EP-17-002-OPT-1"
+            ],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-17.md",
+            "source_fingerprint": "117cb8abdc971d858c33dbdfc3361ec33c2eb3865b73b255329488772567fcae",
+            "source_lines": "L1241-L1244",
+            "source_section": "38. Enterprise Design Principles > EP-17-002"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "SET_OF<CANONICAL_ENUM_VALUE>",
+            "resolver_id": "RESOLVE.EP-17-002.PLATFORM.COMPONENT.INVENTORY.ACTIVE.SET",
+            "version": "1.0.0"
+          },
+          "semantic_type": "CANONICAL_SET_REF<CANONICAL_ENUM_VALUE>"
+        }
+      },
+      {
+        "evidence_object": {
+          "authoritative_source": {
+            "source_id": "P2C-OBT-C1-EP-17-002-OPT-1",
+            "source_type": "APPROVED_DECISION",
+            "version": "2026-07-16"
+          },
+          "identifier": "EP-17-002.EVIDENCE_OBJECT",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "EP-17-002.O1.2.EVIDENCE_FIELD_PRESENT.EVIDENCE_OBJECT.ORIGIN",
+            "origin_type": "APPROVED_DECISION"
+          },
+          "provenance": {
+            "approved_decision_references": [
+              "P2C-OBT-C1-EP-17-002-OPT-1"
+            ],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-17.md",
+            "source_fingerprint": "117cb8abdc971d858c33dbdfc3361ec33c2eb3865b73b255329488772567fcae",
+            "source_lines": "L1241-L1244",
+            "source_section": "38. Enterprise Design Principles > EP-17-002"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "EVIDENCE_OBJECT_REF",
+            "resolver_id": "RESOLVE.EP-17-002.EP-17-002.EVIDENCE_OBJECT",
+            "version": "1.0.0"
+          },
+          "semantic_type": "EVIDENCE_OBJECT_REF"
+        },
+        "required_fields": {
+          "members": [
+            {
+              "authoritative_source": {
+                "source_id": "P2C-OBT-C1-EP-17-002-OPT-1",
+                "source_type": "APPROVED_DECISION",
+                "version": "2026-07-16"
+              },
+              "identifier": "FIELD.PLATFORM_COMPONENT_INVENTORY",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "EP-17-002.O1.2.EVIDENCE_FIELD_PRESENT.REQUIRED_FIELDS.ORIGIN.MEMBER.1",
+                "origin_type": "APPROVED_DECISION"
+              },
+              "provenance": {
+                "approved_decision_references": [
+                  "P2C-OBT-C1-EP-17-002-OPT-1"
+                ],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-17.md",
+                "source_fingerprint": "117cb8abdc971d858c33dbdfc3361ec33c2eb3865b73b255329488772567fcae",
+                "source_lines": "L1241-L1244",
+                "source_section": "38. Enterprise Design Principles > EP-17-002"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "FIELD_ID",
+                "resolver_id": "RESOLVE.EP-17-002.FIELD.PLATFORM_COMPONENT_INVENTORY",
+                "version": "1.0.0"
+              },
+              "semantic_type": "FIELD_ID"
+            },
+            {
+              "authoritative_source": {
+                "source_id": "P2C-OBT-C1-EP-17-002-OPT-1",
+                "source_type": "APPROVED_DECISION",
+                "version": "2026-07-16"
+              },
+              "identifier": "FIELD.MONITORED_COMPONENT_IDS",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "EP-17-002.O1.2.EVIDENCE_FIELD_PRESENT.REQUIRED_FIELDS.ORIGIN.MEMBER.2",
+                "origin_type": "APPROVED_DECISION"
+              },
+              "provenance": {
+                "approved_decision_references": [
+                  "P2C-OBT-C1-EP-17-002-OPT-1"
+                ],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-17.md",
+                "source_fingerprint": "117cb8abdc971d858c33dbdfc3361ec33c2eb3865b73b255329488772567fcae",
+                "source_lines": "L1241-L1244",
+                "source_section": "38. Enterprise Design Principles > EP-17-002"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "FIELD_ID",
+                "resolver_id": "RESOLVE.EP-17-002.FIELD.MONITORED_COMPONENT_IDS",
+                "version": "1.0.0"
+              },
+              "semantic_type": "FIELD_ID"
+            },
+            {
+              "authoritative_source": {
+                "source_id": "P2C-OBT-C1-EP-17-002-OPT-1",
+                "source_type": "APPROVED_DECISION",
+                "version": "2026-07-16"
+              },
+              "identifier": "FIELD.REQUIRED_SIGNALS",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "EP-17-002.O1.2.EVIDENCE_FIELD_PRESENT.REQUIRED_FIELDS.ORIGIN.MEMBER.3",
+                "origin_type": "APPROVED_DECISION"
+              },
+              "provenance": {
+                "approved_decision_references": [
+                  "P2C-OBT-C1-EP-17-002-OPT-1"
+                ],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-17.md",
+                "source_fingerprint": "117cb8abdc971d858c33dbdfc3361ec33c2eb3865b73b255329488772567fcae",
+                "source_lines": "L1241-L1244",
+                "source_section": "38. Enterprise Design Principles > EP-17-002"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "FIELD_ID",
+                "resolver_id": "RESOLVE.EP-17-002.FIELD.REQUIRED_SIGNALS",
+                "version": "1.0.0"
+              },
+              "semantic_type": "FIELD_ID"
+            },
+            {
+              "authoritative_source": {
+                "source_id": "P2C-OBT-C1-EP-17-002-OPT-1",
+                "source_type": "APPROVED_DECISION",
+                "version": "2026-07-16"
+              },
+              "identifier": "FIELD.COVERAGE_RESULT",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "EP-17-002.O1.2.EVIDENCE_FIELD_PRESENT.REQUIRED_FIELDS.ORIGIN.MEMBER.4",
+                "origin_type": "APPROVED_DECISION"
+              },
+              "provenance": {
+                "approved_decision_references": [
+                  "P2C-OBT-C1-EP-17-002-OPT-1"
+                ],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-17.md",
+                "source_fingerprint": "117cb8abdc971d858c33dbdfc3361ec33c2eb3865b73b255329488772567fcae",
+                "source_lines": "L1241-L1244",
+                "source_section": "38. Enterprise Design Principles > EP-17-002"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "FIELD_ID",
+                "resolver_id": "RESOLVE.EP-17-002.FIELD.COVERAGE_RESULT",
+                "version": "1.0.0"
+              },
+              "semantic_type": "FIELD_ID"
+            }
+          ],
+          "origin": {
+            "origin_id": "EP-17-002.O1.2.EVIDENCE_FIELD_PRESENT.REQUIRED_FIELDS.ORIGIN",
+            "origin_type": "APPROVED_DECISION"
+          },
+          "provenance": {
+            "approved_decision_references": [
+              "P2C-OBT-C1-EP-17-002-OPT-1"
+            ],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-17.md",
+            "source_fingerprint": "117cb8abdc971d858c33dbdfc3361ec33c2eb3865b73b255329488772567fcae",
+            "source_lines": "L1241-L1244",
+            "source_section": "38. Enterprise Design Principles > EP-17-002"
+          },
+          "semantic_type": "SET_OF<FIELD_ID>"
+        }
+      }
+    ],
+    "contract_id": "P2C.C4.CONTRACT.EP-17-002",
+    "inference": false,
+    "mechanism": "APPROVED_TYPED_CUSTOM_AST",
+    "mechanism_version": "C4-R3",
+    "negative_oracle": [
+      "A platform component has no required monitoring evidence"
+    ],
+    "operator_composition": [
+      "SET_EQUALS",
+      "EVIDENCE_FIELD_PRESENT"
+    ],
+    "positive_oracle": [
+      "Monitoring covers every platform component in the inventory"
+    ],
+    "provenance": {
+      "approved_decision_references": [
+        "P2C-OBT-C1-EP-17-002-OPT-1"
       ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
+      "inference": false,
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "117cb8abdc971d858c33dbdfc3361ec33c2eb3865b73b255329488772567fcae",
+      "source_lines": "L1241-L1244",
+      "source_section": "38. Enterprise Design Principles > EP-17-002"
     },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "OPERATIONAL_VERIFICATION_FAILURE_V1",
-      "criterion_id": "EP-17-002-AC002",
-      "given": "an operational task missing an outcome, required signal, audit evidence, or recovery evidence for Monitoring phải bao phủ toàn Platform",
-      "observable_evidence": "operator-visible verification result, missing-evidence identifier, operation state, and relevant signal or audit record",
-      "then": "verification reports the specific missing evidence as a detectable failure and does not report the task as conforming",
-      "verifies": [
-        "EP-17-002-O001"
+    "required_evidence": {
+      "evidence_object_ref": {
+        "authoritative_source": {
+          "source_id": "P2C-OBT-C1-EP-17-002-OPT-1",
+          "source_type": "APPROVED_DECISION",
+          "version": "2026-07-16"
+        },
+        "identifier": "EP-17-002.EP-17-002.CONTRACT.EVIDENCE.OBJECT",
+        "inference": false,
+        "lifecycle": {
+          "status": "ACTIVE",
+          "version": "2.3"
+        },
+        "namespace": "YSIM.V2.3",
+        "origin": {
+          "origin_id": "EP-17-002.CONTRACT.EVIDENCE.ORIGIN",
+          "origin_type": "EVIDENCE_OBJECT"
+        },
+        "provenance": {
+          "approved_decision_references": [
+            "P2C-OBT-C1-EP-17-002-OPT-1"
+          ],
+          "inference": false,
+          "source_document": "docs/BRD/BRD-WS-17.md",
+          "source_fingerprint": "117cb8abdc971d858c33dbdfc3361ec33c2eb3865b73b255329488772567fcae",
+          "source_lines": "L1241-L1244",
+          "source_section": "38. Enterprise Design Principles > EP-17-002"
+        },
+        "resolver_contract": {
+          "deterministic": true,
+          "input_types": [],
+          "output_type": "EVIDENCE_OBJECT_REF",
+          "resolver_id": "OBSERVE.EP-17-002.EP-17-002.EP-17-002.CONTRACT.EVIDENCE.OBJECT",
+          "version": "1.0.0"
+        },
+        "semantic_type": "EVIDENCE_OBJECT_REF"
+      },
+      "inference": false,
+      "observed_collection_origin": "EP-17-002.RUNTIME.OBSERVED.FIELDS",
+      "observed_field_ids": [
+        "FIELD.PLATFORM_COMPONENT_INVENTORY",
+        "FIELD.MONITORED_COMPONENT_IDS",
+        "FIELD.REQUIRED_SIGNALS",
+        "FIELD.COVERAGE_RESULT"
       ],
-      "when": "operational verification is performed"
+      "producer": "EP-17-002.EVIDENCE.PRODUCER",
+      "required_collection_origin": "EP-17-002.SOURCE.REQUIRED.FIELDS",
+      "required_field_ids": [
+        "FIELD.PLATFORM_COMPONENT_INVENTORY",
+        "FIELD.MONITORED_COMPONENT_IDS",
+        "FIELD.REQUIRED_SIGNALS",
+        "FIELD.COVERAGE_RESULT"
+      ],
+      "required_values_or_hashes": [
+        "EP-17-002.EVIDENCE.CONTENT.HASH"
+      ],
+      "retrieval_method": "EP-17-002.EVIDENCE.RETRIEVAL",
+      "version_or_correlation": "EP-17-002.EVIDENCE.VERSION.CORRELATION"
+    },
+    "runtime_evidence_executed": false,
+    "runtime_status": "RUNTIME_ADAPTER_PENDING",
+    "semantic_obligation_references": [
+      "EP-17-002-O001"
+    ],
+    "typed_contract_ast": {
+      "approved_clarification": {
+        "meaning": "A versioned Platform Component Inventory and component-class monitoring profiles define coverage and required signals.",
+        "non_inferences": [
+          "No component or signal list is invented.",
+          "Non-critical components are not excluded from monitoring."
+        ],
+        "option_id": "P2C-OBT-C1-EP-17-002-OPT-1"
+      },
+      "assertions": [
+        {
+          "assertion_id": "EP-17-002.O1.1.SET_EQUALS",
+          "evaluator_consumed_bindings": [
+            "actual_set",
+            "expected_set"
+          ],
+          "evidence_object": {
+            "authoritative_source": {
+              "source_id": "P2C-OBT-C1-EP-17-002-OPT-1",
+              "source_type": "APPROVED_DECISION",
+              "version": "2026-07-16"
+            },
+            "identifier": "EP-17-002.EP-17-002.O1.1.SET_EQUALS.EVIDENCE.OBJECT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "EP-17-002.O1.1.SET_EQUALS.EVIDENCE.ORIGIN",
+              "origin_type": "EVIDENCE_OBJECT"
+            },
+            "provenance": {
+              "approved_decision_references": [
+                "P2C-OBT-C1-EP-17-002-OPT-1"
+              ],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-WS-17.md",
+              "source_fingerprint": "117cb8abdc971d858c33dbdfc3361ec33c2eb3865b73b255329488772567fcae",
+              "source_lines": "L1241-L1244",
+              "source_section": "38. Enterprise Design Principles > EP-17-002"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "EVIDENCE_OBJECT_REF",
+              "resolver_id": "OBSERVE.EP-17-002.EP-17-002.EP-17-002.O1.1.SET_EQUALS.EVIDENCE.OBJECT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "EVIDENCE_OBJECT_REF"
+          },
+          "expected_operand": {
+            "members": [
+              {
+                "authoritative_source": {
+                  "allowed_identifiers": [
+                    "EP-17-002.EP-17-002.O1.1.SET_EQUALS.CANONICAL.RESULT.MEMBER"
+                  ],
+                  "source_id": "P2C-OBT-C1-EP-17-002-OPT-1",
+                  "source_type": "APPROVED_DECISION",
+                  "version": "2026-07-16"
+                },
+                "identifier": "EP-17-002.EP-17-002.O1.1.SET_EQUALS.CANONICAL.RESULT.MEMBER",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "EP-17-002.O1.1.SET_EQUALS.AUTHORITY.ORIGIN.MEMBER.1",
+                  "origin_type": "APPROVED_DECISION"
+                },
+                "provenance": {
+                  "approved_decision_references": [
+                    "P2C-OBT-C1-EP-17-002-OPT-1"
+                  ],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-17.md",
+                  "source_fingerprint": "117cb8abdc971d858c33dbdfc3361ec33c2eb3865b73b255329488772567fcae",
+                  "source_lines": "L1241-L1244",
+                  "source_section": "38. Enterprise Design Principles > EP-17-002"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "CANONICAL_ENUM_VALUE",
+                  "resolver_id": "RESOLVE.EP-17-002.EP-17-002.EP-17-002.O1.1.SET_EQUALS.CANONICAL.RESULT.MEMBER",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "CANONICAL_ENUM_VALUE"
+              }
+            ],
+            "origin": {
+              "origin_id": "EP-17-002.O1.1.SET_EQUALS.AUTHORITY.ORIGIN",
+              "origin_type": "APPROVED_DECISION"
+            },
+            "provenance": {
+              "approved_decision_references": [
+                "P2C-OBT-C1-EP-17-002-OPT-1"
+              ],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-WS-17.md",
+              "source_fingerprint": "117cb8abdc971d858c33dbdfc3361ec33c2eb3865b73b255329488772567fcae",
+              "source_lines": "L1241-L1244",
+              "source_section": "38. Enterprise Design Principles > EP-17-002"
+            },
+            "semantic_type": "SET_OF<CANONICAL_ENUM_VALUE>"
+          },
+          "inference": false,
+          "model_conformance_fixture": {
+            "bindings": {
+              "actual_set": {
+                "authoritative_source": {
+                  "source_id": "P2C-OBT-C1-EP-17-002-OPT-1",
+                  "source_type": "APPROVED_DECISION",
+                  "version": "2026-07-16"
+                },
+                "identifier": "MONITORING.REGISTRATION.OBSERVED.COMPONENT.SET",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "YSIM.MONITORING_COVERAGE.OBSERVED_COMPONENT_COVERAGE.RUNTIME_OBSERVED",
+                  "origin_type": "RUNTIME_OBSERVED"
+                },
+                "provenance": {
+                  "approved_decision_references": [
+                    "P2C-OBT-C1-EP-17-002-OPT-1"
+                  ],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-17.md",
+                  "source_fingerprint": "117cb8abdc971d858c33dbdfc3361ec33c2eb3865b73b255329488772567fcae",
+                  "source_lines": "L1241-L1244",
+                  "source_section": "38. Enterprise Design Principles > EP-17-002"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "SET_OF<CANONICAL_ENUM_VALUE>",
+                  "resolver_id": "OBSERVE.EP-17-002.MONITORING.REGISTRATION.OBSERVED.COMPONENT.SET",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "RUNTIME_SET_REF<CANONICAL_ENUM_VALUE>"
+              },
+              "expected_set": {
+                "authoritative_source": {
+                  "source_id": "P2C-OBT-C1-EP-17-002-OPT-1",
+                  "source_type": "APPROVED_DECISION",
+                  "version": "2026-07-16"
+                },
+                "identifier": "PLATFORM.COMPONENT.INVENTORY.ACTIVE.SET",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "YSIM.PLATFORM_COMPONENT_INVENTORY.ACTIVE_COMPONENT_SET.CANONICAL_REGISTRY",
+                  "origin_type": "APPROVED_DECISION"
+                },
+                "provenance": {
+                  "approved_decision_references": [
+                    "P2C-OBT-C1-EP-17-002-OPT-1"
+                  ],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-17.md",
+                  "source_fingerprint": "117cb8abdc971d858c33dbdfc3361ec33c2eb3865b73b255329488772567fcae",
+                  "source_lines": "L1241-L1244",
+                  "source_section": "38. Enterprise Design Principles > EP-17-002"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "SET_OF<CANONICAL_ENUM_VALUE>",
+                  "resolver_id": "RESOLVE.EP-17-002.PLATFORM.COMPONENT.INVENTORY.ACTIVE.SET",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "CANONICAL_SET_REF<CANONICAL_ENUM_VALUE>"
+              }
+            },
+            "comparison": {
+              "expected": {
+                "members": [
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "EP-17-002.EP-17-002.O1.1.SET_EQUALS.CANONICAL.RESULT.MEMBER"
+                      ],
+                      "source_id": "P2C-OBT-C1-EP-17-002-OPT-1",
+                      "source_type": "APPROVED_DECISION",
+                      "version": "2026-07-16"
+                    },
+                    "identifier": "EP-17-002.EP-17-002.O1.1.SET_EQUALS.CANONICAL.RESULT.MEMBER",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "EP-17-002.O1.1.SET_EQUALS.AUTHORITY.ORIGIN.MEMBER.1",
+                      "origin_type": "APPROVED_DECISION"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [
+                        "P2C-OBT-C1-EP-17-002-OPT-1"
+                      ],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-WS-17.md",
+                      "source_fingerprint": "117cb8abdc971d858c33dbdfc3361ec33c2eb3865b73b255329488772567fcae",
+                      "source_lines": "L1241-L1244",
+                      "source_section": "38. Enterprise Design Principles > EP-17-002"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "CANONICAL_ENUM_VALUE",
+                      "resolver_id": "RESOLVE.EP-17-002.EP-17-002.EP-17-002.O1.1.SET_EQUALS.CANONICAL.RESULT.MEMBER",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "CANONICAL_ENUM_VALUE"
+                  }
+                ],
+                "origin": {
+                  "origin_id": "EP-17-002.O1.1.SET_EQUALS.AUTHORITY.ORIGIN",
+                  "origin_type": "APPROVED_DECISION"
+                },
+                "provenance": {
+                  "approved_decision_references": [
+                    "P2C-OBT-C1-EP-17-002-OPT-1"
+                  ],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-17.md",
+                  "source_fingerprint": "117cb8abdc971d858c33dbdfc3361ec33c2eb3865b73b255329488772567fcae",
+                  "source_lines": "L1241-L1244",
+                  "source_section": "38. Enterprise Design Principles > EP-17-002"
+                },
+                "semantic_type": "SET_OF<CANONICAL_ENUM_VALUE>"
+              },
+              "observed": {
+                "members": [
+                  {
+                    "authoritative_source": {
+                      "allowed_identifiers": [
+                        "EP-17-002.EP-17-002.O1.1.SET_EQUALS.CANONICAL.RESULT.MEMBER"
+                      ],
+                      "source_id": "P2C-OBT-C1-EP-17-002-OPT-1",
+                      "source_type": "APPROVED_DECISION",
+                      "version": "2026-07-16"
+                    },
+                    "identifier": "EP-17-002.EP-17-002.O1.1.SET_EQUALS.CANONICAL.RESULT.MEMBER",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "EP-17-002.O1.1.SET_EQUALS.OBSERVED.ORIGIN.MEMBER.1",
+                      "origin_type": "RUNTIME_OBSERVED"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [
+                        "P2C-OBT-C1-EP-17-002-OPT-1"
+                      ],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-WS-17.md",
+                      "source_fingerprint": "117cb8abdc971d858c33dbdfc3361ec33c2eb3865b73b255329488772567fcae",
+                      "source_lines": "L1241-L1244",
+                      "source_section": "38. Enterprise Design Principles > EP-17-002"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "CANONICAL_ENUM_VALUE",
+                      "resolver_id": "OBSERVE.EP-17-002.EP-17-002.EP-17-002.O1.1.SET_EQUALS.CANONICAL.RESULT.MEMBER",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "CANONICAL_ENUM_VALUE"
+                  }
+                ],
+                "origin": {
+                  "origin_id": "EP-17-002.O1.1.SET_EQUALS.OBSERVED.ORIGIN",
+                  "origin_type": "RUNTIME_OBSERVED"
+                },
+                "provenance": {
+                  "approved_decision_references": [
+                    "P2C-OBT-C1-EP-17-002-OPT-1"
+                  ],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-17.md",
+                  "source_fingerprint": "117cb8abdc971d858c33dbdfc3361ec33c2eb3865b73b255329488772567fcae",
+                  "source_lines": "L1241-L1244",
+                  "source_section": "38. Enterprise Design Principles > EP-17-002"
+                },
+                "semantic_type": "SET_OF<CANONICAL_ENUM_VALUE>"
+              }
+            },
+            "evidence_object": {
+              "authoritative_source": {
+                "source_id": "P2C-OBT-C1-EP-17-002-OPT-1",
+                "source_type": "APPROVED_DECISION",
+                "version": "2026-07-16"
+              },
+              "identifier": "EP-17-002.EP-17-002.O1.1.SET_EQUALS.EVIDENCE.OBJECT",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "EP-17-002.O1.1.SET_EQUALS.EVIDENCE.ORIGIN",
+                "origin_type": "EVIDENCE_OBJECT"
+              },
+              "provenance": {
+                "approved_decision_references": [
+                  "P2C-OBT-C1-EP-17-002-OPT-1"
+                ],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-17.md",
+                "source_fingerprint": "117cb8abdc971d858c33dbdfc3361ec33c2eb3865b73b255329488772567fcae",
+                "source_lines": "L1241-L1244",
+                "source_section": "38. Enterprise Design Principles > EP-17-002"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "EVIDENCE_OBJECT_REF",
+                "resolver_id": "OBSERVE.EP-17-002.EP-17-002.EP-17-002.O1.1.SET_EQUALS.EVIDENCE.OBJECT",
+                "version": "1.0.0"
+              },
+              "semantic_type": "EVIDENCE_OBJECT_REF"
+            },
+            "operator_id": "SET_EQUALS"
+          },
+          "obligation_id": "EP-17-002-O001",
+          "observed_operand": {
+            "members": [
+              {
+                "authoritative_source": {
+                  "allowed_identifiers": [
+                    "EP-17-002.EP-17-002.O1.1.SET_EQUALS.CANONICAL.RESULT.MEMBER"
+                  ],
+                  "source_id": "P2C-OBT-C1-EP-17-002-OPT-1",
+                  "source_type": "APPROVED_DECISION",
+                  "version": "2026-07-16"
+                },
+                "identifier": "EP-17-002.EP-17-002.O1.1.SET_EQUALS.CANONICAL.RESULT.MEMBER",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "EP-17-002.O1.1.SET_EQUALS.OBSERVED.ORIGIN.MEMBER.1",
+                  "origin_type": "RUNTIME_OBSERVED"
+                },
+                "provenance": {
+                  "approved_decision_references": [
+                    "P2C-OBT-C1-EP-17-002-OPT-1"
+                  ],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-17.md",
+                  "source_fingerprint": "117cb8abdc971d858c33dbdfc3361ec33c2eb3865b73b255329488772567fcae",
+                  "source_lines": "L1241-L1244",
+                  "source_section": "38. Enterprise Design Principles > EP-17-002"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "CANONICAL_ENUM_VALUE",
+                  "resolver_id": "OBSERVE.EP-17-002.EP-17-002.EP-17-002.O1.1.SET_EQUALS.CANONICAL.RESULT.MEMBER",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "CANONICAL_ENUM_VALUE"
+              }
+            ],
+            "origin": {
+              "origin_id": "EP-17-002.O1.1.SET_EQUALS.OBSERVED.ORIGIN",
+              "origin_type": "RUNTIME_OBSERVED"
+            },
+            "provenance": {
+              "approved_decision_references": [
+                "P2C-OBT-C1-EP-17-002-OPT-1"
+              ],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-WS-17.md",
+              "source_fingerprint": "117cb8abdc971d858c33dbdfc3361ec33c2eb3865b73b255329488772567fcae",
+              "source_lines": "L1241-L1244",
+              "source_section": "38. Enterprise Design Principles > EP-17-002"
+            },
+            "semantic_type": "SET_OF<CANONICAL_ENUM_VALUE>"
+          },
+          "operator_id": "SET_EQUALS",
+          "operator_version": "1.0.0-candidate.2",
+          "typed_bindings": {
+            "actual_set": {
+              "authoritative_source": {
+                "source_id": "P2C-OBT-C1-EP-17-002-OPT-1",
+                "source_type": "APPROVED_DECISION",
+                "version": "2026-07-16"
+              },
+              "identifier": "MONITORING.REGISTRATION.OBSERVED.COMPONENT.SET",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "YSIM.MONITORING_COVERAGE.OBSERVED_COMPONENT_COVERAGE.RUNTIME_OBSERVED",
+                "origin_type": "RUNTIME_OBSERVED"
+              },
+              "provenance": {
+                "approved_decision_references": [
+                  "P2C-OBT-C1-EP-17-002-OPT-1"
+                ],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-17.md",
+                "source_fingerprint": "117cb8abdc971d858c33dbdfc3361ec33c2eb3865b73b255329488772567fcae",
+                "source_lines": "L1241-L1244",
+                "source_section": "38. Enterprise Design Principles > EP-17-002"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "SET_OF<CANONICAL_ENUM_VALUE>",
+                "resolver_id": "OBSERVE.EP-17-002.MONITORING.REGISTRATION.OBSERVED.COMPONENT.SET",
+                "version": "1.0.0"
+              },
+              "semantic_type": "RUNTIME_SET_REF<CANONICAL_ENUM_VALUE>"
+            },
+            "expected_set": {
+              "authoritative_source": {
+                "source_id": "P2C-OBT-C1-EP-17-002-OPT-1",
+                "source_type": "APPROVED_DECISION",
+                "version": "2026-07-16"
+              },
+              "identifier": "PLATFORM.COMPONENT.INVENTORY.ACTIVE.SET",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "YSIM.PLATFORM_COMPONENT_INVENTORY.ACTIVE_COMPONENT_SET.CANONICAL_REGISTRY",
+                "origin_type": "APPROVED_DECISION"
+              },
+              "provenance": {
+                "approved_decision_references": [
+                  "P2C-OBT-C1-EP-17-002-OPT-1"
+                ],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-17.md",
+                "source_fingerprint": "117cb8abdc971d858c33dbdfc3361ec33c2eb3865b73b255329488772567fcae",
+                "source_lines": "L1241-L1244",
+                "source_section": "38. Enterprise Design Principles > EP-17-002"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "SET_OF<CANONICAL_ENUM_VALUE>",
+                "resolver_id": "RESOLVE.EP-17-002.PLATFORM.COMPONENT.INVENTORY.ACTIVE.SET",
+                "version": "1.0.0"
+              },
+              "semantic_type": "CANONICAL_SET_REF<CANONICAL_ENUM_VALUE>"
+            }
+          }
+        },
+        {
+          "assertion_id": "EP-17-002.O1.2.EVIDENCE_FIELD_PRESENT",
+          "evaluator_consumed_bindings": [
+            "evidence_object",
+            "required_fields"
+          ],
+          "evidence_object": {
+            "authoritative_source": {
+              "source_id": "P2C-OBT-C1-EP-17-002-OPT-1",
+              "source_type": "APPROVED_DECISION",
+              "version": "2026-07-16"
+            },
+            "identifier": "EP-17-002.EP-17-002.O1.2.EVIDENCE_FIELD_PRESENT.EVIDENCE.OBJECT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "EP-17-002.O1.2.EVIDENCE_FIELD_PRESENT.EVIDENCE.ORIGIN",
+              "origin_type": "EVIDENCE_OBJECT"
+            },
+            "provenance": {
+              "approved_decision_references": [
+                "P2C-OBT-C1-EP-17-002-OPT-1"
+              ],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-WS-17.md",
+              "source_fingerprint": "117cb8abdc971d858c33dbdfc3361ec33c2eb3865b73b255329488772567fcae",
+              "source_lines": "L1241-L1244",
+              "source_section": "38. Enterprise Design Principles > EP-17-002"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "EVIDENCE_OBJECT_REF",
+              "resolver_id": "OBSERVE.EP-17-002.EP-17-002.EP-17-002.O1.2.EVIDENCE_FIELD_PRESENT.EVIDENCE.OBJECT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "EVIDENCE_OBJECT_REF"
+          },
+          "expected_operand": {
+            "authoritative_source": {
+              "source_id": "P2C-OBT-C1-EP-17-002-OPT-1",
+              "source_type": "APPROVED_DECISION",
+              "version": "2026-07-16"
+            },
+            "identifier": "EP-17-002.EP-17-002.O1.2.EVIDENCE_FIELD_PRESENT.CANONICAL.RESULT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "EP-17-002.O1.2.EVIDENCE_FIELD_PRESENT.AUTHORITY.ORIGIN",
+              "origin_type": "APPROVED_DECISION"
+            },
+            "provenance": {
+              "approved_decision_references": [
+                "P2C-OBT-C1-EP-17-002-OPT-1"
+              ],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-WS-17.md",
+              "source_fingerprint": "117cb8abdc971d858c33dbdfc3361ec33c2eb3865b73b255329488772567fcae",
+              "source_lines": "L1241-L1244",
+              "source_section": "38. Enterprise Design Principles > EP-17-002"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "EVIDENCE_OBJECT_REF",
+              "resolver_id": "RESOLVE.EP-17-002.EP-17-002.EP-17-002.O1.2.EVIDENCE_FIELD_PRESENT.CANONICAL.RESULT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "EVIDENCE_OBJECT_REF"
+          },
+          "inference": false,
+          "model_conformance_fixture": {
+            "bindings": {
+              "evidence_object": {
+                "authoritative_source": {
+                  "source_id": "P2C-OBT-C1-EP-17-002-OPT-1",
+                  "source_type": "APPROVED_DECISION",
+                  "version": "2026-07-16"
+                },
+                "identifier": "EP-17-002.EVIDENCE_OBJECT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "EP-17-002.O1.2.EVIDENCE_FIELD_PRESENT.EVIDENCE_OBJECT.ORIGIN",
+                  "origin_type": "APPROVED_DECISION"
+                },
+                "provenance": {
+                  "approved_decision_references": [
+                    "P2C-OBT-C1-EP-17-002-OPT-1"
+                  ],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-17.md",
+                  "source_fingerprint": "117cb8abdc971d858c33dbdfc3361ec33c2eb3865b73b255329488772567fcae",
+                  "source_lines": "L1241-L1244",
+                  "source_section": "38. Enterprise Design Principles > EP-17-002"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "EVIDENCE_OBJECT_REF",
+                  "resolver_id": "RESOLVE.EP-17-002.EP-17-002.EVIDENCE_OBJECT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "EVIDENCE_OBJECT_REF"
+              },
+              "required_fields": {
+                "members": [
+                  {
+                    "authoritative_source": {
+                      "source_id": "P2C-OBT-C1-EP-17-002-OPT-1",
+                      "source_type": "APPROVED_DECISION",
+                      "version": "2026-07-16"
+                    },
+                    "identifier": "FIELD.PLATFORM_COMPONENT_INVENTORY",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "EP-17-002.O1.2.EVIDENCE_FIELD_PRESENT.REQUIRED_FIELDS.ORIGIN.MEMBER.1",
+                      "origin_type": "APPROVED_DECISION"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [
+                        "P2C-OBT-C1-EP-17-002-OPT-1"
+                      ],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-WS-17.md",
+                      "source_fingerprint": "117cb8abdc971d858c33dbdfc3361ec33c2eb3865b73b255329488772567fcae",
+                      "source_lines": "L1241-L1244",
+                      "source_section": "38. Enterprise Design Principles > EP-17-002"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "FIELD_ID",
+                      "resolver_id": "RESOLVE.EP-17-002.FIELD.PLATFORM_COMPONENT_INVENTORY",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "FIELD_ID"
+                  },
+                  {
+                    "authoritative_source": {
+                      "source_id": "P2C-OBT-C1-EP-17-002-OPT-1",
+                      "source_type": "APPROVED_DECISION",
+                      "version": "2026-07-16"
+                    },
+                    "identifier": "FIELD.MONITORED_COMPONENT_IDS",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "EP-17-002.O1.2.EVIDENCE_FIELD_PRESENT.REQUIRED_FIELDS.ORIGIN.MEMBER.2",
+                      "origin_type": "APPROVED_DECISION"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [
+                        "P2C-OBT-C1-EP-17-002-OPT-1"
+                      ],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-WS-17.md",
+                      "source_fingerprint": "117cb8abdc971d858c33dbdfc3361ec33c2eb3865b73b255329488772567fcae",
+                      "source_lines": "L1241-L1244",
+                      "source_section": "38. Enterprise Design Principles > EP-17-002"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "FIELD_ID",
+                      "resolver_id": "RESOLVE.EP-17-002.FIELD.MONITORED_COMPONENT_IDS",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "FIELD_ID"
+                  },
+                  {
+                    "authoritative_source": {
+                      "source_id": "P2C-OBT-C1-EP-17-002-OPT-1",
+                      "source_type": "APPROVED_DECISION",
+                      "version": "2026-07-16"
+                    },
+                    "identifier": "FIELD.REQUIRED_SIGNALS",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "EP-17-002.O1.2.EVIDENCE_FIELD_PRESENT.REQUIRED_FIELDS.ORIGIN.MEMBER.3",
+                      "origin_type": "APPROVED_DECISION"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [
+                        "P2C-OBT-C1-EP-17-002-OPT-1"
+                      ],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-WS-17.md",
+                      "source_fingerprint": "117cb8abdc971d858c33dbdfc3361ec33c2eb3865b73b255329488772567fcae",
+                      "source_lines": "L1241-L1244",
+                      "source_section": "38. Enterprise Design Principles > EP-17-002"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "FIELD_ID",
+                      "resolver_id": "RESOLVE.EP-17-002.FIELD.REQUIRED_SIGNALS",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "FIELD_ID"
+                  },
+                  {
+                    "authoritative_source": {
+                      "source_id": "P2C-OBT-C1-EP-17-002-OPT-1",
+                      "source_type": "APPROVED_DECISION",
+                      "version": "2026-07-16"
+                    },
+                    "identifier": "FIELD.COVERAGE_RESULT",
+                    "inference": false,
+                    "lifecycle": {
+                      "status": "ACTIVE",
+                      "version": "2.3"
+                    },
+                    "namespace": "YSIM.V2.3",
+                    "origin": {
+                      "origin_id": "EP-17-002.O1.2.EVIDENCE_FIELD_PRESENT.REQUIRED_FIELDS.ORIGIN.MEMBER.4",
+                      "origin_type": "APPROVED_DECISION"
+                    },
+                    "provenance": {
+                      "approved_decision_references": [
+                        "P2C-OBT-C1-EP-17-002-OPT-1"
+                      ],
+                      "inference": false,
+                      "source_document": "docs/BRD/BRD-WS-17.md",
+                      "source_fingerprint": "117cb8abdc971d858c33dbdfc3361ec33c2eb3865b73b255329488772567fcae",
+                      "source_lines": "L1241-L1244",
+                      "source_section": "38. Enterprise Design Principles > EP-17-002"
+                    },
+                    "resolver_contract": {
+                      "deterministic": true,
+                      "input_types": [],
+                      "output_type": "FIELD_ID",
+                      "resolver_id": "RESOLVE.EP-17-002.FIELD.COVERAGE_RESULT",
+                      "version": "1.0.0"
+                    },
+                    "semantic_type": "FIELD_ID"
+                  }
+                ],
+                "origin": {
+                  "origin_id": "EP-17-002.O1.2.EVIDENCE_FIELD_PRESENT.REQUIRED_FIELDS.ORIGIN",
+                  "origin_type": "APPROVED_DECISION"
+                },
+                "provenance": {
+                  "approved_decision_references": [
+                    "P2C-OBT-C1-EP-17-002-OPT-1"
+                  ],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-17.md",
+                  "source_fingerprint": "117cb8abdc971d858c33dbdfc3361ec33c2eb3865b73b255329488772567fcae",
+                  "source_lines": "L1241-L1244",
+                  "source_section": "38. Enterprise Design Principles > EP-17-002"
+                },
+                "semantic_type": "SET_OF<FIELD_ID>"
+              }
+            },
+            "comparison": {
+              "expected": {
+                "authoritative_source": {
+                  "source_id": "P2C-OBT-C1-EP-17-002-OPT-1",
+                  "source_type": "APPROVED_DECISION",
+                  "version": "2026-07-16"
+                },
+                "identifier": "EP-17-002.EP-17-002.O1.2.EVIDENCE_FIELD_PRESENT.CANONICAL.RESULT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "EP-17-002.O1.2.EVIDENCE_FIELD_PRESENT.AUTHORITY.ORIGIN",
+                  "origin_type": "APPROVED_DECISION"
+                },
+                "provenance": {
+                  "approved_decision_references": [
+                    "P2C-OBT-C1-EP-17-002-OPT-1"
+                  ],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-17.md",
+                  "source_fingerprint": "117cb8abdc971d858c33dbdfc3361ec33c2eb3865b73b255329488772567fcae",
+                  "source_lines": "L1241-L1244",
+                  "source_section": "38. Enterprise Design Principles > EP-17-002"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "EVIDENCE_OBJECT_REF",
+                  "resolver_id": "RESOLVE.EP-17-002.EP-17-002.EP-17-002.O1.2.EVIDENCE_FIELD_PRESENT.CANONICAL.RESULT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "EVIDENCE_OBJECT_REF"
+              },
+              "observed": {
+                "authoritative_source": {
+                  "source_id": "P2C-OBT-C1-EP-17-002-OPT-1",
+                  "source_type": "APPROVED_DECISION",
+                  "version": "2026-07-16"
+                },
+                "identifier": "EP-17-002.EP-17-002.O1.2.EVIDENCE_FIELD_PRESENT.CANONICAL.RESULT",
+                "inference": false,
+                "lifecycle": {
+                  "status": "ACTIVE",
+                  "version": "2.3"
+                },
+                "namespace": "YSIM.V2.3",
+                "origin": {
+                  "origin_id": "EP-17-002.O1.2.EVIDENCE_FIELD_PRESENT.OBSERVED.ORIGIN",
+                  "origin_type": "RUNTIME_OBSERVED"
+                },
+                "provenance": {
+                  "approved_decision_references": [
+                    "P2C-OBT-C1-EP-17-002-OPT-1"
+                  ],
+                  "inference": false,
+                  "source_document": "docs/BRD/BRD-WS-17.md",
+                  "source_fingerprint": "117cb8abdc971d858c33dbdfc3361ec33c2eb3865b73b255329488772567fcae",
+                  "source_lines": "L1241-L1244",
+                  "source_section": "38. Enterprise Design Principles > EP-17-002"
+                },
+                "resolver_contract": {
+                  "deterministic": true,
+                  "input_types": [],
+                  "output_type": "EVIDENCE_OBJECT_REF",
+                  "resolver_id": "OBSERVE.EP-17-002.EP-17-002.EP-17-002.O1.2.EVIDENCE_FIELD_PRESENT.CANONICAL.RESULT",
+                  "version": "1.0.0"
+                },
+                "semantic_type": "EVIDENCE_OBJECT_REF"
+              }
+            },
+            "evidence_object": {
+              "authoritative_source": {
+                "source_id": "P2C-OBT-C1-EP-17-002-OPT-1",
+                "source_type": "APPROVED_DECISION",
+                "version": "2026-07-16"
+              },
+              "identifier": "EP-17-002.EP-17-002.O1.2.EVIDENCE_FIELD_PRESENT.EVIDENCE.OBJECT",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "EP-17-002.O1.2.EVIDENCE_FIELD_PRESENT.EVIDENCE.ORIGIN",
+                "origin_type": "EVIDENCE_OBJECT"
+              },
+              "provenance": {
+                "approved_decision_references": [
+                  "P2C-OBT-C1-EP-17-002-OPT-1"
+                ],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-17.md",
+                "source_fingerprint": "117cb8abdc971d858c33dbdfc3361ec33c2eb3865b73b255329488772567fcae",
+                "source_lines": "L1241-L1244",
+                "source_section": "38. Enterprise Design Principles > EP-17-002"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "EVIDENCE_OBJECT_REF",
+                "resolver_id": "OBSERVE.EP-17-002.EP-17-002.EP-17-002.O1.2.EVIDENCE_FIELD_PRESENT.EVIDENCE.OBJECT",
+                "version": "1.0.0"
+              },
+              "semantic_type": "EVIDENCE_OBJECT_REF"
+            },
+            "operator_id": "EVIDENCE_FIELD_PRESENT"
+          },
+          "obligation_id": "EP-17-002-O001",
+          "observed_operand": {
+            "authoritative_source": {
+              "source_id": "P2C-OBT-C1-EP-17-002-OPT-1",
+              "source_type": "APPROVED_DECISION",
+              "version": "2026-07-16"
+            },
+            "identifier": "EP-17-002.EP-17-002.O1.2.EVIDENCE_FIELD_PRESENT.CANONICAL.RESULT",
+            "inference": false,
+            "lifecycle": {
+              "status": "ACTIVE",
+              "version": "2.3"
+            },
+            "namespace": "YSIM.V2.3",
+            "origin": {
+              "origin_id": "EP-17-002.O1.2.EVIDENCE_FIELD_PRESENT.OBSERVED.ORIGIN",
+              "origin_type": "RUNTIME_OBSERVED"
+            },
+            "provenance": {
+              "approved_decision_references": [
+                "P2C-OBT-C1-EP-17-002-OPT-1"
+              ],
+              "inference": false,
+              "source_document": "docs/BRD/BRD-WS-17.md",
+              "source_fingerprint": "117cb8abdc971d858c33dbdfc3361ec33c2eb3865b73b255329488772567fcae",
+              "source_lines": "L1241-L1244",
+              "source_section": "38. Enterprise Design Principles > EP-17-002"
+            },
+            "resolver_contract": {
+              "deterministic": true,
+              "input_types": [],
+              "output_type": "EVIDENCE_OBJECT_REF",
+              "resolver_id": "OBSERVE.EP-17-002.EP-17-002.EP-17-002.O1.2.EVIDENCE_FIELD_PRESENT.CANONICAL.RESULT",
+              "version": "1.0.0"
+            },
+            "semantic_type": "EVIDENCE_OBJECT_REF"
+          },
+          "operator_id": "EVIDENCE_FIELD_PRESENT",
+          "operator_version": "1.0.0-candidate.2",
+          "typed_bindings": {
+            "evidence_object": {
+              "authoritative_source": {
+                "source_id": "P2C-OBT-C1-EP-17-002-OPT-1",
+                "source_type": "APPROVED_DECISION",
+                "version": "2026-07-16"
+              },
+              "identifier": "EP-17-002.EVIDENCE_OBJECT",
+              "inference": false,
+              "lifecycle": {
+                "status": "ACTIVE",
+                "version": "2.3"
+              },
+              "namespace": "YSIM.V2.3",
+              "origin": {
+                "origin_id": "EP-17-002.O1.2.EVIDENCE_FIELD_PRESENT.EVIDENCE_OBJECT.ORIGIN",
+                "origin_type": "APPROVED_DECISION"
+              },
+              "provenance": {
+                "approved_decision_references": [
+                  "P2C-OBT-C1-EP-17-002-OPT-1"
+                ],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-17.md",
+                "source_fingerprint": "117cb8abdc971d858c33dbdfc3361ec33c2eb3865b73b255329488772567fcae",
+                "source_lines": "L1241-L1244",
+                "source_section": "38. Enterprise Design Principles > EP-17-002"
+              },
+              "resolver_contract": {
+                "deterministic": true,
+                "input_types": [],
+                "output_type": "EVIDENCE_OBJECT_REF",
+                "resolver_id": "RESOLVE.EP-17-002.EP-17-002.EVIDENCE_OBJECT",
+                "version": "1.0.0"
+              },
+              "semantic_type": "EVIDENCE_OBJECT_REF"
+            },
+            "required_fields": {
+              "members": [
+                {
+                  "authoritative_source": {
+                    "source_id": "P2C-OBT-C1-EP-17-002-OPT-1",
+                    "source_type": "APPROVED_DECISION",
+                    "version": "2026-07-16"
+                  },
+                  "identifier": "FIELD.PLATFORM_COMPONENT_INVENTORY",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "EP-17-002.O1.2.EVIDENCE_FIELD_PRESENT.REQUIRED_FIELDS.ORIGIN.MEMBER.1",
+                    "origin_type": "APPROVED_DECISION"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [
+                      "P2C-OBT-C1-EP-17-002-OPT-1"
+                    ],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-WS-17.md",
+                    "source_fingerprint": "117cb8abdc971d858c33dbdfc3361ec33c2eb3865b73b255329488772567fcae",
+                    "source_lines": "L1241-L1244",
+                    "source_section": "38. Enterprise Design Principles > EP-17-002"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "FIELD_ID",
+                    "resolver_id": "RESOLVE.EP-17-002.FIELD.PLATFORM_COMPONENT_INVENTORY",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "FIELD_ID"
+                },
+                {
+                  "authoritative_source": {
+                    "source_id": "P2C-OBT-C1-EP-17-002-OPT-1",
+                    "source_type": "APPROVED_DECISION",
+                    "version": "2026-07-16"
+                  },
+                  "identifier": "FIELD.MONITORED_COMPONENT_IDS",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "EP-17-002.O1.2.EVIDENCE_FIELD_PRESENT.REQUIRED_FIELDS.ORIGIN.MEMBER.2",
+                    "origin_type": "APPROVED_DECISION"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [
+                      "P2C-OBT-C1-EP-17-002-OPT-1"
+                    ],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-WS-17.md",
+                    "source_fingerprint": "117cb8abdc971d858c33dbdfc3361ec33c2eb3865b73b255329488772567fcae",
+                    "source_lines": "L1241-L1244",
+                    "source_section": "38. Enterprise Design Principles > EP-17-002"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "FIELD_ID",
+                    "resolver_id": "RESOLVE.EP-17-002.FIELD.MONITORED_COMPONENT_IDS",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "FIELD_ID"
+                },
+                {
+                  "authoritative_source": {
+                    "source_id": "P2C-OBT-C1-EP-17-002-OPT-1",
+                    "source_type": "APPROVED_DECISION",
+                    "version": "2026-07-16"
+                  },
+                  "identifier": "FIELD.REQUIRED_SIGNALS",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "EP-17-002.O1.2.EVIDENCE_FIELD_PRESENT.REQUIRED_FIELDS.ORIGIN.MEMBER.3",
+                    "origin_type": "APPROVED_DECISION"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [
+                      "P2C-OBT-C1-EP-17-002-OPT-1"
+                    ],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-WS-17.md",
+                    "source_fingerprint": "117cb8abdc971d858c33dbdfc3361ec33c2eb3865b73b255329488772567fcae",
+                    "source_lines": "L1241-L1244",
+                    "source_section": "38. Enterprise Design Principles > EP-17-002"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "FIELD_ID",
+                    "resolver_id": "RESOLVE.EP-17-002.FIELD.REQUIRED_SIGNALS",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "FIELD_ID"
+                },
+                {
+                  "authoritative_source": {
+                    "source_id": "P2C-OBT-C1-EP-17-002-OPT-1",
+                    "source_type": "APPROVED_DECISION",
+                    "version": "2026-07-16"
+                  },
+                  "identifier": "FIELD.COVERAGE_RESULT",
+                  "inference": false,
+                  "lifecycle": {
+                    "status": "ACTIVE",
+                    "version": "2.3"
+                  },
+                  "namespace": "YSIM.V2.3",
+                  "origin": {
+                    "origin_id": "EP-17-002.O1.2.EVIDENCE_FIELD_PRESENT.REQUIRED_FIELDS.ORIGIN.MEMBER.4",
+                    "origin_type": "APPROVED_DECISION"
+                  },
+                  "provenance": {
+                    "approved_decision_references": [
+                      "P2C-OBT-C1-EP-17-002-OPT-1"
+                    ],
+                    "inference": false,
+                    "source_document": "docs/BRD/BRD-WS-17.md",
+                    "source_fingerprint": "117cb8abdc971d858c33dbdfc3361ec33c2eb3865b73b255329488772567fcae",
+                    "source_lines": "L1241-L1244",
+                    "source_section": "38. Enterprise Design Principles > EP-17-002"
+                  },
+                  "resolver_contract": {
+                    "deterministic": true,
+                    "input_types": [],
+                    "output_type": "FIELD_ID",
+                    "resolver_id": "RESOLVE.EP-17-002.FIELD.COVERAGE_RESULT",
+                    "version": "1.0.0"
+                  },
+                  "semantic_type": "FIELD_ID"
+                }
+              ],
+              "origin": {
+                "origin_id": "EP-17-002.O1.2.EVIDENCE_FIELD_PRESENT.REQUIRED_FIELDS.ORIGIN",
+                "origin_type": "APPROVED_DECISION"
+              },
+              "provenance": {
+                "approved_decision_references": [
+                  "P2C-OBT-C1-EP-17-002-OPT-1"
+                ],
+                "inference": false,
+                "source_document": "docs/BRD/BRD-WS-17.md",
+                "source_fingerprint": "117cb8abdc971d858c33dbdfc3361ec33c2eb3865b73b255329488772567fcae",
+                "source_lines": "L1241-L1244",
+                "source_section": "38. Enterprise Design Principles > EP-17-002"
+              },
+              "semantic_type": "SET_OF<FIELD_ID>"
+            }
+          }
+        }
+      ],
+      "boundary_cases": [
+        "A deliberately excluded non-platform dependency is documented and not counted as a platform component"
+      ],
+      "contract_ast_sha256": "313b95662d21a3c1b59e0509142a49f3614c9123a10d5a09f11c8ad68faeda17",
+      "contract_id": "P2C.C4.CONTRACT.EP-17-002",
+      "criticality": "HIGH",
+      "disposition": "SOURCE_CLARIFICATION_REQUIRED",
+      "evidence_contract": {
+        "evidence_object_ref": {
+          "authoritative_source": {
+            "source_id": "P2C-OBT-C1-EP-17-002-OPT-1",
+            "source_type": "APPROVED_DECISION",
+            "version": "2026-07-16"
+          },
+          "identifier": "EP-17-002.EP-17-002.CONTRACT.EVIDENCE.OBJECT",
+          "inference": false,
+          "lifecycle": {
+            "status": "ACTIVE",
+            "version": "2.3"
+          },
+          "namespace": "YSIM.V2.3",
+          "origin": {
+            "origin_id": "EP-17-002.CONTRACT.EVIDENCE.ORIGIN",
+            "origin_type": "EVIDENCE_OBJECT"
+          },
+          "provenance": {
+            "approved_decision_references": [
+              "P2C-OBT-C1-EP-17-002-OPT-1"
+            ],
+            "inference": false,
+            "source_document": "docs/BRD/BRD-WS-17.md",
+            "source_fingerprint": "117cb8abdc971d858c33dbdfc3361ec33c2eb3865b73b255329488772567fcae",
+            "source_lines": "L1241-L1244",
+            "source_section": "38. Enterprise Design Principles > EP-17-002"
+          },
+          "resolver_contract": {
+            "deterministic": true,
+            "input_types": [],
+            "output_type": "EVIDENCE_OBJECT_REF",
+            "resolver_id": "OBSERVE.EP-17-002.EP-17-002.EP-17-002.CONTRACT.EVIDENCE.OBJECT",
+            "version": "1.0.0"
+          },
+          "semantic_type": "EVIDENCE_OBJECT_REF"
+        },
+        "inference": false,
+        "observed_collection_origin": "EP-17-002.RUNTIME.OBSERVED.FIELDS",
+        "observed_field_ids": [
+          "FIELD.PLATFORM_COMPONENT_INVENTORY",
+          "FIELD.MONITORED_COMPONENT_IDS",
+          "FIELD.REQUIRED_SIGNALS",
+          "FIELD.COVERAGE_RESULT"
+        ],
+        "producer": "EP-17-002.EVIDENCE.PRODUCER",
+        "required_collection_origin": "EP-17-002.SOURCE.REQUIRED.FIELDS",
+        "required_field_ids": [
+          "FIELD.PLATFORM_COMPONENT_INVENTORY",
+          "FIELD.MONITORED_COMPONENT_IDS",
+          "FIELD.REQUIRED_SIGNALS",
+          "FIELD.COVERAGE_RESULT"
+        ],
+        "required_values_or_hashes": [
+          "EP-17-002.EVIDENCE.CONTENT.HASH"
+        ],
+        "retrieval_method": "EP-17-002.EVIDENCE.RETRIEVAL",
+        "version_or_correlation": "EP-17-002.EVIDENCE.VERSION.CORRELATION"
+      },
+      "explicit_non_obligations": [
+        "No runtime implementation topology is authorized by this semantic record.",
+        "No production runtime evidence is claimed by this model-level candidate."
+      ],
+      "fixture_ids": [
+        "P2C-C4-FX-300697729CFCEE4B02FF",
+        "P2C-C4-FX-345D50832AD7F98EAC4B",
+        "P2C-C4-FX-6ED7BEE40AF8B656BF26"
+      ],
+      "high_risk_audit_subset": true,
+      "independent_contract_identity": true,
+      "inference": false,
+      "inherits_contract_ast": null,
+      "negative_oracles": [
+        "A platform component has no required monitoring evidence"
+      ],
+      "normative_obligations": [
+        {
+          "applicability": "V2.3_ACTIVE",
+          "obligation_id": "EP-17-002-O001",
+          "obligation_text": "Monitoring phải bao phủ toàn Platform"
+        }
+      ],
+      "obligation_to_operator_coverage": [
+        {
+          "assertion_ids": [
+            "EP-17-002.O1.1.SET_EQUALS",
+            "EP-17-002.O1.2.EVIDENCE_FIELD_PRESENT"
+          ],
+          "coverage_count": 1,
+          "obligation_id": "EP-17-002-O001"
+        }
+      ],
+      "operator_composition": [
+        "SET_EQUALS",
+        "EVIDENCE_FIELD_PRESENT"
+      ],
+      "positive_oracles": [
+        "Monitoring covers every platform component in the inventory"
+      ],
+      "preconditions": [
+        "The platform component and required signal inventory are known"
+      ],
+      "prohibitions": [
+        "A platform component has no required monitoring evidence"
+      ],
+      "requirement_id": "EP-17-002",
+      "runtime_status": "SLICE_RUNTIME_ADAPTER_REQUIRED",
+      "semantic_family_id": null,
+      "source_provenance": {
+        "approved_decision_references": [
+          "P2C-OBT-C1-EP-17-002-OPT-1"
+        ],
+        "inference": false,
+        "source_document": "docs/BRD/BRD-WS-17.md",
+        "source_fingerprint": "117cb8abdc971d858c33dbdfc3361ec33c2eb3865b73b255329488772567fcae",
+        "source_lines": "L1241-L1244",
+        "source_section": "38. Enterprise Design Principles > EP-17-002"
+      },
+      "source_statement": "Monitoring phải bao phủ toàn Platform.",
+      "surrounding_source_context": "## EP-17-002\n\nMonitoring phải bao phủ toàn Platform.\n\n---"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "contract_id": "P2C.C4.CONTRACT.EP-17-002",
+    "inference": false,
+    "mechanism": "APPROVED_TYPED_CUSTOM_AST",
+    "mechanism_version": "SEMANTIC_ACCEPTANCE_RENDERER_C2",
+    "runtime_status": "RUNTIME_ADAPTER_PENDING"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "ACCEPTANCE_READY",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "EP-17-002-AC001",
-        "EP-17-002-AC002"
+        "EP-17-002-AC002",
+        "EP-17-002-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "EP-17-002-O001",
@@ -8511,9 +11327,9 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_heading": "EP-17-002",
     "source_context_sha256": "a1f3d85143538f7507ebddc1e9c8776c3c8e65af9444d037c4b7db118ede67fd",
     "source_document": "docs/BRD/BRD-WS-17.md",
-    "source_fingerprint": "117cb8abdc971d858c33dbdfc3361ec33c2eb3865b73b255329488772567fcae",
-    "source_lines": "L1241-L1244",
-    "source_section": "38. Enterprise Design Principles > EP-17-002"
+    "source_fingerprint": "9870dcf79fa9da8ff65867613c8c87ad7c1f0d31d941e6967149cc3d765b08df",
+    "source_lines": "L9675-L11350",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > EP-17-002"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -8538,41 +11354,36 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "EP-17-003-AC001",
-      "given": "an operational task within the scope of Scheduler, Queue, Worker, Alert và Runbook đều là Business Object",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "EP-17-003-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-004"
       ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "OPERATIONAL_VERIFICATION_FAILURE_V1",
-      "criterion_id": "EP-17-003-AC002",
-      "given": "an operational task missing an outcome, required signal, audit evidence, or recovery evidence for Scheduler, Queue, Worker, Alert và Runbook đều là Business Object",
-      "observable_evidence": "operator-visible verification result, missing-evidence identifier, operation state, and relevant signal or audit record",
-      "then": "verification reports the specific missing evidence as a detectable failure and does not report the task as conforming",
-      "verifies": [
-        "EP-17-003-O001"
-      ],
-      "when": "operational verification is performed"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "EP-17-003",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "020e64b9fa842a249d4fd7b90c78cf97ade8be49f8eecf9899417584da42710b"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "EP-17-003-AC001",
-        "EP-17-003-AC002"
+        "EP-17-003-AC002",
+        "EP-17-003-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "EP-17-003-O001",
@@ -8597,9 +11408,9 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_heading": "EP-17-003",
     "source_context_sha256": "01c18a016ddd50a1a330ee5eaa51f2c3dc58f401da9da07e8877b7baf1414919",
     "source_document": "docs/BRD/BRD-WS-17.md",
-    "source_fingerprint": "c996ee6a618001b3961799eed54d812457ede0b5a5d447f8e2f7cbcb3e35ccd0",
-    "source_lines": "L1247-L1250",
-    "source_section": "38. Enterprise Design Principles > EP-17-003"
+    "source_fingerprint": "020e64b9fa842a249d4fd7b90c78cf97ade8be49f8eecf9899417584da42710b",
+    "source_lines": "L11352-L11431",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > EP-17-003"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -8624,54 +11435,34 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "EP-17-004-AC001",
-      "given": "an operational task within the scope of Operation Policy được cấu hình. Không Hard-code",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "EP-17-004-O001"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "EP-17-004-AC002",
-      "given": "an operational task within the scope of Operation Policy được cấu hình. Không Hard-code",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "EP-17-004-O002"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "OPERATIONAL_VERIFICATION_FAILURE_V1",
-      "criterion_id": "EP-17-004-AC003",
-      "given": "an operational task missing an outcome, required signal, audit evidence, or recovery evidence for Operation Policy được cấu hình. Không Hard-code",
-      "observable_evidence": "operator-visible verification result, missing-evidence identifier, operation state, and relevant signal or audit record",
-      "then": "verification reports the specific missing evidence as a detectable failure and does not report the task as conforming",
-      "verifies": [
-        "EP-17-004-O001",
-        "EP-17-004-O002"
-      ],
-      "when": "operational verification is performed"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "EP-17-004",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "79a0a441ad070432dfd6679096a2e90aed5b912fbee60f3abd8d7fb418a7d444"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "EP-17-004-AC001",
-        "EP-17-004-AC003"
+        "EP-17-004-AC003",
+        "EP-17-004-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "EP-17-004-O001",
@@ -8680,7 +11471,8 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     {
       "acceptance_criterion_references": [
         "EP-17-004-AC002",
-        "EP-17-004-AC003"
+        "EP-17-004-AC003",
+        "EP-17-004-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "EP-17-004-O002",
@@ -8703,9 +11495,9 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_heading": "EP-17-004",
     "source_context_sha256": "4f33c9551ddfcc74d47aa024ed35d03e368761bd5d0a29ee368db82f59701245",
     "source_document": "docs/BRD/BRD-WS-17.md",
-    "source_fingerprint": "d57225268437c97036fba2bc3d1fdcbfb16fe62d9c72bb8d89c821c7d4715236",
-    "source_lines": "L1253-L1258",
-    "source_section": "38. Enterprise Design Principles > EP-17-004"
+    "source_fingerprint": "79a0a441ad070432dfd6679096a2e90aed5b912fbee60f3abd8d7fb418a7d444",
+    "source_lines": "L11433-L11518",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > EP-17-004"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -8730,10 +11522,11 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": null,
+  "acceptance_mechanism": null,
   "acceptance_rationale": "Alias evidence is inherited from the canonical target; the alias is not an acceptance unit.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "STRUCTURAL_RECORD",
   "acceptance_unit": false,
   "atomic_obligations": [],
   "criticality_applicability": null,
@@ -8755,9 +11548,9 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_heading": "BD-17-011",
     "source_context_sha256": "2aebb9cc529851f28c32018d00f73946f21a29a8a0cf36843bbafce05b2b2f8a",
     "source_document": "docs/BRD/BRD-WS-17.md",
-    "source_fingerprint": "9313a99369183fb8b855c9455e4efe1d97cfe662128432bc48831edb443f5ee9",
-    "source_lines": "L1261-L1264",
-    "source_section": "38. Enterprise Design Principles > EP-17-005"
+    "source_fingerprint": "2182c0fb868876035b46a98a806d187921bb0de85494a038eca637e05bb86701",
+    "source_lines": "L11520-L11571",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > EP-17-005"
   },
   "record_kind": "ALIAS",
   "relationships": {
@@ -8782,41 +11575,34 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "OPERATIONAL_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "EP-17-006-AC001",
-      "given": "an operational task within the scope of Platform hỗ trợ Replay và Recoverable Operation",
-      "observable_evidence": "operation identity, state, outcome, timestamps, relevant signals, audit record, and operator-visible result",
-      "then": "the operator can distinguish running, completed, and failed state as applicable and can inspect the resulting outcome, relevant signals, and evidence named by the obligation",
-      "verifies": [
-        "EP-17-006-O001"
-      ],
-      "when": "the task runs, completes, fails, or is inspected by an operator"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "OPERATIONAL_VERIFICATION_FAILURE_V1",
-      "criterion_id": "EP-17-006-AC002",
-      "given": "an operational task missing an outcome, required signal, audit evidence, or recovery evidence for Platform hỗ trợ Replay và Recoverable Operation",
-      "observable_evidence": "operator-visible verification result, missing-evidence identifier, operation state, and relevant signal or audit record",
-      "then": "verification reports the specific missing evidence as a detectable failure and does not report the task as conforming",
-      "verifies": [
-        "EP-17-006-O001"
-      ],
-      "when": "operational verification is performed"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "EP-17-006",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "3d07d835beb40c78d0d9c55ed6a7f1af6c1c1b8a4982bed021f375cde50fc4ae"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "EP-17-006-AC001",
-        "EP-17-006-AC002"
+        "EP-17-006-AC002",
+        "EP-17-006-AC003"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "EP-17-006-O001",
@@ -8839,9 +11625,9 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_heading": "EP-17-006",
     "source_context_sha256": "e93cf78b940b2adb594c58ae14d5f885f98e854c8114343571ef7505d32b5034",
     "source_document": "docs/BRD/BRD-WS-17.md",
-    "source_fingerprint": "7e0e518153fc987d1131b56137195013bf63e10afac016afc5714e854e806e80",
-    "source_lines": "L1267-L1270",
-    "source_section": "38. Enterprise Design Principles > EP-17-006"
+    "source_fingerprint": "3d07d835beb40c78d0d9c55ed6a7f1af6c1c1b8a4982bed021f375cde50fc4ae",
+    "source_lines": "L11573-L11648",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > EP-17-006"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -8866,40 +11652,34 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "EP-17-007-AC001",
-      "given": "the applicable business context, actor, and input for Platform hỗ trợ Feature Flag và Kill Switch. Không cần Deploy để bật hoặc tắt chức năng",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "EP-17-007-O001"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "BUSINESS_OUTCOME_OBSERVATION_V1",
-      "criterion_id": "EP-17-007-AC002",
-      "given": "the applicable business context, actor, and input for Platform hỗ trợ Feature Flag và Kill Switch. Không cần Deploy để bật hoặc tắt chức năng",
-      "observable_evidence": "business input, policy or rule version, decision or state transition, calculated result where applicable, and visible outcome",
-      "then": "the applicable policy or rule produces a named decision, calculation, state transition, or visible business outcome with its governing input and reason recorded",
-      "verifies": [
-        "EP-17-007-O002"
-      ],
-      "when": "the governing policy, calculation, state transition, or business action is evaluated"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [],
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "EP-17-007",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "1b975c77a3b95b713430925ca8e8881870b17bfd185ecdca68b51066e03523cb"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
-        "EP-17-007-AC001"
+        "EP-17-007-AC001",
+        "EP-17-007-AC003",
+        "EP-17-007-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "EP-17-007-O001",
@@ -8907,7 +11687,9 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     },
     {
       "acceptance_criterion_references": [
-        "EP-17-007-AC002"
+        "EP-17-007-AC002",
+        "EP-17-007-AC003",
+        "EP-17-007-AC004"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "EP-17-007-O002",
@@ -8930,9 +11712,9 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_heading": "BD-17-028",
     "source_context_sha256": "0f20242bcc1e11401db1c54c141059ce5ca4305fc42048118296482ad058af16",
     "source_document": "docs/BRD/BRD-WS-17.md",
-    "source_fingerprint": "05a58a4b0d7303384b6489d3d62585a5a71f3b8b147f0afdbb5b97ad572c6b41",
-    "source_lines": "L1273-L1278",
-    "source_section": "38. Enterprise Design Principles > EP-17-007"
+    "source_fingerprint": "1b975c77a3b95b713430925ca8e8881870b17bfd185ecdca68b51066e03523cb",
+    "source_lines": "L11650-L11735",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > EP-17-007"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -8957,160 +11739,98 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "SECURITY_DECISION_OBSERVATION_V1",
-      "criterion_id": "EP-17-008-AC001",
-      "given": "an identified principal, applicable assurance context, and policy inputs for Mọi thao tác Operations đều phải: - Kiểm tra Permission - Ghi Audit - Tuân thủ Runbook (nếu có)",
-      "observable_evidence": "decision result, effective assurance or policy, denied or changed state, reason, and audit evidence",
-      "then": "the effective security policy produces the required allow, challenge, block, review, or denial result; protected state and audit evidence agree with that decision",
-      "verifies": [
-        "EP-17-008-O001"
+  "acceptance_contract": {
+    "acceptance_content": null,
+    "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "implementation_entry_policy": "SLICE_SPECIFIC_ACCEPTANCE_APPROVAL_REQUIRED_BEFORE_IMPLEMENTATION",
+    "traceability": {
+      "approved_business_decisions": [
+        "P2-DEC-004"
       ],
-      "when": "the protected decision or action is evaluated"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "SECURITY_DECISION_OBSERVATION_V1",
-      "criterion_id": "EP-17-008-AC002",
-      "given": "an identified principal, applicable assurance context, and policy inputs for Mọi thao tác Operations đều phải: - Kiểm tra Permission - Ghi Audit - Tuân thủ Runbook (nếu có)",
-      "observable_evidence": "decision result, effective assurance or policy, denied or changed state, reason, and audit evidence",
-      "then": "the effective security policy produces the required allow, challenge, block, review, or denial result; protected state and audit evidence agree with that decision",
-      "verifies": [
-        "EP-17-008-O002"
-      ],
-      "when": "the protected decision or action is evaluated"
-    },
-    {
-      "case": "POSITIVE",
-      "controlled_contract": "SECURITY_DECISION_OBSERVATION_V1",
-      "criterion_id": "EP-17-008-AC003",
-      "given": "an identified principal, applicable assurance context, and policy inputs for Mọi thao tác Operations đều phải: - Kiểm tra Permission - Ghi Audit - Tuân thủ Runbook (nếu có)",
-      "observable_evidence": "decision result, effective assurance or policy, denied or changed state, reason, and audit evidence",
-      "then": "the effective security policy produces the required allow, challenge, block, review, or denial result; protected state and audit evidence agree with that decision",
-      "verifies": [
-        "EP-17-008-O003"
-      ],
-      "when": "the protected decision or action is evaluated"
-    },
-    {
-      "case": "PRINCIPAL_FAILURE_OR_EDGE",
-      "controlled_contract": "SECURITY_FAIL_CLOSED_V1",
-      "criterion_id": "EP-17-008-AC004",
-      "given": "a principal or request that does not satisfy the assurance, policy, consent, or authorization boundary for Mọi thao tác Operations đều phải: - Kiểm tra Permission - Ghi Audit - Tuân thủ Runbook (nếu có)",
-      "observable_evidence": "decision result, protected-state comparison, reason, effective policy, and audit record",
-      "then": "the result is challenge, block, review, or denial as required; protected state is unchanged and the reason is audited",
-      "verifies": [
-        "EP-17-008-O001",
-        "EP-17-008-O002",
-        "EP-17-008-O003"
-      ],
-      "when": "the protected decision or action is attempted"
-    },
-    {
-      "case": "NEGATIVE_FAIL_CLOSED",
-      "controlled_contract": "REQUIREMENT_SPECIFIC_FAIL_CLOSED_V1",
-      "criterion_id": "EP-17-008-AC005",
-      "given": "an input or attempted state change that violates a mandatory boundary explicitly stated by Mọi thao tác Operations đều phải: - Kiểm tra Permission - Ghi Audit - Tuân thủ Runbook (nếu có)",
-      "observable_evidence": "violating input, decision and reason, before/after protected state, and audit or conformance evidence",
-      "then": "the violated obligation produces its specified rejection, denial, block, review, or non-conforming result without recording a contradictory success",
-      "verifies": [
-        "EP-17-008-O001",
-        "EP-17-008-O002",
-        "EP-17-008-O003"
-      ],
-      "when": "the violating input or action is evaluated"
-    },
-    {
-      "case": "AUTHORIZATION_BOUNDARY",
-      "controlled_contract": "EXPLICIT_AUTHORIZATION_BOUNDARY_V1",
-      "criterion_id": "EP-17-008-AC006",
-      "given": "an actor lacking the permission, role, identity assurance, consent, or access condition stated by Mọi thao tác Operations đều phải: - Kiểm tra Permission - Ghi Audit - Tuân thủ Runbook (nếu có)",
-      "observable_evidence": "actor and scope, effective policy or assurance, decision, protected-state comparison, reason, and audit evidence",
-      "then": "access is denied or challenged according to the referenced obligation, protected state remains unchanged, and the decision is auditable",
-      "verifies": [
-        "EP-17-008-O001",
-        "EP-17-008-O002",
-        "EP-17-008-O003"
-      ],
-      "when": "the actor attempts the governed action"
+      "governing_decision": "V23-P2C-PROGRESSIVE-ACCEPTANCE-DECISION-001",
+      "inference": false,
+      "requirement_id": "EP-17-008",
+      "source_document": "docs/BRD/BRD-WS-17.md",
+      "source_fingerprint": "62eedfdc6201f555db88426ffa39dae934e3f515213c3826477e9f37e909fd13"
     }
-  ],
+  },
+  "acceptance_mechanism": {
+    "inference": false,
+    "mechanism": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+    "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+  },
   "acceptance_rationale": null,
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "DIRECT",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
   "acceptance_unit": true,
   "atomic_obligations": [
     {
       "acceptance_criterion_references": [
         "EP-17-008-AC001",
         "EP-17-008-AC004",
-        "EP-17-008-AC005",
-        "EP-17-008-AC006"
+        "EP-17-008-AC005"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "EP-17-008-O001",
-      "obligation_text": "Mọi thao tác Operations đều phải: Kiểm tra Permission."
+      "obligation_text": "Mọi thao tác Operations đều phải: Kiểm tra Permission"
     },
     {
       "acceptance_criterion_references": [
         "EP-17-008-AC002",
         "EP-17-008-AC004",
-        "EP-17-008-AC005",
-        "EP-17-008-AC006"
+        "EP-17-008-AC005"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "EP-17-008-O002",
-      "obligation_text": "Mọi thao tác Operations đều phải: Ghi Audit."
+      "obligation_text": "Mọi thao tác Operations đều phải: Ghi Audit"
     },
     {
       "acceptance_criterion_references": [
         "EP-17-008-AC003",
         "EP-17-008-AC004",
-        "EP-17-008-AC005",
-        "EP-17-008-AC006"
+        "EP-17-008-AC005"
       ],
       "applicability": "V2.3_ACTIVE",
       "obligation_id": "EP-17-008-O003",
-      "obligation_text": "Mọi thao tác Operations đều phải: Tuân thủ Runbook (nếu có)."
+      "obligation_text": "Mọi thao tác Operations đều phải: Tuân thủ Runbook (nếu có)"
     }
   ],
   "criticality_applicability": {
     "AUTHORIZATION_BOUNDARY": {
-      "criterion_references": [
-        "EP-17-008-AC006"
-      ],
-      "status": "APPLICABLE"
-    },
-    "CONCURRENCY": {
-      "criterion_references": [],
-      "rationale": "EP-17-008 does not define a concurrency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    },
-    "IDEMPOTENCY": {
-      "criterion_references": [],
-      "rationale": "EP-17-008 does not define a idempotency obligation or boundary.",
-      "status": "NOT_APPLICABLE"
-    },
-    "NEGATIVE_FAIL_CLOSED": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "EP-17-008-AC005"
       ],
-      "status": "APPLICABLE"
+      "rationale": null
+    },
+    "CONCURRENCY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "EP-17-008 does not define a concurrency obligation."
+    },
+    "IDEMPOTENCY": {
+      "applicability": "NOT_APPLICABLE",
+      "criterion_references": [],
+      "rationale": "EP-17-008 does not define a idempotency obligation."
+    },
+    "NEGATIVE_FAIL_CLOSED": {
+      "applicability": "APPLICABLE",
+      "criterion_references": [
+        "EP-17-008-AC004"
+      ]
     },
     "POSITIVE": {
+      "applicability": "APPLICABLE",
       "criterion_references": [
         "EP-17-008-AC001",
         "EP-17-008-AC002",
         "EP-17-008-AC003"
-      ],
-      "status": "APPLICABLE"
+      ]
     },
     "RECOVERY": {
+      "applicability": "NOT_APPLICABLE",
       "criterion_references": [],
-      "rationale": "EP-17-008 does not define a recovery obligation or boundary.",
-      "status": "NOT_APPLICABLE"
+      "rationale": "EP-17-008 does not define a recovery obligation."
     }
   },
   "criticality_unit": true,
@@ -9130,9 +11850,9 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_heading": "EP-17-008",
     "source_context_sha256": "2951251016fb55d5b0c8e04e306c118e26d4e099102b021292494fbe29321b0e",
     "source_document": "docs/BRD/BRD-WS-17.md",
-    "source_fingerprint": "d18721d8104078b547e0a74ad90edb869a5df8ff48e6239bd848aeb1ad145557",
-    "source_lines": "L1281-L1288",
-    "source_section": "38. Enterprise Design Principles > EP-17-008"
+    "source_fingerprint": "62eedfdc6201f555db88426ffa39dae934e3f515213c3826477e9f37e909fd13",
+    "source_lines": "L11737-L11873",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > EP-17-008"
   },
   "record_kind": "CANONICAL_ATOMIC",
   "relationships": {
@@ -9157,10 +11877,11 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": null,
+  "acceptance_mechanism": null,
   "acceptance_rationale": "Alias evidence is inherited from the canonical target; the alias is not an acceptance unit.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "STRUCTURAL_RECORD",
   "acceptance_unit": false,
   "atomic_obligations": [],
   "criticality_applicability": null,
@@ -9179,9 +11900,9 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_heading": "29. Operation Business Events",
     "source_context_sha256": "ab56286c8a4ab9a35eda380fb856a41d2c3038d4f5c35c93c36835f9e4844bc8",
     "source_document": "docs/BRD/BRD-WS-17.md",
-    "source_fingerprint": "8e1054b5bb2c417f617b4b858ed09073bf623a101f309e0fee4f719651fcdec7",
-    "source_lines": "L1291-L1294",
-    "source_section": "38. Enterprise Design Principles > EP-17-009"
+    "source_fingerprint": "2d6ab7828fff5926a1ff83d7a6f945bb080760411b88cf84663dd41e02544bbc",
+    "source_lines": "L11875-L11923",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > EP-17-009"
   },
   "record_kind": "ALIAS",
   "relationships": {
@@ -9206,10 +11927,11 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
 
 ```json
 {
-  "acceptance_contract": [],
+  "acceptance_contract": null,
+  "acceptance_mechanism": null,
   "acceptance_rationale": "Alias evidence is inherited from the canonical target; the alias is not an acceptance unit.",
-  "acceptance_schema_version": "2.0.0-OBLIGATION_COVERAGE",
-  "acceptance_status": "NOT_APPLICABLE_FOR_V2.3",
+  "acceptance_schema_version": "PROGRESSIVE-1.0.0",
+  "acceptance_status": "STRUCTURAL_RECORD",
   "acceptance_unit": false,
   "atomic_obligations": [],
   "criticality_applicability": null,
@@ -9228,9 +11950,9 @@ EPAO đóng vai trò là tài liệu kiến trúc nền tảng (Platform Archite
     "source_context_heading": "EP-17-010",
     "source_context_sha256": "8bbd86f847b6f174ba6c408149c3fa2dc3d29b7aaf4d7bc53b16778d0a1742ea",
     "source_document": "docs/BRD/BRD-WS-17.md",
-    "source_fingerprint": "91d2c85595883c6b57ca20d80a33b50464d99620c94641cbcecbcd91f6c59a7a",
-    "source_lines": "L1297-L1308",
-    "source_section": "38. Enterprise Design Principles > EP-17-010"
+    "source_fingerprint": "9c6bda5c6145ed4ec157297dec2a535d303603ca28b80fb067735e891b4857f7",
+    "source_lines": "L11925-L11973",
+    "source_section": "Phase 2C C6-R1 canonical requirement appendix > EP-17-010"
   },
   "record_kind": "ALIAS",
   "relationships": {

@@ -1,0 +1,255 @@
+{
+  "artifact": "PHASE_2C_PROGRESSIVE_TRACEABILITY",
+  "candidate_id": "V23-P2C-PROGRESSIVE-DOCUMENT-BASELINE-C1",
+  "decision_selection_count": 27,
+  "decision_selections": [
+    {
+      "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+      "approved_semantic_completion_selection": {
+        "decision_id": "P2C-SC-C1-DEC-001",
+        "option_id": "OPT-AST"
+      },
+      "requirement_id": "BD-04-001",
+      "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+    },
+    {
+      "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+      "approved_semantic_completion_selection": {
+        "decision_id": "P2C-SC-C1-DEC-002",
+        "option_id": "OPT-AST"
+      },
+      "requirement_id": "BD-07-014",
+      "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+    },
+    {
+      "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+      "approved_semantic_completion_selection": {
+        "decision_id": "P2C-SC-C1-DEC-003",
+        "option_id": "OPT-AST"
+      },
+      "requirement_id": "BD-09-014",
+      "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+    },
+    {
+      "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+      "approved_semantic_completion_selection": {
+        "decision_id": "P2C-SC-C1-DEC-004",
+        "option_id": "OPT-A"
+      },
+      "requirement_id": "BD-16-027",
+      "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+    },
+    {
+      "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+      "approved_semantic_completion_selection": {
+        "decision_id": "P2C-SC-C1-DEC-005",
+        "option_id": "OPT-AST"
+      },
+      "requirement_id": "BD-17-016",
+      "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+    },
+    {
+      "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+      "approved_semantic_completion_selection": {
+        "decision_id": "P2C-SC-C1-DEC-006",
+        "option_id": "OPT-AST"
+      },
+      "requirement_id": "BRD-UPDATE-01-R028",
+      "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+    },
+    {
+      "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+      "approved_semantic_completion_selection": {
+        "decision_id": "P2C-SC-C1-DEC-007",
+        "option_id": "OPT-CLARIFY"
+      },
+      "requirement_id": "BRD-WS-02-R004",
+      "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+    },
+    {
+      "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+      "approved_semantic_completion_selection": {
+        "decision_id": "P2C-SC-C1-DEC-008",
+        "option_id": "OPT-AST"
+      },
+      "requirement_id": "BRD-WS-04-R011",
+      "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+    },
+    {
+      "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+      "approved_semantic_completion_selection": {
+        "decision_id": "P2C-SC-C1-DEC-009",
+        "option_id": "OPT-AST"
+      },
+      "requirement_id": "BRD-WS-07-R001",
+      "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+    },
+    {
+      "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+      "approved_semantic_completion_selection": {
+        "decision_id": "P2C-SC-C1-DEC-010",
+        "option_id": "OPT-AST"
+      },
+      "requirement_id": "BRD-WS-11-R009",
+      "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+    },
+    {
+      "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+      "approved_semantic_completion_selection": {
+        "decision_id": "P2C-SC-C1-DEC-011",
+        "option_id": "OPT-CLARIFY"
+      },
+      "requirement_id": "BRD-WS-13-R003",
+      "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+    },
+    {
+      "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+      "approved_semantic_completion_selection": {
+        "decision_id": "P2C-SC-C1-DEC-012",
+        "option_id": "OPT-AST"
+      },
+      "requirement_id": "BRD-WS-13-R021",
+      "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+    },
+    {
+      "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+      "approved_semantic_completion_selection": {
+        "decision_id": "P2C-SC-C1-DEC-013",
+        "option_id": "OPT-A"
+      },
+      "requirement_id": "BRD-WS-14-R013",
+      "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+    },
+    {
+      "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+      "approved_semantic_completion_selection": {
+        "decision_id": "P2C-SC-C1-DEC-014",
+        "option_id": "OPT-AST"
+      },
+      "requirement_id": "BRD-WS-14-R025",
+      "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+    },
+    {
+      "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+      "approved_semantic_completion_selection": {
+        "decision_id": "P2C-SC-C1-DEC-015",
+        "option_id": "OPT-AST"
+      },
+      "requirement_id": "BRD-WS-17-R018",
+      "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+    },
+    {
+      "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+      "approved_semantic_completion_selection": {
+        "decision_id": "P2C-SC-C1-DEC-016",
+        "option_id": "OPT-AST"
+      },
+      "requirement_id": "BRD-WS-17-R029",
+      "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+    },
+    {
+      "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+      "approved_semantic_completion_selection": {
+        "decision_id": "P2C-SC-C1-DEC-017",
+        "option_id": "OPT-AST"
+      },
+      "requirement_id": "EP-12-003",
+      "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+    },
+    {
+      "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+      "approved_semantic_completion_selection": {
+        "decision_id": "P2C-SC-C1-DEC-018",
+        "option_id": "OPT-AST"
+      },
+      "requirement_id": "EP-13-001",
+      "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+    },
+    {
+      "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+      "approved_semantic_completion_selection": {
+        "decision_id": "P2C-SC-C1-DEC-019",
+        "option_id": "OPT-AST"
+      },
+      "requirement_id": "EP-14-010",
+      "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+    },
+    {
+      "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+      "approved_semantic_completion_selection": {
+        "decision_id": "P2C-SC-C1-DEC-020",
+        "option_id": "OPT-AST"
+      },
+      "requirement_id": "EP-17-001",
+      "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+    },
+    {
+      "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+      "approved_semantic_completion_selection": {
+        "decision_id": "P2C-SC-C1-DEC-021",
+        "option_id": "OPT-AST"
+      },
+      "requirement_id": "UXF-002",
+      "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+    },
+    {
+      "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+      "approved_semantic_completion_selection": {
+        "decision_id": "P2C-SC-C1-DEC-022",
+        "option_id": "OPT-AST"
+      },
+      "requirement_id": "UXF-003",
+      "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+    },
+    {
+      "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+      "approved_semantic_completion_selection": {
+        "decision_id": "P2C-SC-C1-DEC-023",
+        "option_id": "OPT-AST"
+      },
+      "requirement_id": "UXF-008",
+      "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+    },
+    {
+      "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+      "approved_semantic_completion_selection": {
+        "decision_id": "P2C-SC-C1-DEC-024",
+        "option_id": "OPT-AST"
+      },
+      "requirement_id": "UXF-02-R009",
+      "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+    },
+    {
+      "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+      "approved_semantic_completion_selection": {
+        "decision_id": "P2C-SC-C1-DEC-025",
+        "option_id": "OPT-AST"
+      },
+      "requirement_id": "UXF-209",
+      "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+    },
+    {
+      "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+      "approved_semantic_completion_selection": {
+        "decision_id": "P2C-SC-C1-DEC-026",
+        "option_id": "OPT-AST"
+      },
+      "requirement_id": "UXF-301",
+      "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+    },
+    {
+      "acceptance_state": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION",
+      "approved_semantic_completion_selection": {
+        "decision_id": "P2C-SC-C1-DEC-027",
+        "option_id": "OPT-AST"
+      },
+      "requirement_id": "UXF-302",
+      "runtime_status": "PENDING_VERTICAL_SLICE_ACCEPTANCE_ELABORATION"
+    }
+  ],
+  "rejected_c6_r1": {
+    "backup_object": "8ec2a5381054fc6dddad2e1c2ad15bd4e53a0a28",
+    "tree": "699a7de703fc1c0009cca0d851c67766a1d7d333"
+  },
+  "source_record_count": 1326
+}
