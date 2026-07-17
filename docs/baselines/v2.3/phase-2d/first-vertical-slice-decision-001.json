@@ -1,0 +1,110 @@
+{
+  "approval_basis": "EXACT_HUMAN_AUTHORIZATION_TEXT_AND_SCOPE",
+  "approval_scope": "FIRST_VERTICAL_SLICE_SELECTION_AND_PRODUCT_IMPLEMENTATION_COMMISSIONING_BOUNDARY",
+  "approval_status": "PENDING_HUMAN_APPROVAL",
+  "authorized_approver": "Khoa, Nguyen",
+  "business_outcome": {
+    "authentication_required": false,
+    "external_provider_required": false,
+    "guest_capabilities": [
+      "OPEN_DETERMINISTICALLY_SEEDED_STOREFRONT",
+      "BROWSE_PUBLISHED_PRODUCTS",
+      "OPEN_PRODUCT_DETAIL",
+      "OBSERVE_LOADING_EMPTY_AND_NOT_FOUND_STATES"
+    ],
+    "payment_required": false
+  },
+  "commissioning_boundary": {
+    "allowed": [
+      "APPLICATION_WORKSPACE_MANIFESTS",
+      "API_APPLICATION_SHELL",
+      "WEB_UI_APPLICATION_SHELL",
+      "SHARED_CONTRACT_TYPE_PACKAGE_SHELL",
+      "DATABASE_CONNECTION_AND_MIGRATION_HARNESS",
+      "TEST_HARNESS",
+      "LINT_TYPECHECK_BUILD_COMMANDS",
+      "SECRET_FREE_LOCAL_CONFIGURATION_TEMPLATES",
+      "HEALTH_AND_READINESS_CHECKS",
+      "CI_VALIDATION_CONFIGURATION",
+      "CLEAN_CHECKOUT_BOOTSTRAP_AND_VALIDATION_COMMANDS",
+      "DETERMINISTIC_SEED_AND_MIGRATION_MECHANISM_SHELL",
+      "MINIMAL_API_AND_UI_PROCESS_SMOKE_SURFACE"
+    ],
+    "forbidden": [
+      "PRODUCT_CATALOG_STOREFRONT_OR_PRICING_BUSINESS_SCHEMA",
+      "PRODUCT_LIST_OR_DETAIL_API",
+      "PRODUCT_UI",
+      "BUSINESS_SEED_RECORDS",
+      "AUTHENTICATION_OR_AUTHORIZATION_ENGINE",
+      "ORGANIZATION_ADMINISTRATION",
+      "CART_CHECKOUT_ORDER_OR_PAYMENT",
+      "INVENTORY_PROCUREMENT_OR_PROVIDER_INTEGRATION",
+      "PROMOTION_TAX_RECOMMENDATION_OR_SEARCH",
+      "PRODUCTION_SECRETS",
+      "DEPLOYMENT",
+      "ARCHITECTURE_WIDE_PLATFORM_SERVICES",
+      "VS001_BUSINESS_IMPLEMENTATION"
+    ],
+    "separate_gate_required": true
+  },
+  "decision_id": "V23-P2D-FIRST-SLICE-DECISION-001",
+  "non_claims": [
+    "NOT_SLICE_ACCEPTANCE_ELABORATION_APPROVAL",
+    "NOT_COMMISSIONING_IMPLEMENTATION_APPROVAL",
+    "NOT_VS001_IMPLEMENTATION_APPROVAL",
+    "NOT_RUNTIME_ADAPTER_APPROVAL",
+    "NOT_YADF_PRODUCTION_IMPLEMENTATION_APPROVAL",
+    "NOT_DEPLOYMENT_APPROVAL"
+  ],
+  "requirement_boundary": {
+    "acceptance_ready": [
+      "BD-04-005",
+      "BRD-UPDATE-01-R001",
+      "BRD-WS-02-R002",
+      "BRD-WS-02-R003",
+      "UXF-010",
+      "UXF-011",
+      "UXF-109",
+      "UXF-402",
+      "UXF-405"
+    ],
+    "pending_vertical_slice_acceptance_elaboration": [
+      "BD-02-001",
+      "BD-02-002",
+      "BD-04-001",
+      "BD-04-002",
+      "BD-04-003",
+      "BD-05-001",
+      "BRD-WS-04-R001",
+      "UXF-003",
+      "UXF-04-R011",
+      "UXF-05-R004",
+      "UXF-05-R010",
+      "UXF-05-R018",
+      "UXF-05-R056",
+      "UXF-301",
+      "UXF-304",
+      "UXF-306"
+    ],
+    "readiness_counts": {
+      "acceptance_ready": 9,
+      "pending_elaboration": 16,
+      "total": 25
+    }
+  },
+  "selected_slice": "V23-P2D-VS001-PUBLIC_PRODUCT_CATALOG_BROWSE_DETAIL",
+  "status": "CANDIDATE",
+  "vs001_exclusions": [
+    "LOGIN_AND_ORGANIZATION_ADMINISTRATION",
+    "CART_AND_CHECKOUT",
+    "ORDER_AND_PAYMENT",
+    "INVENTORY_RESERVATION",
+    "PROVIDER_INTEGRATION",
+    "ADMIN_CATALOG_EDITING_OR_PUBLISHING_UI",
+    "SEARCH_FILTERING_AND_RECOMMENDATION",
+    "PROMOTION_AND_TAXATION",
+    "COMPLEX_OR_DYNAMIC_PRICING",
+    "PRODUCTION_DEPLOYMENT",
+    "UNRELATED_RUNTIME_ADAPTERS"
+  ]
+}

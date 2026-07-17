@@ -1,0 +1,21 @@
+{
+  "approval_scope": "FIRST_VERTICAL_SLICE_SELECTION_AND_PRODUCT_IMPLEMENTATION_COMMISSIONING_BOUNDARY",
+  "approval_status": "PENDING_HUMAN_APPROVAL",
+  "candidate_inventory": [
+    "docs/baselines/v2.3/phase-2d/FIRST_VERTICAL_SLICE_DECISION_001.md",
+    "docs/baselines/v2.3/phase-2d/first-vertical-slice-decision-001-manifest.json",
+    "docs/baselines/v2.3/phase-2d/first-vertical-slice-decision-001.json",
+    "scripts/docs/validate-phase-2d-first-vertical-slice-decision-001.py"
+  ],
+  "decision_id": "V23-P2D-FIRST-SLICE-DECISION-001",
+  "generated_payload_aggregate_sha256": "607472094308246df153d841fce5fbd4e8e205e5161806f0f3a7a0e7c608c233",
+  "hash_identity_model": "DETACHED_NON_SELF_REFERENTIAL_MANIFEST",
+  "parent_commit": "9a4e163734f57d0be871f4cd9392a2ad21e3055e",
+  "selected_slice": "V23-P2D-VS001-PUBLIC_PRODUCT_CATALOG_BROWSE_DETAIL",
+  "signed_file_sha256": {
+    "docs/baselines/v2.3/phase-2d/FIRST_VERTICAL_SLICE_DECISION_001.md": "6b9399c49514002db3a2a72524b01ae135b6c8fdb8d7b3e7ad1edff3e97275e7",
+    "docs/baselines/v2.3/phase-2d/first-vertical-slice-decision-001.json": "ec086f05289f11f4869439d1024ddcfa99a72d5025a7a9fa717f255464bbe3c7",
+    "scripts/docs/validate-phase-2d-first-vertical-slice-decision-001.py": "7bae36d5f07d28de8fb7441675c4bd57e0d8f3d14fd3936ea083624f1fd1322b"
+  },
+  "status": "CANDIDATE"
+}
