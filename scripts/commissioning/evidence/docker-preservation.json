@@ -1,0 +1,12 @@
+{
+  "containers": [
+    {"id":"db8b064a07937c28c0426ad29367662ddfb3adbc92e7f3b111df8f644d4d1e00","image_id":"sha256:fe03a7605299a34ddf5e4f285dff78c3d7190a576b3c6b46f2fcff69f4bffd54","mounts":["ysim-platform_ysim_pgdata"],"name":"ysim-postgres","networks":["ysim-platform_default"],"state":"running"},
+    {"id":"f9c6298dca9addbca669dfbdd20eef8c570dae9e08d536edbed1ffa6cc754912","image_id":"sha256:33d7c9a245edd95e6703a0addbeaa48fe40c3b3b4783627a72085155462ebfdb","mounts":["91dd231f4eb20249d6ec2f7438ebf032b180e982f437292d2248814b03d48991"],"name":"ysim-redis","networks":["ysim-platform_default"],"state":"running"},
+    {"id":"5f6896da886efb4b9340e66b776f5626edd16c6efd8db53b84df6bcd29d4cc76","image_id":"sha256:956d688cbd13dca36c72d8e94c34d6d1cdf4a005aa6aa4ff6edaaac56c34d8df","mounts":[],"name":"ysim-mailpit","networks":["ysim-platform_default"],"state":"running"},
+    {"id":"02c3a3197efe255fa39bd9005b0e21bfab6ce717f16da272130e438c68defc68","image_id":"sha256:14cea493d9a34af32f524e538b8346cf79f3321eff8e708c1e2960462bd8936e","mounts":["ysim-platform_ysim_minio"],"name":"ysim-minio","networks":["ysim-platform_default"],"state":"running"}
+  ],
+  "modified": {"containers":0,"networks":0,"volumes":0},
+  "network": {"driver":"bridge","id":"fc8981f0df6475f26345f3e349c178061dea32b45c78e820084aa4ea5857d523","name":"ysim-platform_default"},
+  "stable_snapshot_hashes": {"containers":"4b2de84b63ebc3918f369e041aa6f8b7ddf1d43fd2e6d0bfadf6ebb28e3c9cbd","networks":"433de46c592b97bae5f04e68406ee152b062ac183b3288a7bd1f8bc6cc6a056b","volumes":"0120c9ceefe97b5ecd7762e9e20f6b5031e104e13618f114875cb682e1e41dec"},
+  "volumes": ["91dd231f4eb20249d6ec2f7438ebf032b180e982f437292d2248814b03d48991","ysim-platform_ysim_minio","ysim-platform_ysim_pgdata"]
+}

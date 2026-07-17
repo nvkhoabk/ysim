@@ -1,0 +1,9 @@
+{
+  "body": {"check":"ready","service":"commissioning-api","status":"ok"},
+  "body_sha256": "f7122c1be26497dc4d9d5a8475f1377807aa1fcab9b712db116334d17bb82040",
+  "business_route_status": 404,
+  "endpoint": "http://127.0.0.1:<DYNAMIC_LOOPBACK_PORT>/health/ready",
+  "process_cleanup": "PASS",
+  "process_started": true,
+  "status": 200
+}

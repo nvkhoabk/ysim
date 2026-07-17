@@ -1,0 +1,9 @@
+{
+  "archive": "node-v24.18.0-linux-arm64.tar.xz",
+  "archive_sha256": "58c9520501f6ae2b52d5b210444e24b9d0c029a58c5011b797bc1fe7105886f6",
+  "archive_source": "https://nodejs.org/dist/v24.18.0/node-v24.18.0-linux-arm64.tar.xz",
+  "corepack_version": "0.35.0",
+  "node_version": "24.18.0",
+  "pnpm_version": "11.13.1",
+  "system_node_modified": false
+}

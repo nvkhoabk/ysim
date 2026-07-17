@@ -1,0 +1,15 @@
+{
+  "cleanup_failure_path": "PASS",
+  "cleanup_success_path": "PASS",
+  "database_version": "PostgreSQL 18.4 (Debian 18.4-1.pgdg12+1)",
+  "encoding": "UTF8",
+  "forced_failure_child_exit_code": 1,
+  "forced_failure_command_exit_code": 1,
+  "forced_failure_kind": "MISSING_RELATION_SQL_ERROR",
+  "image_repo_digest": "postgres@sha256:1961f96e6029a02c3812d7cb329a3b03a3ac2bb067058dec17b0f5596aca9296",
+  "migration_ids": ["20260717000000_commissioning_baseline"],
+  "real_query": "PASS",
+  "schema_objects": ["commissioning.runtime_probe", "public._prisma_migrations"],
+  "schema_sha256": "42f8e12141ed1fca1f813ecffcf2516b857b4496d48640c24f5a773c05d139a5",
+  "time_zone": "UTC"
+}

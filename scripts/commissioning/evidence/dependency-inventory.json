@@ -1,0 +1,28 @@
+{
+  "direct_dependencies": {
+    "@nestjs/common": "11.1.28",
+    "@nestjs/core": "11.1.28",
+    "@nestjs/platform-fastify": "11.1.28",
+    "@playwright/test": "1.61.1",
+    "@prisma/adapter-pg": "7.8.0",
+    "@prisma/client": "7.8.0",
+    "@types/node": "24.13.3",
+    "@types/react": "19.2.17",
+    "@types/react-dom": "19.2.3",
+    "@ysim/contracts": "workspace:*",
+    "eslint": "9.39.5",
+    "fastify": "5.10.0",
+    "next": "16.2.10",
+    "pg": "8.22.0",
+    "prisma": "7.8.0",
+    "react": "19.2.7",
+    "react-dom": "19.2.7",
+    "reflect-metadata": "0.2.2",
+    "rxjs": "7.8.2",
+    "typescript": "5.9.3",
+    "vitest": "4.1.10"
+  },
+  "lockfile_sha256": "5f5ca78b1738ed4f88fc939a46d4878cb1ffd651e820d033d9fe51e5c2794ce5",
+  "package_manager": "pnpm@11.13.1",
+  "runtime": "node@24.18.0"
+}

@@ -1,0 +1,17 @@
+{
+  "commands": [
+    {"command":"corepack pnpm install --frozen-lockfile","exit_code":0,"result":"PASS"},
+    {"command":"corepack pnpm lint","exit_code":0,"result":"PASS"},
+    {"command":"corepack pnpm typecheck","exit_code":0,"result":"PASS"},
+    {"command":"corepack pnpm test","exit_code":0,"result":"PASS","tests":"9/9 behavioral and negative gates"},
+    {"command":"corepack pnpm build","exit_code":0,"result":"PASS"},
+    {"command":"corepack pnpm smoke:api","exit_code":0,"result":"PASS"},
+    {"command":"corepack pnpm smoke:web","exit_code":0,"result":"PASS"},
+    {"command":"corepack pnpm db:migrate:verify","exit_code":0,"result":"PASS"},
+    {"command":"corepack pnpm bootstrap:clean-checkout","exit_code":0,"result":"PASS"}
+  ],
+  "candidate_id": "V23-P2D-PRODUCT-IMPLEMENTATION-COMMISSIONING-I1-R1",
+  "committed_lifecycle_regression": "PASS",
+  "correction_passes_used": 1,
+  "external_availability_resolution_counted_as_correction": false
+}

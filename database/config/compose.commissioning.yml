@@ -1,0 +1,35 @@
+services:
+  postgres:
+    image: postgres:18.4-bookworm@sha256:1961f96e6029a02c3812d7cb329a3b03a3ac2bb067058dec17b0f5596aca9296
+    environment:
+      POSTGRES_DB: commissioning
+      POSTGRES_HOST_AUTH_METHOD: trust
+      POSTGRES_INITDB_ARGS: --encoding=UTF8
+      POSTGRES_USER: commissioning
+      TZ: UTC
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U commissioning -d commissioning"]
+      interval: 1s
+      timeout: 3s
+      retries: 30
+    labels:
+      io.ysim.commissioning.owner: "true"
+      io.ysim.commissioning.run-id: "${COMMISSIONING_RUN_ID:?COMMISSIONING_RUN_ID is required}"
+    networks:
+      - commissioning
+    ports:
+      - "127.0.0.1::5432"
+    volumes:
+      - commissioning-data:/var/lib/postgresql
+
+networks:
+  commissioning:
+    labels:
+      io.ysim.commissioning.owner: "true"
+      io.ysim.commissioning.run-id: "${COMMISSIONING_RUN_ID:?COMMISSIONING_RUN_ID is required}"
+
+volumes:
+  commissioning-data:
+    labels:
+      io.ysim.commissioning.owner: "true"
+      io.ysim.commissioning.run-id: "${COMMISSIONING_RUN_ID:?COMMISSIONING_RUN_ID is required}"

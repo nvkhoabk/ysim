@@ -1,0 +1,55 @@
+name: commissioning
+
+on:
+  pull_request:
+    paths:
+      - package.json
+      - pnpm-lock.yaml
+      - pnpm-workspace.yaml
+      - apps/**
+      - packages/**
+      - database/**
+      - scripts/commissioning/**
+      - tests/commissioning/**
+      - .github/workflows/commissioning.yml
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      # actions/checkout v4.2.2, resolved from the official actions/checkout repository.
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Install approved x64 runtime tools
+        run: |
+          test "$(uname -m)" = "x86_64"
+          curl -fL https://nodejs.org/dist/v24.18.0/node-v24.18.0-linux-x64.tar.xz -o /tmp/node-v24.18.0-linux-x64.tar.xz
+          echo '55aa7153f9d88f28d765fcdad5ae6945b5c0f98a36881703817e4c450fa76742  /tmp/node-v24.18.0-linux-x64.tar.xz' | sha256sum -c -
+          tar -xJf /tmp/node-v24.18.0-linux-x64.tar.xz -C /tmp
+          curl -fL https://github.com/docker/compose/releases/download/v2.40.2/docker-compose-linux-x86_64 -o /tmp/docker-compose-v2.40.2-linux-x86_64
+          echo '6c964d9655cd629ef43c5dc75d9612c2da319237debee54a7aef217e9f362b88  /tmp/docker-compose-v2.40.2-linux-x86_64' | sha256sum -c -
+          chmod +x /tmp/docker-compose-v2.40.2-linux-x86_64
+          echo '/tmp/node-v24.18.0-linux-x64/bin' >> "$GITHUB_PATH"
+      - name: Activate exact pnpm
+        run: corepack enable && corepack prepare pnpm@11.13.1 --activate
+      - name: Install
+        run: corepack pnpm install --frozen-lockfile
+      - name: Static and unit validation
+        run: |
+          corepack pnpm lint
+          corepack pnpm typecheck
+          corepack pnpm test
+          corepack pnpm build
+      - name: Process smoke tests
+        run: |
+          corepack pnpm exec playwright install --with-deps chromium
+          corepack pnpm smoke:api
+          corepack pnpm smoke:web
+      - name: Migration verification
+        env:
+          COMMISSIONING_COMPOSE_BIN: /tmp/docker-compose-v2.40.2-linux-x86_64
+          COMMISSIONING_NODE_ARCHIVE: /tmp/node-v24.18.0-linux-x64.tar.xz
+        run: corepack pnpm db:migrate:verify

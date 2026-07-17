@@ -1,0 +1,10 @@
+{
+  "candidate_tree": "COMPUTED_FROM_FINAL_STAGED_INDEX_AT_HUMAN_GATE",
+  "clean_git_status": true,
+  "command_count": 8,
+  "committed_candidate_mode": "PASS",
+  "result": "PASS",
+  "temporary_ref_created": false,
+  "temporary_worktree_removed": true,
+  "staged_candidate_mode": "PASS"
+}

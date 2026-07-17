@@ -1,0 +1,8 @@
+{
+  "business_implementation_count": 0,
+  "business_leakage_findings": 0,
+  "protected_path_findings": 0,
+  "secret_findings": 0,
+  "source_documents_modified": 0,
+  "vs001_implementation_count": 0
+}

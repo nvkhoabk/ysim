@@ -1,0 +1,36 @@
+{
+  "name": "ysim-v2.3-commissioning",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.13.1",
+  "engines": {
+    "node": "24.18.0",
+    "pnpm": "11.13.1"
+  },
+  "scripts": {
+    "lint": "eslint --config scripts/commissioning/eslint.config.mjs scripts/commissioning/*.mjs && node scripts/commissioning/audit-boundaries.mjs",
+    "typecheck": "corepack pnpm --filter @ysim/contracts build && corepack pnpm -r --if-present typecheck && tsc -p database/config/tsconfig.json --noEmit",
+    "test": "vitest run tests/commissioning",
+    "build": "corepack pnpm -r --if-present build",
+    "smoke:api": "node scripts/commissioning/smoke-api.mjs",
+    "smoke:web": "node scripts/commissioning/smoke-web.mjs",
+    "db:migrate:verify": "node scripts/commissioning/db-migrate-verify.mjs",
+    "bootstrap:clean-checkout": "node scripts/commissioning/bootstrap-clean-checkout.mjs",
+    "audit:versions": "node scripts/commissioning/audit-versions.mjs",
+    "audit:boundaries": "node scripts/commissioning/audit-boundaries.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.61.1",
+    "@prisma/adapter-pg": "7.8.0",
+    "@prisma/client": "7.8.0",
+    "@types/node": "24.13.3",
+    "@types/react": "19.2.17",
+    "@types/react-dom": "19.2.3",
+    "eslint": "9.39.5",
+    "pg": "8.22.0",
+    "prisma": "7.8.0",
+    "typescript": "5.9.3",
+    "vitest": "4.1.10"
+  }
+}

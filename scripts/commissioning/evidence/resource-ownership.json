@@ -1,0 +1,11 @@
+{
+  "compose_project_rule": "ysim-v23-commissioning-i1-r1-<mode>-<unique-suffix>",
+  "fixed_container_name": false,
+  "labels": ["io.ysim.commissioning.owner=true", "io.ysim.commissioning.run-id=<unique-run-id>", "com.docker.compose.project=<unique-project>"],
+  "leaked_containers": 0,
+  "leaked_networks": 0,
+  "leaked_volumes": 0,
+  "preflight_cleanup": "PASS",
+  "verification_failure_path_cleanup": "PASS",
+  "verification_success_path_cleanup": "PASS"
+}

@@ -1,0 +1,27 @@
+{
+  "active_context": "default",
+  "client": {"api": "1.55", "arch": "arm64", "os": "linux", "version": "29.6.1"},
+  "compose": {
+    "binary": "/tmp/docker-compose-v2.40.2-linux-aarch64",
+    "binary_sha256": "20e30dda8d0133895b7991bcfec1eb2c02f9d38c8de9e73669daf9fb83df49e6",
+    "version": "2.40.2"
+  },
+  "supported_architecture_matrix": {
+    "arm64": {
+      "compose_sha256": "20e30dda8d0133895b7991bcfec1eb2c02f9d38c8de9e73669daf9fb83df49e6",
+      "node_archive": "node-v24.18.0-linux-arm64.tar.xz",
+      "node_sha256": "58c9520501f6ae2b52d5b210444e24b9d0c029a58c5011b797bc1fe7105886f6"
+    },
+    "x64": {
+      "compose_sha256": "6c964d9655cd629ef43c5dc75d9612c2da319237debee54a7aef217e9f362b88",
+      "node_archive": "node-v24.18.0-linux-x64.tar.xz",
+      "node_sha256": "55aa7153f9d88f28d765fcdad5ae6945b5c0f98a36881703817e4c450fa76742"
+    }
+  },
+  "postgres_image": {
+    "id": "sha256:1961f96e6029a02c3812d7cb329a3b03a3ac2bb067058dec17b0f5596aca9296",
+    "reference": "postgres:18.4-bookworm",
+    "repo_digest": "postgres@sha256:1961f96e6029a02c3812d7cb329a3b03a3ac2bb067058dec17b0f5596aca9296"
+  },
+  "server": {"arch": "arm64", "os": "linux", "platform": "Docker Desktop 4.81.0", "version": "29.6.1"}
+}

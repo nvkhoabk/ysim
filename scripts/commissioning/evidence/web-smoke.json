@@ -1,0 +1,11 @@
+{
+  "body_contains": "Web process ready",
+  "business_route_status": 404,
+  "endpoint": "http://127.0.0.1:<DYNAMIC_LOOPBACK_PORT>/",
+  "no_business_ui": true,
+  "process_cleanup": "PASS",
+  "process_started": true,
+  "screenshot_path": "scripts/commissioning/evidence/web-smoke.png",
+  "screenshot_sha256": "7f3ebfd5b9096aed6ca3d357e5564a76bbb7b960d16e4926c2c4deed688db2e0",
+  "status": 200
+}
