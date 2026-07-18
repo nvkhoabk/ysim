@@ -1,0 +1,1236 @@
+{
+  "candidate_id": "V23-P2D-VS001-ACCEPTANCE-DECISION-C1",
+  "status": "CANDIDATE",
+  "approval": "PENDING_HUMAN_APPROVAL",
+  "implementation_authorized": false,
+  "decisions": [
+    {
+      "decision_id": "V23-P2D-VS001-ACCEPTANCE-DEC-001",
+      "title": "Public Product Catalog Eligibility and Publication Predicate",
+      "classification": "SOURCE_CLARIFICATION_REQUIRED",
+      "source_requirements": [
+        "BD-04-001",
+        "BD-04-002",
+        "BD-04-003",
+        "BRD-WS-04-R001",
+        "UXF-04-R011"
+      ],
+      "selected_option": null,
+      "recommended_option": "OPT-PUBLISHED-STOREFRONT-ELIGIBLE",
+      "options": [
+        {
+          "option_id": "OPT-PUBLISHED-STOREFRONT-ELIGIBLE",
+          "canonical_rule_groups": {
+            "primary": [
+              {
+                "rule_id": "CANONICAL_PRODUCT_EXISTS",
+                "statement": "canonical product exists",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "primary"
+              },
+              {
+                "rule_id": "CANONICAL_PRODUCT_ACTIVE",
+                "statement": "canonical product active",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "primary"
+              },
+              {
+                "rule_id": "CURRENT_PRODUCT_VERSION_VALID",
+                "statement": "current product version valid",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "primary"
+              },
+              {
+                "rule_id": "STOREFRONT_CATALOG_CONTEXT_VALID",
+                "statement": "storefront catalog context valid",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "primary"
+              },
+              {
+                "rule_id": "PUBLICATION_ACTIVE",
+                "statement": "publication active",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "primary"
+              },
+              {
+                "rule_id": "PUBLICATION_WINDOW_VALID",
+                "statement": "publication window valid",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "primary"
+              },
+              {
+                "rule_id": "PUBLICATION_VALIDATION_PASS",
+                "statement": "publication validation pass",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "primary"
+              },
+              {
+                "rule_id": "REFERENCES_VALID",
+                "statement": "references valid",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "primary"
+              },
+              {
+                "rule_id": "BASE_PRICE_RESOLVED",
+                "statement": "base price resolved",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "primary"
+              },
+              {
+                "rule_id": "V23_SCOPE_ACTIVE",
+                "statement": "v23 scope active",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "primary"
+              }
+            ],
+            "failure": [
+              {
+                "rule_id": "EXCLUDE_FROM_PUBLIC_LIST",
+                "statement": "exclude from public list",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "failure"
+              },
+              {
+                "rule_id": "DENY_PUBLIC_DETAIL",
+                "statement": "deny public detail",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "failure"
+              },
+              {
+                "rule_id": "NO_PUBLIC_FAILURE_REASON",
+                "statement": "no public failure reason",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "failure"
+              },
+              {
+                "rule_id": "INTERNAL_REASON_AUDIT_ONLY",
+                "statement": "internal reason audit only",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "failure"
+              }
+            ],
+            "non_inference": [
+              {
+                "rule_id": "NO_STOCK_CHECK",
+                "statement": "no stock check",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "non_inference"
+              },
+              {
+                "rule_id": "NO_RESERVATION",
+                "statement": "no reservation",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "non_inference"
+              },
+              {
+                "rule_id": "NO_PROCUREMENT",
+                "statement": "no procurement",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "non_inference"
+              },
+              {
+                "rule_id": "NO_ALLOCATION_OR_FULFILLMENT",
+                "statement": "no allocation or fulfillment",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "non_inference"
+              },
+              {
+                "rule_id": "NO_PRODUCT_VARIANT",
+                "statement": "no product variant",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "non_inference"
+              },
+              {
+                "rule_id": "NO_PROMOTION",
+                "statement": "no promotion",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "non_inference"
+              },
+              {
+                "rule_id": "NO_TAX",
+                "statement": "no tax",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "non_inference"
+              },
+              {
+                "rule_id": "NO_RECOMMENDATION",
+                "statement": "no recommendation",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "non_inference"
+              },
+              {
+                "rule_id": "NO_CATALOG_ADMIN_UI",
+                "statement": "no catalog admin ui",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "non_inference"
+              },
+              {
+                "rule_id": "BROWSE_NOT_PURCHASE_AUTHORIZATION",
+                "statement": "browse not purchase authorization",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "non_inference"
+              },
+              {
+                "rule_id": "NO_SUPPLIER_AVAILABILITY_PREDICATE",
+                "statement": "no supplier availability predicate",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "non_inference"
+              },
+              {
+                "rule_id": "NO_DEFAULT_PUBLICATION_WINDOW",
+                "statement": "no default publication window",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "non_inference"
+              },
+              {
+                "rule_id": "NO_CROSS_STOREFRONT_FALLBACK",
+                "statement": "no cross storefront fallback",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "non_inference"
+              }
+            ]
+          }
+        },
+        {
+          "option_id": "OPT-WEAKER-001",
+          "summary": "weaker guarantee",
+          "impact": "rejected"
+        },
+        {
+          "option_id": "OPT-OUT-OF-SCOPE-001",
+          "summary": "scope expansion",
+          "impact": "rejected"
+        }
+      ]
+    },
+    {
+      "decision_id": "V23-P2D-VS001-ACCEPTANCE-DEC-002",
+      "title": "Minimum Public Commercial Display Contract",
+      "classification": "BUSINESS_DECISION_REQUIRED",
+      "source_requirements": [
+        "BD-02-001",
+        "BD-05-001",
+        "UXF-003",
+        "UXF-301",
+        "UXF-304",
+        "UXF-306"
+      ],
+      "selected_option": null,
+      "recommended_option": "OPT-MINIMUM-COMMERCIAL-DISPLAY-WITH-PRICE",
+      "options": [
+        {
+          "option_id": "OPT-MINIMUM-COMMERCIAL-DISPLAY-WITH-PRICE",
+          "canonical_rule_groups": {
+            "primary": [
+              {
+                "rule_id": "BASE_PRICE_REQUIRED_LIST",
+                "statement": "base price required list",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "primary"
+              },
+              {
+                "rule_id": "BASE_PRICE_REQUIRED_DETAIL",
+                "statement": "base price required detail",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "primary"
+              },
+              {
+                "rule_id": "PRICE_STOREFRONT_SCOPED",
+                "statement": "price storefront scoped",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "primary"
+              },
+              {
+                "rule_id": "PRICE_AMOUNT_VALID",
+                "statement": "price amount valid",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "primary"
+              },
+              {
+                "rule_id": "PRICE_CURRENCY_ISO",
+                "statement": "price currency iso",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "primary"
+              },
+              {
+                "rule_id": "PRICE_CONTEXT_CONSISTENT",
+                "statement": "price context consistent",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "primary"
+              },
+              {
+                "rule_id": "UNRESOLVED_PRICE_EXCLUDES_PRODUCT",
+                "statement": "unresolved price excludes product",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "primary"
+              },
+              {
+                "rule_id": "NO_PRICE_PLACEHOLDER_OR_STALE_FALLBACK",
+                "statement": "no price placeholder or stale fallback",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "primary"
+              }
+            ],
+            "failure": [
+              {
+                "rule_id": "LIST_PUBLIC_SLUG",
+                "statement": "list public slug",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "failure"
+              },
+              {
+                "rule_id": "LIST_CANONICAL_PRODUCT_IDENTITY",
+                "statement": "list canonical product identity",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "failure"
+              },
+              {
+                "rule_id": "LIST_LOCALIZED_NAME",
+                "statement": "list localized name",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "failure"
+              },
+              {
+                "rule_id": "LIST_LOCALIZED_SHORT_DESCRIPTION",
+                "statement": "list localized short description",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "failure"
+              },
+              {
+                "rule_id": "LIST_PRIMARY_PUBLIC_IMAGE",
+                "statement": "list primary public image",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "failure"
+              },
+              {
+                "rule_id": "LIST_PRIMARY_IMAGE_ALT_TEXT",
+                "statement": "list primary image alt text",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "failure"
+              },
+              {
+                "rule_id": "LIST_DESTINATION_OR_COVERAGE_SUMMARY",
+                "statement": "list destination or coverage summary",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "failure"
+              },
+              {
+                "rule_id": "LIST_PACKAGE_SUMMARY",
+                "statement": "list package summary",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "failure"
+              },
+              {
+                "rule_id": "LIST_BASE_PRICE_AMOUNT",
+                "statement": "list base price amount",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "failure"
+              },
+              {
+                "rule_id": "LIST_BASE_PRICE_CURRENCY",
+                "statement": "list base price currency",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "failure"
+              },
+              {
+                "rule_id": "DETAIL_INCLUDES_ALL_LIST_FIELDS",
+                "statement": "detail includes all list fields",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "failure"
+              },
+              {
+                "rule_id": "DETAIL_LOCALIZED_LONG_DESCRIPTION",
+                "statement": "detail localized long description",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "failure"
+              },
+              {
+                "rule_id": "DETAIL_PUBLIC_PRODUCT_SPECIFICATION",
+                "statement": "detail public product specification",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "failure"
+              },
+              {
+                "rule_id": "DETAIL_DATA_ALLOWANCE_OR_POLICY_IF_DEFINED",
+                "statement": "detail data allowance or policy if defined",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "failure"
+              },
+              {
+                "rule_id": "DETAIL_VALIDITY_IF_DEFINED",
+                "statement": "detail validity if defined",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "failure"
+              },
+              {
+                "rule_id": "DETAIL_NETWORK_OR_COVERAGE_IF_DEFINED",
+                "statement": "detail network or coverage if defined",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "failure"
+              },
+              {
+                "rule_id": "DETAIL_HOTSPOT_SUPPORT_IF_DEFINED",
+                "statement": "detail hotspot support if defined",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "failure"
+              },
+              {
+                "rule_id": "DETAIL_PHONE_NUMBER_AVAILABILITY_IF_DEFINED",
+                "statement": "detail phone number availability if defined",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "failure"
+              },
+              {
+                "rule_id": "NO_PLACEHOLDER_FOR_UNDEFINED_CONDITIONAL_FIELD",
+                "statement": "no placeholder for undefined conditional field",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "failure"
+              },
+              {
+                "rule_id": "LIST_DETAIL_IDENTITY_EQUAL",
+                "statement": "list detail identity equal",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "failure"
+              },
+              {
+                "rule_id": "LIST_DETAIL_SLUG_EQUAL",
+                "statement": "list detail slug equal",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "failure"
+              },
+              {
+                "rule_id": "LIST_DETAIL_STOREFRONT_EQUAL",
+                "statement": "list detail storefront equal",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "failure"
+              },
+              {
+                "rule_id": "LIST_DETAIL_PRICE_EQUAL_WITHIN_SNAPSHOT",
+                "statement": "list detail price equal within snapshot",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "failure"
+              },
+              {
+                "rule_id": "UI_API_VALUES_TRACEABLE",
+                "statement": "ui api values traceable",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "failure"
+              },
+              {
+                "rule_id": "API_DATA_VALUES_TRACEABLE",
+                "statement": "api data values traceable",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "failure"
+              }
+            ],
+            "non_inference": [
+              {
+                "rule_id": "NO_PUBLIC_SUPPLIER_IDENTITY_WITHOUT_AUTHORIZATION",
+                "statement": "no public supplier identity without authorization",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "non_inference"
+              },
+              {
+                "rule_id": "NO_PUBLIC_SUPPLIER_REFERENCE",
+                "statement": "no public supplier reference",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "non_inference"
+              },
+              {
+                "rule_id": "NO_PUBLIC_PURCHASE_COST",
+                "statement": "no public purchase cost",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "non_inference"
+              },
+              {
+                "rule_id": "NO_PUBLIC_MARGIN",
+                "statement": "no public margin",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "non_inference"
+              },
+              {
+                "rule_id": "NO_PUBLIC_INTERNAL_APPROVAL_STATE",
+                "statement": "no public internal approval state",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "non_inference"
+              },
+              {
+                "rule_id": "NO_PUBLIC_POLICY_IDENTIFIER",
+                "statement": "no public policy identifier",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "non_inference"
+              },
+              {
+                "rule_id": "NO_PUBLIC_CONFIGURATION_KEY",
+                "statement": "no public configuration key",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "non_inference"
+              },
+              {
+                "rule_id": "NO_PUBLIC_PROVIDER_CREDENTIAL",
+                "statement": "no public provider credential",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "non_inference"
+              },
+              {
+                "rule_id": "NO_PUBLIC_UNPUBLISHED_CONTENT",
+                "statement": "no public unpublished content",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "non_inference"
+              },
+              {
+                "rule_id": "NO_PUBLIC_INTERNAL_FAILURE_REASON",
+                "statement": "no public internal failure reason",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "non_inference"
+              },
+              {
+                "rule_id": "NO_PUBLIC_DATABASE_SEQUENCE_OR_STORAGE_PATH",
+                "statement": "no public database sequence or storage path",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "non_inference"
+              },
+              {
+                "rule_id": "NO_PROMOTIONAL_PRICE",
+                "statement": "no promotional price",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "non_inference"
+              },
+              {
+                "rule_id": "NO_DISCOUNT",
+                "statement": "no discount",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "non_inference"
+              },
+              {
+                "rule_id": "NO_TAX_CALCULATION_OR_PRESENTATION",
+                "statement": "no tax calculation or presentation",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "non_inference"
+              },
+              {
+                "rule_id": "NO_CROSSED_OUT_PRICE",
+                "statement": "no crossed out price",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "non_inference"
+              },
+              {
+                "rule_id": "NO_INVENTORY_AVAILABILITY",
+                "statement": "no inventory availability",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "non_inference"
+              },
+              {
+                "rule_id": "NO_CART_OR_PURCHASE_ACTION",
+                "statement": "no cart or purchase action",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "non_inference"
+              },
+              {
+                "rule_id": "NO_DATABASE_SCHEMA_DECISION",
+                "statement": "no database schema decision",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "non_inference"
+              },
+              {
+                "rule_id": "NO_API_URL_DECISION",
+                "statement": "no api url decision",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "non_inference"
+              },
+              {
+                "rule_id": "NO_UI_COMPONENT_DECISION",
+                "statement": "no ui component decision",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "non_inference"
+              },
+              {
+                "rule_id": "NO_ATTRIBUTE_INFERENCE_FROM_PRODUCT_NAME",
+                "statement": "no attribute inference from product name",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "non_inference"
+              }
+            ]
+          }
+        },
+        {
+          "option_id": "OPT-WEAKER-002",
+          "summary": "weaker guarantee",
+          "impact": "rejected"
+        },
+        {
+          "option_id": "OPT-OUT-OF-SCOPE-002",
+          "summary": "scope expansion",
+          "impact": "rejected"
+        }
+      ]
+    },
+    {
+      "decision_id": "V23-P2D-VS001-ACCEPTANCE-DEC-003",
+      "title": "Stable Public Slug and Uniform Unavailable-Product Behavior",
+      "classification": "SOURCE_CLARIFICATION_REQUIRED",
+      "source_requirements": [
+        "UXF-04-R011",
+        "UXF-05-R004",
+        "UXF-05-R010",
+        "UXF-05-R018",
+        "UXF-05-R056"
+      ],
+      "selected_option": null,
+      "recommended_option": "OPT-STABLE-SLUG-UNIFORM-NOT-FOUND",
+      "options": [
+        {
+          "option_id": "OPT-STABLE-SLUG-UNIFORM-NOT-FOUND",
+          "canonical_rule_groups": {
+            "primary": [
+              {
+                "rule_id": "SLUG_LOWERCASE",
+                "statement": "slug lowercase",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "primary"
+              },
+              {
+                "rule_id": "SLUG_ASCII",
+                "statement": "slug ascii",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "primary"
+              },
+              {
+                "rule_id": "SLUG_KEBAB_CASE",
+                "statement": "slug kebab case",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "primary"
+              },
+              {
+                "rule_id": "SLUG_NON_EMPTY",
+                "statement": "slug non empty",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "primary"
+              },
+              {
+                "rule_id": "SLUG_UNIQUE_WITHIN_STOREFRONT",
+                "statement": "slug unique within storefront",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "primary"
+              },
+              {
+                "rule_id": "SLUG_LOCALE_NEUTRAL_FOR_VS001",
+                "statement": "slug locale neutral for vs001",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "primary"
+              },
+              {
+                "rule_id": "SLUG_STABLE_FOR_PUBLISHED_PRODUCT",
+                "statement": "slug stable for published product",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "primary"
+              },
+              {
+                "rule_id": "SLUG_NO_DATABASE_IDENTITY",
+                "statement": "slug no database identity",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "primary"
+              },
+              {
+                "rule_id": "SLUG_NO_SUPPLIER_REFERENCE",
+                "statement": "slug no supplier reference",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "primary"
+              },
+              {
+                "rule_id": "LIST_DETAIL_SLUG_CONSISTENT",
+                "statement": "list detail slug consistent",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "primary"
+              },
+              {
+                "rule_id": "RESPONSE_HAS_OPAQUE_CANONICAL_IDENTITY",
+                "statement": "response has opaque canonical identity",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "primary"
+              }
+            ],
+            "failure": [
+              {
+                "rule_id": "UNKNOWN_SLUG",
+                "statement": "unknown slug",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "failure"
+              },
+              {
+                "rule_id": "MALFORMED_SLUG",
+                "statement": "malformed slug",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "failure"
+              },
+              {
+                "rule_id": "WRONG_STOREFRONT",
+                "statement": "wrong storefront",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "failure"
+              },
+              {
+                "rule_id": "PRODUCT_INACTIVE",
+                "statement": "product inactive",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "failure"
+              },
+              {
+                "rule_id": "PRODUCT_RETIRED_OR_DELETED",
+                "statement": "product retired or deleted",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "failure"
+              },
+              {
+                "rule_id": "PRODUCT_UNPUBLISHED",
+                "statement": "product unpublished",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "failure"
+              },
+              {
+                "rule_id": "CATALOG_ENTRY_INACTIVE",
+                "statement": "catalog entry inactive",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "failure"
+              },
+              {
+                "rule_id": "PUBLICATION_WINDOW_INVALID",
+                "statement": "publication window invalid",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "failure"
+              },
+              {
+                "rule_id": "PUBLICATION_VALIDATION_NOT_PASS",
+                "statement": "publication validation not pass",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "failure"
+              },
+              {
+                "rule_id": "PRODUCT_VERSION_INVALID",
+                "statement": "product version invalid",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "failure"
+              },
+              {
+                "rule_id": "REFERENCE_INVALID",
+                "statement": "reference invalid",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "failure"
+              },
+              {
+                "rule_id": "PRICE_UNRESOLVED",
+                "statement": "price unresolved",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "failure"
+              },
+              {
+                "rule_id": "SCOPE_NOT_ACTIVE",
+                "statement": "scope not active",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "failure"
+              },
+              {
+                "rule_id": "ANY_DEC001_PREDICATE_FAILED",
+                "statement": "any dec001 predicate failed",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "failure"
+              },
+              {
+                "rule_id": "HTTP_STATUS_404",
+                "statement": "http status 404",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "failure"
+              },
+              {
+                "rule_id": "ERROR_CODE_PRODUCT_NOT_FOUND",
+                "statement": "error code product not found",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "failure"
+              },
+              {
+                "rule_id": "UNIFORM_PUBLIC_RESPONSE_SCHEMA",
+                "statement": "uniform public response schema",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "failure"
+              },
+              {
+                "rule_id": "NO_INTERNAL_REASON_IN_BODY",
+                "statement": "no internal reason in body",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "failure"
+              },
+              {
+                "rule_id": "NO_INTERNAL_REASON_IN_HEADERS",
+                "statement": "no internal reason in headers",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "failure"
+              },
+              {
+                "rule_id": "NO_PUBLIC_UNKNOWN_UNAVAILABLE_DISTINCTION",
+                "statement": "no public unknown unavailable distinction",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "failure"
+              },
+              {
+                "rule_id": "NO_INTENTIONAL_REASON_TIMING_DISTINCTION",
+                "statement": "no intentional reason timing distinction",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "failure"
+              },
+              {
+                "rule_id": "EXCLUDE_FROM_PUBLIC_LIST",
+                "statement": "exclude from public list",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "failure"
+              }
+            ],
+            "non_inference": [
+              {
+                "rule_id": "NO_PUBLIC_DATABASE_ID_LOOKUP",
+                "statement": "no public database id lookup",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "non_inference"
+              },
+              {
+                "rule_id": "NO_LOCALIZED_SLUG",
+                "statement": "no localized slug",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "non_inference"
+              },
+              {
+                "rule_id": "NO_HISTORICAL_SLUG_REDIRECT",
+                "statement": "no historical slug redirect",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "non_inference"
+              },
+              {
+                "rule_id": "NO_CANONICAL_REDIRECT",
+                "statement": "no canonical redirect",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "non_inference"
+              },
+              {
+                "rule_id": "NO_ALIAS_RESOLUTION",
+                "statement": "no alias resolution",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "non_inference"
+              },
+              {
+                "rule_id": "NO_PRODUCT_VARIANT_ROUTING",
+                "statement": "no product variant routing",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "non_inference"
+              },
+              {
+                "rule_id": "NO_INVENTORY_UNAVAILABLE_STATE",
+                "statement": "no inventory unavailable state",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "non_inference"
+              },
+              {
+                "rule_id": "NO_WAITLIST",
+                "statement": "no waitlist",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "non_inference"
+              },
+              {
+                "rule_id": "NO_REPLACEMENT_RECOMMENDATION",
+                "statement": "no replacement recommendation",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "non_inference"
+              },
+              {
+                "rule_id": "NO_PUBLIC_ADMIN_DIAGNOSTICS",
+                "statement": "no public admin diagnostics",
+                "enforcement": "VS001_ACCEPTANCE_CONTRACT",
+                "failure_behavior": "FAIL_CLOSED",
+                "provenance": "HUMAN_AUTHORIZATION_2026-07-18",
+                "inference": false,
+                "group": "non_inference"
+              }
+            ]
+          }
+        },
+        {
+          "option_id": "OPT-WEAKER-003",
+          "summary": "weaker guarantee",
+          "impact": "rejected"
+        },
+        {
+          "option_id": "OPT-OUT-OF-SCOPE-003",
+          "summary": "scope expansion",
+          "impact": "rejected"
+        }
+      ]
+    }
+  ]
+}
