@@ -1,0 +1,43 @@
+{
+  "actual_modified_builder_probes_required": 10,
+  "approval": "PENDING_HUMAN_APPROVAL",
+  "approval_ready": true,
+  "batch_a_semantic_mutations_required": 27,
+  "batch_b_semantic_mutations_required": 54,
+  "batch_c_semantic_mutations_required": 43,
+  "candidate_id": "V23-P2D-VS001-ACCEPTANCE-ELABORATION-C2-R2",
+  "completed_decision_batches": [
+    "DEC-001",
+    "DEC-002",
+    "DEC-003"
+  ],
+  "correction_pass": 2,
+  "cumulative_focused_regressions_required": 42,
+  "cumulative_semantic_mutations_required": 124,
+  "decision_clauses_complete": 124,
+  "decision_clauses_pending": 0,
+  "declared_mutation_inventory": {
+    "decision_derived": 124,
+    "retained_identity": 9,
+    "source_derived": 48,
+    "structural": 6,
+    "total": 187
+  },
+  "final_git_content_aggregate": null,
+  "final_staged_tree": null,
+  "gate_results_policy": "CLAIMS_ONLY; VALIDATOR_AND_TESTS_DERIVE_RESULTS_INDEPENDENTLY",
+  "implementation_authorized": false,
+  "next_gate": "HUMAN_PHASE_2D_VS001_ACCEPTANCE_ELABORATION_C2_R2_CANDIDATE_REVIEW",
+  "runtime_evidence_status": "NOT_EXECUTED",
+  "self_reference_policy": "NO_FIXED_POINT; FINAL_TREE_AND_GIT_AGGREGATE_ARE_DETACHED_HUMAN_GATE_OUTPUTS",
+  "staged_candidate_identity": null,
+  "status": "CANDIDATE",
+  "working_file_sha256": {
+    "docs/baselines/v2.3/phase-2d/VS001_ACCEPTANCE_ELABORATION_C2_R2_CANDIDATE.md": "b64e094af418a6a4910e8c81b550f26371f31d022ffe191144dbddb646a06abd",
+    "docs/baselines/v2.3/phase-2d/vs001-acceptance-elaboration-c2-r2.json": "d80d6c5b00660eb9dc5a8d3835f9dd6baecca93e732def903f568b675af71ac7",
+    "scripts/docs/build-phase-2d-vs001-acceptance-elaboration-c2-r2.py": "cbae11ac761dd5fd94b1d894e011ad35bd074113dc20e821496a7e3e3f435d6c",
+    "scripts/docs/tests/test-phase-2d-vs001-acceptance-elaboration-c2-r2.py": "12b7e7541baba51c5cadb08bf3baeb008cbdd181489f64a103fc9ed79e74d8e1",
+    "scripts/docs/validate-phase-2d-vs001-acceptance-elaboration-c2-r2.py": "bb3c1edf79ab19fda196c8738eed500695c141411124efb386aa9eaedf40fa3f"
+  },
+  "working_generated_aggregate_sha256": "b57b530fc984266674856bfa003a2fcbc322296781846830c43ea175922dc8fa"
+}
