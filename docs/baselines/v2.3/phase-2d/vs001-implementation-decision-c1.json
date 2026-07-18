@@ -1,0 +1,502 @@
+{
+  "candidate_id": "V23-P2D-VS001-IMPLEMENTATION-DECISION-C1",
+  "status": "CANDIDATE",
+  "approval": "PENDING_HUMAN_APPROVAL",
+  "implementation_authorized": false,
+  "runtime_evidence_status": "NOT_EXECUTED",
+  "implementation_contract_created": false,
+  "governing_commit": "4a0ff5700554023b30d9a6dba01d80d1dbc78867",
+  "governing_acceptance": "V23-P2D-VS001-ACCEPTANCE-ELABORATION-C2-R2",
+  "governing_commissioning": "V23-P2D-PRODUCT-IMPLEMENTATION-COMMISSIONING-I1-R1",
+  "next_gate": "HUMAN_PHASE_2D_VS001_IMPLEMENTATION_DECISION_REQUIRED",
+  "purpose": "Resolve observable-interface, data-lifecycle, security-boundary and future-compatibility choices before an implementation contract can authorize VS001 work.",
+  "authority_objects": [
+    {
+      "authority_id": "COMMISSIONING_C1_APPROVAL",
+      "commit": "c3429e79b2e80ac050b21dd9dc5844dd64029ce0",
+      "path": "docs/baselines/v2.3/phase-2d/PRODUCT_IMPLEMENTATION_COMMISSIONING_C1_APPROVAL.md",
+      "blob_oid": "4aa6eef4bceeaa6416a39186b72301fe4f1a9883",
+      "sha256": "ae547142f29eb98950e86f99a1b61e301e082b8f8fe8ea9b6f6adba4025f5512",
+      "role": "Approved runtime, framework, database, migration and test-tool selections."
+    },
+    {
+      "authority_id": "COMMISSIONING_I1_R1_APPROVAL",
+      "commit": "f7f2aeca3c1643996f77dec1b0b5caae22363ddc",
+      "path": "docs/baselines/v2.3/phase-2d/PRODUCT_IMPLEMENTATION_COMMISSIONING_I1_R1_APPROVAL.md",
+      "blob_oid": "f2a856c92f91e14b631e3dfa8ce2f8ed09ee06d1",
+      "sha256": "85ae4091af9fdcfb26c49bbbbf0623e9d85c62a69ce12e50235715368bfefc87",
+      "role": "Accepted technical foundation and reusable command/resource boundary."
+    },
+    {
+      "authority_id": "VS001_DECISION_C1_CANONICAL",
+      "commit": "f003eca82512887a616c4ee83ed4ab8da4432b8a",
+      "path": "docs/baselines/v2.3/phase-2d/vs001-acceptance-decision-c1.json",
+      "blob_oid": "d4786ec62ca6d4df9b667f7c835857c630ad3c89",
+      "sha256": "b5f7ffb9eae4167749ffd5c7ba1038afe401d9e0366103f6223dbb8966695b3f",
+      "role": "Canonical rules for eligibility, public display, slug and uniform not-found behavior."
+    },
+    {
+      "authority_id": "VS001_DECISION_C1_APPROVAL",
+      "commit": "c818d734049fbf8997a5dce4e1e66e65d6a92f59",
+      "path": "docs/baselines/v2.3/phase-2d/VS001_ACCEPTANCE_DECISION_C1_APPROVAL.md",
+      "blob_oid": "7fd209449aee059da33324391b2e8e55aded7ee2",
+      "sha256": "7907d2b523dbe24facabbf00bb4c9c34594dc55ebf2dfe77b3ea274f3f0afad5",
+      "role": "Detached effective selections for DEC-001, DEC-002 and DEC-003."
+    },
+    {
+      "authority_id": "VS001_ELABORATION_C2_R2_CANONICAL",
+      "commit": "5780bf5e89c66103980fd4cda7c2b294fdc23f20",
+      "path": "docs/baselines/v2.3/phase-2d/vs001-acceptance-elaboration-c2-r2.json",
+      "blob_oid": "ab9535b8b54b9dcbff60761d24bf744b380a0b31",
+      "sha256": "d80d6c5b00660eb9dc5a8d3835f9dd6baecca93e732def903f568b675af71ac7",
+      "role": "Signed 25-requirement acceptance population, 21 obligations, 32 criteria and 124 decision-derived clauses."
+    },
+    {
+      "authority_id": "VS001_ELABORATION_C2_R2_APPROVAL",
+      "commit": "4a0ff5700554023b30d9a6dba01d80d1dbc78867",
+      "path": "docs/baselines/v2.3/phase-2d/VS001_ACCEPTANCE_ELABORATION_C2_R2_APPROVAL.md",
+      "blob_oid": "1cdb2c8f7f915d97755676732fde1760e55f3df1",
+      "sha256": "894892358e1bfaa8b22710b92abf7b962042e7a861fa12c12119a29531532987",
+      "role": "Detached acceptance-elaboration approval and current governing HEAD."
+    }
+  ],
+  "authority_reconciliation": {
+    "requirements_total": 25,
+    "retained_contracts": 9,
+    "elaborated_contracts": 16,
+    "source_obligations": 21,
+    "acceptance_criteria": 32,
+    "decision_clauses": 124,
+    "decision_clause_counts": {
+      "V23-P2D-VS001-ACCEPTANCE-DEC-001": 27,
+      "V23-P2D-VS001-ACCEPTANCE-DEC-002": 54,
+      "V23-P2D-VS001-ACCEPTANCE-DEC-003": 43
+    },
+    "effective_selections": {
+      "V23-P2D-VS001-ACCEPTANCE-DEC-001": "OPT-PUBLISHED-STOREFRONT-ELIGIBLE",
+      "V23-P2D-VS001-ACCEPTANCE-DEC-002": "OPT-MINIMUM-COMMERCIAL-DISPLAY-WITH-PRICE",
+      "V23-P2D-VS001-ACCEPTANCE-DEC-003": "OPT-STABLE-SLUG-UNIFORM-NOT-FOUND"
+    },
+    "requirement_ids": [
+      "BRD-UPDATE-01-R001",
+      "BRD-WS-02-R002",
+      "BRD-WS-02-R003",
+      "BD-04-005",
+      "UXF-010",
+      "UXF-011",
+      "UXF-109",
+      "UXF-402",
+      "UXF-405",
+      "BD-02-001",
+      "BD-02-002",
+      "BD-04-001",
+      "BD-04-002",
+      "BD-04-003",
+      "BRD-WS-04-R001",
+      "BD-05-001",
+      "UXF-003",
+      "UXF-301",
+      "UXF-304",
+      "UXF-306",
+      "UXF-04-R011",
+      "UXF-05-R004",
+      "UXF-05-R010",
+      "UXF-05-R018",
+      "UXF-05-R056"
+    ],
+    "verification_result": "RECONCILED_FROM_ACCEPTED_GIT_OBJECTS"
+  },
+  "classification_model": {
+    "A": "Already selected by accepted commissioning and must be reused.",
+    "B": "Implementation-local detail that cannot change public or business semantics.",
+    "C": "Human decision required because the choice changes an observable contract, data lifecycle, security boundary or future compatibility.",
+    "D": "Properly deferred and not required to implement VS001."
+  },
+  "technical_decision_audit": [
+    {"audit_id": "TDA-001", "topic": "Node, pnpm, NestJS/Fastify, Next/React, PostgreSQL, Prisma, Vitest and Playwright versions", "classification": "A", "disposition": "Reuse exact accepted commissioning selections without replacement.", "decision_id": null},
+    {"audit_id": "TDA-002", "topic": "API route paths and versioning", "classification": "C", "disposition": "Public compatibility surface requires human selection.", "decision_id": "V23-P2D-VS001-IMPLEMENTATION-DEC-001"},
+    {"audit_id": "TDA-003", "topic": "Storefront request context, locale input and localization fallback", "classification": "C", "disposition": "Affects Storefront isolation and observable localized content.", "decision_id": "V23-P2D-VS001-IMPLEMENTATION-DEC-002"},
+    {"audit_id": "TDA-004", "topic": "Pagination and deterministic ordering", "classification": "C", "disposition": "Changes list contract and future compatibility.", "decision_id": "V23-P2D-VS001-IMPLEMENTATION-DEC-003"},
+    {"audit_id": "TDA-005", "topic": "Public list/detail response schemas", "classification": "C", "disposition": "Wire representation is publicly observable.", "decision_id": "V23-P2D-VS001-IMPLEMENTATION-DEC-004"},
+    {"audit_id": "TDA-006", "topic": "Uniform 404 PRODUCT_NOT_FOUND error envelope", "classification": "C", "disposition": "Status and code are fixed; envelope shape remains a public compatibility choice.", "decision_id": "V23-P2D-VS001-IMPLEMENTATION-DEC-004"},
+    {"audit_id": "TDA-007", "topic": "Media and primary-image representation", "classification": "C", "disposition": "Public value shape and delivery indirection are observable.", "decision_id": "V23-P2D-VS001-IMPLEMENTATION-DEC-004"},
+    {"audit_id": "TDA-008", "topic": "Stable public slug storage and Storefront-scoped resolution", "classification": "C", "disposition": "Controls identifier lifecycle and uniqueness.", "decision_id": "V23-P2D-VS001-IMPLEMENTATION-DEC-005"},
+    {"audit_id": "TDA-009", "topic": "Opaque canonical public Product identity", "classification": "C", "disposition": "Public identity format and persistence affect privacy and compatibility.", "decision_id": "V23-P2D-VS001-IMPLEMENTATION-DEC-005"},
+    {"audit_id": "TDA-010", "topic": "Product, Product Version, Catalog, Storefront Catalog, Publication, Price and typed-reference persistence", "classification": "C", "disposition": "Defines authoritative lifecycle and reference integrity.", "decision_id": "V23-P2D-VS001-IMPLEMENTATION-DEC-006"},
+    {"audit_id": "TDA-011", "topic": "PostgreSQL tables, indexes and constraints", "classification": "C", "disposition": "Irreversible data-lifecycle and future-compatibility consequences require approval.", "decision_id": "V23-P2D-VS001-IMPLEMENTATION-DEC-006"},
+    {"audit_id": "TDA-012", "topic": "Migration, seed and controlled-fixture ownership", "classification": "C", "disposition": "Distinguishes schema lifecycle from disposable test data.", "decision_id": "V23-P2D-VS001-IMPLEMENTATION-DEC-007"},
+    {"audit_id": "TDA-013", "topic": "List/detail evaluation snapshot consistency", "classification": "C", "disposition": "Concurrent publication and price changes can alter observable equality.", "decision_id": "V23-P2D-VS001-IMPLEMENTATION-DEC-008"},
+    {"audit_id": "TDA-014", "topic": "Publication-window clock control", "classification": "C", "disposition": "Boundary evaluation requires an approved clock and snapshot rule.", "decision_id": "V23-P2D-VS001-IMPLEMENTATION-DEC-008"},
+    {"audit_id": "TDA-015", "topic": "Runtime publication-validation evidence", "classification": "C", "disposition": "PASS authority and freshness affect eligibility.", "decision_id": "V23-P2D-VS001-IMPLEMENTATION-DEC-008"},
+    {"audit_id": "TDA-016", "topic": "Price resolution and ISO currency validation", "classification": "C", "disposition": "Resolver ambiguity and snapshot identity are public eligibility inputs.", "decision_id": "V23-P2D-VS001-IMPLEMENTATION-DEC-008"},
+    {"audit_id": "TDA-017", "topic": "Internal/public data separation", "classification": "C", "disposition": "Security boundary must be explicit and auditable.", "decision_id": "V23-P2D-VS001-IMPLEMENTATION-DEC-009"},
+    {"audit_id": "TDA-018", "topic": "API, UI and data correlation identifiers", "classification": "C", "disposition": "Public exposure versus internal-only correlation is observable and security-relevant.", "decision_id": "V23-P2D-VS001-IMPLEMENTATION-DEC-009"},
+    {"audit_id": "TDA-019", "topic": "Logging, audit reason codes and redaction", "classification": "C", "disposition": "Must preserve internal diagnostics without public leakage.", "decision_id": "V23-P2D-VS001-IMPLEMENTATION-DEC-009"},
+    {"audit_id": "TDA-020", "topic": "Test isolation and Docker resource ownership", "classification": "A", "disposition": "Reuse disposable project/volume ownership and success/failure cleanup from commissioning.", "decision_id": null},
+    {"audit_id": "TDA-021", "topic": "Controller, service, component and test-file names", "classification": "B", "disposition": "Select locally after approval without changing semantic operations or public schemas.", "decision_id": null},
+    {"audit_id": "TDA-022", "topic": "Focused VS001 command script filenames", "classification": "B", "disposition": "May be selected locally while preserving lifecycle, evidence and failure semantics.", "decision_id": null},
+    {"audit_id": "TDA-023", "topic": "Caching and materialized acceleration", "classification": "D", "disposition": "Not required for VS001; no cache may become an unapproved authority.", "decision_id": null},
+    {"audit_id": "TDA-024", "topic": "Authentication, search, filter, recommendation, cart, checkout, inventory, procurement, promotion, tax and provider behavior", "classification": "D", "disposition": "Excluded from VS001 and not selected by this pack.", "decision_id": null},
+    {"audit_id": "TDA-025", "topic": "Production deployment, CDN, observability vendor and YADF topology", "classification": "D", "disposition": "Deferred beyond the VS001 implementation contract.", "decision_id": null}
+  ],
+  "decisions": [
+    {
+      "decision_id": "V23-P2D-VS001-IMPLEMENTATION-DEC-001",
+      "title": "Public API Resource Paths and Versioning",
+      "classification": "C",
+      "question": "Which stable public HTTP resource hierarchy and version boundary will expose LIST_PUBLIC_PRODUCTS and GET_PUBLIC_PRODUCT_BY_SLUG?",
+      "why_human": "Route hierarchy and versioning are externally observable and become a compatibility commitment.",
+      "source_authorities": ["COMMISSIONING_C1_APPROVAL", "VS001_ELABORATION_C2_R2_CANONICAL", "VS001_ELABORATION_C2_R2_APPROVAL"],
+      "impacted_acceptance": ["UXF-003", "UXF-301", "UXF-304", "UXF-306", "UXF-04-R011", "UXF-05-R004"],
+      "options": [
+        {
+          "option_id": "OPT-V1-STOREFRONT-RESOURCE-HIERARCHY",
+          "summary": "Versioned Storefront resource hierarchy with list and slug-detail beneath a public Storefront identifier.",
+          "contract": "Use /api/v1/storefronts/{storefront_slug}/products and /api/v1/storefronts/{storefront_slug}/products/{public_slug}; web paths remain /catalog and /catalog/{public_slug} in the same Storefront context.",
+          "impact": "Storefront isolation is explicit in the URI and API evolution has a visible v1 boundary.",
+          "rejection_tradeoff": "Longer URLs and future Storefront identifier changes require explicit compatibility handling."
+        },
+        {
+          "option_id": "OPT-V1-CATALOG-RESOURCE-WITH-STOREFRONT-HEADER",
+          "summary": "Versioned catalog resources with Storefront supplied by a required public request header.",
+          "contract": "Use /api/v1/catalog/products and /api/v1/catalog/products/{public_slug}; require X-Storefront-Slug and reject missing or ambiguous context without fallback.",
+          "impact": "Short resource URLs but Storefront scope is less visible and browser/cache behavior depends on header variance.",
+          "rejection_tradeoff": "Higher risk of omitted-header leakage and more complex caching and evidence."
+        },
+        {
+          "option_id": "OPT-UNVERSIONED-STOREFRONT-RESOURCE",
+          "summary": "Unversioned Storefront-scoped product resources.",
+          "contract": "Use /storefronts/{storefront_slug}/products and slug detail without an explicit API version segment.",
+          "impact": "Simpler initial surface with no declared version namespace.",
+          "rejection_tradeoff": "Future incompatible evolution lacks an agreed compatibility boundary."
+        }
+      ],
+      "selected_option": null,
+      "recommended_option": "OPT-V1-STOREFRONT-RESOURCE-HIERARCHY",
+      "recommendation_rationale": "It makes Storefront isolation and compatibility versioning directly testable without inventing authentication.",
+      "non_inferences": ["No authentication or organization administration.", "No search/filter endpoints.", "No route implementation is authorized by recommendation alone."]
+    },
+    {
+      "decision_id": "V23-P2D-VS001-IMPLEMENTATION-DEC-002",
+      "title": "Storefront Context, Locale Input and Localization Fallback",
+      "classification": "C",
+      "question": "How are requested Storefront and locale resolved, and what happens when localized mandatory content is unavailable?",
+      "why_human": "Context resolution controls isolation; fallback changes customer-visible content and mandatory-field eligibility.",
+      "source_authorities": ["VS001_DECISION_C1_CANONICAL", "VS001_ELABORATION_C2_R2_CANONICAL"],
+      "impacted_acceptance": ["BD-04-001", "BD-04-002", "BD-05-001", "UXF-301", "UXF-304", "UXF-306"],
+      "options": [
+        {
+          "option_id": "OPT-BCP47-REQUEST-THEN-STOREFRONT-DEFAULT",
+          "summary": "Resolve a validated BCP 47 requested locale, then the configured Storefront default locale.",
+          "contract": "Storefront comes only from the route/header mechanism selected by DEC-001; locale comes from Accept-Language. Exact supported locale wins, then Storefront default. If mandatory localized fields remain absent, exclude from list and use uniform not-found for detail; optional fields remain omitted.",
+          "impact": "Deterministic fallback supports usable localized browsing while retaining mandatory-field guarantees.",
+          "rejection_tradeoff": "A fallback response may not use the caller's first requested locale and must expose the resolved content locale without internal state."
+        },
+        {
+          "option_id": "OPT-EXACT-BCP47-NO-FALLBACK",
+          "summary": "Require an exact supported requested locale and never fall back.",
+          "contract": "Unsupported or incomplete mandatory localized content excludes list entries and produces uniform not-found detail; optional fields are omitted.",
+          "impact": "Strong locale predictability and no cross-locale substitution.",
+          "rejection_tradeoff": "Catalog availability can vary sharply by locale and empty states become more common."
+        },
+        {
+          "option_id": "OPT-STOREFRONT-DEFAULT-LOCALE-ONLY",
+          "summary": "Ignore caller locale preference and always use the configured Storefront default locale.",
+          "contract": "All list/detail content uses one Storefront locale; no request-level locale selection is exposed in VS001.",
+          "impact": "Smallest contract and fixture matrix.",
+          "rejection_tradeoff": "Does not provide caller-driven localization despite localized source obligations."
+        }
+      ],
+      "selected_option": null,
+      "recommended_option": "OPT-BCP47-REQUEST-THEN-STOREFRONT-DEFAULT",
+      "recommendation_rationale": "It preserves Storefront isolation, provides deterministic localization and fails closed when mandatory public content cannot be resolved.",
+      "non_inferences": ["No localized slug.", "No machine translation.", "No inference of content from Product name.", "No cross-Storefront locale fallback."]
+    },
+    {
+      "decision_id": "V23-P2D-VS001-IMPLEMENTATION-DEC-003",
+      "title": "List Pagination and Deterministic Ordering",
+      "classification": "C",
+      "question": "What list-window and stable ordering contract prevents duplicates, omissions and nondeterministic evidence?",
+      "why_human": "Pagination and ordering are observable response semantics and affect future clients.",
+      "source_authorities": ["VS001_ELABORATION_C2_R2_CANONICAL"],
+      "impacted_acceptance": ["UXF-003", "UXF-301", "UXF-306"],
+      "options": [
+        {
+          "option_id": "OPT-OPAQUE-CURSOR-SLUG-IDENTITY-ORDER",
+          "summary": "Opaque cursor pagination over deterministic public_slug then opaque canonical identity ordering.",
+          "contract": "Default page size 20, maximum 100; cursor encodes no public internal IDs and represents the last public_slug plus opaque public identity in the evaluated Storefront snapshot.",
+          "impact": "Stable traversal under a fixed snapshot and no offset drift.",
+          "rejection_tradeoff": "Cursor encoding and snapshot continuity add implementation and test complexity."
+        },
+        {
+          "option_id": "OPT-OFFSET-LIMIT-SLUG-IDENTITY-ORDER",
+          "summary": "Offset/limit pagination with the same deterministic public ordering.",
+          "contract": "Default limit 20, maximum 100; order by public_slug then opaque public identity; return total only if independently resolved in the same snapshot.",
+          "impact": "Simple client navigation and test setup.",
+          "rejection_tradeoff": "Concurrent changes can shift offsets unless the implementation adds snapshot/version semantics."
+        },
+        {
+          "option_id": "OPT-UNPAGINATED-BOUNDED-VS001-LIST",
+          "summary": "Return the complete eligible seeded Storefront catalog under an explicit maximum size.",
+          "contract": "No pagination parameters; fail closed if eligible count exceeds 100; deterministic public_slug then opaque identity ordering remains mandatory.",
+          "impact": "Smallest VS001 API and evidence surface.",
+          "rejection_tradeoff": "Creates an early hard size limit and requires a future public-contract change for growth."
+        }
+      ],
+      "selected_option": null,
+      "recommended_option": "OPT-OPAQUE-CURSOR-SLUG-IDENTITY-ORDER",
+      "recommendation_rationale": "It provides deterministic evidence and better growth compatibility without exposing storage identity.",
+      "non_inferences": ["No search or filter parameters.", "No recommendation ordering.", "No popularity or inventory ordering."]
+    },
+    {
+      "decision_id": "V23-P2D-VS001-IMPLEMENTATION-DEC-004",
+      "title": "Public Wire Schema, Error Envelope and Media Representation",
+      "classification": "C",
+      "question": "Which stable JSON projection and media representation carries the approved fields and uniform error without exposing internal state?",
+      "why_human": "Field names, envelopes and media indirection are public compatibility commitments.",
+      "source_authorities": ["VS001_DECISION_C1_CANONICAL", "VS001_ELABORATION_C2_R2_CANONICAL"],
+      "impacted_acceptance": ["BD-05-001", "UXF-301", "UXF-304", "UXF-306", "UXF-05-R056"],
+      "options": [
+        {
+          "option_id": "OPT-EXPLICIT-DATA-META-DTO",
+          "summary": "Explicit versioned DTOs inside data/meta envelopes with a minimal public error object.",
+          "contract": "List returns {data:[PublicProductListItem],meta:{page}} and detail returns {data:PublicProductDetail}; primary_image is {url,alt}; uniform failure is {error:{code:'PRODUCT_NOT_FOUND',message:'Product not found'}} with HTTP 404 and no reason fields.",
+          "impact": "Clear extension points and independently schema-validatable list/detail/error projections.",
+          "rejection_tradeoff": "Adds envelope nesting and commits exact public field names."
+        },
+        {
+          "option_id": "OPT-BARE-RESOURCE-DTO",
+          "summary": "Bare array/object success payloads with a top-level public error object.",
+          "contract": "List returns PublicProductListItem[]; detail returns PublicProductDetail; primary image remains a url/alt object; error is {code:'PRODUCT_NOT_FOUND',message:'Product not found'}.",
+          "impact": "Minimal payload and client parsing.",
+          "rejection_tradeoff": "Future pagination and metadata additions require headers or a breaking envelope change."
+        },
+        {
+          "option_id": "OPT-JSONAPI-LIKE-RESOURCE-DOCUMENT",
+          "summary": "Resource documents with type/id/attributes and errors collections.",
+          "contract": "Represent public Product identity as resource id, approved fields as attributes, media as a public attribute object and uniform not-found as one errors entry carrying PRODUCT_NOT_FOUND.",
+          "impact": "Standardized resource shape and extensibility.",
+          "rejection_tradeoff": "Higher ceremony and risk of accidentally exposing relationship or internal metadata not approved for VS001."
+        }
+      ],
+      "selected_option": null,
+      "recommended_option": "OPT-EXPLICIT-DATA-META-DTO",
+      "recommendation_rationale": "It keeps the approved field boundary explicit while supporting pagination and schema evidence without supplier/internal relationships.",
+      "non_inferences": ["No additional mandatory Product fields.", "No promotion, tax, inventory or cart properties.", "No internal reason in body or headers.", "No media storage provider selection."]
+    },
+    {
+      "decision_id": "V23-P2D-VS001-IMPLEMENTATION-DEC-005",
+      "title": "Public Slug and Opaque Canonical Identity Persistence",
+      "classification": "C",
+      "question": "How are Storefront-scoped stable slugs and opaque canonical public identities persisted without exposing storage or Supplier identifiers?",
+      "why_human": "Identifier lifecycle affects public compatibility, privacy and uniqueness constraints.",
+      "source_authorities": ["VS001_DECISION_C1_CANONICAL", "VS001_ELABORATION_C2_R2_CANONICAL"],
+      "impacted_acceptance": ["BD-02-001", "BD-04-001", "UXF-301", "UXF-304", "UXF-04-R011", "UXF-05-R004"],
+      "options": [
+        {
+          "option_id": "OPT-STOREFRONT-ENTRY-SLUG-UUIDV7-PUBLIC-ID",
+          "summary": "Persist slug on the Storefront Catalog entry and a separate immutable UUIDv7 public Product identity.",
+          "contract": "Enforce unique(storefront_id,public_slug), approved lowercase ASCII kebab grammar, immutable-after-publication slug in VS001 and unique UUIDv7 public_product_id unrelated to database sequence or Supplier reference.",
+          "impact": "Direct Storefront lookup and sortable opaque public identity with explicit constraints.",
+          "rejection_tradeoff": "Slug history or future cross-Storefront canonical URLs require a later approved model."
+        },
+        {
+          "option_id": "OPT-SEPARATE-PUBLIC-IDENTIFIER-UUIDV4",
+          "summary": "Use a dedicated public identifier table with Storefront-scoped slug and immutable UUIDv4 Product identity.",
+          "contract": "Resolve slug through a typed identifier row linked to Storefront Catalog entry; disable alias/history rows in VS001; enforce uniqueness and grammar at database and application boundaries.",
+          "impact": "Separates public identifier lifecycle from catalog projection and leaves controlled expansion space.",
+          "rejection_tradeoff": "Additional relation and resolver complexity for features explicitly excluded from VS001."
+        },
+        {
+          "option_id": "OPT-DERIVED-SLUG-ENCODED-INTERNAL-ID",
+          "summary": "Derive slug from Product name and encode internal identity in the public identifier.",
+          "contract": "Generate identifiers from display content plus reversible storage identity.",
+          "impact": "Avoids a dedicated public identifier lifecycle.",
+          "rejection_tradeoff": "Conflicts with stable locale-neutral slug and no-internal-identity rules; retained only as an explicit rejectable alternative."
+        }
+      ],
+      "selected_option": null,
+      "recommended_option": "OPT-STOREFRONT-ENTRY-SLUG-UUIDV7-PUBLIC-ID",
+      "recommendation_rationale": "It directly enforces Storefront uniqueness, stable slug and opaque canonical identity with the smallest approved VS001 model.",
+      "non_inferences": ["No localized or historical slug.", "No alias or redirect.", "No direct lookup by database or Supplier ID."]
+    },
+    {
+      "decision_id": "V23-P2D-VS001-IMPLEMENTATION-DEC-006",
+      "title": "VS001 Relational Persistence and Integrity Model",
+      "classification": "C",
+      "question": "Which PostgreSQL representation preserves canonical Product authority, typed catalog projections, publication and price lifecycles?",
+      "why_human": "Table boundaries, reference ownership and constraints become durable data-lifecycle commitments.",
+      "source_authorities": ["COMMISSIONING_C1_APPROVAL", "VS001_ELABORATION_C2_R2_CANONICAL"],
+      "impacted_acceptance": ["BD-02-001", "BD-02-002", "BD-04-001", "BD-04-002", "BD-04-003", "BRD-WS-04-R001", "BD-05-001", "UXF-05-R018"],
+      "options": [
+        {
+          "option_id": "OPT-NORMALIZED-TYPED-RELATIONAL-MODEL",
+          "summary": "Normalized typed tables for canonical Product, versions, catalog roles, entries, publication validation/window, localized public content, media and Storefront price.",
+          "contract": "Use foreign keys and object-type-safe relations; unique current Product Version per Product, unique Storefront Catalog entry per Product/context, non-overlapping active publication rows where required, amount as exact decimal minor-unit-compatible value, ISO currency constraint, and no Supplier cost in public projection tables.",
+          "impact": "Strong reference integrity and independently queryable evidence for every eligibility predicate.",
+          "rejection_tradeoff": "More migrations, joins and fixture setup than aggregate storage."
+        },
+        {
+          "option_id": "OPT-HYBRID-RELATIONAL-CORE-JSONB-SPECIFICATION",
+          "summary": "Relational identity/lifecycle tables with source-defined public Product specification stored as validated JSONB.",
+          "contract": "Keep Product, version, catalog, publication and price normalized; store conditional public specification in schema-versioned JSONB validated at write/publication boundaries.",
+          "impact": "Retains lifecycle integrity while avoiding premature columns for conditional attributes.",
+          "rejection_tradeoff": "Database-level field constraints and query evidence for conditional attributes are weaker and require schema validators."
+        },
+        {
+          "option_id": "OPT-DENORMALIZED-PUBLIC-CATALOG-DOCUMENT",
+          "summary": "Persist one denormalized Storefront public catalog document containing identity, publication, price and display data.",
+          "contract": "Treat the document as a projection rebuilt from canonical entities; it may never become canonical Product authority.",
+          "impact": "Simple read path and snapshot consistency.",
+          "rejection_tradeoff": "Greater stale-projection and dangling-reference risk, with harder independent evidence of typed ownership."
+        }
+      ],
+      "selected_option": null,
+      "recommended_option": "OPT-HYBRID-RELATIONAL-CORE-JSONB-SPECIFICATION",
+      "recommendation_rationale": "It protects canonical lifecycle and typed references while avoiding unsupported mandatory columns for conditional Product specification fields.",
+      "non_inferences": ["No Supplier procurement or inventory schema.", "No cart/order/payment tables.", "No Product Variant model.", "No rewrite of the accepted commissioning baseline migration."]
+    },
+    {
+      "decision_id": "V23-P2D-VS001-IMPLEMENTATION-DEC-007",
+      "title": "Forward Migration, Seed and Controlled Fixture Ownership",
+      "classification": "C",
+      "question": "How are durable schema migrations separated from deterministic disposable VS001 fixtures?",
+      "why_human": "Seed placement changes data lifecycle, cleanup safety and production compatibility.",
+      "source_authorities": ["COMMISSIONING_C1_APPROVAL", "COMMISSIONING_I1_R1_APPROVAL", "VS001_ELABORATION_C2_R2_CANONICAL"],
+      "impacted_acceptance": ["BD-02-001", "BD-04-001", "BD-05-001", "UXF-04-R011", "UXF-301"],
+      "options": [
+        {
+          "option_id": "OPT-FORWARD-MIGRATION-SEPARATE-FIXTURE-LOADER",
+          "summary": "Add one or more forward-only schema migrations and a separate deterministic VS001 fixture loader/cleanup owner.",
+          "contract": "Migrations contain schema only; fixtures use stable semantic fixture keys plus a run ownership token, run only in disposable local/test PostgreSQL, and cleanup deletes only owned rows/resources on success and failure.",
+          "impact": "Clean lifecycle separation and safe reproducible evidence without production seed coupling.",
+          "rejection_tradeoff": "Requires dedicated fixture tooling and ownership validation."
+        },
+        {
+          "option_id": "OPT-MIGRATION-EMBEDS-REFERENCE-SEED",
+          "summary": "Place deterministic VS001 Product/Catalog fixtures directly in forward migrations.",
+          "contract": "Migration data becomes durable database history and is not removed by test cleanup.",
+          "impact": "Migration verification immediately has browseable data.",
+          "rejection_tradeoff": "Conflates schema and test data, complicates production use and violates disposable fixture ownership."
+        },
+        {
+          "option_id": "OPT-RUNTIME-STARTUP-AUTO-SEED",
+          "summary": "API startup creates missing VS001 schema data and fixtures.",
+          "contract": "Startup performs idempotent data creation before serving requests.",
+          "impact": "Low separate-tooling burden.",
+          "rejection_tradeoff": "Creates hidden runtime writes, weakens migration authority and risks persistent environment contamination."
+        }
+      ],
+      "selected_option": null,
+      "recommended_option": "OPT-FORWARD-MIGRATION-SEPARATE-FIXTURE-LOADER",
+      "recommendation_rationale": "It reuses commissioning's forward-only migrations and disposable Docker ownership without turning fixtures into durable business seed data.",
+      "non_inferences": ["No production business seed.", "No migration rewrite.", "No fixed container name or shared volume deletion.", "No runtime evidence is created in this decision pack."]
+    },
+    {
+      "decision_id": "V23-P2D-VS001-IMPLEMENTATION-DEC-008",
+      "title": "Eligibility Evaluation Snapshot, Clock, Publication Validation and Price Resolution",
+      "classification": "C",
+      "question": "What request-scoped consistency model binds publication, reference, validation and price evidence for list/detail?",
+      "why_human": "Temporal and concurrent resolution choices can change observable eligibility and list/detail equality.",
+      "source_authorities": ["VS001_DECISION_C1_CANONICAL", "VS001_ELABORATION_C2_R2_CANONICAL"],
+      "impacted_acceptance": ["BD-04-001", "BD-04-003", "BD-05-001", "UXF-04-R011", "UXF-301", "UXF-304", "UXF-306"],
+      "options": [
+        {
+          "option_id": "OPT-REQUEST-TIMESTAMP-REPEATABLE-READ-SNAPSHOT",
+          "summary": "Capture one UTC evaluation instant and resolve all eligibility, publication, validation and price facts in one PostgreSQL repeatable-read snapshot.",
+          "contract": "Inject the clock for controlled boundary tests; list cursor retains snapshot identity or fails closed when continuation cannot preserve it; detail resolves one coherent snapshot; publication validation PASS record and base price amount/currency must be current in that snapshot.",
+          "impact": "Strong independent evidence and no mixed-version list/detail response within a request.",
+          "rejection_tradeoff": "Longer transactions or snapshot continuation mechanisms require careful limits."
+        },
+        {
+          "option_id": "OPT-REQUEST-TIMESTAMP-READ-COMMITTED-VERSION-CHECKS",
+          "summary": "Capture one UTC instant but use read-committed queries with explicit entity/version stamps and retry on inconsistency.",
+          "contract": "Every resolver receives the same evaluation instant; compare Product Version, publication-validation and price revision identifiers before serialization; retry once then fail closed.",
+          "impact": "Short transactions with explicit optimistic consistency evidence.",
+          "rejection_tradeoff": "More resolver logic and retry behavior; failure semantics become observable under churn."
+        },
+        {
+          "option_id": "OPT-MATERIALIZED-ELIGIBLE-CATALOG-SNAPSHOT",
+          "summary": "Read a prevalidated materialized Storefront catalog snapshot with immutable snapshot/version identity.",
+          "contract": "Publication and price changes create a new snapshot; list/detail expose only one active validated snapshot and never fall back to raw unresolved state.",
+          "impact": "Fast coherent reads and simple list/detail comparison.",
+          "rejection_tradeoff": "Introduces projection freshness, activation and rebuild lifecycle not otherwise required by VS001."
+        }
+      ],
+      "selected_option": null,
+      "recommended_option": "OPT-REQUEST-TIMESTAMP-REPEATABLE-READ-SNAPSHOT",
+      "recommendation_rationale": "It most directly proves the accepted publication-window, validation, reference and price predicates with a controlled clock and coherent evidence.",
+      "non_inferences": ["No stock or reservation evaluation.", "No promotion or tax resolver.", "No cache authority.", "No claim that list and a later independent detail request share historical state unless the selected contract explicitly carries snapshot identity."]
+    },
+    {
+      "decision_id": "V23-P2D-VS001-IMPLEMENTATION-DEC-009",
+      "title": "Public/Internal Separation, Correlation and Audit Redaction",
+      "classification": "C",
+      "question": "How will API/UI/data evidence correlate without exposing internal eligibility, Supplier, cost or storage details?",
+      "why_human": "Correlation exposure and logging policy define a security and privacy boundary.",
+      "source_authorities": ["VS001_DECISION_C1_CANONICAL", "VS001_ELABORATION_C2_R2_CANONICAL", "COMMISSIONING_I1_R1_APPROVAL"],
+      "impacted_acceptance": ["BD-02-002", "BD-05-001", "UXF-304", "UXF-306", "UXF-04-R011", "UXF-05-R010", "UXF-05-R018", "UXF-05-R056"],
+      "options": [
+        {
+          "option_id": "OPT-SERVER-CORRELATION-ID-ALLOWLISTED-AUDIT",
+          "summary": "Generate a server correlation UUID per request, expose only that opaque value, and use allowlisted structured internal audit fields.",
+          "contract": "Return X-Correlation-Id on success and uniform failure; log correlation id, semantic operation, Storefront public identity and internal reason code only in protected evidence; redact Supplier identity/reference, cost, credentials, storage paths and raw request secrets; never vary public outcome by reason.",
+          "impact": "Enables API/UI/data traceability and internal cause audit with an explicit public allowlist.",
+          "rejection_tradeoff": "Public correlation headers add a compatibility and abuse-monitoring surface."
+        },
+        {
+          "option_id": "OPT-INTERNAL-CORRELATION-ONLY",
+          "summary": "Generate correlation identity internally but expose no correlation field or header publicly.",
+          "contract": "Browser/API evidence correlates through test-harness capture and protected logs; public bodies and headers contain no correlation identity.",
+          "impact": "Smallest public disclosure surface.",
+          "rejection_tradeoff": "Black-box support and API/UI/database evidence correlation are harder and depend on privileged test instrumentation."
+        },
+        {
+          "option_id": "OPT-VALIDATED-CLIENT-CORRELATION-ECHO",
+          "summary": "Accept a constrained client correlation token and echo it after validation, otherwise generate a server value.",
+          "contract": "Allow only bounded ASCII opaque tokens; never place the token into queries or unescaped logs; public response echoes only the validated token.",
+          "impact": "Supports end-to-end caller tracing.",
+          "rejection_tradeoff": "Adds spoofing, log-injection and privacy risk plus more security tests."
+        }
+      ],
+      "selected_option": null,
+      "recommended_option": "OPT-SERVER-CORRELATION-ID-ALLOWLISTED-AUDIT",
+      "recommendation_rationale": "It makes required API/UI/data correlation independently observable while preserving uniform public not-found and strict redaction.",
+      "non_inferences": ["No public internal reason code.", "No Supplier or cost logging authorization.", "No observability vendor selection.", "No production retention policy or deployment authorization."]
+    }
+  ],
+  "decision_accounting": {
+    "total": 9,
+    "selected": 0,
+    "pending": 9,
+    "options_per_decision": 3,
+    "type_c_audit_topics": 18,
+    "implementation_contract_blocked": true
+  },
+  "implementation_contract_blocker": {
+    "code": "HUMAN_PHASE_2D_VS001_IMPLEMENTATION_DECISION_REQUIRED",
+    "reason": "Nine unresolved Type C choices affect public compatibility, data lifecycle, security boundaries or future compatibility.",
+    "required_resolution": "Human approval must select exactly one existing option for every decision in a detached approval layer; the candidate selected_option fields remain null.",
+    "smallest_next_step": "Review the nine recommendations and approve or replace each with one listed option before authoring V23-P2D-VS001-IMPLEMENTATION-CONTRACT-C1."
+  },
+  "technical_foundation_reuse": [
+    "Node.js 24.18.0 and pnpm 11.13.1",
+    "NestJS 11.1.28 with Fastify 5.10.0",
+    "Next.js 16.2.10 with React 19.2.7",
+    "PostgreSQL 18.4 and Prisma 7.8.0 forward-only migration harness",
+    "Vitest 4.1.10 and Playwright 1.61.1",
+    "Disposable Docker Compose project and volume ownership with cleanup after success and failure",
+    "Existing commissioning lint, typecheck, test, build, smoke, migration and clean-checkout command interfaces"
+  ],
+  "non_claims": [
+    "NOT_VS001_IMPLEMENTATION_CONTRACT_APPROVAL",
+    "NOT_VS001_IMPLEMENTATION_AUTHORIZATION",
+    "NOT_RUNTIME_EVIDENCE",
+    "NOT_APPLICATION_OR_PACKAGE_CODE",
+    "NOT_DATABASE_SCHEMA_OR_MIGRATION",
+    "NOT_API_OR_UI_IMPLEMENTATION",
+    "NOT_COMMISSIONING_MODIFICATION",
+    "NOT_BRD_UXF_MODIFICATION",
+    "NOT_YADF_DEPLOYMENT_OR_PRODUCTION_WORK"
+  ]
+}
