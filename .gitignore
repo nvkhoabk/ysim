@@ -1,4 +1,3 @@
-
 # Python bytecode
 __pycache__/
 *.py[cod]
@@ -7,5 +6,20 @@ __pycache__/
 # Python packaging metadata
 *.egg-info/
 
+# Node workspace dependencies
+node_modules/
+**/node_modules/
+
+# Node and frontend build outputs
+dist/
+**/dist/
+.next/
+**/.next/
+coverage/
+**/coverage/
+playwright-report/
+test-results/
+
+# Runtime-generated local state
 runtime/tmp/
 runtime/

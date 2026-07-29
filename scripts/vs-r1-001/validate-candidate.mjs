@@ -3,7 +3,8 @@ import { existsSync, statSync } from 'node:fs';
 import { resolve } from 'node:path';
 
 const root = resolve(import.meta.dirname, '../..');
-const baseRef = process.env.VS_R1_001_BASE_REF ?? 'baseline/r1/r1b-00/accepted-v1';
+const baseRef =
+  process.env.VS_R1_001_BASE_REF ?? 'baseline/r1/r1b-00/accepted-v1';
 const composeBin = process.env.COMMISSIONING_COMPOSE_BIN;
 
 function run(command, args, options = {}) {
@@ -13,9 +14,19 @@ function run(command, args, options = {}) {
     env: process.env,
     maxBuffer: 64 * 1024 * 1024,
   });
-  if (!options.allowFailure && result.status !== 0) {
-    throw new Error(`${command} ${args.join(' ')}\n${result.stdout}\n${result.stderr}`);
+
+  if (result.error) {
+    throw new Error(
+      `${command} ${args.join(' ')} could not start: ${result.error.message}`,
+    );
   }
+
+  if (!options.allowFailure && result.status !== 0) {
+    throw new Error(
+      `${command} ${args.join(' ')}\n${result.stdout}\n${result.stderr}`,
+    );
+  }
+
   return result;
 }
 
@@ -30,14 +41,23 @@ if (pnpmVersion !== '11.13.1') {
 }
 
 if (!composeBin || !existsSync(composeBin) || !statSync(composeBin).isFile()) {
-  throw new Error('COMMISSIONING_COMPOSE_BIN must point to Docker Compose v2.40.2');
+  throw new Error(
+    'COMMISSIONING_COMPOSE_BIN must point to Docker Compose v2.40.2',
+  );
 }
-const composeVersion = run(composeBin, ['version', '--short']).stdout.trim().replace(/^v/u, '');
+
+const composeVersion = run(composeBin, ['version', '--short'])
+  .stdout.trim()
+  .replace(/^v/u, '');
+
 if (composeVersion !== '2.40.2') {
-  throw new Error(`Docker Compose 2.40.2 required; observed ${composeVersion}`);
+  throw new Error(
+    `Docker Compose 2.40.2 required; observed ${composeVersion}`,
+  );
 }
 
 const expected = [
+  '.gitignore',
   'apps/api/package.json',
   'apps/api/src/app.module.ts',
   'apps/api/src/modules/organization-agency/application/organization-agency.service.ts',
@@ -63,31 +83,44 @@ const expected = [
   'tests/vs-r1-001/organization-policy.test.ts',
 ].sort();
 
-const actual = run('git', ['diff', '--name-only', `${baseRef}..HEAD`]).stdout
-  .split('\n')
+const actual = run('git', ['diff', '--name-only', `${baseRef}..HEAD`])
+  .stdout.split('\n')
   .map((value) => value.trim())
   .filter(Boolean)
   .sort();
 
 if (JSON.stringify(actual) !== JSON.stringify(expected)) {
-  throw new Error(`Candidate inventory mismatch\nEXPECTED:\n${expected.join('\n')}\nACTUAL:\n${actual.join('\n')}`);
+  throw new Error(
+    `Candidate inventory mismatch\nEXPECTED:\n${expected.join('\n')}\nACTUAL:\n${actual.join('\n')}`,
+  );
 }
 
 const forbidden = actual.filter((path) =>
-  /(^|\/)(node_modules|dist|\.next)(\/|$)|:Zone\.Identifier$/u.test(path),
+  /(^|\/)(node_modules|dist|\.next|coverage|playwright-report|test-results)(\/|$)|:Zone\.Identifier$/u.test(
+    path,
+  ),
 );
+
 if (forbidden.length > 0) {
-  throw new Error(`Generated or metadata paths are prohibited: ${forbidden.join(', ')}`);
+  throw new Error(
+    `Generated or metadata paths are prohibited: ${forbidden.join(', ')}`,
+  );
 }
 
 run('git', ['diff', '--check', baseRef, 'HEAD']);
 
-console.log(JSON.stringify({
-  base_ref: baseRef,
-  candidate_paths: actual,
-  compose_version: composeVersion,
-  node_version: process.version,
-  pnpm_version: pnpmVersion,
-  result: 'PASS',
-  slice: 'VS-R1-001',
-}, null, 2));
+console.log(
+  JSON.stringify(
+    {
+      base_ref: baseRef,
+      candidate_paths: actual,
+      compose_version: composeVersion,
+      node_version: process.version,
+      pnpm_version: pnpmVersion,
+      result: 'PASS',
+      slice: 'VS-R1-001',
+    },
+    null,
+    2,
+  ),
+);

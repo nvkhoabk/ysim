@@ -76,8 +76,10 @@ The committed candidate is expected to contain only the documented VS-R1-001 imp
 
 - [ ] `pnpm-lock.yaml` is updated by pnpm.
 - [ ] No `Zone.Identifier` file exists.
-- [ ] No generated `node_modules`, `dist` or `.next` directory is staged.
+- [ ] Tracked `.gitignore` excludes `node_modules`, `dist`, `.next`, coverage and test-report outputs.
+- [ ] No generated `node_modules`, `dist`, `.next`, coverage or test-report directory is staged.
 - [ ] `git diff --check` succeeds.
+- [ ] Candidate contains exactly 24 approved paths from the R1B-00 baseline.
 - [ ] Candidate tag is created.
 - [ ] Clean-checkout evidence is produced.
 
