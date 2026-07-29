@@ -1,28 +1,71 @@
 :root {
-  color-scheme: light dark;
+  color-scheme: light;
   font-family: ui-sans-serif, system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
 }
 
 body {
   margin: 0;
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
   background: #0b1020;
   color: #f5f7ff;
 }
 
-main {
-  width: min(42rem, calc(100vw - 3rem));
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.commissioning-page {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: 1.5rem;
+}
+
+.commissioning-card {
+  width: min(42rem, 100%);
   padding: 2.5rem;
   border: 1px solid #33406a;
   border-radius: 1rem;
   background: #131b34;
 }
 
-.eyebrow { color: #87a4ff; text-transform: uppercase; letter-spacing: .12em; }
-h1 { margin-block: .4rem 1rem; }
-dl { display: grid; gap: .5rem; }
-dl div { display: flex; justify-content: space-between; gap: 1rem; }
-dt { color: #aeb9da; }
-dd { margin: 0; font-family: ui-monospace, monospace; }
+.commissioning-eyebrow {
+  color: #87a4ff;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.commissioning-card h1 {
+  margin-block: 0.4rem 1rem;
+}
+
+.commissioning-card dl {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.commissioning-card dl div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.commissioning-card dt {
+  color: #aeb9da;
+}
+
+.commissioning-card dd {
+  margin: 0;
+  font-family: ui-monospace, monospace;
+}

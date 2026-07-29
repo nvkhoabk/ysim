@@ -11,10 +11,12 @@
 ## Executable slices
 
 1. [VS-R1-001 — Organization and Agency Bootstrap](./vs-r1-001/INDEX.md)
+2. [VS-R1-002 — Agency Portal Authenticated Shell](./vs-r1-002/INDEX.md)
 
 ## Package status
 
 | Package | Status |
 |---|---|
 | R1B-00 — Implementation Baseline and Runtime Contract | Accepted |
-| VS-R1-001 — Organization and Agency Bootstrap | Proposed |
+| VS-R1-001 — Organization and Agency Bootstrap | Accepted |
+| VS-R1-002 — Agency Portal Authenticated Shell | Proposed |

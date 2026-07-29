@@ -51,6 +51,10 @@ export interface ActivateAgencyResponse {
   organization: OrganizationContract;
 }
 
+export interface SuspendAgencyResponse {
+  organization: OrganizationContract;
+}
+
 export interface GrantMembershipRequest {
   identityId: string;
   role: MembershipRole;
@@ -73,4 +77,20 @@ export interface GrantMembershipResponse {
 export interface OrganizationContextResponse {
   organization: OrganizationContract;
   membership: MembershipContract;
+}
+
+export type AgencyPortalRole = 'AGENCY_ADMIN' | 'AGENCY_USER';
+
+export interface AgencyPortalContextResponse {
+  organization: OrganizationContract;
+  membership: MembershipContract & {
+    role: AgencyPortalRole;
+  };
+}
+
+export interface OrganizationInactiveError {
+  statusCode: 423;
+  error: 'Locked';
+  code: 'ORGANIZATION_INACTIVE';
+  organization: OrganizationContract;
 }

@@ -42,6 +42,15 @@ interface MembershipRow extends QueryResultRow {
   revoked_at: Date | null;
 }
 
+interface PortalContextRow extends OrganizationRow {
+  membership_id: string;
+  membership_identity_id: string;
+  membership_role: MembershipRole;
+  membership_status: 'ACTIVE' | 'REVOKED';
+  membership_created_at: Date;
+  membership_revoked_at: Date | null;
+}
+
 export interface CreateAgencyRecord {
   organizationCode: string;
   agencyCode: string;
@@ -81,6 +90,24 @@ const mapMembership = (row: MembershipRow): MembershipContract => ({
   status: row.status,
   createdAt: row.created_at.toISOString(),
   revokedAt: row.revoked_at?.toISOString() ?? null,
+});
+
+const mapPortalContext = (
+  row: PortalContextRow,
+): {
+  organization: OrganizationContract;
+  membership: MembershipContract;
+} => ({
+  organization: mapOrganization(row),
+  membership: mapMembership({
+    id: row.membership_id,
+    organization_id: row.id,
+    identity_id: row.membership_identity_id,
+    role: row.membership_role,
+    status: row.membership_status,
+    created_at: row.membership_created_at,
+    revoked_at: row.membership_revoked_at,
+  }),
 });
 
 async function appendActivity(
@@ -182,6 +209,32 @@ export class OrganizationAgencyRepository {
     organizationId: string,
     actorIdentityId: string,
   ): Promise<OrganizationContract | null> {
+    return this.changeAgencyStatus(
+      organizationId,
+      actorIdentityId,
+      'ACTIVE',
+      'AGENCY_ACTIVATED',
+    );
+  }
+
+  async suspendAgency(
+    organizationId: string,
+    actorIdentityId: string,
+  ): Promise<OrganizationContract | null> {
+    return this.changeAgencyStatus(
+      organizationId,
+      actorIdentityId,
+      'SUSPENDED',
+      'AGENCY_SUSPENDED',
+    );
+  }
+
+  private async changeAgencyStatus(
+    organizationId: string,
+    actorIdentityId: string,
+    status: 'ACTIVE' | 'SUSPENDED',
+    action: 'AGENCY_ACTIVATED' | 'AGENCY_SUSPENDED',
+  ): Promise<OrganizationContract | null> {
     return this.database.transaction(async (client) => {
       const current = await client.query<OrganizationRow>(
         `SELECT *
@@ -194,22 +247,22 @@ export class OrganizationAgencyRepository {
 
       const row = current.rows[0];
       if (!row) return null;
-      if (row.status === 'ACTIVE') return mapOrganization(row);
+      if (row.status === status) return mapOrganization(row);
 
       const updated = await client.query<OrganizationRow>(
         `UPDATE organization_agency.organizations
-            SET status = 'ACTIVE',
+            SET status = $2,
                 updated_at = CURRENT_TIMESTAMP,
                 version = version + 1
           WHERE id = $1
           RETURNING *`,
-        [organizationId],
+        [organizationId, status],
       );
 
       await appendActivity(client, {
         organizationId,
         actorIdentityId,
-        action: 'AGENCY_ACTIVATED',
+        action,
         subjectType: 'Organization',
         subjectId: organizationId,
       });
@@ -269,16 +322,26 @@ export class OrganizationAgencyRepository {
     organization: OrganizationContract;
     membership: MembershipContract;
   } | null> {
-    const result = await this.database.query<
-      OrganizationRow & {
-        membership_id: string;
-        membership_identity_id: string;
-        membership_role: MembershipRole;
-        membership_status: 'ACTIVE' | 'REVOKED';
-        membership_created_at: Date;
-        membership_revoked_at: Date | null;
-      }
-    >(
+    const context = await this.resolvePortalContext(
+      organizationId,
+      identityId,
+    );
+
+    if (!context || context.organization.status !== 'ACTIVE') {
+      return null;
+    }
+
+    return context;
+  }
+
+  async resolvePortalContext(
+    organizationId: string,
+    identityId: string,
+  ): Promise<{
+    organization: OrganizationContract;
+    membership: MembershipContract;
+  } | null> {
+    const result = await this.database.query<PortalContextRow>(
       `SELECT
          o.*,
          m.id AS membership_id,
@@ -291,7 +354,7 @@ export class OrganizationAgencyRepository {
        JOIN organization_agency.organization_memberships m
          ON m.organization_id = o.id
       WHERE o.id = $1
-        AND o.status = 'ACTIVE'
+        AND o.type = 'AGENCY'
         AND m.identity_id = $2
         AND m.status = 'ACTIVE'
       ORDER BY m.created_at
@@ -300,19 +363,6 @@ export class OrganizationAgencyRepository {
     );
 
     const row = result.rows[0];
-    if (!row) return null;
-
-    return {
-      organization: mapOrganization(row),
-      membership: mapMembership({
-        id: row.membership_id,
-        organization_id: row.id,
-        identity_id: row.membership_identity_id,
-        role: row.membership_role,
-        status: row.membership_status,
-        created_at: row.membership_created_at,
-        revoked_at: row.membership_revoked_at,
-      }),
-    };
+    return row ? mapPortalContext(row) : null;
   }
 }

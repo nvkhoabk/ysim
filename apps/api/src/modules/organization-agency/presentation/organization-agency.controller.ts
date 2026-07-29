@@ -13,18 +13,23 @@ import {
 } from '@nestjs/common';
 import type {
   ActivateAgencyResponse,
+  AgencyPortalContextResponse,
   CreateAgencyRequest,
   CreateAgencyResponse,
   GrantMembershipRequest,
   GrantMembershipResponse,
   OrganizationContextResponse,
+  SuspendAgencyResponse,
 } from '@ysim/contracts';
 
 import { OrganizationAgencyService } from '../application/organization-agency.service.js';
 
 type RequestHeaders = Record<string, string | string[] | undefined>;
 
-function singleHeader(headers: RequestHeaders, name: string): string | undefined {
+function singleHeader(
+  headers: RequestHeaders,
+  name: string,
+): string | undefined {
   const value = headers[name];
   return Array.isArray(value) ? value[0] : value;
 }
@@ -38,7 +43,9 @@ function requireBootstrapToken(headers: RequestHeaders): void {
   }
 
   const supplied = singleHeader(headers, 'x-ysim-bootstrap-token');
-  if (!supplied) throw new UnauthorizedException('Bootstrap token is required');
+  if (!supplied) {
+    throw new UnauthorizedException('Bootstrap token is required');
+  }
 
   const configuredBuffer = Buffer.from(configured);
   const suppliedBuffer = Buffer.from(supplied);
@@ -52,7 +59,9 @@ function requireBootstrapToken(headers: RequestHeaders): void {
 
 function requiredHeader(headers: RequestHeaders, name: string): string {
   const value = singleHeader(headers, name);
-  if (!value) throw new UnauthorizedException(`${name} header is required`);
+  if (!value) {
+    throw new UnauthorizedException(`${name} header is required`);
+  }
   return value;
 }
 
@@ -85,6 +94,19 @@ export class OrganizationAgencyController {
     );
   }
 
+  @Post(':organizationId/suspend')
+  @HttpCode(200)
+  suspendAgency(
+    @Headers() headers: RequestHeaders,
+    @Param('organizationId') organizationId: string,
+  ): Promise<SuspendAgencyResponse> {
+    requireBootstrapToken(headers);
+    return this.service.suspendAgency(
+      organizationId,
+      requiredHeader(headers, 'x-ysim-actor-id'),
+    );
+  }
+
   @Post(':organizationId/memberships')
   grantMembership(
     @Headers() headers: RequestHeaders,
@@ -105,6 +127,17 @@ export class OrganizationAgencyController {
   ): Promise<OrganizationContextResponse> {
     requireBootstrapToken(headers);
     return this.service.resolveContext(
+      requiredHeader(headers, 'x-ysim-organization-id'),
+      requiredHeader(headers, 'x-ysim-identity-id'),
+    );
+  }
+
+  @Get('portal-context')
+  resolvePortalContext(
+    @Headers() headers: RequestHeaders,
+  ): Promise<AgencyPortalContextResponse> {
+    requireBootstrapToken(headers);
+    return this.service.resolvePortalContext(
       requiredHeader(headers, 'x-ysim-organization-id'),
       requiredHeader(headers, 'x-ysim-identity-id'),
     );

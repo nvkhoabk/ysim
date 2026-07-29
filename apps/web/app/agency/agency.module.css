@@ -1,0 +1,223 @@
+.portal {
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: minmax(15rem, 18rem) minmax(0, 1fr);
+  background:
+    radial-gradient(circle at 100% 0%, rgb(35 146 92 / 18%), transparent 35rem),
+    #f4f7f5;
+  color: #14261d;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2rem 1.5rem;
+  background: #0d2d20;
+  color: #f5fff9;
+}
+
+.eyebrow {
+  margin: 0 0 0.5rem;
+  color: #75d69f;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.organizationName {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.organizationCode {
+  margin: 0.5rem 0 0;
+  color: #a9c9b7;
+  font-family: ui-monospace, monospace;
+  font-size: 0.875rem;
+}
+
+.navigation {
+  display: grid;
+  gap: 0.35rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.navigation a {
+  display: block;
+  padding: 0.8rem 0.9rem;
+  border-radius: 0.75rem;
+  color: #d8eee2;
+  text-decoration: none;
+}
+
+.navigation a:hover,
+.navigation a:focus-visible,
+.navigation .activeLink {
+  background: #1b5138;
+  color: #fff;
+}
+
+.identity {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgb(255 255 255 / 15%);
+}
+
+.identity div {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.identity dt {
+  color: #9ebead;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.identity dd {
+  margin: 0;
+  font-family: ui-monospace, monospace;
+  font-size: 0.85rem;
+}
+
+.content {
+  padding: clamp(1.5rem, 4vw, 4rem);
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.header h2 {
+  margin: 0;
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+}
+
+.statusBadge {
+  padding: 0.45rem 0.75rem;
+  border: 1px solid #79b894;
+  border-radius: 999px;
+  background: #e7f7ed;
+  color: #17633a;
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.emptyState {
+  max-width: 48rem;
+  margin-top: 2.5rem;
+  padding: 1.5rem;
+  border: 1px solid #cddbd2;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 1rem 3rem rgb(24 61 42 / 8%);
+}
+
+.emptyState h3 {
+  margin: 0 0 0.5rem;
+}
+
+.emptyState p {
+  margin: 0;
+  color: #586b60;
+  line-height: 1.6;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.metricCard {
+  display: grid;
+  gap: 0.65rem;
+  min-height: 10rem;
+  padding: 1.25rem;
+  border: 1px solid #d7e2db;
+  border-radius: 1rem;
+  background: rgb(255 255 255 / 85%);
+}
+
+.metricCard p {
+  margin: 0;
+  color: #586b60;
+}
+
+.metricCard strong {
+  font-size: 2rem;
+}
+
+.metricCard span {
+  color: #7b8b82;
+  font-size: 0.875rem;
+}
+
+.statePage {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: 1.5rem;
+  background:
+    radial-gradient(circle at 50% 0%, rgb(35 146 92 / 22%), transparent 30rem),
+    #092219;
+  color: #effff5;
+}
+
+.stateCard {
+  width: min(36rem, 100%);
+  padding: clamp(1.5rem, 5vw, 3rem);
+  border: 1px solid rgb(255 255 255 / 16%);
+  border-radius: 1.25rem;
+  background: rgb(16 55 38 / 92%);
+  box-shadow: 0 1.5rem 4rem rgb(0 0 0 / 25%);
+}
+
+.stateCard h1 {
+  margin: 0 0 1rem;
+}
+
+.stateCard p {
+  color: #c9e2d4;
+  line-height: 1.6;
+}
+
+.detail {
+  font-family: ui-monospace, monospace;
+  font-size: 0.85rem;
+}
+
+.retryButton {
+  padding: 0.7rem 1rem;
+  border: 0;
+  border-radius: 0.7rem;
+  background: #77d79f;
+  color: #092219;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+@media (max-width: 760px) {
+  .portal {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    min-height: auto;
+  }
+
+  .metrics {
+    grid-template-columns: 1fr;
+  }
+}

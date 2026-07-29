@@ -4,13 +4,18 @@ import type { ReactNode } from 'react';
 import './styles.css';
 
 export const metadata: Metadata = {
-  title: 'YSim commissioning status',
-  description: 'Non-business process readiness surface',
+  title: {
+    default: 'YSim Platform',
+    template: '%s | YSim Platform',
+  },
+  description: 'YSim Global eSIM Commerce and Distribution Platform',
 };
 
-export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
+export default function RootLayout({
+  children,
+}: Readonly<{ children: ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="vi">
       <body>{children}</body>
     </html>
   );
