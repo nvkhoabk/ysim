@@ -6,4 +6,5 @@ export interface HealthResponse {
   status: 'ok';
 }
 
+export * from './catalog.js';
 export * from './organization-agency.js';
