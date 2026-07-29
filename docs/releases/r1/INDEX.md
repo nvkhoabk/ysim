@@ -10,6 +10,7 @@
 
 - [R1A-01 — Capability Map and Vertical Slice Plan](./architecture/INDEX.md)
 - [R1A-04 — Release Backlog, Dependencies and Milestones](./planning/INDEX.md)
+- [R1B-00 — Implementation Baseline and Runtime Contract](./implementation/INDEX.md)
 
 ## Release train
 
@@ -24,4 +25,5 @@
 | R1A-01 — Capability Map and Vertical Slice Plan | Accepted |
 | R1A-02 — Domain Context and Ownership Map | Accepted |
 | R1A-03 — Architecture Decision Records | Accepted |
-| R1A-04 — Release Backlog, Dependency Graph and Delivery Milestones | Proposed |
+| R1A-04 — Release Backlog, Dependency Graph and Delivery Milestones | Accepted |
+| R1B-00 — Implementation Baseline and Runtime Contract | Proposed |
