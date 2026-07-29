@@ -38,3 +38,7 @@ Implementation work after DIP-10 is delivered through Executable Sprint Packages
 ## Navigation
 
 See INDEX.md for the generated document listing.
+
+## Product release baselines
+
+- [YSim Release 1](./releases/r1/INDEX.md)

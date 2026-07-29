@@ -193,3 +193,7 @@ This index is generated from the documentation repository.
 ## Summary
 
 Total indexed documents: **111**
+
+## Release definitions
+
+- [Release 1 — Pilot Production](./releases/r1/INDEX.md)
