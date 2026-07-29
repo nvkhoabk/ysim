@@ -8,16 +8,13 @@
 4. [Evidence Model](./EVIDENCE_MODEL.md)
 5. [R1B-00 Acceptance Checklist](./R1B_00_ACCEPTANCE_CHECKLIST.md)
 
-## Package
+## Executable slices
 
-- Package ID: `R1B-00`
-- Name: Implementation Baseline and Runtime Contract
-- Baseline: `baseline/r1/r1a-04/accepted-v1`
-- Runtime changes: Not allowed
-- Database changes: Not allowed
-- Package purpose: Prepare controlled implementation of `VS-R1-001`
-- Status: Proposed
+1. [VS-R1-001 — Organization and Agency Bootstrap](./vs-r1-001/INDEX.md)
 
-## Next executable slice
+## Package status
 
-- `VS-R1-001 — Organization and Agency Bootstrap`
+| Package | Status |
+|---|---|
+| R1B-00 — Implementation Baseline and Runtime Contract | Accepted |
+| VS-R1-001 — Organization and Agency Bootstrap | Proposed |

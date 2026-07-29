@@ -5,3 +5,5 @@ export interface HealthResponse {
   service: 'commissioning-api';
   status: 'ok';
 }
+
+export * from './organization-agency.js';

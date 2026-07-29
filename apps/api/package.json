@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "prebuild": "corepack pnpm --filter @ysim/contracts build",
     "build": "tsc -p tsconfig.json",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "start": "node dist/main.js"
@@ -14,11 +15,13 @@
     "@nestjs/platform-fastify": "11.1.28",
     "@ysim/contracts": "workspace:*",
     "fastify": "5.10.0",
+    "pg": "8.22.0",
     "reflect-metadata": "0.2.2",
     "rxjs": "7.8.2"
   },
   "devDependencies": {
     "@types/node": "24.13.3",
+    "@types/pg": "8.20.0",
     "typescript": "5.9.3"
   }
 }
