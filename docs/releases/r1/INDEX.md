@@ -14,3 +14,7 @@
 ## Current package
 
 - R1D-01 — Release Definition Baseline.
+
+## Architecture and implementation planning
+
+- [R1A-01 — Capability Map and Vertical Slice Plan](./architecture/INDEX.md)
