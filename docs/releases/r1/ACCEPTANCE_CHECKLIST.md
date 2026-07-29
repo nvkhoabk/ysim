@@ -78,14 +78,22 @@
 
 ## H. Repository validation
 
-* [ ] `git diff --check` thành công.
-* [ ] `pnpm audit:versions` thành công.
-* [ ] `pnpm audit:boundaries` thành công.
-* [ ] `pnpm lint` thành công.
-* [ ] `pnpm typecheck` thành công.
-* [ ] `pnpm test` thành công.
-* [ ] Không có file backup hoặc file tạm.
-* [ ] Commit và candidate tag đã được tạo.
+- [ ] Candidate chỉ chứa sáu file tài liệu R1D-01.
+- [ ] Không chứa thay đổi database.
+- [ ] Không chứa thay đổi runtime.
+- [ ] Không chứa artifacts VS001.
+- [ ] Không chứa secret hoặc credential.
+- [ ] `git diff --cached --check` thành công.
+- [ ] Tất cả tài liệu bắt buộc tồn tại và không rỗng.
+- [ ] Các liên kết trong R1 Index trỏ đúng tài liệu.
+- [ ] `pnpm typecheck` thành công dưới runtime được phê duyệt.
+- [ ] `pnpm build` thành công dưới runtime được phê duyệt.
+- [ ] Working tree sạch sau commit.
+- [ ] Candidate tag đã được tạo.
+
+> `audit:boundaries`, commissioning `lint` và commissioning `test`
+> không áp dụng làm candidate validation cho gói tài liệu R1D-01,
+> vì các kiểm tra đó thuộc execution contract của commissioning candidate cũ.
 
 ## Acceptance result
 
