@@ -13,12 +13,18 @@
 3. [Inter-Context Contracts](./INTER_CONTEXT_CONTRACTS.md)
 4. [R1A-02 Acceptance Checklist](./R1A_02_ACCEPTANCE_CHECKLIST.md)
 
+## R1A-03 documents
+
+1. [Architecture Decision Records](./adr/INDEX.md)
+2. [R1A-03 Acceptance Checklist](./adr/R1A_03_ACCEPTANCE_CHECKLIST.md)
+
 ## Package status
 
 | Package | Status |
 |---|---|
 | R1A-01 — Capability Map and Vertical Slice Plan | Accepted |
-| R1A-02 — Domain Context and Ownership Map | Proposed |
+| R1A-02 — Domain Context and Ownership Map | Accepted |
+| R1A-03 — Architecture Decision Records | Proposed |
 
 ## Runtime constraints
 
