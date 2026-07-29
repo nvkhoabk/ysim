@@ -13,6 +13,7 @@
 1. [VS-R1-001 — Organization and Agency Bootstrap](./vs-r1-001/INDEX.md)
 2. [VS-R1-002 — Agency Portal Authenticated Shell](./vs-r1-002/INDEX.md)
 3. [VS-R1-003 — Canonical Destination and Product Offer](./vs-r1-003/INDEX.md)
+4. [VS-R1-004 — Gigago Supplier Plan Mapping](./vs-r1-004/INDEX.md)
 
 ## Package status
 
@@ -21,4 +22,5 @@
 | R1B-00 — Implementation Baseline and Runtime Contract | Accepted |
 | VS-R1-001 — Organization and Agency Bootstrap | Accepted |
 | VS-R1-002 — Agency Portal Authenticated Shell | Accepted |
-| VS-R1-003 — Canonical Destination and Product Offer | Proposed |
+| VS-R1-003 — Canonical Destination and Product Offer | Accepted |
+| VS-R1-004 — Gigago Supplier Plan Mapping | Proposed |
