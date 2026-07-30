@@ -31,6 +31,24 @@ const actual = git(['diff', '--name-only', `${baseRef}..HEAD`]).split('\n').filt
 if (JSON.stringify(actual) !== JSON.stringify(expected)) {
   throw new Error(`VS-R1-011 candidate inventory mismatch: ${JSON.stringify(actual)}`);
 }
+const boundaryAudit = readFileSync(
+  resolve(root, 'scripts/vs-r1-011/audit-worktree.mjs'),
+  'utf8',
+);
+for (const required of [
+  'VS_R1_011_BASE_REF',
+  "git(['diff', '--name-only', `${baseRef}..HEAD`])",
+  "git(['diff', '--cached', '--name-only'])",
+  "git(['ls-files', '--others', '--exclude-standard'])",
+  "'MIXED_CORRECTIVE'",
+]) {
+  if (!boundaryAudit.includes(required)) {
+    throw new Error(
+      `Phase-aware boundary audit fragment missing: ${required}`,
+    );
+  }
+}
+
 const controller = readFileSync(resolve(root, 'apps/api/src/modules/payment/presentation/payment-gpay-webhook.controller.ts'), 'utf8');
 const service = readFileSync(resolve(root, 'apps/api/src/modules/payment/application/gpay-webhook-application.service.ts'), 'utf8');
 const repository = readFileSync(resolve(root, 'apps/api/src/modules/payment/infrastructure/payment.repository.ts'), 'utf8');

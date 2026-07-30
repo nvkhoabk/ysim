@@ -13,3 +13,6 @@
 - [ ] 16 VS-R1-011 assertions pass.
 - [ ] Runtime proof passes twice.
 - [ ] Candidate contains exactly 16 paths.
+- [ ] Boundary inventory passes with uncommitted payload.
+- [ ] Boundary inventory passes after the candidate is committed and the worktree is clean.
+- [ ] Boundary inventory passes for a corrective commit layered on an existing candidate.
