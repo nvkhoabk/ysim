@@ -12,6 +12,7 @@ import type {
 import type { PoolClient, QueryResultRow } from 'pg';
 
 import { PostgresService } from '../../../platform/database/postgres.service.js';
+import { createPaymentSucceededIntegrationEvent } from '../domain/payment-integration-event.js';
 import {
   PaymentPolicyError,
   resolvePaymentTransition,
@@ -584,6 +585,65 @@ export class PaymentRepository {
             currency: current.currency,
           },
         });
+
+        const integrationEvent =
+          createPaymentSucceededIntegrationEvent({
+            eventId: randomUUID(),
+            paymentIntentId: input.intentId,
+            orderId: current.order_id,
+            orderNumber: paidOrder.order_number,
+            provider: input.provider,
+            providerReference:
+              current.provider_reference,
+            amountMinor: current.amount_minor,
+            currency: current.currency,
+            occurredAt: input.occurredAt,
+          });
+
+        const outboxResult = await client.query<{
+          id: string;
+        }>(
+          `INSERT INTO payment.integration_outbox (
+             id,
+             event_type,
+             aggregate_type,
+             aggregate_id,
+             order_id,
+             deduplication_key,
+             payload,
+             occurred_at,
+             available_at
+           ) VALUES (
+             $1::uuid,
+             $2::varchar(100),
+             $3::varchar(100),
+             $4::uuid,
+             $5::uuid,
+             $6::char(64),
+             $7::jsonb,
+             $8::timestamptz,
+             $8::timestamptz
+           )
+           ON CONFLICT (deduplication_key)
+           DO NOTHING
+           RETURNING id`,
+          [
+            integrationEvent.eventId,
+            integrationEvent.eventType,
+            integrationEvent.aggregateType,
+            integrationEvent.aggregateId,
+            integrationEvent.orderId,
+            integrationEvent.deduplicationKey,
+            JSON.stringify(integrationEvent.payload),
+            integrationEvent.occurredAt,
+          ],
+        );
+
+        if (outboxResult.rowCount !== 1) {
+          throw new Error(
+            'PAYMENT_SUCCESS_OUTBOX_CONFLICT',
+          );
+        }
       }
 
       await this.recordPaymentActivity(client, {

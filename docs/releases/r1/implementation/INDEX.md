@@ -23,6 +23,7 @@
 
 11. [VS-R1-011 — GPay Webhook Intake and Payment Event Application](./vs-r1-011/INDEX.md)
 12. [VS-R1-012 — GPay Payment Intent Reservation and Provider Routing](./vs-r1-012/INDEX.md)
+13. [VS-R1-013 — Payment Success Integration Outbox](./vs-r1-013/INDEX.md)
 
 ## Package status
 
@@ -40,4 +41,5 @@
 | VS-R1-009 — GPay Adapter Boundary and Signed Contract Harness | Accepted |
 | VS-R1-010 — GPay Webhook Verification and Provider Schema | Accepted |
 | VS-R1-011 — GPay Webhook Intake and Payment Event Application | Accepted |
-| VS-R1-012 — GPay Payment Intent Reservation and Provider Routing | Proposed |
+| VS-R1-012 — GPay Payment Intent Reservation and Provider Routing | Accepted |
+| VS-R1-013 — Payment Success Integration Outbox | Proposed |
