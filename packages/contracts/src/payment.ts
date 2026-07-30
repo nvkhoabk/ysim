@@ -7,7 +7,7 @@ import type {
   SalesOrderStatus,
 } from './sales-order.js';
 
-export type PaymentProvider = 'TEST';
+export type PaymentProvider = 'TEST' | 'GPAY';
 export type PaymentIntentStatus =
   | 'CREATED'
   | 'PENDING'

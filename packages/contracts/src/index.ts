@@ -15,3 +15,4 @@ export * from './pricing.js';
 export * from './sales-order.js';
 export * from './payment.js';
 export * from './gpay.js';
+export * from './gpay-webhook.js';

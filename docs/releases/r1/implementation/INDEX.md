@@ -19,6 +19,7 @@
 7. [VS-R1-007 — Sales Order and Quote Conversion](./vs-r1-007/INDEX.md)
 8. [VS-R1-008 — Payment Intent Core and Test Provider](./vs-r1-008/INDEX.md)
 9. [VS-R1-009 — GPay Adapter Boundary and Signed Contract Harness](./vs-r1-009/INDEX.md)
+10. [VS-R1-010 — GPay Webhook Verification and Provider Schema](./vs-r1-010/INDEX.md)
 
 ## Package status
 
@@ -33,4 +34,5 @@
 | VS-R1-006 — Price Book and Pricing Quote | Accepted v2 |
 | VS-R1-007 — Sales Order and Quote Conversion | Accepted candidate v2 |
 | VS-R1-008 — Payment Intent Core and Test Provider | Accepted |
-| VS-R1-009 — GPay Adapter Boundary and Signed Contract Harness | Proposed |
+| VS-R1-009 — GPay Adapter Boundary and Signed Contract Harness | Accepted |
+| VS-R1-010 — GPay Webhook Verification and Provider Schema | Proposed |
