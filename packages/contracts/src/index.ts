@@ -13,3 +13,4 @@ export * from './storefront-catalog.js';
 
 export * from './pricing.js';
 export * from './sales-order.js';
+export * from './payment.js';

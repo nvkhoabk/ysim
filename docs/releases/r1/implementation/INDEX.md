@@ -17,6 +17,7 @@
 5. [VS-R1-005 — Storefront Catalog API](./vs-r1-005/INDEX.md)
 6. [VS-R1-006 — Price Book and Pricing Quote](./vs-r1-006/INDEX.md)
 7. [VS-R1-007 — Sales Order and Quote Conversion](./vs-r1-007/INDEX.md)
+8. [VS-R1-008 — Payment Intent Core and Test Provider](./vs-r1-008/INDEX.md)
 
 ## Package status
 
@@ -29,4 +30,5 @@
 | VS-R1-004 — Gigago Supplier Plan Mapping | Accepted |
 | VS-R1-005 — Storefront Catalog API | Accepted |
 | VS-R1-006 — Price Book and Pricing Quote | Accepted v2 |
-| VS-R1-007 — Sales Order and Quote Conversion | Proposed |
+| VS-R1-007 — Sales Order and Quote Conversion | Accepted candidate v2 |
+| VS-R1-008 — Payment Intent Core and Test Provider | Proposed |
