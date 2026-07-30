@@ -1,8 +1,3 @@
-import {
-  GoneException,
-  NotFoundException,
-  UnauthorizedException,
-} from '@nestjs/common';
 import { afterEach, describe, expect, it } from 'vitest';
 
 import { SalesOrderService } from '../../apps/api/src/modules/sales-order/application/sales-order.service.js';
@@ -16,6 +11,57 @@ import type {
   ConvertQuoteResult,
   PersistedSalesOrder,
 } from '../../apps/api/src/modules/sales-order/infrastructure/sales-order.repository.js';
+
+type HttpErrorLike = {
+  getStatus?: () => unknown;
+  status?: unknown;
+  statusCode?: unknown;
+};
+
+const readHttpStatus = (
+  error: unknown,
+): number | undefined => {
+  if (
+    typeof error !== 'object' ||
+    error === null
+  ) {
+    return undefined;
+  }
+
+  const candidate = error as HttpErrorLike;
+
+  if (typeof candidate.getStatus === 'function') {
+    const value = candidate.getStatus();
+    return typeof value === 'number'
+      ? value
+      : undefined;
+  }
+
+  if (typeof candidate.status === 'number') {
+    return candidate.status;
+  }
+
+  return typeof candidate.statusCode === 'number'
+    ? candidate.statusCode
+    : undefined;
+};
+
+const expectHttpStatus = async (
+  operation: Promise<unknown>,
+  expectedStatus: number,
+): Promise<void> => {
+  let observedError: unknown;
+
+  try {
+    await operation;
+  } catch (error) {
+    observedError = error;
+  }
+
+  expect(observedError).toBeDefined();
+  expect(readHttpStatus(observedError))
+    .toBe(expectedStatus);
+};
 
 const secret =
   'order-access-secret-that-is-long-enough-for-tests';
@@ -181,12 +227,13 @@ describe('sales order service', () => {
       repository as never,
     );
 
-    await expect(
+    await expectHttpStatus(
       service.createOrder(
         request,
         'checkout-session-0001',
       ),
-    ).rejects.toBeInstanceOf(GoneException);
+      410,
+    );
   });
 
   it('requires an order access token on reads', async () => {
@@ -195,12 +242,13 @@ describe('sales order service', () => {
       repository as never,
     );
 
-    await expect(
+    await expectHttpStatus(
       service.getOrder(
         'a0000000-0000-4000-8000-000000000001',
         undefined,
       ),
-    ).rejects.toBeInstanceOf(UnauthorizedException);
+      401,
+    );
   });
 
   it('returns a token-protected order and hides internals', async () => {
@@ -225,11 +273,12 @@ describe('sales order service', () => {
     );
 
     repository.findResult = null;
-    await expect(
+    await expectHttpStatus(
       service.getOrder(
         'a0000000-0000-4000-8000-000000000001',
         'x'.repeat(43),
       ),
-    ).rejects.toBeInstanceOf(NotFoundException);
+      404,
+    );
   });
 });

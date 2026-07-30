@@ -127,6 +127,84 @@ for (const [name, expected] of Object.entries({
   }
 }
 
+const declaredRootPackages = new Set([
+  ...Object.keys(packageJson.dependencies ?? {}),
+  ...Object.keys(packageJson.devDependencies ?? {}),
+  ...Object.keys(packageJson.peerDependencies ?? {}),
+]);
+
+function packageNameFromSpecifier(specifier) {
+  if (specifier.startsWith('node:')) {
+    return null;
+  }
+
+  if (
+    specifier.startsWith('.') ||
+    specifier.startsWith('/')
+  ) {
+    return null;
+  }
+
+  if (specifier.startsWith('@')) {
+    return specifier.split('/').slice(0, 2).join('/');
+  }
+
+  return specifier.split('/')[0];
+}
+
+for (const relativeTestPath of [
+  'tests/vs-r1-007/sales-order-policy.test.ts',
+  'tests/vs-r1-007/sales-order-service.test.ts',
+]) {
+  const testSource = readFileSync(
+    resolve(root, relativeTestPath),
+    'utf8',
+  );
+  const importPattern =
+    /(?:from\s+|import\s*\()(['"])([^'"]+)\1/gu;
+
+  for (const match of testSource.matchAll(importPattern)) {
+    const specifier = match[2];
+    const packageName = packageNameFromSpecifier(specifier);
+
+    if (
+      packageName !== null &&
+      !declaredRootPackages.has(packageName)
+    ) {
+      throw new Error(
+        `${relativeTestPath} imports undeclared root dependency ${packageName}`,
+      );
+    }
+  }
+}
+
+const serviceTest = readFileSync(
+  resolve(
+    root,
+    'tests/vs-r1-007/sales-order-service.test.ts',
+  ),
+  'utf8',
+);
+
+if (serviceTest.includes("from '@nestjs/common'")) {
+  throw new Error(
+    'Root Sales Order service test must not import the apps/api-private @nestjs/common dependency',
+  );
+}
+
+for (const required of [
+  'const expectHttpStatus = async',
+  '      410,',
+  '      401,',
+  '      404,',
+]) {
+  if (!serviceTest.includes(required)) {
+    throw new Error(
+      `Sales Order service test is missing boundary-safe HTTP assertion: ${required}`,
+    );
+  }
+}
+
 const migration = readFileSync(
   resolve(
     root,

@@ -46,6 +46,7 @@
 - [ ] PostgreSQL/API runtime proof passes twice.
 - [ ] Runtime fixture uses the declared Supplier Plan Mapping identifier.
 - [ ] Script lint enforces `no-undef`.
+- [ ] Root-level tests import only dependencies declared by the root workspace.
 - [ ] Missing idempotency key is rejected.
 - [ ] Active B2C quote converts exactly.
 - [ ] Token-protected read succeeds and invalid token is hidden as `404`.
