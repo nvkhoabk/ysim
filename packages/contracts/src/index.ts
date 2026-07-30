@@ -12,3 +12,4 @@ export * from './supplier-management.js';
 export * from './storefront-catalog.js';
 
 export * from './pricing.js';
+export * from './sales-order.js';

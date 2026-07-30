@@ -16,6 +16,7 @@
 4. [VS-R1-004 — Gigago Supplier Plan Mapping](./vs-r1-004/INDEX.md)
 5. [VS-R1-005 — Storefront Catalog API](./vs-r1-005/INDEX.md)
 6. [VS-R1-006 — Price Book and Pricing Quote](./vs-r1-006/INDEX.md)
+7. [VS-R1-007 — Sales Order and Quote Conversion](./vs-r1-007/INDEX.md)
 
 ## Package status
 
@@ -27,4 +28,5 @@
 | VS-R1-003 — Canonical Destination and Product Offer | Accepted |
 | VS-R1-004 — Gigago Supplier Plan Mapping | Accepted |
 | VS-R1-005 — Storefront Catalog API | Accepted |
-| VS-R1-006 — Price Book and Pricing Quote | Proposed |
+| VS-R1-006 — Price Book and Pricing Quote | Accepted v2 |
+| VS-R1-007 — Sales Order and Quote Conversion | Proposed |
