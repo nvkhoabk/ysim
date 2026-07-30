@@ -21,6 +21,8 @@
 9. [VS-R1-009 — GPay Adapter Boundary and Signed Contract Harness](./vs-r1-009/INDEX.md)
 10. [VS-R1-010 — GPay Webhook Verification and Provider Schema](./vs-r1-010/INDEX.md)
 
+11. [VS-R1-011 — GPay Webhook Intake and Payment Event Application](./vs-r1-011/INDEX.md)
+
 ## Package status
 
 | Package | Status |
@@ -36,3 +38,4 @@
 | VS-R1-008 — Payment Intent Core and Test Provider | Accepted |
 | VS-R1-009 — GPay Adapter Boundary and Signed Contract Harness | Accepted |
 | VS-R1-010 — GPay Webhook Verification and Provider Schema | Proposed |
+| VS-R1-011 — GPay Webhook Intake and Payment Event Application | Proposed |

@@ -323,6 +323,23 @@ export class PaymentRepository {
     return row ? mapIntent(row) : null;
   }
 
+  async findIntentByProviderReference(
+    provider: PaymentProvider,
+    providerReference: string,
+  ): Promise<PersistedPaymentIntent | null> {
+    const result = await this.database.query<PaymentIntentRow>(
+      `SELECT pi.*, so.order_number
+         FROM payment.payment_intents pi
+         JOIN sales_order.orders so
+           ON so.id = pi.order_id
+        WHERE pi.provider = $1::text
+          AND pi.provider_reference = $2::varchar(80)`,
+      [provider, providerReference],
+    );
+    const row = result.rows[0];
+    return row ? mapIntent(row) : null;
+  }
+
   async applyEvent(
     input: ApplyPaymentEventInput,
   ): Promise<ApplyPaymentEventResult> {

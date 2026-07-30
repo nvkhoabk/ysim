@@ -1,5 +1,12 @@
 import type { PricingCurrency } from './pricing.js';
-import type { TestPaymentEventStatus } from './payment.js';
+import type {
+  PaymentIntentStatus,
+  TestPaymentEventStatus,
+} from './payment.js';
+import type {
+  SalesOrderPaymentStatus,
+  SalesOrderStatus,
+} from './sales-order.js';
 
 export type GPayWebhookStatus =
   | 'PENDING'
@@ -23,4 +30,13 @@ export interface VerifiedGPayWebhookContract {
   currency: PricingCurrency;
   occurredAt: string;
   actorIdentityId: string;
+}
+
+export interface ApplyGPayWebhookResponse {
+  accepted: true;
+  duplicateEvent: boolean;
+  paymentIntentId: string;
+  paymentIntentStatus: PaymentIntentStatus;
+  orderStatus: SalesOrderStatus;
+  orderPaymentStatus: SalesOrderPaymentStatus;
 }
