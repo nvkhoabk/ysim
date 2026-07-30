@@ -5,6 +5,7 @@ import { GPayContractProbeService } from './application/gpay-contract-probe.serv
 import { GPayWebhookApplicationService } from './application/gpay-webhook-application.service.js';
 import { PaymentService } from './application/payment.service.js';
 import { GPayClient } from './infrastructure/gpay/gpay.client.js';
+import { GPayIntentProvider } from './infrastructure/gpay/gpay-intent.provider.js';
 import { PaymentRepository } from './infrastructure/payment.repository.js';
 import { TestPaymentProvider } from './infrastructure/test-payment.provider.js';
 import { PaymentGPayProbeController } from './presentation/payment-gpay-probe.controller.js';
@@ -25,6 +26,7 @@ import { PaymentTestProviderController } from './presentation/payment-test-provi
     TestPaymentProvider,
     PaymentService,
     GPayClient,
+    GPayIntentProvider,
     GPayContractProbeService,
     GPayWebhookApplicationService,
   ],

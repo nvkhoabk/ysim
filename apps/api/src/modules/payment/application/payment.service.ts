@@ -25,11 +25,12 @@ import {
   paymentCurrencyExponent,
   PaymentPolicyError,
   requirePaymentAccessToken,
-  requirePaymentProvider,
+  requirePaymentIntentProvider,
   requirePaymentUuid,
   requireTestPaymentEventStatus,
   sha256PaymentValue,
 } from '../domain/payment-policy.js';
+import { GPayIntentProvider } from '../infrastructure/gpay/gpay-intent.provider.js';
 import {
   PaymentRepository,
   type PersistedPaymentIntent,
@@ -41,6 +42,8 @@ export class PaymentService {
   constructor(
     private readonly repository: PaymentRepository,
     private readonly testProvider: TestPaymentProvider,
+    private readonly gpayProvider: GPayIntentProvider =
+      new GPayIntentProvider(),
   ) {}
 
   async createIntent(
@@ -53,7 +56,7 @@ export class PaymentService {
         request.orderId,
         'orderId',
       );
-      const provider = requirePaymentProvider(
+      const provider = requirePaymentIntentProvider(
         request.provider,
       );
       const idempotencyKey =
@@ -67,10 +70,15 @@ export class PaymentService {
       const proposedIntentId = randomUUID();
       const createdAt = new Date().toISOString();
       const providerSession =
-        this.testProvider.createIntent({
-          intentId: proposedIntentId,
-          createdAt,
-        });
+        provider === 'TEST'
+          ? this.testProvider.createIntent({
+              intentId: proposedIntentId,
+              createdAt,
+            })
+          : this.gpayProvider.createIntent({
+              intentId: proposedIntentId,
+              createdAt,
+            });
 
       const result = await this.repository.createIntent({
         proposedIntentId,
@@ -246,7 +254,13 @@ export class PaymentService {
     if (error instanceof PaymentPolicyError) {
       if (
         error.message ===
-        'TEST payment provider is disabled'
+          'TEST payment provider is disabled' ||
+        error.message ===
+          'GPAY payment provider is disabled' ||
+        error.message ===
+          'GPAY payment intent reservation is sandbox-only in VS-R1-012' ||
+        error.message ===
+          'GPAY contract must be PROBED before payment intent reservation'
       ) {
         throw new ServiceUnavailableException(
           error.message,

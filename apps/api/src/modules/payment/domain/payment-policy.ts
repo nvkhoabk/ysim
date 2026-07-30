@@ -79,6 +79,20 @@ export const requirePaymentProvider = (
   return value;
 };
 
+export const requirePaymentIntentProvider = (
+  value: PaymentProvider | string,
+): PaymentProvider => {
+  if (
+    value !== 'TEST' &&
+    value !== 'GPAY'
+  ) {
+    throw new PaymentPolicyError(
+      'Unsupported Payment Intent provider',
+    );
+  }
+  return value;
+};
+
 export const normalizeTestPaymentEventId = (
   value: string,
 ): string => {

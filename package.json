@@ -9,12 +9,12 @@
     "pnpm": "11.13.1"
   },
   "scripts": {
-    "lint": "eslint --config scripts/vs-r1-011/eslint.config.mjs scripts/vs-r1-011/*.mjs && node scripts/vs-r1-011/audit-worktree.mjs",
+    "lint": "eslint --config scripts/vs-r1-012/eslint.config.mjs scripts/vs-r1-012/*.mjs && node scripts/vs-r1-012/audit-worktree.mjs",
     "lint:vs-r1-002": "eslint --config scripts/vs-r1-002/eslint.config.mjs scripts/vs-r1-002/*.mjs && node scripts/vs-r1-002/audit-worktree.mjs",
     "lint:vs-r1-001": "eslint --config scripts/vs-r1-001/eslint.config.mjs scripts/vs-r1-001/*.mjs && node scripts/vs-r1-001/audit-worktree.mjs",
     "lint:commissioning:legacy": "eslint --config scripts/commissioning/eslint.config.mjs scripts/commissioning/*.mjs && node scripts/commissioning/audit-boundaries.mjs",
     "typecheck": "corepack pnpm --filter @ysim/contracts build && corepack pnpm -r --if-present typecheck && tsc -p database/config/tsconfig.json --noEmit",
-    "test": "vitest run tests/vs-r1-001 tests/vs-r1-002 tests/vs-r1-003 tests/vs-r1-004 tests/vs-r1-005 tests/vs-r1-006 tests/vs-r1-007 tests/vs-r1-008 tests/vs-r1-009 tests/vs-r1-010 tests/vs-r1-011",
+    "test": "vitest run tests/vs-r1-001 tests/vs-r1-002 tests/vs-r1-003 tests/vs-r1-004 tests/vs-r1-005 tests/vs-r1-006 tests/vs-r1-007 tests/vs-r1-008 tests/vs-r1-009 tests/vs-r1-010 tests/vs-r1-011 tests/vs-r1-012",
     "test:vs-r1-001": "vitest run tests/vs-r1-001",
     "test:vs-r1-002": "vitest run tests/vs-r1-002",
     "test:vs-r1-003": "vitest run tests/vs-r1-003",
@@ -25,7 +25,7 @@
     "db:migrate:verify": "node scripts/commissioning/db-migrate-verify.mjs",
     "bootstrap:clean-checkout": "node scripts/commissioning/bootstrap-clean-checkout.mjs",
     "audit:versions": "node scripts/commissioning/audit-versions.mjs",
-    "audit:boundaries": "node scripts/vs-r1-011/audit-worktree.mjs",
+    "audit:boundaries": "node scripts/vs-r1-012/audit-worktree.mjs",
     "audit:boundaries:vs-r1-002": "node scripts/vs-r1-002/audit-worktree.mjs",
     "audit:boundaries:vs-r1-001": "node scripts/vs-r1-001/audit-worktree.mjs",
     "audit:boundaries:legacy": "node scripts/commissioning/audit-boundaries.mjs",
@@ -62,7 +62,10 @@
     "validate:vs-r1-010": "node scripts/vs-r1-010/validate-candidate.mjs",
     "test:vs-r1-011": "vitest run tests/vs-r1-011",
     "runtime:vs-r1-011": "node scripts/vs-r1-011/runtime-proof.mjs",
-    "validate:vs-r1-011": "node scripts/vs-r1-011/validate-candidate.mjs"
+    "validate:vs-r1-011": "node scripts/vs-r1-011/validate-candidate.mjs",
+    "test:vs-r1-012": "vitest run tests/vs-r1-012",
+    "runtime:vs-r1-012": "node scripts/vs-r1-012/runtime-proof.mjs",
+    "validate:vs-r1-012": "node scripts/vs-r1-012/validate-candidate.mjs"
   },
   "devDependencies": {
     "@playwright/test": "1.61.1",
