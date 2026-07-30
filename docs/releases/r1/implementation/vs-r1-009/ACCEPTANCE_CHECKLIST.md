@@ -1,0 +1,27 @@
+# VS-R1-009 — Acceptance Checklist
+
+- [ ] Candidate is based on `baseline/r1/vs-r1-008/accepted-v1`.
+- [ ] Candidate contains exactly 20 approved paths.
+- [ ] No database migration is added.
+- [ ] `pnpm-lock.yaml` is unchanged.
+- [ ] GPay adapter is disabled unless explicitly enabled.
+- [ ] The slice does not claim that GPay publishes `/contract/probe`.
+- [ ] GPay production activation is blocked.
+- [ ] Contract status must be `PROBED`.
+- [ ] Non-loopback endpoints require HTTPS.
+- [ ] Private key and certificate/public key coherence is verified.
+- [ ] Probe request is RSA-SHA256 signed.
+- [ ] Probe response signature is verified.
+- [ ] Request and response identifiers match.
+- [ ] API response contains no raw key, certificate, signature or provider payload.
+- [ ] Safe-response tests allow approved verification booleans while rejecting raw signature and PEM material.
+- [ ] Probe endpoint requires bootstrap token and actor identity.
+- [ ] Root test dependency boundary passes.
+- [ ] Script `no-undef`, syntax, lint and boundary checks pass.
+- [ ] Full typecheck and build pass.
+- [ ] 13 cumulative test files and 117 assertions pass.
+- [ ] Both VS-R1-009 test files and all 18 assertions pass.
+- [ ] Local signed contract-probe runtime passes twice.
+- [ ] Runtime makes no external GPay request and uses only a loopback harness.
+- [ ] Clean checkout remains unchanged.
+- [ ] Human Acceptance is recorded before an accepted tag is created.
