@@ -2,62 +2,19 @@ import { randomUUID } from 'node:crypto';
 import { Injectable } from '@nestjs/common';
 import type { QueryResultRow } from 'pg';
 import { PostgresService } from '../../../platform/database/postgres.service.js';
+import type { RenderedCustomerDeliveryEmail } from '../domain/customer-delivery-email.js';
 import type { EncryptedEsimPayload } from '../../fulfillment/infrastructure/esim-asset.crypto.js';
-
-export interface ClaimedDelivery {
-  outboxId: string; deliveryRequestId: string; orderNumber: string;
-  locale: 'vi'|'lo'|'en'; expectedAssetCount: number; leaseToken: string; version: number;
-}
-export interface ClaimedAsset {
-  position: number; planId: string; dataLabel: string; validityLabel: string;
-  encryptedPayload: EncryptedEsimPayload; aad: string;
-}
-interface ClaimRow extends QueryResultRow { id:string; delivery_request_id:string; order_number:string; locale:'vi'|'lo'|'en'; expected_asset_count:number; version:number }
-
+export interface ClaimedDelivery {outboxId:string;deliveryRequestId:string;orderNumber:string;recipientEmail:string;locale:'vi'|'lo'|'en';expectedAssetCount:number;leaseToken:string;version:number;}
+export interface ClaimedAsset {position:number;planId:string;dataLabel:string;validityLabel:string;encryptedPayload:EncryptedEsimPayload;aad:string;}
+export interface DeliveryPartReceipt {part:number;idempotencyKey:string;messageId:string;}
+interface ClaimRow extends QueryResultRow {id:string;delivery_request_id:string;order_number:string;recipient_email:string;locale:'vi'|'lo'|'en';expected_asset_count:number;version:number;}
 @Injectable()
 export class CustomerDeliveryWorkerRepository {
-  constructor(private readonly database: PostgresService) {}
-
-  async claim(now: Date, leaseSeconds = 30): Promise<ClaimedDelivery|null> {
-    return this.database.transaction(async client => {
-      const selected = await client.query<ClaimRow>(`SELECT o.id::text, o.delivery_request_id::text,
-        r.order_number, r.locale, r.expected_asset_count, o.version
-        FROM delivery.integration_outbox o JOIN delivery.customer_delivery_requests r ON r.id=o.delivery_request_id
-        WHERE o.status IN ('PENDING','FAILED') AND o.available_at <= $1::timestamptz
-          AND (o.lease_until IS NULL OR o.lease_until <= $1::timestamptz)
-        ORDER BY o.available_at,o.id FOR UPDATE OF o SKIP LOCKED LIMIT 1`, [now.toISOString()]);
-      const row=selected.rows[0]; if(!row) return null;
-      const leaseToken=randomUUID();
-      const updated=await client.query(`UPDATE delivery.integration_outbox SET lease_token=$2::uuid,
-        lease_until=$3::timestamptz, attempt_count=attempt_count+1, version=version+1, updated_at=$1::timestamptz
-        WHERE id=$4::uuid AND version=$5::integer RETURNING version`,
-        [now.toISOString(),leaseToken,new Date(now.getTime()+leaseSeconds*1000).toISOString(),row.id,row.version]);
-      if(updated.rowCount!==1) return null;
-      return {outboxId:row.id,deliveryRequestId:row.delivery_request_id,orderNumber:row.order_number,
-        locale:row.locale,expectedAssetCount:row.expected_asset_count,leaseToken,version:updated.rows[0].version};
-    });
-  }
-
-  async loadAssets(deliveryRequestId:string): Promise<ClaimedAsset[]> {
-    const result=await this.database.query(`SELECT a.position,e.plan_id AS "planId",e.data_label AS "dataLabel",
-      e.validity_label AS "validityLabel",e.encrypted_payload AS "encryptedPayload",
-      concat(e.supplier_code,':',e.supplier_environment,':',e.supplier_detail_id) AS aad
-      FROM delivery.customer_delivery_assets a JOIN fulfillment.esim_assets e ON e.id=a.asset_id
-      WHERE a.delivery_request_id=$1::uuid AND e.status='READY' ORDER BY a.position`,[deliveryRequestId]);
-    return result.rows as ClaimedAsset[];
-  }
-
-  async published(claim:ClaimedDelivery,messageId:string,now:Date):Promise<boolean>{
-    const r=await this.database.query(`UPDATE delivery.integration_outbox SET status='PUBLISHED',published_at=$1,
-      provider_message_id=$2,last_error=NULL,lease_until=NULL,lease_token=NULL,updated_at=$1,version=version+1
-      WHERE id=$3::uuid AND lease_token=$4::uuid AND version=$5::integer`,
-      [now.toISOString(),messageId,claim.outboxId,claim.leaseToken,claim.version]); return r.rowCount===1;
-  }
-
-  async failed(claim:ClaimedDelivery,error:string,retryAt:Date,now:Date):Promise<boolean>{
-    const r=await this.database.query(`UPDATE delivery.integration_outbox SET status='FAILED',available_at=$1,last_error=$2,
-      lease_until=NULL,lease_token=NULL,updated_at=$3,version=version+1
-      WHERE id=$4::uuid AND lease_token=$5::uuid AND version=$6::integer`,
-      [retryAt.toISOString(),error,now.toISOString(),claim.outboxId,claim.leaseToken,claim.version]); return r.rowCount===1;
-  }
+ constructor(private readonly database:PostgresService){}
+ async claim(now:Date,leaseSeconds=30):Promise<ClaimedDelivery|null>{return this.database.transaction(async client=>{const selected=await client.query<ClaimRow>(`SELECT o.id::text,o.delivery_request_id::text,r.order_number,r.recipient_email,r.locale,r.expected_asset_count,o.version FROM delivery.integration_outbox o JOIN delivery.customer_delivery_requests r ON r.id=o.delivery_request_id WHERE o.status IN ('PENDING','FAILED') AND o.available_at<=$1::timestamptz AND (o.lease_until IS NULL OR o.lease_until<=$1::timestamptz) AND r.recipient_email IS NOT NULL ORDER BY o.available_at,o.id FOR UPDATE OF o SKIP LOCKED LIMIT 1`,[now.toISOString()]);const row=selected.rows[0];if(!row)return null;const leaseToken=randomUUID();const updated=await client.query(`UPDATE delivery.integration_outbox SET lease_token=$2::uuid,lease_until=$3::timestamptz,attempt_count=attempt_count+1,version=version+1,updated_at=$1::timestamptz WHERE id=$4::uuid AND version=$5::integer RETURNING version`,[now.toISOString(),leaseToken,new Date(now.getTime()+leaseSeconds*1000).toISOString(),row.id,row.version]);if(updated.rowCount!==1)return null;return {outboxId:row.id,deliveryRequestId:row.delivery_request_id,orderNumber:row.order_number,recipientEmail:row.recipient_email,locale:row.locale,expectedAssetCount:row.expected_asset_count,leaseToken,version:updated.rows[0].version};});}
+ async loadAssets(deliveryRequestId:string):Promise<ClaimedAsset[]>{const result=await this.database.query(`SELECT a.position,e.plan_id AS "planId",e.data_label AS "dataLabel",e.validity_label AS "validityLabel",e.encrypted_payload AS "encryptedPayload",concat(e.supplier_code,':',e.supplier_environment,':',e.supplier_detail_id) AS aad FROM delivery.customer_delivery_assets a JOIN fulfillment.esim_assets e ON e.id=a.asset_id WHERE a.delivery_request_id=$1::uuid AND e.status='READY' ORDER BY a.position`,[deliveryRequestId]);return result.rows as ClaimedAsset[];}
+ async loadPartReceipts(deliveryRequestId:string):Promise<DeliveryPartReceipt[]>{const result=await this.database.query(`SELECT part_number AS "part",idempotency_key AS "idempotencyKey",provider_message_id AS "messageId" FROM delivery.customer_delivery_part_receipts WHERE delivery_request_id=$1::uuid ORDER BY part_number`,[deliveryRequestId]);return result.rows as DeliveryPartReceipt[];}
+ async recordPartReceipt(claim:ClaimedDelivery,email:RenderedCustomerDeliveryEmail,idempotencyKey:string,messageId:string,now:Date):Promise<boolean>{const result=await this.database.query(`INSERT INTO delivery.customer_delivery_part_receipts (delivery_request_id,part_number,part_count,asset_start,asset_end,idempotency_key,provider_message_id,sent_at,created_at) SELECT $1::uuid,$2::integer,$3::integer,$4::integer,$5::integer,$6::char(64),$7::varchar(160),$8::timestamptz,$8::timestamptz WHERE EXISTS (SELECT 1 FROM delivery.integration_outbox WHERE id=$9::uuid AND lease_token=$10::uuid AND version=$11::integer) ON CONFLICT (delivery_request_id,part_number) DO NOTHING`,[claim.deliveryRequestId,email.part,email.partCount,email.assetStart,email.assetEnd,idempotencyKey,messageId,now.toISOString(),claim.outboxId,claim.leaseToken,claim.version]);if(result.rowCount===1)return true;const existing=await this.database.query<{idempotency_key:string;provider_message_id:string}&QueryResultRow>(`SELECT idempotency_key,provider_message_id FROM delivery.customer_delivery_part_receipts WHERE delivery_request_id=$1::uuid AND part_number=$2::integer`,[claim.deliveryRequestId,email.part]);return existing.rows[0]?.idempotency_key===idempotencyKey&&existing.rows[0]?.provider_message_id===messageId;}
+ async published(claim:ClaimedDelivery,partCount:number,now:Date):Promise<boolean>{const result=await this.database.query(`UPDATE delivery.integration_outbox o SET status='PUBLISHED',published_at=$1,provider_message_id=$2,last_error=NULL,lease_until=NULL,lease_token=NULL,updated_at=$1,version=version+1 WHERE o.id=$3::uuid AND o.lease_token=$4::uuid AND o.version=$5::integer AND (SELECT count(*) FROM delivery.customer_delivery_part_receipts p WHERE p.delivery_request_id=o.delivery_request_id)=$6::integer`,[now.toISOString(),`multipart:${partCount}`,claim.outboxId,claim.leaseToken,claim.version,partCount]);return result.rowCount===1;}
+ async failed(claim:ClaimedDelivery,error:string,retryAt:Date,now:Date):Promise<boolean>{const r=await this.database.query(`UPDATE delivery.integration_outbox SET status='FAILED',available_at=$1,last_error=$2,lease_until=NULL,lease_token=NULL,updated_at=$3,version=version+1 WHERE id=$4::uuid AND lease_token=$5::uuid AND version=$6::integer`,[retryAt.toISOString(),error,now.toISOString(),claim.outboxId,claim.leaseToken,claim.version]);return r.rowCount===1;}
 }
