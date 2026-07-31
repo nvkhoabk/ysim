@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { PostgresService } from '../../platform/database/postgres.service.js';
 import { EsimAssetCrypto } from '../fulfillment/infrastructure/esim-asset.crypto.js';
 import { CustomerDeliveryActivationService } from './application/customer-delivery-activation.service.js';
+import { CustomerDeliveryOperatorStatusQueryService } from './application/customer-delivery-operator-status-query.service.js';
 import { CustomerDeliveryDispatchService } from './application/customer-delivery-dispatch.service.js';
 import { CustomerDeliveryPumpService } from './application/customer-delivery-pump.service.js';
 import { CustomerDeliveryReadinessService } from './application/customer-delivery-readiness.service.js';
@@ -15,7 +16,7 @@ import { CustomerDeliveryWorkerRepository } from './infrastructure/customer-deli
 import { HttpCustomerEmailProvider } from './infrastructure/http-customer-email.provider.js';
 
 @Module({
-  providers: [PostgresService, EsimAssetCrypto, CustomerDeliveryRepository, CustomerDeliveryWorkerRepository, CustomerDeliveryRequestService, CustomerDeliveryWorkerService, HttpCustomerEmailProvider, CustomerDeliveryDispatchService, CustomerDeliveryPumpService, CustomerDeliverySchedulerConfig, CustomerDeliverySchedulerService, CustomerDeliveryReadinessService, CustomerDeliveryActivationService, CustomerDeliveryRuntimeStatusService],
-  exports: [CustomerDeliveryRequestService, CustomerDeliveryWorkerService, HttpCustomerEmailProvider, CustomerDeliveryDispatchService, CustomerDeliveryPumpService, CustomerDeliverySchedulerConfig, CustomerDeliverySchedulerService, CustomerDeliveryReadinessService, CustomerDeliveryActivationService, CustomerDeliveryRuntimeStatusService],
+  providers: [PostgresService, EsimAssetCrypto, CustomerDeliveryRepository, CustomerDeliveryWorkerRepository, CustomerDeliveryRequestService, CustomerDeliveryWorkerService, HttpCustomerEmailProvider, CustomerDeliveryDispatchService, CustomerDeliveryPumpService, CustomerDeliverySchedulerConfig, CustomerDeliverySchedulerService, CustomerDeliveryReadinessService, CustomerDeliveryActivationService, CustomerDeliveryRuntimeStatusService, CustomerDeliveryOperatorStatusQueryService],
+  exports: [CustomerDeliveryRequestService, CustomerDeliveryWorkerService, HttpCustomerEmailProvider, CustomerDeliveryDispatchService, CustomerDeliveryPumpService, CustomerDeliverySchedulerConfig, CustomerDeliverySchedulerService, CustomerDeliveryReadinessService, CustomerDeliveryActivationService, CustomerDeliveryRuntimeStatusService, CustomerDeliveryOperatorStatusQueryService],
 })
 export class DeliveryModule {}
