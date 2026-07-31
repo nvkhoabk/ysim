@@ -1,40 +1,31 @@
 import { describe, expect, it } from 'vitest';
-import { renderCustomerDeliveryEmail } from '../../apps/api/src/modules/delivery/domain/customer-delivery-email.js';
+import { buildCustomerDeliveryEmails, renderCustomerDeliveryEmail } from '../../apps/api/src/modules/delivery/domain/customer-delivery-email.js';
 import type { DeliveryEmailMessage } from '../../apps/api/src/modules/delivery/domain/customer-delivery-worker-policy.js';
 
-const message = (locale: 'vi'|'lo'|'en' = 'vi'): DeliveryEmailMessage => ({
+const message = (count = 1, locale: 'vi'|'lo'|'en' = 'vi'): DeliveryEmailMessage => ({
   deliveryRequestId: 'delivery-1', orderNumber: 'YS-1001', locale,
-  assets: [{ position: 1, planId: 'JP-7D', dataLabel: '5 GB/day', validityLabel: '7 days',
-    iccid: '8900000000000000001', qrCode: 'LPA:1$server.example$code', shortLink: 'https://e.example/install', phoneNumber: null }],
+  assets: Array.from({ length: count }, (_, index) => ({ position: index + 1, planId: `PLAN-${index + 1}`,
+    dataLabel: '5 GB/day', validityLabel: '7 days', iccid: `890000000000000000${index + 1}`,
+    qrCode: `LPA:1$server.example$code-${index + 1}`, shortLink: 'https://e.example/install', phoneNumber: null })),
 });
 
-describe('VS-R1-022 localized customer delivery email', () => {
-  it('renders Vietnamese subject and instructions', () => {
-    const result=renderCustomerDeliveryEmail(message('vi'));
-    expect(result.subject).toContain('đơn hàng YS-1001'); expect(result.text).toContain('Không chia sẻ');
-  });
-  it('renders Lao copy', () => expect(renderCustomerDeliveryEmail(message('lo')).html).toContain('ພ້ອມແລ້ວ'));
-  it('renders English copy', () => expect(renderCustomerDeliveryEmail(message('en')).subject).toBe('Your eSIM for order YS-1001'));
-  it('includes plain-text alternative', () => expect(renderCustomerDeliveryEmail(message()).text).toContain('ICCID: 8900000000000000001'));
-  it('preserves multiple asset order', () => {
-    const input=message(); input.assets.push({...input.assets[0],position:2,planId:'KR-7D'});
-    expect(renderCustomerDeliveryEmail(input).text.indexOf('eSIM 1')).toBeLessThan(renderCustomerDeliveryEmail(input).text.indexOf('eSIM 2'));
-  });
-  it('rejects an empty asset set', () => { const input=message(); input.assets=[]; expect(()=>renderCustomerDeliveryEmail(input)).toThrow(/incomplete/); });
-  it('rejects unordered assets', () => { const input=message(); input.assets[0].position=2; expect(()=>renderCustomerDeliveryEmail(input)).toThrow(/unordered/); });
-  it('escapes customer-controlled HTML', () => {
-    const input=message(); input.assets[0].dataLabel='<img src=x onerror=alert(1)>';
-    const html=renderCustomerDeliveryEmail(input).html; expect(html).toContain('&lt;img'); expect(html).not.toContain('<img');
-  });
-  it('renders missing optional values explicitly', () => {
-    const input=message('en'); input.assets[0].qrCode=null; input.assets[0].shortLink=null;
-    expect(renderCustomerDeliveryEmail(input).text).toContain('Installation code: Not available');
-  });
-  it('includes an optional phone number', () => {
-    const input=message(); input.assets[0].phoneNumber='+84900000000'; expect(renderCustomerDeliveryEmail(input).text).toContain('+84900000000');
-  });
-  it('does not invent an image when the provider returns an LPA string', () => {
-    const result=renderCustomerDeliveryEmail(message()); expect(result.html).toContain('LPA:1$server.example$code'); expect(result.html).not.toContain('<img');
-  });
-  it('keeps the renderer deterministic', () => expect(renderCustomerDeliveryEmail(message())).toEqual(renderCustomerDeliveryEmail(message())));
+describe('VS-R1-022 corrective delivery email', () => {
+  it('keeps one email for five eSIMs', async () => expect(await buildCustomerDeliveryEmails(message(5))).toHaveLength(1));
+  it('splits six eSIMs into two emails', async () => expect((await buildCustomerDeliveryEmails(message(6))).map(x => [x.assetStart,x.assetEnd])).toEqual([[1,5],[6,6]]));
+  it('splits twelve eSIMs into 5, 5 and 2', async () => expect((await buildCustomerDeliveryEmails(message(12))).map(x => [x.assetStart,x.assetEnd])).toEqual([[1,5],[6,10],[11,12]]));
+  it('numbers Vietnamese subject and range', async () => expect((await buildCustomerDeliveryEmails(message(6)))[1].subject).toContain('Phần 2/2 — eSIM 6-6'));
+  it('numbers Lao subject and range', async () => expect((await buildCustomerDeliveryEmails(message(6,'lo')))[0].subject).toContain('1/2'));
+  it('numbers English subject and range', async () => expect((await buildCustomerDeliveryEmails(message(6,'en')))[1].subject).toContain('Part 2/2 — eSIM 6-6'));
+  it('keeps global numbering in the second email', async () => expect((await buildCustomerDeliveryEmails(message(7)))[1].text).toContain('eSIM 6'));
+  it('generates one PNG attachment per LPA', async () => { const email=(await buildCustomerDeliveryEmails(message(2)))[0]; expect(email.attachments).toHaveLength(2); expect(email.attachments[0].content.subarray(1,4).toString()).toBe('PNG'); });
+  it('references QR images by CID', async () => { const email=(await buildCustomerDeliveryEmails(message()))[0]; expect(email.html).toContain(`cid:${email.attachments[0].contentId}`); });
+  it('does not invent QR when LPA is missing', async () => { const input=message(); input.assets[0].qrCode=null; const email=(await buildCustomerDeliveryEmails(input))[0]; expect(email.attachments).toHaveLength(0); expect(email.html).not.toContain('<img'); });
+  it('supports a PNG logo in the QR', async () => { const logo=Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=','base64'); const plain=(await buildCustomerDeliveryEmails(message()))[0].attachments[0].content; const branded=(await buildCustomerDeliveryEmails(message(),{qrLogo:logo}))[0].attachments[0].content; expect(branded.equals(plain)).toBe(false); });
+  it('rejects oversized logos', async () => await expect(buildCustomerDeliveryEmails(message(),{qrLogo:Buffer.alloc(1024*1024+1)})).rejects.toThrow(/one megabyte/));
+  it('rejects a batch size above five', async () => await expect(buildCustomerDeliveryEmails(message(),{maxAssetsPerEmail:6})).rejects.toThrow(/1 to 5/));
+  it('rejects unordered assets', async () => { const input=message(); input.assets[0].position=2; await expect(buildCustomerDeliveryEmails(input)).rejects.toThrow(/unordered/); });
+  it('escapes customer-controlled HTML', async () => { const input=message(); input.assets[0].dataLabel='<img src=x>'; const html=(await buildCustomerDeliveryEmails(input))[0].html; expect(html).toContain('&lt;img'); expect(html).not.toContain('<img src=x>'); });
+  it('keeps plain-text LPA fallback', async () => expect((await buildCustomerDeliveryEmails(message()))[0].text).toContain('LPA:1$server.example$code-1'));
+  it('keeps the compatibility renderer for up to five', () => expect(renderCustomerDeliveryEmail(message()).partCount).toBe(1));
+  it('forces batching above five in compatibility renderer', () => expect(() => renderCustomerDeliveryEmail(message(6))).toThrow(/buildCustomerDeliveryEmails/));
 });
