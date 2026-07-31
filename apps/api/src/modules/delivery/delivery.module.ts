@@ -17,10 +17,11 @@ import { CustomerDeliveryOperationsSummaryRepository } from './infrastructure/cu
 import { CustomerDeliverySchedulerConfig } from './infrastructure/customer-delivery-scheduler.config.js';
 import { CustomerDeliveryWorkerRepository } from './infrastructure/customer-delivery-worker.repository.js';
 import { HttpCustomerEmailProvider } from './infrastructure/http-customer-email.provider.js';
+import { CustomerDeliveryOperatorOperationsSummaryController } from './customer-delivery-operator-operations-summary.controller.js';
 import { CustomerDeliveryOperatorStatusController } from './customer-delivery-operator-status.controller.js';
 
 @Module({
-  controllers: [CustomerDeliveryOperatorStatusController],
+  controllers: [CustomerDeliveryOperatorStatusController, CustomerDeliveryOperatorOperationsSummaryController],
   providers: [PostgresService, EsimAssetCrypto, CustomerDeliveryRepository, CustomerDeliveryWorkerRepository, CustomerDeliveryOperationsSummaryRepository, CustomerDeliveryRequestService, CustomerDeliveryWorkerService, HttpCustomerEmailProvider, CustomerDeliveryDispatchService, CustomerDeliveryPumpService, CustomerDeliverySchedulerConfig, CustomerDeliverySchedulerService, CustomerDeliveryReadinessService, CustomerDeliveryActivationService, CustomerDeliveryRuntimeStatusService, CustomerDeliveryOperatorStatusQueryService, CustomerDeliveryOperationsSummaryService, CustomerDeliveryOperatorOperationsSummaryQueryService],
   exports: [CustomerDeliveryRequestService, CustomerDeliveryWorkerService, HttpCustomerEmailProvider, CustomerDeliveryDispatchService, CustomerDeliveryPumpService, CustomerDeliverySchedulerConfig, CustomerDeliverySchedulerService, CustomerDeliveryReadinessService, CustomerDeliveryActivationService, CustomerDeliveryRuntimeStatusService, CustomerDeliveryOperatorStatusQueryService, CustomerDeliveryOperationsSummaryService, CustomerDeliveryOperatorOperationsSummaryQueryService],
 })

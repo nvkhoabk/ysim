@@ -122,8 +122,8 @@ describe('VS-R1-035 guarded operator delivery operations summary query (12)', ()
     expect(serviceSource).not.toMatch(/\b(start|stop|activate|deactivate|retry|send|publish|INSERT|UPDATE|DELETE|PATCH|POST|PUT)\b/i);
   });
 
-  it('registers and exports the guarded query without adding a controller', () => {
+  it('registers and exports the guarded query', () => {
     expect(moduleSource).toContain('CustomerDeliveryOperatorOperationsSummaryQueryService');
-    expect(moduleSource.match(/controllers:\s*\[CustomerDeliveryOperatorStatusController\]/g)).toHaveLength(1);
+    expect(serviceSource).not.toMatch(/@Controller|@(Post|Put|Patch|Delete)\b/);
   });
 });
