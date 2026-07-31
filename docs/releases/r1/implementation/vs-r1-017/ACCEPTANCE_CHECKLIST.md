@@ -1,0 +1,21 @@
+# VS-R1-017 Acceptance Checklist
+
+- [ ] Accepted VS-R1-016 baseline verified locally and remotely.
+- [ ] Candidate inventory contains exactly 18 paths.
+- [ ] Canonical test manifest contains 17 contiguous suites.
+- [ ] Supplier submission table belongs to Procurement bounded context.
+- [ ] One Procurement Request has at most one submission row.
+- [ ] Provider request ID and payload fingerprint are immutable.
+- [ ] Active leases block concurrent submission.
+- [ ] Expired or failed submissions may be reclaimed with attempt fencing.
+- [ ] Successful completion stores provider references.
+- [ ] Procurement Request changes atomically to `SUBMITTED`.
+- [ ] Replay does not call Gigago again.
+- [ ] Failures store only sanitized evidence.
+- [ ] API startup does not load Gigago credentials.
+- [ ] No automatic scheduler is introduced.
+- [ ] No live Gigago request is executed.
+- [ ] Slice tests report 2 files and 20 assertions.
+- [ ] Cumulative tests report 29 files and 265 assertions.
+- [ ] Four PostgreSQL runtime proofs pass.
+- [ ] Human Review Manifest is valid and review UI can be generated.

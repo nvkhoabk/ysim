@@ -27,6 +27,7 @@
 14. [VS-R1-014 — Payment Integration Outbox Publisher and Retry Policy](./vs-r1-014/INDEX.md)
 15. [VS-R1-015 — Procurement Request Core and Payment Success Sink](./vs-r1-015/INDEX.md)
 16. [VS-R1-016 — Gigago Sandbox Create-Order Adapter Boundary and Contract Harness](./vs-r1-016/INDEX.md)
+17. [VS-R1-017 — Supplier Submission Persistence and Safe Gigago Sandbox Activation](./vs-r1-017/INDEX.md)
 
 ## Package status
 
@@ -48,4 +49,5 @@
 | VS-R1-013 — Payment Success Integration Outbox | Accepted |
 | VS-R1-014 — Payment Integration Outbox Publisher and Retry Policy | Accepted |
 | VS-R1-015 — Procurement Request Core and Payment Success Sink | Accepted |
-| VS-R1-016 — Gigago Sandbox Create-Order Adapter Boundary and Contract Harness | Proposed |
+| VS-R1-016 — Gigago Sandbox Create-Order Adapter Boundary and Contract Harness | Accepted |
+| VS-R1-017 — Supplier Submission Persistence and Safe Gigago Sandbox Activation | Proposed |

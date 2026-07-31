@@ -130,18 +130,30 @@ const defaultTransport:
 
 @Injectable()
 export class GigagoCreateOrderClient {
+  private readonly configProvider:
+    () => GigagoCreateOrderConfig;
+
   constructor(
     private readonly transport:
       GigagoCreateOrderTransport =
         defaultTransport,
-    private readonly config:
-      GigagoCreateOrderConfig =
-        loadGigagoCreateOrderConfig(),
-  ) {}
+    config:
+      | GigagoCreateOrderConfig
+      | (() => GigagoCreateOrderConfig) =
+        loadGigagoCreateOrderConfig,
+  ) {
+    this.configProvider =
+      typeof config === 'function'
+        ? config
+        : () => config;
+  }
 
   async createPartnerOrder(
     input: GigagoCreatePartnerOrderInput,
   ): Promise<GigagoCreateOrderExtra> {
+    const config =
+      this.configProvider();
+
     let response: {
       status: number;
       body: unknown;
@@ -151,18 +163,18 @@ export class GigagoCreateOrderClient {
       response =
         await this.transport.request({
           url:
-            this.config.baseUrl +
-            this.config.endpoint,
-          method: this.config.method,
+            config.baseUrl +
+            config.endpoint,
+          method: config.method,
           headers: {
             Accept: 'application/json',
             'Content-Type':
               'application/json',
-            apiKey: this.config.apiKey,
+            apiKey: config.apiKey,
           },
           body: JSON.stringify(input),
           timeoutMs:
-            this.config.timeoutMs,
+            config.timeoutMs,
         });
     } catch (error) {
       if (
