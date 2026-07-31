@@ -12,6 +12,12 @@ export interface GigagoCreateOrderConfig {
   endpoint: '/api/partner/createPartnerOrder';
   method: 'PUT';
   timeoutMs: number;
+  myOrdersEndpoint:
+    '/api/partner/getMyOrdersAgency';
+  myOrdersMethod: 'POST';
+  orderDetailEndpoint:
+    '/api/partner/getOrderDetailAgency';
+  orderDetailMethod: 'POST';
 }
 
 type Environment =
@@ -35,6 +41,12 @@ export const loadGigagoCreateOrderConfig = (
     SANDBOX_BASE_URL;
   const apiKey =
     environment.GIGAGO_SANDBOX_API_KEY;
+  const myOrdersMethod =
+    environment.GIGAGO_GET_MY_ORDERS_METHOD ??
+    'POST';
+  const orderDetailMethod =
+    environment.GIGAGO_GET_ORDER_DETAIL_METHOD ??
+    'POST';
   const timeoutValue =
     environment.YSIM_GIGAGO_TIMEOUT_MS ??
     '10000';
@@ -68,6 +80,16 @@ export const loadGigagoCreateOrderConfig = (
       'GIGAGO_SANDBOX_API_KEY is required',
     );
   }
+  if (myOrdersMethod !== 'POST') {
+    throw new GigagoConfigError(
+      'Sandbox getMyOrdersAgency must use probed POST',
+    );
+  }
+  if (orderDetailMethod !== 'POST') {
+    throw new GigagoConfigError(
+      'Sandbox getOrderDetailAgency must use POST',
+    );
+  }
   if (
     !Number.isInteger(timeoutMs) ||
     timeoutMs < 1000 ||
@@ -86,5 +108,11 @@ export const loadGigagoCreateOrderConfig = (
       '/api/partner/createPartnerOrder',
     method: 'PUT',
     timeoutMs,
+    myOrdersEndpoint:
+      '/api/partner/getMyOrdersAgency',
+    myOrdersMethod: 'POST',
+    orderDetailEndpoint:
+      '/api/partner/getOrderDetailAgency',
+    orderDetailMethod: 'POST',
   };
 };

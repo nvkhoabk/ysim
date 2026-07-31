@@ -12,6 +12,7 @@ import type {
   GigagoCreateOrderExtra,
   GigagoCreateOrderTransport,
   GigagoCreatePartnerOrderInput,
+  GigagoOrderQueryInput,
 } from './gigago.types.js';
 
 export class GigagoClientError extends Error {
@@ -36,11 +37,14 @@ const isRecord = (
   value !== null &&
   !Array.isArray(value);
 
-const parseEnvelope = (
+const parseEnvelope = <
+  TResult,
+  TExtra = unknown,
+>(
   value: unknown,
 ): GigagoApiEnvelope<
-  unknown,
-  GigagoCreateOrderExtra
+  TResult,
+  TExtra
 > => {
   if (
     !isRecord(value) ||
@@ -57,8 +61,8 @@ const parseEnvelope = (
     );
   }
   return value as unknown as GigagoApiEnvelope<
-    unknown,
-    GigagoCreateOrderExtra
+    TResult,
+    TExtra
   >;
 };
 
@@ -200,7 +204,10 @@ export class GigagoCreateOrderClient {
       );
     }
 
-    const envelope = parseEnvelope(
+    const envelope = parseEnvelope<
+      unknown,
+      GigagoCreateOrderExtra
+    >(
       response.body,
     );
     if (
@@ -227,6 +234,141 @@ export class GigagoCreateOrderClient {
     return normalizeGigagoCreateOrderExtra(
       envelope.extra,
       input.request_id,
+    );
+  }
+}
+
+
+const buildOrderQuery = (
+  requestId: string,
+): GigagoOrderQueryInput => ({
+  columnFilters: {
+    request_id: requestId,
+  },
+  sort: [],
+  page: 1,
+  pageSize: 100,
+});
+
+@Injectable()
+export class GigagoOrderReadbackClient {
+  private readonly configProvider:
+    () => GigagoCreateOrderConfig;
+
+  constructor(
+    private readonly transport:
+      GigagoCreateOrderTransport =
+        defaultTransport,
+    config:
+      | GigagoCreateOrderConfig
+      | (() => GigagoCreateOrderConfig) =
+        loadGigagoCreateOrderConfig,
+  ) {
+    this.configProvider =
+      typeof config === 'function'
+        ? config
+        : () => config;
+  }
+
+  private async query(
+    endpoint:
+      | '/api/partner/getMyOrdersAgency'
+      | '/api/partner/getOrderDetailAgency',
+    method: 'POST',
+    requestId: string,
+  ): Promise<unknown[]> {
+    const config =
+      this.configProvider();
+    const response =
+      await this.transport.request({
+        url: config.baseUrl + endpoint,
+        method,
+        headers: {
+          Accept: 'application/json',
+          'Content-Type':
+            'application/json',
+          apiKey: config.apiKey,
+        },
+        body: JSON.stringify(
+          buildOrderQuery(requestId),
+        ),
+        timeoutMs: config.timeoutMs,
+      });
+
+    if (
+      response.status < 200 ||
+      response.status >= 300
+    ) {
+      throw new GigagoClientError(
+        `Gigago HTTP ${response.status}`,
+        'GIGAGO_HTTP_ERROR',
+        response.status,
+      );
+    }
+
+    const envelope = parseEnvelope<
+      unknown[],
+      unknown
+    >(response.body);
+
+    if (
+      envelope.code !== 200 ||
+      /^failed!?$/iu.test(
+        envelope.message.trim(),
+      )
+    ) {
+      throw new GigagoClientError(
+        envelope.message ||
+          'Gigago rejected order readback',
+        'GIGAGO_API_REJECTED',
+        response.status,
+      );
+    }
+    if (!Array.isArray(envelope.result)) {
+      throw new GigagoClientError(
+        'Gigago order readback result is invalid',
+        'GIGAGO_RESPONSE_INVALID',
+        response.status,
+      );
+    }
+    if (
+      envelope.totalRecords !==
+        envelope.result.length ||
+      envelope.totalRecords > 100
+    ) {
+      throw new GigagoClientError(
+        'Gigago order readback count mismatch',
+        'GIGAGO_RESPONSE_INVALID',
+        response.status,
+      );
+    }
+
+    return envelope.result;
+  }
+
+  getMyOrdersAgency(
+    requestId: string,
+  ): Promise<unknown[]> {
+    const config =
+      this.configProvider();
+
+    return this.query(
+      config.myOrdersEndpoint,
+      config.myOrdersMethod,
+      requestId,
+    );
+  }
+
+  getOrderDetailAgency(
+    requestId: string,
+  ): Promise<unknown[]> {
+    const config =
+      this.configProvider();
+
+    return this.query(
+      config.orderDetailEndpoint,
+      config.orderDetailMethod,
+      requestId,
     );
   }
 }

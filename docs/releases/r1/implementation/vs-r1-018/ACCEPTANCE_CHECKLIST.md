@@ -1,0 +1,23 @@
+# VS-R1-018 Acceptance Checklist
+
+- [ ] Accepted VS-R1-017 baseline verified locally and remotely.
+- [ ] Candidate inventory contains exactly 17 paths.
+- [ ] Canonical test manifest contains 18 contiguous suites.
+- [ ] Sandbox getMyOrdersAgency method is POST from probe evidence.
+- [ ] Documented PUT is retained as provenance, not runtime behavior.
+- [ ] getOrderDetailAgency method is POST.
+- [ ] Request body filters by deterministic request ID.
+- [ ] Response envelope and totalRecords are validated.
+- [ ] Unsupported order or detail statuses fail closed.
+- [ ] Duplicate or malformed ICCIDs fail closed.
+- [ ] Processing never becomes fulfillment success.
+- [ ] Completed with incomplete data becomes ACTION_REQUIRED.
+- [ ] Only full count and install-data completeness becomes DELIVERABLE.
+- [ ] Runtime evidence contains no raw ICCID, QR/LPA, or short link.
+- [ ] No eSIM Asset is persisted.
+- [ ] No automatic polling worker is started.
+- [ ] No live Gigago request is executed.
+- [ ] Slice tests report 2 files and 20 assertions.
+- [ ] Cumulative tests report 31 files and 285 assertions.
+- [ ] Four PostgreSQL runtime proofs pass.
+- [ ] Human Review preview is generated.
