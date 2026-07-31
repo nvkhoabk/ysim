@@ -1,0 +1,25 @@
+# VS-R1-019 Acceptance Checklist
+
+- [ ] Accepted VS-R1-018 baseline verified locally and remotely.
+- [ ] Candidate inventory contains exactly 18 paths.
+- [ ] Canonical test manifest contains 19 contiguous suites.
+- [ ] Fulfillment owns `fulfillment.esim_assets`.
+- [ ] No cross-context foreign key is introduced.
+- [ ] No plaintext ICCID, QR/LPA, short-link or phone-number column exists.
+- [ ] AES-256-GCM envelope shape is enforced.
+- [ ] Encryption and fingerprint keys must each be exactly 32 bytes.
+- [ ] HMAC-SHA-256 fingerprint is deterministic but non-reversible.
+- [ ] AAD contains no sensitive eSIM value.
+- [ ] First ingestion creates exactly the expected asset count.
+- [ ] Exact replay creates no additional asset.
+- [ ] Supplier detail or ICCID conflict fails closed.
+- [ ] Runtime decrypts with correct key and AAD.
+- [ ] Altered AAD or unavailable key fails closed in tests.
+- [ ] Runtime evidence contains no sensitive eSIM values.
+- [ ] Sales Order remains `UNFULFILLED`.
+- [ ] Procurement Request remains `SUBMITTED`.
+- [ ] No customer delivery or email is started.
+- [ ] Slice tests report 2 files and 20 assertions.
+- [ ] Cumulative tests report 33 files and 305 assertions.
+- [ ] Four PostgreSQL runtime proofs pass.
+- [ ] Human Review preview is generated.
