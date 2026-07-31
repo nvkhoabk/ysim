@@ -5,7 +5,8 @@ import { CustomerDeliveryRequestService } from './application/customer-delivery-
 import { CustomerDeliveryWorkerService } from './application/customer-delivery-worker.service.js';
 import { CustomerDeliveryRepository } from './infrastructure/customer-delivery.repository.js';
 import { CustomerDeliveryWorkerRepository } from './infrastructure/customer-delivery-worker.repository.js';
+import { HttpCustomerEmailProvider } from './infrastructure/http-customer-email.provider.js';
 
 @Module({providers:[PostgresService,EsimAssetCrypto,CustomerDeliveryRepository,CustomerDeliveryWorkerRepository,
-  CustomerDeliveryRequestService,CustomerDeliveryWorkerService],exports:[CustomerDeliveryRequestService,CustomerDeliveryWorkerService]})
+  CustomerDeliveryRequestService,CustomerDeliveryWorkerService,HttpCustomerEmailProvider],exports:[CustomerDeliveryRequestService,CustomerDeliveryWorkerService,HttpCustomerEmailProvider]})
 export class DeliveryModule {}
