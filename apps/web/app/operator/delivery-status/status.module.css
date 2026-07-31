@@ -1,11 +1,57 @@
-.page { min-height: 100vh; display: grid; place-items: center; padding: 1.5rem; background: #07150f; }
-.card { width: min(48rem, 100%); padding: 2rem; border: 1px solid #285b42; border-radius: 1rem; background: #0d2118; }
-.eyebrow { margin: 0; color: #79d5a7; letter-spacing: .12em; text-transform: uppercase; }
-.card h1 { margin: .5rem 0 1.5rem; }
-.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
+.page {
+  min-height: 100vh;
+  padding: 3rem 1.5rem;
+  background:
+    radial-gradient(circle at 10% 0%, rgb(28 92 61 / 32%), transparent 32rem),
+    #07150f;
+  color: #f3fff8;
+}
+
+.shell { width: min(70rem, 100%); margin: 0 auto; }
+.header { max-width: 50rem; margin-bottom: 1.5rem; }
+.eyebrow, .kicker { margin: 0; color: #79d5a7; font-size: .78rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.header h1 { margin: .55rem 0 .65rem; font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.05; letter-spacing: -.035em; }
+.lead { margin: 0; color: #b9d2c5; font-size: 1.02rem; line-height: 1.65; }
+
+.card { margin-top: 1rem; padding: 1.5rem; border: 1px solid #285b42; border-radius: 1rem; background: rgb(13 33 24 / 94%); box-shadow: 0 1.25rem 3rem rgb(0 0 0 / 18%); }
+.sectionHeading { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }
+.sectionHeading h2 { margin: .3rem 0 0; font-size: 1.25rem; }
+.readOnlyBadge { padding: .35rem .65rem; border: 1px solid #2d6d4d; border-radius: 999px; color: #9ce5bd; background: #102a1e; font-size: .78rem; font-weight: 700; white-space: nowrap; }
+.generatedAt { margin: 0; color: #a8cbb8; font-size: .82rem; text-align: right; }
+.generatedAt time { display: block; margin-top: .2rem; color: #e3f5eb; font: 600 .84rem ui-monospace, monospace; }
+
+.grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .75rem; margin: 0; }
 .grid div { padding: 1rem; border: 1px solid #244b38; border-radius: .75rem; background: #102a1e; }
-.grid dt { color: #a8cbb8; }
+.grid dt, .metrics dt { color: #a8cbb8; font-size: .84rem; }
 .grid dd { margin: .35rem 0 0; font: 600 1rem ui-monospace, monospace; overflow-wrap: anywhere; }
-.notice { padding: 1rem; border: 1px solid #8a6a2b; border-radius: .75rem; background: #34270d; }
-.caption { margin: 1.5rem 0 0; color: #a8cbb8; font-size: .9rem; }
-@media (max-width: 36rem) { .card { padding: 1.25rem; } .grid { grid-template-columns: 1fr; } }
+
+.metrics { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: .75rem; margin: 0; }
+.metrics div { position: relative; overflow: hidden; min-height: 7.5rem; padding: 1rem; border: 1px solid #244b38; border-radius: .75rem; background: #102a1e; }
+.metrics div::before { position: absolute; inset: 0 auto 0 0; width: .24rem; background: #6bd29a; content: ''; }
+.metrics div[data-tone='failed']::before { background: #ff8f7b; }
+.metrics div[data-tone='published']::before { background: #5ed9b0; }
+.metrics div[data-tone='in-flight']::before { background: #7bb8ff; }
+.metrics div[data-tone='actionable']::before { background: #f4c76b; }
+.metrics dd { margin: .9rem 0 0; color: #f3fff8; font: 700 2rem ui-monospace, monospace; }
+
+.oldestActionable { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: .75rem; padding: .9rem 1rem; border: 1px solid #3e513c; border-radius: .75rem; color: #bed2c7; background: #18281b; }
+.oldestActionable time, .oldestActionable strong { color: #ffe3a2; font: 650 .9rem ui-monospace, monospace; text-align: right; }
+.notice { padding: 1rem; border: 1px solid #8a6a2b; border-radius: .75rem; color: #ffe6ae; background: #34270d; }
+.notice code { color: inherit; }
+.caption { margin: 1.25rem 0 0; color: #8faf9e; font-size: .88rem; text-align: center; }
+
+@media (max-width: 52rem) {
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .metrics div:last-child { grid-column: 1 / -1; min-height: 6rem; }
+}
+
+@media (max-width: 36rem) {
+  .page { padding: 2rem 1rem; }
+  .card { padding: 1.1rem; }
+  .sectionHeading, .oldestActionable { align-items: flex-start; flex-direction: column; }
+  .generatedAt { text-align: left; }
+  .grid, .metrics { grid-template-columns: 1fr; }
+  .metrics div:last-child { grid-column: auto; }
+  .oldestActionable time, .oldestActionable strong { text-align: left; }
+}
