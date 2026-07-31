@@ -10,18 +10,10 @@ export type CustomerDeliveryActivationReport =
 export class CustomerDeliveryActivationService implements OnModuleInit, OnModuleDestroy {
   private active = false;
 
-  constructor(
-    private readonly readiness: CustomerDeliveryReadinessService,
-    private readonly scheduler: CustomerDeliverySchedulerService,
-  ) {}
-
-  onModuleInit(): void {
-    this.activate();
-  }
-
-  onModuleDestroy(): void {
-    this.deactivate();
-  }
+  constructor(private readonly readiness: CustomerDeliveryReadinessService, private readonly scheduler: CustomerDeliverySchedulerService) {}
+  onModuleInit(): void { this.activate(); }
+  onModuleDestroy(): void { this.deactivate(); }
+  isActive(): boolean { return this.active; }
 
   activate(env: NodeJS.ProcessEnv = process.env): CustomerDeliveryActivationReport {
     if (this.active) return { active: true, reason: 'READY' };
@@ -29,27 +21,16 @@ export class CustomerDeliveryActivationService implements OnModuleInit, OnModule
       const report = this.readiness.evaluate(env);
       if (!report.ready) {
         switch (report.reason) {
-          case 'CONFIG_INVALID':
-          case 'SCHEDULER_DISABLED':
-          case 'EMAIL_PROVIDER_NOT_LIVE':
+          case 'CONFIG_INVALID': case 'SCHEDULER_DISABLED': case 'EMAIL_PROVIDER_NOT_LIVE':
             return { active: false, reason: report.reason };
-          default:
-            return { active: false, reason: 'READINESS_ERROR' };
+          default: return { active: false, reason: 'READINESS_ERROR' };
         }
       }
-      if (report.reason !== 'READY') {
-        return { active: false, reason: 'READINESS_ERROR' };
-      }
+      if (report.reason !== 'READY') return { active: false, reason: 'READINESS_ERROR' };
       this.scheduler.start();
       this.active = true;
       return { active: true, reason: 'READY' };
-    } catch {
-      return { active: false, reason: 'READINESS_ERROR' };
-    }
+    } catch { return { active: false, reason: 'READINESS_ERROR' }; }
   }
-
-  deactivate(): void {
-    this.scheduler.stop();
-    this.active = false;
-  }
+  deactivate(): void { this.scheduler.stop(); this.active = false; }
 }
