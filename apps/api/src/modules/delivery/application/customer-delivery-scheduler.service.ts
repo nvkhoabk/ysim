@@ -1,18 +1,14 @@
-import { Injectable, OnModuleDestroy, OnModuleInit } from '@nestjs/common';
+import { Injectable, OnModuleDestroy } from '@nestjs/common';
 import { CustomerDeliverySchedulerConfig } from '../infrastructure/customer-delivery-scheduler.config.js';
 import { CustomerDeliveryPumpService, CustomerDeliveryPumpSummary } from './customer-delivery-pump.service.js';
 
 @Injectable()
-export class CustomerDeliverySchedulerService implements OnModuleInit, OnModuleDestroy {
+export class CustomerDeliverySchedulerService implements OnModuleDestroy {
   private timer: ReturnType<typeof setTimeout> | undefined;
   private inFlight: Promise<CustomerDeliveryPumpSummary> | undefined;
   private stopped = true;
 
   constructor(private readonly pump: CustomerDeliveryPumpService, private readonly config: CustomerDeliverySchedulerConfig) {}
-
-  onModuleInit(): void {
-    if (this.config.enabled) this.start();
-  }
 
   onModuleDestroy(): void {
     this.stop();
