@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 
 import { HealthController } from './health.controller.js';
 import { CatalogModule } from './modules/catalog/catalog.module.js';
+import { DeliveryModule } from './modules/delivery/delivery.module.js';
 import { FulfillmentModule } from './modules/fulfillment/fulfillment.module.js';
 import { OrganizationAgencyModule } from './modules/organization-agency/organization-agency.module.js';
 import { PaymentModule } from './modules/payment/payment.module.js';
@@ -20,6 +21,7 @@ import { SupplierManagementModule } from './modules/supplier-management/supplier
     PaymentModule,
     ProcurementModule,
     FulfillmentModule,
+    DeliveryModule,
   ],
   controllers: [HealthController],
 })

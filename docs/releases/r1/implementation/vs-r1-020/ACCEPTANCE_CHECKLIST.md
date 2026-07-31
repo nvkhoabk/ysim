@@ -1,0 +1,23 @@
+# VS-R1-020 Acceptance Checklist
+
+- [ ] Accepted VS-R1-019 baseline verified locally and remotely.
+- [ ] Candidate inventory contains exactly 17 paths.
+- [ ] Canonical test manifest contains 20 contiguous suites.
+- [ ] Delivery owns all three new tables.
+- [ ] No cross-context foreign key is introduced.
+- [ ] Request identity is Sales Order + channel + delivery version.
+- [ ] Ordered Asset references match the expected Asset count.
+- [ ] Asset-set and deduplication hashes are deterministic.
+- [ ] First request creates one READY request and one PENDING outbox event.
+- [ ] Exact replay creates no additional rows.
+- [ ] Locale or Asset-set mismatch returns CONFLICT.
+- [ ] Outbox payload excludes recipient email and Asset IDs.
+- [ ] Outbox payload excludes all eSIM installation values and ciphertext.
+- [ ] No eSIM Asset is decrypted.
+- [ ] No email provider is called.
+- [ ] No automatic delivery worker starts.
+- [ ] Sales Order remains UNFULFILLED.
+- [ ] Slice tests report 2 files and 20 assertions.
+- [ ] Cumulative tests report 35 files and 325 assertions.
+- [ ] Four PostgreSQL runtime proofs pass.
+- [ ] Human Review preview is generated.
