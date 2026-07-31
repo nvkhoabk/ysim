@@ -14,7 +14,7 @@
     "lint:vs-r1-001": "eslint --config scripts/vs-r1-001/eslint.config.mjs scripts/vs-r1-001/*.mjs && node scripts/vs-r1-001/audit-worktree.mjs",
     "lint:commissioning:legacy": "eslint --config scripts/commissioning/eslint.config.mjs scripts/commissioning/*.mjs && node scripts/commissioning/audit-boundaries.mjs",
     "typecheck": "corepack pnpm --filter @ysim/contracts build && corepack pnpm -r --if-present typecheck && tsc -p database/config/tsconfig.json --noEmit",
-    "test": "vitest run tests/vs-r1-001 tests/vs-r1-002 tests/vs-r1-003 tests/vs-r1-004 tests/vs-r1-005 tests/vs-r1-006 tests/vs-r1-007 tests/vs-r1-008 tests/vs-r1-009 tests/vs-r1-010 tests/vs-r1-011 tests/vs-r1-012 tests/vs-r1-013 tests/vs-r1-014 tests/vs-r1-015 tests/vs-r1-016 tests/vs-r1-017 tests/vs-r1-018 tests/vs-r1-019 tests/vs-r1-020 tests/vs-r1-021",
+    "test": "vitest run tests/vs-r1-001 tests/vs-r1-002 tests/vs-r1-003 tests/vs-r1-004 tests/vs-r1-005 tests/vs-r1-006 tests/vs-r1-007 tests/vs-r1-008 tests/vs-r1-009 tests/vs-r1-010 tests/vs-r1-011 tests/vs-r1-012 tests/vs-r1-013 tests/vs-r1-014 tests/vs-r1-015 tests/vs-r1-016 tests/vs-r1-017 tests/vs-r1-018 tests/vs-r1-019 tests/vs-r1-020 tests/vs-r1-021 tests/vs-r1-022",
     "test:vs-r1-001": "vitest run tests/vs-r1-001",
     "test:vs-r1-002": "vitest run tests/vs-r1-002",
     "test:vs-r1-003": "vitest run tests/vs-r1-003",
@@ -89,6 +89,7 @@
     "validate:vs-r1-019": "node scripts/vs-r1-019/validate-candidate.mjs",
     "test:vs-r1-020": "vitest run tests/vs-r1-020",
     "test:vs-r1-021": "vitest run tests/vs-r1-021",
+    "test:vs-r1-022": "vitest run tests/vs-r1-022",
     "runtime:vs-r1-020": "node scripts/vs-r1-020/runtime-proof.mjs",
     "validate:vs-r1-020": "node scripts/vs-r1-020/validate-candidate.mjs"
   },
