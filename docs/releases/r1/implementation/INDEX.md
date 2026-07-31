@@ -25,6 +25,7 @@
 12. [VS-R1-012 — GPay Payment Intent Reservation and Provider Routing](./vs-r1-012/INDEX.md)
 13. [VS-R1-013 — Payment Success Integration Outbox](./vs-r1-013/INDEX.md)
 14. [VS-R1-014 — Payment Integration Outbox Publisher and Retry Policy](./vs-r1-014/INDEX.md)
+15. [VS-R1-015 — Procurement Request Core and Payment Success Sink](./vs-r1-015/INDEX.md)
 
 ## Package status
 
@@ -44,4 +45,5 @@
 | VS-R1-011 — GPay Webhook Intake and Payment Event Application | Accepted |
 | VS-R1-012 — GPay Payment Intent Reservation and Provider Routing | Accepted |
 | VS-R1-013 — Payment Success Integration Outbox | Accepted |
-| VS-R1-014 — Payment Integration Outbox Publisher and Retry Policy | Proposed |
+| VS-R1-014 — Payment Integration Outbox Publisher and Retry Policy | Accepted |
+| VS-R1-015 — Procurement Request Core and Payment Success Sink | Proposed |
