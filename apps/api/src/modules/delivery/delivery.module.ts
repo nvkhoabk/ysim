@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { PostgresService } from '../../platform/database/postgres.service.js';
 import { EsimAssetCrypto } from '../fulfillment/infrastructure/esim-asset.crypto.js';
 import { CustomerDeliveryDispatchService } from './application/customer-delivery-dispatch.service.js';
+import { CustomerDeliveryPumpService } from './application/customer-delivery-pump.service.js';
 import { CustomerDeliveryRequestService } from './application/customer-delivery-request.service.js';
 import { CustomerDeliveryWorkerService } from './application/customer-delivery-worker.service.js';
 import { CustomerDeliveryRepository } from './infrastructure/customer-delivery.repository.js';
@@ -18,12 +19,14 @@ import { HttpCustomerEmailProvider } from './infrastructure/http-customer-email.
     CustomerDeliveryWorkerService,
     HttpCustomerEmailProvider,
     CustomerDeliveryDispatchService,
+    CustomerDeliveryPumpService,
   ],
   exports: [
     CustomerDeliveryRequestService,
     CustomerDeliveryWorkerService,
     HttpCustomerEmailProvider,
     CustomerDeliveryDispatchService,
+    CustomerDeliveryPumpService,
   ],
 })
 export class DeliveryModule {}
