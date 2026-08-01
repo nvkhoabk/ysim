@@ -22,7 +22,40 @@ import { CustomerDeliveryOperatorStatusController } from './customer-delivery-op
 
 @Module({
   controllers: [CustomerDeliveryOperatorStatusController, CustomerDeliveryOperatorOperationsSummaryController],
-  providers: [PostgresService, EsimAssetCrypto, CustomerDeliveryRepository, CustomerDeliveryWorkerRepository, CustomerDeliveryOperationsSummaryRepository, CustomerDeliveryRequestService, CustomerDeliveryWorkerService, HttpCustomerEmailProvider, CustomerDeliveryDispatchService, CustomerDeliveryPumpService, CustomerDeliverySchedulerConfig, CustomerDeliverySchedulerService, CustomerDeliveryReadinessService, CustomerDeliveryActivationService, CustomerDeliveryRuntimeStatusService, CustomerDeliveryOperatorStatusQueryService, CustomerDeliveryOperationsSummaryService, CustomerDeliveryOperatorOperationsSummaryQueryService],
+  providers: [
+    PostgresService,
+    {
+      provide: EsimAssetCrypto,
+      useFactory: () =>
+        new EsimAssetCrypto(),
+    },
+    CustomerDeliveryRepository,
+    CustomerDeliveryWorkerRepository,
+    CustomerDeliveryOperationsSummaryRepository,
+    CustomerDeliveryRequestService,
+    CustomerDeliveryWorkerService,
+    {
+      provide:
+        HttpCustomerEmailProvider,
+      useFactory: () =>
+        new HttpCustomerEmailProvider(),
+    },
+    CustomerDeliveryDispatchService,
+    CustomerDeliveryPumpService,
+    {
+      provide:
+        CustomerDeliverySchedulerConfig,
+      useFactory: () =>
+        new CustomerDeliverySchedulerConfig(),
+    },
+    CustomerDeliverySchedulerService,
+    CustomerDeliveryReadinessService,
+    CustomerDeliveryActivationService,
+    CustomerDeliveryRuntimeStatusService,
+    CustomerDeliveryOperatorStatusQueryService,
+    CustomerDeliveryOperationsSummaryService,
+    CustomerDeliveryOperatorOperationsSummaryQueryService,
+  ],
   exports: [CustomerDeliveryRequestService, CustomerDeliveryWorkerService, HttpCustomerEmailProvider, CustomerDeliveryDispatchService, CustomerDeliveryPumpService, CustomerDeliverySchedulerConfig, CustomerDeliverySchedulerService, CustomerDeliveryReadinessService, CustomerDeliveryActivationService, CustomerDeliveryRuntimeStatusService, CustomerDeliveryOperatorStatusQueryService, CustomerDeliveryOperationsSummaryService, CustomerDeliveryOperatorOperationsSummaryQueryService],
 })
 export class DeliveryModule {}

@@ -22,8 +22,18 @@ import { SupplierSubmissionRepository } from './infrastructure/supplier-submissi
     ProcurementOutboxConsumerService,
     ProcurementSubmissionReader,
     SupplierSubmissionRepository,
-    GigagoCreateOrderClient,
-    GigagoOrderReadbackClient,
+    {
+      provide:
+        GigagoCreateOrderClient,
+      useFactory: () =>
+        new GigagoCreateOrderClient(),
+    },
+    {
+      provide:
+        GigagoOrderReadbackClient,
+      useFactory: () =>
+        new GigagoOrderReadbackClient(),
+    },
     GigagoProcurementSubmissionService,
     GigagoOrderReadbackService,
   ],
