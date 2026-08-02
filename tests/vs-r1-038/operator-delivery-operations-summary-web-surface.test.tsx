@@ -6,6 +6,14 @@ const readers = vi.hoisted(() => ({
   readStatus: vi.fn(),
   readOperations: vi.fn(),
 }));
+const access = vi.hoisted(() => ({
+  resolve: vi.fn(),
+}));
+
+vi.mock(
+  '../../apps/web/lib/operator-access.js',
+  () => ({ resolveOperatorPortalAccess: access.resolve }),
+);
 
 vi.mock(
   '../../apps/web/app/operator/delivery-status/operator-delivery-status.js',
@@ -53,6 +61,18 @@ const renderPage = async () => renderToStaticMarkup(await OperatorDeliveryStatus
 
 describe('VS-R1-038 read-only operations summary web surface (12)', () => {
   beforeEach(() => {
+    access.resolve.mockReset().mockResolvedValue({
+      authorized: true,
+      session: {
+        version: 1,
+        audience: 'ysim-operator-portal',
+        identityId: '10000000-0000-4000-8000-000000000039',
+        role: 'OPERATIONS',
+        locale: 'vi',
+        issuedAt: 1_900_000_000,
+        expiresAt: 1_900_003_600,
+      },
+    });
     readers.readStatus.mockReset().mockResolvedValue(runtime);
     readers.readOperations.mockReset().mockResolvedValue(operations);
   });

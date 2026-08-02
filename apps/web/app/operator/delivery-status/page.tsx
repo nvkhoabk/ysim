@@ -1,4 +1,6 @@
 import type { Metadata } from 'next';
+import { resolveOperatorPortalAccess } from '../../../lib/operator-access';
+import { OperatorAccessState } from '../operator-access-state';
 import { readOperatorDeliveryOperationsSummary } from './operator-delivery-operations-summary';
 import { readOperatorDeliveryStatus } from './operator-delivery-status';
 import styles from './status.module.css';
@@ -14,6 +16,11 @@ const formatTimestamp = (value: string) =>
   }).format(new Date(value));
 
 export default async function OperatorDeliveryStatusPage() {
+  const access = await resolveOperatorPortalAccess();
+  if (!access.authorized) {
+    return <OperatorAccessState reason={access.reason} />;
+  }
+
   const [runtime, operations] = await Promise.all([
     readOperatorDeliveryStatus(),
     readOperatorDeliveryOperationsSummary(),
