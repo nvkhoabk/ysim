@@ -17,18 +17,33 @@ function loginRequest(
     password: 'correct horse battery staple',
   },
   origin = 'https://sandbox.ysim.vn',
+  reverseProxy: Readonly<{
+    forwardedHost: string;
+    forwardedProto: string;
+    requestUrl: string;
+  }> | null = null,
 ): NextRequest {
   const body = new URLSearchParams(fields).toString();
-  return new NextRequest('https://sandbox.ysim.vn/api/operator/session', {
-    method: 'POST',
-    headers: {
-      'content-length': String(Buffer.byteLength(body)),
-      'content-type': 'application/x-www-form-urlencoded',
-      host: 'sandbox.ysim.vn',
-      origin,
+  return new NextRequest(
+    reverseProxy?.requestUrl ??
+      'https://sandbox.ysim.vn/api/operator/session',
+    {
+      method: 'POST',
+      headers: {
+        'content-length': String(Buffer.byteLength(body)),
+        'content-type': 'application/x-www-form-urlencoded',
+        host: reverseProxy ? 'localhost:3102' : 'sandbox.ysim.vn',
+        origin,
+        ...(reverseProxy
+          ? {
+              'x-forwarded-host': reverseProxy.forwardedHost,
+              'x-forwarded-proto': reverseProxy.forwardedProto,
+            }
+          : {}),
+      },
+      body,
     },
-    body,
-  });
+  );
 }
 
 describe('VS-R1-040 operator login handler', () => {
@@ -74,6 +89,31 @@ describe('VS-R1-040 operator login handler', () => {
     });
   });
 
+  it('uses the verified public origin for a successful reverse-proxy redirect', async () => {
+    const handler = createOperatorLoginHandler({
+      authenticate: vi.fn(async () => ({
+        authenticated: true as const,
+        config: operatorConfig,
+      })),
+      env: {},
+      limiter: new BoundedOperatorLoginLimiter(),
+      now: () => now,
+    });
+
+    const response = await handler(
+      loginRequest(undefined, 'https://portal.ysim.vn', {
+        forwardedHost: 'portal.ysim.vn',
+        forwardedProto: 'https',
+        requestUrl: 'https://localhost:3102/api/operator/session',
+      }),
+    );
+
+    expect(response.status).toBe(303);
+    expect(response.headers.get('location')).toBe(
+      'https://portal.ysim.vn/operator/delivery-status',
+    );
+  });
+
   it('returns one generic redirect for invalid credentials without a cookie', async () => {
     const handler = createOperatorLoginHandler({
       authenticate: vi.fn(async () => ({
@@ -87,6 +127,31 @@ describe('VS-R1-040 operator login handler', () => {
     expect(response.status).toBe(303);
     expect(response.headers.get('location')).toContain(
       'error=INVALID_CREDENTIALS',
+    );
+    expect(response.headers.get('set-cookie')).toBeNull();
+  });
+
+  it('uses the verified public origin for a failed reverse-proxy redirect', async () => {
+    const handler = createOperatorLoginHandler({
+      authenticate: vi.fn(async () => ({
+        authenticated: false as const,
+        reason: 'INVALID_CREDENTIALS' as const,
+      })),
+      limiter: new BoundedOperatorLoginLimiter(),
+      now: () => now,
+    });
+
+    const response = await handler(
+      loginRequest(undefined, 'https://portal.ysim.vn', {
+        forwardedHost: 'portal.ysim.vn',
+        forwardedProto: 'https',
+        requestUrl: 'https://localhost:3102/api/operator/session',
+      }),
+    );
+
+    expect(response.status).toBe(303);
+    expect(response.headers.get('location')).toBe(
+      'https://portal.ysim.vn/operator/login?error=INVALID_CREDENTIALS&next=%2Foperator%2Fdelivery-status',
     );
     expect(response.headers.get('set-cookie')).toBeNull();
   });

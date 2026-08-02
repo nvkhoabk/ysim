@@ -63,7 +63,7 @@ export class BoundedOperatorLoginLimiter implements LoginAttemptLimiter {
 
 const processLimiter = new BoundedOperatorLoginLimiter();
 
-function requestOrigin(request: NextRequest): string | null {
+function verifiedRequestOrigin(request: NextRequest): string | null {
   const origin = request.headers.get('origin');
   const forwardedHost = request.headers.get('x-forwarded-host');
   const forwardedProto = request.headers.get('x-forwarded-proto');
@@ -99,11 +99,11 @@ export function safeOperatorNextPath(value: string | null): string {
 }
 
 function loginRedirect(
-  request: NextRequest,
+  verifiedOrigin: string,
   error: 'INVALID_CREDENTIALS' | 'RETRY_LATER' | 'UNAVAILABLE',
   nextPath: string,
 ): NextResponse {
-  const target = new URL(LOGIN_PATH, request.url);
+  const target = new URL(LOGIN_PATH, verifiedOrigin);
   target.searchParams.set('error', error);
   target.searchParams.set('next', nextPath);
   const response = NextResponse.redirect(target, 303);
@@ -126,7 +126,8 @@ export function createOperatorLoginHandler(
   const now = options.now ?? (() => Math.floor(Date.now() / 1_000));
 
   return async function POST(request: NextRequest): Promise<NextResponse> {
-    if (!requestOrigin(request)) {
+    const verifiedOrigin = verifiedRequestOrigin(request);
+    if (!verifiedOrigin) {
       return new NextResponse(null, {
         status: 403,
         headers: { 'Cache-Control': 'no-store' },
@@ -165,7 +166,7 @@ export function createOperatorLoginHandler(
 
     if (limiter.isBlocked(nowSeconds)) {
       const response = loginRedirect(
-        request,
+        verifiedOrigin,
         'RETRY_LATER',
         nextPath,
       );
@@ -178,16 +179,16 @@ export function createOperatorLoginHandler(
 
     if (typeof loginId !== 'string' || typeof password !== 'string') {
       limiter.recordFailure(nowSeconds);
-      return loginRedirect(request, 'INVALID_CREDENTIALS', nextPath);
+      return loginRedirect(verifiedOrigin, 'INVALID_CREDENTIALS', nextPath);
     }
 
     const result = await authenticate(loginId, password, env);
     if (!result.authenticated) {
       if (result.reason === 'CONFIG_INVALID') {
-        return loginRedirect(request, 'UNAVAILABLE', nextPath);
+        return loginRedirect(verifiedOrigin, 'UNAVAILABLE', nextPath);
       }
       limiter.recordFailure(nowSeconds);
-      return loginRedirect(request, 'INVALID_CREDENTIALS', nextPath);
+      return loginRedirect(verifiedOrigin, 'INVALID_CREDENTIALS', nextPath);
     }
 
     limiter.clear();
@@ -206,7 +207,7 @@ export function createOperatorLoginHandler(
       config.sessionSecret,
     );
 
-    const response = NextResponse.redirect(new URL(nextPath, request.url), 303);
+    const response = NextResponse.redirect(new URL(nextPath, verifiedOrigin), 303);
     response.headers.set('Cache-Control', 'no-store');
     response.headers.set('Referrer-Policy', 'no-referrer');
     response.cookies.set(OPERATOR_SESSION_COOKIE, token, {

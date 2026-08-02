@@ -2,9 +2,9 @@ import { NextRequest, NextResponse } from 'next/server';
 
 import { OPERATOR_SESSION_COOKIE } from './operator-session';
 
-function isSameOrigin(request: NextRequest): boolean {
+function verifiedRequestOrigin(request: NextRequest): string | null {
   const origin = request.headers.get('origin');
-  if (!origin) return false;
+  if (!origin) return null;
 
   const requestUrl = new URL(request.url);
   const host =
@@ -16,21 +16,25 @@ function isSameOrigin(request: NextRequest): boolean {
     requestUrl.protocol.slice(0, -1);
 
   try {
-    return new URL(origin).origin === `${protocol}://${host}`;
+    const parsedOrigin = new URL(origin);
+    return parsedOrigin.origin === `${protocol}://${host}`
+      ? parsedOrigin.origin
+      : null;
   } catch {
-    return false;
+    return null;
   }
 }
 
 export function operatorLogoutResponse(request: NextRequest): NextResponse {
-  if (!isSameOrigin(request)) {
+  const verifiedOrigin = verifiedRequestOrigin(request);
+  if (!verifiedOrigin) {
     return new NextResponse(null, {
       status: 403,
       headers: { 'Cache-Control': 'no-store' },
     });
   }
 
-  const target = new URL('/operator/login', request.url);
+  const target = new URL('/operator/login', verifiedOrigin);
   target.searchParams.set('state', 'SIGNED_OUT');
   const response = NextResponse.redirect(target, 303);
   response.headers.set('Cache-Control', 'no-store');

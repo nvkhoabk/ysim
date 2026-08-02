@@ -10,6 +10,18 @@ function request(origin: string): NextRequest {
   });
 }
 
+function reverseProxyRequest(origin: string): NextRequest {
+  return new NextRequest('https://localhost:3102/operator/logout', {
+    method: 'POST',
+    headers: {
+      host: 'localhost:3102',
+      origin,
+      'x-forwarded-host': 'portal.ysim.vn',
+      'x-forwarded-proto': 'https',
+    },
+  });
+}
+
 describe('VS-R1-040 operator logout', () => {
   it('expires the exact secure operator cookie and redirects to login', () => {
     const response = operatorLogoutResponse(
@@ -26,6 +38,18 @@ describe('VS-R1-040 operator logout', () => {
     expect(setCookie).toContain('HttpOnly');
     expect(setCookie).toContain('Secure');
     expect(setCookie).toMatch(/SameSite=Strict/iu);
+  });
+
+  it('uses the verified public origin behind the reverse proxy', () => {
+    const response = operatorLogoutResponse(
+      reverseProxyRequest('https://portal.ysim.vn'),
+    );
+
+    expect(response.status).toBe(303);
+    expect(response.headers.get('location')).toBe(
+      'https://portal.ysim.vn/operator/login?state=SIGNED_OUT',
+    );
+    expect(response.headers.get('location')).not.toContain('localhost:3102');
   });
 
   it('rejects cross-origin logout without touching the cookie', () => {
