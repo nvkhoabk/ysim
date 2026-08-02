@@ -12,6 +12,17 @@ import {
 } from '../../apps/web/lib/operator-session';
 
 const secret = 'test-secret-that-is-long-enough-for-hmac-signing';
+const operatorEnv = {
+  YSIM_OPERATOR_IDENTITY_ID: '10000000-0000-4000-8000-000000000039',
+  YSIM_OPERATOR_LOCALE: 'vi',
+  YSIM_OPERATOR_LOGIN_ID: 'operator@example.test',
+  YSIM_OPERATOR_PASSWORD_SCRYPT:
+    'scrypt$16384$8$1$MDEyMzQ1Njc4OWFiY2RlZg$tjK03tRvEjqCcPwmgtddMkgjlXrk8U_b9rIvfeBMKCc',
+  YSIM_OPERATOR_REVOCATION_VERSION: '1',
+  YSIM_OPERATOR_ROLE: 'PLATFORM_ADMIN',
+  YSIM_OPERATOR_SESSION_TTL_SECONDS: '3600',
+  YSIM_PORTAL_SESSION_SECRET: secret,
+};
 const now = Math.floor(Date.now() / 1000);
 const payload = {
   version: OPERATOR_SESSION_VERSION,
@@ -19,6 +30,7 @@ const payload = {
   identityId: '10000000-0000-4000-8000-000000000039',
   role: 'PLATFORM_ADMIN' as const,
   locale: 'vi' as const,
+  revocationVersion: 1,
   issuedAt: now - 60,
   expiresAt: now + 3_600,
 };
@@ -35,10 +47,20 @@ function signedWrongRoleToken(): string {
     'utf8',
   ).toString('base64url');
   const signature = createHmac('sha256', secret)
-    .update('ysim:operator-session:v1\0')
+    .update('ysim:operator-session:v2\0')
     .update(encodedPayload)
     .digest('base64url');
   return `${encodedPayload}.${signature}`;
+}
+
+function tamperSignatureBytes(token: string): string {
+  const [encodedPayload, encodedSignature] = token.split('.');
+  if (!encodedPayload || !encodedSignature) {
+    throw new Error('Expected a two-part operator session token');
+  }
+
+  const changedFirstCharacter = encodedSignature[0] === 'A' ? 'B' : 'A';
+  return `${encodedPayload}.${changedFirstCharacter}${encodedSignature.slice(1)}`;
 }
 
 describe('VS-R1-039 operator access resolver', () => {
@@ -53,7 +75,7 @@ describe('VS-R1-039 operator access resolver', () => {
   it('requires the dedicated operator cookie', async () => {
     await expect(
       resolveOperatorPortalAccess(
-        { YSIM_PORTAL_SESSION_SECRET: secret },
+        operatorEnv,
         cookieReader(),
       ),
     ).resolves.toEqual({ authorized: false, reason: 'SESSION_REQUIRED' });
@@ -63,7 +85,7 @@ describe('VS-R1-039 operator access resolver', () => {
     const token = createOperatorSessionToken(payload, secret);
     await expect(
       resolveOperatorPortalAccess(
-        { YSIM_PORTAL_SESSION_SECRET: secret },
+        operatorEnv,
         cookieReader(token),
       ),
     ).resolves.toEqual({ authorized: true, session: payload });
@@ -73,8 +95,8 @@ describe('VS-R1-039 operator access resolver', () => {
     const token = createOperatorSessionToken(payload, secret);
     await expect(
       resolveOperatorPortalAccess(
-        { YSIM_PORTAL_SESSION_SECRET: secret },
-        cookieReader(`${token.slice(0, -1)}x`),
+        operatorEnv,
+        cookieReader(tamperSignatureBytes(token)),
       ),
     ).resolves.toEqual({ authorized: false, reason: 'SESSION_INVALID' });
   });
@@ -82,7 +104,7 @@ describe('VS-R1-039 operator access resolver', () => {
   it('rejects a signed session with an agency role', async () => {
     await expect(
       resolveOperatorPortalAccess(
-        { YSIM_PORTAL_SESSION_SECRET: secret },
+        operatorEnv,
         cookieReader(signedWrongRoleToken()),
       ),
     ).resolves.toEqual({ authorized: false, reason: 'SESSION_INVALID' });
@@ -100,7 +122,7 @@ describe('VS-R1-039 operator access resolver', () => {
     );
     await expect(
       resolveOperatorPortalAccess(
-        { YSIM_PORTAL_SESSION_SECRET: secret },
+        operatorEnv,
         cookieReader(agencyToken),
       ),
     ).resolves.toEqual({ authorized: false, reason: 'SESSION_INVALID' });

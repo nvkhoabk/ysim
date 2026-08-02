@@ -22,18 +22,18 @@ vi.mock(
   () => ({ readOperatorDeliveryOperationsSummary: readers.readOperations }),
 );
 
-import OperatorLayout from '../../apps/web/app/operator/layout.js';
-import OperatorDeliveryStatusPage from '../../apps/web/app/operator/delivery-status/page.js';
+import ProtectedOperatorLayout from '../../apps/web/app/operator/(protected)/layout.js';
+import OperatorDeliveryStatusPage from '../../apps/web/app/operator/(protected)/delivery-status/page.js';
 
 const pageSource = readFileSync(
   new URL(
-    '../../apps/web/app/operator/delivery-status/page.tsx',
+    '../../apps/web/app/operator/(protected)/delivery-status/page.tsx',
     import.meta.url,
   ),
   'utf8',
 );
 const layoutSource = readFileSync(
-  new URL('../../apps/web/app/operator/layout.tsx', import.meta.url),
+  new URL('../../apps/web/app/operator/(protected)/layout.tsx', import.meta.url),
   'utf8',
 );
 
@@ -85,11 +85,12 @@ describe('VS-R1-039 operator namespace boundary', () => {
     access.resolve.mockResolvedValue({
       authorized: true,
       session: {
-        version: 1,
+        version: 2,
         audience: 'ysim-operator-portal',
         identityId: '10000000-0000-4000-8000-000000000039',
         role: 'OPERATIONS',
         locale: 'vi',
+        revocationVersion: 1,
         issuedAt: 1_900_000_000,
         expiresAt: 1_900_003_600,
       },
@@ -105,7 +106,7 @@ describe('VS-R1-039 operator namespace boundary', () => {
       authorized: false,
       reason: 'SESSION_REQUIRED',
     });
-    const result = await OperatorLayout({
+    const result = await ProtectedOperatorLayout({
       children: 'SENSITIVE_OPERATOR_CHILD',
     });
     const html = renderToStaticMarkup(result);
@@ -126,13 +127,12 @@ describe('VS-R1-039 operator namespace boundary', () => {
     expect(readerIndex).toBeGreaterThan(guardIndex);
   });
 
-  it('adds no public login or session issuance endpoint', () => {
+  it('keeps the public login route outside the protected route group', () => {
     const webRoot = new URL('../../apps/web/', import.meta.url);
-    expect(
-      existsSync(new URL('app/operator/login/page.tsx', webRoot)),
-    ).toBe(false);
+    expect(existsSync(new URL('app/operator/login/page.tsx', webRoot))).toBe(true);
     expect(
       existsSync(new URL('app/api/operator/session/route.ts', webRoot)),
-    ).toBe(false);
+    ).toBe(true);
+    expect(layoutSource).toMatch(/resolveOperatorPortalAccess\(\)/u);
   });
 });

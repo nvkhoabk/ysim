@@ -43,3 +43,19 @@
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   font-size: 0.75rem;
 }
+
+.action {
+  display: inline-flex;
+  margin-top: 1.25rem;
+  padding: 0.7rem 1rem;
+  border-radius: 0.75rem;
+  color: #ffffff;
+  background: #128953;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.action:focus-visible {
+  outline: 3px solid rgba(18, 137, 83, 0.3);
+  outline-offset: 3px;
+}

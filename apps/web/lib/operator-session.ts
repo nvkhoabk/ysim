@@ -2,11 +2,12 @@ import { createHmac, timingSafeEqual } from 'node:crypto';
 
 export const OPERATOR_SESSION_COOKIE = 'ysim_operator_session';
 export const OPERATOR_SESSION_AUDIENCE = 'ysim-operator-portal';
-export const OPERATOR_SESSION_VERSION = 1;
+export const OPERATOR_SESSION_VERSION = 2;
 export const OPERATOR_SESSION_MAX_TTL_SECONDS = 8 * 60 * 60;
 
-const SIGNATURE_CONTEXT = 'ysim:operator-session:v1\0';
+const SIGNATURE_CONTEXT = 'ysim:operator-session:v2\0';
 const CLOCK_SKEW_SECONDS = 60;
+const base64UrlPattern = /^[A-Za-z0-9_-]+$/u;
 
 export type OperatorPortalLocale = 'vi' | 'en';
 export type OperatorPortalRole = 'PLATFORM_ADMIN' | 'OPERATIONS';
@@ -17,6 +18,7 @@ export interface OperatorSessionPayload {
   identityId: string;
   role: OperatorPortalRole;
   locale: OperatorPortalLocale;
+  revocationVersion: number;
   issuedAt: number;
   expiresAt: number;
 }
@@ -43,6 +45,9 @@ function isPayload(value: unknown): value is OperatorSessionPayload {
     uuidPattern.test(candidate.identityId) &&
     (candidate.role === 'PLATFORM_ADMIN' || candidate.role === 'OPERATIONS') &&
     (candidate.locale === 'vi' || candidate.locale === 'en') &&
+    typeof candidate.revocationVersion === 'number' &&
+    Number.isSafeInteger(candidate.revocationVersion) &&
+    candidate.revocationVersion > 0 &&
     typeof candidate.issuedAt === 'number' &&
     Number.isSafeInteger(candidate.issuedAt) &&
     typeof candidate.expiresAt === 'number' &&
@@ -58,6 +63,13 @@ function signatureFor(encodedPayload: string, secret: string): Buffer {
     .update(SIGNATURE_CONTEXT)
     .update(encodedPayload)
     .digest();
+}
+
+function decodeCanonicalBase64Url(value: string): Buffer | null {
+  if (!base64UrlPattern.test(value)) return null;
+
+  const decoded = Buffer.from(value, 'base64url');
+  return decoded.toString('base64url') === value ? decoded : null;
 }
 
 export function createOperatorSessionToken(
@@ -95,10 +107,12 @@ export function verifyOperatorSessionToken(
   let payload: unknown;
 
   try {
-    suppliedSignature = Buffer.from(encodedSignature, 'base64url');
-    payload = JSON.parse(
-      Buffer.from(encodedPayload, 'base64url').toString('utf8'),
-    );
+    const decodedSignature = decodeCanonicalBase64Url(encodedSignature);
+    const decodedPayload = decodeCanonicalBase64Url(encodedPayload);
+    if (!decodedSignature || !decodedPayload) return null;
+
+    suppliedSignature = decodedSignature;
+    payload = JSON.parse(decodedPayload.toString('utf8'));
   } catch {
     return null;
   }

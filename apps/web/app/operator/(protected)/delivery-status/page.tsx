@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
-import { resolveOperatorPortalAccess } from '../../../lib/operator-access';
-import { OperatorAccessState } from '../operator-access-state';
-import { readOperatorDeliveryOperationsSummary } from './operator-delivery-operations-summary';
-import { readOperatorDeliveryStatus } from './operator-delivery-status';
-import styles from './status.module.css';
+
+import { resolveOperatorPortalAccess } from '../../../../lib/operator-access';
+import { OperatorAccessState } from '../../operator-access-state';
+import { readOperatorDeliveryOperationsSummary } from '../../delivery-status/operator-delivery-operations-summary';
+import { readOperatorDeliveryStatus } from '../../delivery-status/operator-delivery-status';
+import styles from '../../delivery-status/status.module.css';
 
 export const metadata: Metadata = { title: 'Trạng thái giao eSIM' };
 export const dynamic = 'force-dynamic';
@@ -48,9 +49,15 @@ export default async function OperatorDeliveryStatusPage() {
           </div>
           {runtime.authorized ? (
             <dl className={styles.grid}>
-              <div><dt>Trạng thái</dt><dd data-state={runtime.status.state}>{runtime.status.state}</dd></div>
+              <div>
+                <dt>Trạng thái</dt>
+                <dd data-state={runtime.status.state}>{runtime.status.state}</dd>
+              </div>
               <div><dt>Lý do</dt><dd>{runtime.status.reason}</dd></div>
-              <div><dt>Scheduler</dt><dd>{runtime.status.schedulerEnabled ? 'Đã bật' : 'Đã tắt'}</dd></div>
+              <div>
+                <dt>Scheduler</dt>
+                <dd>{runtime.status.schedulerEnabled ? 'Đã bật' : 'Đã tắt'}</dd>
+              </div>
               <div><dt>Chế độ email</dt><dd>{runtime.status.emailMode}</dd></div>
             </dl>
           ) : (
@@ -60,7 +67,10 @@ export default async function OperatorDeliveryStatusPage() {
           )}
         </section>
 
-        <section className={styles.card} aria-labelledby="operations-summary-title">
+        <section
+          className={styles.card}
+          aria-labelledby="operations-summary-title"
+        >
           <div className={styles.sectionHeading}>
             <div>
               <p className={styles.kicker}>Delivery operations</p>

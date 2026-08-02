@@ -1,0 +1,48 @@
+.shell {
+  min-height: 100vh;
+  background: #07150f;
+}
+
+.bar {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: min(70rem, calc(100% - 3rem));
+  margin: 0 auto -1.5rem;
+  padding-top: 1rem;
+  color: #a8cbb8;
+  font-size: 0.82rem;
+}
+
+.bar p {
+  margin: 0;
+}
+
+.bar strong {
+  color: #dff6e9;
+}
+
+.bar button {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #3c7658;
+  border-radius: 0.65rem;
+  color: #dff6e9;
+  background: #102a1e;
+  font-size: 0.82rem;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.bar button:focus-visible {
+  outline: 3px solid rgb(121 213 167 / 25%);
+  outline-offset: 3px;
+}
+
+@media (max-width: 36rem) {
+  .bar {
+    width: calc(100% - 2rem);
+  }
+}

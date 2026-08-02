@@ -6,7 +6,7 @@ const token = 'operator-token-that-is-at-least-32-characters';
 const env = { YSIM_API_INTERNAL_BASE_URL: 'http://api.internal:3000', CUSTOMER_DELIVERY_OPERATOR_STATUS_TOKEN: token };
 const active = { authorized: true, status: { state: 'ACTIVE', reason: 'READY', schedulerEnabled: true, emailMode: 'live' } } as const;
 const response = (body: unknown, ok = true) => ({ ok, json: vi.fn(async () => body) }) as never;
-const pageSource = readFileSync(new URL('../../apps/web/app/operator/delivery-status/page.tsx', import.meta.url), 'utf8');
+const pageSource = readFileSync(new URL('../../apps/web/app/operator/(protected)/delivery-status/page.tsx', import.meta.url), 'utf8');
 
 describe('VS-R1-033 read-only operator delivery status web surface (12)', () => {
   it('calls the bounded internal status endpoint with GET and no-store', async () => { const request = vi.fn(async () => response(active)); await readOperatorDeliveryStatus(env, request as never); expect(String(request.mock.calls[0]?.[0])).toBe('http://api.internal:3000/internal/delivery/runtime-status'); expect(request.mock.calls[0]?.[1]).toMatchObject({ method: 'GET', cache: 'no-store' }); });

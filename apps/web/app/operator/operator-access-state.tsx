@@ -13,6 +13,10 @@ const copy = {
     title: 'Phiên truy cập không hợp lệ',
     message: 'Phiên operator không hợp lệ hoặc đã hết hạn.',
   },
+  SESSION_REVOKED: {
+    title: 'Phiên truy cập đã bị thu hồi',
+    message: 'Vui lòng đăng nhập lại để tiếp tục.',
+  },
 } as const;
 
 export type OperatorAccessFailureReason = keyof typeof copy;
@@ -28,6 +32,11 @@ export function OperatorAccessState({
         <p className={styles.eyebrow}>YSim Operator Portal</p>
         <h1>{state.title}</h1>
         <p>{state.message}</p>
+        {reason === 'CONFIG_INVALID' ? null : (
+          <a className={styles.action} href="/operator/login">
+            Đi tới đăng nhập
+          </a>
+        )}
         <p className={styles.reference}>Mã tham chiếu: {reason}</p>
       </section>
     </main>

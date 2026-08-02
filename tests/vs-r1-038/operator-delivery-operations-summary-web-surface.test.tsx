@@ -24,7 +24,7 @@ vi.mock(
   () => ({ readOperatorDeliveryOperationsSummary: readers.readOperations }),
 );
 
-import OperatorDeliveryStatusPage from '../../apps/web/app/operator/delivery-status/page.js';
+import OperatorDeliveryStatusPage from '../../apps/web/app/operator/(protected)/delivery-status/page.js';
 
 const runtime = {
   authorized: true,
@@ -49,7 +49,7 @@ const operations = {
   },
 } as const;
 const pageSource = readFileSync(
-  new URL('../../apps/web/app/operator/delivery-status/page.tsx', import.meta.url),
+  new URL('../../apps/web/app/operator/(protected)/delivery-status/page.tsx', import.meta.url),
   'utf8',
 );
 const cssSource = readFileSync(
@@ -64,11 +64,12 @@ describe('VS-R1-038 read-only operations summary web surface (12)', () => {
     access.resolve.mockReset().mockResolvedValue({
       authorized: true,
       session: {
-        version: 1,
+        version: 2,
         audience: 'ysim-operator-portal',
         identityId: '10000000-0000-4000-8000-000000000039',
         role: 'OPERATIONS',
         locale: 'vi',
+        revocationVersion: 1,
         issuedAt: 1_900_000_000,
         expiresAt: 1_900_003_600,
       },
