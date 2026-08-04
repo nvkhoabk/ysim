@@ -31,6 +31,23 @@ const environment = (): Record<string, string> => ({
   YSIM_GPAY_PRIVATE_KEY_PATH: resolve('/tmp/gpay-private.pem'),
   YSIM_GPAY_CERTIFICATE_PATH: resolve('/tmp/gpay-certificate.pem'),
   YSIM_GPAY_VERIFY_CERTIFICATE_PATH: resolve('/tmp/gpay-provider.pem'),
+  YSIM_COMMISSIONING_MODE: 'SANDBOX',
+  YSIM_COMMISSIONING_RUN_NAMESPACE: 'vs-r1-043-gateway-test-0001',
+  YSIM_COMMISSIONING_TRANSACTION_CAP: '1',
+  YSIM_COMMISSIONING_MARKET: 'VN',
+  YSIM_COMMISSIONING_CURRENCY: 'VND',
+  YSIM_GPAY_EXECUTION_ENABLED: 'true',
+  YSIM_GPAY_QUERY_CAP: '12',
+  YSIM_GPAY_CALLBACK_URL:
+    'https://portal.ysim.vn/api/platform/api/r1/payments/gpay/gateway/callback',
+  YSIM_GPAY_WEBHOOK_URL:
+    'https://portal.ysim.vn/api/platform/api/r1/payments/gpay/gateway/webhook',
+  YSIM_GPAY_COMMISSIONING_CUSTOMER_ID:
+    'vs-r1-043-sandbox-customer',
+  YSIM_GIGAGO_ORDER_SUBMISSION_ENABLED: 'false',
+  YSIM_CUSTOMER_EMAIL_ENABLED: 'false',
+  YSIM_CUSTOMER_EMAIL_MODE: 'disabled',
+  YSIM_CATALOG_SUPPLIER_ENVIRONMENT: 'SANDBOX',
 });
 
 const response = (body: unknown): Response => new Response(
@@ -162,5 +179,47 @@ describe('GPay All-in-one gateway client', () => {
       gpayBillId: 'GPAY-BILL-0001',
       merchantOrderId: 'YSIM-ORDER-0001',
     })).rejects.toBeInstanceOf(GPayGatewayClientError);
+  });
+
+  it('consumes the init-order budget before the first network call', async () => {
+    const fetchMock = vi.fn().mockRejectedValue(new Error('network'));
+    const gateway = client(fetchMock);
+    const input = {
+      amount: 338000,
+      callbackUrl: 'https://sandbox.ysim.vn/payment/return',
+      customerId: 'customer-0001',
+      embedData: '{"orderId":"order-0001"}',
+      merchantOrderId: 'YSIM-ORDER-0001',
+      webhookUrl: 'https://sandbox.ysim.vn/api/r1/payments/gpay/webhook',
+    };
+    await expect(gateway.initOrder(input)).rejects.toThrow(/request failed/u);
+    const countAfterFailure = fetchMock.mock.calls.length;
+    await expect(gateway.initOrder(input)).rejects.toThrow(/budget/u);
+    expect(fetchMock).toHaveBeenCalledTimes(countAfterFailure);
+  });
+
+  it('rejects an invalid or already expired init-order lifetime', async () => {
+    const fetchMock = vi.fn()
+      .mockResolvedValueOnce(response({
+        meta: { code: '200' },
+        data: { access_token: 'sandbox-token', expires_in: 3600 },
+      }))
+      .mockResolvedValueOnce(response({
+        meta: { code: '200' },
+        data: {
+          bill_id: 'GPAY-BILL-0001',
+          bill_url: 'https://sandbox.g-pay.vn/pay/GPAY-BILL-0001',
+          expired_time: '2026-08-01T15:59:59.000Z',
+          request_id: 'YSIM-ORDER-0001',
+        },
+      }));
+    await expect(client(fetchMock).initOrder({
+      amount: 338000,
+      callbackUrl: 'https://sandbox.ysim.vn/payment/return',
+      customerId: 'customer-0001',
+      embedData: '{"orderId":"order-0001"}',
+      merchantOrderId: 'YSIM-ORDER-0001',
+      webhookUrl: 'https://sandbox.ysim.vn/api/r1/payments/gpay/webhook',
+    })).rejects.toThrow(/future ISO timestamp/u);
   });
 });

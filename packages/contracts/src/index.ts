@@ -16,4 +16,5 @@ export * from './sales-order.js';
 export * from './payment.js';
 export * from './gpay.js';
 export * from './gpay-webhook.js';
+export * from './gpay-commissioning.js';
 export * from './payment-integration.js';

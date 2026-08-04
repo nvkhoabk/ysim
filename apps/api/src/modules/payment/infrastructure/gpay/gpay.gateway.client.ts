@@ -22,6 +22,9 @@ import {
   assertGPayKeyPair,
   signGPayCanonical,
 } from './gpay.crypto.js';
+import {
+  loadGPayGatewayExecutionPolicy,
+} from './gpay.gateway.execution-policy.js';
 
 type Environment = Record<string, string | undefined>;
 type Fetch = typeof fetch;
@@ -129,6 +132,21 @@ const validUrl = (
   return parsed.toString();
 };
 
+const validFutureInstant = (
+  value: unknown,
+  name: string,
+  now: number,
+): string => {
+  const raw = string(value, name);
+  const parsed = Date.parse(raw);
+  if (!Number.isFinite(parsed) || parsed <= now) {
+    throw new GPayGatewayClientError(
+      `GPay response ${name} must be a future ISO timestamp`,
+    );
+  }
+  return new Date(parsed).toISOString();
+};
+
 @Injectable()
 export class GPayGatewayClient {
   readonly #environment: Environment;
@@ -137,6 +155,8 @@ export class GPayGatewayClient {
   readonly #requestId: () => string;
   readonly #readText: ReadText;
   #token: GPayToken | undefined;
+  #initOrderAttempted = false;
+  #queryOrderCount = 0;
 
   constructor(dependencies: GPayGatewayClientDependencies = {}) {
     this.#environment = dependencies.environment ?? process.env;
@@ -290,6 +310,13 @@ export class GPayGatewayClient {
   async initOrder(
     input: GPayGatewayInitOrderInput,
   ): Promise<GPayGatewayInitOrderResult> {
+    loadGPayGatewayExecutionPolicy(this.#environment);
+    if (this.#initOrderAttempted) {
+      throw new GPayGatewayClientError(
+        'GPay init-order external-effect budget is already consumed',
+      );
+    }
+    this.#initOrderAttempted = true;
     if (!Number.isSafeInteger(input.amount) || input.amount <= 0) {
       throw new GPayGatewayClientError(
         'GPay amount must be a positive safe integer',
@@ -335,9 +362,10 @@ export class GPayGatewayClient {
       provider: 'GPAY',
       billId: string(result.data.bill_id, 'data.bill_id'),
       billUrl,
-      expiredTime: string(
+      expiredTime: validFutureInstant(
         result.data.expired_time,
         'data.expired_time',
+        this.#now(),
       ),
       merchantOrderId,
       securityRequestId: result.securityRequestId,
@@ -348,6 +376,14 @@ export class GPayGatewayClient {
   async queryOrder(
     input: GPayGatewayQueryOrderInput,
   ): Promise<GPayGatewayQueryOrderResult> {
+    const executionPolicy =
+      loadGPayGatewayExecutionPolicy(this.#environment);
+    if (this.#queryOrderCount >= executionPolicy.queryCap) {
+      throw new GPayGatewayClientError(
+        'GPay query-order bounded reconciliation budget is consumed',
+      );
+    }
+    this.#queryOrderCount += 1;
     const gpayBillId = string(input.gpayBillId, 'gpayBillId');
     const merchantOrderId = string(
       input.merchantOrderId,
