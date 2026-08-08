@@ -124,7 +124,7 @@ jobs:
               if job.get("permissions") != {"contents": "read"}:
                   raise SystemExit(f"job permissions mismatch: {job_id}")
           forbidden_trigger = "pull_request" + "_target"
-          secret_expression = "${{" + " secrets."
+          secret_expression = "$" + "{{" + " secrets."
           if forbidden_trigger in text or secret_expression in text:
               raise SystemExit("forbidden trigger or secret reference")
           build_command = "bash scripts/v3-r1-s00.sh " + "build-candidate"
