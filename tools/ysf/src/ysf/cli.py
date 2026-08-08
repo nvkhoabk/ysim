@@ -19,6 +19,8 @@ from ysf.knowledge.service import build_knowledge
 from ysf.pipeline.service import run_pipeline
 from ysf.prompt.service import build_prompt
 from ysf.secure_factory.cli import main as secure_factory_main
+from ysf.secure_factory.models import FactoryFailure
+from ysf.traceability.service import run_traceability_validation
 from ysf.verification.service import run_verification
 
 
@@ -420,6 +422,26 @@ def create_parser() -> argparse.ArgumentParser:
         action="store_true",
     )
 
+    traceability_parser = subparsers.add_parser(
+        "traceability",
+        help="Validate or query the V3-R1 G00-S01 traceability baseline.",
+    )
+    traceability_parser.add_argument(
+        "--registry",
+        default="docs/v3/r1/g00/s01/traceability-baseline.yaml",
+    )
+    traceability_parser.add_argument(
+        "--facet",
+        choices=(
+            "CONFLICT",
+            "EXCLUSION",
+            "MULTI_SOURCE",
+            "DECISION_DEPENDENT",
+            "REFINEMENT",
+        ),
+    )
+    traceability_parser.add_argument("--json", action="store_true")
+
     return parser
 
 
@@ -552,6 +574,14 @@ def main() -> int:
                 secure_args.append("--json")
             return secure_factory_main(secure_args)
 
+        elif args.command == "traceability":
+            registry_path = Path(args.registry)
+            result = run_traceability_validation(
+                repository_root,
+                registry_path=registry_path,
+                facet=args.facet,
+            )
+
         else:
             parser.error(
                 f"Unsupported command: "
@@ -569,6 +599,23 @@ def main() -> int:
             if result.successful
             else 1
         )
+
+    except FactoryFailure as exc:
+        if getattr(args, "json", False):
+            print(
+                json.dumps(
+                    {
+                        "status": "FAIL",
+                        "code": exc.code,
+                        "message": exc.safe_message,
+                        "details": exc.details,
+                    },
+                    sort_keys=True,
+                )
+            )
+        else:
+            print(f"ERROR {exc.code}: {exc.safe_message}", file=sys.stderr)
+        return 3
 
     except RepositoryError as exc:
         print(

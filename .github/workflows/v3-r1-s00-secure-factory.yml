@@ -196,6 +196,7 @@ jobs:
           validation_repository="${RUNNER_TEMP}/s00-test-repository"
           cp -a -- "$GITHUB_WORKSPACE" "$validation_repository"
           cd "$validation_repository/tools/ysf"
+          PYTHONPATH=src python -m ysf.cli traceability --json
           python -m ruff check src/ysf tests
           python -m mypy src/ysf
           python -m pytest tests \
