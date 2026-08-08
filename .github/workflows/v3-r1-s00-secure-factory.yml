@@ -1,0 +1,408 @@
+name: V3 R1 G00 S00 Secure Factory
+
+"on":
+  pull_request:
+    branches:
+      - v3/main
+
+permissions:
+  contents: read
+
+concurrency:
+  group: v3-r1-s00-${{ github.event.pull_request.number }}-${{ github.sha }}
+  cancel-in-progress: false
+
+env:
+  PIP_DISABLE_PIP_VERSION_CHECK: "1"
+  PYTHONDONTWRITEBYTECODE: "1"
+  YSF_EXTERNAL_EFFECT_BUDGET: DENY_ALL
+  YSF_PROVIDERS: "OFF"
+  YSF_EMAIL_MODE: NON_RELAYING
+
+jobs:
+  policy:
+    name: S00 / policy
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout exact evaluated source
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Set up approved Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: 3.11.2
+          cache: ""
+      - name: Install hash-locked development inputs
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          umask 027
+          wheelhouse="${RUNNER_TEMP}/s00-policy-wheelhouse"
+          python -m pip download \
+            --dest "$wheelhouse" \
+            --only-binary=:all: \
+            --require-hashes \
+            --requirement tools/ysf/requirements-s00-dev.lock
+          python -m pip install \
+            --no-index \
+            --find-links "$wheelhouse" \
+            --only-binary=:all: \
+            --require-hashes \
+            --requirement tools/ysf/requirements-s00-dev.lock
+          python -m pip check
+      - name: Enforce source, corpus, identity and no-effect policy
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          umask 027
+          export PYTHONPATH="$PWD/tools/ysf/src"
+          python - <<'PY'
+          from pathlib import Path
+
+          from ysf.secure_factory.environment import (
+              load_expectation,
+              validate_candidate_build_environment,
+          )
+          from ysf.secure_factory.policy import (
+              QUARANTINED_FIXTURES,
+              mutation_paths,
+              validate_changed_paths,
+              verify_immutable_corpus,
+              verify_policy_self_protection,
+          )
+          from ysf.secure_factory.sensitive import require_no_sensitive_values
+
+          root = Path.cwd()
+          context = root / "docs/v3/r1/g00/s00"
+          expectation = load_expectation(context / "environment-identity.yaml")
+          validate_candidate_build_environment(expectation, root)
+          verify_policy_self_protection(context / "source-and-delivery-policy.md")
+          paths = mutation_paths(root)
+          validate_changed_paths(root, paths)
+          verify_immutable_corpus(root)
+          inputs = [
+              root / path
+              for path in sorted(paths - QUARANTINED_FIXTURES)
+              if (root / path).is_file()
+          ]
+          require_no_sensitive_values(inputs)
+          print("RESULT=PASS_S00_POLICY")
+          PY
+      - name: Verify workflow self-policy and CODEOWNERS
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          umask 027
+          python - <<'PY'
+          from pathlib import Path
+
+          import yaml
+
+          workflow_path = Path(".github/workflows/v3-r1-s00-secure-factory.yml")
+          text = workflow_path.read_text(encoding="utf-8")
+          value = yaml.safe_load(text)
+          expected_names = {
+              "policy": "S00 / policy",
+              "test": "S00 / test",
+              "build-candidate": "S00 / build-candidate",
+              "verify-candidate": "S00 / verify-candidate",
+          }
+          if value.get("permissions") != {"contents": "read"}:
+              raise SystemExit("workflow permissions are not read-only")
+          jobs = value.get("jobs")
+          if not isinstance(jobs, dict) or set(jobs) != set(expected_names):
+              raise SystemExit("workflow job set mismatch")
+          for job_id, expected_name in expected_names.items():
+              job = jobs[job_id]
+              if job.get("name") != expected_name:
+                  raise SystemExit(f"job name mismatch: {job_id}")
+              if job.get("permissions") != {"contents": "read"}:
+                  raise SystemExit(f"job permissions mismatch: {job_id}")
+          forbidden_trigger = "pull_request" + "_target"
+          secret_expression = "${{" + " secrets."
+          if forbidden_trigger in text or secret_expression in text:
+              raise SystemExit("forbidden trigger or secret reference")
+          build_command = "bash scripts/v3-r1-s00.sh " + "build-candidate"
+          if text.count(build_command) != 1:
+              raise SystemExit("build-once command count mismatch")
+          verify_text = yaml.safe_dump(jobs["verify-candidate"], sort_keys=True)
+          if (
+              "verify-candidate" not in verify_text
+              or build_command in verify_text
+          ):
+              raise SystemExit("clean-room verification boundary mismatch")
+          if Path(".github/CODEOWNERS").read_text(encoding="utf-8") != "* @nvkhoabk\n":
+              raise SystemExit("CODEOWNERS mismatch")
+          print("RESULT=PASS_WORKFLOW_SELF_POLICY")
+          PY
+      - name: Prove quarantined known-bad fixtures fail closed
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          umask 027
+          output_root="${RUNNER_TEMP}/s00-policy-known-bad"
+          YSF_S00_OUTPUT_ROOT="$output_root" \
+            bash scripts/v3-r1-s00.sh known-bad
+
+  test:
+    name: S00 / test
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout exact evaluated source
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Set up approved Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: 3.11.2
+          cache: ""
+      - name: Install hash-locked development inputs
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          umask 027
+          wheelhouse="${RUNNER_TEMP}/s00-test-wheelhouse"
+          python -m pip download \
+            --dest "$wheelhouse" \
+            --only-binary=:all: \
+            --require-hashes \
+            --requirement tools/ysf/requirements-s00-dev.lock
+          python -m pip install \
+            --no-index \
+            --find-links "$wheelhouse" \
+            --only-binary=:all: \
+            --require-hashes \
+            --requirement tools/ysf/requirements-s00-dev.lock
+          python -m pip check
+      - name: Run full quality graph in an isolated source copy
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          umask 027
+          validation_repository="${RUNNER_TEMP}/s00-test-repository"
+          cp -a -- "$GITHUB_WORKSPACE" "$validation_repository"
+          cd "$validation_repository/tools/ysf"
+          python -m ruff check src/ysf tests
+          python -m mypy src/ysf
+          python -m pytest tests \
+            --cov=ysf.secure_factory \
+            --cov-branch \
+            --cov-report=term-missing \
+            --cov-fail-under=90
+          python -m bandit -q -r src/ysf --severity-level medium
+          python -m pip_audit \
+            --require-hashes \
+            --no-deps \
+            --strict \
+            --progress-spinner off \
+            --requirement requirements-s00-dev.lock
+
+  build-candidate:
+    name: S00 / build-candidate
+    needs:
+      - policy
+      - test
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout exact evaluated source
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Set up approved Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: 3.11.2
+          cache: ""
+      - name: Install hash-locked development inputs
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          umask 027
+          wheelhouse="${RUNNER_TEMP}/s00-build-wheelhouse"
+          python -m pip download \
+            --dest "$wheelhouse" \
+            --only-binary=:all: \
+            --require-hashes \
+            --requirement tools/ysf/requirements-s00-dev.lock
+          python -m pip install \
+            --no-index \
+            --find-links "$wheelhouse" \
+            --only-binary=:all: \
+            --require-hashes \
+            --requirement tools/ysf/requirements-s00-dev.lock
+          python -m pip check
+      - name: Generate exact candidate quality inputs
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          umask 027
+          quality_root="${RUNNER_TEMP}/s00-quality"
+          validation_repository="${RUNNER_TEMP}/s00-build-validation-repository"
+          mkdir -m 0750 "$quality_root"
+          cp -a -- "$GITHUB_WORKSPACE" "$validation_repository"
+          cd "$validation_repository"
+          export PYTHONPATH="$validation_repository/tools/ysf/src"
+
+          python -m ruff check tools/ysf/src/ysf tools/ysf/tests
+          python -m mypy tools/ysf/src/ysf
+          python -m pytest tools/ysf/tests \
+            --cov=ysf.secure_factory \
+            --cov-branch \
+            --cov-report=term-missing \
+            --cov-fail-under=90
+          python -m bandit -q -r tools/ysf/src/ysf --severity-level medium
+          python -m pip_audit \
+            --require-hashes \
+            --no-deps \
+            --strict \
+            --progress-spinner off \
+            --requirement tools/ysf/requirements-s00-dev.lock
+
+          python - "$quality_root" <<'PY'
+          import json
+          import os
+          import sys
+          from pathlib import Path
+
+          root = Path(sys.argv[1])
+          records = {
+              "test-and-coverage.json": {
+                  "result": "PASS",
+                  "pytest": "PASS",
+                  "branch_coverage_threshold_percent": 90,
+              },
+              "lint-type-sast-dependency.json": {
+                  "result": "PASS",
+                  "ruff": "PASS",
+                  "strict_mypy": "PASS",
+                  "bandit_medium_high": 0,
+                  "dependency_vulnerabilities": 0,
+              },
+              "leak-scan.json": {
+                  "result": "PASS",
+                  "prohibited_real_values": 0,
+                  "quarantined_synthetic_fixtures_excluded": True,
+              },
+              "environment-identity.json": {
+                  "result": "PASS",
+                  "repository": os.environ["GITHUB_REPOSITORY"],
+                  "head_commit": os.environ["GITHUB_SHA"],
+                  "runner_os": os.environ.get("RUNNER_OS", "Linux"),
+                  "external_effect_budget": "DENY_ALL",
+                  "providers": "OFF",
+              },
+          }
+          for name, value in records.items():
+              (root / name).write_text(
+                  json.dumps(value, sort_keys=True, separators=(",", ":")) + "\n",
+                  encoding="utf-8",
+              )
+          ledger = {
+              "execution_id": f"GHA-{os.environ['GITHUB_RUN_ID']}-{os.environ['GITHUB_RUN_ATTEMPT']}",
+              "command_or_gate": "build-candidate-quality",
+              "contract_sha256": "337519fcf7d08104ba0e53cbf33dcc4b4a75ec32aac18601cb097c778aa0ae35",
+              "exit_code": 0,
+              "result": "PASS",
+              "next_allowed_action": "BUILD_ONCE_CANDIDATE",
+          }
+          (root / "execution-ledger.jsonl").write_text(
+              json.dumps(ledger, sort_keys=True, separators=(",", ":")) + "\n",
+              encoding="utf-8",
+          )
+          PY
+
+          printf 'YSF_S00_QUALITY_ROOT=%s\n' "$quality_root" >>"$GITHUB_ENV"
+      - name: Build exactly one candidate
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          umask 027
+          output_root="${RUNNER_TEMP}/s00-build-output"
+          YSF_S00_OUTPUT_ROOT="$output_root" \
+          YSF_S00_QUALITY_ROOT="$YSF_S00_QUALITY_ROOT" \
+            bash scripts/v3-r1-s00.sh build-candidate
+          mapfile -t candidates < <(find "$output_root" -type d -name candidate -print)
+          [[ "${#candidates[@]}" -eq 1 ]]
+          bash scripts/v3-r1-s00.sh verify-candidate "${candidates[0]}"
+          transfer_root="${RUNNER_TEMP}/s00-candidate-transfer"
+          mkdir -m 0750 "$transfer_root"
+          cp -a -- "${candidates[0]}" "$transfer_root/candidate"
+          printf 'S00_CANDIDATE_TRANSFER_ROOT=%s\n' "$transfer_root" >>"$GITHUB_ENV"
+      - name: Upload exact checksummed candidate
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: v3-r1-s00-candidate-${{ github.sha }}
+          path: ${{ env.S00_CANDIDATE_TRANSFER_ROOT }}
+          if-no-files-found: error
+          compression-level: 0
+          overwrite: false
+          include-hidden-files: false
+          retention-days: 7
+
+  verify-candidate:
+    name: S00 / verify-candidate
+    needs:
+      - build-candidate
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout exact verification source
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Set up approved Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: 3.11.2
+          cache: ""
+      - name: Install hash-locked verification inputs only
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          umask 027
+          wheelhouse="${RUNNER_TEMP}/s00-verify-wheelhouse"
+          python -m pip download \
+            --dest "$wheelhouse" \
+            --only-binary=:all: \
+            --require-hashes \
+            --requirement tools/ysf/requirements-s00-dev.lock
+          python -m pip install \
+            --no-index \
+            --find-links "$wheelhouse" \
+            --only-binary=:all: \
+            --require-hashes \
+            --requirement tools/ysf/requirements-s00-dev.lock
+          python -m pip check
+      - name: Download build-once candidate bytes
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: v3-r1-s00-candidate-${{ github.sha }}
+          path: ${{ runner.temp }}/s00-candidate-input
+      - name: Clean-room verify without rebuild or installation
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          umask 027
+          candidate_path="${RUNNER_TEMP}/s00-candidate-input/candidate"
+          test -d "$candidate_path"
+          output_root="${RUNNER_TEMP}/s00-verify-output"
+          YSF_S00_OUTPUT_ROOT="$output_root" \
+            bash scripts/v3-r1-s00.sh verify-candidate "$candidate_path"
+          test -z "$(find . -type f \( -name '*.whl' -o -name 'artifact-manifest.json' \) -print -quit)"

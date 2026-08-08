@@ -18,6 +18,7 @@ from ysf.index.service import build_indexes
 from ysf.knowledge.service import build_knowledge
 from ysf.pipeline.service import run_pipeline
 from ysf.prompt.service import build_prompt
+from ysf.secure_factory.cli import main as secure_factory_main
 from ysf.verification.service import run_verification
 
 
@@ -387,6 +388,37 @@ def create_parser() -> argparse.ArgumentParser:
         action="store_true",
     )
 
+    secure_factory_parser = subparsers.add_parser(
+        "secure-factory",
+        help="Run the V3-R1 G00-S00 fail-closed factory.",
+    )
+    secure_factory_parser.add_argument(
+        "mode",
+        choices=(
+            "preflight",
+            "verify",
+            "known-bad",
+            "build-candidate",
+            "verify-candidate",
+        ),
+    )
+    secure_factory_parser.add_argument(
+        "candidate_path",
+        nargs="?",
+    )
+    secure_factory_parser.add_argument(
+        "--output-root",
+        default=None,
+    )
+    secure_factory_parser.add_argument(
+        "--execution-id",
+        default=None,
+    )
+    secure_factory_parser.add_argument(
+        "--json",
+        action="store_true",
+    )
+
     return parser
 
 
@@ -506,6 +538,18 @@ def main() -> int:
                 ),
                 mode="dry-run",
             )
+
+        elif args.command == "secure-factory":
+            secure_args = [args.mode]
+            if args.candidate_path:
+                secure_args.append(args.candidate_path)
+            if args.output_root:
+                secure_args.extend(["--output-root", args.output_root])
+            if args.execution_id:
+                secure_args.extend(["--execution-id", args.execution_id])
+            if args.json:
+                secure_args.append("--json")
+            return secure_factory_main(secure_args)
 
         else:
             parser.error(

@@ -1,0 +1,37 @@
+schema_version: 1
+slice_id: V3-R1-G00-S00
+environment_id: V3-R1-G00-S00-IMPLEMENTATION-ENV-001
+contract_sha256: 337519fcf7d08104ba0e53cbf33dcc4b4a75ec32aac18601cb097c778aa0ae35
+repository: nvkhoabk/ysim
+protected_source:
+  branch: v3/main
+  commit: 5be8413d3c22d1345b3088424af40ca2eb9d1115
+  tree: 4631630f4d57872e08f6b523ab8adf0a94453673
+  ruleset_id: 20583674
+implementation:
+  wsl_distribution: YSim-Debian12
+  os_id: debian
+  os_version_id: "12"
+  architecture: aarch64
+  python_version: 3.11.2
+  checkout: /root/projects/ysim-v3-r1/ysim
+  branch: feature/v3-r1-g00-s00-secure-factory
+  upstream: NONE
+  data_class: SYNTHETIC_DISPOSABLE
+  providers: "OFF"
+  email: NON_RELAYING
+  production_secrets: FORBIDDEN
+candidate_build:
+  environment: GitHub_Actions_isolated_candidate_job
+  build_count: 1
+  source: EXACT_CANDIDATE_COMMIT_TREE_AND_HASH_LOCK
+  output: REPRODUCIBLE_YSF_WHEEL_AND_CHECKSUMMED_EVIDENCE
+rp_d:
+  environment: GitHub_Actions_separate_clean_room_job
+  repository_permission: CONTENTS_READ_ONLY
+  input: EXACT_BUILD_ONCE_CANDIDATE_BYTES
+  rebuild: FORBIDDEN
+  secrets: NONE
+  providers: "OFF"
+  application_deployment: NONE
+external_effect_budget: DENY_ALL

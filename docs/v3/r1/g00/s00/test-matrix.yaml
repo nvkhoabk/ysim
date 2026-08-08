@@ -1,0 +1,39 @@
+schema_version: 1
+slice_id: V3-R1-G00-S00
+matrix_id: V3-R1-G00-S00-TEST-MATRIX-001
+contract_sha256: 337519fcf7d08104ba0e53cbf33dcc4b4a75ec32aac18601cb097c778aa0ae35
+default_result_on_missing_or_skipped_gate: FAIL_CLOSED
+test_groups:
+  - id: ENVIRONMENT_IDENTITY
+    state: PLANNED
+    positive: [exact_repository_ref_tree_os_arch_python_workspace]
+    negative: [wrong_repository, wrong_ref, wrong_tree, wrong_os, wrong_arch, wrong_python, wrong_workspace]
+  - id: SOURCE_AND_CORPUS_POLICY
+    state: PLANNED
+    positive: [clean_tree, exact_diff_allowlist, immutable_brd_uxf]
+    negative: [dirty_tree, path_escape, unapproved_path, corpus_mutation, policy_self_disable]
+  - id: APPROVAL_AND_RULESET
+    state: PLANNED
+    positive: [exact_contract_approval_digest, exact_ruleset_readback]
+    negative: [missing_approval, stale_approval, wrong_digest, ruleset_mismatch, stale_review]
+  - id: DEPENDENCY_AND_QUALITY
+    state: PLANNED
+    positive: [hash_required_install, declared_dependency_closure, ruff, mypy, pytest, coverage, bandit, dependency_sca, sbom]
+    negative: [altered_lock, undeclared_dependency, silently_skipped_gate]
+  - id: SENSITIVE_DATA_AND_EVIDENCE
+    state: PLANNED
+    positive: [sanitized_metadata, append_only_execution_ledger]
+    negative: [synthetic_secret, synthetic_pii, synthetic_iccid, synthetic_lpa, synthetic_qr, tampered_manifest, overwritten_failure]
+  - id: CANDIDATE_INTEGRITY
+    state: PLANNED
+    positive: [one_deterministic_wheel, checksums, sbom, provenance]
+    negative: [second_build, artifact_substitution, altered_provenance]
+  - id: EXTERNAL_EFFECT_POLICY
+    state: PLANNED
+    positive: [providers_off, non_relaying_email, no_application_deployment]
+    negative: [provider_target_present, secret_present, outbound_business_action]
+required_human_gates:
+  - RP-B_BEHAVIOR_DECISION
+  - RP-C_SOURCE_SECURITY_DECISION
+  - RP-D_INTEGRATED_TOOLING_DECISION
+ai_review: SEPARATE_ADVISORY_REVIEW_ONLY

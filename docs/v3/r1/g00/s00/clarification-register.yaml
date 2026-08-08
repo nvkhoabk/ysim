@@ -1,0 +1,52 @@
+schema_version: 1
+slice_id: V3-R1-G00-S00
+register_id: V3-R1-G00-S00-CLARIFICATION-REGISTER-IMPLEMENTATION-001
+source_register_id: V3-R1-G00-S00-CLARIFICATION-REGISTER-002
+source_register_sha256: 84798ded9be5db5f40c4176b3c6383bcc1f2ddf7eb821ce77e56299da6a6bbce
+contract_sha256: 337519fcf7d08104ba0e53cbf33dcc4b4a75ec32aac18601cb097c778aa0ae35
+approval_result: HUMAN_CONTRACT_APPROVED
+approver: Khoa Nguyen
+status: SIX_RP_A_CLARIFICATIONS_RESOLVED
+items:
+  - id: S00-CLAR-001
+    state: RESOLVED_BY_HUMAN_RP_A
+    resolution: ACCEPT_PROPOSED_PARENT
+    commit: 5be8413d3c22d1345b3088424af40ca2eb9d1115
+    tree: 4631630f4d57872e08f6b523ab8adf0a94453673
+    seed_status: UNACCEPTED_SOURCE_BYTES
+    maturity_transfer: FORBIDDEN
+  - id: S00-CLAR-002
+    state: RESOLVED_BY_HUMAN_RP_A
+    resolution: ACCEPT_INVENTORY_R2
+    tracked_files: 344
+    brd_files: 24
+    uxf_files: 7
+    python: 3.11.2
+  - id: S00-CLAR-003
+    state: RESOLVED_BY_HUMAN_RP_A
+    resolution: ACCEPT_EXACT_CONTRACT_ALLOWLIST
+    allowlist_path_count: 36
+    policy: EXACT_ALLOWLIST_DEFAULT_DENY
+  - id: S00-CLAR-004
+    state: RESOLVED_BY_HUMAN_RP_A
+    resolution: ACCEPT_CONTROL_DESIGN_AND_POST_APPLY_READBACK
+    operator: Khoa Nguyen
+    ruleset_id: 20583674
+    target: refs/heads/v3/main
+    bypass_actors: NONE
+  - id: S00-CLAR-005
+    state: RESOLVED_BY_HUMAN_RP_A
+    resolution: ISOLATED_CLEAN_ROOM_CI_NO_BUSINESS_EFFECT
+    rebuild_in_rp_d: false
+    application_deployment: NONE
+  - id: S00-CLAR-006
+    state: RESOLVED_BY_HUMAN_RP_A
+    resolution: REPRODUCIBLE_YSF_PYTHON_WHEEL
+    runtime_installation: FORBIDDEN
+open_items:
+  - id: V3-R1-QA-001
+    state: OPEN_WITH_APPROVED_PLANNING_CONSTRAINT
+  - id: V3-R1-QA-014
+    state: OPEN_WITH_APPROVED_AUTHORITY_CONSTRAINT
+  - id: S00-EXACT-SOURCE-ANCHORS
+    state: DEFERRED_TO_G00_S01

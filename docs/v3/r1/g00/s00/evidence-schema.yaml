@@ -1,0 +1,49 @@
+schema_version: 1
+schema_id: V3-R1-G00-S00-EVIDENCE-SCHEMA-001
+slice_id: V3-R1-G00-S00
+contract_sha256: 337519fcf7d08104ba0e53cbf33dcc4b4a75ec32aac18601cb097c778aa0ae35
+record_policy:
+  execution_id: REQUIRED_UNIQUE_IMMUTABLE
+  failed_record_overwrite: FORBIDDEN
+  encoding: UTF-8
+  timestamps: UTC_RFC3339
+  generated_output_location: OUTSIDE_GIT_CHECKOUT
+required_fields:
+  - execution_id
+  - timestamp_utc
+  - mutation_class
+  - repository
+  - branch
+  - head_commit
+  - head_tree
+  - contract_sha256
+  - environment_identity
+  - changed_paths
+  - input_digests
+  - command_or_gate
+  - exit_code
+  - result
+  - next_allowed_action
+artifact_manifest_fields:
+  - relative_path
+  - byte_size
+  - sha256
+candidate_required_records:
+  - artifact_manifest
+  - SHA256SUMS
+  - cyclone_dx_sbom
+  - slsa_aligned_provenance
+  - test_and_coverage_reports
+  - lint_type_sast_and_dependency_reports
+  - leak_scan_report
+  - environment_identity
+  - append_only_execution_ledger
+prohibited_values:
+  - REAL_CREDENTIAL
+  - PII
+  - ICCID
+  - LPA
+  - QR_PAYLOAD
+  - SECRET_VALUE
+redaction_policy: FAIL_IF_PROHIBITED_VALUE_WOULD_BE_EMITTED
+external_effect_budget: DENY_ALL
