@@ -20,7 +20,14 @@ def fixture(name: str) -> Path:
 
 def test_synthetic_secret_and_pii_are_metadata_only() -> None:
     findings = scan_path(fixture("synthetic-secret.txt"))
-    assert {item.kind for item in findings} == {"SECRET_VALUE", "PII_EMAIL"}
+    assert {item.kind for item in findings} == {
+        "SECRET_VALUE",
+        "PII_EMAIL",
+        "PII_NAME",
+        "PII_ADDRESS",
+        "PII_PHONE_E164",
+        "PII_GOVERNMENT_ID",
+    }
     serialized = str([item.safe_dict() for item in findings])
     source = fixture("synthetic-secret.txt").read_text(encoding="utf-8").splitlines()
     assert source[1].split("=", 1)[1] not in serialized
@@ -85,7 +92,7 @@ def test_scan_input_must_be_regular(tmp_path: Path) -> None:
 def test_private_key_marker_and_invalid_utf8_are_detected_safely() -> None:
     marker = "-----BEGIN " + "PRIVATE KEY-----"
     findings = scan_text(marker, location="memory")
-    assert [finding.kind for finding in findings] == ["PRIVATE_KEY"]
+    assert [finding.kind for finding in findings] == ["REAL_CREDENTIAL_PRIVATE_KEY"]
     from ysf.secure_factory.sensitive import scan_bytes
 
     assert scan_bytes(b"safe\xffbytes", location="bytes") == []

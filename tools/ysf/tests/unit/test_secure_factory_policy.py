@@ -12,7 +12,9 @@ from ysf.secure_factory.policy import (
     mutation_paths,
     parse_porcelain_z,
     require_regular_files,
+    validate_approval_and_ruleset,
     validate_changed_paths,
+    validate_external_effect_policy,
     validate_relative_path,
     verify_policy_self_protection,
 )
@@ -154,3 +156,54 @@ def test_immutable_corpus_positive_and_failures(
     with pytest.raises(FactoryFailure) as captured:
         verify_immutable_corpus(tmp_path)
     assert captured.value.code == "FAIL_IMMUTABLE_CORPUS_COUNT"
+
+
+def test_approval_ruleset_and_external_effect_policy_fail_closed() -> None:
+    contract = "337519fcf7d08104ba0e53cbf33dcc4b4a75ec32aac18601cb097c778aa0ae35"
+    ruleset = {
+        "enforcement": "active",
+        "target": "refs/heads/v3/main",
+        "bypass_actors": [],
+        "required_status_checks": [
+            "S00 / policy",
+            "S00 / test",
+            "S00 / build-candidate",
+            "S00 / verify-candidate",
+        ],
+    }
+    assert validate_approval_and_ruleset(
+        approval_digest=contract,
+        reviewed_commit="a" * 40,
+        current_commit="a" * 40,
+        ruleset=ruleset,
+    ).passed
+    for field, code in (
+        ("approval", "FAIL_APPROVAL_DIGEST"),
+        ("review", "FAIL_STALE_REVIEW"),
+        ("ruleset", "FAIL_RULESET_MISMATCH"),
+    ):
+        values = {
+            "approval_digest": contract,
+            "reviewed_commit": "a" * 40,
+            "current_commit": "a" * 40,
+            "ruleset": ruleset,
+        }
+        if field == "approval":
+            values["approval_digest"] = "0" * 64
+        elif field == "review":
+            values["current_commit"] = "b" * 40
+        else:
+            values["ruleset"] = {**ruleset, "bypass_actors": ["synthetic"]}
+        with pytest.raises(FactoryFailure) as captured:
+            validate_approval_and_ruleset(**values)
+        assert captured.value.code == code
+
+    controls = {
+        "YSF_EXTERNAL_EFFECT_BUDGET": "DENY_ALL",
+        "YSF_PROVIDERS": "OFF",
+        "YSF_EMAIL_MODE": "NON_RELAYING",
+    }
+    assert validate_external_effect_policy(controls).passed
+    with pytest.raises(FactoryFailure) as captured:
+        validate_external_effect_policy({**controls, "YSF_PROVIDER_TARGET": "SYNTHETIC"})
+    assert captured.value.code == "FAIL_EXTERNAL_EFFECT_POLICY"

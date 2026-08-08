@@ -5,7 +5,7 @@ umask 027
 MODE="${1:-}"
 if [[ -z "$MODE" ]]; then
   printf '%s\n' \
-    'USAGE=scripts/v3-r1-s00.sh {preflight|verify|known-bad|build-candidate|verify-candidate} [candidate-path]' >&2
+    'USAGE=scripts/v3-r1-s00.sh {preflight|verify|known-bad|build-candidate|verify-candidate|rp-c-matrix} [candidate-path]' >&2
   exit 2
 fi
 shift
@@ -85,6 +85,11 @@ case "$MODE" in
     CANDIDATE_PATH="$1"
     exec python3 -m ysf.secure_factory.cli \
       verify-candidate "$CANDIDATE_PATH" --output-root "$OUTPUT_ROOT" --json
+    ;;
+  rp-c-matrix)
+    [[ "$#" -eq 0 ]] || exit 2
+    exec python3 -m ysf.secure_factory.cli \
+      rp-c-matrix --output-root "$OUTPUT_ROOT" --json
     ;;
   *)
     printf 'RESULT=FAIL_UNSUPPORTED_MODE:%s\n' "$MODE" >&2

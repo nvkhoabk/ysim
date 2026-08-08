@@ -14,7 +14,11 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
-from ysf.secure_factory.candidate import build_candidate, verify_candidate
+from ysf.secure_factory.candidate import (
+    build_candidate,
+    verify_candidate,
+    verify_declared_dependency_closure,
+)
 from ysf.secure_factory.environment import (
     load_expectation,
     observe_environment,
@@ -26,7 +30,9 @@ from ysf.secure_factory.models import FactoryFailure, GateResult
 from ysf.secure_factory.policy import (
     QUARANTINED_FIXTURES,
     mutation_paths,
+    validate_approval_and_ruleset,
     validate_changed_paths,
+    validate_external_effect_policy,
     validate_relative_path,
     verify_immutable_corpus,
     verify_policy_self_protection,
@@ -66,7 +72,7 @@ def _preflight(repository_root: Path, *, candidate_build: bool = False) -> list[
         identity_gate = validate_environment(expected, observe_environment(repository_root))
     results = [identity_gate]
     results.append(verify_policy_self_protection(context / "source-and-delivery-policy.md"))
-    paths = mutation_paths(repository_root)
+    paths = mutation_paths(repository_root, base_ref="origin/v3/main")
     results.append(validate_changed_paths(repository_root, paths))
     results.append(verify_immutable_corpus(repository_root))
     scan_inputs = [
@@ -153,6 +159,126 @@ def _identity(repository_root: Path) -> tuple[str, str, str]:
     return expectation.repository, commit.stdout.strip(), tree.stdout.strip()
 
 
+def _expected_rejection(name: str, code: str, operation: Any) -> GateResult:
+    try:
+        operation()
+    except FactoryFailure as exc:
+        if exc.code != code:
+            raise FactoryFailure(
+                "FAIL_RP_C_MATRIX_CODE",
+                "RP-C negative scenario returned an unexpected failure code.",
+                details={"scenario": name, "observed_code": exc.code},
+            ) from exc
+        return GateResult(name, "PASS", f"Expected rejection preserved: {code}.")
+    raise FactoryFailure(
+        "FAIL_RP_C_MATRIX_ACCEPTED",
+        "RP-C negative scenario was accepted.",
+        details={"scenario": name},
+    )
+
+
+def _rp_c_matrix(repository_root: Path) -> list[GateResult]:
+    """Execute synthetic fail-closed security cases without external effects."""
+
+    ruleset = {
+        "enforcement": "active",
+        "target": "refs/heads/v3/main",
+        "bypass_actors": [],
+        "required_status_checks": [
+            "S00 / policy",
+            "S00 / test",
+            "S00 / build-candidate",
+            "S00 / verify-candidate",
+        ],
+    }
+    safe_effects = {
+        "YSF_EXTERNAL_EFFECT_BUDGET": "DENY_ALL",
+        "YSF_PROVIDERS": "OFF",
+        "YSF_EMAIL_MODE": "NON_RELAYING",
+    }
+    results = _known_bad(repository_root)
+    results.append(
+        _expected_rejection(
+            "stale_approval",
+            "FAIL_APPROVAL_DIGEST",
+            lambda: validate_approval_and_ruleset(
+                approval_digest="0" * 64,
+                reviewed_commit="a" * 40,
+                current_commit="a" * 40,
+                ruleset=ruleset,
+            ),
+        )
+    )
+    results.append(
+        _expected_rejection(
+            "stale_review",
+            "FAIL_STALE_REVIEW",
+            lambda: validate_approval_and_ruleset(
+                approval_digest=CONTRACT_SHA256,
+                reviewed_commit="a" * 40,
+                current_commit="b" * 40,
+                ruleset=ruleset,
+            ),
+        )
+    )
+    mismatched_ruleset = dict(ruleset)
+    mismatched_ruleset["required_status_checks"] = ["S00 / policy"]
+    results.append(
+        _expected_rejection(
+            "ruleset_mismatch",
+            "FAIL_RULESET_MISMATCH",
+            lambda: validate_approval_and_ruleset(
+                approval_digest=CONTRACT_SHA256,
+                reviewed_commit="a" * 40,
+                current_commit="a" * 40,
+                ruleset=mismatched_ruleset,
+            ),
+        )
+    )
+    for key, name in (
+        ("YSF_PROVIDER_TARGET", "provider_target_present"),
+        ("YSF_PROVIDER_SECRET", "secret_present"),
+        ("YSF_OUTBOUND_BUSINESS_ACTION", "outbound_business_action"),
+    ):
+        controls = {**safe_effects, key: "SYNTHETIC_PRESENT"}
+        results.append(
+            _expected_rejection(
+                name,
+                "FAIL_EXTERNAL_EFFECT_POLICY",
+                lambda controls=controls: validate_external_effect_policy(controls),
+            )
+        )
+    lock_paths = (
+        repository_root / "tools/ysf/requirements-s00-build.lock",
+        repository_root / "tools/ysf/requirements-s00-dev.lock",
+    )
+    with tempfile.TemporaryDirectory(prefix="ysim-v3-r1-s00-rpc-matrix.") as temporary:
+        declaration = Path(temporary) / "pyproject.toml"
+        declaration.write_text(
+            "[build-system]\nrequires=['setuptools==83.0.0']\n"
+            "[project]\nname='synthetic'\nversion='0'\ndependencies=['absent-package==1.0']\n"
+            "[project.optional-dependencies]\ndev=[]\n",
+            encoding="utf-8",
+        )
+        results.append(
+            _expected_rejection(
+                "undeclared_dependency",
+                "FAIL_DEPENDENCY_CLOSURE",
+                lambda: verify_declared_dependency_closure(declaration, lock_paths),
+            )
+        )
+    validate_external_effect_policy(safe_effects)
+    results.append(
+        GateResult(
+            "rp_c_matrix_complete",
+            "PASS",
+            "All synthetic negative cases failed closed with no business external effect.",
+            details={"scenario_count": len(results)},
+        )
+    )
+    return results
+
+
 def create_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="ysf-secure-factory")
     parser.add_argument(
@@ -163,6 +289,7 @@ def create_parser() -> argparse.ArgumentParser:
             "known-bad",
             "build-candidate",
             "verify-candidate",
+            "rp-c-matrix",
         ),
     )
     parser.add_argument("candidate_path", nargs="?")
@@ -214,24 +341,54 @@ def main(argv: Sequence[str] | None = None) -> int:
                     "Candidate quality report root was not supplied by CI.",
                 )
             repository, commit, tree = _identity(repository_root)
+            expectation = load_expectation(
+                repository_root / "docs/v3/r1/g00/s00/environment-identity.yaml"
+            )
+            paths = mutation_paths(repository_root, base_ref="origin/v3/main")
             candidate_path = ledger.directory / "candidate"
             gates.append(
                 build_candidate(
                     repository_root,
                     candidate_path,
                     repository=repository,
+                    branch=expectation.branch,
                     commit=commit,
                     tree=tree,
                     contract_sha256=CONTRACT_SHA256,
                     source_date_epoch=_commit_timestamp(repository_root),
-                    gate_report={"gates": [gate.to_dict() for gate in gates]},
+                    gate_report={
+                        "changed_paths": sorted(paths),
+                        "gates": [gate.to_dict() for gate in gates],
+                    },
                     report_root=Path(quality_root_value),
                 )
             )
-        else:
+        elif args.mode == "verify-candidate":
             if not args.candidate_path:
                 parser.error("verify-candidate requires candidate_path")
-            gates = [verify_candidate(Path(args.candidate_path))]
+            repository, commit, tree = _identity(repository_root)
+            expectation = load_expectation(
+                repository_root / "docs/v3/r1/g00/s00/environment-identity.yaml"
+            )
+            gates = [
+                verify_candidate(
+                    Path(args.candidate_path),
+                    expected_repository=repository,
+                    expected_branch=expectation.branch,
+                    expected_commit=commit,
+                    expected_tree=tree,
+                    expected_contract_sha256=CONTRACT_SHA256,
+                    expected_lock_paths=(
+                        repository_root / "tools/ysf/requirements-s00-build.lock",
+                        repository_root / "tools/ysf/requirements-s00-dev.lock",
+                    ),
+                    expected_changed_paths=mutation_paths(
+                        repository_root, base_ref="origin/v3/main"
+                    ),
+                )
+            ]
+        else:
+            gates = _rp_c_matrix(repository_root)
         payload = {
             "execution_id": execution_id,
             "result": "PASS",

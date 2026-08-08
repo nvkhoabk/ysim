@@ -29,10 +29,20 @@ class SensitiveFinding:
 
 
 _PRIVATE_KEY = "-----BEGIN " + "PRIVATE KEY-----"
+_OPENSSH_KEY = "-----BEGIN " + "OPENSSH PRIVATE KEY-----"
 _OTP_AUTH = "otp" + "auth://"
 _DATA_IMAGE = "data:image/" + r"(?:png|jpeg);base64,"
+_QR_WIFI = "WI" + "FI:"
+_QR_VCARD = "BEGIN:" + "VCARD"
+_QR_PAYMENT = "bit" + "coin:"
 _PATTERNS: tuple[tuple[str, re.Pattern[str]], ...] = (
-    ("PRIVATE_KEY", re.compile(re.escape(_PRIVATE_KEY))),
+    ("REAL_CREDENTIAL_PRIVATE_KEY", re.compile(re.escape(_PRIVATE_KEY))),
+    ("REAL_CREDENTIAL_OPENSSH_KEY", re.compile(re.escape(_OPENSSH_KEY))),
+    ("REAL_CREDENTIAL_CLOUD_KEY", re.compile(r"\bAKIA[0-9A-Z]{16}\b")),
+    (
+        "REAL_CREDENTIAL_JWT",
+        re.compile(r"\beyJ[A-Za-z0-9_-]{8,}\.[A-Za-z0-9_-]{8,}\.[A-Za-z0-9_-]{8,}\b"),
+    ),
     (
         "SECRET_VALUE",
         re.compile(
@@ -41,9 +51,35 @@ _PATTERNS: tuple[tuple[str, re.Pattern[str]], ...] = (
         ),
     ),
     ("PII_EMAIL", re.compile(r"(?i)\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b")),
+    ("PII_PHONE_E164", re.compile(r"(?<![\w+])\+[1-9]\d{7,14}(?!\d)")),
+    ("PII_PHONE_VN", re.compile(r"(?<!\d)0[35789]\d{8}(?!\d)")),
+    (
+        "PII_NAME",
+        re.compile(
+            r"(?i)\b(?:customer[_ -]?name|full[_ -]?name|legal[_ -]?name)"
+            r"\s*[:=]\s*[\"']?[A-Z][A-Za-z.'-]+(?:\s+[A-Z][A-Za-z.'-]+)+"
+        ),
+    ),
+    (
+        "PII_ADDRESS",
+        re.compile(
+            r"(?i)\b(?:street[_ -]?address|home[_ -]?address|shipping[_ -]?address)"
+            r"\s*[:=]\s*[\"']?[^,\n}{]{8,}"
+        ),
+    ),
+    (
+        "PII_GOVERNMENT_ID",
+        re.compile(
+            r"(?i)\b(?:passport|national[_ -]?id|citizen[_ -]?id|tax[_ -]?id)"
+            r"\s*[:=]\s*[\"']?[A-Z0-9-]{6,20}"
+        ),
+    ),
     ("ICCID", re.compile(r"(?<!\d)89\d{17,20}(?!\d)")),
     ("LPA", re.compile(r"(?i)\bLPA:1\$[^\s$]{3,}\$[^\s]{4,}")),
-    ("QR_PAYLOAD", re.compile(rf"(?i)(?:{_OTP_AUTH}|{_DATA_IMAGE})")),
+    (
+        "QR_PAYLOAD",
+        re.compile(rf"(?i)(?:{_OTP_AUTH}|{_DATA_IMAGE}|{_QR_WIFI}|{_QR_VCARD}|{_QR_PAYMENT})"),
+    ),
 )
 
 
@@ -102,8 +138,9 @@ def scan_path(path: Path, *, location: str | None = None) -> list[SensitiveFindi
 
 
 def require_no_sensitive_values(paths: Iterable[Path]) -> GateResult:
+    inputs = tuple(paths)
     findings: list[SensitiveFinding] = []
-    for path in paths:
+    for path in inputs:
         findings.extend(scan_path(path))
     if findings:
         raise FactoryFailure(
@@ -115,7 +152,7 @@ def require_no_sensitive_values(paths: Iterable[Path]) -> GateResult:
         gate="sensitive_data",
         result="PASS",
         message="No prohibited value detected.",
-        details={"scanned_file_count": len(list(paths)) if isinstance(paths, list) else None},
+        details={"scanned_file_count": len(inputs), "profile": "V3-R1-S00-PROHIBITED-V2"},
     )
 
 

@@ -47,3 +47,14 @@ prohibited_values:
   - SECRET_VALUE
 redaction_policy: FAIL_IF_PROHIBITED_VALUE_WOULD_BE_EMITTED
 external_effect_budget: DENY_ALL
+quality_gate_policy:
+  required_exactly_once: [ruff, mypy, pytest, bandit, pip-audit, leak-scan, environment-identity]
+  skipped_or_duplicate: FAIL_CLOSED
+  output_binding: SHA256_OF_ACTUAL_GATE_OUTPUT
+  required_result: PASS_WITH_EXIT_CODE_ZERO
+candidate_semantic_binding:
+  source: [repository, branch, head_commit, head_tree, contract_sha256]
+  dependency_inputs: [requirements-s00-build.lock, requirements-s00-dev.lock]
+  sbom: CYCLONEDX_1_6_EXACT_LOCK_COMPONENTS
+  provenance: SLSA_V1_EXACT_SOURCE_BUILDER_LOCK_AND_WHEEL_BINDING
+  reproducibility: TWO_INDEPENDENT_WHEEL_BUILDS_ONE_RETAINED_ARTIFACT

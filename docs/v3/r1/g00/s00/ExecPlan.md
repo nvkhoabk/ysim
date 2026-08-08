@@ -26,6 +26,11 @@ observable proof is one compliant source tree producing one reproducible,
 checksummed, provenance-bound `ysf` wheel, while a deliberately noncompliant
 synthetic fixture is rejected and its safe failure evidence is preserved.
 
+The candidate retains exactly one authorized wheel. Reproducibility is proven
+by a second independent build in disposable storage; its bytes are compared to
+the retained wheel and then destroyed. A mismatch fails
+`FAIL_WHEEL_REPRODUCIBILITY` and no candidate is authorized.
+
 ## Locked invariants
 
 - The base is the protected `v3/main` source line at commit

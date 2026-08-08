@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import subprocess
-from collections.abc import Iterable
+from collections.abc import Iterable, Mapping
 from pathlib import Path, PurePosixPath
 
 from ysf.secure_factory.models import FactoryFailure, GateResult
@@ -50,6 +50,16 @@ EXACT_ALLOWLIST: tuple[str, ...] = (
 QUARANTINED_FIXTURES: frozenset[str] = frozenset(
     path for path in EXACT_ALLOWLIST if "/noncompliant/" in path
 )
+
+REQUIRED_STATUS_CHECKS: frozenset[str] = frozenset(
+    {
+        "S00 / policy",
+        "S00 / test",
+        "S00 / build-candidate",
+        "S00 / verify-candidate",
+    }
+)
+_CONTRACT_SHA256 = "337519fcf7d08104ba0e53cbf33dcc4b4a75ec32aac18601cb097c778aa0ae35"
 
 
 def validate_relative_path(value: str) -> str:
@@ -278,3 +288,64 @@ def require_regular_files(repository_root: Path, paths: Iterable[str]) -> None:
                 "Required source input is not a single regular file.",
                 details={"path": normalized},
             )
+
+
+def validate_approval_and_ruleset(
+    *,
+    approval_digest: str,
+    reviewed_commit: str,
+    current_commit: str,
+    ruleset: Mapping[str, object],
+) -> GateResult:
+    """Fail closed on stale approval/review or non-exact source protection."""
+
+    if approval_digest != _CONTRACT_SHA256:
+        raise FactoryFailure("FAIL_APPROVAL_DIGEST", "Contract approval digest is stale.")
+    if reviewed_commit != current_commit:
+        raise FactoryFailure("FAIL_STALE_REVIEW", "Source review does not cover current commit.")
+    required_checks = ruleset.get("required_status_checks")
+    if (
+        ruleset.get("enforcement") != "active"
+        or ruleset.get("target") != "refs/heads/v3/main"
+        or ruleset.get("bypass_actors") != []
+        or not isinstance(required_checks, list)
+        or set(required_checks) != REQUIRED_STATUS_CHECKS
+        or len(required_checks) != len(REQUIRED_STATUS_CHECKS)
+    ):
+        raise FactoryFailure("FAIL_RULESET_MISMATCH", "Protected source ruleset is not exact.")
+    return GateResult(
+        gate="approval_and_ruleset",
+        result="PASS",
+        message="Approval, review freshness and exact ruleset verified.",
+    )
+
+
+def validate_external_effect_policy(environ: Mapping[str, str]) -> GateResult:
+    """Reject provider targets, credential presence and outbound business actions."""
+
+    exact = {
+        "YSF_EXTERNAL_EFFECT_BUDGET": "DENY_ALL",
+        "YSF_PROVIDERS": "OFF",
+        "YSF_EMAIL_MODE": "NON_RELAYING",
+    }
+    mismatches = sorted(name for name, value in exact.items() if environ.get(name) != value)
+    prohibited_presence = sorted(
+        name
+        for name in (
+            "YSF_PROVIDER_TARGET",
+            "YSF_PROVIDER_SECRET",
+            "YSF_OUTBOUND_BUSINESS_ACTION",
+        )
+        if environ.get(name)
+    )
+    if mismatches or prohibited_presence:
+        raise FactoryFailure(
+            "FAIL_EXTERNAL_EFFECT_POLICY",
+            "External-effect policy rejected a provider, secret or outbound action.",
+            details={"mismatched_controls": mismatches, "prohibited_presence": prohibited_presence},
+        )
+    return GateResult(
+        gate="external_effect_policy",
+        result="PASS",
+        message="No provider target, secret or outbound business action is enabled.",
+    )

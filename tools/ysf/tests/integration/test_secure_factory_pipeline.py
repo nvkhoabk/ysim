@@ -13,6 +13,7 @@ from ysf.secure_factory.cli import (
     _known_bad,
     _preflight,
     _repository_root,
+    _rp_c_matrix,
     create_parser,
     main,
 )
@@ -25,7 +26,7 @@ def repository_root() -> Path:
 
 def test_all_required_repository_modes_parse() -> None:
     parser = create_parser()
-    for mode in ("preflight", "verify", "known-bad", "build-candidate"):
+    for mode in ("preflight", "verify", "known-bad", "build-candidate", "rp-c-matrix"):
         assert parser.parse_args([mode]).mode == mode
     parsed = parser.parse_args(["verify-candidate", "/tmp/candidate"])
     assert parsed.candidate_path == "/tmp/candidate"
@@ -94,10 +95,26 @@ def test_cli_modes_and_failures_write_results(
     )
     monkeypatch.setattr("ysf.secure_factory.cli._commit_timestamp", lambda root: 1)
     monkeypatch.setattr("ysf.secure_factory.cli.build_candidate", lambda *args, **kwargs: pass_gate)
+    monkeypatch.setattr(
+        "ysf.secure_factory.cli.load_expectation",
+        lambda path: type(
+            "Expectation",
+            (),
+            {
+                "repository": "nvkhoabk/ysim",
+                "branch": "feature/v3-r1-g00-s00-secure-factory",
+            },
+        )(),
+    )
+    monkeypatch.setattr(
+        "ysf.secure_factory.cli.mutation_paths", lambda root, **kwargs: {"AGENTS.md"}
+    )
     monkeypatch.setenv("YSF_S00_QUALITY_ROOT", str(tmp_path / "quality"))
     assert main(["build-candidate", "--output-root", str(output_base / "build")]) == 0
 
-    monkeypatch.setattr("ysf.secure_factory.cli.verify_candidate", lambda path: pass_gate)
+    monkeypatch.setattr(
+        "ysf.secure_factory.cli.verify_candidate", lambda *args, **kwargs: pass_gate
+    )
     assert (
         main(
             [
@@ -181,7 +198,9 @@ def test_preflight_orchestrates_policy_and_safe_scan(
         "ysf.secure_factory.cli.validate_environment", lambda expected, observed: gate
     )
     monkeypatch.setattr("ysf.secure_factory.cli.verify_policy_self_protection", lambda path: gate)
-    monkeypatch.setattr("ysf.secure_factory.cli.mutation_paths", lambda root: {"AGENTS.md"})
+    monkeypatch.setattr(
+        "ysf.secure_factory.cli.mutation_paths", lambda root, **kwargs: {"AGENTS.md"}
+    )
     monkeypatch.setattr("ysf.secure_factory.cli.validate_changed_paths", lambda root, paths: gate)
     monkeypatch.setattr("ysf.secure_factory.cli.verify_immutable_corpus", lambda root: gate)
     monkeypatch.setattr("ysf.secure_factory.cli.require_no_sensitive_values", lambda paths: gate)
@@ -198,3 +217,19 @@ def test_known_bad_fixture_self_checks_fail_closed(tmp_path: Path) -> None:
     with pytest.raises(FactoryFailure) as captured:
         _known_bad(tmp_path)
     assert captured.value.code == "FAIL_KNOWN_BAD_ACCEPTED"
+
+
+def test_rp_c_matrix_executes_exact_synthetic_effect_rejections() -> None:
+    gates = _rp_c_matrix(repository_root())
+    names = {gate.gate for gate in gates}
+    assert {
+        "stale_approval",
+        "stale_review",
+        "ruleset_mismatch",
+        "provider_target_present",
+        "secret_present",
+        "outbound_business_action",
+        "undeclared_dependency",
+        "rp_c_matrix_complete",
+    }.issubset(names)
+    assert all(gate.passed for gate in gates)

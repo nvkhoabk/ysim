@@ -92,7 +92,7 @@ user_journeys:
     outcome: Witness a known-noncompliant synthetic fixture rejected with safe append-only evidence.
   - id: S00-JRN-002
     actor: Human_Reviewer
-    outcome: Witness an exact clean source tree produce one build-once ysf candidate and complete evidence.
+    outcome: Witness an exact clean source tree produce one retained ysf candidate whose wheel matches an independent disposable reproducibility build and complete evidence.
 contracts:
   ui: []
   api: []

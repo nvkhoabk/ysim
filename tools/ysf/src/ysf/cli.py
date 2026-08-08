@@ -400,6 +400,7 @@ def create_parser() -> argparse.ArgumentParser:
             "known-bad",
             "build-candidate",
             "verify-candidate",
+            "rp-c-matrix",
         ),
     )
     secure_factory_parser.add_argument(

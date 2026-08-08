@@ -5,31 +5,31 @@ contract_sha256: 337519fcf7d08104ba0e53cbf33dcc4b4a75ec32aac18601cb097c778aa0ae3
 default_result_on_missing_or_skipped_gate: FAIL_CLOSED
 test_groups:
   - id: ENVIRONMENT_IDENTITY
-    state: PLANNED
+    state: IMPLEMENTED_EXECUTABLE
     positive: [exact_repository_ref_tree_os_arch_python_workspace]
     negative: [wrong_repository, wrong_ref, wrong_tree, wrong_os, wrong_arch, wrong_python, wrong_workspace]
   - id: SOURCE_AND_CORPUS_POLICY
-    state: PLANNED
+    state: IMPLEMENTED_EXECUTABLE
     positive: [clean_tree, exact_diff_allowlist, immutable_brd_uxf]
     negative: [dirty_tree, path_escape, unapproved_path, corpus_mutation, policy_self_disable]
   - id: APPROVAL_AND_RULESET
-    state: PLANNED
+    state: IMPLEMENTED_EXECUTABLE
     positive: [exact_contract_approval_digest, exact_ruleset_readback]
     negative: [missing_approval, stale_approval, wrong_digest, ruleset_mismatch, stale_review]
   - id: DEPENDENCY_AND_QUALITY
-    state: PLANNED
+    state: IMPLEMENTED_EXECUTABLE
     positive: [hash_required_install, declared_dependency_closure, ruff, mypy, pytest, coverage, bandit, dependency_sca, sbom]
     negative: [altered_lock, undeclared_dependency, silently_skipped_gate]
   - id: SENSITIVE_DATA_AND_EVIDENCE
-    state: PLANNED
+    state: IMPLEMENTED_EXECUTABLE
     positive: [sanitized_metadata, append_only_execution_ledger]
     negative: [synthetic_secret, synthetic_pii, synthetic_iccid, synthetic_lpa, synthetic_qr, tampered_manifest, overwritten_failure]
   - id: CANDIDATE_INTEGRITY
-    state: PLANNED
+    state: IMPLEMENTED_EXECUTABLE
     positive: [one_deterministic_wheel, checksums, sbom, provenance]
     negative: [second_build, artifact_substitution, altered_provenance]
   - id: EXTERNAL_EFFECT_POLICY
-    state: PLANNED
+    state: IMPLEMENTED_EXECUTABLE
     positive: [providers_off, non_relaying_email, no_application_deployment]
     negative: [provider_target_present, secret_present, outbound_business_action]
 required_human_gates:
@@ -37,3 +37,16 @@ required_human_gates:
   - RP-C_SOURCE_SECURITY_DECISION
   - RP-D_INTEGRATED_TOOLING_DECISION
 ai_review: SEPARATE_ADVISORY_REVIEW_ONLY
+execution_contract:
+  command: bash scripts/v3-r1-s00.sh rp-c-matrix
+  evidence: UNIQUE_IMMUTABLE_EXECUTION_DIRECTORY_OUTSIDE_CHECKOUT
+  skipped_scenario: FAIL_CLOSED
+  expected_failure_codes:
+    stale_approval: FAIL_APPROVAL_DIGEST
+    stale_review: FAIL_STALE_REVIEW
+    ruleset_mismatch: FAIL_RULESET_MISMATCH
+    undeclared_dependency: FAIL_DEPENDENCY_CLOSURE
+    provider_target_present: FAIL_EXTERNAL_EFFECT_POLICY
+    secret_present: FAIL_EXTERNAL_EFFECT_POLICY
+    outbound_business_action: FAIL_EXTERNAL_EFFECT_POLICY
+    candidate_semantic_substitution: FAIL_SBOM_SEMANTICS_OR_FAIL_PROVENANCE_SEMANTICS
