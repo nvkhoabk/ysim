@@ -254,23 +254,23 @@ jobs:
           validation_repository="${RUNNER_TEMP}/s00-build-validation-repository"
           mkdir -m 0750 "$quality_root"
           cp -a -- "$GITHUB_WORKSPACE" "$validation_repository"
-          cd "$validation_repository"
+          cd "$validation_repository/tools/ysf"
           export PYTHONPATH="$validation_repository/tools/ysf/src"
 
-          python -m ruff check tools/ysf/src/ysf tools/ysf/tests
-          python -m mypy tools/ysf/src/ysf
-          python -m pytest tools/ysf/tests \
+          python -m ruff check src/ysf tests
+          python -m mypy src/ysf
+          python -m pytest tests \
             --cov=ysf.secure_factory \
             --cov-branch \
             --cov-report=term-missing \
             --cov-fail-under=90
-          python -m bandit -q -r tools/ysf/src/ysf --severity-level medium
+          python -m bandit -q -r src/ysf --severity-level medium
           python -m pip_audit \
             --require-hashes \
             --no-deps \
             --strict \
             --progress-spinner off \
-            --requirement tools/ysf/requirements-s00-dev.lock
+            --requirement requirements-s00-dev.lock
 
           python - "$quality_root" <<'PY'
           import json
@@ -331,6 +331,7 @@ jobs:
         run: |
           set -Eeuo pipefail
           umask 027
+          git branch --no-track v3/main origin/v3/main
           output_root="${RUNNER_TEMP}/s00-build-output"
           YSF_S00_OUTPUT_ROOT="$output_root" \
           YSF_S00_QUALITY_ROOT="$YSF_S00_QUALITY_ROOT" \
