@@ -16,7 +16,7 @@ implementation:
   python_version: 3.11.2
   checkout: /root/projects/ysim-v3-r1/ysim
   branch: feature/v3-r1-g00-s00-secure-factory
-  upstream: NONE
+  upstream: origin/feature/v3-r1-g00-s00-secure-factory
   data_class: SYNTHETIC_DISPOSABLE
   providers: "OFF"
   email: NON_RELAYING
