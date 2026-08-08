@@ -35,6 +35,7 @@ _DATA_IMAGE = "data:image/" + r"(?:png|jpeg);base64,"
 _QR_WIFI = "WI" + "FI:"
 _QR_VCARD = "BEGIN:" + "VCARD"
 _QR_PAYMENT = "bit" + "coin:"
+_SHA256_HEX = re.compile(r"(?i)(?<![0-9a-f])(?:sha256:)?([0-9a-f]{64})(?![0-9a-f])")
 _PATTERNS: tuple[tuple[str, re.Pattern[str]], ...] = (
     ("REAL_CREDENTIAL_PRIVATE_KEY", re.compile(re.escape(_PRIVATE_KEY))),
     ("REAL_CREDENTIAL_OPENSSH_KEY", re.compile(re.escape(_OPENSSH_KEY))),
@@ -87,12 +88,23 @@ def _fingerprint(value: str) -> str:
     return hashlib.sha256(value.encode("utf-8")).hexdigest()[:12]
 
 
+def _inside_sha256_digest(text: str, start: int, end: int) -> bool:
+    return any(
+        digest.start(1) <= start and end <= digest.end(1)
+        for digest in _SHA256_HEX.finditer(text)
+    )
+
+
 def scan_text(text: str, *, location: str) -> list[SensitiveFinding]:
     """Return metadata-only findings; never retain the matched value."""
 
     findings: list[SensitiveFinding] = []
     for kind, pattern in _PATTERNS:
         for match in pattern.finditer(text):
+            if kind == "PII_PHONE_VN" and _inside_sha256_digest(
+                text, match.start(), match.end()
+            ):
+                continue
             value = match.group(0)
             findings.append(
                 SensitiveFinding(
@@ -152,7 +164,7 @@ def require_no_sensitive_values(paths: Iterable[Path]) -> GateResult:
         gate="sensitive_data",
         result="PASS",
         message="No prohibited value detected.",
-        details={"scanned_file_count": len(inputs), "profile": "V3-R1-S00-PROHIBITED-V2"},
+        details={"scanned_file_count": len(inputs), "profile": "V3-R1-S00-PROHIBITED-V3"},
     )
 
 

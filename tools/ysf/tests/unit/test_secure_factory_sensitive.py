@@ -52,6 +52,16 @@ def test_compliant_fixture_passes() -> None:
     assert require_no_sensitive_values([compliant]).passed
 
 
+def test_vn_phone_detector_ignores_only_sha256_digest_substrings() -> None:
+    synthetic_phone = "".join(("0", "3", "1" * 8))
+    findings = scan_text(synthetic_phone, location="standalone-synthetic")
+    assert [finding.kind for finding in findings] == ["PII_PHONE_VN"]
+
+    digest = ("a" * 12) + synthetic_phone + ("b" * 42)
+    assert len(digest) == 64
+    assert scan_text(f"--hash=sha256:{digest}", location="synthetic-lock") == []
+
+
 def test_sensitive_gate_fails_without_raw_value() -> None:
     with pytest.raises(FactoryFailure) as captured:
         require_no_sensitive_values([fixture("synthetic-secret.txt")])
