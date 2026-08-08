@@ -82,7 +82,7 @@ jobs:
           expectation = load_expectation(context / "environment-identity.yaml")
           validate_candidate_build_environment(expectation, root)
           verify_policy_self_protection(context / "source-and-delivery-policy.md")
-          paths = mutation_paths(root)
+          paths = mutation_paths(root, base_ref="origin/v3/main")
           validate_changed_paths(root, paths)
           verify_immutable_corpus(root)
           inputs = [
