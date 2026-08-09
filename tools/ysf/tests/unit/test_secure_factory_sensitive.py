@@ -62,6 +62,31 @@ def test_vn_phone_detector_ignores_only_sha256_digest_substrings() -> None:
     assert scan_text(f"--hash=sha256:{digest}", location="synthetic-lock") == []
 
 
+def test_reserved_admin_example_email_is_safe_but_other_roles_fail_closed() -> None:
+    non_reserved = "".join(("seed", "@", "synthetic.localdomain"))
+    reserved_admin = "".join(("admin", "@", "example.com"))
+    admin_source = (
+        "# 9. Demonstration Seed\n\n"
+        "```yaml\n"
+        "demo_user:\n"
+        f"  email: {reserved_admin}\n"
+        "  role: admin\n"
+        "```\n"
+    )
+    assert not scan_text(admin_source, location="reserved-admin")
+
+    for role in ("customer", "fulfillment"):
+        other_role = admin_source.replace("role: admin", f"role: {role}")
+        assert [item.kind for item in scan_text(other_role, location=role)] == [
+            "PII_EMAIL"
+        ]
+
+    non_reserved_admin = admin_source.replace(reserved_admin, non_reserved)
+    assert [item.kind for item in scan_text(non_reserved_admin, location="admin")] == [
+        "PII_EMAIL"
+    ]
+
+
 def test_sensitive_gate_fails_without_raw_value() -> None:
     with pytest.raises(FactoryFailure) as captured:
         require_no_sensitive_values([fixture("synthetic-secret.txt")])

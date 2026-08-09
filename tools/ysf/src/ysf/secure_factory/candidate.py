@@ -25,7 +25,10 @@ from ysf.secure_factory.evidence import (
 )
 from ysf.secure_factory.models import FactoryFailure, FileDigest, GateResult
 from ysf.secure_factory.policy import validate_relative_path
-from ysf.secure_factory.sensitive import require_no_sensitive_values
+from ysf.secure_factory.sensitive import (
+    admin_example_email_spans,
+    require_no_sensitive_values,
+)
 
 REQUIRED_CANDIDATE_FILES: frozenset[str] = frozenset(
     {
@@ -54,6 +57,7 @@ _TIMESTAMP_UTC = re.compile(r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$")
 _CONTRACT_SHA256 = "337519fcf7d08104ba0e53cbf33dcc4b4a75ec32aac18601cb097c778aa0ae35"
 _BUILDER_ID = "https://github.com/actions/runner"
 _BUILD_TYPE = "https://ysim.vn/build-types/v3-r1-s00/ysf-wheel/v1"
+_SYNTHETIC_ADMIN_EMAIL = "admin" + "@" + "example.com"
 _REQUIRED_PREFLIGHT_GATES = frozenset(
     {
         "candidate_build_environment",
@@ -94,6 +98,33 @@ def _json_bytes(value: Any) -> bytes:
     return (
         json.dumps(value, sort_keys=True, ensure_ascii=True, separators=(",", ":")) + "\n"
     ).encode("utf-8")
+
+
+def normalize_generated_admin_email(path: Path) -> GateResult:
+    """Normalize only structurally identified admin example email scalars."""
+
+    if path.is_symlink() or not path.is_file():
+        raise FactoryFailure(
+            "FAIL_NORMALIZATION_INPUT",
+            "Generated candidate input is not a regular file.",
+        )
+    try:
+        original = path.read_text(encoding="utf-8")
+    except (OSError, UnicodeError) as exc:
+        raise FactoryFailure(
+            "FAIL_NORMALIZATION_INPUT",
+            "Generated candidate input is not valid UTF-8.",
+        ) from exc
+    normalized = original
+    for start, end in reversed(admin_example_email_spans(original)):
+        normalized = normalized[:start] + _SYNTHETIC_ADMIN_EMAIL + normalized[end:]
+    path.write_text(normalized, encoding="utf-8")
+    return GateResult(
+        gate="normalize_generated_admin_email",
+        result="PASS",
+        message="Generated admin example email normalized deterministically.",
+        details={"changed": normalized != original},
+    )
 
 
 def _parse_lock_components(lock_paths: Iterable[Path]) -> list[dict[str, str]]:

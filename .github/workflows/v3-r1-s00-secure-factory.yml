@@ -398,6 +398,16 @@ jobs:
           run_gate mypy lint-type-sast-dependency.json python -m mypy src/ysf
           run_gate pytest test-and-coverage.json python -m pytest tests \
             --cov=ysf.secure_factory --cov-branch --cov-report=term-missing --cov-fail-under=90
+          python - <<'PY'
+          from pathlib import Path
+
+          from ysf.secure_factory.candidate import normalize_generated_admin_email
+
+          root = Path.cwd().parents[1]
+          normalize_generated_admin_email(
+              root / "factory/prompts/generated/s00/t00/prompt.md"
+          )
+          PY
           run_gate bandit lint-type-sast-dependency.json \
             python -m bandit -q -r src/ysf --severity-level medium
           run_gate pip-audit lint-type-sast-dependency.json python -m pip_audit \

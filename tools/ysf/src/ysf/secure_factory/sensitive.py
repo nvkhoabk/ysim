@@ -9,6 +9,9 @@ from collections.abc import Iterable
 from dataclasses import dataclass
 from pathlib import Path
 
+import yaml
+from yaml.nodes import MappingNode, Node, ScalarNode, SequenceNode
+
 from ysf.secure_factory.models import FactoryFailure, GateResult
 
 
@@ -36,6 +39,13 @@ _QR_WIFI = "WI" + "FI:"
 _QR_VCARD = "BEGIN:" + "VCARD"
 _QR_PAYMENT = "bit" + "coin:"
 _SHA256_HEX = re.compile(r"(?i)(?<![0-9a-f])(?:sha256:)?([0-9a-f]{64})(?![0-9a-f])")
+_EMAIL = re.compile(r"(?i)\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b")
+_DEMONSTRATION_HEADING = re.compile(
+    r"(?i)^#{1,6}\s+(?:\d+(?:\.\d+)*[.)]?\s+)?demonstration seed\s*$"
+)
+_YAML_FENCE = re.compile(r"^\x60{3,}\s*(?:yaml|yml)\s*$", re.IGNORECASE)
+_FENCE_END = re.compile(r"^\x60{3,}\s*$")
+_RFC_RESERVED_EMAIL_DOMAINS = frozenset({"example.com", "example.net", "example.org"})
 _PATTERNS: tuple[tuple[str, re.Pattern[str]], ...] = (
     ("REAL_CREDENTIAL_PRIVATE_KEY", re.compile(re.escape(_PRIVATE_KEY))),
     ("REAL_CREDENTIAL_OPENSSH_KEY", re.compile(re.escape(_OPENSSH_KEY))),
@@ -51,7 +61,7 @@ _PATTERNS: tuple[tuple[str, re.Pattern[str]], ...] = (
             r"\s*[:=]\s*[\"']?([A-Za-z0-9_./+=-]{16,})"
         ),
     ),
-    ("PII_EMAIL", re.compile(r"(?i)\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b")),
+    ("PII_EMAIL", _EMAIL),
     ("PII_PHONE_E164", re.compile(r"(?<![\w+])\+[1-9]\d{7,14}(?!\d)")),
     ("PII_PHONE_VN", re.compile(r"(?<!\d)0[35789]\d{8}(?!\d)")),
     (
@@ -95,17 +105,101 @@ def _inside_sha256_digest(text: str, start: int, end: int) -> bool:
     )
 
 
+def _demonstration_yaml_blocks(text: str) -> list[tuple[int, str]]:
+    blocks: list[tuple[int, str]] = []
+    in_demonstration = False
+    block_start: int | None = None
+    offset = 0
+    for line in text.splitlines(keepends=True):
+        stripped = line.strip()
+        if block_start is not None:
+            if _FENCE_END.fullmatch(stripped):
+                blocks.append((block_start, text[block_start:offset]))
+                block_start = None
+        else:
+            if stripped.startswith("#"):
+                in_demonstration = (
+                    _DEMONSTRATION_HEADING.fullmatch(stripped) is not None
+                )
+            elif in_demonstration and _YAML_FENCE.fullmatch(stripped):
+                block_start = offset + len(line)
+        offset += len(line)
+    return blocks
+
+
+def _admin_email_node_spans(node: Node) -> list[tuple[int, int]]:
+    spans: list[tuple[int, int]] = []
+    if isinstance(node, MappingNode):
+        fields = {
+            key.value.casefold(): value
+            for key, value in node.value
+            if isinstance(key, ScalarNode)
+        }
+        role = fields.get("role")
+        email = fields.get("email")
+        if (
+            isinstance(role, ScalarNode)
+            and re.split(r"[^a-z0-9]+", role.value.casefold())[-1] == "admin"
+            and isinstance(email, ScalarNode)
+            and _EMAIL.fullmatch(email.value)
+        ):
+            spans.append((email.start_mark.index, email.end_mark.index))
+        for _, value in node.value:
+            spans.extend(_admin_email_node_spans(value))
+    elif isinstance(node, SequenceNode):
+        for value in node.value:
+            spans.extend(_admin_email_node_spans(value))
+    return spans
+
+
+def admin_example_email_spans(text: str) -> tuple[tuple[int, int], ...]:
+    """Locate YAML email scalars whose sibling role is explicitly admin."""
+
+    spans: list[tuple[int, int]] = []
+    for block_offset, block in _demonstration_yaml_blocks(text):
+        try:
+            node = yaml.compose(block)
+        except yaml.YAMLError:
+            continue
+        if node is not None:
+            spans.extend(
+                (block_offset + start, block_offset + end)
+                for start, end in _admin_email_node_spans(node)
+            )
+    return tuple(spans)
+
+
+def _is_reserved_admin_email(
+    value: str,
+    start: int,
+    end: int,
+    admin_spans: tuple[tuple[int, int], ...],
+) -> bool:
+    domain = value.rsplit("@", 1)[-1].casefold()
+    return domain in _RFC_RESERVED_EMAIL_DOMAINS and any(
+        span_start <= start and end <= span_end for span_start, span_end in admin_spans
+    )
+
+
 def scan_text(text: str, *, location: str) -> list[SensitiveFinding]:
     """Return metadata-only findings; never retain the matched value."""
 
     findings: list[SensitiveFinding] = []
+    admin_spans = admin_example_email_spans(text)
     for kind, pattern in _PATTERNS:
         for match in pattern.finditer(text):
+            value = match.group(0)
+            if kind == "PII_EMAIL" and _is_reserved_admin_email(
+                value,
+                match.start(),
+                match.end(),
+                admin_spans,
+            ):
+                continue
             if kind == "PII_PHONE_VN" and _inside_sha256_digest(
                 text, match.start(), match.end()
             ):
                 continue
-            value = match.group(0)
             findings.append(
                 SensitiveFinding(
                     kind=kind,

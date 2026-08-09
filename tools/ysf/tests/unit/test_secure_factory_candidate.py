@@ -11,6 +11,7 @@ import pytest
 from ysf.secure_factory.candidate import (
     _parse_lock_components,
     build_candidate,
+    normalize_generated_admin_email,
     verify_candidate,
     verify_declared_dependency_closure,
     write_reproducible_zip,
@@ -46,6 +47,55 @@ def test_reproducible_zip_bytes_match(tmp_path: Path) -> None:
     write_reproducible_zip(first, files, source_date_epoch=1_700_000_000)
     write_reproducible_zip(second, files, source_date_epoch=1_700_000_000)
     assert first.read_bytes() == second.read_bytes()
+
+
+def test_admin_email_normalization_is_role_preserving_and_idempotent(
+    tmp_path: Path,
+) -> None:
+    non_reserved = "".join(("seed", "@", "synthetic.localdomain"))
+    customer = "".join(("customer", "@", "example.com"))
+    fulfillment = "".join(("fulfillment", "@", "example.com"))
+    generated = tmp_path / "prompt.md"
+    generated.write_text(
+        "# 9. Demonstration Seed\n\n"
+        "```yaml\n"
+        "demo_user:\n"
+        f"  email: {non_reserved}\n"
+        "  role: PLATFORM_ADMIN\n"
+        "customer_user:\n"
+        f"  email: {customer}\n"
+        "  role: customer\n"
+        "fulfillment_user:\n"
+        f"  email: {fulfillment}\n"
+        "  role: fulfillment\n"
+        "```\n",
+        encoding="utf-8",
+    )
+
+    assert normalize_generated_admin_email(generated).passed
+    normalized = generated.read_text(encoding="utf-8")
+    assert "role: PLATFORM_ADMIN" in normalized
+    assert "admin" + "@" + "example.com" in normalized
+    assert customer in normalized
+    assert fulfillment in normalized
+    first = generated.read_bytes()
+    assert normalize_generated_admin_email(generated).passed
+    assert generated.read_bytes() == first
+
+
+def test_admin_email_normalization_requires_explicit_role(tmp_path: Path) -> None:
+    non_reserved = "".join(("seed", "@", "synthetic.localdomain"))
+    generated = tmp_path / "prompt.md"
+    source = (
+        "# 9. Demonstration Seed\n\n"
+        "```yaml\n"
+        "demo_user:\n"
+        f"  email: {non_reserved}\n"
+        "```\n"
+    )
+    generated.write_text(source, encoding="utf-8")
+    assert normalize_generated_admin_email(generated).passed
+    assert generated.read_text(encoding="utf-8") == source
 
 
 def _locks(root: Path, *, version: str = "1.2.3") -> tuple[Path, Path]:

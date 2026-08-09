@@ -7,6 +7,8 @@ from subprocess import CompletedProcess
 import pytest
 
 from ysf.cli import create_parser as create_ysf_parser
+from ysf.prompt.service import build_prompt
+from ysf.secure_factory.candidate import normalize_generated_admin_email
 from ysf.secure_factory.cli import (
     _commit_timestamp,
     _identity,
@@ -18,6 +20,7 @@ from ysf.secure_factory.cli import (
     main,
 )
 from ysf.secure_factory.models import FactoryFailure, GateResult
+from ysf.secure_factory.sensitive import scan_path
 
 
 def repository_root() -> Path:
@@ -233,3 +236,18 @@ def test_rp_c_matrix_executes_exact_synthetic_effect_rejections() -> None:
         "rp_c_matrix_complete",
     }.issubset(names)
     assert all(gate.passed for gate in gates)
+
+
+def test_generated_candidate_prompt_is_sanitized_and_stable() -> None:
+    root = repository_root()
+    manifest = root / "factory/prompt-manifests/s00-t00.yaml"
+    prompt = root / "factory/prompts/generated/s00/t00/prompt.md"
+
+    assert build_prompt(repository_root=root, manifest_path=manifest).successful
+    assert normalize_generated_admin_email(prompt).passed
+    first = prompt.read_bytes()
+    assert not [finding for finding in scan_path(prompt) if finding.kind == "PII_EMAIL"]
+
+    assert build_prompt(repository_root=root, manifest_path=manifest).successful
+    assert normalize_generated_admin_email(prompt).passed
+    assert prompt.read_bytes() == first
