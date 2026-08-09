@@ -20,11 +20,42 @@ from ysf.secure_factory.cli import (
     main,
 )
 from ysf.secure_factory.models import FactoryFailure, GateResult
-from ysf.secure_factory.sensitive import scan_path
+from ysf.secure_factory.sensitive import scan_text
 
 
 def repository_root() -> Path:
     return Path(__file__).resolve().parents[4]
+
+
+def _snapshot_generator_outputs(
+    paths: tuple[Path, ...],
+) -> dict[Path, tuple[bytes, int] | None]:
+    snapshot: dict[Path, tuple[bytes, int] | None] = {}
+    for path in paths:
+        if path.exists() or path.is_symlink():
+            assert path.is_file() and not path.is_symlink()
+            snapshot[path] = (path.read_bytes(), path.stat().st_mode & 0o777)
+        else:
+            snapshot[path] = None
+    return snapshot
+
+
+def _restore_generator_outputs(
+    snapshot: dict[Path, tuple[bytes, int] | None],
+    *,
+    output_directory_existed: bool,
+) -> None:
+    for path, state in snapshot.items():
+        if state is None:
+            path.unlink(missing_ok=True)
+            continue
+        content, mode = state
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_bytes(content)
+        path.chmod(mode)
+    output_directory = next(iter(snapshot)).parent
+    if not output_directory_existed and output_directory.exists():
+        output_directory.rmdir()
 
 
 def test_all_required_repository_modes_parse() -> None:
@@ -238,16 +269,61 @@ def test_rp_c_matrix_executes_exact_synthetic_effect_rejections() -> None:
     assert all(gate.passed for gate in gates)
 
 
-def test_generated_candidate_prompt_is_sanitized_and_stable() -> None:
+def test_generated_candidate_prompt_is_sanitized_and_stable(tmp_path: Path) -> None:
     root = repository_root()
     manifest = root / "factory/prompt-manifests/s00-t00.yaml"
-    prompt = root / "factory/prompts/generated/s00/t00/prompt.md"
+    output_directory = root / "factory/prompts/generated/s00/t00"
+    outputs = tuple(
+        output_directory / name
+        for name in ("prompt.md", "prompt.json", "manifest.json")
+    )
+    prompt = outputs[0]
+    output_directory_existed = output_directory.is_dir()
+    initial = _snapshot_generator_outputs(outputs)
+    generated: list[bytes] = []
 
-    assert build_prompt(repository_root=root, manifest_path=manifest).successful
-    assert normalize_generated_admin_email(prompt).passed
-    first = prompt.read_bytes()
-    assert not [finding for finding in scan_path(prompt) if finding.kind == "PII_EMAIL"]
+    try:
+        for _ in range(2):
+            _restore_generator_outputs(
+                initial,
+                output_directory_existed=output_directory_existed,
+            )
+            assert build_prompt(repository_root=root, manifest_path=manifest).successful
+            assert normalize_generated_admin_email(prompt).passed
+            generated.append(prompt.read_bytes())
+    finally:
+        _restore_generator_outputs(
+            initial,
+            output_directory_existed=output_directory_existed,
+        )
 
-    assert build_prompt(repository_root=root, manifest_path=manifest).successful
-    assert normalize_generated_admin_email(prompt).passed
-    assert prompt.read_bytes() == first
+    assert _snapshot_generator_outputs(outputs) == initial
+    assert generated[0] == generated[1]
+    findings = scan_text(generated[0].decode("utf-8"), location="generated")
+    assert [finding.kind for finding in findings if finding.kind == "PII_EMAIL"] == []
+    synthetic_admin = ("admin" + "@" + "example.com").encode()
+    assert generated[0].count(synthetic_admin) >= 1
+
+    non_reserved = "".join(("seed", "@", "synthetic.localdomain"))
+    customer = "".join(("customer", "@", "example.com"))
+    fulfillment = "".join(("fulfillment", "@", "example.com"))
+    role_fixture = tmp_path / "roles.md"
+    role_fixture.write_text(
+        "# 9. Demonstration Seed\n\n"
+        "```yaml\n"
+        "demo_user:\n"
+        f"  email: {non_reserved}\n"
+        "  role: PLATFORM_ADMIN\n"
+        "customer_user:\n"
+        f"  email: {customer}\n"
+        "  role: customer\n"
+        "fulfillment_user:\n"
+        f"  email: {fulfillment}\n"
+        "  role: fulfillment\n"
+        "```\n",
+        encoding="utf-8",
+    )
+    assert normalize_generated_admin_email(role_fixture).passed
+    normalized_roles = role_fixture.read_text(encoding="utf-8")
+    assert customer in normalized_roles
+    assert fulfillment in normalized_roles
