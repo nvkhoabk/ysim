@@ -69,6 +69,7 @@ REQUIRED_REPORT_INPUTS: tuple[str, ...] = (
 )
 _LOCK_LINE = re.compile(r"^([A-Za-z0-9_.-]+)==([^\s;\\]+)")
 _SHA256 = re.compile(r"^[0-9a-f]{64}$")
+_PREFIXED_SHA256 = re.compile(r"^sha256:[0-9a-f]{64}$")
 _TIMESTAMP_UTC = re.compile(r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$")
 _CONTRACT_SHA256 = APPROVED_CONTRACT_SHA256
 _BUILDER_ID = "https://github.com/actions/runner"
@@ -220,7 +221,40 @@ def sanitized_quality_output(gate: str, exit_code: int, raw_output: bytes) -> di
                 details = value.get("details")
                 if not isinstance(details, dict):
                     raise ValueError
-                metrics = details
+                safe_governance_fields = {
+                    "api_host",
+                    "repository",
+                    "ruleset_id",
+                    "enforcement",
+                    "target_ref",
+                    "required_status_checks",
+                    "required_approving_review_count",
+                    "dismiss_stale_reviews_on_push",
+                    "require_code_owner_review",
+                    "required_review_thread_resolution",
+                    "ruleset_updated_at",
+                    "observable_ruleset_sha256",
+                    "full_ruleset_sha256",
+                    "bypass_actor_state",
+                    "bypass_actor_count",
+                    "bypass_actors_sha256",
+                    "human_attestation_verified",
+                    "attestation_comment_id",
+                    "attestation_payload_sha256",
+                    "pr_number",
+                    "pr_state",
+                    "pr_draft",
+                    "pr_merged",
+                    "base_ref",
+                    "base_sha",
+                    "head_ref",
+                    "head_sha",
+                    "retrieval_context",
+                    "github_approving_review_claimed",
+                }
+                if set(details) != safe_governance_fields:
+                    raise ValueError
+                metrics = {key: details[key] for key in sorted(safe_governance_fields)}
     except (AttributeError, KeyError, TypeError, ValueError, json.JSONDecodeError) as exc:
         raise FactoryFailure(
             "FAIL_QUALITY_OUTPUT_FORMAT",
@@ -965,6 +999,8 @@ def _verify_quality_record(
             "email_mode": "NON_RELAYING",
         }
     elif gate == "governance-readback":
+        bypass_state = metrics.get("bypass_actor_state")
+        attestation_verified = metrics.get("human_attestation_verified")
         quality_valid = (
             metrics.get("repository") == repository
             and metrics.get("ruleset_id") == 20583674
@@ -977,6 +1013,29 @@ def _verify_quality_record(
                 "S00 / verify-candidate",
             ]
             and metrics.get("bypass_actor_count") == 0
+            and metrics.get("bypass_actors_sha256")
+            == "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+            and isinstance(metrics.get("observable_ruleset_sha256"), str)
+            and _PREFIXED_SHA256.fullmatch(metrics["observable_ruleset_sha256"])
+            is not None
+            and isinstance(metrics.get("full_ruleset_sha256"), str)
+            and _PREFIXED_SHA256.fullmatch(metrics["full_ruleset_sha256"])
+            is not None
+            and (
+                (
+                    bypass_state == "OBSERVED_EMPTY"
+                    and attestation_verified is False
+                )
+                or (
+                    bypass_state == "UNOBSERVABLE_UNDER_CALLER"
+                    and attestation_verified is True
+                    and isinstance(metrics.get("attestation_payload_sha256"), str)
+                    and _PREFIXED_SHA256.fullmatch(
+                        metrics["attestation_payload_sha256"]
+                    )
+                    is not None
+                )
+            )
             and metrics.get("pr_state") == "open"
             and metrics.get("pr_draft") is True
             and metrics.get("pr_merged") is False

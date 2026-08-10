@@ -27,6 +27,7 @@ jobs:
     timeout-minutes: 15
     permissions:
       contents: read
+      issues: read
     steps:
       - name: Checkout exact evaluated source
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
@@ -65,16 +66,19 @@ jobs:
           set -Eeuo pipefail
           umask 027
           export GITHUB_SHA="$YSF_SOURCE_COMMIT"
+          export YSF_SOURCE_TREE="$(git rev-parse HEAD^{tree})"
           export PYTHONPATH="$PWD/tools/ysf/src"
           python - <<'PY'
           from pathlib import Path
           import json
           import os
+          import sys
 
           from ysf.secure_factory.environment import (
               load_expectation,
               validate_candidate_build_environment,
           )
+          from ysf.secure_factory.models import FactoryFailure
           from ysf.secure_factory.policy import (
               QUARANTINED_FIXTURES,
               mutation_paths,
@@ -94,15 +98,20 @@ jobs:
           verify_approved_contract(root)
           event = json.loads(Path(os.environ["GITHUB_EVENT_PATH"]).read_text(encoding="utf-8"))
           pull = event["pull_request"]
-          governance = validate_live_governance(
-              repository=os.environ["GITHUB_REPOSITORY"],
-              pr_number=int(event["number"]),
-              expected_base_ref=pull["base"]["ref"],
-              expected_base_sha=pull["base"]["sha"],
-              expected_head_ref=pull["head"]["ref"],
-              expected_head_sha=pull["head"]["sha"],
-              run_id=os.environ["GITHUB_RUN_ID"],
-          )
+          try:
+              governance = validate_live_governance(
+                  repository=os.environ["GITHUB_REPOSITORY"],
+                  pr_number=int(event["number"]),
+                  expected_base_ref=pull["base"]["ref"],
+                  expected_base_sha=pull["base"]["sha"],
+                  expected_head_ref=pull["head"]["ref"],
+                  expected_head_sha=pull["head"]["sha"],
+                  expected_head_tree=os.environ["YSF_SOURCE_TREE"],
+                  run_id=os.environ["GITHUB_RUN_ID"],
+              )
+          except FactoryFailure as exc:
+              print(exc.code, file=sys.stderr)
+              raise SystemExit(1) from exc
           paths = mutation_paths(root, base_ref="origin/v3/main")
           validate_changed_paths(root, paths)
           verify_immutable_corpus(root)
@@ -139,11 +148,17 @@ jobs:
           jobs = value.get("jobs")
           if not isinstance(jobs, dict) or set(jobs) != set(expected_names):
               raise SystemExit("workflow job set mismatch")
+          expected_permissions = {
+              "policy": {"contents": "read", "issues": "read"},
+              "test": {"contents": "read"},
+              "build-candidate": {"contents": "read", "issues": "read"},
+              "verify-candidate": {"contents": "read"},
+          }
           for job_id, expected_name in expected_names.items():
               job = jobs[job_id]
               if job.get("name") != expected_name:
                   raise SystemExit(f"job name mismatch: {job_id}")
-              if job.get("permissions") != {"contents": "read"}:
+              if job.get("permissions") != expected_permissions[job_id]:
                   raise SystemExit(f"job permissions mismatch: {job_id}")
           forbidden_trigger = "pull_request" + "_target"
           secret_expression = "$" + "{{" + " secrets."
@@ -280,6 +295,7 @@ jobs:
     timeout-minutes: 25
     permissions:
       contents: read
+      issues: read
     steps:
       - name: Checkout exact evaluated source
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
@@ -450,21 +466,28 @@ jobs:
             python - <<'PY'
           import json
           import os
+          import sys
           from pathlib import Path
 
+          from ysf.secure_factory.models import FactoryFailure
           from ysf.secure_factory.policy import validate_live_governance
 
           event = json.loads(Path(os.environ["GITHUB_EVENT_PATH"]).read_text(encoding="utf-8"))
           pull = event["pull_request"]
-          gate = validate_live_governance(
-              repository=os.environ["GITHUB_REPOSITORY"],
-              pr_number=int(event["number"]),
-              expected_base_ref=pull["base"]["ref"],
-              expected_base_sha=pull["base"]["sha"],
-              expected_head_ref=pull["head"]["ref"],
-              expected_head_sha=pull["head"]["sha"],
-              run_id=os.environ["GITHUB_RUN_ID"],
-          )
+          try:
+              gate = validate_live_governance(
+                  repository=os.environ["GITHUB_REPOSITORY"],
+                  pr_number=int(event["number"]),
+                  expected_base_ref=pull["base"]["ref"],
+                  expected_base_sha=pull["base"]["sha"],
+                  expected_head_ref=pull["head"]["ref"],
+                  expected_head_sha=pull["head"]["sha"],
+                  expected_head_tree=os.environ["SOURCE_TREE"],
+                  run_id=os.environ["GITHUB_RUN_ID"],
+              )
+          except FactoryFailure as exc:
+              print(exc.code, file=sys.stderr)
+              raise SystemExit(1) from exc
           print(json.dumps(gate.to_dict(), sort_keys=True, separators=(",", ":")))
           PY
           }

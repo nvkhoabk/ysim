@@ -193,6 +193,46 @@ def test_sanitized_quality_outputs_are_derived_from_actual_results() -> None:
     )
     assert governance["metrics"]["ruleset_id"] == 20583674
 
+    attested_metrics = _quality_metrics("governance-readback")
+    attested_metrics.update(
+        {
+            "bypass_actor_state": "UNOBSERVABLE_UNDER_CALLER",
+            "human_attestation_verified": True,
+            "attestation_comment_id": 123456,
+            "attestation_payload_sha256": "sha256:" + "c" * 64,
+        }
+    )
+    attested = sanitized_quality_output(
+        "governance-readback",
+        0,
+        json.dumps(
+            {
+                "gate": "governance_readback",
+                "result": "PASS",
+                "details": attested_metrics,
+            }
+        ).encode(),
+    )
+    retained = json.dumps(attested, sort_keys=True)
+    assert "UNOBSERVABLE_UNDER_CALLER" in retained
+    assert "Authorization" not in retained
+
+    unsafe_metrics = dict(attested_metrics)
+    unsafe_metrics["Authorization"] = "synthetic-forbidden"
+    with pytest.raises(FactoryFailure) as captured:
+        sanitized_quality_output(
+            "governance-readback",
+            0,
+            json.dumps(
+                {
+                    "gate": "governance_readback",
+                    "result": "PASS",
+                    "details": unsafe_metrics,
+                }
+            ).encode(),
+        )
+    assert captured.value.code == "FAIL_QUALITY_OUTPUT_FORMAT"
+
 
 def test_sanitized_quality_output_bytes_are_persisted_and_scannable(
     tmp_path: Path,
@@ -293,7 +333,17 @@ def _quality_metrics(gate: str) -> dict[str, Any]:
         "dismiss_stale_reviews_on_push": True,
         "require_code_owner_review": True,
         "required_review_thread_resolution": True,
+        "ruleset_updated_at": "2026-08-08T16:22:16.442+07:00",
+        "observable_ruleset_sha256": "sha256:" + "a" * 64,
+        "full_ruleset_sha256": "sha256:" + "b" * 64,
+        "bypass_actor_state": "OBSERVED_EMPTY",
         "bypass_actor_count": 0,
+        "bypass_actors_sha256": (
+            "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        ),
+        "human_attestation_verified": False,
+        "attestation_comment_id": None,
+        "attestation_payload_sha256": None,
         "pr_number": 1,
         "pr_state": "open",
         "pr_draft": True,
