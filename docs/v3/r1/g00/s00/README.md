@@ -18,7 +18,7 @@ promotion, release or production activation.
 - Baseline: `YSIM-V3-R1-DOCSET-2026-08-08 v0.2.0`, archive SHA-256
   `4f183a6537a126b56f7a7b8680e71b976b2c2045793fc6abd9e59ef99cc91a4d`.
 - Contract: `V3-R1-G00-S00-CONTRACT-001 v0.2.0`, SHA-256
-  `337519fcf7d08104ba0e53cbf33dcc4b4a75ec32aac18601cb097c778aa0ae35`.
+  `0c1c0e76c6ff55afd77c6c3aeaebae4a89bd2341870766c05d2ba8610a62b8dd`.
 - Human approval: `HUMAN_CONTRACT_APPROVED` by Khoa Nguyen as Business Owner
   and Technical Owner.
 - Protected source: `v3/main` at commit

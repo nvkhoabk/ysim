@@ -18,7 +18,7 @@ authority:
   baseline_archive_sha256: 4f183a6537a126b56f7a7b8680e71b976b2c2045793fc6abd9e59ef99cc91a4d
   contract_id: V3-R1-G00-S00-CONTRACT-001
   contract_version: 0.2.0
-  contract_sha256: 337519fcf7d08104ba0e53cbf33dcc4b4a75ec32aac18601cb097c778aa0ae35
+  contract_sha256: 0c1c0e76c6ff55afd77c6c3aeaebae4a89bd2341870766c05d2ba8610a62b8dd
   approval_result: HUMAN_CONTRACT_APPROVED
   approval_record_sha256: 352d8411bd4ad0d61d0a7269482834f2e0d7dcffdd275074f050a0bdfbc41062
   approver: Khoa Nguyen

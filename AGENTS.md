@@ -11,7 +11,7 @@ This policy applies to the whole repository while working on Slice
 - Approved seed commit: `5be8413d3c22d1345b3088424af40ca2eb9d1115`.
 - Approved seed tree: `4631630f4d57872e08f6b523ab8adf0a94453673`.
 - Approved Contract SHA-256:
-  `337519fcf7d08104ba0e53cbf33dcc4b4a75ec32aac18601cb097c778aa0ae35`.
+  `0c1c0e76c6ff55afd77c6c3aeaebae4a89bd2341870766c05d2ba8610a62b8dd`.
 - External-effect budget: `DENY_ALL`.
 
 ## Required behavior

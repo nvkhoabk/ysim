@@ -232,13 +232,14 @@ def test_preflight_orchestrates_policy_and_safe_scan(
         "ysf.secure_factory.cli.validate_environment", lambda expected, observed: gate
     )
     monkeypatch.setattr("ysf.secure_factory.cli.verify_policy_self_protection", lambda path: gate)
+    monkeypatch.setattr("ysf.secure_factory.cli.verify_approved_contract", lambda root: gate)
     monkeypatch.setattr(
         "ysf.secure_factory.cli.mutation_paths", lambda root, **kwargs: {"AGENTS.md"}
     )
     monkeypatch.setattr("ysf.secure_factory.cli.validate_changed_paths", lambda root, paths: gate)
     monkeypatch.setattr("ysf.secure_factory.cli.verify_immutable_corpus", lambda root: gate)
     monkeypatch.setattr("ysf.secure_factory.cli.require_no_sensitive_values", lambda paths: gate)
-    assert len(_preflight(tmp_path)) == 5
+    assert len(_preflight(tmp_path)) == 6
 
 
 def test_known_bad_fixture_self_checks_fail_closed(tmp_path: Path) -> None:

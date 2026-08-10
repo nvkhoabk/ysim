@@ -11,7 +11,7 @@ language: en
 
 Contract: `V3-R1-G00-S00-CONTRACT-001 v0.2.0`  
 Contract SHA-256:
-`337519fcf7d08104ba0e53cbf33dcc4b4a75ec32aac18601cb097c778aa0ae35`
+`0c1c0e76c6ff55afd77c6c3aeaebae4a89bd2341870766c05d2ba8610a62b8dd`
 
 ## Exact allowlist
 

@@ -1,7 +1,7 @@
 schema_version: 1
 schema_id: V3-R1-G00-S00-EVIDENCE-SCHEMA-001
 slice_id: V3-R1-G00-S00
-contract_sha256: 337519fcf7d08104ba0e53cbf33dcc4b4a75ec32aac18601cb097c778aa0ae35
+contract_sha256: 0c1c0e76c6ff55afd77c6c3aeaebae4a89bd2341870766c05d2ba8610a62b8dd
 record_policy:
   execution_id: REQUIRED_UNIQUE_IMMUTABLE
   failed_record_overwrite: FORBIDDEN
@@ -17,6 +17,10 @@ required_fields:
   - head_commit
   - head_tree
   - contract_sha256
+  - contract_path
+  - contract_actual_sha256
+  - contract_approved_sha256
+  - contract_digest_match
   - environment_identity
   - changed_paths
   - input_digests
@@ -38,6 +42,8 @@ candidate_required_records:
   - leak_scan_report
   - environment_identity
   - append_only_execution_ledger
+  - exact_approved_contract_bytes
+  - retained_sanitized_quality_outputs
 prohibited_values:
   - REAL_CREDENTIAL
   - PII
@@ -53,7 +59,7 @@ quality_gate_policy:
   output_binding: SHA256_OF_ACTUAL_GATE_OUTPUT
   required_result: PASS_WITH_EXIT_CODE_ZERO
 candidate_semantic_binding:
-  source: [repository, branch, head_commit, head_tree, contract_sha256]
+  source: [repository, branch, head_commit, head_tree, contract_path, contract_actual_sha256, contract_approved_sha256, contract_digest_match]
   dependency_inputs: [requirements-s00-build.lock, requirements-s00-dev.lock]
   sbom: CYCLONEDX_1_6_EXACT_LOCK_COMPONENTS
   provenance: SLSA_V1_EXACT_SOURCE_BUILDER_LOCK_AND_WHEEL_BINDING

@@ -52,7 +52,7 @@ def test_compliant_fixture_passes() -> None:
     assert require_no_sensitive_values([compliant]).passed
 
 
-def test_vn_phone_detector_ignores_only_sha256_digest_substrings() -> None:
+def test_vn_phone_detector_requires_structural_sha256_context() -> None:
     synthetic_phone = "".join(("0", "3", "1" * 8))
     findings = scan_text(synthetic_phone, location="standalone-synthetic")
     assert [finding.kind for finding in findings] == ["PII_PHONE_VN"]
@@ -60,6 +60,21 @@ def test_vn_phone_detector_ignores_only_sha256_digest_substrings() -> None:
     digest = ("a" * 12) + synthetic_phone + ("b" * 42)
     assert len(digest) == 64
     assert scan_text(f"--hash=sha256:{digest}", location="synthetic-lock") == []
+    assert scan_text(f"{digest}  artifacts/synthetic.whl", location="checksums") == []
+
+    wrong_contexts = (
+        digest,
+        f"value: {digest}",
+        f"sha25x:{digest}",
+        f"sha256:{digest[:-1]}",
+        f"sha256:{digest}a",
+        f"sha256:{digest[:-1]}z",
+        f"{digest}  ../escape",
+    )
+    for text in wrong_contexts:
+        assert "PII_PHONE_VN" in {
+            finding.kind for finding in scan_text(text, location="wrong-context")
+        }
 
 
 def test_reserved_admin_example_email_is_safe_but_other_roles_fail_closed() -> None:
@@ -85,6 +100,44 @@ def test_reserved_admin_example_email_is_safe_but_other_roles_fail_closed() -> N
     assert [item.kind for item in scan_text(non_reserved_admin, location="admin")] == [
         "PII_EMAIL"
     ]
+
+
+@pytest.mark.parametrize(
+    "duplicate_fields",
+    [
+        "  role: admin\n  role: admin\n",
+        "  role: customer\n  role: admin\n",
+        "  email: " + "duplicate" + "@" + "example.com\n  role: admin\n",
+        "  email: " + "other" + "@" + "example.net\n  role: admin\n",
+    ],
+)
+def test_ambiguous_admin_yaml_never_receives_email_exemption(
+    duplicate_fields: str,
+) -> None:
+    non_reserved = "".join(("seed", "@", "synthetic.localdomain"))
+    source = (
+        "# 9. Demonstration Seed\n\n"
+        "```yaml\n"
+        "demo_user:\n"
+        f"  email: {non_reserved}\n"
+        f"{duplicate_fields}"
+        "```\n"
+    )
+    assert "PII_EMAIL" in {
+        finding.kind for finding in scan_text(source, location="ambiguous-admin")
+    }
+
+
+def test_malformed_admin_yaml_fails_closed() -> None:
+    non_reserved = "".join(("seed", "@", "synthetic.localdomain"))
+    source = (
+        "# Demonstration Seed\n\n```yaml\n"
+        f"demo_user: [email: {non_reserved}\n"
+        "  role: admin\n```\n"
+    )
+    assert "PII_EMAIL" in {
+        finding.kind for finding in scan_text(source, location="malformed-admin")
+    }
 
 
 def test_sensitive_gate_fails_without_raw_value() -> None:

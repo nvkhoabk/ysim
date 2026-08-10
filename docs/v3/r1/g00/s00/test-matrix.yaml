@@ -1,7 +1,7 @@
 schema_version: 1
 slice_id: V3-R1-G00-S00
 matrix_id: V3-R1-G00-S00-TEST-MATRIX-001
-contract_sha256: 337519fcf7d08104ba0e53cbf33dcc4b4a75ec32aac18601cb097c778aa0ae35
+contract_sha256: 0c1c0e76c6ff55afd77c6c3aeaebae4a89bd2341870766c05d2ba8610a62b8dd
 default_result_on_missing_or_skipped_gate: FAIL_CLOSED
 test_groups:
   - id: ENVIRONMENT_IDENTITY
@@ -11,11 +11,11 @@ test_groups:
   - id: SOURCE_AND_CORPUS_POLICY
     state: IMPLEMENTED_EXECUTABLE
     positive: [clean_tree, exact_diff_allowlist, immutable_brd_uxf]
-    negative: [dirty_tree, path_escape, unapproved_path, corpus_mutation, policy_self_disable]
+    negative: [dirty_tree, path_escape, unapproved_path, corpus_mutation, contract_byte_tamper, policy_self_disable]
   - id: APPROVAL_AND_RULESET
     state: IMPLEMENTED_EXECUTABLE
     positive: [exact_contract_approval_digest, exact_ruleset_readback]
-    negative: [missing_approval, stale_approval, wrong_digest, ruleset_mismatch, stale_review]
+    negative: [missing_approval, stale_approval, wrong_digest, live_ruleset_mismatch, stale_pr_identity, stale_review]
   - id: DEPENDENCY_AND_QUALITY
     state: IMPLEMENTED_EXECUTABLE
     positive: [hash_required_install, declared_dependency_closure, ruff, mypy, pytest, coverage, bandit, dependency_sca, sbom]
@@ -23,7 +23,7 @@ test_groups:
   - id: SENSITIVE_DATA_AND_EVIDENCE
     state: IMPLEMENTED_EXECUTABLE
     positive: [sanitized_metadata, append_only_execution_ledger]
-    negative: [synthetic_secret, synthetic_pii, synthetic_iccid, synthetic_lpa, synthetic_qr, tampered_manifest, overwritten_failure]
+    negative: [synthetic_secret, synthetic_pii, synthetic_iccid, synthetic_lpa, synthetic_qr, ambiguous_admin_yaml, tampered_manifest, tampered_quality_output, overwritten_failure]
   - id: CANDIDATE_INTEGRITY
     state: IMPLEMENTED_EXECUTABLE
     positive: [one_deterministic_wheel, checksums, sbom, provenance]

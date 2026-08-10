@@ -1,7 +1,7 @@
 schema_version: 1
 slice_id: V3-R1-G00-S00
 environment_id: V3-R1-G00-S00-IMPLEMENTATION-ENV-001
-contract_sha256: 337519fcf7d08104ba0e53cbf33dcc4b4a75ec32aac18601cb097c778aa0ae35
+contract_sha256: 0c1c0e76c6ff55afd77c6c3aeaebae4a89bd2341870766c05d2ba8610a62b8dd
 repository: nvkhoabk/ysim
 protected_source:
   branch: v3/main

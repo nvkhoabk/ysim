@@ -3,7 +3,7 @@ slice_id: V3-R1-G00-S00
 register_id: V3-R1-G00-S00-CLARIFICATION-REGISTER-IMPLEMENTATION-001
 source_register_id: V3-R1-G00-S00-CLARIFICATION-REGISTER-002
 source_register_sha256: 84798ded9be5db5f40c4176b3c6383bcc1f2ddf7eb821ce77e56299da6a6bbce
-contract_sha256: 337519fcf7d08104ba0e53cbf33dcc4b4a75ec32aac18601cb097c778aa0ae35
+contract_sha256: 0c1c0e76c6ff55afd77c6c3aeaebae4a89bd2341870766c05d2ba8610a62b8dd
 approval_result: HUMAN_CONTRACT_APPROVED
 approver: Khoa Nguyen
 status: SIX_RP_A_CLARIFICATIONS_RESOLVED

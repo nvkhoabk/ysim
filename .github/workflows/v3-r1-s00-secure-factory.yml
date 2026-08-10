@@ -58,6 +58,8 @@ jobs:
             --requirement tools/ysf/requirements-s00-dev.lock
           python -m pip check
       - name: Enforce source, corpus, identity and no-effect policy
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
         shell: bash
         run: |
           set -Eeuo pipefail
@@ -66,6 +68,8 @@ jobs:
           export PYTHONPATH="$PWD/tools/ysf/src"
           python - <<'PY'
           from pathlib import Path
+          import json
+          import os
 
           from ysf.secure_factory.environment import (
               load_expectation,
@@ -75,7 +79,9 @@ jobs:
               QUARANTINED_FIXTURES,
               mutation_paths,
               validate_changed_paths,
+              validate_live_governance,
               verify_immutable_corpus,
+              verify_approved_contract,
               verify_policy_self_protection,
           )
           from ysf.secure_factory.sensitive import require_no_sensitive_values
@@ -85,6 +91,18 @@ jobs:
           expectation = load_expectation(context / "environment-identity.yaml")
           validate_candidate_build_environment(expectation, root)
           verify_policy_self_protection(context / "source-and-delivery-policy.md")
+          verify_approved_contract(root)
+          event = json.loads(Path(os.environ["GITHUB_EVENT_PATH"]).read_text(encoding="utf-8"))
+          pull = event["pull_request"]
+          governance = validate_live_governance(
+              repository=os.environ["GITHUB_REPOSITORY"],
+              pr_number=int(event["number"]),
+              expected_base_ref=pull["base"]["ref"],
+              expected_base_sha=pull["base"]["sha"],
+              expected_head_ref=pull["head"]["ref"],
+              expected_head_sha=pull["head"]["sha"],
+              run_id=os.environ["GITHUB_RUN_ID"],
+          )
           paths = mutation_paths(root, base_ref="origin/v3/main")
           validate_changed_paths(root, paths)
           verify_immutable_corpus(root)
@@ -94,6 +112,7 @@ jobs:
               if (root / path).is_file()
           ]
           require_no_sensitive_values(inputs)
+          print(json.dumps(governance.to_dict(), sort_keys=True, separators=(",", ":")))
           print("RESULT=PASS_S00_POLICY")
           PY
       - name: Verify workflow self-policy and CODEOWNERS
@@ -292,6 +311,8 @@ jobs:
             --requirement tools/ysf/requirements-s00-dev.lock
           python -m pip check
       - name: Generate exact candidate quality inputs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
         shell: bash
         run: |
           set -Eeuo pipefail
@@ -315,11 +336,22 @@ jobs:
           import os
           from pathlib import Path
 
+          from ysf.secure_factory.policy import (
+              APPROVED_CONTRACT_SHA256,
+              CONTRACT_RELATIVE_PATH,
+          )
+
           def digest(path: str) -> str:
               return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
+          contract_actual = digest(str(Path.cwd().parents[1] / CONTRACT_RELATIVE_PATH))
+          if contract_actual != APPROVED_CONTRACT_SHA256:
+              raise SystemExit("FAIL_CONTRACT_DIGEST")
           print(json.dumps({
-              "contract_sha256": "337519fcf7d08104ba0e53cbf33dcc4b4a75ec32aac18601cb097c778aa0ae35",
+              "contract_path": CONTRACT_RELATIVE_PATH,
+              "contract_actual_sha256": contract_actual,
+              "contract_approved_sha256": APPROVED_CONTRACT_SHA256,
+              "contract_digest_match": "true",
               "head_tree": os.environ["SOURCE_TREE"],
               "requirements-s00-build.lock": digest("requirements-s00-build.lock"),
               "requirements-s00-dev.lock": digest("requirements-s00-dev.lock"),
@@ -331,6 +363,7 @@ jobs:
             local gate="$1"
             local report="$2"
             local log_path="${quality_root}/${gate}.log"
+            local output_path="${quality_root}/quality-outputs/${gate}.json"
             local status
             shift 2
             if "$@" >"$log_path" 2>&1; then
@@ -338,8 +371,22 @@ jobs:
             else
               status=$?
             fi
+            GATE_NAME="$gate" GATE_STATUS="$status" RAW_PATH="$log_path" OUTPUT_PATH="$output_path" \
+              python - <<'PY'
+          import os
+          from pathlib import Path
+
+          from ysf.secure_factory.candidate import write_sanitized_quality_output
+
+          write_sanitized_quality_output(
+              os.environ["GATE_NAME"],
+              int(os.environ["GATE_STATUS"]),
+              Path(os.environ["RAW_PATH"]),
+              Path(os.environ["OUTPUT_PATH"]),
+          )
+          PY
             cat "$log_path"
-            GATE_NAME="$gate" GATE_STATUS="$status" REPORT_NAME="$report" \
+            GATE_NAME="$gate" GATE_STATUS="$status" REPORT_NAME="$report" OUTPUT_PATH="$output_path" \
               python - <<'PY'
           import hashlib
           import json
@@ -352,6 +399,7 @@ jobs:
           status = int(os.environ["GATE_STATUS"])
           root = Path(os.environ["QUALITY_ROOT"])
           report = root / os.environ["REPORT_NAME"]
+          output = Path(os.environ["OUTPUT_PATH"])
           record = {
               "execution_id": (
                   f"GHA-{os.environ['GITHUB_RUN_ID']}-{os.environ['GITHUB_RUN_ATTEMPT']}-"
@@ -363,7 +411,11 @@ jobs:
               "branch": os.environ["SOURCE_BRANCH"],
               "head_commit": os.environ["YSF_SOURCE_COMMIT"],
               "head_tree": os.environ["SOURCE_TREE"],
-              "contract_sha256": "337519fcf7d08104ba0e53cbf33dcc4b4a75ec32aac18601cb097c778aa0ae35",
+              "contract_sha256": json.loads(os.environ["INPUT_DIGESTS_JSON"])["contract_actual_sha256"],
+              "contract_path": json.loads(os.environ["INPUT_DIGESTS_JSON"])["contract_path"],
+              "contract_actual_sha256": json.loads(os.environ["INPUT_DIGESTS_JSON"])["contract_actual_sha256"],
+              "contract_approved_sha256": json.loads(os.environ["INPUT_DIGESTS_JSON"])["contract_approved_sha256"],
+              "contract_digest_match": True,
               "environment_identity": {
                   "architecture": platform.machine(),
                   "email_mode": os.environ["YSF_EMAIL_MODE"],
@@ -378,7 +430,9 @@ jobs:
               "exit_code": status,
               "result": "PASS" if status == 0 else "FAIL",
               "next_allowed_action": "BUILD_ONCE_CANDIDATE" if status == 0 else "STOP_AND_REVIEW",
-              "output_sha256": hashlib.sha256((root / f"{gate}.log").read_bytes()).hexdigest(),
+              "output_path": f"reports/quality-outputs/{gate}.json",
+              "output_size": output.stat().st_size,
+              "output_sha256": hashlib.sha256(output.read_bytes()).hexdigest(),
           }
           if gate == "pytest":
               record["branch_coverage_threshold_percent"] = 90
@@ -392,8 +446,32 @@ jobs:
             return "$status"
           }
 
+          governance_readback() {
+            python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          from ysf.secure_factory.policy import validate_live_governance
+
+          event = json.loads(Path(os.environ["GITHUB_EVENT_PATH"]).read_text(encoding="utf-8"))
+          pull = event["pull_request"]
+          gate = validate_live_governance(
+              repository=os.environ["GITHUB_REPOSITORY"],
+              pr_number=int(event["number"]),
+              expected_base_ref=pull["base"]["ref"],
+              expected_base_sha=pull["base"]["sha"],
+              expected_head_ref=pull["head"]["ref"],
+              expected_head_sha=pull["head"]["sha"],
+              run_id=os.environ["GITHUB_RUN_ID"],
+          )
+          print(json.dumps(gate.to_dict(), sort_keys=True, separators=(",", ":")))
+          PY
+          }
+
           run_gate environment-identity environment-identity.json \
-            python -c 'import os; assert os.environ["YSF_EXTERNAL_EFFECT_BUDGET"] == "DENY_ALL"; assert os.environ["YSF_PROVIDERS"] == "OFF"; assert os.environ["YSF_EMAIL_MODE"] == "NON_RELAYING"'
+            python -c 'import json,os; value={"external_effect_budget":os.environ["YSF_EXTERNAL_EFFECT_BUDGET"],"providers":os.environ["YSF_PROVIDERS"],"email_mode":os.environ["YSF_EMAIL_MODE"]}; assert value=={"external_effect_budget":"DENY_ALL","providers":"OFF","email_mode":"NON_RELAYING"}; print(json.dumps(value,sort_keys=True,separators=(",",":")))'
+          run_gate governance-readback governance-readback.json governance_readback
           run_gate ruff lint-type-sast-dependency.json python -m ruff check src/ysf tests
           run_gate mypy lint-type-sast-dependency.json python -m mypy src/ysf
           run_gate pytest test-and-coverage.json python -m pytest tests \
@@ -409,12 +487,12 @@ jobs:
           )
           PY
           run_gate bandit lint-type-sast-dependency.json \
-            python -m bandit -q -r src/ysf --severity-level medium
+            python -m bandit -q -f json -r src/ysf --severity-level medium
           run_gate pip-audit lint-type-sast-dependency.json python -m pip_audit \
             --require-hashes --no-deps --strict --progress-spinner off \
-            --requirement requirements-s00-dev.lock
+            --format json --requirement requirements-s00-dev.lock
           run_gate leak-scan leak-scan.json python -c \
-            'from pathlib import Path; from ysf.secure_factory.policy import QUARANTINED_FIXTURES, mutation_paths; from ysf.secure_factory.sensitive import require_no_sensitive_values; root=Path.cwd().parents[1]; paths=mutation_paths(root, base_ref="origin/v3/main"); require_no_sensitive_values(root/path for path in sorted(paths-QUARANTINED_FIXTURES) if (root/path).is_file())'
+            'import json; from pathlib import Path; from ysf.secure_factory.policy import QUARANTINED_FIXTURES, mutation_paths; from ysf.secure_factory.sensitive import require_no_sensitive_values; root=Path.cwd().parents[1]; paths=mutation_paths(root, base_ref="origin/v3/main"); gate=require_no_sensitive_values(root/path for path in sorted(paths-QUARANTINED_FIXTURES) if (root/path).is_file()); print(json.dumps(gate.to_dict(),sort_keys=True,separators=(",",":")))'
 
           python - "$quality_root" <<'PY'
           import json
@@ -427,6 +505,7 @@ jobs:
               "lint-type-sast-dependency.json",
               "leak-scan.json",
               "environment-identity.json",
+              "governance-readback.json",
           )
           records = []
           for name in report_names:
@@ -434,7 +513,7 @@ jobs:
               if value["result"] != "PASS":
                   raise SystemExit(f"quality report failed: {name}")
               records.extend(value["records"])
-          if len(records) != 7 or len({item["command_or_gate"] for item in records}) != 7:
+          if len(records) != 8 or len({item["command_or_gate"] for item in records}) != 8:
               raise SystemExit("quality gate set is not exact")
           (root / "execution-ledger.jsonl").write_text(
               "".join(json.dumps(item, sort_keys=True, separators=(",", ":")) + "\n" for item in records),

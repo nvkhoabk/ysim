@@ -28,18 +28,21 @@ from ysf.secure_factory.environment import (
 from ysf.secure_factory.evidence import EvidenceLedger
 from ysf.secure_factory.models import FactoryFailure, GateResult
 from ysf.secure_factory.policy import (
+    APPROVED_CONTRACT_SHA256,
+    CONTRACT_RELATIVE_PATH,
     QUARANTINED_FIXTURES,
     mutation_paths,
     validate_approval_and_ruleset,
     validate_changed_paths,
     validate_external_effect_policy,
     validate_relative_path,
+    verify_approved_contract,
     verify_immutable_corpus,
     verify_policy_self_protection,
 )
 from ysf.secure_factory.sensitive import require_no_sensitive_values, scan_path
 
-CONTRACT_SHA256 = "337519fcf7d08104ba0e53cbf33dcc4b4a75ec32aac18601cb097c778aa0ae35"
+CONTRACT_SHA256 = APPROVED_CONTRACT_SHA256
 
 
 def _repository_root() -> Path:
@@ -72,6 +75,7 @@ def _preflight(repository_root: Path, *, candidate_build: bool = False) -> list[
         identity_gate = validate_environment(expected, observe_environment(repository_root))
     results = [identity_gate]
     results.append(verify_policy_self_protection(context / "source-and-delivery-policy.md"))
+    results.append(verify_approved_contract(repository_root))
     paths = mutation_paths(repository_root, base_ref="origin/v3/main")
     results.append(validate_changed_paths(repository_root, paths))
     results.append(verify_immutable_corpus(repository_root))
@@ -378,6 +382,7 @@ def main(argv: Sequence[str] | None = None) -> int:
                     expected_commit=commit,
                     expected_tree=tree,
                     expected_contract_sha256=CONTRACT_SHA256,
+                    expected_contract_path=repository_root / CONTRACT_RELATIVE_PATH,
                     expected_lock_paths=(
                         repository_root / "tools/ysf/requirements-s00-build.lock",
                         repository_root / "tools/ysf/requirements-s00-dev.lock",

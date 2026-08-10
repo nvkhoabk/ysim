@@ -12,18 +12,24 @@ from ysf.secure_factory.candidate import (
     _parse_lock_components,
     build_candidate,
     normalize_generated_admin_email,
+    sanitized_quality_output,
     verify_candidate,
     verify_declared_dependency_closure,
     write_reproducible_zip,
+    write_sanitized_quality_output,
 )
 from ysf.secure_factory.evidence import build_manifest, sha256_file
 from ysf.secure_factory.models import FactoryFailure
+from ysf.secure_factory.policy import (
+    APPROVED_CONTRACT_SHA256,
+    CONTRACT_RELATIVE_PATH,
+)
 
 REPOSITORY = "nvkhoabk/ysim"
 BRANCH = "feature/v3-r1-g00-s00-secure-factory"
 COMMIT = "a" * 40
 TREE = "b" * 40
-CONTRACT = "337519fcf7d08104ba0e53cbf33dcc4b4a75ec32aac18601cb097c778aa0ae35"
+CONTRACT = APPROVED_CONTRACT_SHA256
 CHANGED_PATHS = ["AGENTS.md"]
 PREFLIGHT_GATES = (
     "candidate_build_environment",
@@ -31,13 +37,19 @@ PREFLIGHT_GATES = (
     "source_allowlist",
     "immutable_corpus",
     "sensitive_data",
+    "contract_digest",
 )
 QUALITY_GROUPS = {
     "test-and-coverage.json": ("pytest",),
     "lint-type-sast-dependency.json": ("ruff", "mypy", "bandit", "pip-audit"),
     "leak-scan.json": ("leak-scan",),
     "environment-identity.json": ("environment-identity",),
+    "governance-readback.json": ("governance-readback",),
 }
+
+
+def _approved_contract() -> Path:
+    return Path(__file__).resolve().parents[4] / CONTRACT_RELATIVE_PATH
 
 
 def test_reproducible_zip_bytes_match(tmp_path: Path) -> None:
@@ -98,6 +110,123 @@ def test_admin_email_normalization_requires_explicit_role(tmp_path: Path) -> Non
     assert generated.read_text(encoding="utf-8") == source
 
 
+@pytest.mark.parametrize(
+    "ambiguous",
+    [
+        "  role: admin\n  role: admin\n",
+        "  role: customer\n  role: admin\n",
+        "  email: " + "duplicate" + "@" + "example.com\n  role: admin\n",
+    ],
+)
+def test_admin_email_normalization_rejects_ambiguous_mapping(
+    tmp_path: Path, ambiguous: str
+) -> None:
+    non_reserved = "".join(("seed", "@", "synthetic.localdomain"))
+    generated = tmp_path / "prompt.md"
+    source = (
+        "# Demonstration Seed\n\n```yaml\n"
+        f"demo_user:\n  email: {non_reserved}\n{ambiguous}```\n"
+    )
+    generated.write_text(source, encoding="utf-8")
+    assert normalize_generated_admin_email(generated).passed
+    assert generated.read_text(encoding="utf-8") == source
+
+
+def test_sanitized_quality_outputs_are_derived_from_actual_results() -> None:
+    pytest_output = (
+        b"Required test coverage of 90% reached. Total coverage: 91.25%\n"
+        b"132 passed in 1.00s\n"
+    )
+    summary = sanitized_quality_output("pytest", 0, pytest_output)
+    assert summary["metrics"] == {
+        "passed": 132,
+        "failed": 0,
+        "skipped": 0,
+        "coverage_percent": 91.25,
+    }
+    bandit = sanitized_quality_output(
+        "bandit", 0, b'{"results":[],"metrics":{"_totals":{"loc":100,"nosec":0}}}'
+    )
+    assert bandit["metrics"] == {
+        "issue_count": 0,
+        "lines_of_code": 100,
+        "files_skipped": 0,
+    }
+    audit = sanitized_quality_output(
+        "pip-audit",
+        0,
+        b"sanitized warning with {invalid payload\n{\"dependencies\":[]}\n",
+    )
+    assert audit["metrics"]["vulnerability_count"] == 0
+
+    ruff = sanitized_quality_output("ruff", 0, b"All checks passed!\n")
+    assert ruff["metrics"]["issue_count"] == 0
+    failed_ruff = sanitized_quality_output("ruff", 1, b"sanitized failure\n")
+    assert failed_ruff["result"] == "FAIL"
+    assert failed_ruff["metrics"]["issue_count"] == 1
+    mypy = sanitized_quality_output(
+        "mypy", 0, b"Success: no issues found in 67 source files\n"
+    )
+    assert mypy["metrics"]["source_file_count"] == 67
+    environment = sanitized_quality_output(
+        "environment-identity",
+        0,
+        b'{"email_mode":"NON_RELAYING","external_effect_budget":"DENY_ALL","providers":"OFF"}',
+    )
+    assert environment["metrics"]["providers"] == "OFF"
+    leak = sanitized_quality_output(
+        "leak-scan",
+        0,
+        b'{"gate":"sensitive_data","result":"PASS","details":{"scanned_file_count":3,"profile":"V3-R1-S00-PROHIBITED-V3"}}',
+    )
+    assert leak["metrics"]["finding_count"] == 0
+    governance = sanitized_quality_output(
+        "governance-readback",
+        0,
+        json.dumps(
+            {
+                "gate": "governance_readback",
+                "result": "PASS",
+                "details": _quality_metrics("governance-readback"),
+            }
+        ).encode(),
+    )
+    assert governance["metrics"]["ruleset_id"] == 20583674
+
+
+def test_sanitized_quality_output_bytes_are_persisted_and_scannable(
+    tmp_path: Path,
+) -> None:
+    raw = tmp_path / "ruff.log"
+    raw.write_bytes(b"All checks passed!\n")
+    output = tmp_path / "quality-outputs/ruff.json"
+    write_sanitized_quality_output("ruff", 0, raw, output)
+    value = json.loads(output.read_text(encoding="utf-8"))
+    assert value["gate"] == "ruff"
+    assert value["metrics"]["issue_count"] == 0
+
+
+@pytest.mark.parametrize(
+    ("gate", "raw", "code"),
+    [
+        ("unsupported", b"safe", "FAIL_QUALITY_OUTPUT_GATE"),
+        ("ruff", b"unexpected", "FAIL_QUALITY_OUTPUT_FORMAT"),
+        ("mypy", b"unexpected", "FAIL_QUALITY_OUTPUT_FORMAT"),
+        ("pytest", b"1 passed\nTotal coverage: 80%", "FAIL_QUALITY_OUTPUT_RESULT"),
+        ("bandit", b"{}", "FAIL_QUALITY_OUTPUT_FORMAT"),
+        ("pip-audit", b"{}", "FAIL_QUALITY_OUTPUT_FORMAT"),
+        ("leak-scan", b"{}", "FAIL_QUALITY_OUTPUT_FORMAT"),
+        ("governance-readback", b"{}", "FAIL_QUALITY_OUTPUT_FORMAT"),
+    ],
+)
+def test_sanitized_quality_output_fails_closed(
+    gate: str, raw: bytes, code: str
+) -> None:
+    with pytest.raises(FactoryFailure) as captured:
+        sanitized_quality_output(gate, 0, raw)
+    assert captured.value.code == code
+
+
 def _locks(root: Path, *, version: str = "1.2.3") -> tuple[Path, Path]:
     lock_root = root / "locks"
     lock_root.mkdir(parents=True)
@@ -115,13 +244,72 @@ def _locks(root: Path, *, version: str = "1.2.3") -> tuple[Path, Path]:
 
 def _input_digests(locks: tuple[Path, Path]) -> dict[str, str]:
     return {
-        "contract_sha256": CONTRACT,
+        "contract_path": CONTRACT_RELATIVE_PATH,
+        "contract_actual_sha256": CONTRACT,
+        "contract_approved_sha256": CONTRACT,
+        "contract_digest_match": "true",
         "head_tree": TREE,
         **{path.name: sha256_file(path) for path in locks},
     }
 
 
-def _quality_record(gate: str, locks: tuple[Path, Path]) -> dict[str, Any]:
+def _quality_metrics(gate: str) -> dict[str, Any]:
+    if gate in {"ruff", "mypy", "bandit"}:
+        return {"issue_count": 0, **({"source_file_count": 1} if gate == "mypy" else {})}
+    if gate == "pip-audit":
+        return {"dependency_count": 1, "vulnerability_count": 0}
+    if gate == "pytest":
+        return {
+            "passed": 1,
+            "failed": 0,
+            "skipped": 0,
+            "coverage_percent": 100.0,
+        }
+    if gate == "leak-scan":
+        return {
+            "finding_count": 0,
+            "scanned_file_count": 1,
+            "profile": "V3-R1-S00-PROHIBITED-V3",
+        }
+    if gate == "environment-identity":
+        return {
+            "external_effect_budget": "DENY_ALL",
+            "providers": "OFF",
+            "email_mode": "NON_RELAYING",
+        }
+    return {
+        "api_host": "api.github.com",
+        "repository": REPOSITORY,
+        "ruleset_id": 20583674,
+        "enforcement": "active",
+        "target_ref": "refs/heads/v3/main",
+        "required_status_checks": [
+            "S00 / build-candidate",
+            "S00 / policy",
+            "S00 / test",
+            "S00 / verify-candidate",
+        ],
+        "required_approving_review_count": 1,
+        "dismiss_stale_reviews_on_push": True,
+        "require_code_owner_review": True,
+        "required_review_thread_resolution": True,
+        "bypass_actor_count": 0,
+        "pr_number": 1,
+        "pr_state": "open",
+        "pr_draft": True,
+        "pr_merged": False,
+        "base_ref": "v3/main",
+        "base_sha": "5be8413d3c22d1345b3088424af40ca2eb9d1115",
+        "head_ref": BRANCH,
+        "head_sha": COMMIT,
+        "retrieval_context": {"github_actions_run_id": "123"},
+        "github_approving_review_claimed": False,
+    }
+
+
+def _quality_record(
+    gate: str, locks: tuple[Path, Path], output: Path
+) -> dict[str, Any]:
     record: dict[str, Any] = {
         "execution_id": f"GHA-100-1-{gate.upper().replace('-', '_')}",
         "timestamp_utc": "2026-08-08T15:00:00Z",
@@ -131,6 +319,10 @@ def _quality_record(gate: str, locks: tuple[Path, Path]) -> dict[str, Any]:
         "head_commit": COMMIT,
         "head_tree": TREE,
         "contract_sha256": CONTRACT,
+        "contract_path": CONTRACT_RELATIVE_PATH,
+        "contract_actual_sha256": CONTRACT,
+        "contract_approved_sha256": CONTRACT,
+        "contract_digest_match": True,
         "environment_identity": {
             "architecture": "x86_64",
             "email_mode": "NON_RELAYING",
@@ -146,7 +338,10 @@ def _quality_record(gate: str, locks: tuple[Path, Path]) -> dict[str, Any]:
         "result": "PASS",
         "next_allowed_action": "BUILD_ONCE_CANDIDATE",
         "output_sha256": "d" * 64,
+        "output_path": f"reports/quality-outputs/{gate}.json",
+        "output_size": output.stat().st_size,
     }
+    record["output_sha256"] = sha256_file(output)
     if gate == "pytest":
         record["branch_coverage_threshold_percent"] = 90
     return record
@@ -154,9 +349,30 @@ def _quality_record(gate: str, locks: tuple[Path, Path]) -> dict[str, Any]:
 
 def _write_quality_inputs(root: Path, locks: tuple[Path, Path]) -> list[dict[str, Any]]:
     root.mkdir(parents=True, exist_ok=True)
+    output_root = root / "quality-outputs"
+    output_root.mkdir()
     records: list[dict[str, Any]] = []
     for name, gates in QUALITY_GROUPS.items():
-        group = [_quality_record(gate, locks) for gate in gates]
+        group = []
+        for gate in gates:
+            output = output_root / f"{gate}.json"
+            output.write_text(
+                json.dumps(
+                    {
+                        "schema_version": 1,
+                        "gate": gate,
+                        "tool": gate,
+                        "exit_code": 0,
+                        "result": "PASS",
+                        "metrics": _quality_metrics(gate),
+                    },
+                    sort_keys=True,
+                    separators=(",", ":"),
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+            group.append(_quality_record(gate, locks, output))
         records.extend(group)
         (root / name).write_text(
             json.dumps(
@@ -209,10 +425,15 @@ def _synthetic_candidate(root: Path) -> Path:
     quality_records = _write_quality_inputs(quality_root, locks)
     for name in ("test-and-coverage.json", "lint-type-sast-dependency.json", "leak-scan.json"):
         shutil.copyfile(quality_root / name, reports / name)
+    shutil.copyfile(quality_root / "governance-readback.json", reports / "governance-readback.json")
+    shutil.copytree(quality_root / "quality-outputs", reports / "quality-outputs")
     shutil.copyfile(
         quality_root / "environment-identity.json", candidate / "environment-identity.json"
     )
     shutil.copyfile(quality_root / "execution-ledger.jsonl", candidate / "execution-ledger.jsonl")
+    contract_target = candidate / "contract/slice-contract.yaml"
+    contract_target.parent.mkdir()
+    shutil.copyfile(_approved_contract(), contract_target)
     (reports / "gates.json").write_text(
         json.dumps(
             {
@@ -222,6 +443,12 @@ def _synthetic_candidate(root: Path) -> Path:
                 "head_commit": COMMIT,
                 "head_tree": TREE,
                 "contract_sha256": CONTRACT,
+                "contract_binding": {
+                    "path": CONTRACT_RELATIVE_PATH,
+                    "actual_sha256": CONTRACT,
+                    "approved_sha256": CONTRACT,
+                    "digest_match": True,
+                },
                 "changed_paths": CHANGED_PATHS,
                 "gates": [
                     {"gate": gate, "result": "PASS", "message": "safe"} for gate in PREFLIGHT_GATES
@@ -245,6 +472,10 @@ def _synthetic_candidate(root: Path) -> Path:
                     "component": {"type": "application", "name": "ysf", "version": "0.1.0"},
                     "properties": [
                         {"name": "ysim:contract:sha256", "value": CONTRACT},
+                        {"name": "ysim:contract:path", "value": CONTRACT_RELATIVE_PATH},
+                        {"name": "ysim:contract:actual-sha256", "value": CONTRACT},
+                        {"name": "ysim:contract:approved-sha256", "value": CONTRACT},
+                        {"name": "ysim:contract:digest-match", "value": "true"},
                         {"name": "ysim:source:branch", "value": BRANCH},
                         {"name": "ysim:source:commit", "value": COMMIT},
                         {"name": "ysim:source:tree", "value": TREE},
@@ -277,6 +508,12 @@ def _synthetic_candidate(root: Path) -> Path:
                         "externalParameters": {
                             "branch": BRANCH,
                             "contract_sha256": CONTRACT,
+                            "contract_binding": {
+                                "path": CONTRACT_RELATIVE_PATH,
+                                "actual_sha256": CONTRACT,
+                                "approved_sha256": CONTRACT,
+                                "digest_match": True,
+                            },
                             "lock_digests": lock_digests,
                         },
                         "resolvedDependencies": [
@@ -306,7 +543,7 @@ def _synthetic_candidate(root: Path) -> Path:
         + "\n",
         encoding="utf-8",
     )
-    assert len(quality_records) == 7
+    assert len(quality_records) == 8
     _rehash_candidate(candidate)
     return candidate
 
@@ -318,6 +555,7 @@ def _verify(candidate: Path, **overrides: Any) -> Any:
         "expected_commit": COMMIT,
         "expected_tree": TREE,
         "expected_contract_sha256": CONTRACT,
+        "expected_contract_path": _approved_contract(),
         "expected_lock_paths": (
             candidate.parent / "locks/requirements-s00-build.lock",
             candidate.parent / "locks/requirements-s00-dev.lock",
@@ -357,6 +595,52 @@ def test_semantic_substitution_is_rejected_even_after_rehash(tmp_path: Path) -> 
     assert captured.value.code == "FAIL_PROVENANCE_SEMANTICS"
 
 
+def test_contract_and_retained_quality_bytes_are_recomputed(tmp_path: Path) -> None:
+    candidate = _synthetic_candidate(tmp_path / "contract")
+    retained_contract = candidate / "contract/slice-contract.yaml"
+    retained_contract.write_bytes(retained_contract.read_bytes() + b"\n")
+    _rehash_candidate(candidate)
+    with pytest.raises(FactoryFailure) as captured:
+        _verify(candidate)
+    assert captured.value.code == "FAIL_CONTRACT_DIGEST"
+
+    candidate = _synthetic_candidate(tmp_path / "quality-digest")
+    output = candidate / "reports/quality-outputs/ruff.json"
+    value = json.loads(output.read_text(encoding="utf-8"))
+    value["metrics"]["issue_count"] = 1
+    output.write_text(json.dumps(value) + "\n", encoding="utf-8")
+    _rehash_candidate(candidate)
+    with pytest.raises(FactoryFailure) as captured:
+        _verify(candidate)
+    assert captured.value.code == "FAIL_QUALITY_OUTPUT_TAMPER"
+
+    report = candidate / "reports/lint-type-sast-dependency.json"
+    report_value = json.loads(report.read_text(encoding="utf-8"))
+    ruff_record = next(
+        item for item in report_value["records"] if item["command_or_gate"] == "ruff"
+    )
+    ruff_record["output_sha256"] = sha256_file(output)
+    ruff_record["output_size"] = output.stat().st_size
+    report.write_text(json.dumps(report_value) + "\n", encoding="utf-8")
+    ledger = candidate / "execution-ledger.jsonl"
+    records = [json.loads(line) for line in ledger.read_text(encoding="utf-8").splitlines()]
+    ledger_record = next(item for item in records if item["command_or_gate"] == "ruff")
+    ledger_record.update(
+        {
+            "output_sha256": ruff_record["output_sha256"],
+            "output_size": ruff_record["output_size"],
+        }
+    )
+    ledger.write_text(
+        "".join(json.dumps(item, sort_keys=True, separators=(",", ":")) + "\n" for item in records),
+        encoding="utf-8",
+    )
+    _rehash_candidate(candidate)
+    with pytest.raises(FactoryFailure) as captured:
+        _verify(candidate)
+    assert captured.value.code == "FAIL_QUALITY_OUTPUT_RESULT"
+
+
 def test_evidence_missing_skipped_duplicate_and_wrong_identity_fail(tmp_path: Path) -> None:
     candidate = _synthetic_candidate(tmp_path / "missing")
     report_path = candidate / "reports/lint-type-sast-dependency.json"
@@ -377,6 +661,9 @@ def test_evidence_missing_skipped_duplicate_and_wrong_identity_fail(tmp_path: Pa
 def test_build_candidate_refuses_second_build(tmp_path: Path) -> None:
     repository = tmp_path / "repo"
     repository.mkdir()
+    contract = repository / CONTRACT_RELATIVE_PATH
+    contract.parent.mkdir(parents=True)
+    shutil.copyfile(_approved_contract(), contract)
     candidate = tmp_path / "candidate"
     candidate.mkdir()
     with pytest.raises(FactoryFailure) as captured:
@@ -445,6 +732,9 @@ def _build_repository(root: Path) -> tuple[Path, tuple[Path, Path], Path]:
         "[project.optional-dependencies]\ndev=['example-package==1.2.3']\n",
         encoding="utf-8",
     )
+    contract = repository / CONTRACT_RELATIVE_PATH
+    contract.parent.mkdir(parents=True)
+    shutil.copyfile(_approved_contract(), contract)
     report_root = root / "reports"
     _write_quality_inputs(report_root, locks)
     return repository, locks, report_root
@@ -498,6 +788,7 @@ def test_build_candidate_proves_actual_wheel_reproducibility_and_failure(
         expected_commit=COMMIT,
         expected_tree=TREE,
         expected_contract_sha256=CONTRACT,
+        expected_contract_path=repository / CONTRACT_RELATIVE_PATH,
         expected_lock_paths=locks,
         expected_changed_paths=CHANGED_PATHS,
     ).passed

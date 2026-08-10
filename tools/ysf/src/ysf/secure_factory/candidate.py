@@ -24,7 +24,13 @@ from ysf.secure_factory.evidence import (
     write_exclusive,
 )
 from ysf.secure_factory.models import FactoryFailure, FileDigest, GateResult
-from ysf.secure_factory.policy import validate_relative_path
+from ysf.secure_factory.policy import (
+    APPROVED_CONTRACT_SHA256,
+    CONTRACT_RELATIVE_PATH,
+    contract_digest,
+    validate_relative_path,
+    verify_approved_contract,
+)
 from ysf.secure_factory.sensitive import (
     admin_example_email_spans,
     require_no_sensitive_values,
@@ -42,6 +48,15 @@ REQUIRED_CANDIDATE_FILES: frozenset[str] = frozenset(
         "reports/leak-scan.json",
         "environment-identity.json",
         "execution-ledger.jsonl",
+        "contract/slice-contract.yaml",
+        "reports/quality-outputs/bandit.json",
+        "reports/quality-outputs/environment-identity.json",
+        "reports/quality-outputs/governance-readback.json",
+        "reports/quality-outputs/leak-scan.json",
+        "reports/quality-outputs/mypy.json",
+        "reports/quality-outputs/pip-audit.json",
+        "reports/quality-outputs/pytest.json",
+        "reports/quality-outputs/ruff.json",
     }
 )
 REQUIRED_REPORT_INPUTS: tuple[str, ...] = (
@@ -49,12 +64,13 @@ REQUIRED_REPORT_INPUTS: tuple[str, ...] = (
     "lint-type-sast-dependency.json",
     "leak-scan.json",
     "environment-identity.json",
+    "governance-readback.json",
     "execution-ledger.jsonl",
 )
 _LOCK_LINE = re.compile(r"^([A-Za-z0-9_.-]+)==([^\s;\\]+)")
 _SHA256 = re.compile(r"^[0-9a-f]{64}$")
 _TIMESTAMP_UTC = re.compile(r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$")
-_CONTRACT_SHA256 = "337519fcf7d08104ba0e53cbf33dcc4b4a75ec32aac18601cb097c778aa0ae35"
+_CONTRACT_SHA256 = APPROVED_CONTRACT_SHA256
 _BUILDER_ID = "https://github.com/actions/runner"
 _BUILD_TYPE = "https://ysim.vn/build-types/v3-r1-s00/ysf-wheel/v1"
 _SYNTHETIC_ADMIN_EMAIL = "admin" + "@" + "example.com"
@@ -65,6 +81,7 @@ _REQUIRED_PREFLIGHT_GATES = frozenset(
         "source_allowlist",
         "immutable_corpus",
         "sensitive_data",
+        "contract_digest",
     }
 )
 _QUALITY_REPORT_GATES: dict[str, frozenset[str]] = {
@@ -72,7 +89,11 @@ _QUALITY_REPORT_GATES: dict[str, frozenset[str]] = {
     "lint-type-sast-dependency.json": frozenset({"ruff", "mypy", "bandit", "pip-audit"}),
     "leak-scan.json": frozenset({"leak-scan"}),
     "environment-identity.json": frozenset({"environment-identity"}),
+    "governance-readback.json": frozenset({"governance-readback"}),
 }
+_QUALITY_OUTPUT_GATES = frozenset(
+    gate for gates in _QUALITY_REPORT_GATES.values() for gate in gates
+)
 _EVIDENCE_REQUIRED_FIELDS = frozenset(
     {
         "execution_id",
@@ -83,6 +104,10 @@ _EVIDENCE_REQUIRED_FIELDS = frozenset(
         "head_commit",
         "head_tree",
         "contract_sha256",
+        "contract_path",
+        "contract_actual_sha256",
+        "contract_approved_sha256",
+        "contract_digest_match",
         "environment_identity",
         "changed_paths",
         "input_digests",
@@ -98,6 +123,153 @@ def _json_bytes(value: Any) -> bytes:
     return (
         json.dumps(value, sort_keys=True, ensure_ascii=True, separators=(",", ":")) + "\n"
     ).encode("utf-8")
+
+
+def sanitized_quality_output(gate: str, exit_code: int, raw_output: bytes) -> dict[str, Any]:
+    """Reduce actual tool output to deterministic, non-sensitive gate evidence."""
+
+    if gate not in _QUALITY_OUTPUT_GATES:
+        raise FactoryFailure("FAIL_QUALITY_OUTPUT_GATE", "Quality output gate is not approved.")
+    text = raw_output.decode("utf-8", errors="replace")
+    result = "PASS" if exit_code == 0 else "FAIL"
+    metrics: dict[str, Any]
+    tool = gate
+
+    def json_payload() -> Any:
+        decoder = json.JSONDecoder()
+        for offset, character in enumerate(text):
+            if character not in "[{":
+                continue
+            try:
+                value, _ = decoder.raw_decode(text[offset:])
+            except json.JSONDecodeError:
+                continue
+            return value
+        raise json.JSONDecodeError("missing JSON payload", text, 0)
+
+    try:
+        if gate == "ruff":
+            metrics = {"issue_count": 0 if exit_code == 0 else 1}
+            if exit_code == 0 and "All checks passed!" not in text:
+                raise ValueError
+        elif gate == "mypy":
+            match = re.search(r"Success: no issues found in (\d+) source files", text)
+            if exit_code == 0 and match is None:
+                raise ValueError
+            metrics = {
+                "issue_count": 0 if exit_code == 0 else 1,
+                "source_file_count": int(match.group(1)) if match else 0,
+            }
+        elif gate == "pytest":
+            tests = re.search(r"(\d+) passed", text)
+            skipped = re.search(r"(\d+) skipped", text)
+            coverage = re.search(r"Total coverage: ([0-9]+(?:\.[0-9]+)?)%", text)
+            if exit_code == 0 and (tests is None or coverage is None):
+                raise ValueError
+            metrics = {
+                "passed": int(tests.group(1)) if tests else 0,
+                "failed": 0 if exit_code == 0 else 1,
+                "skipped": int(skipped.group(1)) if skipped else 0,
+                "coverage_percent": float(coverage.group(1)) if coverage else 0.0,
+            }
+        elif gate == "bandit":
+            value = json_payload()
+            results = value.get("results")
+            totals = value.get("metrics", {}).get("_totals", {})
+            if not isinstance(results, list) or not isinstance(totals, dict):
+                raise ValueError
+            metrics = {
+                "issue_count": len(results),
+                "lines_of_code": int(totals.get("loc", 0)),
+                "files_skipped": int(totals.get("nosec", 0)),
+            }
+        elif gate == "pip-audit":
+            value = json_payload()
+            dependencies = value.get("dependencies") if isinstance(value, dict) else value
+            if not isinstance(dependencies, list):
+                raise ValueError
+            vulnerability_count = sum(
+                len(item.get("vulns", [])) for item in dependencies if isinstance(item, dict)
+            )
+            metrics = {
+                "dependency_count": len(dependencies),
+                "vulnerability_count": vulnerability_count,
+            }
+        else:
+            value = json_payload()
+            if not isinstance(value, dict):
+                raise ValueError
+            if gate == "leak-scan":
+                details = value.get("details")
+                if value.get("gate") != "sensitive_data" or not isinstance(details, dict):
+                    raise ValueError
+                metrics = {
+                    "finding_count": 0 if exit_code == 0 else 1,
+                    "scanned_file_count": int(details.get("scanned_file_count", 0)),
+                    "profile": str(details.get("profile", "")),
+                }
+            elif gate == "environment-identity":
+                metrics = {
+                    "external_effect_budget": value.get("external_effect_budget"),
+                    "providers": value.get("providers"),
+                    "email_mode": value.get("email_mode"),
+                }
+            else:
+                if value.get("gate") != "governance_readback" or value.get("result") != result:
+                    raise ValueError
+                details = value.get("details")
+                if not isinstance(details, dict):
+                    raise ValueError
+                metrics = details
+    except (AttributeError, KeyError, TypeError, ValueError, json.JSONDecodeError) as exc:
+        raise FactoryFailure(
+            "FAIL_QUALITY_OUTPUT_FORMAT",
+            "Actual quality output could not be sanitized deterministically.",
+            details={"gate": gate},
+        ) from exc
+    if exit_code == 0:
+        if gate == "pytest" and (
+            metrics["passed"] <= 0
+            or metrics["failed"] != 0
+            or metrics["skipped"] != 0
+            or metrics["coverage_percent"] < 90
+        ):
+            raise FactoryFailure(
+                "FAIL_QUALITY_OUTPUT_RESULT", "Pytest quality evidence is insufficient."
+            )
+        if gate in {"ruff", "mypy", "bandit"} and metrics["issue_count"] != 0:
+            raise FactoryFailure(
+                "FAIL_QUALITY_OUTPUT_RESULT", "Static-analysis evidence contains findings."
+            )
+        if gate == "pip-audit" and metrics["vulnerability_count"] != 0:
+            raise FactoryFailure(
+                "FAIL_QUALITY_OUTPUT_RESULT", "Dependency evidence contains vulnerabilities."
+            )
+        if gate == "leak-scan" and (
+            metrics["finding_count"] != 0 or metrics["scanned_file_count"] <= 0
+        ):
+            raise FactoryFailure(
+                "FAIL_QUALITY_OUTPUT_RESULT", "Leak-scan evidence is insufficient."
+            )
+    return {
+        "schema_version": 1,
+        "gate": gate,
+        "tool": tool,
+        "exit_code": exit_code,
+        "result": result,
+        "metrics": metrics,
+    }
+
+
+def write_sanitized_quality_output(
+    gate: str, exit_code: int, raw_path: Path, output_path: Path
+) -> None:
+    """Persist exact deterministic summary bytes derived from actual gate output."""
+
+    value = sanitized_quality_output(gate, exit_code, raw_path.read_bytes())
+    output_path.parent.mkdir(parents=True, exist_ok=True, mode=0o750)
+    output_path.write_bytes(_json_bytes(value))
+    require_no_sensitive_values([output_path])
 
 
 def normalize_generated_admin_email(path: Path) -> GateResult:
@@ -213,7 +385,10 @@ def _expected_input_digests(
     *, tree: str, contract_sha256: str, lock_paths: Iterable[Path]
 ) -> dict[str, str]:
     return {
-        "contract_sha256": contract_sha256,
+        "contract_path": CONTRACT_RELATIVE_PATH,
+        "contract_actual_sha256": contract_sha256,
+        "contract_approved_sha256": APPROVED_CONTRACT_SHA256,
+        "contract_digest_match": "true",
         "head_tree": tree,
         **_lock_digest_map(lock_paths),
     }
@@ -269,6 +444,7 @@ def _write_candidate_metadata(
     reproducible_wheel_sha256: str,
     gate_report: Mapping[str, Any],
     report_root: Path,
+    contract_path: Path,
 ) -> None:
     locks = tuple(lock_paths)
     lock_digests = _lock_digest_map(locks)
@@ -281,6 +457,16 @@ def _write_candidate_metadata(
         "head_commit": commit,
         "head_tree": tree,
         "contract_sha256": contract_sha256,
+        "contract_path": CONTRACT_RELATIVE_PATH,
+        "contract_actual_sha256": contract_sha256,
+        "contract_approved_sha256": APPROVED_CONTRACT_SHA256,
+        "contract_digest_match": True,
+        "contract_binding": {
+            "path": CONTRACT_RELATIVE_PATH,
+            "actual_sha256": contract_sha256,
+            "approved_sha256": APPROVED_CONTRACT_SHA256,
+            "digest_match": contract_sha256 == APPROVED_CONTRACT_SHA256,
+        },
         **gate_report,
     }
     write_exclusive(reports / "gates.json", _json_bytes(bound_gate_report))
@@ -298,6 +484,35 @@ def _write_candidate_metadata(
             else reports / name
         )
         write_exclusive(destination, source.read_bytes())
+    quality_outputs = report_root / "quality-outputs"
+    observed_outputs = {path.stem for path in quality_outputs.glob("*.json")}
+    if observed_outputs != _QUALITY_OUTPUT_GATES:
+        raise FactoryFailure(
+            "FAIL_CANDIDATE_REPORT_BUNDLE",
+            "Candidate sanitized quality-output set is incomplete or unexpected.",
+            details={
+                "missing": sorted(_QUALITY_OUTPUT_GATES - observed_outputs),
+                "extra": sorted(observed_outputs - _QUALITY_OUTPUT_GATES),
+            },
+        )
+    for gate in sorted(_QUALITY_OUTPUT_GATES):
+        source = quality_outputs / f"{gate}.json"
+        if source.is_symlink() or not source.is_file() or source.stat().st_nlink != 1:
+            raise FactoryFailure(
+                "FAIL_CANDIDATE_REPORT_BUNDLE",
+                "Candidate sanitized quality output is missing or unsafe.",
+                details={"gate": gate},
+            )
+        write_exclusive(reports / "quality-outputs" / source.name, source.read_bytes())
+    if (
+        contract_path.is_symlink()
+        or not contract_path.is_file()
+        or contract_path.stat().st_nlink != 1
+    ):
+        raise FactoryFailure(
+            "FAIL_CONTRACT_SOURCE", "Approved Contract bytes are missing or unsafe."
+        )
+    write_exclusive(candidate_dir / "contract/slice-contract.yaml", contract_path.read_bytes())
     sbom = {
         "bomFormat": "CycloneDX",
         "specVersion": "1.6",
@@ -306,6 +521,16 @@ def _write_candidate_metadata(
             "component": {"type": "application", "name": "ysf", "version": "0.1.0"},
             "properties": [
                 {"name": "ysim:contract:sha256", "value": contract_sha256},
+                {"name": "ysim:contract:path", "value": CONTRACT_RELATIVE_PATH},
+                {
+                    "name": "ysim:contract:actual-sha256",
+                    "value": contract_sha256,
+                },
+                {
+                    "name": "ysim:contract:approved-sha256",
+                    "value": APPROVED_CONTRACT_SHA256,
+                },
+                {"name": "ysim:contract:digest-match", "value": "true"},
                 {"name": "ysim:source:branch", "value": branch},
                 {"name": "ysim:source:commit", "value": commit},
                 {"name": "ysim:source:tree", "value": tree},
@@ -336,6 +561,12 @@ def _write_candidate_metadata(
                 "externalParameters": {
                     "branch": branch,
                     "contract_sha256": contract_sha256,
+                    "contract_binding": {
+                        "path": CONTRACT_RELATIVE_PATH,
+                        "actual_sha256": contract_sha256,
+                        "approved_sha256": APPROVED_CONTRACT_SHA256,
+                        "digest_match": True,
+                    },
                     "lock_digests": lock_digests,
                 },
                 "resolvedDependencies": [
@@ -443,6 +674,13 @@ def build_candidate(
 ) -> GateResult:
     """Retain one wheel after two independent byte-for-byte reproducibility builds."""
 
+    contract_gate = verify_approved_contract(repository_root)
+    actual_contract_sha256 = str(contract_gate.details["actual_sha256"])
+    if contract_sha256 != actual_contract_sha256:
+        raise FactoryFailure(
+            "FAIL_CONTRACT_DIGEST",
+            "Candidate Contract expectation does not match actual approved bytes.",
+        )
     try:
         report_root = require_output_outside_checkout(repository_root, report_root).resolve(
             strict=True
@@ -495,6 +733,7 @@ def build_candidate(
         reproducible_wheel_sha256=sha256_file(retained_wheel),
         gate_report=gate_report,
         report_root=report_root,
+        contract_path=repository_root / CONTRACT_RELATIVE_PATH,
     )
     require_no_sensitive_values(path for path in candidate_dir.rglob("*") if path.is_file())
     verify_candidate(
@@ -504,6 +743,7 @@ def build_candidate(
         expected_commit=commit,
         expected_tree=tree,
         expected_contract_sha256=contract_sha256,
+        expected_contract_path=repository_root / CONTRACT_RELATIVE_PATH,
         expected_lock_paths=lock_paths,
         expected_changed_paths=gate_report.get("changed_paths", []),
     )
@@ -581,6 +821,15 @@ def _verify_gate_report(
         raise FactoryFailure(
             "FAIL_GATE_REPORT_IDENTITY", "Candidate preflight report identity is invalid."
         )
+    if report.get("contract_binding") != {
+        "path": CONTRACT_RELATIVE_PATH,
+        "actual_sha256": contract_sha256,
+        "approved_sha256": APPROVED_CONTRACT_SHA256,
+        "digest_match": True,
+    }:
+        raise FactoryFailure(
+            "FAIL_GATE_REPORT_IDENTITY", "Candidate Contract gate binding is invalid."
+        )
     gates = report.get("gates")
     if not isinstance(gates, list):
         raise FactoryFailure("FAIL_GATE_REPORT_FORMAT", "Candidate preflight gates are invalid.")
@@ -601,6 +850,7 @@ def _verify_gate_report(
 
 
 def _verify_quality_record(
+    root: Path,
     record: dict[str, Any],
     *,
     gate: str,
@@ -622,6 +872,10 @@ def _verify_quality_record(
         "head_commit": commit,
         "head_tree": tree,
         "contract_sha256": contract_sha256,
+        "contract_path": CONTRACT_RELATIVE_PATH,
+        "contract_actual_sha256": contract_sha256,
+        "contract_approved_sha256": APPROVED_CONTRACT_SHA256,
+        "contract_digest_match": True,
         "changed_paths": changed_paths,
         "input_digests": input_digests,
         "command_or_gate": gate,
@@ -638,6 +892,8 @@ def _verify_quality_record(
     timestamp = record.get("timestamp_utc")
     environment = record.get("environment_identity")
     output_sha256 = record.get("output_sha256")
+    output_path = record.get("output_path")
+    output_size = record.get("output_size")
     if (
         not isinstance(execution_id, str)
         or not re.fullmatch(r"[A-Z0-9][A-Z0-9._-]{7,127}", execution_id)
@@ -649,8 +905,91 @@ def _verify_quality_record(
         or environment.get("email_mode") != "NON_RELAYING"
         or not isinstance(output_sha256, str)
         or not _SHA256.fullmatch(output_sha256)
+        or output_path != f"reports/quality-outputs/{gate}.json"
+        or not isinstance(output_size, int)
+        or output_size <= 0
     ):
         raise FactoryFailure("FAIL_EVIDENCE_SCHEMA", "Candidate evidence field is invalid.")
+    output = root / str(output_path)
+    if (
+        output.is_symlink()
+        or not output.is_file()
+        or output.stat().st_nlink != 1
+        or output.stat().st_size != output_size
+        or sha256_file(output) != output_sha256
+    ):
+        raise FactoryFailure(
+            "FAIL_QUALITY_OUTPUT_TAMPER",
+            "Retained sanitized quality output is missing or does not match its digest.",
+            details={"gate": gate},
+        )
+    value = _load_json_object(output, "FAIL_QUALITY_OUTPUT_FORMAT")
+    if (
+        value.get("schema_version") != 1
+        or value.get("gate") != gate
+        or value.get("tool") != gate
+        or value.get("exit_code") != 0
+        or value.get("result") != "PASS"
+        or not isinstance(value.get("metrics"), dict)
+    ):
+        raise FactoryFailure(
+            "FAIL_QUALITY_OUTPUT_RESULT",
+            "Retained sanitized quality output does not prove a passing gate.",
+            details={"gate": gate},
+        )
+    metrics = value["metrics"]
+    quality_valid = True
+    if gate in {"ruff", "mypy", "bandit"}:
+        quality_valid = metrics.get("issue_count") == 0
+    elif gate == "pip-audit":
+        quality_valid = metrics.get("vulnerability_count") == 0
+    elif gate == "pytest":
+        quality_valid = (
+            isinstance(metrics.get("passed"), int)
+            and metrics["passed"] > 0
+            and metrics.get("failed") == 0
+            and metrics.get("skipped") == 0
+            and isinstance(metrics.get("coverage_percent"), (int, float))
+            and metrics["coverage_percent"] >= 90
+        )
+    elif gate == "leak-scan":
+        quality_valid = (
+            metrics.get("finding_count") == 0
+            and isinstance(metrics.get("scanned_file_count"), int)
+            and metrics["scanned_file_count"] > 0
+        )
+    elif gate == "environment-identity":
+        quality_valid = metrics == {
+            "external_effect_budget": "DENY_ALL",
+            "providers": "OFF",
+            "email_mode": "NON_RELAYING",
+        }
+    elif gate == "governance-readback":
+        quality_valid = (
+            metrics.get("repository") == repository
+            and metrics.get("ruleset_id") == 20583674
+            and metrics.get("enforcement") == "active"
+            and metrics.get("required_status_checks")
+            == [
+                "S00 / build-candidate",
+                "S00 / policy",
+                "S00 / test",
+                "S00 / verify-candidate",
+            ]
+            and metrics.get("bypass_actor_count") == 0
+            and metrics.get("pr_state") == "open"
+            and metrics.get("pr_draft") is True
+            and metrics.get("pr_merged") is False
+            and metrics.get("head_ref") == branch
+            and metrics.get("head_sha") == commit
+            and metrics.get("github_approving_review_claimed") is False
+        )
+    if not quality_valid:
+        raise FactoryFailure(
+            "FAIL_QUALITY_OUTPUT_RESULT",
+            "Retained sanitized quality metrics do not prove the required gate.",
+            details={"gate": gate},
+        )
     try:
         datetime.strptime(timestamp, "%Y-%m-%dT%H:%M:%SZ")
     except ValueError as exc:
@@ -702,6 +1041,7 @@ def _verify_quality_evidence(
                 )
             gate = record["command_or_gate"]
             _verify_quality_record(
+                root,
                 record,
                 gate=gate,
                 repository=repository,
@@ -766,6 +1106,16 @@ def _verify_sbom(
             "component": {"type": "application", "name": "ysf", "version": "0.1.0"},
             "properties": [
                 {"name": "ysim:contract:sha256", "value": contract_sha256},
+                {"name": "ysim:contract:path", "value": CONTRACT_RELATIVE_PATH},
+                {
+                    "name": "ysim:contract:actual-sha256",
+                    "value": contract_sha256,
+                },
+                {
+                    "name": "ysim:contract:approved-sha256",
+                    "value": APPROVED_CONTRACT_SHA256,
+                },
+                {"name": "ysim:contract:digest-match", "value": "true"},
                 {"name": "ysim:source:branch", "value": branch},
                 {"name": "ysim:source:commit", "value": commit},
                 {"name": "ysim:source:tree", "value": tree},
@@ -805,6 +1155,12 @@ def _verify_provenance(
     wanted_parameters = {
         "branch": branch,
         "contract_sha256": contract_sha256,
+        "contract_binding": {
+            "path": CONTRACT_RELATIVE_PATH,
+            "actual_sha256": contract_sha256,
+            "approved_sha256": APPROVED_CONTRACT_SHA256,
+            "digest_match": True,
+        },
         "lock_digests": _lock_digest_map(lock_paths),
     }
     checks = (
@@ -844,6 +1200,7 @@ def verify_candidate(
     expected_commit: str,
     expected_tree: str,
     expected_contract_sha256: str,
+    expected_contract_path: Path,
     expected_lock_paths: Iterable[Path],
     expected_changed_paths: Iterable[str],
 ) -> GateResult:
@@ -877,6 +1234,29 @@ def verify_candidate(
     ):
         raise FactoryFailure(
             "FAIL_CANDIDATE_EXPECTATION", "Candidate verification expectation is invalid."
+        )
+    source_contract_sha256 = contract_digest(expected_contract_path)
+    retained_contract_sha256 = contract_digest(root / "contract/slice-contract.yaml")
+    if (
+        source_contract_sha256 != APPROVED_CONTRACT_SHA256
+        or retained_contract_sha256 != APPROVED_CONTRACT_SHA256
+        or expected_contract_sha256 != source_contract_sha256
+    ):
+        raise FactoryFailure(
+            "FAIL_CONTRACT_DIGEST",
+            "Candidate Contract bytes are not bound to the exact approved source bytes.",
+            details={
+                "contract_path": CONTRACT_RELATIVE_PATH,
+                "source_matches_approved": (
+                    source_contract_sha256 == APPROVED_CONTRACT_SHA256
+                ),
+                "retained_matches_approved": (
+                    retained_contract_sha256 == APPROVED_CONTRACT_SHA256
+                ),
+                "expected_matches_source": (
+                    expected_contract_sha256 == source_contract_sha256
+                ),
+            },
         )
     manifest = _load_manifest(root / "artifact-manifest.json")
     manifest_paths = {record.relative_path for record in manifest}

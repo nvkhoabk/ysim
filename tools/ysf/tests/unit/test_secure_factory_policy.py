@@ -2,12 +2,16 @@ from __future__ import annotations
 
 from pathlib import Path
 from subprocess import CompletedProcess
+from typing import Any
 
 import pytest
 
 from ysf.secure_factory.models import FactoryFailure
 from ysf.secure_factory.policy import (
+    APPROVED_CONTRACT_SHA256,
+    CONTRACT_RELATIVE_PATH,
     EXACT_ALLOWLIST,
+    _github_json,
     changed_paths,
     mutation_paths,
     parse_porcelain_z,
@@ -15,7 +19,9 @@ from ysf.secure_factory.policy import (
     validate_approval_and_ruleset,
     validate_changed_paths,
     validate_external_effect_policy,
+    validate_live_governance,
     validate_relative_path,
+    verify_approved_contract,
     verify_policy_self_protection,
 )
 
@@ -159,7 +165,7 @@ def test_immutable_corpus_positive_and_failures(
 
 
 def test_approval_ruleset_and_external_effect_policy_fail_closed() -> None:
-    contract = "337519fcf7d08104ba0e53cbf33dcc4b4a75ec32aac18601cb097c778aa0ae35"
+    contract = APPROVED_CONTRACT_SHA256
     ruleset = {
         "enforcement": "active",
         "target": "refs/heads/v3/main",
@@ -207,3 +213,193 @@ def test_approval_ruleset_and_external_effect_policy_fail_closed() -> None:
     with pytest.raises(FactoryFailure) as captured:
         validate_external_effect_policy({**controls, "YSF_PROVIDER_TARGET": "SYNTHETIC"})
     assert captured.value.code == "FAIL_EXTERNAL_EFFECT_POLICY"
+
+
+def test_exact_contract_bytes_pass_and_tamper_or_missing_fail(tmp_path: Path) -> None:
+    source = Path(__file__).resolve().parents[4] / CONTRACT_RELATIVE_PATH
+    contract = tmp_path / CONTRACT_RELATIVE_PATH
+    contract.parent.mkdir(parents=True)
+    contract.write_bytes(source.read_bytes())
+    gate = verify_approved_contract(tmp_path)
+    assert gate.details == {
+        "contract_path": CONTRACT_RELATIVE_PATH,
+        "actual_sha256": APPROVED_CONTRACT_SHA256,
+        "approved_sha256": APPROVED_CONTRACT_SHA256,
+        "digest_match": True,
+    }
+    contract.write_bytes(contract.read_bytes() + b"\n")
+    with pytest.raises(FactoryFailure) as captured:
+        verify_approved_contract(tmp_path)
+    assert captured.value.code == "FAIL_CONTRACT_DIGEST"
+    contract.unlink()
+    with pytest.raises(FactoryFailure) as captured:
+        verify_approved_contract(tmp_path)
+    assert captured.value.code == "FAIL_CONTRACT_SOURCE"
+
+
+def _governance_payloads() -> dict[str, dict[str, Any]]:
+    base = "5be8413d3c22d1345b3088424af40ca2eb9d1115"
+    head = "d" * 40
+    repository = "nvkhoabk/ysim"
+    return {
+        f"/repos/{repository}/rulesets/20583674": {
+            "id": 20583674,
+            "target": "branch",
+            "enforcement": "active",
+            "bypass_actors": [],
+            "conditions": {"ref_name": {"include": ["refs/heads/v3/main"]}},
+            "rules": [
+                {
+                    "type": "pull_request",
+                    "parameters": {
+                        "required_approving_review_count": 1,
+                        "dismiss_stale_reviews_on_push": True,
+                        "require_code_owner_review": True,
+                        "required_review_thread_resolution": True,
+                    },
+                },
+                {
+                    "type": "required_status_checks",
+                    "parameters": {
+                        "strict_required_status_checks_policy": True,
+                        "required_status_checks": [
+                            {"context": "S00 / policy"},
+                            {"context": "S00 / test"},
+                            {"context": "S00 / build-candidate"},
+                            {"context": "S00 / verify-candidate"},
+                        ],
+                    },
+                },
+            ],
+        },
+        f"/repos/{repository}/pulls/1": {
+            "number": 1,
+            "state": "open",
+            "draft": True,
+            "merged": False,
+            "base": {"ref": "v3/main", "sha": base, "repo": {"full_name": repository}},
+            "head": {
+                "ref": "feature/v3-r1-g00-s00-secure-factory",
+                "sha": head,
+                "repo": {"full_name": repository},
+            },
+        },
+    }
+
+
+def test_live_governance_readback_binds_ruleset_and_draft_pr() -> None:
+    payloads = _governance_payloads()
+    gate = validate_live_governance(
+        repository="nvkhoabk/ysim",
+        pr_number=1,
+        expected_base_ref="v3/main",
+        expected_base_sha="5be8413d3c22d1345b3088424af40ca2eb9d1115",
+        expected_head_ref="feature/v3-r1-g00-s00-secure-factory",
+        expected_head_sha="d" * 40,
+        run_id="123",
+        fetch_json=lambda path: payloads[path],
+    )
+    assert gate.passed
+    assert gate.details["github_approving_review_claimed"] is False
+    assert gate.details["bypass_actor_count"] == 0
+
+
+@pytest.mark.parametrize(
+    ("mutation", "code"),
+    [
+        ("disabled", "FAIL_GOVERNANCE_MISMATCH"),
+        ("bypass", "FAIL_GOVERNANCE_MISMATCH"),
+        ("missing_check", "FAIL_GOVERNANCE_MISMATCH"),
+        ("stale_head", "FAIL_GOVERNANCE_MISMATCH"),
+        ("not_draft", "FAIL_GOVERNANCE_MISMATCH"),
+    ],
+)
+def test_live_governance_readback_fails_closed(mutation: str, code: str) -> None:
+    payloads = _governance_payloads()
+    ruleset = payloads["/repos/nvkhoabk/ysim/rulesets/20583674"]
+    pull = payloads["/repos/nvkhoabk/ysim/pulls/1"]
+    if mutation == "disabled":
+        ruleset["enforcement"] = "disabled"
+    elif mutation == "bypass":
+        ruleset["bypass_actors"] = [{"actor_type": "OrganizationAdmin"}]
+    elif mutation == "missing_check":
+        rules = ruleset["rules"]
+        assert isinstance(rules, list)
+        checks = rules[1]["parameters"]["required_status_checks"]
+        rules[1]["parameters"]["required_status_checks"] = checks[:-1]
+    elif mutation == "stale_head":
+        pull["head"]["sha"] = "e" * 40
+    else:
+        pull["draft"] = False
+    with pytest.raises(FactoryFailure) as captured:
+        validate_live_governance(
+            repository="nvkhoabk/ysim",
+            pr_number=1,
+            expected_base_ref="v3/main",
+            expected_base_sha="5be8413d3c22d1345b3088424af40ca2eb9d1115",
+            expected_head_ref="feature/v3-r1-g00-s00-secure-factory",
+            expected_head_sha="d" * 40,
+            run_id="123",
+            fetch_json=lambda path: payloads[path],
+        )
+    assert captured.value.code == code
+
+
+def test_github_readback_uses_bounded_json_response(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    class Response:
+        status = 200
+
+        def read(self, limit: int) -> bytes:
+            assert limit == 1024 * 1024 + 1
+            return b'{"id":20583674}'
+
+    class Connection:
+        def __init__(self, host: str, timeout: int) -> None:
+            assert host == "api.github.com"
+            assert timeout == 15
+
+        def request(self, method: str, path: str, headers: dict[str, str]) -> None:
+            assert method == "GET"
+            assert path.startswith("/repos/nvkhoabk/ysim/")
+            assert "Authorization" not in headers
+
+        def getresponse(self) -> Response:
+            return Response()
+
+        def close(self) -> None:
+            pass
+
+    monkeypatch.delenv("GITHUB_TOKEN", raising=False)
+    monkeypatch.setattr("ysf.secure_factory.policy.http.client.HTTPSConnection", Connection)
+    assert _github_json("/repos/nvkhoabk/ysim/rulesets/20583674") == {"id": 20583674}
+
+
+@pytest.mark.parametrize(("status", "payload"), [(503, b"{}"), (200, b"not-json")])
+def test_github_readback_fails_closed_on_http_or_json(
+    monkeypatch: pytest.MonkeyPatch, status: int, payload: bytes
+) -> None:
+    class Response:
+        def read(self, limit: int) -> bytes:
+            return payload
+
+    Response.status = status
+
+    class Connection:
+        def __init__(self, host: str, timeout: int) -> None:
+            pass
+
+        def request(self, method: str, path: str, headers: dict[str, str]) -> None:
+            pass
+
+        def getresponse(self) -> Response:
+            return Response()
+
+        def close(self) -> None:
+            pass
+
+    monkeypatch.setattr("ysf.secure_factory.policy.http.client.HTTPSConnection", Connection)
+    with pytest.raises(FactoryFailure) as captured:
+        _github_json("/repos/nvkhoabk/ysim/rulesets/20583674")
+    assert captured.value.code == "FAIL_GOVERNANCE_READBACK"

@@ -7,7 +7,7 @@ import re
 import zipfile
 from collections.abc import Iterable
 from dataclasses import dataclass
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 
 import yaml
 from yaml.nodes import MappingNode, Node, ScalarNode, SequenceNode
@@ -38,7 +38,8 @@ _DATA_IMAGE = "data:image/" + r"(?:png|jpeg);base64,"
 _QR_WIFI = "WI" + "FI:"
 _QR_VCARD = "BEGIN:" + "VCARD"
 _QR_PAYMENT = "bit" + "coin:"
-_SHA256_HEX = re.compile(r"(?i)(?<![0-9a-f])(?:sha256:)?([0-9a-f]{64})(?![0-9a-f])")
+_SHA256_PREFIXED = re.compile(r"(?i)(?<![0-9a-f])sha256:([0-9a-f]{64})(?![0-9a-f])")
+_SHA256SUMS_RECORD = re.compile(r"(?im)^([0-9a-f]{64})  ([^\r\n]+)$")
 _EMAIL = re.compile(r"(?i)\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b")
 _DEMONSTRATION_HEADING = re.compile(
     r"(?i)^#{1,6}\s+(?:\d+(?:\.\d+)*[.)]?\s+)?demonstration seed\s*$"
@@ -99,10 +100,21 @@ def _fingerprint(value: str) -> str:
 
 
 def _inside_sha256_digest(text: str, start: int, end: int) -> bool:
-    return any(
-        digest.start(1) <= start and end <= digest.end(1)
-        for digest in _SHA256_HEX.finditer(text)
-    )
+    spans = [
+        (digest.start(1), digest.end(1)) for digest in _SHA256_PREFIXED.finditer(text)
+    ]
+    for record in _SHA256SUMS_RECORD.finditer(text):
+        filename = record.group(2)
+        path = PurePosixPath(filename)
+        if (
+            filename
+            and "\\" not in filename
+            and not path.is_absolute()
+            and path.as_posix() == filename
+            and all(part not in {"", ".", ".."} for part in path.parts)
+        ):
+            spans.append((record.start(1), record.end(1)))
+    return any(span_start <= start and end <= span_end for span_start, span_end in spans)
 
 
 def _demonstration_yaml_blocks(text: str) -> list[tuple[int, str]]:
@@ -130,13 +142,14 @@ def _demonstration_yaml_blocks(text: str) -> list[tuple[int, str]]:
 def _admin_email_node_spans(node: Node) -> list[tuple[int, int]]:
     spans: list[tuple[int, int]] = []
     if isinstance(node, MappingNode):
-        fields = {
-            key.value.casefold(): value
-            for key, value in node.value
-            if isinstance(key, ScalarNode)
-        }
-        role = fields.get("role")
-        email = fields.get("email")
+        fields: dict[str, list[Node]] = {}
+        for key, value in node.value:
+            if isinstance(key, ScalarNode):
+                fields.setdefault(key.value.casefold(), []).append(value)
+        roles = fields.get("role", [])
+        emails = fields.get("email", [])
+        role = roles[0] if len(roles) == 1 else None
+        email = emails[0] if len(emails) == 1 else None
         if (
             isinstance(role, ScalarNode)
             and re.split(r"[^a-z0-9]+", role.value.casefold())[-1] == "admin"
