@@ -44,6 +44,11 @@ def test_verification_passes(
             "run_process",
             return_value=successful_process,
         ),
+        patch(
+            "ysf.verification.service."
+            "validate_traceability_baseline",
+            return_value={"requirement_count": 86},
+        ),
     ):
         result = run_verification(
             tmp_path

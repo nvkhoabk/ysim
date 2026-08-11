@@ -8,6 +8,8 @@ from typing import Any
 from ysf.core.doctor import run_doctor
 from ysf.core.result import CommandResult
 from ysf.pipeline.service import run_pipeline
+from ysf.secure_factory.models import FactoryFailure
+from ysf.traceability.validator import validate_traceability_baseline
 
 
 def run_process(
@@ -53,6 +55,26 @@ def run_verification(
     )
 
     checks: list[dict[str, Any]] = []
+
+    try:
+        traceability = validate_traceability_baseline(repository_root)
+        checks.append(
+            {
+                "name": "traceability",
+                "status": "PASS",
+                "exitCode": 0,
+                "data": traceability,
+            }
+        )
+    except FactoryFailure as exc:
+        checks.append(
+            {
+                "name": "traceability",
+                "status": "FAIL",
+                "exitCode": 3,
+                "data": {"code": exc.code, "details": exc.details},
+            }
+        )
 
     doctor_result = run_doctor(
         repository_root
