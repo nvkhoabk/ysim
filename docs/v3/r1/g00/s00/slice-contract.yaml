@@ -1,0 +1,325 @@
+schema_version: 1
+release: V3-R1
+gate_id: G00
+slice_id: V3-R1-G00-S00
+contract_id: V3-R1-G00-S00-CONTRACT-001
+contract_version: 0.2.0
+status: READY_FOR_RP_A_HUMAN_REVIEW
+implementation_permitted: false
+contract_freeze_rule: >-
+  Human approval binds the byte-exact SHA-256 of this file. Approval is stored
+  in a separate immutable decision record; this contract file is not edited to
+  insert approval fields.
+source:
+  repository: nvkhoabk/ysim
+  seed_commit: 5be8413d3c22d1345b3088424af40ca2eb9d1115
+  seed_tree: 4631630f4d57872e08f6b523ab8adf0a94453673
+  seed_status: UNACCEPTED_SOURCE_BYTES
+  legacy_maturity_transfer: FORBIDDEN
+  protected_source_line: v3/main
+  protected_source_line_exists_at_discovery: false
+  implementation_branch: feature/v3-r1-g00-s00-secure-factory
+  default_branch_change: FORBIDDEN
+baseline:
+  document_set_id: YSIM-V3-R1-DOCSET-2026-08-08
+  version: 0.2.0
+  archive_sha256: 4f183a6537a126b56f7a7b8680e71b976b2c2045793fc6abd9e59ef99cc91a4d
+  approval_receipt: V3-R1-APR-2026-08-08-001
+bound_inputs:
+  context_receipt:
+    id: V3-R1-G00-S00-CONTEXT-RECEIPT-002
+    sha256: 6e01291a29f378b56533c77008c9855d8edfe5e2c47a57ac84b9bcf6b8e2bee4
+  clarification_register:
+    id: V3-R1-G00-S00-CLARIFICATION-REGISTER-002
+    sha256: 84798ded9be5db5f40c4176b3c6383bcc1f2ddf7eb821ce77e56299da6a6bbce
+  execplan:
+    id: V3-R1-G00-S00-EXECPLAN-002
+    sha256: fd92dcf8d7dd3ca7970f47774d09f1104d91de6f82ed7677c4e9026fe7f6d58d
+  operator_probe:
+    id: V3-R1-G00-S00-PRE-RP-A-READ-ONLY-R2
+    sha256: fe0413e92afe312db23f23672a44635b702eda0f3667853dbb7c4695621822ba
+    result: PASS_READ_ONLY_DISCOVERY
+requirements:
+  - V3-R1-OPS-004
+  - V3-R1-SEC-002
+  - V3-R1-REL-002
+  - V3-R1-REL-010
+requirement_state: PROPOSED
+source_anchors:
+  - PENDING_G00_S01_EXACT_ANCHOR_REVIEW
+decisions:
+  - V3-R1-DEC-001
+  - V3-R1-DEC-002
+  - V3-R1-DEC-003
+  - V3-R1-DEC-004
+  - V3-R1-APR-2026-08-08-001
+qa_constraints:
+  - id: V3-R1-QA-001
+    state: OPEN_WITH_APPROVED_PLANNING_CONSTRAINT
+  - id: V3-R1-QA-014
+    state: OPEN_WITH_APPROVED_AUTHORITY_CONSTRAINT
+blocking_questions:
+  - S00-CLAR-001
+  - S00-CLAR-002
+  - S00-CLAR-003
+  - S00-CLAR-004
+  - S00-CLAR-005
+  - S00-CLAR-006
+rp_a_resolution_effect: >-
+  HUMAN_CONTRACT_APPROVED against this exact contract digest accepts the six
+  proposed clarification resolutions and removes only their implementation
+  block. It grants no Human Acceptance, merge, deployment, promotion or
+  external-effect authority.
+business_outcome: >-
+  A Human witnesses a deliberately noncompliant synthetic change fail closed
+  and a compliant exact source tree produce one checksummed provenance-bound
+  ysf wheel and evidence package without credentials, PII, ICCID, LPA or QR
+  payloads.
+excluded_behavior:
+  - IDENTITY_CATALOG_ORDER_PAYMENT_SUPPLIER_FULFILLMENT_EMAIL_OR_AGENCY_IMPLEMENTATION
+  - BRD_OR_UXF_MUTATION
+  - REQUIREMENT_SOURCE_APPROVAL
+  - LEGACY_MATURITY_TRANSFER
+  - PRODUCTION_SECRET_OR_CUSTOMER_DATA_ACCESS
+  - BUSINESS_EXTERNAL_EFFECT
+  - APPLICATION_SANDBOX_OR_PRODUCTION_DEPLOYMENT
+  - MERGE_TO_V3_MAIN
+  - DEFAULT_BRANCH_CHANGE
+  - TAG_RELEASE_OR_PRODUCTION_ACTIVATION
+user_journeys:
+  - id: S00-JRN-001
+    actor: Human_Reviewer
+    outcome: Witness a known-noncompliant synthetic fixture rejected with safe append-only evidence.
+  - id: S00-JRN-002
+    actor: Human_Reviewer
+    outcome: Witness an exact clean source tree produce one retained ysf candidate whose wheel matches an independent disposable reproducibility build and complete evidence.
+contracts:
+  ui: []
+  api: []
+  data:
+    - Append-only execution and failure ledger with immutable execution IDs.
+    - Artifact, evidence and corpus manifests with file sizes and SHA-256 digests.
+    - Environment identity and provenance records without secret values.
+  events: []
+  integrations:
+    - GitHub source line, pull request, CODEOWNERS, ruleset and required checks.
+    - GitHub Actions candidate build and clean-room no-effect verification jobs.
+source_bootstrap_authority_after_rp_a:
+  operator: Khoa Nguyen
+  authorized_operations:
+    - Apply the exact approved ruleset to refs/heads/v3/main before the branch exists.
+    - Read back and verify the ruleset.
+    - Create v3/main at the exact approved seed commit.
+    - Read back and verify the remote ref and tree.
+    - Create isolated local checkout /root/projects/ysim-v3-r1/ysim.
+    - Create implementation branch feature/v3-r1-g00-s00-secure-factory from v3/main.
+    - Push the implementation branch for required checks and review after local verification.
+  forbidden_operations:
+    - Merge to v3/main.
+    - Change the repository default branch.
+    - Create a tag or release.
+    - Weaken or bypass the ruleset.
+    - Modify any source ref outside the two named branches.
+ruleset_contract:
+  target: refs/heads/v3/main
+  apply_before_branch_creation: true
+  pull_request_required: true
+  required_human_approvals: 1
+  dismiss_stale_approvals: true
+  require_code_owner_review: true
+  require_conversation_resolution: true
+  required_status_checks:
+    - S00 / policy
+    - S00 / test
+    - S00 / build-candidate
+    - S00 / verify-candidate
+  block_force_push: true
+  block_deletion: true
+  operator: Khoa Nguyen
+  verification: Independent read-only ruleset/ref readback before source implementation.
+  failure_result: BLOCKED_SOURCE_CONTROL_NOT_ESTABLISHED
+acceptance:
+  RP-A:
+    - Exact seed commit/tree and unaccepted-seed interpretation approved.
+    - Read-only repository/toolchain/CI inventory approved.
+    - Exact 36-file allowlist and default-deny protected-path policy approved.
+    - Exact ruleset controls, application order, operator and readback approved.
+    - Clean-room CI no-business-effect RP-D exception approved.
+    - Reproducible ysf Python wheel as harmless proof artifact approved.
+    - External-effect budget remains DENY_ALL.
+    - Contract digest receives HUMAN_CONTRACT_APPROVED from Khoa Nguyen.
+  RP-B:
+    - Quarantined known-bad path or sensitive fixture is rejected at the intended gate.
+    - Failed execution evidence is preserved under a unique immutable execution ID.
+    - Compliant run produces wheel, artifact manifest, SBOM, provenance and checksums.
+    - No changed path exists outside the exact allowlist.
+    - No business external effect or application deployment occurs.
+    - Human records ACCEPT, CHANGES_REQUESTED or REJECT against exact evidence.
+  RP-C:
+    - Full wrong-identity, path, corpus, lock, approval, ruleset, leak, tamper, rebuild and self-protection matrix passes.
+    - Ruff, mypy, pytest, coverage, Bandit, dependency/SCA and SBOM checks complete without silent skip.
+    - Separate Codex reviewer run resolves technical findings and remains advisory.
+    - Khoa Nguyen separately records Human source/security acceptance.
+  RP-D:
+    - Exact candidate artifact and evidence bytes are consumed by a separate clean-room GitHub Actions verification job.
+    - RP-D does not rebuild, install into application runtime or deploy the candidate.
+    - Job has read-only repository permission, no secrets and no business-provider target.
+    - Artifact digest, provenance, SBOM, leak scan and effect policy are reverified.
+    - Khoa Nguyen records the integrated tooling acceptance against the exact candidate digest.
+file_allowlist:
+  - AGENTS.md
+  - .github/CODEOWNERS
+  - .github/workflows/v3-r1-s00-secure-factory.yml
+  - docs/v3/r1/g00/s00/README.md
+  - docs/v3/r1/g00/s00/context-receipt.yaml
+  - docs/v3/r1/g00/s00/clarification-register.yaml
+  - docs/v3/r1/g00/s00/slice-contract.yaml
+  - docs/v3/r1/g00/s00/ExecPlan.md
+  - docs/v3/r1/g00/s00/source-and-delivery-policy.md
+  - docs/v3/r1/g00/s00/environment-identity.yaml
+  - docs/v3/r1/g00/s00/test-matrix.yaml
+  - docs/v3/r1/g00/s00/evidence-schema.yaml
+  - tools/ysf/pyproject.toml
+  - tools/ysf/requirements-s00-build.lock
+  - tools/ysf/requirements-s00-dev.lock
+  - tools/ysf/src/ysf/cli.py
+  - tools/ysf/src/ysf/secure_factory/__init__.py
+  - tools/ysf/src/ysf/secure_factory/models.py
+  - tools/ysf/src/ysf/secure_factory/cli.py
+  - tools/ysf/src/ysf/secure_factory/environment.py
+  - tools/ysf/src/ysf/secure_factory/policy.py
+  - tools/ysf/src/ysf/secure_factory/sensitive.py
+  - tools/ysf/src/ysf/secure_factory/evidence.py
+  - tools/ysf/src/ysf/secure_factory/candidate.py
+  - tools/ysf/tests/unit/test_secure_factory_environment.py
+  - tools/ysf/tests/unit/test_secure_factory_policy.py
+  - tools/ysf/tests/unit/test_secure_factory_sensitive.py
+  - tools/ysf/tests/unit/test_secure_factory_evidence.py
+  - tools/ysf/tests/unit/test_secure_factory_candidate.py
+  - tools/ysf/tests/integration/test_secure_factory_pipeline.py
+  - tools/ysf/tests/fixtures/secure_factory/compliant/README.txt
+  - tools/ysf/tests/fixtures/secure_factory/noncompliant/path-escape.json
+  - tools/ysf/tests/fixtures/secure_factory/noncompliant/synthetic-secret.txt
+  - tools/ysf/tests/fixtures/secure_factory/noncompliant/synthetic-esim-payload.txt
+  - tools/ysf/tests/fixtures/secure_factory/noncompliant/tampered-manifest.json
+  - scripts/v3-r1-s00.sh
+file_policy:
+  mode: EXACT_ALLOWLIST_DEFAULT_DENY
+  unexpected_path_result: FAIL_UNAPPROVED_PATH
+  generated_candidate_and_evidence_output: Outside Git checkout in a unique temporary execution directory.
+  generated_output_commit: FORBIDDEN
+protected_paths:
+  - All repository paths not named in file_allowlist.
+  - docs/BRD/**
+  - docs/UXF/**
+  - factory/releases/**
+  - factory/executions/**
+  - factory/evidence/**
+  - knowledge/**
+  - application business logic and all future service/runtime paths.
+  - secrets, environment data, deployment controls and production configuration.
+environment_policy:
+  discovery:
+    distro: YSim-Debian12
+    checkout: /root/projects/ysim-v2.1/ysim
+    mutation: FORBIDDEN
+  implementation:
+    distro: YSim-Debian12
+    os: Debian 12
+    architecture: aarch64
+    checkout: /root/projects/ysim-v3-r1/ysim
+    branch: feature/v3-r1-g00-s00-secure-factory
+    python: 3.11.2
+    data: SYNTHETIC_DISPOSABLE
+    providers: "OFF"
+    email: NON_RELAYING
+    production_secrets: FORBIDDEN
+  candidate_build:
+    environment: GitHub Actions isolated candidate job
+    source: Exact candidate commit/tree and hash-locked dependencies
+    output: One ysf wheel plus checksummed evidence package
+    build_count: 1
+  rp_d_environment:
+    environment: Separate GitHub Actions clean-room verification job
+    input: Exact candidate bytes from candidate build job
+    rebuild: FORBIDDEN
+    repository_permission: contents_read_only
+    secrets: "NONE"
+    application_deployment: "NONE"
+    providers: "OFF"
+  external_effect_budget: DENY_ALL
+artifact_contract:
+  type: REPRODUCIBLE_YSF_PYTHON_WHEEL
+  source_root: tools/ysf
+  runtime_installation: FORBIDDEN
+  business_capability_claim: FORBIDDEN
+  deterministic_timestamp: SOURCE_DATE_EPOCH_FROM_CANDIDATE_COMMIT
+  candidate_contents:
+    - ysf wheel
+    - artifact manifest
+    - SHA256SUMS
+    - CycloneDX SBOM
+    - SLSA-aligned provenance statement
+    - test and coverage reports
+    - lint, type, SAST and dependency/SCA reports
+    - leak-scan report
+    - environment identity
+    - append-only execution ledger
+tests:
+  - ENVIRONMENT_IDENTITY_POSITIVE_AND_WRONG_REPO_REF_TREE_OS_ARCH_PYTHON_WORKSPACE_NEGATIVES
+  - CLEAN_TREE_AND_EXACT_DIFF_ALLOWLIST
+  - IMMUTABLE_BRD_UXF_CORPUS
+  - RULESET_READBACK_REQUIRED_REVIEW_AND_STALE_APPROVAL
+  - HASH_LOCK_INSTALL_AND_DECLARED_DEPENDENCY_CLOSURE
+  - RUFF_MYPY_PYTEST_AND_COVERAGE
+  - BANDIT_SAST_AND_DEPENDENCY_SCA
+  - SYNTHETIC_SECRET_PII_ICCID_LPA_AND_QR_KNOWN_BAD_REJECTION
+  - SAFE_EVIDENCE_METADATA_REDACTION_AND_TAMPER_DETECTION
+  - SBOM_PROVENANCE_ARTIFACT_DIGEST_AND_BUILD_ONCE
+  - POLICY_SELF_PROTECTION
+  - IMMUTABLE_FAILURE_EXECUTION_LEDGER
+threats_and_failures:
+  - WRONG_REPOSITORY_REF_TREE_OS_ARCHITECTURE_PYTHON_OR_WORKSPACE
+  - DIRTY_TREE_PATH_ESCAPE_OR_UNAPPROVED_FILE
+  - BRD_UXF_OR_PROTECTED_PATH_MUTATION
+  - MISSING_OR_MISMATCHED_RULESET
+  - SECRET_PII_ICCID_LPA_OR_QR_PAYLOAD_LEAK
+  - STALE_MISSING_OR_WRONG_DIGEST_HUMAN_APPROVAL
+  - ALTERED_DEPENDENCY_LOCK_SBOM_PROVENANCE_OR_ARTIFACT
+  - SECOND_BUILD_OR_ARTIFACT_SUBSTITUTION
+  - DISABLED_POLICY_SELF_CHECK
+  - FAILED_RUN_EVIDENCE_OVERWRITE
+migration_and_compatibility: >-
+  No database, service or runtime migration. The seed tree transfers no legacy
+  maturity. Existing ysf behavior outside the exact allowlist must remain
+  regression-compatible or the Slice stops for a contract revision.
+rollback_and_reconciliation: >-
+  No business external reconciliation is possible or permitted. Before merge,
+  all implementation changes remain isolated on the named feature branch and
+  can be superseded only through reviewed version history. Ruleset or source-ref
+  mismatch stops further mutation and requires Human review. Failed execution
+  and candidate identities remain append-only.
+deliverables:
+  - HUMAN_RP_A_DECISION_RECORD
+  - SOURCE_BOOTSTRAP_AND_RULESET_READBACK_EVIDENCE
+  - REPOSITORY_CONTEXT_AND_POLICY_FILES
+  - HASH_LOCKED_DEPENDENCIES
+  - SECURE_FACTORY_IMPLEMENTATION_AND_TESTS
+  - RP_B_BEHAVIOR_EVIDENCE
+  - RP_C_SECURITY_AND_INDEPENDENT_REVIEW_EVIDENCE
+  - BUILD_ONCE_CANDIDATE_PACKAGE
+  - RP_D_CLEAN_ROOM_VERIFICATION_AND_HUMAN_RECORD
+  - SLICE_CLOSURE_DOSSIER
+reviewers:
+  business: Khoa Nguyen
+  technical: Khoa Nguyen
+  security: Khoa Nguyen
+  source_ruleset_operator: Khoa Nguyen
+  independent_ai_technical_review: Separate_Codex_Reviewer_Run_Advisory_Only
+  promotion: Khoa Nguyen
+human_contract_approval:
+  storage: SEPARATE_IMMUTABLE_DECISION_RECORD
+  decision: PENDING
+  approver: null
+  contract_sha256: null
+  timestamp_utc: null

@@ -1,0 +1,66 @@
+schema_version: 1
+slice_id: V3-R1-G00-S00
+receipt_id: V3-R1-G00-S00-CONTEXT-FREEZE-RECEIPT-001
+freeze_execution_id: V3-R1-G00-S00-CONTEXT-FREEZE-B4-R1
+status: FROZEN_PENDING_B4_EVIDENCE_REVIEW
+repository:
+  name: nvkhoabk/ysim
+  checkout: /root/projects/ysim-v3-r1/ysim
+  protected_source_line: v3/main
+  implementation_branch: feature/v3-r1-g00-s00-secure-factory
+  seed_commit: 5be8413d3c22d1345b3088424af40ca2eb9d1115
+  seed_tree: 4631630f4d57872e08f6b523ab8adf0a94453673
+  seed_status: UNACCEPTED_SOURCE_BYTES
+  legacy_maturity_transfer: FORBIDDEN
+authority:
+  baseline_id: YSIM-V3-R1-DOCSET-2026-08-08
+  baseline_version: 0.2.0
+  baseline_archive_sha256: 4f183a6537a126b56f7a7b8680e71b976b2c2045793fc6abd9e59ef99cc91a4d
+  contract_id: V3-R1-G00-S00-CONTRACT-001
+  contract_version: 0.2.0
+  contract_sha256: 0c1c0e76c6ff55afd77c6c3aeaebae4a89bd2341870766c05d2ba8610a62b8dd
+  approval_result: HUMAN_CONTRACT_APPROVED
+  approval_record_sha256: 352d8411bd4ad0d61d0a7269482834f2e0d7dcffdd275074f050a0bdfbc41062
+  approver: Khoa Nguyen
+  roles: [Business Owner, Technical Owner]
+predecessor_evidence:
+  - execution_id: V3-R1-G00-S00-RULESET-B1-R1
+    result: PASS_RULESET_APPLIED_AND_READ_BACK
+    ruleset_id: 20583674
+  - execution_id: V3-R1-G00-S00-SOURCE-LINE-B2-R1
+    result: PASS_V3_MAIN_CREATED_AND_READ_BACK
+  - execution_id: V3-R1-G00-S00-ISOLATED-CHECKOUT-B3-R1
+    result: PASS_ISOLATED_V3_CHECKOUT_AND_IMPLEMENTATION_BRANCH_CREATED
+environment:
+  wsl_distribution: YSim-Debian12
+  os: Debian 12
+  architecture: aarch64
+  python: 3.11.2
+  data: SYNTHETIC_DISPOSABLE
+  providers: "OFF"
+  email: NON_RELAYING
+  production_secrets: FORBIDDEN
+  external_effect_budget: DENY_ALL
+immutable_corpus:
+  brd_file_count: 24
+  uxf_file_count: 7
+  mutation: FORBIDDEN
+requirements:
+  state: PROPOSED
+  exact_anchor_review: PENDING_G00_S01
+  ids:
+    - V3-R1-OPS-004
+    - V3-R1-SEC-002
+    - V3-R1-REL-002
+    - V3-R1-REL-010
+scope:
+  context_path_count: 10
+  full_contract_allowlist_count: 36
+  file_policy: EXACT_ALLOWLIST_DEFAULT_DENY
+  unexpected_path_result: FAIL_UNAPPROVED_PATH
+stage_boundary:
+  context_freeze_permitted: true
+  dependency_lock_permitted_in_this_execution: false
+  secure_factory_implementation_permitted_in_this_execution: false
+  commit_or_push_permitted_in_this_execution: false
+  merge_deploy_promotion_or_external_effect_permitted: false

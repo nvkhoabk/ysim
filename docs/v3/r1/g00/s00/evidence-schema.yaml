@@ -1,0 +1,75 @@
+schema_version: 1
+schema_id: V3-R1-G00-S00-EVIDENCE-SCHEMA-001
+slice_id: V3-R1-G00-S00
+contract_sha256: 0c1c0e76c6ff55afd77c6c3aeaebae4a89bd2341870766c05d2ba8610a62b8dd
+record_policy:
+  execution_id: REQUIRED_UNIQUE_IMMUTABLE
+  failed_record_overwrite: FORBIDDEN
+  encoding: UTF-8
+  timestamps: UTC_RFC3339
+  generated_output_location: OUTSIDE_GIT_CHECKOUT
+required_fields:
+  - execution_id
+  - timestamp_utc
+  - mutation_class
+  - repository
+  - branch
+  - head_commit
+  - head_tree
+  - contract_sha256
+  - contract_path
+  - contract_actual_sha256
+  - contract_approved_sha256
+  - contract_digest_match
+  - environment_identity
+  - changed_paths
+  - input_digests
+  - command_or_gate
+  - exit_code
+  - result
+  - next_allowed_action
+artifact_manifest_fields:
+  - relative_path
+  - byte_size
+  - sha256
+candidate_required_records:
+  - artifact_manifest
+  - SHA256SUMS
+  - cyclone_dx_sbom
+  - slsa_aligned_provenance
+  - test_and_coverage_reports
+  - lint_type_sast_and_dependency_reports
+  - leak_scan_report
+  - environment_identity
+  - append_only_execution_ledger
+  - exact_approved_contract_bytes
+  - retained_sanitized_quality_outputs
+prohibited_values:
+  - REAL_CREDENTIAL
+  - PII
+  - ICCID
+  - LPA
+  - QR_PAYLOAD
+  - SECRET_VALUE
+redaction_policy: FAIL_IF_PROHIBITED_VALUE_WOULD_BE_EMITTED
+external_effect_budget: DENY_ALL
+quality_gate_policy:
+  required_exactly_once: [ruff, mypy, pytest, bandit, pip-audit, leak-scan, environment-identity]
+  skipped_or_duplicate: FAIL_CLOSED
+  output_binding: SHA256_OF_ACTUAL_GATE_OUTPUT
+  required_result: PASS_WITH_EXIT_CODE_ZERO
+candidate_semantic_binding:
+  source: [repository, branch, head_commit, head_tree, contract_path, contract_actual_sha256, contract_approved_sha256, contract_digest_match]
+  dependency_inputs: [requirements-s00-build.lock, requirements-s00-dev.lock]
+  sbom:
+    format: CYCLONEDX_1_6
+    dependency_binding: EXACT_LOCK_COMPONENTS_AND_LOCK_DIGEST_PROPERTIES
+    retained_wheel_binding:
+      location: metadata.component.hashes
+      cardinality: EXACTLY_ONE
+      alg: SHA-256
+      content: SHA256_CALCULATED_DIRECTLY_FROM_EXACT_RETAINED_WHEEL_BYTES
+      missing_malformed_duplicate_or_incorrect: FAIL_CLOSED
+      outer_manifest_or_sha256sums_rehash: INSUFFICIENT_WITHOUT_EXACT_SBOM_BINDING
+  provenance: SLSA_V1_EXACT_SOURCE_BUILDER_LOCK_AND_WHEEL_BINDING
+  reproducibility: TWO_INDEPENDENT_WHEEL_BUILDS_ONE_RETAINED_ARTIFACT
