@@ -547,12 +547,26 @@ def _write_candidate_metadata(
             "FAIL_CONTRACT_SOURCE", "Approved Contract bytes are missing or unsafe."
         )
     write_exclusive(candidate_dir / "contract/slice-contract.yaml", contract_path.read_bytes())
+    wheels = sorted((candidate_dir / "artifacts").glob("*.whl"))
+    if len(wheels) != 1:
+        raise FactoryFailure("FAIL_WHEEL_COUNT", "Candidate must contain exactly one wheel.")
+    wheel_sha256 = sha256_file(wheels[0])
+    if wheel_sha256 != reproducible_wheel_sha256:
+        raise FactoryFailure(
+            "FAIL_WHEEL_REPRODUCIBILITY",
+            "Retained wheel digest does not match the reproducibility proof.",
+        )
     sbom = {
         "bomFormat": "CycloneDX",
         "specVersion": "1.6",
         "version": 1,
         "metadata": {
-            "component": {"type": "application", "name": "ysf", "version": "0.1.0"},
+            "component": {
+                "type": "application",
+                "name": "ysf",
+                "version": "0.1.0",
+                "hashes": [{"alg": "SHA-256", "content": wheel_sha256}],
+            },
             "properties": [
                 {"name": "ysim:contract:sha256", "value": contract_sha256},
                 {"name": "ysim:contract:path", "value": CONTRACT_RELATIVE_PATH},
@@ -577,15 +591,12 @@ def _write_candidate_metadata(
         "components": _parse_lock_components(locks),
     }
     write_exclusive(candidate_dir / "sbom.cdx.json", _json_bytes(sbom))
-    wheels = sorted((candidate_dir / "artifacts").glob("*.whl"))
-    if len(wheels) != 1:
-        raise FactoryFailure("FAIL_WHEEL_COUNT", "Candidate must contain exactly one wheel.")
     provenance = {
         "_type": "https://in-toto.io/Statement/v1",
         "subject": [
             {
                 "name": f"artifacts/{wheels[0].name}",
-                "digest": {"sha256": sha256_file(wheels[0])},
+                "digest": {"sha256": wheel_sha256},
             }
         ],
         "predicateType": "https://slsa.dev/provenance/v1",
@@ -618,7 +629,7 @@ def _write_candidate_metadata(
                     "finishedOnEpoch": source_date_epoch,
                     "reproducibility": {
                         "independentBuildCount": 2,
-                        "wheelSha256": reproducible_wheel_sha256,
+                        "wheelSha256": wheel_sha256,
                     },
                 },
             },
@@ -1147,6 +1158,7 @@ def _verify_quality_evidence(
 def _verify_sbom(
     root: Path,
     *,
+    wheel: str,
     repository: str,
     branch: str,
     commit: str,
@@ -1157,12 +1169,18 @@ def _verify_sbom(
     del repository
     locks = tuple(lock_paths)
     lock_digests = _lock_digest_map(locks)
+    wheel_sha256 = sha256_file(root / wheel)
     expected = {
         "bomFormat": "CycloneDX",
         "specVersion": "1.6",
         "version": 1,
         "metadata": {
-            "component": {"type": "application", "name": "ysf", "version": "0.1.0"},
+            "component": {
+                "type": "application",
+                "name": "ysf",
+                "version": "0.1.0",
+                "hashes": [{"alg": "SHA-256", "content": wheel_sha256}],
+            },
             "properties": [
                 {"name": "ysim:contract:sha256", "value": contract_sha256},
                 {"name": "ysim:contract:path", "value": CONTRACT_RELATIVE_PATH},
@@ -1362,6 +1380,7 @@ def verify_candidate(
     )
     _verify_sbom(
         root,
+        wheel=wheels[0],
         repository=expected_repository,
         branch=expected_branch,
         commit=expected_commit,

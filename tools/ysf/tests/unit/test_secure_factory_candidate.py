@@ -512,6 +512,7 @@ def _synthetic_candidate(root: Path) -> Path:
     )
     lock_digests = {path.name: sha256_file(path) for path in locks}
     components = _parse_lock_components(locks)
+    wheel_digest = sha256_file(wheel)
     (candidate / "sbom.cdx.json").write_text(
         json.dumps(
             {
@@ -519,7 +520,12 @@ def _synthetic_candidate(root: Path) -> Path:
                 "specVersion": "1.6",
                 "version": 1,
                 "metadata": {
-                    "component": {"type": "application", "name": "ysf", "version": "0.1.0"},
+                    "component": {
+                        "type": "application",
+                        "name": "ysf",
+                        "version": "0.1.0",
+                        "hashes": [{"alg": "SHA-256", "content": wheel_digest}],
+                    },
                     "properties": [
                         {"name": "ysim:contract:sha256", "value": CONTRACT},
                         {"name": "ysim:contract:path", "value": CONTRACT_RELATIVE_PATH},
@@ -543,7 +549,6 @@ def _synthetic_candidate(root: Path) -> Path:
         + "\n",
         encoding="utf-8",
     )
-    wheel_digest = sha256_file(wheel)
     (candidate / "provenance.json").write_text(
         json.dumps(
             {
@@ -643,6 +648,41 @@ def test_semantic_substitution_is_rejected_even_after_rehash(tmp_path: Path) -> 
     with pytest.raises(FactoryFailure) as captured:
         _verify(candidate)
     assert captured.value.code == "FAIL_PROVENANCE_SEMANTICS"
+
+
+@pytest.mark.parametrize("mutation", ["missing", "incorrect", "duplicate"])
+def test_sbom_requires_one_exact_retained_wheel_digest(
+    tmp_path: Path, mutation: str
+) -> None:
+    candidate = _synthetic_candidate(tmp_path / mutation)
+    sbom_path = candidate / "sbom.cdx.json"
+    sbom = json.loads(sbom_path.read_text(encoding="utf-8"))
+    hashes = sbom["metadata"]["component"]["hashes"]
+    if mutation == "missing":
+        del sbom["metadata"]["component"]["hashes"]
+    elif mutation == "incorrect":
+        hashes[0]["content"] = "0" * 64
+    else:
+        hashes.append(dict(hashes[0]))
+    sbom_path.write_text(json.dumps(sbom) + "\n", encoding="utf-8")
+    _rehash_candidate(candidate)
+
+    with pytest.raises(FactoryFailure) as captured:
+        _verify(candidate)
+    assert captured.value.code == "FAIL_SBOM_SEMANTICS"
+
+
+def test_altered_wheel_with_rehashed_outer_manifest_fails_sbom_binding(
+    tmp_path: Path,
+) -> None:
+    candidate = _synthetic_candidate(tmp_path / "altered-wheel")
+    wheel = next((candidate / "artifacts").glob("*.whl"))
+    wheel.write_bytes(wheel.read_bytes() + b"synthetic-tamper")
+    _rehash_candidate(candidate)
+
+    with pytest.raises(FactoryFailure) as captured:
+        _verify(candidate)
+    assert captured.value.code == "FAIL_SBOM_SEMANTICS"
 
 
 def test_contract_and_retained_quality_bytes_are_recomputed(tmp_path: Path) -> None:

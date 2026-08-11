@@ -26,8 +26,8 @@ test_groups:
     negative: [synthetic_secret, synthetic_pii, synthetic_iccid, synthetic_lpa, synthetic_qr, ambiguous_admin_yaml, tampered_manifest, tampered_quality_output, overwritten_failure]
   - id: CANDIDATE_INTEGRITY
     state: IMPLEMENTED_EXECUTABLE
-    positive: [one_deterministic_wheel, checksums, sbom, provenance]
-    negative: [second_build, artifact_substitution, altered_provenance]
+    positive: [one_deterministic_wheel, checksums, sbom_exact_retained_wheel_sha256, provenance]
+    negative: [second_build, artifact_substitution, missing_sbom_wheel_digest, incorrect_sbom_wheel_digest, duplicate_sbom_wheel_digest, altered_wheel_with_rehashed_outer_manifest, altered_provenance]
   - id: EXTERNAL_EFFECT_POLICY
     state: IMPLEMENTED_EXECUTABLE
     positive: [providers_off, non_relaying_email, no_application_deployment]
@@ -50,3 +50,5 @@ execution_contract:
     secret_present: FAIL_EXTERNAL_EFFECT_POLICY
     outbound_business_action: FAIL_EXTERNAL_EFFECT_POLICY
     candidate_semantic_substitution: FAIL_SBOM_SEMANTICS_OR_FAIL_PROVENANCE_SEMANTICS
+    missing_incorrect_or_ambiguous_sbom_wheel_binding: FAIL_SBOM_SEMANTICS
+    altered_wheel_with_mechanically_rehashed_outer_manifest: FAIL_SBOM_SEMANTICS
