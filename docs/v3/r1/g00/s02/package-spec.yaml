@@ -1,0 +1,67 @@
+schema_version: 1
+package_id: V3-R1-G00-S02-GOVERNANCE-REQUIREMENTS-BASELINE-R1
+package_version: 0.1.0-candidate.1
+checkpoint: V3-R1-G00-S02
+repository: nvkhoabk/ysim
+required_baseline:
+  branch: feature/v3-r1-g00-s01-traceability-fast-track
+  commit: 3afc37eb366769603f7a898c53432c444f50726a
+  tree: 217db32ea46636a40bc0aa611c653836e461b6de
+worktree_entry_mode: EXPECTED_BASELINE
+requirement_ids:
+  - V3-R1-GOV-001
+  - V3-R1-GOV-002
+  - V3-R1-GOV-003
+  - V3-R1-GOV-004
+  - V3-R1-GOV-005
+  - V3-R1-GOV-006
+  - V3-R1-GOV-007
+  - V3-R1-GOV-008
+  - V3-R1-GOV-009
+  - V3-R1-GOV-010
+  - V3-R1-GOV-011
+  - V3-R1-GOV-012
+maturity_transition:
+  from: PROPOSED
+  refined_requirements_to: ACCEPTED_REQUIREMENTS_BASELINE
+  deferred_requirements_to: REFERENCE_ONLY/FUTURE
+environment_scope: WSL:YSim-Debian12:DOCUMENTATION_SOURCE_ONLY
+execution_os: Linux
+development_shell: bash
+canonical_repo_root: /root/projects/ysim-v2.1/ysim
+standard:
+  package_release: YSIM-PCS-001 v1.27.1
+  engineering: YSIM-ENG-001 v1.0.1
+  environment: YSIM-ENV-001 v3.2.1
+mutations:
+  source: true
+  runtime: false
+  external_provider: false
+  customer_communication: false
+  scheduler: false
+approval_mode: HUMAN_ACCEPTANCE_RECORDED_OUT_OF_BAND
+payment_owner_mode: NOT_APPLICABLE
+money_ledger_impact: NONE
+candidate:
+  path: factory/releases/v3-r1-g00-s02-governance-requirements-baseline/YSim_V3_R1_G00_S02_Governance_Requirements_Baseline_v0.1.0-candidate.1.md
+  size_bytes: 28555
+  sha256: f3aa80a23a1ab95ab9914263d8c79bf11fc466579f162c79d0302cbfa77c9a77
+governed_wrapper:
+  path: docs/v3/r1/g00/s02/governance-requirements-baseline.md
+  document_code: V3-R1-G00-S02-GOVERNANCE-BASELINE-WRAPPER
+  human_accepted: false
+manifest: docs/v3/r1/g00/s02/MANIFEST.sha256
+allowed_paths:
+  - docs/v3/r1/g00/s02/README.md
+  - docs/v3/r1/g00/s02/governance-requirements-baseline.md
+  - docs/v3/r1/g00/s02/acceptance-receipt.yaml
+  - docs/v3/r1/g00/s02/package-spec.yaml
+  - docs/v3/r1/g00/s02/MANIFEST.sha256
+  - tools/ysf/src/ysf/governance_baseline/__init__.py
+  - tools/ysf/src/ysf/governance_baseline/validator.py
+  - tools/ysf/tests/unit/test_governance_baseline_validator.py
+  - factory/releases/v3-r1-g00-s02-governance-requirements-baseline/YSim_V3_R1_G00_S02_Governance_Requirements_Baseline_v0.1.0-candidate.1.md
+exit_criteria:
+  validation: PASS
+  next_action: OPEN_ONE_STACKED_DRAFT_PR_AND_STOP
+safe_stop: Preserve candidate bytes and Draft PR; perform no promotion or runtime action.

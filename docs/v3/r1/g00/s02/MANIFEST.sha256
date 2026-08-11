@@ -1,0 +1,8 @@
+a1fa733c76ea8f2e01d61193e5f20545be523bc1a56bc7be0f0bc2c8e662a076  docs/v3/r1/g00/s02/README.md
+7e9c42a020d7fe87031218bd812349a421b45f10c4ff2920ca2f024ab762e6f4  docs/v3/r1/g00/s02/governance-requirements-baseline.md
+0a776b91daaef1b6fad67eb6b2d94bd0b6f99e522d089845dfc02ccc62410c23  docs/v3/r1/g00/s02/acceptance-receipt.yaml
+40f62fda8787262a63f0183267d6fad8ac4d19619221430baf52068c294c688f  docs/v3/r1/g00/s02/package-spec.yaml
+2bf08c590ebc3beee02a0fbcac44b48c117e60c7632f48c2b9fc228010c1857a  tools/ysf/src/ysf/governance_baseline/__init__.py
+6ff581346b9873f680b1391756dd2a58c19b7f35b98519ae7da661da3d9ec000  tools/ysf/src/ysf/governance_baseline/validator.py
+6cf844e19d4c3cdaf404ce6492635baea035b62095143d0eb3007980a75989bc  tools/ysf/tests/unit/test_governance_baseline_validator.py
+f3aa80a23a1ab95ab9914263d8c79bf11fc466579f162c79d0302cbfa77c9a77  factory/releases/v3-r1-g00-s02-governance-requirements-baseline/YSim_V3_R1_G00_S02_Governance_Requirements_Baseline_v0.1.0-candidate.1.md
