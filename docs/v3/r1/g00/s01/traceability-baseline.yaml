@@ -1,12 +1,14 @@
-schema_version: 1
-baseline_id: V3-R1-G00-S01-TRACEABILITY-BASELINE-001
+schema_version: 2
+baseline_id: V3-R1-G00-S01-TRACEABILITY-BASELINE-002
 release: V3-R1
 authority:
   repository: nvkhoabk/ysim
   stacked_base_branch: feature/v3-r1-g00-s00-secure-factory
   seed_commit: a8cfc5d93c8176fc3a727257be609f3af82f38de
   seed_tree: 1953815ee35edc5f6fc487784e4f2bac9191ec1f
-  source_decision: PENDING_HUMAN_REVIEW
+  source_decision: SOURCE_INPUT_DECISIONS_RESOLVED
+  normative_precedence: V3_R1_BASELINE_AND_EXPLICIT_DECISIONS
+  final_human_acceptance: REQUIRED_BEFORE_GOVERNANCE_RECORD
   legacy_maturity_transfer: FORBIDDEN
 corpus:
   expected_brd_count: 24
@@ -16,32 +18,50 @@ corpus:
     path: docs/BRD/BRD-BO-INDEX.md
     git_blob_sha: 864f11dda3748417cda6a5a4c44509d5f888b4e8
     source_group: ENTERPRISE_GOVERNANCE
-    source_group_status: HUMAN_DECISION_REQUIRED
+    source_group_status: RESOLVED
+    source_role: SOURCE_INPUT
+    normative_requirement_authority: NONE
+    source_decision_id: V3-R1-SD-001
   - source_set: BRD
     path: docs/BRD/BRD-CAP-INDEX.md
     git_blob_sha: f0f60cb5a24a0971ccdacade911ca6a163641a0f
     source_group: ENTERPRISE_GOVERNANCE
-    source_group_status: HUMAN_DECISION_REQUIRED
+    source_group_status: RESOLVED
+    source_role: SOURCE_INPUT
+    normative_requirement_authority: NONE
+    source_decision_id: V3-R1-SD-002
   - source_set: BRD
     path: docs/BRD/BRD-EVENT-INDEX.md
     git_blob_sha: e8e31a457d4fbae177729b2ad29f40ad991a5b2d
     source_group: ENTERPRISE_GOVERNANCE
-    source_group_status: HUMAN_DECISION_REQUIRED
+    source_group_status: RESOLVED
+    source_role: SOURCE_INPUT
+    normative_requirement_authority: NONE
+    source_decision_id: V3-R1-SD-003
   - source_set: BRD
     path: docs/BRD/BRD-META-MODEL.md
     git_blob_sha: 574b716098b0269afa59c37e447ad11e8f9132ea
     source_group: ENTERPRISE_GOVERNANCE
-    source_group_status: HUMAN_DECISION_REQUIRED
+    source_group_status: RESOLVED
+    source_role: SOURCE_INPUT
+    normative_requirement_authority: NONE
+    source_decision_id: V3-R1-SD-004
   - source_set: BRD
     path: docs/BRD/BRD-POLICY-INDEX.md
     git_blob_sha: 47a4220a500c866d15e0d2ca7379656d9ef5c44e
     source_group: ENTERPRISE_GOVERNANCE
-    source_group_status: HUMAN_DECISION_REQUIRED
+    source_group_status: RESOLVED
+    source_role: SOURCE_INPUT
+    normative_requirement_authority: NONE
+    source_decision_id: V3-R1-SD-005
   - source_set: BRD
     path: docs/BRD/BRD-SNAPSHOT-INDEX.md
     git_blob_sha: 4468b01900c408181817458870d5f52bcb00d8da
     source_group: ENTERPRISE_GOVERNANCE
-    source_group_status: HUMAN_DECISION_REQUIRED
+    source_group_status: RESOLVED
+    source_role: SOURCE_INPUT
+    normative_requirement_authority: NONE
+    source_decision_id: V3-R1-SD-006
   - source_set: BRD
     path: docs/BRD/BRD-UPDATE-01.md
     git_blob_sha: db8965fd142b6e9a5808a41c7fa01d6ed77220d5
@@ -136,27 +156,42 @@ corpus:
     path: docs/UXF/INDEX.md
     git_blob_sha: c24e2211713ce9a1f6e7dcb7005b743885400edb
     source_group: ENTERPRISE_GOVERNANCE
-    source_group_status: HUMAN_DECISION_REQUIRED
+    source_group_status: RESOLVED
+    source_role: SOURCE_INPUT
+    normative_requirement_authority: NONE
+    source_decision_id: V3-R1-SD-007
   - source_set: UXF
     path: docs/UXF/UXF-00.md
     git_blob_sha: 355fd9308d1ac5661e8b5bfff7449b8311366651
     source_group: EXPERIENCE_FOUNDATION
-    source_group_status: HUMAN_DECISION_REQUIRED
+    source_group_status: RESOLVED
+    source_role: SOURCE_INPUT
+    normative_requirement_authority: NONE
+    source_decision_id: V3-R1-SD-008
   - source_set: UXF
     path: docs/UXF/UXF-01.md
     git_blob_sha: a7cd21b547a55f787af866bab690b8686be90b02
     source_group: EXPERIENCE_FOUNDATION
-    source_group_status: HUMAN_DECISION_REQUIRED
+    source_group_status: RESOLVED
+    source_role: SOURCE_INPUT
+    normative_requirement_authority: NONE
+    source_decision_id: V3-R1-SD-009
   - source_set: UXF
     path: docs/UXF/UXF-02.md
     git_blob_sha: 58db188896df3951fbc7d40adf69ba3d0323b8a4
     source_group: EXPERIENCE_FOUNDATION
-    source_group_status: HUMAN_DECISION_REQUIRED
+    source_group_status: RESOLVED
+    source_role: SOURCE_INPUT
+    normative_requirement_authority: NONE
+    source_decision_id: V3-R1-SD-010
   - source_set: UXF
     path: docs/UXF/UXF-03.md
     git_blob_sha: d27a281590bf5b5a7f48eab7937b450d1b328de6
     source_group: EXPERIENCE_FOUNDATION
-    source_group_status: HUMAN_DECISION_REQUIRED
+    source_group_status: RESOLVED
+    source_role: SOURCE_INPUT
+    normative_requirement_authority: NONE
+    source_decision_id: V3-R1-SD-011
   - source_set: UXF
     path: docs/UXF/UXF-04.md
     git_blob_sha: cab4314dff8c8869845dba042297cd2e92f99840
@@ -167,6 +202,118 @@ corpus:
     git_blob_sha: df8b17fd6eebf76299d7a9d4d0d31ccdacfc6efc
     source_group: EXPERIENCE_FOUNDATION
     source_group_status: ASSIGNED
+source_decisions:
+- id: V3-R1-SD-001
+  source_path: docs/BRD/BRD-BO-INDEX.md
+  decision: ACCEPT_AS_SOURCE_INPUT
+  status: RESOLVED
+  source_role: SOURCE_INPUT
+  normative_requirement_authority: NONE
+  precedence: V3_R1_BASELINE_AND_EXPLICIT_DECISIONS
+  draft_adoption: REQUIRES_EXPLICIT_ADOPTION_OR_REFINEMENT
+  legacy_maturity_transfer: FORBIDDEN
+  rationale: Retained as an enterprise governance reference input; registry, title, purpose, or workshop language gains no normative Release 1 authority.
+- id: V3-R1-SD-002
+  source_path: docs/BRD/BRD-CAP-INDEX.md
+  decision: ACCEPT_AS_SOURCE_INPUT
+  status: RESOLVED
+  source_role: SOURCE_INPUT
+  normative_requirement_authority: NONE
+  precedence: V3_R1_BASELINE_AND_EXPLICIT_DECISIONS
+  draft_adoption: REQUIRES_EXPLICIT_ADOPTION_OR_REFINEMENT
+  legacy_maturity_transfer: FORBIDDEN
+  rationale: Retained as an enterprise governance reference input; registry, title, purpose, or workshop language gains no normative Release 1 authority.
+- id: V3-R1-SD-003
+  source_path: docs/BRD/BRD-EVENT-INDEX.md
+  decision: ACCEPT_AS_SOURCE_INPUT
+  status: RESOLVED
+  source_role: SOURCE_INPUT
+  normative_requirement_authority: NONE
+  precedence: V3_R1_BASELINE_AND_EXPLICIT_DECISIONS
+  draft_adoption: REQUIRES_EXPLICIT_ADOPTION_OR_REFINEMENT
+  legacy_maturity_transfer: FORBIDDEN
+  rationale: Retained as an enterprise governance reference input; registry, title, purpose, or workshop language gains no normative Release 1 authority.
+- id: V3-R1-SD-004
+  source_path: docs/BRD/BRD-META-MODEL.md
+  decision: ACCEPT_AS_SOURCE_INPUT
+  status: RESOLVED
+  source_role: SOURCE_INPUT
+  normative_requirement_authority: NONE
+  precedence: V3_R1_BASELINE_AND_EXPLICIT_DECISIONS
+  draft_adoption: REQUIRES_EXPLICIT_ADOPTION_OR_REFINEMENT
+  legacy_maturity_transfer: FORBIDDEN
+  rationale: Retained as an enterprise governance reference input; registry, title, purpose, or workshop language gains no normative Release 1 authority.
+- id: V3-R1-SD-005
+  source_path: docs/BRD/BRD-POLICY-INDEX.md
+  decision: ACCEPT_AS_SOURCE_INPUT
+  status: RESOLVED
+  source_role: SOURCE_INPUT
+  normative_requirement_authority: NONE
+  precedence: V3_R1_BASELINE_AND_EXPLICIT_DECISIONS
+  draft_adoption: REQUIRES_EXPLICIT_ADOPTION_OR_REFINEMENT
+  legacy_maturity_transfer: FORBIDDEN
+  rationale: Retained as an enterprise governance reference input; registry, title, purpose, or workshop language gains no normative Release 1 authority.
+- id: V3-R1-SD-006
+  source_path: docs/BRD/BRD-SNAPSHOT-INDEX.md
+  decision: ACCEPT_AS_SOURCE_INPUT
+  status: RESOLVED
+  source_role: SOURCE_INPUT
+  normative_requirement_authority: NONE
+  precedence: V3_R1_BASELINE_AND_EXPLICIT_DECISIONS
+  draft_adoption: REQUIRES_EXPLICIT_ADOPTION_OR_REFINEMENT
+  legacy_maturity_transfer: FORBIDDEN
+  rationale: Retained as an enterprise governance reference input; registry, title, purpose, or workshop language gains no normative Release 1 authority.
+- id: V3-R1-SD-007
+  source_path: docs/UXF/INDEX.md
+  decision: ACCEPT_AS_SOURCE_INPUT
+  status: RESOLVED
+  source_role: SOURCE_INPUT
+  normative_requirement_authority: NONE
+  precedence: V3_R1_BASELINE_AND_EXPLICIT_DECISIONS
+  draft_adoption: REQUIRES_EXPLICIT_ADOPTION_OR_REFINEMENT
+  legacy_maturity_transfer: FORBIDDEN
+  rationale: Retained as an enterprise governance reference input; registry, title, purpose, or workshop language gains no normative Release 1 authority.
+- id: V3-R1-SD-008
+  source_path: docs/UXF/UXF-00.md
+  decision: ACCEPT_AS_SOURCE_INPUT
+  status: RESOLVED
+  source_role: SOURCE_INPUT
+  normative_requirement_authority: NONE
+  precedence: V3_R1_BASELINE_AND_EXPLICIT_DECISIONS
+  draft_adoption: REQUIRES_EXPLICIT_ADOPTION_OR_REFINEMENT
+  legacy_maturity_transfer: FORBIDDEN
+  rationale: Retained as Draft v2.1 architecture and experience reference input; any Release 1 use requires an explicit scoped adoption or refinement decision.
+- id: V3-R1-SD-009
+  source_path: docs/UXF/UXF-01.md
+  decision: ACCEPT_AS_SOURCE_INPUT
+  status: RESOLVED
+  source_role: SOURCE_INPUT
+  normative_requirement_authority: NONE
+  precedence: V3_R1_BASELINE_AND_EXPLICIT_DECISIONS
+  draft_adoption: REQUIRES_EXPLICIT_ADOPTION_OR_REFINEMENT
+  legacy_maturity_transfer: FORBIDDEN
+  rationale: Retained as Draft v2.1 architecture and experience reference input; any Release 1 use requires an explicit scoped adoption or refinement decision.
+- id: V3-R1-SD-010
+  source_path: docs/UXF/UXF-02.md
+  decision: ACCEPT_AS_SOURCE_INPUT
+  status: RESOLVED
+  source_role: SOURCE_INPUT
+  normative_requirement_authority: NONE
+  precedence: V3_R1_BASELINE_AND_EXPLICIT_DECISIONS
+  draft_adoption: REQUIRES_EXPLICIT_ADOPTION_OR_REFINEMENT
+  legacy_maturity_transfer: FORBIDDEN
+  rationale: Retained as Draft v2.1 architecture and experience reference input; any Release 1 use requires an explicit scoped adoption or refinement decision.
+- id: V3-R1-SD-011
+  source_path: docs/UXF/UXF-03.md
+  decision: ACCEPT_AS_SOURCE_INPUT
+  status: RESOLVED
+  source_role: SOURCE_INPUT
+  normative_requirement_authority: NONE
+  precedence: V3_R1_BASELINE_AND_EXPLICIT_DECISIONS
+  draft_adoption: REQUIRES_EXPLICIT_ADOPTION_OR_REFINEMENT
+  legacy_maturity_transfer: FORBIDDEN
+  rationale: Retained as Draft v2.1 architecture and experience reference input; any Release 1 use requires an explicit scoped adoption or refinement decision.
+source_decision_matrix_sha256: b256be664153ed6cac30b9fc9c0a76c9233ed7d4cfed6584abade3207c4ac9a1
 roadmap:
   valid_gate_slices:
   - V3-R1-G00-S00
@@ -197,7 +344,7 @@ s01_slice_acceptance:
     test: tools/ysf/tests/unit/test_traceability_validator.py::test_fail_closed_matrix
     status: IMPLEMENTED
     evidence_status: NOT_CAPTURED
-exact_anchor_count: 94
+exact_anchor_count: 86
 source_anchors:
 - id: V3-R1-SA-001
   source_set: BRD
@@ -1192,7 +1339,7 @@ source_anchors:
   statement_sha256: ce547de00ec6df8688c42e6d49dbaae12e97d52b23239d0d199504803de4acc3
   requirement_id: V3-R1-REL-009
   gate_slice: V3-R1-G00-S04
-  disposition: CONFLICT
+  disposition: REFINE
   traceability_maturity: PLANNED
 - id: V3-R1-SA-072
   source_set: BRD
@@ -1206,7 +1353,7 @@ source_anchors:
   statement_sha256: aa8080e3efc5caca504dd9522399f7e7ebb39a0cb2569edf2bbc130dd1e6f285
   requirement_id: V3-R1-REL-010
   gate_slice: V3-R1-G00-S00
-  disposition: CONFLICT
+  disposition: REFINE
   traceability_maturity: PLANNED
 - id: V3-R1-SA-073
   source_set: UXF
@@ -1220,7 +1367,7 @@ source_anchors:
   statement_sha256: 52e7ba256af851af13eebd74c3abb41772dc266884257b054aa8573869970770
   requirement_id: V3-R1-UX-001
   gate_slice: V3-R1-G05-S02
-  disposition: CONFLICT
+  disposition: EXCLUDE
   traceability_maturity: PLANNED
 - id: V3-R1-SA-074
   source_set: UXF
@@ -1234,7 +1381,7 @@ source_anchors:
   statement_sha256: f75e6f5bb24e33a31395d0d13218ec9f72d5a48dae5bdacaa01d4343b5b16efe
   requirement_id: V3-R1-UX-002
   gate_slice: V3-R1-G05-S02
-  disposition: CONFLICT
+  disposition: EXCLUDE
   traceability_maturity: PLANNED
 - id: V3-R1-SA-075
   source_set: UXF
@@ -1248,7 +1395,7 @@ source_anchors:
   statement_sha256: 756209d354afc31aaedc80007a4e5d5617d72528a6020f96d9440a21143a581b
   requirement_id: V3-R1-UX-003
   gate_slice: V3-R1-G05-S02
-  disposition: CONFLICT
+  disposition: EXCLUDE
   traceability_maturity: PLANNED
 - id: V3-R1-SA-076
   source_set: UXF
@@ -1262,7 +1409,7 @@ source_anchors:
   statement_sha256: 8caa1386dda361ff4e49d07f8d0522c74cfa149ed9400472c8e9f8595eb41671
   requirement_id: V3-R1-UX-004
   gate_slice: V3-R1-G05-S02
-  disposition: CONFLICT
+  disposition: EXCLUDE
   traceability_maturity: PLANNED
 - id: V3-R1-SA-077
   source_set: UXF
@@ -1346,7 +1493,7 @@ source_anchors:
   statement_sha256: 9effa3aaf928096a281165e7b334a1fae516047e3d230f4cd70de5430bd0bdbb
   requirement_id: V3-R1-UX-010
   gate_slice: V3-R1-G05-S02
-  disposition: DECISION_REQUIRED
+  disposition: REFINE
   traceability_maturity: PLANNED
 - id: V3-R1-SA-083
   source_set: UXF
@@ -1360,7 +1507,7 @@ source_anchors:
   statement_sha256: 5d65e45135e96989d770b4a3effe010243cd0dd733ebf5ecba265e31523601ab
   requirement_id: V3-R1-UX-011
   gate_slice: V3-R1-G05-S02
-  disposition: DECISION_REQUIRED
+  disposition: DEFER
   traceability_maturity: PLANNED
 - id: V3-R1-SA-084
   source_set: UXF
@@ -1374,7 +1521,7 @@ source_anchors:
   statement_sha256: 94bfb26a2c34981496c848654c140d3a28d4c8faee2d65c9c34fe64bfef632f4
   requirement_id: V3-R1-UX-012
   gate_slice: V3-R1-G05-S02
-  disposition: DECISION_REQUIRED
+  disposition: DEFER
   traceability_maturity: PLANNED
 - id: V3-R1-SA-085
   source_set: UXF
@@ -1388,7 +1535,7 @@ source_anchors:
   statement_sha256: 9490d35ad018136274315ca86dc5a1e7e15499448bef6ecc3d2fface3e42da64
   requirement_id: V3-R1-UX-013
   gate_slice: V3-R1-G05-S02
-  disposition: DECISION_REQUIRED
+  disposition: REFINE
   traceability_maturity: PLANNED
 - id: V3-R1-SA-086
   source_set: UXF
@@ -1402,118 +1549,6 @@ source_anchors:
   statement_sha256: 7b26a9a8b24cac7cc927a029b4e78341db1bde16c3f2c64d8b7fc096a0b795d9
   requirement_id: V3-R1-UX-014
   gate_slice: V3-R1-G05-S02
-  disposition: DECISION_REQUIRED
-  traceability_maturity: PLANNED
-- id: V3-R1-SA-087
-  source_set: BRD
-  source_path: docs/BRD/BRD-WS-16.md
-  git_blob_sha: 3a99857a3ae62198b0d720e61635f75257df3b0b
-  heading: 3. Identity Platform
-  locator:
-    start_line: 88
-    end_line: 88
-  normalized_statement: Identity Platform hỗ trợ nhiều Identity Provider.
-  statement_sha256: 15662da12059f86e3220def5f12d0245786f74b33a0606e47affc415d2ac10ed
-  requirement_id: V3-R1-FIN-003
-  gate_slice: V3-R1-G03-S03
-  disposition: REFINE
-  traceability_maturity: PLANNED
-- id: V3-R1-SA-088
-  source_set: BRD
-  source_path: docs/BRD/BRD-WS-16.md
-  git_blob_sha: 3a99857a3ae62198b0d720e61635f75257df3b0b
-  heading: 4. Authentication
-  locator:
-    start_line: 118
-    end_line: 118
-  normalized_statement: Authentication Platform hỗ trợ nhiều phương thức xác thực.
-  statement_sha256: 2d08c58dcd7e7572e8a57f979e45c7b794b9a07d109b9b01c20049a19ae2ae6d
-  requirement_id: V3-R1-CUS-001
-  gate_slice: V3-R1-G04-S02
-  disposition: REFINE
-  traceability_maturity: PLANNED
-- id: V3-R1-SA-089
-  source_set: BRD
-  source_path: docs/BRD/BRD-WS-17.md
-  git_blob_sha: fc9b9e54f28d5f6574b9ee5247fa7652d4470569
-  heading: 1. Workshop Objective
-  locator:
-    start_line: 22
-    end_line: 22
-  normalized_statement: Workshop này xác định toàn bộ năng lực vận hành (Operations Capability) của nền tảng YSim.
-  statement_sha256: f42639b0088c3b4501d040614ea398c5efab4413acb95bb32b076a46b33ab93c
-  requirement_id: V3-R1-CUS-002
-  gate_slice: V3-R1-G04-S02
-  disposition: REFINE
-  traceability_maturity: PLANNED
-- id: V3-R1-SA-090
-  source_set: BRD
-  source_path: docs/BRD/BRD-WS-17.md
-  git_blob_sha: fc9b9e54f28d5f6574b9ee5247fa7652d4470569
-  heading: 3. Platform Operations Center
-  locator:
-    start_line: 81
-    end_line: 81
-  normalized_statement: Platform có một Platform Operations Center thống nhất.
-  statement_sha256: ce547de00ec6df8688c42e6d49dbaae12e97d52b23239d0d199504803de4acc3
-  requirement_id: V3-R1-CUS-003
-  gate_slice: V3-R1-G04-S02
-  disposition: REFINE
-  traceability_maturity: PLANNED
-- id: V3-R1-SA-091
-  source_set: BRD
-  source_path: docs/BRD/BRD-WS-17.md
-  git_blob_sha: fc9b9e54f28d5f6574b9ee5247fa7652d4470569
-  heading: 4. Monitoring
-  locator:
-    start_line: 107
-    end_line: 107
-  normalized_statement: Monitoring bao phủ toàn bộ Platform.
-  statement_sha256: aa8080e3efc5caca504dd9522399f7e7ebb39a0cb2569edf2bbc130dd1e6f285
-  requirement_id: V3-R1-MSG-001
-  gate_slice: V3-R1-G04-S03
-  disposition: REFINE
-  traceability_maturity: PLANNED
-- id: V3-R1-SA-092
-  source_set: UXF
-  source_path: docs/UXF/INDEX.md
-  git_blob_sha: c24e2211713ce9a1f6e7dcb7005b743885400edb
-  heading: User Experience Foundation
-  locator:
-    start_line: 15
-    end_line: 15
-  normalized_statement: '| UXF-00 | User Experience Foundation Overview |'
-  statement_sha256: 52e7ba256af851af13eebd74c3abb41772dc266884257b054aa8573869970770
-  requirement_id: V3-R1-MSG-002
-  gate_slice: V3-R1-G04-S03
-  disposition: REFINE
-  traceability_maturity: PLANNED
-- id: V3-R1-SA-093
-  source_set: UXF
-  source_path: docs/UXF/INDEX.md
-  git_blob_sha: c24e2211713ce9a1f6e7dcb7005b743885400edb
-  heading: User Experience Foundation
-  locator:
-    start_line: 16
-    end_line: 16
-  normalized_statement: '| UXF-01 | Experience Channels, Personas & Navigation |'
-  statement_sha256: f75e6f5bb24e33a31395d0d13218ec9f72d5a48dae5bdacaa01d4343b5b16efe
-  requirement_id: V3-R1-MSG-003
-  gate_slice: V3-R1-G04-S03
-  disposition: REFINE
-  traceability_maturity: PLANNED
-- id: V3-R1-SA-094
-  source_set: UXF
-  source_path: docs/UXF/UXF-00.md
-  git_blob_sha: 355fd9308d1ac5661e8b5bfff7449b8311366651
-  heading: 1. Purpose
-  locator:
-    start_line: 19
-    end_line: 19
-  normalized_statement: This document defines the **User Experience Foundation (UXF)** for the YSim Platform.
-  statement_sha256: 756209d354afc31aaedc80007a4e5d5617d72528a6020f96d9440a21143a581b
-  requirement_id: V3-R1-ANA-001
-  gate_slice: V3-R1-G05-S01
   disposition: REFINE
   traceability_maturity: PLANNED
 requirements:
@@ -1526,6 +1561,7 @@ requirements:
   - V3-R1-SA-001
   acceptance_case_id: V3-R1-AC-001
   review_facets: []
+  promotion_blocker: This requirement is outside the authorized 36-item semantic decision set and requires a later scoped review with explicit meaning and measurable acceptance criteria.
 - id: V3-R1-GOV-002
   state: PROPOSED
   gate_slice: V3-R1-G00-S02
@@ -1535,6 +1571,7 @@ requirements:
   - V3-R1-SA-002
   acceptance_case_id: V3-R1-AC-002
   review_facets: []
+  promotion_blocker: This requirement is outside the authorized 36-item semantic decision set and requires a later scoped review with explicit meaning and measurable acceptance criteria.
 - id: V3-R1-GOV-003
   state: PROPOSED
   gate_slice: V3-R1-G00-S02
@@ -1544,6 +1581,7 @@ requirements:
   - V3-R1-SA-003
   acceptance_case_id: V3-R1-AC-003
   review_facets: []
+  promotion_blocker: This requirement is outside the authorized 36-item semantic decision set and requires a later scoped review with explicit meaning and measurable acceptance criteria.
 - id: V3-R1-GOV-004
   state: PROPOSED
   gate_slice: V3-R1-G00-S02
@@ -1553,6 +1591,7 @@ requirements:
   - V3-R1-SA-004
   acceptance_case_id: V3-R1-AC-004
   review_facets: []
+  promotion_blocker: This requirement is outside the authorized 36-item semantic decision set and requires a later scoped review with explicit meaning and measurable acceptance criteria.
 - id: V3-R1-GOV-005
   state: PROPOSED
   gate_slice: V3-R1-G00-S02
@@ -1562,6 +1601,7 @@ requirements:
   - V3-R1-SA-005
   acceptance_case_id: V3-R1-AC-005
   review_facets: []
+  promotion_blocker: This requirement is outside the authorized 36-item semantic decision set and requires a later scoped review with explicit meaning and measurable acceptance criteria.
 - id: V3-R1-GOV-006
   state: PROPOSED
   gate_slice: V3-R1-G00-S02
@@ -1571,6 +1611,7 @@ requirements:
   - V3-R1-SA-006
   acceptance_case_id: V3-R1-AC-006
   review_facets: []
+  promotion_blocker: This requirement is outside the authorized 36-item semantic decision set and requires a later scoped review with explicit meaning and measurable acceptance criteria.
 - id: V3-R1-REL-001
   state: PROPOSED
   gate_slice: V3-R1-G00-S04
@@ -1580,6 +1621,7 @@ requirements:
   - V3-R1-SA-007
   acceptance_case_id: V3-R1-AC-007
   review_facets: []
+  promotion_blocker: This requirement is outside the authorized 36-item semantic decision set and requires a later scoped review with explicit meaning and measurable acceptance criteria.
 - id: V3-R1-REL-002
   state: PROPOSED
   gate_slice: V3-R1-G00-S00
@@ -1589,6 +1631,7 @@ requirements:
   - V3-R1-SA-008
   acceptance_case_id: V3-R1-AC-008
   review_facets: []
+  promotion_blocker: This requirement is outside the authorized 36-item semantic decision set and requires a later scoped review with explicit meaning and measurable acceptance criteria.
 - id: V3-R1-REL-003
   state: PROPOSED
   gate_slice: V3-R1-G00-S04
@@ -1598,6 +1641,7 @@ requirements:
   - V3-R1-SA-009
   acceptance_case_id: V3-R1-AC-009
   review_facets: []
+  promotion_blocker: This requirement is outside the authorized 36-item semantic decision set and requires a later scoped review with explicit meaning and measurable acceptance criteria.
 - id: V3-R1-GOV-007
   state: PROPOSED
   gate_slice: V3-R1-G00-S02
@@ -1607,6 +1651,7 @@ requirements:
   - V3-R1-SA-010
   acceptance_case_id: V3-R1-AC-010
   review_facets: []
+  promotion_blocker: This requirement is outside the authorized 36-item semantic decision set and requires a later scoped review with explicit meaning and measurable acceptance criteria.
 - id: V3-R1-GOV-008
   state: PROPOSED
   gate_slice: V3-R1-G00-S02
@@ -1616,6 +1661,7 @@ requirements:
   - V3-R1-SA-011
   acceptance_case_id: V3-R1-AC-011
   review_facets: []
+  promotion_blocker: This requirement is outside the authorized 36-item semantic decision set and requires a later scoped review with explicit meaning and measurable acceptance criteria.
 - id: V3-R1-GOV-009
   state: PROPOSED
   gate_slice: V3-R1-G00-S02
@@ -1625,6 +1671,7 @@ requirements:
   - V3-R1-SA-012
   acceptance_case_id: V3-R1-AC-012
   review_facets: []
+  promotion_blocker: This requirement is outside the authorized 36-item semantic decision set and requires a later scoped review with explicit meaning and measurable acceptance criteria.
 - id: V3-R1-GOV-010
   state: PROPOSED
   gate_slice: V3-R1-G00-S02
@@ -1634,6 +1681,7 @@ requirements:
   - V3-R1-SA-013
   acceptance_case_id: V3-R1-AC-013
   review_facets: []
+  promotion_blocker: This requirement is outside the authorized 36-item semantic decision set and requires a later scoped review with explicit meaning and measurable acceptance criteria.
 - id: V3-R1-GOV-011
   state: PROPOSED
   gate_slice: V3-R1-G00-S02
@@ -1643,6 +1691,7 @@ requirements:
   - V3-R1-SA-014
   acceptance_case_id: V3-R1-AC-014
   review_facets: []
+  promotion_blocker: This requirement is outside the authorized 36-item semantic decision set and requires a later scoped review with explicit meaning and measurable acceptance criteria.
 - id: V3-R1-GOV-012
   state: PROPOSED
   gate_slice: V3-R1-G00-S02
@@ -1652,6 +1701,7 @@ requirements:
   - V3-R1-SA-015
   acceptance_case_id: V3-R1-AC-015
   review_facets: []
+  promotion_blocker: This requirement is outside the authorized 36-item semantic decision set and requires a later scoped review with explicit meaning and measurable acceptance criteria.
 - id: V3-R1-DATA-001
   state: PROPOSED
   gate_slice: V3-R1-G05-S01
@@ -1661,6 +1711,7 @@ requirements:
   - V3-R1-SA-016
   acceptance_case_id: V3-R1-AC-016
   review_facets: []
+  promotion_blocker: This requirement is outside the authorized 36-item semantic decision set and requires a later scoped review with explicit meaning and measurable acceptance criteria.
 - id: V3-R1-DATA-002
   state: PROPOSED
   gate_slice: V3-R1-G05-S01
@@ -1670,6 +1721,7 @@ requirements:
   - V3-R1-SA-017
   acceptance_case_id: V3-R1-AC-017
   review_facets: []
+  promotion_blocker: This requirement is outside the authorized 36-item semantic decision set and requires a later scoped review with explicit meaning and measurable acceptance criteria.
 - id: V3-R1-DATA-003
   state: PROPOSED
   gate_slice: V3-R1-G05-S01
@@ -1679,6 +1731,7 @@ requirements:
   - V3-R1-SA-018
   acceptance_case_id: V3-R1-AC-018
   review_facets: []
+  promotion_blocker: This requirement is outside the authorized 36-item semantic decision set and requires a later scoped review with explicit meaning and measurable acceptance criteria.
 - id: V3-R1-COM-001
   state: PROPOSED
   gate_slice: V3-R1-G02-S02
@@ -1688,6 +1741,7 @@ requirements:
   - V3-R1-SA-019
   acceptance_case_id: V3-R1-AC-019
   review_facets: []
+  promotion_blocker: This requirement is outside the authorized 36-item semantic decision set and requires a later scoped review with explicit meaning and measurable acceptance criteria.
 - id: V3-R1-COM-002
   state: PROPOSED
   gate_slice: V3-R1-G02-S02
@@ -1697,6 +1751,7 @@ requirements:
   - V3-R1-SA-020
   acceptance_case_id: V3-R1-AC-020
   review_facets: []
+  promotion_blocker: This requirement is outside the authorized 36-item semantic decision set and requires a later scoped review with explicit meaning and measurable acceptance criteria.
 - id: V3-R1-COM-003
   state: PROPOSED
   gate_slice: V3-R1-G02-S02
@@ -1706,6 +1761,7 @@ requirements:
   - V3-R1-SA-021
   acceptance_case_id: V3-R1-AC-021
   review_facets: []
+  promotion_blocker: This requirement is outside the authorized 36-item semantic decision set and requires a later scoped review with explicit meaning and measurable acceptance criteria.
 - id: V3-R1-REL-004
   state: PROPOSED
   gate_slice: V3-R1-G00-S04
@@ -1715,6 +1771,7 @@ requirements:
   - V3-R1-SA-022
   acceptance_case_id: V3-R1-AC-022
   review_facets: []
+  promotion_blocker: This requirement is outside the authorized 36-item semantic decision set and requires a later scoped review with explicit meaning and measurable acceptance criteria.
 - id: V3-R1-REL-005
   state: PROPOSED
   gate_slice: V3-R1-G00-S04
@@ -1724,6 +1781,7 @@ requirements:
   - V3-R1-SA-023
   acceptance_case_id: V3-R1-AC-023
   review_facets: []
+  promotion_blocker: This requirement is outside the authorized 36-item semantic decision set and requires a later scoped review with explicit meaning and measurable acceptance criteria.
 - id: V3-R1-REL-006
   state: PROPOSED
   gate_slice: V3-R1-G00-S04
@@ -1733,6 +1791,7 @@ requirements:
   - V3-R1-SA-024
   acceptance_case_id: V3-R1-AC-024
   review_facets: []
+  promotion_blocker: This requirement is outside the authorized 36-item semantic decision set and requires a later scoped review with explicit meaning and measurable acceptance criteria.
 - id: V3-R1-COM-004
   state: PROPOSED
   gate_slice: V3-R1-G02-S02
@@ -1742,6 +1801,7 @@ requirements:
   - V3-R1-SA-025
   acceptance_case_id: V3-R1-AC-025
   review_facets: []
+  promotion_blocker: This requirement is outside the authorized 36-item semantic decision set and requires a later scoped review with explicit meaning and measurable acceptance criteria.
 - id: V3-R1-COM-005
   state: PROPOSED
   gate_slice: V3-R1-G02-S02
@@ -1751,6 +1811,7 @@ requirements:
   - V3-R1-SA-026
   acceptance_case_id: V3-R1-AC-026
   review_facets: []
+  promotion_blocker: This requirement is outside the authorized 36-item semantic decision set and requires a later scoped review with explicit meaning and measurable acceptance criteria.
 - id: V3-R1-COM-006
   state: PROPOSED
   gate_slice: V3-R1-G02-S02
@@ -1760,6 +1821,7 @@ requirements:
   - V3-R1-SA-027
   acceptance_case_id: V3-R1-AC-027
   review_facets: []
+  promotion_blocker: This requirement is outside the authorized 36-item semantic decision set and requires a later scoped review with explicit meaning and measurable acceptance criteria.
 - id: V3-R1-ORG-001
   state: PROPOSED
   gate_slice: V3-R1-G01-S01
@@ -1769,6 +1831,7 @@ requirements:
   - V3-R1-SA-028
   acceptance_case_id: V3-R1-AC-028
   review_facets: []
+  promotion_blocker: This requirement is outside the authorized 36-item semantic decision set and requires a later scoped review with explicit meaning and measurable acceptance criteria.
 - id: V3-R1-ORG-002
   state: PROPOSED
   gate_slice: V3-R1-G01-S01
@@ -1778,6 +1841,7 @@ requirements:
   - V3-R1-SA-029
   acceptance_case_id: V3-R1-AC-029
   review_facets: []
+  promotion_blocker: This requirement is outside the authorized 36-item semantic decision set and requires a later scoped review with explicit meaning and measurable acceptance criteria.
 - id: V3-R1-ORG-003
   state: PROPOSED
   gate_slice: V3-R1-G01-S01
@@ -1787,6 +1851,7 @@ requirements:
   - V3-R1-SA-030
   acceptance_case_id: V3-R1-AC-030
   review_facets: []
+  promotion_blocker: This requirement is outside the authorized 36-item semantic decision set and requires a later scoped review with explicit meaning and measurable acceptance criteria.
 - id: V3-R1-CAT-001
   state: PROPOSED
   gate_slice: V3-R1-G02-S01
@@ -1796,6 +1861,7 @@ requirements:
   - V3-R1-SA-031
   acceptance_case_id: V3-R1-AC-031
   review_facets: []
+  promotion_blocker: This requirement is outside the authorized 36-item semantic decision set and requires a later scoped review with explicit meaning and measurable acceptance criteria.
 - id: V3-R1-CAT-002
   state: PROPOSED
   gate_slice: V3-R1-G02-S01
@@ -1805,6 +1871,7 @@ requirements:
   - V3-R1-SA-032
   acceptance_case_id: V3-R1-AC-032
   review_facets: []
+  promotion_blocker: This requirement is outside the authorized 36-item semantic decision set and requires a later scoped review with explicit meaning and measurable acceptance criteria.
 - id: V3-R1-CAT-003
   state: PROPOSED
   gate_slice: V3-R1-G02-S01
@@ -1814,6 +1881,7 @@ requirements:
   - V3-R1-SA-033
   acceptance_case_id: V3-R1-AC-033
   review_facets: []
+  promotion_blocker: This requirement is outside the authorized 36-item semantic decision set and requires a later scoped review with explicit meaning and measurable acceptance criteria.
 - id: V3-R1-COM-007
   state: PROPOSED
   gate_slice: V3-R1-G02-S02
@@ -1823,6 +1891,7 @@ requirements:
   - V3-R1-SA-034
   acceptance_case_id: V3-R1-AC-034
   review_facets: []
+  promotion_blocker: This requirement is outside the authorized 36-item semantic decision set and requires a later scoped review with explicit meaning and measurable acceptance criteria.
 - id: V3-R1-COM-008
   state: PROPOSED
   gate_slice: V3-R1-G02-S02
@@ -1832,6 +1901,7 @@ requirements:
   - V3-R1-SA-035
   acceptance_case_id: V3-R1-AC-035
   review_facets: []
+  promotion_blocker: This requirement is outside the authorized 36-item semantic decision set and requires a later scoped review with explicit meaning and measurable acceptance criteria.
 - id: V3-R1-COM-009
   state: PROPOSED
   gate_slice: V3-R1-G02-S02
@@ -1841,6 +1911,7 @@ requirements:
   - V3-R1-SA-036
   acceptance_case_id: V3-R1-AC-036
   review_facets: []
+  promotion_blocker: This requirement is outside the authorized 36-item semantic decision set and requires a later scoped review with explicit meaning and measurable acceptance criteria.
 - id: V3-R1-COM-010
   state: PROPOSED
   gate_slice: V3-R1-G02-S02
@@ -1850,6 +1921,7 @@ requirements:
   - V3-R1-SA-037
   acceptance_case_id: V3-R1-AC-037
   review_facets: []
+  promotion_blocker: This requirement is outside the authorized 36-item semantic decision set and requires a later scoped review with explicit meaning and measurable acceptance criteria.
 - id: V3-R1-COM-011
   state: PROPOSED
   gate_slice: V3-R1-G02-S02
@@ -1859,6 +1931,7 @@ requirements:
   - V3-R1-SA-038
   acceptance_case_id: V3-R1-AC-038
   review_facets: []
+  promotion_blocker: This requirement is outside the authorized 36-item semantic decision set and requires a later scoped review with explicit meaning and measurable acceptance criteria.
 - id: V3-R1-COM-012
   state: PROPOSED
   gate_slice: V3-R1-G02-S02
@@ -1868,6 +1941,7 @@ requirements:
   - V3-R1-SA-039
   acceptance_case_id: V3-R1-AC-039
   review_facets: []
+  promotion_blocker: This requirement is outside the authorized 36-item semantic decision set and requires a later scoped review with explicit meaning and measurable acceptance criteria.
 - id: V3-R1-ORD-001
   state: PROPOSED
   gate_slice: V3-R1-G03-S01
@@ -1877,6 +1951,7 @@ requirements:
   - V3-R1-SA-040
   acceptance_case_id: V3-R1-AC-040
   review_facets: []
+  promotion_blocker: This requirement is outside the authorized 36-item semantic decision set and requires a later scoped review with explicit meaning and measurable acceptance criteria.
 - id: V3-R1-ORD-002
   state: PROPOSED
   gate_slice: V3-R1-G03-S01
@@ -1886,6 +1961,7 @@ requirements:
   - V3-R1-SA-041
   acceptance_case_id: V3-R1-AC-041
   review_facets: []
+  promotion_blocker: This requirement is outside the authorized 36-item semantic decision set and requires a later scoped review with explicit meaning and measurable acceptance criteria.
 - id: V3-R1-ORD-003
   state: PROPOSED
   gate_slice: V3-R1-G03-S01
@@ -1895,6 +1971,7 @@ requirements:
   - V3-R1-SA-042
   acceptance_case_id: V3-R1-AC-042
   review_facets: []
+  promotion_blocker: This requirement is outside the authorized 36-item semantic decision set and requires a later scoped review with explicit meaning and measurable acceptance criteria.
 - id: V3-R1-PAY-001
   state: PROPOSED
   gate_slice: V3-R1-G03-S02
@@ -1904,6 +1981,7 @@ requirements:
   - V3-R1-SA-043
   acceptance_case_id: V3-R1-AC-043
   review_facets: []
+  promotion_blocker: This requirement is outside the authorized 36-item semantic decision set and requires a later scoped review with explicit meaning and measurable acceptance criteria.
 - id: V3-R1-PAY-002
   state: PROPOSED
   gate_slice: V3-R1-G03-S02
@@ -1913,6 +1991,7 @@ requirements:
   - V3-R1-SA-044
   acceptance_case_id: V3-R1-AC-044
   review_facets: []
+  promotion_blocker: This requirement is outside the authorized 36-item semantic decision set and requires a later scoped review with explicit meaning and measurable acceptance criteria.
 - id: V3-R1-PAY-003
   state: PROPOSED
   gate_slice: V3-R1-G03-S02
@@ -1922,6 +2001,7 @@ requirements:
   - V3-R1-SA-045
   acceptance_case_id: V3-R1-AC-045
   review_facets: []
+  promotion_blocker: This requirement is outside the authorized 36-item semantic decision set and requires a later scoped review with explicit meaning and measurable acceptance criteria.
 - id: V3-R1-FUL-001
   state: PROPOSED
   gate_slice: V3-R1-G04-S01
@@ -1931,6 +2011,7 @@ requirements:
   - V3-R1-SA-046
   acceptance_case_id: V3-R1-AC-046
   review_facets: []
+  promotion_blocker: This requirement is outside the authorized 36-item semantic decision set and requires a later scoped review with explicit meaning and measurable acceptance criteria.
 - id: V3-R1-FUL-002
   state: PROPOSED
   gate_slice: V3-R1-G04-S01
@@ -1940,6 +2021,7 @@ requirements:
   - V3-R1-SA-047
   acceptance_case_id: V3-R1-AC-047
   review_facets: []
+  promotion_blocker: This requirement is outside the authorized 36-item semantic decision set and requires a later scoped review with explicit meaning and measurable acceptance criteria.
 - id: V3-R1-FUL-003
   state: PROPOSED
   gate_slice: V3-R1-G04-S01
@@ -1949,6 +2031,7 @@ requirements:
   - V3-R1-SA-048
   acceptance_case_id: V3-R1-AC-048
   review_facets: []
+  promotion_blocker: This requirement is outside the authorized 36-item semantic decision set and requires a later scoped review with explicit meaning and measurable acceptance criteria.
 - id: V3-R1-FIN-001
   state: PROPOSED
   gate_slice: V3-R1-G03-S03
@@ -1958,6 +2041,7 @@ requirements:
   - V3-R1-SA-049
   acceptance_case_id: V3-R1-AC-049
   review_facets: []
+  promotion_blocker: This requirement is outside the authorized 36-item semantic decision set and requires a later scoped review with explicit meaning and measurable acceptance criteria.
 - id: V3-R1-FIN-002
   state: PROPOSED
   gate_slice: V3-R1-G03-S03
@@ -1967,382 +2051,786 @@ requirements:
   - V3-R1-SA-050
   acceptance_case_id: V3-R1-AC-050
   review_facets: []
+  promotion_blocker: This requirement is outside the authorized 36-item semantic decision set and requires a later scoped review with explicit meaning and measurable acceptance criteria.
 - id: V3-R1-FIN-003
-  state: PROPOSED
+  state: SOURCE_APPROVED
   gate_slice: V3-R1-G03-S03
   disposition: REFINE
   traceability_maturity: PLANNED
   source_anchor_ids:
   - V3-R1-SA-051
-  - V3-R1-SA-087
   acceptance_case_id: V3-R1-AC-051
-  review_facets: &id001
+  review_facets:
   - REFINEMENT
-  - MULTI_SOURCE
+  selection_id: V3-R1-HR-001
+  resolution_decision: REFINE
+  release_requirement:
+    statement: The Release 1 pilot shall record and reconcile settlement obligations between identified Distribution Network entities without executing a provider payment.
+    release_scope: Pilot settlement ledger and reconciliation for synthetic order and commission records.
+    owner: Finance and Reconciliation
+    acceptance_criteria:
+    - id: V3-R1-FIN-003-AC-01
+      condition: Every settlement obligation records debtor entity, creditor entity, currency, amount, source order, correlation identifier, and lifecycle status.
+      verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+    - id: V3-R1-FIN-003-AC-02
+      condition: A reconciliation run matches synthetic settlement totals to the source order ledger and flags every non-zero unexplained difference.
+      verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+    out_of_scope:
+    - Payment-provider execution and movement of real funds are outside Release 1 source scope.
 - id: V3-R1-CUS-001
-  state: PROPOSED
+  state: SOURCE_APPROVED
   gate_slice: V3-R1-G04-S02
   disposition: REFINE
   traceability_maturity: PLANNED
   source_anchor_ids:
   - V3-R1-SA-052
-  - V3-R1-SA-088
   acceptance_case_id: V3-R1-AC-052
-  review_facets: &id002
+  review_facets:
   - REFINEMENT
-  - MULTI_SOURCE
+  selection_id: V3-R1-HR-002
+  resolution_decision: REFINE
+  release_requirement:
+    statement: The Release 1 pilot shall manage customer-success cases linked to the relevant customer relationship and order context.
+    release_scope: Pilot support case intake, ownership, status, and audit history using synthetic records.
+    owner: Customer Success
+    acceptance_criteria:
+    - id: V3-R1-CUS-001-AC-01
+      condition: A synthetic case can be created with a stable identifier, relationship reference, order reference when applicable, owner, priority, and status.
+      verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+    - id: V3-R1-CUS-001-AC-02
+      condition: Every allowed status or owner transition produces an immutable audit entry and every disallowed transition is rejected.
+      verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+    out_of_scope:
+    - Loyalty, marketing automation, AI support, and call-center capabilities are outside this requirement.
 - id: V3-R1-CUS-002
-  state: PROPOSED
+  state: SOURCE_APPROVED
   gate_slice: V3-R1-G04-S02
   disposition: REFINE
   traceability_maturity: PLANNED
   source_anchor_ids:
   - V3-R1-SA-053
-  - V3-R1-SA-089
   acceptance_case_id: V3-R1-AC-053
-  review_facets: &id003
+  review_facets:
   - REFINEMENT
-  - MULTI_SOURCE
+  selection_id: V3-R1-HR-003
+  resolution_decision: REFINE
+  release_requirement:
+    statement: The Release 1 pilot shall apply an explicit customer lifecycle state machine to customer relationships.
+    release_scope: Lifecycle states and transitions required for pilot onboarding, service, retention, and inactivity handling.
+    owner: Customer Success
+    acceptance_criteria:
+    - id: V3-R1-CUS-002-AC-01
+      condition: The configured lifecycle exposes a finite allowlist of states and permitted transitions with an accountable transition owner.
+      verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+    - id: V3-R1-CUS-002-AC-02
+      condition: A test traverses every permitted transition and proves that an unlisted transition fails without changing the stored state.
+      verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+    out_of_scope:
+    - Enterprise CRM automation and predictive lifecycle scoring are outside Release 1.
 - id: V3-R1-CUS-003
-  state: PROPOSED
+  state: SOURCE_APPROVED
   gate_slice: V3-R1-G04-S02
   disposition: REFINE
   traceability_maturity: PLANNED
   source_anchor_ids:
   - V3-R1-SA-054
-  - V3-R1-SA-090
   acceptance_case_id: V3-R1-AC-054
-  review_facets: &id004
+  review_facets:
   - REFINEMENT
-  - MULTI_SOURCE
+  selection_id: V3-R1-HR-004
+  resolution_decision: REFINE
+  release_requirement:
+    statement: The platform shall own canonical customer identity while organizations manage only their authorized customer relationships.
+    release_scope: Release 1 logical ownership, access control, and audit boundary for pilot customer records.
+    owner: Customer Platform
+    acceptance_criteria:
+    - id: V3-R1-CUS-003-AC-01
+      condition: Organization-scoped access can update an authorized relationship but cannot transfer or overwrite canonical customer identity ownership.
+      verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+    - id: V3-R1-CUS-003-AC-02
+      condition: Cross-organization read and write attempts are denied and recorded with a redacted correlation identifier.
+      verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+    out_of_scope:
+    - Migration of external CRM ownership and production customer data is outside this source-only decision.
 - id: V3-R1-MSG-001
-  state: PROPOSED
+  state: SOURCE_APPROVED
   gate_slice: V3-R1-G04-S03
   disposition: REFINE
   traceability_maturity: PLANNED
   source_anchor_ids:
   - V3-R1-SA-055
-  - V3-R1-SA-091
   acceptance_case_id: V3-R1-AC-055
-  review_facets: &id005
+  review_facets:
   - REFINEMENT
-  - MULTI_SOURCE
+  selection_id: V3-R1-HR-005
+  resolution_decision: REFINE
+  release_requirement:
+    statement: The Release 1 pilot shall accept policy-controlled communication requests derived from business events while delivery providers remain disabled.
+    release_scope: Synthetic notification request, template selection, recipient class, channel policy, and delivery-status recording.
+    owner: Communication Platform
+    acceptance_criteria:
+    - id: V3-R1-MSG-001-AC-01
+      condition: A synthetic business event produces at most one idempotent communication request with correlation identifier, template, locale, channel, and policy decision.
+      verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+    - id: V3-R1-MSG-001-AC-02
+      condition: When providers are OFF, the request is retained in a non-relaying state and no outbound delivery operation is attempted.
+      verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+    out_of_scope:
+    - Real email, SMS, chat, voice, or customer delivery is outside this checkpoint.
 - id: V3-R1-MSG-002
-  state: PROPOSED
+  state: SOURCE_APPROVED
   gate_slice: V3-R1-G04-S03
   disposition: REFINE
   traceability_maturity: PLANNED
   source_anchor_ids:
   - V3-R1-SA-056
-  - V3-R1-SA-092
   acceptance_case_id: V3-R1-AC-056
-  review_facets: &id006
+  review_facets:
   - REFINEMENT
-  - MULTI_SOURCE
+  selection_id: V3-R1-HR-006
+  resolution_decision: REFINE
+  release_requirement:
+    statement: Communication policy and delivery tracking shall be owned by a shared platform boundary rather than individual business domains.
+    release_scope: Release 1 logical ownership for message decisions, retries, templates, and audit records.
+    owner: Communication Platform
+    acceptance_criteria:
+    - id: V3-R1-MSG-002-AC-01
+      condition: Static dependency checks prove business-domain code emits a request or event and does not import a delivery-provider adapter.
+      verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+    - id: V3-R1-MSG-002-AC-02
+      condition: Each synthetic request records the policy version, decision outcome, attempt count, and terminal non-relaying status.
+      verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+    out_of_scope:
+    - A universal enterprise engagement platform is outside the Release 1 pilot.
 - id: V3-R1-MSG-003
-  state: PROPOSED
+  state: SOURCE_APPROVED
   gate_slice: V3-R1-G04-S03
   disposition: REFINE
   traceability_maturity: PLANNED
   source_anchor_ids:
   - V3-R1-SA-057
-  - V3-R1-SA-093
   acceptance_case_id: V3-R1-AC-057
-  review_facets: &id007
+  review_facets:
   - REFINEMENT
-  - MULTI_SOURCE
+  selection_id: V3-R1-HR-007
+  resolution_decision: REFINE
+  release_requirement:
+    statement: The Release 1 communication flow shall resolve synthetic business events through an allowlisted matrix, policy, and template before queuing a non-relaying message.
+    release_scope: Deterministic event-to-message decision flow required by pilot scenarios.
+    owner: Communication Platform
+    acceptance_criteria:
+    - id: V3-R1-MSG-003-AC-01
+      condition: Given the same event and policy version, resolution produces the same recipient class, channel, template, and localization decision.
+      verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+    - id: V3-R1-MSG-003-AC-02
+      condition: An event without an allowlisted matrix or template fails closed and creates no outbound delivery attempt.
+      verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+    out_of_scope:
+    - Automated translation and unrestricted channel expansion are outside Release 1.
 - id: V3-R1-ANA-001
-  state: PROPOSED
+  state: SOURCE_APPROVED
   gate_slice: V3-R1-G05-S01
   disposition: REFINE
   traceability_maturity: PLANNED
   source_anchor_ids:
   - V3-R1-SA-058
-  - V3-R1-SA-094
   acceptance_case_id: V3-R1-AC-058
-  review_facets: &id008
+  review_facets:
   - REFINEMENT
-  - MULTI_SOURCE
+  selection_id: V3-R1-HR-008
+  resolution_decision: REFINE
+  release_requirement:
+    statement: The Release 1 pilot shall provide scoped operational reporting for approved order, payment-state, fulfillment-state, and support indicators.
+    release_scope: Pilot dashboards and reports over synthetic or redacted operational data.
+    owner: Analytics and Operations
+    acceptance_criteria:
+    - id: V3-R1-ANA-001-AC-01
+      condition: Each approved metric declares an owner, source field set, calculation, refresh expectation, and permitted audience.
+      verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+    - id: V3-R1-ANA-001-AC-02
+      condition: A verification dataset reproduces every displayed total and rejects access outside the metric audience.
+      verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+    out_of_scope:
+    - Predictive analytics, machine learning, and unrestricted enterprise BI are outside Release 1.
 - id: V3-R1-ANA-002
-  state: PROPOSED
+  state: SOURCE_APPROVED
   gate_slice: V3-R1-G05-S01
   disposition: REFINE
   traceability_maturity: PLANNED
   source_anchor_ids:
   - V3-R1-SA-059
   acceptance_case_id: V3-R1-AC-059
-  review_facets: &id009
+  review_facets:
   - REFINEMENT
+  selection_id: V3-R1-HR-009
+  resolution_decision: REFINE
+  release_requirement:
+    statement: A Release 1 dashboard shall be a versioned configuration object with explicit scope, audience, data sources, and drill-down targets.
+    release_scope: Pilot operator and customer-safe dashboard definitions.
+    owner: Analytics and Operations
+    acceptance_criteria:
+    - id: V3-R1-ANA-002-AC-01
+      condition: A dashboard definition records stable identifier, owner, scope, permitted roles, widget identifiers, and version.
+      verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+    - id: V3-R1-ANA-002-AC-02
+      condition: Every drill-down target resolves to an approved pilot route and data access remains constrained to the declared audience.
+      verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+    out_of_scope:
+    - Arbitrary report building and production customer analytics are outside this requirement.
 - id: V3-R1-ANA-003
-  state: PROPOSED
+  state: SOURCE_APPROVED
   gate_slice: V3-R1-G05-S01
   disposition: REFINE
   traceability_maturity: PLANNED
   source_anchor_ids:
   - V3-R1-SA-060
   acceptance_case_id: V3-R1-AC-060
-  review_facets: &id010
+  review_facets:
   - REFINEMENT
+  selection_id: V3-R1-HR-010
+  resolution_decision: REFINE
+  release_requirement:
+    statement: Release 1 dashboard widgets shall use an allowlisted catalog and expose only declared, permission-checked metrics.
+    release_scope: Pilot widget configuration, layout, and read-only metric presentation.
+    owner: Analytics and Operations
+    acceptance_criteria:
+    - id: V3-R1-ANA-003-AC-01
+      condition: Each widget declares metric identifiers, query parameters, audience, refresh policy, and a deterministic empty or error state.
+      verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+    - id: V3-R1-ANA-003-AC-02
+      condition: Layout create, reorder, and resize operations persist for a synthetic user without changing metric source records.
+      verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+    out_of_scope:
+    - Third-party widgets and unrestricted custom code are outside Release 1.
 - id: V3-R1-OPS-001
-  state: PROPOSED
+  state: SOURCE_APPROVED
   gate_slice: V3-R1-G00-S03
   disposition: REFINE
   traceability_maturity: PLANNED
   source_anchor_ids:
   - V3-R1-SA-061
   acceptance_case_id: V3-R1-AC-061
-  review_facets: &id011
+  review_facets:
   - REFINEMENT
+  selection_id: V3-R1-HR-011
+  resolution_decision: REFINE
+  release_requirement:
+    statement: The Release 1 pilot shall manage approved operational configuration as versioned, schema-validated records without storing secret values.
+    release_scope: Configuration required by pilot business rules, feature controls, and integration routing.
+    owner: Platform Operations
+    acceptance_criteria:
+    - id: V3-R1-OPS-001-AC-01
+      condition: Every configuration record declares schema, owner, scope, version, effective interval, and audit metadata.
+      verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+    - id: V3-R1-OPS-001-AC-02
+      condition: A schema-invalid or sensitive configuration value is rejected without changing the active configuration.
+      verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+    out_of_scope:
+    - A general-purpose enterprise rule engine is outside Release 1.
 - id: V3-R1-OPS-002
-  state: PROPOSED
+  state: SOURCE_APPROVED
   gate_slice: V3-R1-G00-S03
   disposition: REFINE
   traceability_maturity: PLANNED
   source_anchor_ids:
   - V3-R1-SA-062
   acceptance_case_id: V3-R1-AC-062
-  review_facets: &id012
+  review_facets:
   - REFINEMENT
+  selection_id: V3-R1-HR-012
+  resolution_decision: REFINE
+  release_requirement:
+    statement: Each Release 1 configuration object shall have an explicit scope, value schema, version, effective interval, and accountable owner.
+    release_scope: Pilot configuration persistence and readback semantics.
+    owner: Platform Operations
+    acceptance_criteria:
+    - id: V3-R1-OPS-002-AC-01
+      condition: Create and readback preserve the exact scope, schema version, effective interval, owner, and canonical value digest.
+      verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+    - id: V3-R1-OPS-002-AC-02
+      condition: Two records with the same identity and version but different canonical values are rejected as ambiguous.
+      verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+    out_of_scope:
+    - Production secret management and unrestricted metadata authoring are outside this requirement.
 - id: V3-R1-OPS-003
-  state: PROPOSED
+  state: SOURCE_APPROVED
   gate_slice: V3-R1-G00-S03
   disposition: REFINE
   traceability_maturity: PLANNED
   source_anchor_ids:
   - V3-R1-SA-063
   acceptance_case_id: V3-R1-AC-063
-  review_facets: &id013
+  review_facets:
   - REFINEMENT
+  selection_id: V3-R1-HR-013
+  resolution_decision: REFINE
+  release_requirement:
+    statement: Release 1 effective configuration shall resolve through a deterministic scope precedence with explicit, auditable overrides.
+    release_scope: Global, organization, department, storefront, and user scopes only where required by the pilot.
+    owner: Platform Operations
+    acceptance_criteria:
+    - id: V3-R1-OPS-003-AC-01
+      condition: For each supported scope chain, a test proves the documented precedence and identifies the source record selected for every effective value.
+      verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+    - id: V3-R1-OPS-003-AC-02
+      condition: Removing an override restores the next valid inherited value and records the change without mutating its parent record.
+      verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+    out_of_scope:
+    - Unbounded inheritance hierarchies and cross-tenant overrides are outside Release 1.
 - id: V3-R1-INT-001
-  state: PROPOSED
+  state: SOURCE_APPROVED
   gate_slice: V3-R1-G00-S04
   disposition: REFINE
   traceability_maturity: PLANNED
   source_anchor_ids:
   - V3-R1-SA-064
   acceptance_case_id: V3-R1-AC-064
-  review_facets: &id014
+  review_facets:
   - REFINEMENT
+  selection_id: V3-R1-HR-014
+  resolution_decision: REFINE
+  release_requirement:
+    statement: Release 1 external integration shall cross an owned gateway or adapter boundary; business and presentation components shall not call providers directly.
+    release_scope: Source-level integration boundary for pilot supplier, payment, notification, and partner interfaces with providers disabled.
+    owner: Platform Integration
+    acceptance_criteria:
+    - id: V3-R1-INT-001-AC-01
+      condition: Static dependency tests reject a business or UI component importing a provider adapter or direct external transport client.
+      verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+    - id: V3-R1-INT-001-AC-02
+      condition: Synthetic integration requests carry an idempotency key, correlation identifier, adapter identity, redacted log context, and fail-closed result.
+      verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+    out_of_scope:
+    - Calling a real provider or deploying an integration runtime is outside this checkpoint.
 - id: V3-R1-INT-002
-  state: PROPOSED
+  state: SOURCE_APPROVED
   gate_slice: V3-R1-G00-S04
   disposition: REFINE
   traceability_maturity: PLANNED
   source_anchor_ids:
   - V3-R1-SA-065
   acceptance_case_id: V3-R1-AC-065
-  review_facets: &id015
+  review_facets:
   - REFINEMENT
+  selection_id: V3-R1-HR-015
+  resolution_decision: REFINE
+  release_requirement:
+    statement: The Release 1 pilot shall expose one canonical internal integration interface per approved external capability while keeping provider adapters replaceable and disabled by default.
+    release_scope: Pilot routing contracts and adapter selection for synthetic integration tests.
+    owner: Platform Integration
+    acceptance_criteria:
+    - id: V3-R1-INT-002-AC-01
+      condition: Each approved capability maps to one versioned canonical request and response contract plus an allowlisted adapter identifier.
+      verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+    - id: V3-R1-INT-002-AC-02
+      condition: An absent, disabled, or unallowlisted adapter returns a deterministic fail-closed result and performs no network operation.
+      verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+    out_of_scope:
+    - A universal enterprise integration platform is outside Release 1.
 - id: V3-R1-INT-003
-  state: PROPOSED
+  state: SOURCE_APPROVED
   gate_slice: V3-R1-G00-S04
   disposition: REFINE
   traceability_maturity: PLANNED
   source_anchor_ids:
   - V3-R1-SA-066
   acceptance_case_id: V3-R1-AC-066
-  review_facets: &id016
+  review_facets:
   - REFINEMENT
+  selection_id: V3-R1-HR-016
+  resolution_decision: REFINE
+  release_requirement:
+    statement: Release 1 shall support only the explicitly approved REST, webhook, event, queue, or batch interaction needed by a pilot flow.
+    release_scope: Allowlisted interaction modes bound to concrete pilot scenarios.
+    owner: Platform Integration
+    acceptance_criteria:
+    - id: V3-R1-INT-003-AC-01
+      condition: Every enabled interaction mode is linked to a named pilot scenario, versioned contract, timeout or retry policy, and owner.
+      verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+    - id: V3-R1-INT-003-AC-02
+      condition: An undeclared protocol or interaction mode is rejected before adapter invocation and produces redacted diagnostic evidence.
+      verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+    out_of_scope:
+    - Supporting every protocol listed in legacy workshops is outside Release 1.
 - id: V3-R1-SEC-001
-  state: PROPOSED
+  state: SOURCE_APPROVED
   gate_slice: V3-R1-G00-S03
   disposition: REFINE
   traceability_maturity: PLANNED
   source_anchor_ids:
   - V3-R1-SA-067
   acceptance_case_id: V3-R1-AC-067
-  review_facets: &id017
+  review_facets:
   - REFINEMENT
+  selection_id: V3-R1-HR-017
+  resolution_decision: REFINE
+  release_requirement:
+    statement: Release 1 pilot flows shall enforce authentication, authorization, audit, redaction, and data-scope controls at owned platform boundaries.
+    release_scope: Security controls for synthetic pilot identities and source-only verification.
+    owner: Security Platform
+    acceptance_criteria:
+    - id: V3-R1-SEC-001-AC-01
+      condition: Each protected operation has a tested allow and deny case bound to role, data scope, and a redacted audit correlation identifier.
+      verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+    - id: V3-R1-SEC-001-AC-02
+      condition: Sensitive values, raw tokens, private keys, and real credentials are rejected by the evidence and source scanners.
+      verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+    out_of_scope:
+    - Production identity migration, key custody, and compliance certification are outside this checkpoint.
 - id: V3-R1-SEC-002
-  state: PROPOSED
+  state: SOURCE_APPROVED
   gate_slice: V3-R1-G00-S00
   disposition: REFINE
   traceability_maturity: PLANNED
   source_anchor_ids:
   - V3-R1-SA-068
   acceptance_case_id: V3-R1-AC-068
-  review_facets: &id018
+  review_facets:
   - REFINEMENT
+  selection_id: V3-R1-HR-018
+  resolution_decision: REFINE
+  release_requirement:
+    statement: Release 1 identity-provider selection shall use an explicit allowlist and remain disabled unless a pilot decision enables a synthetic or approved provider profile.
+    release_scope: Identity provider configuration and fail-closed routing for the pilot.
+    owner: Security Platform
+    acceptance_criteria:
+    - id: V3-R1-SEC-002-AC-01
+      condition: Each provider profile declares identifier, enabled state, supported identity class, owner, and non-secret configuration digest.
+      verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+    - id: V3-R1-SEC-002-AC-02
+      condition: An unallowlisted or disabled provider cannot be selected and produces no external authentication request.
+      verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+    out_of_scope:
+    - Enabling every provider named in legacy source documents is outside Release 1.
 - id: V3-R1-SEC-003
-  state: PROPOSED
+  state: SOURCE_APPROVED
   gate_slice: V3-R1-G00-S03
   disposition: REFINE
   traceability_maturity: PLANNED
   source_anchor_ids:
   - V3-R1-SA-069
   acceptance_case_id: V3-R1-AC-069
-  review_facets: &id019
+  review_facets:
   - REFINEMENT
+  selection_id: V3-R1-HR-019
+  resolution_decision: REFINE
+  release_requirement:
+    statement: Release 1 authentication methods shall be selected from a policy allowlist and tested without real delivery or credential material.
+    release_scope: Authentication policy, method selection, and synthetic verification for pilot actors.
+    owner: Security Platform
+    acceptance_criteria:
+    - id: V3-R1-SEC-003-AC-01
+      condition: The policy maps each pilot actor class to an allowlisted method, assurance requirement, session rule, and failure behavior.
+      verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+    - id: V3-R1-SEC-003-AC-02
+      condition: A disabled or unconfigured method fails before delivery or provider invocation and emits only redacted evidence.
+      verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+    out_of_scope:
+    - Universal MFA, social login, SAML, and production credential issuance are outside this requirement unless separately adopted.
 - id: V3-R1-OPS-004
-  state: PROPOSED
+  state: SOURCE_APPROVED
   gate_slice: V3-R1-G00-S00
   disposition: REFINE
   traceability_maturity: PLANNED
   source_anchor_ids:
   - V3-R1-SA-070
   acceptance_case_id: V3-R1-AC-070
-  review_facets: &id020
+  review_facets:
   - REFINEMENT
+  selection_id: V3-R1-HR-020
+  resolution_decision: REFINE
+  release_requirement:
+    statement: The Release 1 pilot shall expose redacted operator visibility for its critical workflows, queues, jobs, adapters, and reconciliation states.
+    release_scope: Pilot operational view, correlation, health, alert, and replay eligibility metadata; not an enterprise operations center.
+    owner: Platform Operations
+    acceptance_criteria:
+    - id: V3-R1-OPS-004-AC-01
+      condition: A synthetic pilot transaction can be followed by one correlation identifier across order, payment-state, fulfillment-state, adapter, and reconciliation records.
+      verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+    - id: V3-R1-OPS-004-AC-02
+      condition: The operator view reports health and actionable failure state while redacting sensitive fields and performing no business action.
+      verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+    out_of_scope:
+    - A full Enterprise Operations Center, infrastructure provisioning, and production control plane are outside Release 1.
 - id: V3-R1-REL-009
-  state: PROPOSED
+  state: SOURCE_APPROVED
   gate_slice: V3-R1-G00-S04
-  disposition: CONFLICT
+  disposition: REFINE
   traceability_maturity: PLANNED
   source_anchor_ids:
   - V3-R1-SA-071
   acceptance_case_id: V3-R1-AC-071
-  review_facets: &id021
+  review_facets:
   - CONFLICT
+  selection_id: V3-R1-HR-021
+  resolution_decision: REFINE
+  release_requirement:
+    statement: Release 1 shall provide a bounded operator view for pilot status correlation, reconciliation exceptions, alerts, and redacted diagnostics.
+    release_scope: Operator visibility needed to diagnose pilot order, payment-state, fulfillment-state, queue, and adapter failures.
+    owner: Reliability and Platform Operations
+    acceptance_criteria:
+    - id: V3-R1-REL-009-AC-01
+      condition: For every synthetic failure scenario, the operator can locate the correlated records, current state, exception reason, and safe next manual action.
+      verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+    - id: V3-R1-REL-009-AC-02
+      condition: The view cannot execute payment, fulfillment, provider, or customer actions and reveals no sensitive value.
+      verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+    out_of_scope:
+    - Building a unified Enterprise Operations Center is outside Release 1.
 - id: V3-R1-REL-010
-  state: PROPOSED
+  state: SOURCE_APPROVED
   gate_slice: V3-R1-G00-S00
-  disposition: CONFLICT
+  disposition: REFINE
   traceability_maturity: PLANNED
   source_anchor_ids:
   - V3-R1-SA-072
   acceptance_case_id: V3-R1-AC-072
-  review_facets: &id022
+  review_facets:
   - CONFLICT
+  selection_id: V3-R1-HR-022
+  resolution_decision: REFINE
+  release_requirement:
+    statement: Release 1 monitoring shall cover only approved pilot critical paths with health, latency, error, queue, reconciliation, and alert signals.
+    release_scope: Source-defined monitoring contracts and synthetic evidence for pilot services and adapters.
+    owner: Reliability and Platform Operations
+    acceptance_criteria:
+    - id: V3-R1-REL-010-AC-01
+      condition: Each critical pilot path declares owned signals, threshold or failure condition, correlation fields, redaction rule, and alert destination class.
+      verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+    - id: V3-R1-REL-010-AC-02
+      condition: Negative tests prove missing correlation, sensitive diagnostic content, and undeclared signals fail the monitoring evidence validator.
+      verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+    out_of_scope:
+    - Complete enterprise infrastructure, database, network, and storage monitoring is outside Release 1.
 - id: V3-R1-UX-001
-  state: PROPOSED
+  state: EXCLUDED
   gate_slice: V3-R1-G05-S02
-  disposition: CONFLICT
+  disposition: EXCLUDE
   traceability_maturity: PLANNED
   source_anchor_ids:
   - V3-R1-SA-073
   acceptance_case_id: V3-R1-AC-073
-  review_facets: &id023
+  review_facets:
   - CONFLICT
+  selection_id: V3-R1-HR-023
+  resolution_decision: EXCLUDE
+  baseline_exclusion_reason: A UXF index row is corpus navigation metadata, not an independently approved Release 1 requirement.
+  source_provenance_retained: true
 - id: V3-R1-UX-002
-  state: PROPOSED
+  state: EXCLUDED
   gate_slice: V3-R1-G05-S02
-  disposition: CONFLICT
+  disposition: EXCLUDE
   traceability_maturity: PLANNED
   source_anchor_ids:
   - V3-R1-SA-074
   acceptance_case_id: V3-R1-AC-074
-  review_facets: &id024
+  review_facets:
   - CONFLICT
+  selection_id: V3-R1-HR-024
+  resolution_decision: EXCLUDE
+  baseline_exclusion_reason: A UXF index row is corpus navigation metadata, not an independently approved Release 1 requirement.
+  source_provenance_retained: true
 - id: V3-R1-UX-003
-  state: PROPOSED
+  state: EXCLUDED
   gate_slice: V3-R1-G05-S02
-  disposition: CONFLICT
+  disposition: EXCLUDE
   traceability_maturity: PLANNED
   source_anchor_ids:
   - V3-R1-SA-075
   acceptance_case_id: V3-R1-AC-075
-  review_facets: &id025
+  review_facets:
   - CONFLICT
+  selection_id: V3-R1-HR-025
+  resolution_decision: EXCLUDE
+  baseline_exclusion_reason: A document-purpose statement is retained as provenance and is not a scoped Release 1 behavior.
+  source_provenance_retained: true
 - id: V3-R1-UX-004
-  state: PROPOSED
+  state: EXCLUDED
   gate_slice: V3-R1-G05-S02
-  disposition: CONFLICT
+  disposition: EXCLUDE
   traceability_maturity: PLANNED
   source_anchor_ids:
   - V3-R1-SA-076
   acceptance_case_id: V3-R1-AC-076
-  review_facets: &id026
+  review_facets:
   - CONFLICT
+  selection_id: V3-R1-HR-026
+  resolution_decision: EXCLUDE
+  baseline_exclusion_reason: The broad YSim-not-a-website slogan is reference context and is not a measurable Release 1 requirement.
+  source_provenance_retained: true
 - id: V3-R1-UX-005
-  state: PROPOSED
+  state: EXCLUDED
   gate_slice: V3-R1-G05-S02
   disposition: EXCLUDE
   traceability_maturity: PLANNED
   source_anchor_ids:
   - V3-R1-SA-077
   acceptance_case_id: V3-R1-AC-077
-  review_facets: &id027
+  review_facets:
   - EXCLUSION
+  selection_id: V3-R1-HR-027
+  resolution_decision: EXCLUDE
+  baseline_exclusion_reason: A document-purpose statement about experience channels is reference input, not a scoped Release 1 behavior.
+  source_provenance_retained: true
 - id: V3-R1-UX-006
-  state: PROPOSED
+  state: EXCLUDED
   gate_slice: V3-R1-G05-S02
   disposition: EXCLUDE
   traceability_maturity: PLANNED
   source_anchor_ids:
   - V3-R1-SA-078
   acceptance_case_id: V3-R1-AC-078
-  review_facets: &id028
+  review_facets:
   - EXCLUSION
+  selection_id: V3-R1-HR-028
+  resolution_decision: EXCLUDE
+  baseline_exclusion_reason: The multi-channel product characterization is too broad to serve as an independently approved Release 1 requirement.
+  source_provenance_retained: true
 - id: V3-R1-UX-007
-  state: PROPOSED
+  state: EXCLUDED
   gate_slice: V3-R1-G05-S02
   disposition: EXCLUDE
   traceability_maturity: PLANNED
   source_anchor_ids:
   - V3-R1-SA-079
   acceptance_case_id: V3-R1-AC-079
-  review_facets: &id029
+  review_facets:
   - EXCLUSION
+  selection_id: V3-R1-HR-029
+  resolution_decision: EXCLUDE
+  baseline_exclusion_reason: A Draft v2.1 design-runtime document purpose is architecture reference, not a Release 1 requirement.
+  source_provenance_retained: true
 - id: V3-R1-UX-008
-  state: PROPOSED
+  state: EXCLUDED
   gate_slice: V3-R1-G05-S02
   disposition: EXCLUDE
   traceability_maturity: PLANNED
   source_anchor_ids:
   - V3-R1-SA-080
   acceptance_case_id: V3-R1-AC-080
-  review_facets: &id030
+  review_facets:
   - EXCLUSION
+  selection_id: V3-R1-HR-030
+  resolution_decision: EXCLUDE
+  baseline_exclusion_reason: The single-design-system strategy lacks an authorized Release 1 scope and remains reference material.
+  source_provenance_retained: true
 - id: V3-R1-UX-009
-  state: PROPOSED
+  state: EXCLUDED
   gate_slice: V3-R1-G05-S02
   disposition: EXCLUDE
   traceability_maturity: PLANNED
   source_anchor_ids:
   - V3-R1-SA-081
   acceptance_case_id: V3-R1-AC-081
-  review_facets: &id031
+  review_facets:
   - EXCLUSION
+  selection_id: V3-R1-HR-031
+  resolution_decision: EXCLUDE
+  baseline_exclusion_reason: A Storefront-runtime document purpose is provenance metadata, not an independently approved behavior.
+  source_provenance_retained: true
 - id: V3-R1-UX-010
-  state: PROPOSED
+  state: SOURCE_APPROVED
   gate_slice: V3-R1-G05-S02
-  disposition: DECISION_REQUIRED
+  disposition: REFINE
   traceability_maturity: PLANNED
   source_anchor_ids:
   - V3-R1-SA-082
   acceptance_case_id: V3-R1-AC-082
-  review_facets: &id032
+  review_facets:
   - DECISION_DEPENDENT
+  selection_id: V3-R1-HR-032
+  resolution_decision: REFINE
+  release_requirement:
+    statement: A Release 1 Storefront shall be an experience and presentation layer that uses platform-owned Order, Payment, and Fulfillment capabilities without direct supplier access.
+    release_scope: Logical Storefront ownership plus the approved WordPress and WooCommerce transition, content, and SEO boundary.
+    owner: Experience Architecture
+    acceptance_criteria:
+    - id: V3-R1-UX-010-AC-01
+      condition: Dependency checks prove Storefront and UI code use platform interfaces and do not import supplier adapters, provider clients, or direct database access.
+      verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+    - id: V3-R1-UX-010-AC-02
+      condition: The architecture inventory classifies WordPress and WooCommerce only within the approved transition, content, and SEO boundary.
+      verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+    out_of_scope:
+    - The source slogan that a Storefront is not a website is not itself a normative requirement.
 - id: V3-R1-UX-011
-  state: PROPOSED
+  state: DEFERRED
   gate_slice: V3-R1-G05-S02
-  disposition: DECISION_REQUIRED
+  disposition: DEFER
   traceability_maturity: PLANNED
   source_anchor_ids:
   - V3-R1-SA-083
   acceptance_case_id: V3-R1-AC-083
-  review_facets: &id033
+  review_facets:
   - DECISION_DEPENDENT
+  selection_id: V3-R1-HR-033
+  resolution_decision: DEFER
+  baseline_exclusion_reason: A universal runtime-resolution engine is future architecture reference and is not required by the Release 1 pilot.
+  source_provenance_retained: true
 - id: V3-R1-UX-012
-  state: PROPOSED
+  state: DEFERRED
   gate_slice: V3-R1-G05-S02
-  disposition: DECISION_REQUIRED
+  disposition: DEFER
   traceability_maturity: PLANNED
   source_anchor_ids:
   - V3-R1-SA-084
   acceptance_case_id: V3-R1-AC-084
-  review_facets: &id034
+  review_facets:
   - DECISION_DEPENDENT
+  selection_id: V3-R1-HR-034
+  resolution_decision: DEFER
+  baseline_exclusion_reason: The absolute assertion that the platform never renders pages directly is deferred and is not normative for Release 1.
+  source_provenance_retained: true
 - id: V3-R1-UX-013
-  state: PROPOSED
+  state: SOURCE_APPROVED
   gate_slice: V3-R1-G05-S02
-  disposition: DECISION_REQUIRED
+  disposition: REFINE
   traceability_maturity: PLANNED
   source_anchor_ids:
   - V3-R1-SA-085
   acceptance_case_id: V3-R1-AC-085
-  review_facets: &id035
+  review_facets:
   - DECISION_DEPENDENT
+  selection_id: V3-R1-HR-035
+  resolution_decision: REFINE
+  release_requirement:
+    statement: Release 1 shall keep presentation ownership in Experience and business behavior ownership in Commerce, connected through versioned platform interfaces.
+    release_scope: Logical component ownership and integration invariants for pilot UI flows.
+    owner: Experience and Commerce Architecture
+    acceptance_criteria:
+    - id: V3-R1-UX-013-AC-01
+      condition: A component inventory assigns each pilot responsibility to Experience, Commerce, or Infrastructure and identifies its versioned interface.
+      verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+    - id: V3-R1-UX-013-AC-02
+      condition: Static tests reject UI access to provider adapters or databases and reject presentation-owned order, payment, or fulfillment rules.
+      verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+    out_of_scope:
+    - A big-bang Experience Runtime and a prescribed physical service topology are outside Release 1.
 - id: V3-R1-UX-014
-  state: PROPOSED
+  state: SOURCE_APPROVED
   gate_slice: V3-R1-G05-S02
-  disposition: DECISION_REQUIRED
+  disposition: REFINE
   traceability_maturity: PLANNED
   source_anchor_ids:
   - V3-R1-SA-086
   acceptance_case_id: V3-R1-AC-086
-  review_facets: &id036
+  review_facets:
   - DECISION_DEPENDENT
+  selection_id: V3-R1-HR-036
+  resolution_decision: REFINE
+  release_requirement:
+    statement: Release 1 shall place provider and gateway adapters in Infrastructure while Experience presents and Commerce executes business behavior.
+    release_scope: Logical three-boundary ownership model without requiring three physical runtimes or deployments.
+    owner: Platform Architecture
+    acceptance_criteria:
+    - id: V3-R1-UX-014-AC-01
+      condition: Every pilot provider interaction is owned by an Infrastructure adapter reached through a Commerce-owned interface, never directly from UI code.
+      verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+    - id: V3-R1-UX-014-AC-02
+      condition: Deployment documentation may co-locate logical boundaries, and tests verify ownership without asserting a three-service topology.
+      verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+    out_of_scope:
+    - Mandatory deployment as three independent runtimes is outside Release 1.
 traces:
 - requirement_id: V3-R1-GOV-001
   acceptance_case:
@@ -3429,136 +3917,145 @@ traces:
     id: V3-R1-AC-073
     requirement_id: V3-R1-UX-001
     test_id: V3-R1-TEST-073
-    traceability_maturity: PLANNED
+    traceability_maturity: NOT_APPLICABLE
   test:
     id: V3-R1-TEST-073
     acceptance_case_id: V3-R1-AC-073
     evidence_id: V3-R1-EVIDENCE-073
-    status: PLANNED
+    status: NOT_APPLICABLE
   evidence:
     id: V3-R1-EVIDENCE-073
     test_id: V3-R1-TEST-073
-    status: PLANNED
+    status: NOT_APPLICABLE
+  trace_status: SOURCE_REFERENCE_ONLY
 - requirement_id: V3-R1-UX-002
   acceptance_case:
     id: V3-R1-AC-074
     requirement_id: V3-R1-UX-002
     test_id: V3-R1-TEST-074
-    traceability_maturity: PLANNED
+    traceability_maturity: NOT_APPLICABLE
   test:
     id: V3-R1-TEST-074
     acceptance_case_id: V3-R1-AC-074
     evidence_id: V3-R1-EVIDENCE-074
-    status: PLANNED
+    status: NOT_APPLICABLE
   evidence:
     id: V3-R1-EVIDENCE-074
     test_id: V3-R1-TEST-074
-    status: PLANNED
+    status: NOT_APPLICABLE
+  trace_status: SOURCE_REFERENCE_ONLY
 - requirement_id: V3-R1-UX-003
   acceptance_case:
     id: V3-R1-AC-075
     requirement_id: V3-R1-UX-003
     test_id: V3-R1-TEST-075
-    traceability_maturity: PLANNED
+    traceability_maturity: NOT_APPLICABLE
   test:
     id: V3-R1-TEST-075
     acceptance_case_id: V3-R1-AC-075
     evidence_id: V3-R1-EVIDENCE-075
-    status: PLANNED
+    status: NOT_APPLICABLE
   evidence:
     id: V3-R1-EVIDENCE-075
     test_id: V3-R1-TEST-075
-    status: PLANNED
+    status: NOT_APPLICABLE
+  trace_status: SOURCE_REFERENCE_ONLY
 - requirement_id: V3-R1-UX-004
   acceptance_case:
     id: V3-R1-AC-076
     requirement_id: V3-R1-UX-004
     test_id: V3-R1-TEST-076
-    traceability_maturity: PLANNED
+    traceability_maturity: NOT_APPLICABLE
   test:
     id: V3-R1-TEST-076
     acceptance_case_id: V3-R1-AC-076
     evidence_id: V3-R1-EVIDENCE-076
-    status: PLANNED
+    status: NOT_APPLICABLE
   evidence:
     id: V3-R1-EVIDENCE-076
     test_id: V3-R1-TEST-076
-    status: PLANNED
+    status: NOT_APPLICABLE
+  trace_status: SOURCE_REFERENCE_ONLY
 - requirement_id: V3-R1-UX-005
   acceptance_case:
     id: V3-R1-AC-077
     requirement_id: V3-R1-UX-005
     test_id: V3-R1-TEST-077
-    traceability_maturity: PLANNED
+    traceability_maturity: NOT_APPLICABLE
   test:
     id: V3-R1-TEST-077
     acceptance_case_id: V3-R1-AC-077
     evidence_id: V3-R1-EVIDENCE-077
-    status: PLANNED
+    status: NOT_APPLICABLE
   evidence:
     id: V3-R1-EVIDENCE-077
     test_id: V3-R1-TEST-077
-    status: PLANNED
+    status: NOT_APPLICABLE
+  trace_status: SOURCE_REFERENCE_ONLY
 - requirement_id: V3-R1-UX-006
   acceptance_case:
     id: V3-R1-AC-078
     requirement_id: V3-R1-UX-006
     test_id: V3-R1-TEST-078
-    traceability_maturity: PLANNED
+    traceability_maturity: NOT_APPLICABLE
   test:
     id: V3-R1-TEST-078
     acceptance_case_id: V3-R1-AC-078
     evidence_id: V3-R1-EVIDENCE-078
-    status: PLANNED
+    status: NOT_APPLICABLE
   evidence:
     id: V3-R1-EVIDENCE-078
     test_id: V3-R1-TEST-078
-    status: PLANNED
+    status: NOT_APPLICABLE
+  trace_status: SOURCE_REFERENCE_ONLY
 - requirement_id: V3-R1-UX-007
   acceptance_case:
     id: V3-R1-AC-079
     requirement_id: V3-R1-UX-007
     test_id: V3-R1-TEST-079
-    traceability_maturity: PLANNED
+    traceability_maturity: NOT_APPLICABLE
   test:
     id: V3-R1-TEST-079
     acceptance_case_id: V3-R1-AC-079
     evidence_id: V3-R1-EVIDENCE-079
-    status: PLANNED
+    status: NOT_APPLICABLE
   evidence:
     id: V3-R1-EVIDENCE-079
     test_id: V3-R1-TEST-079
-    status: PLANNED
+    status: NOT_APPLICABLE
+  trace_status: SOURCE_REFERENCE_ONLY
 - requirement_id: V3-R1-UX-008
   acceptance_case:
     id: V3-R1-AC-080
     requirement_id: V3-R1-UX-008
     test_id: V3-R1-TEST-080
-    traceability_maturity: PLANNED
+    traceability_maturity: NOT_APPLICABLE
   test:
     id: V3-R1-TEST-080
     acceptance_case_id: V3-R1-AC-080
     evidence_id: V3-R1-EVIDENCE-080
-    status: PLANNED
+    status: NOT_APPLICABLE
   evidence:
     id: V3-R1-EVIDENCE-080
     test_id: V3-R1-TEST-080
-    status: PLANNED
+    status: NOT_APPLICABLE
+  trace_status: SOURCE_REFERENCE_ONLY
 - requirement_id: V3-R1-UX-009
   acceptance_case:
     id: V3-R1-AC-081
     requirement_id: V3-R1-UX-009
     test_id: V3-R1-TEST-081
-    traceability_maturity: PLANNED
+    traceability_maturity: NOT_APPLICABLE
   test:
     id: V3-R1-TEST-081
     acceptance_case_id: V3-R1-AC-081
     evidence_id: V3-R1-EVIDENCE-081
-    status: PLANNED
+    status: NOT_APPLICABLE
   evidence:
     id: V3-R1-EVIDENCE-081
     test_id: V3-R1-TEST-081
-    status: PLANNED
+    status: NOT_APPLICABLE
+  trace_status: SOURCE_REFERENCE_ONLY
 - requirement_id: V3-R1-UX-010
   acceptance_case:
     id: V3-R1-AC-082
@@ -3579,31 +4076,33 @@ traces:
     id: V3-R1-AC-083
     requirement_id: V3-R1-UX-011
     test_id: V3-R1-TEST-083
-    traceability_maturity: PLANNED
+    traceability_maturity: NOT_APPLICABLE
   test:
     id: V3-R1-TEST-083
     acceptance_case_id: V3-R1-AC-083
     evidence_id: V3-R1-EVIDENCE-083
-    status: PLANNED
+    status: NOT_APPLICABLE
   evidence:
     id: V3-R1-EVIDENCE-083
     test_id: V3-R1-TEST-083
-    status: PLANNED
+    status: NOT_APPLICABLE
+  trace_status: SOURCE_REFERENCE_ONLY
 - requirement_id: V3-R1-UX-012
   acceptance_case:
     id: V3-R1-AC-084
     requirement_id: V3-R1-UX-012
     test_id: V3-R1-TEST-084
-    traceability_maturity: PLANNED
+    traceability_maturity: NOT_APPLICABLE
   test:
     id: V3-R1-TEST-084
     acceptance_case_id: V3-R1-AC-084
     evidence_id: V3-R1-EVIDENCE-084
-    status: PLANNED
+    status: NOT_APPLICABLE
   evidence:
     id: V3-R1-EVIDENCE-084
     test_id: V3-R1-TEST-084
-    status: PLANNED
+    status: NOT_APPLICABLE
+  trace_status: SOURCE_REFERENCE_ONLY
 - requirement_id: V3-R1-UX-013
   acceptance_case:
     id: V3-R1-AC-085
@@ -3635,149 +4134,333 @@ traces:
     test_id: V3-R1-TEST-086
     status: PLANNED
 human_review:
+  selection_count: 36
+  unresolved_selection_count: 0
+  final_human_acceptance: PENDING
+  decision_matrix_sha256: 36b638bdf8fcc9b60d74ad2736d244f419243b810bd1e045529702663f17967c
   selection:
   - id: V3-R1-HR-001
     requirement_id: V3-R1-FIN-003
-    facets: *id001
-    status: PENDING
+    facets:
+    - REFINEMENT
+    status: RESOLVED_PENDING_FINAL_ACCEPTANCE
+    decision: REFINE
+    policy_group: HR001_008_DEDUP_REFINE
+    resolution_summary: Refined into the scoped Release 1 requirement V3-R1-FIN-003 with explicit owner, boundaries, and measurable acceptance criteria.
+    requirement_sha256: de0583142de2ca5a2cdb21da1ef08696877000da5df7beef69845dbff83c07c6
   - id: V3-R1-HR-002
     requirement_id: V3-R1-CUS-001
-    facets: *id002
-    status: PENDING
+    facets:
+    - REFINEMENT
+    status: RESOLVED_PENDING_FINAL_ACCEPTANCE
+    decision: REFINE
+    policy_group: HR001_008_DEDUP_REFINE
+    resolution_summary: Refined into the scoped Release 1 requirement V3-R1-CUS-001 with explicit owner, boundaries, and measurable acceptance criteria.
+    requirement_sha256: be9b8beb454e2950200c584055047a8ef4d03bdc002a5c1d3d7369db9af0cef9
   - id: V3-R1-HR-003
     requirement_id: V3-R1-CUS-002
-    facets: *id003
-    status: PENDING
+    facets:
+    - REFINEMENT
+    status: RESOLVED_PENDING_FINAL_ACCEPTANCE
+    decision: REFINE
+    policy_group: HR001_008_DEDUP_REFINE
+    resolution_summary: Refined into the scoped Release 1 requirement V3-R1-CUS-002 with explicit owner, boundaries, and measurable acceptance criteria.
+    requirement_sha256: aaf61e3d903facfa138b0f3d410337e575c180c07e961e95a76b92dde3ddd9de
   - id: V3-R1-HR-004
     requirement_id: V3-R1-CUS-003
-    facets: *id004
-    status: PENDING
+    facets:
+    - REFINEMENT
+    status: RESOLVED_PENDING_FINAL_ACCEPTANCE
+    decision: REFINE
+    policy_group: HR001_008_DEDUP_REFINE
+    resolution_summary: Refined into the scoped Release 1 requirement V3-R1-CUS-003 with explicit owner, boundaries, and measurable acceptance criteria.
+    requirement_sha256: 02665b4ad1a0baf008453b6451b1a3dde1a621d37abf740d5d22dfc69fc48023
   - id: V3-R1-HR-005
     requirement_id: V3-R1-MSG-001
-    facets: *id005
-    status: PENDING
+    facets:
+    - REFINEMENT
+    status: RESOLVED_PENDING_FINAL_ACCEPTANCE
+    decision: REFINE
+    policy_group: HR001_008_DEDUP_REFINE
+    resolution_summary: Refined into the scoped Release 1 requirement V3-R1-MSG-001 with explicit owner, boundaries, and measurable acceptance criteria.
+    requirement_sha256: 6202e751bfe34be8579acf89954b8cb64cf9e5049edf29e35abcaed6fb25620c
   - id: V3-R1-HR-006
     requirement_id: V3-R1-MSG-002
-    facets: *id006
-    status: PENDING
+    facets:
+    - REFINEMENT
+    status: RESOLVED_PENDING_FINAL_ACCEPTANCE
+    decision: REFINE
+    policy_group: HR001_008_DEDUP_REFINE
+    resolution_summary: Refined into the scoped Release 1 requirement V3-R1-MSG-002 with explicit owner, boundaries, and measurable acceptance criteria.
+    requirement_sha256: b703af694c0d779b4939d2e701e427915a145bdedf446b44bdc8bc2a70488caa
   - id: V3-R1-HR-007
     requirement_id: V3-R1-MSG-003
-    facets: *id007
-    status: PENDING
+    facets:
+    - REFINEMENT
+    status: RESOLVED_PENDING_FINAL_ACCEPTANCE
+    decision: REFINE
+    policy_group: HR001_008_DEDUP_REFINE
+    resolution_summary: Refined into the scoped Release 1 requirement V3-R1-MSG-003 with explicit owner, boundaries, and measurable acceptance criteria.
+    requirement_sha256: 3b5970b6e9121f37ed1f021cf2ca4a4d2e8c4efcb4cd5ecd10b1d1d3d9befd0e
   - id: V3-R1-HR-008
     requirement_id: V3-R1-ANA-001
-    facets: *id008
-    status: PENDING
+    facets:
+    - REFINEMENT
+    status: RESOLVED_PENDING_FINAL_ACCEPTANCE
+    decision: REFINE
+    policy_group: HR001_008_DEDUP_REFINE
+    resolution_summary: Refined into the scoped Release 1 requirement V3-R1-ANA-001 with explicit owner, boundaries, and measurable acceptance criteria.
+    requirement_sha256: 9d2b199ae43afd82d29aa2444743d9b9f33685f9856a6d6e6443b2a2c53c5348
   - id: V3-R1-HR-009
     requirement_id: V3-R1-ANA-002
-    facets: *id009
-    status: PENDING
+    facets:
+    - REFINEMENT
+    status: RESOLVED_PENDING_FINAL_ACCEPTANCE
+    decision: REFINE
+    policy_group: HR009_020_SCOPED_REFINE
+    resolution_summary: Refined into the scoped Release 1 requirement V3-R1-ANA-002 with explicit owner, boundaries, and measurable acceptance criteria.
+    requirement_sha256: 52989c0407714a3af36f310b91bb81ff3367f4e568e71da9163330926119b208
   - id: V3-R1-HR-010
     requirement_id: V3-R1-ANA-003
-    facets: *id010
-    status: PENDING
+    facets:
+    - REFINEMENT
+    status: RESOLVED_PENDING_FINAL_ACCEPTANCE
+    decision: REFINE
+    policy_group: HR009_020_SCOPED_REFINE
+    resolution_summary: Refined into the scoped Release 1 requirement V3-R1-ANA-003 with explicit owner, boundaries, and measurable acceptance criteria.
+    requirement_sha256: 90902ce6dfb49a06acf840ed40b2ea3621119402a8f107b30d10c1183380e420
   - id: V3-R1-HR-011
     requirement_id: V3-R1-OPS-001
-    facets: *id011
-    status: PENDING
+    facets:
+    - REFINEMENT
+    status: RESOLVED_PENDING_FINAL_ACCEPTANCE
+    decision: REFINE
+    policy_group: HR009_020_SCOPED_REFINE
+    resolution_summary: Refined into the scoped Release 1 requirement V3-R1-OPS-001 with explicit owner, boundaries, and measurable acceptance criteria.
+    requirement_sha256: 00ab0c750536bb89f3c0b3602216a539daaaa5ea3219cf7908a12bfde29dca39
   - id: V3-R1-HR-012
     requirement_id: V3-R1-OPS-002
-    facets: *id012
-    status: PENDING
+    facets:
+    - REFINEMENT
+    status: RESOLVED_PENDING_FINAL_ACCEPTANCE
+    decision: REFINE
+    policy_group: HR009_020_SCOPED_REFINE
+    resolution_summary: Refined into the scoped Release 1 requirement V3-R1-OPS-002 with explicit owner, boundaries, and measurable acceptance criteria.
+    requirement_sha256: 6b944525092a264b893e429be888e620d1fe691faaaf8731fd8d9a380abdcfd5
   - id: V3-R1-HR-013
     requirement_id: V3-R1-OPS-003
-    facets: *id013
-    status: PENDING
+    facets:
+    - REFINEMENT
+    status: RESOLVED_PENDING_FINAL_ACCEPTANCE
+    decision: REFINE
+    policy_group: HR009_020_SCOPED_REFINE
+    resolution_summary: Refined into the scoped Release 1 requirement V3-R1-OPS-003 with explicit owner, boundaries, and measurable acceptance criteria.
+    requirement_sha256: 8458b0140a58fc6eca555a4f57a26021afab70d021c54755714c5cbb19e4edfe
   - id: V3-R1-HR-014
     requirement_id: V3-R1-INT-001
-    facets: *id014
-    status: PENDING
+    facets:
+    - REFINEMENT
+    status: RESOLVED_PENDING_FINAL_ACCEPTANCE
+    decision: REFINE
+    policy_group: HR009_020_SCOPED_REFINE
+    resolution_summary: Refined into the scoped Release 1 requirement V3-R1-INT-001 with explicit owner, boundaries, and measurable acceptance criteria.
+    requirement_sha256: 16c5210e4073ce54d0fb8c93ae5674fb5a8df3e45490571dce7408d2004ad01a
   - id: V3-R1-HR-015
     requirement_id: V3-R1-INT-002
-    facets: *id015
-    status: PENDING
+    facets:
+    - REFINEMENT
+    status: RESOLVED_PENDING_FINAL_ACCEPTANCE
+    decision: REFINE
+    policy_group: HR009_020_SCOPED_REFINE
+    resolution_summary: Refined into the scoped Release 1 requirement V3-R1-INT-002 with explicit owner, boundaries, and measurable acceptance criteria.
+    requirement_sha256: eaebb90c097141b74c54075f2a53d37a458c5a3230ff7d7067dec1a653cc0d01
   - id: V3-R1-HR-016
     requirement_id: V3-R1-INT-003
-    facets: *id016
-    status: PENDING
+    facets:
+    - REFINEMENT
+    status: RESOLVED_PENDING_FINAL_ACCEPTANCE
+    decision: REFINE
+    policy_group: HR009_020_SCOPED_REFINE
+    resolution_summary: Refined into the scoped Release 1 requirement V3-R1-INT-003 with explicit owner, boundaries, and measurable acceptance criteria.
+    requirement_sha256: 93b8726606055c5fa29261f4a6a62553f09bb6dbb7e18638ca10aaee2c5a3912
   - id: V3-R1-HR-017
     requirement_id: V3-R1-SEC-001
-    facets: *id017
-    status: PENDING
+    facets:
+    - REFINEMENT
+    status: RESOLVED_PENDING_FINAL_ACCEPTANCE
+    decision: REFINE
+    policy_group: HR009_020_SCOPED_REFINE
+    resolution_summary: Refined into the scoped Release 1 requirement V3-R1-SEC-001 with explicit owner, boundaries, and measurable acceptance criteria.
+    requirement_sha256: 97a68795d4d6d6bc91963b1a2c9a6bc6d1907abb47b7d36f4efb6a8dc44b2233
   - id: V3-R1-HR-018
     requirement_id: V3-R1-SEC-002
-    facets: *id018
-    status: PENDING
+    facets:
+    - REFINEMENT
+    status: RESOLVED_PENDING_FINAL_ACCEPTANCE
+    decision: REFINE
+    policy_group: HR009_020_SCOPED_REFINE
+    resolution_summary: Refined into the scoped Release 1 requirement V3-R1-SEC-002 with explicit owner, boundaries, and measurable acceptance criteria.
+    requirement_sha256: 268264b635671770eb7cc8a84dbd436b8a72a8e539b57624f7d19f075d3a1dae
   - id: V3-R1-HR-019
     requirement_id: V3-R1-SEC-003
-    facets: *id019
-    status: PENDING
+    facets:
+    - REFINEMENT
+    status: RESOLVED_PENDING_FINAL_ACCEPTANCE
+    decision: REFINE
+    policy_group: HR009_020_SCOPED_REFINE
+    resolution_summary: Refined into the scoped Release 1 requirement V3-R1-SEC-003 with explicit owner, boundaries, and measurable acceptance criteria.
+    requirement_sha256: 9a6fdc24be211952b86d90b1dbc69a9209d2186a1db472329ea4ddfa81fa207d
   - id: V3-R1-HR-020
     requirement_id: V3-R1-OPS-004
-    facets: *id020
-    status: PENDING
+    facets:
+    - REFINEMENT
+    status: RESOLVED_PENDING_FINAL_ACCEPTANCE
+    decision: REFINE
+    policy_group: HR009_020_SCOPED_REFINE
+    resolution_summary: Refined into the scoped Release 1 requirement V3-R1-OPS-004 with explicit owner, boundaries, and measurable acceptance criteria.
+    requirement_sha256: f176e16acd106fa0325ce90aa236dfbb85625d1db7a5bc6a15870f6ae3e64862
   - id: V3-R1-HR-021
     requirement_id: V3-R1-REL-009
-    facets: *id021
-    status: PENDING
+    facets:
+    - CONFLICT
+    status: RESOLVED_PENDING_FINAL_ACCEPTANCE
+    decision: REFINE
+    policy_group: HR021_022_OPERATIONS_REFINE
+    resolution_summary: Refined into the scoped Release 1 requirement V3-R1-REL-009 with explicit owner, boundaries, and measurable acceptance criteria.
+    requirement_sha256: 5c4e5038db3715ac18064c2c0c0f85028e2ce856fb81d6b462da786325b31fe3
   - id: V3-R1-HR-022
     requirement_id: V3-R1-REL-010
-    facets: *id022
-    status: PENDING
+    facets:
+    - CONFLICT
+    status: RESOLVED_PENDING_FINAL_ACCEPTANCE
+    decision: REFINE
+    policy_group: HR021_022_OPERATIONS_REFINE
+    resolution_summary: Refined into the scoped Release 1 requirement V3-R1-REL-010 with explicit owner, boundaries, and measurable acceptance criteria.
+    requirement_sha256: 0dd8dfa9667406d1964d668a8f32ef903d1716fef8f3170ec817a3d8890112f0
   - id: V3-R1-HR-023
     requirement_id: V3-R1-UX-001
-    facets: *id023
-    status: PENDING
+    facets:
+    - CONFLICT
+    status: RESOLVED_PENDING_FINAL_ACCEPTANCE
+    decision: EXCLUDE
+    policy_group: HR023_031_REFERENCE_EXCLUDE
+    resolution_summary: A UXF index row is corpus navigation metadata, not an independently approved Release 1 requirement.
+    requirement_sha256: e33bc32f754a8d74ed2bfb0e950dcc7b23e06581718f9d29af67aefb9e05cfdd
   - id: V3-R1-HR-024
     requirement_id: V3-R1-UX-002
-    facets: *id024
-    status: PENDING
+    facets:
+    - CONFLICT
+    status: RESOLVED_PENDING_FINAL_ACCEPTANCE
+    decision: EXCLUDE
+    policy_group: HR023_031_REFERENCE_EXCLUDE
+    resolution_summary: A UXF index row is corpus navigation metadata, not an independently approved Release 1 requirement.
+    requirement_sha256: cd8d0de65eecad043275c5a9eb3d83fe3b6db4c4f06057c77146f34d0e688417
   - id: V3-R1-HR-025
     requirement_id: V3-R1-UX-003
-    facets: *id025
-    status: PENDING
+    facets:
+    - CONFLICT
+    status: RESOLVED_PENDING_FINAL_ACCEPTANCE
+    decision: EXCLUDE
+    policy_group: HR023_031_REFERENCE_EXCLUDE
+    resolution_summary: A document-purpose statement is retained as provenance and is not a scoped Release 1 behavior.
+    requirement_sha256: dd032a180b151ca866ca88a6aa8e87aaa1748069a645f7c2dd15359ce8e70437
   - id: V3-R1-HR-026
     requirement_id: V3-R1-UX-004
-    facets: *id026
-    status: PENDING
+    facets:
+    - CONFLICT
+    status: RESOLVED_PENDING_FINAL_ACCEPTANCE
+    decision: EXCLUDE
+    policy_group: HR023_031_REFERENCE_EXCLUDE
+    resolution_summary: The broad YSim-not-a-website slogan is reference context and is not a measurable Release 1 requirement.
+    requirement_sha256: 33036c25708718d30c36143f7ab04a44b900673c2db28befbac42961ccccfda9
   - id: V3-R1-HR-027
     requirement_id: V3-R1-UX-005
-    facets: *id027
-    status: PENDING
+    facets:
+    - EXCLUSION
+    status: RESOLVED_PENDING_FINAL_ACCEPTANCE
+    decision: EXCLUDE
+    policy_group: HR023_031_REFERENCE_EXCLUDE
+    resolution_summary: A document-purpose statement about experience channels is reference input, not a scoped Release 1 behavior.
+    requirement_sha256: 27914da3d2066fa7fffcd592070ab0f36cae44e147a610deea7d6f747a44fe9d
   - id: V3-R1-HR-028
     requirement_id: V3-R1-UX-006
-    facets: *id028
-    status: PENDING
+    facets:
+    - EXCLUSION
+    status: RESOLVED_PENDING_FINAL_ACCEPTANCE
+    decision: EXCLUDE
+    policy_group: HR023_031_REFERENCE_EXCLUDE
+    resolution_summary: The multi-channel product characterization is too broad to serve as an independently approved Release 1 requirement.
+    requirement_sha256: 0e13dce991626d1d2a4ffcb09c47017bc48cc35323fc28c0b678bde3aa32f895
   - id: V3-R1-HR-029
     requirement_id: V3-R1-UX-007
-    facets: *id029
-    status: PENDING
+    facets:
+    - EXCLUSION
+    status: RESOLVED_PENDING_FINAL_ACCEPTANCE
+    decision: EXCLUDE
+    policy_group: HR023_031_REFERENCE_EXCLUDE
+    resolution_summary: A Draft v2.1 design-runtime document purpose is architecture reference, not a Release 1 requirement.
+    requirement_sha256: ad853fe26e68371a98e0a96d63ded1813cbab092e95a6606e0de726fc92877a8
   - id: V3-R1-HR-030
     requirement_id: V3-R1-UX-008
-    facets: *id030
-    status: PENDING
+    facets:
+    - EXCLUSION
+    status: RESOLVED_PENDING_FINAL_ACCEPTANCE
+    decision: EXCLUDE
+    policy_group: HR023_031_REFERENCE_EXCLUDE
+    resolution_summary: The single-design-system strategy lacks an authorized Release 1 scope and remains reference material.
+    requirement_sha256: a13c1b779959698569e7e21ff60fc94c0957ae3f63af0ef8b92da0af09394665
   - id: V3-R1-HR-031
     requirement_id: V3-R1-UX-009
-    facets: *id031
-    status: PENDING
+    facets:
+    - EXCLUSION
+    status: RESOLVED_PENDING_FINAL_ACCEPTANCE
+    decision: EXCLUDE
+    policy_group: HR023_031_REFERENCE_EXCLUDE
+    resolution_summary: A Storefront-runtime document purpose is provenance metadata, not an independently approved behavior.
+    requirement_sha256: 6f8fdec5cae0c16e0c42113e5b7631328eb6ecdb7c53bf03270c37921d70b6d6
   - id: V3-R1-HR-032
     requirement_id: V3-R1-UX-010
-    facets: *id032
-    status: PENDING
+    facets:
+    - DECISION_DEPENDENT
+    status: RESOLVED_PENDING_FINAL_ACCEPTANCE
+    decision: REFINE
+    policy_group: HR032_STOREFRONT_INVARIANT_REFINE
+    resolution_summary: Refined into the scoped Release 1 requirement V3-R1-UX-010 with explicit owner, boundaries, and measurable acceptance criteria.
+    requirement_sha256: e0217be6002632e54f4df88ceab4da08d27956013d58cd19fa2581f343b42250
   - id: V3-R1-HR-033
     requirement_id: V3-R1-UX-011
-    facets: *id033
-    status: PENDING
+    facets:
+    - DECISION_DEPENDENT
+    status: RESOLVED_PENDING_FINAL_ACCEPTANCE
+    decision: DEFER
+    policy_group: HR033_034_FUTURE_ARCHITECTURE_DEFER
+    resolution_summary: A universal runtime-resolution engine is future architecture reference and is not required by the Release 1 pilot.
+    requirement_sha256: 2bcfc7b21685c96832b9b75c99c508eade3fce06cca676fbb762bd3751d613b9
   - id: V3-R1-HR-034
     requirement_id: V3-R1-UX-012
-    facets: *id034
-    status: PENDING
+    facets:
+    - DECISION_DEPENDENT
+    status: RESOLVED_PENDING_FINAL_ACCEPTANCE
+    decision: DEFER
+    policy_group: HR033_034_FUTURE_ARCHITECTURE_DEFER
+    resolution_summary: The absolute assertion that the platform never renders pages directly is deferred and is not normative for Release 1.
+    requirement_sha256: 8aba0a1f6b524452ab281e2777052cbd3dedf52cc121604fe545018fa7665e2e
   - id: V3-R1-HR-035
     requirement_id: V3-R1-UX-013
-    facets: *id035
-    status: PENDING
+    facets:
+    - DECISION_DEPENDENT
+    status: RESOLVED_PENDING_FINAL_ACCEPTANCE
+    decision: REFINE
+    policy_group: HR035_036_LOGICAL_OWNERSHIP_REFINE
+    resolution_summary: Refined into the scoped Release 1 requirement V3-R1-UX-013 with explicit owner, boundaries, and measurable acceptance criteria.
+    requirement_sha256: 8d642a7d944347abf65f472204d5b40d8d7d4b387b818e351a36a5fa7d293459
   - id: V3-R1-HR-036
     requirement_id: V3-R1-UX-014
-    facets: *id036
-    status: PENDING
+    facets:
+    - DECISION_DEPENDENT
+    status: RESOLVED_PENDING_FINAL_ACCEPTANCE
+    decision: REFINE
+    policy_group: HR035_036_LOGICAL_OWNERSHIP_REFINE
+    resolution_summary: Refined into the scoped Release 1 requirement V3-R1-UX-014 with explicit owner, boundaries, and measurable acceptance criteria.
+    requirement_sha256: b18b3b70532dd392136e224900dd3f39dd4c43c009a59382029920573964811c
   approvals: []

@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import copy
-import hashlib
 import shutil
 from collections.abc import Callable
 from pathlib import Path
@@ -63,19 +62,34 @@ def test_repository_baseline_passes_and_is_queryable() -> None:
     assert summary["stacked_base_branch"] == "feature/v3-r1-g00-s00-secure-factory"
     assert summary["seed_commit"] == "a8cfc5d93c8176fc3a727257be609f3af82f38de"
     assert summary["seed_tree"] == "1953815ee35edc5f6fc487784e4f2bac9191ec1f"
-    assert summary["source_decision"] == "PENDING_HUMAN_REVIEW"
+    assert summary["source_decision"] == "SOURCE_INPUT_DECISIONS_RESOLVED"
     assert summary["corpus_file_count"] == 31
     assert summary["brd_file_count"] == 24
     assert summary["uxf_file_count"] == 7
     assert summary["requirement_count"] == 86
-    assert summary["exact_anchor_count"] == 94
+    assert summary["exact_anchor_count"] == 86
     assert summary["human_review_requirement_count"] == 36
-    assert summary["source_group_human_decision_count"] == 11
+    assert summary["human_review_resolved_count"] == 36
+    assert summary["human_review_pending_count"] == 0
+    assert summary["human_review_decision_counts"] == {
+        "REFINE": 25,
+        "EXCLUDE": 9,
+        "DEFER": 2,
+    }
+    assert summary["source_group_decision_count"] == 11
+    assert summary["source_group_pending_count"] == 0
+    assert summary["requirement_state_counts"] == {
+        "DEFERRED": 2,
+        "EXCLUDED": 9,
+        "PROPOSED": 50,
+        "SOURCE_APPROVED": 25,
+    }
+    assert summary["final_human_acceptance"] == "PENDING"
     assert summary["facet_counts"] == {
         "CONFLICT": 6,
         "DECISION_DEPENDENT": 5,
         "EXCLUSION": 5,
-        "MULTI_SOURCE": 8,
+        "MULTI_SOURCE": 0,
         "REFINEMENT": 20,
     }
     conflict = validate_traceability_baseline(root, facet="CONFLICT")
@@ -84,14 +98,54 @@ def test_repository_baseline_passes_and_is_queryable() -> None:
 
 def test_requirement_traces_do_not_claim_future_execution() -> None:
     value = _baseline()
-    assert {item["state"] for item in value["requirements"]} == {"PROPOSED"}
+    assert {item["state"] for item in value["requirements"]} == {
+        "SOURCE_APPROVED",
+        "PROPOSED",
+        "EXCLUDED",
+        "DEFERRED",
+    }
     assert {item["traceability_maturity"] for item in value["requirements"]} == {
         "PLANNED"
     }
-    assert {item["test"]["status"] for item in value["traces"]} == {"PLANNED"}
-    assert {item["evidence"]["status"] for item in value["traces"]} == {"PLANNED"}
+    states = {item["id"]: item["state"] for item in value["requirements"]}
+    normative = [
+        item
+        for item in value["traces"]
+        if states[item["requirement_id"]] in {"SOURCE_APPROVED", "PROPOSED"}
+    ]
+    references = [
+        item
+        for item in value["traces"]
+        if states[item["requirement_id"]] in {"EXCLUDED", "DEFERRED"}
+    ]
+    assert {item["test"]["status"] for item in normative} == {"PLANNED"}
+    assert {item["evidence"]["status"] for item in normative} == {"PLANNED"}
+    assert {item["trace_status"] for item in references} == {"SOURCE_REFERENCE_ONLY"}
+    assert {item["test"]["status"] for item in references} == {"NOT_APPLICABLE"}
+    assert {item["evidence"]["status"] for item in references} == {"NOT_APPLICABLE"}
     assert value["s01_slice_acceptance"]["direct_requirement_count"] == 0
     assert value["s01_slice_acceptance"]["direct_requirement_ids"] == []
+
+
+def test_all_source_decisions_and_review_selections_are_resolved_without_overclaim() -> None:
+    value = _baseline()
+    assert len(value["source_decisions"]) == 11
+    assert {item["decision"] for item in value["source_decisions"]} == {
+        "ACCEPT_AS_SOURCE_INPUT"
+    }
+    assert {item["normative_requirement_authority"] for item in value["source_decisions"]} == {
+        "NONE"
+    }
+    assert len(value["source_decision_matrix_sha256"]) == 64
+    review = value["human_review"]
+    assert review["selection_count"] == 36
+    assert review["unresolved_selection_count"] == 0
+    assert review["final_human_acceptance"] == "PENDING"
+    assert review["approvals"] == []
+    assert len(review["decision_matrix_sha256"]) == 64
+    assert {item["status"] for item in review["selection"]} == {
+        "RESOLVED_PENDING_FINAL_ACCEPTANCE"
+    }
 
 
 def _corpus_count(_: dict[str, Any], root: Path) -> None:
@@ -167,21 +221,12 @@ def _future_test_overclaim(value: dict[str, Any], _: Path) -> None:
     value["traces"][0]["test"]["status"] = "EXECUTED"
 
 
-def _approval_missing(value: dict[str, Any], _: Path) -> None:
-    value["human_review"]["selection"][0]["status"] = "RESOLVED"
+def _selection_resolution_missing(value: dict[str, Any], _: Path) -> None:
+    value["human_review"]["selection"][0]["status"] = "PENDING"
 
 
-def _approval_stale(value: dict[str, Any], _: Path) -> None:
-    item = value["human_review"]["selection"][0]
-    item["status"] = "RESOLVED"
-    value["human_review"]["approvals"].append(
-        {
-            "review_id": item["id"],
-            "requirement_id": item["requirement_id"],
-            "requirement_sha256": hashlib.sha256(b"stale").hexdigest(),
-            "decision": "ACCEPT",
-        }
-    )
+def _selection_digest_stale(value: dict[str, Any], _: Path) -> None:
+    value["human_review"]["selection"][0]["requirement_sha256"] = "0" * 64
 
 
 def _requirement_state(value: dict[str, Any], _: Path) -> None:
@@ -189,7 +234,7 @@ def _requirement_state(value: dict[str, Any], _: Path) -> None:
 
 
 def _forbidden_source_decision(value: dict[str, Any], _: Path) -> None:
-    value["authority"]["source_decision"] = "SOURCE_APPROVED"
+    value["authority"]["source_decision"] = "PENDING_HUMAN_REVIEW"
 
 
 def _stale_seed_commit(value: dict[str, Any], _: Path) -> None:
@@ -208,6 +253,117 @@ def _source_group(value: dict[str, Any], _: Path) -> None:
     value["corpus"]["files"][0]["source_group_status"] = "UNASSIGNED"
 
 
+def _duplicate_anchor(value: dict[str, Any], _: Path) -> None:
+    duplicate = copy.deepcopy(value["source_anchors"][0])
+    duplicate["id"] = "V3-R1-SA-087"
+    value["source_anchors"].append(duplicate)
+    value["exact_anchor_count"] = 87
+    value["requirements"][0]["source_anchor_ids"].append(duplicate["id"])
+
+
+def _misbound_anchor(value: dict[str, Any], _: Path) -> None:
+    duplicate = copy.deepcopy(value["source_anchors"][0])
+    duplicate["id"] = "V3-R1-SA-087"
+    requirement = value["requirements"][1]
+    duplicate["requirement_id"] = requirement["id"]
+    for field in ("gate_slice", "disposition", "traceability_maturity"):
+        duplicate[field] = requirement[field]
+    value["source_anchors"].append(duplicate)
+    value["exact_anchor_count"] = 87
+    requirement["source_anchor_ids"].append(duplicate["id"])
+
+
+def _fake_multi_source(value: dict[str, Any], _: Path) -> None:
+    item = value["human_review"]["selection"][0]
+    requirement = next(
+        entry for entry in value["requirements"] if entry["id"] == item["requirement_id"]
+    )
+    requirement["review_facets"].append("MULTI_SOURCE")
+    item["facets"].append("MULTI_SOURCE")
+
+
+def _source_decision_missing(value: dict[str, Any], _: Path) -> None:
+    value["source_decisions"].pop()
+
+
+def _source_decision_digest(value: dict[str, Any], _: Path) -> None:
+    value["source_decision_matrix_sha256"] = "0" * 64
+
+
+def _declared_anchor_count(value: dict[str, Any], _: Path) -> None:
+    value["exact_anchor_count"] = 94
+
+
+def _requirement_semantics(value: dict[str, Any], _: Path) -> None:
+    requirement = next(
+        entry for entry in value["requirements"] if entry["state"] == "SOURCE_APPROVED"
+    )
+    requirement["release_requirement"]["statement"] = "TBD"
+
+
+def _approved_requirement(value: dict[str, Any]) -> dict[str, Any]:
+    return next(
+        entry for entry in value["requirements"] if entry["state"] == "SOURCE_APPROVED"
+    )
+
+
+def _release_missing_field(value: dict[str, Any], _: Path) -> None:
+    _approved_requirement(value)["release_requirement"].pop("out_of_scope")
+
+
+def _release_short_owner(value: dict[str, Any], _: Path) -> None:
+    _approved_requirement(value)["release_requirement"]["owner"] = "Ops"
+
+
+def _release_empty_boundary(value: dict[str, Any], _: Path) -> None:
+    _approved_requirement(value)["release_requirement"]["out_of_scope"] = []
+
+
+def _release_one_criterion(value: dict[str, Any], _: Path) -> None:
+    requirement = _approved_requirement(value)["release_requirement"]
+    requirement["acceptance_criteria"] = requirement["acceptance_criteria"][:1]
+
+
+def _release_criterion_missing_field(value: dict[str, Any], _: Path) -> None:
+    criterion = _approved_requirement(value)["release_requirement"]["acceptance_criteria"][0]
+    criterion.pop("verification")
+
+
+def _release_short_condition(value: dict[str, Any], _: Path) -> None:
+    criterion = _approved_requirement(value)["release_requirement"]["acceptance_criteria"][0]
+    criterion["condition"] = "Too short"
+
+
+def _source_approved_binding_invalid(value: dict[str, Any], _: Path) -> None:
+    _approved_requirement(value)["resolution_decision"] = "EXCLUDE"
+
+
+def _proposed_blocker_short(value: dict[str, Any], _: Path) -> None:
+    requirement = next(
+        entry for entry in value["requirements"] if entry["state"] == "PROPOSED"
+    )
+    requirement["promotion_blocker"] = "Too short"
+
+
+def _excluded_binding_invalid(value: dict[str, Any], _: Path) -> None:
+    requirement = next(
+        entry for entry in value["requirements"] if entry["state"] == "EXCLUDED"
+    )
+    requirement["source_provenance_retained"] = False
+
+
+def _anchor_count_type_invalid(value: dict[str, Any], _: Path) -> None:
+    value["exact_anchor_count"] = "86"
+
+
+def _anchor_id_stale(value: dict[str, Any], _: Path) -> None:
+    value["source_anchors"][0]["id"] = "V3-R1-SA-999"
+
+
+def _final_acceptance_overclaim(value: dict[str, Any], _: Path) -> None:
+    value["human_review"]["final_human_acceptance"] = "ACCEPT"
+
+
 def _s01_reallocation(value: dict[str, Any], _: Path) -> None:
     value["s01_slice_acceptance"]["direct_requirement_count"] = 1
     value["s01_slice_acceptance"]["direct_requirement_ids"] = ["V3-R1-GOV-001"]
@@ -223,7 +379,7 @@ def _set_path(value: dict[str, Any], path: tuple[str | int, ...], replacement: A
 @pytest.mark.parametrize(
     ("code", "path", "replacement"),
     [
-        ("FAIL_REGISTRY_FORMAT", ("schema_version",), 2),
+        ("FAIL_REGISTRY_FORMAT", ("schema_version",), 1),
         ("FAIL_SOURCE_IDENTITY", ("authority",), []),
         ("FAIL_CORPUS_COUNT", ("corpus", "files"), "invalid"),
         ("FAIL_CORPUS_COUNT", ("corpus", "expected_brd_count"), 23),
@@ -242,7 +398,7 @@ def _set_path(value: dict[str, Any], path: tuple[str | int, ...], replacement: A
             "INVALID",
         ),
         ("FAIL_REVIEW_SELECTION", ("requirements", 0, "review_facets"), ["INVALID"]),
-        ("FAIL_SOURCE_ANCHOR_MISSING", ("exact_anchor_count",), 0),
+        ("FAIL_SOURCE_ANCHOR_COUNT", ("exact_anchor_count",), 0),
         (
             "FAIL_SOURCE_ANCHOR_STALE",
             ("source_anchors", 0, "source_path"),
@@ -277,6 +433,11 @@ def _set_path(value: dict[str, Any], path: tuple[str | int, ...], replacement: A
         ("FAIL_TRACEABILITY_MATURITY", ("traces", 0, "test", "status"), "INVALID"),
         ("FAIL_REVIEW_SELECTION", ("human_review", "selection", 0, "facets"), []),
         ("FAIL_REVIEW_SELECTION", ("human_review", "selection", 0, "status"), "INVALID"),
+        (
+            "FAIL_SOURCE_DECISION",
+            ("source_decisions", 0, "normative_requirement_authority"),
+            "ALL_CONTENT_APPROVED",
+        ),
         ("FAIL_S01_ACCEPTANCE", ("s01_slice_acceptance", "acceptance_cases"), []),
         (
             "FAIL_S01_ACCEPTANCE",
@@ -297,6 +458,43 @@ def test_additional_fail_closed_schema_matrix(
     replacement: Any,
 ) -> None:
     _assert_failure(tmp_path, code, lambda value, _: _set_path(value, path, replacement))
+
+
+@pytest.mark.parametrize(
+    ("code", "mutation"),
+    [
+        ("FAIL_SOURCE_ANCHOR_DUPLICATE", _duplicate_anchor),
+        ("FAIL_SOURCE_ANCHOR_SEMANTIC_BINDING", _misbound_anchor),
+        ("FAIL_SOURCE_ANCHOR_COUNT", _declared_anchor_count),
+        ("FAIL_FAKE_MULTI_SOURCE", _fake_multi_source),
+    ],
+)
+def test_canonical_anchor_integrity_fails_closed(
+    tmp_path: Path, code: str, mutation: Mutation
+) -> None:
+    _assert_failure(tmp_path, code, mutation)
+
+
+@pytest.mark.parametrize(
+    ("code", "mutation"),
+    [
+        ("FAIL_REQUIREMENT_SEMANTICS", _release_missing_field),
+        ("FAIL_REQUIREMENT_SEMANTICS", _release_short_owner),
+        ("FAIL_REQUIREMENT_SEMANTICS", _release_empty_boundary),
+        ("FAIL_REQUIREMENT_SEMANTICS", _release_one_criterion),
+        ("FAIL_REQUIREMENT_SEMANTICS", _release_criterion_missing_field),
+        ("FAIL_REQUIREMENT_SEMANTICS", _release_short_condition),
+        ("FAIL_REQUIREMENT_STATE", _source_approved_binding_invalid),
+        ("FAIL_REQUIREMENT_STATE", _proposed_blocker_short),
+        ("FAIL_REQUIREMENT_STATE", _excluded_binding_invalid),
+        ("FAIL_SOURCE_ANCHOR_COUNT", _anchor_count_type_invalid),
+        ("FAIL_SOURCE_ANCHOR_STALE", _anchor_id_stale),
+    ],
+)
+def test_resolved_semantics_fail_closed(
+    tmp_path: Path, code: str, mutation: Mutation
+) -> None:
+    _assert_failure(tmp_path, code, mutation)
 
 
 def test_registry_io_query_and_service_paths(tmp_path: Path) -> None:
@@ -326,7 +524,10 @@ def test_registry_io_query_and_service_paths(tmp_path: Path) -> None:
         ("FAIL_CORPUS_COUNT", _extra_corpus_file),
         ("FAIL_REQUIREMENT_COUNT", _requirement_count),
         ("FAIL_CORPUS_BLOB", _corpus_blob),
-        ("FAIL_SOURCE_ANCHOR_MISSING", _missing_anchor),
+        ("FAIL_SOURCE_ANCHOR_COUNT", _missing_anchor),
+        ("FAIL_SOURCE_ANCHOR_DUPLICATE", _duplicate_anchor),
+        ("FAIL_SOURCE_ANCHOR_SEMANTIC_BINDING", _misbound_anchor),
+        ("FAIL_FAKE_MULTI_SOURCE", _fake_multi_source),
         ("FAIL_SOURCE_ANCHOR_STALE", _stale_anchor),
         ("FAIL_STATEMENT_DIGEST", _statement_digest),
         ("FAIL_SOURCE_ANCHOR_STALE", _stale_heading),
@@ -337,10 +538,14 @@ def test_registry_io_query_and_service_paths(tmp_path: Path) -> None:
         ("FAIL_GATE_SLICE_ID", _gate_slice),
         ("FAIL_TRACEABILITY_MATURITY", _maturity),
         ("FAIL_TRACEABILITY_MATURITY", _future_test_overclaim),
-        ("FAIL_HUMAN_APPROVAL_MISSING", _approval_missing),
-        ("FAIL_HUMAN_APPROVAL_STALE", _approval_stale),
+        ("FAIL_REVIEW_SELECTION", _selection_resolution_missing),
+        ("FAIL_REVIEW_SELECTION", _selection_digest_stale),
         ("FAIL_REQUIREMENT_STATE", _requirement_state),
-        ("FAIL_SOURCE_APPROVED_FORBIDDEN", _forbidden_source_decision),
+        ("FAIL_REQUIREMENT_SEMANTICS", _requirement_semantics),
+        ("FAIL_REVIEW_SELECTION", _final_acceptance_overclaim),
+        ("FAIL_SOURCE_DECISION", _source_decision_missing),
+        ("FAIL_SOURCE_DECISION_DIGEST", _source_decision_digest),
+        ("FAIL_SOURCE_IDENTITY", _forbidden_source_decision),
         ("FAIL_SOURCE_IDENTITY", _stale_seed_commit),
         ("FAIL_SOURCE_IDENTITY", _stale_seed_tree),
         ("FAIL_SOURCE_IDENTITY", _legacy_maturity_transfer),
