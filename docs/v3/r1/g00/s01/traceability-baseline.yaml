@@ -1,0 +1,3783 @@
+schema_version: 1
+baseline_id: V3-R1-G00-S01-TRACEABILITY-BASELINE-001
+release: V3-R1
+authority:
+  repository: nvkhoabk/ysim
+  stacked_base_branch: feature/v3-r1-g00-s00-secure-factory
+  seed_commit: a8cfc5d93c8176fc3a727257be609f3af82f38de
+  seed_tree: 1953815ee35edc5f6fc487784e4f2bac9191ec1f
+  source_decision: PENDING_HUMAN_REVIEW
+  legacy_maturity_transfer: FORBIDDEN
+corpus:
+  expected_brd_count: 24
+  expected_uxf_count: 7
+  files:
+  - source_set: BRD
+    path: docs/BRD/BRD-BO-INDEX.md
+    git_blob_sha: 864f11dda3748417cda6a5a4c44509d5f888b4e8
+    source_group: ENTERPRISE_GOVERNANCE
+    source_group_status: HUMAN_DECISION_REQUIRED
+  - source_set: BRD
+    path: docs/BRD/BRD-CAP-INDEX.md
+    git_blob_sha: f0f60cb5a24a0971ccdacade911ca6a163641a0f
+    source_group: ENTERPRISE_GOVERNANCE
+    source_group_status: HUMAN_DECISION_REQUIRED
+  - source_set: BRD
+    path: docs/BRD/BRD-EVENT-INDEX.md
+    git_blob_sha: e8e31a457d4fbae177729b2ad29f40ad991a5b2d
+    source_group: ENTERPRISE_GOVERNANCE
+    source_group_status: HUMAN_DECISION_REQUIRED
+  - source_set: BRD
+    path: docs/BRD/BRD-META-MODEL.md
+    git_blob_sha: 574b716098b0269afa59c37e447ad11e8f9132ea
+    source_group: ENTERPRISE_GOVERNANCE
+    source_group_status: HUMAN_DECISION_REQUIRED
+  - source_set: BRD
+    path: docs/BRD/BRD-POLICY-INDEX.md
+    git_blob_sha: 47a4220a500c866d15e0d2ca7379656d9ef5c44e
+    source_group: ENTERPRISE_GOVERNANCE
+    source_group_status: HUMAN_DECISION_REQUIRED
+  - source_set: BRD
+    path: docs/BRD/BRD-SNAPSHOT-INDEX.md
+    git_blob_sha: 4468b01900c408181817458870d5f52bcb00d8da
+    source_group: ENTERPRISE_GOVERNANCE
+    source_group_status: HUMAN_DECISION_REQUIRED
+  - source_set: BRD
+    path: docs/BRD/BRD-UPDATE-01.md
+    git_blob_sha: db8965fd142b6e9a5808a41c7fa01d6ed77220d5
+    source_group: COMMERCE_EXPERIENCE
+    source_group_status: ASSIGNED
+  - source_set: BRD
+    path: docs/BRD/BRD-WS-01.md
+    git_blob_sha: 9a2ad8de259304f826cd42bfb255411cc3dcb3ef
+    source_group: WORKSHOP_01
+    source_group_status: ASSIGNED
+  - source_set: BRD
+    path: docs/BRD/BRD-WS-02.md
+    git_blob_sha: 263fb07b9832bd625d39f06c4508483c811417f9
+    source_group: WORKSHOP_02
+    source_group_status: ASSIGNED
+  - source_set: BRD
+    path: docs/BRD/BRD-WS-03.md
+    git_blob_sha: 57c7da2f6333baadefae5ce4b81fd671febd2f44
+    source_group: WORKSHOP_03
+    source_group_status: ASSIGNED
+  - source_set: BRD
+    path: docs/BRD/BRD-WS-04.md
+    git_blob_sha: 26c801f750f5df2004a06859b9b4f9d8511ea1b5
+    source_group: WORKSHOP_04
+    source_group_status: ASSIGNED
+  - source_set: BRD
+    path: docs/BRD/BRD-WS-05.md
+    git_blob_sha: d55be5176e558870af76900c68ec483db751b124
+    source_group: WORKSHOP_05
+    source_group_status: ASSIGNED
+  - source_set: BRD
+    path: docs/BRD/BRD-WS-06.md
+    git_blob_sha: 6d6506269541d1a309472049da37e88f39f876a0
+    source_group: WORKSHOP_06
+    source_group_status: ASSIGNED
+  - source_set: BRD
+    path: docs/BRD/BRD-WS-07.md
+    git_blob_sha: 84071033e3f30f137cbadb8cd291227ef7eb3cc4
+    source_group: WORKSHOP_07
+    source_group_status: ASSIGNED
+  - source_set: BRD
+    path: docs/BRD/BRD-WS-08.md
+    git_blob_sha: 16788435bf16da75831189ba4ac50ad9d843076b
+    source_group: WORKSHOP_08
+    source_group_status: ASSIGNED
+  - source_set: BRD
+    path: docs/BRD/BRD-WS-09.md
+    git_blob_sha: dfeb7b1c6e1d7accbb5368ad252f077221e8a657
+    source_group: WORKSHOP_09
+    source_group_status: ASSIGNED
+  - source_set: BRD
+    path: docs/BRD/BRD-WS-10.md
+    git_blob_sha: e5c278cd795b3d500e45b093ee95208d0141e96f
+    source_group: WORKSHOP_10
+    source_group_status: ASSIGNED
+  - source_set: BRD
+    path: docs/BRD/BRD-WS-11.md
+    git_blob_sha: 8a32274d1d4442176aec5bef872395372d4f7b9d
+    source_group: WORKSHOP_11
+    source_group_status: ASSIGNED
+  - source_set: BRD
+    path: docs/BRD/BRD-WS-12.md
+    git_blob_sha: 956e2b19a1e7481ee9ca99935c0869f3e4e44256
+    source_group: WORKSHOP_12
+    source_group_status: ASSIGNED
+  - source_set: BRD
+    path: docs/BRD/BRD-WS-13.md
+    git_blob_sha: 123c6886fd31c96546b7c11dc29b797c2f94c0de
+    source_group: WORKSHOP_13
+    source_group_status: ASSIGNED
+  - source_set: BRD
+    path: docs/BRD/BRD-WS-14.md
+    git_blob_sha: f4efcf874b778d4bada8860a8b5e58804653fa63
+    source_group: WORKSHOP_14
+    source_group_status: ASSIGNED
+  - source_set: BRD
+    path: docs/BRD/BRD-WS-15.md
+    git_blob_sha: 681e04950c1d396ffe9c149bdc92fdf4957ed38a
+    source_group: WORKSHOP_15
+    source_group_status: ASSIGNED
+  - source_set: BRD
+    path: docs/BRD/BRD-WS-16.md
+    git_blob_sha: 3a99857a3ae62198b0d720e61635f75257df3b0b
+    source_group: WORKSHOP_16
+    source_group_status: ASSIGNED
+  - source_set: BRD
+    path: docs/BRD/BRD-WS-17.md
+    git_blob_sha: fc9b9e54f28d5f6574b9ee5247fa7652d4470569
+    source_group: WORKSHOP_17
+    source_group_status: ASSIGNED
+  - source_set: UXF
+    path: docs/UXF/INDEX.md
+    git_blob_sha: c24e2211713ce9a1f6e7dcb7005b743885400edb
+    source_group: ENTERPRISE_GOVERNANCE
+    source_group_status: HUMAN_DECISION_REQUIRED
+  - source_set: UXF
+    path: docs/UXF/UXF-00.md
+    git_blob_sha: 355fd9308d1ac5661e8b5bfff7449b8311366651
+    source_group: EXPERIENCE_FOUNDATION
+    source_group_status: HUMAN_DECISION_REQUIRED
+  - source_set: UXF
+    path: docs/UXF/UXF-01.md
+    git_blob_sha: a7cd21b547a55f787af866bab690b8686be90b02
+    source_group: EXPERIENCE_FOUNDATION
+    source_group_status: HUMAN_DECISION_REQUIRED
+  - source_set: UXF
+    path: docs/UXF/UXF-02.md
+    git_blob_sha: 58db188896df3951fbc7d40adf69ba3d0323b8a4
+    source_group: EXPERIENCE_FOUNDATION
+    source_group_status: HUMAN_DECISION_REQUIRED
+  - source_set: UXF
+    path: docs/UXF/UXF-03.md
+    git_blob_sha: d27a281590bf5b5a7f48eab7937b450d1b328de6
+    source_group: EXPERIENCE_FOUNDATION
+    source_group_status: HUMAN_DECISION_REQUIRED
+  - source_set: UXF
+    path: docs/UXF/UXF-04.md
+    git_blob_sha: cab4314dff8c8869845dba042297cd2e92f99840
+    source_group: EXPERIENCE_FOUNDATION
+    source_group_status: ASSIGNED
+  - source_set: UXF
+    path: docs/UXF/UXF-05.md
+    git_blob_sha: df8b17fd6eebf76299d7a9d4d0d31ccdacfc6efc
+    source_group: EXPERIENCE_FOUNDATION
+    source_group_status: ASSIGNED
+roadmap:
+  valid_gate_slices:
+  - V3-R1-G00-S00
+  - V3-R1-G00-S01
+  - V3-R1-G00-S02
+  - V3-R1-G00-S03
+  - V3-R1-G00-S04
+  - V3-R1-G01-S01
+  - V3-R1-G02-S01
+  - V3-R1-G02-S02
+  - V3-R1-G03-S01
+  - V3-R1-G03-S02
+  - V3-R1-G03-S03
+  - V3-R1-G04-S01
+  - V3-R1-G04-S02
+  - V3-R1-G04-S03
+  - V3-R1-G05-S01
+  - V3-R1-G05-S02
+s01_slice_acceptance:
+  direct_requirement_count: 0
+  direct_requirement_ids: []
+  acceptance_cases:
+  - id: V3-R1-G00-S01-AC-001
+    test: tools/ysf/tests/unit/test_traceability_validator.py::test_repository_baseline_passes
+    status: IMPLEMENTED
+    evidence_status: NOT_CAPTURED
+  - id: V3-R1-G00-S01-AC-002
+    test: tools/ysf/tests/unit/test_traceability_validator.py::test_fail_closed_matrix
+    status: IMPLEMENTED
+    evidence_status: NOT_CAPTURED
+exact_anchor_count: 94
+source_anchors:
+- id: V3-R1-SA-001
+  source_set: BRD
+  source_path: docs/BRD/BRD-BO-INDEX.md
+  git_blob_sha: 864f11dda3748417cda6a5a4c44509d5f888b4e8
+  heading: 1. Purpose
+  locator:
+    start_line: 21
+    end_line: 21
+  normalized_statement: Business Object Registry là tài liệu quản lý tập trung toàn bộ **Business Object** của nền tảng YSim.
+  statement_sha256: 6dc114076f21bed7c28fd2bb170c5c0fba5b9a3fca28818802a52c1eb258d2b4
+  requirement_id: V3-R1-GOV-001
+  gate_slice: V3-R1-G00-S02
+  disposition: REUSE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-002
+  source_set: BRD
+  source_path: docs/BRD/BRD-BO-INDEX.md
+  git_blob_sha: 864f11dda3748417cda6a5a4c44509d5f888b4e8
+  heading: 2. Objectives
+  locator:
+    start_line: 38
+    end_line: 38
+  normalized_statement: 'Business Object Registry được xây dựng nhằm các mục tiêu sau:'
+  statement_sha256: dce8d53a2f624172073536432321d80989ebcc7b2c67175d340e8d07b469cb03
+  requirement_id: V3-R1-GOV-002
+  gate_slice: V3-R1-G00-S02
+  disposition: REUSE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-003
+  source_set: BRD
+  source_path: docs/BRD/BRD-BO-INDEX.md
+  git_blob_sha: 864f11dda3748417cda6a5a4c44509d5f888b4e8
+  heading: 3. Scope
+  locator:
+    start_line: 53
+    end_line: 53
+  normalized_statement: 'Business Object Registry bao gồm toàn bộ Business Object thuộc các Business Domain sau:'
+  statement_sha256: 6efe73aeea11ceb4b9b28dec1c461825fc0f39340d5a1ae82f993c8a0e06b82f
+  requirement_id: V3-R1-GOV-003
+  gate_slice: V3-R1-G00-S02
+  disposition: REUSE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-004
+  source_set: BRD
+  source_path: docs/BRD/BRD-CAP-INDEX.md
+  git_blob_sha: f0f60cb5a24a0971ccdacade911ca6a163641a0f
+  heading: 1. Purpose
+  locator:
+    start_line: 21
+    end_line: 21
+  normalized_statement: Enterprise Business Capability Registry là tài liệu quản lý tập trung toàn bộ **Business Capability** của nền tảng YSim.
+  statement_sha256: 12efdbd22aaeeaaf7101ef77fd0148f18ae962c83c1544252e79d2efe697f27d
+  requirement_id: V3-R1-GOV-004
+  gate_slice: V3-R1-G00-S02
+  disposition: REUSE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-005
+  source_set: BRD
+  source_path: docs/BRD/BRD-CAP-INDEX.md
+  git_blob_sha: f0f60cb5a24a0971ccdacade911ca6a163641a0f
+  heading: 2. Objectives
+  locator:
+    start_line: 42
+    end_line: 42
+  normalized_statement: 'Capability Registry được xây dựng nhằm các mục tiêu:'
+  statement_sha256: 0d059d581be3ebc47703e9c8f0ba39f99a1bea81b684b90c45436bfb3d4c8ac6
+  requirement_id: V3-R1-GOV-005
+  gate_slice: V3-R1-G00-S02
+  disposition: REUSE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-006
+  source_set: BRD
+  source_path: docs/BRD/BRD-CAP-INDEX.md
+  git_blob_sha: f0f60cb5a24a0971ccdacade911ca6a163641a0f
+  heading: 3. Scope
+  locator:
+    start_line: 61
+    end_line: 61
+  normalized_statement: 'Capability Registry bao gồm toàn bộ Capability thuộc các Business Domain:'
+  statement_sha256: 9ca88742b65cb76d5f2bcbea7d585dfee3cc43f0d7560804983cc1e5a579dd9b
+  requirement_id: V3-R1-GOV-006
+  gate_slice: V3-R1-G00-S02
+  disposition: REUSE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-007
+  source_set: BRD
+  source_path: docs/BRD/BRD-EVENT-INDEX.md
+  git_blob_sha: e8e31a457d4fbae177729b2ad29f40ad991a5b2d
+  heading: 1. Purpose
+  locator:
+    start_line: 21
+    end_line: 21
+  normalized_statement: Enterprise Business Event Registry là tài liệu quản lý tập trung toàn bộ **Business Event** của nền tảng YSim.
+  statement_sha256: 5964651208de72569a577d0876f3a2a672811b1fbbc314ad5b1f348e5974d3aa
+  requirement_id: V3-R1-REL-001
+  gate_slice: V3-R1-G00-S04
+  disposition: REUSE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-008
+  source_set: BRD
+  source_path: docs/BRD/BRD-EVENT-INDEX.md
+  git_blob_sha: e8e31a457d4fbae177729b2ad29f40ad991a5b2d
+  heading: 2. Objectives
+  locator:
+    start_line: 33
+    end_line: 33
+  normalized_statement: 'Business Event Registry được xây dựng nhằm các mục tiêu:'
+  statement_sha256: 9366473a1585d9691d2cf706ac1df27e41a9a52b3634f6141cba394ea7d1284d
+  requirement_id: V3-R1-REL-002
+  gate_slice: V3-R1-G00-S00
+  disposition: REUSE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-009
+  source_set: BRD
+  source_path: docs/BRD/BRD-EVENT-INDEX.md
+  git_blob_sha: e8e31a457d4fbae177729b2ad29f40ad991a5b2d
+  heading: 3. Scope
+  locator:
+    start_line: 52
+    end_line: 52
+  normalized_statement: 'Business Event Registry bao gồm toàn bộ Event phát sinh từ:'
+  statement_sha256: 78468e7b98935bd88fef69d4d9997d38dc5528a048a1c77a2dc0d353ba11d00f
+  requirement_id: V3-R1-REL-003
+  gate_slice: V3-R1-G00-S04
+  disposition: REUSE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-010
+  source_set: BRD
+  source_path: docs/BRD/BRD-META-MODEL.md
+  git_blob_sha: 574b716098b0269afa59c37e447ad11e8f9132ea
+  heading: 1. Purpose
+  locator:
+    start_line: 19
+    end_line: 19
+  normalized_statement: Tài liệu này mô tả mô hình nghiệp vụ tổng thể (Business Meta Model) của nền tảng YSim.
+  statement_sha256: fde16dd9928ea8c4b86276c09e5e9f2313861aac4188804e7f48dc098a9ecfef
+  requirement_id: V3-R1-GOV-007
+  gate_slice: V3-R1-G00-S02
+  disposition: REUSE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-011
+  source_set: BRD
+  source_path: docs/BRD/BRD-META-MODEL.md
+  git_blob_sha: 574b716098b0269afa59c37e447ad11e8f9132ea
+  heading: 2. Business Meta Model
+  locator:
+    start_line: 36
+    end_line: 36
+  normalized_statement: YSim sử dụng mô hình kiến trúc nghiệp vụ như sau.
+  statement_sha256: ad97749d1bdc07e0419e3bf68084c7b12b326337dd8df43c2c8bbc8017447d66
+  requirement_id: V3-R1-GOV-008
+  gate_slice: V3-R1-G00-S02
+  disposition: REUSE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-012
+  source_set: BRD
+  source_path: docs/BRD/BRD-META-MODEL.md
+  git_blob_sha: 574b716098b0269afa59c37e447ad11e8f9132ea
+  heading: 2A. Commerce Meta Model (Version 2.1)
+  locator:
+    start_line: 65
+    end_line: 65
+  normalized_statement: Version 2.1 mở rộng Business Meta Model để chuẩn hóa cách xây dựng và vận hành Commerce Experience.
+  statement_sha256: 1996e0d19cb1c72ef1687946600152ccf01d1357a8e5804e6813f56043100f39
+  requirement_id: V3-R1-GOV-009
+  gate_slice: V3-R1-G00-S02
+  disposition: REUSE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-013
+  source_set: BRD
+  source_path: docs/BRD/BRD-POLICY-INDEX.md
+  git_blob_sha: 47a4220a500c866d15e0d2ca7379656d9ef5c44e
+  heading: 1. Purpose
+  locator:
+    start_line: 21
+    end_line: 21
+  normalized_statement: Enterprise Policy Registry là tài liệu quản lý tập trung toàn bộ **Business Policy** của nền tảng YSim.
+  statement_sha256: 6640be59f8dd415bd5ceea0dcf5a1b31e27c75a330b1123b32ddfce4975a3b9b
+  requirement_id: V3-R1-GOV-010
+  gate_slice: V3-R1-G00-S02
+  disposition: REUSE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-014
+  source_set: BRD
+  source_path: docs/BRD/BRD-POLICY-INDEX.md
+  git_blob_sha: 47a4220a500c866d15e0d2ca7379656d9ef5c44e
+  heading: 2. Objectives
+  locator:
+    start_line: 37
+    end_line: 37
+  normalized_statement: 'Enterprise Policy Registry được xây dựng nhằm:'
+  statement_sha256: 94e78978d5808fce469919549d8f392d43aa62e8cbbf1b93ad92c0162ae9dd4e
+  requirement_id: V3-R1-GOV-011
+  gate_slice: V3-R1-G00-S02
+  disposition: REUSE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-015
+  source_set: BRD
+  source_path: docs/BRD/BRD-POLICY-INDEX.md
+  git_blob_sha: 47a4220a500c866d15e0d2ca7379656d9ef5c44e
+  heading: 3. Scope
+  locator:
+    start_line: 63
+    end_line: 63
+  normalized_statement: 'Enterprise Policy Registry bao gồm toàn bộ Policy thuộc các Domain:'
+  statement_sha256: 39e2343493368ad457f6fa385dac4ecbc3c975a619051af78d6d2b4701bdf96a
+  requirement_id: V3-R1-GOV-012
+  gate_slice: V3-R1-G00-S02
+  disposition: REUSE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-016
+  source_set: BRD
+  source_path: docs/BRD/BRD-SNAPSHOT-INDEX.md
+  git_blob_sha: 4468b01900c408181817458870d5f52bcb00d8da
+  heading: 1. Purpose
+  locator:
+    start_line: 21
+    end_line: 21
+  normalized_statement: Enterprise Snapshot Registry là tài liệu quản lý tập trung toàn bộ **Business Snapshot** của nền tảng YSim.
+  statement_sha256: bd7f70237126a98d8b9e4528a4d48454134c772e340b41aa497f174bc2771285
+  requirement_id: V3-R1-DATA-001
+  gate_slice: V3-R1-G05-S01
+  disposition: REUSE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-017
+  source_set: BRD
+  source_path: docs/BRD/BRD-SNAPSHOT-INDEX.md
+  git_blob_sha: 4468b01900c408181817458870d5f52bcb00d8da
+  heading: 2. Objectives
+  locator:
+    start_line: 42
+    end_line: 42
+  normalized_statement: 'Snapshot Registry được xây dựng nhằm:'
+  statement_sha256: b9c77b35f4d6da58ee37314344a746c5a03d0a809cbd3cbd28146e5f9de4a5e7
+  requirement_id: V3-R1-DATA-002
+  gate_slice: V3-R1-G05-S01
+  disposition: REUSE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-018
+  source_set: BRD
+  source_path: docs/BRD/BRD-SNAPSHOT-INDEX.md
+  git_blob_sha: 4468b01900c408181817458870d5f52bcb00d8da
+  heading: 3. Scope
+  locator:
+    start_line: 66
+    end_line: 66
+  normalized_statement: 'Enterprise Snapshot Registry bao gồm toàn bộ Snapshot thuộc các Domain:'
+  statement_sha256: 84027946fac8d7c35c06ca2b84d38f1ce835315f7f36753b4c36666cf16e09ea
+  requirement_id: V3-R1-DATA-003
+  gate_slice: V3-R1-G05-S01
+  disposition: REUSE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-019
+  source_set: BRD
+  source_path: docs/BRD/BRD-UPDATE-01.md
+  git_blob_sha: db8965fd142b6e9a5808a41c7fa01d6ed77220d5
+  heading: 1. Purpose
+  locator:
+    start_line: 19
+    end_line: 19
+  normalized_statement: 'Version 2.1 bổ sung Business Domain mới:'
+  statement_sha256: 4099b3e89c426ecda19df23e4ae9a0f4c9c093865a705f565b7fc3c0f6cbe843
+  requirement_id: V3-R1-COM-001
+  gate_slice: V3-R1-G02-S02
+  disposition: REUSE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-020
+  source_set: BRD
+  source_path: docs/BRD/BRD-UPDATE-01.md
+  git_blob_sha: db8965fd142b6e9a5808a41c7fa01d6ed77220d5
+  heading: 2. Business Vision
+  locator:
+    start_line: 31
+    end_line: 31
+  normalized_statement: 'Commerce Experience Platform hướng tới mục tiêu:'
+  statement_sha256: "6aa2e6bde248d07\
+    53381506c5e860130fb561114077e9a3ff1524a5b79ad9da4"
+  requirement_id: V3-R1-COM-002
+  gate_slice: V3-R1-G02-S02
+  disposition: REUSE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-021
+  source_set: BRD
+  source_path: docs/BRD/BRD-UPDATE-01.md
+  git_blob_sha: db8965fd142b6e9a5808a41c7fa01d6ed77220d5
+  heading: 3. Business Scope
+  locator:
+    start_line: 45
+    end_line: 45
+  normalized_statement: 'CXP bao gồm:'
+  statement_sha256: dd1968b671bdffa75525b883edad7ac71116d95509191a9614f7bfa7f0c64fe1
+  requirement_id: V3-R1-COM-003
+  gate_slice: V3-R1-G02-S02
+  disposition: REUSE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-022
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-01.md
+  git_blob_sha: 9a2ad8de259304f826cd42bfb255411cc3dcb3ef
+  heading: 1. Workshop Objective
+  locator:
+    start_line: 20
+    end_line: 20
+  normalized_statement: Xác định tầm nhìn, định vị sản phẩm, phạm vi nghiệp vụ và các nguyên tắc nền tảng của YSim v2.0 trước khi xây dựng các yêu cầu chi tiết.
+  statement_sha256: fd5ecdc84901ddf3b69276edf7d1f278c7f83e5284279e6f2511afde33eb4ca1
+  requirement_id: V3-R1-REL-004
+  gate_slice: V3-R1-G00-S04
+  disposition: REUSE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-023
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-01.md
+  git_blob_sha: 9a2ad8de259304f826cd42bfb255411cc3dcb3ef
+  heading: 2. Product Vision
+  locator:
+    start_line: 28
+    end_line: 28
+  normalized_statement: YSim là nền tảng thương mại và phân phối eSIM toàn cầu (Global eSIM Commerce & Distribution Platform), kết nối các nhà cung cấp eSIM với nhiều kênh bán hàng và đối tác phân phối nhằm mang đến trải nghiệm mua, cấp phát, kích hoạt và quản lý eSIM thuận tiện cho khách du lịch quốc tế.
+  statement_sha256: ef226c3cc5d855388391f15f08e2dff2194a0b117da3a151dbc61d455b57ea0c
+  requirement_id: V3-R1-REL-005
+  gate_slice: V3-R1-G00-S04
+  disposition: REUSE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-024
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-01.md
+  git_blob_sha: 9a2ad8de259304f826cd42bfb255411cc3dcb3ef
+  heading: 3. Product Positioning
+  locator:
+    start_line: 36
+    end_line: 36
+  normalized_statement: YSim là một Product Line thuộc hệ sinh thái Digital Connectivity Platform (DCP).
+  statement_sha256: 35fdeac60c8cf6d5a8983c49c2f6da2a97fe5a19e963bfdb4c78ace959c277bc
+  requirement_id: V3-R1-REL-006
+  gate_slice: V3-R1-G00-S04
+  disposition: REUSE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-025
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-02.md
+  git_blob_sha: 263fb07b9832bd625d39f06c4508483c811417f9
+  heading: 1. Workshop Objective
+  locator:
+    start_line: 22
+    end_line: 22
+  normalized_statement: Workshop này xác định mô hình kinh doanh của YSim, cách hình thành sản phẩm, chuỗi cung ứng eSIM, mô hình doanh thu và các Business Entity cốt lõi của hệ thống.
+  statement_sha256: c4c42479cfa2332a8a5e2614384c54a29bb2a56f55a4f2062cd064abaa15db81
+  requirement_id: V3-R1-COM-004
+  gate_slice: V3-R1-G02-S02
+  disposition: REUSE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-026
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-02.md
+  git_blob_sha: 263fb07b9832bd625d39f06c4508483c811417f9
+  heading: 2. Business Vision
+  locator:
+    start_line: 39
+    end_line: 39
+  normalized_statement: YSim không bán dịch vụ viễn thông.
+  statement_sha256: a3559d1b1399302d806fdb39d7c0d1907bffa62778a9a70f5c2b395d370552a5
+  requirement_id: V3-R1-COM-005
+  gate_slice: V3-R1-G02-S02
+  disposition: REUSE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-027
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-02.md
+  git_blob_sha: 263fb07b9832bd625d39f06c4508483c811417f9
+  heading: 3. Business Entity Hierarchy
+  locator:
+    start_line: 73
+    end_line: 73
+  normalized_statement: Business Entity trung tâm của toàn bộ hệ thống là **Product**.
+  statement_sha256: bf26e8dda61b3f9c8c6510df51b01ea362e53968e0198c4fba9bd0bc405d34ca
+  requirement_id: V3-R1-COM-006
+  gate_slice: V3-R1-G02-S02
+  disposition: REUSE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-028
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-03.md
+  git_blob_sha: 57c7da2f6333baadefae5ce4b81fd671febd2f44
+  heading: 1. Workshop Objective
+  locator:
+    start_line: 22
+    end_line: 22
+  normalized_statement: Workshop này xác định nền tảng quản lý Identity, Organization, User, Customer, Portal, Storefront và mô hình phân quyền của toàn bộ hệ thống YSim.
+  statement_sha256: 79811d81a0c14c749c36eaa9a95a00adc3aa733280a76e35c235d240dbb500ea
+  requirement_id: V3-R1-ORG-001
+  gate_slice: V3-R1-G01-S01
+  disposition: REUSE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-029
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-03.md
+  git_blob_sha: 57c7da2f6333baadefae5ce4b81fd671febd2f44
+  heading: 2. Organization Model
+  locator:
+    start_line: 45
+    end_line: 45
+  normalized_statement: YSim quản lý toàn bộ kênh bán hàng theo mô hình Organization.
+  statement_sha256: 634379ae0993068f409b4a7bf5b1b19a442694a1cdf349742130c3a008b05ffd
+  requirement_id: V3-R1-ORG-002
+  gate_slice: V3-R1-G01-S01
+  disposition: REUSE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-030
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-03.md
+  git_blob_sha: 57c7da2f6333baadefae5ce4b81fd671febd2f44
+  heading: 3. Organization Structure
+  locator:
+    start_line: 76
+    end_line: 76
+  normalized_statement: Organization Structure mô tả cơ cấu nội bộ của Organization.
+  statement_sha256: 6e18a3ea05a3ed18f83f36b9a9e4b1a59b0a090f4597fedf5a6476f5cfe34590
+  requirement_id: V3-R1-ORG-003
+  gate_slice: V3-R1-G01-S01
+  disposition: REUSE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-031
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-04.md
+  git_blob_sha: 26c801f750f5df2004a06859b9b4f9d8511ea1b5
+  heading: 1. Workshop Objective
+  locator:
+    start_line: 22
+    end_line: 22
+  normalized_statement: Workshop này xác định mô hình Product Catalog của YSim, phương pháp chuẩn hóa sản phẩm từ Supplier, cơ chế xây dựng Sales Catalog cho từng Organization và nền tảng Product Intelligence.
+  statement_sha256: 6d205e036f06b68e32a643e5968fa91ff041ee516ab46ddb758dd2b2044dfb7b
+  requirement_id: V3-R1-CAT-001
+  gate_slice: V3-R1-G02-S01
+  disposition: REUSE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-032
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-04.md
+  git_blob_sha: 26c801f750f5df2004a06859b9b4f9d8511ea1b5
+  heading: 3. Four-Level Catalog Architecture
+  locator:
+    start_line: 61
+    end_line: 61
+  normalized_statement: YSim sử dụng mô hình **Four-Level Catalog**.
+  statement_sha256: a52ddecdd025ab4eb839a8e0427ba576009222e0edd99ee7b024e2fd8904aa31
+  requirement_id: V3-R1-CAT-002
+  gate_slice: V3-R1-G02-S01
+  disposition: REUSE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-033
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-04.md
+  git_blob_sha: 26c801f750f5df2004a06859b9b4f9d8511ea1b5
+  heading: 4. Supplier Catalog
+  locator:
+    start_line: 80
+    end_line: 80
+  normalized_statement: Supplier Catalog được đồng bộ từ API của Supplier.
+  statement_sha256: 31504970c239492c16debb99b6fa1d03faff6db490dee6ce988f23fb97b02eaa
+  requirement_id: V3-R1-CAT-003
+  gate_slice: V3-R1-G02-S01
+  disposition: REUSE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-034
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-05.md
+  git_blob_sha: d55be5176e558870af76900c68ec483db751b124
+  heading: 1. Workshop Objective
+  locator:
+    start_line: 22
+    end_line: 22
+  normalized_statement: Workshop này xác định mô hình Pricing, Commercial Policy và Revenue Model của YSim.
+  statement_sha256: 0d47affb425efc0f79448f2c1530f2b8b3475dbcd14b9ac484dc0a1c48c67187
+  requirement_id: V3-R1-COM-007
+  gate_slice: V3-R1-G02-S02
+  disposition: REUSE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-035
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-05.md
+  git_blob_sha: d55be5176e558870af76900c68ec483db751b124
+  heading: 3. Commercial Domain
+  locator:
+    start_line: 69
+    end_line: 69
+  normalized_statement: YSim tách riêng Product Domain và Commercial Domain.
+  statement_sha256: c8b89d3c9f522e9518dbccb14baad1a26fb3e65c7d5f6dda6432438f512c138e
+  requirement_id: V3-R1-COM-008
+  gate_slice: V3-R1-G02-S02
+  disposition: REUSE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-036
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-05.md
+  git_blob_sha: d55be5176e558870af76900c68ec483db751b124
+  heading: Product Domain
+  locator:
+    start_line: 73
+    end_line: 73
+  normalized_statement: '- Product'
+  statement_sha256: 598b07634ca2a414596fad7cda5893fb5f1f1db8829fb0f112bbc30a5666d187
+  requirement_id: V3-R1-COM-009
+  gate_slice: V3-R1-G02-S02
+  disposition: REUSE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-037
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-06.md
+  git_blob_sha: 6d6506269541d1a309472049da37e88f39f876a0
+  heading: 1. Workshop Objective
+  locator:
+    start_line: 22
+    end_line: 22
+  normalized_statement: Workshop này xác định toàn bộ mô hình Promotion, Coupon, Campaign và Sales Enablement của nền tảng YSim.
+  statement_sha256: ce73e00b53b8561c654ef5c5321c983b082a053faaa318f5acc7ba680e1bda10
+  requirement_id: V3-R1-COM-010
+  gate_slice: V3-R1-G02-S02
+  disposition: REUSE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-038
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-06.md
+  git_blob_sha: 6d6506269541d1a309472049da37e88f39f876a0
+  heading: 3. Sales Enablement Domain
+  locator:
+    start_line: 73
+    end_line: 73
+  normalized_statement: 'YSim xây dựng một Business Domain độc lập:'
+  statement_sha256: a9caec84e3fcb3095bfbdecc741a732504d9730bba0acd4490cef4c1a78c69d7
+  requirement_id: V3-R1-COM-011
+  gate_slice: V3-R1-G02-S02
+  disposition: REUSE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-039
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-06.md
+  git_blob_sha: 6d6506269541d1a309472049da37e88f39f876a0
+  heading: Sales Enablement
+  locator:
+    start_line: 77
+    end_line: 77
+  normalized_statement: 'Bao gồm:'
+  statement_sha256: 47437456a68ce4077d0d2daf73c393faee79ac91b945378a9a87c0db5c592953
+  requirement_id: V3-R1-COM-012
+  gate_slice: V3-R1-G02-S02
+  disposition: REUSE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-040
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-07.md
+  git_blob_sha: 84071033e3f30f137cbadb8cd291227ef7eb3cc4
+  heading: 1. Workshop Objective
+  locator:
+    start_line: 22
+    end_line: 22
+  normalized_statement: Workshop này xác định toàn bộ Transaction Entry của nền tảng YSim.
+  statement_sha256: 209148a9973920c2e656544029ce990428eedf6f22479ccf264df1f16dc2dbb4
+  requirement_id: V3-R1-ORD-001
+  gate_slice: V3-R1-G03-S01
+  disposition: REUSE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-041
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-07.md
+  git_blob_sha: 84071033e3f30f137cbadb8cd291227ef7eb3cc4
+  heading: 3. Transaction Domain Principle
+  locator:
+    start_line: 65
+    end_line: 65
+  normalized_statement: Transaction Domain của YSim được chia thành các giai đoạn độc lập.
+  statement_sha256: 867a3e7896e4c6240e36bf7bc20d54aee6ba90ebb4bf38abf07c4139752a40b5
+  requirement_id: V3-R1-ORD-002
+  gate_slice: V3-R1-G03-S01
+  disposition: REUSE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-042
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-07.md
+  git_blob_sha: 84071033e3f30f137cbadb8cd291227ef7eb3cc4
+  heading: 4. Order Taxonomy
+  locator:
+    start_line: 92
+    end_line: 92
+  normalized_statement: YSim định nghĩa hai loại Order độc lập.
+  statement_sha256: 9bd97aa806aa07f11c3b9389a4ebd7e53ff581ff995317ad84e2bac389ebb013
+  requirement_id: V3-R1-ORD-003
+  gate_slice: V3-R1-G03-S01
+  disposition: REUSE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-043
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-08.md
+  git_blob_sha: 16788435bf16da75831189ba4ac50ad9d843076b
+  heading: 1. Workshop Objective
+  locator:
+    start_line: 22
+    end_line: 22
+  normalized_statement: Workshop này xác định toàn bộ Payment Domain của YSim.
+  statement_sha256: 995fba636e7f6c2c9fe8af979a13611bba3d8d4ae9e15768648d83e7a06da8ce
+  requirement_id: V3-R1-PAY-001
+  gate_slice: V3-R1-G03-S02
+  disposition: REUSE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-044
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-08.md
+  git_blob_sha: 16788435bf16da75831189ba4ac50ad9d843076b
+  heading: 3. Payment Domain Architecture
+  locator:
+    start_line: 64
+    end_line: 64
+  normalized_statement: Payment Domain được chia thành các Business Object độc lập.
+  statement_sha256: c8c2ee90c78701a98939d6d21fc75300bd38c3cb7fe593e19f948a07e6e79085
+  requirement_id: V3-R1-PAY-002
+  gate_slice: V3-R1-G03-S02
+  disposition: REUSE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-045
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-08.md
+  git_blob_sha: 16788435bf16da75831189ba4ac50ad9d843076b
+  heading: 4. Payment Owner
+  locator:
+    start_line: 97
+    end_line: 97
+  normalized_statement: PaymentSession luôn thuộc PaymentOwner.
+  statement_sha256: 5f251a7da80b9c664dd58dc760e75cf2ad4bc433785a4d7c79cab0149ca2666b
+  requirement_id: V3-R1-PAY-003
+  gate_slice: V3-R1-G03-S02
+  disposition: REUSE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-046
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-09.md
+  git_blob_sha: dfeb7b1c6e1d7accbb5368ad252f077221e8a657
+  heading: 1. Workshop Objective
+  locator:
+    start_line: 22
+    end_line: 22
+  normalized_statement: Workshop này xác định toàn bộ Inventory Domain và Fulfillment Domain của YSim.
+  statement_sha256: fbf648ae2677a65549d534999606b0987f14af25de54c09799bee73e9dbb1adb
+  requirement_id: V3-R1-FUL-001
+  gate_slice: V3-R1-G04-S01
+  disposition: REUSE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-047
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-09.md
+  git_blob_sha: dfeb7b1c6e1d7accbb5368ad252f077221e8a657
+  heading: 3. Inventory Architecture
+  locator:
+    start_line: 66
+    end_line: 66
+  normalized_statement: Inventory là Business Object quản lý kho.
+  statement_sha256: 5b44762f671e04e089f4f590802421c3c617b8405d0348db85100365b5e36c9a
+  requirement_id: V3-R1-FUL-002
+  gate_slice: V3-R1-G04-S01
+  disposition: REUSE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-048
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-09.md
+  git_blob_sha: dfeb7b1c6e1d7accbb5368ad252f077221e8a657
+  heading: 4. Product Item Lifecycle
+  locator:
+    start_line: 86
+    end_line: 86
+  normalized_statement: Inventory quản lý Product Item.
+  statement_sha256: 935cded476c981421926903fa4719f7c2f1ab6d5610b80852a08671136362efd
+  requirement_id: V3-R1-FUL-003
+  gate_slice: V3-R1-G04-S01
+  disposition: REUSE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-049
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-10.md
+  git_blob_sha: e5c278cd795b3d500e45b093ee95208d0141e96f
+  heading: 1. Workshop Objective
+  locator:
+    start_line: 22
+    end_line: 22
+  normalized_statement: Workshop này xác định toàn bộ Financial Domain của YSim.
+  statement_sha256: 68b2465a19c3920b11702723ea240c189d0a52fa9ca25af6e9849135de0fff50
+  requirement_id: V3-R1-FIN-001
+  gate_slice: V3-R1-G03-S03
+  disposition: REUSE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-050
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-10.md
+  git_blob_sha: e5c278cd795b3d500e45b093ee95208d0141e96f
+  heading: 3. Financial Domain Architecture
+  locator:
+    start_line: 71
+    end_line: 71
+  normalized_statement: 'Financial Domain được tổ chức theo các lớp sau:'
+  statement_sha256: 4100d8e41c3ce587fd780109f408771144fa988cb205276d882ca6e2027f2f6a
+  requirement_id: V3-R1-FIN-002
+  gate_slice: V3-R1-G03-S03
+  disposition: REUSE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-051
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-10.md
+  git_blob_sha: e5c278cd795b3d500e45b093ee95208d0141e96f
+  heading: 4. Settlement
+  locator:
+    start_line: 112
+    end_line: 112
+  normalized_statement: Settlement được thực hiện giữa các thực thể trong Distribution Network.
+  statement_sha256: cb68751c47cf6b250c03cd948707315a21a66cc3ab6f5a44f43897b2816300c5
+  requirement_id: V3-R1-FIN-003
+  gate_slice: V3-R1-G03-S03
+  disposition: REFINE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-052
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-11.md
+  git_blob_sha: 8a32274d1d4442176aec5bef872395372d4f7b9d
+  heading: 1. Workshop Objective
+  locator:
+    start_line: 22
+    end_line: 22
+  normalized_statement: Workshop này xác định toàn bộ Customer Success Domain của YSim.
+  statement_sha256: 8a71c4ae5779d08af775b4ec9408409b86f8cc8a7b54cef5571b071f9d9074a7
+  requirement_id: V3-R1-CUS-001
+  gate_slice: V3-R1-G04-S02
+  disposition: REFINE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-053
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-11.md
+  git_blob_sha: 8a32274d1d4442176aec5bef872395372d4f7b9d
+  heading: 3. Customer Lifecycle
+  locator:
+    start_line: 72
+    end_line: 72
+  normalized_statement: 'Customer Lifecycle:'
+  statement_sha256: 4a1fedab8434786e86a63fc51163b3315b4bcd42d4880ab44cbf0c32d46efccf
+  requirement_id: V3-R1-CUS-002
+  gate_slice: V3-R1-G04-S02
+  disposition: REFINE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-054
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-11.md
+  git_blob_sha: 8a32274d1d4442176aec5bef872395372d4f7b9d
+  heading: 4. Enterprise Customer Principle
+  locator:
+    start_line: 104
+    end_line: 104
+  normalized_statement: Customer là tài sản của Platform.
+  statement_sha256: f4ffd0022d8775f2fde98a983d0381fbdb8e4427f22ca44a3dbdb3fd002ba7c1
+  requirement_id: V3-R1-CUS-003
+  gate_slice: V3-R1-G04-S02
+  disposition: REFINE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-055
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-12.md
+  git_blob_sha: 956e2b19a1e7481ee9ca99935c0869f3e4e44256
+  heading: 1. Workshop Objective
+  locator:
+    start_line: 22
+    end_line: 22
+  normalized_statement: Workshop này xác định toàn bộ Communication Platform của YSim.
+  statement_sha256: faabef44910d68010ce11e14957b55ae1267fe30de3e98287792d2c4c2fb9c84
+  requirement_id: V3-R1-MSG-001
+  gate_slice: V3-R1-G04-S03
+  disposition: REFINE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-056
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-12.md
+  git_blob_sha: 956e2b19a1e7481ee9ca99935c0869f3e4e44256
+  heading: 3. Communication Platform Principle
+  locator:
+    start_line: 74
+    end_line: 74
+  normalized_statement: Communication Platform là Platform Capability.
+  statement_sha256: 3f6a902c5329c50222756eda379e1477767b9ef9956cea6b5ce7ae5b57fa278e
+  requirement_id: V3-R1-MSG-002
+  gate_slice: V3-R1-G04-S03
+  disposition: REFINE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-057
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-12.md
+  git_blob_sha: 956e2b19a1e7481ee9ca99935c0869f3e4e44256
+  heading: 4. Event-Driven Communication
+  locator:
+    start_line: 99
+    end_line: 99
+  normalized_statement: 'Communication Platform hoạt động theo mô hình:'
+  statement_sha256: 07b5a1b9a304922b83c363daa0f998ea3c89f4054fafeb9dcf6e4c6bb8198c3d
+  requirement_id: V3-R1-MSG-003
+  gate_slice: V3-R1-G04-S03
+  disposition: REFINE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-058
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-13.md
+  git_blob_sha: 123c6886fd31c96546b7c11dc29b797c2f94c0de
+  heading: 1. Workshop Objective
+  locator:
+    start_line: 22
+    end_line: 22
+  normalized_statement: Workshop này xác định toàn bộ năng lực Reporting, Analytics và Operational Intelligence của nền tảng YSim.
+  statement_sha256: d1a1bd26c00c515e4dd1ac57ca39b83ef76d9108aee98fb5f7dc55cdce056cbc
+  requirement_id: V3-R1-ANA-001
+  gate_slice: V3-R1-G05-S01
+  disposition: REFINE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-059
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-13.md
+  git_blob_sha: 123c6886fd31c96546b7c11dc29b797c2f94c0de
+  heading: 3. Dashboard Model
+  locator:
+    start_line: 70
+    end_line: 70
+  normalized_statement: Dashboard là Business Object.
+  statement_sha256: 436cb5c6719f12ebbcebc0285ccf8b8ed0da9bb2d9371b18c60929b77932a4b6
+  requirement_id: V3-R1-ANA-002
+  gate_slice: V3-R1-G05-S01
+  disposition: REFINE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-060
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-13.md
+  git_blob_sha: 123c6886fd31c96546b7c11dc29b797c2f94c0de
+  heading: 4. Dashboard Widget
+  locator:
+    start_line: 96
+    end_line: 96
+  normalized_statement: Dashboard sử dụng Widget.
+  statement_sha256: 21e9a648287d27b2821b59e47a35dcb1c0f9bc13b1515dce0fae2ba144756cf6
+  requirement_id: V3-R1-ANA-003
+  gate_slice: V3-R1-G05-S01
+  disposition: REFINE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-061
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-14.md
+  git_blob_sha: f4efcf874b778d4bada8860a8b5e58804653fa63
+  heading: 1. Workshop Objective
+  locator:
+    start_line: 22
+    end_line: 22
+  normalized_statement: Workshop này xác định toàn bộ nền tảng Configuration của YSim.
+  statement_sha256: 3f83e69d0a7e29deb748b1b143cd823634df129b288f128ffae82a15f273eb1e
+  requirement_id: V3-R1-OPS-001
+  gate_slice: V3-R1-G00-S03
+  disposition: REFINE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-062
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-14.md
+  git_blob_sha: f4efcf874b778d4bada8860a8b5e58804653fa63
+  heading: 3. Configuration Scope
+  locator:
+    start_line: 73
+    end_line: 73
+  normalized_statement: Configuration là Business Object.
+  statement_sha256: 92f1b915e5bfa9b336a6283d51662e25e028502d8a19262101cb4d770edb7245
+  requirement_id: V3-R1-OPS-002
+  gate_slice: V3-R1-G00-S03
+  disposition: REFINE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-063
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-14.md
+  git_blob_sha: f4efcf874b778d4bada8860a8b5e58804653fa63
+  heading: 4. Configuration Override
+  locator:
+    start_line: 92
+    end_line: 92
+  normalized_statement: Configuration hỗ trợ mô hình kế thừa.
+  statement_sha256: f24f68cc99669b09ff9552c1ed6015182dc196139a44de2b20688fc333e5427c
+  requirement_id: V3-R1-OPS-003
+  gate_slice: V3-R1-G00-S03
+  disposition: REFINE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-064
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-15.md
+  git_blob_sha: 681e04950c1d396ffe9c149bdc92fdf4957ed38a
+  heading: 1. Workshop Objective
+  locator:
+    start_line: 22
+    end_line: 22
+  normalized_statement: Workshop này xác định toàn bộ nền tảng Integration của YSim.
+  statement_sha256: fa3a970a07b94e33408a3fe021b499e18ed795e79611e05110a712d26ef4ace1
+  requirement_id: V3-R1-INT-001
+  gate_slice: V3-R1-G00-S04
+  disposition: REFINE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-065
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-15.md
+  git_blob_sha: 681e04950c1d396ffe9c149bdc92fdf4957ed38a
+  heading: 3. Integration Architecture
+  locator:
+    start_line: 87
+    end_line: 87
+  normalized_statement: YSim sử dụng một Integration Platform thống nhất.
+  statement_sha256: 7152be185dc2db2db7c09e4993fbcfc2f68331ce9d879b9461e3d3413278d46c
+  requirement_id: V3-R1-INT-002
+  gate_slice: V3-R1-G00-S04
+  disposition: REFINE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-066
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-15.md
+  git_blob_sha: 681e04950c1d396ffe9c149bdc92fdf4957ed38a
+  heading: 4. Integration Model
+  locator:
+    start_line: 131
+    end_line: 131
+  normalized_statement: 'Integration Platform hỗ trợ đầy đủ các hình thức tích hợp:'
+  statement_sha256: e116c50c99d001dfc40e01e689186f6db288f88a081f6af5cb8f28f25cd22f29
+  requirement_id: V3-R1-INT-003
+  gate_slice: V3-R1-G00-S04
+  disposition: REFINE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-067
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-16.md
+  git_blob_sha: 3a99857a3ae62198b0d720e61635f75257df3b0b
+  heading: 1. Workshop Objective
+  locator:
+    start_line: 22
+    end_line: 22
+  normalized_statement: Workshop này xác định toàn bộ nền tảng Identity, Security, Authorization, Audit và Compliance của YSim.
+  statement_sha256: 7bf6d4a74a6ef718134fcfd9dcfb3c433bdeb6e01867d10d67ac232d8d7b55f5
+  requirement_id: V3-R1-SEC-001
+  gate_slice: V3-R1-G00-S03
+  disposition: REFINE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-068
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-16.md
+  git_blob_sha: 3a99857a3ae62198b0d720e61635f75257df3b0b
+  heading: 3. Identity Platform
+  locator:
+    start_line: 88
+    end_line: 88
+  normalized_statement: Identity Platform hỗ trợ nhiều Identity Provider.
+  statement_sha256: 15662da12059f86e3220def5f12d0245786f74b33a0606e47affc415d2ac10ed
+  requirement_id: V3-R1-SEC-002
+  gate_slice: V3-R1-G00-S00
+  disposition: REFINE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-069
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-16.md
+  git_blob_sha: 3a99857a3ae62198b0d720e61635f75257df3b0b
+  heading: 4. Authentication
+  locator:
+    start_line: 118
+    end_line: 118
+  normalized_statement: Authentication Platform hỗ trợ nhiều phương thức xác thực.
+  statement_sha256: 2d08c58dcd7e7572e8a57f979e45c7b794b9a07d109b9b01c20049a19ae2ae6d
+  requirement_id: V3-R1-SEC-003
+  gate_slice: V3-R1-G00-S03
+  disposition: REFINE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-070
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-17.md
+  git_blob_sha: fc9b9e54f28d5f6574b9ee5247fa7652d4470569
+  heading: 1. Workshop Objective
+  locator:
+    start_line: 22
+    end_line: 22
+  normalized_statement: Workshop này xác định toàn bộ năng lực vận hành (Operations Capability) của nền tảng YSim.
+  statement_sha256: f42639b0088c3b4501d040614ea398c5efab4413acb95bb32b076a46b33ab93c
+  requirement_id: V3-R1-OPS-004
+  gate_slice: V3-R1-G00-S00
+  disposition: REFINE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-071
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-17.md
+  git_blob_sha: fc9b9e54f28d5f6574b9ee5247fa7652d4470569
+  heading: 3. Platform Operations Center
+  locator:
+    start_line: 81
+    end_line: 81
+  normalized_statement: Platform có một Platform Operations Center thống nhất.
+  statement_sha256: ce547de00ec6df8688c42e6d49dbaae12e97d52b23239d0d199504803de4acc3
+  requirement_id: V3-R1-REL-009
+  gate_slice: V3-R1-G00-S04
+  disposition: CONFLICT
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-072
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-17.md
+  git_blob_sha: fc9b9e54f28d5f6574b9ee5247fa7652d4470569
+  heading: 4. Monitoring
+  locator:
+    start_line: 107
+    end_line: 107
+  normalized_statement: Monitoring bao phủ toàn bộ Platform.
+  statement_sha256: aa8080e3efc5caca504dd9522399f7e7ebb39a0cb2569edf2bbc130dd1e6f285
+  requirement_id: V3-R1-REL-010
+  gate_slice: V3-R1-G00-S00
+  disposition: CONFLICT
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-073
+  source_set: UXF
+  source_path: docs/UXF/INDEX.md
+  git_blob_sha: c24e2211713ce9a1f6e7dcb7005b743885400edb
+  heading: User Experience Foundation
+  locator:
+    start_line: 15
+    end_line: 15
+  normalized_statement: '| UXF-00 | User Experience Foundation Overview |'
+  statement_sha256: 52e7ba256af851af13eebd74c3abb41772dc266884257b054aa8573869970770
+  requirement_id: V3-R1-UX-001
+  gate_slice: V3-R1-G05-S02
+  disposition: CONFLICT
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-074
+  source_set: UXF
+  source_path: docs/UXF/INDEX.md
+  git_blob_sha: c24e2211713ce9a1f6e7dcb7005b743885400edb
+  heading: User Experience Foundation
+  locator:
+    start_line: 16
+    end_line: 16
+  normalized_statement: '| UXF-01 | Experience Channels, Personas & Navigation |'
+  statement_sha256: f75e6f5bb24e33a31395d0d13218ec9f72d5a48dae5bdacaa01d4343b5b16efe
+  requirement_id: V3-R1-UX-002
+  gate_slice: V3-R1-G05-S02
+  disposition: CONFLICT
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-075
+  source_set: UXF
+  source_path: docs/UXF/UXF-00.md
+  git_blob_sha: 355fd9308d1ac5661e8b5bfff7449b8311366651
+  heading: 1. Purpose
+  locator:
+    start_line: 19
+    end_line: 19
+  normalized_statement: This document defines the **User Experience Foundation (UXF)** for the YSim Platform.
+  statement_sha256: 756209d354afc31aaedc80007a4e5d5617d72528a6020f96d9440a21143a581b
+  requirement_id: V3-R1-UX-003
+  gate_slice: V3-R1-G05-S02
+  disposition: CONFLICT
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-076
+  source_set: UXF
+  source_path: docs/UXF/UXF-00.md
+  git_blob_sha: 355fd9308d1ac5661e8b5bfff7449b8311366651
+  heading: 2. Vision
+  locator:
+    start_line: 41
+    end_line: 41
+  normalized_statement: YSim is **NOT** a website.
+  statement_sha256: 8caa1386dda361ff4e49d07f8d0522c74cfa149ed9400472c8e9f8595eb41671
+  requirement_id: V3-R1-UX-004
+  gate_slice: V3-R1-G05-S02
+  disposition: CONFLICT
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-077
+  source_set: UXF
+  source_path: docs/UXF/UXF-01.md
+  git_blob_sha: a7cd21b547a55f787af866bab690b8686be90b02
+  heading: 1. Purpose
+  locator:
+    start_line: 19
+    end_line: 19
+  normalized_statement: This document defines the primary user experience channels of the YSim Platform.
+  statement_sha256: 7674a585c0b7826aac40acf47ed657556bbd5bf24c695d302b0bc5aab96a36a7
+  requirement_id: V3-R1-UX-005
+  gate_slice: V3-R1-G05-S02
+  disposition: EXCLUDE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-078
+  source_set: UXF
+  source_path: docs/UXF/UXF-01.md
+  git_blob_sha: a7cd21b547a55f787af866bab690b8686be90b02
+  heading: 2. Experience Philosophy
+  locator:
+    start_line: 29
+    end_line: 29
+  normalized_statement: YSim is a multi-channel digital commerce platform.
+  statement_sha256: 18250221d0156ba357bb8d888823584439a7235ade9b4610c05c561711d86cb2
+  requirement_id: V3-R1-UX-006
+  gate_slice: V3-R1-G05-S02
+  disposition: EXCLUDE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-079
+  source_set: UXF
+  source_path: docs/UXF/UXF-02.md
+  git_blob_sha: 58db188896df3951fbc7d40adf69ba3d0323b8a4
+  heading: 1. Purpose
+  locator:
+    start_line: 19
+    end_line: 19
+  normalized_statement: This document defines the Design Runtime Architecture used by the YSim Platform.
+  statement_sha256: 72b6c7d62ac69936397d63caede7a95af51170dc411f0b00e1596bbda7e8ea3c
+  requirement_id: V3-R1-UX-007
+  gate_slice: V3-R1-G05-S02
+  disposition: EXCLUDE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-080
+  source_set: UXF
+  source_path: docs/UXF/UXF-02.md
+  git_blob_sha: 58db188896df3951fbc7d40adf69ba3d0323b8a4
+  heading: 2. Design Philosophy
+  locator:
+    start_line: 39
+    end_line: 39
+  normalized_statement: The YSim Platform follows a **Single Design System** strategy.
+  statement_sha256: 69e42a2360ab2e96825160d01ca518945af2823430d6283c5280e2d9cceff0ed
+  requirement_id: V3-R1-UX-008
+  gate_slice: V3-R1-G05-S02
+  disposition: EXCLUDE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-081
+  source_set: UXF
+  source_path: docs/UXF/UXF-03.md
+  git_blob_sha: d27a281590bf5b5a7f48eab7937b450d1b328de6
+  heading: 1. Purpose
+  locator:
+    start_line: 19
+    end_line: 19
+  normalized_statement: This document defines the Storefront Runtime Model of the YSim Platform.
+  statement_sha256: c82bb89a468138ed1e83d250973ab84733fe5f36cf637d00c5602bef8d952058
+  requirement_id: V3-R1-UX-009
+  gate_slice: V3-R1-G05-S02
+  disposition: EXCLUDE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-082
+  source_set: UXF
+  source_path: docs/UXF/UXF-03.md
+  git_blob_sha: d27a281590bf5b5a7f48eab7937b450d1b328de6
+  heading: 2. Storefront Philosophy
+  locator:
+    start_line: 38
+    end_line: 38
+  normalized_statement: A Storefront is **NOT** a website.
+  statement_sha256: 9effa3aaf928096a281165e7b334a1fae516047e3d230f4cd70de5430bd0bdbb
+  requirement_id: V3-R1-UX-010
+  gate_slice: V3-R1-G05-S02
+  disposition: DECISION_REQUIRED
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-083
+  source_set: UXF
+  source_path: docs/UXF/UXF-04.md
+  git_blob_sha: cab4314dff8c8869845dba042297cd2e92f99840
+  heading: 1. Purpose
+  locator:
+    start_line: 19
+    end_line: 19
+  normalized_statement: This document defines the runtime resolution engine responsible for generating every customer experience within the YSim Platform.
+  statement_sha256: 5d65e45135e96989d770b4a3effe010243cd0dd733ebf5ecba265e31523601ab
+  requirement_id: V3-R1-UX-011
+  gate_slice: V3-R1-G05-S02
+  disposition: DECISION_REQUIRED
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-084
+  source_set: UXF
+  source_path: docs/UXF/UXF-04.md
+  git_blob_sha: cab4314dff8c8869845dba042297cd2e92f99840
+  heading: 2. Runtime Resolution Philosophy
+  locator:
+    start_line: 44
+    end_line: 44
+  normalized_statement: The YSim Platform never renders pages directly.
+  statement_sha256: 94bfb26a2c34981496c848654c140d3a28d4c8faee2d65c9c34fe64bfef632f4
+  requirement_id: V3-R1-UX-012
+  gate_slice: V3-R1-G05-S02
+  disposition: DECISION_REQUIRED
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-085
+  source_set: UXF
+  source_path: docs/UXF/UXF-05.md
+  git_blob_sha: df8b17fd6eebf76299d7a9d4d0d31ccdacfc6efc
+  heading: 1. Purpose
+  locator:
+    start_line: 19
+    end_line: 19
+  normalized_statement: This document defines how the Experience Runtime integrates with the Commerce Runtime.
+  statement_sha256: 9490d35ad018136274315ca86dc5a1e7e15499448bef6ecc3d2fface3e42da64
+  requirement_id: V3-R1-UX-013
+  gate_slice: V3-R1-G05-S02
+  disposition: DECISION_REQUIRED
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-086
+  source_set: UXF
+  source_path: docs/UXF/UXF-05.md
+  git_blob_sha: df8b17fd6eebf76299d7a9d4d0d31ccdacfc6efc
+  heading: 2. Core Architecture
+  locator:
+    start_line: 33
+    end_line: 33
+  normalized_statement: The YSim Platform consists of three independent runtime layers.
+  statement_sha256: 7b26a9a8b24cac7cc927a029b4e78341db1bde16c3f2c64d8b7fc096a0b795d9
+  requirement_id: V3-R1-UX-014
+  gate_slice: V3-R1-G05-S02
+  disposition: DECISION_REQUIRED
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-087
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-16.md
+  git_blob_sha: 3a99857a3ae62198b0d720e61635f75257df3b0b
+  heading: 3. Identity Platform
+  locator:
+    start_line: 88
+    end_line: 88
+  normalized_statement: Identity Platform hỗ trợ nhiều Identity Provider.
+  statement_sha256: 15662da12059f86e3220def5f12d0245786f74b33a0606e47affc415d2ac10ed
+  requirement_id: V3-R1-FIN-003
+  gate_slice: V3-R1-G03-S03
+  disposition: REFINE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-088
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-16.md
+  git_blob_sha: 3a99857a3ae62198b0d720e61635f75257df3b0b
+  heading: 4. Authentication
+  locator:
+    start_line: 118
+    end_line: 118
+  normalized_statement: Authentication Platform hỗ trợ nhiều phương thức xác thực.
+  statement_sha256: 2d08c58dcd7e7572e8a57f979e45c7b794b9a07d109b9b01c20049a19ae2ae6d
+  requirement_id: V3-R1-CUS-001
+  gate_slice: V3-R1-G04-S02
+  disposition: REFINE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-089
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-17.md
+  git_blob_sha: fc9b9e54f28d5f6574b9ee5247fa7652d4470569
+  heading: 1. Workshop Objective
+  locator:
+    start_line: 22
+    end_line: 22
+  normalized_statement: Workshop này xác định toàn bộ năng lực vận hành (Operations Capability) của nền tảng YSim.
+  statement_sha256: f42639b0088c3b4501d040614ea398c5efab4413acb95bb32b076a46b33ab93c
+  requirement_id: V3-R1-CUS-002
+  gate_slice: V3-R1-G04-S02
+  disposition: REFINE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-090
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-17.md
+  git_blob_sha: fc9b9e54f28d5f6574b9ee5247fa7652d4470569
+  heading: 3. Platform Operations Center
+  locator:
+    start_line: 81
+    end_line: 81
+  normalized_statement: Platform có một Platform Operations Center thống nhất.
+  statement_sha256: ce547de00ec6df8688c42e6d49dbaae12e97d52b23239d0d199504803de4acc3
+  requirement_id: V3-R1-CUS-003
+  gate_slice: V3-R1-G04-S02
+  disposition: REFINE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-091
+  source_set: BRD
+  source_path: docs/BRD/BRD-WS-17.md
+  git_blob_sha: fc9b9e54f28d5f6574b9ee5247fa7652d4470569
+  heading: 4. Monitoring
+  locator:
+    start_line: 107
+    end_line: 107
+  normalized_statement: Monitoring bao phủ toàn bộ Platform.
+  statement_sha256: aa8080e3efc5caca504dd9522399f7e7ebb39a0cb2569edf2bbc130dd1e6f285
+  requirement_id: V3-R1-MSG-001
+  gate_slice: V3-R1-G04-S03
+  disposition: REFINE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-092
+  source_set: UXF
+  source_path: docs/UXF/INDEX.md
+  git_blob_sha: c24e2211713ce9a1f6e7dcb7005b743885400edb
+  heading: User Experience Foundation
+  locator:
+    start_line: 15
+    end_line: 15
+  normalized_statement: '| UXF-00 | User Experience Foundation Overview |'
+  statement_sha256: 52e7ba256af851af13eebd74c3abb41772dc266884257b054aa8573869970770
+  requirement_id: V3-R1-MSG-002
+  gate_slice: V3-R1-G04-S03
+  disposition: REFINE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-093
+  source_set: UXF
+  source_path: docs/UXF/INDEX.md
+  git_blob_sha: c24e2211713ce9a1f6e7dcb7005b743885400edb
+  heading: User Experience Foundation
+  locator:
+    start_line: 16
+    end_line: 16
+  normalized_statement: '| UXF-01 | Experience Channels, Personas & Navigation |'
+  statement_sha256: f75e6f5bb24e33a31395d0d13218ec9f72d5a48dae5bdacaa01d4343b5b16efe
+  requirement_id: V3-R1-MSG-003
+  gate_slice: V3-R1-G04-S03
+  disposition: REFINE
+  traceability_maturity: PLANNED
+- id: V3-R1-SA-094
+  source_set: UXF
+  source_path: docs/UXF/UXF-00.md
+  git_blob_sha: 355fd9308d1ac5661e8b5bfff7449b8311366651
+  heading: 1. Purpose
+  locator:
+    start_line: 19
+    end_line: 19
+  normalized_statement: This document defines the **User Experience Foundation (UXF)** for the YSim Platform.
+  statement_sha256: 756209d354afc31aaedc80007a4e5d5617d72528a6020f96d9440a21143a581b
+  requirement_id: V3-R1-ANA-001
+  gate_slice: V3-R1-G05-S01
+  disposition: REFINE
+  traceability_maturity: PLANNED
+requirements:
+- id: V3-R1-GOV-001
+  state: PROPOSED
+  gate_slice: V3-R1-G00-S02
+  disposition: REUSE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-001
+  acceptance_case_id: V3-R1-AC-001
+  review_facets: []
+- id: V3-R1-GOV-002
+  state: PROPOSED
+  gate_slice: V3-R1-G00-S02
+  disposition: REUSE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-002
+  acceptance_case_id: V3-R1-AC-002
+  review_facets: []
+- id: V3-R1-GOV-003
+  state: PROPOSED
+  gate_slice: V3-R1-G00-S02
+  disposition: REUSE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-003
+  acceptance_case_id: V3-R1-AC-003
+  review_facets: []
+- id: V3-R1-GOV-004
+  state: PROPOSED
+  gate_slice: V3-R1-G00-S02
+  disposition: REUSE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-004
+  acceptance_case_id: V3-R1-AC-004
+  review_facets: []
+- id: V3-R1-GOV-005
+  state: PROPOSED
+  gate_slice: V3-R1-G00-S02
+  disposition: REUSE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-005
+  acceptance_case_id: V3-R1-AC-005
+  review_facets: []
+- id: V3-R1-GOV-006
+  state: PROPOSED
+  gate_slice: V3-R1-G00-S02
+  disposition: REUSE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-006
+  acceptance_case_id: V3-R1-AC-006
+  review_facets: []
+- id: V3-R1-REL-001
+  state: PROPOSED
+  gate_slice: V3-R1-G00-S04
+  disposition: REUSE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-007
+  acceptance_case_id: V3-R1-AC-007
+  review_facets: []
+- id: V3-R1-REL-002
+  state: PROPOSED
+  gate_slice: V3-R1-G00-S00
+  disposition: REUSE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-008
+  acceptance_case_id: V3-R1-AC-008
+  review_facets: []
+- id: V3-R1-REL-003
+  state: PROPOSED
+  gate_slice: V3-R1-G00-S04
+  disposition: REUSE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-009
+  acceptance_case_id: V3-R1-AC-009
+  review_facets: []
+- id: V3-R1-GOV-007
+  state: PROPOSED
+  gate_slice: V3-R1-G00-S02
+  disposition: REUSE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-010
+  acceptance_case_id: V3-R1-AC-010
+  review_facets: []
+- id: V3-R1-GOV-008
+  state: PROPOSED
+  gate_slice: V3-R1-G00-S02
+  disposition: REUSE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-011
+  acceptance_case_id: V3-R1-AC-011
+  review_facets: []
+- id: V3-R1-GOV-009
+  state: PROPOSED
+  gate_slice: V3-R1-G00-S02
+  disposition: REUSE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-012
+  acceptance_case_id: V3-R1-AC-012
+  review_facets: []
+- id: V3-R1-GOV-010
+  state: PROPOSED
+  gate_slice: V3-R1-G00-S02
+  disposition: REUSE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-013
+  acceptance_case_id: V3-R1-AC-013
+  review_facets: []
+- id: V3-R1-GOV-011
+  state: PROPOSED
+  gate_slice: V3-R1-G00-S02
+  disposition: REUSE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-014
+  acceptance_case_id: V3-R1-AC-014
+  review_facets: []
+- id: V3-R1-GOV-012
+  state: PROPOSED
+  gate_slice: V3-R1-G00-S02
+  disposition: REUSE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-015
+  acceptance_case_id: V3-R1-AC-015
+  review_facets: []
+- id: V3-R1-DATA-001
+  state: PROPOSED
+  gate_slice: V3-R1-G05-S01
+  disposition: REUSE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-016
+  acceptance_case_id: V3-R1-AC-016
+  review_facets: []
+- id: V3-R1-DATA-002
+  state: PROPOSED
+  gate_slice: V3-R1-G05-S01
+  disposition: REUSE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-017
+  acceptance_case_id: V3-R1-AC-017
+  review_facets: []
+- id: V3-R1-DATA-003
+  state: PROPOSED
+  gate_slice: V3-R1-G05-S01
+  disposition: REUSE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-018
+  acceptance_case_id: V3-R1-AC-018
+  review_facets: []
+- id: V3-R1-COM-001
+  state: PROPOSED
+  gate_slice: V3-R1-G02-S02
+  disposition: REUSE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-019
+  acceptance_case_id: V3-R1-AC-019
+  review_facets: []
+- id: V3-R1-COM-002
+  state: PROPOSED
+  gate_slice: V3-R1-G02-S02
+  disposition: REUSE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-020
+  acceptance_case_id: V3-R1-AC-020
+  review_facets: []
+- id: V3-R1-COM-003
+  state: PROPOSED
+  gate_slice: V3-R1-G02-S02
+  disposition: REUSE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-021
+  acceptance_case_id: V3-R1-AC-021
+  review_facets: []
+- id: V3-R1-REL-004
+  state: PROPOSED
+  gate_slice: V3-R1-G00-S04
+  disposition: REUSE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-022
+  acceptance_case_id: V3-R1-AC-022
+  review_facets: []
+- id: V3-R1-REL-005
+  state: PROPOSED
+  gate_slice: V3-R1-G00-S04
+  disposition: REUSE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-023
+  acceptance_case_id: V3-R1-AC-023
+  review_facets: []
+- id: V3-R1-REL-006
+  state: PROPOSED
+  gate_slice: V3-R1-G00-S04
+  disposition: REUSE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-024
+  acceptance_case_id: V3-R1-AC-024
+  review_facets: []
+- id: V3-R1-COM-004
+  state: PROPOSED
+  gate_slice: V3-R1-G02-S02
+  disposition: REUSE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-025
+  acceptance_case_id: V3-R1-AC-025
+  review_facets: []
+- id: V3-R1-COM-005
+  state: PROPOSED
+  gate_slice: V3-R1-G02-S02
+  disposition: REUSE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-026
+  acceptance_case_id: V3-R1-AC-026
+  review_facets: []
+- id: V3-R1-COM-006
+  state: PROPOSED
+  gate_slice: V3-R1-G02-S02
+  disposition: REUSE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-027
+  acceptance_case_id: V3-R1-AC-027
+  review_facets: []
+- id: V3-R1-ORG-001
+  state: PROPOSED
+  gate_slice: V3-R1-G01-S01
+  disposition: REUSE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-028
+  acceptance_case_id: V3-R1-AC-028
+  review_facets: []
+- id: V3-R1-ORG-002
+  state: PROPOSED
+  gate_slice: V3-R1-G01-S01
+  disposition: REUSE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-029
+  acceptance_case_id: V3-R1-AC-029
+  review_facets: []
+- id: V3-R1-ORG-003
+  state: PROPOSED
+  gate_slice: V3-R1-G01-S01
+  disposition: REUSE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-030
+  acceptance_case_id: V3-R1-AC-030
+  review_facets: []
+- id: V3-R1-CAT-001
+  state: PROPOSED
+  gate_slice: V3-R1-G02-S01
+  disposition: REUSE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-031
+  acceptance_case_id: V3-R1-AC-031
+  review_facets: []
+- id: V3-R1-CAT-002
+  state: PROPOSED
+  gate_slice: V3-R1-G02-S01
+  disposition: REUSE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-032
+  acceptance_case_id: V3-R1-AC-032
+  review_facets: []
+- id: V3-R1-CAT-003
+  state: PROPOSED
+  gate_slice: V3-R1-G02-S01
+  disposition: REUSE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-033
+  acceptance_case_id: V3-R1-AC-033
+  review_facets: []
+- id: V3-R1-COM-007
+  state: PROPOSED
+  gate_slice: V3-R1-G02-S02
+  disposition: REUSE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-034
+  acceptance_case_id: V3-R1-AC-034
+  review_facets: []
+- id: V3-R1-COM-008
+  state: PROPOSED
+  gate_slice: V3-R1-G02-S02
+  disposition: REUSE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-035
+  acceptance_case_id: V3-R1-AC-035
+  review_facets: []
+- id: V3-R1-COM-009
+  state: PROPOSED
+  gate_slice: V3-R1-G02-S02
+  disposition: REUSE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-036
+  acceptance_case_id: V3-R1-AC-036
+  review_facets: []
+- id: V3-R1-COM-010
+  state: PROPOSED
+  gate_slice: V3-R1-G02-S02
+  disposition: REUSE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-037
+  acceptance_case_id: V3-R1-AC-037
+  review_facets: []
+- id: V3-R1-COM-011
+  state: PROPOSED
+  gate_slice: V3-R1-G02-S02
+  disposition: REUSE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-038
+  acceptance_case_id: V3-R1-AC-038
+  review_facets: []
+- id: V3-R1-COM-012
+  state: PROPOSED
+  gate_slice: V3-R1-G02-S02
+  disposition: REUSE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-039
+  acceptance_case_id: V3-R1-AC-039
+  review_facets: []
+- id: V3-R1-ORD-001
+  state: PROPOSED
+  gate_slice: V3-R1-G03-S01
+  disposition: REUSE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-040
+  acceptance_case_id: V3-R1-AC-040
+  review_facets: []
+- id: V3-R1-ORD-002
+  state: PROPOSED
+  gate_slice: V3-R1-G03-S01
+  disposition: REUSE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-041
+  acceptance_case_id: V3-R1-AC-041
+  review_facets: []
+- id: V3-R1-ORD-003
+  state: PROPOSED
+  gate_slice: V3-R1-G03-S01
+  disposition: REUSE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-042
+  acceptance_case_id: V3-R1-AC-042
+  review_facets: []
+- id: V3-R1-PAY-001
+  state: PROPOSED
+  gate_slice: V3-R1-G03-S02
+  disposition: REUSE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-043
+  acceptance_case_id: V3-R1-AC-043
+  review_facets: []
+- id: V3-R1-PAY-002
+  state: PROPOSED
+  gate_slice: V3-R1-G03-S02
+  disposition: REUSE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-044
+  acceptance_case_id: V3-R1-AC-044
+  review_facets: []
+- id: V3-R1-PAY-003
+  state: PROPOSED
+  gate_slice: V3-R1-G03-S02
+  disposition: REUSE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-045
+  acceptance_case_id: V3-R1-AC-045
+  review_facets: []
+- id: V3-R1-FUL-001
+  state: PROPOSED
+  gate_slice: V3-R1-G04-S01
+  disposition: REUSE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-046
+  acceptance_case_id: V3-R1-AC-046
+  review_facets: []
+- id: V3-R1-FUL-002
+  state: PROPOSED
+  gate_slice: V3-R1-G04-S01
+  disposition: REUSE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-047
+  acceptance_case_id: V3-R1-AC-047
+  review_facets: []
+- id: V3-R1-FUL-003
+  state: PROPOSED
+  gate_slice: V3-R1-G04-S01
+  disposition: REUSE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-048
+  acceptance_case_id: V3-R1-AC-048
+  review_facets: []
+- id: V3-R1-FIN-001
+  state: PROPOSED
+  gate_slice: V3-R1-G03-S03
+  disposition: REUSE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-049
+  acceptance_case_id: V3-R1-AC-049
+  review_facets: []
+- id: V3-R1-FIN-002
+  state: PROPOSED
+  gate_slice: V3-R1-G03-S03
+  disposition: REUSE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-050
+  acceptance_case_id: V3-R1-AC-050
+  review_facets: []
+- id: V3-R1-FIN-003
+  state: PROPOSED
+  gate_slice: V3-R1-G03-S03
+  disposition: REFINE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-051
+  - V3-R1-SA-087
+  acceptance_case_id: V3-R1-AC-051
+  review_facets: &id001
+  - REFINEMENT
+  - MULTI_SOURCE
+- id: V3-R1-CUS-001
+  state: PROPOSED
+  gate_slice: V3-R1-G04-S02
+  disposition: REFINE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-052
+  - V3-R1-SA-088
+  acceptance_case_id: V3-R1-AC-052
+  review_facets: &id002
+  - REFINEMENT
+  - MULTI_SOURCE
+- id: V3-R1-CUS-002
+  state: PROPOSED
+  gate_slice: V3-R1-G04-S02
+  disposition: REFINE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-053
+  - V3-R1-SA-089
+  acceptance_case_id: V3-R1-AC-053
+  review_facets: &id003
+  - REFINEMENT
+  - MULTI_SOURCE
+- id: V3-R1-CUS-003
+  state: PROPOSED
+  gate_slice: V3-R1-G04-S02
+  disposition: REFINE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-054
+  - V3-R1-SA-090
+  acceptance_case_id: V3-R1-AC-054
+  review_facets: &id004
+  - REFINEMENT
+  - MULTI_SOURCE
+- id: V3-R1-MSG-001
+  state: PROPOSED
+  gate_slice: V3-R1-G04-S03
+  disposition: REFINE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-055
+  - V3-R1-SA-091
+  acceptance_case_id: V3-R1-AC-055
+  review_facets: &id005
+  - REFINEMENT
+  - MULTI_SOURCE
+- id: V3-R1-MSG-002
+  state: PROPOSED
+  gate_slice: V3-R1-G04-S03
+  disposition: REFINE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-056
+  - V3-R1-SA-092
+  acceptance_case_id: V3-R1-AC-056
+  review_facets: &id006
+  - REFINEMENT
+  - MULTI_SOURCE
+- id: V3-R1-MSG-003
+  state: PROPOSED
+  gate_slice: V3-R1-G04-S03
+  disposition: REFINE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-057
+  - V3-R1-SA-093
+  acceptance_case_id: V3-R1-AC-057
+  review_facets: &id007
+  - REFINEMENT
+  - MULTI_SOURCE
+- id: V3-R1-ANA-001
+  state: PROPOSED
+  gate_slice: V3-R1-G05-S01
+  disposition: REFINE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-058
+  - V3-R1-SA-094
+  acceptance_case_id: V3-R1-AC-058
+  review_facets: &id008
+  - REFINEMENT
+  - MULTI_SOURCE
+- id: V3-R1-ANA-002
+  state: PROPOSED
+  gate_slice: V3-R1-G05-S01
+  disposition: REFINE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-059
+  acceptance_case_id: V3-R1-AC-059
+  review_facets: &id009
+  - REFINEMENT
+- id: V3-R1-ANA-003
+  state: PROPOSED
+  gate_slice: V3-R1-G05-S01
+  disposition: REFINE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-060
+  acceptance_case_id: V3-R1-AC-060
+  review_facets: &id010
+  - REFINEMENT
+- id: V3-R1-OPS-001
+  state: PROPOSED
+  gate_slice: V3-R1-G00-S03
+  disposition: REFINE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-061
+  acceptance_case_id: V3-R1-AC-061
+  review_facets: &id011
+  - REFINEMENT
+- id: V3-R1-OPS-002
+  state: PROPOSED
+  gate_slice: V3-R1-G00-S03
+  disposition: REFINE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-062
+  acceptance_case_id: V3-R1-AC-062
+  review_facets: &id012
+  - REFINEMENT
+- id: V3-R1-OPS-003
+  state: PROPOSED
+  gate_slice: V3-R1-G00-S03
+  disposition: REFINE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-063
+  acceptance_case_id: V3-R1-AC-063
+  review_facets: &id013
+  - REFINEMENT
+- id: V3-R1-INT-001
+  state: PROPOSED
+  gate_slice: V3-R1-G00-S04
+  disposition: REFINE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-064
+  acceptance_case_id: V3-R1-AC-064
+  review_facets: &id014
+  - REFINEMENT
+- id: V3-R1-INT-002
+  state: PROPOSED
+  gate_slice: V3-R1-G00-S04
+  disposition: REFINE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-065
+  acceptance_case_id: V3-R1-AC-065
+  review_facets: &id015
+  - REFINEMENT
+- id: V3-R1-INT-003
+  state: PROPOSED
+  gate_slice: V3-R1-G00-S04
+  disposition: REFINE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-066
+  acceptance_case_id: V3-R1-AC-066
+  review_facets: &id016
+  - REFINEMENT
+- id: V3-R1-SEC-001
+  state: PROPOSED
+  gate_slice: V3-R1-G00-S03
+  disposition: REFINE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-067
+  acceptance_case_id: V3-R1-AC-067
+  review_facets: &id017
+  - REFINEMENT
+- id: V3-R1-SEC-002
+  state: PROPOSED
+  gate_slice: V3-R1-G00-S00
+  disposition: REFINE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-068
+  acceptance_case_id: V3-R1-AC-068
+  review_facets: &id018
+  - REFINEMENT
+- id: V3-R1-SEC-003
+  state: PROPOSED
+  gate_slice: V3-R1-G00-S03
+  disposition: REFINE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-069
+  acceptance_case_id: V3-R1-AC-069
+  review_facets: &id019
+  - REFINEMENT
+- id: V3-R1-OPS-004
+  state: PROPOSED
+  gate_slice: V3-R1-G00-S00
+  disposition: REFINE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-070
+  acceptance_case_id: V3-R1-AC-070
+  review_facets: &id020
+  - REFINEMENT
+- id: V3-R1-REL-009
+  state: PROPOSED
+  gate_slice: V3-R1-G00-S04
+  disposition: CONFLICT
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-071
+  acceptance_case_id: V3-R1-AC-071
+  review_facets: &id021
+  - CONFLICT
+- id: V3-R1-REL-010
+  state: PROPOSED
+  gate_slice: V3-R1-G00-S00
+  disposition: CONFLICT
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-072
+  acceptance_case_id: V3-R1-AC-072
+  review_facets: &id022
+  - CONFLICT
+- id: V3-R1-UX-001
+  state: PROPOSED
+  gate_slice: V3-R1-G05-S02
+  disposition: CONFLICT
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-073
+  acceptance_case_id: V3-R1-AC-073
+  review_facets: &id023
+  - CONFLICT
+- id: V3-R1-UX-002
+  state: PROPOSED
+  gate_slice: V3-R1-G05-S02
+  disposition: CONFLICT
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-074
+  acceptance_case_id: V3-R1-AC-074
+  review_facets: &id024
+  - CONFLICT
+- id: V3-R1-UX-003
+  state: PROPOSED
+  gate_slice: V3-R1-G05-S02
+  disposition: CONFLICT
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-075
+  acceptance_case_id: V3-R1-AC-075
+  review_facets: &id025
+  - CONFLICT
+- id: V3-R1-UX-004
+  state: PROPOSED
+  gate_slice: V3-R1-G05-S02
+  disposition: CONFLICT
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-076
+  acceptance_case_id: V3-R1-AC-076
+  review_facets: &id026
+  - CONFLICT
+- id: V3-R1-UX-005
+  state: PROPOSED
+  gate_slice: V3-R1-G05-S02
+  disposition: EXCLUDE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-077
+  acceptance_case_id: V3-R1-AC-077
+  review_facets: &id027
+  - EXCLUSION
+- id: V3-R1-UX-006
+  state: PROPOSED
+  gate_slice: V3-R1-G05-S02
+  disposition: EXCLUDE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-078
+  acceptance_case_id: V3-R1-AC-078
+  review_facets: &id028
+  - EXCLUSION
+- id: V3-R1-UX-007
+  state: PROPOSED
+  gate_slice: V3-R1-G05-S02
+  disposition: EXCLUDE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-079
+  acceptance_case_id: V3-R1-AC-079
+  review_facets: &id029
+  - EXCLUSION
+- id: V3-R1-UX-008
+  state: PROPOSED
+  gate_slice: V3-R1-G05-S02
+  disposition: EXCLUDE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-080
+  acceptance_case_id: V3-R1-AC-080
+  review_facets: &id030
+  - EXCLUSION
+- id: V3-R1-UX-009
+  state: PROPOSED
+  gate_slice: V3-R1-G05-S02
+  disposition: EXCLUDE
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-081
+  acceptance_case_id: V3-R1-AC-081
+  review_facets: &id031
+  - EXCLUSION
+- id: V3-R1-UX-010
+  state: PROPOSED
+  gate_slice: V3-R1-G05-S02
+  disposition: DECISION_REQUIRED
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-082
+  acceptance_case_id: V3-R1-AC-082
+  review_facets: &id032
+  - DECISION_DEPENDENT
+- id: V3-R1-UX-011
+  state: PROPOSED
+  gate_slice: V3-R1-G05-S02
+  disposition: DECISION_REQUIRED
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-083
+  acceptance_case_id: V3-R1-AC-083
+  review_facets: &id033
+  - DECISION_DEPENDENT
+- id: V3-R1-UX-012
+  state: PROPOSED
+  gate_slice: V3-R1-G05-S02
+  disposition: DECISION_REQUIRED
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-084
+  acceptance_case_id: V3-R1-AC-084
+  review_facets: &id034
+  - DECISION_DEPENDENT
+- id: V3-R1-UX-013
+  state: PROPOSED
+  gate_slice: V3-R1-G05-S02
+  disposition: DECISION_REQUIRED
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-085
+  acceptance_case_id: V3-R1-AC-085
+  review_facets: &id035
+  - DECISION_DEPENDENT
+- id: V3-R1-UX-014
+  state: PROPOSED
+  gate_slice: V3-R1-G05-S02
+  disposition: DECISION_REQUIRED
+  traceability_maturity: PLANNED
+  source_anchor_ids:
+  - V3-R1-SA-086
+  acceptance_case_id: V3-R1-AC-086
+  review_facets: &id036
+  - DECISION_DEPENDENT
+traces:
+- requirement_id: V3-R1-GOV-001
+  acceptance_case:
+    id: V3-R1-AC-001
+    requirement_id: V3-R1-GOV-001
+    test_id: V3-R1-TEST-001
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-001
+    acceptance_case_id: V3-R1-AC-001
+    evidence_id: V3-R1-EVIDENCE-001
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-001
+    test_id: V3-R1-TEST-001
+    status: PLANNED
+- requirement_id: V3-R1-GOV-002
+  acceptance_case:
+    id: V3-R1-AC-002
+    requirement_id: V3-R1-GOV-002
+    test_id: V3-R1-TEST-002
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-002
+    acceptance_case_id: V3-R1-AC-002
+    evidence_id: V3-R1-EVIDENCE-002
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-002
+    test_id: V3-R1-TEST-002
+    status: PLANNED
+- requirement_id: V3-R1-GOV-003
+  acceptance_case:
+    id: V3-R1-AC-003
+    requirement_id: V3-R1-GOV-003
+    test_id: V3-R1-TEST-003
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-003
+    acceptance_case_id: V3-R1-AC-003
+    evidence_id: V3-R1-EVIDENCE-003
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-003
+    test_id: V3-R1-TEST-003
+    status: PLANNED
+- requirement_id: V3-R1-GOV-004
+  acceptance_case:
+    id: V3-R1-AC-004
+    requirement_id: V3-R1-GOV-004
+    test_id: V3-R1-TEST-004
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-004
+    acceptance_case_id: V3-R1-AC-004
+    evidence_id: V3-R1-EVIDENCE-004
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-004
+    test_id: V3-R1-TEST-004
+    status: PLANNED
+- requirement_id: V3-R1-GOV-005
+  acceptance_case:
+    id: V3-R1-AC-005
+    requirement_id: V3-R1-GOV-005
+    test_id: V3-R1-TEST-005
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-005
+    acceptance_case_id: V3-R1-AC-005
+    evidence_id: V3-R1-EVIDENCE-005
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-005
+    test_id: V3-R1-TEST-005
+    status: PLANNED
+- requirement_id: V3-R1-GOV-006
+  acceptance_case:
+    id: V3-R1-AC-006
+    requirement_id: V3-R1-GOV-006
+    test_id: V3-R1-TEST-006
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-006
+    acceptance_case_id: V3-R1-AC-006
+    evidence_id: V3-R1-EVIDENCE-006
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-006
+    test_id: V3-R1-TEST-006
+    status: PLANNED
+- requirement_id: V3-R1-REL-001
+  acceptance_case:
+    id: V3-R1-AC-007
+    requirement_id: V3-R1-REL-001
+    test_id: V3-R1-TEST-007
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-007
+    acceptance_case_id: V3-R1-AC-007
+    evidence_id: V3-R1-EVIDENCE-007
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-007
+    test_id: V3-R1-TEST-007
+    status: PLANNED
+- requirement_id: V3-R1-REL-002
+  acceptance_case:
+    id: V3-R1-AC-008
+    requirement_id: V3-R1-REL-002
+    test_id: V3-R1-TEST-008
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-008
+    acceptance_case_id: V3-R1-AC-008
+    evidence_id: V3-R1-EVIDENCE-008
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-008
+    test_id: V3-R1-TEST-008
+    status: PLANNED
+- requirement_id: V3-R1-REL-003
+  acceptance_case:
+    id: V3-R1-AC-009
+    requirement_id: V3-R1-REL-003
+    test_id: V3-R1-TEST-009
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-009
+    acceptance_case_id: V3-R1-AC-009
+    evidence_id: V3-R1-EVIDENCE-009
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-009
+    test_id: V3-R1-TEST-009
+    status: PLANNED
+- requirement_id: V3-R1-GOV-007
+  acceptance_case:
+    id: V3-R1-AC-010
+    requirement_id: V3-R1-GOV-007
+    test_id: V3-R1-TEST-010
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-010
+    acceptance_case_id: V3-R1-AC-010
+    evidence_id: V3-R1-EVIDENCE-010
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-010
+    test_id: V3-R1-TEST-010
+    status: PLANNED
+- requirement_id: V3-R1-GOV-008
+  acceptance_case:
+    id: V3-R1-AC-011
+    requirement_id: V3-R1-GOV-008
+    test_id: V3-R1-TEST-011
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-011
+    acceptance_case_id: V3-R1-AC-011
+    evidence_id: V3-R1-EVIDENCE-011
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-011
+    test_id: V3-R1-TEST-011
+    status: PLANNED
+- requirement_id: V3-R1-GOV-009
+  acceptance_case:
+    id: V3-R1-AC-012
+    requirement_id: V3-R1-GOV-009
+    test_id: V3-R1-TEST-012
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-012
+    acceptance_case_id: V3-R1-AC-012
+    evidence_id: V3-R1-EVIDENCE-012
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-012
+    test_id: V3-R1-TEST-012
+    status: PLANNED
+- requirement_id: V3-R1-GOV-010
+  acceptance_case:
+    id: V3-R1-AC-013
+    requirement_id: V3-R1-GOV-010
+    test_id: V3-R1-TEST-013
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-013
+    acceptance_case_id: V3-R1-AC-013
+    evidence_id: V3-R1-EVIDENCE-013
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-013
+    test_id: V3-R1-TEST-013
+    status: PLANNED
+- requirement_id: V3-R1-GOV-011
+  acceptance_case:
+    id: V3-R1-AC-014
+    requirement_id: V3-R1-GOV-011
+    test_id: V3-R1-TEST-014
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-014
+    acceptance_case_id: V3-R1-AC-014
+    evidence_id: V3-R1-EVIDENCE-014
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-014
+    test_id: V3-R1-TEST-014
+    status: PLANNED
+- requirement_id: V3-R1-GOV-012
+  acceptance_case:
+    id: V3-R1-AC-015
+    requirement_id: V3-R1-GOV-012
+    test_id: V3-R1-TEST-015
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-015
+    acceptance_case_id: V3-R1-AC-015
+    evidence_id: V3-R1-EVIDENCE-015
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-015
+    test_id: V3-R1-TEST-015
+    status: PLANNED
+- requirement_id: V3-R1-DATA-001
+  acceptance_case:
+    id: V3-R1-AC-016
+    requirement_id: V3-R1-DATA-001
+    test_id: V3-R1-TEST-016
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-016
+    acceptance_case_id: V3-R1-AC-016
+    evidence_id: V3-R1-EVIDENCE-016
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-016
+    test_id: V3-R1-TEST-016
+    status: PLANNED
+- requirement_id: V3-R1-DATA-002
+  acceptance_case:
+    id: V3-R1-AC-017
+    requirement_id: V3-R1-DATA-002
+    test_id: V3-R1-TEST-017
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-017
+    acceptance_case_id: V3-R1-AC-017
+    evidence_id: V3-R1-EVIDENCE-017
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-017
+    test_id: V3-R1-TEST-017
+    status: PLANNED
+- requirement_id: V3-R1-DATA-003
+  acceptance_case:
+    id: V3-R1-AC-018
+    requirement_id: V3-R1-DATA-003
+    test_id: V3-R1-TEST-018
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-018
+    acceptance_case_id: V3-R1-AC-018
+    evidence_id: V3-R1-EVIDENCE-018
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-018
+    test_id: V3-R1-TEST-018
+    status: PLANNED
+- requirement_id: V3-R1-COM-001
+  acceptance_case:
+    id: V3-R1-AC-019
+    requirement_id: V3-R1-COM-001
+    test_id: V3-R1-TEST-019
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-019
+    acceptance_case_id: V3-R1-AC-019
+    evidence_id: V3-R1-EVIDENCE-019
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-019
+    test_id: V3-R1-TEST-019
+    status: PLANNED
+- requirement_id: V3-R1-COM-002
+  acceptance_case:
+    id: V3-R1-AC-020
+    requirement_id: V3-R1-COM-002
+    test_id: V3-R1-TEST-020
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-020
+    acceptance_case_id: V3-R1-AC-020
+    evidence_id: V3-R1-EVIDENCE-020
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-020
+    test_id: V3-R1-TEST-020
+    status: PLANNED
+- requirement_id: V3-R1-COM-003
+  acceptance_case:
+    id: V3-R1-AC-021
+    requirement_id: V3-R1-COM-003
+    test_id: V3-R1-TEST-021
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-021
+    acceptance_case_id: V3-R1-AC-021
+    evidence_id: V3-R1-EVIDENCE-021
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-021
+    test_id: V3-R1-TEST-021
+    status: PLANNED
+- requirement_id: V3-R1-REL-004
+  acceptance_case:
+    id: V3-R1-AC-022
+    requirement_id: V3-R1-REL-004
+    test_id: V3-R1-TEST-022
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-022
+    acceptance_case_id: V3-R1-AC-022
+    evidence_id: V3-R1-EVIDENCE-022
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-022
+    test_id: V3-R1-TEST-022
+    status: PLANNED
+- requirement_id: V3-R1-REL-005
+  acceptance_case:
+    id: V3-R1-AC-023
+    requirement_id: V3-R1-REL-005
+    test_id: V3-R1-TEST-023
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-023
+    acceptance_case_id: V3-R1-AC-023
+    evidence_id: V3-R1-EVIDENCE-023
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-023
+    test_id: V3-R1-TEST-023
+    status: PLANNED
+- requirement_id: V3-R1-REL-006
+  acceptance_case:
+    id: V3-R1-AC-024
+    requirement_id: V3-R1-REL-006
+    test_id: V3-R1-TEST-024
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-024
+    acceptance_case_id: V3-R1-AC-024
+    evidence_id: V3-R1-EVIDENCE-024
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-024
+    test_id: V3-R1-TEST-024
+    status: PLANNED
+- requirement_id: V3-R1-COM-004
+  acceptance_case:
+    id: V3-R1-AC-025
+    requirement_id: V3-R1-COM-004
+    test_id: V3-R1-TEST-025
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-025
+    acceptance_case_id: V3-R1-AC-025
+    evidence_id: V3-R1-EVIDENCE-025
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-025
+    test_id: V3-R1-TEST-025
+    status: PLANNED
+- requirement_id: V3-R1-COM-005
+  acceptance_case:
+    id: V3-R1-AC-026
+    requirement_id: V3-R1-COM-005
+    test_id: V3-R1-TEST-026
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-026
+    acceptance_case_id: V3-R1-AC-026
+    evidence_id: V3-R1-EVIDENCE-026
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-026
+    test_id: V3-R1-TEST-026
+    status: PLANNED
+- requirement_id: V3-R1-COM-006
+  acceptance_case:
+    id: V3-R1-AC-027
+    requirement_id: V3-R1-COM-006
+    test_id: V3-R1-TEST-027
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-027
+    acceptance_case_id: V3-R1-AC-027
+    evidence_id: V3-R1-EVIDENCE-027
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-027
+    test_id: V3-R1-TEST-027
+    status: PLANNED
+- requirement_id: V3-R1-ORG-001
+  acceptance_case:
+    id: V3-R1-AC-028
+    requirement_id: V3-R1-ORG-001
+    test_id: V3-R1-TEST-028
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-028
+    acceptance_case_id: V3-R1-AC-028
+    evidence_id: V3-R1-EVIDENCE-028
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-028
+    test_id: V3-R1-TEST-028
+    status: PLANNED
+- requirement_id: V3-R1-ORG-002
+  acceptance_case:
+    id: V3-R1-AC-029
+    requirement_id: V3-R1-ORG-002
+    test_id: V3-R1-TEST-029
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-029
+    acceptance_case_id: V3-R1-AC-029
+    evidence_id: V3-R1-EVIDENCE-029
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-029
+    test_id: V3-R1-TEST-029
+    status: PLANNED
+- requirement_id: V3-R1-ORG-003
+  acceptance_case:
+    id: V3-R1-AC-030
+    requirement_id: V3-R1-ORG-003
+    test_id: V3-R1-TEST-030
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-030
+    acceptance_case_id: V3-R1-AC-030
+    evidence_id: V3-R1-EVIDENCE-030
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-030
+    test_id: V3-R1-TEST-030
+    status: PLANNED
+- requirement_id: V3-R1-CAT-001
+  acceptance_case:
+    id: V3-R1-AC-031
+    requirement_id: V3-R1-CAT-001
+    test_id: V3-R1-TEST-031
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-031
+    acceptance_case_id: V3-R1-AC-031
+    evidence_id: V3-R1-EVIDENCE-031
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-031
+    test_id: V3-R1-TEST-031
+    status: PLANNED
+- requirement_id: V3-R1-CAT-002
+  acceptance_case:
+    id: V3-R1-AC-032
+    requirement_id: V3-R1-CAT-002
+    test_id: V3-R1-TEST-032
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-032
+    acceptance_case_id: V3-R1-AC-032
+    evidence_id: V3-R1-EVIDENCE-032
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-032
+    test_id: V3-R1-TEST-032
+    status: PLANNED
+- requirement_id: V3-R1-CAT-003
+  acceptance_case:
+    id: V3-R1-AC-033
+    requirement_id: V3-R1-CAT-003
+    test_id: V3-R1-TEST-033
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-033
+    acceptance_case_id: V3-R1-AC-033
+    evidence_id: V3-R1-EVIDENCE-033
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-033
+    test_id: V3-R1-TEST-033
+    status: PLANNED
+- requirement_id: V3-R1-COM-007
+  acceptance_case:
+    id: V3-R1-AC-034
+    requirement_id: V3-R1-COM-007
+    test_id: V3-R1-TEST-034
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-034
+    acceptance_case_id: V3-R1-AC-034
+    evidence_id: V3-R1-EVIDENCE-034
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-034
+    test_id: V3-R1-TEST-034
+    status: PLANNED
+- requirement_id: V3-R1-COM-008
+  acceptance_case:
+    id: V3-R1-AC-035
+    requirement_id: V3-R1-COM-008
+    test_id: V3-R1-TEST-035
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-035
+    acceptance_case_id: V3-R1-AC-035
+    evidence_id: V3-R1-EVIDENCE-035
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-035
+    test_id: V3-R1-TEST-035
+    status: PLANNED
+- requirement_id: V3-R1-COM-009
+  acceptance_case:
+    id: V3-R1-AC-036
+    requirement_id: V3-R1-COM-009
+    test_id: V3-R1-TEST-036
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-036
+    acceptance_case_id: V3-R1-AC-036
+    evidence_id: V3-R1-EVIDENCE-036
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-036
+    test_id: V3-R1-TEST-036
+    status: PLANNED
+- requirement_id: V3-R1-COM-010
+  acceptance_case:
+    id: V3-R1-AC-037
+    requirement_id: V3-R1-COM-010
+    test_id: V3-R1-TEST-037
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-037
+    acceptance_case_id: V3-R1-AC-037
+    evidence_id: V3-R1-EVIDENCE-037
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-037
+    test_id: V3-R1-TEST-037
+    status: PLANNED
+- requirement_id: V3-R1-COM-011
+  acceptance_case:
+    id: V3-R1-AC-038
+    requirement_id: V3-R1-COM-011
+    test_id: V3-R1-TEST-038
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-038
+    acceptance_case_id: V3-R1-AC-038
+    evidence_id: V3-R1-EVIDENCE-038
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-038
+    test_id: V3-R1-TEST-038
+    status: PLANNED
+- requirement_id: V3-R1-COM-012
+  acceptance_case:
+    id: V3-R1-AC-039
+    requirement_id: V3-R1-COM-012
+    test_id: V3-R1-TEST-039
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-039
+    acceptance_case_id: V3-R1-AC-039
+    evidence_id: V3-R1-EVIDENCE-039
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-039
+    test_id: V3-R1-TEST-039
+    status: PLANNED
+- requirement_id: V3-R1-ORD-001
+  acceptance_case:
+    id: V3-R1-AC-040
+    requirement_id: V3-R1-ORD-001
+    test_id: V3-R1-TEST-040
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-040
+    acceptance_case_id: V3-R1-AC-040
+    evidence_id: V3-R1-EVIDENCE-040
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-040
+    test_id: V3-R1-TEST-040
+    status: PLANNED
+- requirement_id: V3-R1-ORD-002
+  acceptance_case:
+    id: V3-R1-AC-041
+    requirement_id: V3-R1-ORD-002
+    test_id: V3-R1-TEST-041
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-041
+    acceptance_case_id: V3-R1-AC-041
+    evidence_id: V3-R1-EVIDENCE-041
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-041
+    test_id: V3-R1-TEST-041
+    status: PLANNED
+- requirement_id: V3-R1-ORD-003
+  acceptance_case:
+    id: V3-R1-AC-042
+    requirement_id: V3-R1-ORD-003
+    test_id: V3-R1-TEST-042
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-042
+    acceptance_case_id: V3-R1-AC-042
+    evidence_id: V3-R1-EVIDENCE-042
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-042
+    test_id: V3-R1-TEST-042
+    status: PLANNED
+- requirement_id: V3-R1-PAY-001
+  acceptance_case:
+    id: V3-R1-AC-043
+    requirement_id: V3-R1-PAY-001
+    test_id: V3-R1-TEST-043
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-043
+    acceptance_case_id: V3-R1-AC-043
+    evidence_id: V3-R1-EVIDENCE-043
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-043
+    test_id: V3-R1-TEST-043
+    status: PLANNED
+- requirement_id: V3-R1-PAY-002
+  acceptance_case:
+    id: V3-R1-AC-044
+    requirement_id: V3-R1-PAY-002
+    test_id: V3-R1-TEST-044
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-044
+    acceptance_case_id: V3-R1-AC-044
+    evidence_id: V3-R1-EVIDENCE-044
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-044
+    test_id: V3-R1-TEST-044
+    status: PLANNED
+- requirement_id: V3-R1-PAY-003
+  acceptance_case:
+    id: V3-R1-AC-045
+    requirement_id: V3-R1-PAY-003
+    test_id: V3-R1-TEST-045
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-045
+    acceptance_case_id: V3-R1-AC-045
+    evidence_id: V3-R1-EVIDENCE-045
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-045
+    test_id: V3-R1-TEST-045
+    status: PLANNED
+- requirement_id: V3-R1-FUL-001
+  acceptance_case:
+    id: V3-R1-AC-046
+    requirement_id: V3-R1-FUL-001
+    test_id: V3-R1-TEST-046
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-046
+    acceptance_case_id: V3-R1-AC-046
+    evidence_id: V3-R1-EVIDENCE-046
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-046
+    test_id: V3-R1-TEST-046
+    status: PLANNED
+- requirement_id: V3-R1-FUL-002
+  acceptance_case:
+    id: V3-R1-AC-047
+    requirement_id: V3-R1-FUL-002
+    test_id: V3-R1-TEST-047
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-047
+    acceptance_case_id: V3-R1-AC-047
+    evidence_id: V3-R1-EVIDENCE-047
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-047
+    test_id: V3-R1-TEST-047
+    status: PLANNED
+- requirement_id: V3-R1-FUL-003
+  acceptance_case:
+    id: V3-R1-AC-048
+    requirement_id: V3-R1-FUL-003
+    test_id: V3-R1-TEST-048
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-048
+    acceptance_case_id: V3-R1-AC-048
+    evidence_id: V3-R1-EVIDENCE-048
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-048
+    test_id: V3-R1-TEST-048
+    status: PLANNED
+- requirement_id: V3-R1-FIN-001
+  acceptance_case:
+    id: V3-R1-AC-049
+    requirement_id: V3-R1-FIN-001
+    test_id: V3-R1-TEST-049
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-049
+    acceptance_case_id: V3-R1-AC-049
+    evidence_id: V3-R1-EVIDENCE-049
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-049
+    test_id: V3-R1-TEST-049
+    status: PLANNED
+- requirement_id: V3-R1-FIN-002
+  acceptance_case:
+    id: V3-R1-AC-050
+    requirement_id: V3-R1-FIN-002
+    test_id: V3-R1-TEST-050
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-050
+    acceptance_case_id: V3-R1-AC-050
+    evidence_id: V3-R1-EVIDENCE-050
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-050
+    test_id: V3-R1-TEST-050
+    status: PLANNED
+- requirement_id: V3-R1-FIN-003
+  acceptance_case:
+    id: V3-R1-AC-051
+    requirement_id: V3-R1-FIN-003
+    test_id: V3-R1-TEST-051
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-051
+    acceptance_case_id: V3-R1-AC-051
+    evidence_id: V3-R1-EVIDENCE-051
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-051
+    test_id: V3-R1-TEST-051
+    status: PLANNED
+- requirement_id: V3-R1-CUS-001
+  acceptance_case:
+    id: V3-R1-AC-052
+    requirement_id: V3-R1-CUS-001
+    test_id: V3-R1-TEST-052
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-052
+    acceptance_case_id: V3-R1-AC-052
+    evidence_id: V3-R1-EVIDENCE-052
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-052
+    test_id: V3-R1-TEST-052
+    status: PLANNED
+- requirement_id: V3-R1-CUS-002
+  acceptance_case:
+    id: V3-R1-AC-053
+    requirement_id: V3-R1-CUS-002
+    test_id: V3-R1-TEST-053
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-053
+    acceptance_case_id: V3-R1-AC-053
+    evidence_id: V3-R1-EVIDENCE-053
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-053
+    test_id: V3-R1-TEST-053
+    status: PLANNED
+- requirement_id: V3-R1-CUS-003
+  acceptance_case:
+    id: V3-R1-AC-054
+    requirement_id: V3-R1-CUS-003
+    test_id: V3-R1-TEST-054
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-054
+    acceptance_case_id: V3-R1-AC-054
+    evidence_id: V3-R1-EVIDENCE-054
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-054
+    test_id: V3-R1-TEST-054
+    status: PLANNED
+- requirement_id: V3-R1-MSG-001
+  acceptance_case:
+    id: V3-R1-AC-055
+    requirement_id: V3-R1-MSG-001
+    test_id: V3-R1-TEST-055
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-055
+    acceptance_case_id: V3-R1-AC-055
+    evidence_id: V3-R1-EVIDENCE-055
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-055
+    test_id: V3-R1-TEST-055
+    status: PLANNED
+- requirement_id: V3-R1-MSG-002
+  acceptance_case:
+    id: V3-R1-AC-056
+    requirement_id: V3-R1-MSG-002
+    test_id: V3-R1-TEST-056
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-056
+    acceptance_case_id: V3-R1-AC-056
+    evidence_id: V3-R1-EVIDENCE-056
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-056
+    test_id: V3-R1-TEST-056
+    status: PLANNED
+- requirement_id: V3-R1-MSG-003
+  acceptance_case:
+    id: V3-R1-AC-057
+    requirement_id: V3-R1-MSG-003
+    test_id: V3-R1-TEST-057
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-057
+    acceptance_case_id: V3-R1-AC-057
+    evidence_id: V3-R1-EVIDENCE-057
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-057
+    test_id: V3-R1-TEST-057
+    status: PLANNED
+- requirement_id: V3-R1-ANA-001
+  acceptance_case:
+    id: V3-R1-AC-058
+    requirement_id: V3-R1-ANA-001
+    test_id: V3-R1-TEST-058
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-058
+    acceptance_case_id: V3-R1-AC-058
+    evidence_id: V3-R1-EVIDENCE-058
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-058
+    test_id: V3-R1-TEST-058
+    status: PLANNED
+- requirement_id: V3-R1-ANA-002
+  acceptance_case:
+    id: V3-R1-AC-059
+    requirement_id: V3-R1-ANA-002
+    test_id: V3-R1-TEST-059
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-059
+    acceptance_case_id: V3-R1-AC-059
+    evidence_id: V3-R1-EVIDENCE-059
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-059
+    test_id: V3-R1-TEST-059
+    status: PLANNED
+- requirement_id: V3-R1-ANA-003
+  acceptance_case:
+    id: V3-R1-AC-060
+    requirement_id: V3-R1-ANA-003
+    test_id: V3-R1-TEST-060
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-060
+    acceptance_case_id: V3-R1-AC-060
+    evidence_id: V3-R1-EVIDENCE-060
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-060
+    test_id: V3-R1-TEST-060
+    status: PLANNED
+- requirement_id: V3-R1-OPS-001
+  acceptance_case:
+    id: V3-R1-AC-061
+    requirement_id: V3-R1-OPS-001
+    test_id: V3-R1-TEST-061
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-061
+    acceptance_case_id: V3-R1-AC-061
+    evidence_id: V3-R1-EVIDENCE-061
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-061
+    test_id: V3-R1-TEST-061
+    status: PLANNED
+- requirement_id: V3-R1-OPS-002
+  acceptance_case:
+    id: V3-R1-AC-062
+    requirement_id: V3-R1-OPS-002
+    test_id: V3-R1-TEST-062
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-062
+    acceptance_case_id: V3-R1-AC-062
+    evidence_id: V3-R1-EVIDENCE-062
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-062
+    test_id: V3-R1-TEST-062
+    status: PLANNED
+- requirement_id: V3-R1-OPS-003
+  acceptance_case:
+    id: V3-R1-AC-063
+    requirement_id: V3-R1-OPS-003
+    test_id: V3-R1-TEST-063
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-063
+    acceptance_case_id: V3-R1-AC-063
+    evidence_id: V3-R1-EVIDENCE-063
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-063
+    test_id: V3-R1-TEST-063
+    status: PLANNED
+- requirement_id: V3-R1-INT-001
+  acceptance_case:
+    id: V3-R1-AC-064
+    requirement_id: V3-R1-INT-001
+    test_id: V3-R1-TEST-064
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-064
+    acceptance_case_id: V3-R1-AC-064
+    evidence_id: V3-R1-EVIDENCE-064
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-064
+    test_id: V3-R1-TEST-064
+    status: PLANNED
+- requirement_id: V3-R1-INT-002
+  acceptance_case:
+    id: V3-R1-AC-065
+    requirement_id: V3-R1-INT-002
+    test_id: V3-R1-TEST-065
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-065
+    acceptance_case_id: V3-R1-AC-065
+    evidence_id: V3-R1-EVIDENCE-065
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-065
+    test_id: V3-R1-TEST-065
+    status: PLANNED
+- requirement_id: V3-R1-INT-003
+  acceptance_case:
+    id: V3-R1-AC-066
+    requirement_id: V3-R1-INT-003
+    test_id: V3-R1-TEST-066
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-066
+    acceptance_case_id: V3-R1-AC-066
+    evidence_id: V3-R1-EVIDENCE-066
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-066
+    test_id: V3-R1-TEST-066
+    status: PLANNED
+- requirement_id: V3-R1-SEC-001
+  acceptance_case:
+    id: V3-R1-AC-067
+    requirement_id: V3-R1-SEC-001
+    test_id: V3-R1-TEST-067
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-067
+    acceptance_case_id: V3-R1-AC-067
+    evidence_id: V3-R1-EVIDENCE-067
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-067
+    test_id: V3-R1-TEST-067
+    status: PLANNED
+- requirement_id: V3-R1-SEC-002
+  acceptance_case:
+    id: V3-R1-AC-068
+    requirement_id: V3-R1-SEC-002
+    test_id: V3-R1-TEST-068
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-068
+    acceptance_case_id: V3-R1-AC-068
+    evidence_id: V3-R1-EVIDENCE-068
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-068
+    test_id: V3-R1-TEST-068
+    status: PLANNED
+- requirement_id: V3-R1-SEC-003
+  acceptance_case:
+    id: V3-R1-AC-069
+    requirement_id: V3-R1-SEC-003
+    test_id: V3-R1-TEST-069
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-069
+    acceptance_case_id: V3-R1-AC-069
+    evidence_id: V3-R1-EVIDENCE-069
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-069
+    test_id: V3-R1-TEST-069
+    status: PLANNED
+- requirement_id: V3-R1-OPS-004
+  acceptance_case:
+    id: V3-R1-AC-070
+    requirement_id: V3-R1-OPS-004
+    test_id: V3-R1-TEST-070
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-070
+    acceptance_case_id: V3-R1-AC-070
+    evidence_id: V3-R1-EVIDENCE-070
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-070
+    test_id: V3-R1-TEST-070
+    status: PLANNED
+- requirement_id: V3-R1-REL-009
+  acceptance_case:
+    id: V3-R1-AC-071
+    requirement_id: V3-R1-REL-009
+    test_id: V3-R1-TEST-071
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-071
+    acceptance_case_id: V3-R1-AC-071
+    evidence_id: V3-R1-EVIDENCE-071
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-071
+    test_id: V3-R1-TEST-071
+    status: PLANNED
+- requirement_id: V3-R1-REL-010
+  acceptance_case:
+    id: V3-R1-AC-072
+    requirement_id: V3-R1-REL-010
+    test_id: V3-R1-TEST-072
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-072
+    acceptance_case_id: V3-R1-AC-072
+    evidence_id: V3-R1-EVIDENCE-072
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-072
+    test_id: V3-R1-TEST-072
+    status: PLANNED
+- requirement_id: V3-R1-UX-001
+  acceptance_case:
+    id: V3-R1-AC-073
+    requirement_id: V3-R1-UX-001
+    test_id: V3-R1-TEST-073
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-073
+    acceptance_case_id: V3-R1-AC-073
+    evidence_id: V3-R1-EVIDENCE-073
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-073
+    test_id: V3-R1-TEST-073
+    status: PLANNED
+- requirement_id: V3-R1-UX-002
+  acceptance_case:
+    id: V3-R1-AC-074
+    requirement_id: V3-R1-UX-002
+    test_id: V3-R1-TEST-074
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-074
+    acceptance_case_id: V3-R1-AC-074
+    evidence_id: V3-R1-EVIDENCE-074
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-074
+    test_id: V3-R1-TEST-074
+    status: PLANNED
+- requirement_id: V3-R1-UX-003
+  acceptance_case:
+    id: V3-R1-AC-075
+    requirement_id: V3-R1-UX-003
+    test_id: V3-R1-TEST-075
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-075
+    acceptance_case_id: V3-R1-AC-075
+    evidence_id: V3-R1-EVIDENCE-075
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-075
+    test_id: V3-R1-TEST-075
+    status: PLANNED
+- requirement_id: V3-R1-UX-004
+  acceptance_case:
+    id: V3-R1-AC-076
+    requirement_id: V3-R1-UX-004
+    test_id: V3-R1-TEST-076
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-076
+    acceptance_case_id: V3-R1-AC-076
+    evidence_id: V3-R1-EVIDENCE-076
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-076
+    test_id: V3-R1-TEST-076
+    status: PLANNED
+- requirement_id: V3-R1-UX-005
+  acceptance_case:
+    id: V3-R1-AC-077
+    requirement_id: V3-R1-UX-005
+    test_id: V3-R1-TEST-077
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-077
+    acceptance_case_id: V3-R1-AC-077
+    evidence_id: V3-R1-EVIDENCE-077
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-077
+    test_id: V3-R1-TEST-077
+    status: PLANNED
+- requirement_id: V3-R1-UX-006
+  acceptance_case:
+    id: V3-R1-AC-078
+    requirement_id: V3-R1-UX-006
+    test_id: V3-R1-TEST-078
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-078
+    acceptance_case_id: V3-R1-AC-078
+    evidence_id: V3-R1-EVIDENCE-078
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-078
+    test_id: V3-R1-TEST-078
+    status: PLANNED
+- requirement_id: V3-R1-UX-007
+  acceptance_case:
+    id: V3-R1-AC-079
+    requirement_id: V3-R1-UX-007
+    test_id: V3-R1-TEST-079
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-079
+    acceptance_case_id: V3-R1-AC-079
+    evidence_id: V3-R1-EVIDENCE-079
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-079
+    test_id: V3-R1-TEST-079
+    status: PLANNED
+- requirement_id: V3-R1-UX-008
+  acceptance_case:
+    id: V3-R1-AC-080
+    requirement_id: V3-R1-UX-008
+    test_id: V3-R1-TEST-080
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-080
+    acceptance_case_id: V3-R1-AC-080
+    evidence_id: V3-R1-EVIDENCE-080
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-080
+    test_id: V3-R1-TEST-080
+    status: PLANNED
+- requirement_id: V3-R1-UX-009
+  acceptance_case:
+    id: V3-R1-AC-081
+    requirement_id: V3-R1-UX-009
+    test_id: V3-R1-TEST-081
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-081
+    acceptance_case_id: V3-R1-AC-081
+    evidence_id: V3-R1-EVIDENCE-081
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-081
+    test_id: V3-R1-TEST-081
+    status: PLANNED
+- requirement_id: V3-R1-UX-010
+  acceptance_case:
+    id: V3-R1-AC-082
+    requirement_id: V3-R1-UX-010
+    test_id: V3-R1-TEST-082
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-082
+    acceptance_case_id: V3-R1-AC-082
+    evidence_id: V3-R1-EVIDENCE-082
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-082
+    test_id: V3-R1-TEST-082
+    status: PLANNED
+- requirement_id: V3-R1-UX-011
+  acceptance_case:
+    id: V3-R1-AC-083
+    requirement_id: V3-R1-UX-011
+    test_id: V3-R1-TEST-083
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-083
+    acceptance_case_id: V3-R1-AC-083
+    evidence_id: V3-R1-EVIDENCE-083
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-083
+    test_id: V3-R1-TEST-083
+    status: PLANNED
+- requirement_id: V3-R1-UX-012
+  acceptance_case:
+    id: V3-R1-AC-084
+    requirement_id: V3-R1-UX-012
+    test_id: V3-R1-TEST-084
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-084
+    acceptance_case_id: V3-R1-AC-084
+    evidence_id: V3-R1-EVIDENCE-084
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-084
+    test_id: V3-R1-TEST-084
+    status: PLANNED
+- requirement_id: V3-R1-UX-013
+  acceptance_case:
+    id: V3-R1-AC-085
+    requirement_id: V3-R1-UX-013
+    test_id: V3-R1-TEST-085
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-085
+    acceptance_case_id: V3-R1-AC-085
+    evidence_id: V3-R1-EVIDENCE-085
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-085
+    test_id: V3-R1-TEST-085
+    status: PLANNED
+- requirement_id: V3-R1-UX-014
+  acceptance_case:
+    id: V3-R1-AC-086
+    requirement_id: V3-R1-UX-014
+    test_id: V3-R1-TEST-086
+    traceability_maturity: PLANNED
+  test:
+    id: V3-R1-TEST-086
+    acceptance_case_id: V3-R1-AC-086
+    evidence_id: V3-R1-EVIDENCE-086
+    status: PLANNED
+  evidence:
+    id: V3-R1-EVIDENCE-086
+    test_id: V3-R1-TEST-086
+    status: PLANNED
+human_review:
+  selection:
+  - id: V3-R1-HR-001
+    requirement_id: V3-R1-FIN-003
+    facets: *id001
+    status: PENDING
+  - id: V3-R1-HR-002
+    requirement_id: V3-R1-CUS-001
+    facets: *id002
+    status: PENDING
+  - id: V3-R1-HR-003
+    requirement_id: V3-R1-CUS-002
+    facets: *id003
+    status: PENDING
+  - id: V3-R1-HR-004
+    requirement_id: V3-R1-CUS-003
+    facets: *id004
+    status: PENDING
+  - id: V3-R1-HR-005
+    requirement_id: V3-R1-MSG-001
+    facets: *id005
+    status: PENDING
+  - id: V3-R1-HR-006
+    requirement_id: V3-R1-MSG-002
+    facets: *id006
+    status: PENDING
+  - id: V3-R1-HR-007
+    requirement_id: V3-R1-MSG-003
+    facets: *id007
+    status: PENDING
+  - id: V3-R1-HR-008
+    requirement_id: V3-R1-ANA-001
+    facets: *id008
+    status: PENDING
+  - id: V3-R1-HR-009
+    requirement_id: V3-R1-ANA-002
+    facets: *id009
+    status: PENDING
+  - id: V3-R1-HR-010
+    requirement_id: V3-R1-ANA-003
+    facets: *id010
+    status: PENDING
+  - id: V3-R1-HR-011
+    requirement_id: V3-R1-OPS-001
+    facets: *id011
+    status: PENDING
+  - id: V3-R1-HR-012
+    requirement_id: V3-R1-OPS-002
+    facets: *id012
+    status: PENDING
+  - id: V3-R1-HR-013
+    requirement_id: V3-R1-OPS-003
+    facets: *id013
+    status: PENDING
+  - id: V3-R1-HR-014
+    requirement_id: V3-R1-INT-001
+    facets: *id014
+    status: PENDING
+  - id: V3-R1-HR-015
+    requirement_id: V3-R1-INT-002
+    facets: *id015
+    status: PENDING
+  - id: V3-R1-HR-016
+    requirement_id: V3-R1-INT-003
+    facets: *id016
+    status: PENDING
+  - id: V3-R1-HR-017
+    requirement_id: V3-R1-SEC-001
+    facets: *id017
+    status: PENDING
+  - id: V3-R1-HR-018
+    requirement_id: V3-R1-SEC-002
+    facets: *id018
+    status: PENDING
+  - id: V3-R1-HR-019
+    requirement_id: V3-R1-SEC-003
+    facets: *id019
+    status: PENDING
+  - id: V3-R1-HR-020
+    requirement_id: V3-R1-OPS-004
+    facets: *id020
+    status: PENDING
+  - id: V3-R1-HR-021
+    requirement_id: V3-R1-REL-009
+    facets: *id021
+    status: PENDING
+  - id: V3-R1-HR-022
+    requirement_id: V3-R1-REL-010
+    facets: *id022
+    status: PENDING
+  - id: V3-R1-HR-023
+    requirement_id: V3-R1-UX-001
+    facets: *id023
+    status: PENDING
+  - id: V3-R1-HR-024
+    requirement_id: V3-R1-UX-002
+    facets: *id024
+    status: PENDING
+  - id: V3-R1-HR-025
+    requirement_id: V3-R1-UX-003
+    facets: *id025
+    status: PENDING
+  - id: V3-R1-HR-026
+    requirement_id: V3-R1-UX-004
+    facets: *id026
+    status: PENDING
+  - id: V3-R1-HR-027
+    requirement_id: V3-R1-UX-005
+    facets: *id027
+    status: PENDING
+  - id: V3-R1-HR-028
+    requirement_id: V3-R1-UX-006
+    facets: *id028
+    status: PENDING
+  - id: V3-R1-HR-029
+    requirement_id: V3-R1-UX-007
+    facets: *id029
+    status: PENDING
+  - id: V3-R1-HR-030
+    requirement_id: V3-R1-UX-008
+    facets: *id030
+    status: PENDING
+  - id: V3-R1-HR-031
+    requirement_id: V3-R1-UX-009
+    facets: *id031
+    status: PENDING
+  - id: V3-R1-HR-032
+    requirement_id: V3-R1-UX-010
+    facets: *id032
+    status: PENDING
+  - id: V3-R1-HR-033
+    requirement_id: V3-R1-UX-011
+    facets: *id033
+    status: PENDING
+  - id: V3-R1-HR-034
+    requirement_id: V3-R1-UX-012
+    facets: *id034
+    status: PENDING
+  - id: V3-R1-HR-035
+    requirement_id: V3-R1-UX-013
+    facets: *id035
+    status: PENDING
+  - id: V3-R1-HR-036
+    requirement_id: V3-R1-UX-014
+    facets: *id036
+    status: PENDING
+  approvals: []

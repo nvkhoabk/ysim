@@ -1,0 +1,174 @@
+name: V3 R1 G00 S01 Traceability
+
+"on":
+  pull_request:
+    branches:
+      - feature/v3-r1-g00-s00-secure-factory
+
+permissions:
+  contents: read
+
+concurrency:
+  group: v3-r1-s01-${{ github.event.pull_request.number }}-${{ github.sha }}
+  cancel-in-progress: false
+
+env:
+  PIP_DISABLE_PIP_VERSION_CHECK: "1"
+  PYTHONDONTWRITEBYTECODE: "1"
+  YSF_EXTERNAL_EFFECT_BUDGET: DENY_ALL
+  YSF_PROVIDERS: "OFF"
+  YSF_EMAIL_MODE: NON_RELAYING
+
+jobs:
+  source-policy:
+    name: S01 / source-policy
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout exact evaluated source
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Set up approved Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: 3.11.2
+          cache: ""
+      - name: Install hash-locked source-policy inputs
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          umask 027
+          wheelhouse="${RUNNER_TEMP}/s01-policy-wheelhouse"
+          python -m pip download --dest "$wheelhouse" --only-binary=:all: \
+            --require-hashes --requirement tools/ysf/requirements-s00-dev.lock
+          python -m pip install --no-index --find-links "$wheelhouse" \
+            --only-binary=:all: --require-hashes \
+            --requirement tools/ysf/requirements-s00-dev.lock
+          python -m pip check
+      - name: Enforce exact stacked source, corpus and no-effect policy
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          umask 027
+          export PYTHONPATH="$PWD/tools/ysf/src"
+          python - <<'PY'
+          import json
+          import os
+          import subprocess
+          from pathlib import Path
+
+          from ysf.secure_factory.sensitive import require_no_sensitive_values
+          from ysf.traceability.validator import validate_traceability_baseline
+
+          root = Path.cwd()
+          expected = {
+              ".github/workflows/v3-r1-s00-secure-factory.yml",
+              ".github/workflows/v3-r1-s01-traceability.yml",
+              "docs/v3/r1/g00/s01/traceability-baseline.yaml",
+              "tools/ysf/src/ysf/cli.py",
+              "tools/ysf/src/ysf/traceability/__init__.py",
+              "tools/ysf/src/ysf/traceability/service.py",
+              "tools/ysf/src/ysf/traceability/validator.py",
+              "tools/ysf/src/ysf/verification/service.py",
+              "tools/ysf/tests/unit/test_traceability_validator.py",
+              "tools/ysf/tests/unit/test_verification.py",
+          }
+          base = os.environ["GITHUB_BASE_REF"]
+          observed = set(
+              subprocess.run(
+                  ["git", "diff", "--name-only", f"origin/{base}...HEAD"],
+                  check=True,
+                  capture_output=True,
+                  text=True,
+              ).stdout.splitlines()
+          )
+          if observed != expected:
+              raise SystemExit(
+                  "FAIL_S01_PATH_SET "
+                  + json.dumps(
+                      {"missing": sorted(expected - observed), "extra": sorted(observed - expected)}
+                  )
+              )
+          if any(path.startswith(("docs/BRD/", "docs/UXF/")) for path in observed):
+              raise SystemExit("FAIL_S01_CORPUS_MUTATION")
+          controls = {
+              "external_effect_budget": os.environ["YSF_EXTERNAL_EFFECT_BUDGET"],
+              "providers": os.environ["YSF_PROVIDERS"],
+              "email_mode": os.environ["YSF_EMAIL_MODE"],
+          }
+          if controls != {
+              "external_effect_budget": "DENY_ALL",
+              "providers": "OFF",
+              "email_mode": "NON_RELAYING",
+          }:
+              raise SystemExit("FAIL_S01_EXTERNAL_EFFECT_POLICY")
+          summary = validate_traceability_baseline(root)
+          require_no_sensitive_values(root / path for path in sorted(observed))
+          print(json.dumps({"controls": controls, "summary": summary}, sort_keys=True))
+          PY
+
+  quality:
+    name: S01 / quality-traceability
+    needs: source-policy
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout exact evaluated source
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Set up approved Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: 3.11.2
+          cache: ""
+      - name: Install hash-locked quality inputs
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          umask 027
+          wheelhouse="${RUNNER_TEMP}/s01-quality-wheelhouse"
+          python -m pip download --dest "$wheelhouse" --only-binary=:all: \
+            --require-hashes --requirement tools/ysf/requirements-s00-dev.lock
+          python -m pip install --no-index --find-links "$wheelhouse" \
+            --only-binary=:all: --require-hashes \
+            --requirement tools/ysf/requirements-s00-dev.lock
+          python -m pip check
+      - name: Run complete quality, traceability and negative graph
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          umask 027
+          evidence_root="${RUNNER_TEMP}/s01-evidence"
+          mkdir -m 0750 "$evidence_root"
+          cd tools/ysf
+          PYTHONPATH=src python -m ysf.cli traceability --json \
+            >"$evidence_root/traceability.json"
+          python -m ruff check src/ysf tests
+          python -m mypy src/ysf
+          python -m pytest tests --cov=ysf.traceability --cov-branch \
+            --cov-report=term-missing --cov-fail-under=90 \
+            --junitxml="$evidence_root/junit.xml"
+          python -m bandit -q -r src/ysf --severity-level medium
+          python -m pip_audit --require-hashes --no-deps --strict \
+            --progress-spinner off --requirement requirements-s00-dev.lock
+          printf 'S01_EVIDENCE_ROOT=%s\n' "$evidence_root" >>"$GITHUB_ENV"
+      - name: Upload exact S01 evidence
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: v3-r1-s01-evidence-${{ github.event.pull_request.head.sha }}
+          path: ${{ env.S01_EVIDENCE_ROOT }}
+          if-no-files-found: error
+          compression-level: 0
+          overwrite: false
+          include-hidden-files: false
+          retention-days: 7
