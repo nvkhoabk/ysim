@@ -30,8 +30,6 @@ EXPECTED_BRANCH = "feature/v3-r1-g00-s02-governance-requirements-baseline"
 EXPECTED_BASE_BRANCH = "feature/v3-r1-g00-s01-traceability-fast-track"
 EXPECTED_BASE_COMMIT = "3afc37eb366769603f7a898c53432c444f50726a"
 EXPECTED_BASE_TREE = "217db32ea46636a40bc0aa611c653836e461b6de"
-EXPECTED_PACKAGE_CANONICAL_ROOT = Path("/root/projects/ysim-v2.1/ysim")
-EXPECTED_CANONICAL_ROOT = EXPECTED_PACKAGE_CANONICAL_ROOT
 EXPECTED_CANDIDATE_PATH = Path(
     "factory/releases/v3-r1-g00-s02-governance-requirements-baseline/"
     "YSim_V3_R1_G00_S02_Governance_Requirements_Baseline_"
@@ -276,7 +274,14 @@ def _expected_spec() -> dict[str, Any]:
         "environment_scope": "WSL:YSim-Debian12:DOCUMENTATION_SOURCE_ONLY",
         "execution_os": "Linux",
         "development_shell": "bash",
-        "canonical_repo_root": EXPECTED_PACKAGE_CANONICAL_ROOT.as_posix(),
+        "repository_root_contract": {
+            "absolute_path_required": True,
+            "symlink_components_allowed": False,
+            "git_top_level_must_equal_repository_root": True,
+            "identity_boundary": (
+                "OBSERVED_ORIGIN_BRANCH_AND_EXTERNAL_SNAPSHOT_TOPOLOGY"
+            ),
+        },
         "governing_standards": {
             "provenance_path": EXPECTED_PROVENANCE_PATH.as_posix(),
             "authoritative_source_sha256": EXPECTED_SOURCE_DOCX_SHA256,
@@ -701,7 +706,9 @@ def _render_docx_block(
 def _parse_verified_xml(data: bytes) -> ElementTree.Element:
     """Parse XML only after its containing DOCX passed the exact digest gate."""
 
-    parser = ElementTree.XMLPullParser(events=("start", "end"))
+    parser: ElementTree.XMLPullParser[ElementTree.Element] = (
+        ElementTree.XMLPullParser(events=("start", "end"))
+    )
     for offset in range(0, len(data), 65536):
         parser.feed(data[offset : offset + 65536])
     parser.close()
@@ -1304,10 +1311,10 @@ def _validate_snapshot_contract(contract: Mapping[str, Any]) -> None:
     if (
         topology.get("base_sha") != EXPECTED_BASE_COMMIT
         or topology.get("base_tree") != EXPECTED_BASE_TREE
-        or topology.get("base_to_head_commit_count") != 3
+        or topology.get("base_to_head_commit_count") != 4
         or topology.get("parent_to_head_commit_count") != 1
     ):
-        _fail(code, "Snapshot contract topology is not the exact three-commit stack.")
+        _fail(code, "Snapshot contract topology is not the exact four-commit stack.")
     changed_paths = _sequence(contract.get("changed_paths"), code, "changed_paths")
     if (
         any(not isinstance(path, str) for path in changed_paths)
@@ -1385,6 +1392,54 @@ def _observed_modes(root: Path, changed_paths: set[str]) -> dict[str, str]:
     return result
 
 
+def _validated_repository_root(repository_root: Path) -> Path:
+    """Require an absolute, component-safe directory without resolving aliases."""
+
+    if not isinstance(repository_root, Path) or not repository_root.is_absolute():
+        _fail(
+            "FAIL_REPOSITORY_ROOT",
+            "Repository root must be supplied as an absolute path.",
+        )
+    if ".." in repository_root.parts or not repository_root.parts[1:]:
+        _fail("FAIL_REPOSITORY_ROOT", "Repository root path is not canonical.")
+    normalized = Path(os.path.normpath(os.fspath(repository_root)))
+    if normalized != repository_root:
+        _fail("FAIL_REPOSITORY_ROOT", "Repository root path is not normalized.")
+    current = Path(repository_root.anchor)
+    try:
+        for component in repository_root.parts[1:]:
+            current /= component
+            observed = os.lstat(current)
+            if stat.S_ISLNK(observed.st_mode):
+                _fail(
+                    "FAIL_REPOSITORY_ROOT",
+                    "Repository root or one of its parents is a symbolic link.",
+                )
+            if not stat.S_ISDIR(observed.st_mode):
+                _fail("FAIL_REPOSITORY_ROOT", "Repository root is not a directory.")
+    except OSError:
+        _fail("FAIL_REPOSITORY_ROOT", "Repository root is missing or unsafe.")
+    try:
+        resolved = repository_root.resolve(strict=True)
+    except OSError:
+        _fail("FAIL_REPOSITORY_ROOT", "Repository root cannot be resolved safely.")
+    if resolved != repository_root:
+        _fail("FAIL_REPOSITORY_ROOT", "Repository root is an alias, not an exact path.")
+    return repository_root
+
+
+def _repository_identity_from_origin(origin: str) -> str:
+    ssh_user = "git"
+    accepted = {
+        f"{ssh_user}@github-ysim:nvkhoabk/ysim.git",
+        f"{ssh_user}@github.com:nvkhoabk/ysim.git",
+        "https://github.com/nvkhoabk/ysim.git",
+    }
+    if origin not in accepted:
+        _fail("FAIL_ENVIRONMENT_IDENTITY", "Git origin is not an accepted repository URL.")
+    return EXPECTED_REPOSITORY
+
+
 def _observe_repository(root: Path, contract: Mapping[str, Any]) -> set[str]:
     repository_contract = _mapping(
         contract.get("repository"), "FAIL_SNAPSHOT_CONTRACT", "repository"
@@ -1395,14 +1450,15 @@ def _observe_repository(root: Path, contract: Mapping[str, Any]) -> set[str]:
     if (
         platform.system() != "Linux"
         or os.environ.get("WSL_DISTRO_NAME") != "YSim-Debian12"
-        or root.resolve() != EXPECTED_CANONICAL_ROOT
     ):
         _fail("FAIL_ENVIRONMENT_IDENTITY", "Execution environment is not canonical WSL.")
     repository = _run_git(root, "rev-parse", "--show-toplevel")
     branch = _run_git(root, "branch", "--show-current")
     origin = _run_git(root, "remote", "get-url", "origin")
     if (
-        Path(repository).resolve() != EXPECTED_CANONICAL_ROOT
+        not Path(repository).is_absolute()
+        or Path(repository) != root
+        or _repository_identity_from_origin(origin) != repository_contract["identity"]
         or branch != repository_contract["branch"]
         or origin != repository_contract["origin"]
     ):
@@ -1489,7 +1545,7 @@ def validate_governance_baseline(
 ) -> dict[str, Any]:
     """Validate the repository against a mandatory exact external snapshot contract."""
 
-    root = repository_root.resolve()
+    root = _validated_repository_root(repository_root)
     _validate_snapshot_contract(snapshot_contract)
     changed_paths = _observe_repository(root, snapshot_contract)
     sensitive = require_no_sensitive_values(
@@ -1520,7 +1576,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     parser.add_argument("--json", action="store_true")
     args = parser.parse_args(argv)
     try:
-        root = args.repository_root.resolve()
+        root = args.repository_root
         snapshot_contract = load_snapshot_contract(args.snapshot_contract)
         summary = validate_governance_baseline(root, snapshot_contract)
         if args.json:

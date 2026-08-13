@@ -28,7 +28,11 @@ maturity_transition:
 environment_scope: WSL:YSim-Debian12:DOCUMENTATION_SOURCE_ONLY
 execution_os: Linux
 development_shell: bash
-canonical_repo_root: /root/projects/ysim-v2.1/ysim
+repository_root_contract:
+  absolute_path_required: true
+  symlink_components_allowed: false
+  git_top_level_must_equal_repository_root: true
+  identity_boundary: OBSERVED_ORIGIN_BRANCH_AND_EXTERNAL_SNAPSHOT_TOPOLOGY
 governing_standards:
   provenance_path: docs/v3/r1/g00/s02/standards/standards-provenance.yaml
   authoritative_source_sha256: 47da5d9dc46bb0e136936f865007d988fe537e3a0413676d8d00fe89496fba48

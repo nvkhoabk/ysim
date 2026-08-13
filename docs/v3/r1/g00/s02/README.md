@@ -39,7 +39,8 @@ candidate byte-for-byte and records acceptance separately. It is stacked on
 
 ## Validation
 
-From the canonical WSL repository root:
+From an exact, clean checkout at any safe absolute path, including a disposable
+checkout under `/tmp`:
 
 ```bash
 PYTHONPATH=tools/ysf/src python tools/ysf/src/ysf/governance_baseline/validator.py \
@@ -53,6 +54,13 @@ commit topology, 15 changed paths and Git modes, plus both authoritative input
 files and the complete standards extraction/redaction contract. The public API
 and CLI compare independently observed Git and filesystem evidence against the
 same exact contract and fail closed on any mismatch.
+
+Repository validity is established from the observed Git top-level, normalized
+repository identity/origin, branch, topology, clean state, changed paths and
+file modes—not from a fixed host path. The supplied root must itself be the Git
+top-level and every path component must be a real directory rather than a
+symbolic-link alias. Relocating an exact snapshot is supported; an arbitrary
+checkout or caller-authored observation is not.
 
 Authoritative verification always reads and hashes both the DOCX and its input
 manifest through no-follow regular-file descriptors. The ENV extract preserves
