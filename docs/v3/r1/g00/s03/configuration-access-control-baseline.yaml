@@ -76,17 +76,24 @@ requirements:
       - Universal MFA, social login, SAML, and production credential issuance are outside this requirement unless separately adopted.
 configuration_contract:
   scopes: [GLOBAL, ORGANIZATION, DEPARTMENT, STOREFRONT, USER]
+  tenant_identity: EXPLICIT_FOR_NON_GLOBAL
+  global_tenant_binding: TENANT_NEUTRAL
+  cross_tenant_inheritance: FORBIDDEN
   canonical_serialization: RFC8259_SORTED_KEYS_COMPACT_UTF8
-  digest: SHA-256
+  value_digest: SHA-256
+  record_and_resolution_digest: SHA-256_WITH_TENANT_BINDING
   immutable_identity_version: true
   sensitive_values_allowed: false
   inheritance: EXPLICIT_PARENT_DETERMINISTIC
   invalid_resolution: FAIL_CLOSED
 access_contract:
   authentication_methods: [SERVICE_ASSERTION, SYNTHETIC_OTP, SYNTHETIC_PASSWORD]
+  policy_rule_fields: [actor_class, role, method, assurance_requirement, session_rule, failure_behavior]
   decisions: [ALLOW, DENY]
-  audit: DETERMINISTIC_REDACTED
-  provider_delivery_precondition: AUTHENTICATION_AND_AUTHORIZATION_PASS
+  audit_fields: [actor_class, role, subject_digest, action, resource, data_scope, correlation_digest, authentication_method, assurance_result, session_rule_result, authorization_result]
+  audit: DETERMINISTIC_REDACTED_NO_RAW_SUBJECT_OR_CORRELATION
+  provider_delivery_precondition: RECOMPUTE_AUTHENTICATION_AND_AUTHORIZATION_FROM_IMMUTABLE_INPUTS
+  caller_supplied_decision_authority: FORBIDDEN
   provider_execution: DISABLED
 safety:
   synthetic_data_only: true

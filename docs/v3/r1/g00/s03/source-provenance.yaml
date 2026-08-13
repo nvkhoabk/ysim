@@ -41,6 +41,29 @@ s02_governance:
     git_blob_sha: f0fd92bd5d858c42d104b5f07fe4f0c268cdabd8
     sha256: 2cb417883bd2a5e9a1a10a95b5669777736979a7a91c62a988c3e0a8e59d45df
   authoritative_docx_sha256: 47da5d9dc46bb0e136936f865007d988fe537e3a0413676d8d00fe89496fba48
+s02_descendant_compatibility:
+  scope: DESCENDANT_S03_TEST_FIXTURE_ONLY
+  historical_predecessor:
+    commit: 6e71bdd58df2c5baddb36783abbc513867656df0
+    tree: b40ef828825e36641695adb23faedf7346102630
+    manifest:
+      path: docs/v3/r1/g00/s02/MANIFEST.sha256
+      git_blob_sha: b937e52ad8f23db2913968b0297cf0640306862b
+      sha256: 1107e55b8aef11722b202ab42c0fdff2b4c3a8cc0f8d720485b7c7f9856a2ae6
+    test_helper:
+      path: tools/ysf/tests/unit/test_governance_baseline_validator.py
+      git_blob_sha: 43fc00598ff02ef083b4ef90142a2d085b91565f
+      sha256: e85bb9e42e6dd0ac8901d06d5e930ead7a72acb0aa29b93824df560f2c745bf7
+  descendant_bytes:
+    manifest:
+      path: docs/v3/r1/g00/s02/MANIFEST.sha256
+      sha256: 3a6973d33e592cac9485632b946128ca64292760204070a5415865597c7b7265
+    test_helper:
+      path: tools/ysf/tests/unit/test_governance_baseline_validator.py
+      sha256: 06eded35479d05548e0090cd64e12d3ddf2300ea6c612eb91fdad09518738365
+  accepted_s02_branch_mutated: false
+  s02_human_decision_reinterpreted: false
+  runtime_or_governance_validator_changed: false
 normative_requirements:
   - id: V3-R1-OPS-001
     source_anchor_id: V3-R1-SA-061

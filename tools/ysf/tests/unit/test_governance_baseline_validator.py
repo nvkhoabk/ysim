@@ -185,7 +185,20 @@ def _snapshot_contract(root: Path) -> dict[str, Any]:
     }
 
 
-def _api_workspace(tmp_path: Path) -> tuple[Path, dict[str, Any]]:
+def _local_branch_exists(root: Path, branch: str) -> bool:
+    return (
+        subprocess.run(
+            ["git", "-C", str(root), "show-ref", "--verify", f"refs/heads/{branch}"],
+            check=False,
+            capture_output=True,
+        ).returncode
+        == 0
+    )
+
+
+def _api_workspace(
+    tmp_path: Path, *, prepare_existing_s02_branch: bool = False
+) -> tuple[Path, dict[str, Any]]:
     tmp_path.mkdir(parents=True, exist_ok=True)
     root = tmp_path / "observed-repository"
     _run(
@@ -198,7 +211,10 @@ def _api_workspace(tmp_path: Path) -> tuple[Path, dict[str, Any]]:
         str(root),
     )
     _run(root, "switch", "--quiet", "--detach", EXPECTED_BASE_COMMIT)
-    _run(root, "branch", "-D", validator.EXPECTED_BRANCH)
+    if prepare_existing_s02_branch and not _local_branch_exists(root, validator.EXPECTED_BRANCH):
+        _run(root, "branch", validator.EXPECTED_BRANCH, EXPECTED_BASE_COMMIT)
+    if _local_branch_exists(root, validator.EXPECTED_BRANCH):
+        _run(root, "branch", "-D", validator.EXPECTED_BRANCH)
     _run(root, "switch", "--quiet", "-c", validator.EXPECTED_BRANCH)
     _apply_commit_delta(root, EXPECTED_BASE_COMMIT, FIRST_S02_COMMIT, 1)
     assert _run(root, "rev-parse", "HEAD^{tree}").stdout.strip() == (
@@ -216,15 +232,11 @@ def _api_workspace(tmp_path: Path) -> tuple[Path, dict[str, Any]]:
     _run(root, "remote", "set-url", "origin", "git@github-ysim:nvkhoabk/ysim.git")
     _run(root, "add", "--", *sorted(EXPECTED_ALLOWLIST))
     staged = {
-        path
-        for path in _run(root, "diff", "--cached", "--name-only").stdout.splitlines()
-        if path
+        path for path in _run(root, "diff", "--cached", "--name-only").stdout.splitlines() if path
     }
     assert staged == R3_WRITE_SUBSET
     _commit_at(root, "test: materialize S02 corrective R3", 4)
-    assert int(
-        _run(root, "rev-list", "--count", f"{EXPECTED_BASE_COMMIT}..HEAD").stdout
-    ) == 4
+    assert int(_run(root, "rev-list", "--count", f"{EXPECTED_BASE_COMMIT}..HEAD").stdout) == 4
     assert int(_run(root, "rev-list", "--count", "HEAD^..HEAD").stdout) == 1
     assert not _run(root, "status", "--porcelain=v1", "--untracked-files=all").stdout
     assert {
@@ -237,22 +249,28 @@ def _api_workspace(tmp_path: Path) -> tuple[Path, dict[str, Any]]:
     return root, _snapshot_contract(root)
 
 
-def _refresh_contract_identity(
-    root: Path, contract: dict[str, Any]
-) -> dict[str, Any]:
+def test_api_workspace_supports_absent_and_existing_local_s02_branch(tmp_path: Path) -> None:
+    absent_root, absent_contract = _api_workspace(tmp_path / "absent")
+    present_root, present_contract = _api_workspace(
+        tmp_path / "present", prepare_existing_s02_branch=True
+    )
+    for root, contract in (
+        (absent_root, absent_contract),
+        (present_root, present_contract),
+    ):
+        assert _run(root, "branch", "--show-current").stdout.strip() == validator.EXPECTED_BRANCH
+        assert int(_run(root, "rev-list", "--count", f"{EXPECTED_BASE_COMMIT}..HEAD").stdout) == 4
+        assert set(contract["changed_paths"]) == EXPECTED_ALLOWLIST
+
+
+def _refresh_contract_identity(root: Path, contract: dict[str, Any]) -> dict[str, Any]:
     result = copy.deepcopy(contract)
-    result["topology"]["corrective_parent_sha"] = _run(
-        root, "rev-parse", "HEAD^"
-    ).stdout.strip()
+    result["topology"]["corrective_parent_sha"] = _run(root, "rev-parse", "HEAD^").stdout.strip()
     result["topology"]["corrective_parent_tree"] = _run(
         root, "rev-parse", "HEAD^^{tree}"
     ).stdout.strip()
-    result["topology"]["expected_head_sha"] = _run(
-        root, "rev-parse", "HEAD"
-    ).stdout.strip()
-    result["topology"]["expected_head_tree"] = _run(
-        root, "rev-parse", "HEAD^{tree}"
-    ).stdout.strip()
+    result["topology"]["expected_head_sha"] = _run(root, "rev-parse", "HEAD").stdout.strip()
+    result["topology"]["expected_head_tree"] = _run(root, "rev-parse", "HEAD^{tree}").stdout.strip()
     return result
 
 
@@ -613,9 +631,7 @@ def test_receipt_rejects_identity_scope_and_authorization_bypasses(
 def test_standards_provenance_rejects_wrong_binding(
     tmp_path: Path, path: tuple[str, ...], value: Any
 ) -> None:
-    _content_failure(
-        tmp_path, "FAIL_GOVERNING_STANDARDS", _set_yaml(PROVENANCE_PATH, path, value)
-    )
+    _content_failure(tmp_path, "FAIL_GOVERNING_STANDARDS", _set_yaml(PROVENANCE_PATH, path, value))
 
 
 @pytest.mark.parametrize("field", ["code", "version", "extract_path", "extract_sha256"])
@@ -634,9 +650,7 @@ def test_authoritative_inputs_reproduce_all_extracts(
     root, contract = _api_workspace(tmp_path)
     result = verify_authoritative_standards_source(root, contract)
     assert result["source_sha256"] == validator.EXPECTED_SOURCE_DOCX_SHA256
-    assert result["input_manifest_sha256"] == (
-        validator.EXPECTED_INPUT_MANIFEST_SHA256
-    )
+    assert result["input_manifest_sha256"] == (validator.EXPECTED_INPUT_MANIFEST_SHA256)
     assert result["standard_count"] == 3
     assert result["env_block_700_rule_preserved"] is True
     assert result["personal_mailbox_values_redacted"] is True
@@ -680,14 +694,10 @@ def test_authoritative_input_negative_matrix(
     elif kind == "parent_symlink":
         linked = tmp_path / "linked-evidence"
         linked.symlink_to(evidence, target_is_directory=True)
-        contract["authoritative_inputs"]["docx"]["path"] = (
-            linked / docx.name
-        ).as_posix()
+        contract["authoritative_inputs"]["docx"]["path"] = (linked / docx.name).as_posix()
     else:
         manifest.write_text("0" * 64 + f"  {docx.name}\n", encoding="utf-8")
-        contract["authoritative_inputs"]["manifest"]["size_bytes"] = (
-            manifest.stat().st_size
-        )
+        contract["authoritative_inputs"]["manifest"]["size_bytes"] = manifest.stat().st_size
         contract["authoritative_inputs"]["manifest"]["sha256"] = hashlib.sha256(
             manifest.read_bytes()
         ).hexdigest()
@@ -697,18 +707,19 @@ def test_authoritative_input_negative_matrix(
 
 
 @pytest.mark.parametrize("kind", ["altered", "omitted_rule", "wrong_marker", "mailbox"])
-def test_env_redacted_extract_negative_matrix(
-    tmp_path: Path, kind: str
-) -> None:
+def test_env_redacted_extract_negative_matrix(tmp_path: Path, kind: str) -> None:
     root, contract = _api_workspace(tmp_path)
     extract = root / validator.EXPECTED_STANDARD_BINDINGS[2]["extract_path"]
     text = extract.read_text(encoding="utf-8")
     if kind == "altered":
         text += "altered\n"
     elif kind == "omitted_rule":
-        text = "\n".join(
-            line for line in text.splitlines() if "Sandbox recipients are limited" not in line
-        ) + "\n"
+        text = (
+            "\n".join(
+                line for line in text.splitlines() if "Sandbox recipients are limited" not in line
+            )
+            + "\n"
+        )
     elif kind == "wrong_marker":
         text = text.replace("<REDACTED:PERSONAL_MAILBOX:01>", "<REDACTED:MAILBOX>")
     else:
@@ -739,9 +750,7 @@ def test_env_redacted_extract_negative_matrix(
         ),
     ],
 )
-def test_content_surfaces_fail_closed(
-    tmp_path: Path, code: str, mutation: Mutation
-) -> None:
+def test_content_surfaces_fail_closed(tmp_path: Path, code: str, mutation: Mutation) -> None:
     _content_failure(tmp_path, code, mutation)
 
 
@@ -843,8 +852,7 @@ def test_candidate_semantics_reject_duplicates_decisions_and_status() -> None:
     candidate = (_repository_root() / EXPECTED_CANDIDATE_PATH).read_text(encoding="utf-8")
     changes = (
         (
-            candidate
-            + "\n### V3-R1-GOV-001 — Duplicate\n\n**Decision:** `REFINE`\n",
+            candidate + "\n### V3-R1-GOV-001 — Duplicate\n\n**Decision:** `REFINE`\n",
             "FAIL_GOVERNANCE_REQUIREMENT_IDS",
         ),
         (
@@ -854,9 +862,7 @@ def test_candidate_semantics_reject_duplicates_decisions_and_status() -> None:
         (candidate.replace("REFERENCE_ONLY/FUTURE", "FUTURE"), "FAIL_DEFERRED_BOUNDARY"),
         (candidate + "\nAI Store Generator is IMPLEMENTED\n", "FAIL_FORBIDDEN_STATUS_CLAIM"),
         (
-            candidate.replace(
-                "## 6. Cross-requirement validation gates", "## 6. Removed"
-            ),
+            candidate.replace("## 6. Cross-requirement validation gates", "## 6. Removed"),
             "FAIL_MARKDOWN_STRUCTURE",
         ),
     )
@@ -866,9 +872,7 @@ def test_candidate_semantics_reject_duplicates_decisions_and_status() -> None:
         assert captured.value.code == code
 
 
-def _assert_api_failure(
-    root: Path, contract: dict[str, Any], expected_code: str
-) -> None:
+def _assert_api_failure(root: Path, contract: dict[str, Any], expected_code: str) -> None:
     reached_assertion = False
     try:
         validate_governance_baseline(root, contract)
@@ -894,15 +898,18 @@ def test_public_api_exact_snapshot_and_cli_parity(
     contract_path = tmp_path / "snapshot.yaml"
     _write_contract(contract_path, contract)
     assert load_snapshot_contract(contract_path) == contract
-    assert main(
-        [
-            "--repository-root",
-            str(root),
-            "--snapshot-contract",
-            str(contract_path),
-            "--json",
-        ]
-    ) == 0
+    assert (
+        main(
+            [
+                "--repository-root",
+                str(root),
+                "--snapshot-contract",
+                str(contract_path),
+                "--json",
+            ]
+        )
+        == 0
+    )
     cli = capsys.readouterr().out
     api = json.dumps(summary, sort_keys=True) + "\n"
     assert cli.encode("utf-8") == api.encode("utf-8")
@@ -918,12 +925,14 @@ def test_same_exact_snapshot_passes_at_two_disposable_absolute_roots(
     second_root, second_contract = _api_workspace(tmp_path / "second")
     assert first_root.is_absolute() and second_root.is_absolute()
     assert first_root != second_root
-    assert _run(first_root, "rev-parse", "HEAD").stdout == _run(
-        second_root, "rev-parse", "HEAD"
-    ).stdout
-    assert _run(first_root, "rev-parse", "HEAD^{tree}").stdout == _run(
-        second_root, "rev-parse", "HEAD^{tree}"
-    ).stdout
+    assert (
+        _run(first_root, "rev-parse", "HEAD").stdout
+        == _run(second_root, "rev-parse", "HEAD").stdout
+    )
+    assert (
+        _run(first_root, "rev-parse", "HEAD^{tree}").stdout
+        == _run(second_root, "rev-parse", "HEAD^{tree}").stdout
+    )
     assert first_contract == second_contract
     first = validate_governance_baseline(first_root, first_contract)
     second = validate_governance_baseline(second_root, second_contract)
@@ -992,9 +1001,7 @@ def test_public_api_rejects_symlink_subdirectory_relative_and_wrong_branch_roots
             "FAIL_SNAPSHOT_CONTRACT",
         ),
         (
-            lambda value: value["file_modes"].update(
-                {EXPECTED_README_PATH.as_posix(): "100755"}
-            ),
+            lambda value: value["file_modes"].update({EXPECTED_README_PATH.as_posix(): "100755"}),
             "FAIL_SNAPSHOT_CONTRACT",
         ),
         (
@@ -1004,33 +1011,23 @@ def test_public_api_rejects_symlink_subdirectory_relative_and_wrong_branch_roots
             "FAIL_SNAPSHOT_CONTRACT",
         ),
         (
-            lambda value: value["standards"]["bindings"][2].update(
-                {"redacted_source_blocks": []}
-            ),
+            lambda value: value["standards"]["bindings"][2].update({"redacted_source_blocks": []}),
             "FAIL_SNAPSHOT_CONTRACT",
         ),
         (
-            lambda value: value["standards"]["bindings"][0].update(
-                {"code": "WRONG"}
-            ),
+            lambda value: value["standards"]["bindings"][0].update({"code": "WRONG"}),
             "FAIL_SNAPSHOT_CONTRACT",
         ),
         (
-            lambda value: value["standards"]["bindings"][0].update(
-                {"version": "0.0.0"}
-            ),
+            lambda value: value["standards"]["bindings"][0].update({"version": "0.0.0"}),
             "FAIL_SNAPSHOT_CONTRACT",
         ),
         (
-            lambda value: value["standards"]["bindings"][0].update(
-                {"extract_path": "wrong.txt"}
-            ),
+            lambda value: value["standards"]["bindings"][0].update({"extract_path": "wrong.txt"}),
             "FAIL_SNAPSHOT_CONTRACT",
         ),
         (
-            lambda value: value["standards"]["bindings"][0].update(
-                {"extract_sha256": "0" * 64}
-            ),
+            lambda value: value["standards"]["bindings"][0].update({"extract_sha256": "0" * 64}),
             "FAIL_SNAPSHOT_CONTRACT",
         ),
     ],
@@ -1055,27 +1052,21 @@ def test_public_api_rejects_dirty_unexpected_sensitive_symlink_and_mode(
     root, contract = _api_workspace(tmp_path / "unexpected")
     (root / "unexpected.txt").write_text("unexpected", encoding="utf-8")
     _amend(root)
-    _assert_api_failure(
-        root, _refresh_contract_identity(root, contract), "FAIL_FILE_ALLOWLIST"
-    )
+    _assert_api_failure(root, _refresh_contract_identity(root, contract), "FAIL_FILE_ALLOWLIST")
 
     root, contract = _api_workspace(tmp_path / "sensitive")
     readme = root / EXPECTED_README_PATH
     prohibited = "pass" + "word=" + "abcdefghijklmnop"
     readme.write_text(readme.read_text(encoding="utf-8") + prohibited, encoding="utf-8")
     _amend(root)
-    _assert_api_failure(
-        root, _refresh_contract_identity(root, contract), "FAIL_SENSITIVE_VALUE"
-    )
+    _assert_api_failure(root, _refresh_contract_identity(root, contract), "FAIL_SENSITIVE_VALUE")
 
     root, contract = _api_workspace(tmp_path / "symlink")
     candidate = root / EXPECTED_CANDIDATE_PATH
     candidate.unlink()
     candidate.symlink_to(root / EXPECTED_WRAPPER_PATH)
     _amend(root)
-    _assert_api_failure(
-        root, _refresh_contract_identity(root, contract), "FAIL_PATH_SAFETY"
-    )
+    _assert_api_failure(root, _refresh_contract_identity(root, contract), "FAIL_PATH_SAFETY")
 
     root, contract = _api_workspace(tmp_path / "mode")
     (root / EXPECTED_README_PATH).chmod(0o755)
@@ -1089,9 +1080,7 @@ def test_public_api_rejects_replacement_extra_commit_wrong_origin_and_parent(
     root, contract = _api_workspace(tmp_path / "replacement")
     _run(root, "reset", "--soft", EXPECTED_BASE_COMMIT)
     _commit_at(root, "test: forbidden replacement commit", 5)
-    _assert_api_failure(
-        root, _refresh_contract_identity(root, contract), "FAIL_COMMIT_TOPOLOGY"
-    )
+    _assert_api_failure(root, _refresh_contract_identity(root, contract), "FAIL_COMMIT_TOPOLOGY")
 
     root, contract = _api_workspace(tmp_path / "extra")
     subprocess.run(
@@ -1112,9 +1101,7 @@ def test_public_api_rejects_replacement_extra_commit_wrong_origin_and_parent(
         check=True,
         capture_output=True,
     )
-    _assert_api_failure(
-        root, _refresh_contract_identity(root, contract), "FAIL_COMMIT_TOPOLOGY"
-    )
+    _assert_api_failure(root, _refresh_contract_identity(root, contract), "FAIL_COMMIT_TOPOLOGY")
 
     root, contract = _api_workspace(tmp_path / "origin")
     _run(root, "remote", "set-url", "origin", "https://github.com/other/repository.git")
@@ -1179,9 +1166,7 @@ def test_external_file_and_redaction_defenses(
     regular = tmp_path / "regular"
     regular.write_bytes(b"safe")
     with pytest.raises(FactoryFailure) as captured:
-        validator._read_external_regular_file(
-            regular, code="FAIL_EXTERNAL", expected_size=5
-        )
+        validator._read_external_regular_file(regular, code="FAIL_EXTERNAL", expected_size=5)
     assert captured.value.code == "FAIL_EXTERNAL"
 
     malformed = tmp_path / "malformed.yaml"
@@ -1216,9 +1201,7 @@ def test_render_and_candidate_immutability_defensive_branches(
         b"CANDIDATE_FOR_HUMAN_ACCEPTANCE", b"CANDIDATE_FOR_HUMAN_ACCEPTANCX", 1
     )
     candidate.write_bytes(data)
-    monkeypatch.setattr(
-        validator, "EXPECTED_CANDIDATE_SHA256", hashlib.sha256(data).hexdigest()
-    )
+    monkeypatch.setattr(validator, "EXPECTED_CANDIDATE_SHA256", hashlib.sha256(data).hexdigest())
     with pytest.raises(FactoryFailure) as captured:
         validator._validate_candidate(root)
     assert captured.value.code == "FAIL_CANDIDATE_IMMUTABILITY"
@@ -1232,20 +1215,21 @@ def test_cli_failure_and_plain_success_share_security_boundary(
     root, contract = _api_workspace(tmp_path)
     contract_path = tmp_path / "snapshot.yaml"
     _write_contract(contract_path, contract)
-    assert main(
-        ["--repository-root", str(root), "--snapshot-contract", str(contract_path)]
-    ) == 0
+    assert main(["--repository-root", str(root), "--snapshot-contract", str(contract_path)]) == 0
     assert capsys.readouterr().out == "V3-R1-G00-S02 validation PASS\n"
     monkeypatch.setenv("WSL_DISTRO_NAME", "WRONG")
-    assert main(
-        [
-            "--repository-root",
-            str(root),
-            "--snapshot-contract",
-            str(contract_path),
-            "--json",
-        ]
-    ) == 1
+    assert (
+        main(
+            [
+                "--repository-root",
+                str(root),
+                "--snapshot-contract",
+                str(contract_path),
+                "--json",
+            ]
+        )
+        == 1
+    )
     assert '"code": "FAIL_ENVIRONMENT_IDENTITY"' in capsys.readouterr().out
 
 
@@ -1253,5 +1237,5 @@ def test_integration_isolation_fixture_has_canonical_invariants() -> None:
     fixture = _repository_root() / "tools/ysf/tests/integration/conftest.py"
     text = fixture.read_text(encoding="utf-8")
     assert "_canonical_snapshot(canonical) == before" in text
-    assert "git\", \"clone" in text
-    assert "os.chdir(repository / \"tools/ysf\")" in text
+    assert 'git", "clone' in text
+    assert 'os.chdir(repository / "tools/ysf")' in text

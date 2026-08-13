@@ -20,6 +20,8 @@ from ysf.configuration_access_control.validator import (
     EXPECTED_BASE_SHA,
     EXPECTED_BRANCH,
     EXPECTED_CHANGED_PATHS,
+    EXPECTED_CORRECTIVE_PARENT_SHA,
+    EXPECTED_CORRECTIVE_PARENT_TREE,
     load_snapshot_contract,
     main,
     validate_configuration_access_control,
@@ -27,7 +29,7 @@ from ysf.configuration_access_control.validator import (
 from ysf.secure_factory.models import FactoryFailure
 
 Mutation = Callable[[Path], None]
-R3_PARENT = "6e71bdd58df2c5baddb36783abbc513867656df0"
+R1_WRITE_SUBSET = EXPECTED_CHANGED_PATHS
 AUTHORITATIVE_PATHS = {
     "docs/v3/r1/g00/s01/traceability-baseline.yaml",
     "docs/BRD/BRD-WS-14.md",
@@ -115,9 +117,11 @@ def snapshot_contract(root: Path) -> dict[str, Any]:
         "topology": {
             "base_sha": EXPECTED_BASE_SHA,
             "base_tree": validator.EXPECTED_BASE_TREE,
+            "corrective_parent_sha": EXPECTED_CORRECTIVE_PARENT_SHA,
+            "corrective_parent_tree": EXPECTED_CORRECTIVE_PARENT_TREE,
             "expected_head_sha": git(root, "rev-parse", "HEAD"),
             "expected_head_tree": git(root, "rev-parse", "HEAD^{tree}"),
-            "base_to_head_commit_count": 1,
+            "base_to_head_commit_count": 2,
             "parent_to_head_commit_count": 1,
         },
         "changed_paths": paths,
@@ -129,7 +133,7 @@ def api_workspace(tmp_path: Path) -> tuple[Path, dict[str, Any]]:
     tmp_path.mkdir(parents=True, exist_ok=True)
     root = tmp_path / "repository"
     git(tmp_path, "clone", "--quiet", "--no-hardlinks", str(repository_root()), str(root))
-    git(root, "switch", "--quiet", "--detach", R3_PARENT)
+    git(root, "switch", "--quiet", "--detach", EXPECTED_CORRECTIVE_PARENT_SHA)
     if (
         subprocess.run(
             ["git", "-C", str(root), "show-ref", "--verify", f"refs/heads/{EXPECTED_BRANCH}"],
@@ -142,13 +146,13 @@ def api_workspace(tmp_path: Path) -> tuple[Path, dict[str, Any]]:
     git(root, "switch", "--quiet", "-c", EXPECTED_BRANCH)
     copy_package(root)
     git(root, "add", "--", *sorted(EXPECTED_ALLOWLIST))
-    assert set(git(root, "diff", "--cached", "--name-only").splitlines()) == set(
-        EXPECTED_CHANGED_PATHS
-    )
-    commit(root, "test: materialize exact S03 source", 1)
+    assert set(git(root, "diff", "--cached", "--name-only").splitlines()) == set(R1_WRITE_SUBSET)
+    commit(root, "test: materialize exact S03 corrective source", 1)
     git(root, "remote", "set-url", "origin", "git@github-ysim:nvkhoabk/ysim.git")
-    assert git(root, "rev-parse", "HEAD^") == EXPECTED_BASE_SHA
-    assert int(git(root, "rev-list", "--count", f"{EXPECTED_BASE_SHA}..HEAD")) == 1
+    assert git(root, "rev-parse", "HEAD^") == EXPECTED_CORRECTIVE_PARENT_SHA
+    assert git(root, "rev-parse", "HEAD^^{tree}") == EXPECTED_CORRECTIVE_PARENT_TREE
+    assert int(git(root, "rev-list", "--count", f"{EXPECTED_BASE_SHA}..HEAD")) == 2
+    assert int(git(root, "rev-list", "--count", f"{EXPECTED_CORRECTIVE_PARENT_SHA}..HEAD")) == 1
     assert not git(root, "status", "--porcelain=v1", "--untracked-files=all")
     assert set(git(root, "diff", "--name-only", f"{EXPECTED_BASE_SHA}...HEAD").splitlines()) == set(
         EXPECTED_CHANGED_PATHS
@@ -320,7 +324,15 @@ def test_public_api_cli_parity_and_two_disposable_roots(
             "FAIL_HEAD_TREE",
         ),
         (
-            lambda value: value["topology"].update({"base_to_head_commit_count": 2}),
+            lambda value: value["topology"].update({"base_to_head_commit_count": 3}),
+            "FAIL_SNAPSHOT_CONTRACT",
+        ),
+        (
+            lambda value: value["topology"].update({"corrective_parent_sha": "0" * 40}),
+            "FAIL_SNAPSHOT_CONTRACT",
+        ),
+        (
+            lambda value: value["topology"].update({"corrective_parent_tree": "0" * 40}),
             "FAIL_SNAPSHOT_CONTRACT",
         ),
         (lambda value: value["changed_paths"].append("unexpected"), "FAIL_SNAPSHOT_CONTRACT"),

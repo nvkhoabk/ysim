@@ -12,7 +12,7 @@ stacked_base:
   tree: b40ef828825e36641695adb23faedf7346102630
 head_topology:
   binding: MANDATORY_EXTERNAL_SNAPSHOT_CONTRACT
-  base_to_head_commit_count: 1
+  base_to_head_commit_count: 2
   parent_to_head_commit_count: 1
 repository_root_contract:
   absolute_path_required: true
@@ -30,6 +30,8 @@ requirements:
   - V3-R1-SEC-001
   - V3-R1-SEC-003
 allowed_paths:
+  - docs/v3/r1/g00/s02/MANIFEST.sha256
+  - tools/ysf/tests/unit/test_governance_baseline_validator.py
   - docs/v3/r1/g00/s03/MANIFEST.sha256
   - docs/v3/r1/g00/s03/README.md
   - docs/v3/r1/g00/s03/configuration-access-control-baseline.yaml
@@ -42,6 +44,12 @@ allowed_paths:
   - tools/ysf/tests/unit/test_configuration_access_control_validator.py
   - tools/ysf/tests/integration/test_secure_factory_pipeline.py
 file_mode: "100644"
+s02_compatibility_exception:
+  scope: DESCENDANT_S03_TEST_FIXTURE_ONLY
+  accepted_s02_branch_mutated: false
+  accepted_s02_decision_reinterpreted: false
+  runtime_or_governance_validator_changed: false
+  integration_path_changed: false
 safety:
   synthetic_data_only: true
   providers: "OFF"

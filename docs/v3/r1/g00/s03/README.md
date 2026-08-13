@@ -23,11 +23,24 @@ system exists.
 - [Baseline](configuration-access-control-baseline.yaml) binds the exact
   requirement statements, Release 1 scopes, acceptance criteria, and
   out-of-scope boundaries from the immutable S01 traceability baseline.
-- [Source provenance](source-provenance.yaml) binds the predecessor, exact Git
-  blobs, source SHA-256 values, and S02 governance decision.
+- [Source provenance](source-provenance.yaml) binds the historical predecessor,
+  exact Git blobs, source SHA-256 values, S02 governance decision, and the
+  descendant-only S02 test-fixture compatibility bytes. The compatibility
+  exception does not alter the accepted S02 branch or decision.
 - [Package specification](package-spec.yaml) defines the exact source-only
   scope, effects boundary, and final Human Decision boundary.
-- [Manifest](MANIFEST.sha256) checksums every S03 path except itself.
+- [Manifest](MANIFEST.sha256) checksums all twelve non-self paths in the
+  thirteen-path corrective authorization, including the unchanged integration
+  test and the two descendant-only S02 compatibility paths.
+
+Configuration records bind tenant/partition identity into immutable record and
+effective-resolution digests. `GLOBAL` records are tenant-neutral; every other
+supported scope requires exactly one tenant, and cross-tenant inheritance is
+rejected. Authentication policy rules bind actor class, role, exact method,
+assurance requirement, session rule, and deterministic failure behavior.
+Pre-execution validation accepts only policy, request, grants, and synthetic
+verification inputs and recomputes authentication and authorization internally;
+caller-created decision objects are never authority.
 
 ## Validation
 

@@ -25,6 +25,8 @@ EXPECTED_BRANCH = "feature/v3-r1-g00-s03-configuration-access-control-source-bas
 EXPECTED_BASE_BRANCH = "feature/v3-r1-g00-s02-governance-requirements-baseline"
 EXPECTED_BASE_SHA = "6e71bdd58df2c5baddb36783abbc513867656df0"
 EXPECTED_BASE_TREE = "b40ef828825e36641695adb23faedf7346102630"
+EXPECTED_CORRECTIVE_PARENT_SHA = "548f50eba4dd9d51104e1e235fceff3c396c0b5e"
+EXPECTED_CORRECTIVE_PARENT_TREE = "898c55b009ccb171929a9fc45d8357410ccfee53"
 EXPECTED_REQUIREMENTS = (
     "V3-R1-OPS-001",
     "V3-R1-OPS-002",
@@ -33,6 +35,8 @@ EXPECTED_REQUIREMENTS = (
     "V3-R1-SEC-003",
 )
 EXPECTED_ALLOWLIST_ORDER = (
+    "docs/v3/r1/g00/s02/MANIFEST.sha256",
+    "tools/ysf/tests/unit/test_governance_baseline_validator.py",
     "docs/v3/r1/g00/s03/MANIFEST.sha256",
     "docs/v3/r1/g00/s03/README.md",
     "docs/v3/r1/g00/s03/configuration-access-control-baseline.yaml",
@@ -125,6 +129,17 @@ def _run_git(root: Path, *args: str) -> str:
     return completed.stdout.strip()
 
 
+def _git_file_sha256(root: Path, revision: str, path: str) -> str:
+    completed = subprocess.run(
+        ["git", "-C", str(root), "show", f"{revision}:{path}"],
+        check=False,
+        capture_output=True,
+    )
+    if completed.returncode != 0:
+        _fail("FAIL_SOURCE_PROVENANCE", "Historical source bytes cannot be read.")
+    return hashlib.sha256(completed.stdout).hexdigest()
+
+
 def _expected_spec() -> dict[str, Any]:
     return {
         "schema_version": 1,
@@ -142,7 +157,7 @@ def _expected_spec() -> dict[str, Any]:
         },
         "head_topology": {
             "binding": "MANDATORY_EXTERNAL_SNAPSHOT_CONTRACT",
-            "base_to_head_commit_count": 1,
+            "base_to_head_commit_count": 2,
             "parent_to_head_commit_count": 1,
         },
         "repository_root_contract": {
@@ -158,6 +173,13 @@ def _expected_spec() -> dict[str, Any]:
         "requirements": list(EXPECTED_REQUIREMENTS),
         "allowed_paths": list(EXPECTED_ALLOWLIST_ORDER),
         "file_mode": "100644",
+        "s02_compatibility_exception": {
+            "scope": "DESCENDANT_S03_TEST_FIXTURE_ONLY",
+            "accepted_s02_branch_mutated": False,
+            "accepted_s02_decision_reinterpreted": False,
+            "runtime_or_governance_validator_changed": False,
+            "integration_path_changed": False,
+        },
         "safety": {
             "synthetic_data_only": True,
             "providers": "OFF",
@@ -249,6 +271,36 @@ def _expected_provenance() -> dict[str, Any]:
                 "47da5d9dc46bb0e136936f865007d988fe537e3a0413676d8d00fe89496fba48"
             ),
         },
+        "s02_descendant_compatibility": {
+            "scope": "DESCENDANT_S03_TEST_FIXTURE_ONLY",
+            "historical_predecessor": {
+                "commit": EXPECTED_BASE_SHA,
+                "tree": EXPECTED_BASE_TREE,
+                "manifest": {
+                    "path": "docs/v3/r1/g00/s02/MANIFEST.sha256",
+                    "git_blob_sha": "b937e52ad8f23db2913968b0297cf0640306862b",
+                    "sha256": ("1107e55b8aef11722b202ab42c0fdff2b4c3a8cc0f8d720485b7c7f9856a2ae6"),
+                },
+                "test_helper": {
+                    "path": "tools/ysf/tests/unit/test_governance_baseline_validator.py",
+                    "git_blob_sha": "43fc00598ff02ef083b4ef90142a2d085b91565f",
+                    "sha256": ("e85bb9e42e6dd0ac8901d06d5e930ead7a72acb0aa29b93824df560f2c745bf7"),
+                },
+            },
+            "descendant_bytes": {
+                "manifest": {
+                    "path": "docs/v3/r1/g00/s02/MANIFEST.sha256",
+                    "sha256": ("3a6973d33e592cac9485632b946128ca64292760204070a5415865597c7b7265"),
+                },
+                "test_helper": {
+                    "path": "tools/ysf/tests/unit/test_governance_baseline_validator.py",
+                    "sha256": ("06eded35479d05548e0090cd64e12d3ddf2300ea6c612eb91fdad09518738365"),
+                },
+            },
+            "accepted_s02_branch_mutated": False,
+            "s02_human_decision_reinterpreted": False,
+            "runtime_or_governance_validator_changed": False,
+        },
         "normative_requirements": [
             {
                 "id": "V3-R1-OPS-001",
@@ -327,6 +379,30 @@ def _validate_provenance(root: Path) -> dict[str, Any]:
             or _sha256(root / path) != binding["sha256"]
         ):
             _fail("FAIL_SOURCE_PROVENANCE", "A source blob binding is incorrect.", path=path)
+    compatibility = cast(Mapping[str, Any], expected["s02_descendant_compatibility"])
+    historical = cast(Mapping[str, Any], compatibility["historical_predecessor"])
+    for key in ("manifest", "test_helper"):
+        binding = cast(Mapping[str, Any], historical[key])
+        path = str(binding["path"])
+        if (
+            _run_git(root, "rev-parse", f"{EXPECTED_BASE_SHA}:{path}") != binding["git_blob_sha"]
+            or _git_file_sha256(root, EXPECTED_BASE_SHA, path) != binding["sha256"]
+        ):
+            _fail(
+                "FAIL_SOURCE_PROVENANCE",
+                "Historical S02 compatibility binding is incorrect.",
+                path=path,
+            )
+    descendant = cast(Mapping[str, Any], compatibility["descendant_bytes"])
+    for key in ("manifest", "test_helper"):
+        binding = cast(Mapping[str, Any], descendant[key])
+        path = str(binding["path"])
+        if _sha256(root / path) != binding["sha256"]:
+            _fail(
+                "FAIL_SOURCE_PROVENANCE",
+                "Descendant-only S02 compatibility binding is incorrect.",
+                path=path,
+            )
     return {"result": "PASS", "sha256": _sha256(root / PROVENANCE_PATH)}
 
 
@@ -366,8 +442,12 @@ def _validate_baseline(root: Path) -> dict[str, Any]:
         "candidate_model": "NONE",
         "configuration_contract": {
             "scopes": ["GLOBAL", "ORGANIZATION", "DEPARTMENT", "STOREFRONT", "USER"],
+            "tenant_identity": "EXPLICIT_FOR_NON_GLOBAL",
+            "global_tenant_binding": "TENANT_NEUTRAL",
+            "cross_tenant_inheritance": "FORBIDDEN",
             "canonical_serialization": "RFC8259_SORTED_KEYS_COMPACT_UTF8",
-            "digest": "SHA-256",
+            "value_digest": "SHA-256",
+            "record_and_resolution_digest": "SHA-256_WITH_TENANT_BINDING",
             "immutable_identity_version": True,
             "sensitive_values_allowed": False,
             "inheritance": "EXPLICIT_PARENT_DETERMINISTIC",
@@ -379,9 +459,33 @@ def _validate_baseline(root: Path) -> dict[str, Any]:
                 "SYNTHETIC_OTP",
                 "SYNTHETIC_PASSWORD",
             ],
+            "policy_rule_fields": [
+                "actor_class",
+                "role",
+                "method",
+                "assurance_requirement",
+                "session_rule",
+                "failure_behavior",
+            ],
             "decisions": ["ALLOW", "DENY"],
-            "audit": "DETERMINISTIC_REDACTED",
-            "provider_delivery_precondition": "AUTHENTICATION_AND_AUTHORIZATION_PASS",
+            "audit_fields": [
+                "actor_class",
+                "role",
+                "subject_digest",
+                "action",
+                "resource",
+                "data_scope",
+                "correlation_digest",
+                "authentication_method",
+                "assurance_result",
+                "session_rule_result",
+                "authorization_result",
+            ],
+            "audit": "DETERMINISTIC_REDACTED_NO_RAW_SUBJECT_OR_CORRELATION",
+            "provider_delivery_precondition": (
+                "RECOMPUTE_AUTHENTICATION_AND_AUTHORIZATION_FROM_IMMUTABLE_INPUTS"
+            ),
+            "caller_supplied_decision_authority": "FORBIDDEN",
             "provider_execution": "DISABLED",
         },
         "safety": {
@@ -525,6 +629,8 @@ def _validate_snapshot_contract(contract: Mapping[str, Any]) -> None:
     topology_keys = {
         "base_sha",
         "base_tree",
+        "corrective_parent_sha",
+        "corrective_parent_tree",
         "expected_head_sha",
         "expected_head_tree",
         "base_to_head_commit_count",
@@ -538,10 +644,12 @@ def _validate_snapshot_contract(contract: Mapping[str, Any]) -> None:
     if (
         topology.get("base_sha") != EXPECTED_BASE_SHA
         or topology.get("base_tree") != EXPECTED_BASE_TREE
-        or topology.get("base_to_head_commit_count") != 1
+        or topology.get("corrective_parent_sha") != EXPECTED_CORRECTIVE_PARENT_SHA
+        or topology.get("corrective_parent_tree") != EXPECTED_CORRECTIVE_PARENT_TREE
+        or topology.get("base_to_head_commit_count") != 2
         or topology.get("parent_to_head_commit_count") != 1
     ):
-        _fail(code, "Snapshot topology differs from the exact one-commit stack.")
+        _fail(code, "Snapshot topology differs from the exact corrective stack.")
     changed = _sequence(contract.get("changed_paths"), code, "changed_paths")
     if list(changed) != sorted(EXPECTED_CHANGED_PATHS):
         _fail(code, "Snapshot changed paths differ from exact observed S03 delta.")
@@ -601,10 +709,15 @@ def _observe_repository(root: Path, contract: Mapping[str, Any]) -> set[str]:
         _fail("FAIL_HEAD_IDENTITY", "Observed head differs from snapshot.")
     if tree != topology["expected_head_tree"]:
         _fail("FAIL_HEAD_TREE", "Observed tree differs from snapshot.")
-    if _run_git(root, "rev-parse", "HEAD^") != EXPECTED_BASE_SHA:
+    if (
+        _run_git(root, "rev-parse", "HEAD^") != EXPECTED_CORRECTIVE_PARENT_SHA
+        or _run_git(root, "rev-parse", "HEAD^^{tree}") != EXPECTED_CORRECTIVE_PARENT_TREE
+    ):
         _fail("FAIL_BASE_IDENTITY", "Observed corrective parent is incorrect.")
-    if int(_run_git(root, "rev-list", "--count", f"{EXPECTED_BASE_SHA}..HEAD")) != 1:
+    if int(_run_git(root, "rev-list", "--count", f"{EXPECTED_BASE_SHA}..HEAD")) != 2:
         _fail("FAIL_COMMIT_TOPOLOGY", "Observed base-to-head count is incorrect.")
+    if int(_run_git(root, "rev-list", "--count", f"{EXPECTED_CORRECTIVE_PARENT_SHA}..HEAD")) != 1:
+        _fail("FAIL_COMMIT_TOPOLOGY", "Observed parent-to-head count is incorrect.")
     changed = _changed_paths(root)
     if changed != set(cast(Sequence[str], contract["changed_paths"])):
         _fail("FAIL_FILE_ALLOWLIST", "Observed paths differ from snapshot.")
