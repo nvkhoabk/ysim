@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import dataclasses
 from collections.abc import Mapping
+from typing import Any, cast
 
 import pytest
 
@@ -10,6 +11,7 @@ from ysf.configuration_access_control.controls import (
     AccessGrant,
     AccessRequest,
     AuthenticationPolicy,
+    AuthenticationRule,
     ConfigurationRecord,
     ConfigurationRegistry,
     ConfigurationSchema,
@@ -420,6 +422,113 @@ def request() -> AccessRequest:
         resource="CONFIG:PILOT",
         data_scope="ORG:SYNTHETIC",
         correlation_id="SYN-CORRELATION-001",
+    )
+
+
+def valid_authentication():
+    return authenticate(
+        policy(),
+        actor_class="ACTOR:OPERATOR",
+        role="ROLE:OPERATOR",
+        method="SYNTHETIC_PASSWORD",
+        synthetic_proof="SYNTHETIC_VERIFIED",
+        assurance_result="SYNTHETIC_ASSURANCE_LEVEL_2",
+        session_rule_result="SYNTHETIC_SINGLE_OPERATION",
+    )
+
+
+@pytest.mark.parametrize(
+    "case",
+    (
+        "non_string_rule_value",
+        "empty_policy",
+        "invalid_rule_value",
+        "unknown_actor",
+        "wrong_policy_digest",
+        "wrong_policy_type",
+        "wrong_request_type",
+        "wrong_grant_type",
+        "wrong_authentication_type",
+    ),
+)
+def test_defensive_authentication_and_authorization_branches_fail_closed(case: str) -> None:
+    valid_rule: dict[str, Any] = {
+        "role": "ROLE:OPERATOR",
+        "method": "SYNTHETIC_PASSWORD",
+        "assurance_requirement": "SYNTHETIC_ASSURANCE_LEVEL_2",
+        "session_rule": "SYNTHETIC_SINGLE_OPERATION",
+        "failure_behavior": "DENY_BEFORE_PROVIDER_OR_DELIVERY",
+    }
+    invalid_rule = AuthenticationRule(
+        actor_class="ACTOR:OPERATOR",
+        role="ROLE:OPERATOR",
+        method="UNLISTED",
+        assurance_requirement="SYNTHETIC_ASSURANCE_LEVEL_2",
+        session_rule="SYNTHETIC_SINGLE_OPERATION",
+        failure_behavior="DENY_BEFORE_PROVIDER_OR_DELIVERY",
+    )
+    calls = {
+        "non_string_rule_value": (
+            lambda: AuthenticationPolicy.create(
+                {"ACTOR:OPERATOR": {**valid_rule, "role": cast(Any, 7)}}
+            ),
+            "FAIL_AUTH_POLICY",
+        ),
+        "empty_policy": (
+            lambda: AuthenticationPolicy((), "0" * 64).rule_for("ACTOR:OPERATOR"),
+            "FAIL_AUTH_POLICY",
+        ),
+        "invalid_rule_value": (
+            lambda: AuthenticationPolicy((invalid_rule,), "0" * 64).rule_for("ACTOR:OPERATOR"),
+            "FAIL_AUTH_POLICY",
+        ),
+        "unknown_actor": (
+            lambda: policy().rule_for("ACTOR:UNKNOWN"),
+            "FAIL_AUTH_POLICY",
+        ),
+        "wrong_policy_digest": (
+            lambda: dataclasses.replace(policy(), policy_digest="0" * 64).rule_for(
+                "ACTOR:OPERATOR"
+            ),
+            "FAIL_AUTH_POLICY",
+        ),
+        "wrong_policy_type": (
+            lambda: authenticate(
+                cast(Any, object()),
+                actor_class="ACTOR:OPERATOR",
+                role="ROLE:OPERATOR",
+                method="SYNTHETIC_PASSWORD",
+                synthetic_proof="SYNTHETIC_VERIFIED",
+                assurance_result="SYNTHETIC_ASSURANCE_LEVEL_2",
+                session_rule_result="SYNTHETIC_SINGLE_OPERATION",
+            ),
+            "FAIL_AUTH_POLICY",
+        ),
+        "wrong_request_type": (
+            lambda: authorize(policy(), valid_authentication(), cast(Any, object()), ()),
+            "FAIL_AUTHORIZATION_INPUT",
+        ),
+        "wrong_grant_type": (
+            lambda: authorize(policy(), valid_authentication(), request(), (cast(Any, object()),)),
+            "FAIL_AUTHORIZATION_INPUT",
+        ),
+        "wrong_authentication_type": (
+            lambda: authorize(policy(), cast(Any, object()), request(), ()),
+            "FAIL_AUTHENTICATION_EVIDENCE",
+        ),
+    }
+    call, expected_code = calls[case]
+    failure_code(call, expected_code)
+
+
+def test_malformed_utc_timestamp_reaches_interval_boundary() -> None:
+    failure_code(
+        lambda: record(
+            "CONFIG:GLOBAL",
+            "GLOBAL",
+            effective_from="not-a-timestampZ",
+        ),
+        "FAIL_CONFIG_INTERVAL",
     )
 
 

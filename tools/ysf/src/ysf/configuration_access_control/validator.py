@@ -25,8 +25,8 @@ EXPECTED_BRANCH = "feature/v3-r1-g00-s03-configuration-access-control-source-bas
 EXPECTED_BASE_BRANCH = "feature/v3-r1-g00-s02-governance-requirements-baseline"
 EXPECTED_BASE_SHA = "6e71bdd58df2c5baddb36783abbc513867656df0"
 EXPECTED_BASE_TREE = "b40ef828825e36641695adb23faedf7346102630"
-EXPECTED_CORRECTIVE_PARENT_SHA = "548f50eba4dd9d51104e1e235fceff3c396c0b5e"
-EXPECTED_CORRECTIVE_PARENT_TREE = "898c55b009ccb171929a9fc45d8357410ccfee53"
+EXPECTED_CORRECTIVE_PARENT_SHA = "bc7893f5efa2c3b40da52396b9e946187c6a2044"
+EXPECTED_CORRECTIVE_PARENT_TREE = "ff9be9172780065e46dac4a336a9cf38b52af8f2"
 EXPECTED_REQUIREMENTS = (
     "V3-R1-OPS-001",
     "V3-R1-OPS-002",
@@ -47,6 +47,8 @@ EXPECTED_ALLOWLIST_ORDER = (
     "tools/ysf/src/ysf/configuration_access_control/validator.py",
     "tools/ysf/tests/unit/test_configuration_access_control.py",
     "tools/ysf/tests/unit/test_configuration_access_control_validator.py",
+    "tools/ysf/src/ysf/knowledge/service.py",
+    "tools/ysf/tests/integration/test_build_knowledge.py",
     "tools/ysf/tests/integration/test_secure_factory_pipeline.py",
 )
 EXPECTED_ALLOWLIST = frozenset(EXPECTED_ALLOWLIST_ORDER)
@@ -157,7 +159,9 @@ def _expected_spec() -> dict[str, Any]:
         },
         "head_topology": {
             "binding": "MANDATORY_EXTERNAL_SNAPSHOT_CONTRACT",
-            "base_to_head_commit_count": 2,
+            "corrective_parent_commit": EXPECTED_CORRECTIVE_PARENT_SHA,
+            "corrective_parent_tree": EXPECTED_CORRECTIVE_PARENT_TREE,
+            "base_to_head_commit_count": 3,
             "parent_to_head_commit_count": 1,
         },
         "repository_root_contract": {
@@ -173,6 +177,22 @@ def _expected_spec() -> dict[str, Any]:
         "requirements": list(EXPECTED_REQUIREMENTS),
         "allowed_paths": list(EXPECTED_ALLOWLIST_ORDER),
         "file_mode": "100644",
+        "validation_gates": {
+            "branch_coverage": {
+                "source_package": "ysf.configuration_access_control",
+                "metric": "COVERED_BRANCHES_DIVIDED_BY_VALID_BRANCHES",
+                "minimum_percent": 90.0,
+            },
+            "knowledge_input": {
+                "builder": "ysf.index.documents.build_document_index",
+                "source": "CURRENT_DOCS_IN_MEMORY",
+                "source_glob": "docs/**/*.md",
+                "tracked_factory_index_allowed": False,
+                "expected_document_count": 124,
+                "expected_capability_count": 8,
+                "expected_relationship_count": 48,
+            },
+        },
         "s02_compatibility_exception": {
             "scope": "DESCENDANT_S03_TEST_FIXTURE_ONLY",
             "accepted_s02_branch_mutated": False,
@@ -212,6 +232,31 @@ def _expected_provenance() -> dict[str, Any]:
         "schema_version": 1,
         "provenance_id": "V3-R1-G00-S03-SOURCE-PROVENANCE-001",
         "checkpoint": "V3-R1-G00-S03",
+        "corrective_r2": {
+            "parent_commit": EXPECTED_CORRECTIVE_PARENT_SHA,
+            "parent_tree": EXPECTED_CORRECTIVE_PARENT_TREE,
+            "knowledge_input": {
+                "builder": "ysf.index.documents.build_document_index",
+                "source": "CURRENT_DOCS_IN_MEMORY",
+                "source_glob": "docs/**/*.md",
+                "tracked_factory_index_allowed": False,
+                "expected_document_count": 124,
+                "expected_capability_count": 8,
+                "expected_relationship_count": 48,
+                "service": {
+                    "path": "tools/ysf/src/ysf/knowledge/service.py",
+                    "sha256": ("82a03c2dc9a7862b1cb5c79b01f0c6b3ef5feb107c5b5b20e12f34d36f7f334d"),
+                },
+                "regression_test": {
+                    "path": "tools/ysf/tests/integration/test_build_knowledge.py",
+                    "sha256": ("c5a9dc34e71b90e7b5a8fe5075626cf039fff37517d2e111b824cab285908905"),
+                },
+            },
+            "branch_coverage_gate": {
+                "metric": "COVERED_BRANCHES_DIVIDED_BY_VALID_BRANCHES",
+                "minimum_percent": 90.0,
+            },
+        },
         "predecessor": {
             "branch": EXPECTED_BASE_BRANCH,
             "commit": EXPECTED_BASE_SHA,
@@ -401,6 +446,17 @@ def _validate_provenance(root: Path) -> dict[str, Any]:
             _fail(
                 "FAIL_SOURCE_PROVENANCE",
                 "Descendant-only S02 compatibility binding is incorrect.",
+                path=path,
+            )
+    corrective = cast(Mapping[str, Any], expected["corrective_r2"])
+    knowledge_input = cast(Mapping[str, Any], corrective["knowledge_input"])
+    for key in ("service", "regression_test"):
+        binding = cast(Mapping[str, Any], knowledge_input[key])
+        path = str(binding["path"])
+        if _sha256(root / path) != binding["sha256"]:
+            _fail(
+                "FAIL_SOURCE_PROVENANCE",
+                "Corrective R2 knowledge binding is incorrect.",
                 path=path,
             )
     return {"result": "PASS", "sha256": _sha256(root / PROVENANCE_PATH)}
@@ -646,7 +702,7 @@ def _validate_snapshot_contract(contract: Mapping[str, Any]) -> None:
         or topology.get("base_tree") != EXPECTED_BASE_TREE
         or topology.get("corrective_parent_sha") != EXPECTED_CORRECTIVE_PARENT_SHA
         or topology.get("corrective_parent_tree") != EXPECTED_CORRECTIVE_PARENT_TREE
-        or topology.get("base_to_head_commit_count") != 2
+        or topology.get("base_to_head_commit_count") != 3
         or topology.get("parent_to_head_commit_count") != 1
     ):
         _fail(code, "Snapshot topology differs from the exact corrective stack.")
@@ -714,7 +770,7 @@ def _observe_repository(root: Path, contract: Mapping[str, Any]) -> set[str]:
         or _run_git(root, "rev-parse", "HEAD^^{tree}") != EXPECTED_CORRECTIVE_PARENT_TREE
     ):
         _fail("FAIL_BASE_IDENTITY", "Observed corrective parent is incorrect.")
-    if int(_run_git(root, "rev-list", "--count", f"{EXPECTED_BASE_SHA}..HEAD")) != 2:
+    if int(_run_git(root, "rev-list", "--count", f"{EXPECTED_BASE_SHA}..HEAD")) != 3:
         _fail("FAIL_COMMIT_TOPOLOGY", "Observed base-to-head count is incorrect.")
     if int(_run_git(root, "rev-list", "--count", f"{EXPECTED_CORRECTIVE_PARENT_SHA}..HEAD")) != 1:
         _fail("FAIL_COMMIT_TOPOLOGY", "Observed parent-to-head count is incorrect.")

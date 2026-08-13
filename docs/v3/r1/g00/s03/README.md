@@ -29,9 +29,10 @@ system exists.
   exception does not alter the accepted S02 branch or decision.
 - [Package specification](package-spec.yaml) defines the exact source-only
   scope, effects boundary, and final Human Decision boundary.
-- [Manifest](MANIFEST.sha256) checksums all twelve non-self paths in the
-  thirteen-path corrective authorization, including the unchanged integration
-  test and the two descendant-only S02 compatibility paths.
+- [Manifest](MANIFEST.sha256) checksums all fourteen non-self paths in the
+  fifteen-path authorization, including the unchanged secure-factory
+  integration test, the fresh knowledge builder/test bindings, and the two
+  descendant-only S02 compatibility paths.
 
 Configuration records bind tenant/partition identity into immutable record and
 effective-resolution digests. `GLOBAL` records are tenant-neutral; every other
@@ -41,6 +42,14 @@ assurance requirement, session rule, and deterministic failure behavior.
 Pre-execution validation accepts only policy, request, grants, and synthetic
 verification inputs and recomputes authentication and authorization internally;
 caller-created decision objects are never authority.
+
+Knowledge generation builds its document index in memory from the current
+`docs/**/*.md` bytes during every invocation. It never reads or falls back to
+the tracked `factory/index/documents.json`. On this snapshot, index and
+knowledge generation bind the same 124 documents; knowledge derives 8
+capabilities and 48 relationships. The coverage gate uses covered branches
+divided by valid branches and requires at least 90.00%; line or aggregate
+coverage is not substituted for that metric.
 
 ## Validation
 

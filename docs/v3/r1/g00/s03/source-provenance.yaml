@@ -1,6 +1,26 @@
 schema_version: 1
 provenance_id: V3-R1-G00-S03-SOURCE-PROVENANCE-001
 checkpoint: V3-R1-G00-S03
+corrective_r2:
+  parent_commit: bc7893f5efa2c3b40da52396b9e946187c6a2044
+  parent_tree: ff9be9172780065e46dac4a336a9cf38b52af8f2
+  knowledge_input:
+    builder: ysf.index.documents.build_document_index
+    source: CURRENT_DOCS_IN_MEMORY
+    source_glob: docs/**/*.md
+    tracked_factory_index_allowed: false
+    expected_document_count: 124
+    expected_capability_count: 8
+    expected_relationship_count: 48
+    service:
+      path: tools/ysf/src/ysf/knowledge/service.py
+      sha256: 82a03c2dc9a7862b1cb5c79b01f0c6b3ef5feb107c5b5b20e12f34d36f7f334d
+    regression_test:
+      path: tools/ysf/tests/integration/test_build_knowledge.py
+      sha256: c5a9dc34e71b90e7b5a8fe5075626cf039fff37517d2e111b824cab285908905
+  branch_coverage_gate:
+    metric: COVERED_BRANCHES_DIVIDED_BY_VALID_BRANCHES
+    minimum_percent: 90.0
 predecessor:
   branch: feature/v3-r1-g00-s02-governance-requirements-baseline
   commit: 6e71bdd58df2c5baddb36783abbc513867656df0

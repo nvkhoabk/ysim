@@ -29,7 +29,19 @@ from ysf.configuration_access_control.validator import (
 from ysf.secure_factory.models import FactoryFailure
 
 Mutation = Callable[[Path], None]
-R1_WRITE_SUBSET = EXPECTED_CHANGED_PATHS
+R2_WRITE_SUBSET = frozenset(
+    {
+        "docs/v3/r1/g00/s03/MANIFEST.sha256",
+        "docs/v3/r1/g00/s03/README.md",
+        "docs/v3/r1/g00/s03/package-spec.yaml",
+        "docs/v3/r1/g00/s03/source-provenance.yaml",
+        "tools/ysf/src/ysf/configuration_access_control/validator.py",
+        "tools/ysf/src/ysf/knowledge/service.py",
+        "tools/ysf/tests/integration/test_build_knowledge.py",
+        "tools/ysf/tests/unit/test_configuration_access_control.py",
+        "tools/ysf/tests/unit/test_configuration_access_control_validator.py",
+    }
+)
 AUTHORITATIVE_PATHS = {
     "docs/v3/r1/g00/s01/traceability-baseline.yaml",
     "docs/BRD/BRD-WS-14.md",
@@ -121,7 +133,7 @@ def snapshot_contract(root: Path) -> dict[str, Any]:
             "corrective_parent_tree": EXPECTED_CORRECTIVE_PARENT_TREE,
             "expected_head_sha": git(root, "rev-parse", "HEAD"),
             "expected_head_tree": git(root, "rev-parse", "HEAD^{tree}"),
-            "base_to_head_commit_count": 2,
+            "base_to_head_commit_count": 3,
             "parent_to_head_commit_count": 1,
         },
         "changed_paths": paths,
@@ -146,12 +158,12 @@ def api_workspace(tmp_path: Path) -> tuple[Path, dict[str, Any]]:
     git(root, "switch", "--quiet", "-c", EXPECTED_BRANCH)
     copy_package(root)
     git(root, "add", "--", *sorted(EXPECTED_ALLOWLIST))
-    assert set(git(root, "diff", "--cached", "--name-only").splitlines()) == set(R1_WRITE_SUBSET)
-    commit(root, "test: materialize exact S03 corrective source", 1)
+    assert set(git(root, "diff", "--cached", "--name-only").splitlines()) == set(R2_WRITE_SUBSET)
+    commit(root, "test: materialize exact S03 corrective R2 source", 1)
     git(root, "remote", "set-url", "origin", "git@github-ysim:nvkhoabk/ysim.git")
     assert git(root, "rev-parse", "HEAD^") == EXPECTED_CORRECTIVE_PARENT_SHA
     assert git(root, "rev-parse", "HEAD^^{tree}") == EXPECTED_CORRECTIVE_PARENT_TREE
-    assert int(git(root, "rev-list", "--count", f"{EXPECTED_BASE_SHA}..HEAD")) == 2
+    assert int(git(root, "rev-list", "--count", f"{EXPECTED_BASE_SHA}..HEAD")) == 3
     assert int(git(root, "rev-list", "--count", f"{EXPECTED_CORRECTIVE_PARENT_SHA}..HEAD")) == 1
     assert not git(root, "status", "--porcelain=v1", "--untracked-files=all")
     assert set(git(root, "diff", "--name-only", f"{EXPECTED_BASE_SHA}...HEAD").splitlines()) == set(
@@ -246,6 +258,31 @@ def test_requirement_statement_and_provenance_blob_mutations_fail_closed(tmp_pat
         validator._validate_provenance(root)
     assert captured.value.code == "FAIL_SOURCE_PROVENANCE"
 
+    root = content_workspace(tmp_path / "corrective-r2")
+    provenance = load(root / validator.PROVENANCE_PATH)
+    provenance["corrective_r2"]["knowledge_input"]["service"]["sha256"] = "0" * 64
+    write(root / validator.PROVENANCE_PATH, provenance)
+    with pytest.raises(FactoryFailure) as captured:
+        validator._validate_provenance(root)
+    assert captured.value.code == "FAIL_SOURCE_PROVENANCE"
+
+
+def test_package_fresh_knowledge_and_branch_metric_bindings_fail_closed(tmp_path: Path) -> None:
+    mutations = (
+        ("branch_coverage", "minimum_percent", 89.0),
+        ("branch_coverage", "metric", "AGGREGATE_COVERAGE"),
+        ("knowledge_input", "tracked_factory_index_allowed", True),
+        ("knowledge_input", "source", "TRACKED_FACTORY_INDEX"),
+    )
+    for gate, field, value in mutations:
+        root = content_workspace(tmp_path / f"{gate}-{field}")
+        package = load(root / validator.SPEC_PATH)
+        package["validation_gates"][gate][field] = value
+        write(root / validator.SPEC_PATH, package)
+        with pytest.raises(FactoryFailure) as captured:
+            validator._validate_package(root)
+        assert captured.value.code == "FAIL_PACKAGE_SPEC"
+
 
 @pytest.mark.parametrize("kind", ["malformed", "missing", "duplicate", "digest", "unsafe"])
 def test_manifest_negative_matrix(tmp_path: Path, kind: str) -> None:
@@ -324,7 +361,7 @@ def test_public_api_cli_parity_and_two_disposable_roots(
             "FAIL_HEAD_TREE",
         ),
         (
-            lambda value: value["topology"].update({"base_to_head_commit_count": 3}),
+            lambda value: value["topology"].update({"base_to_head_commit_count": 2}),
             "FAIL_SNAPSHOT_CONTRACT",
         ),
         (
@@ -489,4 +526,10 @@ def test_defensive_helpers_fail_closed(tmp_path: Path) -> None:
     with pytest.raises(FactoryFailure) as captured:
         validator._load_yaml(tmp_path / "missing.yaml", "FAIL_YAML")
     assert captured.value.code == "FAIL_YAML"
+    with pytest.raises(FactoryFailure) as captured:
+        validator._run_git(tmp_path, "rev-parse", "HEAD")
+    assert captured.value.code == "FAIL_REPOSITORY_IDENTITY"
+    with pytest.raises(FactoryFailure) as captured:
+        validator._git_file_sha256(tmp_path, "missing", "path")
+    assert captured.value.code == "FAIL_SOURCE_PROVENANCE"
     assert hashlib.sha256(b"safe").hexdigest() != "0" * 64
