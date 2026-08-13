@@ -1,0 +1,74 @@
+schema_version: 1
+binding_id: V3-R1-G00-S02-GOVERNING-STANDARDS-001
+checkpoint: V3-R1-G00-S02
+source:
+  identity: YSim_R1_Documentation_Baseline_2026-08-02_v1.2.1
+  title: YSim Release 1 — Documentation Baseline v1.2.1
+  version: 1.2.1
+  format: DOCX
+  filename: YSim_R1_Documentation_Baseline_2026-08-02_v1.2.1.docx
+  physical_input_path: /root/projects/ysim-v3-r1/evidence/V3-R1-G00-S02-READONLY-PREFLIGHT-20260811T100321Z/V3-R1-G00-S02-CORRECTIVE-INPUTS-R1/YSim_R1_Documentation_Baseline_2026-08-02_v1.2.1.docx
+  sha256: 47da5d9dc46bb0e136936f865007d988fe537e3a0413676d8d00fe89496fba48
+  package_manifest_path: /root/projects/ysim-v3-r1/evidence/V3-R1-G00-S02-READONLY-PREFLIGHT-20260811T100321Z/V3-R1-G00-S02-CORRECTIVE-INPUTS-R1/MANIFEST.sha256
+  package_manifest_sha256: 4e55ba9a4dbeb9329d52aa91161a7f0f1f7e73fcc4b31b17896c376a32539249
+  authority: AUTHORITATIVE_DOCUMENTATION_BASELINE
+extraction:
+  method_id: DOCX_WORDPROCESSINGML_HEADING1_MARKDOWN_REDACTED_V2
+  source_part: word/document.xml
+  boundary_rule: Exact listed inclusive source body blocks in source order; PCS and ENG span their complete Heading1 sections, while ENV includes blocks 582 through 760 and applies the declared deterministic redaction only to three personal-mailbox values in block 700.
+  paragraph_rendering:
+    Heading1: '# '
+    Heading2: '## '
+    Heading3: '### '
+    ListBullet: '- '
+    ListNumber: '1. '
+    default: ''
+  table_rendering: GitHub Markdown table with source row order and pipe escaping.
+  block_separator: TWO_LF
+  final_terminator: ONE_LF
+  encoding: UTF-8
+  redaction:
+    source_body_block: 700
+    match_rule: RFC_STYLE_EMAIL_ADDRESS_IN_SOURCE_ORDER
+    exact_match_count: 3
+    replacement_template: '<REDACTED:PERSONAL_MAILBOX:{ordinal_2_digit}>'
+    raw_rendered_block_sha256: de819600ca71da5f694f64f6f179ed8f363fb68af231a4e960c9862e2321768a
+    redacted_rendered_block_sha256: 09ba3cc99f13221dab7ed157be5114720f1d93a82b21412b4c5c4ca267ececcf
+    preserved_normative_rule: Sandbox recipients are limited to the three redacted personal mailboxes, or an approved sink that cannot relay externally.
+    raw_values_retained: false
+standards:
+  - code: YSIM-PCS-001
+    version: 1.27.1
+    status: APPROVED FOR RELEASE 1
+    embedded_document: 04_RELEASE_STANDARD_1.27.1.md
+    heading: YSim Package and Release Standard
+    source_body_blocks_inclusive: [352, 521]
+    extract_path: docs/v3/r1/g00/s02/standards/04_RELEASE_STANDARD_1.27.1.txt
+    extract_size_bytes: 13428
+    extract_sha256: 92823bbef5560bf1a958285555814aa3e2afe20e191ddd3e82b6d85c0a940a0b
+  - code: YSIM-ENG-001
+    version: 1.0.1
+    status: APPROVED FOR RELEASE 1 PLATFORM WORK
+    embedded_document: 05_ENGINEERING_AND_CODE_GENERATION_STANDARD_1.0.1.md
+    heading: YSim Release 1 — Engineering and Code Generation Standard
+    source_body_blocks_inclusive: [522, 581]
+    extract_path: docs/v3/r1/g00/s02/standards/05_ENGINEERING_AND_CODE_GENERATION_STANDARD_1.0.1.txt
+    extract_size_bytes: 6326
+    extract_sha256: a8f475a5c7b3ec72770c92dafd36b079f196e697602d4db300b5a1813da0181d
+  - code: YSIM-ENV-001
+    version: 3.2.1
+    status: APPROVED CONTRACT; ACTUAL VALUES REQUIRE ENV EVIDENCE
+    embedded_document: 06_ENVIRONMENT_STANDARD_3.2.1.md
+    heading: YSim Release 1 — Environment Standard
+    source_body_blocks_inclusive: [582, 760]
+    redacted_source_body_blocks: [700]
+    redaction_profile: PERSONAL_MAILBOX_SOURCE_ORDER_V1
+    extract_path: docs/v3/r1/g00/s02/standards/06_ENVIRONMENT_STANDARD_3.2.1.txt
+    extract_size_bytes: 17183
+    extract_sha256: 5512f6ae88772d303f9d478d3f9ea961d7fb17fcc047faaf20b13c974ae58893
+scope:
+  binds_package_spec: docs/v3/r1/g00/s02/package-spec.yaml
+  binds_candidate: factory/releases/v3-r1-g00-s02-governance-requirements-baseline/YSim_V3_R1_G00_S02_Governance_Requirements_Baseline_v0.1.0-candidate.1.md
+  extract_human_accepted: false
+  wrapper_human_accepted: false
+  candidate_bytes_modified: false

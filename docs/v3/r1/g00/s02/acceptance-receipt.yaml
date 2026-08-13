@@ -1,0 +1,56 @@
+schema_version: 1
+receipt_id: V3-R1-G00-S02-ACCEPTANCE-RECEIPT-001
+checkpoint: V3-R1-G00-S02
+document:
+  id: V3-R1-G00-S02-GOVERNANCE-REQUIREMENTS-BASELINE
+  version: 0.1.0-candidate.1
+  path: factory/releases/v3-r1-g00-s02-governance-requirements-baseline/YSim_V3_R1_G00_S02_Governance_Requirements_Baseline_v0.1.0-candidate.1.md
+  size_bytes: 28555
+  sha256: f3aa80a23a1ab95ab9914263d8c79bf11fc466579f162c79d0302cbfa77c9a77
+  candidate_bytes_immutable: true
+  candidate_status_preserved: CANDIDATE_FOR_HUMAN_ACCEPTANCE
+  candidate_human_acceptance_field_preserved: NOT_RECORDED
+  governed_wrapper_path: docs/v3/r1/g00/s02/governance-requirements-baseline.md
+  governed_wrapper_human_accepted: false
+human_acceptance:
+  decision: ACCEPT
+  statement: >-
+    ACCEPT V3-R1-G00-S02 version 0.1.0-candidate.1 SHA-256
+    f3aa80a23a1ab95ab9914263d8c79bf11fc466579f162c79d0302cbfa77c9a77
+  source: RECORDED_OUT_OF_BAND
+  acceptance_timestamp_utc: NOT_PROVIDED
+  receipt_created_at_utc: "2026-08-11T11:11:08Z"
+governance_decisions:
+  V3-R1-GOV-001: REFINE
+  V3-R1-GOV-002: REFINE
+  V3-R1-GOV-003: REFINE
+  V3-R1-GOV-004: REFINE
+  V3-R1-GOV-005: REFINE
+  V3-R1-GOV-006: REFINE
+  V3-R1-GOV-007: REFINE
+  V3-R1-GOV-008: REFINE
+  V3-R1-GOV-009: REFINE
+  V3-R1-GOV-010: REFINE
+  V3-R1-GOV-011: DEFER
+  V3-R1-GOV-012: DEFER
+deferred_boundary:
+  V3-R1-GOV-011: REFERENCE_ONLY/FUTURE
+  V3-R1-GOV-012: REFERENCE_ONLY/FUTURE
+scope:
+  accepted_content: Governance Requirements Baseline only
+  accepted_bytes: RAW_CANDIDATE_ONLY
+  governed_wrapper_human_accepted: false
+  implementation_claimed: false
+  operational_claimed: false
+authorization_boundaries:
+  merge: false
+  tag: false
+  release: false
+  deployment: false
+  production_activation: false
+  provider_action: false
+  payment: false
+  fulfillment: false
+  customer_communication: false
+  scheduler: false
+  business_external_effects: false

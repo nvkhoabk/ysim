@@ -1,0 +1,119 @@
+# YSim Release 1 — Engineering and Code Generation Standard
+
+Standard ID: YSIM-ENG-001
+
+Version: 1.0.1
+
+Effective date: 2026-08-02
+
+Status: APPROVED FOR RELEASE 1 PLATFORM WORK
+
+## 1. Scope and repository boundary
+
+- This standard governs the YSim Commerce & Distribution Platform repository nvkhoabk/ysim and VS-R1/ENV-R1 work.
+
+- The only canonical Release 1 Platform source workspace is /root/projects/ysim-v2.1/ysim inside WSL distro YSim-Debian12.
+
+- Windows is not a Platform source workspace. It may stage downloaded archives and provide a browser surface, but must not run Platform Git, package apply, pnpm, tests or builds.
+
+- F07, ysim-storefront and WordPress/WooCommerce remain separate tracks. Their package standards and runtime proof are not automatically evidence for Platform Release 1.
+
+- Every generated change names one bounded capability, one starting baseline, one target maturity and one environment scope.
+
+## 2. Source generation rules
+
+- Generate only the files required for the declared slice; reject unrelated staged paths and unrelated formatter changes.
+
+- Start from the exact accepted tag/commit or exact installed immutable release declared by the package. An ancestor match is not sufficient.
+
+- Never edit an accepted immutable release directory in place. Corrections create a new source commit, artifact and revision.
+
+- Use canonical project tooling and pinned versions. Current baseline: Node 24.18.0 and pnpm 11.13.1; Docker Compose 2.40.2 where required.
+
+- Generated documentation, manifests, tests and runtime code must agree on identifiers, paths, ports, feature flags and expected exit states.
+
+- A Platform source package is invalid if its guide, launcher or manifest targets a Windows path, a ysim-storefront checkout or the legacy Storefront server root.
+
+- The generator must emit a WSL/Linux launcher and test that wrong OS, wrong distro, wrong repo root and wrong Git remote fail before source mutation.
+
+## 3. Architecture invariants
+
+- Domain policy is provider-neutral. GPay, OnePay and Gigago details stay behind explicit adapters and contracts.
+
+- Browser return pages are presentation state, never authoritative payment evidence.
+
+- Fulfillment begins only from authoritative paid evidence and every external boundary is idempotent and correlatable.
+
+- Payment outbox, procurement, supplier readback, encrypted asset ingestion and delivery receipt remain separate durable boundaries.
+
+- Agency credit, Payment Owner settlement and Sales User commission remain separate ledgers.
+
+- Sandbox and production behavior is selected by isolated configuration; production behavior is never inferred from sandbox.
+
+## 4. Money, identity and sensitive data
+
+- Use explicit currency and integer/decimal-safe money types; do not use binary floating point for stored or reconciled amounts.
+
+- Store immutable price, market, currency, provider and ownership snapshots with the order/payment boundary.
+
+- Do not log secrets, raw authorization headers, full PII, full ICCID, LPA activation data or QR payloads.
+
+- Operator and agency authorization is organization/role scoped and denied by default.
+
+## 5. Dependency injection and runtime construction
+
+- NestJS configurable providers use explicit tokens and factories whose runtime metadata can be resolved without design-time type inference.
+
+- Every provider-registration change adds a complete Nest application-context bootstrap regression, not only a unit test for the service class.
+
+- Startup/readiness tests prove the actual compiled entry point, environment parser and provider graph used by the target service.
+
+## 6. Required tests for every slice
+
+- Exact slice positive tests and negative controls.
+
+- Cumulative tests/vs-r1-* regression and repository typecheck.
+
+- Production API/Web build for the applications touched by the slice.
+
+- Schema/migration checks when data contracts change, including idempotency and rollback/restore decision.
+
+- Runtime tests at the actual process, OS and network boundary when the change claims runtime behavior.
+
+- UI changes require actual candidate-route desktop/mobile evidence and a human decision token.
+
+## 7. Semantic and toolchain resilience
+
+- Structural source claims use a parser/AST or runtime behavior; do not treat whitespace-sensitive strings or regex scans as semantic proof.
+
+- Run formatter before the final semantic gate and rerun the exact final serialized artifact after ZIP extraction.
+
+- Embedded awk, shell, Node and PowerShell fragments require executable fixtures on the target tool family. bash -n cannot validate an embedded awk program.
+
+- Machine-readable subprocess protocols define stdout, stderr and exit-code matrices; wrappers preserve the real exit code.
+
+## 8. Package-generation contract
+
+- A normal operator package is one script or one copy-safe block that performs checksum, extraction, installed-state classification, validation, bounded action and final evidence.
+
+- Packages are immutable and revisioned. A failed R1 is superseded by R2; do not silently replace bytes under the same revision.
+
+- Every ZIP includes a machine-readable spec, SHA-256 manifest, exact prerequisites, safe-stop/rollback behavior and expected success/failure markers.
+
+- All invalidating preflight gates run before source, systemd, runtime, database or provider mutation.
+
+- For Platform source packages, archive intake may originate from /mnt/c/Users/Khoa Nguyen/Downloads, but extraction occurs under /tmp and execution occurs from /root/projects/ysim-v2.1/ysim in YSim-Debian12.
+
+## 9. Deployment-ready code
+
+- All external execution flags default OFF, including payment, fulfillment, scheduler, provider submission and customer email.
+
+- Health/readiness/status paths are bounded, redacted and do not create business effects.
+
+- Service startup declares explicit loopback host/port, runtime user, working directory and immutable release identity.
+
+- Promotion and rollback are operational behaviors that must be tested, not documentation-only intentions.
+
+## 10. Definition of done
+
+A slice is done only when the final artifact is identity-bound, all applicable machine gates pass, evidence is redacted, the human gate passes where required, the accepted baseline is recorded, and the next allowed action is explicit. A PASS applies only to the declared scope.
