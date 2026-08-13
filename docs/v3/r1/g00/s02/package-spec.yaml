@@ -44,7 +44,7 @@ governing_standards:
     - code: YSIM-ENV-001
       version: 3.2.1
       extract_path: docs/v3/r1/g00/s02/standards/06_ENVIRONMENT_STANDARD_3.2.1.txt
-      extract_sha256: 741260bc7e5889cef9eada9634bb33a0a806ef75830993d064d402841e82a2e6
+      extract_sha256: 5512f6ae88772d303f9d478d3f9ea961d7fb17fcc047faaf20b13c974ae58893
 mutations:
   source: true
   runtime: false

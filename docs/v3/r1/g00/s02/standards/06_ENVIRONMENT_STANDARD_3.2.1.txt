@@ -262,6 +262,8 @@ Sandbox and production support HTTPS only. Port 80 may exist solely to redirect 
 
 - Modes: disabled, dry-run and live/allowed delivery as implemented.
 
+- Sandbox recipients are limited to <REDACTED:PERSONAL_MAILBOX:01>, <REDACTED:PERSONAL_MAILBOX:02> and <REDACTED:PERSONAL_MAILBOX:03>, or an approved sink that cannot relay externally.
+
 - Live customer delivery requires a separate approval and audit trail.
 
 ### Authorized sandbox transactions

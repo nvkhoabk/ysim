@@ -1,6 +1,9 @@
 from __future__ import annotations
 
+import copy
+import hashlib
 import inspect
+import os
 import shutil
 import subprocess
 from collections.abc import Callable
@@ -15,9 +18,11 @@ from ysf.governance_baseline.validator import (
     EXPECTED_ALLOWLIST,
     EXPECTED_BASE_COMMIT,
     EXPECTED_CANDIDATE_PATH,
+    EXPECTED_INPUT_MANIFEST_PATH,
     EXPECTED_README_PATH,
     EXPECTED_SOURCE_DOCX_PATH,
     EXPECTED_WRAPPER_PATH,
+    load_snapshot_contract,
     main,
     validate_candidate_semantics,
     validate_governance_baseline,
@@ -30,6 +35,17 @@ RECEIPT_PATH = "docs/v3/r1/g00/s02/acceptance-receipt.yaml"
 SPEC_PATH = "docs/v3/r1/g00/s02/package-spec.yaml"
 PROVENANCE_PATH = "docs/v3/r1/g00/s02/standards/standards-provenance.yaml"
 TRACEABILITY_PATH = "docs/v3/r1/g00/s01/traceability-baseline.yaml"
+FIRST_S02_COMMIT = "9bec3979ce3c74da66848ce53efd03f11739d5e2"
+R1_CORRECTIVE_COMMIT = "f2b3904b364ae38df1a7a6dbe999741636e69a0a"
+R2_WRITE_SUBSET = {
+    "docs/v3/r1/g00/s02/MANIFEST.sha256",
+    "docs/v3/r1/g00/s02/README.md",
+    "docs/v3/r1/g00/s02/package-spec.yaml",
+    "docs/v3/r1/g00/s02/standards/06_ENVIRONMENT_STANDARD_3.2.1.txt",
+    "docs/v3/r1/g00/s02/standards/standards-provenance.yaml",
+    "tools/ysf/src/ysf/governance_baseline/validator.py",
+    "tools/ysf/tests/unit/test_governance_baseline_validator.py",
+}
 
 
 def _repository_root() -> Path:
@@ -63,26 +79,210 @@ def _content_workspace(tmp_path: Path) -> Path:
     return root
 
 
-def _api_workspace(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> Path:
+def _commit_at(root: Path, message: str, timestamp: int) -> None:
+    environment = {
+        **os.environ,
+        "GIT_AUTHOR_DATE": f"2000-01-01T00:00:{timestamp:02d}Z",
+        "GIT_COMMITTER_DATE": f"2000-01-01T00:00:{timestamp:02d}Z",
+    }
+    subprocess.run(
+        [
+            "git",
+            "-C",
+            str(root),
+            "-c",
+            "user.name=YSim Test",
+            "-c",
+            f"user.email={_synthetic_git_email()}",
+            "commit",
+            "--quiet",
+            "-m",
+            message,
+        ],
+        check=True,
+        capture_output=True,
+        env=environment,
+    )
+
+
+def _apply_commit_delta(root: Path, old: str, new: str, timestamp: int) -> None:
+    patch = subprocess.run(
+        ["git", "-C", str(_repository_root()), "diff", "--binary", old, new],
+        check=True,
+        capture_output=True,
+    ).stdout
+    subprocess.run(
+        ["git", "-C", str(root), "apply", "--index", "--binary", "-"],
+        input=patch,
+        check=True,
+        capture_output=True,
+    )
+    _commit_at(root, f"test: materialize {new[:7]}", timestamp)
+
+
+def _snapshot_contract(root: Path) -> dict[str, Any]:
+    def identity(revision: str) -> str:
+        return _run(root, "rev-parse", revision).stdout.strip()
+
+    modes: dict[str, str] = {}
+    for relative in sorted(EXPECTED_ALLOWLIST):
+        record = _run(root, "ls-tree", "HEAD", "--", relative).stdout
+        modes[relative] = record.split(" ", 1)[0]
+    return {
+        "schema_version": 1,
+        "repository": {
+            "identity": "nvkhoabk/ysim",
+            "origin": "git@github-ysim:nvkhoabk/ysim.git",
+            "branch": validator.EXPECTED_BRANCH,
+        },
+        "topology": {
+            "base_sha": EXPECTED_BASE_COMMIT,
+            "base_tree": validator.EXPECTED_BASE_TREE,
+            "corrective_parent_sha": identity("HEAD^"),
+            "corrective_parent_tree": identity("HEAD^^{tree}"),
+            "expected_head_sha": identity("HEAD"),
+            "expected_head_tree": identity("HEAD^{tree}"),
+            "base_to_head_commit_count": 3,
+            "parent_to_head_commit_count": 1,
+        },
+        "changed_paths": sorted(EXPECTED_ALLOWLIST),
+        "file_modes": modes,
+        "authoritative_inputs": {
+            "docx": {
+                "path": EXPECTED_SOURCE_DOCX_PATH.as_posix(),
+                "size_bytes": validator.EXPECTED_SOURCE_DOCX_SIZE,
+                "sha256": validator.EXPECTED_SOURCE_DOCX_SHA256,
+            },
+            "manifest": {
+                "path": EXPECTED_INPUT_MANIFEST_PATH.as_posix(),
+                "size_bytes": validator.EXPECTED_INPUT_MANIFEST_SIZE,
+                "sha256": validator.EXPECTED_INPUT_MANIFEST_SHA256,
+            },
+        },
+        "standards": {
+            "provenance_path": validator.EXPECTED_PROVENANCE_PATH.as_posix(),
+            "provenance_sha256": hashlib.sha256(
+                (root / validator.EXPECTED_PROVENANCE_PATH).read_bytes()
+            ).hexdigest(),
+            "bindings": [
+                {
+                    **dict(validator.EXPECTED_STANDARD_BINDINGS[0]),
+                    "source_body_ranges": [[352, 521]],
+                    "redacted_source_blocks": [],
+                },
+                {
+                    **dict(validator.EXPECTED_STANDARD_BINDINGS[1]),
+                    "source_body_ranges": [[522, 581]],
+                    "redacted_source_blocks": [],
+                },
+                {
+                    **dict(validator.EXPECTED_STANDARD_BINDINGS[2]),
+                    "source_body_ranges": [[582, 760]],
+                    "redacted_source_blocks": [700],
+                },
+            ],
+        },
+    }
+
+
+def _api_workspace(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> tuple[Path, dict[str, Any]]:
     tmp_path.mkdir(parents=True, exist_ok=True)
     root = tmp_path / "observed-repository"
-    _run(tmp_path, "clone", "--quiet", "--no-hardlinks", str(_repository_root()), str(root))
+    _run(
+        tmp_path,
+        "clone",
+        "--quiet",
+        "--no-hardlinks",
+        "--no-checkout",
+        str(_repository_root()),
+        str(root),
+    )
+    _run(root, "switch", "--quiet", "--detach", EXPECTED_BASE_COMMIT)
+    _run(root, "branch", "-D", validator.EXPECTED_BRANCH)
+    _run(root, "switch", "--quiet", "-c", validator.EXPECTED_BRANCH)
+    _apply_commit_delta(root, EXPECTED_BASE_COMMIT, FIRST_S02_COMMIT, 1)
+    assert _run(root, "rev-parse", "HEAD^{tree}").stdout.strip() == (
+        "2afccaaceb57f3255cb3bad91fd0bdf4d16eb5a7"
+    )
+    _apply_commit_delta(root, FIRST_S02_COMMIT, R1_CORRECTIVE_COMMIT, 2)
+    assert _run(root, "rev-parse", "HEAD^{tree}").stdout.strip() == (
+        "e5e2c8d0b9f4a3e7565473ae8007871f3b6863f8"
+    )
     _copy_governance_files(root)
     _run(root, "remote", "set-url", "origin", "git@github-ysim:nvkhoabk/ysim.git")
     _run(root, "add", "--", *sorted(EXPECTED_ALLOWLIST))
-    _run(
-        root,
-        "-c",
-        "user.name=YSim Test",
-        "-c",
-        f"user.email={_synthetic_git_email()}",
-        "commit",
-        "--quiet",
-        "-m",
-        "test: materialize observed S02 correction",
-    )
+    staged = {
+        path
+        for path in _run(root, "diff", "--cached", "--name-only").stdout.splitlines()
+        if path
+    }
+    assert staged == R2_WRITE_SUBSET
+    _commit_at(root, "test: materialize S02 corrective R2", 3)
+    assert int(
+        _run(root, "rev-list", "--count", f"{EXPECTED_BASE_COMMIT}..HEAD").stdout
+    ) == 3
+    assert int(_run(root, "rev-list", "--count", "HEAD^..HEAD").stdout) == 1
+    assert not _run(root, "status", "--porcelain=v1", "--untracked-files=all").stdout
+    assert {
+        path
+        for path in _run(
+            root, "diff", "--name-only", f"{EXPECTED_BASE_COMMIT}...HEAD"
+        ).stdout.splitlines()
+        if path
+    } == set(EXPECTED_ALLOWLIST)
     monkeypatch.setattr(validator, "EXPECTED_CANONICAL_ROOT", root.resolve())
-    return root
+    return root, _snapshot_contract(root)
+
+
+def _refresh_contract_identity(
+    root: Path, contract: dict[str, Any]
+) -> dict[str, Any]:
+    result = copy.deepcopy(contract)
+    result["topology"]["corrective_parent_sha"] = _run(
+        root, "rev-parse", "HEAD^"
+    ).stdout.strip()
+    result["topology"]["corrective_parent_tree"] = _run(
+        root, "rev-parse", "HEAD^^{tree}"
+    ).stdout.strip()
+    result["topology"]["expected_head_sha"] = _run(
+        root, "rev-parse", "HEAD"
+    ).stdout.strip()
+    result["topology"]["expected_head_tree"] = _run(
+        root, "rev-parse", "HEAD^{tree}"
+    ).stdout.strip()
+    return result
+
+
+def _amend(root: Path) -> None:
+    _run(root, "add", "-A")
+    environment = {
+        **os.environ,
+        "GIT_COMMITTER_DATE": "2000-01-01T00:00:04Z",
+    }
+    subprocess.run(
+        [
+            "git",
+            "-C",
+            str(root),
+            "-c",
+            "user.name=YSim Test",
+            "-c",
+            f"user.email={_synthetic_git_email()}",
+            "commit",
+            "--quiet",
+            "--amend",
+            "--no-edit",
+        ],
+        check=True,
+        capture_output=True,
+        env=environment,
+    )
+
+
+def _write_contract(path: Path, contract: dict[str, Any]) -> None:
+    path.write_text(yaml.safe_dump(contract, sort_keys=False), encoding="utf-8")
 
 
 def _content_failure(tmp_path: Path, code: str, mutation: Mutation) -> None:
@@ -417,19 +617,96 @@ def test_standard_binding_rejects_wrong_identity(tmp_path: Path, field: str) -> 
     _content_failure(tmp_path, "FAIL_GOVERNING_STANDARDS", mutate)
 
 
-def test_authoritative_docx_reproduces_all_extracts(tmp_path: Path) -> None:
-    root = _content_workspace(tmp_path)
-    result = verify_authoritative_standards_source(root, EXPECTED_SOURCE_DOCX_PATH)
-    assert result == {
-        "source_path": EXPECTED_SOURCE_DOCX_PATH.as_posix(),
-        "source_sha256": validator.EXPECTED_SOURCE_DOCX_SHA256,
-        "standard_count": 3,
-        "result": "PASS",
-    }
-    altered = tmp_path / "altered.docx"
-    altered.write_bytes(EXPECTED_SOURCE_DOCX_PATH.read_bytes() + b"altered")
+def test_authoritative_inputs_reproduce_all_extracts(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    root, contract = _api_workspace(tmp_path, monkeypatch)
+    result = verify_authoritative_standards_source(root, contract)
+    assert result["source_sha256"] == validator.EXPECTED_SOURCE_DOCX_SHA256
+    assert result["input_manifest_sha256"] == (
+        validator.EXPECTED_INPUT_MANIFEST_SHA256
+    )
+    assert result["standard_count"] == 3
+    assert result["env_block_700_rule_preserved"] is True
+    assert result["personal_mailbox_values_redacted"] is True
+    assert result["result"] == "PASS"
+
+
+@pytest.mark.parametrize(
+    ("target", "kind", "code"),
+    [
+        ("docx", "missing", "FAIL_AUTHORITATIVE_STANDARDS_SOURCE"),
+        ("docx", "digest", "FAIL_AUTHORITATIVE_STANDARDS_SOURCE"),
+        ("docx", "file_symlink", "FAIL_AUTHORITATIVE_STANDARDS_SOURCE"),
+        ("docx", "parent_symlink", "FAIL_AUTHORITATIVE_STANDARDS_SOURCE"),
+        ("manifest", "missing", "FAIL_AUTHORITATIVE_INPUT_MANIFEST"),
+        ("manifest", "digest", "FAIL_AUTHORITATIVE_INPUT_MANIFEST"),
+        ("manifest", "membership", "FAIL_AUTHORITATIVE_INPUT_MANIFEST"),
+    ],
+)
+def test_authoritative_input_negative_matrix(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    target: str,
+    kind: str,
+    code: str,
+) -> None:
+    root, contract = _api_workspace(tmp_path / "repository", monkeypatch)
+    evidence = tmp_path / "evidence"
+    evidence.mkdir()
+    docx = evidence / EXPECTED_SOURCE_DOCX_PATH.name
+    manifest = evidence / EXPECTED_INPUT_MANIFEST_PATH.name
+    shutil.copy2(EXPECTED_SOURCE_DOCX_PATH, docx)
+    shutil.copy2(EXPECTED_INPUT_MANIFEST_PATH, manifest)
+    contract["authoritative_inputs"]["docx"]["path"] = docx.as_posix()
+    contract["authoritative_inputs"]["manifest"]["path"] = manifest.as_posix()
+    if kind == "missing":
+        (docx if target == "docx" else manifest).unlink()
+    elif kind == "digest":
+        contract["authoritative_inputs"][target]["sha256"] = "0" * 64
+    elif kind == "file_symlink":
+        docx.unlink()
+        docx.symlink_to(EXPECTED_SOURCE_DOCX_PATH)
+    elif kind == "parent_symlink":
+        linked = tmp_path / "linked-evidence"
+        linked.symlink_to(evidence, target_is_directory=True)
+        contract["authoritative_inputs"]["docx"]["path"] = (
+            linked / docx.name
+        ).as_posix()
+    else:
+        manifest.write_text("0" * 64 + f"  {docx.name}\n", encoding="utf-8")
+        contract["authoritative_inputs"]["manifest"]["size_bytes"] = (
+            manifest.stat().st_size
+        )
+        contract["authoritative_inputs"]["manifest"]["sha256"] = hashlib.sha256(
+            manifest.read_bytes()
+        ).hexdigest()
     with pytest.raises(FactoryFailure) as captured:
-        verify_authoritative_standards_source(root, altered)
+        verify_authoritative_standards_source(root, contract)
+    assert captured.value.code == code
+
+
+@pytest.mark.parametrize("kind", ["altered", "omitted_rule", "wrong_marker", "mailbox"])
+def test_env_redacted_extract_negative_matrix(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, kind: str
+) -> None:
+    root, contract = _api_workspace(tmp_path, monkeypatch)
+    extract = root / validator.EXPECTED_STANDARD_BINDINGS[2]["extract_path"]
+    text = extract.read_text(encoding="utf-8")
+    if kind == "altered":
+        text += "altered\n"
+    elif kind == "omitted_rule":
+        text = "\n".join(
+            line for line in text.splitlines() if "Sandbox recipients are limited" not in line
+        ) + "\n"
+    elif kind == "wrong_marker":
+        text = text.replace("<REDACTED:PERSONAL_MAILBOX:01>", "<REDACTED:MAILBOX>")
+    else:
+        synthetic = "reviewer" + "@" + "example.invalid"
+        text = text.replace("<REDACTED:PERSONAL_MAILBOX:01>", synthetic)
+    extract.write_text(text, encoding="utf-8")
+    with pytest.raises(FactoryFailure) as captured:
+        verify_authoritative_standards_source(root, contract)
     assert captured.value.code == "FAIL_AUTHORITATIVE_STANDARDS_SOURCE"
 
 
@@ -579,117 +856,342 @@ def test_candidate_semantics_reject_duplicates_decisions_and_status() -> None:
         assert captured.value.code == code
 
 
-def test_public_api_derives_observed_evidence_and_matches_cli(
+def _assert_api_failure(
+    root: Path, contract: dict[str, Any], expected_code: str
+) -> None:
+    reached_assertion = False
+    try:
+        validate_governance_baseline(root, contract)
+    except FactoryFailure as failure:
+        reached_assertion = True
+        assert failure.code == expected_code
+    assert reached_assertion, "security probe did not reach its intended assertion"
+
+
+def test_public_api_exact_snapshot_and_cli_parity(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
 ) -> None:
-    root = _api_workspace(tmp_path, monkeypatch)
+    root, contract = _api_workspace(tmp_path, monkeypatch)
     assert tuple(inspect.signature(validate_governance_baseline).parameters) == (
         "repository_root",
+        "snapshot_contract",
     )
-    summary = validate_governance_baseline(root)
+    summary = validate_governance_baseline(root, contract)
     assert summary["result"] == "PASS"
     assert summary["sensitive_data"] == "PASS"
     assert summary["changed_paths"] == sorted(EXPECTED_ALLOWLIST)
-    assert main(["--repository-root", str(root), "--json"]) == 0
-    cli = capsys.readouterr().out
-    assert '"result": "PASS"' in cli
-    assert '"sensitive_data": "PASS"' in cli
-
-
-def test_public_api_rejects_dirty_and_fabricated_changed_paths(
-    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
-) -> None:
-    root = _api_workspace(tmp_path, monkeypatch)
-    (root / "dirty.txt").write_text("dirty", encoding="utf-8")
-    with pytest.raises(FactoryFailure) as captured:
-        validate_governance_baseline(root)
-    assert captured.value.code == "FAIL_DIRTY_WORKTREE"
-    (root / "dirty.txt").unlink()
-
-    (root / "unexpected.txt").write_text("safe unexpected path", encoding="utf-8")
-    _commit(root)
-    with pytest.raises(FactoryFailure) as captured:
-        validate_governance_baseline(root)
-    assert captured.value.code == "FAIL_FILE_ALLOWLIST"
-
-
-def test_public_api_rejects_sensitive_data_and_symlink(
-    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
-) -> None:
-    sensitive_root = _api_workspace(tmp_path / "sensitive", monkeypatch)
-    readme = sensitive_root / EXPECTED_README_PATH
-    prohibited_value = "pass" + "word=" + "abcdefghijklmnop"
-    readme.write_text(
-        readme.read_text(encoding="utf-8") + f"\n{prohibited_value}\n",
-        encoding="utf-8",
-    )
-    _commit(sensitive_root)
-    with pytest.raises(FactoryFailure) as captured:
-        validate_governance_baseline(sensitive_root)
-    assert captured.value.code == "FAIL_SENSITIVE_VALUE"
-
-    symlink_root = _api_workspace(tmp_path / "symlink", monkeypatch)
-    candidate = symlink_root / EXPECTED_CANDIDATE_PATH
-    candidate.unlink()
-    candidate.symlink_to(symlink_root / EXPECTED_WRAPPER_PATH)
-    _commit(symlink_root)
-    with pytest.raises(FactoryFailure) as captured:
-        validate_governance_baseline(symlink_root)
-    assert captured.value.code == "FAIL_PATH_SAFETY"
-
-
-def test_public_api_rejects_wrong_base_sha_and_tree(
-    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
-) -> None:
-    root = _api_workspace(tmp_path, monkeypatch)
-    monkeypatch.setattr(
-        validator,
-        "EXPECTED_BASE_COMMIT",
-        _run(root, "rev-parse", "HEAD").stdout.strip(),
-    )
-    with pytest.raises(FactoryFailure) as captured:
-        validate_governance_baseline(root)
-    assert captured.value.code == "FAIL_BASE_TREE"
-
-    monkeypatch.setattr(validator, "EXPECTED_BASE_COMMIT", EXPECTED_BASE_COMMIT)
-    monkeypatch.setattr(validator, "EXPECTED_BASE_TREE", "0" * 40)
-    with pytest.raises(FactoryFailure) as captured:
-        validate_governance_baseline(root)
-    assert captured.value.code == "FAIL_BASE_TREE"
-
-
-def test_public_api_rejects_wrong_repository_identity(
-    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
-) -> None:
-    root = _api_workspace(tmp_path, monkeypatch)
-    _run(root, "remote", "set-url", "origin", "https://github.com/other/repository.git")
-    with pytest.raises(FactoryFailure) as captured:
-        validate_governance_baseline(root)
-    assert captured.value.code == "FAIL_ENVIRONMENT_IDENTITY"
-
-
-def test_cli_verifies_authoritative_source(
-    tmp_path: Path,
-    monkeypatch: pytest.MonkeyPatch,
-    capsys: pytest.CaptureFixture[str],
-) -> None:
-    root = _api_workspace(tmp_path, monkeypatch)
+    assert summary["authoritative_standards_source"]["result"] == "PASS"
+    contract_path = tmp_path / "snapshot.yaml"
+    _write_contract(contract_path, contract)
+    assert load_snapshot_contract(contract_path) == contract
     assert main(
         [
             "--repository-root",
             str(root),
-            "--authoritative-standards-source",
-            str(EXPECTED_SOURCE_DOCX_PATH),
+            "--snapshot-contract",
+            str(contract_path),
             "--json",
         ]
     ) == 0
-    assert '"authoritative_standards_source"' in capsys.readouterr().out
+    cli = capsys.readouterr().out
+    assert '"result": "PASS"' in cli
+    assert '"authoritative_standards_source"' in cli
+    with pytest.raises(SystemExit) as captured:
+        main(["--repository-root", str(root), "--json"])
+    assert captured.value.code == 2
 
-    assert main(["--repository-root", str(root)]) == 0
+
+@pytest.mark.parametrize(
+    ("mutation", "code"),
+    [
+        (lambda value: value.pop("standards"), "FAIL_SNAPSHOT_CONTRACT"),
+        (lambda value: value.update({"unexpected": True}), "FAIL_SNAPSHOT_CONTRACT"),
+        (
+            lambda value: value["topology"].update({"expected_head_sha": "0" * 40}),
+            "FAIL_HEAD_IDENTITY",
+        ),
+        (
+            lambda value: value["topology"].update({"expected_head_tree": "0" * 40}),
+            "FAIL_HEAD_TREE",
+        ),
+        (
+            lambda value: value["topology"].update({"corrective_parent_sha": "0" * 40}),
+            "FAIL_CORRECTIVE_PARENT",
+        ),
+        (
+            lambda value: value["topology"].update({"base_to_head_commit_count": 2}),
+            "FAIL_SNAPSHOT_CONTRACT",
+        ),
+        (
+            lambda value: value["topology"].update({"parent_to_head_commit_count": 2}),
+            "FAIL_SNAPSHOT_CONTRACT",
+        ),
+        (
+            lambda value: value["topology"].update({"base_sha": "0" * 40}),
+            "FAIL_SNAPSHOT_CONTRACT",
+        ),
+        (
+            lambda value: value["topology"].update({"base_tree": "0" * 40}),
+            "FAIL_SNAPSHOT_CONTRACT",
+        ),
+        (
+            lambda value: value["changed_paths"].append("fabricated.txt"),
+            "FAIL_SNAPSHOT_CONTRACT",
+        ),
+        (
+            lambda value: value["file_modes"].update(
+                {EXPECTED_README_PATH.as_posix(): "100755"}
+            ),
+            "FAIL_SNAPSHOT_CONTRACT",
+        ),
+        (
+            lambda value: value["standards"]["bindings"][2].update(
+                {"source_body_ranges": [[582, 699], [701, 760]]}
+            ),
+            "FAIL_SNAPSHOT_CONTRACT",
+        ),
+        (
+            lambda value: value["standards"]["bindings"][2].update(
+                {"redacted_source_blocks": []}
+            ),
+            "FAIL_SNAPSHOT_CONTRACT",
+        ),
+        (
+            lambda value: value["standards"]["bindings"][0].update(
+                {"code": "WRONG"}
+            ),
+            "FAIL_SNAPSHOT_CONTRACT",
+        ),
+        (
+            lambda value: value["standards"]["bindings"][0].update(
+                {"version": "0.0.0"}
+            ),
+            "FAIL_SNAPSHOT_CONTRACT",
+        ),
+        (
+            lambda value: value["standards"]["bindings"][0].update(
+                {"extract_path": "wrong.txt"}
+            ),
+            "FAIL_SNAPSHOT_CONTRACT",
+        ),
+        (
+            lambda value: value["standards"]["bindings"][0].update(
+                {"extract_sha256": "0" * 64}
+            ),
+            "FAIL_SNAPSHOT_CONTRACT",
+        ),
+    ],
+)
+def test_snapshot_contract_negative_matrix(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    mutation: Callable[[dict[str, Any]], Any],
+    code: str,
+) -> None:
+    root, contract = _api_workspace(tmp_path, monkeypatch)
+    mutation(contract)
+    _assert_api_failure(root, contract, code)
+
+
+def test_public_api_rejects_dirty_unexpected_sensitive_symlink_and_mode(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    root, contract = _api_workspace(tmp_path / "dirty", monkeypatch)
+    (root / "dirty.txt").write_text("dirty", encoding="utf-8")
+    _assert_api_failure(root, contract, "FAIL_DIRTY_WORKTREE")
+
+    root, contract = _api_workspace(tmp_path / "unexpected", monkeypatch)
+    (root / "unexpected.txt").write_text("unexpected", encoding="utf-8")
+    _amend(root)
+    _assert_api_failure(
+        root, _refresh_contract_identity(root, contract), "FAIL_FILE_ALLOWLIST"
+    )
+
+    root, contract = _api_workspace(tmp_path / "sensitive", monkeypatch)
+    readme = root / EXPECTED_README_PATH
+    prohibited = "pass" + "word=" + "abcdefghijklmnop"
+    readme.write_text(readme.read_text(encoding="utf-8") + prohibited, encoding="utf-8")
+    _amend(root)
+    _assert_api_failure(
+        root, _refresh_contract_identity(root, contract), "FAIL_SENSITIVE_VALUE"
+    )
+
+    root, contract = _api_workspace(tmp_path / "symlink", monkeypatch)
+    candidate = root / EXPECTED_CANDIDATE_PATH
+    candidate.unlink()
+    candidate.symlink_to(root / EXPECTED_WRAPPER_PATH)
+    _amend(root)
+    _assert_api_failure(
+        root, _refresh_contract_identity(root, contract), "FAIL_PATH_SAFETY"
+    )
+
+    root, contract = _api_workspace(tmp_path / "mode", monkeypatch)
+    (root / EXPECTED_README_PATH).chmod(0o755)
+    _amend(root)
+    _assert_api_failure(root, _refresh_contract_identity(root, contract), "FAIL_FILE_MODE")
+
+
+def test_public_api_rejects_replacement_extra_commit_wrong_origin_and_parent(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    root, contract = _api_workspace(tmp_path / "replacement", monkeypatch)
+    _run(root, "reset", "--soft", EXPECTED_BASE_COMMIT)
+    _commit_at(root, "test: forbidden replacement commit", 5)
+    _assert_api_failure(
+        root, _refresh_contract_identity(root, contract), "FAIL_COMMIT_TOPOLOGY"
+    )
+
+    root, contract = _api_workspace(tmp_path / "extra", monkeypatch)
+    subprocess.run(
+        [
+            "git",
+            "-C",
+            str(root),
+            "-c",
+            "user.name=YSim Test",
+            "-c",
+            f"user.email={_synthetic_git_email()}",
+            "commit",
+            "--quiet",
+            "--allow-empty",
+            "-m",
+            "test: forbidden extra head",
+        ],
+        check=True,
+        capture_output=True,
+    )
+    _assert_api_failure(
+        root, _refresh_contract_identity(root, contract), "FAIL_COMMIT_TOPOLOGY"
+    )
+
+    root, contract = _api_workspace(tmp_path / "origin", monkeypatch)
+    _run(root, "remote", "set-url", "origin", "https://github.com/other/repository.git")
+    _assert_api_failure(root, contract, "FAIL_ENVIRONMENT_IDENTITY")
+
+    root, contract = _api_workspace(tmp_path / "parent", monkeypatch)
+    contract["topology"]["corrective_parent_tree"] = "0" * 40
+    _assert_api_failure(root, contract, "FAIL_CORRECTIVE_PARENT")
+
+
+def test_snapshot_contract_loader_rejects_symlink(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    _, contract = _api_workspace(tmp_path / "repository", monkeypatch)
+    actual = tmp_path / "actual.yaml"
+    link = tmp_path / "contract.yaml"
+    _write_contract(actual, contract)
+    link.symlink_to(actual)
+    with pytest.raises(FactoryFailure) as captured:
+        load_snapshot_contract(link)
+    assert captured.value.code == "FAIL_SNAPSHOT_CONTRACT"
+
+
+@pytest.mark.parametrize(
+    "mutation",
+    [
+        lambda value: value.update({"schema_version": "1"}),
+        lambda value: value["repository"].update({"identity": "wrong/repository"}),
+        lambda value: value["topology"].update({"expected_head_sha": "malformed"}),
+        lambda value: value["authoritative_inputs"]["docx"].update({"size_bytes": 1}),
+        lambda value: value["standards"].update({"provenance_path": "wrong.yaml"}),
+    ],
+)
+def test_snapshot_contract_schema_type_and_binding_fail_closed(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    mutation: Callable[[dict[str, Any]], Any],
+) -> None:
+    _, contract = _api_workspace(tmp_path, monkeypatch)
+    mutation(contract)
+    with pytest.raises(FactoryFailure) as captured:
+        validator._validate_snapshot_contract(contract)
+    assert captured.value.code == "FAIL_SNAPSHOT_CONTRACT"
+
+
+def test_external_file_and_redaction_defenses(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    relative = Path("relative")
+    with pytest.raises(FactoryFailure) as captured:
+        validator._read_external_regular_file(relative, code="FAIL_EXTERNAL")
+    assert captured.value.code == "FAIL_EXTERNAL"
+
+    directory = tmp_path / "directory"
+    directory.mkdir()
+    with pytest.raises(FactoryFailure) as captured:
+        validator._read_external_regular_file(directory, code="FAIL_EXTERNAL")
+    assert captured.value.code == "FAIL_EXTERNAL"
+
+    regular = tmp_path / "regular"
+    regular.write_bytes(b"safe")
+    with pytest.raises(FactoryFailure) as captured:
+        validator._read_external_regular_file(
+            regular, code="FAIL_EXTERNAL", expected_size=5
+        )
+    assert captured.value.code == "FAIL_EXTERNAL"
+
+    malformed = tmp_path / "malformed.yaml"
+    malformed.write_text("[invalid", encoding="utf-8")
+    with pytest.raises(FactoryFailure) as captured:
+        load_snapshot_contract(malformed)
+    assert captured.value.code == "FAIL_SNAPSHOT_CONTRACT"
+
+    with pytest.raises(FactoryFailure) as captured:
+        validator._redact_env_block(["unexpected source block"])
+    assert captured.value.code == "FAIL_AUTHORITATIVE_STANDARDS_SOURCE"
+
+    root, contract = _api_workspace(tmp_path / "provenance", monkeypatch)
+    contract["standards"]["provenance_sha256"] = "0" * 64
+    _assert_api_failure(root, contract, "FAIL_GOVERNING_STANDARDS")
+
+
+def test_render_and_candidate_immutability_defensive_branches(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    namespace = {"w": "http://schemas.openxmlformats.org/wordprocessingml/2006/main"}
+    other = validator.ElementTree.Element("other")
+    empty_table = validator.ElementTree.Element(
+        "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}tbl"
+    )
+    assert validator._render_docx_block(other, namespace) == []
+    assert validator._render_docx_block(empty_table, namespace) == []
+
+    root = _content_workspace(tmp_path)
+    candidate = root / EXPECTED_CANDIDATE_PATH
+    data = candidate.read_bytes().replace(
+        b"CANDIDATE_FOR_HUMAN_ACCEPTANCE", b"CANDIDATE_FOR_HUMAN_ACCEPTANCX", 1
+    )
+    candidate.write_bytes(data)
+    monkeypatch.setattr(
+        validator, "EXPECTED_CANDIDATE_SHA256", hashlib.sha256(data).hexdigest()
+    )
+    with pytest.raises(FactoryFailure) as captured:
+        validator._validate_candidate(root)
+    assert captured.value.code == "FAIL_CANDIDATE_IMMUTABILITY"
+
+
+def test_cli_failure_and_plain_success_share_security_boundary(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    root, contract = _api_workspace(tmp_path, monkeypatch)
+    contract_path = tmp_path / "snapshot.yaml"
+    _write_contract(contract_path, contract)
+    assert main(
+        ["--repository-root", str(root), "--snapshot-contract", str(contract_path)]
+    ) == 0
     assert capsys.readouterr().out == "V3-R1-G00-S02 validation PASS\n"
-
     monkeypatch.setenv("WSL_DISTRO_NAME", "WRONG")
-    assert main(["--repository-root", str(root), "--json"]) == 1
+    assert main(
+        [
+            "--repository-root",
+            str(root),
+            "--snapshot-contract",
+            str(contract_path),
+            "--json",
+        ]
+    ) == 1
     assert '"code": "FAIL_ENVIRONMENT_IDENTITY"' in capsys.readouterr().out
 
 

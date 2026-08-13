@@ -42,17 +42,24 @@ candidate byte-for-byte and records acceptance separately. It is stacked on
 From the canonical WSL repository root:
 
 ```bash
-PYTHONPATH=tools/ysf/src python tools/ysf/src/ysf/governance_baseline/validator.py --json
+PYTHONPATH=tools/ysf/src python tools/ysf/src/ysf/governance_baseline/validator.py \
+  --snapshot-contract /tmp/ysim-v3-r1-g00-s02-final-snapshot.yaml \
+  --json
 ```
 
-The public validator derives repository identity, base tree, clean state and
-the complete changed-path set from Git; callers cannot supply substitute
-observations. It fails closed on candidate-byte changes, wrong base identity,
-unexpected or unsafe paths, missing or duplicate document codes, wrapper or
-receipt acceptance overclaim, governing-standard drift, duplicate requirement
-IDs, unresolved template text, manifest mismatch, sensitive data, and claims
-that assign implemented or operational maturity to Business Factory or AI
-Store Generator in Release 1.
+The external snapshot contract is mandatory and has no default. It binds the
+exact repository origin, branch, base, corrective parent, final head/tree,
+commit topology, 15 changed paths and Git modes, plus both authoritative input
+files and the complete standards extraction/redaction contract. The public API
+and CLI compare independently observed Git and filesystem evidence against the
+same exact contract and fail closed on any mismatch.
+
+Authoritative verification always reads and hashes both the DOCX and its input
+manifest through no-follow regular-file descriptors. The ENV extract preserves
+the normative sandbox-recipient limitation from source block 700 while
+replacing exactly three personal-mailbox values, in source order, with
+deterministic ordinal markers. The provenance file specifies the reproduction
+algorithm and does not retain those source values.
 
 ## Safety boundary
 
