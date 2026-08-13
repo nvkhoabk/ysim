@@ -29,16 +29,13 @@ from ysf.configuration_access_control.validator import (
 from ysf.secure_factory.models import FactoryFailure
 
 Mutation = Callable[[Path], None]
-R2_WRITE_SUBSET = frozenset(
+R3_WRITE_SUBSET = frozenset(
     {
         "docs/v3/r1/g00/s03/MANIFEST.sha256",
         "docs/v3/r1/g00/s03/README.md",
         "docs/v3/r1/g00/s03/package-spec.yaml",
         "docs/v3/r1/g00/s03/source-provenance.yaml",
         "tools/ysf/src/ysf/configuration_access_control/validator.py",
-        "tools/ysf/src/ysf/knowledge/service.py",
-        "tools/ysf/tests/integration/test_build_knowledge.py",
-        "tools/ysf/tests/unit/test_configuration_access_control.py",
         "tools/ysf/tests/unit/test_configuration_access_control_validator.py",
     }
 )
@@ -115,12 +112,17 @@ def content_workspace(tmp_path: Path) -> Path:
 
 def snapshot_contract(root: Path) -> dict[str, Any]:
     paths = sorted(EXPECTED_CHANGED_PATHS)
+    authorized = sorted(EXPECTED_ALLOWLIST)
     modes = {
         relative: git(root, "ls-tree", "HEAD", "--", relative).split(" ", 1)[0]
-        for relative in paths
+        for relative in authorized
+    }
+    artifacts = {
+        relative: hashlib.sha256((root / relative).read_bytes()).hexdigest()
+        for relative in validator.EXPECTED_ARTIFACT_PATHS
     }
     return {
-        "schema_version": 1,
+        "schema_version": 2,
         "repository": {
             "identity": "nvkhoabk/ysim",
             "origin": "git@github-ysim:nvkhoabk/ysim.git",
@@ -133,11 +135,19 @@ def snapshot_contract(root: Path) -> dict[str, Any]:
             "corrective_parent_tree": EXPECTED_CORRECTIVE_PARENT_TREE,
             "expected_head_sha": git(root, "rev-parse", "HEAD"),
             "expected_head_tree": git(root, "rev-parse", "HEAD^{tree}"),
-            "base_to_head_commit_count": 3,
+            "base_to_head_commit_count": 4,
             "parent_to_head_commit_count": 1,
         },
         "changed_paths": paths,
+        "authorized_paths": authorized,
         "file_modes": modes,
+        "artifact_digests": artifacts,
+        "validation_boundaries": {
+            "knowledge_input": copy.deepcopy(validator.EXPECTED_KNOWLEDGE_BOUNDARY),
+            "branch_coverage": copy.deepcopy(
+                validator.EXPECTED_BRANCH_COVERAGE_BOUNDARY
+            ),
+        },
     }
 
 
@@ -158,12 +168,12 @@ def api_workspace(tmp_path: Path) -> tuple[Path, dict[str, Any]]:
     git(root, "switch", "--quiet", "-c", EXPECTED_BRANCH)
     copy_package(root)
     git(root, "add", "--", *sorted(EXPECTED_ALLOWLIST))
-    assert set(git(root, "diff", "--cached", "--name-only").splitlines()) == set(R2_WRITE_SUBSET)
-    commit(root, "test: materialize exact S03 corrective R2 source", 1)
+    assert set(git(root, "diff", "--cached", "--name-only").splitlines()) == set(R3_WRITE_SUBSET)
+    commit(root, "test: materialize exact S03 corrective R3 source", 1)
     git(root, "remote", "set-url", "origin", "git@github-ysim:nvkhoabk/ysim.git")
     assert git(root, "rev-parse", "HEAD^") == EXPECTED_CORRECTIVE_PARENT_SHA
     assert git(root, "rev-parse", "HEAD^^{tree}") == EXPECTED_CORRECTIVE_PARENT_TREE
-    assert int(git(root, "rev-list", "--count", f"{EXPECTED_BASE_SHA}..HEAD")) == 3
+    assert int(git(root, "rev-list", "--count", f"{EXPECTED_BASE_SHA}..HEAD")) == 4
     assert int(git(root, "rev-list", "--count", f"{EXPECTED_CORRECTIVE_PARENT_SHA}..HEAD")) == 1
     assert not git(root, "status", "--porcelain=v1", "--untracked-files=all")
     assert set(git(root, "diff", "--name-only", f"{EXPECTED_BASE_SHA}...HEAD").splitlines()) == set(
@@ -271,8 +281,12 @@ def test_package_fresh_knowledge_and_branch_metric_bindings_fail_closed(tmp_path
     mutations = (
         ("branch_coverage", "minimum_percent", 89.0),
         ("branch_coverage", "metric", "AGGREGATE_COVERAGE"),
+        ("branch_coverage", "source_package", "ysf"),
         ("knowledge_input", "tracked_factory_index_allowed", True),
         ("knowledge_input", "source", "TRACKED_FACTORY_INDEX"),
+        ("knowledge_input", "builder", "other.builder"),
+        ("knowledge_input", "source_glob", "factory/index/documents.json"),
+        ("knowledge_input", "expected_integration_count", 1),
     )
     for gate, field, value in mutations:
         root = content_workspace(tmp_path / f"{gate}-{field}")
@@ -345,7 +359,13 @@ def test_public_api_cli_parity_and_two_disposable_roots(
     [
         (lambda value: value.pop("topology"), "FAIL_SNAPSHOT_CONTRACT"),
         (lambda value: value.update({"extra": True}), "FAIL_SNAPSHOT_CONTRACT"),
-        (lambda value: value.update({"schema_version": "1"}), "FAIL_SNAPSHOT_CONTRACT"),
+        (lambda value: value.update({"schema_version": 1}), "FAIL_SNAPSHOT_CONTRACT"),
+        (lambda value: value.update({"repository": []}), "FAIL_SNAPSHOT_CONTRACT"),
+        (lambda value: value["repository"].pop("branch"), "FAIL_SNAPSHOT_CONTRACT"),
+        (
+            lambda value: value["repository"].update({"unexpected": True}),
+            "FAIL_SNAPSHOT_CONTRACT",
+        ),
         (
             lambda value: value["repository"].update({"identity": "other/repo"}),
             "FAIL_SNAPSHOT_CONTRACT",
@@ -365,6 +385,10 @@ def test_public_api_cli_parity_and_two_disposable_roots(
             "FAIL_SNAPSHOT_CONTRACT",
         ),
         (
+            lambda value: value["topology"].update({"parent_to_head_commit_count": "1"}),
+            "FAIL_SNAPSHOT_CONTRACT",
+        ),
+        (
             lambda value: value["topology"].update({"corrective_parent_sha": "0" * 40}),
             "FAIL_SNAPSHOT_CONTRACT",
         ),
@@ -374,7 +398,179 @@ def test_public_api_cli_parity_and_two_disposable_roots(
         ),
         (lambda value: value["changed_paths"].append("unexpected"), "FAIL_SNAPSHOT_CONTRACT"),
         (
+            lambda value: value["changed_paths"].append(value["changed_paths"][0]),
+            "FAIL_SNAPSHOT_CONTRACT",
+        ),
+        (lambda value: value["changed_paths"].reverse(), "FAIL_SNAPSHOT_CONTRACT"),
+        (
+            lambda value: value["changed_paths"].__setitem__(0, "../unsafe"),
+            "FAIL_SNAPSHOT_CONTRACT",
+        ),
+        (
+            lambda value: value["authorized_paths"].remove(
+                "tools/ysf/tests/integration/test_secure_factory_pipeline.py"
+            ),
+            "FAIL_SNAPSHOT_CONTRACT",
+        ),
+        (
+            lambda value: value["authorized_paths"].append("fabricated/path.py"),
+            "FAIL_SNAPSHOT_CONTRACT",
+        ),
+        (
+            lambda value: value["authorized_paths"].append(value["authorized_paths"][0]),
+            "FAIL_SNAPSHOT_CONTRACT",
+        ),
+        (lambda value: value["authorized_paths"].reverse(), "FAIL_SNAPSHOT_CONTRACT"),
+        (
+            lambda value: value["authorized_paths"].__setitem__(0, "../unsafe"),
+            "FAIL_SNAPSHOT_CONTRACT",
+        ),
+        (
+            lambda value: value["file_modes"].pop(
+                "tools/ysf/tests/integration/test_secure_factory_pipeline.py"
+            ),
+            "FAIL_SNAPSHOT_CONTRACT",
+        ),
+        (
+            lambda value: value["file_modes"].update({"fabricated/path.py": "100644"}),
+            "FAIL_SNAPSHOT_CONTRACT",
+        ),
+        (
             lambda value: value["file_modes"].update({validator.README_PATH: "100755"}),
+            "FAIL_SNAPSHOT_CONTRACT",
+        ),
+        (
+            lambda value: value["file_modes"].update(
+                {"tools/ysf/tests/integration/test_secure_factory_pipeline.py": "100755"}
+            ),
+            "FAIL_SNAPSHOT_CONTRACT",
+        ),
+        (
+            lambda value: value["artifact_digests"].pop(validator.SPEC_PATH),
+            "FAIL_SNAPSHOT_CONTRACT",
+        ),
+        (
+            lambda value: value["artifact_digests"].update({"unexpected": "0" * 64}),
+            "FAIL_SNAPSHOT_CONTRACT",
+        ),
+        (
+            lambda value: value["artifact_digests"].update({validator.SPEC_PATH: "wrong"}),
+            "FAIL_SNAPSHOT_CONTRACT",
+        ),
+        (
+            lambda value: value["artifact_digests"].update({validator.SPEC_PATH: "0" * 64}),
+            "FAIL_SNAPSHOT_ARTIFACT",
+        ),
+        (
+            lambda value: value["artifact_digests"].update({validator.MANIFEST_PATH: "0" * 64}),
+            "FAIL_SNAPSHOT_ARTIFACT",
+        ),
+        (
+            lambda value: value["artifact_digests"].update(
+                {validator.PROVENANCE_PATH: "0" * 64}
+            ),
+            "FAIL_SNAPSHOT_ARTIFACT",
+        ),
+        (
+            lambda value: value["validation_boundaries"].pop("knowledge_input"),
+            "FAIL_SNAPSHOT_CONTRACT",
+        ),
+        (
+            lambda value: value["validation_boundaries"].update({"unexpected": {}}),
+            "FAIL_SNAPSHOT_CONTRACT",
+        ),
+        (
+            lambda value: value["validation_boundaries"].update({"knowledge_input": []}),
+            "FAIL_SNAPSHOT_CONTRACT",
+        ),
+        (
+            lambda value: value["validation_boundaries"]["knowledge_input"].update(
+                {"tracked_factory_index_allowed": True}
+            ),
+            "FAIL_SNAPSHOT_CONTRACT",
+        ),
+        (
+            lambda value: value["validation_boundaries"]["knowledge_input"].update(
+                {"source": "TRACKED_FACTORY_INDEX"}
+            ),
+            "FAIL_SNAPSHOT_CONTRACT",
+        ),
+        (
+            lambda value: value["validation_boundaries"]["knowledge_input"].update(
+                {"builder": "other.builder"}
+            ),
+            "FAIL_SNAPSHOT_CONTRACT",
+        ),
+        (
+            lambda value: value["validation_boundaries"]["knowledge_input"].update(
+                {"source_glob": "factory/index/documents.json"}
+            ),
+            "FAIL_SNAPSHOT_CONTRACT",
+        ),
+        (
+            lambda value: value["validation_boundaries"]["knowledge_input"].update(
+                {"expected_document_count": 123}
+            ),
+            "FAIL_SNAPSHOT_CONTRACT",
+        ),
+        (
+            lambda value: value["validation_boundaries"]["knowledge_input"].pop(
+                "expected_relationship_count"
+            ),
+            "FAIL_SNAPSHOT_CONTRACT",
+        ),
+        (
+            lambda value: value["validation_boundaries"]["knowledge_input"].update(
+                {"unexpected": 1}
+            ),
+            "FAIL_SNAPSHOT_CONTRACT",
+        ),
+        (
+            lambda value: value["validation_boundaries"]["knowledge_input"].update(
+                {"expected_integration_count": "0"}
+            ),
+            "FAIL_SNAPSHOT_CONTRACT",
+        ),
+        (
+            lambda value: value["validation_boundaries"]["branch_coverage"].update(
+                {"metric": "AGGREGATE_COVERAGE"}
+            ),
+            "FAIL_SNAPSHOT_CONTRACT",
+        ),
+        (
+            lambda value: value["validation_boundaries"]["branch_coverage"].update(
+                {"metric": "LINE_COVERAGE"}
+            ),
+            "FAIL_SNAPSHOT_CONTRACT",
+        ),
+        (
+            lambda value: value["validation_boundaries"]["branch_coverage"].update(
+                {"source_package": "ysf"}
+            ),
+            "FAIL_SNAPSHOT_CONTRACT",
+        ),
+        (
+            lambda value: value["validation_boundaries"]["branch_coverage"].update(
+                {"minimum_percent": 89.0}
+            ),
+            "FAIL_SNAPSHOT_CONTRACT",
+        ),
+        (
+            lambda value: value["validation_boundaries"]["branch_coverage"].update(
+                {"minimum_percent": "90.0"}
+            ),
+            "FAIL_SNAPSHOT_CONTRACT",
+        ),
+        (
+            lambda value: value["validation_boundaries"]["branch_coverage"].pop(
+                "source_package"
+            ),
+            "FAIL_SNAPSHOT_CONTRACT",
+        ),
+        (
+            lambda value: value["validation_boundaries"]["branch_coverage"].update(
+                {"unexpected": True}
+            ),
             "FAIL_SNAPSHOT_CONTRACT",
         ),
     ],
@@ -387,6 +583,52 @@ def test_snapshot_contract_negative_matrix(
     root, contract = api_workspace(tmp_path)
     mutation(contract)
     assert_failure(root, contract, code)
+
+
+@pytest.mark.parametrize(
+    "artifact_path",
+    [validator.SPEC_PATH, validator.MANIFEST_PATH, validator.PROVENANCE_PATH],
+)
+def test_actual_artifact_bytes_must_match_external_digest(
+    tmp_path: Path, artifact_path: str
+) -> None:
+    root, contract = api_workspace(tmp_path)
+    target = root / artifact_path
+    target.write_bytes(target.read_bytes() + b"\n")
+    git(root, "add", "--", artifact_path)
+    commit(root, "test: mutate tracked artifact bytes", 2, amend=True)
+    assert_failure(root, refresh_identity(root, contract), "FAIL_SNAPSHOT_ARTIFACT")
+
+
+def test_contract_boundary_cannot_be_made_consistent_with_mutated_package_or_provenance(
+    tmp_path: Path,
+) -> None:
+    root, contract = api_workspace(tmp_path / "package")
+    package = load(root / validator.SPEC_PATH)
+    package["validation_gates"]["branch_coverage"]["minimum_percent"] = 89.0
+    write(root / validator.SPEC_PATH, package)
+    git(root, "add", "--", validator.SPEC_PATH)
+    commit(root, "test: weaken package boundary", 2, amend=True)
+    contract = refresh_identity(root, contract)
+    contract["artifact_digests"][validator.SPEC_PATH] = hashlib.sha256(
+        (root / validator.SPEC_PATH).read_bytes()
+    ).hexdigest()
+    contract["validation_boundaries"]["branch_coverage"]["minimum_percent"] = 89.0
+    assert_failure(root, contract, "FAIL_SNAPSHOT_CONTRACT")
+
+    root, contract = api_workspace(tmp_path / "provenance")
+    provenance = load(root / validator.PROVENANCE_PATH)
+    provenance["corrective_r3"]["external_snapshot_contract"]["knowledge_input"][
+        "tracked_factory_index_allowed"
+    ] = True
+    write(root / validator.PROVENANCE_PATH, provenance)
+    git(root, "add", "--", validator.PROVENANCE_PATH)
+    commit(root, "test: weaken provenance boundary", 2, amend=True)
+    contract = refresh_identity(root, contract)
+    contract["artifact_digests"][validator.PROVENANCE_PATH] = hashlib.sha256(
+        (root / validator.PROVENANCE_PATH).read_bytes()
+    ).hexdigest()
+    assert_failure(root, contract, "FAIL_SOURCE_PROVENANCE")
 
 
 def test_root_contract_missing_malformed_and_symlink_fail_closed(tmp_path: Path) -> None:
@@ -402,6 +644,25 @@ def test_root_contract_missing_malformed_and_symlink_fail_closed(tmp_path: Path)
     linked_contract.symlink_to(actual)
     with pytest.raises(FactoryFailure) as captured:
         load_snapshot_contract(linked_contract)
+    assert captured.value.code == "FAIL_SNAPSHOT_CONTRACT"
+    contract_directory = tmp_path / "contract-directory"
+    contract_directory.mkdir()
+    nested_contract = contract_directory / "snapshot.yaml"
+    write_contract(nested_contract, contract)
+    linked_directory = tmp_path / "linked-directory"
+    linked_directory.symlink_to(contract_directory, target_is_directory=True)
+    with pytest.raises(FactoryFailure) as captured:
+        load_snapshot_contract(linked_directory / "snapshot.yaml")
+    assert captured.value.code == "FAIL_SNAPSHOT_CONTRACT"
+    non_directory_parent = tmp_path / "not-a-directory"
+    non_directory_parent.write_text("synthetic", encoding="utf-8")
+    with pytest.raises(FactoryFailure) as captured:
+        load_snapshot_contract(non_directory_parent / "snapshot.yaml")
+    assert captured.value.code == "FAIL_SNAPSHOT_CONTRACT"
+    directory_contract = tmp_path / "directory-contract"
+    directory_contract.mkdir()
+    with pytest.raises(FactoryFailure) as captured:
+        load_snapshot_contract(directory_contract)
     assert captured.value.code == "FAIL_SNAPSHOT_CONTRACT"
     malformed = tmp_path / "malformed.yaml"
     malformed.write_text("[invalid", encoding="utf-8")
@@ -450,12 +711,41 @@ def test_unexpected_mode_symlink_replacement_and_extra_commit_fail_closed(
     commit(root, "test: mode drift", 2, amend=True)
     assert_failure(root, refresh_identity(root, contract), "FAIL_FILE_MODE")
 
+    root, contract = api_workspace(tmp_path / "unchanged-integration-mode")
+    integration = root / "tools/ysf/tests/integration/test_secure_factory_pipeline.py"
+    integration.chmod(0o755)
+    git(root, "add", str(integration.relative_to(root)))
+    commit(root, "test: unchanged bound mode drift", 2, amend=True)
+    assert_failure(root, refresh_identity(root, contract), "FAIL_FILE_MODE")
+
     root, contract = api_workspace(tmp_path / "symlink")
     readme = root / validator.README_PATH
     readme.unlink()
     readme.symlink_to(root / validator.SPEC_PATH)
     git(root, "add", validator.README_PATH)
     commit(root, "test: symlink drift", 2, amend=True)
+    assert_failure(root, refresh_identity(root, contract), "FAIL_PATH_SAFETY")
+
+    root, contract = api_workspace(tmp_path / "artifact-symlink")
+    package = root / validator.SPEC_PATH
+    package.unlink()
+    package.symlink_to(root / validator.PROVENANCE_PATH)
+    git(root, "add", validator.SPEC_PATH)
+    commit(root, "test: artifact symlink", 2, amend=True)
+    assert_failure(root, refresh_identity(root, contract), "FAIL_PATH_SAFETY")
+
+    root, contract = api_workspace(tmp_path / "gitlink")
+    readme = root / validator.README_PATH
+    readme.unlink()
+    readme.mkdir()
+    git(
+        root,
+        "update-index",
+        "--add",
+        "--cacheinfo",
+        f"160000,{EXPECTED_CORRECTIVE_PARENT_SHA},{validator.README_PATH}",
+    )
+    commit(root, "test: gitlink drift", 2, amend=True)
     assert_failure(root, refresh_identity(root, contract), "FAIL_PATH_SAFETY")
 
     root, contract = api_workspace(tmp_path / "replacement")

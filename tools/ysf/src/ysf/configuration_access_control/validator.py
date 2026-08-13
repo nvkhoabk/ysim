@@ -25,8 +25,10 @@ EXPECTED_BRANCH = "feature/v3-r1-g00-s03-configuration-access-control-source-bas
 EXPECTED_BASE_BRANCH = "feature/v3-r1-g00-s02-governance-requirements-baseline"
 EXPECTED_BASE_SHA = "6e71bdd58df2c5baddb36783abbc513867656df0"
 EXPECTED_BASE_TREE = "b40ef828825e36641695adb23faedf7346102630"
-EXPECTED_CORRECTIVE_PARENT_SHA = "bc7893f5efa2c3b40da52396b9e946187c6a2044"
-EXPECTED_CORRECTIVE_PARENT_TREE = "ff9be9172780065e46dac4a336a9cf38b52af8f2"
+EXPECTED_CORRECTIVE_PARENT_SHA = "62f73324f00fda213cba52cb7c50686c6a0f5e6a"
+EXPECTED_CORRECTIVE_PARENT_TREE = "ce1005025986e39dabd5b675aaa8f8956cd754a7"
+R2_CORRECTIVE_PARENT_SHA = "bc7893f5efa2c3b40da52396b9e946187c6a2044"
+R2_CORRECTIVE_PARENT_TREE = "ff9be9172780065e46dac4a336a9cf38b52af8f2"
 EXPECTED_REQUIREMENTS = (
     "V3-R1-OPS-001",
     "V3-R1-OPS-002",
@@ -64,6 +66,26 @@ BASELINE_PATH = "docs/v3/r1/g00/s03/configuration-access-control-baseline.yaml"
 SPEC_PATH = "docs/v3/r1/g00/s03/package-spec.yaml"
 PROVENANCE_PATH = "docs/v3/r1/g00/s03/source-provenance.yaml"
 TRACEABILITY_PATH = "docs/v3/r1/g00/s01/traceability-baseline.yaml"
+EXPECTED_ARTIFACT_PATHS = (
+    SPEC_PATH,
+    MANIFEST_PATH,
+    PROVENANCE_PATH,
+)
+EXPECTED_KNOWLEDGE_BOUNDARY: dict[str, Any] = {
+    "builder": "ysf.index.documents.build_document_index",
+    "source": "CURRENT_DOCS_IN_MEMORY",
+    "source_glob": "docs/**/*.md",
+    "tracked_factory_index_allowed": False,
+    "expected_document_count": 124,
+    "expected_capability_count": 8,
+    "expected_integration_count": 0,
+    "expected_relationship_count": 48,
+}
+EXPECTED_BRANCH_COVERAGE_BOUNDARY: dict[str, Any] = {
+    "source_package": "ysf.configuration_access_control",
+    "metric": "COVERED_BRANCHES_DIVIDED_BY_VALID_BRANCHES",
+    "minimum_percent": 90.0,
+}
 _SHA256 = re.compile(r"^[0-9a-f]{64}$")
 _GIT_SHA = re.compile(r"^[0-9a-f]{40}$")
 _PLACEHOLDER = re.compile(r"(?i)(?:\bTODO\b|\bTBD\b|\bFIXME\b|CHANGE_ME|REPLACE_ME|\{\{[^}]+\}\})")
@@ -158,10 +180,10 @@ def _expected_spec() -> dict[str, Any]:
             "tree": EXPECTED_BASE_TREE,
         },
         "head_topology": {
-            "binding": "MANDATORY_EXTERNAL_SNAPSHOT_CONTRACT",
+            "binding": "MANDATORY_EXTERNAL_SNAPSHOT_CONTRACT_V2",
             "corrective_parent_commit": EXPECTED_CORRECTIVE_PARENT_SHA,
             "corrective_parent_tree": EXPECTED_CORRECTIVE_PARENT_TREE,
-            "base_to_head_commit_count": 3,
+            "base_to_head_commit_count": 4,
             "parent_to_head_commit_count": 1,
         },
         "repository_root_contract": {
@@ -177,21 +199,17 @@ def _expected_spec() -> dict[str, Any]:
         "requirements": list(EXPECTED_REQUIREMENTS),
         "allowed_paths": list(EXPECTED_ALLOWLIST_ORDER),
         "file_mode": "100644",
+        "external_snapshot_contract": {
+            "schema_version": 2,
+            "changed_path_binding": "EXACT_SORTED_BASE_TO_HEAD_14_PATHS",
+            "authorized_path_binding": "EXACT_SORTED_15_PATHS",
+            "authorized_mode_binding": "EXACT_15_PATHS_100644",
+            "artifact_digest_paths": list(EXPECTED_ARTIFACT_PATHS),
+            "validation_boundaries": ["knowledge_input", "branch_coverage"],
+        },
         "validation_gates": {
-            "branch_coverage": {
-                "source_package": "ysf.configuration_access_control",
-                "metric": "COVERED_BRANCHES_DIVIDED_BY_VALID_BRANCHES",
-                "minimum_percent": 90.0,
-            },
-            "knowledge_input": {
-                "builder": "ysf.index.documents.build_document_index",
-                "source": "CURRENT_DOCS_IN_MEMORY",
-                "source_glob": "docs/**/*.md",
-                "tracked_factory_index_allowed": False,
-                "expected_document_count": 124,
-                "expected_capability_count": 8,
-                "expected_relationship_count": 48,
-            },
+            "branch_coverage": EXPECTED_BRANCH_COVERAGE_BOUNDARY,
+            "knowledge_input": EXPECTED_KNOWLEDGE_BOUNDARY,
         },
         "s02_compatibility_exception": {
             "scope": "DESCENDANT_S03_TEST_FIXTURE_ONLY",
@@ -233,8 +251,8 @@ def _expected_provenance() -> dict[str, Any]:
         "provenance_id": "V3-R1-G00-S03-SOURCE-PROVENANCE-001",
         "checkpoint": "V3-R1-G00-S03",
         "corrective_r2": {
-            "parent_commit": EXPECTED_CORRECTIVE_PARENT_SHA,
-            "parent_tree": EXPECTED_CORRECTIVE_PARENT_TREE,
+            "parent_commit": R2_CORRECTIVE_PARENT_SHA,
+            "parent_tree": R2_CORRECTIVE_PARENT_TREE,
             "knowledge_input": {
                 "builder": "ysf.index.documents.build_document_index",
                 "source": "CURRENT_DOCS_IN_MEMORY",
@@ -242,6 +260,7 @@ def _expected_provenance() -> dict[str, Any]:
                 "tracked_factory_index_allowed": False,
                 "expected_document_count": 124,
                 "expected_capability_count": 8,
+                "expected_integration_count": 0,
                 "expected_relationship_count": 48,
                 "service": {
                     "path": "tools/ysf/src/ysf/knowledge/service.py",
@@ -253,8 +272,22 @@ def _expected_provenance() -> dict[str, Any]:
                 },
             },
             "branch_coverage_gate": {
+                "source_package": "ysf.configuration_access_control",
                 "metric": "COVERED_BRANCHES_DIVIDED_BY_VALID_BRANCHES",
                 "minimum_percent": 90.0,
+            },
+        },
+        "corrective_r3": {
+            "parent_commit": EXPECTED_CORRECTIVE_PARENT_SHA,
+            "parent_tree": EXPECTED_CORRECTIVE_PARENT_TREE,
+            "external_snapshot_contract": {
+                "schema_version": 2,
+                "changed_path_count": 14,
+                "authorized_path_count": 15,
+                "authorized_file_mode": "100644",
+                "artifact_digest_paths": list(EXPECTED_ARTIFACT_PATHS),
+                "knowledge_input": EXPECTED_KNOWLEDGE_BOUNDARY,
+                "branch_coverage": EXPECTED_BRANCH_COVERAGE_BOUNDARY,
             },
         },
         "predecessor": {
@@ -663,15 +696,52 @@ def _accepted_origin(origin: str) -> str:
     return EXPECTED_REPOSITORY
 
 
+def _validate_exact_scalar_mapping(
+    observed: Mapping[str, Any], expected: Mapping[str, Any], code: str, label: str
+) -> None:
+    _exact_keys(observed, set(expected), code, label)
+    for key, expected_value in expected.items():
+        observed_value = observed[key]
+        if type(observed_value) is not type(expected_value) or observed_value != expected_value:
+            _fail(code, f"{label} differs from the exact boundary.", field=key)
+
+
+def _validate_contract_paths(value: Any, expected: frozenset[str], label: str) -> list[str]:
+    code = "FAIL_SNAPSHOT_CONTRACT"
+    observed = list(_sequence(value, code, label))
+    for relative in observed:
+        if not isinstance(relative, str):
+            _fail(code, f"{label} contains a non-string path.")
+        pure = PurePosixPath(relative)
+        if (
+            pure.is_absolute()
+            or pure.as_posix() != relative
+            or any(part in {"", ".", ".."} for part in pure.parts)
+        ):
+            _fail(code, f"{label} contains an unsafe path.")
+    if observed != sorted(expected):
+        _fail(code, f"{label} differs from the exact sorted boundary.")
+    return observed
+
+
 def _validate_snapshot_contract(contract: Mapping[str, Any]) -> None:
     code = "FAIL_SNAPSHOT_CONTRACT"
     _exact_keys(
         contract,
-        {"schema_version", "repository", "topology", "changed_paths", "file_modes"},
+        {
+            "schema_version",
+            "repository",
+            "topology",
+            "changed_paths",
+            "authorized_paths",
+            "file_modes",
+            "artifact_digests",
+            "validation_boundaries",
+        },
         code,
         "snapshot contract",
     )
-    if type(contract.get("schema_version")) is not int or contract["schema_version"] != 1:
+    if type(contract.get("schema_version")) is not int or contract["schema_version"] != 2:
         _fail(code, "Snapshot schema version is incorrect.")
     repository = _mapping(contract.get("repository"), code, "repository")
     _exact_keys(repository, {"identity", "origin", "branch"}, code, "repository")
@@ -697,25 +767,66 @@ def _validate_snapshot_contract(contract: Mapping[str, Any]) -> None:
         pattern = _GIT_SHA
         if not isinstance(topology.get(key), str) or pattern.fullmatch(str(topology[key])) is None:
             _fail(code, "Snapshot contains malformed Git identity.")
+    for key in ("base_to_head_commit_count", "parent_to_head_commit_count"):
+        if type(topology.get(key)) is not int:
+            _fail(code, "Snapshot contains malformed commit count.")
     if (
         topology.get("base_sha") != EXPECTED_BASE_SHA
         or topology.get("base_tree") != EXPECTED_BASE_TREE
         or topology.get("corrective_parent_sha") != EXPECTED_CORRECTIVE_PARENT_SHA
         or topology.get("corrective_parent_tree") != EXPECTED_CORRECTIVE_PARENT_TREE
-        or topology.get("base_to_head_commit_count") != 3
+        or topology.get("base_to_head_commit_count") != 4
         or topology.get("parent_to_head_commit_count") != 1
     ):
         _fail(code, "Snapshot topology differs from the exact corrective stack.")
-    changed = _sequence(contract.get("changed_paths"), code, "changed_paths")
-    if list(changed) != sorted(EXPECTED_CHANGED_PATHS):
-        _fail(code, "Snapshot changed paths differ from exact observed S03 delta.")
+    _validate_contract_paths(contract.get("changed_paths"), EXPECTED_CHANGED_PATHS, "changed_paths")
+    _validate_contract_paths(
+        contract.get("authorized_paths"), EXPECTED_ALLOWLIST, "authorized_paths"
+    )
     modes = _mapping(contract.get("file_modes"), code, "file_modes")
-    if set(modes) != EXPECTED_CHANGED_PATHS or any(value != "100644" for value in modes.values()):
+    if set(modes) != EXPECTED_ALLOWLIST or any(
+        not isinstance(value, str) or value != "100644" for value in modes.values()
+    ):
         _fail(code, "Snapshot modes differ from exact 100644 boundary.")
+    artifacts = _mapping(contract.get("artifact_digests"), code, "artifact_digests")
+    _exact_keys(artifacts, set(EXPECTED_ARTIFACT_PATHS), code, "artifact_digests")
+    if any(
+        not isinstance(value, str) or _SHA256.fullmatch(value) is None
+        for value in artifacts.values()
+    ):
+        _fail(code, "Snapshot artifact digest is malformed.")
+    boundaries = _mapping(contract.get("validation_boundaries"), code, "validation_boundaries")
+    _exact_keys(boundaries, {"knowledge_input", "branch_coverage"}, code, "validation_boundaries")
+    knowledge = _mapping(boundaries.get("knowledge_input"), code, "knowledge_input")
+    coverage = _mapping(boundaries.get("branch_coverage"), code, "branch_coverage")
+    _validate_exact_scalar_mapping(
+        knowledge, EXPECTED_KNOWLEDGE_BOUNDARY, code, "knowledge_input"
+    )
+    _validate_exact_scalar_mapping(
+        coverage, EXPECTED_BRANCH_COVERAGE_BOUNDARY, code, "branch_coverage"
+    )
 
 
 def load_snapshot_contract(path: Path) -> Mapping[str, Any]:
-    if not path.is_absolute() or path.is_symlink() or not path.is_file():
+    if (
+        not path.is_absolute()
+        or len(path.parts) < 2
+        or Path(os.path.normpath(os.fspath(path))) != path
+    ):
+        _fail("FAIL_SNAPSHOT_CONTRACT", "Snapshot contract path is unsafe.")
+    current = Path(path.anchor)
+    try:
+        observed = os.lstat(current)
+        for index, component in enumerate(path.parts[1:]):
+            current /= component
+            observed = os.lstat(current)
+            if stat.S_ISLNK(observed.st_mode):
+                _fail("FAIL_SNAPSHOT_CONTRACT", "Snapshot contract path is unsafe.")
+            if index < len(path.parts[1:]) - 1 and not stat.S_ISDIR(observed.st_mode):
+                _fail("FAIL_SNAPSHOT_CONTRACT", "Snapshot contract parent is unsafe.")
+        if not stat.S_ISREG(observed.st_mode):
+            _fail("FAIL_SNAPSHOT_CONTRACT", "Snapshot contract is not a regular file.")
+    except OSError:
         _fail("FAIL_SNAPSHOT_CONTRACT", "Snapshot contract path is unsafe.")
     return _load_yaml(path, "FAIL_SNAPSHOT_CONTRACT")
 
@@ -731,6 +842,29 @@ def _changed_paths(root: Path) -> set[str]:
             _fail("FAIL_PATH_SAFETY", "Observed changed path is unsafe.")
         paths.add(relative)
     return paths
+
+
+def _observe_bound_file(root: Path, relative: str) -> str:
+    current = root
+    parts = PurePosixPath(relative).parts
+    try:
+        observed = os.lstat(current)
+        for index, part in enumerate(parts):
+            current /= part
+            observed = os.lstat(current)
+            if stat.S_ISLNK(observed.st_mode):
+                _fail("FAIL_PATH_SAFETY", "Authorized path contains a symlink.", path=relative)
+            if index < len(parts) - 1 and not stat.S_ISDIR(observed.st_mode):
+                _fail("FAIL_PATH_SAFETY", "Authorized path parent is not a directory.")
+        if not stat.S_ISREG(observed.st_mode):
+            _fail("FAIL_PATH_SAFETY", "Authorized path is not a regular file.", path=relative)
+    except OSError:
+        _fail("FAIL_PATH_SAFETY", "Authorized path is missing or unsafe.", path=relative)
+    record = _run_git(root, "ls-tree", "HEAD", "--", relative)
+    match = re.fullmatch(r"(\d{6}) blob [0-9a-f]{40}\t.+", record)
+    if match is None:
+        _fail("FAIL_FILE_MODE", "Authorized path is not a regular Git blob.", path=relative)
+    return match.group(1)
 
 
 def _observe_repository(root: Path, contract: Mapping[str, Any]) -> set[str]:
@@ -770,30 +904,72 @@ def _observe_repository(root: Path, contract: Mapping[str, Any]) -> set[str]:
         or _run_git(root, "rev-parse", "HEAD^^{tree}") != EXPECTED_CORRECTIVE_PARENT_TREE
     ):
         _fail("FAIL_BASE_IDENTITY", "Observed corrective parent is incorrect.")
-    if int(_run_git(root, "rev-list", "--count", f"{EXPECTED_BASE_SHA}..HEAD")) != 3:
+    if int(_run_git(root, "rev-list", "--count", f"{EXPECTED_BASE_SHA}..HEAD")) != 4:
         _fail("FAIL_COMMIT_TOPOLOGY", "Observed base-to-head count is incorrect.")
     if int(_run_git(root, "rev-list", "--count", f"{EXPECTED_CORRECTIVE_PARENT_SHA}..HEAD")) != 1:
         _fail("FAIL_COMMIT_TOPOLOGY", "Observed parent-to-head count is incorrect.")
+    modes = {
+        relative: _observe_bound_file(root, relative)
+        for relative in sorted(EXPECTED_ALLOWLIST)
+    }
+    if modes != dict(cast(Mapping[str, str], contract["file_modes"])):
+        _fail("FAIL_FILE_MODE", "Observed modes differ from snapshot.")
     changed = _changed_paths(root)
     if changed != set(cast(Sequence[str], contract["changed_paths"])):
         _fail("FAIL_FILE_ALLOWLIST", "Observed paths differ from snapshot.")
-    modes: dict[str, str] = {}
-    for relative in sorted(changed):
-        current = root
-        for part in PurePosixPath(relative).parts:
-            current /= part
-            if current.is_symlink():
-                _fail("FAIL_PATH_SAFETY", "Changed path contains a symlink.")
-        if not current.is_file():
-            _fail("FAIL_PATH_SAFETY", "Changed path is not a regular file.")
-        record = _run_git(root, "ls-tree", "HEAD", "--", relative)
-        match = re.fullmatch(r"(\d{6}) blob [0-9a-f]{40}\t.+", record)
-        if match is None:
-            _fail("FAIL_FILE_MODE", "Changed path mode cannot be observed.")
-        modes[relative] = match.group(1)
-    if modes != dict(cast(Mapping[str, str], contract["file_modes"])):
-        _fail("FAIL_FILE_MODE", "Observed modes differ from snapshot.")
     return changed
+
+
+def _validate_snapshot_artifact_digests(
+    root: Path, contract: Mapping[str, Any]
+) -> dict[str, str]:
+    artifacts = cast(Mapping[str, str], contract["artifact_digests"])
+    actual = {relative: _sha256(root / relative) for relative in EXPECTED_ARTIFACT_PATHS}
+    if actual != dict(artifacts):
+        _fail("FAIL_SNAPSHOT_ARTIFACT", "External artifact digest binding failed.")
+    return actual
+
+
+def _validate_external_snapshot_bindings(
+    root: Path,
+    contract: Mapping[str, Any],
+    actual_artifacts: Mapping[str, str],
+    package: Mapping[str, Any],
+    provenance: Mapping[str, Any],
+    manifest: Mapping[str, Any],
+) -> dict[str, Any]:
+    validated = {
+        SPEC_PATH: package["sha256"],
+        MANIFEST_PATH: manifest["sha256"],
+        PROVENANCE_PATH: provenance["sha256"],
+    }
+    if dict(actual_artifacts) != validated:
+        _fail("FAIL_SNAPSHOT_ARTIFACT", "Validated artifact digests differ from the snapshot.")
+    package_document = _load_yaml(root / SPEC_PATH, "FAIL_PACKAGE_SPEC")
+    provenance_document = _load_yaml(root / PROVENANCE_PATH, "FAIL_SOURCE_PROVENANCE")
+    package_boundaries = cast(Mapping[str, Any], package_document["validation_gates"])
+    corrective_r3 = cast(Mapping[str, Any], provenance_document["corrective_r3"])
+    provenance_contract = cast(Mapping[str, Any], corrective_r3["external_snapshot_contract"])
+    boundaries = cast(Mapping[str, Any], contract["validation_boundaries"])
+    if (
+        dict(cast(Mapping[str, Any], boundaries["knowledge_input"]))
+        != dict(cast(Mapping[str, Any], package_boundaries["knowledge_input"]))
+        or dict(cast(Mapping[str, Any], boundaries["branch_coverage"]))
+        != dict(cast(Mapping[str, Any], package_boundaries["branch_coverage"]))
+        or dict(cast(Mapping[str, Any], boundaries["knowledge_input"]))
+        != dict(cast(Mapping[str, Any], provenance_contract["knowledge_input"]))
+        or dict(cast(Mapping[str, Any], boundaries["branch_coverage"]))
+        != dict(cast(Mapping[str, Any], provenance_contract["branch_coverage"]))
+    ):
+        _fail("FAIL_SNAPSHOT_BOUNDARY", "External validation boundaries are not cross-bound.")
+    return {
+        "result": "PASS",
+        "schema_version": 2,
+        "authorized_paths": sorted(EXPECTED_ALLOWLIST),
+        "artifact_digests": dict(actual_artifacts),
+        "knowledge_input": dict(EXPECTED_KNOWLEDGE_BOUNDARY),
+        "branch_coverage": dict(EXPECTED_BRANCH_COVERAGE_BOUNDARY),
+    }
 
 
 def validate_configuration_access_control(
@@ -804,11 +980,15 @@ def validate_configuration_access_control(
     root = _validated_repository_root(repository_root)
     _validate_snapshot_contract(snapshot_contract)
     changed = _observe_repository(root, snapshot_contract)
+    artifact_digests = _validate_snapshot_artifact_digests(root, snapshot_contract)
     sensitive = require_no_sensitive_values(root / path for path in sorted(changed))
     package = _validate_package(root)
     provenance = _validate_provenance(root)
     baseline = _validate_baseline(root)
     manifest = _validate_manifest(root)
+    snapshot = _validate_external_snapshot_bindings(
+        root, snapshot_contract, artifact_digests, package, provenance, manifest
+    )
     _validate_documents(root)
     return {
         "result": "PASS",
@@ -826,6 +1006,7 @@ def validate_configuration_access_control(
         "provenance": provenance,
         "baseline": baseline,
         "manifest": manifest,
+        "snapshot_contract": snapshot,
         "sensitive_data": sensitive.result,
         "providers": "OFF",
         "email_mode": "NON_RELAYING",

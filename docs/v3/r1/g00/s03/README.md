@@ -61,6 +61,15 @@ permissive default. An exact repository may be validated at a safe disposable
 absolute path when its observed origin, branch, topology, changed paths, modes,
 content, and sensitive-data gates match the external contract.
 
+The mandatory external contract uses schema version 2. It binds the exact
+sorted fourteen-path base-to-head delta, all fifteen authorized paths and their
+`100644` Git modes (including the unchanged secure-factory integration test),
+and independently supplied SHA-256 values for the package specification,
+manifest, and source provenance. It also binds the fresh in-memory knowledge
+builder/count boundary and the covered-branches-divided-by-valid-branches
+coverage metric with its exact 90.0% threshold. Schema version 1 and every
+missing, extra, reordered, malformed, or mismatched binding fail closed.
+
 ## Safety boundary
 
 Only synthetic source validation is permitted. Providers are `OFF`, email is

@@ -11,6 +11,7 @@ corrective_r2:
     tracked_factory_index_allowed: false
     expected_document_count: 124
     expected_capability_count: 8
+    expected_integration_count: 0
     expected_relationship_count: 48
     service:
       path: tools/ysf/src/ysf/knowledge/service.py
@@ -19,8 +20,34 @@ corrective_r2:
       path: tools/ysf/tests/integration/test_build_knowledge.py
       sha256: c5a9dc34e71b90e7b5a8fe5075626cf039fff37517d2e111b824cab285908905
   branch_coverage_gate:
+    source_package: ysf.configuration_access_control
     metric: COVERED_BRANCHES_DIVIDED_BY_VALID_BRANCHES
     minimum_percent: 90.0
+corrective_r3:
+  parent_commit: 62f73324f00fda213cba52cb7c50686c6a0f5e6a
+  parent_tree: ce1005025986e39dabd5b675aaa8f8956cd754a7
+  external_snapshot_contract:
+    schema_version: 2
+    changed_path_count: 14
+    authorized_path_count: 15
+    authorized_file_mode: "100644"
+    artifact_digest_paths:
+      - docs/v3/r1/g00/s03/package-spec.yaml
+      - docs/v3/r1/g00/s03/MANIFEST.sha256
+      - docs/v3/r1/g00/s03/source-provenance.yaml
+    knowledge_input:
+      builder: ysf.index.documents.build_document_index
+      source: CURRENT_DOCS_IN_MEMORY
+      source_glob: docs/**/*.md
+      tracked_factory_index_allowed: false
+      expected_document_count: 124
+      expected_capability_count: 8
+      expected_integration_count: 0
+      expected_relationship_count: 48
+    branch_coverage:
+      source_package: ysf.configuration_access_control
+      metric: COVERED_BRANCHES_DIVIDED_BY_VALID_BRANCHES
+      minimum_percent: 90.0
 predecessor:
   branch: feature/v3-r1-g00-s02-governance-requirements-baseline
   commit: 6e71bdd58df2c5baddb36783abbc513867656df0
