@@ -1,0 +1,65 @@
+schema_version: 1
+binding_id: V3-R1-G00-S02-GOVERNING-STANDARDS-001
+checkpoint: V3-R1-G00-S02
+source:
+  identity: YSim_R1_Documentation_Baseline_2026-08-02_v1.2.1
+  title: YSim Release 1 — Documentation Baseline v1.2.1
+  version: 1.2.1
+  format: DOCX
+  filename: YSim_R1_Documentation_Baseline_2026-08-02_v1.2.1.docx
+  physical_input_path: /root/projects/ysim-v3-r1/evidence/V3-R1-G00-S02-READONLY-PREFLIGHT-20260811T100321Z/V3-R1-G00-S02-CORRECTIVE-INPUTS-R1/YSim_R1_Documentation_Baseline_2026-08-02_v1.2.1.docx
+  sha256: 47da5d9dc46bb0e136936f865007d988fe537e3a0413676d8d00fe89496fba48
+  package_manifest_path: /root/projects/ysim-v3-r1/evidence/V3-R1-G00-S02-READONLY-PREFLIGHT-20260811T100321Z/V3-R1-G00-S02-CORRECTIVE-INPUTS-R1/MANIFEST.sha256
+  package_manifest_sha256: 4e55ba9a4dbeb9329d52aa91161a7f0f1f7e73fcc4b31b17896c376a32539249
+  authority: AUTHORITATIVE_DOCUMENTATION_BASELINE
+extraction:
+  method_id: DOCX_WORDPROCESSINGML_HEADING1_MARKDOWN_V1
+  source_part: word/document.xml
+  boundary_rule: Exact listed inclusive source body blocks, in source order; PCS and ENG span their complete Heading1 sections, while ENV omits source body block 700 containing three personal mailbox values that are outside S02 scope.
+  paragraph_rendering:
+    Heading1: '# '
+    Heading2: '## '
+    Heading3: '### '
+    ListBullet: '- '
+    ListNumber: '1. '
+    default: ''
+  table_rendering: GitHub Markdown table with source row order and pipe escaping.
+  block_separator: TWO_LF
+  final_terminator: ONE_LF
+  encoding: UTF-8
+standards:
+  - code: YSIM-PCS-001
+    version: 1.27.1
+    status: APPROVED FOR RELEASE 1
+    embedded_document: 04_RELEASE_STANDARD_1.27.1.md
+    heading: YSim Package and Release Standard
+    source_body_blocks_inclusive: [352, 521]
+    extract_path: docs/v3/r1/g00/s02/standards/04_RELEASE_STANDARD_1.27.1.txt
+    extract_size_bytes: 13428
+    extract_sha256: 92823bbef5560bf1a958285555814aa3e2afe20e191ddd3e82b6d85c0a940a0b
+  - code: YSIM-ENG-001
+    version: 1.0.1
+    status: APPROVED FOR RELEASE 1 PLATFORM WORK
+    embedded_document: 05_ENGINEERING_AND_CODE_GENERATION_STANDARD_1.0.1.md
+    heading: YSim Release 1 — Engineering and Code Generation Standard
+    source_body_blocks_inclusive: [522, 581]
+    extract_path: docs/v3/r1/g00/s02/standards/05_ENGINEERING_AND_CODE_GENERATION_STANDARD_1.0.1.txt
+    extract_size_bytes: 6326
+    extract_sha256: a8f475a5c7b3ec72770c92dafd36b079f196e697602d4db300b5a1813da0181d
+  - code: YSIM-ENV-001
+    version: 3.2.1
+    status: APPROVED CONTRACT; ACTUAL VALUES REQUIRE ENV EVIDENCE
+    embedded_document: 06_ENVIRONMENT_STANDARD_3.2.1.md
+    heading: YSim Release 1 — Environment Standard
+    source_body_block_ranges_inclusive: [[582, 699], [701, 760]]
+    excluded_source_body_blocks: [700]
+    exclusion_reason: PROHIBITED_PERSONAL_MAILBOX_VALUES_OUTSIDE_S02_SCOPE
+    extract_path: docs/v3/r1/g00/s02/standards/06_ENVIRONMENT_STANDARD_3.2.1.txt
+    extract_size_bytes: 16997
+    extract_sha256: 741260bc7e5889cef9eada9634bb33a0a806ef75830993d064d402841e82a2e6
+scope:
+  binds_package_spec: docs/v3/r1/g00/s02/package-spec.yaml
+  binds_candidate: factory/releases/v3-r1-g00-s02-governance-requirements-baseline/YSim_V3_R1_G00_S02_Governance_Requirements_Baseline_v0.1.0-candidate.1.md
+  extract_human_accepted: false
+  wrapper_human_accepted: false
+  candidate_bytes_modified: false

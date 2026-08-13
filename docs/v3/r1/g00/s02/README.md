@@ -29,6 +29,13 @@ candidate byte-for-byte and records acceptance separately. It is stacked on
   environment, baseline and mutation contract.
 - [Manifest](MANIFEST.sha256) — SHA-256 coverage for every S02 payload and
   validation file except the manifest itself.
+- [Governing standards provenance](standards/standards-provenance.yaml) — exact
+  authoritative DOCX identity, deterministic extraction method and checksummed
+  PCS/ENG/ENV bindings. The readable extracts are
+  [YSIM-PCS-001 v1.27.1](standards/04_RELEASE_STANDARD_1.27.1.txt),
+  [YSIM-ENG-001 v1.0.1](standards/05_ENGINEERING_AND_CODE_GENERATION_STANDARD_1.0.1.txt),
+  and [YSIM-ENV-001 v3.2.1](standards/06_ENVIRONMENT_STANDARD_3.2.1.txt).
+  Neither the extracts nor this repository binding was Human-Accepted.
 
 ## Validation
 
@@ -38,12 +45,14 @@ From the canonical WSL repository root:
 PYTHONPATH=tools/ysf/src python tools/ysf/src/ysf/governance_baseline/validator.py --json
 ```
 
-The validator fails closed on candidate-byte changes, wrong base identity,
-unexpected paths, missing or duplicate document codes, wrapper or receipt
-acceptance overclaim, duplicate requirement IDs, unresolved template text,
-receipt or decision drift, manifest mismatch, sensitive data, and claims that
-assign implemented or operational maturity to Business Factory or AI Store
-Generator in Release 1.
+The public validator derives repository identity, base tree, clean state and
+the complete changed-path set from Git; callers cannot supply substitute
+observations. It fails closed on candidate-byte changes, wrong base identity,
+unexpected or unsafe paths, missing or duplicate document codes, wrapper or
+receipt acceptance overclaim, governing-standard drift, duplicate requirement
+IDs, unresolved template text, manifest mismatch, sensitive data, and claims
+that assign implemented or operational maturity to Business Factory or AI
+Store Generator in Release 1.
 
 ## Safety boundary
 

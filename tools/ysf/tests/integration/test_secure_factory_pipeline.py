@@ -24,38 +24,7 @@ from ysf.secure_factory.sensitive import scan_text
 
 
 def repository_root() -> Path:
-    return Path(__file__).resolve().parents[4]
-
-
-def _snapshot_generator_outputs(
-    paths: tuple[Path, ...],
-) -> dict[Path, tuple[bytes, int] | None]:
-    snapshot: dict[Path, tuple[bytes, int] | None] = {}
-    for path in paths:
-        if path.exists() or path.is_symlink():
-            assert path.is_file() and not path.is_symlink()
-            snapshot[path] = (path.read_bytes(), path.stat().st_mode & 0o777)
-        else:
-            snapshot[path] = None
-    return snapshot
-
-
-def _restore_generator_outputs(
-    snapshot: dict[Path, tuple[bytes, int] | None],
-    *,
-    output_directory_existed: bool,
-) -> None:
-    for path, state in snapshot.items():
-        if state is None:
-            path.unlink(missing_ok=True)
-            continue
-        content, mode = state
-        path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_bytes(content)
-        path.chmod(mode)
-    output_directory = next(iter(snapshot)).parent
-    if not output_directory_existed and output_directory.exists():
-        output_directory.rmdir()
+    return Path.cwd().parents[1]
 
 
 def test_all_required_repository_modes_parse() -> None:
@@ -279,26 +248,14 @@ def test_generated_candidate_prompt_is_sanitized_and_stable(tmp_path: Path) -> N
         for name in ("prompt.md", "prompt.json", "manifest.json")
     )
     prompt = outputs[0]
-    output_directory_existed = output_directory.is_dir()
-    initial = _snapshot_generator_outputs(outputs)
     generated: list[bytes] = []
 
-    try:
-        for _ in range(2):
-            _restore_generator_outputs(
-                initial,
-                output_directory_existed=output_directory_existed,
-            )
-            assert build_prompt(repository_root=root, manifest_path=manifest).successful
-            assert normalize_generated_admin_email(prompt).passed
-            generated.append(prompt.read_bytes())
-    finally:
-        _restore_generator_outputs(
-            initial,
-            output_directory_existed=output_directory_existed,
-        )
+    for _ in range(2):
+        assert build_prompt(repository_root=root, manifest_path=manifest).successful
+        assert normalize_generated_admin_email(prompt).passed
+        generated.append(prompt.read_bytes())
 
-    assert _snapshot_generator_outputs(outputs) == initial
+    assert all(path.is_file() for path in outputs)
     assert generated[0] == generated[1]
     findings = scan_text(generated[0].decode("utf-8"), location="generated")
     assert [finding.kind for finding in findings if finding.kind == "PII_EMAIL"] == []

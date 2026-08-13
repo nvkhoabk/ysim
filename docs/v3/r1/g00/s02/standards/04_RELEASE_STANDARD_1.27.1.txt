@@ -1,0 +1,337 @@
+# YSim Package and Release Standard
+
+Standard ID: YSIM-PCS-001
+
+Version: 1.27.1
+
+Effective date: 2026-08-02
+
+Supersedes: YSIM-PCS-001 v1.27.0
+
+Status: APPROVED FOR RELEASE 1
+
+## 1. Governing principles
+
+- Every package has one bounded purpose, one repository, one baseline, declared mutations and explicit exit criteria.
+
+- Unknown state is a stop condition.
+
+- Diagnosis and preflight are read-only unless mutation is explicitly approved.
+
+- Source acceptance, deployment, commissioning and pilot readiness are distinct claims.
+
+- Sandbox acceptance precedes production deployment; production deployment precedes production execution.
+
+- Promote the same immutable artifact. Environment differences belong only in isolated configuration and secrets.
+
+- Evidence is redacted, reproducible and sufficient to independently classify the result.
+
+## 2. Mandatory identity
+
+Every package must declare:
+
+PACKAGE_ID PACKAGE_VERSION/REVISION REPOSITORY REQUIRED_BASELINE_TAG REQUIRED_BASELINE_COMMIT WORKTREE_ENTRY_MODE REQUIREMENT_IDS MATURITY_FROM MATURITY_TO ENVIRONMENT_SCOPE EXECUTION_OS DEVELOPMENT_SHELL CANONICAL_REPO_ROOT MUTATES_SOURCE MUTATES_RUNTIME CALLS_EXTERNAL_PROVIDER SENDS_CUSTOMER_COMMUNICATION APPROVAL_MODE PAYMENT_OWNER_MODE MONEY_LEDGER_IMPACT
+
+The launcher verifies operating system, WSL distro where applicable, canonical repository root, repository marker files, Git remote, current branch, commit, accepted tag and installed-state classification. For nvkhoabk/ysim source packages, the required boundary is Linux inside WSL distro YSim-Debian12 at /root/projects/ysim-v2.1/ysim. Current directory alone is not repository identity.
+
+## 3. Installed-state protocol
+
+Before mutation classify the target as:
+
+- EXPECTED_BASELINE
+
+- PARTIALLY_APPLIED_KNOWN_STATE
+
+- ALREADY_APPLIED
+
+- UNKNOWN_STATE
+
+Only declared known states may proceed. Corrective revisions must bind the exact recoverable state, own a bounded file set, reject unrelated mutations and be idempotent.
+
+## 4. Package contents
+
+Each ZIP contains at minimum:
+
+- README.md with prerequisites, exact commands and expected results.
+
+- PACKAGE_SPEC.json or equivalent machine-readable manifest.
+
+- MANIFEST.sha256 covering executable and payload files.
+
+- Current release handoff/context document.
+
+- Current YSIM-PCS-001 standard.
+
+- Preflight, apply, machine validation, evidence and finalization steps.
+
+- Rollback or explicit safe-stop behavior.
+
+## 5. Preflight-before-mutation rule
+
+All checks that can invalidate execution must run before the first source/runtime mutation, including:
+
+- package checksum/archive integrity;
+
+- repository/baseline/worktree binding;
+
+- toolchain and required dependency availability;
+
+- environment identity and collision checks;
+
+- browser/render capability when required for acceptance;
+
+- external connectivity only when explicitly authorized and safe;
+
+- evidence directory writability and disk-space checks.
+
+- For Platform source mutation: Linux kernel, WSL_DISTRO_NAME=YSim-Debian12, canonical repo root /root/projects/ysim-v2.1/ysim and remote nvkhoabk/ysim.
+
+- Reject Windows/PowerShell source execution and reject any path identified as ysim-storefront or /var/www/sandbox.ysim.vn/storefront.
+
+If a preflight fails, the package must state whether the repository/runtime remained unchanged.
+
+## 6. Machine validation
+
+Applicable gates include:
+
+- TypeScript/typecheck.
+
+- Exact slice tests and negative controls.
+
+- Cumulative tests/vs-r1-* regression.
+
+- API and Web production builds.
+
+- Migration/schema validation.
+
+- Static scope and staged-path audit.
+
+- Package checksum and ZIP round-trip.
+
+- Runtime/lifecycle tests equivalent to the target OS and process boundary.
+
+Do not describe a static regex, simplified fixture or cross-environment simulation as equivalent runtime proof.
+
+## 7. Human acceptance
+
+Candidate publication occurs before human review; accepted tag publication occurs only after the exact approved decision token. CHANGES_REQUESTED preserves candidate/evidence but creates no accepted tag.
+
+For UI acceptance:
+
+- Capture the actual candidate route, not a mock detached from the build.
+
+- Include desktop and mobile viewports where responsive behavior is in scope.
+
+- Store original PNG files with checksum in the evidence bundle.
+
+- Terminal ANSI rendering may assist review but is not the sole durable evidence.
+
+- Record route, viewport, timestamp, artifact/commit and capture command.
+
+- Human review must check content, state boundaries, responsive layout and absence of secret/PII leakage.
+
+## 8. Cross-OS browser/runtime standard
+
+The browser-capture defect in VS-R1-038 v1 establishes these mandatory rules:
+
+- Never assume 127.0.0.1 or localhost is shared across WSL and Windows processes.
+
+- Detect browser operating system and transport explicitly.
+
+- Prefer same-OS browser and application process when possible.
+
+- Windows browser use is limited to UI capture/review. If a Windows browser is launched from WSL, use a validated cross-OS mechanism; do not rely on WSL-to-Windows CDP loopback and do not move Platform source execution into PowerShell.
+
+- Browser stderr, exit code and timeout classification must be retained in redacted diagnostics.
+
+- Probe browser capability before applying payload.
+
+- A corrective package must add a regression gate reproducing the failed transport path.
+
+## 9. External execution gates
+
+Production is deployed with payment, fulfillment, scheduler and customer email disabled. Enablement is provider-specific, sequential and reversible.
+
+- GPay: authoritative callback/query, replay protection and reconciliation required.
+
+- OnePay: independent sandbox and production gate required.
+
+- Laos: cash/manual only at initial go-live.
+
+- uMoney: disabled and absent from enabled options until official inputs exist.
+
+- Gigago: production endpoint/method confirmed independently; sandbox POST evidence is not a production contract.
+
+No package may claim live E2E unless it actually called the named provider/environment under explicit authorization and preserved redacted evidence.
+
+### 9.1 Authorized Release 1 sandbox effects
+
+For bounded commissioning, the Business Owner authorizes creation of GPay/OnePay sandbox transactions and Gigago sandbox orders. Email delivery is limited to the approved allowlist in YSIM-ENV-001 v3.1.0. The package must still declare expected cost/effect, test references, maximum count and cleanup/reconciliation procedure. This authorization never extends to production.
+
+### 9.2 Agency money and Payment Owner release gates
+
+Any package affecting agency money must declare which independent ledger it mutates:
+
+- agency credit posted by a YSim Operator after external settlement;
+
+- optional YSim Payment Owner net settlement; or
+
+- Sales User commission based on recognized sales revenue.
+
+GPay/OnePay must not be exposed as agency balance top-up methods in R1. A Payment Owner package must prove per-agency authorization, YSim credential isolation, provider attribution, fees/refunds/chargebacks, net-settlement reconciliation and no automatic conversion to agency credit. A Sales User commission package must prove Agency Admin authorization, rule version/effective period, fulfillment-time accrual and reversal.
+
+### 9.3 R1 one-person production activation exception
+
+Khoa Nguyen holds both Business Owner and Technical Operator. Production activation may proceed under a one-person R1 exception only if the candidate includes:
+
+- explicit risk acceptance naming the exact capability/provider and bounded window;
+
+- completed Human Review and immutable approval/audit record;
+
+- verified provider/capability kill switch;
+
+- transaction/order caps and an immediate stop condition;
+
+- backup/rollback readiness and immediate post-activation reconciliation.
+
+The same actor may not silently self-approve by omission. Missing exception evidence blocks activation. This exception is specific to R1 and must be reassessed before a broader release.
+
+## 10. Evidence standard
+
+Evidence includes:
+
+- timestamp/timezone, host and environment;
+
+- repository, branch, baseline, candidate and accepted commit/tag;
+
+- package identity and checksums;
+
+- toolchain/runtime versions;
+
+- commands/gates and exit codes;
+
+- requirement IDs and maturity transition;
+
+- named Business Owner/Technical Operator, approval mode and any exception evidence;
+
+- affected money ledger and Payment Owner mode where applicable;
+
+- test correlation IDs and reconciliation outcome;
+
+- original UI PNGs when applicable;
+
+- final classification and next allowed action.
+
+Evidence excludes credential values, tokens, private keys, database passwords, raw .env, full email/phone/customer record, full ICCID, LPA and QR payload.
+
+### 10.1 Console-first evidence handoff
+
+Every non-visual diagnostic, corrective, validation and commissioning runner must print one bounded, redacted evidence block to standard output after returning the target to its declared final safety state.
+
+- Use matching ===== BEGIN <PACKAGE_ID> EVIDENCE ===== and ===== END <PACKAGE_ID> EVIDENCE ===== markers.
+
+- Include package/run and baseline/candidate identity, gates and exit codes, final classification, final safety state and next allowed action.
+
+- Omit or redact prohibited secrets and sensitive customer/supplier payloads; print EVIDENCE_BLOCK_INCOMPLETE when required evidence is unavailable.
+
+- Make the block complete enough for direct terminal copy-paste into review; ZIP/text evidence remains an integrity/recovery fallback.
+
+- Keep original visual files mandatory when visual acceptance applies.
+
+## 11. Failure and corrective policy
+
+Every failure report separates:
+
+- first failed gate;
+
+- root cause;
+
+- coverage gap;
+
+- repository/runtime mutation state;
+
+- safe next action.
+
+The corrective revision must fix both root cause and coverage gap, use a new immutable identity and include a regression test that fails on the defective revision and passes on the corrective revision. Do not direct the operator to hand-edit package payload or checksums.
+
+## 12. Promotion standard
+
+1. Pin accepted commit and standard version.
+
+1. Build one immutable artifact and record checksum/SBOM where available.
+
+1. Deploy to sandbox.
+
+1. Complete automated, provider and E2E tests.
+
+1. Review redacted evidence and business UAT.
+
+1. Verify backup and rehearse rollback.
+
+1. Deploy the same artifact to production with execution OFF.
+
+1. Run non-transactional smoke checks.
+
+1. Record dual-approval evidence or the approved R1 one-person exception, then enable one provider/capability at a time.
+
+1. Execute a controlled low-value transaction.
+
+1. Reconcile order, payment, supplier, asset, delivery and receipt.
+
+1. Monitor 24–48 hours before expanding pilot traffic.
+
+Any unknown state, isolation breach, secret exposure, evidence gap, reconciliation mismatch or duplicate business effect blocks promotion.
+
+## 13. Version interpretation
+
+YSIM-PCS-001 v1.27.1 is the project package/release standard. Runner fields such as RELEASE_STANDARD_AMENDMENT identify an internal implementation-chain amendment; they do not supersede or rename this governing standard.
+
+## 14. Change log — 1.27.1
+
+- Made execution OS, development shell and canonical repository root mandatory package identity fields.
+
+- Bound nvkhoabk/ysim source packages to WSL distro YSim-Debian12 and rejected Windows/storefront source paths before mutation.
+
+- Recorded VS-R1-040-R1 as withdrawn before execution and required a corrective WSL-only revision.
+
+- Added explicit package identity for approval mode, Payment Owner mode and money-ledger impact.
+
+- Recorded bounded authorization for GPay/OnePay/Gigago sandbox test effects and the mailbox allowlist boundary.
+
+- Added independent gates for agency credit, Payment Owner settlement and Sales User commission.
+
+- Prohibited gateway-based agency credit top-up in R1.
+
+- Added the documented one-person R1 production-activation exception with risk acceptance, Human Review, immutable audit, kill switch and reconciliation.
+
+- Added the console-first evidence handoff rule for all non-visual package runners.
+
+- Required a bounded redacted BEGIN/END EVIDENCE block after final safety restoration.
+
+- Retained ZIP evidence as a fallback instead of the default operator handoff.
+
+- Added build → canary → promotion separation. A successful build never changes the running service.
+
+- Required canary listener scope, process identity, access-boundary checks and complete cleanup before promotion.
+
+- Required promotion packages to preserve an exact rollback artifact and invoke automatic rollback after any post-switch failure.
+
+- Required embedded awk/Node/shell programs to execute against target-platform fixtures; outer syntax checks alone are insufficient.
+
+- Required every wrapper to propagate the real inner process exit code so a failed package cannot report success.
+
+- Adopted one-script/one-block operator execution with console-first redacted evidence.
+
+### Retained changes from 1.25.0 and 1.24.0
+
+- Added the six-state capability maturity model.
+
+- Required requirement IDs and maturity transitions in package manifests.
+
+- Required original PNG evidence for UI acceptance.
+
+- Added cross-OS WSL/Windows browser transport rules from VS-R1-038 v1.
+
+- Required browser/render preflight before payload application.
+
+- Strengthened distinction between source acceptance, deployment, commissioning and pilot readiness.

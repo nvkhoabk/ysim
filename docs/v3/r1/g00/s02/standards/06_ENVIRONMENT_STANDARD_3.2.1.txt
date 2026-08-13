@@ -1,0 +1,381 @@
+# YSim Release 1 — Environment Standard
+
+Standard ID: YSIM-ENV-001
+
+Version: 3.2.1
+
+Effective date: 2026-08-02
+
+Supersedes: YSIM-ENV-001 v3.2.0
+
+Status: APPROVED CONTRACT; ACTUAL VALUES REQUIRE ENV EVIDENCE
+
+## 1. Purpose
+
+This standard defines development, acceptance, sandbox and production boundaries for Release 1. It replaces stale proposed port/path values with a contract: actual values are accepted only after read-only discovery and collision review.
+
+## 2. Environment classes
+
+| Class | Purpose | External effects |
+
+| --- | --- | --- |
+
+| Windows workstation | Operator desktop, package-download staging and selected browser UI review only; no Platform source tree | No production effects |
+
+| WSL YSim-Debian12 development/acceptance | nvkhoabk/ysim at /root/projects/ysim-v2.1/ysim; source packages, tests, builds and Git candidate/accepted flow | Provider calls disabled unless explicitly scoped |
+
+| Debian sandbox | Integration commissioning and UAT | Sandbox providers; email allowlist/sink only |
+
+| Debian production predeploy | Same artifact smoke/health with execution OFF | No transaction execution |
+
+| Debian production enabled | Controlled pilot | Only explicitly enabled providers/capabilities |
+
+## 3. Known environment facts
+
+### Windows operator surface and WSL YSim-Debian12 development
+
+- Windows 11 operator workstation; not a Platform source workspace.
+
+- Canonical WSL distro: YSim-Debian12; shell identity observed as root@DESKTOP-29O9VE9.
+
+- Platform development/acceptance root: /root/projects/ysim-v2.1.
+
+- Canonical Platform repository: /root/projects/ysim-v2.1/ysim; GitHub repository: https://github.com/nvkhoabk/ysim.
+
+- Windows downloads are intake-only and are visible in WSL under /mnt/c/Users/Khoa Nguyen/Downloads/.... Packages are extracted under /tmp/<package-id> before use.
+
+- Pinned accepted toolchain: Node v24.18.0; pnpm 11.13.1; Docker Compose 2.40.2 where required.
+
+- WSL has no Linux-native Chrome/Chromium; Windows Chrome and Edge are available.
+
+- Windows is only the operator desktop, download staging area and browser-review surface. WSL distro YSim-Debian12 is the exclusive Platform source/package acceptance shell for Git, Node, pnpm, tests and builds.
+
+- No Windows path is canonical for the Release 1 Platform repo. Paths containing ysim-storefront, NodeWoo or /var/www/sandbox.ysim.vn/storefront are excluded from Platform source packages.
+
+- Source acceptance runners must fail before mutation unless uname reports Linux, WSL_DISTRO_NAME equals YSim-Debian12, repo root equals /root/projects/ysim-v2.1/ysim and the Git remote resolves to nvkhoabk/ysim.
+
+- The WSL repository and the Debian runtime are different machines and different evidence boundaries. A local PASS does not imply sandbox deployment.
+
+- Windows Chrome/Edge and WSL processes do not share loopback by assumption; cross-OS browser transport must be probed before mutation.
+
+- Generated source packages, acceptance evidence and runtime deployment packages remain separately identifiable.
+
+### Debian shared host
+
+- Host: ysim-prd-01, Debian 12.
+
+- Legacy Storefront sandbox path: /var/www/sandbox.ysim.vn/storefront; this is not a Platform source or release root.
+
+- Legacy Storefront sandbox listens on 127.0.0.1:3001 behind nginx and remains operationally separate from Platform ports 3101/3102.
+
+- WordPress/WooCommerce administration/content: shop.ysim.vn.
+
+- Canonical sandbox public domain: sandbox.ysim.vn.
+
+- Production B2C domain: ysim.vn.
+
+- Production Agency Portal domain: agency.ysim.vn.
+
+- Production API/provider callback domain: api.ysim.vn.
+
+- WordPress content origin/administration domain: shop.ysim.vn.
+
+- Production Operator UI/Admin domain: account.ysim.vn.
+
+- /etc/ysim/secrets exists as the centralized secret root; environment subdirectories are required.
+
+- MariaDB and Redis are loopback services on the shared host.
+
+ENV-R1-003 approved sandbox-only loopback allocations 127.0.0.1:3101 for Platform API and 127.0.0.1:3102 for Platform Web after collision review. Port 3102 passed bounded Web smoke; port 3101 remained collision-free but the API failed before bind. These are not production port decisions and do not alter legacy Storefront ports 3001/3003.
+
+### Current Platform sandbox Web - accepted 2026-08-02
+
+- Immutable release root: /opt/ysim/platform/sandbox/releases/<commit>.
+
+- Current Web commit: 25abc8949fa4fc12fb9190e16f598de9ba0d201a.
+
+- Service: ysim-platform-sandbox-web.service; bind: 127.0.0.1:3102; runtime user: ysim; Next.js 16.2.10.
+
+- Previous Web release c6df6049a411de0d6e467ddc30a3c7772e45cdc0 is retained as the VS-R1-039 rollback baseline.
+
+- The accepted promotion PID 1516115 is evidence for that run, not a durable service identity.
+
+### Current Platform sandbox API boundary
+
+- Service name: ysim-platform-sandbox-api.service; approved loopback port: 127.0.0.1:3101.
+
+- VS-R1-039 did not change the API. Before commissioning, collect fresh systemd WorkingDirectory/commit, process identity, listener, health, readiness and full application bootstrap evidence.
+
+- Do not infer API health from Web HTTP 200 or from historical build/migration evidence.
+
+Release 1 explicitly accepts a shared physical VPS/host for sandbox and production. This is a documented risk acceptance, not permission to share mutable state or identities. The Environment manifest must prove logical isolation before any production activation.
+
+## 4. Mandatory sandbox/production isolation
+
+Even when sharing a physical host, sandbox and production must have separate:
+
+- release/application directories and immutable release identifiers;
+
+- service names, environment files, working directories and process users where practical;
+
+- databases and least-privilege database users;
+
+- Redis instance/database/namespace and access control;
+
+- queue names, locks, cron/timer identities and dead-letter paths;
+
+- secret directories/files and provider credentials;
+
+- webhook URLs, callback secrets and provider environments;
+
+- mutable storage/uploads;
+
+- logs, evidence, retention and alerts;
+
+- backups and restore targets;
+
+- email mode and recipient policy.
+
+No shared database schema, credential file, webhook secret, mutable upload path, queue name, deployment working tree or customer-email allowlist is permitted.
+
+## 5. Canonical resource contract
+
+| Resource | Sandbox | Production | Acceptance rule |
+
+| --- | --- | --- | --- |
+
+| Public route | sandbox.ysim.vn | ysim.vn, agency.ysim.vn, api.ysim.vn, shop.ysim.vn, account.ysim.vn | DNS, nginx, HTTPS redirect and TLS evidence |
+
+| Platform release root | /opt/ysim/platform/sandbox/releases/<commit>; Web current 25abc894... | /opt/ysim/platform/production/releases/<commit> after approved ENV manifest | No shared mutable working tree |
+
+| Platform internal port | 127.0.0.1:3101 API; 127.0.0.1:3102 Web | Dedicated loopback ports from approved production ENV manifest | Loopback only; collision-free |
+
+| Database | Sandbox-specific | Production-specific | Separate users and schemas/databases |
+
+| Redis/queue | Sandbox-specific | Production-specific | Explicit namespace/access isolation |
+
+| Secrets | /etc/ysim/secrets/sandbox/... | /etc/ysim/secrets/production/... | Owner/mode audit; values not printed |
+
+| Logs/evidence | Sandbox-specific | Production-specific | Redaction and retention verified |
+
+| Email | Disabled/dry-run/allowlist | Disabled initially; controlled enablement | Recipient policy gate |
+
+| Providers | Sandbox endpoints/credentials | Production endpoints/credentials | Independent contract validation |
+
+account.ysim.vn must expose only authenticated Operator UI/Admin capabilities. Internal operator APIs remain protected by network and application authorization and are not made public merely by routing the web surface.
+
+## 6. Configuration behavior
+
+Required logical controls include:
+
+YSIM_ENVIRONMENT=sandbox|productionPAYMENT_EXECUTION_ENABLED=falseFULFILLMENT_EXECUTION_ENABLED=falseCUSTOMER_EMAIL_DELIVERY_ENABLED=falseSCHEDULER_ENABLED=falseGPAY_ENABLED=falseONEPAY_ENABLED=falseGIGAGO_ENABLED=falseLAOS_CASH_PAYMENT_ENABLED=<market-approved>UMONEY_ENABLED=falseAGENCY_GATEWAY_TOPUP_ENABLED=falseYSIM_PAYMENT_OWNER_ENABLED=false
+
+These names express behavior. Before adding variables, reconcile them with the source’s canonical configuration schema to avoid duplicate flags with conflicting precedence.
+
+## 7. Secret standard
+
+- Secrets never enter Git, ZIP payload, documentation, screenshots or evidence.
+
+- Files are owned by the runtime identity with minimum readable permissions.
+
+- Public verification keys are stored separately from private credentials.
+
+- Rotation is environment-specific and does not require source changes.
+
+- YSim Payment Owner provider credentials are held only in the YSim environment secret boundary and are never copied into agency configuration.
+
+- Provider tokens, webhook secrets and email tokens are never reused between sandbox and production.
+
+- Diagnostics may print presence, readable/not-readable, owner/mode and fingerprint where safe; never the value.
+
+## 8. Nginx and routing requirements
+
+Before a routing mutation, collect redacted evidence for:
+
+- nginx -T relevant server blocks;
+
+- enabled/available site links;
+
+- certificate paths and SNI names;
+
+- upstream address/port;
+
+- headers, timeouts and request-size limits;
+
+- webhook path routing and body preservation;
+
+- X-Forwarded-*, host and scheme behavior;
+
+- noindex policy for sandbox;
+
+- public health route and protected internal/operator routes.
+
+- HTTP-to-HTTPS redirect for every public sandbox and production domain.
+
+No new server block may reuse an existing server_name, upstream port or certificate identity without explicit review. Internal operator APIs must not become public merely because the web surface is public.
+
+Sandbox and production support HTTPS only. Port 80 may exist solely to redirect the same host/path to HTTPS; business requests must never execute over HTTP.
+
+## 9. Database, Redis and migration gates
+
+- Migration runs against the named environment only.
+
+- Pre-migration backup and restore target are recorded.
+
+- Schema version is checked before and after.
+
+- Redis keys/queues include an environment-safe boundary.
+
+- Worker/scheduler remains OFF during migration unless the migration procedure explicitly requires otherwise.
+
+- A failed migration stops activation and invokes the declared rollback/restore decision.
+
+## 10. Provider environment contract
+
+### GPay
+
+- Sandbox and production endpoints/credentials/webhooks are independent.
+
+- One shared GPay webhook URL may route several contracted services; internal routing must remain authenticated and idempotent.
+
+- Browser return is not authoritative.
+
+- GPay is not an agency credit top-up channel in R1. When an agency authorizes YSim as Payment Owner for an end-customer transaction, the YSim provider credential boundary and transaction attribution must be explicit.
+
+### OnePay
+
+- Sandbox and production endpoints/credentials/callbacks are independently gated.
+
+- OnePay is not an agency credit top-up channel in R1.
+
+- Optional Agency Payment Owner use is disabled until OnePay's own hosted-flow, IPN, QueryDR, reconciliation and production gates pass.
+
+### Gigago
+
+- Sandbox evidence: getMyOrdersAgency accepts POST and rejects PUT with 405.
+
+- Production method is independently probed/confirmed and configured with GIGAGO_GET_MY_ORDERS_METHOD or its canonical equivalent.
+
+- No production purchase is allowed during connectivity-only checks.
+
+### Email
+
+- Modes: disabled, dry-run and live/allowed delivery as implemented.
+
+- Live customer delivery requires a separate approval and audit trail.
+
+### Authorized sandbox transactions
+
+- Bounded GPay and OnePay sandbox transactions and Gigago sandbox orders are approved for commissioning evidence.
+
+- Each run records provider environment, correlation/reference, bounded count, outcome and reconciliation without exposing secrets or full eSIM data.
+
+- Authorization does not extend to production endpoints, production purchases or non-allowlisted recipients.
+
+## 11. R1 ownership and activation control
+
+- Business Owner: Khoa Nguyen.
+
+- Technical Operator: Khoa Nguyen.
+
+- Sandbox may be activated by the Technical Operator within an approved commissioning package.
+
+- Production uses the R1 one-person exception only with explicit risk acceptance, Human Review, immutable audit log, bounded caps, verified kill switch and immediate reconciliation.
+
+- The exception does not relax provider-specific gates, HTTPS, backup/restore or environment isolation.
+
+## 12. YSim-Debian12 WSL / Windows browser contract
+
+- Windows browser executables launched from WSL are cross-OS processes.
+
+- Do not assume loopback equivalence.
+
+- Use the validated command-line screenshot/DOM path or a separately proven host transport.
+
+- Write Windows browser output to a Windows-writable temporary path before importing it into WSL evidence.
+
+- Capture exit code, timeout and redacted stderr.
+
+- Probe browser transport before source/runtime mutation; browser transport never changes the canonical WSL source-execution boundary.
+
+## 13. Deployment sequence
+
+### 13.1 Platform source path before server deployment
+
+1. Enter distro YSim-Debian12 and change to /root/projects/ysim-v2.1/ysim.
+
+1. Read the downloaded archive from /mnt/c/Users/Khoa Nguyen/Downloads and verify its SHA-256.
+
+1. Extract the package into /tmp/<package-id>; do not extract it into a Windows source folder or the repository tree.
+
+1. Run package preflight, apply, pnpm install, exact tests, cumulative regression, typecheck and production build inside WSL.
+
+1. Create commit, candidate tag, Human Review evidence and accepted tag from the WSL Platform repository only.
+
+1. Only an accepted immutable commit/artifact may proceed to Debian sandbox deployment under /opt/ysim/platform/sandbox/releases/<commit>.
+
+1. Read-only discovery and approved environment manifest.
+
+1. Collision-free resource provisioning.
+
+1. Immutable artifact installation with execution OFF.
+
+1. Database/Redis/secrets connectivity checks.
+
+1. Health and operator read-only smoke tests.
+
+1. Provider connectivity without business execution.
+
+1. Controlled sandbox commissioning.
+
+1. Backup/rollback rehearsal.
+
+1. Same artifact production predeploy with execution OFF.
+
+1. Sequential controlled production enablement.
+
+## 14. Backup, retention and support targets
+
+- Database recovery point objective: at most 15 minutes.
+
+- Recovery time objective: at most four hours.
+
+- A successful sandbox restore rehearsal is mandatory before production activation.
+
+- Operational logs are retained for at least 90 days; audit evidence for at least 365 days.
+
+- Order and financial records follow the approved accounting/legal retention policy.
+
+- Initial pilot support window is 08:00–22:00 ICT for two weeks, with Sev-1 on-call coverage and named Technical, Payment/Finance, Supplier and Customer Support owners before Gate 6.
+
+## 15. Current environment classification
+
+WINDOWS_OPERATOR_SURFACE=ESTABLISHED PLATFORM_DEV_DISTRO=YSim-Debian12 PLATFORM_DEV_REPO=/root/projects/ysim-v2.1/ysim PLATFORM_SOURCE_HISTORY_THROUGH_VS_R1_038=ACCEPTED VS_R1_039_STATUS=ACCEPTED_SANDBOX VS_R1_040_R1=WITHDRAWN_BEFORE_EXECUTION SANDBOX_STOREFRONT=ONLINE/SEPARATE PLATFORM_SANDBOX_WEB_COMMIT=25abc8949fa4fc12fb9190e16f598de9ba0d201a PLATFORM_SANDBOX_WEB_SERVICE=ACTIVE_AT_ACCEPTANCE PLATFORM_SANDBOX_WEB_BIND=127.0.0.1:3102 OPERATOR_ANONYMOUS_UI_GATE=PASS OPERATOR_AUTHENTICATED_CANARY_GATE=PASS PLATFORM_SANDBOX_API_FRESH_RUNTIME_EVIDENCE=REQUIRED PROVIDER_EXECUTION=OFF CUSTOMER_EMAIL_EXECUTION=OFF SANDBOX_CORE_COMMISSIONING=NOT_COMPLETE PRODUCTION_EXECUTION=OFF PILOT_READY=false
+
+## 16. Change log — 3.2.1
+
+- Named YSim-Debian12 as the exclusive WSL development/acceptance distro for Platform Release 1.
+
+- Locked /root/projects/ysim-v2.1/ysim as the canonical Platform repo and explicitly excluded Windows/storefront paths.
+
+- Defined the Windows-download → WSL /tmp extraction → WSL source acceptance → Debian immutable deployment flow.
+
+- Locked shared-VPS sandbox/production topology with mandatory logical isolation and risk acceptance.
+
+- Added the full production domain matrix and HTTPS-only/HTTP-redirect rule.
+
+- Added account.ysim.vn Operator UI/Admin protection requirements.
+
+- Added explicit sandbox mailbox allowlist and authorization for bounded GPay/OnePay/Gigago test effects.
+
+- Added Payment Owner credential boundaries and prohibition of gateway agency top-up.
+
+- Added the named R1 ownership/one-person activation exception and backup, retention and support targets.
+
+- Recorded the accepted Platform Web service, immutable release path, commit, port and rollback baseline.
+
+- Separated volatile acceptance PID evidence from durable service identity.
+
+- Made fresh Platform API runtime evidence an explicit prerequisite after VS-R1-039.
+
+- Expanded the development environment contract for Windows, WSL and cross-OS browser behavior.
