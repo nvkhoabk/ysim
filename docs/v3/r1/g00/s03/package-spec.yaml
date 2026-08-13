@@ -1,0 +1,65 @@
+schema_version: 1
+package_id: V3-R1-G00-S03-CONFIGURATION-ACCESS-CONTROL-SOURCE-BASELINE
+package_version: 0.1.0
+checkpoint: V3-R1-G00-S03
+title: Configuration and Access Control Source Baseline
+repository: nvkhoabk/ysim
+origin_policy: NORMALIZED_GITHUB_REPOSITORY_IDENTITY
+branch: feature/v3-r1-g00-s03-configuration-access-control-source-baseline
+stacked_base:
+  branch: feature/v3-r1-g00-s02-governance-requirements-baseline
+  commit: 6e71bdd58df2c5baddb36783abbc513867656df0
+  tree: b40ef828825e36641695adb23faedf7346102630
+head_topology:
+  binding: MANDATORY_EXTERNAL_SNAPSHOT_CONTRACT
+  base_to_head_commit_count: 1
+  parent_to_head_commit_count: 1
+repository_root_contract:
+  absolute_path_required: true
+  symlink_components_allowed: false
+  git_top_level_must_equal_repository_root: true
+  identity_boundary: OBSERVED_ORIGIN_BRANCH_AND_EXTERNAL_SNAPSHOT_TOPOLOGY
+checkpoint_type: SOURCE_IMPLEMENTATION
+maturity_target: PLANNED
+package_evidence_level: SOURCE_VALIDATED_NON_OPERATIONAL
+candidate_model: NONE
+requirements:
+  - V3-R1-OPS-001
+  - V3-R1-OPS-002
+  - V3-R1-OPS-003
+  - V3-R1-SEC-001
+  - V3-R1-SEC-003
+allowed_paths:
+  - docs/v3/r1/g00/s03/MANIFEST.sha256
+  - docs/v3/r1/g00/s03/README.md
+  - docs/v3/r1/g00/s03/configuration-access-control-baseline.yaml
+  - docs/v3/r1/g00/s03/package-spec.yaml
+  - docs/v3/r1/g00/s03/source-provenance.yaml
+  - tools/ysf/src/ysf/configuration_access_control/__init__.py
+  - tools/ysf/src/ysf/configuration_access_control/controls.py
+  - tools/ysf/src/ysf/configuration_access_control/validator.py
+  - tools/ysf/tests/unit/test_configuration_access_control.py
+  - tools/ysf/tests/unit/test_configuration_access_control_validator.py
+  - tools/ysf/tests/integration/test_secure_factory_pipeline.py
+file_mode: "100644"
+safety:
+  synthetic_data_only: true
+  providers: "OFF"
+  email_mode: NON_RELAYING
+  external_effect_budget: DENY_ALL
+forbidden_scope:
+  - IDENTITY_PLATFORM
+  - UNIVERSAL_MFA
+  - FEDERATION
+  - PRODUCTION_SESSIONS
+  - CREDENTIAL_ISSUANCE
+  - KEY_CUSTODY
+  - COMPLIANCE_CERTIFICATION
+final_human_decision:
+  actor: nvkhoabk
+  prerequisite: FRESH_INDEPENDENT_ADVISORY_REVIEW_PASS
+  record_type: TOP_LEVEL_ISSUE_COMMENT
+  github_approval_review: false
+  implementation_codex_may_record: false
+  status_before_decision: DRAFT
+next_allowed_action: FRESH_INDEPENDENT_ADVISORY_REVIEW_S03

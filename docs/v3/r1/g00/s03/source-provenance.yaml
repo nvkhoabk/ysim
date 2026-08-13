@@ -1,0 +1,70 @@
+schema_version: 1
+provenance_id: V3-R1-G00-S03-SOURCE-PROVENANCE-001
+checkpoint: V3-R1-G00-S03
+predecessor:
+  branch: feature/v3-r1-g00-s02-governance-requirements-baseline
+  commit: 6e71bdd58df2c5baddb36783abbc513867656df0
+  tree: b40ef828825e36641695adb23faedf7346102630
+s01_traceability:
+  path: docs/v3/r1/g00/s01/traceability-baseline.yaml
+  git_blob_sha: 09f6bb315349666194eb4961776b0e007334973c
+  sha256: bd5cd5dc65a9481ca0355a7eb1383632bbcd69a6da64681031c4755554d82a19
+brd_sources:
+  - path: docs/BRD/BRD-WS-14.md
+    git_blob_sha: f4efcf874b778d4bada8860a8b5e58804653fa63
+    sha256: fe1b5aa63cfede9d949cb678a60bf1eb5e250b131049cda9f5b4dfef437a2ef2
+    anchor_ids: [V3-R1-SA-061, V3-R1-SA-062, V3-R1-SA-063]
+  - path: docs/BRD/BRD-WS-16.md
+    git_blob_sha: 3a99857a3ae62198b0d720e61635f75257df3b0b
+    sha256: 027fac669b060e1ec9dc66020e10b8d86dfb1b1bd6ec0725f066064e5ff93903
+    anchor_ids: [V3-R1-SA-067, V3-R1-SA-069]
+s02_governance:
+  human_decision:
+    comment_id: 5278693551
+    marker: YSIM_V3_R1_G00_S02_HUMAN_DECISION_V1
+    actor: nvkhoabk
+    body_sha256: bd9e1ed4dc05952ad08b81c78173ae9ce3eeb7ab0cfaeaad3b0df61ed513e25d
+  candidate:
+    path: factory/releases/v3-r1-g00-s02-governance-requirements-baseline/YSim_V3_R1_G00_S02_Governance_Requirements_Baseline_v0.1.0-candidate.1.md
+    git_blob_sha: 6f979e29178fb6f35812ee0815d683a1566f4065
+    sha256: f3aa80a23a1ab95ab9914263d8c79bf11fc466579f162c79d0302cbfa77c9a77
+  acceptance_receipt:
+    path: docs/v3/r1/g00/s02/acceptance-receipt.yaml
+    git_blob_sha: a3fd4d246b986a06b83ca57fe9809b00e62fe306
+    sha256: 0a776b91daaef1b6fad67eb6b2d94bd0b6f99e522d089845dfc02ccc62410c23
+  package_spec:
+    path: docs/v3/r1/g00/s02/package-spec.yaml
+    git_blob_sha: b6176340a541ff859ceb0be54aa403145143db60
+    sha256: 8ef86e32ca2313ca80a60a74af4b88b67cad59c6644f3b9525e0f028dff16fd9
+  standards_provenance:
+    path: docs/v3/r1/g00/s02/standards/standards-provenance.yaml
+    git_blob_sha: f0fd92bd5d858c42d104b5f07fe4f0c268cdabd8
+    sha256: 2cb417883bd2a5e9a1a10a95b5669777736979a7a91c62a988c3e0a8e59d45df
+  authoritative_docx_sha256: 47da5d9dc46bb0e136936f865007d988fe537e3a0413676d8d00fe89496fba48
+normative_requirements:
+  - id: V3-R1-OPS-001
+    source_anchor_id: V3-R1-SA-061
+    acceptance_case_id: V3-R1-AC-061
+    requirement_sha256: 00ab0c750536bb89f3c0b3602216a539daaaa5ea3219cf7908a12bfde29dca39
+  - id: V3-R1-OPS-002
+    source_anchor_id: V3-R1-SA-062
+    acceptance_case_id: V3-R1-AC-062
+    requirement_sha256: 6b944525092a264b893e429be888e620d1fe691faaaf8731fd8d9a380abdcfd5
+  - id: V3-R1-OPS-003
+    source_anchor_id: V3-R1-SA-063
+    acceptance_case_id: V3-R1-AC-063
+    requirement_sha256: 8458b0140a58fc6eca555a4f57a26021afab70d021c54755714c5cbb19e4edfe
+  - id: V3-R1-SEC-001
+    source_anchor_id: V3-R1-SA-067
+    acceptance_case_id: V3-R1-AC-067
+    requirement_sha256: 97a68795d4d6d6bc91963b1a2c9a6bc6d1907abb47b7d36f4efb6a8dc44b2233
+  - id: V3-R1-SEC-003
+    source_anchor_id: V3-R1-SA-069
+    acceptance_case_id: V3-R1-AC-069
+    requirement_sha256: 9a6fdc24be211952b86d90b1dbc69a9209d2186a1db472329ea4ddfa81fa207d
+legacy_boundary:
+  path_glob: docs/DIP/**
+  role: HISTORICAL_PROVENANCE_ONLY
+  v3_normative_authority: false
+  v3_maturity_authority: false
+  scope_expansion_authorized: false
