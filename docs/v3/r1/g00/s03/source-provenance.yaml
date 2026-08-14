@@ -94,6 +94,61 @@ corrective_r4:
       source_package: ysf.configuration_access_control
       metric: COVERED_BRANCHES_DIVIDED_BY_VALID_BRANCHES
       minimum_percent: 90.0
+corrective_r5:
+  parent_commit: f349bb071c0c696a15fb12405538c80edb0977a6
+  parent_tree: d1f17fff0a94f9056536ecd1567303898aeabf3c
+  stable_read_boundary:
+    platform: Linux
+    component_traversal: DESCRIPTOR_RELATIVE
+    empty_parts_rejected: true
+    normalization_aliases_rejected: true
+    controlled_failure: FactoryFailure
+    failure_code_passthrough: true
+    raw_exception_escape_allowed: false
+    descriptor_closure_required: true
+    minimum_descriptor_cycles: 500
+    nofollow: true
+    descriptor_fstat_before_after: true
+    worktree_bytes_equal_head_blob: true
+    trusted_path_reopen_allowed: false
+    sensitive_scan_source: CAPTURED_BYTES
+  external_snapshot_contract:
+    schema_version: 2
+    changed_path_count: 16
+    authorized_path_count: 17
+    authorized_file_mode: "100644"
+    artifact_digest_paths:
+      - docs/v3/r1/g00/s03/package-spec.yaml
+      - docs/v3/r1/g00/s03/MANIFEST.sha256
+      - docs/v3/r1/g00/s03/source-provenance.yaml
+    knowledge_input:
+      builder: ysf.index.documents.build_document_index
+      source: CURRENT_DOCS_IN_MEMORY
+      source_glob: docs/**/*.md
+      tracked_factory_index_allowed: false
+      expected_document_count: 124
+      expected_capability_count: 8
+      expected_integration_count: 0
+      expected_relationship_count: 48
+    branch_coverage:
+      source_package: ysf.configuration_access_control
+      metric: COVERED_BRANCHES_DIVIDED_BY_VALID_BRANCHES
+      minimum_percent: 90.0
+    stable_read:
+      platform: Linux
+      component_traversal: DESCRIPTOR_RELATIVE
+      empty_parts_rejected: true
+      normalization_aliases_rejected: true
+      controlled_failure: FactoryFailure
+      failure_code_passthrough: true
+      raw_exception_escape_allowed: false
+      descriptor_closure_required: true
+      minimum_descriptor_cycles: 500
+      nofollow: true
+      descriptor_fstat_before_after: true
+      worktree_bytes_equal_head_blob: true
+      trusted_path_reopen_allowed: false
+      sensitive_scan_source: CAPTURED_BYTES
 predecessor:
   branch: feature/v3-r1-g00-s02-governance-requirements-baseline
   commit: 6e71bdd58df2c5baddb36783abbc513867656df0

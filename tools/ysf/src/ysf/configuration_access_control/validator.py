@@ -26,8 +26,10 @@ EXPECTED_BRANCH = "feature/v3-r1-g00-s03-configuration-access-control-source-bas
 EXPECTED_BASE_BRANCH = "feature/v3-r1-g00-s02-governance-requirements-baseline"
 EXPECTED_BASE_SHA = "6e71bdd58df2c5baddb36783abbc513867656df0"
 EXPECTED_BASE_TREE = "b40ef828825e36641695adb23faedf7346102630"
-EXPECTED_CORRECTIVE_PARENT_SHA = "82e7adb52940b2a1214f0b97e85156f3758124a6"
-EXPECTED_CORRECTIVE_PARENT_TREE = "efcf63461d63e0260de2fb01945d860badca5d97"
+EXPECTED_CORRECTIVE_PARENT_SHA = "f349bb071c0c696a15fb12405538c80edb0977a6"
+EXPECTED_CORRECTIVE_PARENT_TREE = "d1f17fff0a94f9056536ecd1567303898aeabf3c"
+R4_CORRECTIVE_PARENT_SHA = "82e7adb52940b2a1214f0b97e85156f3758124a6"
+R4_CORRECTIVE_PARENT_TREE = "efcf63461d63e0260de2fb01945d860badca5d97"
 R3_CORRECTIVE_PARENT_SHA = "62f73324f00fda213cba52cb7c50686c6a0f5e6a"
 R3_CORRECTIVE_PARENT_TREE = "ce1005025986e39dabd5b675aaa8f8956cd754a7"
 R2_CORRECTIVE_PARENT_SHA = "bc7893f5efa2c3b40da52396b9e946187c6a2044"
@@ -91,6 +93,22 @@ EXPECTED_BRANCH_COVERAGE_BOUNDARY: dict[str, Any] = {
     "metric": "COVERED_BRANCHES_DIVIDED_BY_VALID_BRANCHES",
     "minimum_percent": 90.0,
 }
+EXPECTED_STABLE_READ_BOUNDARY: dict[str, Any] = {
+    "platform": "Linux",
+    "component_traversal": "DESCRIPTOR_RELATIVE",
+    "empty_parts_rejected": True,
+    "normalization_aliases_rejected": True,
+    "controlled_failure": "FactoryFailure",
+    "failure_code_passthrough": True,
+    "raw_exception_escape_allowed": False,
+    "descriptor_closure_required": True,
+    "minimum_descriptor_cycles": 500,
+    "nofollow": True,
+    "descriptor_fstat_before_after": True,
+    "worktree_bytes_equal_head_blob": True,
+    "trusted_path_reopen_allowed": False,
+    "sensitive_scan_source": "CAPTURED_BYTES",
+}
 EXPECTED_COVERAGE_ISOLATION: dict[str, Any] = {
     "configuration_path": "tools/ysf/pyproject.toml",
     "runtime_data_file": ".coverage.runtime",
@@ -153,9 +171,12 @@ def _metadata(identity: os.stat_result) -> tuple[int, int, int, int, int, int, i
 
 
 def _safe_relative_parts(relative: str, code: str) -> tuple[str, ...]:
+    if not isinstance(relative, str) or "\x00" in relative:
+        _fail(code, "Required path is unsafe.")
     pure = PurePosixPath(relative)
     if (
         not relative
+        or not pure.parts
         or pure.is_absolute()
         or pure.as_posix() != relative
         or any(part in {"", ".", ".."} for part in pure.parts)
@@ -187,7 +208,7 @@ def _open_absolute_directory(path: Path, code: str) -> int:
         result = os.dup(descriptors[-1])
         os.set_inheritable(result, False)
         return result
-    except OSError:
+    except (OSError, ValueError):
         _fail(code, "Absolute directory path is missing or unsafe.")
     finally:
         for descriptor in reversed(descriptors):
@@ -226,7 +247,7 @@ def _verify_relative_identity(
         descriptors.append(final_descriptor)
         if _metadata(os.fstat(final_descriptor)) != expected_file:
             _fail(code, "Required file pathname identity changed during stable read.")
-    except OSError:
+    except (OSError, ValueError):
         _fail(code, "Required path identity cannot be reverified after stable read.")
     finally:
         for descriptor in reversed(descriptors):
@@ -270,7 +291,7 @@ def _stable_read_relative(root_descriptor: int, relative: str, code: str) -> byt
             code,
         )
         return data
-    except OSError:
+    except (OSError, ValueError):
         _fail(code, "Required path cannot be opened through the stable boundary.")
     finally:
         for descriptor in reversed(descriptors):
@@ -421,7 +442,7 @@ def _expected_spec() -> dict[str, Any]:
             "binding": "MANDATORY_EXTERNAL_SNAPSHOT_CONTRACT_V2",
             "corrective_parent_commit": EXPECTED_CORRECTIVE_PARENT_SHA,
             "corrective_parent_tree": EXPECTED_CORRECTIVE_PARENT_TREE,
-            "base_to_head_commit_count": 5,
+            "base_to_head_commit_count": 6,
             "parent_to_head_commit_count": 1,
         },
         "repository_root_contract": {
@@ -443,20 +464,12 @@ def _expected_spec() -> dict[str, Any]:
             "authorized_path_binding": "EXACT_SORTED_17_PATHS",
             "authorized_mode_binding": "EXACT_17_PATHS_100644",
             "artifact_digest_paths": list(EXPECTED_ARTIFACT_PATHS),
-            "validation_boundaries": ["knowledge_input", "branch_coverage"],
+            "validation_boundaries": ["knowledge_input", "branch_coverage", "stable_read"],
         },
         "validation_gates": {
             "branch_coverage": EXPECTED_BRANCH_COVERAGE_BOUNDARY,
             "knowledge_input": EXPECTED_KNOWLEDGE_BOUNDARY,
-            "stable_descriptor_read": {
-                "platform": "Linux",
-                "component_traversal": "DESCRIPTOR_RELATIVE",
-                "nofollow": True,
-                "descriptor_fstat_before_after": True,
-                "worktree_bytes_equal_head_blob": True,
-                "trusted_path_reopen_allowed": False,
-                "sensitive_scan_source": "CAPTURED_BYTES",
-            },
+            "stable_descriptor_read": EXPECTED_STABLE_READ_BOUNDARY,
             "coverage_state_isolation": EXPECTED_COVERAGE_ISOLATION,
         },
         "s02_compatibility_exception": {
@@ -539,8 +552,8 @@ def _expected_provenance() -> dict[str, Any]:
             },
         },
         "corrective_r4": {
-            "parent_commit": EXPECTED_CORRECTIVE_PARENT_SHA,
-            "parent_tree": EXPECTED_CORRECTIVE_PARENT_TREE,
+            "parent_commit": R4_CORRECTIVE_PARENT_SHA,
+            "parent_tree": R4_CORRECTIVE_PARENT_TREE,
             "stable_read_boundary": {
                 "platform": "Linux",
                 "component_traversal": "DESCRIPTOR_RELATIVE",
@@ -560,6 +573,21 @@ def _expected_provenance() -> dict[str, Any]:
                 "artifact_digest_paths": list(EXPECTED_ARTIFACT_PATHS),
                 "knowledge_input": EXPECTED_KNOWLEDGE_BOUNDARY,
                 "branch_coverage": EXPECTED_BRANCH_COVERAGE_BOUNDARY,
+            },
+        },
+        "corrective_r5": {
+            "parent_commit": EXPECTED_CORRECTIVE_PARENT_SHA,
+            "parent_tree": EXPECTED_CORRECTIVE_PARENT_TREE,
+            "stable_read_boundary": EXPECTED_STABLE_READ_BOUNDARY,
+            "external_snapshot_contract": {
+                "schema_version": 2,
+                "changed_path_count": 16,
+                "authorized_path_count": 17,
+                "authorized_file_mode": "100644",
+                "artifact_digest_paths": list(EXPECTED_ARTIFACT_PATHS),
+                "knowledge_input": EXPECTED_KNOWLEDGE_BOUNDARY,
+                "branch_coverage": EXPECTED_BRANCH_COVERAGE_BOUNDARY,
+                "stable_read": EXPECTED_STABLE_READ_BOUNDARY,
             },
         },
         "predecessor": {
@@ -1093,7 +1121,7 @@ def _validate_snapshot_contract(contract: Mapping[str, Any]) -> None:
         or topology.get("base_tree") != EXPECTED_BASE_TREE
         or topology.get("corrective_parent_sha") != EXPECTED_CORRECTIVE_PARENT_SHA
         or topology.get("corrective_parent_tree") != EXPECTED_CORRECTIVE_PARENT_TREE
-        or topology.get("base_to_head_commit_count") != 5
+        or topology.get("base_to_head_commit_count") != 6
         or topology.get("parent_to_head_commit_count") != 1
     ):
         _fail(code, "Snapshot topology differs from the exact corrective stack.")
@@ -1114,12 +1142,21 @@ def _validate_snapshot_contract(contract: Mapping[str, Any]) -> None:
     ):
         _fail(code, "Snapshot artifact digest is malformed.")
     boundaries = _mapping(contract.get("validation_boundaries"), code, "validation_boundaries")
-    _exact_keys(boundaries, {"knowledge_input", "branch_coverage"}, code, "validation_boundaries")
+    _exact_keys(
+        boundaries,
+        {"knowledge_input", "branch_coverage", "stable_read"},
+        code,
+        "validation_boundaries",
+    )
     knowledge = _mapping(boundaries.get("knowledge_input"), code, "knowledge_input")
     coverage = _mapping(boundaries.get("branch_coverage"), code, "branch_coverage")
+    stable_read = _mapping(boundaries.get("stable_read"), code, "stable_read")
     _validate_exact_scalar_mapping(knowledge, EXPECTED_KNOWLEDGE_BOUNDARY, code, "knowledge_input")
     _validate_exact_scalar_mapping(
         coverage, EXPECTED_BRANCH_COVERAGE_BOUNDARY, code, "branch_coverage"
+    )
+    _validate_exact_scalar_mapping(
+        stable_read, EXPECTED_STABLE_READ_BOUNDARY, code, "stable_read"
     )
 
 
@@ -1189,7 +1226,7 @@ def _observe_repository(
         or _run_git(root, "rev-parse", "HEAD^^{tree}") != EXPECTED_CORRECTIVE_PARENT_TREE
     ):
         _fail("FAIL_BASE_IDENTITY", "Observed corrective parent is incorrect.")
-    if int(_run_git(root, "rev-list", "--count", f"{EXPECTED_BASE_SHA}..HEAD")) != 5:
+    if int(_run_git(root, "rev-list", "--count", f"{EXPECTED_BASE_SHA}..HEAD")) != 6:
         _fail("FAIL_COMMIT_TOPOLOGY", "Observed base-to-head count is incorrect.")
     if int(_run_git(root, "rev-list", "--count", f"{EXPECTED_CORRECTIVE_PARENT_SHA}..HEAD")) != 1:
         _fail("FAIL_COMMIT_TOPOLOGY", "Observed parent-to-head count is incorrect.")
@@ -1236,8 +1273,8 @@ def _validate_external_snapshot_bindings(
     package_document = _content_yaml(root, SPEC_PATH, "FAIL_PACKAGE_SPEC", snapshot)
     provenance_document = _content_yaml(root, PROVENANCE_PATH, "FAIL_SOURCE_PROVENANCE", snapshot)
     package_boundaries = cast(Mapping[str, Any], package_document["validation_gates"])
-    corrective_r4 = cast(Mapping[str, Any], provenance_document["corrective_r4"])
-    provenance_contract = cast(Mapping[str, Any], corrective_r4["external_snapshot_contract"])
+    corrective_r5 = cast(Mapping[str, Any], provenance_document["corrective_r5"])
+    provenance_contract = cast(Mapping[str, Any], corrective_r5["external_snapshot_contract"])
     boundaries = cast(Mapping[str, Any], contract["validation_boundaries"])
     if (
         dict(cast(Mapping[str, Any], boundaries["knowledge_input"]))
@@ -1248,6 +1285,10 @@ def _validate_external_snapshot_bindings(
         != dict(cast(Mapping[str, Any], provenance_contract["knowledge_input"]))
         or dict(cast(Mapping[str, Any], boundaries["branch_coverage"]))
         != dict(cast(Mapping[str, Any], provenance_contract["branch_coverage"]))
+        or dict(cast(Mapping[str, Any], boundaries["stable_read"]))
+        != dict(cast(Mapping[str, Any], package_boundaries["stable_descriptor_read"]))
+        or dict(cast(Mapping[str, Any], boundaries["stable_read"]))
+        != dict(cast(Mapping[str, Any], provenance_contract["stable_read"]))
     ):
         _fail("FAIL_SNAPSHOT_BOUNDARY", "External validation boundaries are not cross-bound.")
     return {
@@ -1257,6 +1298,7 @@ def _validate_external_snapshot_bindings(
         "artifact_digests": dict(actual_artifacts),
         "knowledge_input": dict(EXPECTED_KNOWLEDGE_BOUNDARY),
         "branch_coverage": dict(EXPECTED_BRANCH_COVERAGE_BOUNDARY),
+        "stable_read": dict(EXPECTED_STABLE_READ_BOUNDARY),
     }
 
 

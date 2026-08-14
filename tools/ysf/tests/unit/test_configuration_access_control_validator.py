@@ -30,14 +30,12 @@ from ysf.configuration_access_control.validator import (
 from ysf.secure_factory.models import FactoryFailure
 
 Mutation = Callable[[Path], None]
-R4_WRITE_SUBSET = frozenset(
+R5_WRITE_SUBSET = frozenset(
     {
-        ".gitignore",
         "docs/v3/r1/g00/s03/MANIFEST.sha256",
         "docs/v3/r1/g00/s03/README.md",
         "docs/v3/r1/g00/s03/package-spec.yaml",
         "docs/v3/r1/g00/s03/source-provenance.yaml",
-        "tools/ysf/pyproject.toml",
         "tools/ysf/src/ysf/configuration_access_control/validator.py",
         "tools/ysf/tests/unit/test_configuration_access_control_validator.py",
     }
@@ -138,7 +136,7 @@ def snapshot_contract(root: Path) -> dict[str, Any]:
             "corrective_parent_tree": EXPECTED_CORRECTIVE_PARENT_TREE,
             "expected_head_sha": git(root, "rev-parse", "HEAD"),
             "expected_head_tree": git(root, "rev-parse", "HEAD^{tree}"),
-            "base_to_head_commit_count": 5,
+            "base_to_head_commit_count": 6,
             "parent_to_head_commit_count": 1,
         },
         "changed_paths": paths,
@@ -148,6 +146,7 @@ def snapshot_contract(root: Path) -> dict[str, Any]:
         "validation_boundaries": {
             "knowledge_input": copy.deepcopy(validator.EXPECTED_KNOWLEDGE_BOUNDARY),
             "branch_coverage": copy.deepcopy(validator.EXPECTED_BRANCH_COVERAGE_BOUNDARY),
+            "stable_read": copy.deepcopy(validator.EXPECTED_STABLE_READ_BOUNDARY),
         },
     }
 
@@ -169,12 +168,12 @@ def api_workspace(tmp_path: Path) -> tuple[Path, dict[str, Any]]:
     git(root, "switch", "--quiet", "-c", EXPECTED_BRANCH)
     copy_package(root)
     git(root, "add", "--", *sorted(EXPECTED_ALLOWLIST))
-    assert set(git(root, "diff", "--cached", "--name-only").splitlines()) == set(R4_WRITE_SUBSET)
-    commit(root, "test: materialize exact S03 corrective R4 source", 1)
+    assert set(git(root, "diff", "--cached", "--name-only").splitlines()) == set(R5_WRITE_SUBSET)
+    commit(root, "test: materialize exact S03 corrective R5 source", 1)
     git(root, "remote", "set-url", "origin", "git@github-ysim:nvkhoabk/ysim.git")
     assert git(root, "rev-parse", "HEAD^") == EXPECTED_CORRECTIVE_PARENT_SHA
     assert git(root, "rev-parse", "HEAD^^{tree}") == EXPECTED_CORRECTIVE_PARENT_TREE
-    assert int(git(root, "rev-list", "--count", f"{EXPECTED_BASE_SHA}..HEAD")) == 5
+    assert int(git(root, "rev-list", "--count", f"{EXPECTED_BASE_SHA}..HEAD")) == 6
     assert int(git(root, "rev-list", "--count", f"{EXPECTED_CORRECTIVE_PARENT_SHA}..HEAD")) == 1
     assert not git(root, "status", "--porcelain=v1", "--untracked-files=all")
     assert set(git(root, "diff", "--name-only", f"{EXPECTED_BASE_SHA}...HEAD").splitlines()) == set(
@@ -570,6 +569,28 @@ def test_public_api_cli_parity_and_two_disposable_roots(
             ),
             "FAIL_SNAPSHOT_CONTRACT",
         ),
+        (
+            lambda value: value["validation_boundaries"].pop("stable_read"),
+            "FAIL_SNAPSHOT_CONTRACT",
+        ),
+        (
+            lambda value: value["validation_boundaries"]["stable_read"].update(
+                {"empty_parts_rejected": False}
+            ),
+            "FAIL_SNAPSHOT_CONTRACT",
+        ),
+        (
+            lambda value: value["validation_boundaries"]["stable_read"].update(
+                {"raw_exception_escape_allowed": True}
+            ),
+            "FAIL_SNAPSHOT_CONTRACT",
+        ),
+        (
+            lambda value: value["validation_boundaries"]["stable_read"].update(
+                {"minimum_descriptor_cycles": 64}
+            ),
+            "FAIL_SNAPSHOT_CONTRACT",
+        ),
     ],
 )
 def test_snapshot_contract_negative_matrix(
@@ -764,6 +785,38 @@ def test_stable_descriptor_reader_rejects_in_read_mutation_and_contract_replacem
     assert captured.value.code == "FAIL_SNAPSHOT_CONTRACT"
 
 
+@pytest.mark.parametrize(
+    "relative",
+    [
+        ".",
+        "",
+        "./",
+        "./.",
+        "foo/",
+        "foo//bar",
+        "foo/.",
+        "foo/..",
+        "/absolute",
+        "../traversal",
+        "malformed\x00path",
+    ],
+)
+def test_stable_reader_rejects_malformed_aliases_with_controlled_failure(
+    tmp_path: Path, relative: str
+) -> None:
+    root_descriptor = validator._open_absolute_directory(tmp_path, "FAIL_TEST")
+    before = len(tuple(Path("/proc/self/fd").iterdir()))
+    try:
+        for _ in range(500):
+            with pytest.raises(FactoryFailure) as captured:
+                validator._stable_read_relative(root_descriptor, relative, "FAIL_ALIAS_PATH")
+            assert captured.value.code == "FAIL_ALIAS_PATH"
+        after = len(tuple(Path("/proc/self/fd").iterdir()))
+        assert after == before
+    finally:
+        os.close(root_descriptor)
+
+
 def test_stable_reader_closes_descriptors_and_rejects_symlinks(tmp_path: Path) -> None:
     target = tmp_path / "target"
     target.write_bytes(b"stable")
@@ -771,7 +824,7 @@ def test_stable_reader_closes_descriptors_and_rejects_symlinks(tmp_path: Path) -
     linked.symlink_to(target)
     root_descriptor = validator._open_absolute_directory(tmp_path, "FAIL_TEST")
     before = len(tuple(Path("/proc/self/fd").iterdir()))
-    for _ in range(64):
+    for _ in range(500):
         assert (
             validator._stable_read_relative(root_descriptor, "target", "FAIL_STABLE") == b"stable"
         )

@@ -70,13 +70,21 @@ worktree bytes must equal their exact `HEAD` blobs. YAML parsing, manifests,
 artifact digests, README checks, and sensitive-data scanning reuse those
 immutable captured bytes and do not reopen trusted pathnames.
 
+The stable reader rejects empty path-part tuples and every normalization alias,
+including `.`, before indexing or opening a pathname. Malformed inputs fail
+with the caller-supplied `FactoryFailure` code; raw filesystem parameter errors
+do not cross the boundary. Repeated success and failure probes bind descriptor
+closure across at least 500 cycles without weakening symlink, TOCTOU, or exact
+`HEAD`-blob protections.
+
 The mandatory external contract uses schema version 2. It binds the exact
 sorted sixteen-path base-to-head delta, all seventeen authorized paths and their
 `100644` Git modes (including the unchanged secure-factory integration test),
 and independently supplied SHA-256 values for the package specification,
 manifest, and source provenance. It also binds the fresh in-memory knowledge
 builder/count boundary and the covered-branches-divided-by-valid-branches
-coverage metric with its exact 90.0% threshold. Schema version 1 and every
+coverage metric with its exact 90.0% threshold, plus the fail-closed stable-read
+alias and descriptor-closure boundary. Schema version 1 and every
 missing, extra, reordered, malformed, or mismatched binding fail closed.
 
 The standard unified coverage invocation is

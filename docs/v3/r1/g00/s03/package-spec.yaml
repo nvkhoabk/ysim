@@ -12,9 +12,9 @@ stacked_base:
   tree: b40ef828825e36641695adb23faedf7346102630
 head_topology:
   binding: MANDATORY_EXTERNAL_SNAPSHOT_CONTRACT_V2
-  corrective_parent_commit: 82e7adb52940b2a1214f0b97e85156f3758124a6
-  corrective_parent_tree: efcf63461d63e0260de2fb01945d860badca5d97
-  base_to_head_commit_count: 5
+  corrective_parent_commit: f349bb071c0c696a15fb12405538c80edb0977a6
+  corrective_parent_tree: d1f17fff0a94f9056536ecd1567303898aeabf3c
+  base_to_head_commit_count: 6
   parent_to_head_commit_count: 1
 repository_root_contract:
   absolute_path_required: true
@@ -62,6 +62,7 @@ external_snapshot_contract:
   validation_boundaries:
     - knowledge_input
     - branch_coverage
+    - stable_read
 validation_gates:
   branch_coverage:
     source_package: ysf.configuration_access_control
@@ -79,6 +80,13 @@ validation_gates:
   stable_descriptor_read:
     platform: Linux
     component_traversal: DESCRIPTOR_RELATIVE
+    empty_parts_rejected: true
+    normalization_aliases_rejected: true
+    controlled_failure: FactoryFailure
+    failure_code_passthrough: true
+    raw_exception_escape_allowed: false
+    descriptor_closure_required: true
+    minimum_descriptor_cycles: 500
     nofollow: true
     descriptor_fstat_before_after: true
     worktree_bytes_equal_head_blob: true
