@@ -7,6 +7,7 @@ import json
 import os
 import shutil
 import subprocess
+import tomllib
 from collections.abc import Callable
 from pathlib import Path
 from typing import Any
@@ -29,12 +30,14 @@ from ysf.configuration_access_control.validator import (
 from ysf.secure_factory.models import FactoryFailure
 
 Mutation = Callable[[Path], None]
-R3_WRITE_SUBSET = frozenset(
+R4_WRITE_SUBSET = frozenset(
     {
+        ".gitignore",
         "docs/v3/r1/g00/s03/MANIFEST.sha256",
         "docs/v3/r1/g00/s03/README.md",
         "docs/v3/r1/g00/s03/package-spec.yaml",
         "docs/v3/r1/g00/s03/source-provenance.yaml",
+        "tools/ysf/pyproject.toml",
         "tools/ysf/src/ysf/configuration_access_control/validator.py",
         "tools/ysf/tests/unit/test_configuration_access_control_validator.py",
     }
@@ -135,7 +138,7 @@ def snapshot_contract(root: Path) -> dict[str, Any]:
             "corrective_parent_tree": EXPECTED_CORRECTIVE_PARENT_TREE,
             "expected_head_sha": git(root, "rev-parse", "HEAD"),
             "expected_head_tree": git(root, "rev-parse", "HEAD^{tree}"),
-            "base_to_head_commit_count": 4,
+            "base_to_head_commit_count": 5,
             "parent_to_head_commit_count": 1,
         },
         "changed_paths": paths,
@@ -144,9 +147,7 @@ def snapshot_contract(root: Path) -> dict[str, Any]:
         "artifact_digests": artifacts,
         "validation_boundaries": {
             "knowledge_input": copy.deepcopy(validator.EXPECTED_KNOWLEDGE_BOUNDARY),
-            "branch_coverage": copy.deepcopy(
-                validator.EXPECTED_BRANCH_COVERAGE_BOUNDARY
-            ),
+            "branch_coverage": copy.deepcopy(validator.EXPECTED_BRANCH_COVERAGE_BOUNDARY),
         },
     }
 
@@ -168,12 +169,12 @@ def api_workspace(tmp_path: Path) -> tuple[Path, dict[str, Any]]:
     git(root, "switch", "--quiet", "-c", EXPECTED_BRANCH)
     copy_package(root)
     git(root, "add", "--", *sorted(EXPECTED_ALLOWLIST))
-    assert set(git(root, "diff", "--cached", "--name-only").splitlines()) == set(R3_WRITE_SUBSET)
-    commit(root, "test: materialize exact S03 corrective R3 source", 1)
+    assert set(git(root, "diff", "--cached", "--name-only").splitlines()) == set(R4_WRITE_SUBSET)
+    commit(root, "test: materialize exact S03 corrective R4 source", 1)
     git(root, "remote", "set-url", "origin", "git@github-ysim:nvkhoabk/ysim.git")
     assert git(root, "rev-parse", "HEAD^") == EXPECTED_CORRECTIVE_PARENT_SHA
     assert git(root, "rev-parse", "HEAD^^{tree}") == EXPECTED_CORRECTIVE_PARENT_TREE
-    assert int(git(root, "rev-list", "--count", f"{EXPECTED_BASE_SHA}..HEAD")) == 4
+    assert int(git(root, "rev-list", "--count", f"{EXPECTED_BASE_SHA}..HEAD")) == 5
     assert int(git(root, "rev-list", "--count", f"{EXPECTED_CORRECTIVE_PARENT_SHA}..HEAD")) == 1
     assert not git(root, "status", "--porcelain=v1", "--untracked-files=all")
     assert set(git(root, "diff", "--name-only", f"{EXPECTED_BASE_SHA}...HEAD").splitlines()) == set(
@@ -466,9 +467,7 @@ def test_public_api_cli_parity_and_two_disposable_roots(
             "FAIL_SNAPSHOT_ARTIFACT",
         ),
         (
-            lambda value: value["artifact_digests"].update(
-                {validator.PROVENANCE_PATH: "0" * 64}
-            ),
+            lambda value: value["artifact_digests"].update({validator.PROVENANCE_PATH: "0" * 64}),
             "FAIL_SNAPSHOT_ARTIFACT",
         ),
         (
@@ -562,9 +561,7 @@ def test_public_api_cli_parity_and_two_disposable_roots(
             "FAIL_SNAPSHOT_CONTRACT",
         ),
         (
-            lambda value: value["validation_boundaries"]["branch_coverage"].pop(
-                "source_package"
-            ),
+            lambda value: value["validation_boundaries"]["branch_coverage"].pop("source_package"),
             "FAIL_SNAPSHOT_CONTRACT",
         ),
         (
@@ -598,6 +595,25 @@ def test_actual_artifact_bytes_must_match_external_digest(
     git(root, "add", "--", artifact_path)
     commit(root, "test: mutate tracked artifact bytes", 2, amend=True)
     assert_failure(root, refresh_identity(root, contract), "FAIL_SNAPSHOT_ARTIFACT")
+
+
+def test_artifact_replacement_after_capture_fails_final_snapshot_readback(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    root, contract = api_workspace(tmp_path)
+    original = validator._validate_snapshot_artifact_digests
+    target = root / validator.SPEC_PATH
+
+    def replace_after_capture(
+        observed_root: Path,
+        observed_contract: Any,
+        snapshot: Any,
+    ) -> dict[str, str]:
+        target.write_bytes(target.read_bytes() + b"\n")
+        return original(observed_root, observed_contract, snapshot)
+
+    monkeypatch.setattr(validator, "_validate_snapshot_artifact_digests", replace_after_capture)
+    assert_failure(root, contract, "FAIL_DIRTY_WORKTREE")
 
 
 def test_contract_boundary_cannot_be_made_consistent_with_mutated_package_or_provenance(
@@ -672,6 +688,210 @@ def test_root_contract_missing_malformed_and_symlink_fail_closed(tmp_path: Path)
     with pytest.raises(FactoryFailure) as captured:
         load_snapshot_contract(tmp_path / "missing.yaml")
     assert captured.value.code == "FAIL_SNAPSHOT_CONTRACT"
+
+
+def test_stable_descriptor_reader_rejects_final_and_parent_replacement(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    root = tmp_path / "stable-root"
+    parent = root / "parent"
+    parent.mkdir(parents=True)
+    target = parent / "target.yaml"
+    target.write_bytes(b"value: original\n")
+    root_descriptor = validator._open_absolute_directory(root, "FAIL_TEST")
+    original_reader = validator._read_descriptor_bytes
+
+    def replace_final(descriptor: int) -> bytes:
+        target.rename(parent / "original.yaml")
+        target.write_bytes(b"value: replacement\n")
+        return original_reader(descriptor)
+
+    monkeypatch.setattr(validator, "_read_descriptor_bytes", replace_final)
+    with pytest.raises(FactoryFailure) as captured:
+        validator._stable_read_relative(root_descriptor, "parent/target.yaml", "FAIL_STABLE")
+    assert captured.value.code == "FAIL_STABLE"
+    os.close(root_descriptor)
+
+    root = tmp_path / "parent-root"
+    parent = root / "parent"
+    parent.mkdir(parents=True)
+    target = parent / "target.yaml"
+    target.write_bytes(b"value: original\n")
+    root_descriptor = validator._open_absolute_directory(root, "FAIL_TEST")
+
+    def replace_parent(descriptor: int) -> bytes:
+        parent.rename(root / "original-parent")
+        parent.mkdir()
+        (parent / "target.yaml").write_bytes(b"value: replacement\n")
+        return original_reader(descriptor)
+
+    monkeypatch.setattr(validator, "_read_descriptor_bytes", replace_parent)
+    with pytest.raises(FactoryFailure) as captured:
+        validator._stable_read_relative(root_descriptor, "parent/target.yaml", "FAIL_STABLE")
+    assert captured.value.code == "FAIL_STABLE"
+    os.close(root_descriptor)
+
+
+def test_stable_descriptor_reader_rejects_in_read_mutation_and_contract_replacement(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    target = tmp_path / "mutable.bin"
+    target.write_bytes(b"a" * 4096)
+    root_descriptor = validator._open_absolute_directory(tmp_path, "FAIL_TEST")
+    original_reader = validator._read_descriptor_bytes
+
+    def truncate_during_read(descriptor: int) -> bytes:
+        target.write_bytes(b"changed")
+        return original_reader(descriptor)
+
+    monkeypatch.setattr(validator, "_read_descriptor_bytes", truncate_during_read)
+    with pytest.raises(FactoryFailure) as captured:
+        validator._stable_read_relative(root_descriptor, target.name, "FAIL_STABLE")
+    assert captured.value.code == "FAIL_STABLE"
+    os.close(root_descriptor)
+
+    contract = tmp_path / "contract.yaml"
+    contract.write_text("schema_version: 2\n", encoding="utf-8")
+
+    def replace_contract(descriptor: int) -> bytes:
+        contract.rename(tmp_path / "contract-original.yaml")
+        contract.write_text("schema_version: 1\n", encoding="utf-8")
+        return original_reader(descriptor)
+
+    monkeypatch.setattr(validator, "_read_descriptor_bytes", replace_contract)
+    with pytest.raises(FactoryFailure) as captured:
+        load_snapshot_contract(contract)
+    assert captured.value.code == "FAIL_SNAPSHOT_CONTRACT"
+
+
+def test_stable_reader_closes_descriptors_and_rejects_symlinks(tmp_path: Path) -> None:
+    target = tmp_path / "target"
+    target.write_bytes(b"stable")
+    linked = tmp_path / "linked"
+    linked.symlink_to(target)
+    root_descriptor = validator._open_absolute_directory(tmp_path, "FAIL_TEST")
+    before = len(tuple(Path("/proc/self/fd").iterdir()))
+    for _ in range(64):
+        assert (
+            validator._stable_read_relative(root_descriptor, "target", "FAIL_STABLE") == b"stable"
+        )
+        with pytest.raises(FactoryFailure) as captured:
+            validator._stable_read_relative(root_descriptor, "linked", "FAIL_STABLE")
+        assert captured.value.code == "FAIL_STABLE"
+    after = len(tuple(Path("/proc/self/fd").iterdir()))
+    os.close(root_descriptor)
+    assert after == before
+
+
+def test_stable_reader_requires_linux_and_head_blob_equality(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    monkeypatch.setattr(validator.platform, "system", lambda: "Other")
+    with pytest.raises(FactoryFailure) as captured:
+        validator._open_absolute_directory(tmp_path, "FAIL_TEST")
+    assert captured.value.code == "FAIL_ENVIRONMENT_IDENTITY"
+    monkeypatch.setattr(validator.platform, "system", lambda: "Linux")
+
+    root, _ = api_workspace(tmp_path / "blob")
+    target = root / validator.README_PATH
+    target.write_bytes(target.read_bytes() + b"\n")
+    with validator._ValidationSnapshot(root) as snapshot:
+        with pytest.raises(FactoryFailure) as captured:
+            snapshot.read(validator.README_PATH)
+    assert captured.value.code == "FAIL_WORKTREE_BLOB"
+
+
+def test_contract_mapping_is_frozen_before_repository_validation(tmp_path: Path) -> None:
+    root, contract = api_workspace(tmp_path)
+
+    class MutatingContract(dict[str, Any]):
+        def items(self) -> Any:
+            captured_items = tuple(super().items())
+            self.clear()
+            self["fabricated_after_capture"] = True
+            return captured_items
+
+    supplied = MutatingContract(contract)
+    result = validate_configuration_access_control(root, supplied)
+    assert result["result"] == "PASS"
+    assert supplied == {"fabricated_after_capture": True}
+
+
+def test_sensitive_scan_reuses_captured_bytes(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    root, _ = api_workspace(tmp_path)
+    with validator._ValidationSnapshot(root) as snapshot:
+        snapshot.capture_all(sorted(EXPECTED_ALLOWLIST))
+
+        def unexpected_reopen(*_args: object, **_kwargs: object) -> bytes:
+            raise AssertionError("sensitive scan reopened a captured pathname")
+
+        monkeypatch.setattr(validator, "_stable_read_relative", unexpected_reopen)
+        assert validator._scan_snapshot(snapshot, set(EXPECTED_CHANGED_PATHS)) == "PASS"
+
+
+def test_trusted_validation_source_has_no_path_content_reopen() -> None:
+    source = inspect.getsource(validator)
+    assert ".read_text(" not in source
+    assert ".read_bytes(" not in source
+    assert "require_no_sensitive_values" not in source
+    assert "scan_bytes(snapshot.read(relative)" in source
+
+
+@pytest.mark.parametrize(
+    ("kind", "expected_code"),
+    [
+        ("tracked-data-file", "FAIL_COVERAGE_ISOLATION"),
+        ("missing-ignore", "FAIL_COVERAGE_ISOLATION"),
+        ("broad-ignore", "FAIL_COVERAGE_ISOLATION"),
+        ("branch-disabled", "FAIL_COVERAGE_ISOLATION"),
+        ("source-weakened", "FAIL_COVERAGE_ISOLATION"),
+        ("threshold-weakened", "FAIL_COVERAGE_ISOLATION"),
+    ],
+)
+def test_coverage_state_isolation_negative_matrix(
+    tmp_path: Path, kind: str, expected_code: str
+) -> None:
+    root = content_workspace(tmp_path)
+    pyproject_path = root / "tools/ysf/pyproject.toml"
+    gitignore_path = root / ".gitignore"
+    if kind in {"missing-ignore", "broad-ignore"}:
+        lines = gitignore_path.read_text(encoding="utf-8").splitlines()
+        lines = [line for line in lines if line != "/tools/ysf/.coverage.runtime.*"]
+        if kind == "broad-ignore":
+            lines.append("/tools/ysf/.coverage*")
+        gitignore_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    else:
+        text = pyproject_path.read_text(encoding="utf-8")
+        replacements = {
+            "tracked-data-file": ('data_file = ".coverage.runtime"', 'data_file = ".coverage"'),
+            "branch-disabled": ("branch = true", "branch = false"),
+            "source-weakened": ('source = ["ysf"]', 'source = ["other"]'),
+            "threshold-weakened": ("fail_under = 90", "fail_under = 89"),
+        }
+        old, new = replacements[kind]
+        pyproject_path.write_text(text.replace(old, new), encoding="utf-8")
+    with pytest.raises(FactoryFailure) as captured:
+        validator._validate_coverage_isolation(root)
+    assert captured.value.code == expected_code
+
+
+def test_coverage_state_isolation_configuration_is_exact() -> None:
+    root = repository_root()
+    result = validator._validate_coverage_isolation(root)
+    assert result == {
+        "result": "PASS",
+        "data_file": ".coverage.runtime",
+        "environment_override_required": False,
+        "tracked_coverage_mutation_allowed": False,
+    }
+    configuration = tomllib.loads((root / "tools/ysf/pyproject.toml").read_text(encoding="utf-8"))
+    assert configuration["tool"]["coverage"]["run"] == {
+        "branch": True,
+        "source": ["ysf"],
+        "data_file": ".coverage.runtime",
+    }
 
 
 def test_dirty_origin_branch_and_sensitive_fail_closed(tmp_path: Path) -> None:
@@ -822,4 +1042,24 @@ def test_defensive_helpers_fail_closed(tmp_path: Path) -> None:
     with pytest.raises(FactoryFailure) as captured:
         validator._git_file_sha256(tmp_path, "missing", "path")
     assert captured.value.code == "FAIL_SOURCE_PROVENANCE"
+    with pytest.raises(FactoryFailure) as captured:
+        validator._safe_relative_parts("", "FAIL_PATH")
+    assert captured.value.code == "FAIL_PATH"
+    with pytest.raises(FactoryFailure) as captured:
+        validator._open_absolute_directory(Path("relative"), "FAIL_PATH")
+    assert captured.value.code == "FAIL_PATH"
+    with pytest.raises(FactoryFailure) as captured:
+        validator._stable_read_absolute(Path("relative"), "FAIL_PATH")
+    assert captured.value.code == "FAIL_PATH"
+    with pytest.raises(FactoryFailure) as captured:
+        validator._git_file_bytes(tmp_path, "missing", "path", "FAIL_GIT_BYTES")
+    assert captured.value.code == "FAIL_GIT_BYTES"
+    with pytest.raises(FactoryFailure) as captured:
+        validator._load_yaml_bytes(b"\xff", "FAIL_YAML", "invalid")
+    assert captured.value.code == "FAIL_YAML"
+    invalid_toml_root = content_workspace(tmp_path / "invalid-toml")
+    (invalid_toml_root / "tools/ysf/pyproject.toml").write_bytes(b"[invalid")
+    with pytest.raises(FactoryFailure) as captured:
+        validator._validate_coverage_isolation(invalid_toml_root)
+    assert captured.value.code == "FAIL_COVERAGE_ISOLATION"
     assert hashlib.sha256(b"safe").hexdigest() != "0" * 64

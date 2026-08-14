@@ -42,6 +42,7 @@ pythonpath = ["src"]
 [tool.coverage.run]
 branch = true
 source = ["ysf"]
+data_file = ".coverage.runtime"
 
 [tool.coverage.report]
 fail_under = 90

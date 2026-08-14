@@ -9,3 +9,7 @@ __pycache__/
 
 runtime/tmp/
 runtime/
+
+# YSF runtime-only coverage state; tracked tools/ysf/.coverage is immutable evidence.
+/tools/ysf/.coverage.runtime
+/tools/ysf/.coverage.runtime.*

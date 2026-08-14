@@ -29,10 +29,11 @@ system exists.
   exception does not alter the accepted S02 branch or decision.
 - [Package specification](package-spec.yaml) defines the exact source-only
   scope, effects boundary, and final Human Decision boundary.
-- [Manifest](MANIFEST.sha256) checksums all fourteen non-self paths in the
-  fifteen-path authorization, including the unchanged secure-factory
+- [Manifest](MANIFEST.sha256) checksums all sixteen non-self paths in the
+  seventeen-path authorization, including the unchanged secure-factory
   integration test, the fresh knowledge builder/test bindings, and the two
-  descendant-only S02 compatibility paths.
+  descendant-only S02 compatibility paths. It also binds the repository
+  coverage configuration and exact runtime-state ignore rules.
 
 Configuration records bind tenant/partition identity into immutable record and
 effective-resolution digests. `GLOBAL` records are tenant-neutral; every other
@@ -61,14 +62,32 @@ permissive default. An exact repository may be validated at a safe disposable
 absolute path when its observed origin, branch, topology, changed paths, modes,
 content, and sensitive-data gates match the external contract.
 
+Trusted validation content is captured once through a Linux descriptor-based
+boundary. Directory traversal uses descriptor-relative `O_DIRECTORY`,
+`O_NOFOLLOW`, and `O_CLOEXEC`; final regular files are read through the opened
+descriptor and checked with `fstat` before and after the read. Captured
+worktree bytes must equal their exact `HEAD` blobs. YAML parsing, manifests,
+artifact digests, README checks, and sensitive-data scanning reuse those
+immutable captured bytes and do not reopen trusted pathnames.
+
 The mandatory external contract uses schema version 2. It binds the exact
-sorted fourteen-path base-to-head delta, all fifteen authorized paths and their
+sorted sixteen-path base-to-head delta, all seventeen authorized paths and their
 `100644` Git modes (including the unchanged secure-factory integration test),
 and independently supplied SHA-256 values for the package specification,
 manifest, and source provenance. It also binds the fresh in-memory knowledge
 builder/count boundary and the covered-branches-divided-by-valid-branches
 coverage metric with its exact 90.0% threshold. Schema version 1 and every
 missing, extra, reordered, malformed, or mismatched binding fail closed.
+
+The standard unified coverage invocation is
+`pytest --cov=ysf.configuration_access_control --cov-branch`; it runs the
+entire collected suite and needs no `COVERAGE_FILE`
+environment override. Coverage state is written to
+`tools/ysf/.coverage.runtime` by `tools/ysf/pyproject.toml`; that exact runtime
+file and its suffix variants are ignored. The historical tracked
+`tools/ysf/.coverage` bytes are never mutated by the standard run. Branch
+instrumentation, the exact source package, and the 90.0% branch threshold
+remain mandatory.
 
 ## Safety boundary
 

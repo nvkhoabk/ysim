@@ -12,9 +12,9 @@ stacked_base:
   tree: b40ef828825e36641695adb23faedf7346102630
 head_topology:
   binding: MANDATORY_EXTERNAL_SNAPSHOT_CONTRACT_V2
-  corrective_parent_commit: 62f73324f00fda213cba52cb7c50686c6a0f5e6a
-  corrective_parent_tree: ce1005025986e39dabd5b675aaa8f8956cd754a7
-  base_to_head_commit_count: 4
+  corrective_parent_commit: 82e7adb52940b2a1214f0b97e85156f3758124a6
+  corrective_parent_tree: efcf63461d63e0260de2fb01945d860badca5d97
+  base_to_head_commit_count: 5
   parent_to_head_commit_count: 1
 repository_root_contract:
   absolute_path_required: true
@@ -32,6 +32,7 @@ requirements:
   - V3-R1-SEC-001
   - V3-R1-SEC-003
 allowed_paths:
+  - .gitignore
   - docs/v3/r1/g00/s02/MANIFEST.sha256
   - tools/ysf/tests/unit/test_governance_baseline_validator.py
   - docs/v3/r1/g00/s03/MANIFEST.sha256
@@ -47,12 +48,13 @@ allowed_paths:
   - tools/ysf/src/ysf/knowledge/service.py
   - tools/ysf/tests/integration/test_build_knowledge.py
   - tools/ysf/tests/integration/test_secure_factory_pipeline.py
+  - tools/ysf/pyproject.toml
 file_mode: "100644"
 external_snapshot_contract:
   schema_version: 2
-  changed_path_binding: EXACT_SORTED_BASE_TO_HEAD_14_PATHS
-  authorized_path_binding: EXACT_SORTED_15_PATHS
-  authorized_mode_binding: EXACT_15_PATHS_100644
+  changed_path_binding: EXACT_SORTED_BASE_TO_HEAD_16_PATHS
+  authorized_path_binding: EXACT_SORTED_17_PATHS
+  authorized_mode_binding: EXACT_17_PATHS_100644
   artifact_digest_paths:
     - docs/v3/r1/g00/s03/package-spec.yaml
     - docs/v3/r1/g00/s03/MANIFEST.sha256
@@ -74,6 +76,26 @@ validation_gates:
     expected_capability_count: 8
     expected_integration_count: 0
     expected_relationship_count: 48
+  stable_descriptor_read:
+    platform: Linux
+    component_traversal: DESCRIPTOR_RELATIVE
+    nofollow: true
+    descriptor_fstat_before_after: true
+    worktree_bytes_equal_head_blob: true
+    trusted_path_reopen_allowed: false
+    sensitive_scan_source: CAPTURED_BYTES
+  coverage_state_isolation:
+    configuration_path: tools/ysf/pyproject.toml
+    runtime_data_file: .coverage.runtime
+    runtime_data_pattern: tools/ysf/.coverage.runtime*
+    gitignore_rules:
+      - /tools/ysf/.coverage.runtime
+      - /tools/ysf/.coverage.runtime.*
+    tracked_coverage_file: tools/ysf/.coverage
+    tracked_coverage_mutation_allowed: false
+    coverage_file_environment_override_required: false
+    standard_invocation_clean_required: true
+    branch_instrumentation: true
 s02_compatibility_exception:
   scope: DESCENDANT_S03_TEST_FIXTURE_ONLY
   accepted_s02_branch_mutated: false

@@ -10,23 +10,26 @@ import platform
 import re
 import stat
 import subprocess
+import tomllib
 from collections.abc import Mapping, Sequence
 from pathlib import Path, PurePosixPath
+from types import MappingProxyType
 from typing import Any, NoReturn, cast
 
 import yaml
 
-from ysf.index.documents import build_document_index
 from ysf.secure_factory.models import FactoryFailure
-from ysf.secure_factory.sensitive import require_no_sensitive_values
+from ysf.secure_factory.sensitive import scan_bytes
 
 EXPECTED_REPOSITORY = "nvkhoabk/ysim"
 EXPECTED_BRANCH = "feature/v3-r1-g00-s03-configuration-access-control-source-baseline"
 EXPECTED_BASE_BRANCH = "feature/v3-r1-g00-s02-governance-requirements-baseline"
 EXPECTED_BASE_SHA = "6e71bdd58df2c5baddb36783abbc513867656df0"
 EXPECTED_BASE_TREE = "b40ef828825e36641695adb23faedf7346102630"
-EXPECTED_CORRECTIVE_PARENT_SHA = "62f73324f00fda213cba52cb7c50686c6a0f5e6a"
-EXPECTED_CORRECTIVE_PARENT_TREE = "ce1005025986e39dabd5b675aaa8f8956cd754a7"
+EXPECTED_CORRECTIVE_PARENT_SHA = "82e7adb52940b2a1214f0b97e85156f3758124a6"
+EXPECTED_CORRECTIVE_PARENT_TREE = "efcf63461d63e0260de2fb01945d860badca5d97"
+R3_CORRECTIVE_PARENT_SHA = "62f73324f00fda213cba52cb7c50686c6a0f5e6a"
+R3_CORRECTIVE_PARENT_TREE = "ce1005025986e39dabd5b675aaa8f8956cd754a7"
 R2_CORRECTIVE_PARENT_SHA = "bc7893f5efa2c3b40da52396b9e946187c6a2044"
 R2_CORRECTIVE_PARENT_TREE = "ff9be9172780065e46dac4a336a9cf38b52af8f2"
 EXPECTED_REQUIREMENTS = (
@@ -37,6 +40,7 @@ EXPECTED_REQUIREMENTS = (
     "V3-R1-SEC-003",
 )
 EXPECTED_ALLOWLIST_ORDER = (
+    ".gitignore",
     "docs/v3/r1/g00/s02/MANIFEST.sha256",
     "tools/ysf/tests/unit/test_governance_baseline_validator.py",
     "docs/v3/r1/g00/s03/MANIFEST.sha256",
@@ -52,6 +56,7 @@ EXPECTED_ALLOWLIST_ORDER = (
     "tools/ysf/src/ysf/knowledge/service.py",
     "tools/ysf/tests/integration/test_build_knowledge.py",
     "tools/ysf/tests/integration/test_secure_factory_pipeline.py",
+    "tools/ysf/pyproject.toml",
 )
 EXPECTED_ALLOWLIST = frozenset(EXPECTED_ALLOWLIST_ORDER)
 EXPECTED_CHANGED_PATHS_ORDER = tuple(
@@ -85,6 +90,20 @@ EXPECTED_BRANCH_COVERAGE_BOUNDARY: dict[str, Any] = {
     "source_package": "ysf.configuration_access_control",
     "metric": "COVERED_BRANCHES_DIVIDED_BY_VALID_BRANCHES",
     "minimum_percent": 90.0,
+}
+EXPECTED_COVERAGE_ISOLATION: dict[str, Any] = {
+    "configuration_path": "tools/ysf/pyproject.toml",
+    "runtime_data_file": ".coverage.runtime",
+    "runtime_data_pattern": "tools/ysf/.coverage.runtime*",
+    "gitignore_rules": [
+        "/tools/ysf/.coverage.runtime",
+        "/tools/ysf/.coverage.runtime.*",
+    ],
+    "tracked_coverage_file": "tools/ysf/.coverage",
+    "tracked_coverage_mutation_allowed": False,
+    "coverage_file_environment_override_required": False,
+    "standard_invocation_clean_required": True,
+    "branch_instrumentation": True,
 }
 _SHA256 = re.compile(r"^[0-9a-f]{64}$")
 _GIT_SHA = re.compile(r"^[0-9a-f]{40}$")
@@ -121,19 +140,238 @@ def _exact_keys(value: Mapping[str, Any], expected: set[str], code: str, label: 
         )
 
 
-def _load_yaml(path: Path, code: str) -> Mapping[str, Any]:
+def _metadata(identity: os.stat_result) -> tuple[int, int, int, int, int, int, int]:
+    return (
+        identity.st_dev,
+        identity.st_ino,
+        stat.S_IFMT(identity.st_mode),
+        identity.st_size,
+        identity.st_mtime_ns,
+        identity.st_ctime_ns,
+        identity.st_nlink,
+    )
+
+
+def _safe_relative_parts(relative: str, code: str) -> tuple[str, ...]:
+    pure = PurePosixPath(relative)
+    if (
+        not relative
+        or pure.is_absolute()
+        or pure.as_posix() != relative
+        or any(part in {"", ".", ".."} for part in pure.parts)
+    ):
+        _fail(code, "Required path is unsafe.")
+    return pure.parts
+
+
+def _directory_flags() -> int:
+    return os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW | os.O_CLOEXEC
+
+
+def _file_flags() -> int:
+    return os.O_RDONLY | os.O_NOFOLLOW | os.O_CLOEXEC
+
+
+def _open_absolute_directory(path: Path, code: str) -> int:
+    if platform.system() != "Linux":
+        _fail("FAIL_ENVIRONMENT_IDENTITY", "Stable descriptor validation requires Linux.")
+    if not path.is_absolute() or Path(os.path.normpath(os.fspath(path))) != path:
+        _fail(code, "Absolute directory path is unsafe.")
+    descriptors: list[int] = []
     try:
-        value = yaml.safe_load(path.read_text(encoding="utf-8"))
-    except (OSError, UnicodeError, yaml.YAMLError):
-        _fail(code, "Required YAML cannot be read exactly.")
-    return _mapping(value, code, path.name)
+        current = os.open(path.anchor, _directory_flags())
+        descriptors.append(current)
+        for component in path.parts[1:]:
+            current = os.open(component, _directory_flags(), dir_fd=current)
+            descriptors.append(current)
+        result = os.dup(descriptors[-1])
+        os.set_inheritable(result, False)
+        return result
+    except OSError:
+        _fail(code, "Absolute directory path is missing or unsafe.")
+    finally:
+        for descriptor in reversed(descriptors):
+            os.close(descriptor)
+
+
+def _read_descriptor_bytes(descriptor: int) -> bytes:
+    chunks: list[bytes] = []
+    while True:
+        chunk = os.read(descriptor, 1024 * 1024)
+        if not chunk:
+            return b"".join(chunks)
+        chunks.append(chunk)
+
+
+def _verify_relative_identity(
+    root_descriptor: int,
+    parts: tuple[str, ...],
+    expected_directories: Sequence[tuple[int, int, int, int, int, int, int]],
+    expected_file: tuple[int, int, int, int, int, int, int],
+    code: str,
+) -> None:
+    descriptors: list[int] = []
+    try:
+        current = os.dup(root_descriptor)
+        os.set_inheritable(current, False)
+        descriptors.append(current)
+        if _metadata(os.fstat(current)) != expected_directories[0]:
+            _fail(code, "Required path root identity changed during stable read.")
+        for index, component in enumerate(parts[:-1], start=1):
+            current = os.open(component, _directory_flags(), dir_fd=current)
+            descriptors.append(current)
+            if _metadata(os.fstat(current)) != expected_directories[index]:
+                _fail(code, "Required path parent identity changed during stable read.")
+        final_descriptor = os.open(parts[-1], _file_flags(), dir_fd=current)
+        descriptors.append(final_descriptor)
+        if _metadata(os.fstat(final_descriptor)) != expected_file:
+            _fail(code, "Required file pathname identity changed during stable read.")
+    except OSError:
+        _fail(code, "Required path identity cannot be reverified after stable read.")
+    finally:
+        for descriptor in reversed(descriptors):
+            os.close(descriptor)
+
+
+def _stable_read_relative(root_descriptor: int, relative: str, code: str) -> bytes:
+    parts = _safe_relative_parts(relative, code)
+    descriptors: list[int] = []
+    directory_metadata: list[tuple[int, tuple[int, int, int, int, int, int, int]]] = []
+    try:
+        current = os.dup(root_descriptor)
+        os.set_inheritable(current, False)
+        descriptors.append(current)
+        directory_metadata.append((current, _metadata(os.fstat(current))))
+        for component in parts[:-1]:
+            current = os.open(component, _directory_flags(), dir_fd=current)
+            descriptors.append(current)
+            observed = os.fstat(current)
+            if not stat.S_ISDIR(observed.st_mode):
+                _fail(code, "Required path parent is not a directory.")
+            directory_metadata.append((current, _metadata(observed)))
+        file_descriptor = os.open(parts[-1], _file_flags(), dir_fd=current)
+        descriptors.append(file_descriptor)
+        before = os.fstat(file_descriptor)
+        if not stat.S_ISREG(before.st_mode):
+            _fail(code, "Required path is not a regular file.")
+        before_metadata = _metadata(before)
+        data = _read_descriptor_bytes(file_descriptor)
+        after_metadata = _metadata(os.fstat(file_descriptor))
+        if before_metadata != after_metadata or len(data) != before.st_size:
+            _fail(code, "Required file changed while its stable descriptor was read.")
+        for descriptor, expected in directory_metadata:
+            if _metadata(os.fstat(descriptor)) != expected:
+                _fail(code, "Required path parent changed during stable read.")
+        _verify_relative_identity(
+            root_descriptor,
+            parts,
+            [expected for _, expected in directory_metadata],
+            before_metadata,
+            code,
+        )
+        return data
+    except OSError:
+        _fail(code, "Required path cannot be opened through the stable boundary.")
+    finally:
+        for descriptor in reversed(descriptors):
+            os.close(descriptor)
+
+
+def _stable_read_absolute(path: Path, code: str) -> bytes:
+    if not path.is_absolute() or Path(os.path.normpath(os.fspath(path))) != path:
+        _fail(code, "Required absolute file path is unsafe.")
+    root_descriptor = _open_absolute_directory(Path(path.anchor), code)
+    try:
+        relative = PurePosixPath(*path.parts[1:]).as_posix()
+        return _stable_read_relative(root_descriptor, relative, code)
+    finally:
+        os.close(root_descriptor)
+
+
+def _git_file_bytes(root: Path, revision: str, path: str, code: str) -> bytes:
+    completed = subprocess.run(
+        ["git", "-C", str(root), "show", f"{revision}:{path}"],
+        check=False,
+        capture_output=True,
+    )
+    if completed.returncode != 0:
+        _fail(code, "Git blob bytes cannot be read.", path=path)
+    return completed.stdout
+
+
+class _ValidationSnapshot:
+    def __init__(self, root: Path) -> None:
+        self.root = root
+        self._root_descriptor = _open_absolute_directory(root, "FAIL_REPOSITORY_ROOT")
+        self._root_metadata = _metadata(os.fstat(self._root_descriptor))
+        self._cache: dict[str, bytes] = {}
+
+    def __enter__(self) -> _ValidationSnapshot:
+        return self
+
+    def __exit__(self, *_args: object) -> None:
+        os.close(self._root_descriptor)
+
+    def read(self, relative: str) -> bytes:
+        cached = self._cache.get(relative)
+        if cached is not None:
+            return cached
+        captured = _stable_read_relative(self._root_descriptor, relative, "FAIL_PATH_SAFETY")
+        expected = _git_file_bytes(self.root, "HEAD", relative, "FAIL_PATH_SAFETY")
+        if captured != expected:
+            _fail(
+                "FAIL_WORKTREE_BLOB",
+                "Captured worktree bytes differ from the exact HEAD blob.",
+                path=relative,
+            )
+        self._cache[relative] = captured
+        return captured
+
+    def capture_all(self, paths: Sequence[str]) -> None:
+        for relative in paths:
+            self.read(relative)
+
+    def verify_root_stable(self) -> None:
+        if _metadata(os.fstat(self._root_descriptor)) != self._root_metadata:
+            _fail("FAIL_REPOSITORY_ROOT", "Repository root descriptor changed during validation.")
+        observed_descriptor = _open_absolute_directory(self.root, "FAIL_REPOSITORY_ROOT")
+        try:
+            if _metadata(os.fstat(observed_descriptor)) != self._root_metadata:
+                _fail("FAIL_REPOSITORY_ROOT", "Repository root path changed during validation.")
+        finally:
+            os.close(observed_descriptor)
+
+
+def _load_yaml_bytes(data: bytes, code: str, label: str) -> Mapping[str, Any]:
+    try:
+        value = yaml.safe_load(data.decode("utf-8"))
+    except (UnicodeError, yaml.YAMLError):
+        _fail(code, "Required YAML cannot be parsed from captured bytes.")
+    return _mapping(value, code, label)
+
+
+def _load_yaml(path: Path, code: str) -> Mapping[str, Any]:
+    return _load_yaml_bytes(_stable_read_absolute(path, code), code, path.name)
 
 
 def _sha256(path: Path) -> str:
-    try:
-        return hashlib.sha256(path.read_bytes()).hexdigest()
-    except OSError:
-        _fail("FAIL_REQUIRED_FILE", "Required file cannot be read.")
+    return hashlib.sha256(_stable_read_absolute(path, "FAIL_REQUIRED_FILE")).hexdigest()
+
+
+def _content_bytes(root: Path, relative: str, snapshot: _ValidationSnapshot | None) -> bytes:
+    if snapshot is not None:
+        return snapshot.read(relative)
+    return _stable_read_absolute(root / relative, "FAIL_REQUIRED_FILE")
+
+
+def _content_yaml(
+    root: Path, relative: str, code: str, snapshot: _ValidationSnapshot | None
+) -> Mapping[str, Any]:
+    return _load_yaml_bytes(_content_bytes(root, relative, snapshot), code, relative)
+
+
+def _content_sha256(root: Path, relative: str, snapshot: _ValidationSnapshot | None) -> str:
+    return hashlib.sha256(_content_bytes(root, relative, snapshot)).hexdigest()
 
 
 def _run_git(root: Path, *args: str) -> str:
@@ -183,7 +421,7 @@ def _expected_spec() -> dict[str, Any]:
             "binding": "MANDATORY_EXTERNAL_SNAPSHOT_CONTRACT_V2",
             "corrective_parent_commit": EXPECTED_CORRECTIVE_PARENT_SHA,
             "corrective_parent_tree": EXPECTED_CORRECTIVE_PARENT_TREE,
-            "base_to_head_commit_count": 4,
+            "base_to_head_commit_count": 5,
             "parent_to_head_commit_count": 1,
         },
         "repository_root_contract": {
@@ -201,15 +439,25 @@ def _expected_spec() -> dict[str, Any]:
         "file_mode": "100644",
         "external_snapshot_contract": {
             "schema_version": 2,
-            "changed_path_binding": "EXACT_SORTED_BASE_TO_HEAD_14_PATHS",
-            "authorized_path_binding": "EXACT_SORTED_15_PATHS",
-            "authorized_mode_binding": "EXACT_15_PATHS_100644",
+            "changed_path_binding": "EXACT_SORTED_BASE_TO_HEAD_16_PATHS",
+            "authorized_path_binding": "EXACT_SORTED_17_PATHS",
+            "authorized_mode_binding": "EXACT_17_PATHS_100644",
             "artifact_digest_paths": list(EXPECTED_ARTIFACT_PATHS),
             "validation_boundaries": ["knowledge_input", "branch_coverage"],
         },
         "validation_gates": {
             "branch_coverage": EXPECTED_BRANCH_COVERAGE_BOUNDARY,
             "knowledge_input": EXPECTED_KNOWLEDGE_BOUNDARY,
+            "stable_descriptor_read": {
+                "platform": "Linux",
+                "component_traversal": "DESCRIPTOR_RELATIVE",
+                "nofollow": True,
+                "descriptor_fstat_before_after": True,
+                "worktree_bytes_equal_head_blob": True,
+                "trusted_path_reopen_allowed": False,
+                "sensitive_scan_source": "CAPTURED_BYTES",
+            },
+            "coverage_state_isolation": EXPECTED_COVERAGE_ISOLATION,
         },
         "s02_compatibility_exception": {
             "scope": "DESCENDANT_S03_TEST_FIXTURE_ONLY",
@@ -278,12 +526,36 @@ def _expected_provenance() -> dict[str, Any]:
             },
         },
         "corrective_r3": {
-            "parent_commit": EXPECTED_CORRECTIVE_PARENT_SHA,
-            "parent_tree": EXPECTED_CORRECTIVE_PARENT_TREE,
+            "parent_commit": R3_CORRECTIVE_PARENT_SHA,
+            "parent_tree": R3_CORRECTIVE_PARENT_TREE,
             "external_snapshot_contract": {
                 "schema_version": 2,
                 "changed_path_count": 14,
                 "authorized_path_count": 15,
+                "authorized_file_mode": "100644",
+                "artifact_digest_paths": list(EXPECTED_ARTIFACT_PATHS),
+                "knowledge_input": EXPECTED_KNOWLEDGE_BOUNDARY,
+                "branch_coverage": EXPECTED_BRANCH_COVERAGE_BOUNDARY,
+            },
+        },
+        "corrective_r4": {
+            "parent_commit": EXPECTED_CORRECTIVE_PARENT_SHA,
+            "parent_tree": EXPECTED_CORRECTIVE_PARENT_TREE,
+            "stable_read_boundary": {
+                "platform": "Linux",
+                "component_traversal": "DESCRIPTOR_RELATIVE",
+                "directory_flags": ["O_DIRECTORY", "O_NOFOLLOW", "O_CLOEXEC"],
+                "file_flags": ["O_NOFOLLOW", "O_CLOEXEC"],
+                "descriptor_fstat_before_after": True,
+                "worktree_bytes_equal_head_blob": True,
+                "trusted_path_reopen_allowed": False,
+                "sensitive_scan_source": "CAPTURED_BYTES",
+            },
+            "coverage_state_isolation": EXPECTED_COVERAGE_ISOLATION,
+            "external_snapshot_contract": {
+                "schema_version": 2,
+                "changed_path_count": 16,
+                "authorized_path_count": 17,
                 "authorized_file_mode": "100644",
                 "artifact_digest_paths": list(EXPECTED_ARTIFACT_PATHS),
                 "knowledge_input": EXPECTED_KNOWLEDGE_BOUNDARY,
@@ -431,15 +703,15 @@ def _expected_provenance() -> dict[str, Any]:
     }
 
 
-def _validate_package(root: Path) -> dict[str, Any]:
-    observed = _load_yaml(root / SPEC_PATH, "FAIL_PACKAGE_SPEC")
+def _validate_package(root: Path, snapshot: _ValidationSnapshot | None = None) -> dict[str, Any]:
+    observed = _content_yaml(root, SPEC_PATH, "FAIL_PACKAGE_SPEC", snapshot)
     if dict(observed) != _expected_spec():
         _fail("FAIL_PACKAGE_SPEC", "Package specification differs from exact contract.")
-    return {"result": "PASS", "sha256": _sha256(root / SPEC_PATH)}
+    return {"result": "PASS", "sha256": _content_sha256(root, SPEC_PATH, snapshot)}
 
 
-def _validate_provenance(root: Path) -> dict[str, Any]:
-    observed = _load_yaml(root / PROVENANCE_PATH, "FAIL_SOURCE_PROVENANCE")
+def _validate_provenance(root: Path, snapshot: _ValidationSnapshot | None = None) -> dict[str, Any]:
+    observed = _content_yaml(root, PROVENANCE_PATH, "FAIL_SOURCE_PROVENANCE", snapshot)
     expected = _expected_provenance()
     if dict(observed) != expected:
         _fail("FAIL_SOURCE_PROVENANCE", "Source provenance differs from exact binding.")
@@ -454,7 +726,7 @@ def _validate_provenance(root: Path) -> dict[str, Any]:
         path = str(binding["path"])
         if (
             _run_git(root, "rev-parse", f"HEAD:{path}") != binding["git_blob_sha"]
-            or _sha256(root / path) != binding["sha256"]
+            or _content_sha256(root, path, snapshot) != binding["sha256"]
         ):
             _fail("FAIL_SOURCE_PROVENANCE", "A source blob binding is incorrect.", path=path)
     compatibility = cast(Mapping[str, Any], expected["s02_descendant_compatibility"])
@@ -475,7 +747,7 @@ def _validate_provenance(root: Path) -> dict[str, Any]:
     for key in ("manifest", "test_helper"):
         binding = cast(Mapping[str, Any], descendant[key])
         path = str(binding["path"])
-        if _sha256(root / path) != binding["sha256"]:
+        if _content_sha256(root, path, snapshot) != binding["sha256"]:
             _fail(
                 "FAIL_SOURCE_PROVENANCE",
                 "Descendant-only S02 compatibility binding is incorrect.",
@@ -486,17 +758,20 @@ def _validate_provenance(root: Path) -> dict[str, Any]:
     for key in ("service", "regression_test"):
         binding = cast(Mapping[str, Any], knowledge_input[key])
         path = str(binding["path"])
-        if _sha256(root / path) != binding["sha256"]:
+        if _content_sha256(root, path, snapshot) != binding["sha256"]:
             _fail(
                 "FAIL_SOURCE_PROVENANCE",
                 "Corrective R2 knowledge binding is incorrect.",
                 path=path,
             )
-    return {"result": "PASS", "sha256": _sha256(root / PROVENANCE_PATH)}
+    return {
+        "result": "PASS",
+        "sha256": _content_sha256(root, PROVENANCE_PATH, snapshot),
+    }
 
 
-def _validate_baseline(root: Path) -> dict[str, Any]:
-    baseline = _load_yaml(root / BASELINE_PATH, "FAIL_S03_BASELINE")
+def _validate_baseline(root: Path, snapshot: _ValidationSnapshot | None = None) -> dict[str, Any]:
+    baseline = _content_yaml(root, BASELINE_PATH, "FAIL_S03_BASELINE", snapshot)
     _exact_keys(
         baseline,
         {
@@ -588,7 +863,7 @@ def _validate_baseline(root: Path) -> dict[str, Any]:
     for key, expected in fixed.items():
         if baseline.get(key) != expected:
             _fail("FAIL_S03_BASELINE", "Baseline fixed field is incorrect.", field=key)
-    traceability = _load_yaml(root / TRACEABILITY_PATH, "FAIL_S01_BINDING")
+    traceability = _content_yaml(root, TRACEABILITY_PATH, "FAIL_S01_BINDING", snapshot)
     source_requirements = {
         item["id"]: item["release_requirement"]
         for item in _sequence(traceability.get("requirements"), "FAIL_S01_BINDING", "requirements")
@@ -617,15 +892,14 @@ def _validate_baseline(root: Path) -> dict[str, Any]:
     return {
         "result": "PASS",
         "requirement_count": len(observed_requirements),
-        "sha256": _sha256(root / BASELINE_PATH),
+        "sha256": _content_sha256(root, BASELINE_PATH, snapshot),
     }
 
 
-def _validate_manifest(root: Path) -> dict[str, Any]:
-    path = root / MANIFEST_PATH
+def _validate_manifest(root: Path, snapshot: _ValidationSnapshot | None = None) -> dict[str, Any]:
     try:
-        lines = path.read_text(encoding="utf-8").splitlines()
-    except (OSError, UnicodeError):
+        lines = _content_bytes(root, MANIFEST_PATH, snapshot).decode("utf-8").splitlines()
+    except UnicodeError:
         _fail("FAIL_PACKAGE_MANIFEST", "Manifest cannot be read.")
     records: dict[str, str] = {}
     for line in lines:
@@ -646,22 +920,58 @@ def _validate_manifest(root: Path) -> dict[str, Any]:
     if set(records) != expected_paths:
         _fail("FAIL_PACKAGE_MANIFEST", "Manifest coverage differs from exact S03 scope.")
     for relative, digest in records.items():
-        target = root / relative
-        if target.is_symlink() or not target.is_file() or _sha256(target) != digest:
+        if _content_sha256(root, relative, snapshot) != digest:
             _fail("FAIL_PACKAGE_MANIFEST", "Manifest digest binding failed.", path=relative)
-    return {"result": "PASS", "sha256": _sha256(path)}
+    return {"result": "PASS", "sha256": _content_sha256(root, MANIFEST_PATH, snapshot)}
 
 
-def _validate_documents(root: Path) -> None:
-    readme = root / README_PATH
-    text = readme.read_text(encoding="utf-8")
+def _validate_documents(root: Path, snapshot: _ValidationSnapshot | None = None) -> None:
+    try:
+        text = _content_bytes(root, README_PATH, snapshot).decode("utf-8")
+    except UnicodeError:
+        _fail("FAIL_DOCUMENT_METADATA", "S03 README is not valid UTF-8.")
     if _PLACEHOLDER.search(text) or _OVERCLAIM.search(text):
         _fail("FAIL_DOCUMENT_CLAIM", "S03 document contains placeholder or overclaim.")
-    index = build_document_index(root)
-    entries = cast(Sequence[Mapping[str, Any]], index["documents"])
-    matches = [item for item in entries if item.get("path") == README_PATH]
-    if len(matches) != 1 or matches[0].get("documentCode") != "V3-R1-G00-S03-README":
+    if not text.startswith("---\n") or "\n---\n" not in text[4:]:
+        _fail("FAIL_DOCUMENT_METADATA", "S03 README metadata is missing or malformed.")
+    frontmatter_text = text[4:].split("\n---\n", 1)[0]
+    metadata = _load_yaml_bytes(
+        frontmatter_text.encode("utf-8"), "FAIL_DOCUMENT_METADATA", README_PATH
+    )
+    if metadata.get("document_code") != "V3-R1-G00-S03-README":
         _fail("FAIL_DOCUMENT_METADATA", "S03 README metadata is missing or duplicated.")
+
+
+def _validate_coverage_isolation(
+    root: Path, snapshot: _ValidationSnapshot | None = None
+) -> dict[str, Any]:
+    try:
+        configuration = tomllib.loads(
+            _content_bytes(root, "tools/ysf/pyproject.toml", snapshot).decode("utf-8")
+        )
+        ignore_lines = _content_bytes(root, ".gitignore", snapshot).decode("utf-8").splitlines()
+    except (UnicodeError, tomllib.TOMLDecodeError):
+        _fail("FAIL_COVERAGE_ISOLATION", "Coverage isolation configuration is malformed.")
+    coverage = _mapping(
+        configuration.get("tool", {}).get("coverage"), "FAIL_COVERAGE_ISOLATION", "coverage"
+    )
+    run = _mapping(coverage.get("run"), "FAIL_COVERAGE_ISOLATION", "coverage.run")
+    report = _mapping(coverage.get("report"), "FAIL_COVERAGE_ISOLATION", "coverage.report")
+    if dict(run) != {"branch": True, "source": ["ysf"], "data_file": ".coverage.runtime"}:
+        _fail("FAIL_COVERAGE_ISOLATION", "Coverage runtime boundary is not exact.")
+    if report.get("fail_under") != 90:
+        _fail("FAIL_COVERAGE_ISOLATION", "Coverage threshold is below the exact boundary.")
+    coverage_rules = [
+        line for line in ignore_lines if ".coverage" in line and not line.startswith("#")
+    ]
+    if coverage_rules != list(EXPECTED_COVERAGE_ISOLATION["gitignore_rules"]):
+        _fail("FAIL_COVERAGE_ISOLATION", "Coverage ignore rules differ from the exact boundary.")
+    return {
+        "result": "PASS",
+        "data_file": ".coverage.runtime",
+        "environment_override_required": False,
+        "tracked_coverage_mutation_allowed": False,
+    }
 
 
 def _validated_repository_root(repository_root: Path) -> Path:
@@ -670,18 +980,26 @@ def _validated_repository_root(repository_root: Path) -> Path:
     normalized = Path(os.path.normpath(os.fspath(repository_root)))
     if normalized != repository_root or ".." in repository_root.parts:
         _fail("FAIL_REPOSITORY_ROOT", "Repository root path is not normalized.")
-    current = Path(repository_root.anchor)
-    try:
-        for component in repository_root.parts[1:]:
-            current /= component
-            observed = os.lstat(current)
-            if stat.S_ISLNK(observed.st_mode) or not stat.S_ISDIR(observed.st_mode):
-                _fail("FAIL_REPOSITORY_ROOT", "Repository root component is unsafe.")
-    except OSError:
-        _fail("FAIL_REPOSITORY_ROOT", "Repository root is missing or unsafe.")
-    if repository_root.resolve(strict=True) != repository_root:
-        _fail("FAIL_REPOSITORY_ROOT", "Repository root is an alias.")
+    descriptor = _open_absolute_directory(repository_root, "FAIL_REPOSITORY_ROOT")
+    os.close(descriptor)
     return repository_root
+
+
+def _freeze_contract_value(value: Any) -> Any:
+    try:
+        if isinstance(value, Mapping):
+            copied = {key: _freeze_contract_value(item) for key, item in tuple(value.items())}
+            return MappingProxyType(copied)
+        if isinstance(value, Sequence) and not isinstance(value, (str, bytes)):
+            return tuple(_freeze_contract_value(item) for item in tuple(value))
+    except (RuntimeError, TypeError, ValueError):
+        _fail("FAIL_SNAPSHOT_CONTRACT", "Snapshot contract changed while being frozen.")
+    return value
+
+
+def _freeze_snapshot_contract(contract: Mapping[str, Any]) -> Mapping[str, Any]:
+    frozen = _freeze_contract_value(contract)
+    return _mapping(frozen, "FAIL_SNAPSHOT_CONTRACT", "snapshot contract")
 
 
 def _accepted_origin(origin: str) -> str:
@@ -775,7 +1093,7 @@ def _validate_snapshot_contract(contract: Mapping[str, Any]) -> None:
         or topology.get("base_tree") != EXPECTED_BASE_TREE
         or topology.get("corrective_parent_sha") != EXPECTED_CORRECTIVE_PARENT_SHA
         or topology.get("corrective_parent_tree") != EXPECTED_CORRECTIVE_PARENT_TREE
-        or topology.get("base_to_head_commit_count") != 4
+        or topology.get("base_to_head_commit_count") != 5
         or topology.get("parent_to_head_commit_count") != 1
     ):
         _fail(code, "Snapshot topology differs from the exact corrective stack.")
@@ -799,36 +1117,15 @@ def _validate_snapshot_contract(contract: Mapping[str, Any]) -> None:
     _exact_keys(boundaries, {"knowledge_input", "branch_coverage"}, code, "validation_boundaries")
     knowledge = _mapping(boundaries.get("knowledge_input"), code, "knowledge_input")
     coverage = _mapping(boundaries.get("branch_coverage"), code, "branch_coverage")
-    _validate_exact_scalar_mapping(
-        knowledge, EXPECTED_KNOWLEDGE_BOUNDARY, code, "knowledge_input"
-    )
+    _validate_exact_scalar_mapping(knowledge, EXPECTED_KNOWLEDGE_BOUNDARY, code, "knowledge_input")
     _validate_exact_scalar_mapping(
         coverage, EXPECTED_BRANCH_COVERAGE_BOUNDARY, code, "branch_coverage"
     )
 
 
 def load_snapshot_contract(path: Path) -> Mapping[str, Any]:
-    if (
-        not path.is_absolute()
-        or len(path.parts) < 2
-        or Path(os.path.normpath(os.fspath(path))) != path
-    ):
-        _fail("FAIL_SNAPSHOT_CONTRACT", "Snapshot contract path is unsafe.")
-    current = Path(path.anchor)
-    try:
-        observed = os.lstat(current)
-        for index, component in enumerate(path.parts[1:]):
-            current /= component
-            observed = os.lstat(current)
-            if stat.S_ISLNK(observed.st_mode):
-                _fail("FAIL_SNAPSHOT_CONTRACT", "Snapshot contract path is unsafe.")
-            if index < len(path.parts[1:]) - 1 and not stat.S_ISDIR(observed.st_mode):
-                _fail("FAIL_SNAPSHOT_CONTRACT", "Snapshot contract parent is unsafe.")
-        if not stat.S_ISREG(observed.st_mode):
-            _fail("FAIL_SNAPSHOT_CONTRACT", "Snapshot contract is not a regular file.")
-    except OSError:
-        _fail("FAIL_SNAPSHOT_CONTRACT", "Snapshot contract path is unsafe.")
-    return _load_yaml(path, "FAIL_SNAPSHOT_CONTRACT")
+    captured = _stable_read_absolute(path, "FAIL_SNAPSHOT_CONTRACT")
+    return _load_yaml_bytes(captured, "FAIL_SNAPSHOT_CONTRACT", path.name)
 
 
 def _changed_paths(root: Path) -> set[str]:
@@ -844,22 +1141,8 @@ def _changed_paths(root: Path) -> set[str]:
     return paths
 
 
-def _observe_bound_file(root: Path, relative: str) -> str:
-    current = root
-    parts = PurePosixPath(relative).parts
-    try:
-        observed = os.lstat(current)
-        for index, part in enumerate(parts):
-            current /= part
-            observed = os.lstat(current)
-            if stat.S_ISLNK(observed.st_mode):
-                _fail("FAIL_PATH_SAFETY", "Authorized path contains a symlink.", path=relative)
-            if index < len(parts) - 1 and not stat.S_ISDIR(observed.st_mode):
-                _fail("FAIL_PATH_SAFETY", "Authorized path parent is not a directory.")
-        if not stat.S_ISREG(observed.st_mode):
-            _fail("FAIL_PATH_SAFETY", "Authorized path is not a regular file.", path=relative)
-    except OSError:
-        _fail("FAIL_PATH_SAFETY", "Authorized path is missing or unsafe.", path=relative)
+def _observe_bound_file(root: Path, relative: str, snapshot: _ValidationSnapshot) -> str:
+    snapshot.read(relative)
     record = _run_git(root, "ls-tree", "HEAD", "--", relative)
     match = re.fullmatch(r"(\d{6}) blob [0-9a-f]{40}\t.+", record)
     if match is None:
@@ -867,7 +1150,9 @@ def _observe_bound_file(root: Path, relative: str) -> str:
     return match.group(1)
 
 
-def _observe_repository(root: Path, contract: Mapping[str, Any]) -> set[str]:
+def _observe_repository(
+    root: Path, contract: Mapping[str, Any], snapshot: _ValidationSnapshot
+) -> set[str]:
     if platform.system() != "Linux":
         _fail("FAIL_ENVIRONMENT_IDENTITY", "S03 source validation requires Linux.")
     repository_contract = cast(Mapping[str, Any], contract["repository"])
@@ -904,12 +1189,12 @@ def _observe_repository(root: Path, contract: Mapping[str, Any]) -> set[str]:
         or _run_git(root, "rev-parse", "HEAD^^{tree}") != EXPECTED_CORRECTIVE_PARENT_TREE
     ):
         _fail("FAIL_BASE_IDENTITY", "Observed corrective parent is incorrect.")
-    if int(_run_git(root, "rev-list", "--count", f"{EXPECTED_BASE_SHA}..HEAD")) != 4:
+    if int(_run_git(root, "rev-list", "--count", f"{EXPECTED_BASE_SHA}..HEAD")) != 5:
         _fail("FAIL_COMMIT_TOPOLOGY", "Observed base-to-head count is incorrect.")
     if int(_run_git(root, "rev-list", "--count", f"{EXPECTED_CORRECTIVE_PARENT_SHA}..HEAD")) != 1:
         _fail("FAIL_COMMIT_TOPOLOGY", "Observed parent-to-head count is incorrect.")
     modes = {
-        relative: _observe_bound_file(root, relative)
+        relative: _observe_bound_file(root, relative, snapshot)
         for relative in sorted(EXPECTED_ALLOWLIST)
     }
     if modes != dict(cast(Mapping[str, str], contract["file_modes"])):
@@ -921,10 +1206,12 @@ def _observe_repository(root: Path, contract: Mapping[str, Any]) -> set[str]:
 
 
 def _validate_snapshot_artifact_digests(
-    root: Path, contract: Mapping[str, Any]
+    root: Path, contract: Mapping[str, Any], snapshot: _ValidationSnapshot
 ) -> dict[str, str]:
     artifacts = cast(Mapping[str, str], contract["artifact_digests"])
-    actual = {relative: _sha256(root / relative) for relative in EXPECTED_ARTIFACT_PATHS}
+    actual = {
+        relative: _content_sha256(root, relative, snapshot) for relative in EXPECTED_ARTIFACT_PATHS
+    }
     if actual != dict(artifacts):
         _fail("FAIL_SNAPSHOT_ARTIFACT", "External artifact digest binding failed.")
     return actual
@@ -937,6 +1224,7 @@ def _validate_external_snapshot_bindings(
     package: Mapping[str, Any],
     provenance: Mapping[str, Any],
     manifest: Mapping[str, Any],
+    snapshot: _ValidationSnapshot,
 ) -> dict[str, Any]:
     validated = {
         SPEC_PATH: package["sha256"],
@@ -945,11 +1233,11 @@ def _validate_external_snapshot_bindings(
     }
     if dict(actual_artifacts) != validated:
         _fail("FAIL_SNAPSHOT_ARTIFACT", "Validated artifact digests differ from the snapshot.")
-    package_document = _load_yaml(root / SPEC_PATH, "FAIL_PACKAGE_SPEC")
-    provenance_document = _load_yaml(root / PROVENANCE_PATH, "FAIL_SOURCE_PROVENANCE")
+    package_document = _content_yaml(root, SPEC_PATH, "FAIL_PACKAGE_SPEC", snapshot)
+    provenance_document = _content_yaml(root, PROVENANCE_PATH, "FAIL_SOURCE_PROVENANCE", snapshot)
     package_boundaries = cast(Mapping[str, Any], package_document["validation_gates"])
-    corrective_r3 = cast(Mapping[str, Any], provenance_document["corrective_r3"])
-    provenance_contract = cast(Mapping[str, Any], corrective_r3["external_snapshot_contract"])
+    corrective_r4 = cast(Mapping[str, Any], provenance_document["corrective_r4"])
+    provenance_contract = cast(Mapping[str, Any], corrective_r4["external_snapshot_contract"])
     boundaries = cast(Mapping[str, Any], contract["validation_boundaries"])
     if (
         dict(cast(Mapping[str, Any], boundaries["knowledge_input"]))
@@ -972,30 +1260,79 @@ def _validate_external_snapshot_bindings(
     }
 
 
+def _scan_snapshot(snapshot: _ValidationSnapshot, changed: set[str]) -> str:
+    findings = []
+    for relative in sorted(changed):
+        findings.extend(scan_bytes(snapshot.read(relative), location=relative))
+    if findings:
+        raise FactoryFailure(
+            "FAIL_SENSITIVE_VALUE",
+            "Sensitive or prohibited value detected; raw value suppressed.",
+            details={"findings": [item.safe_dict() for item in findings]},
+        )
+    return "PASS"
+
+
+def _final_repository_readback(
+    root: Path, contract: Mapping[str, Any], snapshot: _ValidationSnapshot
+) -> tuple[str, str]:
+    topology = cast(Mapping[str, Any], contract["topology"])
+    status = subprocess.run(
+        ["git", "-C", str(root), "status", "--porcelain=v1", "-z", "--untracked-files=all"],
+        check=False,
+        capture_output=True,
+    )
+    if status.returncode != 0 or status.stdout:
+        _fail("FAIL_DIRTY_WORKTREE", "Repository changed during validation.")
+    head = _run_git(root, "rev-parse", "HEAD")
+    tree = _run_git(root, "rev-parse", "HEAD^{tree}")
+    branch = _run_git(root, "branch", "--show-current")
+    origin = _run_git(root, "remote", "get-url", "origin")
+    if (
+        head != topology["expected_head_sha"]
+        or tree != topology["expected_head_tree"]
+        or branch != EXPECTED_BRANCH
+        or _accepted_origin(origin) != EXPECTED_REPOSITORY
+    ):
+        _fail("FAIL_REPOSITORY_IDENTITY", "Repository identity changed during validation.")
+    snapshot.verify_root_stable()
+    return head, tree
+
+
 def validate_configuration_access_control(
     repository_root: Path, snapshot_contract: Mapping[str, Any]
 ) -> dict[str, Any]:
     """Validate exact repository evidence through one shared API/CLI boundary."""
 
     root = _validated_repository_root(repository_root)
-    _validate_snapshot_contract(snapshot_contract)
-    changed = _observe_repository(root, snapshot_contract)
-    artifact_digests = _validate_snapshot_artifact_digests(root, snapshot_contract)
-    sensitive = require_no_sensitive_values(root / path for path in sorted(changed))
-    package = _validate_package(root)
-    provenance = _validate_provenance(root)
-    baseline = _validate_baseline(root)
-    manifest = _validate_manifest(root)
-    snapshot = _validate_external_snapshot_bindings(
-        root, snapshot_contract, artifact_digests, package, provenance, manifest
-    )
-    _validate_documents(root)
+    contract = _freeze_snapshot_contract(snapshot_contract)
+    _validate_snapshot_contract(contract)
+    with _ValidationSnapshot(root) as captured:
+        changed = _observe_repository(root, contract, captured)
+        artifact_digests = _validate_snapshot_artifact_digests(root, contract, captured)
+        sensitive = _scan_snapshot(captured, changed)
+        package = _validate_package(root, captured)
+        provenance = _validate_provenance(root, captured)
+        baseline = _validate_baseline(root, captured)
+        manifest = _validate_manifest(root, captured)
+        snapshot = _validate_external_snapshot_bindings(
+            root,
+            contract,
+            artifact_digests,
+            package,
+            provenance,
+            manifest,
+            captured,
+        )
+        _validate_documents(root, captured)
+        coverage_isolation = _validate_coverage_isolation(root, captured)
+        repository_head, repository_tree = _final_repository_readback(root, contract, captured)
     return {
         "result": "PASS",
         "checkpoint": "V3-R1-G00-S03",
         "title": "Configuration and Access Control Source Baseline",
-        "repository_head": _run_git(root, "rev-parse", "HEAD"),
-        "repository_tree": _run_git(root, "rev-parse", "HEAD^{tree}"),
+        "repository_head": repository_head,
+        "repository_tree": repository_tree,
         "changed_paths": sorted(changed),
         "requirements": list(EXPECTED_REQUIREMENTS),
         "checkpoint_type": "SOURCE_IMPLEMENTATION",
@@ -1007,7 +1344,8 @@ def validate_configuration_access_control(
         "baseline": baseline,
         "manifest": manifest,
         "snapshot_contract": snapshot,
-        "sensitive_data": sensitive.result,
+        "coverage_state_isolation": coverage_isolation,
+        "sensitive_data": sensitive,
         "providers": "OFF",
         "email_mode": "NON_RELAYING",
         "external_effect_budget": "DENY_ALL",

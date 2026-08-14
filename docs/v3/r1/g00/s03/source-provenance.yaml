@@ -48,6 +48,52 @@ corrective_r3:
       source_package: ysf.configuration_access_control
       metric: COVERED_BRANCHES_DIVIDED_BY_VALID_BRANCHES
       minimum_percent: 90.0
+corrective_r4:
+  parent_commit: 82e7adb52940b2a1214f0b97e85156f3758124a6
+  parent_tree: efcf63461d63e0260de2fb01945d860badca5d97
+  stable_read_boundary:
+    platform: Linux
+    component_traversal: DESCRIPTOR_RELATIVE
+    directory_flags: [O_DIRECTORY, O_NOFOLLOW, O_CLOEXEC]
+    file_flags: [O_NOFOLLOW, O_CLOEXEC]
+    descriptor_fstat_before_after: true
+    worktree_bytes_equal_head_blob: true
+    trusted_path_reopen_allowed: false
+    sensitive_scan_source: CAPTURED_BYTES
+  coverage_state_isolation:
+    configuration_path: tools/ysf/pyproject.toml
+    runtime_data_file: .coverage.runtime
+    runtime_data_pattern: tools/ysf/.coverage.runtime*
+    gitignore_rules:
+      - /tools/ysf/.coverage.runtime
+      - /tools/ysf/.coverage.runtime.*
+    tracked_coverage_file: tools/ysf/.coverage
+    tracked_coverage_mutation_allowed: false
+    coverage_file_environment_override_required: false
+    standard_invocation_clean_required: true
+    branch_instrumentation: true
+  external_snapshot_contract:
+    schema_version: 2
+    changed_path_count: 16
+    authorized_path_count: 17
+    authorized_file_mode: "100644"
+    artifact_digest_paths:
+      - docs/v3/r1/g00/s03/package-spec.yaml
+      - docs/v3/r1/g00/s03/MANIFEST.sha256
+      - docs/v3/r1/g00/s03/source-provenance.yaml
+    knowledge_input:
+      builder: ysf.index.documents.build_document_index
+      source: CURRENT_DOCS_IN_MEMORY
+      source_glob: docs/**/*.md
+      tracked_factory_index_allowed: false
+      expected_document_count: 124
+      expected_capability_count: 8
+      expected_integration_count: 0
+      expected_relationship_count: 48
+    branch_coverage:
+      source_package: ysf.configuration_access_control
+      metric: COVERED_BRANCHES_DIVIDED_BY_VALID_BRANCHES
+      minimum_percent: 90.0
 predecessor:
   branch: feature/v3-r1-g00-s02-governance-requirements-baseline
   commit: 6e71bdd58df2c5baddb36783abbc513867656df0
