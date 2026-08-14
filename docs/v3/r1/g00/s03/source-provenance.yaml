@@ -1,0 +1,241 @@
+schema_version: 1
+provenance_id: V3-R1-G00-S03-SOURCE-PROVENANCE-001
+checkpoint: V3-R1-G00-S03
+corrective_r2:
+  parent_commit: bc7893f5efa2c3b40da52396b9e946187c6a2044
+  parent_tree: ff9be9172780065e46dac4a336a9cf38b52af8f2
+  knowledge_input:
+    builder: ysf.index.documents.build_document_index
+    source: CURRENT_DOCS_IN_MEMORY
+    source_glob: docs/**/*.md
+    tracked_factory_index_allowed: false
+    expected_document_count: 124
+    expected_capability_count: 8
+    expected_integration_count: 0
+    expected_relationship_count: 48
+    service:
+      path: tools/ysf/src/ysf/knowledge/service.py
+      sha256: 82a03c2dc9a7862b1cb5c79b01f0c6b3ef5feb107c5b5b20e12f34d36f7f334d
+    regression_test:
+      path: tools/ysf/tests/integration/test_build_knowledge.py
+      sha256: c5a9dc34e71b90e7b5a8fe5075626cf039fff37517d2e111b824cab285908905
+  branch_coverage_gate:
+    source_package: ysf.configuration_access_control
+    metric: COVERED_BRANCHES_DIVIDED_BY_VALID_BRANCHES
+    minimum_percent: 90.0
+corrective_r3:
+  parent_commit: 62f73324f00fda213cba52cb7c50686c6a0f5e6a
+  parent_tree: ce1005025986e39dabd5b675aaa8f8956cd754a7
+  external_snapshot_contract:
+    schema_version: 2
+    changed_path_count: 14
+    authorized_path_count: 15
+    authorized_file_mode: "100644"
+    artifact_digest_paths:
+      - docs/v3/r1/g00/s03/package-spec.yaml
+      - docs/v3/r1/g00/s03/MANIFEST.sha256
+      - docs/v3/r1/g00/s03/source-provenance.yaml
+    knowledge_input:
+      builder: ysf.index.documents.build_document_index
+      source: CURRENT_DOCS_IN_MEMORY
+      source_glob: docs/**/*.md
+      tracked_factory_index_allowed: false
+      expected_document_count: 124
+      expected_capability_count: 8
+      expected_integration_count: 0
+      expected_relationship_count: 48
+    branch_coverage:
+      source_package: ysf.configuration_access_control
+      metric: COVERED_BRANCHES_DIVIDED_BY_VALID_BRANCHES
+      minimum_percent: 90.0
+corrective_r4:
+  parent_commit: 82e7adb52940b2a1214f0b97e85156f3758124a6
+  parent_tree: efcf63461d63e0260de2fb01945d860badca5d97
+  stable_read_boundary:
+    platform: Linux
+    component_traversal: DESCRIPTOR_RELATIVE
+    directory_flags: [O_DIRECTORY, O_NOFOLLOW, O_CLOEXEC]
+    file_flags: [O_NOFOLLOW, O_CLOEXEC]
+    descriptor_fstat_before_after: true
+    worktree_bytes_equal_head_blob: true
+    trusted_path_reopen_allowed: false
+    sensitive_scan_source: CAPTURED_BYTES
+  coverage_state_isolation:
+    configuration_path: tools/ysf/pyproject.toml
+    runtime_data_file: .coverage.runtime
+    runtime_data_pattern: tools/ysf/.coverage.runtime*
+    gitignore_rules:
+      - /tools/ysf/.coverage.runtime
+      - /tools/ysf/.coverage.runtime.*
+    tracked_coverage_file: tools/ysf/.coverage
+    tracked_coverage_mutation_allowed: false
+    coverage_file_environment_override_required: false
+    standard_invocation_clean_required: true
+    branch_instrumentation: true
+  external_snapshot_contract:
+    schema_version: 2
+    changed_path_count: 16
+    authorized_path_count: 17
+    authorized_file_mode: "100644"
+    artifact_digest_paths:
+      - docs/v3/r1/g00/s03/package-spec.yaml
+      - docs/v3/r1/g00/s03/MANIFEST.sha256
+      - docs/v3/r1/g00/s03/source-provenance.yaml
+    knowledge_input:
+      builder: ysf.index.documents.build_document_index
+      source: CURRENT_DOCS_IN_MEMORY
+      source_glob: docs/**/*.md
+      tracked_factory_index_allowed: false
+      expected_document_count: 124
+      expected_capability_count: 8
+      expected_integration_count: 0
+      expected_relationship_count: 48
+    branch_coverage:
+      source_package: ysf.configuration_access_control
+      metric: COVERED_BRANCHES_DIVIDED_BY_VALID_BRANCHES
+      minimum_percent: 90.0
+corrective_r5:
+  parent_commit: f349bb071c0c696a15fb12405538c80edb0977a6
+  parent_tree: d1f17fff0a94f9056536ecd1567303898aeabf3c
+  stable_read_boundary:
+    platform: Linux
+    component_traversal: DESCRIPTOR_RELATIVE
+    empty_parts_rejected: true
+    normalization_aliases_rejected: true
+    controlled_failure: FactoryFailure
+    failure_code_passthrough: true
+    raw_exception_escape_allowed: false
+    descriptor_closure_required: true
+    minimum_descriptor_cycles: 500
+    nofollow: true
+    descriptor_fstat_before_after: true
+    worktree_bytes_equal_head_blob: true
+    trusted_path_reopen_allowed: false
+    sensitive_scan_source: CAPTURED_BYTES
+  external_snapshot_contract:
+    schema_version: 2
+    changed_path_count: 16
+    authorized_path_count: 17
+    authorized_file_mode: "100644"
+    artifact_digest_paths:
+      - docs/v3/r1/g00/s03/package-spec.yaml
+      - docs/v3/r1/g00/s03/MANIFEST.sha256
+      - docs/v3/r1/g00/s03/source-provenance.yaml
+    knowledge_input:
+      builder: ysf.index.documents.build_document_index
+      source: CURRENT_DOCS_IN_MEMORY
+      source_glob: docs/**/*.md
+      tracked_factory_index_allowed: false
+      expected_document_count: 124
+      expected_capability_count: 8
+      expected_integration_count: 0
+      expected_relationship_count: 48
+    branch_coverage:
+      source_package: ysf.configuration_access_control
+      metric: COVERED_BRANCHES_DIVIDED_BY_VALID_BRANCHES
+      minimum_percent: 90.0
+    stable_read:
+      platform: Linux
+      component_traversal: DESCRIPTOR_RELATIVE
+      empty_parts_rejected: true
+      normalization_aliases_rejected: true
+      controlled_failure: FactoryFailure
+      failure_code_passthrough: true
+      raw_exception_escape_allowed: false
+      descriptor_closure_required: true
+      minimum_descriptor_cycles: 500
+      nofollow: true
+      descriptor_fstat_before_after: true
+      worktree_bytes_equal_head_blob: true
+      trusted_path_reopen_allowed: false
+      sensitive_scan_source: CAPTURED_BYTES
+predecessor:
+  branch: feature/v3-r1-g00-s02-governance-requirements-baseline
+  commit: 6e71bdd58df2c5baddb36783abbc513867656df0
+  tree: b40ef828825e36641695adb23faedf7346102630
+s01_traceability:
+  path: docs/v3/r1/g00/s01/traceability-baseline.yaml
+  git_blob_sha: 09f6bb315349666194eb4961776b0e007334973c
+  sha256: bd5cd5dc65a9481ca0355a7eb1383632bbcd69a6da64681031c4755554d82a19
+brd_sources:
+  - path: docs/BRD/BRD-WS-14.md
+    git_blob_sha: f4efcf874b778d4bada8860a8b5e58804653fa63
+    sha256: fe1b5aa63cfede9d949cb678a60bf1eb5e250b131049cda9f5b4dfef437a2ef2
+    anchor_ids: [V3-R1-SA-061, V3-R1-SA-062, V3-R1-SA-063]
+  - path: docs/BRD/BRD-WS-16.md
+    git_blob_sha: 3a99857a3ae62198b0d720e61635f75257df3b0b
+    sha256: 027fac669b060e1ec9dc66020e10b8d86dfb1b1bd6ec0725f066064e5ff93903
+    anchor_ids: [V3-R1-SA-067, V3-R1-SA-069]
+s02_governance:
+  human_decision:
+    comment_id: 5278693551
+    marker: YSIM_V3_R1_G00_S02_HUMAN_DECISION_V1
+    actor: nvkhoabk
+    body_sha256: bd9e1ed4dc05952ad08b81c78173ae9ce3eeb7ab0cfaeaad3b0df61ed513e25d
+  candidate:
+    path: factory/releases/v3-r1-g00-s02-governance-requirements-baseline/YSim_V3_R1_G00_S02_Governance_Requirements_Baseline_v0.1.0-candidate.1.md
+    git_blob_sha: 6f979e29178fb6f35812ee0815d683a1566f4065
+    sha256: f3aa80a23a1ab95ab9914263d8c79bf11fc466579f162c79d0302cbfa77c9a77
+  acceptance_receipt:
+    path: docs/v3/r1/g00/s02/acceptance-receipt.yaml
+    git_blob_sha: a3fd4d246b986a06b83ca57fe9809b00e62fe306
+    sha256: 0a776b91daaef1b6fad67eb6b2d94bd0b6f99e522d089845dfc02ccc62410c23
+  package_spec:
+    path: docs/v3/r1/g00/s02/package-spec.yaml
+    git_blob_sha: b6176340a541ff859ceb0be54aa403145143db60
+    sha256: 8ef86e32ca2313ca80a60a74af4b88b67cad59c6644f3b9525e0f028dff16fd9
+  standards_provenance:
+    path: docs/v3/r1/g00/s02/standards/standards-provenance.yaml
+    git_blob_sha: f0fd92bd5d858c42d104b5f07fe4f0c268cdabd8
+    sha256: 2cb417883bd2a5e9a1a10a95b5669777736979a7a91c62a988c3e0a8e59d45df
+  authoritative_docx_sha256: 47da5d9dc46bb0e136936f865007d988fe537e3a0413676d8d00fe89496fba48
+s02_descendant_compatibility:
+  scope: DESCENDANT_S03_TEST_FIXTURE_ONLY
+  historical_predecessor:
+    commit: 6e71bdd58df2c5baddb36783abbc513867656df0
+    tree: b40ef828825e36641695adb23faedf7346102630
+    manifest:
+      path: docs/v3/r1/g00/s02/MANIFEST.sha256
+      git_blob_sha: b937e52ad8f23db2913968b0297cf0640306862b
+      sha256: 1107e55b8aef11722b202ab42c0fdff2b4c3a8cc0f8d720485b7c7f9856a2ae6
+    test_helper:
+      path: tools/ysf/tests/unit/test_governance_baseline_validator.py
+      git_blob_sha: 43fc00598ff02ef083b4ef90142a2d085b91565f
+      sha256: e85bb9e42e6dd0ac8901d06d5e930ead7a72acb0aa29b93824df560f2c745bf7
+  descendant_bytes:
+    manifest:
+      path: docs/v3/r1/g00/s02/MANIFEST.sha256
+      sha256: 3a6973d33e592cac9485632b946128ca64292760204070a5415865597c7b7265
+    test_helper:
+      path: tools/ysf/tests/unit/test_governance_baseline_validator.py
+      sha256: 06eded35479d05548e0090cd64e12d3ddf2300ea6c612eb91fdad09518738365
+  accepted_s02_branch_mutated: false
+  s02_human_decision_reinterpreted: false
+  runtime_or_governance_validator_changed: false
+normative_requirements:
+  - id: V3-R1-OPS-001
+    source_anchor_id: V3-R1-SA-061
+    acceptance_case_id: V3-R1-AC-061
+    requirement_sha256: 00ab0c750536bb89f3c0b3602216a539daaaa5ea3219cf7908a12bfde29dca39
+  - id: V3-R1-OPS-002
+    source_anchor_id: V3-R1-SA-062
+    acceptance_case_id: V3-R1-AC-062
+    requirement_sha256: 6b944525092a264b893e429be888e620d1fe691faaaf8731fd8d9a380abdcfd5
+  - id: V3-R1-OPS-003
+    source_anchor_id: V3-R1-SA-063
+    acceptance_case_id: V3-R1-AC-063
+    requirement_sha256: 8458b0140a58fc6eca555a4f57a26021afab70d021c54755714c5cbb19e4edfe
+  - id: V3-R1-SEC-001
+    source_anchor_id: V3-R1-SA-067
+    acceptance_case_id: V3-R1-AC-067
+    requirement_sha256: 97a68795d4d6d6bc91963b1a2c9a6bc6d1907abb47b7d36f4efb6a8dc44b2233
+  - id: V3-R1-SEC-003
+    source_anchor_id: V3-R1-SA-069
+    acceptance_case_id: V3-R1-AC-069
+    requirement_sha256: 9a6fdc24be211952b86d90b1dbc69a9209d2186a1db472329ea4ddfa81fa207d
+legacy_boundary:
+  path_glob: docs/DIP/**
+  role: HISTORICAL_PROVENANCE_ONLY
+  v3_normative_authority: false
+  v3_maturity_authority: false
+  scope_expansion_authorized: false

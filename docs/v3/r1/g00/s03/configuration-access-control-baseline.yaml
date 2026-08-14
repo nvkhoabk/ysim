@@ -1,0 +1,103 @@
+schema_version: 1
+baseline_id: V3-R1-G00-S03-CONFIGURATION-ACCESS-CONTROL-BASELINE
+title: Configuration and Access Control Source Baseline
+document_set: V3-R1-G00-S03
+version: 0.1.0
+status: DRAFT
+checkpoint_type: SOURCE_IMPLEMENTATION
+maturity_target: PLANNED
+package_evidence_level: SOURCE_VALIDATED_NON_OPERATIONAL
+candidate_model: NONE
+requirements:
+  - id: V3-R1-OPS-001
+    statement: The Release 1 pilot shall manage approved operational configuration as versioned, schema-validated records without storing secret values.
+    release_scope: Configuration required by pilot business rules, feature controls, and integration routing.
+    owner: Platform Operations
+    acceptance_criteria:
+      - id: V3-R1-OPS-001-AC-01
+        condition: Every configuration record declares schema, owner, scope, version, effective interval, and audit metadata.
+        verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+      - id: V3-R1-OPS-001-AC-02
+        condition: A schema-invalid or sensitive configuration value is rejected without changing the active configuration.
+        verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+    out_of_scope:
+      - A general-purpose enterprise rule engine is outside Release 1.
+  - id: V3-R1-OPS-002
+    statement: Each Release 1 configuration object shall have an explicit scope, value schema, version, effective interval, and accountable owner.
+    release_scope: Pilot configuration persistence and readback semantics.
+    owner: Platform Operations
+    acceptance_criteria:
+      - id: V3-R1-OPS-002-AC-01
+        condition: Create and readback preserve the exact scope, schema version, effective interval, owner, and canonical value digest.
+        verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+      - id: V3-R1-OPS-002-AC-02
+        condition: Two records with the same identity and version but different canonical values are rejected as ambiguous.
+        verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+    out_of_scope:
+      - Production secret management and unrestricted metadata authoring are outside this requirement.
+  - id: V3-R1-OPS-003
+    statement: Release 1 effective configuration shall resolve through a deterministic scope precedence with explicit, auditable overrides.
+    release_scope: Global, organization, department, storefront, and user scopes only where required by the pilot.
+    owner: Platform Operations
+    acceptance_criteria:
+      - id: V3-R1-OPS-003-AC-01
+        condition: For each supported scope chain, a test proves the documented precedence and identifies the source record selected for every effective value.
+        verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+      - id: V3-R1-OPS-003-AC-02
+        condition: Removing an override restores the next valid inherited value and records the change without mutating its parent record.
+        verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+    out_of_scope:
+      - Unbounded inheritance hierarchies and cross-tenant overrides are outside Release 1.
+  - id: V3-R1-SEC-001
+    statement: Release 1 pilot flows shall enforce authentication, authorization, audit, redaction, and data-scope controls at owned platform boundaries.
+    release_scope: Security controls for synthetic pilot identities and source-only verification.
+    owner: Security Platform
+    acceptance_criteria:
+      - id: V3-R1-SEC-001-AC-01
+        condition: Each protected operation has a tested allow and deny case bound to role, data scope, and a redacted audit correlation identifier.
+        verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+      - id: V3-R1-SEC-001-AC-02
+        condition: Sensitive values, raw tokens, private keys, and real credentials are rejected by the evidence and source scanners.
+        verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+    out_of_scope:
+      - Production identity migration, key custody, and compliance certification are outside this checkpoint.
+  - id: V3-R1-SEC-003
+    statement: Release 1 authentication methods shall be selected from a policy allowlist and tested without real delivery or credential material.
+    release_scope: Authentication policy, method selection, and synthetic verification for pilot actors.
+    owner: Security Platform
+    acceptance_criteria:
+      - id: V3-R1-SEC-003-AC-01
+        condition: The policy maps each pilot actor class to an allowlisted method, assurance requirement, session rule, and failure behavior.
+        verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+      - id: V3-R1-SEC-003-AC-02
+        condition: A disabled or unconfigured method fails before delivery or provider invocation and emits only redacted evidence.
+        verification: Automated source, unit, or integration evidence on synthetic data must demonstrate this condition.
+    out_of_scope:
+      - Universal MFA, social login, SAML, and production credential issuance are outside this requirement unless separately adopted.
+configuration_contract:
+  scopes: [GLOBAL, ORGANIZATION, DEPARTMENT, STOREFRONT, USER]
+  tenant_identity: EXPLICIT_FOR_NON_GLOBAL
+  global_tenant_binding: TENANT_NEUTRAL
+  cross_tenant_inheritance: FORBIDDEN
+  canonical_serialization: RFC8259_SORTED_KEYS_COMPACT_UTF8
+  value_digest: SHA-256
+  record_and_resolution_digest: SHA-256_WITH_TENANT_BINDING
+  immutable_identity_version: true
+  sensitive_values_allowed: false
+  inheritance: EXPLICIT_PARENT_DETERMINISTIC
+  invalid_resolution: FAIL_CLOSED
+access_contract:
+  authentication_methods: [SERVICE_ASSERTION, SYNTHETIC_OTP, SYNTHETIC_PASSWORD]
+  policy_rule_fields: [actor_class, role, method, assurance_requirement, session_rule, failure_behavior]
+  decisions: [ALLOW, DENY]
+  audit_fields: [actor_class, role, subject_digest, action, resource, data_scope, correlation_digest, authentication_method, assurance_result, session_rule_result, authorization_result]
+  audit: DETERMINISTIC_REDACTED_NO_RAW_SUBJECT_OR_CORRELATION
+  provider_delivery_precondition: RECOMPUTE_AUTHENTICATION_AND_AUTHORIZATION_FROM_IMMUTABLE_INPUTS
+  caller_supplied_decision_authority: FORBIDDEN
+  provider_execution: DISABLED
+safety:
+  synthetic_data_only: true
+  providers: "OFF"
+  email_mode: NON_RELAYING
+  external_effect_budget: DENY_ALL
+  maturity_overclaim_forbidden: true
