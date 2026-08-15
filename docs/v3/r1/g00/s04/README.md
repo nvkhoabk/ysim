@@ -28,7 +28,7 @@ fulfillment, notification, customer action, or deployed runtime exists.
   REL-003, REL-004, REL-005, and REL-006 without rewriting accepted S01 history.
 - `source-provenance.yaml` binds the accepted S03 predecessor, the S03 Human
   Decision, immutable traceability/source inputs, and requirement digests.
-- `package-spec.yaml` defines the exact 14-path recovery scope, external snapshot
+- `package-spec.yaml` defines the exact 15-path recovery scope, external snapshot
   contract, validation gates, and non-operational boundary.
 - `MANIFEST.sha256` checksums every non-self path in the frozen allowlist.
 
@@ -62,8 +62,8 @@ Both paths share the same deterministic output boundary and require an
 external schema-v2 contract.
 
 Validation requires an absolute normalized symlink-free Linux repository root,
-the exact origin/repository/branch identity, the accepted S03 parent, one S04
-commit, exact changed paths and `100644` modes, a clean worktree/index, exact
+the exact origin/repository/branch identity, the accepted S03 parent, three S04
+commits, exact changed paths and `100644` modes, a clean worktree/index, exact
 artifact digests, the four-requirement set, five scope dispositions, fresh
 knowledge counts, and branch coverage for `ysf.integration_boundary` at or
 above 90.0 percent.
@@ -89,3 +89,8 @@ the same 125 documents, 14 retained knowledge records, 8 capabilities, 0
 integrations, and 48 relationships. These counts are derived from current
 source and bound into the external snapshot; no stale tracked document index is
 accepted as input.
+
+The S03 compatibility fixture reconstructs every S03 snapshot path from the
+immutable Git tree at the accepted S03 commit. In particular, it never copies
+the S04 knowledge-test bytes into an S03 R5 workspace and does not depend on a
+local S03 branch or a network fetch.

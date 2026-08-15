@@ -13,9 +13,9 @@ stacked_base:
   tree: 6126508cf1fdae163dbf9ccc43684a567fa6c7e1
 head_topology:
   binding: MANDATORY_EXTERNAL_SNAPSHOT_CONTRACT_V2
-  corrective_parent_commit: 76e96ed3326e8bf3fb4da739456c158cbfab87de
-  corrective_parent_tree: 31d359d6f1ccac887cd7a5fe9582a86e226202f2
-  base_to_head_commit_count: 2
+  corrective_parent_commit: 1870a96c03f51e9c06e1cad1619ae79ccbdf26ab
+  corrective_parent_tree: d56e7839a02b91a52538f1f8f20ceb5b73f09ec4
+  base_to_head_commit_count: 3
   parent_to_head_commit_count: 1
 repository_root_contract:
   absolute_path_required: true
@@ -46,12 +46,13 @@ allowed_paths:
   - tools/ysf/tests/unit/test_integration_boundary_validator.py
   - tools/ysf/tests/integration/test_integration_boundary_pipeline.py
   - tools/ysf/tests/integration/test_build_knowledge.py
+  - tools/ysf/tests/unit/test_configuration_access_control_validator.py
 file_mode: "100644"
 external_snapshot_contract:
   schema_version: 2
-  changed_path_binding: EXACT_SORTED_14_PATHS
-  authorized_path_binding: EXACT_SORTED_14_PATHS
-  authorized_mode_binding: EXACT_14_PATHS_100644
+  changed_path_binding: EXACT_SORTED_15_PATHS
+  authorized_path_binding: EXACT_SORTED_15_PATHS
+  authorized_mode_binding: EXACT_15_PATHS_100644
   artifact_digest_paths:
     - docs/v3/r1/g00/s04/integration-boundary-operator-visibility-baseline.yaml
     - docs/v3/r1/g00/s04/package-spec.yaml

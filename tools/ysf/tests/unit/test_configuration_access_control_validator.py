@@ -5,7 +5,6 @@ import hashlib
 import inspect
 import json
 import os
-import shutil
 import subprocess
 import tomllib
 from collections.abc import Callable
@@ -30,6 +29,9 @@ from ysf.configuration_access_control.validator import (
 from ysf.secure_factory.models import FactoryFailure
 
 Mutation = Callable[[Path], None]
+ACCEPTED_S03_SHA = "168efc707cde042ef0459a2bd92f177617c4a25b"
+ACCEPTED_S03_TREE = "6126508cf1fdae163dbf9ccc43684a567fa6c7e1"
+S04_CHANGED_SHARED_PATH = "tools/ysf/tests/integration/test_build_knowledge.py"
 R5_WRITE_SUBSET = frozenset(
     {
         "docs/v3/r1/g00/s03/MANIFEST.sha256",
@@ -97,18 +99,63 @@ def commit(root: Path, message: str, timestamp: int, *, amend: bool = False) -> 
     )
 
 
-def copy_package(root: Path) -> None:
+def accepted_s03_blob(relative: str) -> bytes:
     source = repository_root()
+    assert git(source, "rev-parse", f"{ACCEPTED_S03_SHA}^{{tree}}") == ACCEPTED_S03_TREE
+    entry = subprocess.run(
+        ["git", "-C", str(source), "ls-tree", "-z", ACCEPTED_S03_SHA, "--", relative],
+        check=True,
+        capture_output=True,
+    ).stdout
+    assert entry.endswith(b"\0") and entry.count(b"\0") == 1
+    metadata, observed_path = entry[:-1].split(b"\t", 1)
+    mode, object_type, object_sha = metadata.decode("ascii").split(" ")
+    assert mode == "100644"
+    assert object_type == "blob"
+    assert observed_path.decode("utf-8") == relative
+    content = subprocess.run(
+        ["git", "-C", str(source), "cat-file", "blob", object_sha],
+        check=True,
+        capture_output=True,
+    ).stdout
+    observed_sha = subprocess.run(
+        ["git", "-C", str(source), "hash-object", "--stdin"],
+        input=content,
+        check=True,
+        capture_output=True,
+    ).stdout.decode("ascii").strip()
+    assert observed_sha == object_sha
+    return content
+
+
+def copy_package(root: Path) -> None:
     for relative in sorted(EXPECTED_ALLOWLIST | AUTHORITATIVE_PATHS):
         target = root / relative
         target.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(source / relative, target)
+        target.write_bytes(accepted_s03_blob(relative))
 
 
 def content_workspace(tmp_path: Path) -> Path:
     root = tmp_path / "content"
     copy_package(root)
     return root
+
+
+def accepted_s03_workspace(tmp_path: Path) -> Path:
+    root = tmp_path / "accepted-s03"
+    git(tmp_path, "clone", "--quiet", "--no-hardlinks", str(repository_root()), str(root))
+    git(root, "switch", "--quiet", "--detach", ACCEPTED_S03_SHA)
+    assert git(root, "rev-parse", "HEAD^{tree}") == ACCEPTED_S03_TREE
+    return root
+
+
+def test_s03_fixture_uses_accepted_tree_not_current_s04_bytes(tmp_path: Path) -> None:
+    accepted = accepted_s03_blob(S04_CHANGED_SHARED_PATH)
+    current = (repository_root() / S04_CHANGED_SHARED_PATH).read_bytes()
+    assert current != accepted
+    root = content_workspace(tmp_path)
+    assert (root / S04_CHANGED_SHARED_PATH).read_bytes() == accepted
+    assert hashlib.sha256(current).digest() != hashlib.sha256(accepted).digest()
 
 
 def snapshot_contract(root: Path) -> dict[str, Any]:
@@ -213,8 +260,8 @@ def write(path: Path, value: dict[str, Any]) -> None:
     path.write_text(yaml.safe_dump(value, sort_keys=False), encoding="utf-8")
 
 
-def test_exact_content_package_passes() -> None:
-    root = repository_root()
+def test_exact_content_package_passes(tmp_path: Path) -> None:
+    root = accepted_s03_workspace(tmp_path)
     assert validator._validate_package(root)["result"] == "PASS"
     assert validator._validate_provenance(root)["result"] == "PASS"
     assert validator._validate_baseline(root)["requirement_count"] == 5

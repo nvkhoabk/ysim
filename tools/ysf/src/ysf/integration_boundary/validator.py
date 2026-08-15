@@ -36,8 +36,10 @@ EXPECTED_BRANCH = (
 EXPECTED_BASE_BRANCH = "feature/v3-r1-g00-s03-configuration-access-control-source-baseline"
 EXPECTED_BASE_SHA = "168efc707cde042ef0459a2bd92f177617c4a25b"
 EXPECTED_BASE_TREE = "6126508cf1fdae163dbf9ccc43684a567fa6c7e1"
-EXPECTED_CORRECTIVE_PARENT_SHA = "76e96ed3326e8bf3fb4da739456c158cbfab87de"
-EXPECTED_CORRECTIVE_PARENT_TREE = "31d359d6f1ccac887cd7a5fe9582a86e226202f2"
+EXPECTED_PATH14_PARENT_SHA = "76e96ed3326e8bf3fb4da739456c158cbfab87de"
+EXPECTED_PATH14_PARENT_TREE = "31d359d6f1ccac887cd7a5fe9582a86e226202f2"
+EXPECTED_CORRECTIVE_PARENT_SHA = "1870a96c03f51e9c06e1cad1619ae79ccbdf26ab"
+EXPECTED_CORRECTIVE_PARENT_TREE = "d56e7839a02b91a52538f1f8f20ceb5b73f09ec4"
 EXPECTED_REQUIREMENTS = (
     "V3-R1-INT-001",
     "V3-R1-INT-002",
@@ -66,6 +68,7 @@ EXPECTED_ALLOWLIST_ORDER = (
     "tools/ysf/tests/unit/test_integration_boundary_validator.py",
     "tools/ysf/tests/integration/test_integration_boundary_pipeline.py",
     "tools/ysf/tests/integration/test_build_knowledge.py",
+    "tools/ysf/tests/unit/test_configuration_access_control_validator.py",
 )
 EXPECTED_ALLOWLIST = frozenset(EXPECTED_ALLOWLIST_ORDER)
 EXPECTED_CHANGED_PATHS = EXPECTED_ALLOWLIST
@@ -441,7 +444,7 @@ def _validate_contract(contract: Mapping[str, Any]) -> None:
         topology["base_sha"] != EXPECTED_BASE_SHA
         or topology["base_tree"] != EXPECTED_BASE_TREE
         or topology["parent_sha"] != EXPECTED_CORRECTIVE_PARENT_SHA
-        or topology["base_to_head_commit_count"] != 2
+        or topology["base_to_head_commit_count"] != 3
         or topology["parent_to_head_commit_count"] != 1
     ):
         _fail(code, "Snapshot topology differs from the exact S04 stack.")
@@ -621,7 +624,7 @@ def _observe_repository(
         _run_git(root, "rev-parse", f"{EXPECTED_BASE_SHA}^{{tree}}") != EXPECTED_BASE_TREE
         or _run_git(root, "rev-parse", "HEAD^") != EXPECTED_CORRECTIVE_PARENT_SHA
         or _run_git(root, "rev-parse", "HEAD^^{tree}") != EXPECTED_CORRECTIVE_PARENT_TREE
-        or int(_run_git(root, "rev-list", "--count", f"{EXPECTED_BASE_SHA}..HEAD")) != 2
+        or int(_run_git(root, "rev-list", "--count", f"{EXPECTED_BASE_SHA}..HEAD")) != 3
         or int(
             _run_git(root, "rev-list", "--count", f"{EXPECTED_CORRECTIVE_PARENT_SHA}..HEAD")
         )
@@ -706,7 +709,9 @@ def _validate_artifacts(
         or package.get("maturity_target") != "PLANNED"
         or package.get("package_evidence_level") != "SOURCE_VALIDATED_NON_OPERATIONAL"
         or package.get("candidate_model") != "NONE"
-        or head_topology.get("base_to_head_commit_count") != 2
+        or head_topology.get("corrective_parent_commit") != EXPECTED_CORRECTIVE_PARENT_SHA
+        or head_topology.get("corrective_parent_tree") != EXPECTED_CORRECTIVE_PARENT_TREE
+        or head_topology.get("base_to_head_commit_count") != 3
         or head_topology.get("parent_to_head_commit_count") != 1
     ):
         _fail("FAIL_PACKAGE_SPEC", "Package identity, scope, or maturity differs.")
@@ -760,14 +765,33 @@ def _validate_artifacts(
     )
     if (
         recovery.get("authority") != "AUTHORIZE_S04_SAFE_STOP_RECOVERY"
-        or recovery.get("stopped_candidate_commit") != EXPECTED_CORRECTIVE_PARENT_SHA
-        or recovery.get("stopped_candidate_tree") != EXPECTED_CORRECTIVE_PARENT_TREE
+        or recovery.get("stopped_candidate_commit") != EXPECTED_PATH14_PARENT_SHA
+        or recovery.get("stopped_candidate_tree") != EXPECTED_PATH14_PARENT_TREE
         or recovery.get("revised_write_allowlist_count") != 14
         or recovery.get("required_path_14")
         != "tools/ysf/tests/integration/test_build_knowledge.py"
         or recovery.get("purpose") != "FRESH_DOCUMENT_COUNT_REGRESSION_ONLY"
     ):
         _fail("FAIL_SOURCE_PROVENANCE", "Safe-stop recovery provenance differs.")
+    path15_recovery = _mapping(
+        provenance.get("safe_stop_recovery_path15"),
+        "FAIL_SOURCE_PROVENANCE",
+        "safe_stop_recovery_path15",
+    )
+    if path15_recovery != {
+        "authority": "AUTHORIZE_S04_SAFE_STOP_RECOVERY_PATH_15",
+        "recovery_start_commit": EXPECTED_CORRECTIVE_PARENT_SHA,
+        "recovery_start_tree": EXPECTED_CORRECTIVE_PARENT_TREE,
+        "revised_write_allowlist_count": 15,
+        "required_path_15": "tools/ysf/tests/unit/test_configuration_access_control_validator.py",
+        "purpose": "S03_FIXTURE_COMPATIBILITY_ONLY",
+        "fixture_source": "EXACT_ACCEPTED_S03_GIT_TREE",
+        "fixture_accepted_sha": EXPECTED_BASE_SHA,
+        "fixture_accepted_tree": EXPECTED_BASE_TREE,
+        "current_tree_contamination_allowed": False,
+        "local_s03_branch_required": False,
+    }:
+        _fail("FAIL_SOURCE_PROVENANCE", "Path-15 recovery provenance differs.")
     predecessor = _mapping(
         provenance.get("predecessor"), "FAIL_SOURCE_PROVENANCE", "predecessor"
     )

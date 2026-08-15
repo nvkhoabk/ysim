@@ -103,7 +103,7 @@ def snapshot_contract(root: Path) -> dict[str, Any]:
             "parent_sha": validator.EXPECTED_CORRECTIVE_PARENT_SHA,
             "expected_head_sha": run_git(root, "rev-parse", "HEAD"),
             "expected_head_tree": run_git(root, "rev-parse", "HEAD^{tree}"),
-            "base_to_head_commit_count": 2,
+            "base_to_head_commit_count": 3,
             "parent_to_head_commit_count": 1,
         },
         "changed_paths": sorted(EXPECTED_ALLOWLIST),
@@ -255,7 +255,7 @@ def test_snapshot_contract_extra_key_and_schema_version_fail_closed() -> None:
         ("topology", "base_sha", "0" * 40),
         ("topology", "base_tree", "0" * 40),
         ("topology", "parent_sha", "0" * 40),
-        ("topology", "base_to_head_commit_count", 3),
+        ("topology", "base_to_head_commit_count", 4),
         ("topology", "parent_to_head_commit_count", 2),
         ("safety", "providers", "ON"),
         ("safety", "email_mode", "RELAYING"),
@@ -484,6 +484,16 @@ def test_recovery_knowledge_and_provenance_bindings_fail_closed(tmp_path: Path) 
     write_yaml(root / validator.PROVENANCE_PATH, provenance)
     run_git(root, "add", validator.PROVENANCE_PATH)
     commit(root, "test recovery provenance binding")
+    contract = refresh_identity(root, contract)
+    assert_failure(root, contract, "FAIL_SOURCE_PROVENANCE")
+
+    root = clone_workspace(tmp_path / "path15-recovery-provenance")
+    contract = snapshot_contract(root)
+    provenance = yaml.safe_load((root / validator.PROVENANCE_PATH).read_text(encoding="utf-8"))
+    provenance["safe_stop_recovery_path15"]["fixture_source"] = "CURRENT_WORKTREE"
+    write_yaml(root / validator.PROVENANCE_PATH, provenance)
+    run_git(root, "add", validator.PROVENANCE_PATH)
+    commit(root, "test path15 recovery provenance")
     contract = refresh_identity(root, contract)
     assert_failure(root, contract, "FAIL_SOURCE_PROVENANCE")
 

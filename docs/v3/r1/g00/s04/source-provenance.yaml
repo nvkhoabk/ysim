@@ -18,6 +18,18 @@ safe_stop_recovery:
     relationships: 48
     document_codes: 123
     duplicate_document_codes: 0
+safe_stop_recovery_path15:
+  authority: AUTHORIZE_S04_SAFE_STOP_RECOVERY_PATH_15
+  recovery_start_commit: 1870a96c03f51e9c06e1cad1619ae79ccbdf26ab
+  recovery_start_tree: d56e7839a02b91a52538f1f8f20ceb5b73f09ec4
+  revised_write_allowlist_count: 15
+  required_path_15: tools/ysf/tests/unit/test_configuration_access_control_validator.py
+  purpose: S03_FIXTURE_COMPATIBILITY_ONLY
+  fixture_source: EXACT_ACCEPTED_S03_GIT_TREE
+  fixture_accepted_sha: 168efc707cde042ef0459a2bd92f177617c4a25b
+  fixture_accepted_tree: 6126508cf1fdae163dbf9ccc43684a567fa6c7e1
+  current_tree_contamination_allowed: false
+  local_s03_branch_required: false
 predecessor:
   checkpoint: V3-R1-G00-S03
   branch: feature/v3-r1-g00-s03-configuration-access-control-source-baseline
