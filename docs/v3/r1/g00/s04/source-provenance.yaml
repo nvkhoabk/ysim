@@ -2,6 +2,22 @@ schema_version: 1
 provenance_id: V3-R1-G00-S04-SOURCE-PROVENANCE-001
 checkpoint: V3-R1-G00-S04
 authority: EXPLICIT_SCOPED_ADOPTION_DECISION
+safe_stop_recovery:
+  authority: AUTHORIZE_S04_SAFE_STOP_RECOVERY
+  stopped_candidate_commit: 76e96ed3326e8bf3fb4da739456c158cbfab87de
+  stopped_candidate_tree: 31d359d6f1ccac887cd7a5fe9582a86e226202f2
+  revised_write_allowlist_count: 14
+  required_path_14: tools/ysf/tests/integration/test_build_knowledge.py
+  purpose: FRESH_DOCUMENT_COUNT_REGRESSION_ONLY
+  expected_final_knowledge_counts:
+    index_documents: 125
+    knowledge_records: 14
+    knowledge_documents: 125
+    capabilities: 8
+    integrations: 0
+    relationships: 48
+    document_codes: 123
+    duplicate_document_codes: 0
 predecessor:
   checkpoint: V3-R1-G00-S03
   branch: feature/v3-r1-g00-s03-configuration-access-control-source-baseline

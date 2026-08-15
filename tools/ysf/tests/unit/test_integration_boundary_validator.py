@@ -100,10 +100,10 @@ def snapshot_contract(root: Path) -> dict[str, Any]:
         "topology": {
             "base_sha": EXPECTED_BASE_SHA,
             "base_tree": validator.EXPECTED_BASE_TREE,
-            "parent_sha": EXPECTED_BASE_SHA,
+            "parent_sha": validator.EXPECTED_CORRECTIVE_PARENT_SHA,
             "expected_head_sha": run_git(root, "rev-parse", "HEAD"),
             "expected_head_tree": run_git(root, "rev-parse", "HEAD^{tree}"),
-            "base_to_head_commit_count": 1,
+            "base_to_head_commit_count": 2,
             "parent_to_head_commit_count": 1,
         },
         "changed_paths": sorted(EXPECTED_ALLOWLIST),
@@ -255,7 +255,7 @@ def test_snapshot_contract_extra_key_and_schema_version_fail_closed() -> None:
         ("topology", "base_sha", "0" * 40),
         ("topology", "base_tree", "0" * 40),
         ("topology", "parent_sha", "0" * 40),
-        ("topology", "base_to_head_commit_count", 2),
+        ("topology", "base_to_head_commit_count", 3),
         ("topology", "parent_to_head_commit_count", 2),
         ("safety", "providers", "ON"),
         ("safety", "email_mode", "RELAYING"),
@@ -462,6 +462,30 @@ def test_baseline_safety_and_scope_disposition_fail_closed(tmp_path: Path) -> No
     commit(root, "test scope disposition")
     contract = refresh_identity(root, contract)
     assert_failure(root, contract, "FAIL_SCOPE_DECISIONS")
+
+
+def test_recovery_knowledge_and_provenance_bindings_fail_closed(tmp_path: Path) -> None:
+    root = clone_workspace(tmp_path / "package-counts")
+    contract = snapshot_contract(root)
+    package = yaml.safe_load((root / validator.SPEC_PATH).read_text(encoding="utf-8"))
+    package["validation_gates"]["knowledge_input"]["observed_final_counts"][
+        "index_documents"
+    ] = 124
+    write_yaml(root / validator.SPEC_PATH, package)
+    run_git(root, "add", validator.SPEC_PATH)
+    commit(root, "test recovery knowledge binding")
+    contract = refresh_identity(root, contract)
+    assert_failure(root, contract, "FAIL_PACKAGE_SPEC")
+
+    root = clone_workspace(tmp_path / "recovery-provenance")
+    contract = snapshot_contract(root)
+    provenance = yaml.safe_load((root / validator.PROVENANCE_PATH).read_text(encoding="utf-8"))
+    provenance["safe_stop_recovery"]["revised_write_allowlist_count"] = 15
+    write_yaml(root / validator.PROVENANCE_PATH, provenance)
+    run_git(root, "add", validator.PROVENANCE_PATH)
+    commit(root, "test recovery provenance binding")
+    contract = refresh_identity(root, contract)
+    assert_failure(root, contract, "FAIL_SOURCE_PROVENANCE")
 
 
 def test_manifest_missing_extra_malformed_and_digest_fail_closed(tmp_path: Path) -> None:

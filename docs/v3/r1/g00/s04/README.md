@@ -28,7 +28,7 @@ fulfillment, notification, customer action, or deployed runtime exists.
   REL-003, REL-004, REL-005, and REL-006 without rewriting accepted S01 history.
 - `source-provenance.yaml` binds the accepted S03 predecessor, the S03 Human
   Decision, immutable traceability/source inputs, and requirement digests.
-- `package-spec.yaml` defines the exact 13-path source scope, external snapshot
+- `package-spec.yaml` defines the exact 14-path recovery scope, external snapshot
   contract, validation gates, and non-operational boundary.
 - `MANIFEST.sha256` checksums every non-self path in the frozen allowlist.
 
@@ -82,3 +82,10 @@ protocol blanket support, enterprise operations center, production control
 plane, real provider actions, merge, release, deployment, and operational
 maturity are outside S04. A fresh independent advisory review is mandatory
 before any later Human Decision.
+
+Fresh final discovery observes 125 Markdown documents and 123 governed
+document codes with zero duplicates. The fresh index and knowledge build bind
+the same 125 documents, 14 retained knowledge records, 8 capabilities, 0
+integrations, and 48 relationships. These counts are derived from current
+source and bound into the external snapshot; no stale tracked document index is
+accepted as input.

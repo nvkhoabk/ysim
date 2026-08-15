@@ -36,6 +36,8 @@ EXPECTED_BRANCH = (
 EXPECTED_BASE_BRANCH = "feature/v3-r1-g00-s03-configuration-access-control-source-baseline"
 EXPECTED_BASE_SHA = "168efc707cde042ef0459a2bd92f177617c4a25b"
 EXPECTED_BASE_TREE = "6126508cf1fdae163dbf9ccc43684a567fa6c7e1"
+EXPECTED_CORRECTIVE_PARENT_SHA = "76e96ed3326e8bf3fb4da739456c158cbfab87de"
+EXPECTED_CORRECTIVE_PARENT_TREE = "31d359d6f1ccac887cd7a5fe9582a86e226202f2"
 EXPECTED_REQUIREMENTS = (
     "V3-R1-INT-001",
     "V3-R1-INT-002",
@@ -63,6 +65,7 @@ EXPECTED_ALLOWLIST_ORDER = (
     "tools/ysf/tests/unit/test_integration_boundary.py",
     "tools/ysf/tests/unit/test_integration_boundary_validator.py",
     "tools/ysf/tests/integration/test_integration_boundary_pipeline.py",
+    "tools/ysf/tests/integration/test_build_knowledge.py",
 )
 EXPECTED_ALLOWLIST = frozenset(EXPECTED_ALLOWLIST_ORDER)
 EXPECTED_CHANGED_PATHS = EXPECTED_ALLOWLIST
@@ -437,8 +440,8 @@ def _validate_contract(contract: Mapping[str, Any]) -> None:
     if (
         topology["base_sha"] != EXPECTED_BASE_SHA
         or topology["base_tree"] != EXPECTED_BASE_TREE
-        or topology["parent_sha"] != EXPECTED_BASE_SHA
-        or topology["base_to_head_commit_count"] != 1
+        or topology["parent_sha"] != EXPECTED_CORRECTIVE_PARENT_SHA
+        or topology["base_to_head_commit_count"] != 2
         or topology["parent_to_head_commit_count"] != 1
     ):
         _fail(code, "Snapshot topology differs from the exact S04 stack.")
@@ -616,8 +619,13 @@ def _observe_repository(
     tree = _run_git(root, "rev-parse", "HEAD^{tree}")
     if (
         _run_git(root, "rev-parse", f"{EXPECTED_BASE_SHA}^{{tree}}") != EXPECTED_BASE_TREE
-        or _run_git(root, "rev-parse", "HEAD^") != EXPECTED_BASE_SHA
-        or int(_run_git(root, "rev-list", "--count", f"{EXPECTED_BASE_SHA}..HEAD")) != 1
+        or _run_git(root, "rev-parse", "HEAD^") != EXPECTED_CORRECTIVE_PARENT_SHA
+        or _run_git(root, "rev-parse", "HEAD^^{tree}") != EXPECTED_CORRECTIVE_PARENT_TREE
+        or int(_run_git(root, "rev-list", "--count", f"{EXPECTED_BASE_SHA}..HEAD")) != 2
+        or int(
+            _run_git(root, "rev-list", "--count", f"{EXPECTED_CORRECTIVE_PARENT_SHA}..HEAD")
+        )
+        != 1
         or head != topology["expected_head_sha"]
         or tree != topology["expected_head_tree"]
     ):
@@ -685,6 +693,9 @@ def _validate_artifacts(
         _fail("FAIL_SCOPE_DECISIONS", "Scope dispositions differ from explicit authority.")
 
     package = _yaml(snapshot, SPEC_PATH, "FAIL_PACKAGE_SPEC")
+    head_topology = _mapping(
+        package.get("head_topology"), "FAIL_PACKAGE_SPEC", "head_topology"
+    )
     if (
         package.get("checkpoint") != "V3-R1-G00-S04"
         or package.get("requirements") != list(EXPECTED_REQUIREMENTS)
@@ -695,6 +706,8 @@ def _validate_artifacts(
         or package.get("maturity_target") != "PLANNED"
         or package.get("package_evidence_level") != "SOURCE_VALIDATED_NON_OPERATIONAL"
         or package.get("candidate_model") != "NONE"
+        or head_topology.get("base_to_head_commit_count") != 2
+        or head_topology.get("parent_to_head_commit_count") != 1
     ):
         _fail("FAIL_PACKAGE_SPEC", "Package identity, scope, or maturity differs.")
     package_safety = _mapping(package.get("safety"), "FAIL_PACKAGE_SPEC", "safety")
@@ -703,6 +716,20 @@ def _validate_artifacts(
     validation_gates = _mapping(
         package.get("validation_gates"), "FAIL_PACKAGE_SPEC", "validation_gates"
     )
+    knowledge_gate = _mapping(
+        validation_gates.get("knowledge_input"), "FAIL_PACKAGE_SPEC", "knowledge_input"
+    )
+    if knowledge_gate.get("observed_final_counts") != {
+        "index_documents": 125,
+        "knowledge_records": 14,
+        "knowledge_documents": 125,
+        "capabilities": 8,
+        "integrations": 0,
+        "relationships": 48,
+        "document_codes": 123,
+        "duplicate_document_codes": 0,
+    }:
+        _fail("FAIL_PACKAGE_SPEC", "Package knowledge count binding differs.")
     branch_gate = _mapping(
         validation_gates.get("branch_coverage"), "FAIL_PACKAGE_SPEC", "branch_coverage"
     )
@@ -726,6 +753,21 @@ def _validate_artifacts(
         or provenance.get("authority") != "EXPLICIT_SCOPED_ADOPTION_DECISION"
     ):
         _fail("FAIL_SOURCE_PROVENANCE", "Source provenance identity differs.")
+    recovery = _mapping(
+        provenance.get("safe_stop_recovery"),
+        "FAIL_SOURCE_PROVENANCE",
+        "safe_stop_recovery",
+    )
+    if (
+        recovery.get("authority") != "AUTHORIZE_S04_SAFE_STOP_RECOVERY"
+        or recovery.get("stopped_candidate_commit") != EXPECTED_CORRECTIVE_PARENT_SHA
+        or recovery.get("stopped_candidate_tree") != EXPECTED_CORRECTIVE_PARENT_TREE
+        or recovery.get("revised_write_allowlist_count") != 14
+        or recovery.get("required_path_14")
+        != "tools/ysf/tests/integration/test_build_knowledge.py"
+        or recovery.get("purpose") != "FRESH_DOCUMENT_COUNT_REGRESSION_ONLY"
+    ):
+        _fail("FAIL_SOURCE_PROVENANCE", "Safe-stop recovery provenance differs.")
     predecessor = _mapping(
         provenance.get("predecessor"), "FAIL_SOURCE_PROVENANCE", "predecessor"
     )
