@@ -1,0 +1,114 @@
+schema_version: 1
+package_id: V3-R1-G00-S04-INTEGRATION-BOUNDARY-OPERATOR-VISIBILITY-SOURCE-BASELINE
+package_version: 0.1.0
+checkpoint: V3-R1-G00-S04
+title: Integration Boundary and Operator Visibility Source Baseline
+owner: Platform Integration and Reliability
+repository: nvkhoabk/ysim
+origin_policy: EXACT_ALLOWED_REPOSITORY_IDENTITY_WITH_SSH_ALIAS
+branch: feature/v3-r1-g00-s04-integration-boundary-operator-visibility-source-baseline
+stacked_base:
+  branch: feature/v3-r1-g00-s03-configuration-access-control-source-baseline
+  commit: 168efc707cde042ef0459a2bd92f177617c4a25b
+  tree: 6126508cf1fdae163dbf9ccc43684a567fa6c7e1
+head_topology:
+  binding: MANDATORY_EXTERNAL_SNAPSHOT_CONTRACT_V2
+  corrective_parent_commit: 1870a96c03f51e9c06e1cad1619ae79ccbdf26ab
+  corrective_parent_tree: d56e7839a02b91a52538f1f8f20ceb5b73f09ec4
+  base_to_head_commit_count: 3
+  parent_to_head_commit_count: 1
+repository_root_contract:
+  absolute_path_required: true
+  symlink_components_allowed: false
+  git_top_level_must_equal_repository_root: true
+  clean_worktree_and_index_required: true
+checkpoint_type: SOURCE_IMPLEMENTATION
+maturity_target: PLANNED
+package_evidence_level: SOURCE_VALIDATED_NON_OPERATIONAL
+candidate_model: NONE
+requirements:
+  - V3-R1-INT-001
+  - V3-R1-INT-002
+  - V3-R1-INT-003
+  - V3-R1-REL-009
+allowed_paths:
+  - docs/v3/r1/g00/s04/MANIFEST.sha256
+  - docs/v3/r1/g00/s04/README.md
+  - docs/v3/r1/g00/s04/integration-boundary-operator-visibility-baseline.yaml
+  - docs/v3/r1/g00/s04/package-spec.yaml
+  - docs/v3/r1/g00/s04/scope-decisions.yaml
+  - docs/v3/r1/g00/s04/source-provenance.yaml
+  - tools/ysf/src/ysf/integration_boundary/__init__.py
+  - tools/ysf/src/ysf/integration_boundary/models.py
+  - tools/ysf/src/ysf/integration_boundary/service.py
+  - tools/ysf/src/ysf/integration_boundary/validator.py
+  - tools/ysf/tests/unit/test_integration_boundary.py
+  - tools/ysf/tests/unit/test_integration_boundary_validator.py
+  - tools/ysf/tests/integration/test_integration_boundary_pipeline.py
+  - tools/ysf/tests/integration/test_build_knowledge.py
+  - tools/ysf/tests/unit/test_configuration_access_control_validator.py
+file_mode: "100644"
+external_snapshot_contract:
+  schema_version: 2
+  changed_path_binding: EXACT_SORTED_15_PATHS
+  authorized_path_binding: EXACT_SORTED_15_PATHS
+  authorized_mode_binding: EXACT_15_PATHS_100644
+  artifact_digest_paths:
+    - docs/v3/r1/g00/s04/integration-boundary-operator-visibility-baseline.yaml
+    - docs/v3/r1/g00/s04/package-spec.yaml
+    - docs/v3/r1/g00/s04/MANIFEST.sha256
+    - docs/v3/r1/g00/s04/scope-decisions.yaml
+    - docs/v3/r1/g00/s04/source-provenance.yaml
+  validation_boundaries:
+    - requirements_and_scope_decisions
+    - knowledge_input
+    - branch_coverage
+    - stable_read
+validation_gates:
+  branch_coverage:
+    source_package: ysf.integration_boundary
+    metric: COVERED_BRANCHES_DIVIDED_BY_VALID_BRANCHES
+    minimum_percent: 90.0
+  knowledge_input:
+    builder: ysf.index.documents.build_document_index
+    source: CURRENT_DOCS_IN_MEMORY
+    source_glob: docs/**/*.md
+    tracked_factory_index_allowed: false
+    index_document_count_equals_knowledge_document_count: true
+    duplicate_document_codes_allowed: false
+    observed_counts_bound_by_external_contract: true
+    observed_final_counts:
+      index_documents: 125
+      knowledge_records: 14
+      knowledge_documents: 125
+      capabilities: 8
+      integrations: 0
+      relationships: 48
+      document_codes: 123
+      duplicate_document_codes: 0
+  stable_descriptor_read:
+    platform: Linux
+    component_traversal: DESCRIPTOR_RELATIVE
+    empty_parts_rejected: true
+    normalization_aliases_rejected: true
+    controlled_failure: FactoryFailure
+    failure_code_passthrough: true
+    raw_exception_escape_allowed: false
+    descriptor_closure_required: true
+    minimum_descriptor_cycles: 500
+    nofollow: true
+    descriptor_fstat_before_after: true
+    worktree_bytes_equal_head_blob: true
+    trusted_path_reopen_allowed: false
+    sensitive_scan_source: CAPTURED_BYTES
+safety:
+  synthetic_data_only: true
+  providers: "OFF"
+  email_mode: NON_RELAYING
+  external_effect_budget: DENY_ALL
+final_human_decision:
+  prerequisite: FRESH_INDEPENDENT_ADVISORY_REVIEW_PASS
+  implementation_may_record: false
+  merge_authorized: false
+  deployment_authorized: false
+next_allowed_action: FRESH_INDEPENDENT_ADVISORY_REVIEW_S04

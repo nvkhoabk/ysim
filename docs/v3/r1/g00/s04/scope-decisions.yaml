@@ -1,0 +1,39 @@
+schema_version: 1
+checkpoint: V3-R1-G00-S04
+authority: EXPLICIT_SCOPED_ADOPTION_DECISION
+unresolved_human_decisions: 0
+decisions:
+  - requirement_id: V3-R1-REL-001
+    decision: DEFER
+    normative_in_s04: false
+    retained_state: PROPOSED
+    provenance_role: FUTURE_EVENT_CONTRACT_REGISTRY_REVIEW
+    implementation_boundary: NO_ENTERPRISE_EVENT_REGISTRY
+  - requirement_id: V3-R1-REL-003
+    decision: DEFER
+    normative_in_s04: false
+    retained_state: PROPOSED
+    provenance_role: FUTURE_EVENT_CONTRACT_REGISTRY_REVIEW
+    implementation_boundary: INCOMPLETE_SOURCE_NOT_ACCEPTANCE_AUTHORITY
+  - requirement_id: V3-R1-REL-004
+    decision: EXCLUDE_FROM_S04_NORMATIVE_SCOPE
+    normative_in_s04: false
+    retained_state: PROPOSED
+    provenance_role: HISTORICAL_CONTEXT
+    implementation_boundary: WORKSHOP_OBJECTIVE_NOT_IMPLEMENTATION_REQUIREMENT
+  - requirement_id: V3-R1-REL-005
+    decision: EXCLUDE_FROM_S04_NORMATIVE_SCOPE
+    normative_in_s04: false
+    retained_state: PROPOSED
+    provenance_role: PRODUCT_CONTEXT
+    implementation_boundary: PRODUCT_VISION_NOT_TECHNICAL_ACCEPTANCE
+  - requirement_id: V3-R1-REL-006
+    decision: EXCLUDE_FROM_S04_NORMATIVE_SCOPE
+    normative_in_s04: false
+    retained_state: PROPOSED
+    provenance_role: POSITIONING_CONTEXT
+    implementation_boundary: NO_DCP_PLATFORM_OR_RUNTIME_REQUIREMENT
+history_boundary:
+  accepted_s01_traceability_modified: false
+  historical_documents_normative_authority: NONE
+  scope_expansion_authorized: false

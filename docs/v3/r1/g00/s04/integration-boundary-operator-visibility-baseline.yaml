@@ -1,0 +1,98 @@
+schema_version: 1
+checkpoint: V3-R1-G00-S04
+title: Integration Boundary and Operator Visibility Source Baseline
+owner: Platform Integration and Reliability
+checkpoint_type: SOURCE_IMPLEMENTATION
+maturity_target: PLANNED
+package_evidence_level: SOURCE_VALIDATED_NON_OPERATIONAL
+candidate_model: NONE
+purpose: >-
+  Establish a source-level owned integration boundary, versioned canonical
+  contracts, allowlisted disabled-by-default adapters and interaction modes,
+  and read-only redacted operator visibility for synthetic failures.
+normative_requirements:
+  - id: V3-R1-INT-001
+    state: SOURCE_APPROVED
+    source_anchor_id: V3-R1-SA-064
+    acceptance_case_id: V3-R1-AC-064
+    requirement_sha256: 16c5210e4073ce54d0fb8c93ae5674fb5a8df3e45490571dce7408d2004ad01a
+  - id: V3-R1-INT-002
+    state: SOURCE_APPROVED
+    source_anchor_id: V3-R1-SA-065
+    acceptance_case_id: V3-R1-AC-065
+    requirement_sha256: eaebb90c097141b74c54075f2a53d37a458c5a3230ff7d7067dec1a653cc0d01
+  - id: V3-R1-INT-003
+    state: SOURCE_APPROVED
+    source_anchor_id: V3-R1-SA-066
+    acceptance_case_id: V3-R1-AC-066
+    requirement_sha256: 93b8726606055c5fa29261f4a6a62553f09bb6dbb7e18638ca10aaee2c5a3912
+  - id: V3-R1-REL-009
+    state: SOURCE_APPROVED
+    source_anchor_id: V3-R1-SA-071
+    acceptance_case_id: V3-R1-AC-071
+    requirement_sha256: 5c4e5038db3715ac18064c2c0c0f85028e2ce856fb81d6b462da786325b31fe3
+owned_boundary:
+  business_or_presentation_direct_provider_import_allowed: false
+  provider_specific_network_client_present: false
+  synthetic_requests_require_owned_gateway: true
+canonical_contract:
+  versioned_request: true
+  versioned_result: true
+  required_bindings:
+    - capability_identity
+    - scenario_identity
+    - idempotency_key
+    - correlation_identifier
+    - interaction_mode
+    - adapter_identity
+    - owner
+    - timeout_policy_reference
+    - retry_policy_reference
+    - redacted_diagnostic_context
+    - deterministic_fail_closed_disposition
+adapter_registry:
+  explicit_allowlist_required: true
+  default_enabled: false
+  absent_disabled_unallowlisted_disposition: DENIED_BEFORE_ADAPTER
+  provider_or_network_call_count: 0
+interaction_modes:
+  schema_values: [REST, WEBHOOK, EVENT, QUEUE, BATCH]
+  schema_presence_enables_mode: false
+  enabled_binding_required:
+    - named_synthetic_scenario
+    - contract_version
+    - owner
+    - timeout_policy_reference
+    - retry_policy_reference
+    - adapter_policy
+operator_visibility:
+  source: SYNTHETIC_FAILURES_ONLY
+  read_only: true
+  fields:
+    - correlation_identifier
+    - current_synthetic_state
+    - adapter_identity
+    - capability_identity
+    - redacted_exception_classification
+    - reconciliation_eligibility
+    - alert_eligibility
+    - safe_manual_action_classification
+  executable_actions: []
+safety:
+  synthetic_data_only: true
+  providers: "OFF"
+  email_mode: NON_RELAYING
+  external_effect_budget: DENY_ALL
+explicit_exclusions:
+  - REAL_PROVIDER_CALLS
+  - INTEGRATION_RUNTIME_DEPLOYMENT
+  - PRODUCTION_ADAPTERS_OR_CREDENTIALS
+  - UNIVERSAL_ENTERPRISE_INTEGRATION_PLATFORM
+  - ENTERPRISE_BUSINESS_EVENT_REGISTRY
+  - BLANKET_LEGACY_PROTOCOL_SUPPORT
+  - ENTERPRISE_OPERATIONS_CENTER
+  - REAL_PAYMENT_FULFILLMENT_OR_NOTIFICATION
+  - CUSTOMER_EMAIL
+  - PRODUCTION_MONITORING_OR_CONTROL_PLANE
+  - MERGE_RELEASE_OR_DEPLOYMENT
+  - OPERATIONAL_MATURITY_CLAIM
