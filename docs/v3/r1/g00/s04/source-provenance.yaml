@@ -1,0 +1,72 @@
+schema_version: 1
+provenance_id: V3-R1-G00-S04-SOURCE-PROVENANCE-001
+checkpoint: V3-R1-G00-S04
+authority: EXPLICIT_SCOPED_ADOPTION_DECISION
+predecessor:
+  checkpoint: V3-R1-G00-S03
+  branch: feature/v3-r1-g00-s03-configuration-access-control-source-baseline
+  commit: 168efc707cde042ef0459a2bd92f177617c4a25b
+  tree: 6126508cf1fdae163dbf9ccc43684a567fa6c7e1
+  human_decision:
+    comment_id: 5296866408
+    marker: YSIM_V3_R1_G00_S03_HUMAN_DECISION_V1
+    decision: ACCEPT_S03_CHECKPOINT_COMPLETION
+    actor: nvkhoabk
+    decision_payload_sha256: e2e8089069c9c1a616b885a159163fe38728282d733d8497da267bcb68bdd0f9
+    comment_body_sha256: 315b83319ef3e64461a510a3432478cf386cd2b03386118cd90593019a046625
+    independent_snapshot_contract_sha256: b1f872c22effa55a468b074762b8604ff11341139bbf5bf406f250b3c28d6a13
+    independent_evidence_inventory_sha256: a8d997303c41d7f8a55366e8e9175cc8d942986609e776e7a06401bcc4ccb196
+s01_traceability:
+  path: docs/v3/r1/g00/s01/traceability-baseline.yaml
+  git_blob_sha: 09f6bb315349666194eb4961776b0e007334973c
+  sha256: bd5cd5dc65a9481ca0355a7eb1383632bbcd69a6da64681031c4755554d82a19
+s02_governance:
+  candidate_sha256: f3aa80a23a1ab95ab9914263d8c79bf11fc466579f162c79d0302cbfa77c9a77
+  standards_provenance:
+    path: docs/v3/r1/g00/s02/standards/standards-provenance.yaml
+    sha256: 2cb417883bd2a5e9a1a10a95b5669777736979a7a91c62a988c3e0a8e59d45df
+  authoritative_docx_sha256: 47da5d9dc46bb0e136936f865007d988fe537e3a0413676d8d00fe89496fba48
+immutable_source_documents:
+  - path: docs/BRD/BRD-WS-15.md
+    git_blob_sha: 681e04950c1d396ffe9c149bdc92fdf4957ed38a
+    sha256: 20eb5dfee4215f31e81b57ac70b7da621679f0184e45b0e8a7a84bb84c8e77de
+    role: SOURCE_INPUT_ONLY
+  - path: docs/BRD/BRD-WS-17.md
+    git_blob_sha: fc9b9e54f28d5f6574b9ee5247fa7652d4470569
+    sha256: 2e90fdc4ceabb0bfb24c5257c80237aaf1b205f089cc9129925d71185319a924
+    role: SOURCE_INPUT_ONLY
+normative_requirements:
+  - id: V3-R1-INT-001
+    source_anchor_id: V3-R1-SA-064
+    acceptance_case_id: V3-R1-AC-064
+    requirement_sha256: 16c5210e4073ce54d0fb8c93ae5674fb5a8df3e45490571dce7408d2004ad01a
+  - id: V3-R1-INT-002
+    source_anchor_id: V3-R1-SA-065
+    acceptance_case_id: V3-R1-AC-065
+    requirement_sha256: eaebb90c097141b74c54075f2a53d37a458c5a3230ff7d7067dec1a653cc0d01
+  - id: V3-R1-INT-003
+    source_anchor_id: V3-R1-SA-066
+    acceptance_case_id: V3-R1-AC-066
+    requirement_sha256: 93b8726606055c5fa29261f4a6a62553f09bb6dbb7e18638ca10aaee2c5a3912
+  - id: V3-R1-REL-009
+    source_anchor_id: V3-R1-SA-071
+    acceptance_case_id: V3-R1-AC-071
+    requirement_sha256: 5c4e5038db3715ac18064c2c0c0f85028e2ce856fb81d6b462da786325b31fe3
+scope_decision_binding:
+  path: docs/v3/r1/g00/s04/scope-decisions.yaml
+  decisions:
+    V3-R1-REL-001: DEFER
+    V3-R1-REL-003: DEFER
+    V3-R1-REL-004: EXCLUDE_FROM_S04_NORMATIVE_SCOPE
+    V3-R1-REL-005: EXCLUDE_FROM_S04_NORMATIVE_SCOPE
+    V3-R1-REL-006: EXCLUDE_FROM_S04_NORMATIVE_SCOPE
+  accepted_s01_history_modified: false
+legacy_boundary:
+  path_glob: docs/DIP/**
+  role: HISTORICAL_PROVENANCE_ONLY
+  v3_normative_authority: false
+  scope_expansion_authorized: false
+safety:
+  providers: "OFF"
+  email_mode: NON_RELAYING
+  external_effect_budget: DENY_ALL
